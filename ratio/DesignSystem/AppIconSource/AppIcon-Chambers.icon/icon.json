@@ -1,0 +1,74 @@
+{
+  "groups": [
+    {
+      "name": "Glyph",
+      "specular": true,
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.35
+      },
+      "layers": [
+        {
+          "image-name": "glyph-R.svg",
+          "name": "Glyph",
+          "glass": true,
+          "fill": {
+            "solid": "extended-srgb:0.99216,0.98824,0.97255,1.00000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dot",
+      "specular": true,
+      "layers": [
+        {
+          "image-name": "glyph-dot.svg",
+          "name": "Dot",
+          "fill": {
+            "solid": "extended-srgb:0.63137,0.18431,0.15686,1.00000"
+          },
+          "fill-specializations": [
+            {
+              "appearance": "dark",
+              "value": {
+                "solid": "extended-srgb:0.76863,0.27451,0.23529,1.00000"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rings",
+      "layers": [
+        {
+          "image-name": "glyph-rings.svg",
+          "name": "Rings",
+          "fill": {
+            "solid": "extended-srgb:0.99216,0.98824,0.97255,1.00000"
+          },
+          "opacity": 0.14
+        }
+      ]
+    }
+  ],
+  "supported-platforms": {
+    "squares": [
+      "iOS"
+    ]
+  },
+  "fill-specializations": [
+    {
+      "value": {
+        "automatic-gradient": "extended-srgb:0.09020,0.08235,0.07451,1.00000"
+      }
+    },
+    {
+      "appearance": "dark",
+      "value": {
+        "automatic-gradient": "extended-srgb:0.04706,0.04314,0.03922,1.00000"
+      }
+    }
+  ]
+}

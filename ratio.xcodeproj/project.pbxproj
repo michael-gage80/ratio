@@ -6,13 +6,36 @@
 	objectVersion = 110;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E656979930632AFB00FF6478 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E656979830632AFB00FF6478 /* FirebaseAnalytics */; };
+		E656979B30632AFB00FF6478 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E656979A30632AFB00FF6478 /* FirebaseAuth */; };
+		E656979D30632AFB00FF6478 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = E656979C30632AFB00FF6478 /* FirebaseCrashlytics */; };
+		E656979F30632AFB00FF6478 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E656979E30632AFB00FF6478 /* FirebaseFirestore */; };
+		E65697A130632AFB00FF6478 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = E65697A030632AFB00FF6478 /* FirebaseFunctions */; };
+		E65697A330632AFB00FF6478 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E65697A230632AFB00FF6478 /* FirebaseMessaging */; };
+		E65697A530632AFB00FF6478 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E65697A430632AFB00FF6478 /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E6569689306315FE00FF6478 /* ratio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ratio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E656970000000000000000A1 /* Exceptions for "ratio" folder in "ratio" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E6569688306315FE00FF6478 /* ratio */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E656968B306315FE00FF6478 /* ratio */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E656970000000000000000A1 /* Exceptions for "ratio" folder in "ratio" target */,
+			);
 			path = ratio;
 			sourceTree = "<group>";
 		};
@@ -22,6 +45,13 @@
 		E6569686306315FE00FF6478 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				E65697A330632AFB00FF6478 /* FirebaseMessaging in Frameworks */,
+				E656979D30632AFB00FF6478 /* FirebaseCrashlytics in Frameworks */,
+				E656979F30632AFB00FF6478 /* FirebaseFirestore in Frameworks */,
+				E65697A130632AFB00FF6478 /* FirebaseFunctions in Frameworks */,
+				E65697A530632AFB00FF6478 /* FirebaseStorage in Frameworks */,
+				E656979930632AFB00FF6478 /* FirebaseAnalytics in Frameworks */,
+				E656979B30632AFB00FF6478 /* FirebaseAuth in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -60,6 +90,15 @@
 				E656968B306315FE00FF6478 /* ratio */,
 			);
 			name = ratio;
+			packageProductDependencies = (
+				E656979830632AFB00FF6478 /* FirebaseAnalytics */,
+				E656979A30632AFB00FF6478 /* FirebaseAuth */,
+				E656979C30632AFB00FF6478 /* FirebaseCrashlytics */,
+				E656979E30632AFB00FF6478 /* FirebaseFirestore */,
+				E65697A030632AFB00FF6478 /* FirebaseFunctions */,
+				E65697A230632AFB00FF6478 /* FirebaseMessaging */,
+				E65697A430632AFB00FF6478 /* FirebaseStorage */,
+			);
 			productName = ratio;
 			productReference = E6569689306315FE00FF6478 /* ratio.app */;
 			productType = "com.apple.product-type.application";
@@ -88,6 +127,9 @@
 			);
 			mainGroup = E6569680306315FE00FF6478;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E656968A306315FE00FF6478 /* Products */;
 			projectDirPath = "";
@@ -239,19 +281,16 @@
 		E65696953063160000FF6478 /* Debug configuration for PBXNativeTarget "ratio" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Parchment AppIcon-Oxblood AppIcon-Chambers AppIcon-Gold AppIcon-Green";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5RP2837Y94;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Ratio;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ratio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -274,19 +313,16 @@
 		E65696963063160000FF6478 /* Release configuration for PBXNativeTarget "ratio" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIcon-Parchment AppIcon-Oxblood AppIcon-Chambers AppIcon-Gold AppIcon-Green";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5RP2837Y94;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Ratio;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ratio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,6 +362,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.19.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E656979830632AFB00FF6478 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E656979A30632AFB00FF6478 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E656979C30632AFB00FF6478 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		E656979E30632AFB00FF6478 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		E65697A030632AFB00FF6478 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		E65697A230632AFB00FF6478 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		E65697A430632AFB00FF6478 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6569681306315FE00FF6478 /* Project object */;
 	validationLevel = 1;

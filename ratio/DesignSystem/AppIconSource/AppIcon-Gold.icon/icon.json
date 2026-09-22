@@ -1,0 +1,79 @@
+{
+  "groups": [
+    {
+      "name": "Glyph",
+      "specular": true,
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.35
+      },
+      "layers": [
+        {
+          "image-name": "glyph-R.svg",
+          "name": "Glyph",
+          "glass": true,
+          "fill": {
+            "linear-gradient": [
+              "extended-srgb:0.90196,0.80000,0.55686,1.00000",
+              "extended-srgb:0.66275,0.52157,0.24706,1.00000"
+            ],
+            "orientation": {
+              "start": {
+                "x": 0.5,
+                "y": 0.0
+              },
+              "stop": {
+                "x": 0.5,
+                "y": 1.0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dot",
+      "specular": true,
+      "layers": [
+        {
+          "image-name": "glyph-dot.svg",
+          "name": "Dot",
+          "fill": {
+            "linear-gradient": [
+              "extended-srgb:0.90196,0.80000,0.55686,1.00000",
+              "extended-srgb:0.66275,0.52157,0.24706,1.00000"
+            ],
+            "orientation": {
+              "start": {
+                "x": 0.5,
+                "y": 0.0
+              },
+              "stop": {
+                "x": 0.5,
+                "y": 1.0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "supported-platforms": {
+    "squares": [
+      "iOS"
+    ]
+  },
+  "fill-specializations": [
+    {
+      "value": {
+        "automatic-gradient": "extended-srgb:0.07843,0.07059,0.06275,1.00000"
+      }
+    },
+    {
+      "appearance": "dark",
+      "value": {
+        "automatic-gradient": "extended-srgb:0.04706,0.04314,0.03922,1.00000"
+      }
+    }
+  ]
+}
