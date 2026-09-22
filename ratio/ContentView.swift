@@ -9,6 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        #if DEBUG
+        // Phase 1 verification screen — see DesignSystemCatalogView's header comment.
+        // Replaced once real screens exist from Phase 3 onward.
+        DesignSystemCatalogView()
+        #else
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -16,6 +21,7 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        #endif
     }
 }
 

@@ -1,0 +1,61 @@
+{
+  "groups": [
+    {
+      "name": "Glyph",
+      "specular": true,
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.35
+      },
+      "layers": [
+        {
+          "image-name": "glyph-R.svg",
+          "name": "Glyph",
+          "glass": true,
+          "fill": {
+            "solid": "extended-srgb:0.99216,0.98824,0.97255,1.00000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dot",
+      "specular": true,
+      "layers": [
+        {
+          "image-name": "glyph-dot.svg",
+          "name": "Dot",
+          "fill": {
+            "solid": "extended-srgb:0.99216,0.98824,0.97255,1.00000"
+          },
+          "fill-specializations": [
+            {
+              "appearance": "dark",
+              "value": {
+                "solid": "extended-srgb:0.88627,0.48235,0.45098,1.00000"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "supported-platforms": {
+    "squares": [
+      "iOS"
+    ]
+  },
+  "fill-specializations": [
+    {
+      "value": {
+        "automatic-gradient": "extended-srgb:0.47843,0.12157,0.10196,1.00000"
+      }
+    },
+    {
+      "appearance": "dark",
+      "value": {
+        "automatic-gradient": "extended-srgb:0.04706,0.04314,0.03922,1.00000"
+      }
+    }
+  ]
+}
