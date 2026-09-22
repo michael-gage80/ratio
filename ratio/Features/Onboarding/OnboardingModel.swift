@@ -7,8 +7,8 @@ import Foundation
 @Observable
 final class OnboardingModel {
     enum Step: Int, CaseIterable {
-        case dateOfBirth = 1, name, programme
-        // Phase 4 adds university and year + modules; Phase 5 the diagnostic.
+        case dateOfBirth = 1, name, programme, university, yearAndModules
+        // Phase 5 adds the diagnostic.
     }
 
     /// Shown in the step counter ("02 / 06"), counting steps still to be built.
@@ -73,6 +73,29 @@ final class OnboardingModel {
         }
     }
 
+    func saveUniversity(id: String) async {
+        await save(["universityId": id, "universityOther": FieldValue.delete()]) {
+            $0.universityId = id
+            $0.universityOther = nil
+        }
+    }
+
+    func saveUniversity(other name: String) async {
+        await save(["universityOther": name, "universityId": FieldValue.delete()]) {
+            $0.universityOther = name
+            $0.universityId = nil
+        }
+    }
+
+    /// Modules are stored in canonical order, which is also their Pathway order.
+    func saveYearAndModules(year: Int, modules: Set<Module>) async {
+        let ordered = Module.allCases.filter(modules.contains)
+        await save(["year": year, "modules": ordered.map(\.rawValue)]) {
+            $0.year = year
+            $0.modules = ordered
+        }
+    }
+
     // MARK: Private
 
     private func save(_ fields: [String: Any], applying change: (inout UserProfile) -> Void) async {
@@ -91,6 +114,8 @@ final class OnboardingModel {
         if profile.birthYear == nil { return .dateOfBirth }
         if profile.displayName == nil { return .name }
         if profile.programme == nil { return .programme }
+        if profile.universityId == nil && profile.universityOther == nil { return .university }
+        if profile.year == nil || (profile.modules ?? []).isEmpty { return .yearAndModules }
         return nil
     }
 }

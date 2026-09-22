@@ -16,6 +16,8 @@ struct OnboardingView: View {
                 case .dateOfBirth: DateOfBirthStep(model: model)
                 case .name: NameStep(model: model, suggestedName: session.suggestedName)
                 case .programme: ProgrammeStep(model: model)
+                case .university: UniversityStep(model: model)
+                case .yearAndModules: YearAndModulesStep(model: model)
                 case nil: EmptyView()
                 }
             }

@@ -31,7 +31,8 @@ service cloud.firestore {
       let before = resource.data;
       let after = request.resource.data;
       let changed = after.diff(before).affectedKeys();
-      return changed.hasOnly(['birthYear', 'ageConfirmedAt', 'displayName', 'initial', 'programme', 'waitlist'])
+      return changed.hasOnly(['birthYear', 'ageConfirmedAt', 'displayName', 'initial', 'programme', 'waitlist',
+                              'universityId', 'universityOther', 'year', 'modules'])
         // The age gate comes first and is final: nothing else is accepted until it's
         // passed, and the birth year can't be changed afterwards.
         && ((!('birthYear' in before) && passesAgeGate(after, changed))
@@ -43,7 +44,20 @@ service cloud.firestore {
             || (after.initial is string && after.initial.matches('^\\p{Lu}$')))
         && (!changed.hasAny(['programme']) || after.programme == 'llb')
         && (!changed.hasAny(['waitlist'])
-            || (after.waitlist is list && after.waitlist.hasOnly(['gdl', 'sqe', 'bptc'])));
+            || (after.waitlist is list && after.waitlist.hasOnly(['gdl', 'sqe', 'bptc'])))
+        // A listed university (an ID from the Remote Config list) or free text for an
+        // unlisted one — never both.
+        && !('universityId' in after && 'universityOther' in after)
+        && (!changed.hasAny(['universityId'])
+            || !('universityId' in after)
+            || (after.universityId is string && after.universityId.matches('^[a-z0-9-]{2,60}$')))
+        && (!changed.hasAny(['universityOther'])
+            || !('universityOther' in after)
+            || (after.universityOther is string && after.universityOther.size() >= 2 && after.universityOther.size() <= 80))
+        && (!changed.hasAny(['year']) || after.year in [1, 2, 3])
+        && (!changed.hasAny(['modules'])
+            || (after.modules is list && after.modules.size() >= 1
+                && after.modules.hasOnly(['crime', 'contract', 'tort', 'public-law', 'land-law', 'equity-trusts'])));
     }
 
     // Only the birth year is stored (not the full date), with the server time of the
