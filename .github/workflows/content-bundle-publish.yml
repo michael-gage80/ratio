@@ -1,0 +1,39 @@
+name: Content bundle publish
+
+# Packages each module's approved lesson JSON into a versioned bundle and uploads it to
+# Cloud Storage, so a "law moved" content fix can ship without an App Store release.
+# Inert until Phase 6 adds Content/ and Content/scripts/publish_bundles.py — the path
+# filter below means this workflow simply never fires before then.
+#
+# Requires the same FIREBASE_SERVICE_ACCOUNT secret as firebase.yml (also grants Storage
+# Object Admin on the ratio-91a04 default bucket).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Content/**"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build and upload module bundles
+        run: |
+          if [ ! -f Content/scripts/publish_bundles.py ]; then
+            echo "No Content/scripts/publish_bundles.py yet — nothing to publish."
+            exit 0
+          fi
+          pip install google-cloud-storage
+          echo "$FIREBASE_SERVICE_ACCOUNT" > /tmp/firebase-sa.json
+          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-sa.json
+          python3 Content/scripts/publish_bundles.py --project ratio-91a04
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}

@@ -1,0 +1,87 @@
+name: Firebase
+
+# Lints/typechecks Cloud Functions and runs security-rules emulator tests on every PR;
+# deploys Functions, Firestore/RTDB rules+indexes and Remote Config on merge to main.
+# Inert until Phase 2 adds functions/ — the path filter below means this workflow simply
+# never fires before then.
+#
+# Requires a repo secret FIREBASE_SERVICE_ACCOUNT holding a JSON service-account key for
+# the ratio-91a04 project (Firebase console → Project settings → Service accounts),
+# added before Phase 2's deploy step is expected to run.
+
+on:
+  pull_request:
+    paths:
+      - "functions/**"
+      - "firestore.rules"
+      - "firestore.indexes.json"
+      - "database.rules.json"
+      - "remoteconfig.template.json"
+  push:
+    branches: [main]
+    paths:
+      - "functions/**"
+      - "firestore.rules"
+      - "firestore.indexes.json"
+      - "database.rules.json"
+      - "remoteconfig.template.json"
+  workflow_dispatch:
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: functions/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          if [ ! -d functions ]; then
+            echo "No functions/ yet — nothing to check."
+            exit 0
+          fi
+          cd functions && npm ci
+
+      - name: Lint + typecheck
+        if: hashFiles('functions/package.json') != ''
+        run: cd functions && npm run lint && npm run build
+
+      - name: Security-rules emulator tests
+        if: hashFiles('functions/package.json') != ''
+        run: |
+          npm install -g firebase-tools
+          firebase emulators:exec --project ratio-91a04 "cd functions && npm test"
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: functions/package-lock.json
+
+      - name: Install dependencies + build
+        run: |
+          if [ ! -d functions ]; then
+            echo "No functions/ yet — nothing to deploy."
+            exit 0
+          fi
+          cd functions && npm ci && npm run build
+
+      - name: Deploy to Firebase
+        if: hashFiles('functions/package.json') != ''
+        run: |
+          npm install -g firebase-tools
+          echo "$FIREBASE_SERVICE_ACCOUNT" > /tmp/firebase-sa.json
+          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-sa.json
+          firebase deploy --project ratio-91a04 --only functions,firestore:rules,firestore:indexes,database,remoteconfig --non-interactive
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
