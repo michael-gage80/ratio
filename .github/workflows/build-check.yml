@@ -1,0 +1,40 @@
+name: Build check
+
+# Fast build-only gate on every PR and push, ahead of Xcode Cloud's archive step.
+# No code signing needed since this never archives, so it runs on stock GitHub-hosted
+# macOS runners with no provisioning profile or team membership required.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: build-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  xcodebuild:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select latest available Xcode
+        run: |
+          LATEST_XCODE=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$LATEST_XCODE" ]; then
+            echo "::error::No Xcode installation found on this runner"
+            exit 1
+          fi
+          echo "Using $LATEST_XCODE"
+          sudo xcode-select -s "$LATEST_XCODE/Contents/Developer"
+          xcodebuild -version
+
+      - name: Build ratio for a generic iOS device
+        run: |
+          xcodebuild build \
+            -project ratio.xcodeproj \
+            -scheme ratio \
+            -destination "generic/platform=iOS" \
+            -skipMacroValidation \
+            CODE_SIGNING_ALLOWED=NO
