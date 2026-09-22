@@ -110,6 +110,28 @@ final class SessionStore {
         update(for: Auth.auth().currentUser)
     }
 
+    /// The display name Apple or Google supplied at sign-in, if any — used to prefill
+    /// onboarding's name step rather than asking for it from scratch.
+    var suggestedName: String? {
+        Auth.auth().currentUser?.displayName
+    }
+
+    /// Under-18s can't use Ratio (PRD: "Safety, privacy and compliance"). Their
+    /// profile holds nothing but a timestamp at this point; remove it and the account,
+    /// then explain on the Welcome screen.
+    func removeUnderageAccount(uid: String) async {
+        try? await users.deleteProfile(uid: uid)
+        do {
+            try await Auth.auth().currentUser?.delete()
+        } catch {
+            // Deleting needs a recent sign-in; if it's gone stale, signing out still
+            // leaves no personal data behind.
+            signOut()
+        }
+        GIDSignIn.sharedInstance.signOut()
+        errorMessage = "Ratio is for students aged 18 and over, so we haven't kept your account or any of your details."
+    }
+
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -131,7 +153,6 @@ final class SessionStore {
             state = .awaitingEmailVerification(email: user.email ?? "")
         } else {
             state = .signedIn(uid: user.uid)
-            Task { await users.ensureUserDocument(uid: user.uid) }
         }
     }
 

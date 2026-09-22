@@ -19,9 +19,42 @@ service cloud.firestore {
         && request.resource.data.keys().hasOnly(['createdAt'])
         && request.resource.data.createdAt == request.time;
 
-      // Onboarding (Phase 3) opens specific profile fields. Deletion runs through a
-      // Function so dependent data is removed with it.
-      allow update, delete: if false;
+      // Onboarding fills the profile in one step at a time.
+      allow update: if isOwner(uid) && isValidProfileUpdate();
+
+      // Only an account that never passed the age gate — an under-18 leaving — can be
+      // removed from the app. Full account deletion will run through a Function.
+      allow delete: if isOwner(uid) && !('birthYear' in resource.data);
+    }
+
+    function isValidProfileUpdate() {
+      let before = resource.data;
+      let after = request.resource.data;
+      let changed = after.diff(before).affectedKeys();
+      return changed.hasOnly(['birthYear', 'ageConfirmedAt', 'displayName', 'initial', 'programme', 'waitlist'])
+        // The age gate comes first and is final: nothing else is accepted until it's
+        // passed, and the birth year can't be changed afterwards.
+        && ((!('birthYear' in before) && passesAgeGate(after, changed))
+            || (('birthYear' in before) && !changed.hasAny(['birthYear', 'ageConfirmedAt'])))
+        && (!changed.hasAny(['displayName'])
+            || (after.displayName is string && after.displayName.size() >= 1 && after.displayName.size() <= 40))
+        && (!changed.hasAny(['initial'])
+            || !('initial' in after)
+            || (after.initial is string && after.initial.matches('^\\p{Lu}$')))
+        && (!changed.hasAny(['programme']) || after.programme == 'llb')
+        && (!changed.hasAny(['waitlist'])
+            || (after.waitlist is list && after.waitlist.hasOnly(['gdl', 'sqe', 'bptc'])));
+    }
+
+    // Only the birth year is stored (not the full date), with the server time of the
+    // declaration. The exact 18th-birthday check happens in the app.
+    function passesAgeGate(after, changed) {
+      return changed.hasOnly(['birthYear', 'ageConfirmedAt'])
+        && changed.hasAll(['birthYear', 'ageConfirmedAt'])
+        && after.birthYear is int
+        && after.birthYear >= request.time.year() - 100
+        && after.birthYear <= request.time.year() - 18
+        && after.ageConfirmedAt == request.time;
     }
   }
 }

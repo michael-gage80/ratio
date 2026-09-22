@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Temporary landing screen after sign-in, until onboarding (Phase 3) replaces it.
+/// Temporary landing screen after onboarding so far, until Today (Phase 10) replaces it.
 struct SignedInPlaceholderView: View {
     @Environment(SessionStore.self) private var session
     @State private var showsCatalog = false
@@ -11,7 +11,7 @@ struct SignedInPlaceholderView: View {
             RatioMark(size: 56)
             Text("You're in.")
                 .ratioFont(.h1)
-            Text("Onboarding arrives in the next phase.")
+            Text("University, modules and the diagnostic come next.")
                 .ratioFont(.body)
                 .foregroundStyle(Color.ratioInk2)
             Spacer()

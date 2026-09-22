@@ -1,9 +1,9 @@
 // Security rules for users/{uid}. Run against the emulator:
 //   firebase emulators:exec --only firestore "npm --prefix firestore-tests test"
 import { readFileSync } from 'node:fs';
-import { after, before, beforeEach, test } from 'node:test';
+import { after, before, beforeEach, describe, test } from 'node:test';
 import { assertFails, assertSucceeds, initializeTestEnvironment } from '@firebase/rules-unit-testing';
-import { deleteDoc, doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
+import { deleteDoc, deleteField, doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 
 let env;
 
@@ -18,34 +18,119 @@ beforeEach(() => env.clearFirestore());
 after(() => env.cleanup());
 
 const db = (uid) => (uid ? env.authenticatedContext(uid) : env.unauthenticatedContext()).firestore();
+const amara = () => doc(db('amara'), 'users/amara');
+const thisYear = new Date().getFullYear();
 
-test('a student can create their own user document with a server timestamp', async () => {
-  await assertSucceeds(setDoc(doc(db('amara'), 'users/amara'), { createdAt: serverTimestamp() }));
+/** Seeds users/amara directly, bypassing the rules. */
+const seed = (data) =>
+  env.withSecurityRulesDisabled((ctx) => setDoc(doc(ctx.firestore(), 'users/amara'), { createdAt: new Date(), ...data }));
+
+const passAgeGate = { birthYear: thisYear - 20, ageConfirmedAt: serverTimestamp() };
+
+describe('creating the user document', () => {
+  test('a student can create their own with a server timestamp', async () => {
+    await assertSucceeds(setDoc(amara(), { createdAt: serverTimestamp() }));
+  });
+
+  test("a student can't create someone else's", async () => {
+    await assertFails(setDoc(doc(db('amara'), 'users/zara'), { createdAt: serverTimestamp() }));
+  });
+
+  test("the create can't smuggle in other fields or a client-chosen time", async () => {
+    await assertFails(setDoc(amara(), { createdAt: serverTimestamp(), plan: 'plus' }));
+    await assertFails(setDoc(amara(), { createdAt: new Date(0) }));
+  });
+
+  test('signed-out clients can do nothing', async () => {
+    await assertFails(setDoc(doc(db(null), 'users/amara'), { createdAt: serverTimestamp() }));
+    await assertFails(getDoc(doc(db(null), 'users/amara')));
+  });
 });
 
-test("a student can't create someone else's user document", async () => {
-  await assertFails(setDoc(doc(db('amara'), 'users/zara'), { createdAt: serverTimestamp() }));
+describe('reading', () => {
+  test('a student reads only their own document', async () => {
+    await seed({});
+    await assertSucceeds(getDoc(amara()));
+    await assertFails(getDoc(doc(db('zara'), 'users/amara')));
+  });
 });
 
-test("the create can't smuggle in other fields or a client-chosen time", async () => {
-  await assertFails(setDoc(doc(db('amara'), 'users/amara'), { createdAt: serverTimestamp(), plan: 'plus' }));
-  await assertFails(setDoc(doc(db('amara'), 'users/amara'), { createdAt: new Date(0) }));
+describe('the age gate', () => {
+  test('an adult birth year with a server timestamp passes', async () => {
+    await seed({});
+    await assertSucceeds(updateDoc(amara(), passAgeGate));
+  });
+
+  test('an under-18 birth year is rejected', async () => {
+    await seed({});
+    await assertFails(updateDoc(amara(), { birthYear: thisYear - 16, ageConfirmedAt: serverTimestamp() }));
+  });
+
+  test('nothing else can be saved before the gate is passed', async () => {
+    await seed({});
+    await assertFails(updateDoc(amara(), { displayName: 'Amara' }));
+    await assertFails(updateDoc(amara(), { ...passAgeGate, displayName: 'Amara' }));
+  });
+
+  test('the gate needs the server time and a whole-number year', async () => {
+    await seed({});
+    await assertFails(updateDoc(amara(), { birthYear: thisYear - 20, ageConfirmedAt: new Date() }));
+    await assertFails(updateDoc(amara(), { birthYear: String(thisYear - 20), ageConfirmedAt: serverTimestamp() }));
+  });
+
+  test("the birth year can't be changed once set", async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertFails(updateDoc(amara(), { birthYear: thisYear - 30 }));
+  });
 });
 
-test('signed-out clients can do nothing', async () => {
-  await assertFails(setDoc(doc(db(null), 'users/amara'), { createdAt: serverTimestamp() }));
-  await assertFails(getDoc(doc(db(null), 'users/amara')));
+describe('profile fields after the gate', () => {
+  test('name, initial, programme and waitlist can be saved', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertSucceeds(updateDoc(amara(), { displayName: 'Amara', initial: 'O' }));
+    await assertSucceeds(updateDoc(amara(), { programme: 'llb', waitlist: ['sqe'] }));
+  });
+
+  test('the initial can be removed, but must be one capital letter if present', async () => {
+    await seed({ birthYear: thisYear - 20, displayName: 'Amara', initial: 'O' });
+    await assertSucceeds(updateDoc(amara(), { initial: deleteField() }));
+    await assertFails(updateDoc(amara(), { initial: 'ok' }));
+    await assertFails(updateDoc(amara(), { initial: 'o' }));
+  });
+
+  test('names must be 1–40 characters', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertFails(updateDoc(amara(), { displayName: '' }));
+    await assertFails(updateDoc(amara(), { displayName: 'A'.repeat(41) }));
+  });
+
+  test('only LLB and known waitlist programmes are accepted', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertFails(updateDoc(amara(), { programme: 'sqe' }));
+    await assertFails(updateDoc(amara(), { waitlist: ['mba'] }));
+  });
+
+  test('unknown fields are rejected', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertFails(updateDoc(amara(), { plan: 'plus' }));
+  });
 });
 
-test("a student reads only their own document, and can't update or delete it yet", async () => {
-  await env.withSecurityRulesDisabled((ctx) => setDoc(doc(ctx.firestore(), 'users/amara'), { createdAt: new Date() }));
-  await assertSucceeds(getDoc(doc(db('amara'), 'users/amara')));
-  await assertFails(getDoc(doc(db('zara'), 'users/amara')));
-  await assertFails(updateDoc(doc(db('amara'), 'users/amara'), { plan: 'plus' }));
-  await assertFails(deleteDoc(doc(db('amara'), 'users/amara')));
+describe('deleting', () => {
+  test('an account that never passed the age gate can be removed by its owner', async () => {
+    await seed({});
+    await assertSucceeds(deleteDoc(amara()));
+  });
+
+  test('once the gate is passed, the document can only be deleted server-side', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertFails(deleteDoc(amara()));
+  });
 });
 
-test('everything outside users/{uid} is denied', async () => {
-  await assertFails(setDoc(doc(db('amara'), 'boards/weekly_everyone'), { rank: 1 }));
-  await assertFails(setDoc(doc(db('amara'), 'users/amara/skills/crime'), { theta: 99 }));
+describe('everything else', () => {
+  test('is denied', async () => {
+    await assertFails(setDoc(doc(db('amara'), 'boards/weekly_everyone'), { rank: 1 }));
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/skills/crime'), { theta: 99 }));
+  });
 });

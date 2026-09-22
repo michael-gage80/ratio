@@ -16,8 +16,8 @@ struct RootView: View {
                     WelcomeView()
                 case .awaitingEmailVerification(let email):
                     VerifyEmailView(email: email)
-                case .signedIn:
-                    SignedInPlaceholderView()
+                case .signedIn(let uid):
+                    SignedInRootView(uid: uid)
                 }
             }
         }
