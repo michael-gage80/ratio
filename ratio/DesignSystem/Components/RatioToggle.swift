@@ -23,7 +23,7 @@ public struct RatioToggle: View {
             if let caption {
                 Text(caption)
                     .ratioFont(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.ratioInk2)
             }
         }
     }
@@ -53,7 +53,7 @@ public struct RatioStepper: View {
                 } label: {
                     Image(systemName: "minus")
                         .frame(width: 28, height: 28)
-                        .background(Color.ratioRule.opacity(0.4), in: Circle())
+                        .background(Color.ratioSunk, in: Circle())
                 }
                 .disabled(value <= range.lowerBound)
 
@@ -66,7 +66,7 @@ public struct RatioStepper: View {
                 } label: {
                     Image(systemName: "plus")
                         .frame(width: 28, height: 28)
-                        .background(Color.ratioRule.opacity(0.4), in: Circle())
+                        .background(Color.ratioSunk, in: Circle())
                 }
                 .disabled(value >= range.upperBound)
             }

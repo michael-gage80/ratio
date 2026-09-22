@@ -27,7 +27,7 @@ struct EmailAuthView: View {
                          ? "We'll send a link to confirm your email before you start."
                          : "Log in with the email you signed up with.")
                         .ratioFont(.body)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.ratioInk2)
                 }
 
                 RatioTextField("Email", placeholder: "you@university.ac.uk", text: $email)
@@ -42,7 +42,7 @@ struct EmailAuthView: View {
                     if mode == .createAccount {
                         Text("At least \(Self.minimumPasswordLength) characters.")
                             .ratioFont(.caption)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color.ratioInk2)
                     }
                 }
 
@@ -71,7 +71,7 @@ struct EmailAuthView: View {
         if resetSent {
             Text("If there's an account for that email, a reset link is on its way.")
                 .ratioFont(.small)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.ratioInk2)
         } else {
             Button("Forgot your password?") {
                 Task { resetSent = await session.sendPasswordReset(email: trimmedEmail) }

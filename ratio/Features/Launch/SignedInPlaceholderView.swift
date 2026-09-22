@@ -13,7 +13,7 @@ struct SignedInPlaceholderView: View {
                 .ratioFont(.h1)
             Text("Onboarding arrives in the next phase.")
                 .ratioFont(.body)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.ratioInk2)
             Spacer()
             #if DEBUG
             RatioButton("Design system catalog", style: .tertiary) { showsCatalog = true }

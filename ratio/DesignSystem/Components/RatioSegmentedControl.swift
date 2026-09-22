@@ -22,7 +22,7 @@ public struct RatioSegmentedControl<T: Hashable>: View {
                 } label: {
                     Text(option.label)
                         .ratioFont(.h3)
-                        .foregroundStyle(isSelected ? Color.ratioInk : Color.ratioInk.opacity(0.55))
+                        .foregroundStyle(isSelected ? Color.ratioInk : Color.ratioInk2)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                         .background {
@@ -38,6 +38,6 @@ public struct RatioSegmentedControl<T: Hashable>: View {
             }
         }
         .padding(3)
-        .background(Color.ratioRule.opacity(0.4), in: RoundedRectangle(cornerRadius: 17, style: .continuous))
+        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 17, style: .continuous))
     }
 }

@@ -27,7 +27,7 @@ struct WelcomeView: View {
             VStack(spacing: 12) {
                 Text("Ratio · for LLB students")
                     .ratioFont(.monoLabel)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.ratioInk2)
                 Text("Think like a \(Text("lawyer.").italic().foregroundStyle(Color.ratioOxblood))\nLearn like a \(Text("game.").italic().foregroundStyle(Color.ratioOxblood))")
                     .ratioFont(.h1)
                     .multilineTextAlignment(.center)
@@ -81,7 +81,7 @@ struct WelcomeView: View {
 
             HStack(spacing: 6) {
                 Text("I already have an account ·")
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.ratioInk2)
                 Button("Log in") { emailMode = .logIn }
                     .italic()
                     .underline()
@@ -95,7 +95,7 @@ struct WelcomeView: View {
     private var footer: some View {
         Text("You must be 18 or over.\nRatio is educational, not legal advice.")
             .ratioFont(.monoData)
-            .foregroundStyle(.secondary)
+            .foregroundStyle(Color.ratioInk2)
             .multilineTextAlignment(.center)
             .padding(.vertical, 20)
     }

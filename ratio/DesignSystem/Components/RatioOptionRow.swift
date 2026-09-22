@@ -101,8 +101,8 @@ public struct RatioOptionRow: View {
 
     private var background: Color {
         switch state {
-        case .correct: return Color.ratioVerdigris.opacity(0.12)
-        case .incorrect: return Color.ratioOxblood.opacity(0.1)
+        case .correct: return .ratioVWash
+        case .incorrect: return .ratioOxWash
         default: return Color.ratioPaper
         }
     }

@@ -1,36 +1,46 @@
 import SwiftUI
 
-/// Ratio's colour tokens — see screens/00-design-system/01-foundations.png and the
-/// PRD's "Design system, brand and icons" section.
-///
-/// Each token is an asset-catalog colour set with a light and dark appearance, so
-/// `Color.ratio*` automatically follows the system appearance. Dark mode follows the
-/// PRD's rule literally: "dark mode inverts ink and parchment" (each token's *role*
-/// stays the same; the ink/parchment *values* swap), and oxblood/verdigris are
-/// lightened in dark mode to keep 4.5:1 contrast against the dark background.
+/// Ratio's colour tokens, taken directly from screens/00-design-system/01-foundations.png
+/// ("Colour", light and dark · warm ink). The PRD's table gives starting values only;
+/// the board is the finalised set. Each token is an asset-catalog colour with a light
+/// and dark appearance, so it follows the system appearance automatically.
 public extension Color {
-    /// Main text, primary buttons, dark surfaces (light: #1D1B18 · dark: parchment's tone).
-    static let ratioInk = Color("Ink", bundle: .main)
+    // MARK: Surfaces
 
-    /// App background (light: #F3F0E9 · dark: ink's tone).
+    /// App background (#F3F0E9 · dark #1D1B18).
     static let ratioParchment = Color("Parchment", bundle: .main)
-
-    /// Cards and reading surfaces (light: #FDFCF8 · dark: a lifted near-black).
+    /// Cards and reading surfaces (#FDFCF8 · dark #282521).
     static let ratioPaper = Color("Paper", bundle: .main)
-
-    /// Accent, key terms, case names, the main call to action (light: #9B2A24 ·
-    /// dark: lightened to ≥4.5:1 against the dark background).
-    static let ratioOxblood = Color("Oxblood", bundle: .main)
-
-    /// Correct answers and "secure" states only — never a general-purpose accent
-    /// (light: #1F7A4D · dark: lightened to ≥4.5:1).
-    static let ratioVerdigris = Color("Verdigris", bundle: .main)
-
-    /// Dividers and outlines (light: #D9D4CA · dark: a subtle lift off ink).
+    /// Inset panels and tracks (#EAE6DD · dark #332F2A).
+    static let ratioSunk = Color("Sunk", bundle: .main)
+    /// Hairline dividers only — inputs use `ratioInputBorder` (#D9D4CA · dark #3A3631).
     static let ratioRule = Color("Rule", bundle: .main)
 
+    // MARK: Text
+
+    /// Main text and continue buttons (#1D1B18 · dark #F3F0E9).
+    static let ratioInk = Color("Ink", bundle: .main)
+    /// Metadata and captions (#6B655C, 5.1:1 · dark #A9A296, 6.8:1).
+    static let ratioInk2 = Color("Ink2", bundle: .main)
+    /// Text on ink and oxblood fills (#FDFCF8 in both appearances).
+    static let ratioOnInk = Color("OnInk", bundle: .main)
+
+    // MARK: Accent and feedback
+
+    /// Accent text: key terms, case names, incorrect (#9B2A24 · dark lifted to #E27B73).
+    static let ratioOxblood = Color("Oxblood", bundle: .main)
+    /// Primary-button fill — keeps the deep oxblood in dark mode (#9B2A24 both).
+    static let ratioCommitFill = Color("CommitFill", bundle: .main)
+    /// Trap panel and missed-answer fill (#F2E4E1 · dark #3A2524).
+    static let ratioOxWash = Color("OxWash", bundle: .main)
+    /// Correct and "secure" only — never a general accent (#1C7147 · dark #6CC096).
+    static let ratioVerdigris = Color("Verdigris", bundle: .main)
+    /// Correct-row fill (#DDEBE2 · dark #1F3328).
+    static let ratioVWash = Color("VWash", bundle: .main)
+    /// Avatar fill only (#946518 · dark #D9A24A).
+    static let ratioOchre = Color("Ochre", bundle: .main)
+
     /// Text field / input boundary (#8C857A both appearances — meets the 3:1 WCAG
-    /// 1.4.11 non-text contrast requirement against both paper surfaces). The plain
-    /// `rule` hairline is for dividers only, never input boundaries.
+    /// 1.4.11 non-text contrast requirement against both paper surfaces).
     static let ratioInputBorder = Color("InputBorder", bundle: .main)
 }

@@ -12,11 +12,11 @@ struct SplashView: View {
             Spacer()
             Text("Entering chambers")
                 .ratioFont(.monoData)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.ratioInk2)
                 .padding(.bottom, 28)
             Text("Ratio · LLB")
                 .ratioFont(.monoLabel)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.ratioInk2)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(24)
