@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// Deny by default: only paths matched below are reachable. A student reads and
+// writes only their own documents; scores, ratings, boards and match results are
+// written only by Cloud Functions (PRD: "Security rules"), and get their own rules in
+// the phases that introduce them.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+
+      // Created on first sign-in with nothing but a server timestamp.
+      allow create: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['createdAt'])
+        && request.resource.data.createdAt == request.time;
+
+      // Onboarding (Phase 3) opens specific profile fields. Deletion runs through a
+      // Function so dependent data is removed with it.
+      allow update, delete: if false;
+    }
+  }
+}

@@ -14,6 +14,7 @@
 		E65697A130632AFB00FF6478 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = E65697A030632AFB00FF6478 /* FirebaseFunctions */; };
 		E65697A330632AFB00FF6478 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = E65697A230632AFB00FF6478 /* FirebaseMessaging */; };
 		E65697A530632AFB00FF6478 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E65697A430632AFB00FF6478 /* FirebaseStorage */; };
+		E65697B230632AFB00FF6478 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E65697B130632AFB00FF6478 /* GoogleSignIn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 				E65697A530632AFB00FF6478 /* FirebaseStorage in Frameworks */,
 				E656979930632AFB00FF6478 /* FirebaseAnalytics in Frameworks */,
 				E656979B30632AFB00FF6478 /* FirebaseAuth in Frameworks */,
+				E65697B230632AFB00FF6478 /* GoogleSignIn in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				E65697A030632AFB00FF6478 /* FirebaseFunctions */,
 				E65697A230632AFB00FF6478 /* FirebaseMessaging */,
 				E65697A430632AFB00FF6478 /* FirebaseStorage */,
+				E65697B130632AFB00FF6478 /* GoogleSignIn */,
 			);
 			productName = ratio;
 			productReference = E6569689306315FE00FF6478 /* ratio.app */;
@@ -129,6 +132,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E65697B030632AFB00FF6478 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E656968A306315FE00FF6478 /* Products */;
@@ -285,6 +289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = ratio/ratio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5RP2837Y94;
@@ -317,6 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = ratio/ratio.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5RP2837Y94;
@@ -372,6 +378,14 @@
 				minimumVersion = 12.19.2;
 			};
 		};
+		E65697B030632AFB00FF6478 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -409,6 +423,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E656979730632AFB00FF6478 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		E65697B130632AFB00FF6478 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E65697B030632AFB00FF6478 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

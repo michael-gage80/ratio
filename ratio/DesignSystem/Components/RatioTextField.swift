@@ -9,19 +9,23 @@ public struct RatioTextField: View {
     private let placeholder: String
     @Binding private var text: String
     private let axis: Axis
+    private let isSecure: Bool
 
-    public init(_ label: String, placeholder: String = "", text: Binding<String>, axis: Axis = .horizontal) {
+    public init(_ label: String, placeholder: String = "", text: Binding<String>, axis: Axis = .horizontal, isSecure: Bool = false) {
         self.label = label
         self.placeholder = placeholder
         self._text = text
         self.axis = axis
+        self.isSecure = isSecure
     }
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(label).ratioFont(.monoLabel)
             Group {
-                if axis == .vertical {
+                if isSecure {
+                    SecureField(placeholder, text: $text)
+                } else if axis == .vertical {
                     TextField(placeholder, text: $text, axis: .vertical)
                 } else {
                     TextField(placeholder, text: $text)

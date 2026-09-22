@@ -1,63 +1,51 @@
 name: Firebase
 
-# Lints/typechecks Cloud Functions and runs security-rules emulator tests on every PR;
-# deploys Functions, Firestore/RTDB rules+indexes and Remote Config on merge to main.
-# Inert until Phase 2 adds functions/ — the path filter below means this workflow simply
-# never fires before then.
+# Runs the Firestore security-rules tests against the emulator on every PR and push,
+# and deploys rules/indexes (plus Functions, once functions/ exists) on merge to main.
 #
-# Requires a repo secret FIREBASE_SERVICE_ACCOUNT holding a JSON service-account key for
-# the ratio-91a04 project (Firebase console → Project settings → Service accounts),
-# added before Phase 2's deploy step is expected to run.
+# Deploying needs a repo secret FIREBASE_SERVICE_ACCOUNT: a JSON key for a service
+# account in ratio-91a04 with the Firebase Admin role. Until it's added, the deploy
+# job skips with a warning instead of failing.
 
 on:
   pull_request:
     paths:
-      - "functions/**"
       - "firestore.rules"
       - "firestore.indexes.json"
-      - "database.rules.json"
-      - "remoteconfig.template.json"
+      - "firebase.json"
+      - "firestore-tests/**"
+      - "functions/**"
+      - ".github/workflows/firebase.yml"
   push:
     branches: [main]
     paths:
-      - "functions/**"
       - "firestore.rules"
       - "firestore.indexes.json"
-      - "database.rules.json"
-      - "remoteconfig.template.json"
+      - "firebase.json"
+      - "firestore-tests/**"
+      - "functions/**"
+      - ".github/workflows/firebase.yml"
   workflow_dispatch:
 
 jobs:
-  check:
-    if: github.event_name == 'pull_request'
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "npm"
-          cache-dependency-path: functions/package-lock.json
-
-      - name: Install dependencies
-        run: |
-          if [ ! -d functions ]; then
-            echo "No functions/ yet — nothing to check."
-            exit 0
-          fi
-          cd functions && npm ci
-
-      - name: Lint + typecheck
-        if: hashFiles('functions/package.json') != ''
-        run: cd functions && npm run lint && npm run build
-
-      - name: Security-rules emulator tests
-        if: hashFiles('functions/package.json') != ''
-        run: |
-          npm install -g firebase-tools
-          firebase emulators:exec --project ratio-91a04 "cd functions && npm test"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - run: npm install -g firebase-tools
+      - run: npm ci --prefix firestore-tests
+      - name: Security rules tests
+        run: firebase emulators:exec --only firestore --project demo-ratio "npm --prefix firestore-tests test"
 
   deploy:
+    needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
@@ -65,23 +53,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "npm"
-          cache-dependency-path: functions/package-lock.json
-
-      - name: Install dependencies + build
-        run: |
-          if [ ! -d functions ]; then
-            echo "No functions/ yet — nothing to deploy."
-            exit 0
-          fi
-          cd functions && npm ci && npm run build
-
-      - name: Deploy to Firebase
-        if: hashFiles('functions/package.json') != ''
-        run: |
-          npm install -g firebase-tools
-          echo "$FIREBASE_SERVICE_ACCOUNT" > /tmp/firebase-sa.json
-          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-sa.json
-          firebase deploy --project ratio-91a04 --only functions,firestore:rules,firestore:indexes,database,remoteconfig --non-interactive
+      - run: npm install -g firebase-tools
+      - name: Deploy
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then
+            echo "::warning::FIREBASE_SERVICE_ACCOUNT isn't set — skipping deploy."
+            exit 0
+          fi
+          echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
+          export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
+          targets="firestore"
+          if [ -f functions/package.json ]; then
+            npm ci --prefix functions && npm run build --prefix functions
+            targets="$targets,functions"
+          fi
+          firebase deploy --project ratio-91a04 --only "$targets" --non-interactive

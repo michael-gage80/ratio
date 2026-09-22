@@ -29,3 +29,9 @@ npm-debug.log*
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
+
+# Firebase client config — kept out of this public repo; Xcode Cloud writes it from
+# the GOOGLE_SERVICE_INFO_PLIST secret in ci_scripts/ci_post_clone.sh.
+ratio/GoogleService-Info.plist
+firestore-tests/node_modules/
+.firebase/
