@@ -9,6 +9,11 @@ struct UserProfile: Decodable, Equatable {
     var initial: String?
     var programme: String?
     var waitlist: [String]?
+    /// One of these is set: a listed university, or free text if it wasn't listed.
+    var universityId: String?
+    var universityOther: String?
+    var year: Int?
+    var modules: [Module]?
 }
 
 /// Reads and writes `users/{uid}`.

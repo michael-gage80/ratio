@@ -116,6 +116,41 @@ describe('profile fields after the gate', () => {
   });
 });
 
+describe('university, year and modules', () => {
+  test('a listed university, or free text for an unlisted one, can be saved', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertSucceeds(updateDoc(amara(), { universityId: 'university-college-london' }));
+    await assertSucceeds(updateDoc(amara(), { universityOther: 'Ruskin College', universityId: deleteField() }));
+  });
+
+  test("a listed and an unlisted university can't both be set", async () => {
+    await seed({ birthYear: thisYear - 20, universityId: 'university-of-leeds' });
+    await assertFails(updateDoc(amara(), { universityOther: 'Somewhere else' }));
+  });
+
+  test('university IDs and free text are validated', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertFails(updateDoc(amara(), { universityId: 'Not An ID!' }));
+    await assertFails(updateDoc(amara(), { universityOther: 'X' }));
+    await assertFails(updateDoc(amara(), { universityOther: 'X'.repeat(81) }));
+  });
+
+  test('year is 1, 2 or 3 and modules are known and non-empty', async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertSucceeds(updateDoc(amara(), { year: 2, modules: ['crime', 'tort', 'public-law'] }));
+    await assertFails(updateDoc(amara(), { year: 4 }));
+    await assertFails(updateDoc(amara(), { year: '2' }));
+    await assertFails(updateDoc(amara(), { modules: [] }));
+    await assertFails(updateDoc(amara(), { modules: ['crime', 'family'] }));
+  });
+
+  test("can't be saved before the age gate", async () => {
+    await seed({});
+    await assertFails(updateDoc(amara(), { universityId: 'university-of-leeds' }));
+    await assertFails(updateDoc(amara(), { year: 1, modules: ['crime'] }));
+  });
+});
+
 describe('deleting', () => {
   test('an account that never passed the age gate can be removed by its owner', async () => {
     await seed({});

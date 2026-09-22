@@ -30,16 +30,15 @@ public enum RatioSpotArt: CaseIterable {
 
     static let strokeStyle = StrokeStyle(lineWidth: 1.4, lineCap: .round, lineJoin: .round)
 
-    /// The module a given icon represents on the Pathway module rail.
-    public static func forModuleId(_ moduleId: String) -> RatioSpotArt {
-        switch moduleId {
-        case "crime": return .scales
-        case "public-law": return .pediment
-        case "contract": return .quill
-        case "tort": return .bottle
-        case "land-law": return .openBook
-        case "equity-trusts": return .seal
-        default: return .scales
+    /// The icon for a module on the Pathway module rail.
+    static func `for`(_ module: Module) -> RatioSpotArt {
+        switch module {
+        case .crime: .scales
+        case .publicLaw: .pediment
+        case .contract: .quill
+        case .tort: .bottle
+        case .landLaw: .openBook
+        case .equityTrusts: .seal
         }
     }
 }
