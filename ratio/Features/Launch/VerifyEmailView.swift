@@ -17,11 +17,11 @@ struct VerifyEmailView: View {
                 .ratioFont(.h1)
             Text("We've sent a link to \(Text(email).italic()). Tap it, then come back here.")
                 .ratioFont(.body)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(Color.ratioInk2)
             if let note {
                 Text(note)
                     .ratioFont(.small)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(Color.ratioInk2)
             }
             Spacer()
             VStack(spacing: 12) {

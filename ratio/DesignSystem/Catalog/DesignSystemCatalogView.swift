@@ -50,19 +50,25 @@ struct DesignSystemCatalogView: View {
     private var header: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("Ratio.").ratioFont(.display).foregroundStyle(Color.ratioInk)
-            Text("Phase 1 · design system catalog").ratioFont(.monoLabel).foregroundStyle(.secondary)
+            Text("Phase 1 · design system catalog").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
         }
     }
 
     private var colorSection: some View {
         sectionCard("Colour") {
-            HStack(spacing: 10) {
-                swatch("Ink", .ratioInk)
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 12) {
                 swatch("Parchment", .ratioParchment)
                 swatch("Paper", .ratioPaper)
-                swatch("Oxblood", .ratioOxblood)
-                swatch("Verdigris", .ratioVerdigris)
+                swatch("Sunk", .ratioSunk)
                 swatch("Rule", .ratioRule)
+                swatch("Ink", .ratioInk)
+                swatch("Ink2", .ratioInk2)
+                swatch("Oxblood", .ratioOxblood)
+                swatch("OxWash", .ratioOxWash)
+                swatch("Verdigris", .ratioVerdigris)
+                swatch("VWash", .ratioVWash)
+                swatch("Ochre", .ratioOchre)
+                swatch("Commit", .ratioCommitFill)
             }
         }
     }
@@ -71,7 +77,7 @@ struct DesignSystemCatalogView: View {
         VStack(spacing: 4) {
             RoundedRectangle(cornerRadius: 10).fill(color).frame(width: 44, height: 44)
                 .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.ratioRule))
-            Text(name).ratioFont(.caption).foregroundStyle(.secondary)
+            Text(name).ratioFont(.caption).foregroundStyle(Color.ratioInk2)
         }
     }
 
@@ -89,10 +95,10 @@ struct DesignSystemCatalogView: View {
                     Text(" and ").ratioFont(.body)
                     Text("foresight.").ratioFont(.bodyEmphasis).foregroundStyle(Color.ratioOxblood)
                 }
-                Text("Updated 4 lessons ago.").ratioFont(.small).foregroundStyle(.secondary)
-                Text("One more day keeps the week.").ratioFont(.caption).foregroundStyle(.secondary)
-                Text("[1999] 1 AC 82 · HL").ratioFont(.monoLabel).foregroundStyle(.secondary)
-                Text("[1999] 1 AC 82 · 1,412 · 8:09").ratioFont(.monoData).foregroundStyle(.secondary)
+                Text("Updated 4 lessons ago.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                Text("One more day keeps the week.").ratioFont(.caption).foregroundStyle(Color.ratioInk2)
+                Text("[1999] 1 AC 82 · HL").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Text("[1999] 1 AC 82 · 1,412 · 8:09").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
                 Text("Regina v Woollin").ratioFont(.displayAccent).foregroundStyle(Color.ratioOxblood)
             }
         }
@@ -228,7 +234,7 @@ struct DesignSystemCatalogView: View {
     @ViewBuilder
     private func sectionCard<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(title).ratioFont(.monoLabel).foregroundStyle(.secondary)
+            Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             content()
         }
         .frame(maxWidth: .infinity, alignment: .leading)

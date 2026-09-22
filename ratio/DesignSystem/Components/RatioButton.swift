@@ -55,7 +55,7 @@ public struct RatioButton: View {
 
     private var background: Color {
         switch style {
-        case .primary: return .ratioOxblood
+        case .primary: return .ratioCommitFill
         case .secondary: return .ratioInk
         case .tertiary: return .ratioPaper
         case .link: return .clear
@@ -64,7 +64,7 @@ public struct RatioButton: View {
 
     private var foreground: Color {
         switch style {
-        case .primary: return .ratioPaper
+        case .primary: return .ratioOnInk
         case .secondary: return .ratioParchment
         case .tertiary: return .ratioInk
         case .link: return .ratioOxblood

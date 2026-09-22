@@ -13,12 +13,12 @@ public struct RatioWhyCard: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Why").ratioFont(.monoLabel).foregroundStyle(.secondary)
+            Text("Why").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text(explanation).ratioFont(.body).foregroundStyle(Color.ratioInk)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .background(Color.ratioRule.opacity(0.3), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 }
 
@@ -39,7 +39,7 @@ public struct RatioTrapCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .background(Color.ratioOxblood.opacity(0.08), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color.ratioOxWash, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 }
 
@@ -54,7 +54,7 @@ public struct RatioReportErrorLink: View {
     public var body: some View {
         Button("Spotted an error? Report it", action: action)
             .ratioFont(.monoLabel)
-            .foregroundStyle(.secondary)
+            .foregroundStyle(Color.ratioInk2)
             .underline()
     }
 }

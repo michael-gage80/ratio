@@ -1,22 +1,40 @@
 import FirebaseFirestore
-import OSLog
 
-/// Reads and writes `users/{uid}` (PRD: "Core Firestore collections"). Onboarding
-/// (Phase 3) adds the profile fields; for now the document only records that the
-/// account exists.
+/// The student's `users/{uid}` document (PRD: "Core Firestore collections"). Fields
+/// are filled in step by step during onboarding; security rules only accept each one
+/// once the age gate has been passed.
+struct UserProfile: Decodable, Equatable {
+    var birthYear: Int?
+    var displayName: String?
+    var initial: String?
+    var programme: String?
+    var waitlist: [String]?
+}
+
+/// Reads and writes `users/{uid}`.
 struct UserRepository {
-    private let logger = Logger(subsystem: "com.mg.ratio", category: "UserRepository")
+    private func document(_ uid: String) -> DocumentReference {
+        Firestore.firestore().collection("users").document(uid)
+    }
 
-    /// Creates the user's document the first time they sign in. Safe to call on every
-    /// sign-in; a failure is logged and retried next launch, since nothing on screen
-    /// depends on the document yet.
-    func ensureUserDocument(uid: String) async {
-        let ref = Firestore.firestore().collection("users").document(uid)
-        do {
-            guard try await !ref.getDocument().exists else { return }
+    /// Loads the profile, creating the document on first sign-in.
+    func loadProfile(uid: String) async throws -> UserProfile {
+        let ref = document(uid)
+        let snapshot = try await ref.getDocument()
+        guard snapshot.exists else {
             try await ref.setData(["createdAt": FieldValue.serverTimestamp()])
-        } catch {
-            logger.error("Couldn't create users/\(uid, privacy: .private): \(error.localizedDescription, privacy: .public)")
+            return UserProfile()
         }
+        return try snapshot.data(as: UserProfile.self)
+    }
+
+    func update(uid: String, _ fields: [String: Any]) async throws {
+        try await document(uid).updateData(fields)
+    }
+
+    /// Only allowed by the rules while the age gate hasn't been passed, i.e. the
+    /// document holds nothing but its creation time.
+    func deleteProfile(uid: String) async throws {
+        try await document(uid).delete()
     }
 }
