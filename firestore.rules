@@ -45,6 +45,22 @@ service cloud.firestore {
       }
     }
 
+    // "Spotted an error? Report it" — create-only, for the student's own reports; triage
+    // happens server-side (PRD: "Error reports: triaged within 72 hours").
+    match /reports/{reportId} {
+      allow create: if request.auth != null
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasAll(['uid', 'itemId', 'reason', 'status', 'createdAt', 'appVersion'])
+        && request.resource.data.keys().hasOnly(['uid', 'itemId', 'lessonId', 'reason', 'note', 'status', 'createdAt', 'appVersion'])
+        && request.resource.data.itemId is string && request.resource.data.itemId.matches('^[a-z0-9-]{1,80}$')
+        && (!('lessonId' in request.resource.data) || request.resource.data.lessonId.matches('^[a-z]+-[0-9]{2}$'))
+        && request.resource.data.reason in ['wrong-answer', 'law-wrong', 'unclear', 'other']
+        && (!('note' in request.resource.data) || (request.resource.data.note is string && request.resource.data.note.size() <= 500))
+        && request.resource.data.status == 'open'
+        && request.resource.data.appVersion is string && request.resource.data.appVersion.size() <= 20
+        && request.resource.data.createdAt == request.time;
+    }
+
     function isValidProfileUpdate() {
       let before = resource.data;
       let after = request.resource.data;

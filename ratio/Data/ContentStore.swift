@@ -53,6 +53,21 @@ final class ContentStore {
         modules.values.lazy.flatMap(\.lessons).first { $0.id == id }
     }
 
+    /// Fact and rule decoys for an IRAC item: real facts and rules from the other IRAC
+    /// problems in the same module, picked in a stable order for the item.
+    func iracDecoys(for itemId: String, in module: Module) -> (facts: [String], rules: [String]) {
+        let others = lessons(in: module)
+            .flatMap { $0.parts.map(\.interaction) + $0.testPool }
+            .filter { $0.id != itemId }
+            .compactMap { item -> (facts: [String], rule: String)? in
+                if case .irac(let facts, let answer) = item.kind { return (facts, answer.rule) }
+                return nil
+            }
+        var generator = SeededGenerator(seed: itemId)
+        return (others.flatMap(\.facts).shuffled(using: &generator).prefix(2).map { $0 },
+                others.map(\.rule).shuffled(using: &generator).prefix(2).map { $0 })
+    }
+
     /// Downloads any module bundle newer than what's loaded. Call once signed in (the
     /// bucket only serves signed-in students). Failures leave current content in place.
     func refresh() async {

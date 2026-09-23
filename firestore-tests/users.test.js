@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { after, before, beforeEach, describe, test } from 'node:test';
 import { assertFails, assertSucceeds, initializeTestEnvironment } from '@firebase/rules-unit-testing';
-import { deleteDoc, deleteField, doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, deleteField, doc, getDoc, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore';
 
 let env;
 
@@ -197,6 +197,30 @@ describe('lesson progress', () => {
     await assertFails(setDoc(progress('amara'), { partsCompleted: 99, updatedAt: serverTimestamp() }));
     await assertFails(setDoc(progress('amara'), { partsCompleted: '2', updatedAt: serverTimestamp() }));
     await assertFails(setDoc(progress('amara'), { partsCompleted: 2, updatedAt: new Date(0) }));
+  });
+});
+
+describe('error reports', () => {
+  const report = (overrides = {}) => ({
+    uid: 'amara', itemId: 'crime-03-check-02', lessonId: 'crime-03', reason: 'wrong-answer',
+    note: 'Option B is also right', status: 'open', createdAt: serverTimestamp(), appVersion: '1.0', ...overrides,
+  });
+
+  test('a student can file a report for any item', async () => {
+    await assertSucceeds(addDoc(collection(db('amara'), 'reports'), report()));
+    const { lessonId, note, ...minimal } = report();
+    await assertSucceeds(addDoc(collection(db('amara'), 'reports'), minimal));
+  });
+
+  test("reports can't be forged, read back, edited or pre-triaged", async () => {
+    await assertFails(addDoc(collection(db('amara'), 'reports'), report({ uid: 'zara' })));
+    await assertFails(addDoc(collection(db(null), 'reports'), report()));
+    await assertFails(addDoc(collection(db('amara'), 'reports'), report({ status: 'resolved' })));
+    await assertFails(addDoc(collection(db('amara'), 'reports'), report({ reason: 'spam' })));
+    await assertFails(addDoc(collection(db('amara'), 'reports'), report({ note: 'x'.repeat(501) })));
+    await env.withSecurityRulesDisabled((ctx) => setDoc(doc(ctx.firestore(), 'reports/r1'), report({ createdAt: new Date() })));
+    await assertFails(getDoc(doc(db('amara'), 'reports/r1')));
+    await assertFails(updateDoc(doc(db('amara'), 'reports/r1'), { status: 'resolved' }));
   });
 });
 

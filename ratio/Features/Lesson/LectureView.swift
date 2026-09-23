@@ -5,6 +5,11 @@ import SwiftUI
 /// Progress is saved after every part, so the lecture resumes where it stopped.
 struct LectureView: View {
     let lesson: Lesson
+    /// Fallback for the IRAC scaffold level when this topic hasn't been assessed yet.
+    let headline: Headline?
+
+    @Environment(ContentStore.self) private var content
+    @State private var applicationEstimate: Estimate?
 
     @State private var partsCompleted = 0
     /// The current part's answer, once locked in.
@@ -49,6 +54,7 @@ struct LectureView: View {
         .task {
             guard !loaded else { return }
             partsCompleted = min(await progress.partsCompleted(lessonId: lesson.id), lesson.parts.count)
+            applicationEstimate = await SkillRepository().estimate(topicId: lesson.topicId, skill: .application) ?? headline?.application
             loaded = true
         }
         .sensoryFeedback(trigger: lockedResponse) { _, response in
@@ -109,7 +115,7 @@ struct LectureView: View {
                     Label(part.interaction.typeTitle, systemImage: "circle.fill")
                         .labelStyle(DotLabelStyle())
                         .ratioFont(.monoLabel)
-                    ItemInteractionView(item: part.interaction, lockedResponse: lockedResponse) { response in
+                    ItemInteractionView(item: part.interaction, lockedResponse: lockedResponse, context: context(for: part.interaction)) { response in
                         lockedResponse = response
                     }
                     if lockedResponse != nil {
@@ -148,6 +154,16 @@ struct LectureView: View {
             .overlay { RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(Color.ratioRule, style: StrokeStyle(lineWidth: 1, dash: [4, 4])) }
             .accessibilityElement(children: .combine)
         }
+    }
+
+    private func context(for item: Item) -> InteractionContext {
+        let decoys = content.iracDecoys(for: item.id, in: lesson.moduleId)
+        return InteractionContext(
+            iracLevel: IRACScaffold.level(for: applicationEstimate),
+            decoyFacts: decoys.facts,
+            decoyRules: decoys.rules,
+            lessonId: lesson.id
+        )
     }
 
     private func advance(scroll: ScrollViewProxy) {
