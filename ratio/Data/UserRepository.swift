@@ -14,6 +14,8 @@ struct UserProfile: Decodable, Equatable {
     var universityOther: String?
     var year: Int?
     var modules: [Module]?
+    /// Written only by the scoring Function once the diagnostic is done (or skipped).
+    var headline: Headline?
 }
 
 /// Reads and writes `users/{uid}`.

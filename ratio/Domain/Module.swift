@@ -1,13 +1,14 @@
-/// The six LLB modules at launch (PRD: "Launch content"). Raw values are the
-/// `moduleId`s used in the lesson JSON and on the student's profile; case order is
-/// the order they're offered in and, by default, their order on the Pathway.
+/// The six LLB modules at launch (PRD: "Launch content"). Raw values are the module
+/// IDs used throughout the content — lesson `moduleId`s, topic ID prefixes
+/// ("public.judicial-review…") and the diagnostic bank — and on the student's profile.
+/// Case order is the order they're offered in and, by default, their Pathway order.
 enum Module: String, CaseIterable, Identifiable, Codable {
     case crime
     case contract
     case tort
-    case publicLaw = "public-law"
-    case landLaw = "land-law"
-    case equityTrusts = "equity-trusts"
+    case publicLaw = "public"
+    case landLaw = "land"
+    case equityTrusts = "equity"
 
     var id: String { rawValue }
 
@@ -20,5 +21,22 @@ enum Module: String, CaseIterable, Identifiable, Codable {
         case .landLaw: "Land law"
         case .equityTrusts: "Equity & Trusts"
         }
+    }
+
+    /// The module a topic ID belongs to, e.g. "crime.homicide.murder" → `.crime`.
+    init?(topicId: String) {
+        guard let prefix = topicId.split(separator: ".").first else { return nil }
+        self.init(rawValue: String(prefix))
+    }
+
+    init(from decoder: Decoder) throws {
+        let raw = try decoder.singleValueContainer().decode(String.self)
+        // Early test profiles (before the IDs were aligned with the content) stored
+        // "public-law", "land-law" and "equity-trusts".
+        let legacy = ["public-law": "public", "land-law": "land", "equity-trusts": "equity"]
+        guard let module = Module(rawValue: legacy[raw] ?? raw) else {
+            throw DecodingError.dataCorrupted(.init(codingPath: decoder.codingPath, debugDescription: "Unknown module \(raw)"))
+        }
+        self = module
     }
 }

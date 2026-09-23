@@ -18,6 +18,7 @@ struct OnboardingView: View {
                 case .programme: ProgrammeStep(model: model)
                 case .university: UniversityStep(model: model)
                 case .yearAndModules: YearAndModulesStep(model: model)
+                case .diagnostic: DiagnosticStep(onboarding: model)
                 case nil: EmptyView()
                 }
             }

@@ -137,7 +137,7 @@ describe('university, year and modules', () => {
 
   test('year is 1, 2 or 3 and modules are known and non-empty', async () => {
     await seed({ birthYear: thisYear - 20 });
-    await assertSucceeds(updateDoc(amara(), { year: 2, modules: ['crime', 'tort', 'public-law'] }));
+    await assertSucceeds(updateDoc(amara(), { year: 2, modules: ['crime', 'tort', 'public'] }));
     await assertFails(updateDoc(amara(), { year: 4 }));
     await assertFails(updateDoc(amara(), { year: '2' }));
     await assertFails(updateDoc(amara(), { modules: [] }));
@@ -163,9 +163,23 @@ describe('deleting', () => {
   });
 });
 
+describe('scores', () => {
+  test('a student can read their own skill estimates but never write them', async () => {
+    await env.withSecurityRulesDisabled((ctx) => setDoc(doc(ctx.firestore(), 'users/amara/skills/crime.homicide.murder'), { knowledge: { theta: 0, sigma: 1 } }));
+    await assertSucceeds(getDoc(doc(db('amara'), 'users/amara/skills/crime.homicide.murder')));
+    await assertFails(getDoc(doc(db('zara'), 'users/amara/skills/crime.homicide.murder')));
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/skills/crime.homicide.murder'), { knowledge: { theta: 9, sigma: 0.1 } }));
+  });
+
+  test("the headline profile on the user document can't be written by the client", async () => {
+    await seed({ birthYear: thisYear - 20 });
+    await assertFails(updateDoc(amara(), { headline: { knowledge: { theta: 9, sigma: 0.1 } } }));
+    await assertFails(updateDoc(amara(), { diagnosticCompletedAt: serverTimestamp() }));
+  });
+});
+
 describe('everything else', () => {
   test('is denied', async () => {
     await assertFails(setDoc(doc(db('amara'), 'boards/weekly_everyone'), { rank: 1 }));
-    await assertFails(setDoc(doc(db('amara'), 'users/amara/skills/crime'), { theta: 99 }));
   });
 });

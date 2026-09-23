@@ -7,12 +7,11 @@ import Foundation
 @Observable
 final class OnboardingModel {
     enum Step: Int, CaseIterable {
-        case dateOfBirth = 1, name, programme, university, yearAndModules
-        // Phase 5 adds the diagnostic.
+        case dateOfBirth = 1, name, programme, university, yearAndModules, diagnostic
     }
 
-    /// Shown in the step counter ("02 / 06"), counting steps still to be built.
-    static let totalSteps = 6
+    /// Shown in the step counter ("02 / 06").
+    static var totalSteps: Int { Step.allCases.count }
 
     enum AgeCheck { case adult, underage }
 
@@ -96,6 +95,12 @@ final class OnboardingModel {
         }
     }
 
+    /// The scoring Function has already saved the headline; this just moves on.
+    func finishDiagnostic(headline: Headline) {
+        profile.headline = headline
+        step = nil
+    }
+
     // MARK: Private
 
     private func save(_ fields: [String: Any], applying change: (inout UserProfile) -> Void) async {
@@ -116,6 +121,7 @@ final class OnboardingModel {
         if profile.programme == nil { return .programme }
         if profile.universityId == nil && profile.universityOther == nil { return .university }
         if profile.year == nil || (profile.modules ?? []).isEmpty { return .yearAndModules }
+        if profile.headline == nil { return .diagnostic }
         return nil
     }
 }

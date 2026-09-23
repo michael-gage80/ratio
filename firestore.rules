@@ -25,6 +25,12 @@ service cloud.firestore {
       // Only an account that never passed the age gate — an under-18 leaving — can be
       // removed from the app. Full account deletion will run through a Function.
       allow delete: if isOwner(uid) && !('birthYear' in resource.data);
+
+      // θ/σ per skill for each topic — written only by Functions (PRD: "Clients never
+      // write their own scores").
+      match /skills/{topicId} {
+        allow read: if isOwner(uid);
+      }
     }
 
     function isValidProfileUpdate() {
@@ -57,7 +63,7 @@ service cloud.firestore {
         && (!changed.hasAny(['year']) || after.year in [1, 2, 3])
         && (!changed.hasAny(['modules'])
             || (after.modules is list && after.modules.size() >= 1
-                && after.modules.hasOnly(['crime', 'contract', 'tort', 'public-law', 'land-law', 'equity-trusts'])));
+                && after.modules.hasOnly(['crime', 'contract', 'tort', 'public', 'land', 'equity'])));
     }
 
     // Only the birth year is stored (not the full date), with the server time of the

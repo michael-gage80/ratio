@@ -1,0 +1,19 @@
+{
+  "name": "ratio-functions",
+  "private": true,
+  "main": "lib/index.js",
+  "engines": { "node": "22" },
+  "scripts": {
+    "build": "tsc && cp ../ratio/Resources/Content/diagnostic-bank.json lib/",
+    "lint": "tsc --noEmit",
+    "test": "npm run build && node --test 'lib/**/*.test.js'"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.4.0",
+    "firebase-functions": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^7.0.2"
+  }
+}
