@@ -1,0 +1,377 @@
+{
+  "lessonId": "crime-06",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 6,
+  "topicId": "crime.homicide.murder",
+  "title": "Murder",
+  "subtitle": "Actus reus, mens rea, and the sentence the judge cannot choose",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the actus reus and mens rea of murder, including that an intention to cause grievous bodily harm suffices without any intention to kill",
+    "Explain why a murder conviction carries a mandatory life sentence, and what judicial discretion survives that mandate",
+    "Distinguish the current single offence of murder from the Law Commission's 2026 consultation proposal, and state clearly why the proposal is not the law"
+  ],
+  "leadingAuthorities": [
+    { "citation": "R v Vickers [1957] 2 QB 664", "role": "Court of Appeal holds intent to cause grievous bodily harm is sufficient mens rea for murder" },
+    { "citation": "DPP v Smith [1961] AC 290", "role": "House of Lords briefly substitutes an objective test for mens rea, provoking statutory reversal" },
+    { "citation": "R v Cunningham [1982] AC 566", "role": "House of Lords confirms GBH-intent murder as settled law — not to be confused with the 1957 Cunningham recklessness case" },
+    { "citation": "Law Commission, Homicide (Consultation Paper, 17 June 2026)", "role": "Proposes replacing the current law with first-degree murder, second-degree murder and manslaughter — a consultation only, not current law" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Murder is the offence every student thinks they already know, which is exactly why it rewards close reading. Where the profile shows knowledge is solid but application lags, this note appears: 'You can define murder — now find it hiding inside a fact pattern that doesn't look like a stabbing.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definition before. The test pool below leans on scenarios: expect to identify GBH intent in facts that never use the word 'intent'.",
+      "weakKnowledge": "Slow down through Parts 1 and 2. Everything else in this lesson — the sentence, the reform debate — assumes you can state both routes to mens rea without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A single punch, thrown in anger outside a takeaway at midnight, kills a man who falls and strikes his head on the kerb. No knife, no plan, no wish that he die. And yet, if the punch was thrown meaning to cause him really serious harm, the label the law reaches for is the same one it uses for a contract killing: murder. This lesson is about how one word carries both.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. On 17 June 2026 the Law Commission published a consultation paper proposing to restructure homicide into first-degree murder, second-degree murder and manslaughter. That is a proposal only — it has not been enacted, and it changes nothing about the law described in this lesson. Current law remains a single common law offence of murder, for which an intention to cause grievous bodily harm continues to suffice. Do not cite the consultation as if it were the law."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The definition, element by element",
+        "voice": "structural — lays out the checklist before any story is allowed to complicate it",
+        "body": [
+          "Murder has no statutory definition — it remains a common law offence, and the classic formulation still used in court traces back to Sir Edward Coke: the unlawful killing of a reasonable creature in being, under the King's peace, with malice aforethought.",
+          "Strip that into actus reus and mens rea and you get four actus reus elements. First, a killing — the defendant's conduct must factually and legally cause death, with no outer time limit since the old 'year and a day' rule was abolished in 1996. Second, of a reasonable creature in being — a human being who has been fully born and has an existence independent of the mother; a foetus is not yet within murder's protection, though an injury inflicted before birth that causes death after birth can still found liability. Third, under the King's peace — this excludes, in essence, killing an enemy combatant in the course of lawful warfare. Fourth, unlawfully — the killing must not be justified, for example by lawful self-defence.",
+          "'Malice aforethought' is the historically loaded label for the mens rea, and it is the part of the definition that does almost all of the interesting work in this lesson. It does not require malice in any everyday sense, and it does not require premeditation. It means one of two states of mind, and only one of them is what most people expect."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Actus reus of murder — four elements",
+            "points": [
+              "A killing — the defendant's act or omission is the factual and legal cause of death",
+              "Of a reasonable creature in being — a human being, fully born, with an existence independent of the mother",
+              "Under the King's peace — excludes killing an enemy in the course of lawful war",
+              "Unlawfully — no applicable justification or defence such as self-defence"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Malice aforethought",
+            "definition": "The mens rea label for murder, now understood to mean an intention to kill (express malice) or an intention to cause grievous bodily harm (implied malice) — neither element requires actual malice or advance planning."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-06-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the four actus reus elements of murder, in any order.",
+          "acceptableAnswers": [
+            "killing, reasonable creature in being, under the King's peace, unlawfully",
+            "causing death, human being born alive, not an enemy in wartime, without lawful justification"
+          ],
+          "modelAnswer": "A killing (factually and legally caused), of a reasonable creature in being (a human being born alive and independent of the mother), under the King's peace, and unlawfully — without justification such as self-defence."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Vickers to Cunningham: how 'grievous bodily harm' became enough",
+        "voice": "case-narrative — follows the mens rea rule through three decisions like instalments of one long argument",
+        "body": [
+          "In 1957 the Court of Appeal in R v Vickers held something that still surprises first-time readers: a defendant who breaks into a house, is disturbed by an elderly occupant, and beats her to death without ever wanting her dead can still be guilty of murder — provided he intended to cause her really serious harm. Intention to kill was not, and had never needed to be, the only route in. Grievous bodily harm intent would do.",
+          "Four years later the House of Lords in DPP v Smith went further than anyone wanted it to go. A police officer clinging to the bonnet of a stolen car was killed when the driver swerved to shake him off; the House held that the defendant's mens rea for murder could be assessed objectively — by what a reasonable man in his position would have contemplated, regardless of what he actually foresaw. Convicting a driver of murder on the strength of what a hypothetical reasonable person would have thought, rather than what he himself intended, provoked immediate and sustained criticism, and Parliament stepped in: s 8 of the Criminal Justice Act 1967 restored a subjective test, providing that foresight of consequences is evidence for the jury to weigh, not something a court can treat as conclusive of intent.",
+          "The question of whether GBH intent should even survive as a route to murder resurfaced two decades later, and this is where a name collision matters. In R v Cunningham [1982] AC 566, the House of Lords was asked to hold that murder should require an intention to endanger life, not merely an intention to cause serious harm. It refused. Lord Hailsham confirmed that intent to cause grievous bodily harm remains sufficient mens rea for murder in its own right — GBH-intent murder was, and is, good law. This is a different case from the far more commonly cited R v Cunningham [1957] 2 QB 396, which is about subjective recklessness in non-fatal offences against the person and has nothing to do with murder's mens rea. Cite the wrong one and an examiner will notice immediately."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Vickers",
+            "citation": "[1957] 2 QB 664",
+            "court": "Court of Appeal",
+            "year": 1957,
+            "factsShort": "A burglar was disturbed by an elderly woman living alone; he beat and kicked her, causing injuries from which she died, though he had not wanted or planned her death.",
+            "ratioShort": "An intention to cause grievous bodily harm is sufficient mens rea for murder; an intention to kill is not required.",
+            "expanded": {
+              "facts": "Vickers broke into a shop with a flat above it, believing it empty. Disturbed by the elderly occupant, he attacked her, causing head injuries from which she later died. He was convicted of murder and appealed on the basis that he had never intended her death.",
+              "judgmentExtract": "The Court of Appeal held that malice aforethought is satisfied by proof of an intention to kill or an intention to cause grievous bodily harm — the two have long stood on the same footing, and there is no requirement that a defendant foresaw or desired death itself.",
+              "significance": "Vickers is the anchor authority for GBH-intent murder, cited in every subsequent case (including Cunningham) that revisits whether the rule should be narrowed."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often write 'R v Cunningham (1982)' and 'R v Cunningham (1957)' interchangeably, or cite the wrong one for the wrong proposition.",
+            "whyItsWrong": "They are unrelated cases about unrelated doctrines that happen to share a defendant's surname. The 1957 case (Cunningham [1957] 2 QB 396) defines subjective recklessness for non-fatal offences. The 1982 case (Cunningham [1982] AC 566) is a House of Lords murder case confirming GBH intent suffices. Always attach the year — and ideally the court — when citing either."
+            }
+        ],
+        "interaction": {
+          "itemId": "crime-06-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, summarising the House of Lords' reasoning in R v Cunningham [1982] AC 566, highlight the sentence that states the ratio.",
+          "passage": "Counsel for the appellant argued that murder should require proof that the defendant intended to endanger life, so as to align liability more closely with the seriousness of the label attached to it. The House rejected that submission. An intention to cause grievous bodily harm remains, and has long been, sufficient mens rea for murder, and there was no proper basis in authority or principle for narrowing the rule established in Vickers.",
+          "ratioSentence": "An intention to cause grievous bodily harm remains, and has long been, sufficient mens rea for murder, and there was no proper basis in authority or principle for narrowing the rule established in Vickers."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "One conviction, one sentence — no exceptions",
+        "voice": "direct — plain and brisk, addressed straight at the reader",
+        "body": [
+          "Here is the fact that surprises students who assume all serious offences work the same way: once a jury convicts of murder, the trial judge has no choice at all about the type of sentence to impose. Section 1(1) of the Murder (Abolition of Death Penalty) Act 1965 requires the court to sentence every person convicted of murder to imprisonment for life. Not 'up to' life — life, mandatorily, every time, regardless of how the killing came about.",
+          "Don't confuse this with a maximum sentence. Most serious offences carry a maximum — the judge can and usually does impose something well below it, calibrated to the facts. Murder gives the judge no such room at the point of conviction: the sentence type is fixed by statute before the judge even considers the facts of the case.",
+          "What the judge does retain is control over the minimum term — the number of years that must be served before the offender can even be considered for parole. Schedule 21 to the Sentencing Act 2020 sets starting points for that minimum term (a whole-life order for the very worst cases, 30 years, 25 years, and so on), which the judge then adjusts up or down for aggravating and mitigating factors. So the sentence is mandatory; only its length before parole eligibility is discretionary."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Murder (Abolition of Death Penalty) Act 1965, s 1(1)",
+            "text": "Where a person over eighteen years is convicted of murder, it shall be the duty of the court to sentence him to imprisonment for life.",
+            "elements": ["Applies on conviction of murder", "'Shall' — the court has no discretion as to sentence type", "Imprisonment for life is the only available sentence"]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Mandatory sentence vs. minimum term",
+            "definition": "The sentence itself (life imprisonment) is fixed by statute with no judicial discretion once murder is proven. The minimum term before parole eligibility is set by the judge, guided by starting points in Sentencing Act 2020, Sch 21, and is where all of the case-specific sentencing argument actually happens."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-06-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "A defendant is convicted of murder committed with minimal planning and no prior record. Can the trial judge lawfully impose a fixed-term custodial sentence instead of life imprisonment, given the mitigating factors?",
+          "options": [
+            "No — s 1(1) of the 1965 Act requires life imprisonment on every murder conviction; mitigation can only affect the minimum term, not the sentence type",
+            "Yes — mitigating factors can justify a fixed term where the killing was not premeditated",
+            "Yes, but only with the consent of the prosecution"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "It is tempting to treat murder like other serious offences, where mitigation can pull the sentence itself down. It cannot do that here. The sentence type is fixed by statute regardless of mitigation; mitigating factors only ever affect the minimum term set under Sentencing Act 2020, Sch 21."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The case for change",
+        "voice": "argumentative — builds the strongest reform argument it can before the next part reins it in",
+        "body": [
+          "Put the last three parts together and a real problem appears. A single offence label — murder — currently covers both the contract killer who plans for months and the defendant who throws one punch intending only serious harm, with no wish or expectation that anyone die. Both are convicted of exactly the same offence. Both, on conviction, receive exactly the same mandatory sentence of life imprisonment. Only the minimum term separates them, and that is set after the fact, by a judge working around a verdict that has already flattened two very different levels of culpability into one word.",
+          "This is not a new complaint. The Law Commission's 2006 report Murder, Manslaughter and Infanticide recommended splitting the single offence into tiers — broadly, an offence reserved for intentional killing, a lesser offence for killings involving an intention to cause serious harm or an awareness of a serious risk to life, and manslaughter beneath that. Government did not implement it. The GBH-intent rule from Vickers has simply continued to operate exactly as it did in 1957.",
+          "The strongest version of the reform argument is this: mandatory sentencing was designed for an offence with a single, clearly understood meaning — intentional killing. Once GBH-intent murder is folded into the same label, the mandatory sentence stops tracking a single moral category and starts flattening a spectrum. Whatever you think of that argument, you need to be able to state it — because the next part covers what has actually happened as a result of it, and what has not."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The reform argument, stated at its strongest",
+            "points": [
+              "A single offence label ('murder') currently covers both intentional killing and GBH-intent killing with no wish to kill",
+              "Both attract the identical mandatory sentence of life imprisonment on conviction",
+              "Only the minimum term — set after conviction — distinguishes vastly different culpability",
+              "The Law Commission recommended a tiered structure in 2006; it was never implemented"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-06-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that, as the law stands today, an intention to cause grievous bodily harm (with no intention to kill and no expectation that death would follow) is sufficient for a murder conviction?",
+          "sliderLabels": ["Not sufficient — intention to kill is required", "Fully sufficient on its own"],
+          "correctPosition": "fully sufficient",
+          "explanation": "Whatever the merits of the reform argument you've just read, it changes nothing about current law. Vickers, confirmed by Cunningham [1982], remains good law: GBH intent alone is sufficient mens rea for murder, right now."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Reading the 2026 consultation correctly",
+        "voice": "Socratic — poses the exam-trap question directly, then walks through why the obvious answer is wrong",
+        "body": [
+          "Here's a question worth sitting with before you answer it: if the Law Commission has now formally proposed splitting murder into degrees, is it still accurate to say English law recognises a single offence of murder with GBH intent sufficing? The honest, slightly deflating answer is yes — entirely, unambiguously yes.",
+          "On 17 June 2026 the Law Commission published a consultation paper proposing to restructure homicide into first-degree murder (broadly, intentional killing), second-degree murder (broadly, GBH intent or an awareness of a serious risk to life), and manslaughter beneath both. It is, in substance, a revival of the 2006 recommendation this lesson's previous part described. But a consultation paper is exactly what its name says: a document inviting responses, not legislation. No bill has been introduced, no vote has been taken, and no provision of it has any legal effect.",
+          "So the rule for your exam answers is simple and non-negotiable: current law, as of this lesson's law-stated date of 22 September 2026, remains the single common law offence of murder described in Parts 1 to 3, with GBH intent under Vickers and Cunningham [1982] fully sufficient. You may mention the 2026 consultation to show awareness of the reform debate — that can earn credit — but only if you are explicit that it is a proposal, under consultation, and not the law you are applying to the facts in front of you."
+        ],
+        "components": [
+          {
+            "type": "timeline",
+            "title": "Murder's mens rea: settled law, then a live proposal",
+            "events": [
+              { "date": "1957", "label": "R v Vickers", "description": "Court of Appeal holds GBH intent sufficient for murder" },
+              { "date": "1961", "label": "DPP v Smith", "description": "House of Lords briefly substitutes an objective test for mens rea" },
+              { "date": "1967", "label": "Criminal Justice Act 1967, s 8", "description": "Parliament restores a subjective test, reversing DPP v Smith" },
+              { "date": "1982", "label": "R v Cunningham [1982] AC 566", "description": "House of Lords confirms GBH intent remains sufficient for murder — current law" },
+              { "date": "17 June 2026", "label": "Law Commission consultation paper", "description": "Proposes first-degree murder / second-degree murder / manslaughter — a proposal only, not enacted, not current law" }
+            ]
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Some students, having read about the 2026 consultation, answer problem questions as though 'second-degree murder' already exists, or as though GBH-intent killings are no longer 'true' murder.",
+            "whyItsWrong": "The consultation changes nothing about the law you apply to a problem question dated today. There is still one offence of murder. Applying a proposed future structure to a present-day fact pattern will lose marks, not gain them — cite the consultation only as a labelled aside about reform, never as the rule you're applying."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-06-check-05",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "A practice essay answer includes this sentence. Tap the phrase that would cost marks in an exam answered under current law.",
+          "scenarioText": "Applying R v Vickers and R v Cunningham, D's intention to cause grievous bodily harm is sufficient mens rea, meaning D is guilty of second-degree murder under the Law Commission's reformed structure and would receive a discretionary rather than mandatory sentence.",
+          "tappableSpans": ["Applying R v Vickers and R v Cunningham", "intention to cause grievous bodily harm is sufficient mens rea", "guilty of second-degree murder under the Law Commission's reformed structure", "discretionary rather than mandatory sentence"],
+          "correctSpan": "guilty of second-degree murder under the Law Commission's reformed structure",
+          "feedbackCorrect": "Right. Everything up to that point is correct current law. The moment the answer applies the Law Commission's proposed tiers as if they were in force, it stops describing the law and starts describing a proposal — and the sentence, correctly, is still mandatory life, not discretionary.",
+          "feedbackIncorrect": "Look again at the point where the answer stops describing current law (Vickers, Cunningham, mandatory life) and starts applying a structure that does not yet exist. That's the costly phrase."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-06-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the two forms of malice aforethought that satisfy the mens rea of murder.",
+      "acceptableAnswers": ["intention to kill or intention to cause GBH", "intent to kill, or intent to cause grievous bodily harm"],
+      "modelAnswer": "An intention to kill (express malice) or an intention to cause grievous bodily harm (implied malice) — either is sufficient on its own."
+    },
+    {
+      "itemId": "crime-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under current law, must the prosecution prove D intended to kill in order to secure a murder conviction?",
+      "options": ["No — intention to cause grievous bodily harm suffices on its own", "Yes — intention to kill is always required"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-06-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the four actus reus elements of murder?",
+      "options": ["A killing, factually and legally caused", "Of a reasonable creature in being", "Committed with premeditation", "Unlawfully, without justification"],
+      "correctIndex": 2,
+      "trapExplanation": "Premeditation is not, and has never been, an element of murder. The mens rea is malice aforethought, which despite its name requires no planning at all — a killing committed on the spot, with GBH intent formed seconds earlier, is still murder."
+    },
+    {
+      "itemId": "crime-06-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "A soldier lawfully kills an enemy combatant during an armed conflict, acting within the rules of engagement. Does this fall within 'under the King's peace'?",
+      "options": ["No — killing an enemy in the course of lawful war is excluded from murder's actus reus", "Yes — the King's peace covers all killings by British nationals anywhere"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-06-test-05",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Section 1(1) of the Murder (Abolition of Death Penalty) Act 1965 uses the word 'shall' when describing the court's duty on a murder conviction. What does that word signify?",
+      "options": ["The court has a discretion it may exercise", "The court has a mandatory duty with no discretion as to sentence type", "The word is merely advisory guidance"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "crime-06-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Put these developments in the mens rea of murder into chronological order.",
+      "items": ["R v Vickers holds GBH intent sufficient for murder", "DPP v Smith substitutes an objective test for mens rea", "Criminal Justice Act 1967, s 8 restores a subjective test", "R v Cunningham [1982] confirms GBH intent remains sufficient"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-06-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that states the ratio of R v Vickers.",
+      "passage": "The appellant argued that a conviction for murder required proof that he intended his victim's death. The Court of Appeal disagreed. Malice aforethought is satisfied by proof of an intention to kill or an intention to cause grievous bodily harm; the two have long stood on the same footing in English law, and no separate intention to endanger life need be shown.",
+      "ratioSentence": "Malice aforethought is satisfied by proof of an intention to kill or an intention to cause grievous bodily harm; the two have long stood on the same footing in English law, and no separate intention to endanger life need be shown."
+    },
+    {
+      "itemId": "crime-06-test-08",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that the Law Commission's 17 June 2026 consultation paper is currently the law of homicide in England and Wales?",
+      "sliderLabels": ["Not the law at all — proposal only", "Fully in force"],
+      "correctPosition": "not the law at all",
+      "explanation": "It is a consultation paper — an invitation for responses to a reform proposal. It has no legal effect. Current law remains the single offence of murder covered in Parts 1 to 3."
+    },
+    {
+      "itemId": "crime-06-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A student cites 'R v Cunningham [1957]' as authority for the proposition that GBH intent suffices for murder. What is wrong with this citation?",
+      "options": ["Nothing — either Cunningham case can be cited for this point", "The 1957 case concerns subjective recklessness for non-fatal offences, not murder's mens rea; the correct authority is R v Cunningham [1982] AC 566", "The 1957 case has been overruled and cannot be cited at all"],
+      "correctIndex": 1,
+      "trapExplanation": "The two Cunningham cases share a surname and nothing else relevant here. Citing the wrong one for GBH-intent murder signals confusion an examiner will penalise — always pair the citation with its year or full reference."
+    },
+    {
+      "itemId": "crime-06-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario discloses the mens rea for murder?",
+      "scenarioA": "D punches V once during an argument, intending only to frighten V and push him away; V falls, hits his head, and dies from the injury.",
+      "scenarioB": "D deliberately strikes V repeatedly with a metal bar aimed at V's head, intending to cause V really serious injury; V dies of the resulting brain injury.",
+      "correctScenario": "B",
+      "explanation": "In A, D intended neither death nor really serious harm — this is more likely to be unlawful act manslaughter. In B, D's intention to cause grievous bodily harm is exactly the implied malice Vickers and Cunningham [1982] require, regardless of any wish that V survive."
+    },
+    {
+      "itemId": "crime-06-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact in this scenario that most clearly establishes GBH-intent mens rea for murder.",
+      "scenarioText": "During a heated argument, D picks up a heavy glass bottle, tells a bystander 'I want to really hurt him, not kill him,' and swings it into V's skull with full force. V later dies in hospital.",
+      "tappableSpans": ["picks up a heavy glass bottle", "tells a bystander", "I want to really hurt him, not kill him", "swings it into V's skull with full force"],
+      "correctSpan": "I want to really hurt him, not kill him",
+      "feedbackCorrect": "That statement is direct evidence of an intention to cause really serious harm — which under Vickers and Cunningham [1982] is sufficient mens rea for murder even though D explicitly disclaims any intention to kill.",
+      "feedbackIncorrect": "Look for the fact that speaks directly to what D wanted to happen to V's body, not just what D physically did. D's own words about intent are the clearest evidence here."
+    },
+    {
+      "itemId": "crime-06-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "D is convicted of murder. D's counsel argues for a lighter sentence given D's previously clean record and lack of any premeditation. What is the correct legal outcome?",
+      "options": ["The judge must still impose a mandatory sentence of life imprisonment, though these factors may reduce the minimum term before parole eligibility", "The judge may impose a fixed-term sentence instead of life imprisonment given the mitigation", "The judge may substitute a non-custodial sentence"],
+      "correctIndex": 0,
+      "explanation": "Section 1(1) of the 1965 Act leaves no discretion over the sentence type. Mitigating factors operate only on the minimum term set under Sentencing Act 2020, Sch 21 — never on whether life imprisonment is imposed at all."
+    },
+    {
+      "itemId": "crime-06-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Farah, in a fury during a fight, grabs a heavy fire extinguisher and strikes Leo twice across the head, later telling police 'I wanted to smash him up properly.' Leo dies from his injuries three days later. Analyse Farah's liability for murder.",
+      "factsToOrder": [
+        "Farah strikes Leo twice across the head with a heavy object",
+        "Farah's own words indicate she wanted to cause serious injury",
+        "Leo dies from the injuries three days later",
+        "No premeditation or advance planning is present"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Farah is guilty of murder, given she did not intend Leo's death.",
+        "rule": "Murder requires an unlawful killing of a reasonable creature in being under the King's peace, with malice aforethought — intention to kill or intention to cause grievous bodily harm (R v Vickers; confirmed in R v Cunningham [1982] AC 566). Premeditation is not required.",
+        "application": "Farah's act (striking Leo twice with a heavy object) factually and legally caused his death. Her own statement — that she wanted to 'smash him up properly' — is strong evidence of an intention to cause really serious harm, satisfying implied malice regardless of whether she wanted Leo to die. The absence of premeditation is irrelevant to mens rea; malice aforethought does not require planning.",
+        "conclusion": "Farah is guilty of murder: the actus reus (an unlawful killing) is satisfied, and her intention to cause grievous bodily harm satisfies malice aforethought under Vickers and Cunningham [1982], independently of any intention to kill."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two mistakes that recur most in this lesson's test items: treating intention to kill as a required element when GBH intent alone suffices, and treating the Law Commission's June 2026 consultation as if it had already changed the law. Neither is true — check both before you finalise an answer.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.homicide.murder"
+  }
+}

@@ -178,6 +178,28 @@ describe('scores', () => {
   });
 });
 
+describe('lesson progress', () => {
+  const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
+
+  test('a student can save and read their own lecture progress', async () => {
+    await assertSucceeds(setDoc(progress('amara'), { partsCompleted: 2, updatedAt: serverTimestamp() }));
+    await assertSucceeds(getDoc(progress('amara')));
+    await assertFails(getDoc(doc(db('zara'), 'users/amara/lessons/crime-03')));
+  });
+
+  test("progress can't be written for someone else, a malformed lesson ID, or with extra fields", async () => {
+    await assertFails(setDoc(doc(db('zara'), 'users/amara/lessons/crime-03'), { partsCompleted: 1, updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(progress('amara', 'not a lesson'), { partsCompleted: 1, updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(progress('amara'), { partsCompleted: 1, updatedAt: serverTimestamp(), score: 100 }));
+  });
+
+  test('progress must be a small whole number with the server time', async () => {
+    await assertFails(setDoc(progress('amara'), { partsCompleted: 99, updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(progress('amara'), { partsCompleted: '2', updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(progress('amara'), { partsCompleted: 2, updatedAt: new Date(0) }));
+  });
+});
+
 describe('everything else', () => {
   test('is denied', async () => {
     await assertFails(setDoc(doc(db('amara'), 'boards/weekly_everyone'), { rank: 1 }));

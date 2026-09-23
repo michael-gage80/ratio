@@ -11,6 +11,7 @@ on:
   pull_request:
     paths:
       - "firestore.rules"
+      - "storage.rules"
       - "firestore.indexes.json"
       - "firebase.json"
       - "firestore-tests/**"
@@ -20,6 +21,7 @@ on:
     branches: [main]
     paths:
       - "firestore.rules"
+      - "storage.rules"
       - "firestore.indexes.json"
       - "firebase.json"
       - "firestore-tests/**"
@@ -66,7 +68,7 @@ jobs:
           fi
           echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          targets="firestore"
+          targets="firestore,storage"
           if [ -f functions/package.json ]; then
             npm ci --prefix functions && npm run build --prefix functions
             targets="$targets,functions"

@@ -1,29 +1,76 @@
 import SwiftUI
 
-/// Temporary landing screen after onboarding so far, until Today (Phase 10) replaces it.
+/// Temporary home after onboarding: a plain list of lessons by module, so the lesson
+/// engine can be tried before the Pathway (Phase 9) and Today (Phase 10) exist.
 struct SignedInPlaceholderView: View {
+    let profile: UserProfile
+
     @Environment(SessionStore.self) private var session
+    @Environment(ContentStore.self) private var content
+    @State private var path: [Route] = []
     @State private var showsCatalog = false
 
+    enum Route: Hashable {
+        case overview(String)
+        case lecture(String)
+    }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Spacer()
-            RatioMark(size: 56)
-            Text("You're in.")
-                .ratioFont(.h1)
-            Text("University, modules and the diagnostic come next.")
-                .ratioFont(.body)
-                .foregroundStyle(Color.ratioInk2)
-            Spacer()
-            #if DEBUG
-            RatioButton("Design system catalog", style: .tertiary) { showsCatalog = true }
-            #endif
-            RatioButton("Log out", style: .secondary) { session.signOut() }
+        NavigationStack(path: $path) {
+            List {
+                Section {
+                    VStack(alignment: .leading, spacing: 8) {
+                        RatioMark(size: 44)
+                        Text("Lessons").ratioFont(.h1)
+                        Text("A preview list until the Pathway arrives.")
+                            .ratioFont(.small)
+                            .foregroundStyle(Color.ratioInk2)
+                    }
+                    .listRowBackground(Color.clear)
+                }
+                ForEach(profile.modules ?? Module.allCases) { module in
+                    Section {
+                        let lessons = content.lessons(in: module)
+                        if lessons.isEmpty {
+                            Text("In preparation").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
+                        }
+                        ForEach(lessons) { lesson in
+                            NavigationLink(value: Route.overview(lesson.id)) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("\(lesson.lessonNumber) · \(lesson.title)").ratioFont(.body)
+                                    Text("\(lesson.estimatedMinutes) min").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                                }
+                            }
+                        }
+                    } header: {
+                        Text(module.title).ratioFont(.monoLabel)
+                    }
+                }
+                Section {
+                    #if DEBUG
+                    Button("Design system catalog") { showsCatalog = true }
+                    #endif
+                    Button("Log out", role: .destructive) { session.signOut() }
+                }
+            }
+            .scrollContentBackground(.hidden)
+            .background(Color.ratioParchment.ignoresSafeArea())
+            .foregroundStyle(Color.ratioInk)
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .overview(let id):
+                    if let lesson = content.lesson(id: id) {
+                        LessonOverviewView(lesson: lesson, headline: profile.headline) {
+                            path.append(.lecture(id))
+                        }
+                    }
+                case .lecture(let id):
+                    if let lesson = content.lesson(id: id) {
+                        LectureView(lesson: lesson)
+                    }
+                }
+            }
         }
-        .padding(24)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
         #if DEBUG
         .sheet(isPresented: $showsCatalog) { DesignSystemCatalogView() }
         #endif

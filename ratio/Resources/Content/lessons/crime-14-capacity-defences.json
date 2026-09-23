@@ -1,0 +1,366 @@
+{
+  "lessonId": "crime-14",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 14,
+  "topicId": "crime.defences.capacity",
+  "title": "Insanity, automatism and intoxication",
+  "subtitle": "Three defences about whether D could form the mens rea at all",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 5
+  },
+  "objectives": [
+    "State the M'Naghten rules and identify the three things a defendant must prove to establish insanity",
+    "Apply the internal/external factor test to distinguish insane automatism from sane automatism on a given fact pattern",
+    "Apply the Majewski rule to distinguish specific and basic intent offences where voluntary or involuntary intoxication is raised"
+  ],
+  "leadingAuthorities": [
+    { "citation": "M'Naghten's Case (1843) 10 Cl & F 200", "role": "Sets the three-part legal test for the insanity defence" },
+    { "citation": "R v Sullivan [1984] AC 156", "role": "Epilepsy is an internal cause — a 'disease of the mind' even though temporary and organic" },
+    { "citation": "R v Hennessy [1989] 1 WLR 287", "role": "Untreated diabetes (hyperglycaemia) is an internal cause — insanity, not automatism" },
+    { "citation": "R v Quick [1973] QB 910", "role": "Insulin-induced hypoglycaemia is an external factor — sane automatism, not insanity" },
+    { "citation": "DPP v Majewski [1977] AC 443", "role": "Voluntary intoxication is no defence to basic intent offences; may negate specific intent" },
+    { "citation": "R v Kingston [1995] 2 AC 355", "role": "Involuntary intoxication does not excuse D if D still formed the requisite mens rea" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "These three defences get muddled together constantly — insanity, automatism and intoxication all sound like variations on 'D wasn't really in control', but they work on completely different logic and lead to completely different outcomes (a hospital order, an acquittal, or no defence at all). Where the profile shows the three are being conflated, this note appears: keep asking which defence you're actually in before you ask whether it succeeds.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions. The failure mode here is misclassifying facts — calling a diabetic collapse 'automatism' when it's actually insanity, or vice versa. Slow down on the internal/external test in Parts 2 and 3.",
+      "weakKnowledge": "This is a dense lesson covering three defences in five parts. Don't try to hold all three in your head at once — take each part as a self-contained unit and let the doctrine map at the end tie them together."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A man kicks his friend twice in the head. He remembers none of it — an epileptic seizure took hold mid-conversation. A diabetic driver mounts the pavement after forgetting to eat; another diabetic driver does exactly the same thing after taking too much insulin. One of these three defendants is legally insane. Two are not. The facts sound almost identical. The law tells them apart with surgical precision — and that precision is the whole of this lesson.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The M'Naghten rules and the Majewski rule remain common law doctrines largely untouched by statute; watch for Law Commission reform proposals on insanity, which have not been enacted."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The M'Naghten rules: three things D must prove",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Insanity is a defence D raises, and D carries the burden of proving it, on the balance of probabilities. That alone marks it out from almost every other defence in this module, where the prosecution must disprove the defence beyond reasonable doubt once it's raised.",
+          "The test comes from a single 1843 case and has barely moved since. To establish insanity, D must show: (1) a defect of reason, (2) from a disease of the mind, (3) such that D either did not know the nature and quality of the act, or did not know that it was wrong.",
+          "Each phrase is a term of art. 'Defect of reason' means a genuine failure of reasoning powers, not just confusion or forgetfulness — someone who could reason but simply didn't stop to think does not qualify. 'Disease of the mind' is a legal concept, not a medical one, and — as the next two parts show — has been stretched to cover conditions no psychiatrist would call a mental illness at all."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "M'Naghten's Case",
+            "citation": "(1843) 10 Cl & F 200",
+            "court": "House of Lords",
+            "year": 1843,
+            "factsShort": "Daniel M'Naghten, suffering paranoid delusions, shot and killed the Prime Minister's secretary, believing he was being persecuted by the government.",
+            "ratioShort": "A defendant is not criminally responsible if, owing to a defect of reason from disease of the mind, he did not know the nature and quality of his act, or did not know it was wrong.",
+            "expanded": {
+              "facts": "M'Naghten believed the Tory party was conspiring against him and, intending to kill the Prime Minister Robert Peel, shot and killed Peel's private secretary, Edward Drummond, mistaking him for Peel. He was acquitted on grounds of insanity, provoking public outcry and a formal reference to the House of Lords to state the law.",
+              "judgmentExtract": "The judges answered that to establish a defence on the ground of insanity, it must be clearly proved that, at the time of committing the act, the accused was labouring under such a defect of reason, from disease of the mind, as not to know the nature and quality of the act he was doing, or, if he did know it, that he did not know he was doing what was wrong.",
+              "significance": "This remains the governing test in England and Wales nearly two centuries later. It is notable for what it does not require: it says nothing about D's ability to control his actions, only about his knowledge and understanding — a gap that later produced the wholly separate defence of automatism."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-14-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Who bears the burden of proving insanity, and to what standard?",
+          "options": ["The defendant, on the balance of probabilities", "The prosecution, beyond reasonable doubt"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — this is the exception to the usual rule. D raises insanity and must prove it, civil standard.",
+          "feedbackIncorrect": "Insanity is unusual: it reverses the normal burden. D must prove it, on the balance of probabilities — not the prosecution disproving it beyond reasonable doubt."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Sullivan and Hennessy: when the cause is inside you",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Patrick Sullivan had epilepsy. During a seizure — a psychomotor episode he had no memory of afterwards — he kicked and injured a close friend who was visiting him. Charged with causing actual bodily harm, he tried to run automatism: a total lack of control caused by something outside the mind's own workings, which should lead to a clean acquittal.",
+          "The House of Lords disagreed with the label. Epilepsy, their Lordships held, is a disease of the mind for legal purposes — not because it's a mental illness in any psychiatric sense, but because it is an internal condition, a malfunction originating within D's own body, that impaired D's mental faculties of reason, memory and understanding, even briefly. Sullivan's defence became insanity, not automatism — with all the very different consequences that follow.",
+          "Six years later, Hennessy confirmed the same logic for a different internal condition. A diabetic man, disqualified from driving, forgot to take his insulin over several days. Hyperglycaemia — high blood sugar from untreated diabetes — left him in a confused, semi-conscious state in which he drove a car and was found with stolen items inside it. The Court of Appeal again classified this as insanity: the hyperglycaemia arose from the disease of diabetes itself, operating from within, not from anything D had done to himself in the moment."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Internal cause",
+            "definition": "A cause of the defect of reason that originates within D's own body or mind — a disease, condition or physiological process — rather than from something external acting on an otherwise normal mind or body. An internal cause points towards insanity, not automatism."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Sullivan",
+            "citation": "[1984] AC 156",
+            "court": "House of Lords",
+            "year": 1984,
+            "factsShort": "D kicked and injured a friend during an epileptic seizure, with no memory of the episode.",
+            "ratioShort": "Epilepsy is a 'disease of the mind' for M'Naghten purposes because it is an internal cause impairing reason, even though it is organic and temporary — the defence in play is insanity, not automatism."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-14-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of the Hennessy reasoning in the correct order.",
+          "items": [
+            "D has diabetes and is prescribed insulin",
+            "D fails to take his insulin over several days",
+            "Untreated diabetes causes hyperglycaemia, impairing D's mental state",
+            "The court classifies the cause as internal, so the defence available is insanity, not automatism"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the chain. Notice step 2 and 3 happen without any external substance being introduced — the malfunction is the diabetes itself, left untreated.",
+          "feedbackIncorrect": "Trace the cause back to its source: it's the untreated disease acting alone, with nothing external triggering the episode. That's what makes it internal, and therefore insanity."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Quick: the same disease, the opposite answer",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Here's the puzzle this part exists to solve: diabetes caused Hennessy's collapse and it was ruled insanity. Diabetes was also present in William Quick's case. Quick assaulted a patient while working as a psychiatric nurse, in a confused state caused by his diabetes. Was that insanity too?",
+          "No. And the reason repays close attention. Quick's collapse wasn't caused by his diabetes running untreated — it was caused by his taking insulin, correctly prescribed, and then failing to eat enough afterwards. The insulin drove his blood sugar down (hypoglycaemia) rather than up. The Court of Appeal held that the insulin was an external factor introduced into his body — a medically administered substance — and it was that external factor, not the underlying disease, that produced the malfunction.",
+          "So the same illness produces opposite legal outcomes depending on the mechanism. High blood sugar from untreated diabetes (Hennessy) is internal — insanity. Low blood sugar from correctly taken insulin plus insufficient food (Quick) is external — automatism. The disease is a constant; the proximate cause of the defect of reason is what the law actually tracks."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Internal vs external: the diabetes contrast",
+            "points": [
+              "Hennessy: hyperglycaemia from NOT taking insulin → cause is the untreated disease itself → internal → insanity",
+              "Quick: hypoglycaemia from taking insulin but not eating enough → cause is the administered insulin → external → automatism",
+              "The test asks what triggered the malfunction, not which organ or system was involved",
+              "External factors recognised elsewhere include a blow to the head, an anaesthetic, or a sting causing a reflex — anything acting on an otherwise sound mind from outside it"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Sane automatism",
+            "definition": "A total loss of voluntary control over the body caused by an external factor acting on an otherwise normal mind, and not self-induced through D's own fault. If established, it is a complete defence leading to outright acquittal — unlike insanity, which leads to a special verdict and disposal order."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-14-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that Quick's hypoglycaemic episode was classified as automatism rather than insanity?",
+          "sliderLabels": ["Definitely insanity", "Definitely automatism"],
+          "correctPosition": "automatism",
+          "explanation": "Correct classification is automatism. The insulin — an external factor administered into the body — was the proximate cause of the malfunction, not the diabetes acting alone from within."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Majewski: why getting drunk is not a get-out",
+        "voice": "argumentative — states the policy case, then works through its mechanics",
+        "body": [
+          "Intoxication is not, strictly, a defence at all — it is a rule about evidence. The question is always whether D had the mens rea for the offence charged; intoxication is simply one thing that might stop D forming it. But the law refuses to let that logic run freely for voluntary intoxication, and the policy reason is blunt: choosing to get drunk or take drugs is itself a culpable choice, and a defendant should not be able to manufacture an excuse for the harm that choice makes more likely.",
+          "DPP v Majewski supplies the mechanism. Offences are split into two categories. Specific intent offences require proof of a particular further intention — murder (intent to kill or cause GBH), s 18 GBH with intent, theft — and voluntary intoxication can be used as evidence that D lacked that intent, because the prosecution must still prove it existed. Basic intent offences — assault, s 47 ABH, s 20 GBH, criminal damage — require only intention or recklessness as to the basic elements, and voluntary intoxication is simply no defence to them at all.",
+          "The doctrinal justification is that getting voluntarily intoxicated is itself treated as reckless conduct — a substitute for the recklessness the basic intent offence requires. It's a legal fiction, and academically contested, but it is settled law: a very drunk defendant charged with assault cannot argue 'I didn't mean to hit him, I was too drunk to know what I was doing' — that argument is available for murder, but not for the lesser basic intent offence the same facts might also support."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Specific intent vs basic intent — worked examples",
+            "points": [
+              "Specific intent (intoxication CAN be relevant): murder, s 18 GBH/wounding with intent, theft, robbery, burglary with intent to steal",
+              "Basic intent (intoxication is NOT a defence): assault/battery, s 47 ABH, s 20 GBH, criminal damage, manslaughter",
+              "A defendant acquitted of a specific intent offence because of intoxication is often still convicted of the corresponding basic intent offence — e.g. murder reduced to manslaughter",
+              "The distinction is about the mental element required, not the seriousness of the offence"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-14-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario can D's voluntary intoxication actually be used as evidence that the necessary intent was missing?",
+          "scenarioA": "D, heavily intoxicated after a night's drinking, smashes a shop window (criminal damage), saying he doesn't remember doing it or intending to.",
+          "scenarioB": "D, heavily intoxicated after a night's drinking, stabs a stranger, and is charged with murder; D says he was too drunk to have intended to kill or cause really serious harm.",
+          "correctScenario": "B",
+          "explanation": "Criminal damage is a basic intent offence — voluntary intoxication is simply irrelevant under Majewski. Murder is a specific intent offence, so D's intoxication can be considered as evidence bearing on whether the intent to kill or cause GBH was actually formed."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Kingston: a drunken intent is still an intent",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Involuntary intoxication works differently in theory: if D's drink or food was spiked without D's knowledge, D hasn't made the culpable choice that justifies the Majewski rule, so involuntary intoxication can in principle be raised for any offence, specific or basic intent, as evidence that D lacked mens rea.",
+          "But R v Kingston shows how narrow that principle really is. Kingston had paedophilic tendencies he normally suppressed. A third party secretly drugged his coffee, then brought a 15-year-old boy into the room, and photographed Kingston sexually abusing him. Kingston's defence was that he would never have done this sober — the drug had disinhibited him and made him act on urges he would otherwise have controlled.",
+          "The House of Lords rejected the defence. The question was never whether the drug caused Kingston to act as he did — it plainly did — but whether, at the moment of the offence, Kingston nonetheless intended to do what he did. He did. A drunken (or drugged) intent is still an intent. Involuntary intoxication only helps D where it prevents the mens rea forming at all — it is not a route to excusing conduct D genuinely intended, however much easier the intoxication made it to act on that intention."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because D was involuntarily intoxicated, any resulting offence is automatically excused — treating 'the drug caused this' as the end of the analysis.",
+            "whyItsWrong": "Involuntary intoxication removes the culpability attached to choosing to get intoxicated, but it does not remove the requirement that the prosecution still prove mens rea in the ordinary way. If D still had the intent — even an intent the intoxication made easier to act on — the offence is made out. Causation of the urge is not the same as absence of intent."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-14-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Ravi's drink is spiked at a party without his knowledge. Heavily intoxicated as a result, he deliberately punches someone he has disliked for months, intending to hurt him. Does involuntary intoxication give Ravi a defence to assault?",
+          "options": ["Yes — because the intoxication was involuntary, it excuses the assault regardless of intent", "No — Ravi still formed the intent to hurt the victim; involuntary intoxication only helps where it prevents the mens rea forming", "No — involuntary intoxication is never available as a defence to any offence"],
+          "correctIndex": 1,
+          "explanation": "Kingston controls this. Ravi's drink being spiked is irrelevant if he still intended the harm — the intoxication explains why he acted on a pre-existing grievance, but it did not stop him forming intent. The third option is too broad: involuntary intoxication can succeed where it genuinely prevents mens rea forming, which is not this case."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-14-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the three elements D must prove to establish the defence of insanity under the M'Naghten rules.",
+      "acceptableAnswers": ["defect of reason from disease of mind, not knowing nature and quality of the act or that it was wrong"],
+      "modelAnswer": "D must show a defect of reason, arising from a disease of the mind, such that D either did not know the nature and quality of the act, or did not know that it was wrong."
+    },
+    {
+      "itemId": "crime-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Who bears the burden of proving insanity?",
+      "options": ["The defendant", "The prosecution"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-14-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is the correct legal test for whether a cause of a defect of reason is 'internal'?",
+      "options": ["Whether the cause is medically classified as a psychiatric illness", "Whether the cause originates within D's own body or mind rather than from something external acting on it", "Whether the condition is permanent rather than temporary"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often assume 'disease of the mind' must be a recognised psychiatric condition — it is a legal, not medical, classification, and turns on internal versus external origin, not on permanence or psychiatric status."
+    },
+    {
+      "itemId": "crime-14-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the reasoning a court follows when classifying a diabetic collapse as insanity or automatism.",
+      "items": ["Identify what physically triggered the defect of reason", "Ask whether that trigger was internal (the disease acting alone) or external (a substance or event acting on the body)", "If internal, classify as insanity", "If external and not self-induced through fault, classify as automatism"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-14-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement correctly distinguishes Hennessy from Quick?",
+      "options": ["Hennessy's hyperglycaemia came from untreated diabetes (internal); Quick's hypoglycaemia came from taking insulin without eating enough (external)", "Hennessy involved insulin misuse; Quick involved untreated diabetes", "Both cases were decided the same way because both defendants had diabetes"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-14-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Sullivan, highlight the sentence stating the ratio.",
+      "passage": "The defendant kicked his friend during an epileptic seizure and had no memory of the episode. Epilepsy is properly classified as a disease of the mind for the purposes of the M'Naghten rules, because it is an internal cause which impairs the mental faculties of reason, memory and understanding, even though the impairment is organic and temporary. The defence available to the defendant was therefore insanity, not automatism.",
+      "ratioSentence": "Epilepsy is properly classified as a disease of the mind for the purposes of the M'Naghten rules, because it is an internal cause which impairs the mental faculties of reason, memory and understanding, even though the impairment is organic and temporary."
+    },
+    {
+      "itemId": "crime-14-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "D is stung by a wasp while driving, has a sudden and unforeseen allergic reaction, loses total control of the car, and crashes. Which defence, if any, is D most likely to raise successfully?",
+      "options": ["Insanity — the reaction impaired his mind", "Sane automatism — an external factor caused a total loss of voluntary control not brought about by D's own fault", "No defence is available"],
+      "correctIndex": 1,
+      "explanation": "A wasp sting is a classic external factor triggering a genuine and unforeseeable loss of control, not self-induced through any prior fault — the textbook case for sane automatism."
+    },
+    {
+      "itemId": "crime-14-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "D, a known epileptic, stops taking his prescribed anti-seizure medication against medical advice and later injures someone during a seizure. Does the internal cause classification (insanity) still apply, or could this affect the outcome?",
+      "options": ["It remains insanity — epilepsy is still the internal cause of the seizure, regardless of why medication was stopped", "It automatically becomes sane automatism because D made a choice", "No defence is available because D stopped his medication"],
+      "correctIndex": 0,
+      "explanation": "The classification tracks the origin of the malfunction (the disease itself), not whether D behaved responsibly beforehand. Fault in stopping medication may be relevant elsewhere, but it does not convert an internal cause into an external one."
+    },
+    {
+      "itemId": "crime-14-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that makes this an external, rather than internal, cause of the collapse.",
+      "scenarioText": "Maya, a diabetic, takes her usual prescribed dose of insulin before a long shift and then skips both her lunch and dinner. By evening she is confused and strikes a colleague without any memory of it afterwards.",
+      "tappableSpans": ["a diabetic", "takes her usual prescribed dose of insulin", "skips both her lunch and dinner", "strikes a colleague"],
+      "correctSpan": "takes her usual prescribed dose of insulin",
+      "explanation": "The insulin is the external factor — a substance introduced into the body — that, combined with not eating, drove the hypoglycaemic collapse. This is the Quick pattern: external cause, sane automatism, not insanity."
+    },
+    {
+      "itemId": "crime-14-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is governed by the Majewski rule on voluntary intoxication rather than the insanity/automatism rules?",
+      "scenarioA": "D drinks heavily at a party of his own choosing, then commits a criminal damage offence he has no memory of.",
+      "scenarioB": "D, a diabetic, forgets to take insulin for three days and commits an offence while in a confused hyperglycaemic state.",
+      "correctScenario": "A",
+      "explanation": "A is a voluntary intoxication case — Majewski applies, and since criminal damage is a basic intent offence, the intoxication is no defence at all. B is Hennessy territory: an internal cause, so insanity, not intoxication rules."
+    },
+    {
+      "itemId": "crime-14-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "D, voluntarily very drunk, is charged with theft and argues he was too intoxicated to form any intention to permanently deprive. Can this argument be run?",
+      "options": ["Yes — theft is a specific intent offence, so voluntary intoxication can be evidence that the specific intent was absent", "No — voluntary intoxication is never relevant to any offence"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-14-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Owen's drink is secretly spiked with a strong sedative at a bar, without his knowledge. While intoxicated as a result, he becomes aggressive and headbutts a stranger he has never met before, for no reason he can later explain, causing a broken nose (s 47 ABH). Analyse whether involuntary intoxication gives Owen a defence.",
+      "factsToOrder": [
+        "Owen's drink was spiked without his knowledge or fault",
+        "Owen becomes aggressive and headbutts a stranger",
+        "There is no prior grievance or motive — the attack appears entirely out of character",
+        "Owen is charged with s 47 ABH, a basic intent offence"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Owen's involuntary intoxication prevented him forming the mens rea for s 47 ABH.",
+        "rule": "Involuntary intoxication may be raised for any offence, specific or basic intent, but only succeeds where it genuinely prevented D forming the mens rea (Kingston) — the mere fact that intoxication caused or explained the conduct is not enough if D still intended or was reckless as to the relevant harm.",
+        "application": "Unlike Kingston, where D acted on a pre-existing intent the drug merely disinhibited, Owen's attack is unexplained by any prior state of mind — there is no evidence he intended or foresaw the harm independently of the sedative's effect. If the sedation genuinely removed his capacity to form intent or recklessness at the relevant moment, rather than simply lowering his inhibitions against acting on an existing state of mind, the defence has a real prospect of success.",
+        "conclusion": "Involuntary intoxication may succeed here, in contrast to Kingston, because on these facts there is no independent intent the drug merely released — though the burden remains on establishing the sedative actually prevented mens rea forming, not merely that it explains the conduct."
+      }
+    },
+    {
+      "itemId": "crime-14-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why did Kingston's defence of involuntary intoxication fail?",
+      "options": ["Because involuntary intoxication is never a defence to any offence", "Because Kingston still formed the intent required for the offence, even though the drug made it easier for him to act on it", "Because the drink was not spiked by a stranger but by someone Kingston knew"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers overstate the rule (claiming involuntary intoxication is never available) or focus on an irrelevant fact (who did the spiking). The actual reasoning is narrower: Kingston still intended to do what he did, and a drugged intent is still an intent."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap across this lesson is treating 'something outside D's normal control caused this' as automatically excusing conduct. It doesn't. Insanity needs an internal cause and a failure of understanding; automatism needs total loss of voluntary control from an external, non-self-induced cause; and even involuntary intoxication only helps if it genuinely stopped D forming intent — not merely if it explains why D acted on one.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.defences.capacity"
+  }
+}

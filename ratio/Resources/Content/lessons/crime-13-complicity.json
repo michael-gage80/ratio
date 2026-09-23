@@ -1,0 +1,403 @@
+{
+  "lessonId": "crime-13",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 13,
+  "topicId": "crime.participation.complicity",
+  "title": "Complicity",
+  "subtitle": "Secondary liability after Jogee, and the correction of thirty years of law",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the conduct element of aiding, abetting, counselling and procuring under s 8 Accessories and Abettors Act 1861",
+    "Explain the mental element required for secondary liability, including how R v Jogee corrected the doctrine of parasitic accessorial liability",
+    "Apply the rules on withdrawal from a joint enterprise to a fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Accessories and Abettors Act 1861, s 8", "role": "Statutory basis for liability as an aider, abettor, counsellor or procurer" },
+    { "citation": "R v Jogee [2016] UKSC 8", "role": "Corrects thirty years of parasitic accessorial liability; foresight is evidence of intent, not a substitute for it" },
+    { "citation": "Ruddock v The Queen [2016] UKSC 8", "role": "Companion decision reinforcing the intention-based test and its application to knowledge of essential matters" },
+    { "citation": "R v Gnango [2011] UKSC 59", "role": "Illustrates the outer reach of joint enterprise before Jogee, in a mutual gunfight scenario" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "For years, students revised 'parasitic accessorial liability' as settled law. It wasn't — the Supreme Court declared that thirty years of authority had taken a wrong turn. Where the profile shows knowledge is already solid here, this note appears: the old law is now precisely the trap examiners set, because it is what half of any cohort will instinctively reach for.",
+    "profileHooks": {
+      "weakApplication": "You know the Jogee correction on paper. The pool below leans towards application — expect scenarios where you have to say whether the old test and the new test would actually have produced different outcomes.",
+      "weakKnowledge": "Start with Part 1 and don't rush past the four verbs in s 8 — aiding, abetting, counselling and procuring are tested individually, not as an interchangeable blob."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two men set out to burgle a house. One expects a scuffle if the owner is home. He does not expect his friend to be carrying a knife, let alone to use it. For thirty years, English law would have convicted him of murder on little more than what he merely foresaw his friend might do. Then, in 2016, the Supreme Court said that law had been wrong the entire time.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. R v Jogee remains the governing authority on secondary liability; its practical boundaries continue to be worked out in the Court of Appeal, but no further Supreme Court intervention is currently pending."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Four verbs, one section",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Secondary liability in English criminal law rests on a strikingly short statutory foundation. Section 8 of the Accessories and Abettors Act 1861 provides that whoever aids, abets, counsels, or procures the commission of an indictable offence is liable to be tried and punished as a principal offender. The section does not define any of the four verbs — the courts have filled that content over time, and each carries a distinct conduct element.",
+          "Aiding covers giving help, assistance, or encouragement to the principal, typically at or around the time of the offence — supplying equipment, keeping watch, or driving the getaway car. Abetting overlaps closely with aiding but specifically captures encouragement given at the scene, present while the offence is committed. Counselling means advising, encouraging, or soliciting the offence beforehand, without needing to be present when it happens — the classic 'I'll pay you to do this' scenario.",
+          "Procuring is the odd one out, and the one most often mishandled. To procure means to produce by endeavour — to set out to bring the offence about — and, unlike the other three verbs, it requires a causal link between the defendant's conduct and the commission of the offence. A person can procure an offence without the principal even realising they are being manipulated into committing it, which is not true of the other three verbs, all of which assume some meeting of minds or presence.",
+          "Keep these four separate when reading a fact pattern. An examiner who describes someone lending a crowbar before the burglary, without being present, is almost certainly testing counselling, not aiding — the timing and presence, or absence, of the secondary party is doing real analytical work."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Accessories and Abettors Act 1861, s 8",
+            "text": "Whosoever shall aid, abet, counsel, or procure the commission of any indictable offence, whether the same be an offence at common law or by virtue of any Act passed or to be passed, shall be liable to be tried, indicted, and punished as a principal offender.",
+            "elements": ["Aiding", "Abetting", "Counselling", "Procuring", "Of an indictable offence actually committed by a principal"]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "The four verbs, distinguished",
+            "points": [
+              "Aid — gives help or assistance, generally at or near the time of the offence",
+              "Abet — encourages, typically present at the scene while the offence occurs",
+              "Counsel — advises or encourages beforehand; presence at the scene is not required",
+              "Procure — brings the offence about causally, even without the principal's knowledge that they are being manipulated"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does procuring an offence under s 8 require the principal to know they are being influenced towards committing it?",
+          "options": ["No — procuring can succeed even without the principal's awareness, provided the causal link is proven", "Yes — procuring always requires the principal to knowingly agree to the defendant's plan"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. Procuring is defined by causation, not by any shared understanding with the principal — this is what sets it apart from aiding, abetting, and counselling, all of which assume some contact or meeting of minds.",
+          "feedbackIncorrect": "Reconsider what makes procuring distinct from the other three verbs. It is the only one of the four that can be made out purely on causation, without the principal ever realising they were being steered towards the offence."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The night that rewrote secondary liability",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Ameen Jogee spent an evening drinking heavily with a friend, Mohammed Hirsi, before the two of them went to the house of a woman Hirsi knew. An argument broke out with her former partner, Paul Fyfe. Jogee stood outside, shouting encouragement and brandishing a bottle, while Hirsi went inside armed with a knife he had picked up in the kitchen. Hirsi stabbed Fyfe to death. Jogee never touched him.",
+          "At trial, the jury was directed along lines that had stood unchallenged for over three decades: if Jogee realised Hirsi might use the knife with intent to kill or cause really serious harm, and continued to participate in the venture regardless, that foresight alone was enough to convict him of murder as a secondary party — even without proof that he actually intended Hirsi to kill or cause serious harm. This was the doctrine known as parasitic accessorial liability, and on that direction, Jogee was convicted of murder.",
+          "The Supreme Court, hearing Jogee's appeal alongside the companion Privy Council case of Ruddock, held that this line of authority — traced back through decades of case law — had taken a wrong turn. Foresight of what the principal might do is evidence from which a jury can infer that the secondary party intended to assist or encourage that outcome. It is not, and never should have been treated as, an automatically sufficient substitute for proving that intention. The court quashed the murder conviction; on the corrected law, the question was whether Jogee actually intended to assist or encourage Hirsi to cause really serious harm or kill, not merely whether he foresaw it as a possibility.",
+          "The correction did not mean Jogee walked free. It meant the right question — did he intend to encourage that level of violence, judged on all the evidence including what he foresaw — had never actually been put to a jury. That distinction, between foresight as evidence and foresight as an automatic trigger, is the single most heavily tested idea in this entire topic."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Jogee",
+            "citation": "[2016] UKSC 8",
+            "court": "Supreme Court",
+            "year": 2016,
+            "factsShort": "Jogee encouraged his friend Hirsi from outside a house during a confrontation; Hirsi went in and fatally stabbed the victim. The jury convicted Jogee of murder on a foresight-based direction.",
+            "ratioShort": "Foresight that the principal might commit the offence, or a more serious offence, is evidence of the secondary party's intent to assist or encourage it — it is not, by itself, sufficient to establish that intent.",
+            "expanded": {
+              "facts": "Jogee and Hirsi had been drinking heavily and went together to a house where an argument developed with the victim, Paul Fyfe. Jogee remained outside, shouting and holding a bottle in an encouraging, aggressive manner, while Hirsi went into the kitchen, picked up a knife, and fatally stabbed Fyfe. The prosecution's case against Jogee for murder rested on the parasitic accessorial liability doctrine: that he foresaw Hirsi might use a knife with murderous intent and continued to participate regardless.",
+              "judgmentExtract": "The Supreme Court held that the law had taken a wrong turn in treating foresight of the principal's possible actions as automatically sufficient for secondary liability for a more serious crime. The correct test asks whether the secondary party intended to assist or encourage the principal to commit the offence — or to act with the intent required for it — judged on the whole of the evidence, of which foresight is simply one part, however weighty.",
+              "significance": "Jogee is the single most important modern authority on secondary liability. It did not abolish joint enterprise or secondary liability generally — it corrected the mental element for cases where the secondary party is alleged to be liable for an offence going beyond what was originally planned, replacing an automatic foresight-based rule with an intention-based one that foresight can still help prove."
+            }
+          },
+          {
+            "type": "timeline",
+            "title": "From parasitic accessorial liability to Jogee",
+            "events": [
+              { "label": "1980s onward", "description": "Chan Wing-Siu and subsequent authority establish parasitic accessorial liability: a secondary party who foresees the principal might commit a further or more serious offence, and continues to participate, is automatically liable for it." },
+              { "label": "1985-2016", "description": "Decades of joint enterprise convictions, particularly in group violence and gang-related cases, rest on foresight alone as sufficient for secondary liability to murder." },
+              { "label": "2016 — R v Jogee", "description": "The Supreme Court holds the foresight-only rule to be a wrong turn: foresight is evidence of intent to assist or encourage, not an automatic substitute for it." },
+              { "label": "Post-2016", "description": "Secondary liability for a crime going beyond what was planned now requires proof that the defendant actually intended to assist or encourage that crime, assessed on all the evidence including — but not limited to — what they foresaw." }
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-13-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these developments in secondary liability doctrine in chronological order.",
+          "items": [
+            "Chan Wing-Siu and later cases establish parasitic accessorial liability based on foresight alone",
+            "Jogee is convicted of murder on a foresight-based jury direction",
+            "The Supreme Court in R v Jogee holds the foresight-only rule to be wrong",
+            "Secondary liability for an unplanned, more serious offence now requires proof of actual intent to assist or encourage it"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the arc of the doctrine: decades of foresight-based liability, a conviction built on that basis, and then the correction that foresight is evidence of intent rather than a stand-in for it.",
+          "feedbackIncorrect": "Re-order with the older foresight-based doctrine first, Jogee's own conviction under that doctrine second, and the Supreme Court's correction — and its consequence for future cases — coming last."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Was foresight ever really an intention?",
+        "voice": "argumentative — states the strongest case for the old rule, then dismantles it",
+        "body": [
+          "Give the old doctrine its due before condemning it. Parasitic accessorial liability existed for a genuine practical reason: group violence is chaotic, planning is rarely explicit, and a strict requirement to prove actual intent to assist a specific, more serious offence would let secondary participants in gang attacks and armed confrontations escape liability simply because nobody could prove exactly what passed between them in the moment. Foresight-based liability made prosecutions easier to bring, and easier to win, in precisely the cases where the public interest in conviction felt strongest.",
+          "The trouble is that 'makes prosecution easier' is not the same as 'correctly states the mental element of murder'. Murder, whether as a principal or a secondary party, has always required an intention to kill or cause really serious harm — that is the whole of what separates it from manslaughter. Parasitic accessorial liability quietly smuggled in a different, lower standard for secondary parties: not intent, but foresight of a possibility. Two people, doing exactly the same thing with exactly the same state of mind, could be convicted of different offences purely because one delivered the fatal blow and the other merely stood nearby having foreseen it might happen.",
+          "Jogee and its companion case, Ruddock v The Queen, corrected this by insisting on a single, principled standard: intention to assist or encourage the crime actually committed, or a crime committed with the intent required for it — with foresight admissible as powerful evidence of that intention, but never a legal substitute for it. The correction did not make convictions impossible; it made them turn on the right question. A jury can still convict a secondary party who foresaw the exact risk that materialised and did nothing to stop it — but only after being asked whether that foresight, on all the evidence, proves they actually intended the outcome, not simply that they saw it coming.",
+          "The stronger objection to the reform, and the one worth taking seriously, is that it may have made some convictions harder to secure in genuinely chaotic group violence cases. That is a real cost. But it is the cost of aligning secondary liability with a coherent theory of intention, rather than continuing to convict on a standard the Supreme Court itself accepted the law should never have adopted."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Parasitic accessorial liability",
+            "definition": "The doctrine, corrected in R v Jogee, under which a secondary party who foresaw that the principal might commit a further or more serious offence, and continued to participate in the joint venture, was automatically liable for that offence — without any separate proof that they intended to assist or encourage it."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Old test versus corrected test",
+            "points": [
+              "Old (pre-Jogee): foresight that the principal might commit offence X, plus continued participation, is sufficient by itself for liability for offence X",
+              "Corrected (Jogee/Ruddock): the secondary party must actually intend to assist or encourage the commission of offence X, or a crime with the intent required for it",
+              "Foresight of what the principal might do remains admissible and often powerful evidence from which intent can be inferred",
+              "The change affects cases where the offence committed goes beyond, or differs from, what the secondary party originally set out to assist"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-13-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that, after Jogee, foresight that the principal might use a weapon is by itself sufficient for secondary liability?",
+          "sliderLabels": ["Definitely sufficient by itself", "Definitely only evidence of intent, not sufficient alone"],
+          "correctPosition": "Definitely only evidence of intent, not sufficient alone",
+          "explanation": "This is the exact point Jogee corrected. Foresight can be strong evidence that the secondary party intended to assist or encourage the principal's use of the weapon, but a jury must still be satisfied of that actual intent — foresight is no longer treated as automatically enough on its own."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Can you undo an agreement to commit a crime?",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Suppose two people agree to commit a robbery together. One of them, moments before it happens, has second thoughts. Is that enough? What if they simply walk away without saying anything — does silent regret undo an agreement that was, until that moment, real and operative?",
+          "Think about why the law would hesitate to accept mere silent withdrawal. If regret alone were enough, a secondary party could encourage an offence, watch it unfold, and then claim afterwards — with the benefit of hindsight and no contemporaneous evidence — that they had privately changed their mind before anything happened. The principal, meanwhile, would have no idea their supposed accomplice had backed out, and would proceed exactly as before.",
+          "That is why the courts require something more concrete: communication of the withdrawal to the other participants, given in enough time and in clear enough terms that it could actually have had an effect — ideally, unequivocal notice that undoes the encouragement or assistance already given, not just an unspoken change of heart. Turning up, then quietly leaving without a word, has generally not been treated as effective withdrawal, particularly once matters are already in motion.",
+          "R v Gnango illustrates how far joint participation in a violent confrontation can stretch before any question of withdrawal even arises. Two men engaged in a spontaneous gunfight in a car park, each shooting at the other; a stray bullet from one of them killed a passer-by. The Supreme Court upheld the conviction of the other participant for the killing, on the basis that he had, in effect, aided and abetted an attempt by his opponent to murder him, and was liable for the death that resulted from the exchange each of them had voluntarily joined. The case is a reminder that 'joint enterprise' does not require agreement in the ordinary sense — mutual, spontaneous participation in a violent exchange can be enough to found liability, which makes clean, timely withdrawal from that kind of situation harder still to establish."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Gnango",
+            "citation": "[2011] UKSC 59",
+            "court": "Supreme Court",
+            "year": 2011,
+            "factsShort": "Two men engaged in a spontaneous mutual gunfight in a car park; a bystander was killed by a bullet fired by one of them.",
+            "ratioShort": "A participant in a voluntary, mutual violent exchange can be liable, as a secondary party, for a death caused by the other participant's shot, on the basis of aiding and abetting the other's attempt against him.",
+            "expanded": {
+              "facts": "Gnango and another man, referred to as 'Bandana Man', exchanged gunfire in a public car park after a chance encounter escalated. A passer-by, Magda Pniewska, was killed by a bullet fired by Bandana Man, who was never identified or caught. Gnango was charged with her murder on the basis of his participation in the mutual gunfight.",
+              "judgmentExtract": "The Supreme Court, by a majority, upheld Gnango's conviction, reasoning that Gnango had aided and abetted Bandana Man's attempt to murder him, and that the resulting death — though caused by the other man's bullet, aimed at Gnango rather than the victim — could still found liability given the mutual, voluntary nature of the exchange each had entered into.",
+              "significance": "Gnango shows the outer edge of joint participation reasoning even after Jogee's correction of the mental element: it did not turn on parasitic accessorial liability foresight reasoning, but confirms that mutual, consensual violent exchanges can generate secondary liability for consequences neither party specifically set out to cause to a third party."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Effective withdrawal",
+            "definition": "To withdraw from participation in a planned or ongoing offence, a secondary party generally must communicate that withdrawal to the other participants clearly and in time for it to have some effect — silent absence or a private change of mind, without more, is unlikely to be treated as effective, especially once the venture is already underway."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-13-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario has the secondary party most clearly achieved effective withdrawal?",
+          "scenarioA": "Dev agrees to keep watch during a burglary, but as his friends approach the house he texts them 'I'm not doing this, I'm leaving now' and walks away before they go in.",
+          "scenarioB": "Dev agrees to keep watch during a burglary, has private second thoughts while waiting outside, but says nothing and simply fails to answer when his friends radio him once they are already inside.",
+          "correctScenario": "A",
+          "explanation": "In A, Dev communicates his withdrawal clearly and before the offence begins, giving his friends the chance to reconsider or proceed without his assistance knowingly. In B, Dev's change of heart is never communicated at all, and comes only after the offence is already underway, which is unlikely to count as effective withdrawal."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "What counts as intention to assist, after Jogee",
+        "voice": "direct — plain synthesis of the corrected mental element",
+        "body": [
+          "Pull the corrected law together into a single working test. After Jogee and Ruddock, a secondary party is liable if they intentionally assisted or encouraged the principal to commit the offence — or to act with whatever state of mind that offence requires — and they knew, or contemplated as a real possibility, the essential matters that make up that offence.",
+          "'Knowledge of essential matters' does real work here. If a secondary party hands a friend a weapon knowing it might be used to kill, that knowledge feeds directly into the intent inquiry, whether or not they knew precisely how, when, or on whom it would be used. Ruddock reinforced that this knowledge need not be detailed or certain — a conditional intent, of the kind 'if a weapon is needed, use this one', is enough, provided it is genuinely present and not merely a foreseen possibility the secondary party never actually signed up to.",
+          "This is also why Jogee is often misunderstood as making secondary liability harder to prove across the board. It doesn't. Where a secondary party clearly and directly intends to assist a specific offence — lending a getaway car for a planned robbery, handing over a crowbar for a specific burglary — Jogee changes nothing about their liability. The correction bites specifically where the prosecution is trying to attach liability for something beyond, or different from, what was originally planned, and had previously relied on foresight alone to bridge that gap.",
+          "The practical exam skill this leaves you with is simple to state and easy to under-practise: identify precisely what offence the secondary party is being accused of assisting or encouraging, then ask whether the evidence shows actual intent to assist that offence — using foresight, presence, prior agreement, and conduct at the scene as evidence for that intent, never as an automatic substitute for it."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The corrected mental element, in practice",
+            "points": [
+              "Intention to assist or encourage the principal's conduct, or the principal acting with the required state of mind for the offence",
+              "Knowledge, or contemplation as a real possibility, of the essential matters constituting the offence — need not be detailed or certain",
+              "A conditional intent ('use this weapon if needed') is sufficient, provided it genuinely exists",
+              "Foresight of what the principal might do remains admissible evidence of intent, but is never treated as automatically sufficient on its own"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Knowledge of essential matters",
+            "definition": "The secondary party need not know every detail of how, when, or against whom the offence will be committed — it is enough that they knew, or contemplated as a real possibility, the matters that make the conduct the offence in question, feeding into the overall assessment of whether they intended to assist or encourage it."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-13-check-05",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that most clearly supports a finding that the secondary party intended to assist the principal, applying the corrected post-Jogee test.",
+          "scenarioText": "Before a planned confrontation, Ella hands her friend a kitchen knife, saying 'take this in case things kick off and you need to really hurt him'. Her friend takes the knife, goes to the meeting, and stabs the victim.",
+          "tappableSpans": ["hands her friend a kitchen knife", "'take this in case things kick off and you need to really hurt him'", "takes the knife", "stabs the victim"],
+          "correctSpan": "'take this in case things kick off and you need to really hurt him'",
+          "feedbackCorrect": "That's the strongest evidence of actual intent — Ella isn't merely handing over an object that happens to foreseeably get used violently; her own words show a conditional intent that the knife be used to cause really serious harm if the situation called for it.",
+          "feedbackIncorrect": "Look for evidence of Ella's own state of mind, not just her conduct or what her friend later did. Her explicit words accompanying the handover are what convert this from mere foreseeable risk into genuine, if conditional, intent to encourage serious harm."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-13-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the four conduct verbs in s 8 Accessories and Abettors Act 1861 that found secondary liability.",
+      "acceptableAnswers": ["aid, abet, counsel, procure", "aiding, abetting, counselling and procuring"],
+      "modelAnswer": "Section 8 imposes liability on anyone who aids, abets, counsels, or procures the commission of an indictable offence."
+    },
+    {
+      "itemId": "crime-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Does counselling an offence require the secondary party to be present when it is committed?",
+      "options": ["No — counselling can occur entirely beforehand, without presence at the scene", "Yes — counselling requires presence at the scene, like abetting"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-13-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following did R v Jogee actually hold?",
+      "options": ["Foresight of what the principal might do is evidence from which intent to assist or encourage can be inferred, but is not automatically sufficient", "Secondary parties can no longer be convicted of any offence going beyond the original plan", "Foresight-based liability was retained but capped at manslaughter"],
+      "correctIndex": 0,
+      "trapExplanation": "Jogee did not abolish liability for offences beyond the original plan, nor did it impose a manslaughter cap — it corrected the mental element, so that foresight becomes evidence of intent rather than an automatic trigger for liability."
+    },
+    {
+      "itemId": "crime-13-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the procedural history of Jogee's own case.",
+      "items": ["Jogee encourages Hirsi from outside the house during the confrontation", "Hirsi stabs and kills the victim inside", "The trial jury convicts Jogee of murder on a foresight-based direction", "The Supreme Court quashes the conviction, holding the direction misstated the law"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-13-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence stating the corrected test from Jogee.",
+      "passage": "The court accepted that the law had taken a wrong turn in the cases following Chan Wing-Siu. Foresight is not to be equated with intent, although it may be evidence of it. The correct approach is to ask whether the accessory intended to assist or encourage the crime, whether it be the crime actually committed or one requiring the same or a lesser degree of intent. That question must be left to the jury on the whole of the evidence.",
+      "ratioSentence": "The correct approach is to ask whether the accessory intended to assist or encourage the crime, whether it be the crime actually committed or one requiring the same or a lesser degree of intent."
+    },
+    {
+      "itemId": "crime-13-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant secretly rigs a colleague's car brakes hoping to cause a crash, without the colleague's knowledge, and a crash duly follows. Which of the four s 8 verbs best describes this conduct?",
+      "options": ["Aiding", "Abetting", "Counselling", "Procuring"],
+      "correctIndex": 3
+    },
+    {
+      "itemId": "crime-13-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Two friends plan a simple shoplifting trip. Unknown to one of them, the other brings a knife and uses it when confronted by a security guard, causing serious injury. Applying Jogee, what must the prosecution prove to convict the first friend of the wounding as a secondary party?",
+      "options": ["That the first friend actually intended to assist or encourage the use of the knife to cause serious harm, or foresaw it and that this evidences such intent", "Nothing beyond the fact that they were present during the shoplifting trip", "That the first friend personally supplied or suggested the knife"],
+      "correctIndex": 0,
+      "explanation": "After Jogee, mere presence during a planned lesser offence is not enough to fix a secondary party with liability for an unplanned, more serious offence committed by the other. The prosecution must show actual intent to assist or encourage that more serious conduct, for which foresight is evidence but not a substitute."
+    },
+    {
+      "itemId": "crime-13-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that would most support a defence of effective withdrawal.",
+      "scenarioText": "Leo agrees to help plan a robbery. The night before it happens, he calls his co-conspirators, tells them clearly he wants no part of it, and asks them to call it off. They ignore him and go ahead without him the next day, and he plays no further role.",
+      "tappableSpans": ["agrees to help plan a robbery", "calls his co-conspirators", "tells them clearly he wants no part of it", "they ignore him and go ahead"],
+      "correctSpan": "tells them clearly he wants no part of it",
+      "explanation": "Effective withdrawal generally requires clear communication to the other participants, given in time to matter — which Leo provides here, the night before and directly to his co-conspirators, even though they ultimately proceed without him regardless."
+    },
+    {
+      "itemId": "crime-13-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario more closely mirrors the reasoning in R v Gnango, rather than ordinary planned joint enterprise?",
+      "scenarioA": "Two friends plan a burglary together in detail over several days before carrying it out as agreed.",
+      "scenarioB": "Two strangers spontaneously begin firing weapons at each other after a chance roadside argument, with no prior plan or agreement between them.",
+      "correctScenario": "B",
+      "explanation": "Gnango dealt with a wholly spontaneous, mutual exchange of violence with no prior agreement at all, showing that joint participation reasoning can extend beyond planned joint enterprises to mutual, voluntary violent confrontations. Scenario A is an ordinary planned joint enterprise and does not need Gnango's reasoning to explain liability."
+    },
+    {
+      "itemId": "crime-13-test-10",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that a secondary party's knowledge of essential matters, after Jogee, must extend to knowing precisely how and against whom the offence will be committed?",
+      "sliderLabels": ["Must know precise details", "Only needs to contemplate the essential matters as a real possibility"],
+      "correctPosition": "Only needs to contemplate the essential matters as a real possibility",
+      "explanation": "Ruddock confirms that detailed or certain knowledge is not required — it is enough that the secondary party knew, or contemplated as a real possibility, the matters that make the principal's conduct the offence charged, including a genuinely conditional intent."
+    },
+    {
+      "itemId": "crime-13-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Ben lends his van to Cara so she can move some furniture, joking 'don't use it to run anyone over'. Unknown to Ben, Cara actually intends to use the van to deliberately hit a rival outside a pub, which she then does, causing serious injury. Analyse Ben's potential liability as a secondary party.",
+      "factsToOrder": [
+        "Ben lends the van believing it will be used to move furniture",
+        "Ben makes a joking remark about not running anyone over",
+        "Cara's real intention, unknown to Ben, is to deliberately injure a rival",
+        "Cara uses the van to cause serious injury",
+        "Ben plays no further role after lending the van"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Ben is liable as a secondary party for the injury Cara deliberately caused using his van.",
+        "rule": "Following Jogee and Ruddock, secondary liability requires proof that the defendant intended to assist or encourage the principal's conduct, or conduct performed with the state of mind the offence requires, and knew or contemplated as a real possibility the essential matters making up that offence; mere foreseeability or an unwitting contribution is not enough.",
+        "application": "Ben genuinely believes the van will be used to move furniture; his joking remark, read in context, undermines rather than supports any inference that he actually contemplated deliberate violence as a real possibility. He has no knowledge of Cara's true intention and plays no further role once lending the van. On these facts there is no evidence he intended to assist or encourage the deliberate injury, nor that he knew the essential matters of that offence.",
+        "conclusion": "Ben is unlikely to be liable as a secondary party — he lacks both the intent to assist the actual offence committed and knowledge of the essential matters that made Cara's conduct criminal in the way it was."
+      }
+    },
+    {
+      "itemId": "crime-13-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A getaway driver knows in detail that the robbery she is driving for will involve her accomplice threatening the cashier with a real firearm. Is her knowledge of that essential matter capable of supporting secondary liability for an armed robbery, even though she never touches the gun?",
+      "options": ["Yes — knowledge of the essential matters of the offence, combined with intent to assist the robbery, is enough without her personally handling any weapon", "No — only the person who physically carries the weapon can be liable for an armed offence"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-13-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "During a planned fight, Omar tells his friend beforehand 'don't kill him, just rough him up a bit'. His friend goes further and kills the victim. What is the effect of Omar's stated limitation on his own liability?",
+      "options": ["It automatically excuses Omar from any liability for the death, since he expressly ruled out killing", "It is strong evidence relevant to whether Omar intended to assist or encourage only the lesser harm, but the jury must still assess his overall intent on all the evidence, and he may still face liability for the lesser offence he did intend", "It is irrelevant, since foresight that things could escalate is all that matters"],
+      "correctIndex": 1,
+      "trapExplanation": "Neither an automatic excuse nor irrelevance is correct. Omar's stated limitation is genuinely important evidence bearing on what he actually intended to assist or encourage, but it does not by itself resolve the question — the jury still weighs it against all the other evidence, and Omar may still be liable for the lesser violence he did intend to encourage."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake across this lesson's items is reaching for foresight as if it were still automatically sufficient for secondary liability — treating 'they could see it coming' as the end of the analysis, when Jogee requires the jury to go further and find actual intent to assist or encourage, using foresight only as evidence towards that finding.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.participation.complicity"
+  }
+}

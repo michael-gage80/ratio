@@ -28,6 +28,10 @@ struct ItemInteractionView: View {
                 SequenceInteraction(itemId: item.id, items: items, correctOrder: correctOrder, locked: lockedResponse, onLock: onLock)
             case .recall(let modelAnswer):
                 RecallInteraction(itemId: item.id, modelAnswer: modelAnswer, locked: lockedResponse, onLock: onLock)
+            case .highlight(let sentences, let ratioSentence):
+                HighlightInteraction(itemId: item.id, sentences: sentences, ratioSentence: ratioSentence, locked: lockedResponse, onLock: onLock)
+            case .irac(let facts, let modelAnswer):
+                IRACWorkedExample(itemId: item.id, facts: facts, answer: modelAnswer, locked: lockedResponse, onLock: onLock)
             }
 
             if let lockedResponse {
@@ -101,8 +105,8 @@ private struct TapTheFactInteraction: View {
         VStack(alignment: .leading, spacing: 16) {
             VStack(alignment: .leading, spacing: 8) {
                 ForEach(Array(segments.enumerated()), id: \.offset) { _, segment in
-                    if segment.isSpan {
-                        spanButton(segment.text)
+                    if let span = segment.span {
+                        spanButton(span, shown: segment.text)
                     } else {
                         Text(segment.text).ratioFont(.body)
                     }
@@ -120,7 +124,7 @@ private struct TapTheFactInteraction: View {
         }
     }
 
-    private func spanButton(_ span: String) -> some View {
+    private func spanButton(_ span: String, shown: String) -> some View {
         let isCorrect = locked != nil && span == correctSpan
         let isWrongPick = locked != nil && span == locked?.span && span != correctSpan
         let isSelected = locked == nil && span == selection
@@ -130,7 +134,7 @@ private struct TapTheFactInteraction: View {
             HStack(spacing: 8) {
                 if isCorrect { Image(systemName: "checkmark.circle.fill").foregroundStyle(Color.ratioVerdigris) }
                 if isWrongPick { Image(systemName: "xmark.circle.fill").foregroundStyle(Color.ratioOxblood) }
-                Text(span).ratioFont(.body).multilineTextAlignment(.leading)
+                Text(shown).ratioFont(.body).multilineTextAlignment(.leading)
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 6)
@@ -147,20 +151,22 @@ private struct TapTheFactInteraction: View {
         .accessibilityValue(isCorrect ? "Correct" : isWrongPick ? "Not quite" : "")
     }
 
-    private var segments: [(text: String, isSpan: Bool)] {
-        var result: [(String, Bool)] = []
+    /// The scenario cut into plain text and tappable phrases. `span` is the content's
+    /// canonical phrase (what gets graded); `text` is how it reads in the scenario —
+    /// matching ignores case, e.g. a phrase that starts a sentence.
+    private var segments: [(text: String, span: String?)] {
+        var result: [(String, String?)] = []
         var rest = Substring(text)
         while !rest.isEmpty {
             let next = spans
-                .compactMap { span in rest.range(of: span).map { (span, $0) } }
+                .compactMap { span in rest.range(of: span, options: .caseInsensitive).map { (span, $0) } }
                 .min { $0.1.lowerBound < $1.1.lowerBound }
             guard let (span, range) = next else {
-                result.append((String(rest), false))
+                result.append((String(rest), nil))
                 break
             }
-            let before = rest[..<range.lowerBound]
-            if !before.trimmingCharacters(in: .whitespaces).isEmpty { result.append((String(before), false)) }
-            result.append((span, true))
+            result.append((String(rest[..<range.lowerBound]), nil))
+            result.append((String(rest[range]), span))
             rest = rest[range.upperBound...]
         }
         return result
@@ -336,5 +342,127 @@ private struct RecallInteraction: View {
 
     private func lock(correct: Bool) {
         onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: correct))
+    }
+}
+
+// MARK: - Highlight the ratio
+
+/// Tap the sentence that states the ratio (board cell 08). Each sentence is a button,
+/// so the passage stays readable and every choice is reachable with VoiceOver.
+private struct HighlightInteraction: View {
+    let itemId: String
+    let sentences: [String]
+    let ratioSentence: String
+    let locked: ItemResponse?
+    let onLock: (ItemResponse) -> Void
+
+    @State private var selection: String?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Paraphrased · not the judgment text")
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk2)
+                ForEach(sentences, id: \.self) { sentence in
+                    sentenceButton(sentence)
+                }
+            }
+            .padding(18)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+
+            if locked == nil {
+                RatioButton("Lock it in", isEnabled: selection != nil) {
+                    onLock(ItemResponse(itemId: itemId, span: selection))
+                }
+            }
+        }
+    }
+
+    private func sentenceButton(_ sentence: String) -> some View {
+        let isRatio = Item.sentence(sentence, states: ratioSentence)
+        let isCorrect = locked != nil && isRatio
+        let isWrongPick = locked != nil && sentence == locked?.span && !isRatio
+        let isSelected = locked == nil && sentence == selection
+        return Button {
+            selection = sentence
+        } label: {
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                if isCorrect { Image(systemName: "checkmark.circle.fill").foregroundStyle(Color.ratioVerdigris) }
+                if isWrongPick { Image(systemName: "xmark.circle.fill").foregroundStyle(Color.ratioOxblood) }
+                Text(sentence).ratioFont(.body).multilineTextAlignment(.leading)
+            }
+            .padding(10)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(isCorrect ? Color.ratioVWash : isWrongPick ? Color.ratioOxWash : isSelected ? Color.ratioPaper : .clear,
+                        in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay {
+                if isSelected {
+                    RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color.ratioInk, lineWidth: 2)
+                }
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .disabled(locked != nil)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .accessibilityValue(isCorrect ? "The ratio" : isWrongPick ? "Not quite" : "")
+    }
+}
+
+// MARK: - IRAC (worked example)
+
+/// Scaffold level 1 of the IRAC builder (PRD: "worked examples, then fading"): the
+/// full model answer with the key facts, before any support is taken away.
+private struct IRACWorkedExample: View {
+    let itemId: String
+    let facts: [String]
+    let answer: Item.IRACAnswer
+    let locked: ItemResponse?
+    let onLock: (ItemResponse) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Worked example · scaffold 1 of 4")
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+            VStack(alignment: .leading, spacing: 6) {
+                Text("Key facts").ratioFont(.monoLabel)
+                ForEach(facts, id: \.self) { fact in
+                    Label(fact, systemImage: "circle.fill")
+                        .labelStyle(BulletLabelStyle())
+                        .ratioFont(.small)
+                }
+            }
+            section("Issue", answer.issue)
+            section("Rule", answer.rule)
+            section("Application", answer.application)
+            section("Conclusion", answer.conclusion)
+            if locked == nil {
+                RatioButton("I've read the worked example", style: .secondary) {
+                    onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: true))
+                }
+            }
+        }
+    }
+
+    private func section(_ title: String, _ text: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            Text(text).ratioFont(.body)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+}
+
+private struct BulletLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Text("·").foregroundStyle(Color.ratioOxblood)
+            configuration.title
+        }
     }
 }

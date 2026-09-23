@@ -1,0 +1,724 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ratio.app/schema/lesson.json",
+  "title": "Ratio lesson",
+  "description": "One lesson (PRD: 'Lessons: flow, components and in-line games'). Cross-field rules the schema can't express live in validate.mjs.",
+  "type": "object",
+  "required": [
+    "lessonId",
+    "moduleId",
+    "moduleTitle",
+    "lessonNumber",
+    "topicId",
+    "title",
+    "subtitle",
+    "estimatedMinutes",
+    "itemCounts",
+    "objectives",
+    "leadingAuthorities",
+    "whyThisMattersTemplate",
+    "lawStatedAt",
+    "reviewedBy",
+    "contentVersion",
+    "overview",
+    "lecture",
+    "testPool",
+    "debriefConfig"
+  ],
+  "properties": {
+    "lessonId": {
+      "type": "string",
+      "pattern": "^[a-z]+-[0-9]{2}$"
+    },
+    "moduleId": {
+      "$ref": "#/$defs/moduleId"
+    },
+    "moduleTitle": {
+      "$ref": "#/$defs/text"
+    },
+    "lessonNumber": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "topicId": {
+      "$ref": "#/$defs/topicId"
+    },
+    "title": {
+      "$ref": "#/$defs/text"
+    },
+    "subtitle": {
+      "$ref": "#/$defs/text"
+    },
+    "estimatedMinutes": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 30
+    },
+    "itemCounts": {
+      "type": "object",
+      "required": [
+        "lecture",
+        "testPool",
+        "testServedPerAttempt"
+      ],
+      "properties": {
+        "lecture": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "testPool": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "testServedPerAttempt": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "objectives": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "leadingAuthorities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "citation",
+          "role"
+        ],
+        "properties": {
+          "citation": {
+            "$ref": "#/$defs/text"
+          },
+          "role": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "whyThisMattersTemplate": {
+      "type": "object",
+      "required": [
+        "default"
+      ],
+      "properties": {
+        "default": {
+          "$ref": "#/$defs/text"
+        },
+        "profileHooks": {
+          "type": "object",
+          "propertyNames": {
+            "enum": [
+              "weakKnowledge",
+              "weakUnderstanding",
+              "weakApplication"
+            ]
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/text"
+          }
+        }
+      }
+    },
+    "lawStatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "reviewedBy": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contentVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "overview": {
+      "type": "object",
+      "required": [
+        "hook"
+      ],
+      "properties": {
+        "hook": {
+          "$ref": "#/$defs/text"
+        },
+        "lawStatedNotice": {
+          "$ref": "#/$defs/text"
+        }
+      }
+    },
+    "lecture": {
+      "type": "object",
+      "required": [
+        "parts"
+      ],
+      "properties": {
+        "parts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "$ref": "#/$defs/part"
+          }
+        }
+      }
+    },
+    "testPool": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    },
+    "debriefConfig": {
+      "type": "object",
+      "required": [
+        "trapSummary"
+      ],
+      "properties": {
+        "trapSummary": {
+          "$ref": "#/$defs/text"
+        },
+        "reviewMisses": {
+          "type": "boolean"
+        },
+        "linkToPathway": {
+          "$ref": "#/$defs/topicId"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "texts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/text"
+      }
+    },
+    "moduleId": {
+      "enum": [
+        "crime",
+        "contract",
+        "tort",
+        "public",
+        "land",
+        "equity"
+      ]
+    },
+    "topicId": {
+      "type": "string",
+      "pattern": "^(crime|contract|tort|public|land|equity)(\\.[a-z0-9-]+)+$"
+    },
+    "skill": {
+      "enum": [
+        "knowledge",
+        "understanding",
+        "application"
+      ]
+    },
+    "part": {
+      "type": "object",
+      "required": [
+        "partNumber",
+        "heading",
+        "body",
+        "components",
+        "interaction"
+      ],
+      "properties": {
+        "partNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "heading": {
+          "$ref": "#/$defs/text"
+        },
+        "voice": {
+          "type": "string"
+        },
+        "body": {
+          "$ref": "#/$defs/texts"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/component"
+          }
+        },
+        "interaction": {
+          "$ref": "#/$defs/item"
+        }
+      }
+    },
+    "component": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "caseCard",
+            "statuteBlock",
+            "keyConcept",
+            "ratioPanel",
+            "theTrap",
+            "doctrineMap",
+            "timeline"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "caseCard"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "caseName",
+              "citation",
+              "court",
+              "year",
+              "factsShort",
+              "ratioShort"
+            ],
+            "properties": {
+              "year": {
+                "type": "integer",
+                "minimum": 1600
+              },
+              "expanded": {
+                "type": "object",
+                "required": [
+                  "facts",
+                  "judgmentExtract",
+                  "significance"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "statuteBlock"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "citation",
+              "text",
+              "elements"
+            ],
+            "properties": {
+              "elements": {
+                "$ref": "#/$defs/texts"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "keyConcept"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "term",
+              "definition"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "ratioPanel"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "label",
+              "points"
+            ],
+            "properties": {
+              "points": {
+                "$ref": "#/$defs/texts"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "theTrap"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "commonWrongAnswer",
+              "whyItsWrong"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "doctrineMap"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "title",
+              "nodes",
+              "edges",
+              "textAlternative"
+            ],
+            "properties": {
+              "nodes": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "label"
+                  ]
+                }
+              },
+              "edges": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "from",
+                    "to",
+                    "label"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "timeline"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "title",
+              "events"
+            ],
+            "properties": {
+              "events": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "description"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "item": {
+      "type": "object",
+      "required": [
+        "itemId",
+        "type",
+        "skillTag",
+        "prompt"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "type": {
+          "enum": [
+            "recallFirst",
+            "quickCheck",
+            "thresholdSlider",
+            "tapTheFact",
+            "irac",
+            "sequence",
+            "mcqWithTrap",
+            "highlightTheRatio",
+            "distinguishTheCase",
+            "statuteParser",
+            "applyTheRule"
+          ]
+        },
+        "skillTag": {
+          "$ref": "#/$defs/skill"
+        },
+        "topicId": {
+          "$ref": "#/$defs/topicId"
+        },
+        "difficultyStart": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "prompt": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "quickCheck",
+                  "mcqWithTrap",
+                  "applyTheRule",
+                  "statuteParser"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options",
+              "correctIndex"
+            ],
+            "properties": {
+              "options": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "$ref": "#/$defs/text"
+                }
+              },
+              "correctIndex": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mcqWithTrap"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "trapExplanation"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "distinguishTheCase"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "scenarioA",
+              "scenarioB",
+              "correctScenario"
+            ],
+            "properties": {
+              "correctScenario": {
+                "enum": [
+                  "A",
+                  "B"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "tapTheFact"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "scenarioText",
+              "tappableSpans",
+              "correctSpan"
+            ],
+            "properties": {
+              "tappableSpans": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "$ref": "#/$defs/text"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "thresholdSlider"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sliderLabels",
+              "correctPosition"
+            ],
+            "properties": {
+              "sliderLabels": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "$ref": "#/$defs/text"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "sequence"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items",
+              "correctOrder"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2
+              },
+              "correctOrder": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "recallFirst"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "modelAnswer"
+            ],
+            "properties": {
+              "modelAnswer": {
+                "$ref": "#/$defs/text"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "highlightTheRatio"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "passage",
+              "ratioSentence"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "irac"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "factsToOrder",
+              "modelAnswer"
+            ],
+            "properties": {
+              "factsToOrder": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "$ref": "#/$defs/text"
+                }
+              },
+              "modelAnswer": {
+                "type": "object",
+                "required": [
+                  "issue",
+                  "rule",
+                  "application",
+                  "conclusion"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

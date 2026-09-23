@@ -1,0 +1,411 @@
+{
+  "lessonId": "crime-15",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 15,
+  "topicId": "crime.defences.self-defence-duress-necessity",
+  "title": "Self-defence, duress and necessity",
+  "subtitle": "When the law excuses or justifies conduct that would otherwise be criminal",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 5
+  },
+  "objectives": [
+    "State the self-defence test, including the honest-belief limb and the enhanced householder standard",
+    "Distinguish duress by threats and duress of circumstances, and explain why duress is never available for murder or attempted murder",
+    "Apply the necessity defence's narrow scope, distinguishing it from duress by reference to Re A (Conjoined Twins)"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Criminal Justice and Immigration Act 2008, s 76", "role": "Statutory footing for self-defence, including the householder provision" },
+    { "citation": "R v Gladstone Williams (1984) 78 Cr App R 276", "role": "D is judged on the facts as D honestly believed them to be, even if the belief is mistaken and unreasonable" },
+    { "citation": "R (Collins) v Secretary of State for Justice [2016] EWHC 33 (Admin)", "role": "Confirms the householder standard: disproportionate force can still be reasonable unless grossly disproportionate" },
+    { "citation": "R v Howe [1987] AC 417", "role": "Duress is never available as a defence to murder" },
+    { "citation": "R v Hasan [2005] UKHL 22", "role": "Restates duress strictly: an imminent threat of death or serious injury, with no voluntary association with the source of the threat" },
+    { "citation": "Re A (Conjoined Twins) [2001] Fam 147", "role": "Necessity as a distinct, exceptionally narrow defence separate from duress" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "These three defences are the ones students most often blur into one another under exam pressure — 'D had no choice' gets used to describe self-defence, duress and necessity interchangeably, when each has its own trigger, its own limits, and (critically) its own list of offences it cannot reach. Where the profile shows the three are being conflated, this note appears: name the defence before you argue it.",
+    "profileHooks": {
+      "weakApplication": "You can define all three defences. The gap is spotting which one a fact pattern is actually testing — especially telling duress of circumstances apart from necessity, and self-defence from both. Part 3 and Part 5 are where to slow down.",
+      "weakKnowledge": "Anchor on one fact before anything else: duress is never a defence to murder, full stop. Build the rest of the lesson around that fixed point."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A householder wakes to a stranger in their kitchen at 3am and swings a cricket bat before thinking twice — the law forgives more than you'd expect. A getaway driver claims a gun was held to his head. A surgeon separates conjoined twins knowing one will not survive. Three defendants, none of them denying what they did — all of them arguing the law should not call it a crime. This is the last lesson of the module, and it closes on the question every other lesson has been building toward: when does the law step back and let conduct that looks criminal go unpunished?",
+    "lawStatedNotice": "Law stated as at 22 September 2026. Self-defence is on a statutory footing under s 76 of the Criminal Justice and Immigration Act 2008 (as amended for householder cases); duress and necessity remain governed by common law, most recently restated in Hasan."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Reasonable force, as D honestly believed the facts to be",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Gladstone Williams saw a man being violently dragged along a street by another man. Believing he was watching an assault, Williams intervened and struck the second man. In fact, the second man was a plain-clothes police officer lawfully restraining a mugger who had just stolen a woman's handbag — Williams had misread the entire scene.",
+          "Williams was charged with assault occasioning actual bodily harm, and the trial judge directed the jury that his mistake had to be a reasonable one to help him. The Court of Appeal quashed the conviction: that direction was wrong. Self-defence is judged on the facts as D honestly believed them to be — even if that belief turns out to be mistaken, and even if a reasonable person would not have made the same mistake. The only role reasonableness plays is as evidence of whether the belief was genuinely held.",
+          "Once D's belief about the circumstances is fixed, a second and separate question follows: was the force D used reasonable in those believed circumstances? Williams answers the first question; it says nothing about whether any particular level of force is proportionate once the facts are settled — that second question is what the next part turns to."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Gladstone Williams",
+            "citation": "(1984) 78 Cr App R 276",
+            "court": "Court of Appeal",
+            "year": 1984,
+            "factsShort": "D struck a man he honestly but mistakenly believed was unlawfully assaulting someone else; the man was in fact a police officer lawfully arresting a thief.",
+            "ratioShort": "Self-defence is assessed on the facts as D honestly believed them to be, whether or not that belief was reasonable — reasonableness of the belief is evidence of honesty, not a separate requirement."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Honest belief limb",
+            "definition": "The first stage of the self-defence test: D is judged against the circumstances D genuinely believed existed, however mistaken, rather than against the circumstances as they actually were. This limb does not itself ask whether the force used was reasonable — only what facts D is to be judged against."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-15-check-01",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that makes the honest-belief limb of self-defence available here, regardless of whether the belief was reasonable.",
+          "scenarioText": "Nadia sees a man grab a woman's arm roughly outside a bar and shout at her. Believing he is about to attack her, Nadia pushes him away hard, causing him to fall and break his wrist. He was, in fact, her over-affectionate boyfriend play-fighting, and the woman was laughing.",
+          "tappableSpans": ["grab a woman's arm roughly", "Believing he is about to attack her", "pushes him away hard", "over-affectionate boyfriend play-fighting"],
+          "correctSpan": "Believing he is about to attack her",
+          "feedbackCorrect": "That's the operative fact. Nadia is judged on the scene as she honestly believed it to be — a man about to attack a woman — even though the true facts, revealed afterwards, were entirely different.",
+          "feedbackIncorrect": "Look for the moment that describes what Nadia genuinely thought was happening, not what was actually happening or what she did next — Williams fixes the facts D is judged against at the point of her honest belief."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The householder provision: disproportionate, but not grossly so",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "The general self-defence standard, once D's believed circumstances are fixed, asks whether the force used was reasonable in those circumstances. That standard was tightened, not loosened, for one specific scenario: a householder confronting an intruder in their own home.",
+          "Section 76 of the Criminal Justice and Immigration Act 2008 was amended to give householders a more generous standard. In a householder case, force is not to be regarded as unreasonable merely because it was disproportionate to the threat as D believed it to be — so long as it was not grossly disproportionate. R (Collins) v Secretary of State for Justice confirmed the correct reading: disproportionate force can still be lawful; only grossly disproportionate force takes D outside the defence.",
+          "This is a narrow carve-out, not a licence. It applies only where D is a householder (or lawfully present as if one) confronting a trespasser in a dwelling — it does not extend to force used in the street, against a non-trespasser, or by someone who is not lawfully in the property. And 'grossly disproportionate' is still a real ceiling: fetching a weapon and continuing to attack an intruder who is already fleeing or subdued can cross it."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Criminal Justice and Immigration Act 2008, s 76(5A)–(8)",
+            "text": "In a householder case, the degree of force used by D is not to be regarded as having been reasonable in the circumstances as D believed them to be if it was grossly disproportionate in those circumstances. In a case other than a householder case, the degree of force used is not to be regarded as reasonable if it was disproportionate in those circumstances.",
+            "elements": ["D is a householder (or treated as one) confronting a trespasser in a dwelling", "Force must not be grossly disproportionate (householder standard)", "In all other cases, force must not be disproportionate (the ordinary, stricter standard)"]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-15-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under the householder provision, at what point does force used against an intruder stop being defensible?",
+          "options": ["The moment it becomes disproportionate to the threat as D believed it", "Only once it becomes grossly disproportionate to the threat as D believed it", "Householders have no limit on the force they may use against an intruder"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — the householder standard is deliberately more forgiving than the ordinary rule: disproportionate force can still be reasonable, and only grossly disproportionate force fails.",
+          "feedbackIncorrect": "The householder standard is more generous than the general rule, not unlimited. Merely disproportionate force can still be lawful for a householder; the line is crossed only at gross disproportionality."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Duress: threats, circumstances, and how close the danger has to be",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Ask yourself this: does duress require someone to be standing over D with a weapon, issuing a direct instruction — 'do this, or else'? Or is it enough that D reasonably perceives a lethal threat from the surrounding circumstances, with no one giving any instruction at all?",
+          "Both count, but they are technically two different forms of the same defence. Duress by threats is the classic scenario: a specific person threatens D with death or serious injury unless D commits the offence. Duress of circumstances applies where the threat comes from the surrounding situation itself, rather than from a person directing D to act — for instance, D drives dangerously to escape a genuinely life-threatening situation with no instruction from anyone to drive at all.",
+          "Both versions share the same tight core requirements, restated firmly in R v Hasan: the threat must be of death or serious injury, it must be effectively imminent — operating on D's mind at the time of the offence, such that D reasonably believed there was no safe avenue of escape — and D must not have voluntarily exposed themselves to the risk of duress, for example by joining a criminal gang known for violence. A vague, distant or merely serious (non-lethal) threat does not qualify, however frightening it felt to D at the time."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Duress of circumstances",
+            "definition": "A form of duress where the threat of death or serious injury arises from the surrounding situation rather than from a person's direct instruction to commit the offence — but which is otherwise judged by the same strict imminence and reasonable-belief requirements as duress by threats."
+          },
+          {
+            "type": "doctrineMap",
+            "title": "Duress: the Hasan checklist",
+            "description": "The core requirements restated in R v Hasan, applicable to both duress by threats and duress of circumstances.",
+            "nodes": [
+              { "id": "threat", "label": "Is the threat one of death or serious injury?" },
+              { "id": "imminent", "label": "Was the threat effectively imminent, operating on D's mind at the time of the offence?" },
+              { "id": "avenue", "label": "Did D reasonably believe there was no safe avenue of escape?" },
+              { "id": "voluntary", "label": "Did D voluntarily expose themselves to the risk of coercion (e.g. joining a violent gang)?" },
+              { "id": "murder", "label": "Is the offence murder or attempted murder?" },
+              { "id": "fail", "label": "Duress unavailable" },
+              { "id": "succeed", "label": "Duress may succeed" }
+            ],
+            "edges": [
+              { "from": "threat", "to": "imminent", "label": "Yes" },
+              { "from": "threat", "to": "fail", "label": "No" },
+              { "from": "imminent", "to": "avenue", "label": "Yes" },
+              { "from": "imminent", "to": "fail", "label": "No" },
+              { "from": "avenue", "to": "voluntary", "label": "Yes" },
+              { "from": "voluntary", "to": "murder", "label": "No voluntary exposure" },
+              { "from": "voluntary", "to": "fail", "label": "Voluntarily exposed self" },
+              { "from": "murder", "to": "fail", "label": "Yes — murder/attempted murder" },
+              { "from": "murder", "to": "succeed", "label": "No" }
+            ],
+            "textAlternative": "Duress requires, in order: a threat of death or serious injury; that the threat was effectively imminent and operating on D's mind; that D reasonably believed there was no safe avenue of escape; that D did not voluntarily expose themselves to the risk of coercion; and that the offence charged is not murder or attempted murder, which are excluded entirely."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-15-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these facts from a duress of circumstances scenario in the order needed to establish the defence, from broadest requirement to most specific.",
+          "items": [
+            "The threat D faced was of death or serious injury",
+            "The threat was effectively imminent, operating on D's mind at the time",
+            "D reasonably believed there was no safe avenue of escape other than committing the offence",
+            "D had not voluntarily exposed themselves to the risk of facing such a threat"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the full Hasan checklist — miss any one link and the defence fails, however sympathetic the facts otherwise look.",
+          "feedbackIncorrect": "Work through the threat itself first, then how close in time it was, then whether escape was possible, and finally whether D brought the risk on themselves — each stage gates the next."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Why duress can never answer a murder charge",
+        "voice": "argumentative — states the policy case, then defends it against the obvious objection",
+        "body": [
+          "R v Howe settled a question the House of Lords had wavered on for years: duress is never available as a defence to murder, for a principal or an accessory, however extreme the threat D faced. The obvious objection writes itself — if a man is told 'kill this stranger or I will kill you', isn't that exactly the kind of impossible choice duress exists to excuse?",
+          "The House of Lords rejected that framing deliberately. Their reasoning was that the law cannot ask an ordinary person to weigh their own life against another innocent person's life and then excuse them for choosing their own — because that calculation treats the victim's life as worth less than D's, which the criminal law refuses to endorse as a legally sanctioned trade-off, however humanly understandable the choice might be. Duress operates as an excuse for D's weakness in the face of a threat; it was never meant to justify killing an innocent third party to save oneself.",
+          "The rule is absolute and famously harsh in application: it makes no difference whether D was fifteen years old, whether the threat was utterly overwhelming, or whether any reasonable person would have done the same thing. Threats can mitigate sentence; they cannot answer the charge. And the same absolute bar extends to attempted murder — the logic (an innocent life is never to be traded away, even where, as in an attempt, no one actually dies) applies with equal force to the attempt."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The Howe/Hasan bar, stated precisely",
+            "points": [
+              "Duress is not available as a defence to murder — for the principal offender or an accessory",
+              "The same bar extends to attempted murder",
+              "The bar is absolute: it does not bend for the severity of the threat, D's age, or the reasonableness of D's response",
+              "Duress remains available for virtually all other offences, including very serious ones such as robbery and GBH"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-15-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "D is told that unless he stabs a named stranger, his own children will be killed within the hour. He does so, and the stranger dies. Can D raise duress as a defence to murder?",
+          "options": ["Yes — the threat here is about as extreme and imminent as duress law contemplates", "No — duress is never available as a defence to murder, however extreme the threat", "Yes, but only if D can show he genuinely believed there was no other option"],
+          "correctIndex": 1,
+          "trapExplanation": "The facts are deliberately built to feel like the strongest possible case for duress — an imminent, credible threat to D's own children. Howe rules this out regardless: the bar on duress for murder is absolute and does not scale with how sympathetic or extreme the threat is."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Necessity: a narrower, separate defence",
+        "voice": "direct — measured and clinical, given the subject matter",
+        "body": [
+          "Necessity is not simply duress by another name. Duress requires a threat aimed at coercing D specifically to commit an offence; necessity applies where D acts to avoid a greater evil, without any person threatening D at all, and English law has historically treated it as an exceptionally narrow, rarely available defence, distinct from duress of circumstances.",
+          "Re A (Conjoined Twins) is the case that gives the defence its modern shape. Conjoined twins, referred to as Jodie and Mary, shared a heart and lungs that could not sustain them both; without separation, both would die within months. Separation would save Jodie but would inevitably cause Mary's death, since she was entirely dependent on the shared organs. The parents, for religious reasons, opposed the operation. The hospital sought a declaration that separation would be lawful.",
+          "The Court of Appeal held that necessity could, in this uniquely constrained situation, justify what would otherwise be the unlawful killing of Mary. The court set out conditions echoing duress's structure but applied to a choice between evils rather than a threat: the act was needed to avoid an inevitable and irreparable evil; no more was done than reasonably necessary; and the evil inflicted was not disproportionate to the evil avoided. On the facts, Mary's death was already inevitable within a very short time regardless of the operation, and doing nothing meant certain death for both twins — separation gave Jodie a chance of survival at the cost of hastening a death that could not, in any event, be prevented.",
+          "Treat this case as a study in the outer limit of a doctrine, not as a template — it succeeded on a uniquely narrow set of facts (an already-doomed life, and a choice with no better alternative for anyone), and the court was explicit that it was not creating a general licence to weigh one life against another."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re A (Conjoined Twins)",
+            "citation": "[2001] Fam 147",
+            "court": "Court of Appeal",
+            "year": 2001,
+            "factsShort": "Conjoined twins shared organs that could not sustain both; separation would save one but hasten the other's death, which was in any event inevitable within months.",
+            "ratioShort": "Necessity can, in an exceptionally narrow category of case, justify conduct that would otherwise be unlawful killing, where the evil avoided is inevitable and irreparable, no more is done than necessary, and the harm caused is not disproportionate to the harm avoided.",
+            "expanded": {
+              "facts": "The twins, referred to in the judgment as Jodie and Mary, were joined in a way that meant Mary survived only because Jodie's heart and lungs supplied both of them; without intervention, doctors expected both would die within months. Separation offered Jodie a good prospect of an independent life, but would immediately end Mary's, since she could not survive without the shared organs. The parents opposed surgery; the hospital applied to the courts.",
+              "judgmentExtract": "The Court of Appeal held the operation could lawfully proceed, treating the case as governed by the doctrine of necessity rather than an extension of duress. The court emphasised the singular nature of the facts — an already inevitable death for Mary, and the absence of any way to save both — in framing the conditions under which necessity could apply.",
+              "significance": "This is the leading modern illustration of necessity as a distinct defence from duress in English law: no one threatened the surgeons to force the operation, and the child could not consent or be coerced — the justification rests entirely on the choice between two evils in genuinely exceptional circumstances, not on any threat directed at anyone."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-15-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A ship's crew, facing a fire that will imminently sink the vessel and kill everyone aboard, jettison cargo belonging to a passenger without consent to keep the ship afloat long enough to reach safety, destroying the cargo. No one threatens the crew; they act to avoid the fire's consequences. Analyse whether necessity, rather than duress, is the applicable defence to the resulting criminal damage.",
+          "factsToOrder": [
+            "The ship faces an imminent, life-threatening fire",
+            "No person threatens the crew or directs them to jettison the cargo",
+            "The crew act to avoid a greater evil — the loss of the ship and all lives aboard",
+            "The cargo is destroyed, but only so much is jettisoned as needed to save the vessel"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether necessity, rather than duress, is the appropriate defence to the criminal damage caused by jettisoning the cargo.",
+            "rule": "Necessity applies where D acts to avoid an inevitable and irreparable greater evil, absent any threat from a person directing D to commit the offence; duress by contrast requires a threat aimed at coercing D to act. The act must go no further than reasonably necessary, and the harm caused must not be disproportionate to the harm avoided.",
+            "application": "No one threatens or instructs the crew — the danger comes from the fire itself, and there is no person to comply with, which places this outside duress (even duress of circumstances, which still borrows the coercion structure) and squarely within necessity. The crew act only to the extent needed to save the ship and its passengers, and the harm caused (destruction of cargo) is plainly disproportionate in the crew's favour compared to the harm avoided (loss of life).",
+            "conclusion": "Necessity, not duress, is the applicable defence: the crew faced a choice between evils with no threat directed at them, acted no further than necessary, and caused harm proportionate to the harm avoided."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-15-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the two-stage test for self-defence.",
+      "acceptableAnswers": ["honest belief as to the circumstances, then reasonable force in those believed circumstances"],
+      "modelAnswer": "First, D is judged on the facts as D honestly believed them to be, whether or not that belief was reasonable. Second, the force used must have been reasonable in those believed circumstances."
+    },
+    {
+      "itemId": "crime-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under the householder provision, must force be proportionate to avoid being unreasonable?",
+      "options": ["No — it can be disproportionate; only grossly disproportionate force fails", "Yes — any disproportionate force automatically fails"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-15-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following offences can duress by threats be raised as a defence to?",
+      "options": ["Robbery", "Murder", "Attempted murder"],
+      "correctIndex": 0,
+      "trapExplanation": "Murder and attempted murder are the two offences duress can never reach, following Howe and its later extension. Duress remains available for other offences, including very serious ones such as robbery."
+    },
+    {
+      "itemId": "crime-15-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order these stages of the Re A (Conjoined Twins) necessity reasoning.",
+      "items": ["Identify the evil to be avoided (both twins' inevitable death)", "Confirm no other course avoids that evil", "Confirm no more harm is done than reasonably necessary", "Confirm the harm caused is not disproportionate to the harm avoided"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-15-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 76 CJIA 2008, what is the ordinary (non-householder) standard for the force used to be regarded as reasonable?",
+      "options": ["It must not be disproportionate to the circumstances as D believed them to be", "It must not be grossly disproportionate to the circumstances as D believed them to be", "There is no proportionality requirement at all outside householder cases"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-15-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Hasan, highlight the sentence stating the core imminence requirement for duress.",
+      "passage": "Duress is a defence available only within strict limits. The threat relied upon must be of death or serious injury. Critically, the threat must be effectively imminent, operating on the defendant's mind at the time the offence is committed, such that the defendant reasonably believed there was no safe avenue of escape open to him. A defendant who has voluntarily exposed himself to the risk of such threats, for example by joining a criminal organisation known for violence, cannot rely on the defence.",
+      "ratioSentence": "Critically, the threat must be effectively imminent, operating on the defendant's mind at the time the offence is committed, such that the defendant reasonably believed there was no safe avenue of escape open to him."
+    },
+    {
+      "itemId": "crime-15-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A homeowner wakes to find a burglar in the hallway, grabs a nearby lamp, and strikes the burglar once, causing him to flee injured. The homeowner does not pursue. Applying the householder standard, is the homeowner likely protected?",
+      "options": ["Yes — a single strike causing the intruder to flee is unlikely to be grossly disproportionate", "No — any use of a weapon automatically exceeds the householder standard", "No — the homeowner should have retreated rather than used any force"],
+      "correctIndex": 0,
+      "explanation": "A single strike that ends the confrontation and causes the intruder to flee sits comfortably within 'disproportionate but not grossly disproportionate' territory — the householder standard does not require D to use no more force than an intruder, only to stop short of the grossly disproportionate line."
+    },
+    {
+      "itemId": "crime-15-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "The same homeowner from the previous scenario chases the fleeing, already-injured burglar down the street and continues to beat him after he has collapsed and stopped resisting. Does the householder provision still protect this later conduct?",
+      "options": ["Yes — once the householder standard applies, it covers everything that follows", "No — continuing to attack an intruder who has fled and is no longer resisting is likely to cross into grossly disproportionate force, and may also fall outside the 'in the dwelling confronting a trespasser' scope entirely", "No defence question arises because the burglar was in the wrong"],
+      "correctIndex": 1,
+      "explanation": "The householder standard is generous but not unlimited, and it is tied to confronting a trespasser in the dwelling — continuing an attack on a fleeing, subdued victim in the street is likely to fail on both gross disproportionality and on the scope of the provision itself."
+    },
+    {
+      "itemId": "crime-15-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly disqualifies D from relying on duress in this scenario.",
+      "scenarioText": "D knowingly joins a violent organised crime gang known for using extreme threats to control its members. Months later, a senior member threatens to kill D's family unless D commits a robbery. D complies.",
+      "tappableSpans": ["knowingly joins a violent organised crime gang", "known for using extreme threats to control its members", "threatens to kill D's family", "D complies"],
+      "correctSpan": "knowingly joins a violent organised crime gang",
+      "explanation": "Hasan bars duress where D voluntarily exposed themselves to the risk of coercion by joining an organisation known to use violent threats — that voluntary association defeats the defence, independent of how genuine or severe the later threat was."
+    },
+    {
+      "itemId": "crime-15-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is better analysed as duress of circumstances rather than necessity?",
+      "scenarioA": "D drives through a red light and breaks the speed limit to escape a car that has been deliberately ramming her vehicle and appears intent on causing serious harm.",
+      "scenarioB": "Mountain rescuers, with no one threatening them, decide to divert a small avalanche onto an empty barn to prevent it from reaching a populated village below, destroying the barn.",
+      "correctScenario": "A",
+      "explanation": "A involves a threat of death or serious injury from the immediate circumstances operating on D's mind, with no safe avenue of escape but to break traffic law — the hallmark of duress of circumstances. B has no threat directed at anyone at all — it is a pure choice between evils, and belongs to necessity instead."
+    },
+    {
+      "itemId": "crime-15-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that necessity was available as an additional route to the same result as duress in Re A (Conjoined Twins)?",
+      "sliderLabels": ["It was simply duress under another name", "It was a genuinely distinct defence from duress"],
+      "correctPosition": "It was a genuinely distinct defence from duress",
+      "explanation": "The Court of Appeal was explicit that necessity was the operative doctrine, precisely because no one threatened the surgeons or directed them to operate — the case could not have been analysed as duress at all, which is exactly why it needed necessity as a separate basis."
+    },
+    {
+      "itemId": "crime-15-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "D is coerced under an imminent, credible threat of death into acting as a getaway driver for an armed robbery. Assuming the Hasan conditions are otherwise met, is duress available?",
+      "options": ["Yes — robbery is not murder or attempted murder, so duress remains open in principle", "No — duress is barred for all offences involving violence"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-15-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "D is told by an armed man that unless D drives him to a bank so he can rob it, D's partner (being held elsewhere) will be shot within the hour. D drives him, and during the robbery a bystander is killed by the armed man. D is charged with robbery and, separately, with the bystander's murder as a secondary party. Analyse D's position on duress for each charge.",
+      "factsToOrder": [
+        "D faces an imminent threat of death to a loved one, not to D personally",
+        "D drives the getaway car under that threat, with no realistic avenue of escape",
+        "D is charged with robbery",
+        "D is also charged as a secondary party to murder for the bystander's death"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether duress is available to D on the robbery charge and on the murder charge.",
+        "rule": "Duress by threats requires an imminent threat of death or serious injury (which may be to a third party close to D, not only to D personally), no safe avenue of escape, and no voluntary exposure to the risk. Duress is never available to murder or attempted murder, whether as a principal or a secondary party (Howe).",
+        "application": "On the robbery charge, the threat to D's partner is imminent, credible and of death, and nothing suggests D had a safe escape route or had voluntarily courted this risk — duress is available in principle. On the murder charge, however, the absolute bar in Howe applies regardless of how compelling the threat was or that D was only a secondary party to the killing.",
+        "conclusion": "Duress may succeed as a defence to robbery, but is entirely unavailable as a defence to the murder charge, however extreme and genuine the threat to D's partner was."
+      }
+    },
+    {
+      "itemId": "crime-15-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why does Re A (Conjoined Twins) not simply collapse into an example of duress of circumstances?",
+      "options": ["Because the surgeons faced no threat directed at them at all — the case is a choice between evils, not a coerced response to a threat, which is what marks it out as necessity", "Because duress of circumstances can never apply to medical decisions", "Because Mary could not consent, and consent is irrelevant to duress anyway"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answers reach for surface features (medical context, consent) rather than the structural distinction the lesson turns on: duress requires a threat aimed at coercing D; necessity does not, and Re A has no threat at all."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap across this lesson is collapsing three distinct defences into one vague idea of 'D had no real choice.' Self-defence turns on D's honestly believed circumstances plus reasonable (or, for householders, not grossly disproportionate) force; duress requires an imminent threat aimed at coercing D and is barred outright for murder and attempted murder; necessity requires no threat at all, just a genuine choice between evils, and remains an exceptionally narrow doctrine illustrated by Re A. Naming which defence is actually in play is half the marks.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.defences.self-defence-duress-necessity"
+  }
+}

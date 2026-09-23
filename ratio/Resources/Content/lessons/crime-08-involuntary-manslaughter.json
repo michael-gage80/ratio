@@ -1,0 +1,423 @@
+{
+  "lessonId": "crime-08",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 8,
+  "topicId": "crime.homicide.involuntary-manslaughter",
+  "title": "Death without murder",
+  "subtitle": "Unlawful act manslaughter and gross negligence manslaughter",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the elements of unlawful act (constructive) manslaughter, including the objective 'dangerousness' test",
+    "State the four elements of gross negligence manslaughter established in Adomako",
+    "Apply both routes to a fact pattern and identify which, if either, is made out"
+  ],
+  "leadingAuthorities": [
+    { "citation": "R v Church [1966] 1 QB 59", "role": "Defines 'dangerous' as recognisable by all sober and reasonable people as carrying a risk of some harm" },
+    { "citation": "DPP v Newbury and Jones [1977] AC 500", "role": "Confirms the dangerousness test is wholly objective — the defendant need not foresee any harm at all" },
+    { "citation": "R v Dawson (1985) 81 Cr App R 150", "role": "The reasonable bystander is fixed only with what would be apparent on the facts, not the victim's hidden vulnerability" },
+    { "citation": "R v Adomako [1995] 1 AC 171", "role": "Leading authority setting out the four elements of gross negligence manslaughter" },
+    { "citation": "R v Rose [2017] EWCA Crim 1168", "role": "The 'obvious and serious risk of death' is assessed prospectively, on what was known or reasonably knowable at the time of breach" },
+    { "citation": "R v Broughton [2020] EWCA Crim 1093", "role": "Even a gross breach must be proved, to the criminal standard, to have caused death" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can define manslaughter as 'killing without the mens rea for murder' — but that's a category, not an answer. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know both routes exist. This lesson is about picking the right one and proving every element of it.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool below is weighted towards fact patterns: expect to be asked which route applies, not to recite either one.",
+      "weakKnowledge": "Go slowly through Parts 1 and 4 — the unlawful act route and the gross negligence route have different ingredients, and the rest of this lesson assumes you can list both sets without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A man on a petrol station forecourt is threatened with what turns out to be a fake gun. He isn't touched. He suffers a heart attack and dies before the robbers have taken a single note. No one intended this. No one even knew it was possible. Whether anyone is guilty of manslaughter depends entirely on what a stranger watching from across the road could have seen coming — and that single question is the spine of this whole lesson.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. Gross negligence manslaughter has been actively refined by the Court of Appeal in the last decade (Rose, Broughton); check for any further appellate movement before relying on this lesson in practice."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A body in the river",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Mrs Church went to a caravan with a man she'd met that night. An argument turned physical; he knocked her unconscious. Panicking, and wrongly believing he had killed her, he dragged her to a nearby river and threw her body in — where she drowned, still alive, from injuries far less serious than the ones that would have killed her outright.",
+          "He hadn't intended to kill her, and by the time he threw her in the river he genuinely (if wrongly) believed she was already dead. He couldn't be convicted of murder. But the Court of Appeal upheld his conviction for manslaughter on a different basis entirely: he had committed an unlawful act — the assault that knocked her out — and that act, viewed objectively, was dangerous. It caused her death. That combination is enough.",
+          "This is unlawful act manslaughter, sometimes called constructive manslaughter, because liability for the death is 'constructed' out of liability for a lesser, deliberate wrong. The court in Church gave the test its enduring form: an act is dangerous if all sober and reasonable people would recognise that it subjected the victim to the risk of at least some harm — not necessarily serious harm, and not necessarily death."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Church",
+            "citation": "[1966] 1 QB 59",
+            "court": "Court of Criminal Appeal",
+            "year": 1966,
+            "factsShort": "D knocked V unconscious in a fight, wrongly believed she was dead, and threw her body into a river, where she drowned.",
+            "ratioShort": "An unlawful act is 'dangerous' for manslaughter purposes if all sober and reasonable people would recognise it as carrying the risk of at least some harm to the victim.",
+            "expanded": {
+              "facts": "Church took a woman to his caravan; after taunting about his sexual performance, a struggle broke out and he knocked her unconscious. Believing, mistakenly, that he had killed her, he panicked and threw her body into a nearby river to conceal what he thought was a killing. Medical evidence suggested she was still alive when she entered the water and drowned.",
+              "judgmentExtract": "The Court of Criminal Appeal held that the assault (the punch) was an unlawful act, and that the correct test for 'dangerousness' was objective: would a sober and reasonable person, present at the scene and knowing what the defendant knew or should have known, recognise the act as exposing the victim to the risk of some harm — not necessarily serious harm.",
+              "significance": "Church supplies the definition every later case works from. It fixes the test as objective (the reasonable bystander's judgment, not the defendant's own state of mind) and sets the bar deliberately low — 'some harm', not grievous harm or a risk of death."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-08-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In Church, did the Court of Appeal ask whether the defendant himself foresaw harm to the victim?",
+          "options": ["No — the test is what a sober and reasonable observer would recognise as risking harm", "Yes — his own foresight of harm was the deciding question"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The test is entirely objective — it doesn't matter what was going through the defendant's head, only what an outside observer would have recognised.",
+          "feedbackIncorrect": "Look again at what the court actually asked. Church is famous precisely because it takes the defendant's own state of mind out of the dangerousness question."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Dangerous to whom? The observer's knowledge, not the victim's fragility",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Here's a question worth sitting with before you read the answer: two men threaten a petrol station attendant with an imitation gun during a robbery. They never touch him. He has an undiagnosed heart condition, and the shock of the threat kills him. Have they committed manslaughter?",
+          "The instinct is to say yes — a death has resulted from a serious unlawful act, robbery. But the Court of Appeal quashed the conviction. The 'sober and reasonable bystander' in the Church test is not omniscient. They're fixed with the knowledge that would have been apparent to anyone watching the scene unfold — not with facts, like a hidden heart condition, that nobody present could have known.",
+          "So the test has two moving parts that must both be satisfied: the act must be unlawful, and it must be objectively dangerous on the facts as they would have appeared to an ordinary onlooker at the time — not as they turn out to have been. If the attendant's heart condition had been visible or announced (an inhaler in hand, a medical alert bracelet, a collapse mid-robbery followed by continued threats), the analysis would likely come out differently."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Dawson",
+            "citation": "(1985) 81 Cr App R 150",
+            "court": "Court of Appeal",
+            "year": 1985,
+            "factsShort": "Robbers threatened a petrol station attendant with an imitation gun; he had an undisclosed heart condition and died of a heart attack.",
+            "ratioShort": "The reasonable bystander is fixed with what would be apparent from the defendant's conduct and the scene, not with facts about the victim that nobody present could have known.",
+            "expanded": {
+              "facts": "Dawson and two others attempted to rob a petrol station, wearing masks and brandishing a replica firearm and a pickaxe handle at the attendant. No physical contact was made. The attendant, who (unknown to anyone including possibly himself) suffered from a serious heart condition, collapsed and died of a heart attack shortly afterwards.",
+              "judgmentExtract": "The Court of Appeal held that the jury should have been directed that the sober and reasonable bystander is to be attributed only with the knowledge that such a person would have gained from observing the incident — not with the defendant's private knowledge (if any) of the victim's vulnerability, and certainly not with facts unknown to anyone present. On the evidence, there was nothing to suggest the robbers knew or could have known of the heart condition.",
+              "significance": "Dawson prevents unlawful act manslaughter from becoming a lottery of hidden medical facts. It keeps the test genuinely objective and scene-based, rather than turning on unforeseeable individual frailty — while leaving open that visible signs of vulnerability can change the answer."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "The sober and reasonable bystander",
+            "definition": "A hypothetical observer present at the scene, credited with ordinary knowledge of what is happening but not with facts about the victim that were neither visible nor announced — the yardstick for objective dangerousness in unlawful act manslaughter."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-08-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that would most likely change the outcome in a Dawson-style scenario.",
+          "scenarioText": "During the robbery, the attendant clutches his chest, says 'I have a heart condition, please stop,' and the robbers continue to shout threats and brandish the weapon at him anyway.",
+          "tappableSpans": ["During the robbery", "clutches his chest", "says 'I have a heart condition, please stop,'", "continue to shout threats"],
+          "correctSpan": "says 'I have a heart condition, please stop,'",
+          "feedbackCorrect": "Correct. Once the vulnerability is announced, it becomes part of what a reasonable bystander watching the scene would know — the objective test now takes it into account.",
+          "feedbackIncorrect": "The fact that matters is the one that makes the heart condition visible to an onlooker. Before that point, Dawson says the bystander can't be credited with knowing it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "No need to foresee harm at all",
+        "voice": "argumentative — states the harshest implication of the rule, then defends it",
+        "body": [
+          "Two boys pushed a paving slab off a railway bridge onto a train below. It crashed through a window and killed the guard. They hadn't aimed at anyone, hadn't intended to hurt anyone, and — this is the point the House of Lords had to resolve — may not have foreseen that anyone would be hurt at all.",
+          "The House of Lords held that it doesn't matter. Once the unlawful act (criminal damage, or a reckless act endangering others) is established, and once it is objectively dangerous by the Church test, the prosecution does not need to prove the defendant foresaw any harm, of any kind, to anyone. The mens rea for the underlying unlawful act is all that's required; the death itself is a matter of objective risk and causation, not of the defendant's foresight.",
+          "This looks harsh, and it is meant to. Manslaughter by an unlawful and dangerous act is a species of constructive liability: the defendant is judged by the risk their unlawful conduct in fact created, not by how much of that risk they personally appreciated. The justification usually offered is that anyone choosing to commit a dangerous unlawful act has already crossed the relevant moral line — what happens next is a matter of luck the law declines to let them benefit from."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "DPP v Newbury and Jones",
+            "citation": "[1977] AC 500",
+            "court": "House of Lords",
+            "year": 1977,
+            "factsShort": "Two boys pushed a paving stone from a railway bridge onto a passing train, killing the guard; they claimed not to have foreseen harm to anyone.",
+            "ratioShort": "Unlawful act manslaughter requires no proof that the defendant foresaw harm — dangerousness is judged wholly objectively, by the Church test.",
+            "expanded": {
+              "facts": "Newbury and Jones, both fifteen, pushed a paving stone from a railway bridge as a train approached. It smashed through the cab window and killed the guard. At trial they said they had not thought anyone would be hurt.",
+              "judgmentExtract": "The House of Lords held that the mens rea for manslaughter of this kind is supplied by the mens rea for the unlawful act itself; there is no additional requirement that the defendant foresaw that harm might result from that act, still less that they foresaw the risk of death. It is enough that a sober and reasonable person would have recognised the danger.",
+              "significance": "Newbury and Jones removes any lingering doubt that subjective foresight of harm is required. It confirms unlawful act manslaughter as constructive liability in its purest form, and it is regularly tested precisely because students expect a subjective element that simply isn't there."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often argue that because the defendants 'didn't foresee anyone would be hurt', they lack the necessary mens rea for manslaughter.",
+            "whyItsWrong": "There is no such requirement. The only mens rea needed is that for the underlying unlawful act (here, an intentional or reckless act of criminal damage/endangerment). Whether harm or death was foreseen by the defendant is simply not part of the test after Newbury and Jones."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-08-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "What must the prosecution prove about the defendant's foresight of harm in unlawful act manslaughter?",
+          "options": ["That the defendant foresaw some harm might result", "That the defendant foresaw serious harm or death might result", "Nothing — foresight of harm by the defendant is not part of the test"],
+          "correctIndex": 2,
+          "trapExplanation": "It's tempting to think some level of foresight must be proved, because it feels unfair otherwise — but Newbury and Jones is explicit that dangerousness is judged objectively, and the defendant's own foresight of harm is irrelevant."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The other route: killing by carelessness",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Everything so far has assumed the defendant committed a separate unlawful act — a punch, a robbery, an act of criminal damage. Gross negligence manslaughter needs none of that. It can be committed by someone doing a lawful job badly enough that a patient, client, or member of the public dies as a result.",
+          "The leading case involves an anaesthetist who failed to notice that a tube supplying oxygen to a patient during an eye operation had become disconnected. The patient suffered a cardiac arrest and died. There was no unlawful act at all — administering anaesthesia is lawful. The House of Lords instead set out four elements that must all be established, and they are worth learning as a fixed sequence.",
+          "Treat this as a checklist you run through in order: first, was there a duty of care at all? Second, was that duty breached? Third, at the time of the breach, did the breach give rise to an obvious and serious risk of death (not merely of injury)? Fourth — and this is the element juries are directed on last — was the breach, in the jury's judgment, so bad as to be characterised as gross, that is, criminal?"
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The four elements of gross negligence manslaughter (Adomako)",
+            "points": [
+              "A duty of care owed by the defendant to the victim",
+              "Breach of that duty, judged by the ordinary standards of negligence",
+              "A risk of death from the breach that was obvious and serious at the time of the breach",
+              "A jury finding that the breach was so bad, in all the circumstances, as to amount to a criminal act or omission — 'gross'"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Adomako",
+            "citation": "[1995] 1 AC 171",
+            "court": "House of Lords",
+            "year": 1995,
+            "factsShort": "An anaesthetist failed to notice a disconnected oxygen tube for several minutes during surgery; the patient suffered cardiac arrest and died.",
+            "ratioShort": "Gross negligence manslaughter requires a duty of care, breach, an obvious and serious risk of death, and a jury finding the breach 'gross' — i.e. criminal.",
+            "expanded": {
+              "facts": "Adomako was the anaesthetist during an eye operation. A tube delivering oxygen to the patient became disconnected. Adomako failed to notice the disconnection for around nine minutes, during which several alarms sounded and the patient's condition visibly deteriorated. The patient suffered a cardiac arrest and died.",
+              "judgmentExtract": "The House of Lords held that the ordinary principles of the law of negligence apply to ascertain whether a duty of care existed and was breached, and that the jury must then go on to decide, having regard to the risk of death, whether the defendant's conduct was so bad in all the circumstances as to amount, in their judgment, to a criminal act or omission.",
+              "significance": "Adomako remains the leading modern authority and gives the offence its structure. It replaced an earlier, more confused 'recklessness' formulation with a clearer, if still famously circular, test: the jury decides gross negligence by asking whether it was 'gross' enough to be a crime."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-08-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the four Adomako elements in the order a court works through them.",
+          "items": ["Was a duty of care owed?", "Was that duty breached?", "Did the breach carry an obvious and serious risk of death at the time?", "Was the breach so bad as to be 'gross' — criminal?"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence. Each element gates the next — there's no point asking whether a breach was 'gross' until you've established a duty, a breach, and an obvious and serious risk of death first.",
+          "feedbackIncorrect": "Check the order again — duty comes before breach, and 'obvious and serious risk of death' has to be established before a jury is even asked whether the breach was gross enough to be criminal."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Gross negligence at the edges: hindsight and causation",
+        "voice": "direct — sets up the traps the tests will probe",
+        "body": [
+          "Two recent Court of Appeal decisions sharpen Adomako in ways examiners like to test. The first: an optometrist failed to carry out a required examination that would have revealed signs of a life-threatening condition in a child patient, who later died. Her conviction was quashed. The Court of Appeal held that the 'obvious and serious risk of death' must be assessed on the facts as they were, or reasonably ought to have been, known at the time of the breach — not on what a properly conducted examination would have shown, if that examination is itself the thing that was never done.",
+          "In other words: you cannot bootstrap an obvious risk into existence using information the defendant's own negligence prevented from ever coming to light. The risk has to have been obvious prospectively, at the moment of breach, on the facts genuinely available then.",
+          "The second case involved a man whose partner died from a drug reaction at a festival after he owed her a duty of care and failed to get her help quickly enough. His conviction was also quashed — this time on causation. Even where a jury could find the breach gross, the prosecution must still prove, to the criminal standard, that the breach actually caused the death: that earlier intervention would, on the balance of medical evidence, probably have saved her. A grossly negligent breach that makes no provable difference to the outcome is not manslaughter."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Two extra hurdles after Adomako",
+            "description": "Rose and Broughton add timing and causation checks to the basic four-element test.",
+            "nodes": [
+              { "id": "risk", "label": "Is the obvious and serious risk of death judged only on facts known/knowable at the moment of breach? (Rose)" },
+              { "id": "risk-yes", "label": "Yes — information the breach itself prevented from surfacing cannot be used to manufacture 'obviousness'" },
+              { "id": "causation", "label": "Even if breach is gross, did it cause death, to the criminal standard? (Broughton)" },
+              { "id": "causation-no", "label": "If the prosecution cannot prove earlier/different action would probably have prevented death, causation fails and there is no manslaughter" }
+            ],
+            "edges": [
+              { "from": "risk", "to": "risk-yes", "label": "Rose" },
+              { "from": "risk-yes", "to": "causation", "label": "then" },
+              { "from": "causation", "to": "causation-no", "label": "Broughton" }
+            ],
+            "textAlternative": "Two further checks sit on top of the basic Adomako test. First, from Rose: the obvious and serious risk of death is judged only on what was known or reasonably knowable at the time of breach — you cannot use information that the breach itself (e.g. a missed examination) prevented from coming to light. Second, from Broughton: even a gross breach must be proved, to the criminal standard, to have actually caused death — if the prosecution cannot show that different action would probably have prevented it, manslaughter is not made out."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Broughton",
+            "citation": "[2020] EWCA Crim 1093",
+            "court": "Court of Appeal",
+            "year": 2020,
+            "factsShort": "D's partner died from a drug-related reaction at a festival after he, owing her a duty of care, delayed calling for medical help.",
+            "ratioShort": "Causation for gross negligence manslaughter must be proved to the criminal standard — a probability, on the medical evidence, that different conduct would have prevented death.",
+            "expanded": {
+              "facts": "Broughton and his girlfriend took drugs together at a music festival. She began to show signs of a serious adverse reaction. Broughton, who owed her a duty of care in the circumstances, failed to call for medical assistance as promptly as he should have. She died. The prosecution could not establish, to the criminal standard, that prompt medical intervention would probably have saved her, given the uncertainty in the medical evidence about how the reaction would have progressed.",
+              "judgmentExtract": "The Court of Appeal quashed the conviction, holding that causation in gross negligence manslaughter is not relaxed simply because the breach is otherwise capable of being found gross: the jury must be sure that the breach caused the death, applying the ordinary criminal standard to the question of whether different conduct would probably have prevented it.",
+              "significance": "Broughton is a reminder that gross negligence manslaughter is not simply 'very bad negligence plus a death' — causation remains a discrete, fully-proved element, and medical uncertainty about what would have happened can be fatal to the prosecution's case even where the breach itself is plainly bad."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-08-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario turns on the Rose point (timing of the 'obvious and serious risk' assessment) rather than the Broughton point (causation)?",
+          "scenarioA": "A GP fails to carry out a routine blood test that would have revealed a life-threatening condition; the prosecution argues the risk was obvious because the test, had it been done, would have shown it clearly.",
+          "scenarioB": "A lifeguard fails to respond promptly to a struggling swimmer who has an undiagnosed cardiac condition; medical evidence cannot say whether a faster response would probably have saved the swimmer.",
+          "correctScenario": "A",
+          "explanation": "Scenario A is Rose: the prosecution is trying to use information the missed test itself would have revealed to manufacture an 'obvious' risk that didn't exist on the facts actually known at the time. Scenario B is a Broughton-style causation problem — the breach may be gross, but there's no proof it made the difference."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the two distinct routes to a conviction for involuntary manslaughter covered in this lesson.",
+      "acceptableAnswers": ["unlawful act manslaughter and gross negligence manslaughter", "constructive manslaughter and gross negligence manslaughter"],
+      "modelAnswer": "Unlawful act (constructive) manslaughter, and gross negligence manslaughter."
+    },
+    {
+      "itemId": "crime-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "According to R v Church, what threshold of harm must a sober and reasonable person recognise the unlawful act as risking?",
+      "options": ["At least some harm", "Serious harm only", "A risk of death"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-08-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of these is NOT a required element of gross negligence manslaughter under Adomako?",
+      "options": ["A duty of care", "Breach of that duty", "Proof that the defendant intended some harm", "An obvious and serious risk of death at the time of breach"],
+      "correctIndex": 2,
+      "trapExplanation": "Gross negligence manslaughter requires no proof of intent to harm at all — it is a negligence-based offence, not one requiring any subjective intention towards the victim."
+    },
+    {
+      "itemId": "crime-08-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Order the reasoning steps a court follows in an unlawful act manslaughter case.",
+      "items": ["Identify a separate unlawful act committed by the defendant", "Ask whether a sober and reasonable person would view that act as dangerous (risking some harm)", "Ask whether the unlawful, dangerous act caused death", "Convict — no further proof of foresight of harm is required"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-08-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How does the 'dangerousness' requirement in unlawful act manslaughter differ from the mens rea for murder?",
+      "options": ["Dangerousness is assessed objectively and needs no proof of the defendant's foresight; murder requires the defendant's own intention to kill or cause GBH", "They are the same test applied to different offences", "Dangerousness requires proof of an intention to kill, just like murder"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-08-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Adomako, highlight the sentence stating the ratio on how a jury decides 'gross'.",
+      "passage": "The ordinary principles of the law of negligence apply to ascertain whether the defendant has been in breach of a duty of care. Having done so, the jury must go on to consider whether that breach of duty should be characterised as gross negligence and therefore as a crime. This will depend on the seriousness of the breach in all the circumstances in which the defendant was placed when it occurred.",
+      "ratioSentence": "This will depend on the seriousness of the breach in all the circumstances in which the defendant was placed when it occurred."
+    },
+    {
+      "itemId": "crime-08-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Two friends have a play-fight; one gently pushes the other, who unexpectedly stumbles, hits their head on a low table, and dies. A sober and reasonable bystander would view the push as trivial and entirely non-dangerous. Is unlawful act manslaughter made out?",
+      "options": ["No — the act was not objectively dangerous, so the dangerousness limb fails regardless of the tragic outcome", "Yes — because a death resulted, the act is automatically treated as dangerous", "Yes — but only because the push was technically a battery"],
+      "correctIndex": 0,
+      "explanation": "Even though the push was an unlawful act (a battery), the dangerousness limb of Church requires that a sober and reasonable observer recognise a risk of some harm — a gentle, playful push that no reasonable onlooker would see as risky fails this test, however tragic the actual outcome."
+    },
+    {
+      "itemId": "crime-08-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A group mugs a victim, snatching a bag and shoving him to the ground. He hits his head on the pavement and dies. A sober and reasonable bystander would plainly see the shove as risking some physical harm. Which route to manslaughter is most obviously made out?",
+      "options": ["Unlawful act manslaughter", "Gross negligence manslaughter", "Neither — this requires proof of intent to kill"],
+      "correctIndex": 0,
+      "explanation": "This is textbook unlawful act manslaughter: the mugging (theft/assault) is the unlawful act, it is objectively dangerous under Church, and it caused death. There is no need to show the group foresaw the risk of death, or even of any harm."
+    },
+    {
+      "itemId": "crime-08-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that a court would treat as most relevant to whether the 'sober and reasonable bystander' would have foreseen harm.",
+      "scenarioText": "Two teenagers throw a snowball-sized rock from a footbridge onto a busy motorway below, aiming at nothing in particular; it smashes through a windscreen and the driver, startled, crashes and dies.",
+      "tappableSpans": ["Two teenagers", "throw a snowball-sized rock", "from a footbridge onto a busy motorway", "the driver, startled, crashes and dies"],
+      "correctSpan": "from a footbridge onto a busy motorway",
+      "explanation": "The location and context — throwing an object onto fast-moving traffic below — is what makes the danger objectively apparent to a reasonable bystander, independent of what the teenagers themselves intended or foresaw."
+    },
+    {
+      "itemId": "crime-08-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is better analysed as gross negligence manslaughter rather than unlawful act manslaughter?",
+      "scenarioA": "A locksmith, called to a lawful job, badly rewires a client's electrical panel out of carelessness, and the client is electrocuted and dies weeks later using it.",
+      "scenarioB": "A man punches another during an argument outside a pub; the victim falls, hits his head, and dies.",
+      "correctScenario": "A",
+      "explanation": "A involves no unlawful act at all — rewiring a panel is lawful, just done negligently — so it can only be analysed through duty, breach, obvious and serious risk of death, and grossness. B is a straightforward unlawful act (the punch/battery) analysed under Church."
+    },
+    {
+      "itemId": "crime-08-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A security guard uses a chokehold on a shoplifter that a reasonable bystander would immediately recognise as risking serious harm; the shoplifter dies. Is the dangerousness limb of unlawful act manslaughter satisfied?",
+      "options": ["Yes — an objectively dangerous unlawful act is present", "No — the guard must have specifically foreseen death"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-08-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A care worker, responsible for a resident with known swallowing difficulties, ignores the resident's care plan and leaves solid food unsupervised. The resident chokes and dies. Analyse whether gross negligence manslaughter is made out.",
+      "factsToOrder": [
+        "The care worker owes a professional duty of care to the resident",
+        "The care plan specifically flags swallowing difficulties",
+        "The care worker leaves solid food unsupervised in breach of that plan",
+        "The risk of death from choking was obvious and serious at the time, given the known difficulties",
+        "The resident chokes and dies as a result"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the care worker's conduct amounts to gross negligence manslaughter.",
+        "rule": "Adomako requires a duty of care, breach of that duty, an obvious and serious risk of death at the time of breach, and a jury finding the breach so bad as to be 'gross' — criminal.",
+        "application": "A duty of care plainly arises from the professional care relationship. Ignoring a documented care plan addressing a known choking risk is a clear breach. Because the resident's swallowing difficulties were known and documented, the risk of death from unsupervised solid food was obvious and serious at the time of the breach, not merely discoverable with hindsight. A jury would very likely characterise ignoring a documented, specific safety instruction as gross.",
+        "conclusion": "On these facts, all four Adomako elements are likely made out, and gross negligence manslaughter is the appropriate charge."
+      }
+    },
+    {
+      "itemId": "crime-08-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "What did Rose add to the Adomako framework?",
+      "options": ["That the obvious and serious risk of death must be assessed on facts known or reasonably knowable at the time of breach, not with hindsight from what a missed step would have revealed", "That gross negligence manslaughter no longer requires a duty of care", "That causation is no longer a required element"],
+      "correctIndex": 0,
+      "trapExplanation": "Students sometimes think Rose loosened the test in the prosecution's favour. It did the opposite — it prevented the risk of death being treated as 'obvious' using information that only the defendant's own negligent omission would have surfaced."
+    },
+    {
+      "itemId": "crime-08-test-14",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a defendant's own subjective belief that their act was harmless is relevant to unlawful act manslaughter?",
+      "sliderLabels": ["Highly relevant", "Not relevant at all"],
+      "correctPosition": "Not relevant at all",
+      "explanation": "After Church and Newbury and Jones, dangerousness is judged wholly objectively through the eyes of a sober and reasonable bystander. What the defendant personally believed or foresaw about harm plays no part in the test."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is picking a route to manslaughter without checking whether its distinct ingredients are actually present — treating any careless death as 'gross negligence' or any death following a crime as 'unlawful act' manslaughter, without running the Church test or the four Adomako elements in full.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.homicide.involuntary-manslaughter"
+  }
+}

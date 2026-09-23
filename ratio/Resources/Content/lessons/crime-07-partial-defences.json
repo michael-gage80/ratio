@@ -1,0 +1,385 @@
+{
+  "lessonId": "crime-07",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 7,
+  "topicId": "crime.homicide.partial-defences",
+  "title": "Partial defences to murder",
+  "subtitle": "Loss of control and diminished responsibility",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain that loss of control and diminished responsibility are partial defences available only to murder, reducing a conviction to voluntary manslaughter rather than producing an acquittal",
+    "State the three elements of loss of control under ss 54-55 of the Coroners and Justice Act 2009, including the statutory exclusion of sexual infidelity as a qualifying trigger",
+    "State the elements of diminished responsibility under s 2 of the Homicide Act 1957 (as amended) and apply the meaning of 'substantially' impaired to a fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Coroners and Justice Act 2009, ss 52-56", "role": "Abolishes the old common law defence of provocation and creates loss of control and the amended diminished responsibility test" },
+    { "citation": "Homicide Act 1957, s 2 (as amended)", "role": "Statutory basis for diminished responsibility" },
+    { "citation": "R v Clinton [2012] EWCA Crim 2", "role": "Clarifies how the sexual infidelity exclusion interacts with other qualifying triggers in the same facts" },
+    { "citation": "R v Dawes [2013] EWCA Crim 322", "role": "Confirms a defendant cannot rely on a loss of control substantially caused by anger they themselves provoked" },
+    { "citation": "R v Golds [2016] UKSC 61", "role": "Supreme Court settles the meaning of 'substantially' impaired for diminished responsibility" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "These are the two defences students most often reach for on instinct and then apply wrong — because the instinct ('D was provoked' or 'D wasn't in their right mind') is usually right, but the statutory tests are narrower and more technical than the instinct suggests. Where the profile shows application lagging behind knowledge, this note appears: 'You know the names of both defences — this lesson is about the words examiners actually test.'",
+    "profileHooks": {
+      "weakApplication": "This lesson is built for you. Every part ends with a fact pattern — spend your time there, not re-reading the statutory wording you already know.",
+      "weakKnowledge": "Go slowly through Parts 1, 2 and 4 before the scenarios speed up. You need the exact statutory elements in hand before you can spot them hiding in facts."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two defendants, both convicted at trial of murder on the same night. One walks out with a discretionary sentence and a conviction for manslaughter instead. The facts that separate them are not about whether they killed — both did — but about a narrow, heavily engineered set of statutory conditions this lesson exists to map precisely."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Partial, not general: what these defences actually do",
+        "voice": "direct — plain and procedural, setting the ground rules before any doctrine",
+        "body": [
+          "Start with what loss of control and diminished responsibility are not. Neither is a general defence to any offence. Both apply only where the defendant would otherwise be convicted of murder — they exist nowhere else in the criminal law. Raise either successfully against a manslaughter or assault charge and it simply has no application.",
+          "Second: neither produces an acquittal. A defendant who successfully raises loss of control or diminished responsibility is not found not guilty — they are convicted of voluntary manslaughter instead of murder. That distinction matters enormously downstream, because it is exactly where the mandatory sentence from the previous lesson stops applying. Voluntary manslaughter carries no mandatory sentence at all; the judge has full discretion, from a suspended sentence up to life imprisonment, calibrated to the facts.",
+          "Third, a point of legal history worth carrying forward: loss of control is not a rebrand of the old common law defence of provocation. The Coroners and Justice Act 2009 abolished provocation outright — s 56(1) repeals the old statutory provocation provision in s 3 of the Homicide Act 1957 and abolishes the common law defence entirely — and replaced it with a new, narrower, wholly statutory scheme. Anything you know about 'provocation' from older case law is historical background, not the current test."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Partial defence",
+            "definition": "A defence that, if successful, does not produce an acquittal but instead reduces the offence to a lesser one. Loss of control and diminished responsibility both reduce murder to voluntary manslaughter — they never apply to any other charge."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Murder vs. voluntary manslaughter — what actually changes",
+            "points": [
+              "Conviction: 'murder' becomes 'voluntary manslaughter' — the killing itself is not excused",
+              "Sentence: the mandatory life sentence (Murder (Abolition of Death Penalty) Act 1965, s 1(1)) no longer applies",
+              "The judge regains full sentencing discretion, informed by the facts of the killing and the partial defence found",
+              "Both defences are only available where D would otherwise be guilty of murder"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "If a defendant successfully raises loss of control at trial, what is the resulting verdict?",
+          "options": ["Not guilty of any offence", "Guilty of voluntary manslaughter, not murder"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — a partial defence reduces the label and unlocks sentencing discretion; it never produces an acquittal.",
+          "feedbackIncorrect": "Not an acquittal. 'Partial' means it reduces the offence from murder to voluntary manslaughter — the killing is still a criminal conviction, just not a murder conviction."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Loss of control: the three statutory elements",
+        "voice": "structural — a reference part built around the bare words of the statute",
+        "body": [
+          "Loss of control is defined entirely by ss 54-55 of the Coroners and Justice Act 2009, and every problem question on this defence can be answered by working through three elements in order.",
+          "First, D's acts or omissions in killing resulted from D's loss of self-control (s 54(1)(a)). Note what s 54(2) adds: the loss of control need not be sudden — a defence that would have looked impossible under the old 'sudden and temporary' provocation rule can now succeed even where control snapped after a slow build-up, provided the other elements are met.",
+          "Second, the loss of control had a 'qualifying trigger' within the meaning of s 55. There are two, and only two: the fear trigger (D's fear of serious violence from the victim against D or another identified person, s 55(3)) and the anger trigger (things done or said, or both, which constituted circumstances of an extremely grave character and caused D to have a justifiable sense of being seriously wronged, s 55(4)). Ordinary jealousy, a bad mood, or minor insults do not reach this bar — 'extremely grave' and 'justifiable' are doing deliberately heavy lifting in that sentence.",
+          "Third — and this is the element juries actually decide, not judges — a person of D's sex and age, with a normal degree of tolerance and self-restraint and in the circumstances of D, might have reacted in the same or a similar way (s 54(1)(c)). This is an objective standard with D's sex, age and circumstances built into the comparator, but ordinary tolerance and self-restraint held constant. D's own short temper, or D's own history of jealousy, does not lower that bar."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Coroners and Justice Act 2009, s 54(1)",
+            "text": "Where a person ('D') kills or is a party to the killing of another ('V'), D is not to be convicted of murder if (a) D's acts and omissions in doing or being a party to the killing resulted from D's loss of self-control, (b) the loss of self-control had a qualifying trigger, and (c) a person of D's sex and age, with a normal degree of tolerance and self-restraint and in the circumstances of D, might have reacted in the same or in a similar way to D.",
+            "elements": ["Loss of self-control (need not be sudden — s 54(2))", "A qualifying trigger under s 55", "The objective 'normal person' standard"]
+          },
+          {
+            "type": "statuteBlock",
+            "citation": "Coroners and Justice Act 2009, s 55(6)(c)",
+            "text": "In determining whether a loss of self-control had a qualifying trigger... the fact that a thing done or said constituted sexual infidelity is to be disregarded.",
+            "elements": ["Sexual infidelity, standing alone, cannot found the anger qualifying trigger"]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-07-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 54(2) of the Coroners and Justice Act 2009, which statement about the loss of self-control is correct?",
+          "options": ["It must be sudden and immediate, as under the old common law", "It need not be sudden — a delayed loss of control can still qualify", "It must occur within 24 hours of the triggering event"],
+          "correctIndex": 1
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Two cases that shaped the trigger requirement",
+        "voice": "case-narrative — presents each case's holding plainly, without dwelling on distressing detail",
+        "body": [
+          "R v Clinton [2012] EWCA Crim 2 is the leading authority on how the sexual infidelity exclusion actually operates in practice, and it is more nuanced than the bare statute suggests. The defendant killed his wife during the breakdown of their marriage; the evidence at trial included the wife's comments about her infidelity alongside separate evidence — about the defendant's mental state, his financial difficulties, and taunts directed at him as a father — that was capable of amounting to a qualifying trigger in its own right. The trial judge excluded the infidelity evidence entirely, on the view that s 55(6)(c) required it. The Court of Appeal held that was too strict: sexual infidelity cannot, by itself, constitute a qualifying trigger, but where it is genuinely integral to and forms part of the context of other circumstances that do qualify, it should not be artificially stripped out of the jury's view of the whole picture. This distinction — infidelity alone excluded, infidelity as inseparable context permitted — remains genuinely contested, and examiners test it precisely because reasonable lawyers disagree about where the line falls.",
+          "R v Dawes [2013] EWCA Crim 322 addresses a different way the trigger requirement can fail: where the defendant's own conduct substantially caused the situation they say provoked them. The Court of Appeal confirmed that a defendant who instigates a violent confrontation, or whose own aggression drives the escalation, will generally struggle to rely on the anger that followed as a qualifying trigger — the statute is not there to reward defendants for the consequences of trouble they started. The case also confirms, consistently with s 55(6)(c), that ordinary sexual jealousy on its own remains outside the defence."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Clinton",
+            "citation": "[2012] EWCA Crim 2",
+            "court": "Court of Appeal",
+            "year": 2012,
+            "factsShort": "D killed his wife during the breakdown of their marriage; evidence of her admitted infidelity was intertwined with separate evidence going to D's mental state and other alleged provocation.",
+            "ratioShort": "Sexual infidelity alone cannot found the anger qualifying trigger, but where it is inseparable from other circumstances capable of qualifying, it need not be excluded from the jury's view of the whole context.",
+            "expanded": {
+              "facts": "The defendant and his wife were separated and the marriage was ending acrimoniously. At trial, evidence going to a possible qualifying trigger included his wife's taunts, which touched on her infidelity but also on other matters concerning the defendant's state of mind and role as a father. The trial judge directed the jury to disregard the infidelity evidence entirely under s 55(6)(c).",
+              "judgmentExtract": "The Court of Appeal held that s 55(6)(c) excludes sexual infidelity only as a freestanding trigger. Where infidelity forms an integral part of a wider context that includes conduct capable of amounting to a qualifying trigger in its own right, the jury should be permitted to consider the whole picture rather than an artificially edited version of it.",
+              "significance": "Clinton is the authority examiners return to for testing whether students understand that the infidelity exclusion is narrower than it first appears — it excludes infidelity as a trigger in itself, not evidence of infidelity that forms part of a wider, otherwise-qualifying context."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often conclude from Clinton that sexual infidelity can now found a qualifying trigger after all, or conversely that it can never be mentioned in any answer involving infidelity.",
+            "whyItsWrong": "Neither extreme is right. Section 55(6)(c) still excludes infidelity, standing alone, as a trigger — that has not changed. Clinton only permits it to be considered where it is genuinely bound up with other conduct that independently qualifies. State the general exclusion first, then the Clinton qualification, in that order."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-07-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is a jury most likely to be permitted to consider evidence of sexual infidelity when assessing whether there was a qualifying trigger?",
+          "scenarioA": "D discovers a single text message suggesting a partner's infidelity and, with no other aggravating conduct by the partner, kills them that evening.",
+          "scenarioB": "D's partner both admits infidelity and, in the same confrontation, makes cruel and sustained threats to falsely report D to the police as a way of taking the children away, which D says pushed D over the edge.",
+          "correctScenario": "B",
+          "explanation": "In A, infidelity stands alone — precisely what s 55(6)(c) excludes. In B, the infidelity is intertwined with separate conduct (the threats around the children) that is independently capable of amounting to a qualifying trigger, which is the Clinton scenario: the infidelity need not be artificially stripped out of that wider context."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What if the explanation lies in D, not in what was done to D?",
+        "voice": "Socratic — poses the conceptual pivot as a question, then answers it with the statute",
+        "body": [
+          "Everything so far has asked what was done to the defendant — a threat, a betrayal, a grave wrong. Diminished responsibility asks a different question entirely: what if the explanation for the killing lies in the defendant's own mental functioning, regardless of anything the victim did at all? Could that ever reduce murder to manslaughter, with no trigger from outside required?",
+          "Section 2 of the Homicide Act 1957, as substituted by s 52 of the Coroners and Justice Act 2009, answers yes — subject to three conjunctive conditions. D must have been suffering from an abnormality of mental functioning; that abnormality must arise from a recognised medical condition; and it must substantially impair D's ability to do at least one of three things: understand the nature of their conduct, form a rational judgment, or exercise self-control. Finally, the abnormality must provide an explanation for D's acts or omissions in doing the killing.",
+          "Notice what is absent: no requirement that the victim did anything at all, no qualifying trigger, no objective comparator. This is a defence built entirely around the defendant's own psychiatric or medical state, established (in practice) through expert evidence — and that is exactly why the word 'substantially' in the middle of the test carries so much weight. Too generous a reading and almost any diagnosed condition reduces murder to manslaughter; too strict a reading and the defence becomes unworkable. Part 4 of this lesson exists because the courts spent decades disagreeing about where that word should sit."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Homicide Act 1957, s 2(1) (as substituted by Coroners and Justice Act 2009, s 52)",
+            "text": "A person ('D') who kills or is a party to the killing of another is not to be convicted of murder if D was suffering from an abnormality of mental functioning which (a) arose from a recognised medical condition, (b) substantially impaired D's ability to do one or more of the things mentioned in subsection (1A), and (c) provides an explanation for D's acts and omissions in doing or being a party to the killing.",
+            "elements": ["Abnormality of mental functioning", "Arising from a recognised medical condition", "Substantially impairing D's ability to understand conduct, form rational judgment, or exercise self-control", "Providing an explanation for the killing"]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Abnormality of mental functioning",
+            "definition": "A state of mind so different from that of an ordinary person that a reasonable person would term it abnormal — the successor concept to the pre-2009 'abnormality of mind', now tied expressly to a recognised medical condition established by expert evidence."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-07-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, summarising R v Golds [2016] UKSC 61, highlight the sentence that states the ratio on the meaning of 'substantially'.",
+          "passage": "Lower courts had given conflicting guidance on the word 'substantially': some treated any impairment beyond the merely trivial as sufficient, while others treated it as requiring something closer to a considerable or weighty degree of impairment. The Supreme Court held that 'substantially' should ordinarily be left to the jury with its normal English meaning and no further direction. Where a jury does ask for elaboration, the correct direction is that 'substantial' means important or weighty, and is a materially higher threshold than 'more than merely trivial'. The impairment need not be total, but a direction suggesting anything beyond the trivial will do is wrong in law.",
+          "ratioSentence": "Where a jury does ask for elaboration, the correct direction is that 'substantial' means important or weighty, and is a materially higher threshold than 'more than merely trivial'."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Applying the tests without collapsing them into each other",
+        "voice": "argumentative — makes the case for keeping the two defences analytically separate, then tests that discipline",
+        "body": [
+          "The single most costly habit in answers to this topic is blending the two defences together — reaching for diminished responsibility's language of 'abnormality' inside a loss of control analysis, or reaching for loss of control's 'qualifying trigger' inside a diminished responsibility analysis. They are structurally different defences answering different questions, and an examiner reading a blended answer will assume the underlying understanding is blended too.",
+          "The discipline worth arguing for is this: identify which defence the facts actually raise before you write a single sentence of law. Facts about what the victim did or said to the defendant — a threat, an admission, a grave insult — point towards loss of control and its qualifying-trigger analysis. Facts about the defendant's own diagnosed condition — a documented psychiatric illness, a cognitive impairment, an established medical history — point towards diminished responsibility. Many real fact patterns raise both, and a strong answer runs them as two fully separate analyses, each with its own elements, rather than merging the vocabulary.",
+          "It's also worth remembering these defences can be run together at trial and a jury can be asked to consider both in the alternative — but the analytical separation on paper has to hold even when the facts overlap, because the elements genuinely do not share a common structure. Losing self-control because of an admitted infidelity is not the same inquiry as being substantially impaired by a recognised medical condition, even where both happen to be true of the same defendant on the same night."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Which defence do these facts raise?",
+            "description": "A decision path for separating loss of control from diminished responsibility before applying either.",
+            "nodes": [
+              { "id": "start", "label": "Does D point to something the victim did or said that triggered the loss of control?" },
+              { "id": "yes-trigger", "label": "Yes → analyse loss of control: s 54(1) self-control, s 55 qualifying trigger, objective standard" },
+              { "id": "no-trigger", "label": "No → does D have a recognised medical condition affecting understanding, judgment or self-control?" },
+              { "id": "yes-condition", "label": "Yes → analyse diminished responsibility: abnormality, recognised medical condition, substantial impairment, explanation" },
+              { "id": "no-condition", "label": "No → neither partial defence is available on these facts" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-trigger", "label": "Yes" },
+              { "from": "start", "to": "no-trigger", "label": "No" },
+              { "from": "no-trigger", "to": "yes-condition", "label": "Yes" },
+              { "from": "no-trigger", "to": "no-condition", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the defendant points to something the victim did or said as the trigger — if so, analyse loss of control under s 54(1) and s 55. If not, ask whether the defendant has a recognised medical condition affecting their understanding, judgment or self-control — if so, analyse diminished responsibility under Homicide Act 1957 s 2. If neither applies, neither partial defence is available on the facts given."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-07-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Nadia, who has a long-documented and medically diagnosed psychotic disorder, kills her housemate during an episode in which she genuinely (though wrongly) believed the housemate was about to kill her. There is no evidence of any threat, insult or act by the housemate that in fact occurred. Which partial defence, if any, is best supported on these facts?",
+          "options": ["Loss of control — Nadia's fear qualifies as a fear trigger under s 55(3)", "Diminished responsibility — the facts point to an abnormality of mental functioning arising from a recognised medical condition, not to anything the victim actually did", "Neither defence is available on any facts involving a documented medical condition"],
+          "correctIndex": 1,
+          "explanation": "Loss of control's fear trigger requires fear of serious violence from the victim — nothing here shows the housemate did anything at all; Nadia's fear arose entirely from her own psychotic episode. That points squarely to diminished responsibility: an abnormality of mental functioning from a recognised medical condition, potentially substantially impairing her understanding of her conduct, and explaining the killing."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-07-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the two partial defences to murder covered in this lesson.",
+      "acceptableAnswers": ["loss of control and diminished responsibility"],
+      "modelAnswer": "Loss of control (Coroners and Justice Act 2009, ss 54-56) and diminished responsibility (Homicide Act 1957, s 2, as amended)."
+    },
+    {
+      "itemId": "crime-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What is the result of a successful partial defence to murder?",
+      "options": ["Acquittal", "Conviction for voluntary manslaughter instead of murder"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "crime-07-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "D is charged with unlawful act manslaughter (not murder). Can D raise loss of control as a defence?",
+      "options": ["Yes — it applies to any homicide offence", "No — loss of control is available only where D would otherwise be guilty of murder", "Yes, but only with the court's permission"],
+      "correctIndex": 1,
+      "trapExplanation": "Both partial defences exist solely to reduce murder to voluntary manslaughter. They have no role at all where the charge is already something other than murder."
+    },
+    {
+      "itemId": "crime-07-test-04",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under Homicide Act 1957, s 2(1), which of the following is NOT one of the three abilities that must be substantially impaired?",
+      "options": ["The ability to understand the nature of D's conduct", "The ability to form a rational judgment", "The ability to feel remorse after the killing", "The ability to exercise self-control"],
+      "correctIndex": 2,
+      "trapExplanation": "Remorse after the fact plays no role in the statutory test. The three abilities are understanding the nature of conduct, forming a rational judgment, and exercising self-control."
+    },
+    {
+      "itemId": "crime-07-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Put the three elements of the loss of control test in the order set out in s 54(1) of the Coroners and Justice Act 2009.",
+      "items": ["D's killing resulted from a loss of self-control", "The loss of self-control had a qualifying trigger under s 55", "A person of D's sex and age with normal tolerance and self-restraint might have reacted similarly"],
+      "correctOrder": [0, 1, 2]
+    },
+    {
+      "itemId": "crime-07-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below on R v Dawes, highlight the sentence that states the ratio.",
+      "passage": "The appellant argued that his own escalating aggression during the confrontation should not prevent him relying on loss of control. The Court of Appeal disagreed. A defendant who substantially causes or instigates the very situation said to constitute the qualifying trigger cannot, in general, rely on the resulting loss of control as a defence — the statute is not designed to excuse the consequences of trouble the defendant himself started.",
+      "ratioSentence": "A defendant who substantially causes or instigates the very situation said to constitute the qualifying trigger cannot, in general, rely on the resulting loss of control as a defence — the statute is not designed to excuse the consequences of trouble the defendant himself started."
+    },
+    {
+      "itemId": "crime-07-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that sexual infidelity, on its own and with no other qualifying conduct present, can found the anger qualifying trigger under s 55?",
+      "sliderLabels": ["Never on its own — excluded by s 55(6)(c)", "Always sufficient on its own"],
+      "correctPosition": "never on its own",
+      "explanation": "Section 55(6)(c) excludes sexual infidelity, standing alone, from founding a qualifying trigger. Clinton only permits it to be considered where it is inseparable from other, independently qualifying circumstances — it does not remove the general exclusion."
+    },
+    {
+      "itemId": "crime-07-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is more likely to satisfy the anger qualifying trigger under s 55(4)?",
+      "scenarioA": "D's partner makes a single sarcastic comment during an argument about household chores, and D kills the partner minutes later.",
+      "scenarioB": "D's partner subjects D to a sustained campaign of threats to falsely accuse D of a serious crime unless D hands over the family home, and D kills the partner during a later confrontation about it.",
+      "correctScenario": "B",
+      "explanation": "A falls well short of 'extremely grave' circumstances producing a 'justifiable sense of being seriously wronged' — an ordinary domestic sarcastic remark does not meet that bar. B, involving sustained and serious threats, is far more capable of meeting the statutory threshold, subject to the objective test in s 54(1)(c)."
+    },
+    {
+      "itemId": "crime-07-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that most clearly establishes a fear trigger, rather than an anger trigger, under s 55.",
+      "scenarioText": "During an argument, D's partner suddenly produces a knife and says 'I am going to kill you right now.' D, terrified, grabs a nearby object and strikes the partner, who dies from the injury.",
+      "tappableSpans": ["During an argument", "suddenly produces a knife", "I am going to kill you right now", "grabs a nearby object"],
+      "correctSpan": "I am going to kill you right now",
+      "feedbackCorrect": "That threat, combined with producing the knife, is the clearest evidence of D's fear of serious violence — the fear trigger under s 55(3) — rather than the anger trigger, which requires grave conduct causing a justifiable sense of being wronged.",
+      "feedbackIncorrect": "Look for the fact showing D was afraid of serious violence directed at D, rather than a fact about D's anger. The explicit threat is the clearest marker of the fear trigger."
+    },
+    {
+      "itemId": "crime-07-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "D, a 19-year-old, loses self-control after a grave and sustained provocation and kills V. At trial, D argues that because D has an unusually short temper, the objective standard in s 54(1)(c) should be adjusted to D's own lower level of self-restraint. Is this argument correct?",
+      "options": ["Yes — the objective test is fully personalised to D's own characteristics", "No — the comparator has D's sex and age built in, but a normal degree of tolerance and self-restraint is held constant regardless of D's own temperament", "No — the objective test is entirely abstract and ignores D's age and sex too"],
+      "correctIndex": 1,
+      "explanation": "Section 54(1)(c) builds in D's sex, age and circumstances, but explicitly requires a 'normal degree of tolerance and self-restraint' — D's own unusually short temper cannot be used to lower that standard."
+    },
+    {
+      "itemId": "crime-07-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "D starts a physical fight by shoving V first; V responds by shouting angry threats back at D, and D, now enraged, kills V. Applying R v Dawes, is D likely to succeed on loss of control?",
+      "options": ["Unlikely — D substantially instigated the confrontation that produced the alleged trigger", "Yes — any threat from V automatically qualifies as a trigger regardless of who started the incident"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-07-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "D has a recognised medical condition causing occasional lapses in concentration, which had only a trivial and fleeting effect on D's judgment at the time of the killing. Applying R v Golds, is D's ability to form a rational judgment 'substantially' impaired?",
+      "options": ["Yes — any impairment beyond zero satisfies 'substantially'", "No — Golds confirms 'substantially' requires something important or weighty, a materially higher bar than merely more-than-trivial impairment", "Yes — a recognised medical condition automatically satisfies the substantiality requirement"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting error is treating 'more than trivial' as the applicable standard. Golds rejected exactly that reading where elaboration is given: 'substantial' means important or weighty, not merely more than negligible."
+    },
+    {
+      "itemId": "crime-07-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which element is missing from this incomplete statement of diminished responsibility: 'D was suffering from an abnormality of mental functioning arising from a recognised medical condition that substantially impaired one of the three listed abilities'?",
+      "options": ["That the abnormality provides an explanation for D's acts or omissions in the killing", "That D must have shown remorse", "That D must have a previous conviction"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-07-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Owen has a long-standing, medically diagnosed severe depressive disorder. During a serious depressive episode, and with no provoking conduct by the victim at all, he kills his elderly father, later telling police he believed, wrongly and as a symptom of his illness, that his father was suffering unbearably and that killing him was an act of mercy. Analyse whether Owen can rely on diminished responsibility.",
+      "factsToOrder": [
+        "Owen has a long-standing, medically diagnosed depressive disorder",
+        "The killing occurred during a serious depressive episode",
+        "There is no provoking conduct by the victim",
+        "Owen's belief about his father's suffering was a symptom of the illness"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Owen can rely on diminished responsibility under Homicide Act 1957, s 2, to reduce a murder conviction to voluntary manslaughter.",
+        "rule": "Diminished responsibility requires an abnormality of mental functioning arising from a recognised medical condition, which substantially impairs D's ability to understand the nature of their conduct, form a rational judgment or exercise self-control, and which provides an explanation for the killing (Homicide Act 1957, s 2, as amended; R v Golds [2016] UKSC 61 on 'substantially').",
+        "application": "Owen's diagnosed depressive disorder is a recognised medical condition. The absence of any provoking conduct by the victim confirms this is a diminished responsibility, not a loss of control, analysis. His mistaken, illness-driven belief about his father's suffering goes directly to his ability to form a rational judgment about his conduct, and — if the impairment is important or weighty rather than merely trivial, per Golds — is capable of being substantial. The connection between the depressive episode and the killing supplies the required explanation.",
+        "conclusion": "Subject to expert psychiatric evidence establishing the degree of impairment as substantial within the Golds standard, Owen has a strong basis for diminished responsibility, which would reduce a murder conviction to voluntary manslaughter."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two mistakes that recur most in this lesson's test items: treating sexual infidelity as either always excluded or never relevant (Clinton draws a narrower line than either extreme), and blending loss of control's trigger-based analysis with diminished responsibility's medical-condition analysis instead of running them as separate tests.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.homicide.partial-defences"
+  }
+}

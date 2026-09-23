@@ -1,0 +1,432 @@
+{
+  "lessonId": "crime-02",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 2,
+  "topicId": "crime.general-principles.causation",
+  "title": "Chains and breaks",
+  "subtitle": "Factual and legal causation, and when something else takes over",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the factual ('but for') test for causation and recognise when it is not satisfied",
+    "Explain the legal causation requirement that the defendant's act be an operating and substantial cause of the result",
+    "Apply the rules on intervening acts — medical treatment, a victim's own free choice, and the thin skull rule — to determine whether the chain of causation survives a new fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "R v White [1910] 2 KB 124", "role": "Factual causation fails: the poison never operated on the cause of death" },
+    { "citation": "R v Pagett (1983) 76 Cr App R 279", "role": "Legal causation: operating and substantial cause; a victim or third party's reasonable act of self-preservation does not break the chain" },
+    { "citation": "R v Cheshire [1991] 1 WLR 844", "role": "Medical treatment rarely breaks the chain unless so independent and so potent that the original wound becomes mere history" },
+    { "citation": "R v Blaue [1975] 1 WLR 1411", "role": "Thin skull rule: take your victim as you find them, beliefs included" },
+    { "citation": "R v Kennedy (No 2) [2007] UKHL 38", "role": "A victim's free, deliberate and informed act of self-injection breaks the chain" },
+    { "citation": "R v Hughes [2013] UKSC 56", "role": "'Causing death' by driving requires some act or omission in the manner of driving that is at least a contributory factor of fault" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Causation looks mechanical from a distance — 'did D cause it?' — but almost every contested homicide problem question turns on exactly where the chain breaks, if it breaks at all. Where the profile shows knowledge ahead of application, this note appears: 'You can state both tests. This lesson is about the six words that decide which one is doing the work in a given fact pattern.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well here on recall before. The test pool below leans hard towards application: expect scenarios with a hospital, a chase, or a needle in them, not bare definitions.",
+      "weakKnowledge": "Go through Parts 1 and 2 slowly and make sure you can state the but-for test and the operating-and-substantial test separately, in that order — everything after Part 2 assumes you can tell them apart without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A man is stabbed outside a nightclub, rushed to hospital, and given a course of treatment that turns out, weeks later, to have been badly mismanaged. He dies. Did the knife kill him, or did the hospital? A jury has to answer that question with nothing but two dry legal tests and a set of facts that refuse to sit still.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. Kennedy (No 2) and Hughes remain the leading modern statements on intervening acts by victims and on statutory 'causing' offences respectively; no legislative change is pending in this area."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The starting gate: factual causation",
+        "voice": "diagnostic — introduces the but-for test as a screening device, not a final answer",
+        "body": [
+          "Causation analysis always begins in the same place, however serious or unusual the facts: strip everything away except one blunt question. But for the defendant's act, would the result have occurred when it did, in the way it did? This is factual causation, and it is deliberately mechanical — it asks nothing about blame, foresight or fairness. It simply asks whether the defendant's conduct made a difference to what actually happened.",
+          "Fail this test and the analysis is over. However wicked the defendant's intentions, if the result would have happened anyway, in the same way, at the same time, the defendant did not cause it. R v White supplies the cleanest illustration precisely because the defendant's guilt feels obvious on the facts, and the law still acquits him of the homicide.",
+          "Pass the but-for test and you have done almost nothing. It filters out the cases where causation plainly fails; it does not tell you the defendant is guilty of anything. Everything from here is a second, much harder question — legal causation. Keep the two separate in your head: examiners reward students who work through both in order, and penalise students who jump straight to 'obviously he caused it.'"
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Factual causation (the 'but for' test)",
+            "definition": "The defendant's conduct is a factual cause of a result if, but for that conduct, the result would not have occurred when and how it did. A necessary filter, never sufficient on its own for legal causation."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v White",
+            "citation": "[1910] 2 KB 124",
+            "court": "Court of Criminal Appeal",
+            "year": 1910,
+            "factsShort": "A son put potassium cyanide in his mother's drink intending to kill her. She died of an unrelated heart attack before the poison had taken any effect.",
+            "ratioShort": "Because the mother would have died at that moment regardless of the poison, the but-for test failed: the defendant had not caused her death, only attempted to.",
+            "expanded": {
+              "facts": "White intended to kill his mother for financial gain and put a small quantity of cyanide into a drink she habitually took at night. She drank a small amount and was later found dead. Medical evidence established that she had died of heart failure, unconnected to the poison, before the cyanide had begun to act on her body at all.",
+              "judgmentExtract": "The court held that death was not, on the medical evidence, caused by the administration of poison. White could not be convicted of murder, because his act had not in fact caused the result — but he was properly convicted of attempted murder, since his intention and his acts towards it were both plainly present.",
+              "significance": "White is the standard illustration that factual causation is a genuine, freestanding hurdle, not a formality. A defendant with a murderous intent and a guilty act can still walk away from a homicide charge — though not from an attempt charge — if the but-for test simply is not met on the medical facts."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-02-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In R v White, why was the defendant not guilty of murder even though he had put poison in his mother's drink intending to kill her?",
+          "options": ["Because the but-for test failed — she died of an unrelated cause before the poison acted", "Because he lacked the intention to kill"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. His intention was never in doubt — what failed was the factual link between his act and her death.",
+          "feedbackIncorrect": "His intention to kill was clear and undisputed on the facts — the case turns entirely on whether his act, in fact, caused the death. It didn't."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Operating and substantial: what legal causation demands",
+        "voice": "analytical — dissects the test into its working parts before reassembling it",
+        "body": [
+          "Passing the but-for test only earns you a seat at the table. Legal causation asks something sharper: was the defendant's act an operating and substantial cause of the result? Two separate ideas are compressed into that phrase, and both matter. 'Operating' means the act must still be having an effect at the time of the result — not spent, not overtaken. 'Substantial' means the contribution must be more than trivial — but, and this trips people up, it does not need to be the sole cause, or even the main one.",
+          "R v Pagett shows how far this stretches. David Pagett, armed and resisting arrest, held his pregnant girlfriend in front of him as a shield and fired at police officers. The officers returned fire instinctively, in self-defence, and killed her. Pagett had not fired the fatal shot — a police officer had. But the Court of Appeal held his act was still an operating and substantial cause of her death: the officers' return of fire was a reasonable, virtually instinctive act of self-preservation directly provoked by his own unlawful and dangerous conduct, not a free and independent choice that broke the chain.",
+          "Notice what Pagett is really doing to the word 'substantial'. It is doing no work at all in the sense of 'main' or 'dominant' — the officer's bullet was physically the more direct cause of death. It is doing work in the sense of 'not trivial, and not superseded'. That distinction — trivial versus dominant — is worth holding onto for the rest of this lesson, because every intervening-act case that follows is really an argument about whether the defendant's original act has stayed 'operating and substantial' or has been overtaken by something else."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Legal causation: unpacking 'operating and substantial'",
+            "points": [
+              "'Operating' — the defendant's act must still be contributing to the result at the relevant time, not spent or overtaken",
+              "'Substantial' — more than a trivial contribution; need not be the sole or even the main cause",
+              "A reasonably foreseeable response by a third party (e.g. an officer returning fire, a victim fleeing) does not break the chain",
+              "Only a truly free, deliberate and informed intervening act — or an extraordinary, unforeseeable event — threatens to break it"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Pagett",
+            "citation": "(1983) 76 Cr App R 279",
+            "court": "Court of Appeal",
+            "year": 1983,
+            "factsShort": "Pagett used his pregnant girlfriend as a human shield while firing at armed police, who returned fire and killed her.",
+            "ratioShort": "A reasonable, foreseeable act of self-preservation by a third party provoked by the defendant's own unlawful conduct does not break the chain of causation.",
+            "expanded": {
+              "facts": "Pagett, wanted by police and armed with a shotgun, took his sixteen-year-old girlfriend hostage and used her as a shield as he left a building firing at officers. Police returned fire instinctively and one of their shots killed her.",
+              "judgmentExtract": "The Court of Appeal held that where the defendant's own act provokes a reasonable defensive reaction from a third party, and that reaction causes death, the defendant's act remains a legal cause of death. The victim's death resulted from Pagett's act of using her as a shield while shooting at armed police — a situation he created and that made the officers' response near-inevitable.",
+              "significance": "Pagett establishes that legal causation survives the intervention of a third party's act, provided that act is a reasonably foreseeable response to the defendant's own unlawful and dangerous conduct, rather than a free and independent choice. It is the foundation case for the 'reasonably foreseeable response' branch of intervening-act analysis."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-02-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that keeps Pagett's own act as an operating and substantial cause of death, despite an officer firing the fatal shot.",
+          "scenarioText": "Pagett fires at armed police officers while holding his girlfriend in front of him. The officers, facing gunfire, instinctively return fire and one shot strikes and kills her. Pagett had not intended for her to be shot.",
+          "tappableSpans": ["fires at armed police officers", "holding his girlfriend in front of him", "instinctively return fire", "had not intended for her to be shot"],
+          "correctSpan": "instinctively return fire",
+          "feedbackCorrect": "Correct. The officers' return of fire is a reasonable, foreseeable reaction to the danger Pagett created — which is exactly why his act, not theirs, remains the legal cause.",
+          "feedbackIncorrect": "Look at how the officers respond, not at Pagett's intentions or his use of a shield. The chain survives because their return of fire is a foreseeable, near-instinctive reaction to the situation he created — not a free, independent choice."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "When someone else's act breaks the chain — medical treatment",
+        "voice": "Socratic — poses the hospital-negligence dilemma before resolving it",
+        "body": [
+          "Here is a genuinely hard question before we answer it. If a victim who has been unlawfully wounded then receives medical treatment that is itself negligent — even badly negligent — does that let the original attacker off the hook? Instinct says: the doctors made the mistake, so the doctors should carry the responsibility. The law is far more reluctant than instinct suggests.",
+          "R v Cheshire is the leading case. Cheshire shot the victim in the leg and stomach during an argument. The victim was taken to hospital and, weeks later, died — not directly from the gunshot wounds, which were healing, but from a rare complication of a tracheostomy performed to help him breathe: his windpipe had narrowed, and the hospital failed to spot and treat it in time. The medical treatment was, on the evidence, negligent.",
+          "The Court of Appeal upheld Cheshire's conviction. Medical treatment, it held, will only break the chain of causation if it is 'so independent' of the defendant's acts and 'so potent in causing death' that the defendant's acts can be regarded as merely part of the history — background, not cause. Ordinary negligence in treatment, even treatment that a jury might describe as careless, does not clear that threshold. The wound need not remain the sole or main cause of death at the time of death — it need only still be contributing significantly.",
+          "The policy behind setting the bar this high is straightforward once you see it: the victim would never have been in that hospital bed, exposed to any risk of medical error, but for the defendant's original act. Letting ordinary hospital mistakes excuse the original attacker would hand defendants a windfall every time medicine, which is never perfect, falls short of perfection."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Novus actus interveniens",
+            "definition": "A 'new intervening act' — conduct by a third party, the victim, or an event, occurring after the defendant's act, that is sufficiently independent and sufficiently potent to break the chain of legal causation. The threshold for medical treatment to qualify is set deliberately high."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Cheshire",
+            "citation": "[1991] 1 WLR 844",
+            "court": "Court of Appeal",
+            "year": 1991,
+            "factsShort": "Cheshire shot the victim, who later died of a rare, negligently unrecognised complication of hospital treatment rather than directly from the wounds.",
+            "ratioShort": "Medical treatment only breaks the chain if it is so independent of the defendant's act, and so potent in causing death, that the defendant's act becomes merely part of the history.",
+            "expanded": {
+              "facts": "Following an argument, Cheshire shot the victim, causing serious wounds to his leg and stomach. In hospital, the victim was given a tracheostomy to assist breathing. Weeks later, and while the gunshot wounds themselves were healing well, he died from respiratory failure caused by a narrowing of the windpipe — a recognised but rare complication of the tracheostomy that hospital staff had failed to diagnose in time.",
+              "judgmentExtract": "The Court of Appeal held that it is only where medical treatment is so independent of the defendant's acts, and in itself so potent in causing death, that the jury regards the contribution made by the defendant's acts as insignificant, that the defendant will be relieved of criminal responsibility. Even treatment that can properly be described as negligent will not, save in the most extraordinary circumstances, break the chain.",
+              "significance": "Cheshire sets a deliberately high bar for medical negligence as a break in the chain. It confirms that the original wound need not still be the direct medical cause of death, provided the defendant's act remains a significant factor at the time of death — the negligence of others rarely excuses the defendant who put the victim in harm's way to begin with."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-02-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is the chain of causation most likely to survive an argument based on medical treatment?",
+          "scenarioA": "The victim is stabbed and taken to hospital, where a junior doctor misses signs of internal bleeding that a competent doctor should have caught; the victim dies from that bleeding two days later.",
+          "scenarioB": "The victim is stabbed with a minor, entirely survivable wound, is fully recovering, and then dies after being administered a wrongly-labelled medication in a mix-up that has no connection at all to the original injury or its treatment.",
+          "correctScenario": "A",
+          "explanation": "A is ordinary — even careless — medical negligence connected to treating the original wound: Cheshire says this does not break the chain. B describes treatment so independent of the original injury that it looks like the kind of extraordinary, unconnected event that could clear the 'so independent and so potent' threshold."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The victim's own choices — and taking them as you find them",
+        "voice": "argumentative — challenges the instinct that an 'unreasonable' victim choice should let the defendant off",
+        "body": [
+          "What about the victim's own subsequent choices — refusing treatment, acting recklessly, making a decision an ordinary person might call unwise? The instinctive student answer is that an unreasonable choice by the victim breaks the chain, because the defendant shouldn't be blamed for someone else's poor judgement. The law rejects that instinct, sharply and deliberately.",
+          "R v Blaue is the case that tests this hardest. Blaue stabbed a young woman, puncturing her lung; she needed a blood transfusion to survive. She was a Jehovah's Witness and, in line with her religious beliefs, refused the transfusion. She died. Blaue argued that her refusal — objectively unreasonable, on any secular view, given that it cost her her life — broke the chain of causation.",
+          "The Court of Appeal disagreed, applying what is known as the thin skull (or 'eggshell skull') rule: a defendant must take their victim as they find them, as a whole person, not merely as a body. That includes physical vulnerabilities the defendant knows nothing about, and it includes the victim's beliefs, however much a jury, or a judge, might personally disagree with them. Whether her refusal was 'reasonable' from anyone else's standpoint was simply the wrong question.",
+          "It is worth sitting with how harsh this can feel to a defendant, because the harshness is the point, not a flaw in the reasoning. The alternative — asking a criminal court to rank whose religious convictions, family loyalties, or personal values count as sufficiently 'reasonable' to be respected — is a worse outcome than putting the risk of an unusually principled or vulnerable victim onto the person who created the danger in the first place. The thin skull rule is a policy choice, made with open eyes."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "The thin skull (eggshell skull) rule",
+            "definition": "A defendant must take their victim as they find them — including physical frailties, medical conditions, and personal or religious beliefs unknown to the defendant — even where those characteristics make the consequences of the defendant's act far worse than an 'ordinary' victim would have suffered."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Blaue",
+            "citation": "[1975] 1 WLR 1411",
+            "court": "Court of Appeal",
+            "year": 1975,
+            "factsShort": "A stabbing victim, a Jehovah's Witness, refused a life-saving blood transfusion on religious grounds and died; the defendant argued her refusal broke the chain of causation.",
+            "ratioShort": "The thin skull rule extends to a victim's beliefs, not just their physical constitution; an unreasonable-seeming refusal of treatment, grounded in genuine belief, does not break the chain.",
+            "expanded": {
+              "facts": "Blaue stabbed an eighteen-year-old woman, causing a wound that punctured her lung. Doctors told her that without a blood transfusion she would very likely die; she refused, explaining that as a Jehovah's Witness her religious convictions did not permit blood transfusions. She died of her wound.",
+              "judgmentExtract": "Lawton LJ held that those who use violence on other people must take their victims as they find them — this means the whole person, not just the physical person. It does not lie in the mouth of the assailant to say that the victim's religious beliefs, which prevented her accepting treatment that would have saved her life, were unreasonable. The question of whether the victim's conduct was reasonable is irrelevant.",
+              "significance": "Blaue confirms that the thin skull rule is not confined to physical vulnerabilities (a weak heart, thin skull bones) but extends to the victim's beliefs and consequent choices. It also confirms that the reasonableness of the victim's decision, judged by an outsider's standards, plays no part in the causation analysis."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-02-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the victim's refusal of a blood transfusion in Blaue broke the chain of causation?",
+          "sliderLabels": ["Definitely broke the chain", "Definitely did not break the chain"],
+          "correctPosition": "did not break the chain",
+          "explanation": "The thin skull rule meant Blaue had to take his victim, beliefs included, as he found her. Her refusal, however unreasonable it might look from outside her beliefs, did not break the chain of causation — reasonableness was simply not the test."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Self-injection and the limits of a 'free, voluntary and informed' choice",
+        "voice": "exam-focused — direct, practical, built around what routinely goes wrong in assessment answers",
+        "body": [
+          "The hardest modern causation problems tend to involve drugs. If a defendant supplies a controlled drug and the recipient injects themselves and dies, has the supplier caused the death? For years the Court of Appeal gave an unstable answer. The House of Lords settled it — for supply cases — in R v Kennedy (No 2).",
+          "Kennedy prepared a syringe of heroin at the victim's request and handed it to him; the victim then injected himself and died. The House of Lords quashed the manslaughter conviction, holding that where a fully informed adult of sound mind makes a free, deliberate and voluntary decision to self-administer the drug, that decision is itself the sole legal cause of any resulting injury or death. The supplier's earlier act of preparing and handing over the drug does not remain an operating and substantial cause once the victim makes that free choice — it becomes, in effect, history.",
+          "R v Hughes deals with a different problem but belongs alongside Kennedy because students routinely confuse the two. Hughes was an uninsured, unlicensed driver involved in a fatal collision caused entirely by the other driver's own negligence; the relevant offence made it an offence to cause death while driving unlicensed or uninsured. The Supreme Court held that 'causing' death under that provision requires some act or omission in the manner of the defendant's driving that is at least a contributory factor of fault — merely being present on the road, driving lawfully in every respect except for licensing or insurance, is not enough on its own.",
+          "Put the two together and a clean rule emerges for this part of the syllabus: causation is not satisfied by mere presence in the causal story. Kennedy requires that the victim's own choice really was free, informed and voluntary — pressure, deception or incapacity would change the analysis entirely. Hughes requires that the defendant's own conduct, not just their unlawful status, actually contributed to the result. Both cases are, at bottom, about refusing to let 'they were involved somewhere in the chain' collapse into 'they caused it.'"
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Kennedy (No 2)",
+            "citation": "[2007] UKHL 38",
+            "court": "House of Lords",
+            "year": 2007,
+            "factsShort": "Kennedy prepared and handed over a syringe of heroin at the victim's request; the victim self-injected and died.",
+            "ratioShort": "A fully informed adult's free, deliberate and voluntary act of self-injection is the sole cause of the resulting harm, breaking the chain from the supplier.",
+            "expanded": {
+              "facts": "The victim asked Kennedy to prepare a dose of heroin for him. Kennedy did so and handed the loaded syringe to the victim, who then injected himself and later died of the overdose. Kennedy was convicted of manslaughter at trial and by the Court of Appeal on a second reference.",
+              "judgmentExtract": "The House of Lords held that in the case of a fully informed and responsible adult, the general rule is that the defendant is not, save in exceptional circumstances, criminally liable for the consequences of the victim's own free, deliberate and informed act done knowingly and voluntarily by the victim. The victim's decision to inject himself was such an act; it broke the causal chain.",
+              "significance": "Kennedy (No 2) is the leading modern authority on the limits of a supplier's liability for a self-administered drug death. It restored a clear, principled boundary after inconsistent Court of Appeal decisions, and it is the counterpoint students most often need against Blaue: two very different outcomes, both flowing from the same underlying question of whether an intervening choice was truly free."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Kennedy and Blaue are inconsistent — one lets a defendant off because of the victim's choice, the other holds a defendant liable despite it.",
+            "whyItsWrong": "They are not inconsistent; they answer different questions. Blaue asks whether an unusual victim characteristic (a belief) breaks the chain — and holds that the thin skull rule means it does not. Kennedy asks whether a genuinely free, informed, voluntary act by the victim breaks the chain — and holds that it does. The victim in Blaue never chose to be stabbed or to hold her beliefs; the victim in Kennedy made an autonomous choice to inject himself. The two doctrines sit comfortably side by side once you see what each is actually testing."
+            }
+        ],
+        "interaction": {
+          "itemId": "crime-02-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "Leon, a drug dealer, hands Maya a bag of heroin and, because she is nervous about injecting herself, offers to do it for her; she agrees and he injects her. She overdoses and dies. Analyse whether Leon caused her death for the purposes of manslaughter.",
+          "factsToOrder": [
+            "Leon supplies the heroin",
+            "Maya is nervous about self-injecting",
+            "Leon, not Maya, performs the injection",
+            "Maya overdoses and dies"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether Leon caused Maya's death, given that he — not she — performed the act of injection.",
+            "rule": "Kennedy (No 2) breaks the chain only where the victim makes a free, deliberate and informed act of self-administration. Where the defendant personally administers the drug, rather than merely supplying it for the victim to use, Kennedy's reasoning does not apply in the same way, because the fatal act is the defendant's own, not an intervening choice by the victim.",
+            "application": "Unlike Kennedy, where the victim injected himself, here Leon performed the injection. There is no intervening free, voluntary act by Maya breaking the chain at the moment the drug entered her body — the administration was Leon's own conduct throughout. Her earlier agreement to be injected does not amount to the kind of independent, causative choice Kennedy protects a supplier with.",
+            "conclusion": "Leon is far more likely to be held to have caused Maya's death: because he personally administered the drug rather than merely supplying it, Kennedy's protection for suppliers does not assist him."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-02-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "State the factual ('but for') test for causation in your own words.",
+      "acceptableAnswers": ["but for the defendant's act the result would not have occurred", "but for test", "would the result have happened anyway"],
+      "modelAnswer": "The defendant's act is a factual cause of the result if, but for that act, the result would not have occurred when and how it did."
+    },
+    {
+      "itemId": "crime-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Does the defendant's act need to be the sole cause of the result to satisfy legal causation?",
+      "options": ["No — it must be operating and substantial, but need not be the only or even the main cause", "Yes — any other contributing cause defeats legal causation"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-02-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT required for legal causation to be established?",
+      "options": ["The act must be operating at the time of the result", "The act must be a substantial (more than trivial) cause", "The act must be the sole and dominant cause of the result", "The but-for test must first be satisfied"],
+      "correctIndex": 2,
+      "trapExplanation": "This is the most common examiner trap in causation: 'substantial' is repeatedly misread as 'main' or 'dominant'. Pagett shows a defendant can be a legal cause of death even where a third party's act was the more direct physical cause."
+    },
+    {
+      "itemId": "crime-02-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Put these steps of a causation analysis in the correct order.",
+      "items": ["Apply the but-for test", "If satisfied, ask whether the act is an operating and substantial cause", "Identify any candidate intervening act (medical treatment, victim's choice, third party)", "Assess whether that intervening act is independent and potent enough to break the chain"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-02-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under R v Hughes, what must be shown for a defendant to have 'caused' death for the purposes of an offence of causing death by driving while uninsured or unlicensed?",
+      "options": ["Simply that the defendant was driving, uninsured or unlicensed, at the time of the collision", "Some act or omission in the manner of the defendant's driving that is at least a contributory factor of fault", "That the defendant was the more careless driver of the two"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "crime-02-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below from R v Cheshire, highlight the sentence that states the ratio.",
+      "passage": "The defendant shot the victim, who later died following complications from hospital treatment. It is only where medical treatment is so independent of the defendant's acts, and in itself so potent in causing death, that the jury regards the contribution made by the defendant's acts as insignificant, that the defendant will be relieved of criminal responsibility. The fact that the treatment was negligent does not by itself break the chain of causation.",
+      "ratioSentence": "It is only where medical treatment is so independent of the defendant's acts, and in itself so potent in causing death, that the jury regards the contribution made by the defendant's acts as insignificant, that the defendant will be relieved of criminal responsibility."
+    },
+    {
+      "itemId": "crime-02-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Ravi threatens a shopkeeper with a knife during a robbery. The shopkeeper, in a panic, runs into the street and is struck by a passing car. Is Ravi's act likely to remain an operating and substantial cause of the shopkeeper's injuries?",
+      "options": ["Yes — fleeing in panic from a threat is a reasonably foreseeable response to the danger Ravi created", "No — once the shopkeeper left the shop, Ravi's act was spent", "No — the driver of the car is automatically the sole cause"],
+      "correctIndex": 0,
+      "explanation": "This mirrors Pagett's logic: a victim's reasonably foreseeable reaction to a threat the defendant created does not break the chain, even though a third event (being hit by a car) directly produces the injury."
+    },
+    {
+      "itemId": "crime-02-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that makes the thin skull rule apply in this scenario.",
+      "scenarioText": "Anh punches a man once, lightly, during an argument. Unknown to Anh, the man has an undiagnosed and extremely fragile skull condition, and the blow — which would have left almost anyone else unharmed — kills him.",
+      "tappableSpans": ["punches a man once, lightly", "during an argument", "an undiagnosed and extremely fragile skull condition", "would have left almost anyone else unharmed"],
+      "correctSpan": "an undiagnosed and extremely fragile skull condition",
+      "explanation": "The thin skull rule means Anh must take the victim as found — an unusual, even unknown, vulnerability does not break the chain, however mild the blow would have been to an ordinary person."
+    },
+    {
+      "itemId": "crime-02-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is closer to Kennedy (No 2) than to Blaue?",
+      "scenarioA": "A victim, fully informed of the risks and of sound mind, chooses to inject herself with drugs supplied by the defendant.",
+      "scenarioB": "A victim refuses medical treatment that would have saved her life because of a deeply held personal belief.",
+      "correctScenario": "A",
+      "explanation": "A is Kennedy: a free, deliberate, informed act of self-administration by the victim breaks the chain. B is Blaue: the thin skull rule means the victim's belief-driven refusal does not break the chain, because it goes to who the victim is, not to a fresh, independent choice about the defendant's original act."
+    },
+    {
+      "itemId": "crime-02-test-10",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that ordinary negligence in hospital treatment breaks the chain of causation from the original wound?",
+      "sliderLabels": ["Almost always breaks the chain", "Almost never breaks the chain"],
+      "correctPosition": "almost never breaks the chain",
+      "explanation": "Cheshire sets the bar very high: only treatment so independent of the original act, and so potent in causing death, that the original act becomes mere history will break the chain. Ordinary — even careless — negligence does not clear that bar."
+    },
+    {
+      "itemId": "crime-02-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "In R v Blaue, was the reasonableness of the victim's decision to refuse a blood transfusion relevant to the causation analysis?",
+      "options": ["No — the thin skull rule made her reasons for refusal irrelevant", "Yes — an unreasonable refusal would have broken the chain"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-02-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Dan, driving with no insurance, is hit from behind by a driver who ran a red light; Dan's passenger dies. Dan's own driving was otherwise faultless. Applying R v Hughes, is Dan likely to have 'caused' the death for the purposes of the offence of causing death while uninsured?",
+      "options": ["Yes — being uninsured is itself sufficient", "No — nothing in the manner of Dan's own driving contributed to the collision", "Yes — because a death occurred while he was driving unlawfully"],
+      "correctIndex": 1,
+      "explanation": "Hughes requires some fault-contributing act or omission in the manner of the defendant's driving, not merely unlawful status combined with presence at the scene. On these facts, Dan's driving was not at fault at all."
+    },
+    {
+      "itemId": "crime-02-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Kennedy (No 2) and Blaue reach opposite results on whether the chain of causation survives. Which best explains why they are not actually inconsistent?",
+      "options": ["Blaue involved a knife and Kennedy involved a drug, and different weapons attract different rules", "Blaue asks whether an unchosen victim characteristic breaks the chain (it does not); Kennedy asks whether a victim's free, informed, voluntary choice breaks the chain (it does)", "Kennedy was wrongly decided and has since been overruled"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats the two cases as being about the same question with different outcomes. They are about two different questions — vulnerability versus voluntary choice — and both answers are internally consistent with the underlying causation principles."
+    },
+    {
+      "itemId": "crime-02-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 3,
+      "prompt": "Farah stabs Ben in the arm during a fight; the wound is not life-threatening on its own. At hospital, a nurse — working a triple shift and plainly exhausted — administers ten times the correct dose of a painkiller by mistake, and Ben dies of the overdose rather than the stab wound. Analyse whether Farah caused Ben's death.",
+      "factsToOrder": [
+        "Farah stabs Ben; the wound alone is not life-threatening",
+        "Ben is taken to hospital for treatment",
+        "An exhausted nurse administers a grossly incorrect dose of medication",
+        "Ben dies from the overdose, not directly from the stab wound"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 2, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the hospital's grossly erroneous overdose breaks the chain of causation between Farah's stabbing and Ben's death.",
+        "rule": "Medical treatment will only break the chain where it is so independent of the defendant's act, and so potent in causing death, that the original act becomes mere history (Cheshire). Ordinary negligence does not meet this threshold, but the bar is not limitless — an extraordinary and virtually unconnected medical error is the kind of case Cheshire itself leaves open as potentially breaking the chain.",
+        "application": "Ben's stab wound put him in hospital and dependent on medical care, which weighs towards the chain surviving on Cheshire's general approach. But a tenfold overdose administered in error is a markedly more extreme departure from competent treatment than ordinary carelessness, and arguably approaches the 'so independent, so potent' threshold Cheshire itself describes as capable of breaking the chain, since the overdose — not the stab wound — becomes the operating cause of death.",
+        "conclusion": "This is a genuinely arguable case: a strong argument exists either way, and the answer should acknowledge Cheshire's general reluctance to let medical negligence excuse the original attacker while recognising this error's severity brings it close to the exceptional category Cheshire itself contemplates."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating any 'unreasonable' or unwelcome downstream event — a negligent hospital, a victim's refusal, a victim's own risky choice — as automatically breaking the chain. It almost never does on its own. The real tests are whether the defendant's act remains operating and substantial, and whether any intervening act was genuinely free, deliberate and informed, or so independent and potent that it eclipses the original act.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.general-principles.causation"
+  }
+}

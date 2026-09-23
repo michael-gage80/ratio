@@ -12,6 +12,7 @@ import SwiftUI
 @main
 struct ratioApp: App {
     @State private var session: SessionStore
+    @State private var content = ContentStore()
 
     init() {
         FirebaseApp.configure()
@@ -26,6 +27,7 @@ struct ratioApp: App {
         WindowGroup {
             RootView()
                 .environment(session)
+                .environment(content)
                 .onOpenURL { GIDSignIn.sharedInstance.handle($0) }
         }
     }
