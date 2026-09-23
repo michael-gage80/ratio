@@ -289,7 +289,7 @@ private struct MatchmakingView: View {
                 Text("v").ratioFont(.h2).italic().foregroundStyle(Color.ratioInk2)
                 Rectangle().fill(Color.ratioRule).frame(height: 1)
             }
-            SwiftUI.TimelineView(.periodic(from: started, by: 1)) { context in
+            TimelineView(.periodic(from: started, by: 1)) { context in
                 let elapsed = Int(context.date.timeIntervalSince(started))
                 HStack(spacing: 16) {
                     ProgressView().frame(width: 64, height: 64)

@@ -1,0 +1,372 @@
+{
+  "lessonId": "contract-11",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 11,
+  "topicId": "contract.vitiating-factors.misrepresentation",
+  "title": "Misrepresentation",
+  "subtitle": "False statements, inducement, and the three faces of misrepresentation",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify a false statement of fact capable of amounting to a misrepresentation, and distinguish it from opinion, intention, and law",
+    "Explain how silence and half-truths can still amount to misrepresentation, and apply the inducement requirement to a fact pattern",
+    "Distinguish fraudulent, negligent, and innocent misrepresentation and match each to its remedies, including the bars to rescission"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Bisset v Wilkinson [1927] AC 177", "role": "A statement of honest opinion is not, without more, a statement of fact" },
+    { "citation": "Edgington v Fitzmaurice (1885) 29 Ch D 459", "role": "A false statement of present intention is itself a misstatement of fact" },
+    { "citation": "With v O'Flanagan [1936] Ch 575", "role": "A true statement that becomes false before completion must be corrected" },
+    { "citation": "Derry v Peek (1889) 14 App Cas 337", "role": "Defines fraud: a statement made knowingly, without belief in its truth, or recklessly" },
+    { "citation": "Misrepresentation Act 1967, ss 2(1), 2(2), 3", "role": "Statutory basis for damages in lieu of rescission and for negligent misrepresentation" },
+    { "citation": "Royscot Trust v Rogerson [1991] 2 QB 297", "role": "Damages under s 2(1) are assessed on the fraud (tortious) measure, not the negligence measure" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Misrepresentation questions reward precision: examiners build fact patterns that hinge on exactly which of the three categories applies, because the remedy changes completely depending on the answer. Get the category right and the remedy follows almost automatically.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions here. The test pool is weighted towards fact patterns that make you choose between fraudulent, negligent, and innocent on the same set of facts — that's where marks are actually won and lost.",
+      "weakKnowledge": "Slow down through Parts 1 to 3 before you reach the remedies. If the false-statement-of-fact test isn't solid, the rest of the lesson won't hold together."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A seller tells a buyer the land has never flooded. It has, twice, but not in the seller's lifetime, so the seller believes it. The buyer signs. Eighteen months later, water is in the cellar. Nobody lied on purpose — and that single fact turns out to decide almost everything about what happens next.",
+    "lawStatedNotice": "Misrepresentation itself is governed by the Misrepresentation Act 1967 and long-settled common law, and nothing here is in flux. Worth knowing, though: for consumer-facing unfair commercial practices specifically, the Consumer Protection from Unfair Trading Regulations 2008 were replaced from April 2025 by the Digital Markets, Competition and Consumers Act 2024, Part 4. That statutory regime runs alongside misrepresentation rather than replacing it, and this lesson does not test it in detail."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A statement has to be about a fact",
+        "voice": "narrative — opens mid-scene, then works backwards to the rule",
+        "body": [
+          "Mrs Bisset was selling a New Zealand farm that had never carried sheep. She told the buyer she thought it would carry two thousand. It didn't come close. The buyer sued for misrepresentation — and lost, because what she'd offered was an estimate, honestly given, about land neither party had ever seen stocked. It was opinion, not fact, and the law will not convert a bad guess into an actionable lie.",
+          "That's the starting gate for this whole topic: an actionable misrepresentation must be a false statement of fact. Statements of opinion, statements of future intention, and statements of law have traditionally sat outside that gate — but each of those categories leaks. An opinion given by someone with no honest belief in it, or by someone in a far better position to know the truth than the person they're speaking to, can collapse into a statement of fact in substance. And a statement of present intention is not really an exception at all.",
+          "Edgington v Fitzmaurice makes the second point precisely: directors raised money saying it was for expanding the business, when in truth it was to pay off debts. 'I intend to do X' sounds like a promise about the future — but it necessarily contains a factual claim about the speaker's actual state of mind right now. If that claim is false, it's a misrepresentation of fact, dressed as intention.",
+          "Statements of law were, historically, treated the same as opinion — not actionable, on the theory that everyone is presumed to know the law equally. Modern authority has eroded that distinction sharply, and a confident, false statement about a specific legal position (rather than a genuine uncertainty) is now treated much like any other factual claim by someone in a position to know better."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "False statement of fact",
+            "definition": "An untrue assertion about an existing or past state of affairs, made by one party to the other. It does not include honest opinion, but a statement of present intention is itself a fact about the speaker's state of mind, and can be false."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-11-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A seller tells a buyer 'I genuinely believe this car has never been in an accident,' having done a reasonable check and found nothing. It later turns out the car was in a minor accident years earlier, invisibly repaired. On Bisset alone, is this an actionable misrepresentation?",
+          "options": ["No — it is an honestly held belief, not a knowing falsehood dressed as fact", "Yes — any statement that turns out to be wrong is automatically a misrepresentation"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right instinct — though note this doesn't end the analysis in every case; a statement can still be a statement of fact even where it's wrong but honestly held, and other doctrines (like negligent misstatement) may still bite. Bisset just tells us honest opinion is not, by itself, the kind of statement misrepresentation targets.",
+          "feedbackIncorrect": "Being wrong is not the same as being a misstatement of fact. Bisset draws the line at honest opinion — the buyer's disappointment doesn't convert a genuine belief into a factual lie."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Silence, half-truths, and the statement that goes stale",
+        "voice": "taxonomic — builds a reference structure students will return to",
+        "body": [
+          "The general rule is that silence is not misrepresentation: there is no general duty to volunteer information to the other side of a contract, however material it might be. But — as with the duty-to-rescue rule in criminal law — the general rule is not the whole story, and three situations pull silence back into the frame.",
+          "First, the half-truth: a statement can be literally true and still misleading, because of what it leaves out. Telling a buyer a property is let to tenants, without mentioning they're in serious rent arrears and about to be evicted, tells a technically accurate story that creates a false overall impression.",
+          "Second, the statement that changes: With v O'Flanagan holds that a representation which was true when made, but becomes false before the contract is concluded, must be corrected. The seller in that case told a buyer his medical practice earned a certain income; by the time contracts were exchanged months later, the practice had collapsed, and he said nothing. Silence at that point was itself the misrepresentation — not because he'd lied originally, but because he let a stale truth stand in for a live falsehood.",
+          "Third, certain relationships — of the utmost good faith, such as insurance contracts, or where one party already owes fiduciary-style duties to the other — impose freestanding duties of disclosure that go well beyond ordinary contracting. Those are the exception rather than the rule, but worth flagging as a category, not folding into 'silence is never enough.'"
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "When silence becomes misrepresentation",
+            "points": [
+              "The half-truth — a statement literally accurate but misleading because of what it omits",
+              "The statement that becomes false before completion — With v O'Flanagan: a true statement must be corrected once it stops being true",
+              "Relationships of utmost good faith or fiduciary character — a positive duty of disclosure exists independently of anything said"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "With v O'Flanagan",
+            "citation": "[1936] Ch 575",
+            "court": "Court of Appeal",
+            "year": 1936,
+            "factsShort": "A doctor selling his practice truthfully stated its takings in January; by the May contract date the practice had collapsed through his illness, and he said nothing further.",
+            "ratioShort": "A statement true when made but falsified by later events must be corrected before the contract is concluded, or it becomes a misrepresentation by omission.",
+            "expanded": {
+              "facts": "Dr O'Flanagan was negotiating the sale of his medical practice. In January he told the prospective buyer, Mr With, that the practice generated a certain level of income. Between January and the exchange of contracts in May, O'Flanagan fell seriously ill, the practice's patients largely went elsewhere, and its takings collapsed almost to nothing. O'Flanagan said nothing about this change before the sale completed.",
+              "judgmentExtract": "The Court of Appeal held that a representation, once made, is treated as continuing until the contract is actually made. If, to the representor's knowledge, it becomes untrue before that point, there is a duty to disclose the change; failing to do so is itself a form of misrepresentation, even though the original statement was accurate when spoken.",
+              "significance": "This closes an obvious gap that a strict 'silence is not misrepresentation' rule would otherwise leave open — a seller could not simply go quiet the moment their own earlier truthful statement started working against the buyer's interests."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-11-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the With v O'Flanagan facts in the order they happened.",
+          "items": [
+            "O'Flanagan truthfully states the practice's takings in January",
+            "O'Flanagan falls seriously ill and the practice's income collapses",
+            "Contracts are exchanged in May with no update given",
+            "The buyer discovers the true position and seeks rescission"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "Exactly the sequence that matters: the duty to speak up is triggered by the gap between an earlier true statement and the later reality, before the contract is actually concluded.",
+          "feedbackIncorrect": "Check the order again — the key is that the statement was true first, then became false, and only after that did the parties actually contract without any correction being given."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Did the statement actually induce the contract?",
+        "voice": "Socratic — poses a puzzle, then narrows it to the test",
+        "body": [
+          "Suppose a false statement is made, and the other party enters the contract. Is that automatically enough? Not quite — ask this: would the claimant have entered the contract anyway, on exactly the same terms, even without the statement? If the answer is genuinely yes, the statement induced nothing, and there is no operative misrepresentation, however false it was.",
+          "The claimant does not have to show the statement was the sole reason they contracted — only that it was a reason, one factor among possibly several that materially influenced the decision. Nor does the claimant have to prove they even checked the statement was true; a party who is careless about verifying a lie is still entitled to rely on it, provided they were in fact induced by it.",
+          "Where it gets harder is when the claimant had the opportunity to discover the truth and didn't take it — say, a survey was available but never read. That carelessness does not, by itself, break the chain of inducement. What does break it is if the claimant actually knew the statement was false, or relied on their own independent judgement rather than the statement at all — in which case there was nothing left for the statement to induce."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Inducement",
+            "definition": "The requirement that the false statement was a real and operative reason the claimant entered the contract — not necessarily the only reason, but more than background noise the claimant would have ignored regardless."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-11-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A buyer is told falsely that a business has no pending litigation against it. The buyer's own solicitor had access to a public court register that would have revealed the claim, but never checked it. How confident are you that this failure to check breaks inducement?",
+          "sliderLabels": ["Definitely breaks inducement", "Does not break inducement"],
+          "correctPosition": "Does not break inducement",
+          "explanation": "Carelessness in failing to verify a statement is not the same as actual knowledge of its falsity or reliance on independent judgement instead of the statement. Unless the buyer actually knew the truth or ignored the statement entirely, the false statement can still be treated as operative."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Three misrepresentations, three remedies",
+        "voice": "brisk and comparison-driven — sets facts side by side and lets the contrast do the work",
+        "body": [
+          "Once you know a false, inducing statement of fact was made, the entire remaining question is: which of three species is it? The answer decides the measure of damages, and in practice decides who wins the case.",
+          "Fraudulent misrepresentation is the narrowest and most serious: Derry v Peek defines fraud as a statement made knowingly false, without belief in its truth, or recklessly, not caring whether it is true or false. Honest but unreasonable belief is not fraud — that distinction is the entire point of Derry v Peek, decided against tram company directors who genuinely, if carelessly, believed a false statement about their right to use steam power.",
+          "Negligent misrepresentation now runs mainly through s 2(1) of the Misrepresentation Act 1967, which reverses the burden of proof: once the claimant shows a false statement induced the contract, the representor must prove they had reasonable grounds to believe it was true, and did believe it, right up to the moment of contracting. Fail to discharge that burden, and damages are assessed as if the misrepresentation were fraudulent — that is the striking effect of Royscot Trust v Rogerson, which held that s 2(1) damages use the tort measure for deceit, not the more limited negligence measure, even though the underlying conduct is merely careless.",
+          "Innocent misrepresentation is what's left once fraud and negligence are both ruled out: a false, inducing statement, honestly and reasonably believed true. Here rescission remains the primary remedy, and s 2(2) gives the court a discretion to award damages in lieu of rescission where rescission would be a disproportionate remedy — but there is no independent damages claim as of right."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Misrepresentation Act 1967, s 2(1)",
+            "text": "Where a person has entered into a contract after a misrepresentation has been made to him by another party thereto and as a result thereof he has suffered loss, then, if the person making the misrepresentation would be liable to damages in respect thereof had the misrepresentation been made fraudulently, that person shall be so liable notwithstanding that the misrepresentation was not made fraudulently, unless he proves that he had reasonable ground to believe and did believe up to the time the contract was made that the facts represented were true.",
+            "elements": ["A misrepresentation was made by one contracting party to the other", "The claimant entered the contract as a result and suffered loss", "The defendant bears the burden of proving reasonable grounds for an honest belief in the statement's truth"]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Category, test, remedy",
+            "points": [
+              "Fraudulent — Derry v Peek test (knowing falsity, no honest belief, or reckless indifference) — rescission plus tortious damages for deceit",
+              "Negligent (s 2(1)) — defendant fails to prove reasonable grounds for honest belief — rescission plus damages on the fraud measure (Royscot Trust v Rogerson)",
+              "Innocent — false statement honestly and reasonably believed true — rescission, or damages in lieu under s 2(2) at the court's discretion"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-11-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two sellers, same false statement about a business's turnover. Which is closer to negligent rather than innocent misrepresentation?",
+          "scenarioA": "The seller checked the last three years of audited accounts personally before stating the figure, and the figure matched what those accounts showed.",
+          "scenarioB": "The seller repeated a turnover figure a former business partner mentioned in conversation two years earlier, without checking any current records before the sale.",
+          "correctScenario": "B",
+          "explanation": "In B, the seller has nothing resembling reasonable grounds for a current, honest belief — an old, unverified, secondhand figure will not discharge the s 2(1) burden. In A, a recent, personally verified check is exactly the kind of reasonable ground that points towards innocent misrepresentation instead."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Rescission, and the doors that close it off",
+        "voice": "cautionary — closes with the traps and the practical warning",
+        "body": [
+          "Rescission is the remedy common to all three categories: it unwinds the contract, putting both parties back as close as possible to their pre-contract position. It is an equitable remedy, not available as of right, and four recognised bars can close the door on it entirely, whatever category the misrepresentation falls into.",
+          "Affirmation bars rescission where the claimant, knowing the truth, does something that shows they intend to carry on with the contract anyway — continuing to use goods after discovering the defect, for instance. Lapse of time can itself be evidence of affirmation, and in cases of innocent misrepresentation, time alone (even without conduct showing acceptance) has been treated as a bar.",
+          "Restitutio in integrum being impossible bars rescission where the parties genuinely cannot be restored to their original positions — the subject matter has been consumed, transformed, or has changed hands to an innocent third party who has acquired rights in it. Third-party rights themselves form the fourth bar: once a bona fide purchaser for value has acquired an interest in the subject matter, rescission cannot be used to unwind that innocent party's position.",
+          "One more thing worth knowing, briefly, because it surfaces in the news rather than in exam questions: consumer-facing unfair commercial practices — misleading actions, aggressive practices, and the like — are now dealt with separately under Part 4 of the Digital Markets, Competition and Consumers Act 2024, which took over from the 2008 Unfair Trading Regulations from April 2025. That regime gives consumers extra statutory remedies against traders. It sits alongside, and does not replace, the misrepresentation analysis in this lesson — which remains governed by the 1967 Act and common law."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume rescission is available automatically once any misrepresentation, however minor, is proved.",
+            "whyItsWrong": "Rescission is discretionary and equitable. Affirmation, lapse of time, impossibility of restitutio in integrum, and intervening third-party rights can each bar it entirely — the correct answer to 'what remedy?' is never complete without checking whether a bar applies."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Restitutio in integrum",
+            "definition": "The requirement, for rescission to be granted, that both parties can substantially be restored to their pre-contractual positions. Where that is no longer practically possible, rescission is barred even though the misrepresentation is proved."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-11-check-05",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that most clearly bars rescission here.",
+          "scenarioText": "Anna buys a secondhand printing press after the seller falsely states it has never broken down. Six months later, having used the press daily and sold it on to a third party who has already installed it in their own workshop, Anna discovers the truth and wants to rescind.",
+          "tappableSpans": ["buys a secondhand printing press", "falsely states it has never broken down", "used the press daily", "sold it on to a third party who has already installed it"],
+          "correctSpan": "sold it on to a third party who has already installed it",
+          "feedbackCorrect": "That's the bar: once an innocent third party has acquired rights in the subject matter, rescission cannot be used to unwind their position — restitutio in integrum has become impossible in the relevant sense.",
+          "feedbackIncorrect": "Daily use on its own may go to affirmation, but the clearest bar on these facts is that the press has passed to a third party who has already relied on it — that closes the door on rescission regardless of anything else."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-11-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the four elements a claimant must establish for an actionable misrepresentation.",
+      "acceptableAnswers": ["false statement of fact, made by one party to the other, which induces the other to enter the contract", "false statement of fact inducing entry into the contract"],
+      "modelAnswer": "A false statement of fact (not opinion, intention, or law, subject to their exceptions), made by one contracting party to the other, which induces the other party to enter the contract."
+    },
+    {
+      "itemId": "contract-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "In Edgington v Fitzmaurice, why was a statement about the purpose of raised funds treated as a statement of fact rather than mere future intention?",
+      "options": ["Because a false statement of present intention is itself a factual claim about the speaker's actual state of mind", "Because statements about money are always treated as fact regardless of context"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "In Bisset v Wilkinson, why did the buyer's claim fail?",
+      "options": ["Because the seller's statement about stocking capacity was an honestly held opinion, not a statement of fact", "Because misrepresentation claims cannot arise out of sales of land", "Because the buyer had signed a written contract excluding all liability"],
+      "correctIndex": 0,
+      "trapExplanation": "There is no blanket exclusion for land sales, and nothing in the facts turns on an exclusion clause. The case turns entirely on the opinion/fact distinction: neither party was in a position to know the true stocking capacity, so the statement was honest opinion, not fact."
+    },
+    {
+      "itemId": "contract-11-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Under s 2(1) of the Misrepresentation Act 1967, once the claimant proves a false, inducing statement, what must the defendant do to avoid liability?",
+      "options": ["Prove they had reasonable grounds to believe, and did believe, the statement was true up to the moment of contracting", "Prove the claimant suffered no financial loss at all", "Prove the statement was made by a third party rather than the defendant"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-11-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage summarising Derry v Peek, highlight the sentence stating the ratio on fraud.",
+      "passage": "The directors had honestly, though mistakenly, believed they had authority to use steam power. Fraud in law means a false representation made knowingly, or without belief in its truth, or recklessly, careless whether it be true or false. Honest belief, however unreasonable, is a complete answer to an allegation of fraud, though it may found liability elsewhere.",
+      "ratioSentence": "Fraud in law means a false representation made knowingly, or without belief in its truth, or recklessly, careless whether it be true or false."
+    },
+    {
+      "itemId": "contract-11-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the steps a court takes when a claimant alleges a misrepresentation and seeks a remedy.",
+      "items": ["Establish a false statement of fact was made", "Establish the statement induced the claimant to contract", "Classify the misrepresentation as fraudulent, negligent, or innocent", "Check whether any bar to rescission applies before granting a remedy"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "contract-11-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is closer to fraudulent misrepresentation under the Derry v Peek test?",
+      "scenarioA": "A car dealer states the mileage is accurate, having reasonably relied on the odometer reading with no reason to suspect tampering.",
+      "scenarioB": "A car dealer states the mileage is accurate while knowing the odometer has been wound back, because a mechanic told him so the week before.",
+      "correctScenario": "B",
+      "explanation": "B shows actual knowledge of falsity — the core of the Derry v Peek test. A shows an honest, reasonable belief with nothing to suggest otherwise, which points away from fraud entirely (though it may still be actionable as innocent misrepresentation)."
+    },
+    {
+      "itemId": "contract-11-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that turns this into a misrepresentation by half-truth.",
+      "scenarioText": "A seller tells a buyer the flat has 'no ongoing disputes with neighbours,' which is true of disputes about the flat itself, while failing to mention an active, escalating dispute with the neighbour above about noise that the seller has reported to the council twice.",
+      "tappableSpans": ["no ongoing disputes with neighbours", "true of disputes about the flat itself", "failing to mention an active, escalating dispute", "reported to the council twice"],
+      "correctSpan": "failing to mention an active, escalating dispute",
+      "explanation": "The literal statement is narrowly true, but omitting the live, escalating dispute creates a false overall impression — exactly the half-truth pattern that pulls silence back into misrepresentation."
+    },
+    {
+      "itemId": "contract-11-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A buyer is falsely told a warehouse roof was replaced last year. The buyer's own engineer inspected the roof but, through carelessness, missed clear signs it was decades old, and the buyer proceeds relying partly on the seller's statement and partly on the engineer's clean report. Was the buyer induced by the misrepresentation?",
+      "options": ["Yes — it need only be one operative reason among others, not the sole cause", "No — because the buyer also relied on an independent inspection, inducement is automatically excluded"],
+      "correctIndex": 0,
+      "explanation": "Inducement does not require the statement to be the only reason for contracting. As long as it was a real, operative factor, it satisfies the requirement even where another factor (here, the flawed inspection) also played a part."
+    },
+    {
+      "itemId": "contract-11-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A finance company is induced by a car dealer's negligent (s 2(1)) misrepresentation about a car's value to enter a hire-purchase agreement, and later suffers a loss greater than would be recoverable under an ordinary negligence claim. Following Royscot Trust v Rogerson, on what measure are damages assessed?",
+      "options": ["The tortious measure for deceit, covering all losses flowing directly from entering the contract even if unforeseeable", "The ordinary contractual expectation measure", "No damages are recoverable under s 2(1) at all"],
+      "correctIndex": 0,
+      "explanation": "Royscot Trust v Rogerson holds that s 2(1) damages are calculated as if the misrepresentation were fraudulent — the full deceit measure — even though the underlying conduct was merely negligent, because the statute deems liability 'as if' fraudulent unless the defendant discharges the reasonable-grounds burden."
+    },
+    {
+      "itemId": "contract-11-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant discovers the truth about a misrepresentation, then continues to use the goods for several months without complaint before seeking rescission. How confident are you that this conduct is capable of amounting to affirmation, barring rescission?",
+      "sliderLabels": ["Not capable of amounting to affirmation", "Capable of amounting to affirmation"],
+      "correctPosition": "Capable of amounting to affirmation",
+      "explanation": "Continuing to use goods, or otherwise behaving as if the contract stands, after learning the truth is a recognised route to affirmation — one of the four bars to rescission — and lapse of time on top of that conduct only strengthens the inference."
+    },
+    {
+      "itemId": "contract-11-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Priya sells her graphic design business to Tom. She tells him, honestly believing it based on last year's figures which she never rechecked, that the business turns over £200,000 annually. In fact a major client left three months before the sale, and turnover has fallen to £90,000 — a fact Priya could easily have discovered by checking recent invoices. Tom buys the business relying on the stated figure. Analyse Tom's position.",
+      "factsToOrder": [
+        "Priya states a turnover figure based on stale, unchecked figures",
+        "The true, current turnover is far lower due to a lost client",
+        "Priya could have discovered this with minimal checking",
+        "Tom relies on the stated figure in deciding to buy"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Priya's statement about turnover is an actionable misrepresentation, and if so, whether it is negligent or innocent.",
+        "rule": "A false, inducing statement of fact is actionable; under s 2(1) Misrepresentation Act 1967 the burden falls on the representor to prove reasonable grounds for an honest belief in its truth up to the point of contracting, failing which damages are assessed on the fraud measure (Royscot Trust v Rogerson).",
+        "application": "The statement is false and induced Tom's purchase. Priya's belief was honest but based on stale, unchecked figures that a minimal check would have corrected — this falls well short of 'reasonable grounds' for the purposes of s 2(1), so she is unlikely to discharge the statutory burden, pointing towards negligent rather than innocent misrepresentation.",
+        "conclusion": "Tom has an actionable misrepresentation; absent Priya proving reasonable grounds for her belief, this is negligent misrepresentation under s 2(1), giving Tom rescission and damages assessed on the fraud measure."
+      }
+    },
+    {
+      "itemId": "contract-11-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which statement correctly places the Digital Markets, Competition and Consumers Act 2024, Part 4 in relation to this lesson's topic?",
+      "options": ["It addresses consumer unfair commercial practices separately, alongside misrepresentation, which remains governed by the 1967 Act and common law", "It has replaced the Misrepresentation Act 1967 entirely for all contracts"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common error in this lesson's test items is stopping the analysis once a false statement is found, without asking whether it actually induced the contract, and without checking whether a bar to rescission closes off the remedy that would otherwise follow.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.vitiating-factors.misrepresentation"
+  }
+}

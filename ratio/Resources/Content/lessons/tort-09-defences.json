@@ -1,0 +1,502 @@
+{
+  "lessonId": "tort-09",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 9,
+  "topicId": "tort.negligence.defences",
+  "title": "Defences in negligence",
+  "subtitle": "Contributory negligence, volenti, and illegality after Patel v Mirza",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how damages are apportioned for contributory negligence under the 1945 Act, and apply the 'just and equitable' test to new facts",
+    "Distinguish volenti non fit injuria from contributory negligence, and explain why volenti so rarely succeeds as a complete defence",
+    "State the modern illegality defence from Patel v Mirza and apply its range-of-factors approach, including to the 2026 Lewis-Ranwell decision"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Law Reform (Contributory Negligence) Act 1945",
+      "role": "Statutory basis for apportioning damages rather than barring the claim entirely"
+    },
+    {
+      "citation": "Froom v Butcher [1976] QB 286",
+      "role": "Sets the tariff approach to seatbelt-type contributory negligence"
+    },
+    {
+      "citation": "Jackson v Murray [2015] UKSC 5",
+      "role": "Supreme Court recalibrates apportionment for a child claimant"
+    },
+    {
+      "citation": "Morris v Murray [1991] 2 QB 6",
+      "role": "Rare successful volenti defence — flying with a visibly drunk pilot"
+    },
+    {
+      "citation": "Henderson v Dorset Healthcare [2020] UKSC 43",
+      "role": "Illegality bars a claim where the claimant's own unlawful act (manslaughter) is inseparable from the loss claimed"
+    },
+    {
+      "citation": "Lewis-Ranwell v G4S Health Services [2026] UKSC 2",
+      "role": "Most recent application of the Patel v Mirza range-of-factors test to a hard case on capacity"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students tend to lump these three defences together as 'reasons the claimant loses'. They don't work the same way at all — one reduces damages, one is a near-dead letter, and one has been rebuilt from scratch since 2016. Where the profile shows knowledge ahead of application, this note appears: 'You can name all three defences — this lesson is about knowing which one is actually live on a given set of facts, and what each one does to the claimant's damages.'",
+    "profileHooks": {
+      "weakApplication": "You've handled the definitions before. The test pool here leans hard on application — expect fact patterns where you have to pick the right defence and predict its effect on the award, not just name it.",
+      "weakKnowledge": "Go through Parts 1 to 3 slowly and be sure you can state what each defence actually does to a claim — full bar versus percentage reduction — before you get to the illegality material in Part 4, which assumes you have that distinction solid."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A claimant proves every element of negligence — duty, breach, causation, loss — and still might not get full compensation, or any at all. Not because the defendant did nothing wrong, but because of what the claimant did. This lesson is about the three ways a claimant's own conduct comes back to bite their own claim, and why courts have spent the last decade quietly rewriting the harshest of the three.",
+    "lawStatedNotice": "Law stated as at 22 September 2026, including the Supreme Court's decision in Lewis-Ranwell v G4S Health Services [2026] UKSC 2, handed down earlier this year. This is a live area: the illegality defence has been reshaped by case law within the last decade and continues to be tested in the courts, so treat the range-of-factors approach as the current position rather than a settled final word."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Damages are not all-or-nothing: contributory negligence",
+        "voice": "conversational, building from an everyday example the reader can picture immediately",
+        "body": [
+          "Picture two drivers. One runs a red light. The other is doing forty in a thirty zone but has the right of way. They collide. Under a strict all-or-nothing rule, the driver who ran the light is entirely liable and the speeding driver recovers in full for their injuries. That feels wrong, and for most of English legal history it produced exactly that result anyway — because until 1945, any fault at all on the claimant's part was a complete defence, however small.",
+          "The Law Reform (Contributory Negligence) Act 1945 changed that. It doesn't ask whether the claimant was at fault; it assumes they might be, and asks how much. Section 1(1) allows a court to reduce damages 'to such extent as the court thinks just and equitable having regard to the claimant's share in the responsibility for the damage'. The claim survives. The award shrinks.",
+          "This is apportionment, not a defence in the pure sense — the defendant doesn't escape liability, they just don't pay for the slice of harm attributable to the claimant's own carelessness. Two things drive the percentage: how much the claimant's conduct contributed to the accident happening at all, and separately, how much it contributed to the injury being as bad as it was. Those can pull in different directions, and the best-known illustration is a seatbelt case."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law Reform (Contributory Negligence) Act 1945, s 1(1)",
+            "text": "Where any person suffers damage as the result partly of his own fault and partly of the fault of any other person or persons, a claim in respect of that damage shall not be defeated by reason of the fault of the person suffering the damage, but the damages recoverable in respect thereof shall be reduced to such extent as the court thinks just and equitable having regard to the claimant's share in the responsibility for the damage.",
+            "elements": [
+              "Damage suffered partly through the claimant's own fault",
+              "The claim is not defeated outright",
+              "Damages are reduced, not extinguished",
+              "The reduction is 'just and equitable' having regard to the claimant's share of responsibility"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Froom v Butcher",
+            "citation": "[1976] QB 286",
+            "court": "Court of Appeal",
+            "year": 1976,
+            "factsShort": "The claimant was injured in a collision caused entirely by the defendant's negligent driving, but was not wearing a seatbelt; his injuries were worse than they would otherwise have been.",
+            "ratioShort": "Fault in causing the accident and fault in causing the extent of injury are separate questions; failing to wear a seatbelt does not cause a crash, but it can substantially increase the damage, and reduces damages accordingly.",
+            "expanded": {
+              "facts": "Mr Froom was a passenger-turned-driver injured when Mr Butcher's car collided head-on with his, entirely as a result of Butcher's negligence. Froom was not wearing a seatbelt. Medical evidence suggested that had he been wearing one, his injuries — a fractured skull, chest and finger injuries — would have been significantly less severe.",
+              "judgmentExtract": "Lord Denning MR held that the claimant's failure to wear a seatbelt had nothing to do with causing the accident, but was directly relevant to the extent of his injuries. He set out a now-famous tariff: where the seatbelt would have made no difference, no reduction; where it would have avoided the injury altogether, a reduction of around 25%; where it would have made the injuries less severe, around 15%.",
+              "significance": "Froom is the standard illustration that contributory negligence is measured against the damage, not just the accident. It also shows courts using rough banding for recurring fact patterns rather than recalculating percentages from first principles every time — useful, but not a rigid rule, as Jackson v Murray later confirmed."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the 1945 Act, what happens to a claimant's damages when contributory negligence is established?",
+          "options": [
+            "The claim is barred entirely",
+            "Damages are reduced by a percentage reflecting the claimant's share of responsibility",
+            "Liability shifts entirely onto the claimant"
+          ],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — the 1945 Act is an apportionment mechanism, not a complete defence. The claim survives; the number attached to it shrinks.",
+          "feedbackIncorrect": "Not quite — the whole point of the 1945 Act was to move away from all-or-nothing outcomes. The claim is not defeated; it is reduced by a 'just and equitable' percentage."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Apportionment is not a formula — Jackson v Murray",
+        "voice": "argumentative, pushing back against a tidy assumption before correcting it",
+        "body": [
+          "It's tempting, after Froom, to treat apportionment as mechanical — look up the fact pattern, apply the tariff, done. Resist that instinct. Percentages in this area are fact-sensitive findings, not fixed rules, and appellate courts have shown they will intervene when a trial judge's split looks unbalanced.",
+          "Jackson v Murray is the clearest recent proof of that. A thirteen-year-old girl stepped out from behind a stationary school minibus into the path of an oncoming car, and was struck. The trial judge found her 90% responsible for her own injuries — a figure that treated her, in effect, almost as an adult pedestrian who simply made a bad call.",
+          "The Supreme Court reduced that to 50%. The reasoning matters more than the number: a driver on a road where children are known to be present must drive with that risk in mind, and a car is potentially lethal in a way a pedestrian's own carelessness is not. Age, the relative dangerousness of the parties' conduct, and the degree of departure from the standard of care all feed into the split — and reasonable judges can, and did, land in very different places on the same facts.",
+          "The exam lesson is not 'children get 50%'. It's that apportionment invites genuine argument on both sides of a percentage, and a well-built answer engages with the factors pulling the number up and down rather than asserting a figure."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Jackson v Murray",
+            "citation": "[2015] UKSC 5",
+            "court": "Supreme Court",
+            "year": 2015,
+            "factsShort": "A 13-year-old stepped out from behind a stationary school minibus and was hit by a car; the trial judge apportioned 90% of the responsibility to her.",
+            "ratioShort": "Apportionment must weigh both causative potency (how dangerous each party's conduct was) and blameworthiness; a driver's vehicle is inherently more dangerous than a pedestrian's misjudgement, which pulled the split to 50/50 on appeal.",
+            "expanded": {
+              "facts": "Poppy Jackson, aged 13, got off a school minibus and, a short time later, ran out from behind it across the road, into the path of Mr Murray's car. Murray was travelling faster than he should have given the visible hazard of a stopped bus with children nearby, though not recklessly. The trial judge found Jackson 90% contributorily negligent.",
+              "judgmentExtract": "The Supreme Court, by majority, held the 90% finding was plainly wrong. Both the causative potency of a car versus a pedestrian, and the fact that a driver approaching a stationary bus in a place where children are known to alight ought to anticipate a child might emerge, meant the balance should sit much closer to even. The apportionment was revised to 50/50.",
+              "significance": "Jackson v Murray confirms that appellate courts will revisit apportionment percentages that look disproportionate, and that the inherent danger of a moving vehicle is a standing factor pulling responsibility back towards drivers, even where the immediate trigger for a collision is the claimant's own conduct."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-09-check-02",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "In Jackson v Murray, was the Supreme Court's revised 50/50 split closer to the trial judge's original 90% finding, or a substantial departure from it?",
+          "sliderLabels": [
+            "Close to the original finding",
+            "A substantial departure"
+          ],
+          "correctPosition": "substantial departure",
+          "explanation": "This slider tests direction of reasoning rather than a fixed doctrinal term: the Supreme Court moved the apportionment from 90% against the claimant to 50/50 — a large revision, driven by the greater causative potency of a car and the anticipated presence of children."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Volenti: consent to risk, and why it almost never works",
+        "voice": "case-narrative, letting the facts of one dramatic case carry the doctrine",
+        "body": [
+          "Volenti non fit injuria — 'to a willing person, no injury is done' — is a complete defence. If it succeeds, the claimant recovers nothing, not a reduced sum. That severity is exactly why courts apply it narrowly: full knowledge of the specific risk, and a free, informed choice to accept the legal risk of it, not just the physical danger.",
+          "Morris v Murray is the case that shows what it actually takes. The claimant and defendant spent an afternoon drinking heavily. In the evening, the defendant suggested they take his light aircraft up for a flight. The claimant, also very drunk, agreed, helped start the plane, and climbed into the passenger seat. The plane crashed on takeoff, killing the pilot and injuring the claimant.",
+          "The Court of Appeal held volenti succeeded. This wasn't merely 'the claimant knew the pilot had been drinking' — the claimant had spent hours drinking alongside him, watched him prepare the aircraft, and chose to fly anyway in circumstances so obviously and grossly dangerous that no person in their right senses could have failed to appreciate the risk. That combination of extreme, visible danger and a genuinely free choice to proceed is rare, and that's the point: volenti is not a defence for ordinary carelessness on the claimant's part, which is what contributory negligence is for.",
+          "Contrast a passenger who simply knows their friend is a mediocre driver, or a spectator at a football match who accepts the ordinary risks of the game. Knowledge of general risk is common; volenti requires something closer to a free acceptance of a specific, obvious, and extreme danger — which is why claimants far more often end up facing contributory negligence, not volenti."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Volenti non fit injuria",
+            "definition": "A complete defence to negligence, requiring the claimant's full knowledge of the specific risk in question and a genuinely free and informed agreement to accept the legal risk of it — not merely the physical danger. Success bars the claim entirely rather than reducing damages."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-09-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is volenti more likely to succeed as a complete defence?",
+          "scenarioA": "A passenger accepts a lift from a friend who has had two drinks over a long dinner and seems entirely normal, unaware the friend is over the limit.",
+          "scenarioB": "A passenger spends an afternoon drinking heavily alongside a friend, watches the friend prepare a light aircraft while visibly intoxicated, and chooses to fly with him anyway.",
+          "correctScenario": "B",
+          "explanation": "B mirrors Morris v Murray: obvious, extreme, visible danger plus a genuinely free choice to proceed. A looks like ordinary contributory negligence at most — the passenger had no real appreciation of a hidden risk, let alone a free acceptance of an obvious one."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Illegality rebuilt: from mechanical rules to Patel v Mirza",
+        "voice": "structural, laying out the shift from old law to new test as a reference students will revisit",
+        "body": [
+          "The illegality defence — ex turpi causa non oritur actio, 'no action arises from a base cause' — asks whether a claimant should be barred from recovering because their claim is bound up with their own unlawful conduct. For decades the law in this area was a patchwork of technical tests: whether the claimant had to 'plead' their own illegality to establish the claim, whether there was a sufficiently 'close connection' between the illegality and the loss, and similar mechanical formulae that produced inconsistent results on similar facts.",
+          "In 2016, the Supreme Court in Patel v Mirza replaced that patchwork with a single, openly evaluative test. A court now asks whether allowing the claim would be harmful to the integrity of the legal system, weighing: the underlying purpose of the prohibition that was breached and whether denying the claim would enhance that purpose; any other relevant public policy that could be affected; and whether denying recovery would be a proportionate response, given the seriousness of the illegality, its centrality to the claim, the claimant's state of mind, and whether there is a marked disparity between the parties' respective culpability.",
+          "This is a genuine range-of-factors balancing exercise, not a checklist with a single decisive box. That makes it harder to predict, and harder to write about in an exam — you are expected to work through the factors on the given facts, not recite a mechanical rule and stop.",
+          "Henderson v Dorset Healthcare shows the test operating at its most severe. The claimant, who suffered from a severe psychotic illness, killed her mother during an episode and was convicted of manslaughter by reason of diminished responsibility. She sued the NHS trust responsible for her care, alleging its negligence caused the psychotic episode. The Supreme Court held the claim was barred: the loss she claimed for — the consequences of the killing itself — was inseparable from her own criminal act, and allowing recovery for the consequences of manslaughter would undermine the coherence of the law, however much her responsibility was reduced by her illness."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The Patel v Mirza range of factors",
+            "points": [
+              "The underlying purpose of the prohibition breached, and whether denying the claim would enhance that purpose",
+              "Any other relevant public policy that might be affected by denying or allowing the claim",
+              "Whether denial would be a proportionate response, assessed through: the seriousness of the conduct, its centrality to the claim, whether it was intentional, and whether there is a marked disparity in the parties' culpability",
+              "The defence is applied to the facts as a whole — it is a structured evaluative judgment, not a rule triggered by a single fact"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Henderson v Dorset Healthcare University NHS Foundation Trust",
+            "citation": "[2020] UKSC 43",
+            "court": "Supreme Court",
+            "year": 2020,
+            "factsShort": "A claimant with a severe psychotic illness, whose care had allegedly been negligently managed, killed her mother during a psychotic episode and was convicted of manslaughter by reason of diminished responsibility; she then sued the trust for the consequences.",
+            "ratioShort": "Applying Patel v Mirza, the claim was barred because the loss claimed was inseparable from the claimant's own criminal act, and allowing recovery would be inconsistent with the coherence of the law even where culpability was reduced.",
+            "expanded": {
+              "facts": "The claimant had a long psychiatric history and was under the community care of the defendant trust. She alleged the trust negligently failed to respond to warning signs before she killed her mother during an acute psychotic episode. She was convicted of manslaughter by reason of diminished responsibility rather than murder, reflecting her impaired but not absent responsibility.",
+              "judgmentExtract": "Applying the Patel v Mirza framework, the Supreme Court held that the illegality defence applied. The claim was, in substance, a claim for the consequences of the claimant's own criminal act; the loss and the illegality could not be untangled from one another, and permitting recovery would conflict with the wider policy that a person should not profit from, or be compensated for, their own serious criminal conduct — notwithstanding the reduced culpability reflected in the diminished responsibility conviction.",
+              "significance": "Henderson shows Patel v Mirza applied at its most demanding: even a claimant whose criminal responsibility was significantly reduced by illness can be barred where the claim and the illegality are inseparable. It is the direct doctrinal ancestor of the reasoning the Supreme Court used in Lewis-Ranwell v G4S Health Services [2026] UKSC 2, covered in the next part."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-09-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these developments in the illegality defence in chronological order.",
+          "items": [
+            "Courts apply mechanical tests such as the 'reliance' and 'close connection' approaches",
+            "Patel v Mirza replaces those tests with a range-of-factors, policy-based approach",
+            "Henderson v Dorset Healthcare applies the new approach to bar a claim tied to the claimant's own manslaughter",
+            "Lewis-Ranwell v G4S Health Services applies the same approach to a claimant found not guilty by reason of insanity"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the arc: from rigid, technical tests, to a single evaluative test in 2016, to two Supreme Court decisions applying it to increasingly difficult facts involving impaired or absent criminal responsibility.",
+          "feedbackIncorrect": "Reorder by date: the old mechanical tests came first, Patel v Mirza replaced them in 2016, Henderson applied the new test in 2020, and Lewis-Ranwell is the most recent application, in 2026."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Currency point: Lewis-Ranwell and the limits of the range-of-factors test",
+        "voice": "measured and deliberately restrained, treating difficult facts as a doctrinal case study rather than a story",
+        "body": [
+          "Lewis-Ranwell v G4S Health Services [2026] UKSC 2 is this lesson's most recent authority, and its value is precisely that it shows the Patel v Mirza test working on facts that push it harder than Henderson did. The claimant had killed another person while experiencing a severe mental health crisis, and was found not guilty of manslaughter by reason of insanity — a verdict that, unlike Henderson's diminished responsibility conviction, reflects a finding that the claimant lacked the capacity to be held criminally responsible at all. He later brought a negligence claim against the healthcare provider responsible for his care in custody, alleging its failures caused or worsened the crisis that led to the killing.",
+          "The question for the Supreme Court was whether the absence of criminal responsibility — no conviction, because the defence of insanity succeeded — took the claim outside the illegality defence altogether. It did not. Applying Patel v Mirza, the Court held that the relevant 'illegality' for these purposes is the underlying unlawful act itself, not the criminal label eventually attached to it; a killing remains the kind of event the public policy against compensating for serious wrongdoing is aimed at, whether or not the actor was legally capable of being convicted for it. The claim was, once again, inseparable from that underlying act, and the range-of-factors balance came down against allowing recovery.",
+          "What makes this the clearest illustration of the modern test in action is what it rules out. Under the old mechanical approach, a claimant who was never convicted of anything might well have escaped the defence on a technicality — no conviction, no 'reliance' on illegal conduct to found the claim. Patel v Mirza's evaluative approach reaches past that formality and asks the substantive question directly: is this claim, in truth, a claim for the consequences of a serious unlawful killing? If so, the public-policy and proportionality factors can still point to refusal, even without a criminal conviction to point to.",
+          "Treat Lewis-Ranwell as confirmation, not expansion: it does not lower the bar for when illegality applies, and it does not suggest claimants with any mental health history are automatically barred from suing. It confirms that the test looks at substance over label, and that a lack of criminal capacity is one factor for the court to weigh — a point toward the claimant's culpability being reduced — within the balance, not a trump card that ends the analysis before it starts."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Lewis-Ranwell v G4S Health Services",
+            "citation": "[2026] UKSC 2",
+            "court": "Supreme Court",
+            "year": 2026,
+            "factsShort": "A claimant found not guilty of manslaughter by reason of insanity brought a negligence claim against his healthcare provider, alleging its failures contributed to the crisis in which the killing occurred.",
+            "ratioShort": "The illegality defence under Patel v Mirza looks at the underlying unlawful act, not whether it resulted in a conviction; a lack of criminal capacity is a factor within the balancing exercise, not an automatic route around the defence.",
+            "expanded": {
+              "facts": "The claimant had been in the care of the defendant provider in the period leading up to a serious mental health crisis, during which he killed another person. He was tried for manslaughter and found not guilty by reason of insanity, reflecting a finding that he lacked the capacity for criminal responsibility. He subsequently brought a civil negligence claim, alleging the provider's failures in his care caused or contributed to the crisis and its consequences.",
+              "judgmentExtract": "The Supreme Court held that the absence of a criminal conviction did not remove the case from the scope of the illegality defence. Applying the Patel v Mirza factors, the Court reasoned that the underlying act — an unlawful killing — remained the substance of what the claim sought compensation for, regardless of the claimant's ultimate criminal capacity. The claimant's lack of capacity was weighed as relevant to proportionality and culpability, but did not, on these facts, outweigh the public policy against compensating for the consequences of a serious unlawful killing, and the claim was barred.",
+              "significance": "Lewis-Ranwell is the leading modern illustration of Patel v Mirza applied to its hardest case: a claimant with no criminal conviction at all. It confirms the test is substantive rather than formal, and it is the most recent point on the doctrinal line running from the old mechanical rules, through Patel v Mirza, through Henderson, to the present law."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-09-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Which best describes the significance of the claimant's insanity verdict in Lewis-Ranwell for the illegality defence?",
+          "options": [
+            "It automatically defeated the illegality defence, because there was no criminal conviction to rely on",
+            "It removed the case from tort law entirely and left only a criminal law remedy",
+            "It was one factor weighed within the Patel v Mirza balancing exercise, but did not by itself prevent the defence succeeding"
+          ],
+          "correctIndex": 2,
+          "explanation": "The Supreme Court treated the underlying unlawful act, not the presence or absence of a conviction, as the trigger for the illegality analysis. The insanity verdict fed into the proportionality and culpability strands of Patel v Mirza but did not, on its own, defeat the defence."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-09-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the statute that governs the apportionment of damages for a claimant's own contributory fault.",
+      "acceptableAnswers": [
+        "Law Reform (Contributory Negligence) Act 1945",
+        "the 1945 Act",
+        "Contributory Negligence Act 1945"
+      ],
+      "modelAnswer": "The Law Reform (Contributory Negligence) Act 1945, which allows damages to be reduced to such extent as the court thinks just and equitable, rather than barring the claim outright."
+    },
+    {
+      "itemId": "tort-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Is volenti non fit injuria a partial reduction of damages or a complete defence?",
+      "options": [
+        "A complete defence — it bars the claim entirely if established",
+        "A partial reduction, similar to contributory negligence"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-09-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which case replaced the older mechanical tests for the illegality defence with a range-of-factors approach?",
+      "options": [
+        "Henderson v Dorset Healthcare [2020] UKSC 43",
+        "Patel v Mirza [2016] UKSC 42",
+        "Morris v Murray [1991] 2 QB 6"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Henderson is tempting because it's the dramatic illustration students remember, but it applies the Patel v Mirza test — it didn't create it. Patel v Mirza is the case that replaced the old mechanical approach."
+    },
+    {
+      "itemId": "tort-09-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 1(1) of the 1945 Act, on what basis does a court reduce a claimant's damages?",
+      "options": [
+        "Whatever figure the defendant proposes",
+        "To the extent the court thinks just and equitable, having regard to the claimant's share of responsibility for the damage",
+        "A fixed statutory percentage set by Parliament"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "tort-09-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below, adapted from Froom v Butcher, highlight the sentence that states the ratio on seatbelt-type contributory negligence.",
+      "passage": "The defendant's negligence caused the collision itself. The claimant's failure to wear a seatbelt played no part in causing the accident. But where the wearing of a seatbelt would have avoided or reduced the claimant's injuries, that failure is properly reflected in a reduction of damages, even though it did not contribute to the accident happening at all.",
+      "ratioSentence": "But where the wearing of a seatbelt would have avoided or reduced the claimant's injuries, that failure is properly reflected in a reduction of damages, even though it did not contribute to the accident happening at all."
+    },
+    {
+      "itemId": "tort-09-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Order the reasoning steps a court follows when applying the Patel v Mirza illegality test.",
+      "items": [
+        "Identify the underlying unlawful act said to taint the claim",
+        "Consider the purpose of the prohibition breached and whether denying the claim serves it",
+        "Weigh any other relevant public policy",
+        "Assess proportionality — seriousness, centrality to the claim, state of mind, disparity of culpability",
+        "Decide whether allowing the claim would harm the integrity of the legal system"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "itemId": "tort-09-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A cyclist injured by a negligent driver was not wearing a helmet, and medical evidence shows a helmet would have reduced (but not prevented) her head injury. What is the likely effect on her damages?",
+      "options": [
+        "No effect — failure to wear a helmet cannot amount to contributory negligence",
+        "Her damages may be reduced by a modest percentage reflecting the extent to which a helmet would have lessened the injury, following the Froom approach",
+        "Her claim is barred entirely under volenti"
+      ],
+      "correctIndex": 1,
+      "explanation": "This mirrors Froom's seatbelt reasoning applied to a different piece of safety equipment: not wearing a helmet did not cause the accident, but it likely increased the severity of injury, which is reflected in a partial reduction, not a bar."
+    },
+    {
+      "itemId": "tort-09-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that is most central to a court finding volenti (rather than mere contributory negligence) made out.",
+      "scenarioText": "Ravi accepts a ride on his friend's motorbike. He has seen his friend ride carefully many times before, but today his friend has drunk six pints in front of him and can barely stand, and Ravi still gets on the back.",
+      "tappableSpans": [
+        "accepts a ride on his friend's motorbike",
+        "seen his friend ride carefully many times before",
+        "drunk six pints in front of him and can barely stand",
+        "still gets on the back"
+      ],
+      "correctSpan": "drunk six pints in front of him and can barely stand",
+      "feedbackCorrect": "That's the Morris v Murray-style fact: an obvious, extreme, visible danger the claimant witnessed directly before choosing to proceed, which is what pushes this towards volenti rather than ordinary contributory fault.",
+      "feedbackIncorrect": "Look for the fact showing an obvious and extreme danger the claimant actually witnessed, not just general awareness that accidents happen — that is what distinguishes volenti from contributory negligence."
+    },
+    {
+      "itemId": "tort-09-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is more likely to trigger the illegality defence under Patel v Mirza?",
+      "scenarioA": "A claimant injured in a car crash while driving five miles per hour over the speed limit sues the other driver for negligence.",
+      "scenarioB": "A claimant sues their former accomplice in a burglary for injuries sustained when the accomplice negligently dropped stolen goods on him during the escape.",
+      "correctScenario": "B",
+      "explanation": "B is the classic illegality pattern: the claim is bound up with the claimant's own participation in a serious criminal enterprise at the time of the injury. A is an ordinary road traffic claim where any fault is a contributory negligence question, not an illegality one."
+    },
+    {
+      "itemId": "tort-09-test-10",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A factory worker ignores a clear, repeated safety instruction not to bypass a machine guard, is injured when the guard was in fact bypassed, and sues his employer for negligent supervision. Is this most likely a contributory negligence issue or a volenti issue?",
+      "options": [
+        "Contributory negligence — his own carelessness contributed to the injury, but this is not the extreme, freely-chosen acceptance of an obvious danger volenti requires",
+        "Volenti — ignoring a safety instruction is automatically a complete defence"
+      ],
+      "correctIndex": 0,
+      "explanation": "Courts are reluctant to find volenti in employment contexts precisely because workplace pressures make a truly free choice questionable; this is the paradigm case for apportionment under the 1945 Act instead."
+    },
+    {
+      "itemId": "tort-09-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Anya was convicted of causing death by dangerous driving after crashing a car she and a friend had taken without the owner's consent. She sues the friend, who was driving at the time, for her own injuries in the crash. Analyse whether the illegality defence is likely to bar her claim.",
+      "factsToOrder": [
+        "Anya and her friend took the car without consent",
+        "The friend was driving dangerously at the time of the crash",
+        "Anya was a willing passenger in the unlawfully taken car",
+        "Anya suffered personal injury in the resulting crash",
+        "Anya was herself convicted in relation to the underlying offence"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Anya's claim for her own injuries is barred by the illegality defence given her participation in taking the car without consent.",
+        "rule": "Following Patel v Mirza, a court asks whether allowing the claim would harm the integrity of the legal system, weighing the purpose of the prohibition breached, other relevant public policy, and proportionality — including the seriousness and centrality of the illegality to the claim and the relative culpability of the parties.",
+        "application": "The underlying illegality (taking the car without consent) is closely connected to the circumstances of the injury, but the injury itself arises from the friend's dangerous driving, not directly from the act of taking the vehicle. Anya's own culpability, while real, is arguably less central to the loss than in a case like Henderson, where the claim and the illegality were inseparable. A court would weigh whether denying the claim is a proportionate response given her degree of involvement versus the friend's degree of fault in causing the crash itself.",
+        "conclusion": "The illegality defence may reduce or complicate the claim, but is less clearly a complete bar than in Henderson-type facts, because the loss (injury from dangerous driving) is more separable from the underlying illegality (taking the vehicle) than in cases where the claim is a direct claim for the consequences of the claimant's own unlawful act."
+      }
+    },
+    {
+      "itemId": "tort-09-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "What was the significance of the claimant's insanity verdict in Lewis-Ranwell v G4S Health Services [2026] UKSC 2?",
+      "options": [
+        "It meant the illegality defence could not apply because there was no criminal conviction",
+        "It was weighed within the Patel v Mirza balancing exercise but did not by itself prevent the defence from succeeding",
+        "It transferred the claim automatically into a claim against the state rather than the healthcare provider"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to assume 'no conviction' means 'no illegality defence' — that was closer to how the old mechanical tests might have worked. Patel v Mirza looks at the underlying unlawful act rather than the formal outcome of any prosecution, so the absence of a conviction was a factor in the balance, not an automatic escape route."
+    },
+    {
+      "itemId": "tort-09-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In Morris v Murray, what was the outcome of the volenti defence?",
+      "options": [
+        "It succeeded — the claimant's damages were barred entirely",
+        "It failed — the claimant recovered damages reduced for contributory negligence instead"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-09-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A claimant with a diagnosed and disclosed heart condition insists on going on a fairground ride despite a clearly posted warning that the ride is unsuitable for people with heart conditions, and suffers a cardiac event. The operator was also negligent in failing to stop the ride when the claimant showed visible distress. What is the most likely outcome?",
+      "options": [
+        "The operator's negligence is irrelevant once volenti is raised, and the claim fails entirely",
+        "Volenti is unlikely to succeed given the operator's own separate negligence in failing to respond to visible distress, but contributory negligence is likely to reduce damages for ignoring the warning",
+        "The claimant automatically wins in full because the ride operator posted a warning sign"
+      ],
+      "correctIndex": 1,
+      "explanation": "A posted warning alone rarely establishes the free, informed acceptance of risk volenti requires, especially where the operator's own later negligence (failing to respond to distress) is a separate and additional wrong. The more likely outcome is a contributory negligence reduction, not a complete bar."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson is treating the three defences as interchangeable 'the claimant was careless too' arguments. They are not: contributory negligence reduces damages, volenti is a rare complete defence requiring free acceptance of an obvious extreme risk, and illegality since Patel v Mirza is a structured policy balance focused on the underlying unlawful act — not on whether a conviction was ever obtained, as Lewis-Ranwell makes clear.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.defences"
+  }
+}

@@ -35,6 +35,13 @@ function checkItem(where, item) {
     case 'quickCheck': case 'mcqWithTrap': case 'applyTheRule': case 'statuteParser':
       if (item.correctIndex >= item.options.length) errors.push(`${where}: correctIndex ${item.correctIndex} is past the last option`);
       break;
+    case 'sortIntoBuckets':
+      for (const statement of item.itemsToSort) {
+        if (!item.buckets.includes(statement.correctBucket)) {
+          errors.push(`${where}: "${statement.text}" belongs to "${statement.correctBucket}", which isn't one of the buckets`);
+        }
+      }
+      break;
     case 'tapTheFact':
       if (!item.tappableSpans.includes(item.correctSpan)) errors.push(`${where}: correctSpan isn't one of tappableSpans`);
       for (const span of item.tappableSpans) {

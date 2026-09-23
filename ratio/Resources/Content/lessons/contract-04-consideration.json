@@ -1,0 +1,415 @@
+{
+  "lessonId": "contract-04",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 4,
+  "topicId": "contract.formation.consideration",
+  "title": "Consideration",
+  "subtitle": "The price the law asks for a promise, and why timing matters more than fairness",
+  "estimatedMinutes": 15,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the distinction between sufficiency and adequacy of consideration",
+    "State the general rule that past consideration is not good consideration, and identify the narrow exception where it is",
+    "Apply the rule that performing an existing duty is not good consideration for a fresh promise from the same promisor"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Currie v Misa (1875) LR 10 Ex 153", "role": "The classic definition of consideration as a benefit or detriment moving as part of a bargain" },
+    { "citation": "Chappell v Nestle [1960] AC 87", "role": "Consideration need only be sufficient, not adequate — courts do not police the fairness of the exchange" },
+    { "citation": "Re McArdle [1951] Ch 669", "role": "A promise made after the act is already done is not supported by consideration — past consideration is no consideration" },
+    { "citation": "Pao On v Lau Yiu Long [1980] AC 614", "role": "Narrow exception: an act done at the promisor's request, with a shared understanding it would be rewarded, can support a later express promise" },
+    { "citation": "Stilk v Myrick (1809) 2 Camp 317", "role": "Performing an existing contractual duty owed to the same promisor is not good consideration for a promise of extra pay" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can define consideration but trip on the two traps this lesson is built around: timing (past consideration) and existing duty. Where the profile shows knowledge is solid but application lags, this note appears: 'You can define consideration — this lesson is about the two situations where something that looks like consideration isn't.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well recalling the rules here before. The test pool below leans on scenarios — watch for facts that hide a timing problem or an existing-duty problem behind an otherwise normal-looking promise.",
+      "weakKnowledge": "Go through Parts 1 to 4 slowly and fix the five case names to their one-line rules before Part 5, which assumes you can name each rule without being prompted."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A woman finishes renovating a house for relatives who will one day inherit it. Only afterwards do they promise, gratefully, to pay her back out of the estate. It sounds like a perfectly good bargain — and in law it very likely isn't one at all, because by the time the promise was made, there was nothing left to bargain with. Consideration is the price the law charges for a promise to be enforceable, and this lesson is about the two ways that price can go unpaid without anyone noticing at the time.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The core doctrine of consideration is long-settled common law; the authorities in this lesson remain good law and are regularly applied without modification."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The 1875 definition that still runs the show",
+        "voice": "historical — opens with the Victorian formula and shows it still doing all the work",
+        "body": [
+          "Consideration is the oldest working part of English contract law, and its most quoted definition is over 150 years old. In Currie v Misa, the court described consideration as some right, interest, profit or benefit accruing to one party, or some forbearance, detriment, loss or responsibility given, suffered or undertaken by the other — in short, something moving in exchange, at the promisor's request, not a promise standing alone.",
+          "The reason the law insists on this is straightforward: it is the line between a bargain, which the courts will enforce, and a gift, which they generally will not (short of a formal deed). If I promise you £500 for nothing in return, walking away from that promise breaks no contract, however unkind it is — there was never an exchange, only generosity, and English law does not enforce generosity.",
+          "Two separate questions dominate the rest of this lesson, and it pays to keep them apart from the start. The first is sufficiency: does what was actually given count as consideration at all, whatever it was worth? The second is timing: was the thing given handed over before the promise was made, at the same time as it, or only afterwards? Get the second one wrong and an otherwise perfectly good-looking bargain quietly falls apart."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Consideration",
+            "definition": "Something of value in the eyes of the law — a benefit to the promisor or a detriment to the promisee — given in exchange for a promise, at the promisor's request. Without it, a promise is generally unenforceable as a contract."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Currie v Misa",
+            "citation": "(1875) LR 10 Ex 153",
+            "court": "Exchequer Chamber",
+            "year": 1875,
+            "factsShort": "A dispute over a bill of exchange gave rise to the classic judicial definition of consideration.",
+            "ratioShort": "Consideration consists of a benefit to the promisor or a detriment to the promisee, given as the price of the promise — the exchange is what the law enforces, not the promise alone."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-04-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "In your own words, state the Currie v Misa definition of consideration.",
+          "acceptableAnswers": ["a benefit to the promisor or a detriment to the promisee, given as the price of the promise", "something of value given in exchange for a promise"],
+          "modelAnswer": "Consideration is some benefit accruing to the promisor, or some detriment suffered by the promisee, given at the promisor's request as the price of the promise."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The wrapper that was worth a shilling",
+        "voice": "sardonic — mocks the myth that consideration has to be a fair price",
+        "body": [
+          "Nestle once ran a promotion offering a record for one shilling and sixpence, plus three wrappers from its chocolate bars. The wrappers themselves were worthless — Nestle threw them straight in the bin the moment they arrived. It would be reasonable to assume something that gets binned on arrival can't possibly count as part of the price of anything. English law disagrees, cheerfully and at length.",
+          "The dispute in Chappell v Nestle turned on whether the wrappers formed part of the consideration for the record, which mattered for calculating royalties owed to the copyright holder under the relevant legislation. The House of Lords held that they did. It did not matter in the slightest that the wrappers had no value to Nestle beyond driving sales, or that Nestle discarded them the second they served that purpose. Requiring them as part of the price was enough to make them consideration.",
+          "This is the sufficiency/adequacy distinction doing exactly what it's for. Courts ask only whether something of recognised value in law was given — sufficiency — never whether it was a fair exchange for what came back the other way — adequacy. Sell a car for a peppercorn, if a peppercorn is genuinely what was bargained for, and the law's response is a shrug: that was the deal you struck, and striking a bad deal is not this court's business."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Chappell & Co v Nestle Co",
+            "citation": "[1960] AC 87",
+            "court": "House of Lords",
+            "year": 1960,
+            "factsShort": "Nestle offered a record for a small cash sum plus three chocolate-bar wrappers, which it then discarded as worthless.",
+            "ratioShort": "The wrappers formed part of the consideration despite having no value to Nestle beyond the promotion — the law asks only whether consideration is sufficient, never whether it is adequate."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Sufficiency vs adequacy",
+            "definition": "Sufficiency asks whether what was given has some value recognised by law, however small. Adequacy asks whether it was a fair price for what was received in return. Courts require the first and are entirely indifferent to the second."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-04-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that makes the wrappers valid consideration in Chappell v Nestle, despite being worthless to Nestle.",
+          "scenarioText": "Nestle required customers to send in three chocolate-bar wrappers along with a small payment to receive the record. The wrappers were discarded immediately on receipt and had no resale or intrinsic value to Nestle beyond promoting sales.",
+          "tappableSpans": ["required customers to send in three chocolate-bar wrappers", "along with a small payment", "discarded immediately on receipt", "no resale or intrinsic value to Nestle"],
+          "correctSpan": "required customers to send in three chocolate-bar wrappers",
+          "feedbackCorrect": "That's it. Requiring the wrappers as part of the bargain is what makes them consideration — the law asks whether they were bargained for, not whether Nestle valued them afterwards.",
+          "feedbackIncorrect": "Look for the fact about how the wrappers were used in the exchange itself, not what happened to them afterwards. What Nestle did with the wrappers later is irrelevant to whether they counted as consideration when the deal was struck."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The promise that came too late",
+        "voice": "cautionary — warns against the trap through the story of a favour repaid too late to count",
+        "body": [
+          "Re McArdle is the case every exam trap in this area is modelled on. A woman carried out substantial improvements to a house in which several family members held a future interest under a will. Only after the work was finished did those relatives sign a document promising to reimburse her out of the estate for what she had spent. When the reimbursement was not paid, she sued on that later promise.",
+          "It failed. By the time the promise was made, the work was already complete — nothing was given in exchange for the promise itself, because whatever was given had already been handed over, for nothing, before the promise existed. The Court of Appeal's reasoning is simple once stated: a promise to pay for something already done is not a bargain, because there is nothing left to bargain with at the moment the promise is made. This is the rule against past consideration, and it catches out students constantly, because the underlying facts often look perfectly fair — someone did something genuinely valuable, and a promise to pay for it followed. Fairness is not the test; timing is.",
+          "There is a narrow, genuine exception, and it matters precisely because it is narrow. Pao On v Lau Yiu Long allows a later promise to stand where the earlier act was done at the promisor's request, both sides understood at the time that the act would eventually be rewarded in some way, and the reward — had it been promised in advance — would have been legally enforceable. In that case, Pao On had agreed, at the defendants' request, to hold certain shares for a fixed period as part of a wider commercial transaction; when he later grew worried about a possible fall in their value, the defendants expressly promised to indemnify him against the loss. The Privy Council held the earlier request, made with a mutual understanding that some form of protection or reward would follow, meant the later promise simply fixed the content of an obligation both sides always understood existed — it was not, in substance, a bare promise to pay for something already given away for free."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re McArdle",
+            "citation": "[1951] Ch 669",
+            "court": "Court of Appeal",
+            "year": 1951,
+            "factsShort": "Family members promised to reimburse a relative for house improvements only after the work was already finished.",
+            "ratioShort": "A promise made after an act is already complete is not supported by consideration; the act was given for nothing at the time, so nothing was exchanged for the later promise."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "The Pao On exception — three conditions",
+            "points": [
+              "The act was done at the promisor's request, not volunteered unprompted",
+              "Both parties understood, at the time the act was done, that it would eventually be rewarded in some way",
+              "The reward, if it had been promised in advance, would itself have been legally enforceable"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-04-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these Re McArdle events in the order they happened.",
+          "items": ["The improvements to the house are carried out", "The work is complete", "The family members sign a promise to reimburse the cost", "The relative sues when reimbursement is not paid"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That order is the whole problem: the promise (step 3) comes after the consideration (steps 1–2) was already given for nothing, which is exactly what makes it past consideration.",
+          "feedbackIncorrect": "Check when the promise to pay is made relative to the work. The rule against past consideration turns entirely on whether the promise comes before or after the act — get that sequence right and the answer follows."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Doing what you already promised to do",
+        "voice": "advocate's — argues both sides of the case before settling which one wins",
+        "body": [
+          "Here is the case for the sailors in Stilk v Myrick. A ship's crew signed on for a voyage. Partway through, two of them deserted. The captain, unable to replace them at that port, promised the remaining crew extra wages if they would sail the ship home shorthanded. They did — working harder, doing more, covering tasks that were not originally meant to fall to them. When the ship returned, the captain refused to pay the promised extra. Surely, the argument runs, the crew gave something real: additional effort, additional risk, additional work they would not otherwise have done.",
+          "Here is the case against them, and it is the one that won. The crew had already contracted to sail the ship to its destination and back, and that contract implicitly covered the ordinary contingencies of a voyage — including some of the crew deserting. Whatever extra effort the desertions demanded of the remaining men, they were not doing anything beyond what they were already legally bound to do under their existing contract with the same captain. The captain, in return for his new promise, got nothing he was not already entitled to. No new legal detriment was given, so no consideration supported the new promise.",
+          "The lesson buried in that contrast is the one to hold onto: the existing-duty rule looks at legal novelty, not practical hardship. It does not ask whether life got harder for the promisee — it asks whether the promisee gave the promisor anything, in law, beyond what the promisor could already have demanded. The rule bites only where the fresh promise and the existing duty are owed to the same promisor; a duty owed to a third party, or work that genuinely goes beyond the scope of the original obligation, sits outside Stilk's reasoning entirely and is capable of supporting a new bargain."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Stilk v Myrick",
+            "citation": "(1809) 2 Camp 317",
+            "court": "Court of Common Pleas (nisi prius)",
+            "year": 1809,
+            "factsShort": "A captain promised extra wages to remaining crew after two sailors deserted; the crew sailed the ship home shorthanded, and the captain later refused to pay.",
+            "ratioShort": "Performing a duty already owed under an existing contract to the same promisor is not good consideration for a fresh promise, because the promisor gains nothing beyond what they were already entitled to."
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often argue the sailors gave good consideration because they objectively worked harder and took on more physical risk than originally expected.",
+            "whyItsWrong": "Extra practical effort is not the test. The rule asks whether the promisee undertook any new legal obligation beyond the one they already owed the same promisor. Sailing the ship home, however demanding it became, remained exactly what the crew's existing contract already required of them."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-04-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "Why did the crew's extra effort in Stilk v Myrick fail to amount to good consideration for the captain's promise of extra pay?",
+          "options": ["Because sailors cannot enforce contracts against a ship's captain", "Because sailing the ship home remained within the scope of a duty they already owed the captain under their existing contract, regardless of how much harder it became", "Because the promise was never put in writing"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong turn is to equate 'worked harder' with 'gave consideration'. The rule is about legal obligation, not physical exertion: because the crew owed the same duty to the same promisor already, nothing new was given in exchange for the fresh promise."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The whole doctrine as a working checklist",
+        "voice": "plain-spoken — strips the doctrine down to an exam-ready checklist",
+        "body": [
+          "Pull the four rules together and consideration stops looking like four separate cases and starts looking like one test with four checkpoints. First: has something of value in the eyes of the law actually moved — sufficiency, not adequacy, per Chappell v Nestle. Second: did it move before, at the same time as, or after the promise — because if it moved first, with no understanding of reward at the time, it's past consideration and Re McArdle kills it, unless the narrow Pao On conditions are all satisfied. Third: if what moved was the performance of a duty, was that duty already owed to the same promisor under an existing contract — if so, Stilk says it isn't good consideration for anything new, unless the promisee went beyond the existing duty or the duty was owed to someone else.",
+          "None of these four checkpoints is complicated on its own. What trips students up is running only one of them and stopping — checking sufficiency and declaring victory, without asking whether the timing or the existing-duty problem is quietly sitting underneath. A fact pattern in an exam will rarely announce which checkpoint is the live issue; it expects you to run all of them and find out which one bites.",
+          "Keep the underlying idea in view throughout: consideration is not a test of fairness, generosity, or effort. It is a test of exchange — did the promisor get something, in law, that they were not already entitled to, at the moment the promise was made? Answer that, checkpoint by checkpoint, and the four cases in this lesson stop being four things to memorise and become one thing to apply."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Consideration: a working checklist",
+            "description": "A decision path running through sufficiency, timing, and the existing-duty rule.",
+            "nodes": [
+              { "id": "start", "label": "Has something of legal value moved from the promisee?" },
+              { "id": "no-value", "label": "No → no consideration, no contract" },
+              { "id": "timing", "label": "Yes → when did it move relative to the promise?" },
+              { "id": "before", "label": "Before, with no understanding of reward at the time → past consideration, generally no good" },
+              { "id": "pao-on", "label": "Unless: requested by promisor, both understood reward would follow, and the reward would have been enforceable if promised in advance (Pao On exception)" },
+              { "id": "same-time", "label": "At the same time, or after with a fresh promise properly bargained → move to existing-duty check" },
+              { "id": "existing-duty", "label": "Is what was given merely performance of a duty already owed to the same promisor?" },
+              { "id": "yes-duty", "label": "Yes → not good consideration for a fresh promise (Stilk), unless it goes beyond the duty or is owed to a third party" },
+              { "id": "no-duty", "label": "No → capable of being good consideration, subject to sufficiency" }
+            ],
+            "edges": [
+              { "from": "start", "to": "no-value", "label": "No" },
+              { "from": "start", "to": "timing", "label": "Yes" },
+              { "from": "timing", "to": "before", "label": "Before" },
+              { "from": "before", "to": "pao-on" },
+              { "from": "timing", "to": "same-time", "label": "Same time / properly bargained after" },
+              { "from": "same-time", "to": "existing-duty" },
+              { "from": "existing-duty", "to": "yes-duty", "label": "Yes" },
+              { "from": "existing-duty", "to": "no-duty", "label": "No" }
+            ],
+            "textAlternative": "First ask whether something of legal value has moved from the promisee — if not, there is no consideration. If so, ask when it moved relative to the promise. If it moved before the promise with no understanding at the time that reward would follow, it is past consideration and generally fails, unless the Pao On exception applies (the act was requested, both parties understood reward would follow, and that reward would have been enforceable if promised in advance). If the consideration is contemporaneous or properly bargained, check whether it is merely performance of a duty already owed to the same promisor — if so, it fails under Stilk v Myrick unless it goes beyond that duty or is owed to a third party; if not, it is capable of being good consideration."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-04-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A decorator is already contractually bound to repaint a client's house for a fixed price. Partway through, the client, worried the decorator might walk off the job, promises an extra £200 if the decorator finishes on time — which the decorator does, doing nothing beyond what the original contract required. Analyse whether the decorator can enforce the promise of the extra £200.",
+          "factsToOrder": [
+            "The decorator was already contractually bound to repaint the house for a fixed price",
+            "The client makes a fresh promise of extra pay partway through the job",
+            "The decorator finishes on time, doing nothing beyond the original contractual scope",
+            "The client later refuses to pay the extra £200"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the decorator gave good consideration for the client's promise of an extra £200.",
+            "rule": "Performing a duty already owed to the same promisor under an existing contract is not good consideration for a fresh promise from that promisor (Stilk v Myrick), unless the promisee does something beyond the existing duty.",
+            "application": "The decorator was already bound, under the original contract, to repaint the house for the agreed price. Finishing on time and doing nothing beyond that original scope is exactly what the existing contract already required. The client's fresh promise of £200 is not matched by anything new from the decorator.",
+            "conclusion": "The decorator gave no good consideration for the extra £200, so the promise is unenforceable under the existing-duty rule."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-04-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "State the classic definition of consideration given in Currie v Misa.",
+      "acceptableAnswers": ["a benefit to the promisor or a detriment to the promisee, given at the promisor's request", "something of value given in exchange for a promise"],
+      "modelAnswer": "Consideration is some right, interest, profit or benefit accruing to the promisor, or some forbearance, detriment, loss or responsibility given or undertaken by the promisee, at the promisor's request."
+    },
+    {
+      "itemId": "contract-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "In Chappell v Nestle, were the chocolate-bar wrappers good consideration, even though Nestle discarded them as worthless?",
+      "options": ["Yes — they were required as part of the bargain, which is enough for sufficiency", "No — something with no resale value can never be consideration"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-04-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which statement correctly captures the sufficiency/adequacy distinction?",
+      "options": ["Courts check that consideration is a fair, roughly equal exchange for the promise made in return", "Courts only require consideration to have some value recognised by law; they do not ask whether it was a fair bargain", "Adequacy and sufficiency mean the same thing in this context"],
+      "correctIndex": 1,
+      "trapExplanation": "The first option describes adequacy, which courts deliberately do not police. Chappell v Nestle exists precisely to show that even a poor bargain, or one involving something practically worthless, can still be legally sufficient."
+    },
+    {
+      "itemId": "contract-04-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A clause reads: 'In consideration of the work you have already completed, I agree to pay you £1,000.' Why does wording like this raise a past consideration problem?",
+      "options": ["Because it prices the work too generously", "Because the phrase 'already completed' shows the act came before the promise, with no exchange happening at the time the promise was made", "Because the amount is not specified precisely enough"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "contract-04-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the reasoning steps a court follows when deciding whether the Pao On exception rescues an otherwise past consideration problem.",
+      "items": ["Identify that the act was done before the promise now being sued on", "Ask whether the act was done at the promisor's request", "Ask whether both parties understood, at the time, that the act would eventually be rewarded", "Ask whether that reward, if promised in advance, would have been legally enforceable", "If all three conditions are met, treat the later promise as fixing the amount of an already-understood obligation"],
+      "correctOrder": [0, 1, 2, 3, 4]
+    },
+    {
+      "itemId": "contract-04-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below, adapted from Pao On v Lau Yiu Long, highlight the sentence that states the ratio.",
+      "passage": "The claimant's earlier act of holding the shares was done at the defendants' request. Both parties understood, at the time the act was performed, that some form of reward or protection would eventually follow. Had such a reward been promised in advance, it would itself have amounted to an enforceable contract. Where these conditions are satisfied, a later express promise may properly be treated as fixing the content of an obligation the parties always understood to exist, rather than as a bare promise to pay for something already given for nothing.",
+      "ratioSentence": "Where these conditions are satisfied, a later express promise may properly be treated as fixing the content of an obligation the parties always understood to exist, rather than as a bare promise to pay for something already given for nothing."
+    },
+    {
+      "itemId": "contract-04-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A neighbour spontaneously mows an elderly resident's lawn every week for months, entirely unasked. Grateful, the resident later promises to pay him £50 a month going forward for the mowing already done. Is that promise supported by consideration?",
+      "options": ["No — the mowing was volunteered, not requested, and was already complete when the promise was made, so it is past consideration outside the Pao On exception", "Yes — genuine, valuable help is always good consideration once acknowledged"],
+      "correctIndex": 0,
+      "explanation": "Because the mowing was neither requested by the resident nor accompanied by any understanding of reward at the time, the Pao On conditions are not met, and the later promise falls foul of the ordinary rule against past consideration."
+    },
+    {
+      "itemId": "contract-04-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A contractor is already bound by contract to deliver a building by a fixed date. The client, anxious about delay, promises a bonus for on-time delivery. The contractor delivers on time but does nothing beyond the original contractual scope. Is the bonus promise supported by consideration?",
+      "options": ["No — completing an existing contractual duty for the same promisor is not good consideration for a fresh promise (Stilk v Myrick)", "Yes — meeting a deadline under pressure is always something extra"],
+      "correctIndex": 0,
+      "explanation": "As in Stilk, doing nothing beyond what the existing contract already required, however much pressure or effort was involved, gives the promisor nothing new — so there is no consideration for the fresh promise."
+    },
+    {
+      "itemId": "contract-04-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that is essential to bringing this scenario within the Pao On exception to the past consideration rule.",
+      "scenarioText": "At the defendant's specific request, the claimant agreed to delay reselling certain shares for six months, on the shared understanding at the time that the defendant would compensate him if their value fell. Months later, the defendant put that understanding into a signed indemnity.",
+      "tappableSpans": ["specific request", "delay reselling certain shares for six months", "shared understanding at the time", "signed indemnity"],
+      "correctSpan": "shared understanding at the time",
+      "feedbackCorrect": "Right. Without a shared understanding, at the time the act was done, that reward would follow, the later promise is just a bare promise to pay for a past favour. The request and the eventual formal promise both matter, but this is the condition that stops it being pure past consideration.",
+      "feedbackIncorrect": "The request and the later signed document both matter, but neither alone satisfies Pao On. Look for the fact showing both sides understood, at the time of the act itself, that reward would eventually follow."
+    },
+    {
+      "itemId": "contract-04-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario shows good consideration for a promise of extra payment, on Stilk v Myrick reasoning?",
+      "scenarioA": "A security firm, already contracted to provide two guards at a site, is promised extra pay if it also provides an additional third guard beyond the original contract.",
+      "scenarioB": "A cleaning crew, already contracted to clean an office five days a week, is promised extra pay simply for continuing to turn up on the days already required.",
+      "correctScenario": "A",
+      "explanation": "A involves going beyond the existing contractual scope — providing a guard not originally required — which is capable of being fresh consideration. B is exactly the existing-duty problem in Stilk: doing only what was already contractually required is not good consideration for a new promise."
+    },
+    {
+      "itemId": "contract-04-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that consideration must be roughly equal in value to what is received in return?",
+      "sliderLabels": ["Must be roughly equal", "No requirement of fairness"],
+      "correctPosition": "No requirement of fairness",
+      "explanation": "Chappell v Nestle confirms courts require only sufficiency, not adequacy. A peppercorn, a worthless wrapper, or any other trivial item can be good consideration if it was genuinely bargained for."
+    },
+    {
+      "itemId": "contract-04-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 4,
+      "prompt": "A removals firm is already contractually bound to move a family's belongings for a fixed price on a set date. On moving day, the firm's owner tells the family he'll need an extra £150 or he'll leave the job half-finished; frightened of being left without their belongings moved, they agree, and afterwards refuse to pay. Separately, days earlier and unprompted, a friend helped the family pack several boxes for free, and only afterwards did the family promise the friend £50 for the help. Analyse whether either promise is supported by consideration.",
+      "factsToOrder": [
+        "The removals firm was already contractually bound to move the belongings for a fixed price",
+        "The firm demands extra payment mid-job, threatening to stop work",
+        "The friend helped pack boxes unprompted and for free, before any promise of payment was made",
+        "The family promises to pay the friend only after the packing help was already given"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the promise of £150 to the removals firm, and the promise of £50 to the friend, are each supported by consideration.",
+        "rule": "Performance of a duty already owed to the same promisor is not good consideration for a fresh promise (Stilk v Myrick). A promise made after an act is already complete, with no request or understanding of reward at the time, is past consideration and generally unenforceable (Re McArdle), absent the narrow Pao On exception.",
+        "application": "The removals firm did nothing beyond its existing contractual obligation to move the belongings, so its demand mid-job gives the family nothing new in exchange for the extra £150 — an existing-duty problem under Stilk. The friend's packing help was volunteered, unrequested, and complete before any promise of payment existed, with no understanding of reward at the time — a textbook past consideration problem under Re McArdle, and the Pao On exception cannot apply because the help was not done at the family's request nor with any contemporaneous understanding of reward.",
+        "conclusion": "Neither promise is supported by consideration: the £150 fails for want of any new consideration beyond the existing duty, and the £50 fails as past consideration outside the Pao On exception."
+      }
+    },
+    {
+      "itemId": "contract-04-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A student argues that the sailors in Stilk v Myrick must have given good consideration because they objectively worked much harder after their crewmates deserted. What is the flaw in this argument?",
+      "options": ["It correctly identifies the ratio of the case", "It mistakes practical extra effort for legal novelty — the crew gave nothing beyond what their existing contract already required, whatever the effort involved", "Sailors cannot give consideration under English law"],
+      "correctIndex": 1,
+      "trapExplanation": "This is the most common misreading of Stilk. The case turns on whether a new legal obligation was undertaken, not on how demanding the work became in practice."
+    },
+    {
+      "itemId": "contract-04-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does consideration have to be adequate — a fair price for what is received in return — to be legally valid?",
+      "options": ["No — it only has to be sufficient, meaning it has some value recognised by law", "Yes — courts assess whether the bargain was fair before enforcing it"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is checking only one part of the consideration test — usually sufficiency — and stopping there, without asking whether a timing problem (past consideration) or an existing-duty problem is quietly sitting underneath an otherwise normal-looking promise.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.formation.consideration"
+  }
+}

@@ -63,6 +63,9 @@ export interface BankItem {
   sliderLabels?: [string, string];
   correctPosition?: string;
   correctOrder?: number[];
+  /** sortIntoBuckets. */
+  buckets?: string[];
+  itemsToSort?: { text: string; correctBucket: string }[];
   passage?: string;
   ratioSentence?: string;
   factsToOrder?: string[];
@@ -94,6 +97,11 @@ export function isCorrect(item: BankItem, response: ItemResponse): boolean {
       return response.choiceIndex === (item.correctScenario === "A" ? 0 : 1);
     case "tapTheFact":
       return response.span === item.correctSpan;
+    case "sortIntoBuckets": {
+      // \`order\` holds the bucket chosen for each statement, in the statements' order.
+      const correct = (item.itemsToSort ?? []).map((s) => (item.buckets ?? []).indexOf(s.correctBucket));
+      return correct.length > 0 && response.order?.length === correct.length && correct.every((b, i) => response.order![i] === b);
+    }
     case "thresholdSlider": {
       if (response.sliderValue === undefined || response.sliderValue === 0.5) return false;
       const rightIsCorrect = sliderCorrectSide(item) === 1;

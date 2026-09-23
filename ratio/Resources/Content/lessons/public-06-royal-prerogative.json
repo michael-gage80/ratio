@@ -1,0 +1,384 @@
+{
+  "lessonId": "public-06",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 6,
+  "topicId": "public.prerogative.royal-prerogative",
+  "title": "The royal prerogative",
+  "subtitle": "Residual power, justiciability, and the cases that redrew the map",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Define the royal prerogative as a residual, common law source of executive power and identify examples of powers still exercised under it",
+    "Explain when the exercise of a prerogative power is justiciable, using GCHQ's shift from a source-based test to a subject-matter test",
+    "Apply the principle that statute displaces prerogative, and that prerogative cannot be used to remove rights or frustrate Parliament's functions, to new fact patterns in the style of Miller I and Miller II"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Council of Civil Service Unions v Minister for the Civil Service (the GCHQ case) [1985] AC 374", "role": "Establishes that the source of a power, not statute or prerogative, no longer determines justiciability — some prerogative powers remain non-justiciable by their subject matter, such as national security" },
+    { "citation": "R (Miller) v Secretary of State for Exiting the European Union [2017] UKSC 5", "role": "The prerogative cannot be used to trigger Article 50 and remove domestic statutory rights without parliamentary authorisation" },
+    { "citation": "R (Miller) v The Prime Minister; Cherry v Advocate General for Scotland [2019] UKSC 41", "role": "Prorogation is a prerogative power, but one with limits set by the constitutional principles of parliamentary sovereignty and executive accountability" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Every prerogative problem question walks through the same three-part argument, in the same order: is this actually a prerogative power at all, does a statute already occupy the ground, and is the exercise of the power justiciable in the first place. Students who jump straight to 'the court said it was unlawful' lose the marks that live inside that three-step structure — this lesson is built around rebuilding the steps from the cases that created them.",
+    "profileHooks": {
+      "weakApplication": "The test pool below is heavy on fact patterns dressed up as news stories. Practise spotting the prerogative power hiding inside the scenario before reaching for a case name.",
+      "weakKnowledge": "Start with Part 1 and fix what 'residual' means before anything else — every later case in this lesson assumes you already know prerogative power has no independent legal source beyond the common law."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "On the morning of 24 September 2019, eleven Supreme Court justices delivered a unanimous judgment that did something no prerogative case had done in living memory: they declared advice given to the Queen unlawful, and treated an act of prorogation as if it had never happened at all. To understand how a power older than Parliament itself ended up voided by eleven judges in a London courtroom, we have to go back further than Boris Johnson — to a 1984 dispute about trade unions at a signals intelligence base in Cheltenham.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. GCHQ, Miller I and Miller II remain the settled leading authorities on prerogative power and its justiciability. The Dissolution and Calling of Parliament Act 2022 restored the prerogative power to dissolve Parliament, reversing the Fixed-term Parliaments Act 2011; this is noted where relevant but is not itself a contested or unsettled point."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A power with no birth certificate",
+        "voice": "narrative — opens with a 1611 case, not a definition",
+        "body": [
+          "In 1611, King James I claimed he could create new criminal offences simply by royal proclamation, without any Act of Parliament behind them. The judges, led by Chief Justice Coke, told him he could not: the King had no prerogative to alter the law of the land, only to act within powers the common law already recognised as his. The Case of Proclamations is over four hundred years old, but it fixed the shape of the prerogative for everything that followed — it is a real source of legal power, but a strictly limited and residual one.",
+          "'Residual' is the word to hold onto. The royal prerogative is not a general reservoir of executive authority the government can dip into whenever convenient; it is the narrow, specific set of powers that survive from the historic authority of the Crown, recognised and limited by the common law, and capable of being cut down or abolished entirely by Act of Parliament at any time. Today it is exercised almost entirely by ministers acting in the Crown's name, not by the monarch personally.",
+          "What survives is a surprisingly practical list: making and ratifying treaties, deploying the armed forces, granting honours, exercising the prerogative of mercy, issuing passports, and — since 2022 — dissolving Parliament to call a general election. None of these rest on any Act of Parliament creating them. They rest on the common law recognising that the Crown always had them, and that nothing has yet taken them away."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Royal prerogative",
+            "definition": "The residual body of common law powers and immunities historically belonging to the Crown, now exercised almost entirely by ministers in the Crown's name, existing only to the extent the common law recognises it and only until Parliament chooses to cut it down or abolish it by statute."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-06-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "In one sentence, what is the royal prerogative?",
+          "acceptableAnswers": ["residual common law powers of the crown", "leftover powers of the crown recognised by common law", "historic crown powers not created by statute"],
+          "modelAnswer": "The royal prerogative is the residual body of common law powers historically belonging to the Crown — such as treaty-making, deploying the armed forces, and granting honours — exercised by ministers today, and existing only until Parliament removes it by statute."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "GCHQ: the case that let judges look at the prerogative at all",
+        "voice": "case-narrative — the facts come first, the doctrine second",
+        "body": [
+          "For most of legal history, the courts treated 'this was done under the royal prerogative' as close to a full stop: prerogative acts were simply not the kind of thing judicial review reached, because judicial review asked whether a *statutory* power had been used properly, and the prerogative wasn't statutory. That changed — abruptly and by accident — in a case about trade union membership at the Government Communications Headquarters.",
+          "In 1984, the Minister for the Civil Service (acting under prerogative powers over the civil service) instructed GCHQ staff that they could no longer belong to trade unions, without any prior consultation, citing concerns about national security and the risk of strikes disrupting intelligence work. The civil service unions argued they had a legitimate expectation of consultation before so significant a change, built on a long-standing practice of consulting before altering employment conditions.",
+          "The House of Lords held, for the first time clearly, that the source of a power — statute or prerogative — is irrelevant to whether its exercise can be reviewed; what matters is the subject matter of the power being exercised. Lord Diplock set out the three now-famous grounds of review — illegality, irrationality and procedural impropriety — as applicable in principle to prerogative decisions just as to statutory ones. On the facts, the unions would have succeeded on procedural impropriety, but the government won anyway: national security was held to be a subject matter the courts would not second-guess, and the government's bare assertion that consultation risked exactly the disruption it was meant to prevent was accepted without further scrutiny."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Justiciable vs non-justiciable prerogative powers after GCHQ",
+            "points": [
+              "Justiciable in principle: the civil service (as in GCHQ itself), passports, and — as later cases confirmed — the use of the prerogative to trigger Article 50 or to prorogue Parliament",
+              "Traditionally non-justiciable by subject matter: national security, the making of treaties, the deployment of the armed forces, the grant of honours, and the prerogative of mercy",
+              "The list of non-justiciable subject matters is not fixed forever — later cases (including Miller I and Miller II) show courts willing to review the boundary of a power even where the underlying subject matter looks political",
+              "A claim of national security is not an automatic trump card: the government still had to show, on the GCHQ facts, that its assessment of the risk was genuinely made and not a pretext"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-06-check-02",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a decision to grant a state honour (such as a knighthood) would be justiciable on ordinary judicial review grounds?",
+          "sliderLabels": ["Definitely justiciable", "Definitely non-justiciable by subject matter"],
+          "correctPosition": "Definitely non-justiciable by subject matter",
+          "explanation": "Honours sit on the traditional GCHQ list of subject matters the courts leave alone, alongside national security, treaty-making and the deployment of the armed forces — the source of the power (prerogative, not statute) is irrelevant; it is the nature of the decision itself that keeps courts out."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Why a valid statute always beats the prerogative",
+        "voice": "structural — a reference part on a rule students under-cite",
+        "body": [
+          "Long before GCHQ made the prerogative reviewable at all, an older and simpler principle governed the relationship between statute and prerogative: where an Act of Parliament covers the same ground as a prerogative power, the statute displaces the prerogative, and the government must act under the statute, not around it. This is sometimes called the De Keyser's principle, after the 1920 case in which the Crown tried to requisition a hotel under the prerogative during wartime rather than under a statutory compensation scheme that would have required paying the owner.",
+          "The logic is a direct application of parliamentary sovereignty: once Parliament legislates on a topic, that legislation represents the most recent and most specific expression of Parliament's will, and it would subvert sovereignty itself to let the executive prefer an older, less constrained prerogative power covering the same ground simply because the statutory route is less convenient. Crucially, the prerogative power does not need to be expressly abolished by the statute — it is simply put into abeyance for as long as the statute occupies the field, and could in principle revive if the statute were later repealed.",
+          "This principle does almost all the analytical work in the two Miller cases that follow in this lesson. Neither case turns on some entirely new doctrine invented for Brexit; both turn on asking, in essence, the same question De Keyser's asked in 1920 — has Parliament already legislated on this ground in a way that leaves no room for the prerogative to operate as the government wants it to?"
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "European Union (Notification of Withdrawal) Act 2017, s 1(1)",
+            "text": "The Prime Minister may notify, under Article 50(2) of the Treaty on European Union, the United Kingdom's intention to withdraw from the EU.",
+            "elements": ["Enacted after the Supreme Court's decision in Miller I", "Confers the specific statutory authority the Court held the prerogative alone could not provide", "Confirms rather than displaces the outcome of the case: Parliament, not the prerogative, had to authorise notification"]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-06-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under the De Keyser's principle, what happens to a prerogative power once a statute is enacted covering the same ground?",
+          "options": ["The prerogative power is displaced and put into abeyance for as long as the statute occupies the field — the executive must act under the statute", "The prerogative power and the statute operate side by side, and the government can freely choose whichever route it prefers", "The prerogative power is permanently and irreversibly abolished the moment any related statute is passed"],
+          "correctIndex": 0
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Miller I: the prerogative can't spend statutory rights it didn't create",
+        "voice": "case-narrative — builds the argument the way the judgment itself does",
+        "body": [
+          "After the 2016 referendum, the government's position was that triggering the formal EU withdrawal process under Article 50 of the Treaty on European Union was a foreign affairs matter — the very kind of subject matter GCHQ left to the prerogative — and so ministers could give notice to withdraw without any Act of Parliament authorising it. Gina Miller and others challenged this.",
+          "The claimants' argument, which the Supreme Court accepted by an 8–3 majority, was not really about foreign affairs at all — it was about domestic law. The European Communities Act 1972 had made EU law a source of domestic rights enforceable in UK courts. Triggering Article 50 would set in motion a process that could only end with those statutory rights being removed. Using the prerogative to start a process whose inevitable domestic legal effect is to strip away rights that only exist because of an Act of Parliament, the majority held, is not a foreign affairs prerogative at all — it is an attempt to use prerogative power to achieve, indirectly, exactly what only Parliament can do directly: change domestic law and remove statutory rights.",
+          "The government lost the case but not the argument that Article 50 could eventually be triggered — Parliament simply had to authorise it first, which it swiftly did through the European Union (Notification of Withdrawal) Act 2017. Miller I is therefore best read not as a case about Brexit policy at all, but as a case applying the De Keyser's principle to a new context: a statute (the 1972 Act) had already created rights on the relevant ground, and the prerogative could not be used to unmake what only Parliament had made."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R (Miller) v Secretary of State for Exiting the European Union",
+            "citation": "[2017] UKSC 5",
+            "court": "Supreme Court",
+            "year": 2017,
+            "factsShort": "Following the 2016 referendum, the government sought to trigger Article 50 using prerogative foreign affairs powers alone, without prior parliamentary authorisation.",
+            "ratioShort": "The prerogative cannot be used to trigger a process whose inevitable effect is to remove domestic statutory rights created by an Act of Parliament — that requires prior parliamentary authorisation.",
+            "expanded": {
+              "facts": "The European Communities Act 1972 gave effect to EU law as a source of domestic rights in the UK. Following the referendum result, the government proposed to give Article 50 notice using prerogative treaty-making powers, without a prior vote in Parliament, treating the decision as a foreign affairs matter falling within the ordinary prerogative.",
+              "judgmentExtract": "The majority held that Article 50 notice, once given, is irrevocable as a matter of EU law and sets in train a process that will necessarily terminate the rights the 1972 Act had domestically created. Withdrawal from a source of domestic law of that kind cannot be achieved through prerogative power alone; it requires the sanction of primary legislation, because it is Parliament, not the executive, that has the constitutional authority to change domestic law.",
+              "significance": "Miller I confirms that the 'foreign affairs' label on a prerogative power does not insulate it from scrutiny where its practical, domestic legal effect is to remove statutory rights. It is the leading modern application of the De Keyser's principle outside its original wartime-requisition context."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-06-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A new international treaty is being negotiated that, if ratified, will not alter any UK domestic statute or remove any right currently enforceable in UK courts. Applying Miller I reasoning, can the government ratify it using prerogative power alone?",
+          "options": ["Yes — ratifying a treaty that has no effect on domestic statutory rights remains a classic prerogative foreign affairs act, untouched by Miller I", "No — after Miller I, any treaty-making now requires prior parliamentary authorisation regardless of domestic effect", "No — treaty ratification was abolished as a prerogative power by Miller I"],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answer over-reads Miller I as abolishing the treaty-making prerogative generally. It does not: the case turns specifically on the removal of domestic statutory rights as the inevitable effect of the prerogative act. A treaty with no such domestic effect remains squarely within the ordinary, undisturbed prerogative."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Miller II: prorogation and the outer edge of justiciability",
+        "voice": "narrative — closes the lesson where the hook began",
+        "body": [
+          "Three years after Miller I, the prerogative was back in front of the Supreme Court — this time over a power GCHQ's own list would have treated as squarely political and untouchable: the power to prorogue Parliament, ending a parliamentary session. In August 2019, the Prime Minister advised the Queen to prorogue for five weeks, running up to the UK's scheduled EU exit date, at a moment when Parliament might otherwise have scrutinised the government's approach closely.",
+          "The government's central argument echoed the position it lost in Miller I but pitched it more broadly still: prorogation, it said, was inherently non-justiciable, a matter of high policy for the executive alone, of exactly the kind Duport Steels-style restraint and the GCHQ national-security exception both counsel courts to avoid. If the courts could review prorogation, the argument ran, there was no principled stopping point short of reviewing any political decision a government makes.",
+          "The Supreme Court rejected that framing unanimously. It held that the prerogative power to prorogue is limited by other constitutional principles that already exist independently — parliamentary sovereignty, and the executive's accountability to Parliament while Parliament sits — and that a prorogation which frustrates or prevents Parliament from carrying out its constitutional functions, without reasonable justification, therefore falls outside the power altogether. Because no justification was offered for a suspension of that length at that moment, the advice to prorogue was not merely wrongly exercised — it was treated as never having been a lawful exercise of the power at all, and Parliament was held, in law, never to have been prorogued.",
+          "Read together, GCHQ, Miller I and Miller II trace one continuous line: GCHQ opened the prerogative to review in principle while carving out subject matters like national security; Miller I showed the prerogative yielding to statutory rights it cannot itself remove; Miller II showed the prerogative yielding to unwritten constitutional principles it cannot itself override, even with no statute in sight at all."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Is a prerogative act lawful? A decision path",
+            "description": "A flowchart summarising the three-stage argument this lesson has built, from GCHQ through Miller I to Miller II.",
+            "nodes": [
+              { "id": "start", "label": "Is this genuinely a prerogative power, recognised by the common law?" },
+              { "id": "no-power", "label": "No → ultra vires from the outset; no lawful basis at all" },
+              { "id": "statute", "label": "Yes → has an Act of Parliament already legislated on this ground (De Keyser's)?" },
+              { "id": "yes-statute", "label": "Yes → prerogative displaced; the executive must act under the statute" },
+              { "id": "justiciable", "label": "No statute in the way → is the subject matter justiciable (GCHQ)?" },
+              { "id": "non-just", "label": "No (e.g. national security, honours) → courts will not review the exercise" },
+              { "id": "limits", "label": "Yes → does the exercise frustrate constitutional principles such as parliamentary sovereignty or accountability (Miller I, Miller II) without reasonable justification?" },
+              { "id": "unlawful", "label": "Yes → unlawful exercise of the power" },
+              { "id": "lawful", "label": "No → lawful exercise of the prerogative power" }
+            ],
+            "edges": [
+              { "from": "start", "to": "no-power", "label": "No" },
+              { "from": "start", "to": "statute", "label": "Yes" },
+              { "from": "statute", "to": "yes-statute", "label": "Yes" },
+              { "from": "statute", "to": "justiciable", "label": "No" },
+              { "from": "justiciable", "to": "non-just", "label": "No" },
+              { "from": "justiciable", "to": "limits", "label": "Yes" },
+              { "from": "limits", "to": "unlawful", "label": "Yes" },
+              { "from": "limits", "to": "lawful", "label": "No" }
+            ],
+            "textAlternative": "To assess a prerogative act: first check it is a genuine, recognised prerogative power at all. If a statute already covers the ground, the prerogative is displaced under the De Keyser's principle and the executive must use the statute. If no statute is in the way, check whether the subject matter is justiciable under GCHQ — some categories, like national security or honours, are not. If it is justiciable, ask whether the exercise frustrates constitutional principles such as parliamentary sovereignty or executive accountability without reasonable justification, as in Miller I and Miller II — if so, it is unlawful; if not, it is a lawful exercise of the power."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-06-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A devolved government's First Minister asks the UK Prime Minister to advise the Crown to suspend sittings of the devolved legislature for ten weeks, immediately before a vote of no confidence in the devolved government was due to be held, offering no public reason for the length chosen. Analyse whether this decision, if challenged, is likely to be treated as justiciable and, if so, lawful.",
+          "factsToOrder": [
+            "The suspension lasts ten weeks, an unusually long period",
+            "The timing is immediately before a scheduled vote of no confidence",
+            "No public reason has been given for the length chosen",
+            "The power invoked is a prerogative-style suspension power, not one created by statute"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the decision to suspend the devolved legislature for ten weeks, timed to prevent a confidence vote, is a justiciable and lawful exercise of the suspension power.",
+            "rule": "Following GCHQ, the source of the power does not bar review; what matters is subject matter, and a power affecting the ability of a representative body to hold the executive to account is unlikely to fall within a protected category like national security. Following Miller II, an exercise of such a power that frustrates or prevents the legislature from carrying out its constitutional functions, without reasonable justification, is unlawful.",
+            "application": "This is not a national security or treaty-making decision of the kind GCHQ shields from review; it directly affects a representative body's ability to hold its executive accountable, which is precisely the constitutional function Miller II protects. The unusual length, the timing immediately before a confidence vote, and the absence of any offered justification together mirror the pattern of frustration without reasonable justification that made the Miller II prorogation unlawful.",
+            "conclusion": "The decision is likely to be justiciable, and, absent some justification not disclosed on these facts, likely to be found an unlawful exercise of the suspension power."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-06-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Name two examples of powers still exercised under the royal prerogative today.",
+      "acceptableAnswers": ["treaty-making and deploying the armed forces", "granting honours and issuing passports", "prerogative of mercy and dissolving parliament"],
+      "modelAnswer": "Examples include making and ratifying treaties, deploying the armed forces, granting honours, exercising the prerogative of mercy, issuing passports, and dissolving Parliament to call an election."
+    },
+    {
+      "itemId": "public-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Is the royal prerogative created by an Act of Parliament?",
+      "options": ["No — it is a residual body of common law power, not a statutory creation", "Yes — every prerogative power traces to a specific Act of Parliament"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-06-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which statement about the royal prerogative is correct?",
+      "options": ["The government can create an entirely new prerogative power whenever it identifies a gap in its statutory authority", "The prerogative is limited to powers the common law already recognises as belonging to the Crown; new prerogative powers cannot simply be invented", "The prerogative was abolished in its entirety by the Constitutional Reform Act 2005"],
+      "correctIndex": 1,
+      "trapExplanation": "The Case of Proclamations settled this in 1611: the Crown cannot create new prerogative powers by simply asserting them. The prerogative can shrink (as statutes displace it) but the government cannot grow it by declaration."
+    },
+    {
+      "itemId": "public-06-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "What did the European Union (Notification of Withdrawal) Act 2017 do, in relation to Miller I?",
+      "options": ["It supplied the statutory authorisation the Supreme Court held was needed before Article 50 notice could lawfully be given", "It overruled the Supreme Court's decision in Miller I", "It restored the prerogative power to trigger Article 50 without parliamentary involvement"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-06-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these GCHQ events in the order they happened.",
+      "items": ["The Minister for the Civil Service instructs GCHQ staff they can no longer join trade unions", "The unions argue they had a legitimate expectation of prior consultation", "The House of Lords holds that the source of a power does not determine justiciability", "The government nonetheless succeeds because national security is treated as non-justiciable"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "public-06-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from GCHQ, highlight the sentence stating the ratio on justiciability.",
+      "passage": "Historically, courts declined to review prerogative decisions because the power did not derive from statute. That approach can no longer be supported: the controlling factor is not the source of the power but whether its subject matter is amenable to judicial process, so that powers of a kind historically exercised under the prerogative may be reviewable in principle even though a decision touching national security will, on its particular subject matter, remain beyond the court's reach.",
+      "ratioSentence": "That approach can no longer be supported: the controlling factor is not the source of the power but whether its subject matter is amenable to judicial process, so that powers of a kind historically exercised under the prerogative may be reviewable in principle even though a decision touching national security will, on its particular subject matter, remain beyond the court's reach."
+    },
+    {
+      "itemId": "public-06-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that a decision to deploy the armed forces overseas would be justiciable on ordinary judicial review grounds?",
+      "sliderLabels": ["Definitely justiciable", "Definitely non-justiciable by subject matter"],
+      "correctPosition": "Definitely non-justiciable by subject matter",
+      "explanation": "Deployment of the armed forces sits on the traditional GCHQ list of subject matters courts leave alone, alongside national security and treaty-making — high policy of a kind the courts have consistently declined to second-guess."
+    },
+    {
+      "itemId": "public-06-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this account of the GCHQ case that the House of Lords accepted as taking the decision outside judicial reach.",
+      "scenarioText": "The Minister instructed staff without prior consultation, relying on an assessment that consulting would itself trigger the disruptive industrial action the policy was designed to prevent, a risk the government characterised as a matter of national security.",
+      "tappableSpans": ["without prior consultation", "consulting would itself trigger the disruptive industrial action", "the policy was designed to prevent", "a matter of national security"],
+      "correctSpan": "a matter of national security",
+      "explanation": "The absence of consultation would ordinarily be a procedural impropriety point in the unions' favour. What defeats the claim is the subject matter itself: once the decision is characterised as touching national security, GCHQ treats that subject matter as beyond the court's reach regardless of the procedural shortfall."
+    },
+    {
+      "itemId": "public-06-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely mirrors the reasoning in Miller I?",
+      "scenarioA": "A minister ratifies a bilateral trade treaty under the prerogative that creates no new domestic rights and requires no change to any UK statute to take effect.",
+      "scenarioB": "A minister seeks to withdraw the UK from an international convention that a UK statute has expressly made a source of domestic legal rights, using prerogative treaty power alone and without any parliamentary vote.",
+      "correctScenario": "B",
+      "explanation": "B mirrors Miller I: a prerogative act whose inevitable effect is to remove domestic statutory rights, attempted without parliamentary authorisation. A involves no domestic statutory rights at stake at all, so it remains within the ordinary, undisturbed treaty-making prerogative."
+    },
+    {
+      "itemId": "public-06-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A statute expressly regulates how compensation is paid to landowners whose property is requisitioned by the state in an emergency. The government instead requisitions a landowner's property under the prerogative, paying nothing. Applying the De Keyser's principle, is this lawful?",
+      "options": ["No — the statute has already occupied the ground and displaces the prerogative; the government must act under the statute", "Yes — the government may always choose the prerogative route over an available statutory one", "Yes, provided the requisition is genuinely urgent"],
+      "correctIndex": 0,
+      "explanation": "This is the De Keyser's Royal Hotel pattern directly: once a statute covers requisition and compensation, the prerogative power on the same ground is displaced, and the executive cannot revert to the less generous prerogative route simply because it prefers the outcome."
+    },
+    {
+      "itemId": "public-06-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "The Prime Minister advises the Crown to prorogue Parliament for nine weeks immediately before a binding treaty deadline, offering no public justification for the length, while several bills scrutinising the government's negotiating position were scheduled for debate during that period. Applying Miller II, what is the most likely outcome if this is challenged?",
+      "options": ["The prorogation is likely unlawful — an unusually long suspension, timed to prevent scrutiny, with no reasonable justification offered, mirrors the pattern condemned in Miller II", "The prorogation is automatically lawful because prorogation is inherently a political, non-justiciable act", "The court would decline jurisdiction entirely, as it did in the Court of Appeal below in Miller II"],
+      "correctIndex": 0,
+      "explanation": "The combination of unusual length, timing that prevents scrutiny of the executive, and no offered justification is exactly the pattern the Supreme Court held crossed from politics into law in Miller II."
+    },
+    {
+      "itemId": "public-06-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "In GCHQ, why did the unions ultimately lose despite having a strong procedural impropriety argument?",
+      "options": ["Because legitimate expectation was not yet recognised as a ground of review in 1984", "Because the subject matter of the decision — national security — was treated as beyond judicial reach, defeating the claim regardless of the procedural shortfall", "Because prerogative decisions can never be reviewed on procedural impropriety grounds"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer suggests legitimate expectation itself was unavailable — it was live in the case and the unions' argument on it was accepted in principle. What defeated them was the national security characterisation of the subject matter, which the court declined to look behind."
+    },
+    {
+      "itemId": "public-06-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "Since the Dissolution and Calling of Parliament Act 2022, is the power to dissolve Parliament for a general election exercised under statute or under the prerogative?",
+      "options": ["Under the prerogative — the 2022 Act restored the prerogative power, reversing the Fixed-term Parliaments Act 2011", "Under statute — the 2022 Act created an entirely new statutory dissolution power"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-06-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A minister, acting under a long-recognised prerogative power to issue passports, refuses to issue a passport to a claimant purely as leverage to discourage conduct the government dislikes but which is entirely lawful, with no statutory basis relied upon and no national security claim made. Analyse whether this decision is justiciable and, if so, whether it is likely lawful.",
+      "factsToOrder": [
+        "The power relied on is the prerogative power to issue passports",
+        "No statute is relied on and no national security claim is made",
+        "The refusal is used purely as leverage against lawful conduct the government dislikes",
+        "The claimant has committed no offence and broken no law"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the refusal to issue a passport, used as leverage against lawful conduct, is a justiciable and lawful exercise of the prerogative passport power.",
+        "rule": "Following GCHQ, passport decisions are a recognised category of justiciable prerogative power (unlike national security or honours), reviewable on ordinary grounds including illegality and irrationality; a decision exercised for an improper purpose unconnected to the power's proper aims is unlawful.",
+        "application": "No national security or other protected subject matter is engaged, so the decision is justiciable on ordinary judicial review grounds. Using the passport power purely to pressure a claimant over lawful conduct is a use of the power for a purpose unconnected to its proper function of regulating international travel documentation, pointing towards an improper-purpose form of illegality.",
+        "conclusion": "The decision is justiciable, and on these facts is likely unlawful as an improper-purpose exercise of a passport-issuing power that was reviewable all along."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is stopping at 'this is a prerogative power' as if that answers the question. Every case here shows the analysis only starting there — the live issue is almost always whether a statute already occupies the ground, whether the subject matter is one the courts will touch, or whether the exercise of the power frustrates a constitutional principle it cannot override.",
+    "reviewMisses": true,
+    "linkToPathway": "public.prerogative.royal-prerogative"
+  }
+}

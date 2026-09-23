@@ -68,6 +68,8 @@ struct ItemInteractionView: View {
                 RecallInteraction(itemId: item.id, modelAnswer: modelAnswer, keyPoints: keyPoints, locked: lockedResponse, onLock: onLock)
             case .highlight(let sentences, let ratioSentence):
                 HighlightInteraction(itemId: item.id, sentences: sentences, ratioSentence: ratioSentence, locked: lockedResponse, onLock: onLock)
+            case .buckets(let buckets, let statements, let correct):
+                SortInteraction(itemId: item.id, buckets: buckets, statements: statements, correct: correct, locked: lockedResponse, onLock: onLock)
             case .irac(let facts, let modelAnswer):
                 IRACInteraction(itemId: item.id, facts: facts, answer: modelAnswer, level: context.iracLevel,
                                 decoyFacts: context.decoyFacts, decoyRules: context.decoyRules,
@@ -317,6 +319,91 @@ private struct SequenceInteraction: View {
     private func move(by offset: Int) {
         guard let selected, let position = order.firstIndex(of: selected), order.indices.contains(position + offset) else { return }
         withAnimation(.easeInOut(duration: 0.2)) { order.swapAt(position, position + offset) }
+    }
+}
+
+// MARK: - Sort into buckets
+
+/// Each statement gets a bucket by tapping one of the bucket buttons under it — no
+/// dragging, so it works the same with VoiceOver.
+private struct SortInteraction: View {
+    let itemId: String
+    let buckets: [String]
+    let statements: [String]
+    let correct: [Int]
+    let locked: ItemResponse?
+    let onLock: (ItemResponse) -> Void
+
+    @State private var chosen: [Int?]
+
+    init(itemId: String, buckets: [String], statements: [String], correct: [Int], locked: ItemResponse?, onLock: @escaping (ItemResponse) -> Void) {
+        self.itemId = itemId
+        self.buckets = buckets
+        self.statements = statements
+        self.correct = correct
+        self.locked = locked
+        self.onLock = onLock
+        _chosen = State(initialValue: Array(repeating: nil, count: statements.count))
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            ForEach(statements.indices, id: \.self) { index in
+                row(index)
+            }
+            if locked == nil {
+                RatioButton("Lock it in", isEnabled: chosen.allSatisfy { $0 != nil }) {
+                    onLock(ItemResponse(itemId: itemId, order: chosen.map { $0 ?? -1 }))
+                }
+                .padding(.top, 4)
+            }
+        }
+    }
+
+    private func row(_ index: Int) -> some View {
+        let answer = locked?.order?[safe: index] ?? chosen[index]
+        let isRight = answer == correct[index]
+        return VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .firstTextBaseline, spacing: 10) {
+                Text(statements[index]).ratioFont(.body)
+                Spacer(minLength: 0)
+                if locked != nil {
+                    Image(systemName: isRight ? "checkmark.circle.fill" : "xmark.circle.fill")
+                        .foregroundStyle(isRight ? Color.ratioVerdigris : Color.ratioOxblood)
+                        .accessibilityLabel(isRight ? "Right" : "Wrong")
+                }
+            }
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 8) { bucketButtons(index, answer: answer) }
+                VStack(alignment: .leading, spacing: 8) { bucketButtons(index, answer: answer) }
+            }
+            if locked != nil, !isRight, let right = buckets[safe: correct[index]] {
+                Text("Belongs in: \(right)").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+            }
+        }
+        .padding(14)
+        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay { RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(Color.ratioRule) }
+    }
+
+    @ViewBuilder
+    private func bucketButtons(_ index: Int, answer: Int?) -> some View {
+        ForEach(buckets.indices, id: \.self) { bucket in
+            let selected = answer == bucket
+            Button { chosen[index] = bucket } label: {
+                Text(buckets[bucket])
+                    .ratioFont(.small)
+                    .multilineTextAlignment(.leading)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .frame(minHeight: 44)
+                    .foregroundStyle(selected ? Color.ratioOnInk : Color.ratioInk)
+                    .background(selected ? Color.ratioInk : Color.ratioSunk, in: Capsule())
+            }
+            .buttonStyle(.plain)
+            .disabled(locked != nil)
+            .accessibilityAddTraits(selected ? .isSelected : [])
+        }
     }
 }
 

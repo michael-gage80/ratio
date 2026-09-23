@@ -1,0 +1,371 @@
+{
+  "lessonId": "public-03",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 3,
+  "topicId": "public.constitution.eu-withdrawal",
+  "title": "Sovereignty and the EU",
+  "subtitle": "Before and after exit: supremacy, the 2018 Act, and assimilated law",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how the European Communities Act 1972 gave EU law domestic effect and precedence without formally abandoning parliamentary sovereignty",
+    "State what Factortame (No 2) actually decided, and evaluate the competing readings of what it meant for sovereignty",
+    "Trace how the European Union (Withdrawal) Act 2018 and the Retained EU Law (Revocation and Reform) Act 2023 unwound EU supremacy and reconfigured the resulting body of law as 'assimilated law'"
+  ],
+  "leadingAuthorities": [
+    { "citation": "European Communities Act 1972, s 2(1) and s 2(4)", "role": "The conduit provision: gives EU law direct effect in domestic law and requires UK statutes to be read subject to it" },
+    { "citation": "R v Secretary of State for Transport, ex p Factortame Ltd (No 2) [1991] 1 AC 603", "role": "House of Lords disapplies an Act of Parliament pending resolution of an EU law conflict — the sharpest domestic test of what s 2(4) actually required" },
+    { "citation": "European Union (Withdrawal) Act 2018", "role": "Repeals the ECA 1972 on exit day; converts existing EU law into domestic 'retained EU law'" },
+    { "citation": "R (Miller) v Secretary of State for Exiting the European Union [2017] UKSC 5", "role": "The prerogative cannot be used to trigger withdrawal where doing so removes domestic rights; only Parliament can authorise that" },
+    { "citation": "Retained EU Law (Revocation and Reform) Act 2023", "role": "Ends the special supremacy of most retained EU law from 1 January 2024 and renames the surviving body 'assimilated law'" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often treat this as recent-history trivia — dates to memorise rather than doctrine to apply. Where the profile shows knowledge outpacing application, this note appears: 'You know the timeline. The exam question is never the timeline — it's what each Act actually did to the hierarchy of law.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well recalling the dates and Acts here before. The test pool below leans on application: expect a scenario asking you to work out which regime — ECA 1972, the 2018 Act, or the 2023 Act — governs a given conflict.",
+      "weakKnowledge": "Take Part 1 slowly and fix the two limbs of s 2(1) and s 2(4) in your head before moving on — everything else in this lesson assumes you can state what each one did without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "1972: Parliament passes a short, technical Act and, almost in passing, opens a channel through which a whole foreign legal order pours directly into English courts — no debate, no vote, on each individual rule. 2020: Parliament passes another Act and closes it. In between, courts set aside an Act of Parliament for the first time in the modern era, a Prime Minister was told by the Supreme Court he could not act alone, and the very meaning of the word 'sovereignty' became, for fifty years, a live argument rather than a settled fact. This lesson follows that arc in order.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The 2023 Act's reforms are now fully in force and the withdrawal timeline is closed history; the live constitutional question this lesson leaves open is how to characterise it, not what happened."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "1972: the conduit pipe",
+        "voice": "narrative — opens on the date and the mechanism, before the theory",
+        "body": [
+          "Before the UK could join the European Communities, EU law needed a way into the domestic legal system. English law doesn't recognise treaties automatically — the dualist rule means an international obligation has no domestic effect until Parliament enacts it. So Parliament had to build a doorway, once, that would let an entire and constantly-growing body of foreign-made law through automatically, without a fresh Act each time a new Regulation or Directive appeared.",
+          "The European Communities Act 1972 was that doorway. Section 2(1) gave directly effective EU law force in the UK 'without further enactment' — Lord Denning later called this a channel or conduit pipe, not a filter. Section 2(4) went further: it required every UK enactment, past and future, to 'be construed and have effect subject to' directly effective EU law.",
+          "Read carefully, s 2(4) is a strange instruction to give a court. It doesn't just resolve today's conflicts between UK statutes and EU law — it purports to bind tomorrow's Parliament too, telling future courts how to read future Acts they haven't been written yet. Whether that was constitutionally possible, given that Parliament cannot normally bind its successors, is the question the rest of this lesson exists to test."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "European Communities Act 1972, s 2(1) and s 2(4)",
+            "text": "s 2(1): All such rights, powers, liabilities, obligations and restrictions from time to time created or arising by or under the Treaties... are without further enactment to be given legal effect or used in the United Kingdom... s 2(4): any enactment passed or to be passed... shall be construed and have effect subject to the foregoing provisions of this section.",
+            "elements": ["Directly effective EU rights take effect in UK law automatically", "No further Act of Parliament is required for each individual measure", "Existing and future UK legislation must be read subject to directly effective EU law"]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-03-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the single Act of Parliament that gave directly effective EU law domestic force in the UK from 1973 onwards.",
+          "acceptableAnswers": ["European Communities Act 1972", "the ECA 1972", "ECA 1972"],
+          "modelAnswer": "The European Communities Act 1972 — its s 2(1) and s 2(4) together let EU law take direct effect in UK law and required domestic legislation to be read subject to it.",
+          "feedbackCorrect": "Right — and hold onto that year. Everything in this lesson is measured against it: what came before 1972, and what unwinds after 2018.",
+          "feedbackIncorrect": "It's the European Communities Act 1972. Fix the year and the name together — this is the doorway every later case and Act in this lesson either uses or dismantles."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "1990: a Spanish fishing fleet and an Act of Parliament that doesn't apply",
+        "voice": "case-narrative — builds the story to its constitutional punchline",
+        "body": [
+          "The Merchant Shipping Act 1988 tightened the rules on who could register a fishing vessel as British, in a deliberate attempt to stop Spanish-owned vessels — registered in the UK to access British fishing quotas — from doing so. Factortame Ltd, a company largely owned by Spanish nationals, argued the Act breached EU law on freedom of establishment and non-discrimination on grounds of nationality.",
+          "The immediate problem was practical, not theoretical: the case would take years to resolve, and the company was being deregistered now. It applied for interim relief — an order suspending the Act's effect against it until the substantive question was settled. English law, at the time, had a longstanding rule that courts cannot grant an interim injunction against the Crown to suspend an Act of Parliament. The case went to the House of Lords, which referred the question to the European Court of Justice.",
+          "The ECJ's answer was blunt: if domestic law had no mechanism to protect a directly effective EU law right pending final judgment, EU law required the national court to set that domestic rule aside and grant the relief anyway. In Factortame (No 2), the House of Lords did exactly that — disapplying, provisionally, an Act of Parliament. It was the first time in the modern era that a UK court had done so."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Secretary of State for Transport, ex p Factortame Ltd (No 2)",
+            "citation": "[1991] 1 AC 603",
+            "court": "House of Lords",
+            "year": 1991,
+            "factsShort": "Spanish-owned fishing companies challenged UK registration rules as contrary to EU law and sought interim relief suspending the Act while the challenge was heard.",
+            "ratioShort": "Where no other means exists to protect a directly effective EU law right pending trial, a UK court must disapply an inconsistent Act of Parliament, including by way of interim relief.",
+            "expanded": {
+              "facts": "The Merchant Shipping Act 1988 imposed nationality and residence conditions on the owners, managers and shareholders of UK-registered fishing vessels. Factortame Ltd and other Spanish-owned companies, which had reflagged their vessels as British to fish against UK quota, no longer qualified for registration under the new rules. They argued this breached EU law on the freedom of establishment and the prohibition on nationality discrimination, and sought an interim injunction disapplying the relevant provisions of the Act while their challenge to its compatibility with EU law was resolved.",
+              "judgmentExtract": "Lord Bridge held that once Parliament had, by the ECA 1972, accepted that EU law should take precedence over inconsistent domestic law, it was 'entirely consistent with the sovereignty of the United Kingdom Parliament' for a UK court to override an Act of Parliament where EU law so required — because Parliament itself had voluntarily accepted that limitation on its own powers when it passed the 1972 Act.",
+              "significance": "Factortame (No 2) is the case everyone reaches for when arguing sovereignty has been eroded by EU membership — a court set aside a statute. But Lord Bridge's own reasoning frames it the other way: as an exercise of, not a defeat of, parliamentary sovereignty, because Parliament chose in 1972 to write the rule that produced this result and could have repealed the ECA 1972 at any time to reverse it."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-03-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "In Factortame (No 2), which provision of the European Communities Act 1972 supplied the House of Lords' authority to disapply the Merchant Shipping Act 1988?",
+          "options": ["Section 2(4), requiring UK enactments to be construed and to have effect subject to directly effective EU law", "Section 1, defining the Treaties to which the Act applies", "There was no domestic statutory basis — the House of Lords acted purely on ECJ instruction"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The House of Lords was careful to locate its power in s 2(4) itself, not in some freestanding EU override — the whole point of Lord Bridge's reasoning is that Parliament authorised this outcome in 1972.",
+          "feedbackIncorrect": "Look again at s 2(4): it is the provision that instructs courts to read UK enactments subject to directly effective EU law. The House of Lords used it to justify disapplying the 1988 Act, rather than treating the ECJ's ruling as a freestanding override of domestic statute."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "So did Parliament stop being sovereign? Two readings",
+        "voice": "analytical — lays out a genuine academic disagreement without resolving it for the student",
+        "body": [
+          "Here is the argument you will meet in every textbook, because Factortame doesn't settle it — it just sharpens it.",
+          "Reading one, orthodox: nothing changed. Dicey's sovereignty means Parliament can make or unmake any law, and no person or body — including a past Parliament — can limit that. On this view, s 2(4) is simply a 'manner and form' or construction rule: a device by which the 1972 Parliament instructed courts how to read later statutes, revocable at will by a later Act (as eventually happened in 2018). Because Parliament always retained the power to repeal the ECA 1972 and reverse the whole arrangement, its sovereignty was never actually constrained — only, for as long as the ECA 1972 stood, its practical exercise was channelled through it.",
+          "Reading two, revisionist: something did change, even if only for as long as it lasted. For nearly fifty years, an ordinary Act of Parliament — the Merchant Shipping Act 1988 — was treated by UK courts as legally ineffective against a directly effective EU right, without Parliament repealing it. Whatever the theory, in practice a later, specific, deliberately-worded Act was disapplied in favour of a different legal order. Some commentators argue this created something closer to a 'new legal order' point, borrowed from the ECJ's own case law, in which parliamentary sovereignty was reconceived rather than merely exercised.",
+          "Notice that both readings agree on the facts and disagree only on what the facts mean for the underlying theory of the constitution. That is the shape of most contested public law doctrine, and it is exactly the shape you will meet again when this module turns to the rule of law."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Manner and form",
+            "definition": "The theory that Parliament can validly bind how later Parliaments must legislate (the procedure or form required), without binding what they may legislate on — used to explain s 2(4) as compatible with orthodox sovereignty."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-03-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Suppose, hypothetically, that in 1995 Parliament had passed a new Act expressly stating 'this Act applies notwithstanding the European Communities Act 1972 or any rule of EU law'. Applying the orthodox ('manner and form') reading of Factortame, what would a UK court have had to do?",
+          "options": ["Apply the 1995 Act — an express and specific later statement of Parliament's will displaces the general instruction in s 2(4), on ordinary principles of implied repeal by express words", "Disapply the 1995 Act — once EU law took precedence in 1972, no later Act of Parliament could ever override it again", "Refer the question to the ECJ and treat its answer as final regardless of what Parliament said"],
+          "correctIndex": 0,
+          "explanation": "On the orthodox reading, s 2(4) bound later courts only because Parliament had not said otherwise. An Act that expressly and specifically overrode the ECA 1972 would, on ordinary sovereignty principles, have to be given effect — that is precisely what the 2018 Act eventually did, at scale, by repealing the ECA 1972 outright. The revisionist reading is the only one under which the second option could be right, and it was never tested this cleanly in practice."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The unwinding, in order",
+        "voice": "timeline — deliberately paced through each step so the sequence, not just the endpoint, is learned",
+        "body": [
+          "Exit did not happen in one Act. It happened in a sequence, and each step matters on its own terms — this is the part of the lesson examiners use to test whether you actually know the mechanism, rather than just the outcome.",
+          "It starts with a case, not a statute: in R (Miller) v Secretary of State for Exiting the European Union, the Supreme Court held that the Government could not use the prerogative alone to trigger Article 50 TEU notification, because doing so would inevitably remove domestic rights that Parliament had created via the ECA 1972 — and only Parliament, not the executive acting alone, can take domestic rights away. Parliament then passed the European Union (Notification of Withdrawal) Act 2017 authorising notification, which was given in March 2017.",
+          "The European Union (Withdrawal) Act 2018 did the structural work: it provided for the repeal of the ECA 1972 on 'exit day', and — to avoid a sudden legal vacuum — converted the huge existing body of EU-derived law into a new domestic category called 'retained EU law', which continued to have a form of priority over pre-exit domestic legislation it conflicted with, but was no longer supreme over anything enacted afterwards.",
+          "The final step, easy to miss, came later: the Retained EU Law (Revocation and Reform) Act 2023 ended the special interpretive status of most retained EU law from 1 January 2024, renaming the surviving body 'assimilated law' and providing that domestic courts need no longer follow the old EU-derived principle of supremacy when interpreting it. What began as a conduit pipe in 1972 was, by 2024, fully closed and relabelled."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "From conduit to closure: the EU law lifecycle in UK law",
+            "description": "The four-stage sequence by which EU law entered, was tested, and was withdrawn from domestic legal effect.",
+            "nodes": [
+              { "id": "entry", "label": "1972 — ECA 1972 s 2(1)/(4): EU law given direct effect and precedence" },
+              { "id": "test", "label": "1990–91 — Factortame (No 2): an Act of Parliament disapplied under s 2(4)" },
+              { "id": "repeal-authorised", "label": "2017 — Miller: only Parliament, not the prerogative, may authorise withdrawal; EU (Notification of Withdrawal) Act 2017 passed" },
+              { "id": "repeal-effected", "label": "2018–20 — EU (Withdrawal) Act 2018: ECA 1972 repealed on exit day; EU law converted to 'retained EU law'" },
+              { "id": "status-ended", "label": "2023–24 — Retained EU Law (Revocation and Reform) Act 2023: special supremacy ends; law renamed 'assimilated law'" }
+            ],
+            "edges": [
+              { "from": "entry", "to": "test", "label": "tested by" },
+              { "from": "test", "to": "repeal-authorised", "label": "later" },
+              { "from": "repeal-authorised", "to": "repeal-effected", "label": "authorises" },
+              { "from": "repeal-effected", "to": "status-ended", "label": "reformed by" }
+            ],
+            "textAlternative": "The lifecycle runs: 1972, the ECA gives EU law direct effect and precedence; 1990–91, Factortame (No 2) tests this by disapplying an Act of Parliament; 2017, Miller holds only Parliament can authorise withdrawal, and the Notification Act 2017 does so; 2018–20, the EU (Withdrawal) Act 2018 repeals the ECA 1972 on exit day and converts EU law into 'retained EU law'; 2023–24, the Retained EU Law (Revocation and Reform) Act 2023 ends its special supremacy and renames it 'assimilated law'."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-03-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these four steps of the withdrawal process in the order they occurred.",
+          "items": [
+            "Supreme Court holds in Miller that only Parliament can authorise triggering Article 50",
+            "European Union (Notification of Withdrawal) Act 2017 authorises notification",
+            "European Union (Withdrawal) Act 2018 repeals the ECA 1972 on exit day and creates 'retained EU law'",
+            "Retained EU Law (Revocation and Reform) Act 2023 ends special supremacy and creates 'assimilated law'"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the mechanism in full: a judicial ruling on who may act, then the Act authorising the act, then the Act restructuring the law, then the Act stripping its remaining special status. Four separate legal steps, not one 'Brexit Act'.",
+          "feedbackIncorrect": "Check the order again — Miller comes first because it decides who is allowed to trigger withdrawal at all, before any withdrawal-specific legislation exists. The 2023 Act is last: it reforms law that the 2018 Act had already created."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Reading the whole arc as one story",
+        "voice": "reflective — closes the lesson by asking the student to hold the whole fifty years in view, and hands off to the rule of law debate",
+        "body": [
+          "Step back from the individual Acts and cases, and a single thread runs through all of them: at no point did anything happen to EU law in the UK except by Act of Parliament, or by a court applying an Act of Parliament. The ECA 1972 was an Act. Its repeal was an Act. Even Factortame, the case most often cited as proof that Parliament lost control, rests on Parliament's own instruction in s 2(4) — which is exactly why Miller, decades later, insisted the executive could not simply walk away from that instruction without Parliament's say-so.",
+          "That is not the only way to tell the story, and you should be able to argue the other side too — that fifty years in which an ordinary Act of Parliament could be disapplied by a foreign court's ruling is not adequately captured by saying 'Parliament could always have changed its mind'. But examiners reward students who can hold both readings at once, apply the right one to the right question, and say clearly which side of the debate a given answer depends on.",
+          "The next lesson in this module turns to the rule of law — a doctrine even less settled than sovereignty, because there isn't even agreement on what it requires, only on what it forbids."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The arc in three sentences",
+            "points": [
+              "1972: Parliament, by ordinary Act, gave EU law direct effect and told courts to read UK statutes subject to it",
+              "1991–2018: courts gave effect to that instruction, including by disapplying an Act of Parliament in Factortame, because Parliament had authorised exactly that",
+              "2017–2024: Parliament, again by ordinary Act (and only after the courts confirmed only Parliament could do it), unwound the whole arrangement"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-03-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "Where do you land: was the 1972–2020 EU membership episode, taken as a whole, ultimately consistent with orthodox parliamentary sovereignty, or a genuine departure from it?",
+          "sliderLabels": ["Genuine departure from orthodoxy", "Consistent with orthodox sovereignty"],
+          "correctPosition": "orthodoxy",
+          "explanation": "This is a contested academic question and good answers can be argued either way — but the dominant reading, and the one Lord Bridge himself gave in Factortame, is that the episode is consistent with orthodox sovereignty: every stage rests on an ordinary Act of Parliament that a later Parliament was free to reverse, and eventually did. Examiners will credit a well-argued 'departure' answer, but expect you to engage with this orthodox position rather than ignore it."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-03-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which two subsections of s 2 of the European Communities Act 1972 gave EU law domestic effect and precedence?",
+      "acceptableAnswers": ["s 2(1) and s 2(4)", "section 2(1) and section 2(4)", "2(1) and 2(4)"],
+      "modelAnswer": "Section 2(1), giving directly effective EU law force in domestic law without further enactment, and s 2(4), requiring UK enactments to be construed and to have effect subject to it."
+    },
+    {
+      "itemId": "public-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under the European Communities Act 1972, did Parliament need to pass a fresh Act every time a new directly effective EU Regulation was to apply in the UK?",
+      "options": ["No — s 2(1) gave such measures domestic effect automatically, without further enactment", "Yes — each Regulation required its own implementing Act"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "In R (Miller) v Secretary of State for Exiting the EU, the Supreme Court held that Article 50 could not be triggered by the prerogative alone. Why not?",
+      "options": ["Because triggering Article 50 would inevitably remove domestic rights created by Parliament via the ECA 1972, and only Parliament can take away rights it has created", "Because the referendum result was legally advisory and had no constitutional weight at all", "Because EU law itself required a domestic Act of Parliament before any member state could withdraw"],
+      "correctIndex": 0,
+      "trapExplanation": "The second option overstates the case — the Court did not need to, and did not, hold the referendum legally irrelevant, only that a referendum result cannot by itself authorise the executive to strip statutory rights. The third option is simply wrong: EU law (Article 50 TEU) sets the withdrawal procedure at EU level and says nothing about UK domestic authorisation requirements — that question is purely a matter of UK constitutional law."
+    },
+    {
+      "itemId": "public-03-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order these events on the road to the UK's withdrawal from the EU.",
+      "items": ["2016 EU membership referendum", "Miller (No 1): Supreme Court rules prerogative alone cannot trigger Article 50", "European Union (Notification of Withdrawal) Act 2017 passed", "Article 50 notification given, March 2017", "European Union (Withdrawal) Act 2018 receives Royal Assent"],
+      "correctOrder": [0, 1, 2, 3, 4]
+    },
+    {
+      "itemId": "public-03-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "What is the key structural difference between 'retained EU law' under the EU (Withdrawal) Act 2018 and ordinary pre-2018 domestic legislation?",
+      "options": ["Retained EU law, as originally created in 2018, held a form of priority over pre-exit domestic legislation it conflicted with — a status ordinary domestic statutes do not have over each other", "There was no difference; the 2018 Act treated all pre-exit law identically", "Retained EU law could only ever be amended by a fresh referendum"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-03-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the extract below from Lord Bridge's speech in Factortame (No 2), highlight the sentence that gives the ratio for why disapplying the Merchant Shipping Act 1988 was constitutionally acceptable.",
+      "passage": "Some public comments on the interim relief granted by this House have suggested that this was a novel and dangerous invasion by a Community institution of the sovereignty of the United Kingdom Parliament. But this is a misconception. If the supremacy within the European Community of Community law over the national law of member states was not always inherent in the E.E.C. Treaty it was certainly well established in the jurisprudence of the European Court of Justice long before the United Kingdom joined the Community. Thus, whatever limitation of its sovereignty Parliament accepted when it enacted the European Communities Act 1972 was entirely voluntary.",
+      "ratioSentence": "Thus, whatever limitation of its sovereignty Parliament accepted when it enacted the European Communities Act 1972 was entirely voluntary."
+    },
+    {
+      "itemId": "public-03-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A UK statute enacted in 2016 conflicts with a directly effective EU law right. The claimant seeks to have the UK statute disapplied, relying on Factortame (No 2). Applying the position as it stood in 2016 (before the 2018 and 2023 Acts), what is the correct outcome?",
+      "options": ["The UK court should disapply the conflicting provision of the 2016 statute, applying s 2(4) ECA 1972 as construed in Factortame (No 2)", "The UK court cannot disapply any Act of Parliament under any circumstances", "The 2016 statute automatically repeals the ECA 1972 by implication, because it is later in time"],
+      "correctIndex": 0,
+      "explanation": "In 2016 the ECA 1972 was still in force and unrepealed, and s 2(4) still required later enactments to be read subject to directly effective EU law unless Parliament had expressly and specifically said otherwise. Implied repeal by mere lateness in time does not apply to s 2(4), which is precisely the point Factortame (No 2) establishes — this is what made the provision unusual."
+    },
+    {
+      "itemId": "public-03-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that made Factortame (No 2), rather than an earlier or later case, the moment a UK court actually disapplied an Act of Parliament.",
+      "scenarioText": "A company challenges the Merchant Shipping Act 1988 as contrary to EU law. Rather than waiting years for the substantive challenge to conclude, it seeks interim relief suspending the Act's effect against it immediately, because domestic law had no other mechanism to protect its directly effective EU right in the meantime.",
+      "tappableSpans": ["challenges the Merchant Shipping Act 1988", "waiting years for the substantive challenge to conclude", "seeks interim relief suspending the Act's effect against it immediately", "no other mechanism to protect its directly effective EU right"],
+      "correctSpan": "no other mechanism to protect its directly effective EU right",
+      "explanation": "The ECJ's ruling, and the House of Lords' application of it, turned on the absence of any other domestic mechanism to protect the right pending trial — that gap is what forced the court to disapply the Act as interim relief, rather than simply deciding the substantive EU law question in the normal way."
+    },
+    {
+      "itemId": "public-03-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which of these two constitutional problems is the one Factortame (No 2) resolves, rather than Miller?",
+      "scenarioA": "A UK court is asked whether it can set aside a UK statute because it conflicts with a directly effective EU law right, given an existing Act of Parliament (the ECA 1972) that instructs it to do so.",
+      "scenarioB": "The Government wishes to give formal notice of withdrawal from the EU using prerogative power alone, without a prior Act of Parliament authorising it.",
+      "correctScenario": "A",
+      "explanation": "Factortame (No 2) is about a court applying an existing statutory instruction (s 2(4) ECA 1972) to disapply an inconsistent later Act — a question about the relationship between two Acts of Parliament as read by a court. Miller is a different problem: whether the executive, using prerogative power with no relevant Act at all, could itself remove statutory rights. Both cases end up protecting Parliament's role, but from opposite directions — one is about a court obeying Parliament's earlier instruction, the other about stopping the executive from acting without any instruction from Parliament."
+    },
+    {
+      "itemId": "public-03-test-10",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "In 2019, before the EU (Withdrawal) Act 2018 had fully taken effect, a claimant argues that a UK statute passed in 2005 should be disapplied because it conflicts with a directly effective EU law right, relying on Factortame (No 2). The Secretary of State argues that Parliament's clear intention, expressed in the 2018 Act, to leave the EU means the court should refuse to apply s 2(4) ECA 1972 at all from that point onwards. Analyse whether the claimant succeeds.",
+      "factsToOrder": [
+        "The conflicting statute was passed in 2005, while the ECA 1972 remained in force",
+        "The EU (Withdrawal) Act 2018 had been enacted but its repeal of the ECA 1972 had not yet taken effect ('exit day' had not been reached)",
+        "The claimant relies on a directly effective EU law right said to conflict with the 2005 statute",
+        "The Secretary of State points to Parliament's general intention to leave the EU as expressed in the 2018 Act"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether s 2(4) ECA 1972 still required the 2005 statute to be disapplied in 2019, given that the 2018 Act had been passed but had not yet repealed the ECA 1972.",
+        "rule": "Under Factortame (No 2), s 2(4) ECA 1972 requires UK enactments to be construed and to have effect subject to directly effective EU law unless and until Parliament expressly and specifically legislates otherwise; a general legislative intention is not enough to displace it, only the actual repeal provisions taking legal effect.",
+        "application": "The ECA 1972 remained formally in force in 2019: the 2018 Act had been enacted but exit day, the point at which the ECA 1972 was actually repealed, had not yet arrived. Parliament's general intention to leave — however clearly expressed — is not itself an express and specific statutory instruction displacing s 2(4) for this particular conflict; that would require either the repeal taking effect or a specific provision overriding s 2(4) for the 2005 statute.",
+        "conclusion": "The claimant succeeds: until exit day and the ECA 1972's actual repeal, s 2(4) continued to operate, and the 2005 statute should be disapplied to the extent of the conflict, exactly as in Factortame (No 2)."
+      }
+    },
+    {
+      "itemId": "public-03-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that 'assimilated law' under the Retained EU Law (Revocation and Reform) Act 2023 still enjoys the same special supremacy over conflicting pre-exit domestic legislation that 'retained EU law' held immediately after the 2018 Act?",
+      "sliderLabels": ["Still fully supreme, unchanged", "That special status has ended"],
+      "correctPosition": "ended",
+      "explanation": "The 2023 Act specifically removed the principle of supremacy for most retained EU law from 1 January 2024, and renamed the surviving body 'assimilated law' to mark the change. It is no longer treated as automatically taking priority over conflicting domestic legislation in the way it briefly did immediately after 2018."
+    },
+    {
+      "itemId": "public-03-test-12",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Did the European Union (Withdrawal) Act 2018 repeal the European Communities Act 1972 immediately on Royal Assent?",
+      "options": ["No — the repeal took effect later, on 'exit day', not on Royal Assent itself", "Yes — the ECA 1972 ceased to have effect the moment the 2018 Act received Royal Assent"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-03-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which statement correctly describes the relationship between 'retained EU law' (2018 Act) and 'assimilated law' (2023 Act)?",
+      "options": ["They are two different bodies of substantive law entirely, created independently of each other", "'Assimilated law' is substantially the same body of law as 'retained EU law', renamed and reformed — most of it stripped of its special supremacy status — not a new body of rules", "'Assimilated law' refers only to law made after Brexit, while 'retained EU law' refers only to law made before it"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to read the name change as marking a wholly new legal category, but the 2023 Act reformed and relabelled the existing 2018 category rather than replacing its content outright — the substance mostly carried over; what changed was its interpretive status, especially the loss of automatic supremacy over conflicting pre-exit domestic law."
+    },
+    {
+      "itemId": "public-03-test-14",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Name the case in which the Supreme Court held that the prerogative could not be used, without an Act of Parliament, to trigger the UK's withdrawal from the EU.",
+      "acceptableAnswers": ["R (Miller) v Secretary of State for Exiting the EU", "Miller", "Miller (No 1)", "Miller v SSEEU"],
+      "modelAnswer": "R (Miller) v Secretary of State for Exiting the European Union [2017] UKSC 5 — the Supreme Court held that because triggering Article 50 would inevitably remove domestic rights created by the ECA 1972, only Parliament, not the prerogative, could authorise it."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating Factortame as proof that sovereignty was simply lost. Read the judgment on its own terms first — Lord Bridge frames it as a voluntary, reversible exercise of sovereignty, not a defeat of it — before deciding what you think of that framing.",
+    "reviewMisses": true,
+    "linkToPathway": "public.constitution.eu-withdrawal"
+  }
+}

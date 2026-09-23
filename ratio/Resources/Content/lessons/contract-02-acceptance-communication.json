@@ -1,0 +1,420 @@
+{
+  "lessonId": "contract-02",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 2,
+  "topicId": "contract.formation.acceptance-communication",
+  "title": "Acceptance and communication",
+  "subtitle": "Mirror images, crossed forms, and the moment a contract is made",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Apply the mirror image rule to identify when a purported acceptance is in fact a counter-offer",
+    "Explain how the 'battle of the forms' is resolved under the traditional offer/counter-offer analysis, and its main alternative",
+    "Identify which communication rule — the postal rule or the receipt rule — governs a given method of communication, and explain why silence cannot generally amount to acceptance"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Hyde v Wrench (1840) 3 Beav 334", "role": "A counter-offer destroys the original offer, which cannot later be revived by purported acceptance" },
+    { "citation": "Butler Machine Tool Co Ltd v Ex-Cell-O Corporation (England) Ltd [1979] 1 WLR 401", "role": "The 'battle of the forms' resolved by traditional offer/counter-offer analysis — the last set of terms sent and acted on generally wins" },
+    { "citation": "Adams v Lindsell (1818) 1 B & Ald 681", "role": "The postal rule: a posted acceptance takes effect on posting, not on receipt" },
+    { "citation": "Entores Ltd v Miles Far East Corp [1955] 2 QB 327", "role": "Instantaneous communication of acceptance (telex) is effective on receipt, not on sending" },
+    { "citation": "Brinkibon Ltd v Stahag Stahl und Stahlwarenhandelsgesellschaft mbH [1983] 2 AC 34", "role": "Confirms the receipt rule for instantaneous communication, while noting no single rule can mechanically cover every variant" },
+    { "citation": "Felthouse v Bindley (1862) 11 CB (NS) 869", "role": "Silence cannot by itself amount to acceptance, even where the offeree privately intends to accept" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students already know acceptance must be communicated. Where the profile shows knowledge running ahead of application, this brief note appears: 'You can state the rules — this lesson is about which rule applies to which method, under pressure of a fact pattern.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the bare rules here before. The test pool below leans heavily on application: expect scenarios involving letters, emails, and crossed forms, not textbook definitions.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state the mirror image rule precisely before moving on — every later part in this lesson builds on the idea that a counter-offer kills the original offer."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "An uncle writes to his nephew about a horse: 'If I hear no more about him, I consider the horse mine at that price.' The nephew never replies — but privately means to sell, and tells the auctioneer to keep the horse out of a forthcoming sale. The auctioneer forgets, and sells the horse to someone else. Whose horse was it, and why does the answer turn entirely on a letter that was never even answered?",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The core communication rules are long-settled common law; courts continue to apply them by analogy to email and other newer methods."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The mirror image rule: acceptance must match, or it's something else",
+        "voice": "diagnostic",
+        "body": [
+          "Acceptance has to mirror the offer exactly — the same terms, agreed to without qualification. The moment a response introduces a new term, drops a term, or proposes different figures, it stops being an acceptance in law, however much the parties themselves might describe it as 'agreeing to the deal'.",
+          "Diagnose any purported acceptance with one question: does this response add anything, or does it simply say yes to precisely what was offered? If it adds or changes anything, it is a counter-offer — which, as the previous lesson in this pathway established, operates as a rejection of the original offer as well as a new offer of its own.",
+          "Hyde v Wrench is the case that fixed this rule. Wrench offered to sell a farm for £1,000. Hyde responded offering £950. Wrench refused that lower figure. Hyde then tried to accept the original £1,000 offer. The court held there was nothing left to accept: Hyde's counter-offer of £950 had already destroyed the £1,000 offer, and Wrench's silence after refusing £950 did not revive it. Once you see this, a huge share of 'has a contract been formed?' problem questions become a single diagnostic exercise: trace every communication, and ask at each step whether it is an unqualified 'yes' or a variation in disguise."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Hyde v Wrench",
+            "citation": "(1840) 3 Beav 334",
+            "court": "Court of Chancery",
+            "year": 1840,
+            "factsShort": "Wrench offered his farm for £1,000. Hyde counter-offered £950, which Wrench refused. Hyde then purported to accept the original £1,000 offer.",
+            "ratioShort": "A counter-offer operates as a rejection of the original offer; the original offer cannot later be revived simply by purporting to accept it.",
+            "expanded": {
+              "facts": "Wrench offered to sell his farm to Hyde for £1,000. Hyde replied offering £950. Wrench refused to accept that lower figure. Some days later, with no fresh offer having been made, Hyde wrote purporting to accept the original £1,000 price, and sued for specific performance when Wrench refused to sell.",
+              "judgmentExtract": "The court held that Hyde's counter-offer of £950 amounted to a rejection of Wrench's original £1,000 offer. Once rejected in that way, the original offer no longer existed to be accepted; Hyde could not, by later purporting to accept it, revive an offer that his own counter-offer had already destroyed.",
+              "significance": "Hyde v Wrench establishes the foundational rule that a counter-offer kills the original offer outright, rather than merely running alongside it as an alternative. It underpins the mirror image rule and, in turn, the 'battle of the forms' analysis that follows in commercial dealings."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Mirror image rule",
+            "definition": "An acceptance must match the offer's terms exactly and unconditionally; any variation, addition, or omission converts the response into a counter-offer rather than a valid acceptance."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-02-check-01",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of these is a genuine acceptance, rather than a counter-offer in disguise?",
+          "scenarioA": "'I accept your offer to sell the laptop for £400, provided you also include the charger.'",
+          "scenarioB": "'I accept your offer to sell the laptop for £400, as described.'",
+          "correctScenario": "B",
+          "explanation": "A adds a new condition (the charger) not in the original offer — under the mirror image rule, that is a counter-offer, however much it looks like agreement. B mirrors the offer exactly and is a genuine, unconditional acceptance."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Battle of the forms: when both sides think their terms won",
+        "voice": "comparative",
+        "body": [
+          "Commercial parties rarely negotiate contracts sentence by sentence. Instead, each side fires its own standard terms at the other — a seller's quotation with terms printed on the back, a buyer's purchase order with different terms printed on its back — and both assume their own document governs. This clash is known as the 'battle of the forms', and it is simply the mirror image rule playing out at industrial scale.",
+          "In Butler Machine Tool v Ex-Cell-O, the seller quoted a price for a machine tool, attaching its own standard terms, which included a clause letting the seller increase the price if costs rose before delivery. The buyer replied with a purchase order on its own standard terms — with no price variation clause — and included a tear-off acknowledgment slip for the seller to sign and return. The seller signed and returned the slip, then later tried to invoke its price variation clause when costs rose.",
+          "The Court of Appeal held the buyer's purchase order was a counter-offer to the seller's original quotation (because its terms differed), and the seller's act of signing and returning the acknowledgment slip was itself an acceptance of that counter-offer — on the buyer's terms, price variation clause and all. This is sometimes called the 'last shot' doctrine: whoever fires the last set of terms before the other side does something that looks like acceptance of them tends to win the battle.",
+          "Lord Denning MR, giving one of the judgments, suggested an alternative approach might sometimes be needed — assembling a contract out of whichever terms genuinely agree across both documents, and discarding the ones that conflict (a 'knock-out' approach used in some other legal systems). But this remained his own suggestion rather than the operative reasoning of the majority, and English law has generally stuck with the traditional offer/counter-offer/last-shot analysis rather than adopting a knock-out rule outright."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Butler Machine Tool Co Ltd v Ex-Cell-O Corporation (England) Ltd",
+            "citation": "[1979] 1 WLR 401",
+            "court": "Court of Appeal",
+            "year": 1979,
+            "factsShort": "A seller quoted for machinery on its own terms (including a price variation clause); the buyer's purchase order, on different terms, was signed and returned by the seller via an acknowledgment slip.",
+            "ratioShort": "The buyer's purchase order was a counter-offer; the seller's return of the acknowledgment slip accepted it — the contract formed on the buyer's terms, the last set fired before conduct signalling acceptance.",
+            "expanded": {
+              "facts": "The sellers quoted a price for a machine tool, the quotation incorporating the sellers' own standard terms, including a clause permitting a price increase to reflect rising costs before delivery. The buyers responded with an order on their own standard terms, which contained no price variation clause, and which included a tear-off acknowledgment slip stating the order was accepted on the buyers' terms. The sellers signed and returned this slip. When costs rose, the sellers sought to rely on their original price variation clause.",
+              "judgmentExtract": "The Court of Appeal analysed the exchange as a conventional sequence of offer and counter-offer: the buyers' purchase order, differing from the sellers' quotation, was itself a counter-offer, which the sellers accepted by signing and returning the acknowledgment slip. That act of acceptance was on the buyers' terms — the sellers could not, after the fact, fall back on terms from their own earlier quotation that had already been superseded.",
+              "significance": "Butler is the leading English authority on the 'battle of the forms', confirming that traditional offer/counter-offer analysis, rather than a wholesale reconciliation of conflicting documents, governs which side's standard terms end up applying — generally the terms last put forward before conduct amounting to acceptance occurred."
+            }
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Competing approaches to the battle of the forms",
+            "points": [
+              "Traditional / 'last shot' analysis (the operative reasoning in Butler) — apply ordinary offer, counter-offer and acceptance rules; whichever terms were last sent before conduct signalling acceptance normally govern",
+              "'First shot' — an alternative sometimes argued, that the original offeror's terms should prevail unless clearly and expressly displaced — generally rejected by English courts in favour of the last-shot approach",
+              "'Knock-out' rule — suggested obiter by Lord Denning MR — construct the contract from whichever terms the documents share, discarding conflicting terms — not the settled English approach, though influential academically and used in some other jurisdictions"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-02-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below adapted from Butler Machine Tool, highlight the sentence identifying the moment and basis on which the contract was formed.",
+          "passage": "The buyers' purchase order differed from the sellers' original quotation and therefore operated as a counter-offer, not an acceptance. The sellers' act of signing and returning the acknowledgment slip constituted acceptance of that counter-offer, and the resulting contract was formed on the buyers' terms. The sellers could not later revert to the price variation clause contained in their own superseded quotation.",
+          "ratioSentence": "The sellers' act of signing and returning the acknowledgment slip constituted acceptance of that counter-offer, and the resulting contract was formed on the buyers' terms."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Posting a letter: why acceptance can be effective before it arrives",
+        "voice": "narrative",
+        "body": [
+          "In 1817, a Sunderland wool firm wrote to buyers in Cirencester offering wool for sale, asking for a reply 'in course of post'. Through a misdirection, the letter took several days longer to arrive than it should have. The buyers accepted immediately on receiving it and posted their reply the same evening — but by the time that acceptance reached the sellers, the sellers, having heard nothing within the time they'd expected, had already sold the wool to somebody else, assuming their offer had lapsed unanswered.",
+          "The court in Adams v Lindsell had to decide precisely when the buyers' acceptance became legally effective: the moment they posted it, or the moment it arrived. If acceptance only took effect on arrival, the court noted, the offeror could never feel safe relying on any acceptance until they had themselves confirmed receipt of it — and that confirmation would need confirming in turn, an endless chain with no fixed point at which either party could act with confidence.",
+          "The court's answer became the postal rule: where post is a reasonable and contemplated method of accepting, a properly addressed and stamped letter of acceptance takes effect — and the contract is formed — at the moment it is posted, not when it arrives, and even if it is lost in the post and never arrives at all. The risk of postal delay or loss is allocated to the offeror, on the reasoning that the offeror chose to invite acceptance by a method they knew carried that risk. Crucially, the rule can be displaced: an offer that expressly requires acceptance to be received (for example, 'notice in writing to reach me by Friday') takes acceptance out of the postal rule and back onto an ordinary receipt basis."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Adams v Lindsell",
+            "citation": "(1818) 1 B & Ald 681",
+            "court": "Court of King's Bench",
+            "year": 1818,
+            "factsShort": "A misdirected offer letter delayed the buyers' reply; the sellers, hearing nothing in the expected time, sold the wool elsewhere before the buyers' posted acceptance arrived.",
+            "ratioShort": "A posted acceptance, properly addressed and stamped, takes effect on posting, not on receipt, even if it is delayed or lost entirely in the post.",
+            "expanded": {
+              "facts": "The sellers wrote offering wool for sale, asking for a reply by post. Owing to the sellers' own misdirection of the letter, it reached the buyers later than intended. The buyers accepted immediately and posted their reply the same day, but the sellers, having received no answer within the time they had expected one, had in the meantime sold the wool to a third party.",
+              "judgmentExtract": "The court held that treating acceptance as effective only on receipt would leave every contract by post indefinitely uncertain, since the offeror would need confirmation of receipt, which would itself need confirming, without end. Acceptance sent by a reasonable and contemplated method — here, post, since the offer itself invited a postal reply — is therefore effective from the moment of posting, provided the letter is properly addressed and stamped.",
+              "significance": "Adams v Lindsell is the foundational authority for the postal rule, a deliberate exception to the ordinary requirement that acceptance be communicated to the offeror. It allocates the risk of postal delay or loss to the offeror, who is treated as having invited that risk by nominating (or accepting the use of) post as a method of reply."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students very often assume acceptance sent by post is only effective once the offeror actually reads it, by analogy with ordinary conversation.",
+            "whyItsWrong": "That is precisely the rule the postal rule departs from. A properly posted acceptance is effective on posting — the contract can be complete, and binding on the offeror, before the offeror has any idea it exists, and even if the letter is later lost entirely."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-02-check-03",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Under the postal rule established in Adams v Lindsell, at what moment does a properly posted acceptance become legally effective?",
+          "acceptableAnswers": ["the moment it is posted", "on posting", "when the letter is put in the post, not when it is received"],
+          "modelAnswer": "The moment the properly addressed and stamped letter is posted — not when it is received, and even if it is delayed or lost in the post entirely."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Telex, fax, email: why 'instantaneous' broke the postal rule's logic",
+        "voice": "interrogative",
+        "body": [
+          "Ask yourself: does the reasoning behind the postal rule apply to a phone call? If a line goes dead mid-sentence and you never hear the other person say 'I accept', has a contract still formed the instant they said the words, unheard by you? Almost certainly not — and that intuition is exactly what the courts formalised for telex in Entores v Miles Far East.",
+          "A London company sent a telex offer to an Amsterdam company, which telexed back its acceptance; the question was where and when the contract was made, which mattered for jurisdiction. Denning LJ (as he then was) reasoned by analogy to a face-to-face exchange interrupted by noise: if you don't actually hear the words of acceptance, you ask the other party to repeat themselves, and no contract exists until you do hear them. Telex, he held, is close enough to instantaneous two-way communication that the same logic applies — acceptance takes effect where and when it is received by the offeror, not when it is sent.",
+          "So why does an apparently similar method — post — get an entirely different rule? Ask what's actually different: post has an inherent, often lengthy delay built into the method itself, with no way for either party to know in real time whether the message has arrived; telex (and by extension, most modern instant communication) does not carry that same structural delay, so there is no equivalent need to fix the risk on the offeror at the point of sending.",
+          "Does this extend neatly to email? Brinkibon v Stahag Stahl confirmed the receipt rule as the general approach for telex, but Lord Wilberforce was careful to say that no single, universal rule can mechanically resolve every variant of instantaneous or near-instantaneous communication — differences in time zones, office hours, and whether a message was even likely to have been seen may all affect where the law should place the risk. Courts and commentators have since generally treated email as closer to the instantaneous, receipt-based category than to the postal rule — but with real nuance for messages sent outside business hours, where 'receipt' may sensibly be treated as occurring only when the recipient's business day begins."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Postal rule or receipt rule?",
+            "description": "A decision path for classifying which communication rule applies to a given method of acceptance.",
+            "nodes": [
+              { "id": "start", "label": "Does the offer expressly require acceptance to be received by a stated method or time?" },
+              { "id": "yes-express", "label": "Yes → follow the offer's own stipulated method; the postal rule is displaced" },
+              { "id": "no-express", "label": "No → is the method of communication inherently instantaneous or near-instantaneous (telex, phone, email)?" },
+              { "id": "yes-instant", "label": "Yes → receipt rule applies (Entores; Brinkibon): effective when and where received, subject to business-hours nuance" },
+              { "id": "no-instant", "label": "No → is post a reasonable, contemplated method in the circumstances?" },
+              { "id": "yes-post", "label": "Yes → postal rule applies (Adams v Lindsell): effective on posting" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-express", "label": "Yes" },
+              { "from": "start", "to": "no-express", "label": "No" },
+              { "from": "no-express", "to": "yes-instant", "label": "Yes" },
+              { "from": "no-express", "to": "no-instant", "label": "No" },
+              { "from": "no-instant", "to": "yes-post", "label": "Yes" }
+            ],
+            "textAlternative": "First check whether the offer itself expressly stipulates how or when acceptance must be received — if so, that stipulation governs and displaces the postal rule. If not, ask whether the method is inherently instantaneous (telex, phone, email): if so, the receipt rule from Entores and Brinkibon applies, subject to nuance for out-of-hours messages. If the method is not instantaneous and post is a reasonable, contemplated method, the postal rule from Adams v Lindsell applies, and acceptance is effective on posting."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Receipt rule",
+            "definition": "For instantaneous or near-instantaneous communication, acceptance takes effect only when and where it is actually received by the offeror, not when it is sent — the opposite allocation of risk to the postal rule."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-02-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Amara emails her acceptance of a business offer at 11:45pm on a Friday; the recipient's office is closed until Monday morning and the email is not opened until then. Applying the reasoning in Brinkibon, when is the acceptance most likely to be treated as effective?",
+          "options": ["At 11:45pm on the Friday, regardless of office hours, purely because email is 'sent'", "At the start of the recipient's next business period (Monday morning), reflecting the nuance Brinkibon allows for communications sent outside ordinary business hours", "Never — silence over a weekend automatically defeats an email acceptance"],
+          "correctIndex": 1,
+          "explanation": "Brinkibon rejects a single mechanical rule for every instantaneous communication. Where a message arrives outside business hours, the sensible application of the receipt-rule reasoning treats it as received when the recipient's business day resumes, not at the moment of sending."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Felthouse v Bindley: why silence never seals a deal",
+        "voice": "practical",
+        "body": [
+          "Here is a rule worth building into how you draft, and how you read, any offer: an offeror cannot impose a contract on someone by declaring, unilaterally, that their silence will count as acceptance. This sounds obvious once stated, but the case that established it is genuinely close on its facts.",
+          "An uncle was negotiating to buy his nephew's horse and wrote: 'If I hear no more about him, I consider the horse mine at that price.' The nephew never replied — but he did privately intend to sell the horse to his uncle, and told the auctioneer handling a sale of his farm stock to keep the horse out of the auction. The auctioneer forgot, and sold the horse by mistake. The uncle sued the auctioneer for conversion — but to win, he first had to show he actually owned the horse at the time of the sale.",
+          "The court held he did not. The nephew's silence, even coupled with his genuine private intention to sell, was not a communicated acceptance, and the uncle could not stipulate in advance that silence would suffice — an offeror cannot force the offeree into the position of having to take positive action just to avoid being bound. No contract existed, so the uncle had no ownership claim against the auctioneer.",
+          "In practice, watch for two traps here. First, silence plus conduct is a different case entirely — if the nephew had, say, started preparing the horse for delivery, that conduct (not the silence) might well have amounted to acceptance. Second, don't assume this rule protects only offerees from being trapped — the same principle stops an offeror unilaterally binding themselves to treat the offeree's silence as a rejection either; silence is simply legally inert unless the parties' own prior course of dealing gives it a settled, agreed meaning."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Felthouse v Bindley",
+            "citation": "(1862) 11 CB (NS) 869",
+            "court": "Court of Common Pleas",
+            "year": 1862,
+            "factsShort": "An uncle told his nephew that silence would mean the horse was sold to him. The nephew never replied but privately intended to sell; the horse was mistakenly auctioned by a third party.",
+            "ratioShort": "Silence cannot amount to acceptance, even where the offeree privately intends to accept — an offeror cannot unilaterally stipulate that silence will bind the offeree.",
+            "expanded": {
+              "facts": "The claimant had been negotiating with his nephew to buy a horse, and wrote: 'If I hear no more about him, I consider the horse mine at £30 15s.' The nephew did not reply, but did instruct the auctioneer conducting a general sale of his farm stock to keep the horse out of the sale, intending to keep it for his uncle. The auctioneer inadvertently sold the horse along with the rest of the stock. The claimant sued the auctioneer in conversion, which required him to prove he owned the horse at the time it was sold.",
+              "judgmentExtract": "The court held that the nephew's silence, however genuinely coupled with a private intention to sell, did not constitute a communicated acceptance of the uncle's offer. The uncle could not, merely by declaring in advance that silence would be treated as acceptance, impose that effect on the nephew. Because no contract had been formed, the uncle held no proprietary interest in the horse capable of supporting a claim in conversion against the auctioneer.",
+              "significance": "Felthouse v Bindley remains the leading authority that silence, without more, cannot constitute acceptance, and that an offeror cannot unilaterally impose that effect on an offeree. It is frequently tested against scenarios involving automatic renewals, opt-out clauses, and consumer 'no response required' terms, where the same underlying principle continues to apply."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often think the nephew's genuine private intention to sell to his uncle should be enough to form a contract, since 'that's clearly what he wanted.'",
+            "whyItsWrong": "Contract formation requires communicated acceptance, not merely a matching private intention. The objective test asks what was actually communicated between the parties — an uncommunicated intention, however sincere, does no legal work at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-02-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A company's terms state: 'Unless you cancel your subscription within 14 days, we will treat your silence as acceptance of the renewal.' A customer does nothing, having simply forgotten about the email entirely. Applying Felthouse v Bindley, has the customer accepted the renewal?",
+          "options": ["No — an offeror (the company) cannot unilaterally stipulate that the customer's silence will amount to acceptance; silence alone is not acceptance regardless of what the terms say", "Yes — since the company clearly stated silence would count, the customer is bound by their own inaction", "Yes, because the customer had 14 days and chose not to use them"],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answers treat the company's own stipulation as if it could create a binding rule by itself. Felthouse is precisely the authority against that: an offeror's attempt to declare silence as acceptance does not make it so — something more than silence is needed from the offeree's side."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-02-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What effect does a counter-offer have on the offer it responds to?",
+      "acceptableAnswers": ["it destroys/rejects the original offer", "it operates as a rejection of the original offer", "the original offer can no longer be accepted"],
+      "modelAnswer": "A counter-offer operates as a rejection of the original offer, which is destroyed and cannot later be revived simply by purporting to accept it (Hyde v Wrench)."
+    },
+    {
+      "itemId": "contract-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under Felthouse v Bindley, can an offeror's silent offeree, who privately intends to accept, ever be bound purely by that silence?",
+      "options": ["No — silence alone is never sufficient, however genuine the private intention to accept", "Yes — a genuine private intention to accept is always enough"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-02-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following communication methods is generally treated as governed by the postal rule from Adams v Lindsell, rather than the receipt rule?",
+      "options": ["A letter sent by ordinary post, where post is a reasonable and contemplated method of reply", "A telex message", "An email sent during business hours"],
+      "correctIndex": 0,
+      "trapExplanation": "Telex and email are both treated, with some nuance, as instantaneous or near-instantaneous methods governed by the receipt rule from Entores and Brinkibon — the postal rule is specifically tied to the structural delay built into ordinary post."
+    },
+    {
+      "itemId": "contract-02-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Lord Wilberforce in Brinkibon said that no universal rule can cover all variations of instantaneous communication, and that courts should instead look to where the risk should sensibly fall. What does this best establish about the receipt rule?",
+      "options": ["It is a rigid, mechanical rule that applies identically regardless of time zones or business hours", "It is a general approach, not an absolute rule, and can be applied flexibly to genuinely instantaneous methods depending on the circumstances of sending and receipt", "It has since been abolished in favour of the postal rule for all communications"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "contract-02-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the events in Adams v Lindsell that determine when the contract was formed.",
+      "items": ["The sellers post an offer for wool, misdirected so it is delayed", "The buyers receive the delayed offer and immediately post their acceptance", "The sellers, having heard nothing within the expected time, sell the wool elsewhere", "The buyers' posted acceptance eventually arrives"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "contract-02-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Felthouse v Bindley, highlight the sentence stating the ratio.",
+      "passage": "The nephew never communicated any acceptance to his uncle, whatever his private intentions may have been. An offeror cannot, by stipulating in advance that silence will be treated as acceptance, impose a contract on an offeree who has done nothing more than remain silent. No contract having been formed, the claimant held no property in the horse at the relevant time.",
+      "ratioSentence": "An offeror cannot, by stipulating in advance that silence will be treated as acceptance, impose a contract on an offeree who has done nothing more than remain silent."
+    },
+    {
+      "itemId": "contract-02-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which exchange is closer to Butler Machine Tool's 'battle of the forms' analysis than to a straightforward single acceptance?",
+      "scenarioA": "A supplier quotes a price on its standard terms; the buyer replies 'Agreed, please proceed' with no other terms mentioned.",
+      "scenarioB": "A supplier quotes a price on its standard terms; the buyer sends a purchase order on its own different standard terms, and the supplier signs and returns the buyer's order acknowledgment slip.",
+      "correctScenario": "B",
+      "explanation": "B is the Butler pattern exactly: two conflicting sets of standard terms, resolved by treating the buyer's order as a counter-offer accepted by the supplier's conduct in signing and returning the slip. A is a plain, unconditional acceptance with no competing terms in play."
+    },
+    {
+      "itemId": "contract-02-test-08",
+      "type": "thresholdSlider",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a business email, sent and received during ordinary office hours, is governed by the receipt rule (Entores/Brinkibon) rather than the postal rule (Adams v Lindsell)?",
+      "sliderLabels": ["Very confident it's the postal rule", "Very confident it's the receipt rule"],
+      "correctPosition": "receipt rule",
+      "explanation": "Courts and commentators generally treat email, at least when sent and received within ordinary business hours, as closer to instantaneous communication and therefore governed by the receipt rule, not the postal rule reserved for methods with a structural sending-to-arrival delay."
+    },
+    {
+      "itemId": "contract-02-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A buyer posts a letter accepting a seller's offer, correctly addressed and stamped. The letter is lost in the post and never arrives. The seller, hearing nothing, sells the goods to someone else. Applying Adams v Lindsell, was a contract formed with the original buyer?",
+      "options": ["Yes — the acceptance was effective the moment it was properly posted, regardless of whether it ever arrived", "No — an acceptance that never arrives can never be effective", "Only if the buyer can prove the seller actually saw the letter"],
+      "correctIndex": 0,
+      "explanation": "The postal rule fixes acceptance at the moment of posting, not receipt — the letter being lost entirely does not undo that, provided it was properly addressed and stamped and post was a reasonable method of reply."
+    },
+    {
+      "itemId": "contract-02-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A manufacturer's quotation includes a limitation-of-liability clause. The buyer's purchase order, sent in response, omits that clause and adds a delivery-penalty clause instead, along with a tear-off slip for the manufacturer to sign confirming the order. The manufacturer signs and returns the slip. Applying Butler Machine Tool, whose terms govern?",
+      "options": ["The buyer's terms — the purchase order was a counter-offer, and the manufacturer's signed slip accepted it on those terms", "The manufacturer's terms — because it quoted first, its terms automatically prevail", "Neither set of terms applies, and the contract has no terms at all"],
+      "correctIndex": 0,
+      "explanation": "This mirrors Butler precisely: the differing purchase order is a counter-offer, and signing the acknowledgment slip is acceptance of it — so the buyer's terms, including the delivery-penalty clause, govern, and the manufacturer's original limitation clause does not survive."
+    },
+    {
+      "itemId": "contract-02-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A supplier sends an acceptance by instant messaging app at 6:30pm on a Tuesday, during the recipient's normal working hours, and it appears on the recipient's screen immediately. Applying Entores-style reasoning, when is this acceptance effective?",
+      "options": ["When and where it is received by the recipient, since this is a form of instantaneous communication", "When it is sent, following the postal rule by analogy", "Only once the recipient replies confirming receipt"],
+      "correctIndex": 0,
+      "explanation": "Instant messaging, like telex, is a form of instantaneous two-way communication — under Entores, acceptance is effective on receipt, not on sending, and no separate confirmation of receipt is required for it to take effect."
+    },
+    {
+      "itemId": "contract-02-test-12",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows the buyer's response was a counter-offer, not an acceptance.",
+      "scenarioText": "A supplier offers 500 units at £2 each, delivery within 30 days. The buyer replies: 'Agreed, 500 units at £2 each, but we need delivery within 14 days.' The supplier does not respond further.",
+      "tappableSpans": ["offers 500 units at £2 each", "delivery within 30 days", "we need delivery within 14 days", "does not respond further"],
+      "correctSpan": "we need delivery within 14 days",
+      "explanation": "Changing the delivery term, even while agreeing the price and quantity, breaks the mirror image rule. The buyer's reply is a counter-offer, not an acceptance — the original 30-day offer is now dead."
+    },
+    {
+      "itemId": "contract-02-test-13",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario more clearly avoids the Felthouse v Bindley trap of relying on silence alone?",
+      "scenarioA": "A seller writes 'if you don't respond by Friday, I'll assume you've accepted my offer to buy your car', and the buyer says and does nothing at all.",
+      "scenarioB": "A seller writes the same thing, and the buyer, though never replying in words, hands over the car keys and the registration document to the seller before Friday.",
+      "correctScenario": "B",
+      "explanation": "In B, the buyer's conduct — handing over the keys and documents — is capable of amounting to acceptance in its own right, independent of the seller's attempt to stipulate that silence would suffice. In A, there is genuinely nothing beyond silence, which Felthouse holds is not enough."
+    },
+    {
+      "itemId": "contract-02-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A UK buyer emails a Singapore supplier accepting a quoted price for machinery parts. The email is sent at 2am UK time (10am Singapore time) but the supplier's spam filter delays it reaching the inbox until 9am UK time. Before then, believing the deal had fallen through, the supplier had already emailed a rejection at 8am UK time, which the buyer received at 8:05am UK time. Analyse whether a contract was formed, and if so, when.",
+      "factsToOrder": [
+        "The buyer sends an acceptance email at 2am UK time / 10am Singapore time",
+        "A spam filter delays the email's arrival in the supplier's inbox until 9am UK time",
+        "The supplier, unaware of the acceptance, emails a rejection at 8am UK time",
+        "The buyer receives the supplier's rejection at 8:05am UK time"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the buyer's emailed acceptance took effect on sending or on actual arrival in the inbox, and what that means for the supplier's later attempted rejection.",
+        "rule": "Instantaneous or near-instantaneous communications, including email, are generally governed by the receipt rule (Entores; Brinkibon), taking effect when and where actually received by the offeror — with some flexibility for delays outside the sender's control and for messages arriving outside business hours, per Lord Wilberforce in Brinkibon.",
+        "application": "The buyer's acceptance was sent at 2am UK time but did not reach the supplier's inbox until 9am UK time owing to the spam filter — a delay outside either party's deliberate control. Applying the receipt-rule reasoning flexibly, the acceptance is best treated as effective either on actual arrival (9am) or, if the delay is treated as the offeror's own system's responsibility, potentially earlier — but in any event, the acceptance email long predates the supplier's rejection at 8am, since the buyer's email was already sent and simply delayed in transit rather than sent afresh; an offer, once genuinely accepted, cannot be unilaterally withdrawn by the offeror's later purported rejection once acceptance has taken legal effect. Once a rule is applied placing effective acceptance at or before 9am (the point of actual, if delayed, arrival, given the offer itself remained open until then), the supplier's 8am rejection is simply too late — an offer that has already been accepted cannot be retrospectively refused.",
+        "conclusion": "A contract was most likely formed once the buyer's acceptance email is treated as received (around 9am UK time, the earliest point the supplier could reasonably access it), and the supplier's earlier 8am rejection has no effect because, properly analysed, the offer was never actually withdrawn before the buyer accepted it — the rejection came from the supplier's own mistaken belief the deal had lapsed, not from any right to revoke a live offer that the buyer had, in substance, already accepted."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating any response that sounds cooperative — 'agreed, but...', a purchase order, silence after a firm-sounding letter — as if it settles the deal. Check it against the mirror image rule and the communication rule for the method actually used before assuming acceptance happened.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.formation.acceptance-communication"
+  }
+}

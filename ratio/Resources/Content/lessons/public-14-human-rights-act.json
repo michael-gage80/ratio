@@ -1,0 +1,394 @@
+{
+  "lessonId": "public-14",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 14,
+  "topicId": "public.human-rights-act",
+  "title": "The Human Rights Act 1998",
+  "subtitle": "How ss 2, 3, 4, 6 and 19 fit together as a working machine",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the mechanics of ss 2, 3, 4, 6 and 19 HRA 1998 and how they combine into the 'dialogue model' between courts and Parliament",
+    "Apply the s 3 interpretive obligation and distinguish it from a s 4 declaration of incompatibility, including the legal effect of each",
+    "Identify which bodies count as 'public authorities' under s 6, including hybrid bodies performing functions of a public nature"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Human Rights Act 1998, ss 2, 3, 4, 6, 19", "role": "The statutory machine this lesson exists to explain: the operative provisions that give Convention rights domestic effect without displacing parliamentary sovereignty" },
+    { "citation": "Ghaidan v Godin-Mendoza [2004] UKHL 30", "role": "Shows how far the s 3 interpretive obligation can be pushed — reading words into a statute to achieve compatibility" },
+    { "citation": "R (Anderson) v Secretary of State for the Home Department [2002] UKHL 46", "role": "Worked example of a s 4 declaration of incompatibility: interpretation could not save the provision, so the court declared it incompatible instead" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can say 'the HRA incorporates the Convention', but the exam lives in the mechanics — which section does what, and what actually happens to the statute afterwards. Where application lags knowledge, this note appears: 'You know what the Act does in outline. This lesson is about which lever the court is allowed to pull, and when.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the framework here before. The test pool below is weighted towards distinguishing s 3 from s 4 on new facts — expect scenarios, not definitions.",
+      "weakKnowledge": "Start with Part 1 and don't move on until you can state what each of ss 2, 3, 4, 6 and 19 actually does, in one sentence each, without looking. The rest of the lesson assumes you have that map fixed."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "The Human Rights Act does something almost nobody expects on first reading: it never gives a court the power to strike down an Act of Parliament. Not once, anywhere in the Act. And yet it has visibly changed how legislation is read, drafted and — occasionally — rewritten by Parliament under pressure. This lesson is a structural map of how an Act with no strike-down power still moves outcomes: five sections, each doing a specific, limited job, designed together to leave the last word with Parliament while still making rights bite.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The Act's core mechanism (ss 2, 3, 4, 6 and 19) is unchanged since it came fully into force in 2000, but reform of the Act remains a recurring item of political debate — check legislation.gov.uk and current government statements for any fresh proposals before relying on this lesson for a live policy question."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Incorporation without entrenchment: the design problem the Act had to solve",
+        "voice": "structural — states the architectural problem before walking through the sections that solve it",
+        "body": [
+          "Before 2000, a person whose Convention rights were violated by UK law had to travel to Strasbourg to enforce them — slow, expensive and remote from the domestic courts that actually decided their case. The Human Rights Act's basic aim was to 'bring rights home': let domestic courts apply Convention rights directly, without needing Strasbourg.",
+          "The hard design problem was constitutional. Parliamentary sovereignty means no Act of Parliament can be struck down by a court. A full 'incorporation' model, of the kind some other countries use, would let judges invalidate primary legislation that breaches human rights — and that was never going to survive contact with UK constitutional orthodoxy. The Act's drafters instead built what is often called a 'dialogue model': courts get strong interpretive tools and the power to flag incompatibility, but the final decision on whether to change the law stays with Parliament.",
+          "Five sections carry almost the whole weight of that design: s 2 (take Strasbourg case law into account), s 3 (interpret legislation compatibly wherever possible), s 4 (declare incompatibility where s 3 can't fix it), s 6 (make public authorities themselves act compatibly), and s 19 (make ministers state, in advance, whether a new Bill is compatible). Treat this as a system, not a list — each part below covers one lever."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "The dialogue model",
+            "definition": "The HRA's core design: courts can interpret legislation compatibly (s 3) or declare it incompatible (s 4), but cannot strike it down — leaving Parliament, informed by the court's ruling, to decide whether and how to amend the law."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-14-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Which of these is the most accurate statement of what a UK court can do under the HRA when it finds an Act of Parliament incompatible with a Convention right?",
+          "options": ["Declare the Act incompatible under s 4, which does not affect the Act's validity or continuing operation", "Strike the Act down and treat it as void", "Automatically suspend the Act until Parliament amends it"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. A s 4 declaration is a signal to Parliament, not a power to invalidate — the incompatible provision remains valid and continues to apply to the case at hand.",
+          "feedbackIncorrect": "No UK court has strike-down power under the HRA. The furthest a court can go is a s 4 declaration of incompatibility, which leaves the Act's validity and operation completely untouched."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Section 3: read it compatibly, if you possibly can",
+        "voice": "structural, with a worked example — explains the tool, then shows it in operation",
+        "body": [
+          "Section 3(1) instructs courts: 'so far as it is possible to do so, primary legislation and subordinate legislation must be read and given effect in a way which is compatible with the Convention rights.' This is a genuinely unusual interpretive obligation — stronger than the ordinary rule that ambiguous statutes are read to avoid absurdity, but not so strong that it lets a court rewrite Parliament's clear intention.",
+          "Ghaidan v Godin-Mendoza shows how far s 3 can be pushed. The Rent Act 1977 gave a surviving spouse (or someone living with the tenant 'as his or her wife or husband') the right to succeed to a statutory tenancy. Mr Godin-Mendoza had lived with his same-sex partner in a long-term relationship; on the ordinary, literal meaning of the words, he wasn't covered.",
+          "The House of Lords held that s 3 required the words to be read as 'as if they were his or her wife or husband' — extending the protection to same-sex couples in an equivalent relationship, even though this departed from what the words would naturally mean on their face. Lord Nicholls put the limit clearly: s 3 does not require the court to adopt a meaning inconsistent with a fundamental feature of the legislation — but short of that, courts may, and must, go further than ordinary interpretation would allow."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Ghaidan v Godin-Mendoza",
+            "citation": "[2004] UKHL 30",
+            "court": "House of Lords",
+            "year": 2004,
+            "factsShort": "A surviving same-sex partner sought to succeed to a statutory tenancy under a provision that, read literally, applied only to a spouse or opposite-sex cohabitant.",
+            "ratioShort": "Section 3 can require words to be read into legislation that depart from its literal meaning, so long as the result is consistent with the underlying thrust and fundamental features of the scheme Parliament enacted.",
+            "expanded": {
+              "facts": "The Rent Act 1977, Sch 1, para 2(2) allowed a person who had lived with the original tenant 'as his or her wife or husband' to succeed to the tenancy on the tenant's death. Mr Godin-Mendoza had lived in a stable, long-term same-sex relationship with the original tenant. On a literal reading, the provision did not extend to him.",
+              "judgmentExtract": "The majority held that s 3 required the phrase to be read as extending to a survivor of a same-sex couple living together in a relationship equivalent to marriage — reading the words 'as if they were his or her wife or husband'. This achieved compatibility with Article 14 (non-discrimination) read with Article 8 (private and family life), without contradicting the underlying purpose of the succession scheme, which was to protect a settled home-sharing relationship, not to police the genders of the people in it.",
+              "significance": "Ghaidan is the high-water mark for s 3: courts may depart from the grammatical meaning of words, and even read new words in, provided the result does not cut across a fundamental feature of the statutory scheme. It draws the line between 'interpretation, however strained' and 'legislation', which only Parliament can do."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-14-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the phrase that shows the outer limit the House of Lords placed on the s 3 interpretive power in Ghaidan.",
+          "scenarioText": "The majority held that s 3 permitted reading the succession provision to cover same-sex couples in an equivalent relationship, because doing so was consistent with the underlying purpose of the scheme; the power would not extend, however, to a reading that cut across a fundamental feature of the legislation Parliament enacted.",
+          "tappableSpans": ["s 3 permitted reading the succession provision", "consistent with the underlying purpose of the scheme", "a reading that cut across a fundamental feature of the legislation Parliament enacted"],
+          "correctSpan": "a reading that cut across a fundamental feature of the legislation Parliament enacted",
+          "feedbackCorrect": "That's the boundary. Section 3 stretches interpretation a long way, but a reading that would undo a fundamental feature of what Parliament actually enacted crosses from interpreting into legislating — and that's where s 4 takes over instead.",
+          "feedbackIncorrect": "Look for the phrase that describes what s 3 cannot do, not what it can. The limiting principle is about not cutting across a fundamental feature of the statutory scheme."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Section 4: when interpretation runs out of road",
+        "voice": "structural, with a worked example — mirrors Part 2's shape for direct comparison",
+        "body": [
+          "Sometimes a statute simply cannot be read compatibly without crossing the Ghaidan line into rewriting Parliament's scheme. Section 4 is the fallback: a court may make a declaration of incompatibility, stating that a provision is incompatible with a Convention right.",
+          "The critical mechanical point, tested constantly, is what a s 4 declaration does not do. It does not affect the validity, continuing operation or enforcement of the provision (s 4(6)). The incompatible law remains fully in force, including as applied to the very case before the court. A declaration is a formal signal to Parliament and the executive — often followed by a fast-track remedial order under s 10, but that is a political and legislative choice, not a legal consequence the Act compels.",
+          "R (Anderson) is a clean worked example. Home Secretaries had for decades set the minimum term ('tariff') that mandatory life-sentence prisoners must serve before parole could be considered — a power under the Crime (Sentences) Act 1997. The House of Lords held this breached Article 6: fixing a punishment is a judicial function, and a politician setting it, however carefully, could not offer the independence and impartiality Article 6 requires. No interpretation of the statute could fix this — the power was plainly given to the Home Secretary in unambiguous terms — so the Lords made a declaration of incompatibility rather than attempting a s 3 rewrite. Parliament and the government then moved tariff-setting to the judiciary."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Human Rights Act 1998, s 4(2) and (6)",
+            "text": "s 4(2): If the court is satisfied that the provision is incompatible with a Convention right, it may make a declaration of that incompatibility. s 4(6): A declaration under this section does not affect the validity, continuing operation or enforcement of the provision in respect of which it is given; and is not binding on the parties to the proceedings in which it is made.",
+            "elements": ["The provision cannot be read compatibly under s 3", "The court has power to declare incompatibility (higher courts only)", "The declaration does not invalidate or suspend the provision", "The provision remains binding on the parties to that very case"]
+          },
+          {
+            "type": "doctrineMap",
+            "title": "Section 3 or section 4?",
+            "description": "The decision a court makes when a statute appears to breach a Convention right.",
+            "nodes": [
+              { "id": "start", "label": "Does the statutory provision appear to breach a Convention right?" },
+              { "id": "possible", "label": "Can it be read compatibly without cutting across a fundamental feature of the scheme (Ghaidan)?" },
+              { "id": "s3", "label": "Yes → apply s 3: read and give effect to the provision compatibly" },
+              { "id": "s4", "label": "No → consider a s 4 declaration of incompatibility; the provision remains valid and in force regardless" }
+            ],
+            "edges": [
+              { "from": "start", "to": "possible", "label": "Apparent breach found" },
+              { "from": "possible", "to": "s3", "label": "Possible" },
+              { "from": "possible", "to": "s4", "label": "Not possible" }
+            ],
+            "textAlternative": "Where a statutory provision appears to breach a Convention right, the court first asks whether it can be read compatibly under s 3 without cutting across a fundamental feature of the statutory scheme. If it can, s 3 applies and the provision is read and given effect compatibly. If it cannot, the court considers a s 4 declaration of incompatibility instead — which leaves the provision fully valid and in force, including for the case at hand."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-14-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a s 4 declaration of incompatibility invalidates the provision it targets?",
+          "sliderLabels": ["Definitely invalidates it", "Definitely does not invalidate it"],
+          "correctPosition": "does not invalidate it",
+          "explanation": "Section 4(6) is explicit: a declaration does not affect the provision's validity, continuing operation or enforcement — it remains binding even on the parties to the case in which it was made, as happened in Anderson."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Section 6: who actually has to comply",
+        "voice": "structural — reference-style, building the third lever of the machine",
+        "body": [
+          "Sections 3 and 4 are about legislation. Section 6 is about conduct: it makes it unlawful for a 'public authority' to act in a way incompatible with a Convention right (subject to the escape valve in s 6(2), where primary legislation left it no choice). This is what actually lets an individual bring a claim against, say, a local council or the police for breaching their rights directly.",
+          "Core public authorities — government departments, the police, local authorities, courts and tribunals themselves — are bound by s 6 in everything they do, public or private in character. The harder question is 'hybrid' bodies: private organisations that sometimes perform public functions. Section 6(3)(b) brings in 'any person certain of whose functions are functions of a public nature', but only in respect of those specific public functions — not their private acts.",
+          "The dividing line has produced difficult case law. A private care home providing accommodation under a local authority contract, for example, was held in one leading case not to be exercising a function of a public nature for these purposes, because the arrangement was essentially a private commercial contract for services, even though publicly funded and closely regulated. The test looks at factors like the degree of statutory underpinning, public funding, and whether the body is standing in the shoes of the state — no single factor is decisive."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Section 6: who is bound",
+            "points": [
+              "'Core' public authorities (government departments, police, local authorities, courts) — bound by s 6 in everything they do",
+              "'Hybrid' bodies (s 6(3)(b)) — private bodies with some public functions — bound only when exercising those specific public functions, not their private acts",
+              "Factors pointing towards a public function: statutory underpinning, public funding, performing a role the state would otherwise perform, exercise of statutory powers",
+              "Section 6(2) escape valve — a public authority does not act unlawfully if primary legislation left it no choice but to act incompatibly"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-14-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A private company runs a prison under a contract with the Ministry of Justice. Is it bound by s 6 HRA in how it treats prisoners in its custody?",
+          "options": ["Yes — running a prison under statutory authority is a core example of a function of a public nature, so the company is bound as a hybrid body in that role", "No — private companies can never be bound by the HRA, whatever they do", "Yes, but only if the company is more than 50% publicly funded"],
+          "correctIndex": 0,
+          "trapExplanation": "There's no blanket rule that private companies are always outside the Act, and there's no bright-line public-funding percentage threshold in s 6 — the test is functional, looking at whether the specific activity (here, exercising the coercive, statutorily-backed power to detain) is a function of a public nature, which running a prison plainly is."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Sections 2 and 19: looking to Strasbourg, and warning Parliament in advance",
+        "voice": "structural — closes the loop by covering the two lower-profile but frequently tested sections",
+        "body": [
+          "Section 2 requires a UK court, when determining a question that has arisen in connection with a Convention right, to 'take into account' relevant Strasbourg jurisprudence. Notice the deliberately weaker verb: 'take into account', not 'be bound by'. UK courts are not required to follow Strasbourg case law, and can in principle go further in protecting a right, or decline to follow a Strasbourg decision they consider wrongly reasoned or out of step with UK constitutional principles — though in practice they follow settled Strasbourg case law closely, out of respect for a coherent, unified interpretation of the Convention across all its signatory states.",
+          "Section 19 works at the drafting stage, before a Bill even reaches Parliament for debate. A minister in charge of a Bill must make a statement, before second reading, either that the Bill's provisions are compatible with Convention rights (a 's 19(1)(a) statement'), or that the minister cannot make that statement but the government wishes to proceed anyway (a 's 19(1)(b) statement'). This doesn't stop Parliament legislating incompatibly if it chooses to — Parliament remains sovereign — but it forces political transparency: a minister who presses ahead with a Bill they cannot certify as compatible has to say so, in public, at the despatch box.",
+          "Together, ss 2 and 19 bookend the Act's operative core: s 19 tries to catch incompatibility before a Bill is even passed, while s 2 shapes how the resulting law is interpreted once Strasbourg case law bears on the question. Neither displaces Parliament's final say — which is exactly the point of the whole design."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "s 19 statement of compatibility",
+            "definition": "A statement a minister must make before a Bill's second reading, either certifying compatibility with Convention rights or expressly declining to certify it while confirming the government wishes to proceed regardless — a transparency mechanism, not a legal bar to Parliament legislating."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-14-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A government minister introduces a Bill and makes a s 19(1)(b) statement, saying she cannot certify compatibility with Article 8 but the government wishes to proceed. Parliament passes the Bill unamended. Two years later, a claimant argues the resulting Act breaches Article 8. Analyse what a court can and cannot do about it.",
+          "factsToOrder": [
+            "The minister made a s 19(1)(b) statement, not a s 19(1)(a) statement",
+            "Parliament passed the Bill into law regardless, as it is entitled to do",
+            "A claimant now argues the resulting Act breaches Article 8",
+            "The court must first ask whether the Act can be read compatibly under s 3",
+            "If not, the court's remaining option is a s 4 declaration of incompatibility, which does not invalidate the Act"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether, and how, a court can respond to an Act of Parliament alleged to breach Article 8, where Parliament knowingly passed it despite a s 19(1)(b) statement of possible incompatibility.",
+            "rule": "The s 19 statement has no bearing on the court's powers: it is a transparency device, not a legal precondition. The court still applies the ordinary two-step process — s 3, reading the Act compatibly if possible without cutting across a fundamental feature of the scheme; failing that, s 4, a declaration of incompatibility that does not affect the Act's validity.",
+            "application": "The s 19(1)(b) statement is legally irrelevant to what the court does next, though it may be practically informative — a minister who has already flagged the risk of incompatibility makes it more plausible the provision genuinely cannot be read compatibly. The court still must attempt s 3 first. Only if that fails does it move to s 4, and even then, the Act remains in force and binds the claimant.",
+            "conclusion": "The court cannot strike the Act down regardless of the earlier s 19(1)(b) statement. It can, at most, read it compatibly under s 3, or declare it incompatible under s 4 — leaving Parliament, now doubly informed, to decide whether to amend the law."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-14-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the section of the HRA 1998 that requires legislation to be read compatibly with Convention rights so far as possible.",
+      "acceptableAnswers": ["section 3", "s 3", "s3", "section 3 HRA"],
+      "modelAnswer": "Section 3(1) HRA 1998: so far as it is possible to do so, primary and subordinate legislation must be read and given effect compatibly with Convention rights."
+    },
+    {
+      "itemId": "public-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Does a section 4 declaration of incompatibility invalidate the provision it targets?",
+      "options": ["No — the provision remains fully valid and in force", "Yes — the provision is automatically struck down"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-14-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement about section 2 HRA is correct?",
+      "options": ["UK courts must take Strasbourg case law into account, but are not bound by it", "UK courts are absolutely bound to follow every Strasbourg decision", "Section 2 requires Parliament, not the courts, to consider Strasbourg case law"],
+      "correctIndex": 0,
+      "trapExplanation": "The wording of s 2 is deliberately weaker than a binding rule — 'take into account' — precisely to preserve the courts' own interpretive role and, ultimately, Parliament's sovereignty."
+    },
+    {
+      "itemId": "public-14-test-04",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which section makes it unlawful for a public authority to act incompatibly with a Convention right?",
+      "options": ["Section 6", "Section 3", "Section 19"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-14-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the steps a court follows when a statutory provision appears to breach a Convention right.",
+      "items": ["Identify the apparent incompatibility with a Convention right", "Ask whether the provision can be read compatibly under s 3 without cutting across a fundamental feature of the scheme", "If compatible reading is possible, apply s 3 and give effect to that reading", "If not possible, consider making a s 4 declaration of incompatibility, which leaves the provision in force"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "public-14-test-06",
+      "type": "tapTheFact",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the phrase in this passage on Ghaidan that marks where the House of Lords drew the limit of the s 3 power.",
+      "scenarioText": "The majority read the succession provision to cover same-sex couples in an equivalent relationship, treating this as consistent with the underlying purpose of the scheme, but confirmed that s 3 could not be used to adopt a meaning inconsistent with a fundamental feature of the legislation Parliament had enacted.",
+      "tappableSpans": ["read the succession provision to cover same-sex couples", "consistent with the underlying purpose of the scheme", "could not be used to adopt a meaning inconsistent with a fundamental feature"],
+      "correctSpan": "could not be used to adopt a meaning inconsistent with a fundamental feature",
+      "explanation": "That's the boundary Ghaidan sets on s 3 — the interpretive power stretches a long way, but not so far as to contradict a fundamental feature of the statutory scheme itself."
+    },
+    {
+      "itemId": "public-14-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Anderson, highlight the sentence stating the ratio.",
+      "passage": "The Home Secretary's power to fix the minimum term a mandatory life-sentence prisoner must serve was, in substance, a sentencing decision. Because the imposition of a sentence is a classically judicial function, it must be performed by a body independent of the executive to satisfy Article 6. A decision-maker who is a serving government minister, however conscientiously exercised, cannot supply that independence. The provision could not be read compatibly under section 3, and a declaration of incompatibility was made instead.",
+      "ratioSentence": "Because the imposition of a sentence is a classically judicial function, it must be performed by a body independent of the executive to satisfy Article 6."
+    },
+    {
+      "itemId": "public-14-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely calls for a section 4 declaration rather than a section 3 reading?",
+      "scenarioA": "A statute defines 'partner' using gendered language that, on a strained but available reading, can be understood to include same-sex partners without undermining the scheme's purpose.",
+      "scenarioB": "A statute expressly and unambiguously vests sentencing authority in a named government minister, with no scope to read the provision as vesting it in an independent judicial body instead.",
+      "correctScenario": "B",
+      "explanation": "B mirrors Anderson: the statute's clear, unambiguous allocation of a function to the executive leaves no room for a s 3 reading without rewriting the scheme entirely — so a s 4 declaration is the only tool left. A mirrors Ghaidan, where a strained-but-available reading was possible."
+    },
+    {
+      "itemId": "public-14-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A privately run leisure centre operates entirely under a commercial contract with no statutory backing, though it receives some council funding. Is it a public authority for the purposes of s 6 in its day-to-day operations?",
+      "options": ["Unlikely — without statutory underpinning or the exercise of a governmental function, ordinary public funding alone is unlikely to make its general commercial activity a function of a public nature", "Yes — any public funding at all automatically makes an organisation a public authority for everything it does", "Yes — private companies performing any service the public uses are always bound by s 6"],
+      "correctIndex": 0,
+      "explanation": "The hybrid-body test looks at a cluster of factors — statutory underpinning, the nature of the function, and whether the body stands in the state's shoes — not a single trigger like receiving some public money."
+    },
+    {
+      "itemId": "public-14-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A minister introduces a Bill with a s 19(1)(a) statement of compatibility. A court later finds, after the Bill becomes law, that a provision does in fact breach a Convention right. Does the earlier compatibility statement bind the court's analysis?",
+      "options": ["No — the s 19 statement is a political transparency device at the drafting stage and has no legal effect on the court's later s 3/s 4 analysis", "Yes — a s 19(1)(a) statement legally binds the court to find the Act compatible", "Yes, but only if the statement was made by the Lord Chancellor specifically"],
+      "correctIndex": 0,
+      "explanation": "Section 19 operates entirely at the pre-legislative stage and creates no legal presumption or binding effect on a court's later compatibility analysis under ss 3 and 4."
+    },
+    {
+      "itemId": "public-14-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A local authority housing officer refuses a disabled applicant's reasonable request for an accessible property, in a way that arguably breaches Article 8. Is the council capable of being sued directly for this under s 6?",
+      "options": ["Yes — a local authority is a core public authority, bound by s 6 in everything it does", "No — councils are only bound by s 6 when exercising statutory planning powers"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-14-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A statute provides that only 'a husband or wife' of a deceased person may claim a specific statutory compensation payment. A same-sex civil partner is refused the payment. Analyse how a court should approach this under the HRA, referencing Ghaidan.",
+      "factsToOrder": [
+        "The statute's literal wording refers only to 'a husband or wife'",
+        "A same-sex civil partner has been refused the payment on that literal wording",
+        "The underlying purpose of the payment is to support a surviving partner in a marriage-like relationship",
+        "Ghaidan shows s 3 can extend gendered marital language to equivalent relationships without undermining the scheme's purpose",
+        "No express words in the statute rule out this extended reading"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the statutory phrase 'a husband or wife' can be read under s 3 HRA to include a same-sex civil partner, or whether the court must instead consider a s 4 declaration.",
+        "rule": "Section 3 requires legislation to be read compatibly with Convention rights so far as possible, and Ghaidan confirms this can extend to reading gendered or marital language to cover an equivalent relationship, provided doing so does not cut across a fundamental feature of the statutory scheme.",
+        "application": "The purpose of the payment is to support a surviving partner in a marriage-like relationship, not to police the genders or formal marital status of the people involved. Extending the phrase to a civil partner tracks that underlying purpose closely, exactly as extending 'wife or husband' to a same-sex cohabitant tracked the Rent Act's purpose in Ghaidan. Nothing in the facts suggests this reading would undermine a fundamental feature of the scheme.",
+        "conclusion": "A court is likely to hold that s 3 permits reading 'a husband or wife' to include a same-sex civil partner, following Ghaidan; a s 4 declaration should not be necessary unless the statutory scheme shows some clear intention to exclude civil partners that these facts do not disclose."
+      }
+    },
+    {
+      "itemId": "public-14-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why is the HRA's design sometimes described as a 'dialogue model' between courts and Parliament?",
+      "options": ["Because courts and Parliament must formally debate every incompatibility finding together before it takes effect", "Because courts can interpret or flag incompatible legislation, but Parliament retains the final legal power to decide whether and how to change it", "Because Parliament must approve every judicial decision under the HRA in advance"],
+      "correctIndex": 1,
+      "trapExplanation": "There's no literal joint debate procedure and no requirement of advance parliamentary approval for a court's ruling — the 'dialogue' is structural: courts signal, Parliament decides, each retaining a distinct and separate role."
+    },
+    {
+      "itemId": "public-14-test-14",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the events of R (Anderson).",
+      "items": ["Home Secretaries had long set tariffs for mandatory life-sentence prisoners under statute", "The House of Lords considers whether this is compatible with Article 6's judicial independence requirement", "The Lords find no s 3 reading is available, since the statute unambiguously gives the power to the Home Secretary", "The Lords make a declaration of incompatibility under s 4, and tariff-setting is later moved to the judiciary"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "public-14-test-15",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that a hybrid body under s 6(3)(b) is bound by the HRA in respect of its purely private commercial activities, unrelated to any public function?",
+      "sliderLabels": ["Definitely bound", "Definitely not bound"],
+      "correctPosition": "not bound",
+      "explanation": "Section 6(5) confirms a hybrid body is only bound 'in relation to a particular act' that is private in nature it is not a public authority for that act — the obligation tracks the specific public function, not the body's identity as a whole."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is conflating s 3 and s 4 — treating any finding of incompatibility as though it invalidates the statute. It never does on its own: s 3 changes how a provision is read; s 4 only flags the problem to Parliament, leaving the provision fully in force.",
+    "reviewMisses": true,
+    "linkToPathway": "public.human-rights-act"
+  }
+}

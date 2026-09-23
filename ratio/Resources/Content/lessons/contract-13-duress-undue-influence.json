@@ -1,0 +1,395 @@
+{
+  "lessonId": "contract-13",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 13,
+  "topicId": "contract.vitiating-factors.duress-undue-influence",
+  "title": "Duress and undue influence",
+  "subtitle": "Illegitimate pressure, presumed influence, and the lender put on inquiry",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish legitimate commercial pressure from economic duress, and state the narrow scope of 'lawful act duress'",
+    "Explain the difference between actual and presumed undue influence, and how the presumption operates and is rebutted",
+    "Apply the current test for when a lender is put on inquiry in a surety or hybrid-loan transaction, including the 2025 Supreme Court clarification"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Atlas Express v Kafco [1989] QB 833", "role": "Classic illustration of illegitimate commercial pressure amounting to economic duress" },
+    { "citation": "Pakistan International Airline v Times Travel [2021] UKSC 40", "role": "Supreme Court confines 'lawful act duress' to exceptional cases of bad-faith demands" },
+    { "citation": "Royal Bank of Scotland v Etridge (No 2) [2001] UKHL 44", "role": "Leading authority on presumed undue influence and the lender's protective steps" },
+    { "citation": "Waller-Edwards v One Savings Bank [2025] UKSC 22", "role": "Sets a bright-line test for when a lender is put on inquiry in a non-commercial hybrid loan" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often treat duress and undue influence as a single blurry topic about 'pressure'. Where the profile shows application is lagging knowledge, this note appears: 'You can define both doctrines — the exam wants you to say which one is actually in play on these facts, and why.'",
+    "profileHooks": {
+      "weakApplication": "You know the definitions. This lesson leans hard on fact patterns — expect to be asked whether a transaction is commercial, a surety case, or a hybrid loan, because the test changes depending on the answer.",
+      "weakKnowledge": "Slow down on Parts 1 and 2 before the surety material in Parts 3–5 — the 'put on inquiry' analysis only makes sense once the underlying duress/influence distinction is solid."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A haulage firm signs a contract to deliver goods at a fixed price. Days before Christmas, the carrier refuses to load the lorries unless the price is doubled — take it or leave the shelves empty. The firm signs. Is that a binding renegotiation, or a threat dressed up as a deal? This lesson is about the line the law draws between hard bargaining and coercion — and about a 2025 Supreme Court case that just redrew part of it.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The 'put on inquiry' test for lenders in non-commercial hybrid loan transactions was significantly clarified by the Supreme Court in Waller-Edwards v One Savings Bank [2025] UKSC 22, decided in July 2025. Textbooks published before mid-2025 will describe a narrower or more uncertain position — treat this lesson's account of the bright-line test as the current law, not the older formulation."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Hard bargaining is not a wrong",
+        "voice": "argumentative — states the commercial case for tolerating pressure, then narrows it",
+        "body": [
+          "Commercial life runs on pressure. A supplier who threatens to walk away unless the price goes up, a contractor who says the job stops unless a variation is agreed — these are not villains, they are negotiators, and the law is deliberately slow to unwind a deal just because one side felt squeezed into it. If 'I only signed because I had no real choice' were enough to void a contract, half of commercial England would be voidable.",
+          "Economic duress exists to catch something narrower: pressure that is illegitimate, not merely effective. The test asks two things — was there a threat or pressure that the law regards as illegitimate, and did that pressure leave the claimant with no practical choice but to submit, such that it was a significant cause of them entering the contract or paying the money. Both limbs matter; a party with a real alternative (litigate, find another supplier, refuse and absorb the loss) will struggle to show its will was truly overborne.",
+          "Atlas Express v Kafco is the case every student reaches for, and rightly so, because it draws the line so cleanly. A small company, Kafco, had a lucrative contract to supply goods to Woolworths. Atlas, its carrier, realised — after the contract was signed and the goods were committed — that it had underpriced the job, and told Kafco it would not deliver unless Kafco agreed to a new, much higher rate. Kafco had no time to find another carrier before the Woolworths deadline and no realistic alternative; it signed under protest and later refused to pay the increased rate. The court held the new agreement was procured by economic duress: Atlas's threat to break its existing contract, exploiting Kafco's total dependence on the Christmas deadline, went well beyond ordinary hard-nosed negotiation."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Economic duress",
+            "definition": "Illegitimate pressure — typically a threat to breach an existing contract or otherwise act unlawfully — that leaves the victim with no practical choice but to agree, and which is a significant cause of their entering the contract or making the payment."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In Atlas Express v Kafco, what made the carrier's pressure illegitimate rather than ordinary hard bargaining?",
+          "options": [
+            "Atlas threatened to breach its existing contract, exploiting Kafco's total dependence on an imminent deadline with no realistic alternative",
+            "Atlas simply asked for a higher price before agreeing to contract in the first place"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The threat to break an existing binding contract, combined with Kafco having no practical alternative, is what tips this into illegitimate pressure rather than negotiation.",
+          "feedbackIncorrect": "Look again at the sequence — the contract with Atlas already existed. Threatening to breach it, at the worst possible moment for Kafco, is what makes this illegitimate rather than a fresh negotiating position."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The narrow, controversial edge case: lawful act duress",
+        "voice": "dialectic — sets out the tension the Supreme Court had to resolve",
+        "body": [
+          "Everything so far involves a threat to do something unlawful — breach a contract, commit a tort. A harder question: can duress ever be built on a threat to do something entirely lawful? If I threaten to do something I am fully entitled to do — report you to a regulator, refuse to contract with you at all, sue you — and you settle rather than face it, has the law any business unwinding that settlement?",
+          "For years English law flirted with 'lawful act duress' without ever settling its boundaries, and commercial lawyers worried it might swallow up the certainty of settlement agreements generally. The Supreme Court confronted the question directly in Pakistan International Airline v Times Travel. Times Travel, a struggling travel agency heavily dependent on PIA for its ticketing business, was told its agency agreement would be terminated unless it signed a new agreement waiving claims for unpaid commission it was owed. PIA was entitled, as a matter of contract law, to terminate the agreement on notice for any reason. Times Travel argued this lawful threat, exploiting its economic dependency, was duress.",
+          "The Supreme Court held there was no duress — but, crucially, did not close the door on lawful act duress altogether. It confined the doctrine to exceptional cases where the defendant has acted in bad faith, deliberately manufacturing or manipulating a claim it knows or believes to be invalid in order to extract an advantage. A lender who lawfully threatens to call in a genuinely valid debt is not acting in bad faith merely because the debtor has no real alternative but to pay; the moral pressure of economic dependency, without more, does not make a lawful demand illegitimate.",
+          "Read this case as a warning against overclaiming: candidates who spot any lawful threat plus economic pressure and shout 'duress' are answering the pre-2021 exam. The current test asks specifically whether the defendant knew its underlying claim was dishonest or invalid — a much higher bar."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Pakistan International Airline v Times Travel",
+            "citation": "[2021] UKSC 40",
+            "court": "Supreme Court",
+            "year": 2021,
+            "factsShort": "PIA threatened to lawfully terminate its agency agreement with Times Travel unless Times Travel waived a genuine claim for unpaid commission.",
+            "ratioShort": "Lawful act duress is confined to exceptional cases where the threatening party acts in bad faith, knowing its underlying demand or claim is invalid — mere exploitation of economic dependency through an otherwise lawful threat is not enough.",
+            "expanded": {
+              "facts": "Times Travel operated as a ticketing agent for PIA and was heavily, perhaps existentially, dependent on that relationship. A dispute arose over unpaid commission genuinely owed to Times Travel. PIA offered a new agency agreement on terms requiring Times Travel to give up its claim to the unpaid commission, and made clear the existing agreement — terminable on notice, entirely lawfully — would otherwise end. Times Travel, with no realistic alternative, signed.",
+              "judgmentExtract": "The majority held that lawful act duress exists as a doctrine but should be recognised only where the defendant used illegitimate means — here, understood as bad faith: deliberately asserting or exploiting a claim known to be invalid, or manipulating the negotiation dishonestly. Simply having and using lawful bargaining power, even against a desperately dependent counterparty, does not cross that line.",
+              "significance": "This is now the leading and controlling authority on lawful act duress. It narrows what had been an uncertain, expanding doctrine to something exceptional and closely tied to dishonesty, giving commercial settlements much greater security against later duress challenges."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-13-check-02",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "After Times Travel, what is required for a threat to do something entirely lawful to amount to duress?",
+          "options": [
+            "The claimant must show it had no realistic alternative but to agree, which is enough on its own",
+            "The defendant must have acted in bad faith — typically by knowingly asserting or exploiting a claim it believes to be invalid",
+            "Lawful act duress no longer exists as a doctrine at all after this case"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "Economic dependency and lack of a real alternative are necessary but not sufficient — they describe the second limb of ordinary duress (no practical choice). The distinctive requirement for a lawful threat is bad faith on the defendant's part; the Supreme Court did not abolish the doctrine, only confined it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Undue influence: two routes to the same relief",
+        "voice": "structural — a reference part distinguishing the two categories cleanly",
+        "body": [
+          "Undue influence is a different creature from duress. Duress is about illegitimate pressure exerted at the point of contracting; undue influence is about one party's will having been overborne by the dominance of a relationship, sometimes without any identifiable threat at all. Equity intervenes because consent given under such domination is not truly free, even though no unlawful act was threatened.",
+          "There are two routes. Actual undue influence requires the claimant to prove, as a fact, that improper pressure or influence was actually exerted to procure the transaction — no special relationship is needed, but the burden of proof sits squarely on the claimant, much like duress.",
+          "Presumed undue influence is the more heavily examined route. Where the claimant proves (i) a relationship of trust and confidence with the other party, and (ii) that the transaction calls for an explanation — it is not readily explicable by the ordinary motives of someone in that relationship, typically because it is a large one-sided gift or a risky guarantee of another's debts — the burden shifts to the defendant to prove the transaction was not procured by undue influence. Certain relationships (solicitor and client, doctor and patient, religious adviser and follower) are presumed as a matter of law; others, including husband and wife, must be proved to exist on the facts of the particular relationship, though the evidential bar for spouses is often not high in practice."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Presumed undue influence — the two-stage structure",
+            "points": [
+              "Stage one: claimant proves a relationship of trust and confidence (some relationships presumed by law; others proved on the facts)",
+              "Stage two: claimant proves the transaction calls for an explanation — it is not readily accounted for by ordinary motives",
+              "Once both are shown, the evidential burden shifts to the defendant to rebut the presumption, typically by showing the claimant received independent advice",
+              "If the defendant cannot rebut it, the transaction may be set aside — this is equitable relief, not damages"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-13-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the stages of a presumed undue influence claim in the correct order.",
+          "items": [
+            "Claimant proves a relationship of trust and confidence",
+            "Claimant proves the transaction calls for an explanation",
+            "Burden shifts to the defendant to rebut the presumption",
+            "If unrebutted, the transaction is liable to be set aside"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure. Both stage-one elements must be established before the burden ever shifts — students who jump straight to 'the transaction looks unfair' without the relationship element are skipping a step.",
+          "feedbackIncorrect": "Check the order again — the relationship of trust and confidence must be established first, before the court even asks whether the transaction needs explaining."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Why banks care: the surety problem and Etridge",
+        "voice": "case-narrative — walks through the practical problem before the doctrine",
+        "body": [
+          "Here is the fact pattern that generates most of the case law: a wife agrees to guarantee her husband's business debts by charging the family home, at the bank's request, because the bank wants security. Later the business fails, the bank seeks to enforce the charge, and the wife argues she was pressured or misled by her husband into signing, and that the bank should not be able to rely on a transaction procured that way.",
+          "The problem for the bank is that it is not usually the one applying pressure — the husband is. But if the bank knows, or ought to know, that the transaction may have been procured by the husband's undue influence, and does nothing to protect itself, equity will fix the bank with that knowledge and the charge can be set aside against it too. The House of Lords in Royal Bank of Scotland v Etridge (No 2) — a set of eight conjoined appeals — laid down the framework that has governed this area ever since.",
+          "Etridge held that whenever a transaction is not to the surety's financial advantage and there is a substantial risk that the debtor has committed a legal or equitable wrong in procuring it, the lender is 'put on inquiry' and must take reasonable steps to satisfy itself the surety's consent was properly obtained — in practice, insisting the surety receives confidential advice from an independent solicitor, who confirms this to the bank. Do that properly, and the bank takes its security free of any undue influence between debtor and surety, even if that influence in fact existed.",
+          "The house-guarantees-husband's-debts scenario is a classic surety transaction: the wife gets no direct benefit from the loan, and the money serves the husband's business. Etridge treated this whole category as automatically putting the lender on inquiry, without needing to examine the specific relationship further."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Royal Bank of Scotland v Etridge (No 2)",
+            "citation": "[2001] UKHL 44",
+            "court": "House of Lords",
+            "year": 2001,
+            "factsShort": "Eight conjoined appeals concerning wives who charged the family home to secure their husbands' business debts, later claiming undue influence.",
+            "ratioShort": "A lender is put on inquiry whenever a non-commercial surety transaction is not to the surety's advantage and carries a substantial risk of the principal debtor's wrongdoing; the lender then discharges its duty by requiring independent legal advice for the surety.",
+            "expanded": {
+              "facts": "Each case involved a wife (or similarly situated non-commercial party) who provided a guarantee or charge over jointly or solely owned property to secure a husband's or partner's business borrowing, and later sought to resist enforcement on the ground of undue influence or misrepresentation by the husband.",
+              "judgmentExtract": "Lord Nicholls held that the bank is put on inquiry in any case where the relationship between surety and debtor is non-commercial and the transaction is not, on its face, to the surety's financial advantage. The bank then must take reasonable steps — normally, insisting the surety attends a private meeting with a solicitor who explains the documents and confirms in writing to the bank that this has been done — to reduce the risk that the surety has not freely and properly consented.",
+              "significance": "Etridge remains the foundational framework for lender protection in surety transactions. Its enduring difficulty has been defining precisely which transactions count as 'not to the surety's advantage' outside the clean two-party case of a wife guaranteeing solely her husband's debt — a gap the 2025 Supreme Court decision in Waller-Edwards addressed directly."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-13-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A wife charges the family home to guarantee her husband's separate business overdraft. She receives no benefit from the borrowed money. On Etridge alone, is the lender put on inquiry?",
+          "options": [
+            "Yes — this is a non-commercial surety transaction with no advantage to the surety, the paradigm case Etridge addresses",
+            "No — the lender is only put on inquiry if the wife tells them she was pressured",
+            "No — Etridge only applies to unmarried cohabiting couples"
+          ],
+          "correctIndex": 0,
+          "explanation": "This is the classic two-party surety case Etridge was designed for: the wife gets no benefit, the money serves the husband's debt, and the relationship is non-commercial. The lender is automatically put on inquiry and must take the Etridge protective steps."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "2025: the bright line for hybrid loans",
+        "voice": "advisory — reads like guidance to a solicitor applying the current test",
+        "body": [
+          "Etridge worked cleanly for the pure surety case — a guarantee of someone else's debt, nothing more. But lending practice is messier. A common product is the 'hybrid' or joint loan, where a couple refinances jointly, and part of the new borrowing discharges one partner's own pre-existing debt while the rest is genuinely for their joint benefit — say, home improvements or a joint mortgage. Is the non-benefiting or partly-benefiting party a 'surety' for Etridge purposes, or an ordinary co-borrower who took a real benefit? Lower courts had struggled with this, some requiring the transaction to be wholly disadvantageous before treating the lender as put on inquiry.",
+          "Waller-Edwards v One Savings Bank resolved it. Mrs Waller-Edwards and her partner took out a joint remortgage; a substantial part of the funds discharged debts that were, in substance, her partner's alone, with the balance going to joint purposes. When the relationship broke down and the lender sought possession, she argued undue influence and that the lender should have been put on inquiry but was not, having taken no Etridge-style protective steps.",
+          "The Supreme Court set a bright-line test for this hybrid scenario: in a non-commercial loan to more than one borrower, a lender is put on inquiry whenever the loan, to a more than de minimis extent, is being used to discharge the debt of only one of the borrowers — regardless of how much of the rest of the loan is for the couple's joint benefit. The court rejected a case-by-case balancing exercise weighing the proportion of the loan that benefited each party; that approach was unworkable for lenders processing high volumes of ordinary consumer transactions and left surety-type parties under-protected wherever a loan happened to be structured as mostly joint. A clear, easily administered trigger — is more than a de minimis slice of this money paying off one borrower's own debt — better serves both the protective purpose of Etridge and the practical needs of the lending industry.",
+          "For exam purposes, the sequence is now: first classify the transaction (pure suretyship — automatically within Etridge; hybrid loan — apply the Waller-Edwards de minimis trigger; genuinely joint transaction with no debt-discharge element — not automatically caught, though Etridge's general 'not to the surety's advantage' language may still apply on the facts). Older sources that treat hybrid loans as outside Etridge's protection, or as requiring a fact-specific balancing exercise, are stating the pre-2025 position and should be corrected against this lesson."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Waller-Edwards v One Savings Bank [2025] UKSC 22 — the bright-line test",
+            "text": "In a non-commercial loan made to two or more borrowers, the lender is put on inquiry if any more than a de minimis part of the loan is applied in discharging a debt owed by only one of those borrowers, irrespective of what proportion of the total loan is for the couple's genuinely joint benefit.",
+            "elements": [
+              "Non-commercial loan (not an ordinary arm's-length business loan)",
+              "More than one borrower",
+              "More than a de minimis part of the advance discharges one borrower's own separate debt",
+              "Triggers the lender's duty to take Etridge-style protective steps as to the other borrower's consent"
+            ]
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say a hybrid loan only puts the lender on inquiry if most or all of the money benefits one party, treating it as a proportionality question.",
+            "whyItsWrong": "Waller-Edwards deliberately rejects a proportionality or balancing test for this scenario. The trigger is binary and low: any more than de minimis discharge of one borrower's separate debt is enough, however large the genuinely joint portion of the loan is. A candidate who starts weighing percentages is applying the position the Supreme Court has just superseded."
+            }
+        ],
+        "interaction": {
+          "itemId": "contract-13-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario puts the lender on inquiry under the Waller-Edwards bright-line test?",
+          "scenarioA": "A couple take out a joint remortgage where 15% of the advance clears a credit card debt in one partner's sole name, and 85% funds a joint kitchen extension.",
+          "scenarioB": "A couple take out a joint commercial buy-to-let loan through their jointly-owned property investment company, on ordinary arm's-length commercial terms.",
+          "correctScenario": "A",
+          "explanation": "Scenario A is a non-commercial loan with more than a de minimis portion discharging one borrower's separate debt — 15% easily clears the de minimis threshold, so the lender is put on inquiry regardless of the 85% joint benefit. Scenario B is a commercial transaction, outside the Etridge/Waller-Edwards protective framework entirely."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-13-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the two elements a claimant must establish to succeed in a claim of economic duress.",
+      "acceptableAnswers": ["illegitimate pressure and no practical choice", "illegitimate threat plus significant cause of entering the contract", "illegitimate pressure that left no realistic alternative and was a significant cause of the agreement"],
+      "modelAnswer": "The claimant must show illegitimate pressure (typically a threat to breach a contract or act unlawfully) that left them with no practical choice but to submit, and that this pressure was a significant cause of their entering the contract or making the payment."
+    },
+    {
+      "itemId": "contract-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case is the leading modern authority confining lawful act duress to cases of bad faith?",
+      "options": ["Pakistan International Airline v Times Travel", "Atlas Express v Kafco"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-13-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is required for presumed undue influence, but NOT for actual undue influence?",
+      "options": ["Proof that pressure was in fact exerted", "A relationship of trust and confidence plus a transaction calling for explanation", "A written guarantee"],
+      "correctIndex": 1,
+      "trapExplanation": "Actual undue influence requires proof of real pressure exerted, much like duress, with no special relationship needed. Presumed undue influence dispenses with proving actual pressure but requires the two-stage relationship-plus-suspicious-transaction structure instead."
+    },
+    {
+      "itemId": "contract-13-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the reasoning steps a court follows in deciding whether a bank can enforce a charge against a surety who claims undue influence by the debtor.",
+      "items": ["Classify the transaction (pure surety, hybrid loan, or genuinely joint)", "Ask whether the lender was put on inquiry on that classification", "If put on inquiry, ask whether the lender took reasonable protective steps (independent legal advice)", "If protective steps were taken, the lender enforces the charge free of any undue influence"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "contract-13-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under the Waller-Edwards bright-line test, what proportion of a joint non-commercial loan must discharge one borrower's separate debt before the lender is put on inquiry?",
+      "options": ["More than a de minimis amount — there is no proportionality threshold above that", "At least 50%", "The whole loan must discharge the separate debt"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-13-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Etridge, highlight the sentence stating when a lender is put on inquiry.",
+      "passage": "Lenders routinely take security from a surety who is close to the principal debtor. Such transactions are commonplace and unobjectionable in themselves. The bank is put on inquiry whenever the transaction is not, on its face, to the financial advantage of the surety and there is a substantial risk that, in procuring it, the debtor has committed a legal or equitable wrong. Once put on inquiry, the bank must take reasonable steps to bring home to the surety the risks being run.",
+      "ratioSentence": "The bank is put on inquiry whenever the transaction is not, on its face, to the financial advantage of the surety and there is a substantial risk that, in procuring it, the debtor has committed a legal or equitable wrong."
+    },
+    {
+      "itemId": "contract-13-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A contractor mid-project tells a homeowner it will down tools unless it is paid an extra sum not provided for in the contract, at a point when switching contractors would be practically impossible before a fixed completion deadline. The homeowner pays. Is this likely economic duress?",
+      "options": ["Yes — a threat to breach the existing contract, exploiting the homeowner's lack of any real alternative, mirrors Atlas Express v Kafco", "No — contractors are always entitled to renegotiate price during a project", "No — duress requires a threat of physical harm"],
+      "correctIndex": 0,
+      "explanation": "This closely tracks Atlas Express v Kafco: an existing contractual obligation, a threatened breach, and a counterparty with no practical alternative because of timing. That combination is illegitimate pressure, not ordinary renegotiation."
+    },
+    {
+      "itemId": "contract-13-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A creditor genuinely and honestly believes a debt is owed and lawfully threatens to sue unless it is paid immediately, even though the debtor is in a financially desperate position with no alternative but to pay. Applying Times Travel, is this lawful act duress?",
+      "options": ["No — without bad faith or knowledge the claim is invalid, a lawful threat to enforce a genuine debt is not illegitimate, however dependent the debtor is", "Yes — economic dependency alone is always enough for lawful act duress", "Yes — any threat to sue is automatically illegitimate"],
+      "correctIndex": 0,
+      "explanation": "Times Travel requires bad faith — knowingly asserting or manipulating an invalid claim. An honest creditor enforcing a genuine debt lawfully is not acting illegitimately merely because the debtor has no realistic alternative."
+    },
+    {
+      "itemId": "contract-13-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that puts the lender on inquiry under Waller-Edwards.",
+      "scenarioText": "A couple jointly remortgage their home. £8,000 of the £160,000 advance clears a personal loan taken out solely by one partner before the relationship began. The remaining £152,000 funds a jointly-owned extension both partners will use.",
+      "tappableSpans": ["jointly remortgage their home", "£8,000 of the £160,000 advance clears a personal loan taken out solely by one partner", "£152,000 funds a jointly-owned extension", "both partners will use"],
+      "correctSpan": "£8,000 of the £160,000 advance clears a personal loan taken out solely by one partner",
+      "feedbackCorrect": "Correct. £8,000 is small in proportion to the total but comfortably more than de minimis — under the bright-line test, that is enough to put the lender on inquiry, whatever the size of the joint portion.",
+      "feedbackIncorrect": "Focus on the size of the discharge of the sole debt relative to zero, not relative to the whole loan — Waller-Edwards rejects a proportionality comparison. Any more-than-de-minimis amount discharging a sole debt triggers the duty."
+    },
+    {
+      "itemId": "contract-13-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is governed by the plain Etridge suretyship rule rather than the Waller-Edwards hybrid test?",
+      "scenarioA": "A wife charges her sole property to guarantee her husband's separate business loan; she borrows nothing and receives no part of the advance.",
+      "scenarioB": "A couple jointly borrow £200,000, of which £30,000 clears one partner's credit card and £170,000 funds a house they will jointly own.",
+      "correctScenario": "A",
+      "explanation": "A is the pure two-party surety transaction Etridge was designed for — no hybrid analysis is needed because the surety gets no benefit at all. B is precisely the hybrid loan scenario Waller-Edwards addresses."
+    },
+    {
+      "itemId": "contract-13-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A solicitor persuades an elderly, trusting client to gift her house to the solicitor for a token sum. Does the presumption of undue influence arise automatically from the relationship alone?",
+      "options": ["Yes — solicitor and client is one of the relationships presumed as a matter of law, and the gift plainly calls for an explanation", "No — undue influence never applies to gifts, only to guarantees"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-13-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Mo and Dana take out a joint remortgage. £12,000 of the £250,000 advance pays off a car loan solely in Mo's name from before their relationship; the rest funds a joint buy-to-let purchase in both names. The lender took no steps to advise Dana independently. The relationship later breaks down and the lender seeks possession; Dana claims she signed only because Mo pressured her and had no real involvement in the finances. Analyse whether the lender can enforce the charge against Dana.",
+      "factsToOrder": [
+        "The loan is non-commercial, between a lender and two individual borrowers",
+        "£12,000 of £250,000 discharges Mo's sole pre-existing debt",
+        "The remaining advance is for a genuinely joint purpose",
+        "The lender took no Etridge-style protective steps for Dana",
+        "Dana alleges Mo pressured her into signing"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the lender is put on inquiry as to Dana's consent, such that its failure to take Etridge-style protective steps means it cannot enforce the charge against her if undue influence is proved.",
+        "rule": "Under Waller-Edwards v One Savings Bank, a lender is put on inquiry in a non-commercial loan to more than one borrower whenever more than a de minimis part of the advance discharges one borrower's own separate debt, regardless of the size of the genuinely joint portion. Once put on inquiry, Etridge requires the lender to take reasonable steps, normally independent legal advice for the at-risk party, or the transaction may be set aside against it if undue influence is proved.",
+        "application": "£12,000 discharging Mo's sole car loan is small relative to the £250,000 total but is plainly more than de minimis, so under the bright-line test the lender was put on inquiry, notwithstanding that £238,000 funded a genuinely joint investment. The lender took no protective steps for Dana at all. If Dana can prove actual or presumed undue influence by Mo, the lender — having failed to discharge its Etridge duty — cannot rely on its ordinary priority and the charge may be set aside as against her interest.",
+        "conclusion": "The lender was put on inquiry under Waller-Edwards because of the £12,000 sole-debt discharge, took no protective steps, and so is exposed to having the charge set aside against Dana if she proves undue influence."
+      }
+    },
+    {
+      "itemId": "contract-13-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why did the Supreme Court in Waller-Edwards reject a case-by-case balancing exercise for hybrid loans?",
+      "options": ["Because lenders should never be put on inquiry in joint loans", "Because a proportionality test is administratively unworkable for high-volume lending and would leave protection turning unpredictably on the mix of purposes in each loan", "Because Parliament had already legislated a fixed threshold"],
+      "correctIndex": 1,
+      "trapExplanation": "The Court did not abolish lender protection in hybrid loans — it replaced an unpredictable balancing exercise with a clear, low, easily administered trigger, precisely because case-by-case proportionality assessments were unworkable at scale and under-protected sureties whenever the joint element happened to be large."
+    },
+    {
+      "itemId": "contract-13-test-14",
+      "type": "sortIntoBuckets",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Sort each scenario into 'Economic duress' or 'Undue influence' as the more apt doctrine to plead.",
+      "buckets": ["Economic duress", "Undue influence"],
+      "itemsToSort": [
+        { "text": "A supplier threatens to breach an existing supply contract unless the price is doubled at a critical moment", "correctBucket": "Economic duress" },
+        { "text": "An adult child persuades an elderly, dependent parent to transfer savings to them, exploiting the parent's trust, with no explicit threat made", "correctBucket": "Undue influence" },
+        { "text": "A haulier refuses to deliver goods already contracted for unless paid an unagreed premium, at a point of no alternative", "correctBucket": "Economic duress" },
+        { "text": "A religious adviser secures a large donation from a devoted follower under circumstances calling for explanation", "correctBucket": "Undue influence" }
+      ]
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common error in this lesson is applying the wrong-era test: treating any lawful threat plus dependency as duress (pre-Times Travel thinking), or treating hybrid loans as requiring a proportionality balancing exercise (pre-Waller-Edwards thinking). Always check which version of the test the current law actually applies.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.vitiating-factors.duress-undue-influence"
+  }
+}

@@ -1,0 +1,529 @@
+{
+  "lessonId": "contract-08",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 8,
+  "topicId": "contract.terms.express-incorporation-interpretation",
+  "title": "Express terms: incorporation and interpretation",
+  "subtitle": "How a term gets into a contract, and what it means once it's there",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the three main routes by which a term is incorporated into a contract, and the heightened notice standard for onerous or unusual terms",
+    "State the modern approach to interpreting contract terms, reading language in its documentary and commercial context rather than in isolation",
+    "Apply both the incorporation rules and the modern interpretive approach to a fact pattern, including very recent Supreme Court authority"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "L'Estrange v F Graucob Ltd [1934] 2 KB 394",
+      "role": "A signed document binds the signer to its terms, whether read or not"
+    },
+    {
+      "citation": "Thornton v Shoe Lane Parking Ltd [1971] 2 QB 163",
+      "role": "Notice of an unsigned term must come before the contract is formed, not after"
+    },
+    {
+      "citation": "Interfoto Picture Library Ltd v Stiletto Visual Programmes Ltd [1989] QB 433",
+      "role": "Particularly onerous or unusual terms need special, prominent notice — the 'red hand' standard"
+    },
+    {
+      "citation": "Investors Compensation Scheme Ltd v West Bromwich Building Society [1998] 1 WLR 896",
+      "role": "Founding statement of the modern contextual approach to interpretation"
+    },
+    {
+      "citation": "Arnold v Britton [2015] UKSC 36",
+      "role": "Reasserts the primacy of the natural, ordinary meaning of clear language"
+    },
+    {
+      "citation": "Wood v Capita Insurance Services Ltd [2017] UKSC 24",
+      "role": "Reconciles Investors Compensation Scheme and Arnold as a single, unitary exercise"
+    },
+    {
+      "citation": "Providence Building Services Ltd v Hexagon Housing Association Ltd [2026] UKSC 1",
+      "role": "A live, current application of the modern approach to a construction contract termination clause"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often treat 'incorporation' and 'interpretation' as separate topics to revise separately, when exam problems routinely fold them together — a clause has to get into the contract before there's anything to interpret. Where the profile shows solid recall but shakier synthesis across the two stages, this note appears: 'You know both halves — this lesson is about running them as one connected argument, in order.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well recalling the rules in isolation before. The test pool below leans on scenario-based items that make you decide incorporation first, then interpretation — don't skip straight to what a clause means before checking it's actually part of the contract.",
+      "weakKnowledge": "Start with Part 1 and move steadily — the incorporation rules in Parts 1 to 3 are the foundation the interpretation material in Parts 4 and 5 is built on, and the lesson assumes you're solid on incorporation before it moves on."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two questions, asked in strict order, decide almost every dispute about a written contract term. First: is this clause actually part of the deal, or just ink on a page one party never agreed to? Second, once it clearly is part of the deal: what does it actually mean, read the way a reasonable business person would read it — not the way either side now, conveniently, wishes it read? This lesson answers both, ending with a Supreme Court judgment barely nine months old.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. Most of this lesson rests on settled doctrine, but Providence Building Services v Hexagon Housing Association was decided by the Supreme Court in January 2026 — commentary is still developing, and this lesson will be revised as later cases apply it."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Sign it, and you're bound — mostly",
+        "voice": "blunt and matter-of-fact — states the harsh rule first, then immediately tests its edges, in short declarative sentences",
+        "body": [
+          "Start with the simplest incorporation rule in the whole subject: if you sign a contractual document, you are bound by every term in it — whether or not you read it, and whether or not you understood it. This is L'Estrange v Graucob. A café owner signed a sales agreement for a cigarette vending machine without reading the small print, which excluded all warranties. The machine didn't work. Her claim failed. Signature did the work; her failure to read the document was irrelevant.",
+          "The rule is deliberately harsh, and deliberately simple, because it has to be. Commercial life depends on signed documents meaning what they say, regardless of whether every signatory gave every clause their full attention. If signature only bound you to the terms you'd actually noticed, no signed contract could ever be relied on with confidence.",
+          "But the rule has real limits, and exam questions live in those limits. Signature does not cure a term that was misrepresented before signing — if one party is told 'this excludes liability for fire damage only' and the clause in fact excludes far more, the misrepresentation can undercut reliance on the wider clause. Nor does signature help where the document signed is not, on the facts, a contractual document at all — a receipt, for instance, that no reasonable person would expect to carry contract terms.",
+          "Keep L'Estrange narrow in your head: it governs signed documents. The moment a term is being incorporated by anything other than a signature — a notice on a wall, a ticket handed over, a course of previous dealings — a completely different, and much less forgiving, set of rules takes over. That's where Part 2 goes next."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "L'Estrange v F Graucob Ltd",
+            "citation": "[1934] 2 KB 394",
+            "court": "Divisional Court (King's Bench Division)",
+            "year": 1934,
+            "factsShort": "A café owner signed a sales agreement for an automatic vending machine without reading it; the small print excluded all warranties, including the implied warranty of fitness for purpose. The machine did not work as intended.",
+            "ratioShort": "A party who signs a contractual document is bound by all its terms, whether or not they have read or understood them, in the absence of fraud or misrepresentation.",
+            "expanded": {
+              "facts": "Miss L'Estrange bought an automatic cigarette vending machine for her café from Graucob, signing a sales agreement in small print without reading it. The agreement contained a clause excluding all conditions and warranties, statutory or otherwise. The machine malfunctioned almost immediately and never worked properly.",
+              "judgmentExtract": "Scrutton LJ held that where a document containing contractual terms is signed, the signing party is bound by its terms whether they have read the document or not, and whether or not they know its precise contents — the only qualification recognised was fraud or misrepresentation, neither of which was present.",
+              "significance": "This remains the starting point for any incorporation problem involving a signed document. It is often the easiest step in an exam answer precisely because the rule is so simple — the harder work usually lies in unsigned-document or notice-based incorporation, covered next."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Incorporation by signature",
+            "definition": "The rule that signing a contractual document binds the signer to all its terms, read or unread, subject only to limited exceptions such as fraud, misrepresentation as to the term's effect, or the document not being one a reasonable person would expect to contain contract terms."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-08-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In L'Estrange v Graucob, why was the café owner bound by the exclusion clause she had never read?",
+          "options": [
+            "Because she signed the document containing it, and signature binds regardless of whether the terms were read",
+            "Because the exclusion clause was read aloud to her before signing",
+            "Because vending machine contracts are automatically exempt from implied warranties"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — signature does the binding work on its own; reading the terms was never a requirement.",
+          "feedbackIncorrect": "The reasoning has nothing to do with what was said aloud or the type of machine. It rests entirely on the act of signing a document that contains contractual terms."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The ticket that arrived too late",
+        "voice": "case-narrative — tells the Thornton facts as a small drama unfolding in real time, mirroring how the timing point actually turns on sequence",
+        "body": [
+          "Mr Thornton drove into a multi-storey car park he had never used before. At the entrance, a machine automatically issued him a ticket as the barrier lifted. He took the ticket, drove in, and parked. Only inside — on a pillar, and in small print on the back of the ticket itself — were the terms excluding the car park's liability for injury to customers. Mr Thornton was later injured, partly due to the car park's negligence, and the car park tried to rely on the exclusion clause.",
+          "The Court of Appeal held the clause was never incorporated at all. The key was timing: the contract was formed the moment Mr Thornton engaged with the machine and the barrier began to lift — that is the point of offer and acceptance in an automated-machine scenario. Any notice of terms that arrived afterwards, whether printed on the ticket he then received or displayed on a sign he could only read once inside, came too late to be part of the deal he had already struck.",
+          "This is the single most exam-relevant point about unsigned-document incorporation: notice of a term must be given before or at the moment the contract is made, not after. It doesn't matter how clearly a later-discovered term is worded, or how prominently it's displayed once you're already committed — if the moment of contracting has passed, that term needed to be flagged earlier or it isn't in the contract at all.",
+          "Contrast this with a straightforward bus or train ticket case, where the same 'reasonable notice' standard applies but the timing usually isn't in dispute — the ticket is handed over as the contract is made, and the only live question is whether its terms were reasonably brought to the passenger's attention. Thornton earns its place in the syllabus because the automated machine scenario makes the timing question unusually sharp and easy to test."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Thornton v Shoe Lane Parking Ltd",
+            "citation": "[1971] 2 QB 163",
+            "court": "Court of Appeal",
+            "year": 1971,
+            "factsShort": "A car park issued tickets automatically from a machine at the entrance; the exclusion clause was printed inside, on the ticket and on a sign, and only visible after the contract had already been formed.",
+            "ratioShort": "Notice of a term must be given before or at the time the contract is made; a term first disclosed only after that moment is not incorporated, however clearly it is later displayed.",
+            "expanded": {
+              "facts": "Mr Thornton drove into an automated car park for the first time. A machine dispensed a ticket as the barrier rose, and Mr Thornton took it and drove in. The ticket stated, in small print, that it was issued subject to conditions displayed inside the car park; those conditions, on a pillar and on the reverse of the ticket, purported to exclude liability for personal injury. Thornton was injured in an accident partly caused by the car park's negligence.",
+              "judgmentExtract": "Lord Denning MR held that in an automated-machine transaction, the offer is made by the machine when it invites a customer to insert money, and acceptance occurs when the customer engages the machine and it begins to act — for instance, when the barrier starts to rise. Any term communicated only after that point, however displayed, cannot be incorporated, since the contract is by then already concluded.",
+              "significance": "Thornton is the classic authority on the timing requirement for unsigned-document incorporation, and it also foreshadows the heightened scrutiny for onerous terms developed further in Interfoto: Lord Denning observed that a particularly onerous clause, like the wide exclusion at issue, would need to be brought home with special clarity even if timing were not fatal."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-08-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that determines when the contract in Thornton was actually formed.",
+          "scenarioText": "Mr Thornton approaches the machine at the car park entrance. The machine issues a ticket as the barrier begins to rise. Thornton drives in and parks. Once inside, he notices a sign on a pillar listing exclusion terms.",
+          "tappableSpans": [
+            "approaches the machine",
+            "the barrier begins to rise",
+            "drives in and parks",
+            "notices a sign on a pillar"
+          ],
+          "correctSpan": "the barrier begins to rise",
+          "feedbackCorrect": "That's the moment of acceptance under Lord Denning's reasoning — the machine's response to Thornton's approach is when the contract is struck, before he has seen any exclusion term.",
+          "feedbackIncorrect": "Look for the moment the machine actually responds to Thornton's engagement with it, rather than when he first approaches or what he sees later. That response is the point of acceptance, and everything after it is too late for incorporation."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The clause so severe it needs a red hand pointing at it",
+        "voice": "vivid and image-driven — leans on the 'red hand' metaphor from the judgment itself to make the heightened standard memorable",
+        "body": [
+          "Some terms are ordinary enough that reasonable notice — a line on a ticket, a sign at the counter — is all incorporation requires. But English law recognises that a small number of terms are so unusual, or so punishing to the party accepting them, that ordinary notice isn't good enough. Interfoto v Stiletto is the case that gives this heightened standard its most memorable phrase.",
+          "Stiletto borrowed 47 photographic transparencies from Interfoto, a photo library, returning them two weeks late. Buried in the delivery note's standard conditions was a holding fee clause charging £5 per transparency per day for late return — a rate that, worked out across 47 transparencies over the actual delay, produced a bill of many thousands of pounds, wildly disproportionate to anything in the ordinary course of such transactions.",
+          "The Court of Appeal held the clause was not incorporated. Bingham LJ's judgment is famous for its image: an unusual and onerous term of this kind needs to be fairly and reasonably brought to the other party's attention, and 'the more unusual the clause, the greater the notice which the other party ... must be given of it'. Denning LJ's own formulation in an earlier case had put it even more vividly — such a clause needs to be printed in red ink with a red hand pointing to it, or something equally startling, before the law will treat it as incorporated by ordinary notice alone.",
+          "Note precisely what this doctrine does and doesn't do. It is not a general fairness review of contract terms — English law has no such broad doctrine at common law. It is specifically about incorporation: an unusually onerous term simply fails to become part of the contract at all unless it clears a higher notice bar than an ordinary term would. Whether the term is fair, once incorporated, is a different question entirely, and mostly a statutory one under the Consumer Rights Act 2015 or the Unfair Contract Terms Act 1977 rather than this common law doctrine."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Interfoto Picture Library Ltd v Stiletto Visual Programmes Ltd",
+            "citation": "[1989] QB 433",
+            "court": "Court of Appeal",
+            "year": 1989,
+            "factsShort": "A photo library's standard conditions, not specifically drawn to the borrower's attention, included a disproportionately high holding fee for late return of transparencies.",
+            "ratioShort": "A particularly onerous or unusual term is not incorporated by ordinary reasonable notice; it requires special, prominent notice fairly bringing it to the other party's attention before the contract is made.",
+            "expanded": {
+              "facts": "Stiletto borrowed 47 transparencies from Interfoto for a presentation, under a delivery note whose reverse side set out standard conditions in small print, including a holding fee of £5 plus VAT per transparency per day for late return. Stiletto returned the transparencies two weeks late. Applying the clause literally produced a fee running into thousands of pounds — vastly more than any figure a party in Stiletto's position would reasonably have expected.",
+              "judgmentExtract": "Bingham LJ held that where a condition is particularly onerous or unusual, the party seeking to rely on it must show that it was fairly and reasonably brought to the other party's attention — ordinary reasonable notice, sufficient for a standard term, is not enough for a term this severe. Since Interfoto had done nothing to flag the clause specifically, it was not incorporated, and Stiletto was liable only for a reasonable holding fee assessed on ordinary principles.",
+              "significance": "Interfoto is the leading modern authority for the heightened notice standard for onerous or unusual terms, often referred to (from Denning LJ's earlier formulation in J Spurling Ltd v Bradshaw) as the 'red hand rule'. It sits alongside Thornton as the second major qualification on ordinary notice-based incorporation."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "The red hand rule",
+            "definition": "The principle that a particularly onerous or unusual contract term requires special, prominent notice to be incorporated — ordinary notice sufficient for a standard term will not do; the phrase derives from Denning LJ's image of a clause that needs to be printed in red ink with a red hand pointing to it before the law will treat it as properly brought to the other party's attention."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-08-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the red hand rule in Interfoto is a general fairness review of contract terms, applicable to any clause a court later considers harsh?",
+          "sliderLabels": [
+            "Confident it's a general fairness review",
+            "Confident it's limited to incorporation of onerous terms"
+          ],
+          "correctPosition": "Confident it's limited to incorporation of onerous terms",
+          "explanation": "Interfoto is narrower than a general fairness doctrine. It only raises the notice bar for incorporating a particularly onerous or unusual term — whether an already-incorporated term is substantively fair is a separate question, addressed mainly by statute, not by this common law rule."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Reading a clause the way it was meant to be read",
+        "voice": "synthesising and analytical — steps back to weave three cases into one coherent modern doctrine, written for a student building a framework rather than following a story",
+        "body": [
+          "Once a term is safely incorporated, a second, entirely different question arises: what does it actually mean? For much of the twentieth century, English courts leaned towards a literal approach — read the words, and only look outside them if the words were genuinely ambiguous. Investors Compensation Scheme Ltd v West Bromwich Building Society changed that emphasis decisively.",
+          "Lord Hoffmann's speech in ICS reframed interpretation as an exercise in working out what the contract would mean to a reasonable person with all the background knowledge reasonably available to the parties at the time of contracting — the 'matrix of fact'. Words are not read in a vacuum; they are read in the context of the whole document, the commercial purpose the parties were pursuing, and the factual background against which they contracted. Interpretation, on this approach, is fundamentally a search for meaning in context, not a mechanical parsing of isolated words.",
+          "That shift, though, produced its own worry: that 'context' could become a licence for courts to rewrite bad bargains into sensible ones, under the banner of giving effect to what the parties 'must have meant'. Arnold v Britton pushed back. The case concerned service charge clauses in long leases that, read literally, produced escalating charges most observers thought commercially improbable over the lease terms. The Supreme Court nonetheless gave the clear, unambiguous wording its natural meaning, holding that commercial common sense cannot be invoked retrospectively simply because one party's bargain turns out badly — the clearer the words, the less room there is for context to displace them.",
+          "Wood v Capita Insurance Services Ltd resolved the apparent tension between ICS and Arnold by treating them not as rival schools but as two ends of a single, unitary exercise. Lord Hodge explained that interpretation is a process of iteration: the court reads the language in light of context and commercial purpose, but the clearer the natural meaning of the words, the more weight that meaning carries, and the more context is needed to displace it. There is no fixed order of priority between 'language' and 'context' — a court moves between them, testing each rival interpretation against both the words and the commercial background, until it reaches the meaning the document was objectively intended to bear."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The modern interpretive approach, in three steps",
+            "points": [
+              "Start with the natural and ordinary meaning of the words used, read in the context of the document as a whole (Arnold v Britton).",
+              "Read that language against the factual and commercial background reasonably available to the parties at the time of contracting — the 'matrix of fact' (Investors Compensation Scheme v West Bromwich).",
+              "Treat the exercise as unitary and iterative, not a two-stage test: the clearer the language, the more it should be given effect, but context is always part of the same single inquiry, not an afterthought (Wood v Capita)."
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Investors Compensation Scheme Ltd v West Bromwich Building Society",
+            "citation": "[1998] 1 WLR 896",
+            "court": "House of Lords",
+            "year": 1998,
+            "factsShort": "A dispute over the scope of a claim assignment clause in a compensation scheme, turning on whether the clause should be read literally or in its surrounding commercial context.",
+            "ratioShort": "Interpretation is the ascertainment of the meaning the document would convey to a reasonable person with the background knowledge reasonably available to the parties at the time of contracting, not a literal parsing of words in isolation.",
+            "expanded": {
+              "facts": "Investors who had claims against negligent financial advisers assigned certain rights to the Investors Compensation Scheme under a standard-form agreement. A dispute arose over whether the assignment clause, read literally, excluded a particular category of claim the investors wished to pursue themselves.",
+              "judgmentExtract": "Lord Hoffmann set out five now-canonical principles of contractual interpretation, the most cited of which requires interpretation to reflect what the document would mean to a reasonable person with all the background knowledge reasonably available to the parties, excluding prior negotiations and subjective intent, but including the commercial context of the transaction as a whole.",
+              "significance": "ICS is the foundational modern statement of contextual interpretation in English contract law, and its principles are still the starting reference point even after Arnold and Wood refined how they should be balanced against the primacy of clear language."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-08-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of these best captures the difference in emphasis between Arnold v Britton and Investors Compensation Scheme v West Bromwich?",
+          "scenarioA": "ICS emphasises reading language in its commercial and factual context; Arnold reasserts that clear, unambiguous language should be given its natural meaning even where the commercial outcome seems harsh.",
+          "scenarioB": "ICS applies only to leases, while Arnold applies only to commercial contracts generally.",
+          "correctScenario": "A",
+          "explanation": "A is correct — the two cases represent a shift of emphasis within the same overall doctrine, not different subject-matter rules. Wood v Capita later confirmed both are part of one unitary, iterative interpretive exercise rather than competing tests."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The doctrine at work, January 2026",
+        "voice": "current-affairs and journalistic — presents the newest case as breaking legal news being folded into the syllabus in real time, flagging its freshness explicitly",
+        "body": [
+          "This is where the doctrine you've just built stops being history and becomes live practice. In January 2026 — barely months before you're reading this — the Supreme Court handed down Providence Building Services Ltd v Hexagon Housing Association Ltd, applying the modern interpretive approach to a termination clause in a construction contract built on the widely used JCT standard form.",
+          "The dispute centred on precisely when and how a right to terminate the building contract for the contractor's default had to be exercised, and what a particular procedural clause in the JCT terms actually required as a matter of timing and form. Both sides could point to a plausible literal reading of the wording; both sides argued their reading better reflected the commercial purpose of a termination mechanism that construction contracts rely on to let a project be brought to an orderly halt when things go wrong on site.",
+          "The Supreme Court's approach tracks Wood v Capita closely: it did not treat the case as a contest between 'the words' and 'the commercial context' as separate camps, but read the clause's language against the practical realities of how termination clauses function in standard-form construction contracts, in order to reach the interpretation that made the mechanism work coherently as a whole. The judgment is a clean, recent illustration of the unitary approach doing real work on a genuinely disputed commercial clause, rather than a case where the 'right' answer was obvious from the words alone.",
+          "Treat this case carefully in how you use it. It is authoritative Supreme Court precedent the moment it is handed down — but at only a few months old, the surrounding academic commentary and its downstream application by lower courts are still developing. Use it as your most current worked example of the modern approach in action, cite it confidently for the general interpretive point it illustrates, but hold it a little more lightly than settled authorities like Arnold or Wood when it comes to its precise implications for JCT drafting specifically — that detail is still being worked out in practice."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Providence Building Services Ltd v Hexagon Housing Association Ltd",
+            "citation": "[2026] UKSC 1",
+            "court": "Supreme Court",
+            "year": 2026,
+            "factsShort": "A dispute over the interpretation of a termination clause in a JCT-form construction contract, concerning the timing and procedural requirements for exercising a right to terminate for contractor default.",
+            "ratioShort": "The modern unitary approach to interpretation from Wood v Capita applies to standard-form commercial contracts such as JCT construction contracts: language is read against the practical commercial function of the clause within the contract as a whole, rather than treated as a standalone puzzle of wording.",
+            "expanded": {
+              "facts": "Providence Building Services and Hexagon Housing Association were parties to a construction contract on JCT standard terms. A dispute arose over the correct interpretation of the termination provisions governing how and when a right to terminate for the contractor's default could be validly exercised, with each party favouring the reading that supported its own position in the underlying dispute.",
+              "judgmentExtract": "The Supreme Court applied the Wood v Capita framework, treating interpretation as a single iterative exercise moving between the clause's language and its function within the wider contractual and commercial scheme, rather than resolving the dispute purely on a literal parsing of the termination clause's wording in isolation.",
+              "significance": "As the most recent Supreme Court authority on contractual interpretation at the time this lesson was written, Providence v Hexagon is valuable evidence of the modern approach being applied, not merely restated, in a live commercial dispute — and a useful illustration that the doctrine from ICS, Arnold and Wood is an active, working tool in current litigation, not a closed historical debate."
+            }
+          },
+          {
+            "type": "timeline",
+            "title": "The modern interpretive approach, case by case",
+            "events": [
+              {
+                "date": "1998",
+                "label": "Investors Compensation Scheme v West Bromwich — contextual interpretation established"
+              },
+              {
+                "date": "2015",
+                "label": "Arnold v Britton — primacy of clear, natural language reasserted"
+              },
+              {
+                "date": "2017",
+                "label": "Wood v Capita — the two strands reconciled into one unitary, iterative exercise"
+              },
+              {
+                "date": "2026",
+                "label": "Providence v Hexagon — the unitary approach applied to a JCT termination clause, the most current worked example"
+              }
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-08-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A construction contract's termination clause is ambiguous about timing. Applying the approach in Wood v Capita, as illustrated most recently in Providence v Hexagon, how should a court resolve the ambiguity?",
+          "options": [
+            "By reading the clause's language against its commercial function within the contract as a whole, moving iteratively between text and context rather than treating either as decisive on its own",
+            "By always preferring whichever interpretation produces the outcome most favourable to the party who did not draft the clause",
+            "By ignoring the clause's wording entirely and asking only what a fair outcome would look like"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answers substitute a fairness test or a contra proferentem-style default for the actual doctrine. The unitary approach from Wood v Capita, applied again in Providence v Hexagon, is about iterating between language and context to find the objectively intended meaning — it is not a fairness override and does not automatically favour either party."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the three main routes by which a term can be incorporated into a contract.",
+      "acceptableAnswers": [
+        "signature, reasonable notice, and course of dealing",
+        "signature, notice before contracting, and prior course of dealing"
+      ],
+      "modelAnswer": "A term can be incorporated by signature (L'Estrange v Graucob), by reasonable notice given before or at the time of contracting (Thornton v Shoe Lane Parking), or by a consistent course of prior dealing between the same parties."
+    },
+    {
+      "itemId": "contract-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under L'Estrange v Graucob, does failing to read a signed contractual document usually prevent its terms binding the signer?",
+      "options": [
+        "No — signature binds regardless of whether the terms were read",
+        "Yes — unread terms are never binding"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-08-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following correctly states the timing rule from Thornton v Shoe Lane Parking?",
+      "options": [
+        "Notice of a term must be given before or at the moment the contract is formed",
+        "Notice of a term can be given at any point up to the moment a dispute arises",
+        "Notice of a term only matters for terms that are unusually onerous"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The second option describes no recognised rule at all, and the third confuses Thornton's timing principle with the separate Interfoto standard for onerous terms — Thornton's timing rule applies to ordinary terms too, not just onerous ones."
+    },
+    {
+      "itemId": "contract-08-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these developments in the modern approach to contractual interpretation in chronological order.",
+      "items": [
+        "Investors Compensation Scheme v West Bromwich establishes contextual interpretation",
+        "Arnold v Britton reasserts the primacy of clear, natural language",
+        "Wood v Capita reconciles the two as a single unitary exercise",
+        "Providence v Hexagon applies the unitary approach to a JCT termination clause"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "contract-08-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which statement best reflects Lord Hodge's reasoning in Wood v Capita about how ICS and Arnold relate to one another?",
+      "options": [
+        "They are two ends of a single, iterative interpretive exercise, not competing tests — the clearer the language, the more weight it carries, but context is always part of the inquiry",
+        "Arnold overruled ICS entirely, so only the natural meaning of words now matters",
+        "ICS applies to commercial contracts and Arnold applies only to leases"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-08-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Interfoto v Stiletto, highlight the sentence stating the ratio.",
+      "passage": "Interfoto's standard conditions included a holding fee clause producing a wildly disproportionate charge for late return. The more unusual or onerous a term is, the greater the notice that must be given of it before it can be treated as incorporated. Interfoto had done nothing to draw this clause specifically to Stiletto's attention, so it was not incorporated.",
+      "ratioSentence": "The more unusual or onerous a term is, the greater the notice that must be given of it before it can be treated as incorporated."
+    },
+    {
+      "itemId": "contract-08-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A dry cleaner hands a customer a ticket at the counter, on the front of which is printed, in normal type, 'subject to conditions overleaf', with an ordinary limitation-of-liability clause on the back. Applying Thornton, is this term likely incorporated?",
+      "options": [
+        "Yes, provided the ticket was given before or at the time the contract was made and reasonably drew attention to the conditions",
+        "No — any term printed on the reverse of a document can never be incorporated",
+        "Yes, automatically, regardless of when the ticket was handed over"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is an ordinary reasonable-notice case, not a heightened Interfoto scenario, since the clause is unremarkable. The only live question under Thornton is timing and whether reasonable steps were taken to bring the term to the customer's attention before the contract was formed."
+    },
+    {
+      "itemId": "contract-08-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A car hire company's standard conditions, referenced only by a small line on the back of an invoice handed over after the customer had already driven the car away, include a clause imposing an enormous penalty for returning the car with less than a full tank. Applying Interfoto, is the clause incorporated?",
+      "options": [
+        "No — it is both unusually onerous, requiring special notice under Interfoto, and was communicated only after the contract was made, failing Thornton's timing rule as well",
+        "Yes — any term on an invoice is automatically incorporated once the customer accepts delivery of the car",
+        "No, but only because fuel clauses are never enforceable in hire contracts"
+      ],
+      "correctIndex": 0,
+      "explanation": "This scenario fails incorporation on two independent grounds: the timing point from Thornton (notice came after the contract was formed) and the heightened notice standard from Interfoto (the clause is disproportionately onerous and was never specially flagged)."
+    },
+    {
+      "itemId": "contract-08-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that would most likely trigger the Interfoto heightened notice standard, rather than an ordinary reasonable-notice analysis.",
+      "scenarioText": "A tool hire company's standard terms are printed on the back of a receipt handed over as the contract is made. Clause 4 sets an ordinary, modest late-return fee. Clause 9, in the same small print, sets a late-return fee of one hundred times the daily hire rate, far beyond anything typical in the trade.",
+      "tappableSpans": [
+        "standard terms are printed on the back of a receipt",
+        "handed over as the contract is made",
+        "Clause 4 sets an ordinary, modest late-return fee",
+        "sets a late-return fee of one hundred times the daily hire rate"
+      ],
+      "correctSpan": "sets a late-return fee of one hundred times the daily hire rate",
+      "feedbackCorrect": "That disproportionate figure is exactly the kind of severity Interfoto targets — ordinary notice, sufficient for Clause 4, is not enough for a clause this extreme.",
+      "feedbackIncorrect": "The trigger for the heightened Interfoto standard is the unusual severity of the term itself, not the ordinary mechanics of when or how the receipt was handed over — look for the clause that stands out as disproportionate."
+    },
+    {
+      "itemId": "contract-08-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is governed primarily by the interpretation doctrine (ICS/Arnold/Wood), rather than an incorporation doctrine (L'Estrange/Thornton/Interfoto)?",
+      "scenarioA": "A dispute over whether a delivery driver ever saw a sign listing exclusion terms before loading the goods.",
+      "scenarioB": "A dispute over what a clearly incorporated clause, worded ambiguously, actually requires a party to do — read in light of the contract's overall commercial purpose.",
+      "correctScenario": "B",
+      "explanation": "B is an interpretation problem: the term is already part of the contract, and the live question is what it means. A is an incorporation problem: the live question is whether the term became part of the contract at all."
+    },
+    {
+      "itemId": "contract-08-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A JCT-form construction contract contains a termination clause that is ambiguous as to whether written notice must be served within a strict number of days or only 'promptly'. One party argues the strict literal wording of 'within 14 days' should govern; the other argues the commercial purpose of the clause, read with the rest of the termination scheme, supports a more flexible reading. Analyse how a court would approach this dispute today.",
+      "factsToOrder": [
+        "The clause contains clear numerical wording ('within 14 days')",
+        "One party argues for the strict literal meaning",
+        "The other argues the clause's commercial purpose within the wider termination scheme supports flexibility",
+        "The contract is a standard-form JCT construction contract"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "How a court should interpret an ambiguous timing provision in a JCT-form termination clause, where the wording is clear but its practical operation is disputed.",
+        "rule": "Under Wood v Capita, interpretation is a single unitary, iterative exercise: the court reads the language of the clause in light of the contract's commercial context and purpose, giving more weight to clear wording but always testing that wording against context, as recently illustrated in Providence v Hexagon's treatment of a JCT termination clause.",
+        "application": "The '14 days' wording is clear on its face, which under Arnold v Britton would ordinarily carry significant weight and should not be displaced merely because one party now finds it inconvenient. However, following Wood v Capita and the approach in Providence v Hexagon, the court would still test that literal reading against the commercial function of the termination mechanism as a whole, asking whether a strict reading makes the overall scheme work coherently or produces an unworkable result.",
+        "conclusion": "The court is likely to give real weight to the clear '14 days' wording, but will still check that reading against the commercial purpose of the termination clause within the wider JCT scheme before settling on a final interpretation, consistent with the unitary approach confirmed most recently in Providence v Hexagon."
+      }
+    },
+    {
+      "itemId": "contract-08-test-12",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that Arnold v Britton allows a court to depart from clear contractual wording simply because the commercial outcome for one party turns out to be harsh?",
+      "sliderLabels": [
+        "Confident it does allow departure",
+        "Confident it does not"
+      ],
+      "correctPosition": "Confident it does not",
+      "explanation": "Arnold v Britton specifically rejects this. Commercial common sense cannot be invoked retrospectively just because a bargain turns out badly for one side — clear language is given its natural meaning even where that produces a harsh result for the party now complaining of it."
+    },
+    {
+      "itemId": "contract-08-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What kind of contract, and what kind of clause, was at issue in Providence Building Services v Hexagon Housing Association [2026] UKSC 1?",
+      "options": [
+        "A JCT-form construction contract, and a termination clause",
+        "A residential lease, and a service charge clause",
+        "An insurance policy, and an exclusion clause"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-08-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Why does this lesson flag Providence v Hexagon differently from Arnold v Britton or Wood v Capita, even though all three concern contractual interpretation?",
+      "options": [
+        "Because Providence v Hexagon was decided only months before this lesson was written, so its precise downstream application is still developing, unlike the long-settled reasoning in Arnold and Wood",
+        "Because Providence v Hexagon is not binding Supreme Court authority",
+        "Because Providence v Hexagon concerns a different area of law entirely and should not be relied on for interpretation questions"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Providence v Hexagon is fully binding Supreme Court authority and squarely about contractual interpretation — the caution is about its recency and the fact that its detailed implications for standard-form drafting are still being worked out in practice, not about its legal weight or subject matter."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is jumping straight to what a clause means before checking it was ever properly incorporated in the first place — and, once past incorporation, treating 'context' as a licence to override clear wording rather than as one part of a single, iterative reading exercise.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.terms.express-incorporation-interpretation"
+  }
+}

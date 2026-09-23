@@ -1,0 +1,363 @@
+{
+  "lessonId": "public-15",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 15,
+  "topicId": "public.human-rights.qualified-rights-protest",
+  "title": "Qualified rights and protest",
+  "subtitle": "Articles 10 and 11 on the street, and a statutory framework that keeps changing",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the structure of a qualified Convention right and apply the three-part test (prescribed by law, legitimate aim, necessary/proportionate) to a restriction on Articles 10 or 11",
+    "Trace how the statutory protest framework has changed — Public Order Act 1986, as amended by the Police, Crime, Sentencing and Courts Act 2022, and the Public Order Act 2023 — and identify what 'lawful excuse' now requires",
+    "Apply DPP v Ziegler's proportionality reasoning to new fact patterns, recognising how later legislation and case law have narrowed its practical reach"
+  ],
+  "leadingAuthorities": [
+    { "citation": "European Convention on Human Rights, Article 10 (freedom of expression) and Article 11 (freedom of assembly and association)", "role": "The qualified rights engaged by protest activity; each protects the right in paragraph 1 and permits restriction, on strict conditions, under paragraph 2" },
+    { "citation": "Public Order Act 1986, as amended by the Police, Crime, Sentencing and Courts Act 2022", "role": "The core statutory conditions regime for processions and assemblies, expanded in 2022 to lower the threshold for police-imposed conditions and widen the 'noise' trigger" },
+    { "citation": "Public Order Act 2023", "role": "Created new standalone protest offences — including locking on, being equipped to lock on, and interference with key national infrastructure — and expanded stop-and-search powers" },
+    { "citation": "DPP v Ziegler [2021] UKSC 23", "role": "Held that the proportionality of protest-related obstruction must be assessed as part of the 'lawful excuse' defence, not treated as automatically excluded by the fact of obstruction" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often learn Ziegler as though it settled protest law once and for all. Where application lags knowledge, this note appears: 'You can state the Ziegler test. This lesson is about what's changed underneath it since 2022 — the same proportionality question now runs into a much stricter statutory floor.'",
+    "profileHooks": {
+      "weakApplication": "You know Articles 10 and 11 and the Ziegler test well already. The test pool below leans on applying that framework to the post-2022 statutory landscape — expect fact patterns that test whether an old-style Ziegler defence still works.",
+      "weakKnowledge": "Start with Part 1 and get the basic structure of a qualified right fixed first — paragraph 1 grants it, paragraph 2 permits restriction on strict conditions. The rest of the lesson assumes you can apply that structure without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "In November 2013, a small group of protesters lay down on the road outside an arms fair in London's Docklands, blocking traffic for around ninety minutes. Convicted, then acquitted on appeal, then reconvicted, then finally cleared by the Supreme Court in 2021 — the same set of facts moved through four different verdicts before the law settled, for that moment, on the protesters' side. Since then, Parliament has rewritten the statute those facts were judged against, twice. This lesson explains the legal test underneath that story, and why the same facts might be judged very differently today.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. This is an unusually fast-moving area: the Public Order Act 2023 and the 2022 amendments to the Public Order Act 1986 have been the subject of continuing litigation through 2025 and into 2026 over their compatibility with Articles 10 and 11, and further judgments are expected. Materials written before late 2022 describe a considerably less restrictive framework than currently applies. Before relying on this lesson for a live question — an essay, a current-affairs discussion, a real case — check the current statutory text on legislation.gov.uk and any recent Divisional Court, Court of Appeal or Strasbourg rulings, since the direction of travel here has consistently been towards greater restriction, not less."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A road, ninety minutes, and four different verdicts",
+        "voice": "journalistic — opens on the news story before the doctrine",
+        "body": [
+          "The facts of DPP v Ziegler read like a fairly ordinary act of civil disobedience: activists opposed to an arms fair lay down in the road leading to the exhibition centre, blocking two lanes of traffic for about ninety minutes before police removed them. They were charged with wilful obstruction of the highway under s 137 of the Highways Act 1980 — a straightforward offence, on paper, with a defence of 'lawful excuse'.",
+          "What made the case worth four rounds of litigation was a single legal question: when deciding whether a protester has a 'lawful excuse' for obstruction, does the court have to weigh the proportionality of convicting them against their Articles 10 and 11 rights — or is causing an obstruction at all simply outside the protection those rights offer in the first place?",
+          "The Supreme Court's answer, in 2021, was that proportionality has to be built into the lawful excuse analysis itself. That sounds like a strong protection for protesters. The rest of this lesson is about two things happening at once since then: how the courts have narrowed what Ziegler actually delivers in practice, and how Parliament has rewritten the statute book underneath it so that a growing range of protest tactics face liability that owes nothing to Ziegler's proportionality question at all."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Qualified right",
+            "definition": "A Convention right, such as Article 10 or 11, that is not absolute: it protects an activity in principle, but permits the state to restrict it where the restriction is prescribed by law, pursues a legitimate aim, and is necessary in a democratic society (proportionate)."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-15-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the two Convention articles most directly engaged by a protest that involves standing in a public place holding a banner and chanting.",
+          "acceptableAnswers": ["Articles 10 and 11", "Article 10 (freedom of expression) and Article 11 (freedom of assembly)", "freedom of expression and freedom of assembly"],
+          "modelAnswer": "Article 10 (freedom of expression) and Article 11 (freedom of assembly and association) — both qualified rights, engaged together by most organised protest activity."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Qualified, not absolute: reading paragraph 2",
+        "voice": "structural, embedded in the journalistic frame — explains the mechanism the news story turns on",
+        "body": [
+          "Articles 10 and 11 are both built the same way. Paragraph 1 of each states the right in broad terms — everyone has the right to freedom of expression; everyone has the right to freedom of peaceful assembly. Paragraph 2 of each then lists the conditions under which the state may restrict that right.",
+          "A restriction survives scrutiny only if it clears three hurdles, in order. First, it must be 'prescribed by law' — there has to be an accessible, sufficiently precise legal basis for it, not police discretion acting on nothing. Second, it must pursue one of the legitimate aims listed in the article — for protest cases, usually public safety, prevention of disorder or crime, or protection of the rights of others. Third, and usually where the real argument happens, the restriction must be 'necessary in a democratic society' — meaning proportionate: no more restrictive than needed to achieve the legitimate aim, given the importance of the right at stake.",
+          "This structure matters because it's the analytical skeleton every protest-law problem question hangs on. A conviction, an injunction, or a set of police-imposed conditions on a march is not automatically lawful just because a statute permits it in the abstract — it still has to be shown, on these facts, that restricting this protest was proportionate."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The three-part test for restricting a qualified right",
+            "points": [
+              "Prescribed by law — an accessible, sufficiently precise legal basis for the restriction, not unfettered discretion",
+              "Legitimate aim — one of the aims listed in paragraph 2 (e.g. public safety, prevention of disorder or crime, protection of the rights of others)",
+              "Necessary in a democratic society / proportionate — no more restrictive of the right than is needed to achieve that aim on these facts",
+              "All three must be satisfied; failing any one makes the restriction a breach of the right"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-15-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under Article 11(2), is it enough for the state to show a restriction on assembly pursues a legitimate aim like public safety?",
+          "options": ["No — it must also be prescribed by law and shown to be proportionate on the facts", "Yes — a legitimate aim alone is sufficient to justify any restriction"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. All three limbs — prescribed by law, legitimate aim, and proportionality — must be satisfied. A legitimate aim without a proportionate means of pursuing it still breaches the right.",
+          "feedbackIncorrect": "A legitimate aim is necessary but not sufficient. The restriction also has to have a proper legal basis and, critically, has to be a proportionate way of achieving that aim on the specific facts."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "What Ziegler actually decided — and how it has since been narrowed",
+        "voice": "case-narrative folded into journalistic framing — tells the case's full arc, including its aftermath",
+        "body": [
+          "Back to the road outside the arms fair. The Supreme Court held, by a majority, that the protesters' obstruction was not automatically unlawful. 'Lawful excuse' under s 137 Highways Act 1980 requires the court to ask whether, weighing the protesters' Article 10 and 11 rights against the effect on others, a conviction would be a proportionate response — and on these facts (a temporary, partial obstruction, meeting police part-way on timing, no violence), it was not. The convictions were quashed.",
+          "That result reads as protester-friendly, and at the time it was widely reported that way. But look closely at what made the facts work in the protesters' favour: partial obstruction, a limited duration, no aggravating conduct, and a police response that itself signalled the obstruction was manageable. Later cases and legislative changes have chipped away at each of those factors' significance in practice. Courts assessing 'lawful excuse' since Ziegler have repeatedly emphasised that a longer, more disruptive, or more deliberately targeted obstruction — blocking an ambulance route, or a specific critical facility, for example — can tip the proportionality balance decisively the other way, even applying exactly the same legal test.",
+          "The more significant narrowing, though, came from Parliament rather than the courts — which the next part covers. Ziegler is still good law on the structure of the analysis: proportionality genuinely has to be weighed, it can't be waved away. What has changed is how much room that weighing exercise now has to operate in, because a growing share of protest tactics now fall under offences that don't route through 'lawful excuse' or a Ziegler-style balancing exercise at all."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "DPP v Ziegler",
+            "citation": "[2021] UKSC 23",
+            "court": "Supreme Court",
+            "year": 2021,
+            "factsShort": "Protesters lying in the road outside an arms fair, blocking traffic for around ninety minutes, were convicted of wilful obstruction of the highway; the case turned on whether proportionality had to be assessed as part of the lawful excuse defence.",
+            "ratioShort": "Where Articles 10 and 11 are engaged, the proportionality of restricting or punishing the protest activity must be assessed as part of determining whether the defendant had a 'lawful excuse' — it cannot be excluded from consideration merely because the conduct caused an obstruction.",
+            "expanded": {
+              "facts": "Four defendants lay in the roadway outside the DSEI arms fair for roughly ninety minutes, causing a partial obstruction of two lanes. They were prosecuted for wilful obstruction of the highway, contrary to s 137 Highways Act 1980, and raised a lawful excuse defence grounded in Articles 10 and 11.",
+              "judgmentExtract": "The Supreme Court held that where a defendant's conduct is an exercise of Convention rights, the question of lawful excuse cannot be resolved without directly engaging with proportionality — whether interfering with (here, convicting for) that conduct is a proportionate response to the legitimate aims served by keeping the highway clear. On the facts — partial, temporary obstruction, with the defendants having offered to move and no violence involved — conviction was not a proportionate response, and the convictions were quashed.",
+              "significance": "Ziegler confirms that qualified-rights proportionality is not an optional add-on in protest prosecutions — it is baked into the statutory defence itself. But the case is fact-sensitive by design: it does not hold that obstruction is generally lawful, only that this obstruction, on these specific facts, did not justify conviction. Later cases have read it narrowly, emphasising just how much the specific facts did the work."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-15-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the reasoning steps in DPP v Ziegler in the order the Supreme Court applied them.",
+          "items": ["Identify that the protest engaged Articles 10 and 11", "Ask whether 'lawful excuse' under s 137 requires proportionality to be weighed, not excluded", "Weigh the specific facts — partial, temporary obstruction, no violence, defendants offered to move — against the aim of keeping the highway clear", "Conclude that conviction would not be a proportionate response, and quash the convictions"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure of the whole judgment: engage the rights, confirm proportionality has to be part of 'lawful excuse', weigh the specific facts, and only then reach a fact-sensitive conclusion.",
+          "feedbackIncorrect": "Check the order again — the court first has to establish that proportionality belongs in the analysis at all, before it can weigh the specific facts of this obstruction against the aims served by the highway offence."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Parliament rewrites the rules: the PCSC Act 2022 and the Public Order Act 2023",
+        "voice": "journalistic — treats the legislative changes as a developing story with its own timeline",
+        "body": [
+          "Two pieces of legislation have reshaped the statutory landscape Ziegler sits within, both aimed at giving police and prosecutors a lower bar to act against disruptive protest than the pre-2022 law allowed.",
+          "The Police, Crime, Sentencing and Courts Act 2022 amended the Public Order Act 1986's long-standing framework for imposing conditions on processions and assemblies (ss 12 and 14). It lowered the threshold at which conditions can be imposed — from a requirement of 'serious' disruption in some respects to a broader 'more than minor' standard for certain triggers — and, controversially, widened the basis for conditions to include the noise generated by a protest, where that noise may cause 'serious unease, alarm or distress' to those in the vicinity, or have a relevant impact on an organisation nearby. It also increased penalties for breaching conditions and for the existing offence of causing a public nuisance.",
+          "The Public Order Act 2023 went further, creating standalone offences that don't depend on obstruction or breach of imposed conditions at all: 'locking on' (attaching oneself to another person, an object, or land, causing serious disruption), being equipped to lock on, tunnelling, and interfering with the operation of 'key national infrastructure' such as airports, railways and oil and gas installations. It also created a new preventative court order — a Serious Disruption Prevention Order — and expanded suspicion-based and suspicionless stop-and-search powers connected to protest-related offences.",
+          "The practical effect for the Ziegler-style proportionality argument is significant: a defendant charged under one of these newer, freestanding offences is not automatically asking a court to weigh 'lawful excuse' the way s 137 Highways Act obstruction does. Some of the new offences have narrower statutory defences of their own, and courts are still working out, case by case, how far Article 10/11 proportionality must be read into them."
+        ],
+        "components": [
+          {
+            "type": "timeline",
+            "title": "The statutory protest framework, 2021–2023",
+            "events": [
+              { "date": "2021", "label": "Supreme Court decides DPP v Ziegler: proportionality must be weighed within 'lawful excuse' under s 137 Highways Act 1980" },
+              { "date": "2022", "label": "Police, Crime, Sentencing and Courts Act 2022 amends the Public Order Act 1986: lowers the conditions threshold and adds a noise-based trigger for imposing conditions on processions and assemblies" },
+              { "date": "2023", "label": "Public Order Act 2023 creates standalone offences (locking on, tunnelling, interference with key national infrastructure) that do not depend on the s 137/Ziegler proportionality route at all" }
+            ]
+          },
+          {
+            "type": "statuteBlock",
+            "citation": "Public Order Act 2023, s 1 (locking on)",
+            "text": "A person commits an offence if (a) they attach themselves to another person, to an object or to land, or attach a person to another person, an object or land, or attach an object to another object or to land, (b) the attachment causes, or is capable of causing, serious disruption to two or more individuals or to an organisation, and (c) the person intends that act to have that consequence, or is reckless as to whether it will have that consequence.",
+            "elements": ["An act of attachment to a person, object or land", "The attachment causes or is capable of causing serious disruption", "Intention or recklessness as to that disruptive consequence"]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-15-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 1 Public Order Act 2023, does the prosecution have to prove the defendant intended to cause serious disruption?",
+          "options": ["No — intention or recklessness as to that consequence is enough", "Yes — only intention will do; recklessness is not sufficient", "No — the offence is one of strict liability with no mental element at all"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 1 is satisfied by either intention or recklessness as to the disruptive consequence of the attachment — it is not a strict liability offence, but recklessness suffices alongside intention.",
+          "feedbackIncorrect": "Look again at the statutory wording: it requires the person to intend that consequence, or be reckless as to whether it will occur — recklessness is enough, so intention alone is not required, but this is not a strict liability offence either."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "So is protest law getting more restrictive? The live debate",
+        "voice": "journalistic — closes by naming the open, contested question rather than resolving it",
+        "body": [
+          "Ask a civil liberties organisation and a Home Office minister the same question — has protest law become significantly more restrictive since 2021? — and you will get sharply different answers, both citing the same statutes. The honest position for exam purposes is that this is a live, contested and still-developing area, not a settled one, and treating it as settled is the most common mistake students make.",
+          "What is clear: the 2022 and 2023 Acts have expanded the range of conduct that attracts criminal liability independently of the Ziegler proportionality question, lowered some statutory thresholds for police intervention, and expanded stop-and-search powers connected to protest. What remains genuinely open: the compatibility of specific provisions with Articles 10 and 11 continues to be tested in the courts, and commentators, campaigners and some parliamentarians have argued that several provisions — particularly the noise-based conditions trigger and elements of the 2023 Act's new offences — sit awkwardly with Convention case law on the high threshold for restricting peaceful assembly, an argument that has not yet been finally resolved by the senior courts.",
+          "Whichever way that plays out, the analytical skill this lesson exists to build doesn't change: identify which right is engaged, identify which statutory provision is actually in play (an old-style obstruction offence, where Ziegler's proportionality reasoning still does real work, or one of the newer standalone offences, where its role is narrower and contested), and only then reach for a conclusion — rather than reaching for 'Ziegler says protest is protected' as an answer that fits every fact pattern."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often cite Ziegler as though it generally protects disruptive protest from prosecution.",
+            "whyItsWrong": "Ziegler is a fact-sensitive decision about one specific statutory defence (lawful excuse under s 137 Highways Act 1980), decided on facts involving a partial, temporary, non-violent obstruction. It does not establish a general right to disrupt, it has been read narrowly in later cases with less sympathetic facts, and it has limited application to the newer standalone offences created by the Public Order Act 2023, which do not route liability through a 'lawful excuse' defence in the same way."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-15-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Protesters glue their hands to the entrance gates of an oil terminal, stopping tanker movements for several hours, intending to cause exactly that disruption. Which is the most accurate assessment of their likely liability?",
+          "options": ["They are likely to face liability under the Public Order Act 2023's locking-on and key infrastructure provisions, which do not depend on the Ziegler proportionality balancing exercise in the same way as an obstruction charge would", "They cannot be prosecuted at all, because Ziegler establishes that any protest engaging Articles 10 and 11 has a lawful excuse", "They can only be prosecuted under the original, unamended Public Order Act 1986, since the 2022 and 2023 Acts do not apply to environmental protest"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Gluing hands to a gate is squarely within the locking-on offence, and an oil terminal is a strong candidate for 'key national infrastructure' under the 2023 Act — liability here does not turn on the same lawful-excuse proportionality question Ziegler addressed.",
+          "feedbackIncorrect": "Ziegler does not create a general immunity for disruptive protest, and the 2022/2023 Acts are not limited to any one cause. This fact pattern — attachment causing serious disruption at critical infrastructure, done intentionally — maps closely onto the newer standalone offences."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-15-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Name the two Convention articles most commonly engaged in protest cases.",
+      "acceptableAnswers": ["Article 10 and Article 11", "freedom of expression and freedom of assembly", "Articles 10 and 11"],
+      "modelAnswer": "Article 10 (freedom of expression) and Article 11 (freedom of assembly and association)."
+    },
+    {
+      "itemId": "public-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Are Articles 10 and 11 absolute rights that can never be restricted?",
+      "options": ["No — they are qualified rights, restrictable under the conditions in paragraph 2 of each article", "Yes — they are absolute and admit no restriction"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-15-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the three requirements for lawfully restricting a qualified right?",
+      "options": ["Prescribed by law", "Legitimate aim", "Necessary in a democratic society (proportionate)", "Approved in advance by the Home Secretary personally"],
+      "correctIndex": 3,
+      "trapExplanation": "There is no requirement of personal Home Secretary sign-off in the Article 10(2)/11(2) test — the three actual limbs are legal basis, legitimate aim, and proportionality."
+    },
+    {
+      "itemId": "public-15-test-04",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under s 137 Highways Act 1980, what must a defendant show to avoid conviction for obstructing the highway?",
+      "options": ["A lawful excuse for the obstruction, which after Ziegler must include a proportionality assessment where Convention rights are engaged", "That the obstruction lasted less than one hour", "That no police officer was present at the time"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-15-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order these developments in the statutory protest framework chronologically.",
+      "items": ["Public Order Act 1986 establishes the core conditions regime for processions and assemblies", "DPP v Ziegler holds proportionality must be assessed within the 'lawful excuse' defence", "Police, Crime, Sentencing and Courts Act 2022 lowers the conditions threshold and adds a noise trigger", "Public Order Act 2023 creates standalone offences including locking on and interference with key infrastructure"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "public-15-test-06",
+      "type": "tapTheFact",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Tap the phrase that shows why the Ziegler outcome is described as fact-sensitive rather than a general rule protecting disruptive protest.",
+      "scenarioText": "The Supreme Court weighed the specific facts — a partial, temporary obstruction of two lanes, no violence, and the defendants having offered to move — and concluded that, on these facts, conviction would not be a proportionate response to the legitimate aim of keeping the highway clear.",
+      "tappableSpans": ["weighed the specific facts", "a partial, temporary obstruction of two lanes, no violence", "on these facts, conviction would not be a proportionate response"],
+      "correctSpan": "on these facts, conviction would not be a proportionate response",
+      "explanation": "The court's conclusion is explicitly tied to the facts of this obstruction, not a general statement that obstruction is protected activity — that's exactly why later cases with less sympathetic facts have reached different outcomes applying the same test."
+    },
+    {
+      "itemId": "public-15-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Ziegler, highlight the sentence stating the ratio.",
+      "passage": "The prosecution argued that any obstruction of the highway is, by definition, unlawful and no lawful excuse defence grounded in Convention rights can arise. The Supreme Court rejected that argument. Where a defendant's conduct is an exercise of rights under Articles 10 and 11, the question of lawful excuse cannot be resolved without assessing whether restricting that conduct is a proportionate response to a legitimate aim. On these facts, it was not, and the convictions were quashed.",
+      "ratioSentence": "Where a defendant's conduct is an exercise of rights under Articles 10 and 11, the question of lawful excuse cannot be resolved without assessing whether restricting that conduct is a proportionate response to a legitimate aim."
+    },
+    {
+      "itemId": "public-15-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is more likely to succeed on a Ziegler-style lawful excuse defence to a s 137 Highways Act obstruction charge?",
+      "scenarioA": "Protesters block one lane of a quiet side street for twenty minutes, move promptly when asked, and cause no injury or emergency-access issues.",
+      "scenarioB": "Protesters block all lanes of a motorway for six hours during rush hour, refuse repeated police requests to move, and delay an ambulance.",
+      "correctScenario": "A",
+      "explanation": "A mirrors the limited, temporary, cooperative obstruction in Ziegler itself, where proportionality favoured the defendants. B involves a longer, more disruptive, uncooperative obstruction with a safety consequence — factors that later courts have treated as tipping the same proportionality test the other way."
+    },
+    {
+      "itemId": "public-15-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A council imposes conditions on a planned march, citing the noise the march is expected to generate near a hospital, under the amended Public Order Act 1986 noise trigger introduced in 2022. Is this a valid basis for conditions, in principle?",
+      "options": ["Yes, in principle — the 2022 amendments added a noise-based trigger where noise may cause serious unease, alarm or distress, though the conditions must still be shown to be proportionate on the facts", "No — noise has never been a valid basis for conditions under the Public Order Act 1986", "Yes, automatically and without any proportionality requirement, because Parliament has already decided noise justifies conditions"],
+      "correctIndex": 0,
+      "explanation": "The 2022 amendments genuinely added a noise-based trigger, so it is capable in principle of justifying conditions — but the Article 10/11 proportionality question the lesson stresses throughout still has to be applied to the specific conditions imposed, not assumed away."
+    },
+    {
+      "itemId": "public-15-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A protester deliberately tunnels beneath a proposed road development site to delay construction, intending to cause serious disruption. Which statutory provision most directly targets this conduct?",
+      "options": ["The Public Order Act 2023's tunnelling offence, which does not depend on the s 137/Ziegler lawful excuse route", "Section 137 Highways Act 1980 obstruction, analysed under the Ziegler proportionality test", "The Public Order Act 1986's original conditions regime, unamended since 1986"],
+      "correctIndex": 0,
+      "explanation": "Tunnelling is a standalone offence created by the 2023 Act, illustrating exactly the shift the lesson describes: liability increasingly attaches through freestanding offences rather than through the Ziegler-style obstruction/lawful-excuse route."
+    },
+    {
+      "itemId": "public-15-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "Does the fact that a protest is peaceful and non-violent automatically mean any restriction on it fails the proportionality test?",
+      "options": ["No — peacefulness is a significant factor favouring the protester, but proportionality still depends on weighing all the facts, including the scale and duration of disruption", "Yes — a peaceful protest can never lawfully be restricted"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-15-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Protesters block the entrance to an airport terminal for four hours during a busy travel period, causing significant flight delays, and refuse to move when asked by police. They are charged with an offence under the Public Order Act 2023 relating to interference with key national infrastructure. Analyse their likely liability and whether a Ziegler-style defence assists them.",
+      "factsToOrder": [
+        "The protest blocks an airport terminal, a form of key national infrastructure",
+        "The blockage lasts four hours and causes significant flight delays",
+        "Protesters refuse repeated police requests to move",
+        "The charge is under a standalone Public Order Act 2023 offence, not s 137 Highways Act obstruction",
+        "Articles 10 and 11 are engaged in principle, but the statutory route to liability is different from Ziegler's"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the protesters are liable under the Public Order Act 2023's key infrastructure provisions, and whether a Ziegler-style proportionality defence assists them.",
+        "rule": "The 2023 Act creates standalone offences for interference with key national infrastructure that do not depend on the s 137 Highways Act 'lawful excuse' route Ziegler addressed; Articles 10 and 11 remain engaged in principle, but the statutory defences and proportionality analysis available differ from, and are generally narrower than, the Ziegler framework.",
+        "application": "An airport terminal is a clear example of key national infrastructure. Four hours of deliberate obstruction causing significant flight delays, combined with a refusal to comply with police requests, is a substantially more disruptive and less cooperative fact pattern than Ziegler's partial, temporary, cooperative obstruction. Even if a court were willing to import a Ziegler-style proportionality analysis into this offence, these facts point away from the protesters, not towards them.",
+        "conclusion": "The protesters face a strong likelihood of liability under the 2023 Act's infrastructure provisions; a Ziegler-style defence is unlikely to assist, both because the statutory route differs from the one Ziegler concerned and because these facts are considerably less favourable than Ziegler's own."
+      }
+    },
+    {
+      "itemId": "public-15-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why is it inaccurate to describe Ziegler as having 'settled' protest law?",
+      "options": ["Because Ziegler was later overruled entirely by the Supreme Court", "Because it was a fact-sensitive ruling on one statutory defence, and Parliament has since created new standalone offences that operate outside that framework, with compatibility questions still being litigated", "Because Ziegler was decided by a lower court with no binding authority"],
+      "correctIndex": 1,
+      "trapExplanation": "Ziegler was a Supreme Court decision and has not been overruled — the inaccuracy is treating a fact-specific ruling on one defence as a general, permanent settlement of protest law, when both the surrounding statutory framework and its compatibility with Articles 10/11 have continued to shift and be litigated since."
+    },
+    {
+      "itemId": "public-15-test-14",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario best illustrates the shift in the statutory framework since 2021, rather than a straightforward application of Ziegler?",
+      "scenarioA": "A protester is prosecuted for wilful obstruction of the highway under s 137, and argues proportionality under Articles 10 and 11 as part of a lawful excuse defence.",
+      "scenarioB": "A protester is prosecuted for the standalone locking-on offence under the Public Order Act 2023 after gluing themselves to a railway platform, a charge that does not depend on a 'lawful excuse' defence in the same way.",
+      "correctScenario": "B",
+      "explanation": "B is the newer route: a freestanding statutory offence created after Ziegler, illustrating exactly how the framework has moved beyond the obstruction/lawful-excuse structure that Ziegler's reasoning was built around."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is citing Ziegler as though it generally protects disruptive protest. It is a fact-sensitive ruling about one statutory defence, and a growing share of protest-related liability now runs through newer, standalone offences under the Public Order Act 2023 that don't route through Ziegler's proportionality question at all.",
+    "reviewMisses": true,
+    "linkToPathway": "public.human-rights.qualified-rights-protest"
+  }
+}

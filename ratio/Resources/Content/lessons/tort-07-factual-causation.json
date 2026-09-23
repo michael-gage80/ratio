@@ -1,0 +1,427 @@
+{
+  "lessonId": "tort-07",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 7,
+  "topicId": "tort.negligence.causation",
+  "title": "Factual causation",
+  "subtitle": "But for, material contribution, and the narrow Fairchild exception",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the 'but for' test for factual causation and explain why it is the default starting point in every negligence claim",
+    "Explain when and why courts depart from a strict but-for approach — material contribution to harm, and the narrow Fairchild exception for material contribution to risk",
+    "Apply the causation tests to new fact patterns, including explaining why loss-of-chance arguments in medical negligence generally fail"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Barnett v Chelsea & Kensington HMC [1969] 1 QB 428", "role": "States and applies the basic but-for test" },
+    { "citation": "Bailey v MoD [2008] EWCA Civ 883", "role": "Material contribution to harm where but-for cannot isolate one cause among cumulative causes" },
+    { "citation": "Fairchild v Glenhaven Funeral Services [2002] UKHL 22", "role": "Narrow exception: material contribution to the RISK of harm, developed for mesothelioma" },
+    { "citation": "Compensation Act 2006, s 3", "role": "Statutory rule apportioning liability between defendants in Fairchild-type mesothelioma claims" },
+    { "citation": "Gregg v Scott [2005] UKHL 2", "role": "Rejects loss-of-a-chance claims in medical negligence; confirms the all-or-nothing balance of probabilities approach" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Causation is where more marks are lost than in any other part of the negligence essay — not because the law is obscure, but because students reach for Fairchild the moment two possible causes appear, when almost every cumulative-cause problem is actually Bailey, or just Barnett with extra steps. Where the profile shows knowledge ahead of application, this note appears: 'You can define all three tests. This lesson is about knowing which one a given fact pattern actually calls for.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. Almost everything in the test pool below is a fact pattern that asks you to pick the right test and defend why the others don't fit — that's the skill this lesson is drilling.",
+      "weakKnowledge": "Go through Parts 1 to 4 in order and don't skip the case facts — the exception in Part 3 only makes sense once you've seen exactly what the ordinary tests in Parts 1 and 2 can't do."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A night porter is sent home from casualty without being examined, and dies of arsenic poisoning hours later. His widow sues — and loses, because the doctor would have made no difference: by the time he arrived, nothing could have saved him. Causation is the doctrine that decides, coldly and mathematically, whether a defendant's breach actually mattered. Most of the time the answer is a straightforward yes or no. This lesson is about the narrow, contested territory where it isn't.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The core tests are settled House of Lords/Supreme Court authority; the boundaries of the Fairchild exception remain actively litigated and narrowly confined by the courts."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The 'but for' test: causation's blunt instrument",
+        "voice": "clinical — lays out the test with deliberate coldness before showing where it bites",
+        "body": [
+          "Factual causation asks one question, and it asks it mechanically: but for the defendant's breach of duty, would the claimant have suffered the harm? If the answer is 'the harm would have happened anyway', the claim fails on causation, however clearly the defendant was at fault. Fault and causation are separate hurdles, and a claimant must clear both.",
+          "This is deliberately unforgiving. The test does not ask whether the defendant's conduct was blameworthy, or whether it increased the risk of harm in the abstract — it asks whether it made a difference to this claimant, on these facts, on the balance of probabilities. A defendant who behaved appallingly but changed nothing owes nothing in negligence.",
+          "The leading illustration is uncomfortable precisely because the defendant's failure was real and obvious, and the claim still failed. That combination — clear breach, no liability — is what makes but-for worth understanding properly rather than reciting."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "The 'but for' test",
+            "definition": "The default test for factual causation in negligence: the claimant must show that, on the balance of probabilities, the harm would not have occurred but for the defendant's breach of duty."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Barnett v Chelsea & Kensington Hospital Management Committee",
+            "citation": "[1969] 1 QB 428",
+            "court": "High Court (Queen's Bench)",
+            "year": 1969,
+            "factsShort": "A night watchman arrived at casualty vomiting after drinking tea, was sent away without examination, and died of arsenic poisoning hours later.",
+            "ratioShort": "The doctor's failure to examine him was a breach of duty, but the claim failed because he would have died of the poisoning regardless — the breach made no difference on the facts.",
+            "expanded": {
+              "facts": "William Barnett and two colleagues drank tea contaminated with arsenic. He attended the hospital's casualty department feeling unwell and vomiting repeatedly. The duty doctor, without examining him, told him to go home and see his own GP. Barnett died some hours later of arsenic poisoning.",
+              "judgmentExtract": "The court found the doctor owed and breached a duty of care by failing to examine a patient presenting at casualty. On the medical evidence, however, even prompt examination, diagnosis and treatment with the antidote then available could not have saved Barnett — the poisoning was already too advanced by the time he arrived.",
+              "significance": "Barnett is the canonical statement of but-for causation precisely because it separates breach from causation so cleanly: the breach is not in doubt, and the claim still fails. It is the case every causation answer should be tested against first, before reaching for any exception."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In Barnett, was the doctor found to have breached his duty of care?",
+          "options": ["Yes — breach was found, but the claim failed on causation", "No — the court found no breach at all"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — breach and causation are separate hurdles. Barnett cleared the first and fell at the second.",
+          "feedbackIncorrect": "Look again: the court did find a breach. What killed the claim was the medical evidence that nothing could have been done in time regardless."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "When 'but for' can't answer the question: cumulative causes",
+        "voice": "problem-solving — walks through the puzzle with the reader before naming the doctrine",
+        "body": [
+          "Here's the problem but-for cannot solve on its own. Suppose a claimant is harmed by two causes acting together — one tortious, one not — and medical science cannot say which one, alone, would have been sufficient to cause the harm. Ask 'but for the defendant's negligence, would the harm have occurred?' and there may be no clean answer, because the harm resulted from the combination, not from either cause in isolation.",
+          "This is exactly the problem in Bailey. A patient was made weak by a combination of naturally occurring pancreatitis and the hospital's negligently poor post-operative care. That combined weakness caused her to aspirate vomit and suffer cardiac arrest and brain damage. Nobody could say the negligent care alone would have caused the aspiration, nor that the pancreatitis alone would have — only that together, they did.",
+          "The Court of Appeal did not abandon but-for; it adapted it. Where an indivisible injury results from cumulative causes and the negligent cause made a material contribution to the harm — more than negligible, even if not the sole or dominant cause — that is enough. The claimant does not have to prove the negligence was necessary on its own; contributing materially to a single, indivisible outcome will do."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Material contribution to harm",
+            "definition": "Where an indivisible injury results from multiple cumulative causes, at least one tortious, and but-for cannot isolate a single sufficient cause, liability follows if the tortious cause made a material (more than negligible) contribution to the harm."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Bailey v Ministry of Defence",
+            "citation": "[2008] EWCA Civ 883",
+            "court": "Court of Appeal",
+            "year": 2008,
+            "factsShort": "Negligent post-operative care combined with the claimant's naturally occurring pancreatitis to leave her critically weak; that weakness caused her to aspirate and suffer brain damage.",
+            "ratioShort": "Where an indivisible injury has cumulative causes and but-for cannot isolate one, a tortious cause that materially contributed to the harm is a sufficient basis for liability.",
+            "expanded": {
+              "facts": "Claire Bailey underwent surgery and developed pancreatitis, a non-negligent complication. Her post-operative care at the hospital was also negligently substandard. The combined effect of the pancreatitis and the negligent care left her critically weakened; in that weakened state she vomited, aspirated, suffered cardiac arrest, and sustained hypoxic brain damage.",
+              "judgmentExtract": "The Court of Appeal held that where medical science could not establish that either cause alone was sufficient, but the negligent cause contributed materially — rather than negligibly — to the weakened state that led to the injury, causation was established. It was not necessary to prove the negligence would have caused the harm without the pancreatitis.",
+              "significance": "Bailey confirms that material contribution to harm is not an exception reserved for exotic disease cases — it is the ordinary response wherever but-for is defeated by two or more causes acting cumulatively on a single, indivisible injury. It is far more likely to appear on an exam paper than Fairchild."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-07-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these Bailey facts in the order they occurred.",
+          "items": [
+            "Bailey undergoes surgery and develops pancreatitis",
+            "Post-operative care is negligently substandard",
+            "The combined weakness leads her to aspirate vomit",
+            "She suffers cardiac arrest and brain damage"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the chain the court had to reason through — two causes acting together on one outcome, which is exactly why but-for alone couldn't resolve it.",
+          "feedbackIncorrect": "Reorder around when each cause arose relative to the aspiration event — the pancreatitis and the negligent care both precede and combine to produce the weakness that causes the aspiration."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The narrow exception: material contribution to RISK",
+        "voice": "cautionary — frames the doctrine as an exceptional departure hedged with warnings",
+        "body": [
+          "Treat this part with more suspicion than the last two. What you are about to read is not a general rule for cumulative-cause cases — it is a narrow, judicially uncomfortable exception, created for one disease, and courts have repeatedly said so since.",
+          "Mesothelioma is caused by inhaling asbestos fibres, but medical science cannot say which single fibre, from which exposure, triggered the cancer — unlike Bailey's cumulative weakening, the disease is thought to be caused by one fibre, and any of several employers' negligent exposures might have supplied it. Ordinary but-for is impossible to satisfy: a claimant exposed by three negligent employers in succession cannot prove, on the balance of probabilities, which one caused the disease — so on a strict approach, none of them would be liable, and a claimant who proves negligence against everyone still recovers nothing.",
+          "The House of Lords in Fairchild refused to accept that result. Where a claimant cannot prove which of several negligent exposures caused the disease, because of a genuine evidential gap in medical science rather than a mere shortage of evidence, it is enough to show that each defendant's breach materially increased the risk of contracting it. That is a real departure from but-for: liability for increasing a risk, not for causing the harm on the facts.",
+          "Parliament then had to decide how liable defendants share the damages, since more than one may have contributed to the risk. Section 3 of the Compensation Act 2006 provides that where Fairchild liability is established, each responsible defendant is liable for the whole of the damage — not merely a share proportionate to their contribution to risk — leaving defendants to seek contribution from each other. The claimant is protected from the risk that an insolvent or untraceable employer leaves them under-compensated."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Compensation Act 2006, s 3",
+            "text": "This section applies where a person ('the responsible person') has negligently or in breach of statutory duty caused or permitted another person ('the victim') to be exposed to asbestos, the victim has contracted mesothelioma as a result of exposure to asbestos, and because of the nature of mesothelioma and the state of medical science, it is not possible to determine with certainty whether it was the exposure caused by the responsible person, or another exposure, which caused the victim to become ill. The responsible person is liable in respect of the whole of the damage caused to the victim by the disease.",
+            "elements": ["Negligent or unlawful exposure to asbestos", "Victim contracts mesothelioma", "Scientific impossibility of identifying the specific causative exposure", "Responsible person liable for the whole of the damage, subject to a right of contribution from other responsible persons"]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Fairchild v Glenhaven Funeral Services Ltd",
+            "citation": "[2002] UKHL 22",
+            "court": "House of Lords",
+            "year": 2002,
+            "factsShort": "Claimants developed mesothelioma after being negligently exposed to asbestos by successive employers, with no way to prove which exposure caused the disease.",
+            "ratioShort": "Exceptionally, where but-for causation cannot be proved because of an evidential gap inherent in the disease itself, a defendant who materially increased the risk of the claimant contracting it can be held liable.",
+            "expanded": {
+              "facts": "Several claimants (or their dependants) had worked for more than one employer over their careers, each of which had negligently exposed them to asbestos dust. Each subsequently developed mesothelioma. Medical evidence could not identify which particular period of exposure had caused the disease to develop, and could not even say whether it was cumulative exposure or a single fibre.",
+              "judgmentExtract": "The House of Lords held that ordinary but-for causation, applied strictly, would leave claimants who could prove negligence against every possible employer with no remedy against any of them — a result their Lordships regarded as unacceptable given the nature of the injustice. Exceptionally, proof that a defendant's breach materially increased the risk of the claimant contracting the disease would satisfy causation.",
+              "significance": "Fairchild is repeatedly described by later courts as confined to its own facts and analogous single-agent, indivisible-disease cases — it has not been extended into a general 'increased risk' principle for negligence claims generally, and subsequent cases (including on the multiple-employer question of how damages divide, addressed by s 3) have kept it on a short leash."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often reach for Fairchild whenever a problem question involves two or more possible causes of harm, treating 'material contribution to risk' as a general fallback whenever but-for is hard to prove.",
+            "whyItsWrong": "Fairchild is confined to cases with the specific structural features of mesothelioma: a single indivisible disease, a genuine scientific impossibility (not just difficulty) in identifying the causative exposure, and multiple negligent exposures to the same causative agent. Most cumulative-cause problems — including anything resembling Bailey's combined weakening — are decided by material contribution to harm, not this exception. Reach for Fairchild only when the facts genuinely mirror its narrow structure."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-07-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that makes this scenario a genuine candidate for the Fairchild exception, rather than ordinary material contribution to harm.",
+          "scenarioText": "Ravi worked for three successive employers, each of whom negligently exposed him to asbestos dust. He later developed mesothelioma. Medical science cannot identify which single exposure, of the three, caused the disease to develop.",
+          "tappableSpans": ["three successive employers", "negligently exposed him to asbestos dust", "developed mesothelioma", "medical science cannot identify which single exposure"],
+          "correctSpan": "medical science cannot identify which single exposure",
+          "feedbackCorrect": "That's the trigger. It isn't the number of employers or the fact of exposure alone — it's the genuine scientific impossibility of identifying the causative exposure that takes this outside ordinary but-for and into Fairchild territory.",
+          "feedbackIncorrect": "The number of employers and the fact of asbestos exposure are present in many ordinary causation problems. What makes this Fairchild specifically is the scientific impossibility of ever identifying which exposure caused the disease."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Loss of a chance: why 'balance of probabilities' bites hardest here",
+        "voice": "statistical — leans into the probability logic underlying the law rather than narrating facts first",
+        "body": [
+          "Run the numbers on a familiar fact pattern. A patient has a condition that, untreated, carries a 45% chance of survival. Negligent delay in diagnosis reduces that chance to 25%. Has the doctor caused the patient's death?",
+          "On a strict balance-of-probabilities approach, the answer is no — and this is the crux of Gregg v Scott. Before the negligence, the patient's chance of survival was already below 50%. That means, on the balance of probabilities, he was always more likely than not to die of the disease regardless of any delay. The negligence reduced an already-losing chance; it did not convert a winning chance into a losing one. English law asks 'what would probably have happened?', not 'how much did the odds worsen?' — and probably, on these numbers, he would have died anyway.",
+          "The claimant in Gregg v Scott argued for a different measure: compensation for the lost percentage points themselves — the reduction in his chance of survival, treated as a freestanding loss, regardless of what would 'probably' have happened. The House of Lords rejected this, by a narrow majority, for medical negligence claims. The law's 'all or nothing' approach means a claimant whose chance was already under 50% recovers nothing for its further reduction, however real and measurable that reduction is statistically.",
+          "The rationale is not indifference to injustice — several of their Lordships acknowledged the harshness. It is a structural worry: medicine is saturated with probabilistic uncertainty, and allowing loss-of-chance claims across the board would unravel the balance-of-probabilities rule that underpins the whole of causation, turning nearly every failed causation case into a percentage-based damages claim instead. Loss of a chance survives as a recognised head of loss elsewhere — notably in claims for pure financial loss, such as a lost commercial opportunity — but has been kept out of clinical negligence."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Loss of a chance (medical negligence)",
+            "definition": "A claim that a defendant's negligence reduced the claimant's statistical chance of a better outcome, rather than caused the outcome itself on the balance of probabilities. Gregg v Scott confirms such claims generally fail in medical negligence: causation is decided all-or-nothing on the balance of probabilities, not by compensating a reduced percentage chance."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Gregg v Scott: the arithmetic that decided the case",
+            "points": [
+              "Pre-negligence chance of survival: 42% (already below 50%)",
+              "Post-negligence (delayed diagnosis) chance of survival: 25%",
+              "On the balance of probabilities, the claimant was always more likely than not to die of the disease, negligence or not",
+              "Held: no recoverable loss, because causation asks what would probably have happened, not how much a losing chance worsened",
+              "The result might differ if delay had reduced a chance from above 50% to below it — that scenario remains genuinely unsettled"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-07-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that Gregg v Scott allows a claimant to recover damages simply for a reduced percentage chance of survival, separate from the balance-of-probabilities question?",
+          "sliderLabels": ["Definitely allows it", "Definitely rejects it"],
+          "correctPosition": "rejects it",
+          "explanation": "Gregg v Scott rejected the loss-of-a-chance measure for medical negligence. Causation remains all-or-nothing on the balance of probabilities: a claimant whose chance was already under 50% before the negligence recovers nothing, however real the further reduction."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it together: the causation decision path",
+        "voice": "exam-focused — direct address to the student, anticipating exactly where marks are lost",
+        "body": [
+          "Here is the sequence an examiner expects you to run, in order, every time causation is in issue. Skipping straight to Fairchild because a problem question mentions more than one possible cause is the single most common way to lose marks in this topic — so walk the sequence properly rather than pattern-matching on 'multiple causes' alone.",
+          "Start with but-for, always. Ask whether the harm would have occurred regardless of the breach. If but-for is satisfied cleanly, stop — you do not need any exception, and reaching for one when the ordinary test works is itself a sign of confused analysis.",
+          "If but-for cannot resolve the question because two or more causes combined to produce a single, indivisible injury, ask whether the tortious cause made a material contribution to that harm — this is Bailey, and it resolves the overwhelming majority of cumulative-cause problems you will see.",
+          "Reserve Fairchild for the narrow structural case: a single indivisible disease caused by one causative agent, where science cannot identify which of several negligent exposures supplied it. If the Compensation Act 2006 s 3 fact pattern (mesothelioma, multiple employers, genuine scientific impossibility) isn't clearly present, Fairchild is very unlikely to be the right answer.",
+          "Finally, if the claimant's real complaint is a reduced statistical chance of a better outcome rather than the outcome itself, remember Gregg v Scott: outside financial loss, that claim almost always fails, because English law will not trade the all-or-nothing balance-of-probabilities rule for a percentages-based one in clinical negligence."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Factual causation: which test applies?",
+            "description": "The decision sequence for factual causation problems in negligence.",
+            "nodes": [
+              { "id": "start", "label": "Would the harm have occurred but for the breach?" },
+              { "id": "yes-butfor", "label": "Yes → no factual causation, claim fails here" },
+              { "id": "no-butfor", "label": "No, or cannot be resolved → is the injury indivisible and caused by two or more cumulative causes?" },
+              { "id": "cumulative", "label": "Yes → ask whether the tortious cause materially contributed to the harm (Bailey)" },
+              { "id": "not-cumulative", "label": "No → is this a single-agent, indivisible disease where science cannot identify the causative exposure among several negligent ones?" },
+              { "id": "fairchild", "label": "Yes → material contribution to risk may suffice (Fairchild; damages under Compensation Act 2006, s 3)" },
+              { "id": "chance", "label": "No → is the real complaint a reduced statistical chance rather than the outcome itself?" },
+              { "id": "gregg", "label": "Yes → loss of chance almost always fails in medical negligence (Gregg v Scott)" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-butfor", "label": "Harm inevitable anyway" },
+              { "from": "start", "to": "no-butfor", "label": "Cannot resolve on but-for alone" },
+              { "from": "no-butfor", "to": "cumulative", "label": "Indivisible injury, cumulative causes" },
+              { "from": "no-butfor", "to": "not-cumulative", "label": "Not a cumulative-harm case" },
+              { "from": "not-cumulative", "to": "fairchild", "label": "Single-agent disease, exposure unidentifiable" },
+              { "from": "not-cumulative", "to": "chance", "label": "Not that structure" },
+              { "from": "chance", "to": "gregg", "label": "Statistical-chance complaint" }
+            ],
+            "textAlternative": "First ask whether the harm would have occurred but for the breach — if yes, the claim fails there. If but-for cannot be resolved, check whether the injury is indivisible and results from cumulative causes: if so, ask whether the tortious cause materially contributed to the harm (Bailey). If it is not a cumulative-harm case, check whether it is a single-agent, indivisible disease where science cannot identify the causative exposure among several negligent ones — if so, material contribution to risk may suffice under Fairchild, with damages governed by Compensation Act 2006 s 3. If none of that applies and the real complaint is a reduced statistical chance rather than the outcome itself, remember that loss-of-chance claims almost always fail in medical negligence under Gregg v Scott."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-07-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario calls for the Fairchild material-contribution-to-risk exception, rather than Bailey's material contribution to harm?",
+          "scenarioA": "A patient's post-surgical infection and a hospital's negligently delayed antibiotics combine to cause organ damage; doctors cannot say either cause alone would have been sufficient.",
+          "scenarioB": "A former shipyard worker develops mesothelioma after negligent asbestos exposure at four different employers over thirty years; no test can identify which employer's exposure caused the disease.",
+          "correctScenario": "B",
+          "explanation": "B has Fairchild's specific structure: a single indivisible disease caused by one agent, with a genuine scientific impossibility of identifying which of several negligent exposures caused it. A is an ordinary cumulative-cause case with an indivisible injury — textbook Bailey, not Fairchild."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-07-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the basic 'but for' test for factual causation in negligence.",
+      "acceptableAnswers": ["but for the defendant's breach, would the harm have occurred", "would the harm have happened anyway without the breach", "the harm would not have occurred but for the breach, on the balance of probabilities"],
+      "modelAnswer": "The claimant must show that, on the balance of probabilities, the harm would not have occurred but for the defendant's breach of duty."
+    },
+    {
+      "itemId": "tort-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "In Barnett v Chelsea & Kensington HMC, why did the claim ultimately fail?",
+      "options": ["The doctor did not owe a duty of care", "The doctor breached his duty, but the claimant would have died of the poisoning regardless"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "tort-07-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following correctly distinguishes material contribution to harm (Bailey) from the Fairchild exception?",
+      "options": ["Bailey applies to cumulative causes acting together on an indivisible injury; Fairchild applies to a single-agent disease where the causative exposure cannot be identified among several negligent ones", "Bailey applies only to mesothelioma; Fairchild applies to all cumulative-cause cases", "There is no meaningful difference — the two tests are interchangeable"],
+      "correctIndex": 0,
+      "trapExplanation": "It is easy to mix these up because both depart from strict but-for. The distinguishing feature is structural: Bailey involves causes combining to produce harm; Fairchild involves a genuine scientific inability to identify which single exposure, among several, produced an indivisible disease."
+    },
+    {
+      "itemId": "tort-07-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under Compensation Act 2006, s 3, where Fairchild liability is established against multiple employers, how is a responsible defendant's liability for damages structured?",
+      "options": ["Each responsible defendant is liable for the whole of the damage, subject to seeking contribution from other responsible defendants", "Each responsible defendant is liable only for a share proportionate to the length of their exposure", "Liability is joint only where all responsible defendants can be identified and sued together"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-07-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the reasoning steps the House of Lords followed in Fairchild.",
+      "items": ["Claimants prove negligent asbestos exposure by more than one employer", "Medical science cannot identify which exposure caused the mesothelioma", "Strict but-for would leave every claimant unable to prove causation against any employer", "The House of Lords accepts material contribution to risk as sufficient, exceptionally"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "tort-07-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Gregg v Scott, highlight the sentence that states the ratio.",
+      "passage": "The claimant's chance of survival before the negligent delay was already below fifty per cent. English law determines causation on the balance of probabilities, asking what would probably have happened rather than how much a losing chance was further reduced. Because the claimant was, on balance, always more likely than not to die of the disease, there is no recoverable loss for the reduction in his chance of survival.",
+      "ratioSentence": "English law determines causation on the balance of probabilities, asking what would probably have happened rather than how much a losing chance was further reduced."
+    },
+    {
+      "itemId": "tort-07-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that the Fairchild exception has since been extended into a general rule for any case where but-for is hard to prove?",
+      "sliderLabels": ["Fully extended into a general rule", "Kept strictly narrow and exceptional"],
+      "correctPosition": "Kept strictly narrow and exceptional",
+      "explanation": "Courts have repeatedly confined Fairchild to its own facts and closely analogous single-agent disease cases. It has not become a general 'increased risk' principle for negligence."
+    },
+    {
+      "itemId": "tort-07-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A patient's negligent post-operative neglect combines with an unrelated, naturally occurring infection to cause organ failure. Experts agree neither cause alone would definitely have caused the failure, but cannot say which contributed more. What is the correct approach to causation?",
+      "options": ["Apply but-for strictly — since neither cause alone is proven sufficient, the claim must fail", "Apply material contribution to harm — if the negligent cause made a material, more than negligible contribution to the indivisible injury, causation is established", "Apply Fairchild — treat this as material contribution to risk"],
+      "correctIndex": 1,
+      "explanation": "This is a textbook Bailey scenario: an indivisible injury with cumulative causes, where but-for cannot isolate one. Material contribution to harm, not Fairchild, is the correct test."
+    },
+    {
+      "itemId": "tort-07-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A claimant's pre-existing heart condition gave him a 30% chance of surviving five years even with prompt treatment. A negligent delay in referral reduced that chance to 15%. Applying Gregg v Scott, is he likely to recover damages for the reduction in his chance of survival?",
+      "options": ["No — his chance was already below 50% before the negligence, so on the balance of probabilities he would probably not have survived regardless", "Yes — any measurable reduction in a statistical chance is recoverable in medical negligence", "Yes, but only for the specific percentage points lost"],
+      "correctIndex": 0,
+      "explanation": "As in Gregg v Scott itself, a pre-negligence chance already under 50% means the claimant was always more likely than not to suffer the adverse outcome. The all-or-nothing rule defeats the claim."
+    },
+    {
+      "itemId": "tort-07-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that makes but-for causation straightforwardly satisfied in this scenario, without needing any exception.",
+      "scenarioText": "A surgeon negligently leaves a swab inside a patient during an operation. The patient later requires a second operation solely to remove it, causing pain, scarring and time off work that would not otherwise have occurred.",
+      "tappableSpans": ["negligently leaves a swab", "requires a second operation solely to remove it", "pain, scarring and time off work", "would not otherwise have occurred"],
+      "correctSpan": "would not otherwise have occurred",
+      "explanation": "Because the harm is directly and solely attributable to the swab being left in, but-for is satisfied cleanly: without the negligence, none of the second-operation harm would have happened. No cumulative-cause or risk-based exception is needed."
+    },
+    {
+      "itemId": "tort-07-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario most closely mirrors Barnett, rather than Bailey?",
+      "scenarioA": "A hospital negligently fails to treat a patient who was already going to die of an unrelated, untreatable condition within hours regardless of any treatment given.",
+      "scenarioB": "A patient's negligent lack of monitoring combines with a naturally occurring blood clot to cause a stroke, and doctors cannot say which alone would have been sufficient.",
+      "correctScenario": "A",
+      "explanation": "A is Barnett: the breach makes no difference because the harm would have occurred regardless — a clean but-for failure. B is Bailey: two causes combining on an indivisible injury, calling for material contribution to harm."
+    },
+    {
+      "itemId": "tort-07-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Farida worked for two employers, both of which negligently exposed her to asbestos over a twenty-year career. She has now been diagnosed with mesothelioma, and no medical test can determine which employer's exposure caused the disease. Analyse whether Farida can establish factual causation against both employers.",
+      "factsToOrder": [
+        "Farida was negligently exposed to asbestos by two separate employers",
+        "She developed mesothelioma, a single indivisible disease caused by asbestos fibre inhalation",
+        "Medical science cannot identify which employer's exposure caused the disease",
+        "Ordinary but-for causation cannot be proved against either employer individually"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Farida can establish factual causation against either or both employers despite being unable to prove, on but-for grounds, which exposure caused her mesothelioma.",
+        "rule": "Ordinarily a claimant must prove but-for causation on the balance of probabilities. Exceptionally, under Fairchild v Glenhaven, where a claimant develops mesothelioma after negligent exposure by more than one employer and medical science cannot identify the causative exposure, proof that a defendant's breach materially increased the risk of contracting the disease is sufficient. Compensation Act 2006, s 3 then makes each responsible employer liable for the whole of the damage, subject to a right of contribution between them.",
+        "application": "Farida's case matches the Fairchild structure precisely: a single indivisible disease (mesothelioma), caused by a single agent (asbestos fibres), with a genuine scientific impossibility of identifying which of the two negligent exposures caused it. Ordinary but-for causation is unavailable against either employer alone, but each employer's negligent exposure materially increased her risk of contracting the disease.",
+        "conclusion": "Farida can establish causation against both employers under the Fairchild exception; under s 3 of the Compensation Act 2006, each is liable for the whole of the damage, leaving them to seek contribution from one another."
+      }
+    },
+    {
+      "itemId": "tort-07-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant's pre-negligence chance of a favourable outcome was 60%, reduced by negligent delay to 40%. Is this the settled Gregg v Scott scenario?",
+      "options": ["No — Gregg v Scott left open what happens when negligence takes a chance from above 50% to below it; this crosses that threshold and is not clearly settled", "Yes — this is identical to the facts of Gregg v Scott"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-07-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why did the House of Lords in Gregg v Scott refuse to recognise a general loss-of-a-chance claim in medical negligence?",
+      "options": ["Because doctors cannot be sued for any negligent diagnosis", "Because allowing it would risk unravelling the balance-of-probabilities approach that underpins causation generally, given how pervasive statistical uncertainty is in medicine", "Because the claimant had not proved any negligence at all"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers misstate the case entirely — negligence was not in doubt, and doctors remain liable on ordinary principles. The real reasoning is structural: the majority feared that a percentages-based measure would displace the all-or-nothing balance-of-probabilities rule across the whole of clinical negligence."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is reaching for the Fairchild exception whenever a fact pattern mentions more than one possible cause. Run but-for first, then Bailey's material contribution to harm for ordinary cumulative causes, and reserve Fairchild for the narrow single-agent, indivisible-disease structure it was actually built for.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.causation"
+  }
+}

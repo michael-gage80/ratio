@@ -1,0 +1,531 @@
+{
+  "lessonId": "tort-01",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 1,
+  "topicId": "tort.negligence.duty-of-care",
+  "title": "Duty of care",
+  "subtitle": "The modern approach — from the neighbour principle to incremental categories",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the neighbour principle and explain why it remains the conceptual root of the duty of care despite later refinement",
+    "Explain Caparo's three-stage approach and identify when it is — and is not — the right tool to reach for",
+    "Apply the modern incremental, category-based approach to a novel fact pattern, reasoning by analogy rather than re-running Caparo from scratch"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Donoghue v Stevenson [1932] AC 562",
+      "role": "Source of the neighbour principle — the conceptual root of the modern duty of care"
+    },
+    {
+      "citation": "Caparo v Dickman [1990] 2 AC 605",
+      "role": "Three-stage approach (foreseeability, proximity, fair/just/reasonable) for novel duty situations"
+    },
+    {
+      "citation": "Robinson v Chief Constable of West Yorkshire [2018] UKSC 4",
+      "role": "Supreme Court confirms the incremental, precedent-based approach as the default; Caparo is not run afresh where an established duty category applies"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Almost every negligence problem question opens with a duty-of-care paragraph, and almost every student reaches for Caparo by reflex. Where the profile shows understanding lagging behind knowledge, this note appears: 'You can recite the three stages — this lesson is about knowing when you're even allowed to use them.'",
+    "profileHooks": {
+      "weakApplication": "You know the tests. The test pool below leans towards understanding the architecture — when Caparo applies and when it doesn't — because that's what separates a good duty paragraph from a template one.",
+      "weakKnowledge": "Slow down on Parts 1 and 2 before the rest of the lesson. Everything after assumes you can state the neighbour principle and the three Caparo stages without hesitation."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A decomposed snail, a bottle of ginger beer, and a café in Paisley: from that unpromising start, an entire branch of law grew. Nearly a century later, the Supreme Court is still deciding how much of the original idea to keep — and how much of it students misapply by treating a general principle as if it were a rigid checklist.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. Robinson (2018) is treated as settled and current Supreme Court doctrine; watch for further appellate refinement of the boundary between established categories and genuinely novel duty situations."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The neighbour who never appears",
+        "voice": "historical-narrative",
+        "body": [
+          "In 1928, May Donoghue's friend bought her a bottle of ginger beer at a café in Paisley. Partway through the glass, the decomposed remains of a snail floated out of the opaque bottle. Donoghue became ill — and had a legal problem, because she had no contract with anyone. Her friend had bought the drink; Donoghue had only drunk it. Contract law, the obvious route to a remedy, was closed to her entirely.",
+          "The case went to the House of Lords, and Lord Atkin's speech did something contract law could never have done: it asked not 'who did you pay?' but 'who might your actions foreseeably harm?'. His answer — now recited by every law student in the country — was that you must take reasonable care to avoid acts or omissions which you can reasonably foresee would be likely to injure your neighbour, and that your neighbour is anyone so closely and directly affected by your act that you ought reasonably to have them in contemplation.",
+          "Notice what Lord Atkin was not doing. He was not handing down a three-part test, a checklist, or anything mechanical. He was stating a moral and organising principle — a reason why the law of negligence should exist at all — and leaving its precise boundaries to be worked out case by case, over decades, by later courts. Everything in the rest of this lesson is that working-out."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "citation": "[1932] AC 562",
+            "court": "House of Lords",
+            "year": 1932,
+            "factsShort": "Donoghue drank ginger beer, bought for her by a friend, from an opaque bottle that turned out to contain a decomposed snail. She had no contract with the café or the manufacturer.",
+            "ratioShort": "A manufacturer owes a duty of care to the ultimate consumer of its product, founded on the general 'neighbour principle': reasonable care must be taken to avoid acts or omissions reasonably foreseeable to injure persons so closely and directly affected that they ought to be in contemplation.",
+            "expanded": {
+              "facts": "Donoghue's friend purchased a bottle of ginger beer manufactured by Stevenson from a café in Paisley. The bottle was opaque, so its contents could not be inspected before pouring. After Donoghue had consumed some of the drink, the decomposing remains of a snail emerged as the bottle was refilled into her glass. She suffered shock and gastroenteritis. Because she had not purchased the drink herself, she had no contractual relationship with either the café or the manufacturer, and so could not sue in contract.",
+              "judgmentExtract": "Lord Atkin: 'You must take reasonable care to avoid acts or omissions which you can reasonably foresee would be likely to injure your neighbour. Who, then, in law is my neighbour? The answer seems to be — persons who are so closely and directly affected by my act that I ought reasonably to have them in contemplation as being so affected when I am directing my mind to the acts or omissions which are called in question.'",
+              "significance": "This is the founding case of the modern law of negligence. It established that liability in tort does not depend on a contractual relationship, and it supplied the 'neighbour principle' as the underlying rationale for duty of care — a rationale later courts would refine, narrow and structure, but never entirely discard. Every subsequent duty-of-care test, including Caparo, is an attempt to give Lord Atkin's broad principle workable edges."
+            },
+            "caseName": "Donoghue v Stevenson"
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-01-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Why did Donoghue need a new legal principle, rather than simply suing in contract?",
+          "options": [
+            "She had no contract with the café or manufacturer — her friend had purchased the drink, not her",
+            "Contract law does not cover defective products at all",
+            "She was suing for a different injury than gastroenteritis"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The absence of a contractual link is exactly what forced the House of Lords to articulate a freestanding basis for liability — the neighbour principle.",
+          "feedbackIncorrect": "Look again at who bought the ginger beer. Donoghue drank it but didn't buy it — that gap in contractual privity is what the neighbour principle was built to fill."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Caparo: a tool built for edge cases, not everyday ones",
+        "voice": "argumentative",
+        "body": [
+          "By 1990, the neighbour principle alone had proved too loose to control an ever-expanding law of negligence — courts needed something more structured for hard cases, especially where the harm was purely economic rather than physical. Caparo v Dickman supplied it: a claimant must show the harm was reasonably foreseeable, that there was sufficient proximity between claimant and defendant, and that imposing a duty would be fair, just and reasonable.",
+          "Here is the argument this part wants you to internalise, because it is where most students go wrong: Caparo was never meant to be run, from scratch, in every negligence problem you ever answer. Lord Bridge himself was cautious about the three stages hardening into a rigid formula, and warned against treating them as a definition capable of universal application. The test was designed for situations genuinely new to the law — where no prior case tells you whether a duty exists.",
+          "Push back on the instinct to open every duty paragraph with 'applying Caparo'. If the claimant is a road user injured by a careless driver, or a patient injured by a negligent doctor, the duty question was settled decades ago by analogous cases — running Caparo there isn't wrong exactly, but it signals to an examiner that you haven't understood the difference between confirming an established duty and constructing a new one. The three-stage test is a tool for the frontier, not the whole map."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "citation": "[1990] 2 AC 605",
+            "court": "House of Lords",
+            "year": 1990,
+            "factsShort": "Caparo relied on audited accounts prepared by Dickman when making a takeover bid, and suffered loss when the accounts proved inaccurate. The question was whether the auditors owed a duty of care to a prospective investor relying on the accounts for that purpose.",
+            "ratioShort": "For a novel duty situation, courts should ask whether harm was reasonably foreseeable, whether there was a relationship of proximity, and whether it is fair, just and reasonable to impose a duty — three cumulative, interrelated requirements rather than a mechanical checklist.",
+            "expanded": {
+              "facts": "Caparo Industries purchased shares in Fidelity plc and later made a successful takeover bid, relying in part on annual accounts audited by Dickman. The accounts turned out to overstate Fidelity's profits substantially. Caparo argued the auditors owed it a duty of care as a potential investor and takeover bidder relying on the audited accounts.",
+              "judgmentExtract": "Lord Bridge: 'In addition to the foreseeability of damage, necessary ingredients in any situation giving rise to a duty of care are that there should exist between the party owing the duty and the party to whom it is owed a relationship characterised by the law as one of \"proximity\" or \"neighbourhood\" and that the situation should be one in which the court considers it fair, just and reasonable that the law should impose a duty... The concepts of proximity and fairness embodied in these additional ingredients are not susceptible of any such precise definition as would be necessary to give them utility as practical tests.'",
+              "significance": "Caparo is the leading formulation of the modern three-stage test, but Lord Bridge's own words caution against exactly the mechanical over-use later generations of students would make of it. The House of Lords held no duty was owed here — auditors preparing statutory accounts could not reasonably be taken to have a class of future, unidentified takeover bidders in contemplation for that specific purpose, so proximity failed even though foreseeability was arguably present."
+            },
+            "caseName": "Caparo Industries plc v Dickman"
+          },
+          {
+            "type": "keyConcept",
+            "term": "Novel duty situation",
+            "definition": "A fact pattern not already covered by an established category of duty recognised in prior case law — the only setting in which the Caparo three-stage test is the primary analytical tool, per Robinson."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-01-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the extract below from Caparo, highlight the sentence that most directly cautions against treating the three stages as a rigid, precisely-defined formula.",
+          "passage": "In addition to the foreseeability of damage, necessary ingredients in any situation giving rise to a duty of care are that there should exist between the party owing the duty and the party to whom it is owed a relationship characterised by the law as one of proximity or neighbourhood and that the situation should be one in which the court considers it fair, just and reasonable that the law should impose a duty. The concepts of proximity and fairness embodied in these additional ingredients are not susceptible of any such precise definition as would be necessary to give them utility as practical tests.",
+          "ratioSentence": "The concepts of proximity and fairness embodied in these additional ingredients are not susceptible of any such precise definition as would be necessary to give them utility as practical tests.",
+          "feedbackCorrect": "That's the key caution — Lord Bridge is explicitly warning that 'proximity' and 'fair, just and reasonable' resist the kind of precise, mechanical definition that would let them function as a simple checklist.",
+          "feedbackIncorrect": "Look for the sentence about definition and 'practical tests' — that's where Lord Bridge undercuts the idea of Caparo as a rigid formula."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Robinson: the Supreme Court chooses precedent over principle-hunting",
+        "voice": "structural",
+        "body": [
+          "Robinson v Chief Constable of West Yorkshire (2018) is the case that finally settled — at Supreme Court level — how Caparo should actually be used. The facts were almost mundane: police officers arresting a suspect on a street knocked over an elderly bystander, Mrs Robinson, injuring her. The Court of Appeal had approached this through a full Caparo analysis, asking afresh whether it was fair, just and reasonable to impose a duty on police officers in this situation.",
+          "The Supreme Court corrected that approach. Lord Reed held that the standard approach in the great majority of cases is not to reason through Caparo's three stages at all, but to ask whether the situation is analogous to one already covered by established authority. Here, ordinary principles of negligence already impose a duty on anyone who carries out a positive act to take reasonable care not to injure others physically nearby — police officers are not a special category exempt from that ordinary duty simply because they were performing an operational function.",
+          "This is the structural point to hold onto for the rest of your studies: the modern law works incrementally. Courts extend duty by analogy to established categories (road users, employers, occupiers, doctors and patients) rather than reopening first principles each time. Caparo is reserved for the genuinely novel case — new technology, new types of loss, new relationships — where no analogy fits."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "citation": "[2018] UKSC 4",
+            "court": "Supreme Court",
+            "year": 2018,
+            "factsShort": "Police officers arresting a suspect on a busy street collided with and knocked over an elderly bystander, Mrs Robinson, causing injury. The Court of Appeal had asked whether it was fair, just and reasonable to impose a duty on police in an operational policing context.",
+            "ratioShort": "Where a duty situation is already covered by established authority, courts should reason incrementally by analogy to precedent rather than applying Caparo's three-stage test afresh; Caparo is reserved for genuinely novel situations.",
+            "expanded": {
+              "facts": "Police officers were attempting to arrest a suspected drug dealer on a public street in Huddersfield. A struggle broke out, and the officers and suspect collided with Mrs Robinson, a 76-year-old bystander, knocking her to the ground and causing her injury. She sued the police for negligence. The lower courts had treated the question as whether policy considerations made it fair, just and reasonable to impose a duty on police performing operational law-enforcement functions.",
+              "judgmentExtract": "Lord Reed: 'It is normally only in a novel type of case, where established principles do not provide an answer, that the courts need to go beyond those principles in order to decide whether a duty of care should be recognised... Following the trend of cases such as the present, in which the court has focused not on the question whether the imposition of a duty of care would be fair, just and reasonable, but on whether the case falls within an established category in which a duty of care has been held to exist, or whether it is analogous to such a case.'",
+              "significance": "Robinson is the Supreme Court's clearest modern statement that Caparo is not the default starting point for duty of care. Established categories — including the ordinary duty not to physically injure others by a positive act, which applies to police as much as anyone — are simply applied or extended by analogy. This corrected a drift, visible in some lower-court reasoning, towards treating Caparo as a mandatory checklist for every negligence claim regardless of how well-trodden the ground was."
+            },
+            "caseName": "Robinson v Chief Constable of West Yorkshire Police"
+          },
+          {
+            "type": "doctrineMap",
+            "title": "Choosing the right duty-of-care tool",
+            "description": "A decision path for identifying whether a case calls for incremental analogy or the full Caparo test.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Does an established duty category already cover this relationship (e.g. driver/road user, doctor/patient, employer/employee, occupier/visitor)?"
+              },
+              {
+                "id": "yes-established",
+                "label": "Yes → apply/extend that category incrementally by analogy — Caparo is not re-run"
+              },
+              {
+                "id": "no-established",
+                "label": "No → is the situation closely analogous to an established category?"
+              },
+              {
+                "id": "yes-analogous",
+                "label": "Yes → extend the existing category incrementally to the new facts"
+              },
+              {
+                "id": "no-analogous",
+                "label": "No → this is a genuinely novel duty situation — apply Caparo's three stages"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "yes-established",
+                "label": "Yes"
+              },
+              {
+                "from": "start",
+                "to": "no-established",
+                "label": "No"
+              },
+              {
+                "from": "no-established",
+                "to": "yes-analogous",
+                "label": "Yes"
+              },
+              {
+                "from": "no-established",
+                "to": "no-analogous",
+                "label": "No"
+              }
+            ],
+            "textAlternative": "First ask whether an established duty category already covers the relationship in question. If yes, apply or extend that category incrementally by analogy — do not re-run Caparo from scratch. If no established category covers it, ask whether the situation is closely analogous to one that does; if so, extend that category incrementally. Only where neither an established category nor a close analogy exists — a genuinely novel duty situation — should Caparo's three-stage test (foreseeability, proximity, fair/just/reasonable) be applied."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-01-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these stages of the Robinson litigation reasoning in the correct order.",
+          "items": [
+            "Police officers arresting a suspect collide with and injure a bystander",
+            "Lower courts apply a full Caparo 'fair, just and reasonable' analysis to the police context",
+            "Supreme Court holds the ordinary duty not to physically injure by a positive act already applies",
+            "Court confirms Caparo is reserved for genuinely novel situations, not established categories"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the arc of Robinson: an ordinary physical-injury case got mistakenly run through a novel-situation test, and the Supreme Court corrected course.",
+          "feedbackIncorrect": "Trace the case history again — the error was the lower courts treating an already-established duty category as if it needed fresh Caparo analysis; the Supreme Court then corrected that."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Telling the two approaches apart under exam pressure",
+        "voice": "exam-focused",
+        "body": [
+          "Under time pressure, students default to the test they memorised most thoroughly — usually Caparo, because it has three tidy stages. That instinct will cost you marks on a fact pattern that clearly falls within an established category, because it signals you're pattern-matching to 'negligence problem question' rather than actually diagnosing the facts in front of you.",
+          "The discipline to build is this: before writing anything about duty, ask yourself what kind of relationship is on the facts. A driver and a pedestrian? A doctor and a patient? An employer and an employee on a building site? These are long-settled categories — state the duty exists, cite the leading authority establishing it, and move on to breach. Reserve the full Caparo discussion for facts that genuinely don't fit anywhere: a new digital platform, an unusual kind of economic loss, a relationship the courts have never considered.",
+          "Examiners deliberately design hybrid questions to test this: a scenario that looks novel on the surface but is actually a straightforward extension of an established category once you look past the unfamiliar setting — exactly what Robinson itself illustrates, since a police collision felt novel until the Court recognised it as an ordinary physical-injury case in a policing wrapper."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Quick diagnostic: established category or novel situation?",
+            "points": [
+              "Established categories rarely need re-litigating: road users, employers and employees, doctors and patients, occupiers and visitors, manufacturers and consumers",
+              "A novel 'wrapper' (unusual setting, unfamiliar technology, an official role) does not automatically make the underlying duty question novel — ask what the substance of the relationship is",
+              "Only genuinely new relationships or new kinds of loss (particularly pure economic loss or psychiatric harm outside existing categories) call for a full Caparo analysis",
+              "Even within a Caparo analysis, treat the three stages as interrelated considerations to weigh, not a rigid sequential checklist"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-01-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A cyclist is injured when a delivery driver runs a red light. On the duty-of-care question, what is the correct approach?",
+          "options": [
+            "Run the full Caparo three-stage test, since this is a personal injury claim",
+            "Recognise this as falling within the established road-user duty category and state the duty exists by reference to precedent, without a fresh Caparo analysis",
+            "No duty can arise because there is no direct proximity between driver and cyclist"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The first option is the classic trap: personal injury claims between road users are about as well-established a duty category as exists in English law. Running Caparo afresh here is exactly the mechanical over-use Robinson corrected — the duty is simply confirmed by analogy to decades of precedent."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it together: from Atkin's principle to Reed's method",
+        "voice": "comparative",
+        "body": [
+          "Step back and compare the three authorities in this lesson side by side, because the comparison is the real content examiners are testing. Donoghue supplies the philosophical foundation — a broad principle about foreseeable harm to those in your contemplation, with almost no internal structure. Caparo supplies a disciplined method for testing that principle against hard, novel facts, built from three interrelated ingredients. Robinson supplies the governing methodology for choosing between them: default to precedent and analogy, and reserve Caparo for the frontier.",
+          "None of the three approaches has been overruled or replaced by the next. That's the point students most often miss — this isn't a story of one test superseding another. The neighbour principle still explains why the law of negligence exists at all; Caparo still governs how genuinely novel duties get recognised; Robinson simply tells you which of the two you need on any given day.",
+          "A well-structured duty-of-care answer, in other words, is not 'apply Caparo' by reflex. It's a short diagnostic — is this established, analogous, or novel? — followed by whichever of Atkin's broad principle or Bridge's three stages actually fits the diagnosis, with Reed's methodology cited as authority for making that choice explicitly rather than leaving it implicit."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Incremental approach",
+            "definition": "The methodology, confirmed in Robinson, of extending duty of care by reasoning from analogy to established, decided categories of relationship rather than by reopening general principle in every case — the dominant approach in modern English negligence law."
+          },
+          {
+            "type": "timeline",
+            "title": "Duty of care: the doctrinal arc",
+            "events": [
+              {
+                "date": "1932",
+                "label": "Donoghue v Stevenson",
+                "description": "Neighbour principle articulated as the foundation of a general duty of care, independent of contract."
+              },
+              {
+                "date": "1990",
+                "label": "Caparo v Dickman",
+                "description": "Three-stage test (foreseeability, proximity, fair/just/reasonable) developed for testing duty in novel situations, particularly pure economic loss."
+              },
+              {
+                "date": "2018",
+                "label": "Robinson v Chief Constable of West Yorkshire",
+                "description": "Supreme Court confirms the incremental, analogy-based approach as the default; Caparo reserved for genuinely novel duty situations."
+              }
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-01-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A software company launches an AI-driven investment tool that gives automated financial advice to members of the public who are not its clients. A user relies on the advice and loses money. Which approach should govern the duty-of-care analysis?",
+          "options": [
+            "Established category — this is analogous to any professional providing services, so no fresh analysis is needed",
+            "Caparo's full three-stage test, since this is a genuinely novel relationship (automated advice to non-clients) not covered by existing categories",
+            "No duty is possible because there is no established category for software companies"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is precisely the kind of new relationship and new form of potential economic loss Caparo was designed for — no established, closely analogous category exists yet, so the three-stage test (and particularly proximity) is the right tool rather than an assumption either way."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-01-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the neighbour principle from Donoghue v Stevenson.",
+      "acceptableAnswers": [
+        "take reasonable care to avoid acts or omissions likely to injure your neighbour",
+        "reasonable care owed to persons so closely and directly affected by your act that they ought to be in your contemplation"
+      ],
+      "modelAnswer": "You must take reasonable care to avoid acts or omissions which you can reasonably foresee would be likely to injure your neighbour — someone so closely and directly affected by your act that you ought reasonably to have them in contemplation."
+    },
+    {
+      "itemId": "tort-01-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which case established the neighbour principle as the conceptual foundation of the modern duty of care?",
+      "options": [
+        "Donoghue v Stevenson",
+        "Caparo v Dickman"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-01-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What are the three stages of the Caparo test?",
+      "options": [
+        "Foreseeability, proximity, and fair/just/reasonable",
+        "Foreseeability, causation, and remoteness",
+        "Duty, breach, and damage"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Causation and remoteness belong to a later stage of the negligence action, not to the duty-of-care test itself — a common mix-up when students are recalling several negligence tests under pressure."
+    },
+    {
+      "itemId": "tort-01-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In which case did the Supreme Court hold that the standard approach is to reason from established categories by analogy, rather than applying Caparo afresh?",
+      "options": [
+        "Robinson v Chief Constable of West Yorkshire",
+        "Caparo v Dickman"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-01-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Lord Bridge in Caparo warned against treating 'proximity' and 'fair, just and reasonable' in a particular way. Which best captures that warning?",
+      "options": [
+        "As concepts too precisely defined to leave courts any flexibility",
+        "As concepts not susceptible of precise definition, and therefore not usable as a rigid, mechanical checklist",
+        "As irrelevant once foreseeability is established"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "tort-01-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below from Robinson, highlight the sentence stating when courts need to go beyond established principle.",
+      "passage": "The common law develops incrementally, by analogy with established categories of liability. It is normally only in a novel type of case, where established principles do not provide an answer, that the courts need to go beyond those principles in order to decide whether a duty of care should be recognised. In the ordinary run of cases, courts consider whether the disputed case falls within, or is analogous to, an established category in which a duty of care has been held to exist.",
+      "ratioSentence": "It is normally only in a novel type of case, where established principles do not provide an answer, that the courts need to go beyond those principles in order to decide whether a duty of care should be recognised."
+    },
+    {
+      "itemId": "tort-01-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that Caparo has been overruled or replaced by Robinson?",
+      "sliderLabels": [
+        "Fully overruled",
+        "Not overruled at all — still governs novel situations"
+      ],
+      "correctPosition": "Not overruled at all — still governs novel situations",
+      "explanation": "Robinson did not overrule Caparo. It clarified when Caparo should be used: for genuinely novel duty situations, not as a default first step in every negligence problem."
+    },
+    {
+      "itemId": "tort-01-test-08",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these doctrinal developments in chronological order.",
+      "items": [
+        "Neighbour principle articulated in Donoghue v Stevenson",
+        "Three-stage test developed in Caparo v Dickman for novel situations",
+        "Supreme Court confirms the incremental, category-based default in Robinson"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "itemId": "tort-01-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario calls for a full Caparo analysis rather than reasoning by analogy to an established category?",
+      "scenarioA": "A patient sues their GP for a negligent misdiagnosis that worsened their condition.",
+      "scenarioB": "A user of a new decentralised financial trading algorithm, which has no human oversight, loses money after relying on an automatically generated risk score, and no comparable relationship has previously reached the courts.",
+      "correctScenario": "B",
+      "explanation": "A is a textbook doctor-patient relationship — an established category, confirmed by decades of precedent. B involves a relationship and technology with no close existing analogy, making it the kind of genuinely novel situation Caparo exists for."
+    },
+    {
+      "itemId": "tort-01-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "An employer fails to provide safety equipment to a warehouse worker, who is injured as a result. What is the correct duty-of-care approach?",
+      "options": [
+        "Run the full Caparo test since every negligence claim requires it",
+        "Recognise the established employer-employee duty category and confirm the duty exists by reference to precedent",
+        "No duty arises because the worker consented to the risks of the job"
+      ],
+      "correctIndex": 1,
+      "explanation": "Employer-employee safety duties are one of the oldest and most settled categories in English negligence law. Running Caparo from scratch here would be exactly the mechanical misapplication Robinson corrected."
+    },
+    {
+      "itemId": "tort-01-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A financial ratings agency publishes a public report, not commissioned by or addressed to any particular investor, which an investor relies on to their loss. Applying Caparo's proximity requirement, what matters most?",
+      "options": [
+        "Whether the agency could foresee that this specific investor, or an identifiable class including them, would rely on the report for this purpose",
+        "Whether the agency made a profit from publishing the report",
+        "Whether the investor read the whole report or only a summary"
+      ],
+      "correctIndex": 0,
+      "explanation": "Proximity in cases like Caparo itself turns on whether the defendant should have had the claimant, or an identifiable class of persons including the claimant, specifically in contemplation for the purpose actually relied on — not on generalised foreseeability that 'someone, somewhere' might read the report."
+    },
+    {
+      "itemId": "tort-01-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 4,
+      "prompt": "A city council launches an experimental public app that gives residents automated advice on flood-risk evacuation routes, generated with no human review. A resident follows the advice, is directed into a flooded underpass, and is injured. No prior case has considered a duty of care for automated public-safety advice of this kind. Analyse whether the council owes a duty of care.",
+      "factsToOrder": [
+        "The app gives automated advice with no human review",
+        "The resident specifically relied on the advice for evacuation guidance",
+        "The advice directed the resident into danger",
+        "No established or closely analogous duty category exists for this kind of automated public advice"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the council owes a duty of care to a resident injured after relying on automated, unreviewed public-safety advice, where no established duty category covers this relationship.",
+        "rule": "Where no established or closely analogous duty category applies, courts apply Caparo's three-stage test: reasonably foreseeable harm, a relationship of proximity, and whether imposing a duty is fair, just and reasonable (Caparo v Dickman, as confirmed applicable to novel situations by Robinson v Chief Constable of West Yorkshire).",
+        "application": "Harm from following flawed safety-critical advice into physical danger is plainly foreseeable. Proximity is arguable: the council directed the advice specifically at residents for reliance in an emergency, which is closer than a general public statement. Fairness cuts both ways — imposing a duty could deter councils from offering useful safety tools at all, but withholding a duty could leave residents with no remedy for genuinely dangerous, unreviewed automated guidance relied on exactly as intended.",
+        "conclusion": "Because no established category applies, this is a genuinely novel situation requiring full Caparo analysis; on these facts a duty is arguable but not certain, turning heavily on how the proximity and fair/just/reasonable elements are weighed."
+      }
+    },
+    {
+      "itemId": "tort-01-test-13",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that shows the duty question falls within an established category rather than requiring a fresh Caparo analysis.",
+      "scenarioText": "A surgeon operating on a private patient at a well-established hospital makes a careless incision, injuring the patient. The patient sues in negligence, and the defence argues the court must first run a full Caparo analysis because the operation used a new type of surgical robot.",
+      "tappableSpans": [
+        "operating on a private patient",
+        "well-established hospital",
+        "careless incision",
+        "new type of surgical robot"
+      ],
+      "correctSpan": "operating on a private patient",
+      "explanation": "The core relationship here is doctor and patient — an established duty category regardless of which tools or technology were used during treatment. The presence of a new robot doesn't turn a settled relationship into a novel one; it's the underlying relationship, not the equipment, that determines whether Caparo needs to be run."
+    },
+    {
+      "itemId": "tort-01-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A first-time offshore wind-turbine operator's automated maintenance-scheduling system fails to flag a fault, and a technician is injured as a result. Which best describes the correct duty analysis?",
+      "options": [
+        "Treat this as entirely novel because the technology (automated scheduling) is new, and apply Caparo in full",
+        "Identify the underlying relationship — employer and employee, or occupier and visitor to a workplace — as an established category, and apply that duty even though the specific technology is new",
+        "No duty can arise until Parliament legislates specifically for automated maintenance systems"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The presence of new technology is a tempting reason to reach for Caparo, but the underlying relationship — an operator's duty to a worker on its premises or in its employment — is well established. Robinson's lesson is to look past an unfamiliar wrapper to the substance of the relationship before deciding a case is genuinely novel."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is reaching for Caparo's three stages by reflex on facts that already fall within an established duty category. Diagnose the relationship first — established, analogous, or genuinely novel — and only run the full Caparo analysis when nothing else fits.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.duty-of-care"
+  }
+}

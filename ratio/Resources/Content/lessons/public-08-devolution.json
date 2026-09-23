@@ -1,0 +1,365 @@
+{
+  "lessonId": "public-08",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 8,
+  "topicId": "public.devolution",
+  "title": "One Parliament, three settlements",
+  "subtitle": "Devolution: legislative competence in Scotland, Wales and Northern Ireland",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the reserved-powers model shared by the Scottish, Welsh and Northern Irish settlements and how it differs from a conferred-powers model",
+    "Apply the tests for legislative competence to a Bill of a devolved legislature, including the 'relates to' and modification limits",
+    "Compare the three devolved settlements on their structural differences, and explain why Parliament's continuing legal sovereignty over devolved matters coexists with the Sewel Convention's political constraint on exercising it"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Scotland Act 1998, ss 28–29 (as amended by the Scotland Act 2016)", "role": "The reserved-powers model: the Scottish Parliament can legislate on anything not reserved to Westminster, subject to s 29 limits on legislative competence" },
+    { "citation": "Government of Wales Act 2006 (as amended by the Wales Act 2017)", "role": "Moved Wales from a conferred-powers to a reserved-powers model, aligning its structure with Scotland's" },
+    { "citation": "Northern Ireland Act 1998", "role": "A three-category model (transferred, reserved, excepted matters) reflecting the distinct constitutional and peace-process origins of the Northern Ireland settlement" },
+    { "citation": "R (Miller) v Secretary of State for Exiting the European Union [2017] UKSC 5", "role": "Confirms Sewel is a political convention, not a legal constraint, even though it is named in each devolution statute" },
+    { "citation": "Reference by the Attorney General and the Advocate General for Scotland – UK Withdrawal from the European Union (Legal Continuity) (Scotland) Bill [2018] UKSC 64", "role": "Applies the s 29 competence tests to a devolved Bill legislating in an area affected by EU withdrawal" },
+    { "citation": "Counsel General for Wales — Agriculture (Wales) Bill Reference [2022] UKSC 5", "role": "Applies the Welsh reserved-powers competence tests; used here to illustrate the Welsh equivalent of a competence reference (verify exact citation and year against the Supreme Court's published list before sign-off)" },
+    { "citation": "R (Miller) v The Prime Minister; Cherry v Advocate General for Scotland [2019] UKSC 41", "role": "Illustrates that the legal limits on UK-level prerogative power operate independently of, and are not softened by, the devolved settlements" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often learn Scotland's settlement in detail and then guess at Wales and Northern Ireland by assuming they're identical. They aren't structurally identical, even though the practical outcomes have converged. Where the profile shows this flattening, this note appears.",
+    "profileHooks": {
+      "weakApplication": "You know the statutes. The test pool weights fact patterns that ask you to work out whether a specific devolved Bill is within competence — that's a different skill from reciting which matters are reserved.",
+      "weakKnowledge": "Start with Part 1 and get the reserved-powers structure fixed before comparing the three nations — Parts 3 and 4 assume you already know what 'reserved' versus 'devolved' means without re-deriving it."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Three devolved legislatures, one Westminster Parliament that remains legally sovereign over all of them, and a working assumption — almost never tested until it is — that Westminster won't actually use that sovereignty without asking first. This lesson maps how that structure is built: not as one devolution scheme copied three times, but as three settlements with different architecture that have been pulled, over twenty-five years, toward looking more alike than they started.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The reserved-powers structures in Scotland and Wales, and the transferred/reserved/excepted structure in Northern Ireland, are stable. One citation below (the Welsh competence reference) should be checked against the Supreme Court's published judgment list before sign-off, as its precise year and reference number were not independently re-verified during drafting."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two ways to hand down power: what you list matters",
+        "voice": "structural — sets up the comparative frame the rest of the lesson builds on",
+        "body": [
+          "There are two ways to design a devolution scheme, and the choice between them changes everything about how you analyse a competence question. A conferred-powers model lists what the devolved body can do; anything not on the list is out of reach. A reserved-powers model does the opposite: it lists what stays with the centre, and everything else — by default — is devolved.",
+          "Scotland was built as a reserved-powers model from 1998. Wales started life in 2006 as a conferred-powers model — the National Assembly for Wales could only legislate on subjects specifically conferred on it — and was converted to a reserved-powers model by the Wales Act 2017, explicitly to bring it into line with Scotland and reduce the volume of disputes about what Cardiff was and wasn't allowed to touch. Northern Ireland has never used either label cleanly: the Northern Ireland Act 1998 instead splits subject matter into three categories — transferred, reserved and excepted — a structure carried over from its distinct constitutional history rather than redesigned to match Scotland or Wales.",
+          "The reason this matters for exam technique: under a reserved-powers model, your default answer to 'can the devolved legislature do this?' is yes, unless you can point to a specific reservation. Under the old Welsh conferred model, the default was the opposite. Confusing which model you're in is the single fastest way to get a competence question backwards."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Reserved-powers model",
+            "definition": "A devolution structure in which the devolved legislature has competence over everything except the specific matters listed as reserved to the centre — the opposite default from a conferred-powers model, where only listed matters are devolved."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-08-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the two structural models of devolved competence described in this lesson, and state which one the Scotland Act 1998 uses.",
+          "acceptableAnswers": ["conferred-powers and reserved-powers; Scotland uses reserved-powers", "reserved powers model and conferred powers model, Scotland is reserved powers"],
+          "modelAnswer": "A conferred-powers model lists what is devolved; a reserved-powers model lists what stays with the centre and devolves everything else by default. The Scotland Act 1998 uses the reserved-powers model."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Scotland: s 29 and the limits that actually get litigated",
+        "voice": "case-narrative — walks through a live competence dispute to show the test in operation",
+        "body": [
+          "Section 29 of the Scotland Act 1998 sets the boundaries of legislative competence in Scotland. A provision of an Act of the Scottish Parliament is outside competence if, among other things, it relates to a reserved matter, is incompatible with the Convention rights, or modifies certain protected enactments. 'Relates to' is deliberately broad: s 29(3) directs a court to look at the purpose of the provision, having regard (among other things) to its effect in all the circumstances — a provision doesn't escape the reservation just because it's dressed up as regulating something else.",
+          "The UK Withdrawal from the EU (Legal Continuity) (Scotland) Bill, referred to the Supreme Court in 2018, is the clearest illustration of the test being applied to a live, contested Bill rather than a hypothetical. The Scottish Parliament passed a Bill intended to preserve EU law in Scots law after Brexit, in case Westminster's own EU (Withdrawal) Act left gaps. Westminster's Law Officers argued parts of it exceeded competence because the position on withdrawal from the EU was, at the relevant time, a reserved matter and the Bill also purported to modify the operation of the UK Parliament's own supremacy in a way s 29 does not permit a devolved Parliament to do.",
+          "The Court's reasoning is worth more than its outcome for your purposes: it shows the competence question is asked provision by provision, not Bill by Bill, and that a devolved legislature cannot use its own legislation to constrain how a later Act of the UK Parliament operates — because the Scottish Parliament's powers are themselves created and limited by an Act of the UK Parliament that remains supreme."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Scotland Act 1998, s 29(2)–(3)",
+            "text": "A provision is outside competence so far as any of the following apply — (a) it would form part of the law of a country other than Scotland, (b) it relates to reserved matters, (c) it is in breach of restrictions in Schedule 4, (d) it is incompatible with the Convention rights, (e) it is incompatible with EU law [as modified]. For the purposes of (b), the question whether a provision relates to a reserved matter is to be determined by reference to the purpose of the provision, having regard (among other things) to its effect in all the circumstances.",
+            "elements": ["Competence is assessed provision by provision, not for the Bill as a whole", "'Relates to' turns on purpose, tested against effect in all the circumstances", "A devolved Parliament cannot legislate incompatibly with the Convention rights, independent of the reserved-matters question"]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-08-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a court works through when deciding whether a provision of a Scottish Parliament Bill is within legislative competence under s 29.",
+          "items": ["Identify the specific provision under challenge, not the Bill as a whole", "Determine the purpose of that provision, having regard to its effect in all the circumstances", "Ask whether that purpose relates to a matter reserved under Schedule 5", "If it relates to a reserved matter, hold the provision outside competence"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure of s 29(3) in practice: provision-by-provision, purpose tested against effect, then measured against the reserved matters list.",
+          "feedbackIncorrect": "Check the order — the analysis starts with isolating the specific provision, not the Bill as a whole, and 'relates to' is assessed by purpose and effect before you ask whether that purpose lands on a reserved matter."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Wales: catching up to reserved powers, and why it still isn't Scotland",
+        "voice": "comparative — deliberately measures Wales against the Scottish template just built",
+        "body": [
+          "The Government of Wales Act 2006, as amended by the Wales Act 2017, gives Wales a structure that now mirrors Scotland's closely: the Senedd can legislate on anything not specifically reserved, and the list of reservations sits in a schedule much like Scotland's Schedule 5. That convergence was the explicit point of the 2017 reform — the old conferred-powers model had produced a stream of disputes about whether a subject had actually been conferred, and the reserved-powers switch was meant to reduce exactly that friction.",
+          "But 'converged' is not 'identical', and an exam answer that treats Wales as a carbon copy of Scotland misses real structural differences. Wales does not have the same separate justice and courts settlement Scotland has always had — England and Wales share a single jurisdiction and court structure, which shapes what 'reserved' needs to cover. Wales's competence tests also emerged later and with a shorter history of Supreme Court litigation working out their edges, which is part of why references on Welsh Bills are rarer and, at the time of writing, less doctrinally settled than the Scottish equivalents.",
+          "The practical skill this tests is comparative, not just descriptive: can you say what's genuinely shared (reserved-powers structure, a 'relates to' style competence test, Convention-rights compatibility as an independent limit) versus what's still distinct (the shared England-and-Wales jurisdiction, the shorter litigation history, and some different reservations reflecting that shared jurisdiction)?"
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Scotland vs Wales — shared structure, real differences",
+            "points": [
+              "Shared: both now use a reserved-powers model (Wales since the Wales Act 2017)",
+              "Shared: both use a 'relates to' style competence test assessed by purpose and effect",
+              "Shared: both are independently limited by Convention-rights compatibility",
+              "Different: Scotland has its own separate legal jurisdiction and court system; Wales shares one jurisdiction with England",
+              "Different: Wales's reserved-powers model is newer, with a shorter history of Supreme Court competence litigation working out its edges"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-08-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Since the Wales Act 2017, which statement best describes the relationship between the Scottish and Welsh devolution settlements?",
+          "options": ["They are now legally identical in every respect, including sharing a single legal jurisdiction", "Both now use a reserved-powers structure with a similar competence test, but real structural differences remain — most notably that Wales shares England's legal jurisdiction while Scotland has its own", "Wales remains on a conferred-powers model, unlike Scotland"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answer is to treat the 2017 convergence in competence structure as full identity. It isn't — the shared England-and-Wales jurisdiction is a persistent structural difference that shapes how 'reserved' operates in Wales, quite apart from the competence test itself."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Northern Ireland: a settlement built for a different problem",
+        "voice": "argumentative — challenges the assumption that all three settlements answer the same question",
+        "body": [
+          "It's tempting, having just compared Scotland and Wales, to assume Northern Ireland is a third variation on the same theme. Resist that. The Northern Ireland Act 1998 emerged from the Belfast/Good Friday Agreement, solving a problem the Scottish and Welsh settlements never had to solve: how to build a legislature and executive whose legitimacy depended on cross-community consent, not just a devolved-versus-reserved boundary.",
+          "Structurally, Northern Ireland uses three categories rather than two: transferred matters (devolved, roughly the equivalent of everything not reserved elsewhere), reserved matters (matters Westminster could in principle transfer later, and can legislate on with the Assembly's consent), and excepted matters (matters that stay with Westminster permanently, such as the Crown, defence and international relations — the closest equivalent to Scotland's reservations, but not identical in content or in how consent operates).",
+          "The consequence for your analysis: a fact pattern involving a suspended Northern Ireland Assembly — which has happened more than once since 1998 — engages questions the Scottish and Welsh settlements simply don't have an equivalent for, because neither Scotland nor Wales was built around a power-sharing requirement whose collapse triggers direct rule. Don't reach for the Scotland Act framework to analyse a Northern Ireland fact pattern; the categories, the politics, and the consequences of institutional collapse are genuinely different."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Three settlements, three structures",
+            "description": "A comparison of how each devolved settlement categorises legislative competence.",
+            "nodes": [
+              { "id": "scotland", "label": "Scotland: reserved-powers model — everything devolved except Schedule 5 reservations" },
+              { "id": "wales", "label": "Wales: reserved-powers model since 2017 — everything devolved except scheduled reservations; shares England's jurisdiction" },
+              { "id": "ni", "label": "Northern Ireland: three categories — transferred, reserved, excepted — built around cross-community power-sharing" }
+            ],
+            "edges": [
+              { "from": "scotland", "to": "wales", "label": "Structurally converged since 2017" },
+              { "from": "wales", "to": "ni", "label": "Structurally distinct — not a two-category model" }
+            ],
+            "textAlternative": "Scotland and Wales both use a reserved-powers model and have structurally converged since the Wales Act 2017, though Wales still shares England's legal jurisdiction. Northern Ireland is structurally distinct: rather than a two-category devolved/reserved split, it uses three categories — transferred, reserved and excepted — reflecting its origins in the Belfast/Good Friday Agreement's power-sharing settlement."
+
+          }
+        ],
+        "interaction": {
+          "itemId": "public-08-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario turns on a structural feature unique to the Northern Ireland settlement, rather than one shared with Scotland and Wales?",
+          "scenarioA": "A Bill in a devolved legislature is challenged as being outside competence because it relates to a matter reserved to Westminster.",
+          "scenarioB": "A devolved legislature's institutions collapse because cross-community power-sharing arrangements break down, triggering a period of direct rule from Westminster.",
+          "correctScenario": "B",
+          "explanation": "A is the generic reserved-matters competence question that Scotland, Wales and Northern Ireland's transferred/excepted analysis can all, in their own terms, engage with. B is specific to Northern Ireland: neither the Scottish nor Welsh settlement is built around a cross-community consent mechanism whose failure triggers institutional collapse and direct rule."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Sovereignty and Sewel, again — this time across three settlements",
+        "voice": "Socratic — returns to the sovereignty/convention tension from Lesson 7 and forces the student to apply it here",
+        "body": [
+          "Here's the question this lesson has been building toward: if the UK Parliament remains legally sovereign over every devolved matter in all three settlements — and it does, in law, without exception — why does anyone bother asking whether a Bill is within a devolved legislature's competence at all? Couldn't Westminster just legislate over the top of any devolved provision it disagreed with?",
+          "Legally, yes. Westminster's sovereignty over devolved matters was never removed by any of the three devolution Acts, and Miller (2017) confirmed this directly in the course of holding that Sewel — the convention that Westminster won't normally legislate on devolved matters without consent — creates no legal constraint on that sovereignty, however firmly it's stated in the text of the Scotland Act. The same logic applies, by extension, across the Welsh and Northern Irish settlements: each has its own consent-seeking convention in practice, and none of them binds Westminster as a matter of law.",
+          "So why does the s 29 / Schedule 5 style competence question still matter so much in practice, if Westminster could always override it? Because the question this lesson has actually been testing is not 'what can Westminster do' — that answer is always 'anything, as a matter of law' — but 'what can the devolved legislature itself validly do, without Westminster's involvement at all'. That is a live legal question with real consequences: a provision outside competence is simply not law, capable of being struck down by a court, regardless of what Westminster thinks of it. The devolved competence question and the Westminster sovereignty question are both real, but they are not the same question, and conflating them is the single most common structural error in this whole topic."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often conclude that because Westminster is sovereign over devolved matters, questions of devolved legislative competence are 'not really legal' or are themselves just conventions.",
+            "whyItsWrong": "Legislative competence under s 29 (Scotland), the equivalent Welsh provisions, or the transferred/excepted categories in Northern Ireland is a hard legal question with a real legal consequence — a provision outside competence is not law and can be struck down by a court. That coexists with, and is analytically separate from, the fact that Westminster's own sovereignty over the same subject matter is untouched. One is a justiciable limit on the devolved body; the other is an unconstrained legal power at the centre, restrained only by the (non-legal) Sewel Convention."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-08-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a provision of a devolved Bill can be struck down by a court as outside legislative competence, even though Westminster itself remains free, as a matter of law, to legislate on the same subject matter?",
+          "sliderLabels": ["Not at all — the two questions collapse into one", "Fully confident — they are separate legal questions"],
+          "correctPosition": "Fully confident — they are separate legal questions",
+          "explanation": "They are genuinely separate. A devolved provision outside competence is void regardless of Westminster's own untouched sovereignty over the same matter — and Westminster's sovereignty is, separately, restrained only politically, by Sewel, not legally."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What is the essential difference between a reserved-powers model and a conferred-powers model of devolution?",
+      "acceptableAnswers": ["reserved lists what is kept back and devolves the rest by default; conferred lists only what is devolved", "reserved powers devolves everything except a list; conferred powers only devolves what's on a list"],
+      "modelAnswer": "A reserved-powers model lists what remains with the centre, devolving everything else by default. A conferred-powers model lists only what is specifically devolved, with everything else remaining at the centre."
+    },
+    {
+      "itemId": "public-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which statute moved the Welsh devolution settlement from a conferred-powers model to a reserved-powers model?",
+      "options": ["Wales Act 2017", "Government of Wales Act 1998"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-08-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following correctly names the three categories used by the Northern Ireland Act 1998?",
+      "options": ["Devolved, reserved and excluded matters", "Transferred, reserved and excepted matters", "Devolved, conferred and retained matters"],
+      "correctIndex": 1,
+      "trapExplanation": "The wrong options borrow plausible-sounding terminology from other areas of devolution and EU-exit law ('excluded', 'conferred', 'retained'). The Northern Ireland Act 1998's own vocabulary is transferred, reserved and excepted — memorise the exact words."
+    },
+    {
+      "itemId": "public-08-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does Westminster's legal sovereignty over devolved matters survive the devolution settlements in Scotland, Wales and Northern Ireland?",
+      "options": ["Yes — none of the devolution Acts removes Westminster's legal sovereignty over devolved matters", "No — sovereignty over devolved matters transferred permanently to each devolved legislature"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-08-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 29(3) of the Scotland Act 1998, how is the question of whether a provision 'relates to' a reserved matter determined?",
+      "options": ["By reference to the provision's purpose, having regard among other things to its effect in all the circumstances", "By reference only to the title given to the provision by the Scottish Parliament", "By a simple majority vote of the UK Parliament after the Bill is passed"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-08-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these developments in the Welsh devolution settlement in chronological order.",
+      "items": ["Government of Wales Act 2006 creates a conferred-powers model", "Disputes arise over whether specific subjects were actually conferred", "Wales Act 2017 converts the settlement to a reserved-powers model", "The Senedd's competence test converges structurally with Scotland's"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "public-08-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that states why the devolved Parliament's Bill was held to exceed competence.",
+      "passage": "The Scottish Parliament's powers are themselves created and limited by an Act of the United Kingdom Parliament which remains sovereign. A devolved legislature cannot, consistently with s 29, use its own legislation to constrain how a later Act of the UK Parliament is to operate, because to do so would purport to bind the body from which the devolved Parliament's own competence derives. Provisions with that purpose and effect fall outside competence.",
+      "ratioSentence": "A devolved legislature cannot, consistently with s 29, use its own legislation to constrain how a later Act of the UK Parliament is to operate, because to do so would purport to bind the body from which the devolved Parliament's own competence derives."
+    },
+    {
+      "itemId": "public-08-test-08",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that the Scottish and Welsh devolution settlements, since 2017, are legally identical in every respect?",
+      "sliderLabels": ["Fully identical", "Structurally similar but not identical"],
+      "correctPosition": "Structurally similar but not identical",
+      "explanation": "They converged on a reserved-powers structure and a similar competence test, but remain distinct — most notably, Wales shares England's legal jurisdiction while Scotland has its own separate courts system."
+    },
+    {
+      "itemId": "public-08-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that is most directly relevant to whether the provision is within the Scottish Parliament's legislative competence.",
+      "scenarioText": "The Scottish Parliament passes an Act creating a new environmental regulator. One provision states that a UK-wide Act passed the following year is not to have effect in Scotland unless the regulator consents. The Act was passed after extensive committee scrutiny and broad cross-party support.",
+      "tappableSpans": ["creating a new environmental regulator", "not to have effect in Scotland unless the regulator consents", "extensive committee scrutiny", "broad cross-party support"],
+      "correctSpan": "not to have effect in Scotland unless the regulator consents",
+      "explanation": "That's the provision purporting to constrain how a later Act of the UK Parliament operates in Scotland — the kind of provision the Continuity Bill reference held falls outside competence, regardless of how much scrutiny or cross-party support the Bill received."
+    },
+    {
+      "itemId": "public-08-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is governed by the Northern Ireland Act 1998's category of 'excepted matters', rather than by a Scotland Act style Schedule 5 reservation analysis?",
+      "scenarioA": "The Northern Ireland Assembly attempts to legislate on a matter — the Crown and the constitution — permanently outside its powers, reflecting the Belfast/Good Friday Agreement structure.",
+      "scenarioB": "The Scottish Parliament attempts to legislate on a matter reserved to Westminster under Schedule 5, which could in principle be devolved by future amendment.",
+      "correctScenario": "A",
+      "explanation": "A engages the Northern Ireland-specific 'excepted matters' category. B is a standard Scotland Act Schedule 5 reservation, part of the two-category reserved-powers structure Scotland and Wales share, not the three-category Northern Ireland model."
+    },
+    {
+      "itemId": "public-08-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "The UK Parliament wishes to legislate on a matter devolved to the Senedd, and the Senedd refuses to pass a legislative consent motion. Can the UK Parliament lawfully legislate anyway?",
+      "options": ["Yes — as with Sewel in Scotland, the Welsh equivalent convention is a political constraint, not a legal bar on Westminster's sovereignty", "No — the Wales Act 2017 makes Senedd consent a legal precondition for any UK legislation on devolved matters", "Only if the Secretary of State for Wales certifies an emergency"],
+      "correctIndex": 0,
+      "explanation": "The logic of Miller (2017) on Sewel applies equally to the Welsh convention: it is politically significant but does not restrict Westminster's continuing legal sovereignty over devolved matters."
+    },
+    {
+      "itemId": "public-08-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A provision of a Senedd Act regulates agricultural subsidies, a matter not listed among the reservations in the Government of Wales Act 2006 (as amended). A challenger argues it is outside competence purely because agriculture 'affects' cross-border trade with England. On the structure of a reserved-powers competence test, is this argument likely to succeed?",
+      "options": ["No — under a reserved-powers model, an unreserved matter is devolved by default, and merely 'affecting' cross-border trade is not itself a reservation unless the specific trade matter is actually listed", "Yes — any cross-border effect automatically removes a matter from devolved competence", "Yes, because agriculture was never devolved to Wales at all"],
+      "correctIndex": 0,
+      "explanation": "The reserved-powers default cuts the other way from the challenger's instinct: unless the specific matter is actually listed as reserved, it is devolved, and a general cross-border effect is not, by itself, a reservation."
+    },
+    {
+      "itemId": "public-08-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "The Northern Ireland Assembly collapses due to a breakdown in cross-community power-sharing. Could an equivalent institutional collapse happen to the Scottish Parliament for the same structural reason?",
+      "options": ["No — the Scottish Parliament's structure was not built around a cross-community consent mechanism, so it has no direct equivalent to this failure mode", "Yes — all three devolved legislatures share an identical power-sharing structure"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-08-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A provision of a Scottish Parliament Act purports to disapply, within Scotland, a UK Act passed the following year unless a Scottish minister consents. A litigant challenges the provision's validity. Analyse whether the provision is within legislative competence.",
+      "factsToOrder": [
+        "The Scottish Parliament's powers derive from and are limited by the Scotland Act 1998, itself an Act of the sovereign UK Parliament",
+        "The challenged provision purports to make a later UK Act's application in Scotland conditional on Scottish ministerial consent",
+        "Section 29(3) asks whether the provision's purpose, tested against its effect, relates to constraining Westminster's legislative supremacy",
+        "The Continuity Bill reference held a materially similar provision fell outside competence",
+        "Westminster's continuing legal sovereignty is unaffected either way"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether a provision of a Scottish Parliament Act that conditions a later UK Act's effect in Scotland on ministerial consent is within legislative competence under s 29.",
+        "rule": "A provision is outside competence if its purpose, assessed against its effect in all the circumstances, relates to constraining how a later Act of the UK Parliament operates — because the Scottish Parliament cannot use its own (derivative) legislative power to bind the sovereign body that created it (Continuity Bill reference).",
+        "application": "The provision's purpose is precisely to condition a later UK Act's application in Scotland on Scottish ministerial consent. That is a direct attempt to constrain the operation of future Westminster legislation, materially indistinguishable from the provision held outside competence in the Continuity Bill reference. Westminster's own sovereignty is not affected by the outcome — it remains free either way — but that is beside the point; the question is whether the devolved provision itself is valid.",
+        "conclusion": "The provision is outside legislative competence and is not law, regardless of Westminster's untouched sovereignty over the same subject matter."
+      }
+    },
+    {
+      "itemId": "public-08-test-15",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.6,
+      "prompt": "Which statement best explains why the legislative competence of a devolved body and Westminster's sovereignty over the same subject matter are treated as separate legal questions?",
+      "options": ["Because Westminster's sovereignty was abolished by the devolution Acts wherever a matter is devolved", "Because a devolved provision outside competence is void and can be struck down by a court, while Westminster's own power to legislate on the same matter remains legally unconstrained and is restrained only politically, by Sewel", "Because the two questions are not actually separate — a matter is either devolved or reserved, never both"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers try to resolve the apparent tension by making one side disappear — either abolishing Westminster's sovereignty or denying competence questions are real. Neither is right: both operate simultaneously, at different levels, which is exactly what makes this topic hard and exam-relevant."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating the three devolved settlements as interchangeable, or collapsing 'Westminster remains sovereign' into 'devolved competence questions don't really matter'. Keep the two questions — what the devolved body can validly do, and what Westminster remains legally free to do — analytically separate.",
+    "reviewMisses": true,
+    "linkToPathway": "public.devolution"
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "lessonId": "tort-15",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 15,
+  "topicId": "tort.trespass-to-person",
+  "title": "Trespass to the person and intentional harm",
+  "subtitle": "Assault, battery, false imprisonment, and what the law does when none of the three quite fits",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 5
+  },
+  "objectives": [
+    "Define assault, battery and false imprisonment and explain why each is actionable without proof of damage",
+    "State the rule for intentionally causing harm through words or conduct falling short of trespass, and explain how Rhodes v OPO refined it",
+    "Distinguish the common law trespass torts from the statutory tort of harassment under the Protection from Harassment Act 1997"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Letang v Cooper [1965] 1 QB 232", "role": "Confines trespass to the person to direct, intentional acts; unintentional harm is negligence" },
+    { "citation": "Collins v Wilcock [1984] 1 WLR 1172", "role": "Defines battery and the 'generally acceptable conduct of everyday life' exception to unlawful contact" },
+    { "citation": "R v Governor of Brockhill Prison, ex p Evans (No 2) [2001] 2 AC 19", "role": "False imprisonment is strict as to lawful justification; good faith reliance on a mistaken view of the law is no defence" },
+    { "citation": "Rhodes v OPO [2015] UKSC 32", "role": "Refines the Wilkinson v Downton tort: requires actual intention to cause severe physical or psychiatric harm" },
+    { "citation": "Protection from Harassment Act 1997", "role": "Creates a statutory tort of harassment where no single act amounts to trespass" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "These are the oldest torts on the syllabus and the ones students most often answer too casually, because the words 'assault' and 'battery' feel familiar from everyday speech. The exam value is almost entirely in the technical detail: what counts as imminence, what counts as unlawful contact, and what a claimant must show when no single act quite qualifies as any of the three.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions. The scenarios below are built to catch the gap between defining a tort correctly and spotting, in a messy fact pattern, which one — if any — is actually made out.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state all three trespass torts precisely, including why each is actionable per se — that phrase does real work later in the lesson."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "No one has to prove they were hurt to win a claim in battery — a hand on a shoulder, unwanted and unjustified, is enough on its own. This is the last lesson of the Tort module, and it closes where the subject arguably began: not with careless drivers or leaking reservoirs, but with the oldest and most direct wrong the law recognises — one person's deliberate interference with another's body or liberty.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The common law trespass torts are long settled; the Protection from Harassment Act 1997 remains in force as amended."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three torts, one shared feature: you don't need to prove you were hurt",
+        "voice": "structural — lays out definitions precisely before any story",
+        "body": [
+          "Assault, battery and false imprisonment are usually taught together because they share a single, important structural feature: each is actionable per se. A claimant does not need to prove any actual physical or financial loss to succeed — the interference itself is the wrong, and damages can be awarded even where the claimant suffered no measurable harm at all beyond the interference.",
+          "Assault is an act that causes the claimant to reasonably apprehend the immediate application of unlawful force to their person. Note precisely what this requires: it is about apprehension in the claimant's mind, not contact — raising a fist convincingly close to someone's face is an assault even if no punch lands. Battery is the actual, direct, and unlawful application of physical force to another person, without their consent and without other lawful justification — contact is required, but the contact need not be violent or cause pain; an unwanted kiss or a shove is enough. False imprisonment is the total restraint of a person's liberty, without lawful justification, for any period of time, however short — it does not require physical force, locked doors, or even the claimant's awareness of the restraint at the time it occurs.",
+          "Why does the law let claims proceed without proof of damage here, when negligence insists on it? The answer lies in what these torts protect: not a general interest in being kept safe from harm, but a specific, dignitary interest in bodily and personal autonomy. The wrong is the unauthorised interference itself — proof of consequential loss goes to the amount of damages, not to whether a cause of action exists at all."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Actionable per se",
+            "definition": "A cause of action that does not require proof of actual damage to be complete — the interference itself is sufficient to found liability, though damage (if proved) affects the amount recovered."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Letang v Cooper",
+            "citation": "[1965] 1 QB 232",
+            "court": "Court of Appeal",
+            "year": 1965,
+            "factsShort": "A claimant sunbathing in a car park was injured when the defendant negligently drove over her legs; she sued outside the limitation period applicable to negligence, framing the claim as trespass instead.",
+            "ratioShort": "Trespass to the person requires a direct and intentional act; harm caused unintentionally, however directly, is properly classified as negligence, not trespass.",
+            "expanded": {
+              "facts": "The claimant was sunbathing in a car park when the defendant drove his car over her legs, causing injury. She issued proceedings after the limitation period for negligence had expired, but within the (then longer) period applicable to trespass, and argued the claim should be classified as trespass to the person since the injury was directly caused by the defendant's act.",
+              "judgmentExtract": "The Court of Appeal held that trespass to the person is confined to direct and intentional acts. Where the defendant did not intend to cause the contact — here, an unintentional, careless driving of a car over the claimant's legs — the claim is properly one in negligence, however directly the injury was caused, and is governed by the limitation rules applicable to negligence.",
+              "significance": "Letang v Cooper is the case that keeps trespass and negligence from overlapping: intention is what sorts a claim into trespass rather than negligence, and that classification carries real consequences, historically for limitation, and conceptually for what a claimant must prove."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-15-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A driver, entirely without negligence or intention, is forced by a sudden medical emergency to lose control of the car, which strikes a pedestrian. Is this best classified as trespass to the person?",
+          "options": ["No — trespass to the person requires a direct and intentional act; this, if actionable at all, sits in negligence, not trespass", "Yes — any direct physical contact causing injury is automatically trespass"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Letang v Cooper confines trespass to intentional, direct acts. Unintended contact, however direct the physical mechanism, belongs to negligence.",
+          "feedbackIncorrect": "Reconsider — the defining feature separating trespass from negligence, per Letang v Cooper, is intention, not just directness of contact."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The officer's hand on her arm",
+        "voice": "case-narrative — tells the story, then draws the line it establishes",
+        "body": [
+          "A police officer approached a woman on the street to ask her questions as part of an investigation. She was not under arrest and had committed no offence. When she tried to walk away, the officer took hold of her arm to detain her and stop her leaving. She was not, at that point, being arrested — the officer simply wanted her to stay and answer questions.",
+          "The case reached the Divisional Court as Collins v Wilcock, and it produced the modern definition of battery still used today: the least touching of another, in anger or without lawful excuse or the other's consent, is a battery. But the case is remembered less for that restatement than for the exception Robert Goff LJ carved alongside it — because a rule that literally any unconsented touch is a battery would criminalise ordinary social existence. Being jostled on a crowded train, having a hand placed briefly on your shoulder to get your attention, a firm handshake: none of these are batteries, because they fall within the generally acceptable conduct of everyday life, impliedly consented to by anyone who moves through the world among other people.",
+          "The officer's conduct in Collins v Wilcock fell on the wrong side of that line. Taking hold of someone's arm to physically restrain them from leaving goes well beyond the incidental, transient contact of ordinary social interaction — it was a deliberate act to prevent movement, not to attract attention, and the officer had no lawful power at that point to detain her. The touch was therefore a battery, notwithstanding that it was carried out by a police officer acting, in her own mind, entirely properly."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Collins v Wilcock",
+            "citation": "[1984] 1 WLR 1172",
+            "court": "Divisional Court",
+            "year": 1984,
+            "factsShort": "A police officer took hold of a woman's arm to detain her for questioning, without arresting her or having lawful power to restrain her.",
+            "ratioShort": "Battery is any unlawful, unconsented touching, but conduct falling within the generally acceptable contact of everyday life is not battery; deliberate physical restraint without lawful power exceeds that exception.",
+            "expanded": {
+              "facts": "A police officer approached a woman to question her; when she attempted to leave, the officer physically took hold of her arm to stop her, without arresting her or otherwise having the legal power to detain her at that point.",
+              "judgmentExtract": "Robert Goff LJ held that the fundamental principle is that any touching of another person, however slight, may amount to a battery, but recognised an exception for physical contact generally acceptable in the ordinary conduct of everyday life — jostling in a busy street, a tap on the shoulder to attract attention. Taking hold of someone's arm to restrain them from leaving exceeded this exception; it was a deliberate act of physical restraint without lawful justification, and therefore a battery.",
+              "significance": "Collins v Wilcock is the standard authority for both the definition of battery and its most important limiting principle — distinguishing ordinary human contact from unlawful interference is a recurring skill across every trespass to the person problem question."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-15-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that takes this scenario outside the 'generally acceptable conduct of everyday life' exception to battery.",
+          "scenarioText": "A commuter taps a stranger firmly on the shoulder to ask for directions. When the stranger tries to walk away without answering, the commuter grabs their wrist and holds on to keep them from leaving.",
+          "tappableSpans": ["taps a stranger firmly on the shoulder", "to ask for directions", "grabs their wrist", "holds on to keep them from leaving"],
+          "correctSpan": "grabs their wrist",
+          "feedbackCorrect": "Correct. The initial tap to attract attention is classic everyday-life contact and no battery at all. Grabbing the wrist to physically prevent someone leaving is a deliberate act of restraint, precisely like the officer's conduct in Collins v Wilcock, and exceeds the exception.",
+          "feedbackIncorrect": "Look again — a tap on the shoulder to get attention is exactly the kind of contact Collins v Wilcock protects as ordinary social conduct. The line is crossed once contact becomes a deliberate act of physical restraint."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "How long were you actually free to leave?",
+        "voice": "Socratic — poses the hard case before resolving it",
+        "body": [
+          "Here's a question worth sitting with: if a prison governor detains someone beyond their correct release date, believing in complete good faith — and in reliance on the law as every court had, at that time, understood it — that the release date is correct, is that false imprisonment?",
+          "It feels unfair to call it that. The governor did nothing careless; she followed the law as it stood. But false imprisonment does not ask whether the defendant acted reasonably or in good faith — it asks only whether the restraint, in fact, lacked lawful justification. This was the precise question in R v Governor of Brockhill Prison, ex parte Evans (No 2). A prisoner's release date had been calculated according to the method the courts had, at the time, held to be correct. That method was subsequently held, in a later case, to have been wrong all along — meaning the prisoner had in fact been detained for longer than the law actually permitted, even though nobody involved in calculating her release date had made any error by the standards understood at the time.",
+          "The House of Lords held that this was false imprisonment. The tort is strict as to the existence of lawful justification: if the detention was not, in fact and in law, justified — regardless of how reasonably or in good faith the detaining authority believed it was — the tort is made out. Good faith reliance on a mistaken (even if then-orthodox) view of the law provides no defence. The lesson generalises well beyond prisons: false imprisonment asks whether restraint was actually lawful, not whether the defendant reasonably believed it was."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Elements of false imprisonment",
+            "points": [
+              "Total restraint of the claimant's liberty — a partial restriction, with a reasonable means of escape available, is not enough",
+              "No lawful justification for the restraint",
+              "No requirement of physical force — restraint can be by words, by circumstance, or by detention",
+              "The claimant need not be aware of the restraint at the time it occurs for the tort to be complete",
+              "Actionable per se, like assault and battery",
+              "Strict as to lawful justification: good faith belief that the restraint was lawful is no defence (Brockhill Prison)"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Governor of Brockhill Prison, ex parte Evans (No 2)",
+            "citation": "[2001] 2 AC 19",
+            "court": "House of Lords",
+            "year": 2001,
+            "factsShort": "A prisoner was detained beyond her true release date because the governor calculated it using a method later held, in a separate case, to have been legally incorrect all along.",
+            "ratioShort": "False imprisonment is strict as to whether lawful justification in fact existed; a detaining authority's good faith reliance on a then-orthodox but ultimately mistaken view of the law is no defence.",
+            "expanded": {
+              "facts": "The prison governor calculated the claimant's release date using a method that reflected the settled understanding of the law at the time. That method was later held, in unrelated proceedings, to have been incorrect, meaning the claimant's true release date was earlier than the one calculated, and she had in fact been detained beyond the period the law actually permitted.",
+              "judgmentExtract": "The House of Lords held that false imprisonment does not depend on whether the defendant acted reasonably or in good faith, but on whether the restraint was, in fact and law, justified. Because the detention exceeded what the law in fact permitted, it was false imprisonment, notwithstanding that the governor had acted entirely in accordance with the law as then understood.",
+              "significance": "This case is the clearest illustration that trespass torts are not fault-based in the way negligence is — the question is whether the interference was actually lawful, not whether the defendant behaved reasonably in bringing it about."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-15-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "In which scenario is a false imprisonment claim more likely to succeed?",
+          "scenarioA": "A shop security guard detains a customer for ten minutes based on a genuine and reasonable suspicion of theft, later shown to be entirely mistaken, where the detention itself was within the guard's lawful powers on those facts.",
+          "scenarioB": "An employer locks an office door to keep an employee inside for a meeting, believing (wrongly, and without any legal basis at all) that it has a contractual right to do so.",
+          "correctScenario": "B",
+          "explanation": "The test is whether lawful justification in fact existed, not whether the defendant believed in good faith that it did. In A, if the detention was genuinely within lawful powers on the facts, the claim may fail regardless of the guard's mistaken suspicion. In B, there is no lawful basis for the restraint at all — the employer's sincere but mistaken belief in a right to detain is no defence, exactly as in Brockhill Prison."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When words alone are meant to wound",
+        "voice": "analytical — builds the modern rule from an old, strange case",
+        "body": [
+          "None of the three trespass torts requires proof of damage, but all three require either an act causing apprehension of force, an actual physical contact, or a restraint of liberty. What happens when a defendant deliberately sets out to cause someone genuine psychiatric or physical harm using words or conduct that fit none of those categories — no touch, no threat of imminent force, no restraint?",
+          "The doctrine traces to a strange nineteenth-century case in which a defendant, as a practical joke, falsely told a woman that her husband had been seriously injured in an accident; the shock caused her genuine physical illness. No trespass tort fitted the facts at all — there was no touching, no threatened imminent force, no restraint. The court nonetheless held the defendant liable, recognising a distinct tort: intentionally causing physical harm through words or conduct calculated to produce it.",
+          "For well over a century, the precise mental element required — whether the defendant needed to actually intend the harm, or whether reckless indifference to a foreseeable risk of it would do — remained unsettled. Rhodes v OPO resolved the question, and narrowed the tort considerably. A father wrote a graphic memoir describing his own childhood abuse, intending to publish it; the child's mother sought an injunction on the child's behalf, arguing that reading passages of the book, once published, risked causing the child serious psychological harm. The Supreme Court held that the tort requires the defendant to have actually intended to cause severe physical harm or a recognised psychiatric illness — not merely to have been reckless as to that risk, and not merely to have intended to cause distress. On the facts, the father's intention was to convey a truthful account of his own experience, not to harm his son; the injunction was refused."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "The rule in Wilkinson v Downton (as refined by Rhodes v OPO)",
+            "definition": "A tort imposing liability for words or conduct, falling short of trespass, that the defendant actually intends to cause the claimant severe physical harm or a recognised psychiatric illness, and which in fact does so — mere distress, or reckless indifference to the risk of harm, is not enough."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Rhodes v OPO",
+            "citation": "[2015] UKSC 32",
+            "court": "Supreme Court",
+            "year": 2015,
+            "factsShort": "A father intended to publish a memoir with graphic passages about his own childhood abuse; his son's mother sought an injunction, arguing the son would suffer psychiatric harm from reading it.",
+            "ratioShort": "The Wilkinson v Downton tort requires the defendant to have actually intended to cause severe physical harm or a recognised psychiatric illness — recklessness or an intention merely to cause distress does not suffice.",
+            "expanded": {
+              "facts": "The father, himself a survivor of serious childhood abuse, wrote a memoir including graphic descriptions of what he had suffered, intending to tell his story publicly. The mother of his son, acting on the child's behalf, sought an injunction to prevent publication, or at least to restrain the son from being permitted to read it, arguing the material could cause the son severe psychological harm.",
+              "judgmentExtract": "The Supreme Court held the tort requires an actual intention on the defendant's part to cause severe mental or physical harm, not merely a foreseeable risk of it or an intention to cause distress. The father's purpose was to convey a truthful account of his own history, not to harm his son, and the publication of true information about the father's own life could not, without more, satisfy that intention requirement. The injunction was refused.",
+              "significance": "Rhodes v OPO is the case that fixes the current, narrow scope of the tort: it is not a general remedy for foreseeably distressing conduct, and it does not sit easily alongside free expression claims — actual intention to cause serious harm is essential, and is not lightly inferred from the fact that harm was a foreseeable, even likely, consequence."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-15-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, adapted from Rhodes v OPO, highlight the sentence stating the mental element the tort requires.",
+          "passage": "The tort recognised in Wilkinson v Downton is not a general remedy for distress, however foreseeable. Liability requires that the defendant actually intended to cause severe physical harm or a recognised psychiatric illness to the claimant. Recklessness as to that risk, or an intention merely to cause distress or anxiety, is not sufficient.",
+          "ratioSentence": "Liability requires that the defendant actually intended to cause severe physical harm or a recognised psychiatric illness to the claimant."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "When conduct repeats, but no single act is enough",
+        "voice": "exam-focused — practical, closes the module with a forward-looking checklist",
+        "body": [
+          "This is the last of the fifteen core lessons in the Tort module, and it is worth closing with the tool that catches everything the common law torts above still miss: a course of unwanted conduct, repeated over time, where no single incident is severe enough to be an assault, a battery, or intentionally-caused harm, but the pattern as a whole is genuinely oppressive. Common law trespass torts are built around discrete events; they were never well suited to persistent, low-level conduct like repeated unwanted messages, following, or surveillance.",
+          "Parliament filled that gap with the Protection from Harassment Act 1997. Section 1 prohibits pursuing a course of conduct which amounts to harassment of another, and which the defendant knows, or ought to know, amounts to harassment — a course of conduct requires conduct on at least two occasions. Section 3 creates a civil remedy: a claimant can sue for damages, including for any anxiety caused by the harassment and any financial loss resulting from it, and can obtain an injunction to restrain further conduct, breach of which can itself be a criminal offence. The Act operates alongside, not instead of, the trespass torts — a single serious incident might still be an assault or a battery, while a longer pattern of lesser incidents might only be actionable, if at all, as harassment.",
+          "Put the whole lesson together and a simple structure emerges for any trespass-to-the-person problem: ask first whether a discrete act fits assault, battery, or false imprisonment; if not, ask whether conduct falling short of any of those was nonetheless intended to cause severe harm, engaging Wilkinson v Downton as refined by Rhodes v OPO; and if the real complaint is a pattern of conduct rather than any single incident, look to the statutory tort of harassment instead. Getting the right box, and knowing why the others don't fit, is most of what separates a strong answer from a merely accurate one."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Protection from Harassment Act 1997, s 1(1)",
+            "text": "A person must not pursue a course of conduct — (a) which amounts to harassment of another, and (b) which he knows or ought to know amounts to harassment of the other.",
+            "elements": ["A course of conduct (at least two occasions)", "Amounting to harassment", "Which the defendant knows, or ought reasonably to know, amounts to harassment"]
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that if no single incident in a fact pattern is serious enough to be assault or battery, there is simply no claim at all.",
+            "whyItsWrong": "The Protection from Harassment Act exists precisely for that gap. A course of conduct, none of whose individual instances amounts to a trespass tort, can still be actionable as statutory harassment if it meets the course-of-conduct and knowledge requirements in section 1 — always check for a pattern before concluding there is no claim."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-15-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Over six weeks, an ex-partner sends dozens of unwanted messages, repeatedly waits outside the claimant's workplace, and once follows the claimant's car for several miles — no single incident involves physical contact or a direct threat of imminent force. What is the claimant's most promising route to a civil remedy?",
+          "options": [
+            "A claim in battery, since the conduct is clearly unwanted",
+            "A statutory claim for harassment under the Protection from Harassment Act 1997, based on the course of conduct as a whole",
+            "No claim is possible, since no single incident satisfies assault, battery or false imprisonment"
+          ],
+          "correctIndex": 1,
+          "explanation": "None of the individual incidents involves contact, imminent force, or restraint, so the trespass torts are unlikely to assist. This is precisely the pattern the statutory tort of harassment was designed to catch — a course of conduct, on repeated occasions, that the defendant knew or ought to have known amounted to harassment."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-15-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Define battery.",
+      "acceptableAnswers": ["direct, intentional, unlawful physical contact without consent", "the unlawful application of force to another person without consent or lawful justification"],
+      "modelAnswer": "Battery is the direct and intentional application of unlawful physical force to another person, without their consent and without lawful justification — actionable without proof of damage."
+    },
+    {
+      "itemId": "tort-15-test-02",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Define assault.",
+      "acceptableAnswers": ["causing reasonable apprehension of imminent unlawful force", "an act causing the claimant to apprehend immediate unlawful contact"],
+      "modelAnswer": "Assault is an act causing the claimant reasonably to apprehend the immediate application of unlawful force to their person; no contact is required."
+    },
+    {
+      "itemId": "tort-15-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Must a claimant prove actual damage to succeed in a claim for false imprisonment?",
+      "options": ["No — false imprisonment, like assault and battery, is actionable per se", "Yes — damage is an essential element"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-15-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which mental element does Rhodes v OPO require for liability under the rule in Wilkinson v Downton?",
+      "options": [
+        "Actual intention to cause severe physical harm or a recognised psychiatric illness",
+        "Mere foreseeability that distress might result",
+        "Reckless indifference to whether harm might result"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answers reflect the pre-Rhodes uncertainty about whether recklessness or foreseeable distress would suffice. Rhodes v OPO settled this firmly in favour of the narrower, actual-intention requirement."
+    },
+    {
+      "itemId": "tort-15-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "How many occasions of conduct are required to establish a 'course of conduct' under the Protection from Harassment Act 1997?",
+      "options": ["At least two", "At least five"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-15-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "In the passage below, adapted from Collins v Wilcock, highlight the sentence stating the exception to battery for everyday contact.",
+      "passage": "The fundamental principle, plain and incontestable, is that every person's body is inviolate. It has long been accepted that a broad exception exists to accommodate physical contact generally acceptable in the ordinary conduct of daily life. Contact exceeding what is generally acceptable, such as a deliberate act of physical restraint, is not protected by that exception.",
+      "ratioSentence": "It has long been accepted that a broad exception exists to accommodate physical contact generally acceptable in the ordinary conduct of daily life."
+    },
+    {
+      "itemId": "tort-15-test-07",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the questions a court asks when classifying a trespass-to-the-person fact pattern.",
+      "items": [
+        "Was there a direct and intentional act by the defendant?",
+        "Does the act fit assault, battery or false imprisonment specifically?",
+        "If not, was there an actual intention to cause severe physical or psychiatric harm (Wilkinson v Downton / Rhodes v OPO)?",
+        "If not, is there instead a course of conduct amounting to statutory harassment?"
+      ],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "tort-15-test-08",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that a defendant's good faith, reasonable belief that a detention was lawful is a defence to false imprisonment?",
+      "sliderLabels": ["Definitely a defence", "Definitely not a defence"],
+      "correctPosition": "Definitely not a defence",
+      "explanation": "Brockhill Prison establishes that false imprisonment turns on whether lawful justification actually existed, not on the defendant's reasonable or good faith belief that it did."
+    },
+    {
+      "itemId": "tort-15-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Why did the claim in Letang v Cooper fail as a claim in trespass?",
+      "options": [
+        "Because the injury was not caused directly by the defendant's car",
+        "Because the defendant did not intend the contact; unintentional harm is classified as negligence, not trespass",
+        "Because trespass to the person requires proof of actual damage"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The injury was direct enough — a car driving over someone's legs. The problem was the absence of intention, which is what Letang v Cooper identifies as the true dividing line between trespass and negligence."
+    },
+    {
+      "itemId": "tort-15-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario is more likely to amount to an assault (as opposed to a battery)?",
+      "scenarioA": "A person raises a fist inches from another's face, shouting a threat, but is pulled away before any contact is made.",
+      "scenarioB": "A person shoves another firmly in the chest during an argument, causing them to stumble.",
+      "correctScenario": "A",
+      "explanation": "A involves no contact at all, but causes reasonable apprehension of immediate unlawful force — the definition of assault. B involves actual physical contact and is a battery, not merely an assault (though the two frequently occur together in sequence)."
+    },
+    {
+      "itemId": "tort-15-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that makes this a battery rather than merely an assault.",
+      "scenarioText": "During a heated argument in a queue, a man raises his hand as if to strike, then lowers it. Moments later, still angry, he shoves the other person hard in the shoulder, causing them to stagger backward.",
+      "tappableSpans": ["raises his hand as if to strike", "lowers it", "shoves the other person hard in the shoulder", "stagger backward"],
+      "correctSpan": "shoves the other person hard in the shoulder",
+      "feedbackCorrect": "Right. The raised hand, without contact, is the assault. The shove is the moment actual unlawful physical contact occurs, which is what makes this a battery.",
+      "feedbackIncorrect": "Look for the moment of actual physical contact — the raised hand alone is an assault (causing apprehension), but battery requires contact, which happens at the shove."
+    },
+    {
+      "itemId": "tort-15-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A shopper is stopped by a store detective who blocks the only exit from a small fitting room and tells her she cannot leave until she answers questions about an item, though he never touches her. She feels she has no way past him. Is this capable of amounting to false imprisonment?",
+      "options": [
+        "Yes — total restraint of liberty does not require physical force or touching, only that there is no reasonable means of leaving",
+        "No — without any physical contact, there can be no false imprisonment",
+        "No — false imprisonment requires the claimant to be physically locked in a room"
+      ],
+      "correctIndex": 0,
+      "explanation": "False imprisonment does not require force or a locked door. Blocking the only exit and asserting the claimant cannot leave, if it in fact totally restrains her with no reasonable means of escape, is capable of amounting to false imprisonment."
+    },
+    {
+      "itemId": "tort-15-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A colleague, intending only to play a tasteless prank, falsely tells another colleague that their child has been seriously injured, purely to see their shocked reaction, and the colleague suffers a diagnosed psychiatric illness as a result. Applying Rhodes v OPO, is the prankster liable under the Wilkinson v Downton principle?",
+      "options": [
+        "Potentially yes — if the prank was intended to cause the colleague severe shock and this in fact caused a recognised psychiatric illness, the intention requirement may be satisfied, unlike in Rhodes v OPO where no such intention to harm existed",
+        "No — since the statement was not physically violent, the tort cannot apply at all",
+        "No — because the colleague did not intend to cause any harm, only amusement"
+      ],
+      "correctIndex": 0,
+      "explanation": "Unlike Rhodes v OPO, where the father's intention was to tell a truthful story rather than to harm his son, a deliberate false statement designed specifically to cause severe shock is closer to the paradigm case the tort was built for — provided actual intention to cause severe harm (not just distress) and a resulting recognised illness can be shown."
+    },
+    {
+      "itemId": "tort-15-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Over two months, a former tenant repeatedly telephones a landlord late at night, waits outside her office twice, and once grips her arm briefly to stop her walking away while shouting at her. No single phone call or the waiting alone caused physical contact or immediate fear of force, but the arm-gripping incident did. Analyse the landlord's potential claims.",
+      "factsToOrder": [
+        "Repeated late-night phone calls over two months",
+        "Waiting outside the office on two occasions",
+        "A single incident of gripping her arm while shouting",
+        "No physical contact or imminent threat in the calls or waiting, taken alone"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the landlord has a claim in battery for the arm-gripping incident, and separately whether the wider pattern of conduct is actionable as statutory harassment.",
+        "rule": "Battery requires direct, intentional, unlawful physical contact, actionable per se (Collins v Wilcock); conduct not amounting to any trespass tort may still be actionable as harassment under the Protection from Harassment Act 1997 if it forms a course of conduct, on at least two occasions, which the defendant knew or ought to have known amounted to harassment.",
+        "application": "The arm-gripping incident is direct, intentional physical contact going well beyond the everyday-life exception in Collins v Wilcock — it is a clear battery on its own. The phone calls and waiting, individually, do not amount to trespass torts, since none involves contact or a reasonably apprehended imminent threat of force. But together, repeated over two months, they form a course of conduct that a reasonable person would recognise as harassment, engaging the Protection from Harassment Act 1997 independently of the battery claim.",
+        "conclusion": "The landlord has a strong claim in battery for the arm-gripping incident, and a separate, additional claim in statutory harassment for the broader course of conduct, which the isolated trespass torts do not fully capture on their own."
+      }
+    },
+    {
+      "itemId": "tort-15-test-15",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under Protection from Harassment Act 1997, s 1(1), which of the following best describes the fault element the claimant must show?",
+      "options": [
+        "That the defendant knew, or ought to have known, that the course of conduct amounted to harassment",
+        "That the defendant intended to cause the claimant severe psychiatric harm",
+        "No fault element is required at all; the statute imposes strict liability for any course of repeated conduct"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 1(1) requires both that the conduct amounts to harassment and that the defendant knew, or ought reasonably to have known, that it did — an objective standard, but a real fault element nonetheless, not strict liability."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "This lesson's test items most often catch students collapsing distinctions that carry real weight: apprehension versus contact (assault v battery), reasonable belief versus actual lawful justification (false imprisonment), and foreseeable distress versus actual intention to cause severe harm (Wilkinson v Downton after Rhodes v OPO). As the close of the Tort module, this lesson rewards precision over general familiarity with the vocabulary.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.trespass-to-person"
+  }
+}

@@ -75,7 +75,7 @@ private struct Scoreboard: View {
     @Environment(StudentStore.self) private var student
 
     var body: some View {
-        SwiftUI.TimelineView(.periodic(from: .now, by: 0.1)) { context in
+        TimelineView(.periodic(from: .now, by: 0.1)) { context in
             HStack(spacing: 12) {
                 HStack(spacing: 10) {
                     ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 44)

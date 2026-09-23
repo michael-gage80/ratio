@@ -415,13 +415,12 @@
               },
               "edges": {
                 "type": "array",
-                "minItems": 1,
+                "minItems": 0,
                 "items": {
                   "type": "object",
                   "required": [
                     "from",
-                    "to",
-                    "label"
+                    "to"
                   ]
                 }
               }
@@ -448,8 +447,7 @@
                 "items": {
                   "type": "object",
                   "required": [
-                    "label",
-                    "description"
+                    "label"
                   ]
                 }
               }
@@ -483,7 +481,8 @@
             "highlightTheRatio",
             "distinguishTheCase",
             "statuteParser",
-            "applyTheRule"
+            "applyTheRule",
+            "sortIntoBuckets"
           ]
         },
         "skillTag": {
@@ -714,6 +713,49 @@
                   "application",
                   "conclusion"
                 ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "sortIntoBuckets"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "buckets",
+              "itemsToSort"
+            ],
+            "properties": {
+              "buckets": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "$ref": "#/$defs/text"
+                }
+              },
+              "itemsToSort": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "text",
+                    "correctBucket"
+                  ],
+                  "properties": {
+                    "text": {
+                      "$ref": "#/$defs/text"
+                    },
+                    "correctBucket": {
+                      "$ref": "#/$defs/text"
+                    }
+                  }
+                }
               }
             }
           }
