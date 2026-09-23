@@ -83,8 +83,7 @@ struct MeView: View {
 
     /// "UCL · LLB · Year 2"
     private var details: String {
-        let university = profile.universityId.flatMap { id in UniversityDirectory.all.first { $0.id == id } }
-            .map { $0.aliases?.first ?? $0.name } ?? profile.universityOther
+        let university = UniversityDirectory.shortName(id: profile.universityId) ?? profile.universityOther
         return [university, "LLB", profile.year.map { "Year \($0)" }].compactMap { $0 }.joined(separator: " · ")
     }
 

@@ -6,6 +6,7 @@
 import { getDatabaseWithUrl } from "firebase-admin/database";
 import { FieldValue, getFirestore, Timestamp, Transaction } from "firebase-admin/firestore";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
+import { periodKeys } from "./boards.js";
 import { blockReason, MAX_MESSAGE_LENGTH } from "./chat.js";
 import { duelLessons, MODULES } from "./content.js";
 import { Answer, DuelQuestion, marked, matchQuestions, MIN_ANSWER_MS, playMatchWith, questionPool } from "./duel.js";
@@ -235,6 +236,33 @@ async function settle(
       forfeited: params.forfeitedBy !== null,
       ...settlements[p],
     };
+  }
+
+  // Boards: every human match puts both players on this period's boards; only a win
+  // scores. A forfeit before any round was played scores nothing.
+  const played = params.rounds.length > 0;
+  const keys = Object.values(periodKeys(new Date()));
+  for (const p of [0, 1] as const) {
+    const uid = params.order[p];
+    const user = sides[p].user;
+    const won = played && params.winner === p;
+    for (const key of keys) {
+      tx.set(db.doc(`boards/${key}/entries/${uid}`), {
+        uid,
+        name: params.players[uid].name,
+        initial: params.players[uid].initial,
+        ...(params.players[uid].avatarVersion ? { avatarVersion: params.players[uid].avatarVersion } : {}),
+        universityId: (user.get("universityId") as string | undefined) ?? null,
+        universityName: (user.get("universityOther") as string | undefined) ?? null,
+        rating: settlements[p].ratingAfter,
+        wins: FieldValue.increment(won ? 1 : 0),
+        played: FieldValue.increment(1),
+        updatedAt: FieldValue.serverTimestamp(),
+      }, { merge: true });
+    }
+    // Students you've duelled are your friends for the Friends board.
+    const other = params.order[1 - p];
+    tx.set(db.doc(`users/${uid}/friends/${other}`), { name: params.players[other].name, lastPlayed: FieldValue.serverTimestamp() }, { merge: true });
   }
 
   tx.create(matchRef, {
