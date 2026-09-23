@@ -1,0 +1,400 @@
+{
+  "lessonId": "contract-10",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 10,
+  "topicId": "contract.terms.exclusion-clauses",
+  "title": "Exclusion clauses: common law, UCTA and the CRA",
+  "subtitle": "Three layers of control between a clause on the page and a clause that actually works",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the common law controls on exclusion clauses — incorporation and strict construction, including contra proferentem",
+    "Apply the Unfair Contract Terms Act 1977 reasonableness test to an exclusion clause in a business-to-business contract",
+    "Distinguish the UCTA regime from the Consumer Rights Act 2015 fairness regime and identify which applies on a given set of facts"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Photo Production Ltd v Securicor Transport Ltd [1980] AC 827", "role": "Rejects any fixed rule of law voiding exclusion clauses for 'fundamental breach'; the clause's true construction governs" },
+    { "citation": "Unfair Contract Terms Act 1977, ss 2, 3, 6, 11, Sch 2", "role": "Statutory reasonableness controls on exclusion and limitation clauses, chiefly in business contracts" },
+    { "citation": "George Mitchell (Chesterhall) Ltd v Finney Lock Seeds Ltd [1983] 2 AC 803", "role": "Leading application of the UCTA reasonableness test" },
+    { "citation": "Consumer Rights Act 2015, ss 31, 62, 65", "role": "Separate consumer fairness regime: core rights that can never be excluded, the general fairness test, and the bar on excluding death/personal injury liability" },
+    { "citation": "Triple Point Technology Inc v PTT Public Company Ltd [2021] UKSC 29", "role": "Modern approach: exclusion and limitation clauses construed according to their natural meaning and business common sense" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often reach for 'UCTA' the moment they see an exclusion clause, without checking who the parties are. Where the profile shows knowledge is ahead of application, this note appears: 'You can recite the reasonableness factors. This lesson is about knowing which regime you're even in before you reach for them.'",
+    "profileHooks": {
+      "weakApplication": "You've done well on the statutory detail here before. The test pool leans on scenarios where you have to identify UCTA versus CRA first, then apply the right test — expect that two-step every time.",
+      "weakKnowledge": "Work through Parts 1 to 3 slowly and get incorporation, construction, and the UCTA structure straight before Part 4 introduces the CRA — conflating the two statutory regimes is the most common error in this lesson."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "The clause is right there, printed on the back of the delivery note, in perfectly clear English: 'the company accepts no liability whatsoever for loss however caused.' A warehouse burns down through an employee's carelessness, and the company tries to rely on exactly that sentence. Whether it works depends on three separate hurdles it has to clear — one of them decided by a court more than forty years ago, one written into a 1977 statute, and one rewritten for consumers as recently as 2015.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The UCTA 1977 and CRA 2015 provisions covered are in force in their current form; no amending legislation is pending."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Before you ask if it's fair, ask if it's even in the contract",
+        "voice": "practical — a working checklist for the first hurdle, deliberately unhurried",
+        "body": [
+          "It's tempting to jump straight to whether an exclusion clause is 'fair' or 'reasonable.' Resist that instinct. Before any question of fairness arises, a clause has to clear a more basic hurdle: was it actually incorporated into the contract at all? A clause that never became a term of the contract doesn't need to be reasonable, because it isn't there to be relied on.",
+          "Incorporation happens in one of three ways. A signed document incorporates whatever terms it contains, whether or not the signer read them — signature is, in general, taken as assent to the whole document. Where there's no signature, a term can still be incorporated by reasonable notice given before or at the time the contract is made; notice given only after the contract is formed (a clause printed on a receipt handed over after payment, for instance) generally comes too late. And a course of dealing between the same parties over time — repeated transactions on the same terms — can incorporate a term even without fresh notice on the particular occasion, provided the dealings are sufficiently regular and consistent.",
+          "The more onerous or unusual a clause is, the more the law expects to see it brought clearly to the other party's attention — a rule sometimes summarised as requiring 'red ink' or 'a red hand pointing to it' for a particularly surprising or oppressive term. A clause buried in dense small print, doing something a reasonable person would not expect, faces a higher bar to incorporation than an ordinary limitation on liability spelled out in the main body of a contract."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Incorporation",
+            "definition": "The threshold requirement that an exclusion clause must actually have become a term of the contract — through signature, reasonable notice before or at the time of contracting, or a consistent course of dealing — before any question of its fairness or reasonableness is reached."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-10-check-01",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that means the exclusion clause is unlikely to be incorporated into this contract.",
+          "scenarioText": "A customer pays for parking, receives a ticket, and only on that ticket — handed to her after she has already paid and the barrier has lifted — does she see a clause excluding the car park's liability for any damage to vehicles.",
+          "tappableSpans": ["pays for parking", "receives a ticket", "handed to her after she has already paid", "excluding the car park's liability"],
+          "correctSpan": "handed to her after she has already paid",
+          "feedbackCorrect": "Right. Notice given only after the contract is formed — here, after payment and the barrier lifting — is generally too late to incorporate the term, whatever the ticket says.",
+          "feedbackIncorrect": "Look again at timing rather than content. The clause's wording isn't the problem here — the problem is that notice of it only arrived after the contract had already been made."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Construing the clause: Photo Production and the end of 'fundamental breach'",
+        "voice": "case-narrative — tells the Photo Production story before drawing out the doctrine",
+        "body": [
+          "Once a clause is incorporated, the second common law control is construction: what does the clause, properly read, actually cover? Courts apply this strictly against the party who drafted it and seeks to rely on it — a principle known as contra proferentem, particularly demanding where the clause purports to exclude liability for the drafter's own negligence, which the courts have historically required to be spelled out in especially clear language.",
+          "For a long period, courts went further and flirted with a rule of law that no exclusion clause, however clearly worded, could ever protect a party from liability for a 'fundamental breach' — a breach so serious it went to the very root of the contract. Photo Production Ltd v Securicor Transport Ltd put an end to that idea. Securicor's security guard, patrolling Photo Production's factory under a contract that excluded Securicor's liability for any injurious act or default by an employee, deliberately started a fire that destroyed the factory. Photo Production argued the breach was so fundamental that the exclusion clause simply could not, as a matter of law, apply to it.",
+          "The House of Lords disagreed, and the shift in reasoning matters as much as the result. There is no special rule of law that strikes down exclusion clauses for fundamental breach; the only question is one of construction — what did the parties' words, properly interpreted, actually mean to exclude? Here, the clause was drafted in wide, unambiguous terms covering exactly this kind of loss, between two substantial commercial parties who had freely allocated the risk (and, tellingly, the insurance for it) between themselves. Freedom of contract meant giving effect to that bargain, not rewriting it because the consequences turned out to be severe.",
+          "Photo Production doesn't mean exclusion clauses always work. It means the only question is genuinely one of construction: read carefully, strictly, and against the drafter where there's genuine ambiguity — but if the words plainly cover the loss, severity of the breach is not itself a reason to disregard them."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Photo Production Ltd v Securicor Transport Ltd",
+            "citation": "[1980] AC 827",
+            "court": "House of Lords",
+            "year": 1980,
+            "factsShort": "A security guard employed by Securicor deliberately started a fire that destroyed the client's factory, in breach of a security contract that excluded Securicor's liability for any injurious act by an employee.",
+            "ratioShort": "There is no fixed rule of law voiding exclusion clauses for 'fundamental breach.' The clause's applicability is purely a matter of construction of the parties' actual words, applied to two commercial parties freely allocating risk.",
+            "expanded": {
+              "facts": "Securicor contracted to provide night patrols of Photo Production's factory. The contract excluded Securicor's liability for any injurious act or default by any employee, unless it could have been foreseen and avoided by due diligence. A guard on patrol deliberately lit a fire, which got out of control and destroyed the factory, causing over £600,000 of damage.",
+              "judgmentExtract": "Lord Wilberforce held that the doctrine of 'fundamental breach' as a rule of law — automatically voiding exclusion clauses regardless of their wording, once a breach was serious enough — had no continuing basis after the Unfair Contract Terms Act 1977 gave Parliament's own statutory mechanism for controlling unreasonable exclusion clauses. The correct approach is construction: read the clause according to its natural meaning, in its commercial context, and ask whether the parties' words, properly interpreted, extend to the loss that occurred. Here they plainly did.",
+              "significance": "Photo Production is the foundational modern statement that exclusion clauses are controlled by construction and, since 1977, by statute — not by a free-standing judicial rule striking down clauses because a breach feels too serious. It cleared the ground for UCTA to become the primary statutory control mechanism."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Contra proferentem",
+            "definition": "The interpretive principle that ambiguity in an exclusion or limitation clause is resolved against the party who drafted it and now seeks to rely on it — applied especially strictly where the clause purports to exclude liability for the drafter's own negligence."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-10-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these developments in the order they occurred, culminating in Photo Production's approach.",
+          "items": [
+            "Courts flirt with a rule of law voiding exclusion clauses for 'fundamental breach', regardless of wording",
+            "Parliament enacts the Unfair Contract Terms Act 1977, giving a statutory mechanism to control unreasonable clauses",
+            "Photo Production v Securicor rejects the fundamental breach rule of law in favour of ordinary construction",
+            "Courts apply contra proferentem and strict construction, but ask only what the clause's words actually cover"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: the old fundamental-breach rule of law gave way once Parliament supplied a statutory control (UCTA), which let the House of Lords in Photo Production return the question to ordinary, if strict, construction.",
+          "feedbackIncorrect": "Check the order — UCTA's enactment is what made it possible for the House of Lords in Photo Production to retire the old fundamental-breach rule of law and rely on construction plus statute instead."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "UCTA's reasonableness test for business contracts",
+        "voice": "reference — dense, statute-first, built for repeated lookup",
+        "body": [
+          "The Unfair Contract Terms Act 1977 is the primary statutory control on exclusion and limitation clauses, chiefly in business-to-business contracts (its consumer-facing provisions have been substantially superseded by the CRA 2015, covered next). Despite its name, UCTA doesn't strike at unfairness generally — it targets attempts to exclude or restrict liability, and it does so with different levels of severity depending on what's being excluded.",
+          "Section 2 draws the sharpest line in the whole Act. Section 2(1) makes it impossible to exclude or restrict liability for death or personal injury resulting from negligence — no reasonableness test even applies; such a clause is simply void. Section 2(2) allows liability for other loss or damage caused by negligence to be excluded, but only if the term satisfies the requirement of reasonableness. Section 6 applies a similar structure to the statutory implied terms in sale of goods contracts (the SGA 1979 terms covered in the previous lesson): the term as to title can never be excluded; the terms as to description, quality, fitness and sample can be excluded against a business buyer only if reasonable, and cannot be excluded at all against a consumer buyer (now governed by the CRA).",
+          "Section 11 sets out the reasonableness test itself: the term must have been a fair and reasonable one to include, having regard to the circumstances known or reasonably contemplated by the parties at the time the contract was made — not with hindsight, once the loss has already happened. Schedule 2 lists guidelines relevant to that assessment: the relative bargaining strength of the parties; whether the customer received an inducement to agree, or could have contracted with someone else without the term; whether the customer knew or ought reasonably to have known of the term's existence and extent; and, where the term excludes liability unless some condition is complied with, whether it was reasonable to expect compliance with that condition."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Unfair Contract Terms Act 1977, s 2",
+            "text": "(1) A person cannot by reference to any contract term or to a notice... exclude or restrict his liability for death or personal injury resulting from negligence. (2) In the case of other loss or damage, a person cannot so exclude or restrict his liability for negligence except in so far as the term or notice satisfies the requirement of reasonableness.",
+            "elements": ["s 2(1): death/personal injury from negligence — clause is void, no reasonableness test applies", "s 2(2): other loss from negligence — clause valid only if reasonable"]
+          },
+          {
+            "type": "statuteBlock",
+            "citation": "Unfair Contract Terms Act 1977, s 11 and Sch 2",
+            "text": "The term shall have been a fair and reasonable one to be included having regard to the circumstances which were, or ought reasonably to have been, known to or in the contemplation of the parties when the contract was made.",
+            "elements": ["Assessed at the time of contracting, not with hindsight", "Sch 2 guidelines: relative bargaining strength; inducement or availability of alternative supply; knowledge of the term; reasonableness of expecting compliance with any condition"]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "George Mitchell (Chesterhall) Ltd v Finney Lock Seeds Ltd",
+            "citation": "[1983] 2 AC 803",
+            "court": "House of Lords",
+            "year": 1983,
+            "factsShort": "A seed merchant supplied the wrong, far cheaper variety of cabbage seed, causing a total crop failure; a clause limited the merchant's liability to the price of the seed.",
+            "ratioShort": "The limitation clause failed the UCTA reasonableness test, given the seller's own practice of settling claims outside the clause, the unequal bargaining position, and the availability of insurance to the seller but not realistically to the buyer.",
+            "expanded": {
+              "facts": "Finney Lock Seeds supplied cabbage seed that was not of the variety ordered and defective, causing a total crop failure and losses far exceeding the price of the seed. A limitation clause in the sale confined the seller's liability to a refund of the price paid.",
+              "judgmentExtract": "The House of Lords held the clause failed the reasonableness test under UCTA s 11. Relevant factors included that the seed merchants had, in the past, settled similar claims in full without relying on the clause (undermining any claim it was a genuinely negotiated, understood limit); the breach arose from the supplier's own negligence; and the supplier could readily have insured against the risk, spreading the cost across its business, whereas the risk to an individual farmer was catastrophic and uninsurable in practice.",
+              "significance": "George Mitchell remains the leading illustration of how the Schedule 2 guidelines are applied in practice — showing that a clause's reasonableness is assessed contextually, weighing bargaining power, past practice, and the relative capacity of each party to bear or insure against the risk."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-10-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A haulage company's contract with another business excludes liability for property damage caused by the haulier's negligence. Under UCTA, is this clause automatically void, or does it depend on reasonableness?",
+          "options": ["It depends on reasonableness under s 2(2) — only death or personal injury from negligence is automatically void under s 2(1)", "It is automatically void — all negligence liability is non-excludable under UCTA", "UCTA does not apply to negligence at all, only to breach of contract"],
+          "correctIndex": 0,
+          "explanation": "Property damage falls under s 2(2), which permits exclusion of negligence liability subject to the reasonableness test — the automatic-void rule in s 2(1) is confined to death and personal injury."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Consumers get a different, tougher regime",
+        "voice": "comparative — sets the CRA squarely against UCTA, part by part",
+        "body": [
+          "Everything in Part 3 concerned UCTA, which today operates chiefly in business-to-business contracts. Where one party is a consumer — an individual acting wholly or mainly outside their trade — the Consumer Rights Act 2015 supplies a separate, and in several respects tougher, regime, and reaching for UCTA's reasonableness test on consumer facts is one of the most common errors in this area.",
+          "Section 31 of the CRA sets a floor that cannot be negotiated away at all: a trader cannot exclude or restrict liability for breach of the core statutory rights covered in the previous lesson — satisfactory quality, fitness for purpose, and correspondence with description. There is no reasonableness escape route here, unlike UCTA's s 6 treatment of the equivalent SGA terms against a business buyer; against a consumer, these terms simply cannot be excluded, full stop.",
+          "Section 65 mirrors UCTA s 2(1) exactly for consumer contracts: a trader cannot exclude or restrict liability for death or personal injury resulting from negligence. But the CRA's most distinctive feature is section 62's general fairness test, which reaches far wider than exclusion clauses alone. A term is unfair, and therefore not binding on the consumer, if — contrary to the requirement of good faith — it causes a significant imbalance in the parties' rights and obligations to the detriment of the consumer. Schedule 2 of the CRA supplies an indicative 'grey list' of terms that may be regarded as unfair — including terms excluding or limiting a trader's liability in the event of the consumer's death or personal injury from an act or omission of the trader, terms inappropriately excluding or limiting the consumer's legal rights against the trader for breach, and terms requiring a consumer to pay disproportionately high sums in compensation. The grey list is illustrative, not exhaustive or automatically decisive — but a term on it faces a strong presumption of unfairness that a trader must work to rebut.",
+          "The practical upshot is that the two regimes ask genuinely different questions. UCTA asks: was including this term, in these commercial circumstances, reasonable? The CRA asks something broader and more consumer-protective: does this term, considered as part of the whole bargain, unfairly tilt the relationship against a consumer who had no real chance to negotiate it?"
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "UCTA 1977 versus CRA 2015 — which regime, and what test",
+            "description": "A decision path for identifying which statutory control applies to an exclusion or limitation clause, and what test governs it.",
+            "nodes": [
+              { "id": "start", "label": "Is one party a consumer (an individual acting wholly or mainly outside their trade)?" },
+              { "id": "consumer", "label": "Yes → Consumer Rights Act 2015 applies" },
+              { "id": "business", "label": "No → Unfair Contract Terms Act 1977 applies" },
+              { "id": "cra-core", "label": "CRA: core quality/fitness/description terms (s 31) — cannot be excluded at all, no reasonableness escape" },
+              { "id": "cra-injury", "label": "CRA: death/personal injury from negligence (s 65) — cannot be excluded at all" },
+              { "id": "cra-fair", "label": "CRA: other terms — s 62 fairness test (significant imbalance, good faith), informed by the Sch 2 grey list" },
+              { "id": "ucta-injury", "label": "UCTA: death/personal injury from negligence (s 2(1)) — void, no reasonableness test" },
+              { "id": "ucta-other", "label": "UCTA: other negligence loss (s 2(2)) and SGA implied terms against a business buyer (s 6) — valid only if reasonable (s 11, Sch 2)" }
+            ],
+            "edges": [
+              { "from": "start", "to": "consumer", "label": "Consumer involved" },
+              { "from": "start", "to": "business", "label": "Both business parties" },
+              { "from": "consumer", "to": "cra-core", "label": "Core rights" },
+              { "from": "consumer", "to": "cra-injury", "label": "Death/PI" },
+              { "from": "consumer", "to": "cra-fair", "label": "Other terms" },
+              { "from": "business", "to": "ucta-injury", "label": "Death/PI" },
+              { "from": "business", "to": "ucta-other", "label": "Other loss/implied terms" }
+            ],
+            "textAlternative": "First identify whether a consumer is involved. If so, the CRA 2015 applies: core quality, fitness and description rights under s 31 can never be excluded; death or personal injury from negligence can never be excluded under s 65; other terms are tested for fairness under s 62, informed by the Schedule 2 grey list. If both parties are businesses, UCTA 1977 applies instead: death or personal injury from negligence is void under s 2(1) with no reasonableness test; other negligence loss and the SGA implied terms against a business buyer are valid only if reasonable under s 11 and Schedule 2."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-10-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario does the CRA 2015's non-negotiable bar apply, rather than UCTA's reasonableness test?",
+          "scenarioA": "A manufacturer sells industrial components to another manufacturer, with a clause limiting liability for defective components to the contract price.",
+          "scenarioB": "An online retailer sells a kettle to a member of the public, with a clause purporting to exclude all liability if the kettle is not of satisfactory quality.",
+          "correctScenario": "B",
+          "explanation": "B involves a consumer buyer and a core statutory quality right — CRA s 31 bars exclusion of that right outright, with no reasonableness escape. A is a business-to-business sale, so the clause is tested for reasonableness under UCTA instead."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Modern courts read the clause as written — and mean it",
+        "voice": "argumentative — pushes the case for Triple Point's business-common-sense reading, then tempers it",
+        "body": [
+          "It would be easy to come away from this lesson thinking exclusion clauses are perpetually under suspicion — struck down for ambiguity, cut down by UCTA, voided by the CRA. Triple Point Technology Inc v PTT Public Company Ltd is a useful corrective: it shows the Supreme Court, in 2021, firmly reaffirming that where a clause survives incorporation and the statutory controls, courts will give it its natural, businesslike meaning, not strain to read it down out of sympathy for the party it disadvantages.",
+          "The case concerned a limitation of liability clause in a software contract, and specifically whether the cap applied to damages for a particular kind of termination-related loss. Lower courts had reached inconsistent, narrow readings that risked draining the clause of most of its practical effect. The Supreme Court restored a natural reading: the clause meant what it plainly said, construed against the commercial background the parties were operating in, and courts should be wary of interpretive gymnastics designed to avoid the consequences of a clause the parties freely negotiated.",
+          "The link back to Photo Production is direct and deliberate. Forty years apart, both cases make the same point from different angles: exclusion and limitation clauses are not disfavoured as a class, to be strained against wherever a court can find a plausible narrow reading. They are contractual bargains, generally negotiated (or at least accepted) with eyes open by parties capable of assessing risk, and the courts' job is to give effect to what the words actually say — with contra proferentem doing real work only where there is genuine ambiguity, not as a general licence to rewrite the deal.",
+          "That said, Triple Point doesn't repeal anything covered earlier in this lesson. Incorporation still has to be shown; construction is still, in a genuine ambiguity, resolved against the drafter; UCTA's reasonableness test and the CRA's fairness regime still bite exactly as described. What Triple Point adds is a caution at the very last stage: once a clause has cleared those hurdles, don't manufacture a narrow reading just because the consequences feel harsh. A clause that has earned its place in the contract is entitled to be read for what it says."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Triple Point Technology Inc v PTT Public Company Ltd",
+            "citation": "[2021] UKSC 29",
+            "court": "Supreme Court",
+            "year": 2021,
+            "factsShort": "A dispute over whether a limitation of liability clause in a software supply contract capped damages arising from termination for a particular kind of breach.",
+            "ratioShort": "Limitation and exclusion clauses should be given their natural meaning, read against the relevant background, without straining to narrow their effect merely because the result favours the party relying on them.",
+            "expanded": {
+              "facts": "Triple Point supplied software to PTT under a contract containing a cap on Triple Point's liability. After PTT terminated for Triple Point's delay and defective work, a dispute arose over whether the liability cap applied to the losses PTT claimed, including losses arising after termination.",
+              "judgmentExtract": "The Supreme Court held that limitation clauses should not be subjected to any special hostile approach; they are to be construed like any other term, according to their natural and ordinary meaning read in the relevant factual and commercial context. The Court restored a reading that gave the clause its evident, intended effect, cautioning against artificially narrow constructions adopted simply because a broader reading favours the party excluding or limiting liability.",
+              "significance": "Triple Point is the leading modern confirmation that Photo Production's approach endures: exclusion and limitation clauses get ordinary, businesslike construction. It closes the loop this lesson opened — from the earliest common law suspicion of these clauses to a settled, construction-first, statute-backed modern approach."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-10-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that Triple Point signals courts should strain to read exclusion and limitation clauses narrowly whenever possible?",
+          "sliderLabels": ["Courts should strain to read them narrowly", "Courts give them their natural, businesslike meaning"],
+          "correctPosition": "Courts give them their natural, businesslike meaning",
+          "explanation": "The opposite is true. Triple Point specifically warns against artificially narrow readings adopted just because they favour the party resisting the clause — the clause should be read for what it plainly says, consistent with Photo Production."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-10-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the two common law controls an exclusion clause must clear before any statutory reasonableness or fairness test is even reached.",
+      "acceptableAnswers": ["incorporation and construction", "incorporation, construction"],
+      "modelAnswer": "The clause must first be incorporated into the contract (by signature, reasonable notice, or a course of dealing), and then construed — read strictly, and against the drafter (contra proferentem) — to see whether its words actually cover the loss in question."
+    },
+    {
+      "itemId": "contract-10-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Does UCTA 1977 still apply directly to exclusion clauses in consumer contracts today?",
+      "options": ["No — the CRA 2015 governs consumer contracts; UCTA now operates chiefly in business-to-business contracts", "Yes — UCTA and the CRA apply identically to consumers and businesses alike"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-10-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Under UCTA 1977, which type of clause is automatically void, with no reasonableness test applied at all?",
+      "options": ["A clause excluding liability for death or personal injury caused by negligence, under s 2(1)", "A clause excluding liability for any property damage caused by negligence, under s 2(2)", "A clause limiting (rather than excluding) any kind of liability"],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to think all negligence exclusions are automatically void — but s 2(2) subjects property/other-loss exclusions to the reasonableness test rather than voiding them outright. Only death and personal injury under s 2(1) escape the reasonableness test entirely."
+    },
+    {
+      "itemId": "contract-10-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the analytical steps for assessing whether an exclusion clause protects a business defendant in a B2B contract.",
+      "items": ["Check whether the clause was incorporated into the contract", "Construe the clause strictly to see whether its words cover the loss that occurred", "Check whether UCTA s 2(1) applies (death/personal injury — automatically void if so)", "If not automatically void, apply the UCTA s 11 reasonableness test using the Sch 2 guidelines"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "contract-10-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Compare CRA 2015 s 65 with UCTA 1977 s 2(1). What is the key similarity between them?",
+      "options": ["Both make it impossible to exclude or restrict liability for death or personal injury caused by negligence, in their respective spheres (consumer and business contracts)", "Both apply only to contracts for the sale of goods", "Both require a reasonableness assessment before liability can be excluded"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-10-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, adapted from Photo Production v Securicor, highlight the sentence stating the ratio.",
+      "passage": "The claimant argued that a breach as serious as deliberately starting a fire could never be covered by any exclusion clause, however clearly worded. There is no rule of law that automatically voids an exclusion clause because the breach is fundamental; the only question is one of construction, asking whether the clause's words, properly interpreted, extend to the loss in question. Here, the clause was drafted in wide and unambiguous terms that plainly covered this loss.",
+      "ratioSentence": "There is no rule of law that automatically voids an exclusion clause because the breach is fundamental; the only question is one of construction, asking whether the clause's words, properly interpreted, extend to the loss in question."
+    },
+    {
+      "itemId": "contract-10-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Two businesses of roughly equal bargaining power negotiate a supply contract with legal advice on both sides. A limitation clause caps liability at the contract price, and the supplier could have offered a higher cap for an additional fee, which the buyer declined. Is this clause likely to satisfy UCTA's reasonableness test?",
+      "options": ["Likely yes — equal bargaining power, legal advice, and a genuine choice to pay more for a higher cap all point towards reasonableness under the Sch 2 guidelines", "Likely no — any cap set at the contract price is automatically unreasonable", "The question is irrelevant — UCTA does not apply to limitation clauses, only exclusion clauses"],
+      "correctIndex": 0,
+      "explanation": "The Sch 2 factors — bargaining strength, availability of an alternative (a higher cap for a fee), and informed negotiation — all point towards reasonableness, unlike the imbalance in George Mitchell."
+    },
+    {
+      "itemId": "contract-10-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact most likely to persuade a court that this exclusion clause should be construed narrowly under contra proferentem.",
+      "scenarioText": "A contractor's clause reads 'the contractor is not liable for any loss,' printed in the same size and prominence as the rest of the text, and used to try to exclude liability for the contractor's own reckless failure to follow basic safety procedures.",
+      "tappableSpans": ["not liable for any loss", "printed in the same size and prominence", "exclude liability for the contractor's own reckless failure", "basic safety procedures"],
+      "correctSpan": "exclude liability for the contractor's own reckless failure",
+      "explanation": "Contra proferentem is applied most strictly where a clause is being stretched to cover the drafter's own serious fault — general, unspecific wording is read narrowly rather than being taken to cover reckless conduct unless the language is very clear."
+    },
+    {
+      "itemId": "contract-10-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is governed by the CRA 2015's s 62 fairness test rather than UCTA's s 11 reasonableness test?",
+      "scenarioA": "A gym membership contract between the gym and an individual member joining for personal fitness contains a clause letting the gym change the price with 24 hours' notice.",
+      "scenarioB": "A logistics contract between two haulage companies contains a clause capping liability for damaged cargo at a fixed sum per consignment.",
+      "correctScenario": "A",
+      "explanation": "A involves a consumer (the individual member) and a term that isn't a straightforward exclusion of a core right, so it falls to the CRA's general s 62 fairness test (and the Sch 2 grey list, which specifically flags unilateral price-variation terms). B is a business-to-business limitation clause, tested under UCTA's reasonableness regime instead."
+    },
+    {
+      "itemId": "contract-10-test-10",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A small independent bakery buys a commercial oven from a specialist supplier under the supplier's standard terms, which exclude all liability for defects in the oven, including defects caused by the supplier's own negligent manufacture. The bakery had no opportunity to negotiate and could not obtain a similar oven elsewhere without accepting an identical clause. The oven's defect causes a fire that destroys stock, but no one is injured. Analyse whether the exclusion clause protects the supplier.",
+      "factsToOrder": [
+        "The transaction is between two businesses (bakery and specialist supplier), not with a consumer",
+        "The clause excludes liability for the supplier's own negligence in a defect causing property damage, not personal injury",
+        "The bakery had no opportunity to negotiate and no realistic alternative supplier",
+        "The clause is drafted to exclude 'all liability,' including for negligence"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the exclusion clause validly protects the supplier from liability for the fire damage caused by its own negligent manufacture.",
+        "rule": "As a B2B transaction, UCTA 1977 applies rather than the CRA. Because no personal injury or death is involved, s 2(1)'s automatic void does not apply; instead, exclusion of negligence liability for property damage is governed by s 2(2) and must satisfy the s 11 reasonableness test, assessed using the Sch 2 guidelines including relative bargaining strength and the availability of alternative supply.",
+        "application": "The bakery had no meaningful opportunity to negotiate and no realistic alternative supplier offering different terms — both Sch 2 factors point strongly against reasonableness, echoing the imbalance found unreasonable in George Mitchell. The clause is drafted extremely broadly ('all liability') with no attempt to differentiate types of loss, reinforcing the case against reasonableness.",
+        "conclusion": "The clause is likely to fail the s 11 reasonableness test and will not protect the supplier from liability for the fire damage."
+      }
+    },
+    {
+      "itemId": "contract-10-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "What does Triple Point Technology v PTT add to the position established in Photo Production?",
+      "options": ["It confirms courts should not artificially narrow the reading of a limitation or exclusion clause simply because the result favours the party relying on it", "It reintroduces a rule of law voiding clauses for fundamental breach", "It holds that limitation clauses are treated more strictly than exclusion clauses under a special separate doctrine"],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to think a 2021 Supreme Court case must be adding a new layer of judicial suspicion of these clauses — Triple Point does the opposite, reinforcing Photo Production's construction-first, non-hostile approach."
+    },
+    {
+      "itemId": "contract-10-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A term in a consumer mobile phone contract lets the trader terminate the contract at will with no equivalent right for the consumer. Is this the kind of term the CRA 2015 Schedule 2 grey list flags as potentially unfair?",
+      "options": ["Yes — one-sided termination rights of this kind are a classic Sch 2 grey list example", "No — Schedule 2 only concerns exclusion of liability for death or personal injury"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-10-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a clause appearing on the CRA 2015 Schedule 2 grey list is automatically and conclusively unfair, with no room for argument?",
+      "sliderLabels": ["Automatically and conclusively unfair", "Indicative only — can be rebutted"],
+      "correctPosition": "Indicative only — can be rebutted",
+      "explanation": "The grey list is illustrative of terms that may be unfair, creating a strong presumption a trader must work to rebut — it is not an automatic, conclusive finding of unfairness in every case."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two recurring mistakes in this lesson: reaching for UCTA's reasonableness test on facts involving a consumer, when the CRA's tougher, sometimes non-excludable regime applies instead; and assuming a serious or 'fundamental' breach automatically defeats an exclusion clause, when Photo Production and Triple Point both confirm the only question is the clause's true construction.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.terms.exclusion-clauses"
+  }
+}

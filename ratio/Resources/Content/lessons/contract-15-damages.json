@@ -1,0 +1,539 @@
+{
+  "lessonId": "contract-15",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 15,
+  "topicId": "contract.remedies.damages",
+  "title": "Damages for breach",
+  "subtitle": "Expectation loss, remoteness, mitigation, and the modern penalty test",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the expectation measure of damages and apply cost-of-cure and difference-in-value approaches to quantify it",
+    "Apply the remoteness rule from Hadley v Baxendale, including the debate over an 'assumption of responsibility' gloss in unusual cases",
+    "Apply the duty to mitigate and the modern 'legitimate interest' test for penalty clauses"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Robinson v Harman (1848) 1 Ex 850",
+      "role": "Foundational statement of the expectation measure as the aim of contract damages"
+    },
+    {
+      "citation": "Ruxley Electronics v Forsyth [1996] AC 344",
+      "role": "Cost-of-cure refused where wholly disproportionate to the loss actually suffered"
+    },
+    {
+      "citation": "Hadley v Baxendale (1854) 9 Ex 341",
+      "role": "The two-limb remoteness test"
+    },
+    {
+      "citation": "Transfield Shipping v Mercator (The Achilleas) [2008] UKHL 48",
+      "role": "Debated 'assumption of responsibility' gloss narrowing remoteness in unusual cases"
+    },
+    {
+      "citation": "Farley v Skinner [2001] UKHL 49",
+      "role": "Narrow exception allowing damages for distress where peace of mind was itself an object of the contract"
+    },
+    {
+      "citation": "Cavendish Square v Makdessi [2015] UKSC 67",
+      "role": "Replaces the genuine-pre-estimate-of-loss test with the modern legitimate interest test for penalties"
+    },
+    {
+      "citation": "ParkingEye v Beavis [2015] UKSC 67",
+      "role": "Applies the legitimate interest test to uphold a parking overstay charge"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the densest lesson in the Contract module, and students often blend its five sub-topics into one undifferentiated 'damages' answer. Where the profile shows application lagging knowledge, this note appears: 'You know each rule in isolation — the exam wants you to know which one governs which part of a single messy fact pattern.'",
+    "profileHooks": {
+      "weakApplication": "This lesson packs five genuinely separate doctrines into one topic. Treat each part as its own mini-lesson and resist blending them together in application questions — remoteness, mitigation, and penalties are tested separately even on the same facts.",
+      "weakKnowledge": "Go slowly through Parts 1 and 3 in particular — expectation loss and remoteness are the two ideas everything else in remedies builds on."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A swimming pool is built nine inches too shallow for diving, exactly to the contract price, perfectly safe, and worth exactly what a correctly built pool would have been worth. The cost of tearing it out and rebuilding it properly would run into tens of thousands. What does the homeowner actually get? This final lesson of the Contract module is about how the law measures loss — and where, deliberately, it refuses to hand over the largest number available."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The expectation measure: contract damages have one job",
+        "voice": "direct — states the governing principle plainly before complicating it",
+        "body": [
+          "Contract damages are not about punishing the defendant, and they are not primarily about compensating reliance losses either, although reliance loss can sometimes be claimed as an alternative. Their default aim is expectation: putting the claimant, so far as money can do it, in the position they would have been in had the contract been performed as promised. This is sometimes called the 'performance interest'.",
+          "The classic statement comes from Robinson v Harman: 'where a party sustains a loss by reason of a breach of contract, he is, so far as money can do it, to be placed in the same situation, with respect to damages, as if the contract had been performed.' Everything in this lesson is really a set of tools and limits for applying that one sentence.",
+          "There are two common ways to measure expectation loss in practice, and picking the right one matters enormously. Difference in value asks what the promised performance was worth compared to what was actually delivered — useful where the defect affects market value in an obvious way. Cost of cure asks what it would cost to put things right — rebuild, repair, or complete the job as promised. Often these produce similar figures. Sometimes they diverge wildly, and that divergence is exactly what the next part explores."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Expectation measure",
+            "definition": "The default aim of contract damages: to put the claimant, so far as money can achieve it, in the position they would have occupied had the contract been performed as promised."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-15-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "What is the default aim of an award of contract damages, per Robinson v Harman?",
+          "options": [
+            "To place the claimant in the position they would have been in had the contract been properly performed",
+            "To punish the defendant for breaching the contract"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Contract damages are compensatory and forward-looking to the promised performance — not punitive.",
+          "feedbackIncorrect": "Contract damages are compensatory, aimed at the position performance would have produced, not at punishing the defendant — punitive damages have essentially no place in ordinary contract claims."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Cost of cure versus difference in value: the shallow pool",
+        "voice": "case-narrative — builds the whole part around one case's facts and reasoning",
+        "body": [
+          "Ruxley Electronics v Forsyth is the case every exam question on quantification eventually points to, because it forces the choice between the two measures head-on. Mr Forsyth contracted for a swimming pool to be built with a maximum diving depth of 7 feet 6 inches. The pool as built was safe, fully usable, and attractive — but had a maximum depth of only 6 feet, too shallow for diving as specified. Crucially, the shortfall made no difference at all to the market value of the property; a valuer would price the pool exactly the same either way.",
+          "Forsyth wanted the cost of demolishing and rebuilding the pool to the contracted specification — roughly £21,560. The trial judge found this would be wholly disproportionate to the actual disadvantage caused by the shallower pool, and awarded instead £2,500 for loss of amenity — a modest sum reflecting the general disappointment of not getting exactly what was promised, without funding an economically wasteful rebuild.",
+          "The House of Lords upheld this approach. Cost of cure is not an automatic entitlement simply because it is the number that would fully vindicate the letter of the contract; where it is wholly disproportionate to the benefit actually to be obtained, and reasonableness is breached by insisting on it, the court may instead award a more modest sum reflecting the claimant's loss of amenity or consumer surplus — the subjective value of getting exactly what was bargained for, distinct from either strict cost of cure or a nil difference in market value.",
+          "The lesson for application questions: never assume cost of cure automatically wins just because it is the largest, most complete-looking figure. Ask first whether it is proportionate to what was actually lost. Where rebuilding would be reasonable — say, a genuinely defective structural element with real practical consequences — cost of cure remains the ordinary starting measure. Ruxley is the narrow, deliberately calibrated exception, not a general licence to discount cost of cure whenever a defendant complains it is expensive."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Ruxley Electronics v Forsyth",
+            "citation": "[1996] AC 344",
+            "court": "House of Lords",
+            "year": 1996,
+            "factsShort": "A swimming pool was built too shallow for diving, though otherwise fully safe and usable, with no effect on the property's market value.",
+            "ratioShort": "Cost of cure will be refused where wholly disproportionate to the actual benefit to be obtained; the court may instead award a modest sum for loss of amenity reflecting the claimant's disappointed expectation.",
+            "expanded": {
+              "facts": "Forsyth's contract specified a pool with a maximum depth of 7 feet 6 inches. As built, the maximum depth was only 6 feet 9 inches (reported variously, but materially too shallow for diving). The pool was otherwise well-built, safe, and visually indistinguishable in value from one built to specification. Rebuilding to specification would have required substantially demolishing and reconstructing the pool.",
+              "judgmentExtract": "Lord Lloyd and Lord Jauncey held that where the cost of remedying a defect is wholly disproportionate to the benefit to be obtained, it is not a reasonable measure of loss and the claimant cannot insist on it merely because the contract was not performed to the letter. A more modest award reflecting genuine loss of amenity or consumer surplus properly compensates the actual loss without rewarding an unreasonable, wasteful choice.",
+              "significance": "Ruxley remains the leading authority disciplining the choice between cost of cure and difference in value, and is the origin of 'loss of amenity' as a recognised, distinct head of contract damages for the disappointment of not getting the exact performance bargained for."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-15-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is cost of cure more likely to be awarded in full, rather than a Ruxley-style loss-of-amenity sum?",
+          "scenarioA": "A pool built one inch shallower than specified, safe and usable, with rebuild costs vastly exceeding any real disadvantage suffered.",
+          "scenarioB": "A newly built extension with a structurally unsound roof that leaks and requires proper reconstruction to be usable and safe, at a cost proportionate to fixing a genuine defect.",
+          "correctScenario": "B",
+          "explanation": "In B, the defect has real practical consequences and the rebuild cost is not disproportionate to the benefit of a properly functioning structure — this is the ordinary case where cost of cure remains the standard measure. A mirrors Ruxley precisely, where disproportion tipped the court towards loss of amenity instead."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Remoteness: how far does liability for consequences reach?",
+        "voice": "structural — builds the two-limb test methodically as a tool to apply",
+        "body": [
+          "Expectation loss can, in theory, ripple out endlessly — a late delivery might cause a missed meeting, a lost deal, a lost reputation, a lost future contract, and so on without obvious limit. Remoteness is the doctrine that draws a line: a defendant is only liable for losses that were within the reasonable contemplation of the parties at the time the contract was made.",
+          "Hadley v Baxendale supplies the two limbs, and they are worth learning by name because problem questions test them separately. A miller's crankshaft broke, and he engaged a carrier to send it away for repair; the carrier delayed, and the mill was idle for longer than it should have been, but the carrier did not know the mill would be completely stopped by the delay — the miller had not mentioned he had no spare shaft. The court held the carrier was not liable for the lost profits from the mill's stoppage.",
+          "The first limb catches loss arising naturally, according to the usual course of things, from the breach itself — no special knowledge is needed, because any reasonable person in the defendant's position would foresee this type of loss as a normal consequence. The second limb catches loss that would not normally arise, but which the defendant actually knew, at the time of contracting, was likely to result from breach because of special circumstances communicated to them. The miller's lost profits fell into neither category on the facts as found — ordinarily a business would have a spare part or alternative arrangement, so the total stoppage was not a natural consequence, and the carrier had not been told of the miller's particular vulnerability.",
+          "The test is about what was reasonably contemplated at the time of contracting, not what actually happened or what hindsight reveals — a critical distinction. A loss can be entirely foreseeable in hindsight and still too remote, if nothing about the position at formation made it something the parties would have had in mind."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Hadley v Baxendale — the two limbs",
+            "points": [
+              "First limb: loss arising naturally, in the ordinary course of things, from the breach itself — no special knowledge required",
+              "Second limb: loss the defendant actually knew, at the time of contracting, was likely to result from breach because of communicated special circumstances",
+              "Assessed at the time of contracting, not with the benefit of hindsight after the breach",
+              "A loss outside both limbs is too remote and irrecoverable, however real it turns out to be"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-15-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A courier is contracted to deliver a parcel of ordinary goods overnight, with no special instructions given. Delivery is a day late. The buyer had, unknown to the courier, been about to resell the goods at a huge one-off profit that is now lost because the resale deal fell through. Is the lost resale profit recoverable?",
+          "options": [
+            "No — this falls outside both Hadley limbs: it is not an ordinary consequence of a late delivery, and the courier was never told of the special resale arrangement",
+            "Yes — any loss that in fact resulted from the breach is automatically recoverable"
+          ],
+          "correctIndex": 0,
+          "explanation": "The lost resale profit is not a natural, ordinary consequence of a late parcel delivery (first limb), and since the courier was never told about the special one-off resale deal, the second limb is not satisfied either. This mirrors Hadley v Baxendale itself."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The Achilleas and Farley: two narrow modern qualifications",
+        "voice": "dialectic — presents the tension in the caselaw honestly rather than resolving it too neatly",
+        "body": [
+          "Hadley v Baxendale has stood for over 160 years, but one modern case unsettled it enough that it needs careful handling. In Transfield Shipping v Mercator (The Achilleas), a ship was returned late under a time charter, causing the owners to lose a lucrative follow-on charter they had already fixed — a loss that, on an orthodox application of the second limb, looked recoverable, since the type of loss (losing a subsequent fixture through late redelivery) was arguably within the ordinary contemplation of shipping parties.",
+          "A majority of the House of Lords nonetheless denied the claim for the full lost-fixture damages, limiting the charterer to the more modest ordinary measure (the difference between the charter rate and the market rate for the overrun period). The reasoning that attracted most attention, from Lord Hoffmann, suggested remoteness should sometimes be understood not just as a question of what type of loss was foreseeable, but as a question of what liability the defendant could reasonably be taken to have assumed responsibility for, given the market's ordinary understanding of what a party in that position was undertaking to bear.",
+          "This 'assumption of responsibility' gloss remains genuinely contested. Some later cases and commentators treat it as confined to unusual, specialist markets like shipping, where a settled market understanding of who bears what risk already exists — not a general rewrite of Hadley v Baxendale for ordinary contracts. Others read it as a standing reminder that foreseeability is necessary but not always sufficient, and that a court can still ask, in an unusual case, whether the type and scale of loss claimed was really something the defendant can fairly be taken to have accepted exposure to. For most application questions, the safe approach is: apply Hadley v Baxendale's two limbs as the primary test, and only raise The Achilleas as an additional, narrower argument where the facts are genuinely unusual — an unquantifiable or wholly disproportionate loss in a specialised market — rather than treating it as displacing Hadley wholesale.",
+          "Farley v Skinner adds a different, narrower qualification, this time about the type of loss recoverable rather than its remoteness. As a general rule, damages for distress, disappointment, or mental suffering are not recoverable in contract — commercial disappointment is treated as part of ordinary life, not compensable loss. Farley carved out a narrow exception: where a major or important object of the contract itself was to provide peace of mind or freedom from distress, damages for the distress caused by its breach may be recovered. There, a surveyor was specifically instructed to check whether a property was affected by aircraft noise, precisely because peace of mind from that noise mattered to the buyer; the surveyor negligently said it was not affected, when it was. The House of Lords allowed a modest award for the distress of living with the noise, because avoiding that very distress was a central purpose the contract itself was struck to achieve — not because the buyer was simply upset that a contract had been broken."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often cite The Achilleas as having replaced Hadley v Baxendale's foreseeability test with a general 'assumption of responsibility' test for all contract remoteness questions.",
+            "whyItsWrong": "The Achilleas is a narrow, contested gloss applied on unusual facts in a specialist market, not a wholesale replacement of the orthodox two-limb test. The safer analytical structure is Hadley v Baxendale first, with The Achilleas raised only as an additional argument on genuinely unusual facts."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-15-check-04",
+          "type": "sortIntoBuckets",
+          "skillTag": "understanding",
+          "prompt": "Sort each scenario into 'Distress damages likely recoverable (Farley exception)' or 'Distress damages not recoverable (ordinary rule)'.",
+          "buckets": [
+            "Distress damages likely recoverable (Farley exception)",
+            "Distress damages not recoverable (ordinary rule)"
+          ],
+          "itemsToSort": [
+            {
+              "text": "A holiday company breaches a contract specifically sold as providing a peaceful, tranquil retreat, and the holiday is ruined by disturbance the contract was meant to prevent",
+              "correctBucket": "Distress damages likely recoverable (Farley exception)"
+            },
+            {
+              "text": "A building contractor is late finishing an office renovation, causing the business owner ordinary frustration and inconvenience",
+              "correctBucket": "Distress damages not recoverable (ordinary rule)"
+            },
+            {
+              "text": "A surveyor is specifically instructed to check for a known source of noise disturbance because peace of mind matters to the buyer, and negligently misses it",
+              "correctBucket": "Distress damages likely recoverable (Farley exception)"
+            },
+            {
+              "text": "A supplier breaches an ordinary commercial supply contract, causing the buyer stress about cash flow",
+              "correctBucket": "Distress damages not recoverable (ordinary rule)"
+            }
+          ]
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Mitigation, and the modern test for penalty clauses",
+        "voice": "exam-focused — closes the lesson (and the module) as a practical checklist for problem answers",
+        "body": [
+          "Two more doctrines round out the topic, and both are frequently tested in the same problem question as remoteness, so keep them analytically separate. First, the duty to mitigate: a claimant cannot recover damages for losses they could reasonably have avoided by taking reasonable steps after the breach. This is not a duty owed to the defendant in any strict sense — a claimant is never compelled to mitigate — but a claimant who fails to take reasonable steps simply cannot recover the portion of loss that reasonable mitigation would have avoided. Reasonable steps taken in mitigation, and any reasonable expenses incurred in doing so, remain recoverable even if, with hindsight, they did not actually reduce the loss.",
+          "Second, and this is where the module ends on genuinely live, frequently misstated law: penalty clauses. Parties often agree in advance a fixed sum payable on breach — a liquidated damages clause. For decades the test for whether such a clause was enforceable, rather than an unenforceable penalty, asked whether the sum was a genuine pre-estimate of the loss likely to flow from the breach, assessed at the time of contracting. A clause that looked like it was there to deter breach, rather than compensate for it, risked being struck down as a penalty.",
+          "Cavendish Square v Makdessi replaced that test. The Supreme Court held the real question is not whether the clause was a genuine pre-estimate of loss, but whether it protects a legitimate interest of the innocent party, and if so, whether the provision made for that interest is extravagant, exorbitant, or unconscionable in amount compared with the greatest conceivable loss that could flow from the breach. A clause can lawfully go beyond simple compensation for loss — deterring a serious breach, or protecting a wider commercial interest such as goodwill or the structure of a broader deal — provided the sum is not out of all proportion to that legitimate interest.",
+          "ParkingEye v Beavis, decided alongside Cavendish, applies this cleanly. A driver was charged £85 for overstaying a two-hour free parking limit. The Supreme Court upheld the charge as enforceable, even though £85 bore no relationship to any loss the car park operator actually suffered from one overstay — because the operator had a legitimate interest in managing the efficient turnover of a limited number of spaces for the benefit of all users and local businesses, and £85 was not extravagant or unconscionable as a means of protecting that interest, being consistent with charges displayed prominently and typical of the industry.",
+          "For an application question, the structure now runs: identify the clause and the interest it is said to protect; ask whether that interest is legitimate (not simply 'deterring breach' in the abstract, but a real commercial interest — protecting goodwill, managing scarce resources, securing performance of a wider bargain); then ask whether the sum stipulated is proportionate to that interest, not merely to the direct financial loss. A clause that once would have failed the old genuine-pre-estimate test can now survive if it protects a legitimate interest proportionately — which is precisely why older materials describing the pre-Cavendish position will mislead on this point, and this lesson's account of the legitimate interest test should be treated as the governing law."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Penalty clause analysis after Cavendish Square v Makdessi",
+            "description": "The two-stage question replacing the old genuine-pre-estimate-of-loss test.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Does the clause protect a legitimate interest of the innocent party beyond simple compensation for direct loss?"
+              },
+              {
+                "id": "no-interest",
+                "label": "No legitimate interest identified → likely an unenforceable penalty"
+              },
+              {
+                "id": "yes-interest",
+                "label": "Yes → is the sum stipulated extravagant, exorbitant, or unconscionable compared with the interest being protected?"
+              },
+              {
+                "id": "proportionate",
+                "label": "Not extravagant/exorbitant → clause is enforceable"
+              },
+              {
+                "id": "disproportionate",
+                "label": "Extravagant/exorbitant/unconscionable → unenforceable as a penalty"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "no-interest",
+                "label": "No"
+              },
+              {
+                "from": "start",
+                "to": "yes-interest",
+                "label": "Yes"
+              },
+              {
+                "from": "yes-interest",
+                "to": "proportionate",
+                "label": "Proportionate"
+              },
+              {
+                "from": "yes-interest",
+                "to": "disproportionate",
+                "label": "Disproportionate"
+              }
+            ],
+            "textAlternative": "First ask whether the clause protects a legitimate interest of the innocent party beyond mere compensation for direct loss. If no such interest is identified, the clause is likely an unenforceable penalty. If a legitimate interest is identified, ask whether the stipulated sum is extravagant, exorbitant, or unconscionable compared with that interest. If proportionate, the clause is enforceable even though it exceeds a simple pre-estimate of loss; if disproportionate, it remains an unenforceable penalty."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-15-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A commercial lease imposes a fixed charge on a tenant for late payment of rent, well above any provable administrative cost of chasing late payment, but the landlord shows it reflects a genuine interest in deterring cash-flow-damaging late payment across its portfolio and is not disproportionate to that interest. Under the modern test, is the clause likely enforceable?",
+          "options": [
+            "No — because it plainly exceeds a genuine pre-estimate of the landlord's actual administrative loss",
+            "Yes — because it protects a legitimate interest (deterring damaging late payment) and is not shown to be extravagant or unconscionable relative to that interest, satisfying Cavendish Square v Makdessi",
+            "No — penalty clauses are always unenforceable regardless of their purpose"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The first answer applies the old, superseded genuine-pre-estimate-of-loss test. Under Cavendish, exceeding the provable direct loss is not fatal on its own — the question is whether a legitimate interest is protected and whether the sum is proportionate to that interest, not to the narrower administrative cost figure."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-15-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the expectation measure of contract damages, as formulated in Robinson v Harman.",
+      "acceptableAnswers": [
+        "putting the claimant in the position as if the contract had been performed",
+        "so far as money can do it, place the claimant as if the contract had been performed"
+      ],
+      "modelAnswer": "The claimant is to be placed, so far as money can do it, in the same position as if the contract had been performed."
+    },
+    {
+      "itemId": "contract-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case establishes that cost of cure can be refused where wholly disproportionate to the actual loss suffered?",
+      "options": [
+        "Ruxley Electronics v Forsyth",
+        "Hadley v Baxendale"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-15-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following correctly states the second limb of Hadley v Baxendale?",
+      "options": [
+        "Loss arising naturally, in the ordinary course of things, from the breach",
+        "Loss the defendant actually knew, at the time of contracting, was likely to result from breach because of communicated special circumstances",
+        "Any loss that in fact resulted from the breach, however unforeseeable"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The first option describes the FIRST limb, not the second — a common mix-up. The third option describes no limb of Hadley at all; remoteness exists precisely to exclude losses that merely in fact resulted but were not reasonably contemplated."
+    },
+    {
+      "itemId": "contract-15-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the steps in analysing whether a fixed sum clause is an enforceable liquidated damages clause after Cavendish Square v Makdessi.",
+      "items": [
+        "Identify the interest the clause is said to protect",
+        "Ask whether that interest is a legitimate commercial interest of the innocent party",
+        "If legitimate, ask whether the stipulated sum is extravagant, exorbitant, or unconscionable relative to that interest",
+        "Conclude the clause is enforceable if proportionate, or an unenforceable penalty if not"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "contract-15-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "What did Cavendish Square v Makdessi replace as the governing test for penalty clauses?",
+      "options": [
+        "The genuine-pre-estimate-of-loss test",
+        "The remoteness test from Hadley v Baxendale",
+        "The mitigation principle"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-15-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from ParkingEye v Beavis, highlight the sentence explaining why the £85 charge was not an unenforceable penalty.",
+      "passage": "The charge bore no correlation to any loss suffered from a single overstay. Nonetheless, the operator had a legitimate interest in managing the efficient use of a limited number of parking spaces for the benefit of retail customers and the wider public. The charge was not extravagant or unconscionable when judged against that interest, and was consistent with charges displayed prominently to users. The clause was accordingly enforceable.",
+      "ratioSentence": "The charge was not extravagant or unconscionable when judged against that interest, and was consistent with charges displayed prominently to users."
+    },
+    {
+      "itemId": "contract-15-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A builder finishes a fence one foot lower than specified. The lower fence has no effect on the property's value, and rebuilding it to the correct height would cost far more than the difference in value. Which measure of damages is a court most likely to apply, per Ruxley?",
+      "options": [
+        "A modest sum for loss of amenity, rather than the full disproportionate cost of cure",
+        "The full cost of demolishing and rebuilding the fence regardless of proportionality",
+        "No damages at all, since market value is unaffected"
+      ],
+      "correctIndex": 0,
+      "explanation": "This mirrors Ruxley closely: a minor specification shortfall, no effect on market value, and a rebuild cost disproportionate to the actual disadvantage — the court is likely to award a modest loss-of-amenity sum instead of full cost of cure."
+    },
+    {
+      "itemId": "contract-15-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A retailer's supplier fails to deliver stock on time. The retailer does nothing to source replacement stock elsewhere, even though reasonably available, and loses sales it could have avoided. Applying the duty to mitigate, can the retailer recover damages for the avoidable lost sales?",
+      "options": [
+        "No — a claimant cannot recover for losses that reasonable steps would have avoided",
+        "Yes — a claimant is never expected to take any steps after a breach",
+        "Yes — mitigation only applies to tort claims, not contract"
+      ],
+      "correctIndex": 0,
+      "explanation": "The duty to mitigate means a claimant cannot recover for loss that reasonable steps after breach would have avoided. Failing to source reasonably available replacement stock means the avoidable portion of the lost sales is not recoverable."
+    },
+    {
+      "itemId": "contract-15-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that brings this claim within the Farley v Skinner exception for distress damages.",
+      "scenarioText": "A couple hire an event planner specifically because the contract states their overriding priority is a stress-free, calm wedding day given a family member's ill health, and the planner is instructed accordingly. The planner negligently double-books the venue, causing severe last-minute chaos and distress precisely of the kind the contract was meant to prevent.",
+      "tappableSpans": [
+        "hire an event planner",
+        "overriding priority is a stress-free, calm wedding day",
+        "negligently double-books the venue",
+        "distress precisely of the kind the contract was meant to prevent"
+      ],
+      "correctSpan": "overriding priority is a stress-free, calm wedding day",
+      "feedbackCorrect": "Correct. Because freedom from stress and distress was itself a major, stated object of this contract, Farley v Skinner allows distress damages here — the fact that this was the contract's purpose, not merely an incidental hope, is what triggers the exception.",
+      "feedbackIncorrect": "Look for the fact establishing that peace of mind was itself a central, stated object of the contract — that is what distinguishes a Farley-style claim from the ordinary rule against distress damages."
+    },
+    {
+      "itemId": "contract-15-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is a stronger candidate for applying The Achilleas' narrower 'assumption of responsibility' reasoning, rather than ordinary Hadley v Baxendale analysis alone?",
+      "scenarioA": "A courier is late delivering an ordinary parcel, causing a modest, foreseeable delay-related loss typical of that kind of contract.",
+      "scenarioB": "A vessel is redelivered late under a specialist time charter in a market with settled expectations about what a charterer typically bears, and the owner claims an unusually large, market-atypical loss from a lost follow-on fixture.",
+      "correctScenario": "B",
+      "explanation": "The Achilleas gloss is narrowly tied to specialist markets with settled understandings of risk allocation and unusual, market-atypical loss claims — exactly scenario B. Scenario A is an ordinary case for which orthodox Hadley v Baxendale analysis suffices."
+    },
+    {
+      "itemId": "contract-15-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A car park charges a flat £100 fee for any overstay, whether by one minute or five hours, with no attempt to relate the fee to actual loss. Does this automatically fail the legitimate interest test?",
+      "options": [
+        "No — disproportion to actual loss is not automatically fatal; the question is whether the charge is extravagant or unconscionable relative to the legitimate interest in space management, as in ParkingEye v Beavis",
+        "Yes — any flat fee unrelated to actual loss is automatically a penalty"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-15-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A software company contracts to deliver a bespoke ordering system by a fixed date, aware only in general terms that the client runs an online retail business. Delivery is three weeks late. The client claims (i) the ordinary loss of profit any online retailer would suffer from being unable to take orders during that period, and (ii) a huge, unusual loss from a single exceptionally lucrative wholesale deal that collapsed because the system wasn't ready, a deal the software company was never told about. Analyse what is recoverable.",
+      "factsToOrder": [
+        "The software company knew only in general terms that the client ran an online retail business",
+        "Ordinary loss of profit from being unable to take orders is claimed",
+        "An unusual, exceptionally large loss from an undisclosed wholesale deal is also claimed",
+        "The software company was never told about the specific wholesale deal"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the ordinary loss of profit and the unusual wholesale-deal loss are both recoverable, applying the remoteness rule in Hadley v Baxendale.",
+        "rule": "A loss is recoverable only if it falls within the first limb (arising naturally, in the ordinary course of things) or the second limb (actually known to the defendant, at the time of contracting, because of communicated special circumstances) of Hadley v Baxendale.",
+        "application": "The ordinary loss of profit from being unable to take orders is a natural, foreseeable consequence of a late-delivered ordering system for a known online retailer, and falls within the first limb regardless of any special knowledge. The wholesale-deal loss is of a different character: it is unusual in scale and kind, and the software company was never told about that specific deal, so the second limb is not satisfied, and it does not arise naturally enough in the ordinary course of things to fall within the first limb either.",
+        "conclusion": "The ordinary lost-profit claim is recoverable under the first limb; the unusual wholesale-deal loss is too remote and irrecoverable, as the software company had no relevant knowledge of it at the time of contracting."
+      }
+    },
+    {
+      "itemId": "contract-15-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which of the following best captures the current, correctly cautious view of The Achilleas' 'assumption of responsibility' reasoning?",
+      "options": [
+        "It has fully replaced the Hadley v Baxendale test for all contract remoteness questions",
+        "It remains a narrow, contested gloss best treated as an additional argument on unusual facts, with Hadley v Baxendale still the primary test",
+        "It applies only to consumer contracts, never commercial ones"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Overstating The Achilleas as a general replacement for Hadley is the most common error in this area — it risks losing marks for misstating the current, still-orthodox structure of remoteness analysis."
+    },
+    {
+      "itemId": "contract-15-test-14",
+      "type": "sortIntoBuckets",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Sort each doctrine into the stage of a contract damages analysis it primarily belongs to.",
+      "buckets": [
+        "Quantifying the loss",
+        "Limiting recoverable loss"
+      ],
+      "itemsToSort": [
+        {
+          "text": "Cost of cure versus difference in value",
+          "correctBucket": "Quantifying the loss"
+        },
+        {
+          "text": "The Hadley v Baxendale two-limb test",
+          "correctBucket": "Limiting recoverable loss"
+        },
+        {
+          "text": "Loss of amenity (Ruxley)",
+          "correctBucket": "Quantifying the loss"
+        },
+        {
+          "text": "The duty to mitigate",
+          "correctBucket": "Limiting recoverable loss"
+        }
+      ]
+    },
+    {
+      "itemId": "contract-15-test-15",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "As a general rule, are damages for distress or disappointment recoverable in an ordinary commercial contract claim?",
+      "options": [
+        "No — this is the general rule, subject to the narrow Farley v Skinner exception where peace of mind was itself a major object of the contract",
+        "Yes — distress damages are freely available in any contract claim"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "This is the densest lesson in the Contract module, and the most common mistake is blending its five sub-topics — quantification, remoteness, distress, mitigation, and penalties — into one undifferentiated answer. Always identify which specific doctrine a given fact is actually testing before applying it, and remember that outdated tests (genuine pre-estimate of loss; unqualified cost of cure) are traps, not correct law. This closes the 15-lesson Contract law core.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.remedies.damages"
+  }
+}

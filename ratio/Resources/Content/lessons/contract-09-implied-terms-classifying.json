@@ -1,0 +1,403 @@
+{
+  "lessonId": "contract-09",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 9,
+  "topicId": "contract.terms.implied-classifying",
+  "title": "Implied terms and classifying terms",
+  "subtitle": "What the contract doesn't say, and what happens when what it does say gets broken",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish terms implied in fact, terms implied in law, and terms implied by statute, and identify the correct test for each",
+    "Classify a contractual term as a condition, warranty, or innominate term, and explain what that classification does to the available remedy",
+    "Apply the Hong Kong Fir approach to a breach scenario to decide whether termination is available"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Marks & Spencer plc v BNP Paribas Securities Services Trust Co [2015] UKSC 72", "role": "Clarifies the test for implying a term in fact — necessity, not mere fairness or reasonableness" },
+    { "citation": "Liverpool City Council v Irwin [1977] AC 239", "role": "Leading authority on terms implied in law, into a recognised category of relationship" },
+    { "citation": "Consumer Rights Act 2015, ss 9–11", "role": "Statutory implied terms (quality, fitness, description) in consumer contracts" },
+    { "citation": "Sale of Goods Act 1979, ss 12–15", "role": "Statutory implied terms in non-consumer contracts for the sale of goods" },
+    { "citation": "Hong Kong Fir Shipping Co v Kawasaki Kisen Kaisha [1962] 2 QB 26", "role": "Establishes the innominate term — remedy determined by the consequences of the breach" },
+    { "citation": "Bunge Corp v Tradax Export SA [1981] 1 WLR 711", "role": "Commercial certainty favours treating time stipulations as conditions despite Hong Kong Fir" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students who can define 'condition' and 'warranty' often freeze when a problem question gives them a term with no label attached — which is most of them. Where the profile shows knowledge ahead of application, this note appears: 'You know the categories. This lesson is about deciding which one a term falls into when nobody tells you.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the tests and the statutes here before. The test pool below leans hard on scenarios with unlabelled terms — expect to do the classifying yourself, not recite a definition.",
+      "weakKnowledge": "Slow down through Parts 1 to 3 and get the three implication routes straight before you touch classification — mixing up 'implied in fact' with 'implied in law' is the single most common cause of a wrong answer here."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A tower block lift breaks down for the third winter running. The tenancy agreement says nothing about lifts, stairwells, or lighting — nothing at all about who has to fix anything. Nobody drafted a clause for it, and yet a court will still find a duty there. This lesson is about the three different ways the law fills a silence in a contract, and about a second, separate question: once a term exists, what kind of promise is it, and what do you get if it's broken?",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The common law tests for implied terms are settled; the statutory regimes (CRA 2015, SGA 1979) are in force and unchanged since the last review."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The gap the parties never noticed",
+        "voice": "Socratic — poses the gap before naming the test",
+        "body": [
+          "Suppose two businesses sign a distribution agreement. It fixes price, quantity, and delivery dates in careful detail — and says nothing at all about what happens if the manufacturer stops making the product entirely. Is that silence a gap the court should fill, or a risk the parties simply chose to leave unallocated? Before you can answer, you need to know what a court is actually looking for.",
+          "A term implied in fact is not a term the court thinks would have been fair, sensible, or even obviously desirable. It is a term the court concludes the parties must have intended, even though they never wrote it down — because the contract cannot work sensibly without it. Two classic formulations chase the same idea: the 'officious bystander' test asks whether an imaginary bystander, suggesting the term to both parties at the moment of signing, would have been met with an irritated 'oh, of course' — and the 'business efficacy' test asks whether the term is necessary to give the contract the practical, workable effect both sides plainly intended.",
+          "For decades these were treated almost as separate hurdles a term had to clear. Marks & Spencer plc v BNP Paribas Securities Services Trust Co reset the question: the Supreme Court held that officious bystander and business efficacy are not two different tests but two ways of asking the same thing, and that the touchstone throughout is necessity. A term is not implied in fact merely because it would improve the contract, make it fairer, or reflect what a reasonable person might have wanted — it is implied only where the contract does not work, commercially or practically, without it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Term implied in fact",
+            "definition": "A term the court concludes the specific parties must have intended, on the facts of their particular contract, because the contract would not work as a matter of business or practical sense without it. Necessity, not fairness, is the test."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Marks & Spencer plc v BNP Paribas Securities Services Trust Co",
+            "citation": "[2015] UKSC 72",
+            "court": "Supreme Court",
+            "year": 2015,
+            "factsShort": "A tenant sought to imply a term into a lease requiring the landlord to repay rent, paid quarterly in advance, for the period after the tenant exercised a break clause mid-quarter.",
+            "ratioShort": "The Supreme Court refused to imply the term: it would have made the deal fairer, but the lease worked perfectly well, commercially, without it — and necessity, not fairness, is the test for implication in fact.",
+            "expanded": {
+              "facts": "M&S held a lease under which rent was payable quarterly in advance. A break clause let the tenant terminate mid-quarter on notice, subject to conditions. M&S exercised the break partway through a quarter and argued a term should be implied requiring the landlord to refund the unused portion of rent already paid for the remainder of that quarter.",
+              "judgmentExtract": "Lord Neuberger held that the officious bystander and business efficacy tests are not cumulative or alternative hurdles but different ways of expressing a single question: is the proposed term necessary to give the contract business efficacy, such that, without it, the contract would lack commercial or practical coherence? A term is not implied merely because it would be reasonable, or because the parties would probably have agreed to it if asked. Here, the lease was a perfectly workable, coherent contract without any repayment term — the absence of the term simply meant that the risk of a mid-quarter break fell on the tenant, which is not itself a reason to imply a term reallocating that risk.",
+              "significance": "This is now the leading modern statement of the test. It is notable for how it narrows implication in fact: 'reasonable' and 'fair' are explicitly rejected as sufficient grounds, and 'necessary for business efficacy' is confirmed as a genuinely high bar, not a rhetorical flourish."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "According to Marks & Spencer v BNP Paribas, is a term implied in fact merely because it would make the contract fairer or more reasonable?",
+          "options": ["No — it must be necessary for the contract to work, not merely reasonable", "Yes — reasonableness alone is enough to imply a term in fact"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Marks & Spencer draws that line deliberately: fairness and reasonableness are not the test, however tempting they are as arguments.",
+          "feedbackIncorrect": "Not quite — re-read the Marks & Spencer ratio. The Supreme Court was explicit that a term is not implied simply because it would be fair or sensible; it must be necessary to make the contract work at all."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "When the law implies the term, not the parties' unspoken intentions",
+        "voice": "comparative — sets terms implied in law directly against Part 1's terms implied in fact",
+        "body": [
+          "Terms implied in fact are, in theory, about this contract, between these parties — a search for what these two people must have meant. Terms implied in law work completely differently, and mixing the two up is one of the most common ways students lose marks on this topic. A term implied in law is not tailored to the individual contract at all. It attaches, as a matter of policy, to an entire recognised category of relationship — landlord and tenant, employer and employee, doctor and patient — regardless of what these particular parties would have agreed if asked.",
+          "The leading case is Liverpool City Council v Irwin. Tenants in a council tower block argued the council, as landlord, owed an implied obligation to keep the lifts, stairwells, and rubbish chutes in reasonable repair, even though the tenancy agreement said nothing about it. The House of Lords implied the term — but notice how differently their reasoning runs from Marks & Spencer. They did not ask what these particular tenants and this particular council must have silently agreed. They asked what obligation the category of relationship — landlord letting flats in a high-rise block, dependent on shared access the landlord alone controls — necessarily requires as a matter of law, once you accept that some obligation must exist for the lease to function at all.",
+          "The practical difference matters most at the margins. A term implied in fact can be excluded or varied by showing that these particular parties, on these particular facts, plainly did not intend it — the whole inquiry is fact-specific. A term implied in law, once the category is established, applies as a general incident of that category of contract; arguing it away requires showing the category itself doesn't fit, not that these two parties happened to feel differently."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Term implied in law",
+            "definition": "A term attached by the courts, as a matter of legal policy, to a recognised category of contractual relationship — irrespective of the presumed intention of the particular parties before the court."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Liverpool City Council v Irwin",
+            "citation": "[1977] AC 239",
+            "court": "House of Lords",
+            "year": 1977,
+            "factsShort": "Tenants in a council-owned tower block sought to imply a term obliging the landlord council to keep common parts — lifts, stairs, rubbish chutes — in reasonable repair.",
+            "ratioShort": "A term was implied in law: given the nature of the letting, the landlord must take reasonable care to keep the means of access in reasonable repair — an obligation attaching to this category of relationship generally, not derived from the specific facts.",
+            "expanded": {
+              "facts": "The tenancy agreements were silent on repair of common parts. The building fell into serious disrepair — lifts frequently out of action, stairwells unlit, chutes blocked — making the flats difficult or dangerous to reach, particularly for elderly and disabled tenants and families with young children.",
+              "judgmentExtract": "Lord Wilberforce held that in a letting of a flat in a high-rise block, where the landlord retains control of the essential means of access, the law implies an obligation on the landlord — as an incident of that type of relationship — to take reasonable care to keep those means of access in reasonable repair. The standard was reasonable care, not a guarantee of perfection, but the existence of some such obligation was necessary for the letting to make sense as a category of relationship, independent of what these particular parties said or didn't say.",
+              "significance": "Irwin is the clearest illustration that implication in law is a distinct legal technique from implication in fact — it operates at the level of relationship-type, not individual bargain, and the standard imposed (reasonable care, not strict guarantee) reflects a policy judgment about what that category of relationship should require."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-09-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these reasoning steps in the order a court follows when implying a term in law under the Irwin approach.",
+          "items": [
+            "Identify the category of relationship the contract belongs to (e.g. landlord letting flats with shared access)",
+            "Ask whether that category of relationship necessarily requires some obligation to function sensibly",
+            "Define the content and standard of that obligation as a matter of policy for the category generally",
+            "Apply the obligation to the case before the court, regardless of what these particular parties intended"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the Irwin structure: category first, necessity of some obligation second, content of the obligation third — the individual parties' intentions never enter the analysis.",
+          "feedbackIncorrect": "Check the order again — implication in law starts from the category of relationship, not from these particular parties' presumed intentions. Content and standard are worked out for the category as a whole, then applied to the case."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "When Parliament writes the term for you",
+        "voice": "reference — checklist style, statute-heavy, built for students to return to",
+        "body": [
+          "The third route to an implied term bypasses judicial reasoning about intention or policy entirely: Parliament has simply legislated certain terms into certain categories of contract by statute. You don't argue for these terms — you identify whether the statute applies, and if it does, the term is there.",
+          "Two statutes do almost all of the work here, and which one applies turns on who the buyer is. The Sale of Goods Act 1979 implies terms into contracts for the sale of goods generally, and remains the operative statute for business-to-business and other non-consumer sales. Section 12 implies a term as to title (the seller has the right to sell); section 13, where the sale is by description, that the goods correspond with that description; section 14, where the seller sells in the course of a business, that the goods are of satisfactory quality and reasonably fit for any particular purpose made known to the seller; section 15, where the sale is by sample, that the bulk corresponds with the sample.",
+          "For consumer contracts — a contract between a trader and an individual acting wholly or mainly outside their trade — the Consumer Rights Act 2015 now governs instead of the SGA. Sections 9 to 11 largely mirror the SGA's structure in updated form: section 9 implies a term that goods are of satisfactory quality; section 10, that goods are fit for a particular purpose made known to the trader; section 11, that goods match their description. The substance tracks the older statute closely, but the CRA gives consumers a distinct and more consumer-protective remedial structure (including the short-term right to reject), which the next lesson develops further."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Consumer Rights Act 2015, s 9(1)",
+            "text": "Every contract to supply goods is to be treated as including a term that the quality of the goods is satisfactory.",
+            "elements": ["Contract to supply goods", "Trader to consumer", "Implied term (not a negotiated one)", "Standard: satisfactory quality"]
+          },
+          {
+            "type": "statuteBlock",
+            "citation": "Sale of Goods Act 1979, s 14(2)",
+            "text": "Where the seller sells goods in the course of a business, there is an implied term that the goods supplied under the contract are of satisfactory quality.",
+            "elements": ["Sale in the course of a business", "Implied term as to satisfactory quality", "Applies whether or not the buyer is a consumer — but displaced by CRA 2015 where the buyer is a consumer"]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-09-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A sole trader buys a industrial printer from a business supplier, for use entirely within her own business. Which statutory regime implies the quality term into this sale?",
+          "options": ["Sale of Goods Act 1979, s 14 — this is a non-consumer (B2B) sale", "Consumer Rights Act 2015, s 9 — any individual buyer counts as a consumer", "Neither statute applies to sales between businesses"],
+          "correctIndex": 0,
+          "explanation": "Buying for the purposes of her own business takes her outside the CRA's definition of 'consumer' (acting wholly or mainly outside trade). The sale falls to the SGA 1979, s 14, not the CRA."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "A crew too incompetent to sail, and a term with no label",
+        "voice": "case-narrative — tells the Hong Kong Fir story before naming the doctrine it created",
+        "body": [
+          "Once a term exists — implied or express — a second, entirely separate question arises: what happens if it's broken? For centuries, English law sorted every term into one of two boxes before the breach even happened. A condition is a term so central to the contract that any breach, however trivial in its actual consequences, lets the innocent party terminate and claim damages. A warranty is a lesser term where breach gives only a right to damages — the contract carries on regardless of how serious the breach turns out to be in practice.",
+          "Hong Kong Fir Shipping Co v Kawasaki Kisen Kaisha broke that binary open. A ship was chartered under a term requiring it to be seaworthy, maintained by a competent and sufficient crew. The engine room staff turned out to be incompetent and the engines badly maintained; substantial time was lost to repairs early in the charter. The charterers tried to terminate, treating 'seaworthiness' as a condition — breach of any kind, they argued, entitled them to walk away.",
+          "The Court of Appeal disagreed, and in doing so created a third category. Some terms, the court held, cannot sensibly be labelled condition or warranty in advance, because they can be broken in trivial ways or in devastating ways — seaworthiness covers everything from a missing lifebelt to a ship literally unable to sail. For these innominate (or intermediate) terms, you don't ask what kind of term it is in the abstract; you ask what the actual consequences of this particular breach were. Only if the breach deprives the innocent party of substantially the whole benefit they were meant to get under the contract does termination become available. Here, the delay was serious but curable, and the charter still had most of its useful life ahead — so damages, not termination, was the remedy.",
+          "The innominate term category matters practically because most terms in a modern commercial contract are never expressly labelled at all. Unless the contract itself says 'this is a condition,' or a statute does (as SGA s 14 implicitly is treated as a condition), a court applying Hong Kong Fir will look past the label to the severity of what actually went wrong."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Hong Kong Fir Shipping Co Ltd v Kawasaki Kisen Kaisha Ltd",
+            "citation": "[1962] 2 QB 26",
+            "court": "Court of Appeal",
+            "year": 1962,
+            "factsShort": "A chartered ship's engine room crew were incompetent and the engines poorly maintained, causing substantial delay through breakdowns and repairs.",
+            "ratioShort": "A seaworthiness clause is an innominate term: whether breach entitles termination depends on whether the breach's actual consequences deprived the innocent party of substantially the whole benefit of the contract, not on any fixed label attached to the term in advance.",
+            "expanded": {
+              "facts": "Kawasaki chartered the Hong Kong Fir to Hong Kong Fir Shipping's charterers for 24 months. The vessel's engine room was undermanned and poorly maintained; roughly five months of the charter period were lost to breakdowns and repairs before the vessel became reliably seaworthy. The charterers purported to terminate the charter for breach of the seaworthiness obligation.",
+              "judgmentExtract": "Diplock LJ held that not every term can be classified in advance as a condition or a warranty; some are broken in ways ranging from trivial to fundamental, and the only workable test is to ask whether the breach as it actually occurred deprived the innocent party of substantially the whole benefit they were intended to obtain under the contract. Applying that test, the delay here — though serious — left most of the two-year charter period still available and did not go to the root of the contract; termination was not available, though damages for the loss caused by the delay were.",
+              "significance": "Hong Kong Fir is the foundation of the innominate term doctrine, which now sits alongside condition and warranty as the third possible classification for any contractual term whose consequences of breach cannot be predicted in advance."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Innominate (intermediate) term",
+            "definition": "A term that is neither a condition nor a warranty at the outset; the availability of termination for breach depends on the actual, factual severity of the consequences of the breach that occurred (Hong Kong Fir), rather than on any fixed label."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-09-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that, under Hong Kong Fir, an innominate term is classified by looking at the seriousness of the breach that actually happened, rather than by a fixed label decided in advance?",
+          "sliderLabels": ["Classified in advance, by label", "Classified after the fact, by consequences"],
+          "correctPosition": "consequences",
+          "explanation": "That's the whole point of Hong Kong Fir: for an innominate term, the label follows the facts of the breach, not the other way round. Only conditions and warranties are fixed in advance."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why commercial parties keep asking for a bright line anyway",
+        "voice": "argumentative — makes the strongest case for Bunge's certainty-first approach, then situates it against Hong Kong Fir",
+        "body": [
+          "Hong Kong Fir looks, on its face, like the more sensible approach — why should a trivial breach of an important-sounding term let someone walk away from a bargain, and why should courts commit in advance to a label that might turn out to fit badly? But commercial parties, especially in shipping and commodities trading, pushed back hard against exactly this flexibility, and Bunge Corp v Tradax Export SA shows why the House of Lords largely agreed with them.",
+          "Bunge concerned a term requiring the buyer to give at least 15 days' notice of the loading port under an FOB contract for soya bean meal. The buyer gave notice four days late. Waiting to assess the actual consequences of that four-day delay — the Hong Kong Fir approach — would have meant the seller couldn't know, at the moment of breach, whether it was entitled to terminate and sell the cargo elsewhere in a volatile, fast-moving market. The House of Lords held that time clauses of this kind, in mercantile contracts, are normally to be treated as conditions, and terminability follows immediately from the breach itself, regardless of how trivial its actual consequences turn out to be.",
+          "The reasoning is worth taking seriously on its own terms, not just as an exception. In fast-moving commercial markets, the cost of uncertainty — not knowing, at the point of breach, whether you can safely terminate and re-contract elsewhere — can be higher than the cost of occasionally allowing termination for what turns out to be a trivial breach. Bunge doesn't overrule Hong Kong Fir; it identifies a class of case, chiefly time stipulations in commercial contracts, where the parties' evident need for certainty pulls the classification back towards a fixed condition, even though nothing in the abstract nature of a notice clause makes it obviously more fundamental than a seaworthiness clause.",
+          "The result is a three-way structure students need to hold in their heads simultaneously: express or statutory labelling settles the question outright where it exists; absent that, courts ask whether the term, by its nature and commercial context, demands certainty (condition) or tolerates a wait-and-see approach (innominate); and only where neither applies does the term default to warranty."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Classifying a term and its remedy",
+            "points": [
+              "Condition — any breach, however trivial in effect, entitles the innocent party to terminate the contract and claim damages",
+              "Warranty — breach gives a right to damages only; the contract continues regardless of how serious the breach turns out to be",
+              "Innominate (intermediate) term — remedy depends on the actual consequences of the breach that occurred; termination is available only if the breach deprives the innocent party of substantially the whole benefit of the contract (Hong Kong Fir)",
+              "Commercial certainty can pull a term towards condition even without an express label — especially time stipulations in mercantile contracts (Bunge v Tradax)"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Bunge Corp v Tradax Export SA",
+            "citation": "[1981] 1 WLR 711",
+            "court": "House of Lords",
+            "year": 1981,
+            "factsShort": "A buyer under an FOB soya bean meal contract gave notice of the loading port four days later than the 15 days required by the contract.",
+            "ratioShort": "Time stipulations in mercantile contracts are normally to be treated as conditions, allowing termination for any breach regardless of its actual triviality, because commercial certainty requires the parties to know their position immediately.",
+            "expanded": {
+              "facts": "The contract required the buyer to give at least 15 consecutive days' notice of the vessel's readiness to load. The buyer's notice was four days short of that requirement. The seller treated the breach as entitling it to terminate.",
+              "judgmentExtract": "The House of Lords held that stipulations as to time in mercantile contracts are generally to be construed as conditions, both because of the commercial need for certainty in fast-moving markets and because that has traditionally been the approach to time clauses specifically. It was not necessary to show the four-day delay had caused the seller any particular loss; the breach of a time condition was itself sufficient to justify termination.",
+              "significance": "Bunge confirms that Hong Kong Fir's flexible approach is not universal. Where certainty is commercially essential — paradigmatically, time clauses in trading contracts — courts will still classify a term as a condition in advance, even without an express label, rather than force the parties to wait and see how serious a breach turns out to be."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-09-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is a Bunge-style 'treat as a condition' approach more likely to apply, rather than a Hong Kong Fir wait-and-see approach?",
+          "scenarioA": "A shipping contract requires the charterer to nominate a loading port at least 10 days before the vessel arrives, in a fast-moving freight market; the nomination is 3 days late.",
+          "scenarioB": "A long-term charter requires the vessel to be 'seaworthy,' and a mechanical fault causes a short, easily repaired delay early in a two-year charter.",
+          "correctScenario": "A",
+          "explanation": "A is a time stipulation in a commercial, fast-moving market — exactly the Bunge fact pattern, where certainty about the right to terminate at the moment of breach outweighs waiting to see how serious the delay turns out to be. B is the Hong Kong Fir pattern itself: a term (seaworthiness) that can be broken trivially or fundamentally, assessed by its actual consequences."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-09-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the three routes by which a term can be implied into a contract.",
+      "acceptableAnswers": ["implied in fact, implied in law, implied by statute", "fact, law, statute"],
+      "modelAnswer": "A term can be implied in fact (necessary for this particular contract to work), implied in law (attaching to a recognised category of relationship), or implied by statute (imposed directly by Parliament, e.g. the SGA 1979 or CRA 2015)."
+    },
+    {
+      "itemId": "contract-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case reformulated the test for implying a term in fact around necessity rather than fairness or reasonableness?",
+      "options": ["Marks & Spencer v BNP Paribas", "Liverpool City Council v Irwin"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-09-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement about terms implied in law is correct?",
+      "options": ["They attach to a recognised category of relationship as a matter of policy, regardless of these particular parties' presumed intentions", "They are implied only where these particular parties would probably have agreed to them if asked", "They can never arise where a written contract exists"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answer imports the implied-in-fact test (presumed intention of these parties) into implication in law, which operates on the opposite logic — category-wide policy, not individual intention."
+    },
+    {
+      "itemId": "contract-09-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the steps in classifying an unlabelled term and identifying the remedy for its breach.",
+      "items": ["Check whether the term is expressly or statutorily labelled a condition or warranty", "If unlabelled, ask whether the term's nature and commercial context demand certainty (pointing to a condition)", "If not, treat the term as innominate and assess the actual consequences of the breach", "Apply the remedy that follows from the classification reached"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "contract-09-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A trader sells a sofa to a member of the public for personal home use. Which statutory provision implies a term that the sofa is of satisfactory quality?",
+      "options": ["Consumer Rights Act 2015, s 9", "Sale of Goods Act 1979, s 14", "Unfair Contract Terms Act 1977, s 6"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-09-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, adapted from Marks & Spencer v BNP Paribas, highlight the sentence stating the ratio.",
+      "passage": "The tenant argued that a term should be implied requiring repayment of rent paid in advance for the unused period after a mid-quarter break. A term will be implied in fact only where it is necessary to give the contract business efficacy, not merely because it would be reasonable or fair to imply it. Here the lease worked perfectly coherently without any such term, so none was implied.",
+      "ratioSentence": "A term will be implied in fact only where it is necessary to give the contract business efficacy, not merely because it would be reasonable or fair to imply it."
+    },
+    {
+      "itemId": "contract-09-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A software licence says nothing about what happens if the licensor stops supporting the software, but the whole commercial point of the deal — as both parties well understood — was ongoing support without which the software is useless. Is a term implied in fact here more or less likely than in Marks & Spencer?",
+      "options": ["More likely — without the term, the contract arguably fails to achieve any coherent commercial purpose at all, unlike the M&S lease which worked fine without it", "Equally unlikely — Marks & Spencer effectively bars implication in fact in commercial contracts", "Less likely — support obligations can never be implied, only expressly agreed"],
+      "correctIndex": 0,
+      "explanation": "The necessity test is fact-sensitive. Where the contract genuinely cannot function for its evident commercial purpose without the term (unlike the M&S lease, which worked fine without a repayment clause), implication in fact remains available."
+    },
+    {
+      "itemId": "contract-09-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows this term should be analysed as implied in law rather than implied in fact.",
+      "scenarioText": "A tenant in a large residential block argues her landlord must keep the shared entrance intercom system working, pointing to the general practice among landlords of blocks of this kind, not to anything said or assumed by her specifically when she signed her own tenancy.",
+      "tappableSpans": ["large residential block", "keep the shared entrance intercom system working", "general practice among landlords of blocks of this kind", "when she signed her own tenancy"],
+      "correctSpan": "general practice among landlords of blocks of this kind",
+      "explanation": "Reasoning from what landlords of this category of building generally must do — rather than from what this particular tenant and landlord privately intended — is the signature of implication in law, following Liverpool CC v Irwin."
+    },
+    {
+      "itemId": "contract-09-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario involves breach of a term more clearly classified as a warranty rather than a condition?",
+      "scenarioA": "A supply contract requires goods to be delivered 'time is of the essence' by a fixed date in a fast-moving resale market; delivery is a week late.",
+      "scenarioB": "An office cleaning contract requires the contractor to wear a specific uniform; the contractor's staff wear a slightly different but similarly branded uniform on one occasion.",
+      "correctScenario": "B",
+      "explanation": "B is a minor, collateral stipulation whose breach causes no real prejudice to the innocent party's core interest — a textbook warranty. A, by contrast, is a time clause in a commercial setting where certainty is likely to push the classification towards a condition."
+    },
+    {
+      "itemId": "contract-09-test-10",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A two-year equipment lease requires the lessor to keep the machinery 'in good working order.' A minor fault causes the machinery to be out of action for three days early in the lease, easily repaired at modest cost. The lessee purports to terminate the lease entirely. Analyse whether termination is available.",
+      "factsToOrder": [
+        "The obligation is expressed simply as 'good working order,' with no label as condition or warranty",
+        "The fault is minor and quickly and cheaply repaired",
+        "Only three days are lost out of a two-year term",
+        "The lessee purports to terminate the whole lease"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the lessee is entitled to terminate the lease for breach of the 'good working order' obligation.",
+        "rule": "Where a term is unlabelled and capable of being broken trivially or fundamentally, it is treated as innominate (Hong Kong Fir); termination is available only if the breach as it occurred deprives the innocent party of substantially the whole benefit of the contract.",
+        "application": "'Good working order' is exactly the kind of term Hong Kong Fir describes — a fault under it can range from trivial to catastrophic. Three days' loss out of a two-year term, cheaply and quickly repaired, leaves almost the entire benefit of the lease intact; it does not go to the root of the contract.",
+        "conclusion": "The term is innominate, and on these facts the breach does not entitle the lessee to terminate — only damages for the loss caused by the three-day outage are available."
+      }
+    },
+    {
+      "itemId": "contract-09-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why did the House of Lords in Bunge v Tradax treat the notice clause as a condition despite Hong Kong Fir's flexible approach?",
+      "options": ["Because notice clauses are always more important than seaworthiness clauses in the abstract", "Because commercial certainty in a fast-moving market requires the parties to know their rights immediately at the point of breach, not after assessing consequences", "Because the buyer had acted in bad faith"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think Bunge ranks time clauses as inherently more serious than seaworthiness clauses — but the actual reasoning is about the commercial need for certainty in that market, not an abstract hierarchy of term importance."
+    },
+    {
+      "itemId": "contract-09-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A consumer buys a fridge that turns out to have a manufacturing defect making it unfit for ordinary use. Which statutory provision is breached?",
+      "options": ["Consumer Rights Act 2015, s 9 (satisfactory quality)", "Sale of Goods Act 1979, s 14 (this consumer purchase is governed by the CRA, not the SGA)"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-09-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a term implied in law (Irwin-style) can be displaced simply by showing these two particular parties privately intended something different?",
+      "sliderLabels": ["Easily displaced by private intention", "Not displaced merely by private intention"],
+      "correctPosition": "Not displaced merely by private intention",
+      "explanation": "Terms implied in law attach to the category of relationship as a matter of policy; displacing them generally requires showing the category doesn't fit, or clear express contrary agreement, not merely that these parties privately felt differently."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two recurring mistakes in this lesson: treating 'implied in fact' and 'implied in law' as interchangeable (they use opposite reasoning — individual intention versus category-wide policy), and assuming an unlabelled term defaults to a condition or warranty rather than checking whether Hong Kong Fir's innominate approach — or Bunge's certainty-driven exception — applies first.",
+    "reviewMisses": true,
+    "linkToPathway": "contract.terms.implied-classifying"
+  }
+}

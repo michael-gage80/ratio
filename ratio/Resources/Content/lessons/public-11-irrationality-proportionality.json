@@ -1,0 +1,376 @@
+{
+  "lessonId": "public-11",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 11,
+  "topicId": "public.judicial-review.irrationality-proportionality",
+  "title": "Irrationality and proportionality",
+  "subtitle": "Two ways of asking whether a decision went too far — and a dial that moves between them",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the Wednesbury unreasonableness test and explain why the threshold it sets is deliberately so high",
+    "Explain the four-stage proportionality test and how its structure differs from Wednesbury's single blunt question",
+    "Identify which standard of review is being applied to a given fact pattern, including borderline cases where the two tests are converging",
+    "Apply the weight/deference principle from Pham and Shvidler to judge how intensively a court will actually scrutinise an executive decision"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Associated Provincial Picture Houses v Wednesbury Corporation [1948] 1 KB 223", "role": "Source of the classic irrationality test: a decision so unreasonable that no reasonable authority could ever have come to it" },
+    { "citation": "R v Ministry of Defence, ex p Smith [1996] QB 517", "role": "\"Anxious scrutiny\" — Wednesbury stretched to its limit for decisions touching fundamental rights, and shown to be straining at that limit" },
+    { "citation": "R (Daly) v Secretary of State for the Home Department [2001] UKHL 26", "role": "Confirms proportionality, not heightened Wednesbury, is the right tool once a Convention right is engaged; sets out why the two tests can produce different results" },
+    { "citation": "Bank Mellat v HM Treasury (No 2) [2013] UKSC 39", "role": "Restates the modern four-stage structure of proportionality review" },
+    { "citation": "Pham v Secretary of State for the Home Department [2015] UKSC 19", "role": "Leaves open whether proportionality should replace Wednesbury generally at common law, and stresses that proportionality still varies in intensity with context" },
+    { "citation": "Shvidler v Secretary of State for Foreign, Commonwealth and Development Affairs [2025] UKSC 30", "role": "Recent illustration: proportionality review of a sanctions designation, and how much weight a court gives the executive's foreign-policy judgment even within that structured test" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite the Wednesbury formula and the four Bank Mellat stages as two separate lists. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know both tests — this lesson is about judging how hard a court will actually push, on these facts, using this test.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool below leans towards application: expect you to place a scenario on the intensity dial, not just recite a test.",
+      "weakKnowledge": "Start with Part 1 and don't rush the Wednesbury wording — everything from Part 3 onwards assumes you can state it precisely, not just gesture at 'really unreasonable'."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Picture a dial, not a switch. At one end sits a court that will strike down almost nothing — a decision has to be so wild that no sane public body could have made it. At the other end sits a court running a tight, structured audit of whether a measure actually goes further than it needed to. Both dials exist in English public law right now, sometimes for the same kind of decision. This lesson is about learning to read which setting the dial is on, and why the executive's own foreign-policy judgment can turn out to matter more than the test's name suggests.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. Most of this lesson rests on settled authority, but Shvidler v Secretary of State for Foreign, Commonwealth and Development Affairs [2025] UKSC 30 was decided in the second half of 2025 and is genuinely live: standard textbooks and many revision guides in circulation predate it and will not discuss it. Treat the Shvidler material in Part 5 as the most current statement of the law, and check for any further Supreme Court gloss on weight and proportionality before relying on it in an exam sitting after this date."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A dial, not a switch",
+        "voice": "spectrum framing — introduces intensity of review as a single sliding scale before naming any test",
+        "body": [
+          "Judicial review of the merits of a decision — as opposed to how it was reached — has always had one job that sits uneasily with the separation of powers: telling an elected or expert decision-maker that their substantive choice was simply not good enough in law. Courts are wary of doing this too readily, because a judge substituting their own view of what's sensible for the decision-maker's view stops being review and starts being an appeal on the merits, which Parliament never gave the courts.",
+          "The solution English law has settled on isn't one fixed test. It's a sliding scale of intensity — think of it as a dial running from 'hands off' to 'hands on'. At the hands-off end, a court will only interfere if the decision is so unreasonable that no reasonable body could have made it: this is Wednesbury unreasonableness, and it is deliberately built to almost never bite. At the hands-on end, a court runs a structured, multi-step audit asking whether the measure actually achieved its aim without going further than necessary: this is proportionality.",
+          "The two tests are not applied at random. Which one governs, and how far along the dial a court sits within that test, depends on what kind of right or interest is at stake, what kind of decision-maker made the call, and — increasingly, as Part 5 will show — how much institutional weight the court thinks that decision-maker's judgment deserves on the subject matter."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Intensity of review",
+            "definition": "How closely a court scrutinises the substance of a decision, ranging from a light-touch Wednesbury check (does this decision make any sense at all) to a full proportionality audit (was this specific level of interference actually necessary and justified)."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-11-check-01",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "Before any test is named: how intensively do you think a court should scrutinise a local council's decision to close one of several public libraries to save money?",
+          "sliderLabels": ["Barely at all — pure policy for elected officials", "Very closely — like scrutinising a criminal sentence"],
+          "correctPosition": "Barely at all — pure policy for elected officials",
+          "explanation": "There's no single 'correct' dial setting in the abstract — that's the point of this lesson. But a resource-allocation decision by an elected body, engaging no protected right, sits at the low-intensity end: Wednesbury, not proportionality, and a genuinely high bar to disturb it. Compare that instinct against Parts 4 and 5, where the facts pull the dial the other way."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Wednesbury: the test built to almost never work",
+        "voice": "case-narrative — tells the origin story before stating the doctrine, then interrogates why it's phrased so strongly",
+        "body": [
+          "Associated Provincial Picture Houses ran the Gaumont cinema in Wednesbury. Wednesbury Corporation, exercising a statutory licensing power, granted the cinema's Sunday opening licence subject to a condition: no children under 15 admitted, even with a parent. The cinema challenged the condition as unreasonable. It lost — and in losing, gave English law its most quoted formula for judicial restraint.",
+          "Lord Greene MR's judgment is really doing two things at once. First, it lists the ordinary grounds of illegality — taking account of irrelevant considerations, ignoring relevant ones, acting for an improper purpose — which by 2026 you'll usually meet separately as the 'illegality' head of review. Second, and this is what the case is remembered for, it carves out a residual category: a decision that, without falling foul of any of those specific errors, is still 'so unreasonable that no reasonable authority could ever have come to it'.",
+          "Notice the double negative buried in that phrase — 'so unreasonable that no reasonable authority could ever'. It isn't asking whether the court thinks the decision was wrong, or even badly wrong. It's asking whether the decision falls outside the entire range of answers any reasonable decision-maker could have reached. That is an extremely high bar by design: it lets courts strike down genuine outliers — the classic hypothetical is dismissing a teacher for having red hair — without turning every planning refusal or licensing condition into a re-run of the original decision in court."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Associated Provincial Picture Houses v Wednesbury Corporation",
+            "citation": "[1948] 1 KB 223",
+            "court": "Court of Appeal",
+            "year": 1948,
+            "factsShort": "A cinema challenged a condition on its Sunday licence banning children under 15, even accompanied, as unreasonable.",
+            "ratioShort": "A discretionary decision can only be quashed for unreasonableness where it is so unreasonable that no reasonable authority could ever have come to it — not merely because a court disagrees with it.",
+            "expanded": {
+              "facts": "Wednesbury Corporation had a statutory power to grant cinema licences 'subject to such conditions as the authority think fit to impose'. It granted Sunday opening to Associated Provincial Picture Houses on condition that no child under 15 be admitted to the cinema on a Sunday, whether accompanied by an adult or not. The cinema company argued the condition was unreasonable and therefore unlawful.",
+              "judgmentExtract": "Lord Greene MR held that a court exercising judicial review is not exercising an appellate function and must not ask whether it agrees with the decision. It may interfere only where the decision-maker has acted unreasonably in the specific sense of taking into account matters it ought not to have, failing to take into account matters it should have, or reaching a conclusion so unreasonable that no reasonable authority could ever have come to it. On the facts, protecting children's welfare on a Sunday, even at the cost of inconveniencing some parents, was well within the range of reasonable views a licensing authority could hold.",
+              "significance": "This is the foundational case for substantive review of discretionary decisions in English public law. Its lasting contribution is not that the cinema lost, but the structure of restraint it imposes: courts police the outer boundary of reasonableness, not the correctness of the answer within it."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-11-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under Wednesbury, can a court quash a decision simply because the judges think it was the wrong call?",
+          "options": ["No — only if the decision falls outside the range any reasonable decision-maker could have reached", "Yes — disagreement with the outcome is enough"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Wednesbury is not an appeal mechanism in disguise — it protects even decisions the reviewing court personally dislikes, as long as they're within the range a reasonable body could reach.",
+          "feedbackIncorrect": "Look again at Lord Greene MR's formula — it is deliberately narrower than 'the court disagrees'. Disagreement on the merits is exactly what Wednesbury was built to exclude from judicial review."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Anxious scrutiny: Wednesbury stretched until it creaks",
+        "voice": "Socratic — poses the problem Wednesbury couldn't solve before showing how courts tried to solve it without abandoning it",
+        "body": [
+          "By the 1990s, a problem was obvious: applying the ordinary Wednesbury standard to decisions that gutted someone's fundamental rights felt wrong. If a policy automatically discharged every gay or lesbian service member from the armed forces regardless of conduct or performance, should a court really ask only whether that policy was 'outside the range any reasonable Secretary of State could hold' — the same forgiving question asked of a Sunday cinema licence?",
+          "R v Ministry of Defence, ex p Smith was the test case. Four service personnel, dismissed solely for their sexual orientation under the Ministry of Defence's then policy, challenged their dismissals as irrational. The Court of Appeal held that the more a decision interferes with fundamental human rights, the more the court will require by way of justification before it is satisfied the decision was reasonable — a sliding version of Wednesbury sometimes called 'anxious scrutiny'.",
+          "But the Court of Appeal still dismissed the claim. Anxious scrutiny raised the bar within Wednesbury; it did not change the underlying question from 'was this outside the range of reasonable responses' to 'was this measure actually necessary'. That gap between a sliding Wednesbury and a genuinely different question is exactly what proportionality, discussed next, was designed to close — and ex p Smith is remembered less as a doctrinal triumph than as proof that Wednesbury, however anxiously applied, had reached its structural limit."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say ex p Smith introduced proportionality into English public law.",
+            "whyItsWrong": "It didn't — and the case is more interesting for that reason. Ex p Smith kept Wednesbury as the governing test and only adjusted how strictly it was applied to rights-engaging decisions. Proportionality as a distinct test arrives later, and Daly (Part 4) is explicit that anxious scrutiny and proportionality can produce different outcomes on the same facts."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-11-check-03",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in this passage that shows anxious scrutiny is still Wednesbury, not proportionality.",
+          "scenarioText": "The Court of Appeal in ex p Smith held that the more substantial the interference with human rights, the more the court will require by way of justification before it is satisfied the decision is reasonable — yet the claimants' dismissals were still upheld as within the range of views a reasonable Secretary of State could hold.",
+          "tappableSpans": ["the more substantial the interference with human rights", "the more the court will require by way of justification", "still upheld", "within the range of views a reasonable Secretary of State could hold"],
+          "correctSpan": "within the range of views a reasonable Secretary of State could hold",
+          "feedbackCorrect": "That's the giveaway. However demanding the scrutiny got, the court was still asking the Wednesbury 'range of reasonable responses' question, not the proportionality question of whether the measure was actually necessary.",
+          "feedbackIncorrect": "The sliding standard of justification is real, but it doesn't change the underlying test. Look for the phrase that shows the court was still measuring against a range of reasonable views, rather than asking whether the interference went further than necessary."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Proportionality: four questions, in order",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "R (Daly) v Secretary of State for the Home Department supplied the answer ex p Smith couldn't reach on its own facts. Daly, a prisoner, challenged a blanket policy of examining prisoners' legally privileged correspondence in their absence. The House of Lords held that once a common law right as fundamental as legal professional privilege is engaged, the correct question is not the Wednesbury range-of-responses test, even anxiously applied — it is proportionality. Lord Steyn was explicit that proportionality can require attention to the relative weight given to interests and considerations in a way pure Wednesbury review does not, and that the two tests may yield different results on identical facts.",
+          "Proportionality itself is not one loose question but a structured sequence. Bank Mellat v HM Treasury (No 2) restates the now-standard four stages a court works through in order: (1) is the objective of the measure sufficiently important to justify limiting a right; (2) is the measure rationally connected to that objective; (3) could a less intrusive measure have been used without unacceptably compromising the objective; and (4) — often the decisive stage — does the measure strike a fair balance between the rights of the individual and the interests of the community, weighing the severity of the effects on the individual against the importance of the objective?",
+          "This structure is what makes proportionality feel more 'hands on' than Wednesbury. It doesn't just ask whether the outcome is within a defensible range; it interrogates the fit between means and ends, and asks, stage by stage, whether something less severe would have done the job."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The four-stage proportionality test (Bank Mellat)",
+            "points": [
+              "Stage 1 — legitimate aim: is the objective sufficiently important to justify limiting a protected right?",
+              "Stage 2 — rational connection: is the measure rationally connected to that objective?",
+              "Stage 3 — necessity: could a less intrusive measure have achieved the objective without unacceptably compromising it?",
+              "Stage 4 — fair balance: does the measure strike a fair balance between the individual's rights and the interests of the community, given its severity?"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-11-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the four stages of the Bank Mellat proportionality test in the order a court applies them.",
+          "items": [
+            "Is the objective sufficiently important to justify limiting a right?",
+            "Is the measure rationally connected to that objective?",
+            "Could a less intrusive measure have achieved the objective?",
+            "Does the measure strike a fair balance between the individual and the community?"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence. Each stage gates the next — a measure that fails at stage 1 or 2 never needs to be tested for necessity or fair balance, because it has already failed on more basic grounds.",
+          "feedbackIncorrect": "Check the order again — legitimate aim comes first, then rational connection, then necessity (the least intrusive means), and only then the final weighing exercise at stage 4."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Weight: why 'proportionality' doesn't mean 'no deference'",
+        "voice": "direct — sets up the trap the tests will probe, and lands on the most current authority",
+        "body": [
+          "It's tempting to think of proportionality as the 'strict' test and Wednesbury as the 'lenient' one, full stop. Pham v Secretary of State for the Home Department complicates that. Pham, deprived of his British citizenship on national security grounds, argued the decision should be reviewed for proportionality rather than Wednesbury. The Supreme Court's judgments left open, without deciding, whether proportionality should simply replace Wednesbury as the general domestic standard — but every judgment agreed on something more important for exam purposes: proportionality itself is not a single fixed intensity. Courts still give real weight to the primary decision-maker's institutional expertise and constitutional responsibility, especially on national security and foreign affairs.",
+          "Shvidler v Secretary of State for Foreign, Commonwealth and Development Affairs puts that principle to work on genuinely current facts. Eugene Shvidler, a UK-based businessman, was designated under the UK's Russia sanctions regime, freezing his assets and restricting his activities, following Russia's invasion of Ukraine. He argued the designation disproportionately interfered with his property rights under Article 1 of Protocol 1 to the ECHR — that a less drastic measure, or a narrower designation, could have served the same foreign-policy objective. The Supreme Court applied the Bank Mellat structure and upheld the designation, but the case is significant for how it got there: the majority held that in a field like sanctions policy — foreign affairs, national security, an area where the executive has institutional expertise and democratic accountability that courts do not — a court applying stage 4's 'fair balance' question should still give substantial weight to the executive's own assessment of what the sanctions regime as a whole requires, rather than substituting its own view of the least intrusive individual designation.",
+          "The lesson to take from Shvidler isn't that proportionality has quietly become Wednesbury again. It's that the four-stage structure leaves room, at stage 4 especially, for exactly the kind of institutional deference that made Wednesbury restrained in the first place — the dial from Part 1 can sit at a fairly hands-off setting even while a court is formally 'doing proportionality'. Which test applies, and how intensely, still turns on subject matter: expect examiners to test whether you can identify that a national security or foreign policy decision pulls the dial back towards deference even under the strict test, while a decision with no such institutional dimension — like Daly's prison correspondence policy — does not."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Choosing and calibrating the test",
+            "description": "A flowchart for identifying which standard of review applies, and how much weight the decision-maker's own judgment should carry within it.",
+            "nodes": [
+              { "id": "start", "label": "Does the decision engage a Convention right, or a fundamental common law right (as in Daly)?" },
+              { "id": "no-right", "label": "No → Wednesbury unreasonableness applies (possibly with anxious scrutiny if some lesser interest is affected)" },
+              { "id": "yes-right", "label": "Yes → apply the four-stage proportionality test (Bank Mellat)" },
+              { "id": "subject-matter", "label": "Does the subject matter involve national security, foreign affairs, or another field of recognised institutional expertise (as in Shvidler)?" },
+              { "id": "high-weight", "label": "Yes → substantial weight given to the executive's judgment, especially at stage 4 — review remains structured but less intrusive in practice" },
+              { "id": "low-weight", "label": "No → court applies each stage, including necessity, with less deference to the decision-maker's own assessment" }
+            ],
+            "edges": [
+              { "from": "start", "to": "no-right", "label": "No" },
+              { "from": "start", "to": "yes-right", "label": "Yes" },
+              { "from": "yes-right", "to": "subject-matter", "label": "then ask" },
+              { "from": "subject-matter", "to": "high-weight", "label": "Yes" },
+              { "from": "subject-matter", "to": "low-weight", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the decision engages a Convention right or a fundamental common law right. If not, Wednesbury unreasonableness applies, possibly with anxious scrutiny for lesser interests. If a qualifying right is engaged, apply the four-stage Bank Mellat proportionality test. Within that test, ask whether the subject matter involves national security, foreign affairs, or another area of recognised institutional expertise, as in Shvidler. If so, the court gives substantial weight to the executive's own judgment, particularly at the fair-balance stage, so review remains structured but less intrusive in practice. If not, the court applies each stage, including necessity, with less deference to the decision-maker's own assessment."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-11-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario would a court give the LEAST weight to the decision-maker's own judgment, even applying proportionality?",
+          "scenarioA": "A prison policy allowing prison officers to examine a prisoner's legally privileged correspondence in the prisoner's absence, challenged as interfering with legal professional privilege.",
+          "scenarioB": "A sanctions designation freezing a named individual's assets as part of the UK's response to a foreign state's invasion of a neighbouring country.",
+          "correctScenario": "A",
+          "explanation": "Scenario A mirrors Daly: a domestic prison administration decision engaging legal professional privilege, with no national security or foreign policy dimension, so a court applies each proportionality stage, including necessity, without deferring to any special institutional expertise. Scenario B mirrors Shvidler: foreign policy and sanctions are precisely the field where courts give the executive substantial weight, particularly at stage 4, even while formally applying proportionality."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-11-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the Wednesbury unreasonableness test in your own words.",
+      "acceptableAnswers": ["so unreasonable that no reasonable authority could ever have come to it", "no reasonable decision-maker could have reached that decision", "decision outside the range of reasonable responses"],
+      "modelAnswer": "A decision can only be quashed for unreasonableness where it is so unreasonable that no reasonable authority could ever have come to it — not merely because a reviewing court disagrees with the outcome."
+    },
+    {
+      "itemId": "public-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which case restated the modern four-stage structure of the proportionality test?",
+      "options": ["Bank Mellat v HM Treasury (No 2)", "Associated Provincial Picture Houses v Wednesbury Corporation"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the four Bank Mellat proportionality stages?",
+      "options": ["Whether the objective is sufficiently important to justify limiting a right", "Whether the measure is rationally connected to that objective", "Whether the decision-maker followed the correct internal consultation procedure", "Whether the measure strikes a fair balance between the individual and the community"],
+      "correctIndex": 2,
+      "trapExplanation": "Consultation procedure is a hallmark of procedural impropriety, not substantive proportionality review — the two grounds of judicial review are easy to conflate, but Bank Mellat's four stages are entirely about the substance and severity of the measure, not the process by which it was adopted."
+    },
+    {
+      "itemId": "public-11-test-04",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the case in which the House of Lords held that proportionality, not Wednesbury even anxiously applied, was the correct test for a prison policy interfering with legal professional privilege.",
+      "acceptableAnswers": ["Daly", "R (Daly) v Secretary of State for the Home Department", "R v SSHD ex p Daly"],
+      "modelAnswer": "R (Daly) v Secretary of State for the Home Department [2001] UKHL 26."
+    },
+    {
+      "itemId": "public-11-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement best captures the structural difference between Wednesbury and proportionality?",
+      "options": ["Wednesbury asks whether the decision falls outside the whole range of reasonable responses; proportionality works through a sequence of separate questions about aim, connection, necessity and fair balance", "Wednesbury is only used in criminal cases and proportionality only in civil cases", "The two tests are simply different names for the same legal standard"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-11-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these developments in the order they occurred.",
+      "items": ["Associated Provincial Picture Houses v Wednesbury Corporation establishes the unreasonableness test", "R v Ministry of Defence, ex p Smith applies a heightened, 'anxious scrutiny' version of Wednesbury to a rights-engaging dismissal policy", "R (Daly) v Secretary of State for the Home Department holds proportionality, not anxious scrutiny, is the correct test for a fundamental right", "Bank Mellat v HM Treasury (No 2) restates proportionality as a four-stage structured test"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "public-11-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that captures why Daly rejected anxious scrutiny in favour of proportionality.",
+      "passage": "The Home Secretary's blanket policy of examining privileged correspondence in the prisoner's absence engaged a fundamental common law right. Although the previous, more intensive form of Wednesbury review might in practice reach a similar result in some cases, proportionality requires the court to assess the relative weight accorded to competing interests, a discipline which the traditional, if heightened, Wednesbury approach does not impose. The two tests may in some cases yield different results.",
+      "ratioSentence": "The two tests may in some cases yield different results."
+    },
+    {
+      "itemId": "public-11-test-08",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that a court applying proportionality to a sanctions designation under Shvidler will give the same weight to the executive's judgment as it would to a routine local licensing decision?",
+      "sliderLabels": ["Same weight in both cases", "Much more weight given in the sanctions case"],
+      "correctPosition": "Much more weight given in the sanctions case",
+      "explanation": "Shvidler is precisely about subject-matter deference: foreign policy and national security decisions attract substantial weight for the executive's own assessment, particularly at the fair-balance stage, in a way an ordinary domestic licensing decision does not."
+    },
+    {
+      "itemId": "public-11-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "A student writes: 'Since Pham left open whether proportionality should replace Wednesbury generally, proportionality has now completely replaced Wednesbury in English public law.' What is wrong with this claim?",
+      "options": ["Pham expressly left the question open rather than deciding it, and Wednesbury continues to apply outside the areas where a qualifying right is engaged", "Nothing is wrong with the claim", "Pham held the opposite — that Wednesbury has completely replaced proportionality"],
+      "correctIndex": 0,
+      "trapExplanation": "This is a common overreach. Pham is genuinely significant for airing doubts about Wednesbury's long-term survival, but the Supreme Court did not decide the point, and Wednesbury remains the governing test for decisions that engage no qualifying right, such as ordinary resource-allocation or planning decisions."
+    },
+    {
+      "itemId": "public-11-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "Tap the fact that would most clearly move a court from Wednesbury towards proportionality review.",
+      "scenarioText": "A local authority refuses a market trader's licence renewal for a food stall, citing space constraints on a busy high street, after a straightforward review of competing applications.",
+      "tappableSpans": ["local authority", "refuses a market trader's licence renewal", "citing space constraints", "straightforward review of competing applications"],
+      "correctSpan": "citing space constraints",
+      "feedbackCorrect": "Correct in the sense that nothing here triggers proportionality — space constraints on a licensing decision engage no Convention right or fundamental common law right, so this stays squarely within ordinary Wednesbury review.",
+      "feedbackIncorrect": "Look for whether any fact here engages a fundamental right at all. None does — this is a routine discretionary licensing refusal, which is exactly the kind of decision Wednesbury, not proportionality, is designed to review."
+    },
+    {
+      "itemId": "public-11-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario is more likely to be reviewed under the anxious scrutiny variant of Wednesbury rather than full proportionality?",
+      "scenarioA": "A domestic policy affecting an individual's private life in a way that does not engage a right protected by the Human Rights Act or a recognised fundamental common law right.",
+      "scenarioB": "A prison policy interfering with legal professional privilege.",
+      "correctScenario": "A",
+      "explanation": "Anxious scrutiny remains a heightened form of Wednesbury for decisions with serious consequences that nonetheless fall short of engaging a Convention right or a right as fundamental as legal professional privilege. Scenario B is Daly territory, and proportionality applies directly."
+    },
+    {
+      "itemId": "public-11-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "The Foreign Secretary designates a company under a sanctions regime targeting a foreign state's war effort, freezing its UK assets. The company argues a narrower designation covering only its military-linked subsidiary would have achieved the same objective. Applying Shvidler, how should stage 4 of the proportionality test be approached?",
+      "options": ["The court should substitute its own view of the least intrusive designation without regard to the Foreign Secretary's assessment", "The court should give substantial weight to the Foreign Secretary's own assessment of what the sanctions regime requires, while still applying the structured four-stage test", "Proportionality does not apply at all to sanctions decisions"],
+      "correctIndex": 1,
+      "explanation": "Shvidler confirms proportionality still applies in full structure to sanctions designations engaging property rights, but at stage 4 the court gives substantial weight to the executive's institutional expertise on foreign policy rather than re-running the designation decision itself."
+    },
+    {
+      "itemId": "public-11-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A university disciplinary panel expels a student for alleged plagiarism, applying a blanket policy of expulsion for any confirmed case regardless of severity or mitigating circumstances, with no engagement of a Convention right. The student argues the outcome was disproportionate. Analyse which standard of review applies and whether the decision is likely to be unlawful.",
+      "factsToOrder": [
+        "The panel applies a blanket expulsion policy for any confirmed plagiarism",
+        "No Convention right or fundamental common law right is engaged",
+        "The policy does not allow for severity or mitigating circumstances to be considered",
+        "The student argues the outcome was disproportionate"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the panel's blanket expulsion policy is unlawful for irrationality, and whether proportionality rather than Wednesbury is the correct test.",
+        "rule": "Where no Convention right or fundamental common law right is engaged, Wednesbury unreasonableness, not proportionality, is the applicable standard: the decision must fall outside the range of responses any reasonable panel could reach. A blanket policy that refuses to consider individual circumstances can itself amount to unlawful fettering of discretion, which is a form of unreasonableness.",
+        "application": "Because no qualifying right is engaged, the student's argument is mislabelled as 'disproportionate' — the correct question is whether the policy is Wednesbury unreasonable. A rule that mandates expulsion regardless of severity or mitigating circumstances, with no scope for individual assessment, is a strong candidate for unreasonableness precisely because it forecloses any genuine exercise of judgment on the facts of each case.",
+        "conclusion": "The decision is reviewed under Wednesbury, not proportionality, but is nonetheless likely to be unlawful because the blanket policy leaves no room for individual assessment, which itself falls outside the range of reasonable disciplinary responses."
+      }
+    },
+    {
+      "itemId": "public-11-test-14",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A government minister's decision to close a border crossing for national security reasons is challenged on proportionality grounds. Should a court applying stage 4 defer heavily to the minister's assessment, following the reasoning in Shvidler?",
+      "options": ["Yes — national security and foreign-facing decisions attract substantial weight for the executive's institutional judgment", "No — proportionality never allows any deference at any stage"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is treating 'proportionality' and 'strict scrutiny with no deference' as synonyms. Shvidler is the sharpest current illustration that they are not: the four-stage structure still leaves room, especially at stage 4, for real institutional weight to be given to the decision-maker — particularly in foreign affairs and national security.",
+    "reviewMisses": true,
+    "linkToPathway": "public.judicial-review.irrationality-proportionality"
+  }
+}

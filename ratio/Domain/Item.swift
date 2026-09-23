@@ -24,6 +24,8 @@ struct Item: Decodable, Identifiable {
         /// Shown as a worked example (scaffold level 1) until the IRAC builder's fading
         /// levels arrive.
         case irac(facts: [String], modelAnswer: IRACAnswer)
+        /// Each statement goes in one bucket; `correct` holds the right bucket for each.
+        case buckets(buckets: [String], statements: [String], correct: [Int])
     }
 
     let id: String
@@ -69,6 +71,8 @@ struct Item: Decodable, Identifiable {
             return response.selfMarkedCorrect == true
         case .highlight(_, let ratioSentence):
             return response.span.map { Self.sentence($0, states: ratioSentence) } ?? false
+        case .buckets(_, _, let correct):
+            return response.order == correct
         }
     }
 
@@ -109,6 +113,7 @@ struct Item: Decodable, Identifiable {
         case modelAnswer, acceptableAnswers
         case passage, ratioSentence
         case factsToOrder
+        case buckets, itemsToSort
         case briefExplanation, explanation, trapExplanation, feedbackCorrect, feedbackIncorrect
     }
 
@@ -156,6 +161,12 @@ struct Item: Decodable, Identifiable {
         case "irac":
             kind = .irac(facts: try c.decode([String].self, forKey: .factsToOrder),
                          modelAnswer: try c.decode(IRACAnswer.self, forKey: .modelAnswer))
+        case "sortIntoBuckets":
+            struct Statement: Decodable { let text: String; let correctBucket: String }
+            let buckets = try c.decode([String].self, forKey: .buckets)
+            let statements = try c.decode([Statement].self, forKey: .itemsToSort)
+            kind = .buckets(buckets: buckets, statements: statements.map(\.text),
+                            correct: statements.map { buckets.firstIndex(of: $0.correctBucket) ?? -1 })
         default:
             throw DecodingError.dataCorruptedError(forKey: .type, in: c, debugDescription: "Unsupported item type \(type)")
         }
@@ -163,7 +174,8 @@ struct Item: Decodable, Identifiable {
 }
 
 /// What the student answered, in the shape the scoring Function expects
-/// (`ItemResponse` in functions/src/scoring.ts). Only the field for the item's type is set.
+/// (`ItemResponse` in functions/src/scoring.ts). Only the field for the item's type is set:
+/// `order` is the order for a sequence, or the bucket chosen for each statement.
 nonisolated struct ItemResponse: Codable, Equatable {
     let itemId: String
     var choiceIndex: Int?

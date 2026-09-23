@@ -21,7 +21,7 @@ struct LessonComponentView: View {
         case .doctrineMap(let map):
             DoctrineMapView(map: map)
         case .timeline(let title, let events):
-            TimelineView(title: title, events: events)
+            LessonTimelineView(title: title, events: events)
         }
     }
 }
@@ -213,7 +213,10 @@ struct DoctrineMapView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Doctrine map · \(map.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            if let root = map.nodes.first {
+            // Usually one root; a map of separate propositions has no edges, so every node is one.
+            let targets = Set(map.edges.map(\.to))
+            let roots = map.nodes.filter { !targets.contains($0.id) }
+            ForEach(roots.isEmpty ? Array(map.nodes.prefix(1)) : roots, id: \.id) { root in
                 branch(from: root.id, visited: [])
             }
         }
@@ -238,7 +241,7 @@ struct DoctrineMapView: View {
                     .environment(\.colorScheme, isOutcome ? colorScheme : .light)
                 ForEach(children, id: \.to) { edge in
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("\(edge.label) ↓").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        Text(edge.label.map { "\($0) ↓" } ?? "↓").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                         branch(from: edge.to, visited: visited.union([nodeId]))
                     }
                     .padding(.leading, 14)
@@ -251,7 +254,7 @@ struct DoctrineMapView: View {
 
 // MARK: - Timeline (cell 11)
 
-struct TimelineView: View {
+struct LessonTimelineView: View {
     let title: String
     let events: [LessonComponent.TimelineEvent]
 
@@ -269,7 +272,9 @@ struct TimelineView: View {
                         if event.date != nil {
                             Text(event.label).ratioFont(.body).italic().foregroundStyle(Color.ratioOxblood)
                         }
-                        Text(event.description).ratioFont(.small)
+                        if let description = event.description {
+                            Text(description).ratioFont(.small)
+                        }
                     }
                 }
             }

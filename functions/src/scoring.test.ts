@@ -128,3 +128,18 @@ test("scoring ignores unknown items and builds per-topic estimates in answer ord
   assert.equal(topics["crime.x"].application!.sigma, 0.8 * 0.8);
   assert.deepEqual(headline.knowledge, prior());
 });
+
+test("sort into buckets is right only when every statement is in its bucket", () => {
+  const item = {
+    itemId: "s1", topicId: "contract.x.y", skillTag: "understanding" as const, difficultyStart: 0.5, type: "sortIntoBuckets",
+    buckets: ["Quantifying the loss", "Limiting recoverable loss"],
+    itemsToSort: [
+      { text: "Cost of cure", correctBucket: "Quantifying the loss" },
+      { text: "Remoteness", correctBucket: "Limiting recoverable loss" },
+    ],
+  };
+  assert.equal(isCorrect(item, { itemId: "s1", order: [0, 1] }), true);
+  assert.equal(isCorrect(item, { itemId: "s1", order: [1, 1] }), false);
+  assert.equal(isCorrect(item, { itemId: "s1", order: [0] }), false);
+  assert.equal(isCorrect(item, { itemId: "s1" }), false);
+});

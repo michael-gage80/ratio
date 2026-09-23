@@ -1,0 +1,471 @@
+{
+  "lessonId": "public-07",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 7,
+  "topicId": "public.constitution.conventions",
+  "title": "Rules without a remedy",
+  "subtitle": "Constitutional conventions: what they are, and why courts won't enforce them",
+  "estimatedMinutes": 15,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Define a constitutional convention and distinguish it from a legally binding rule",
+    "Apply Jennings' three-part test to decide whether a political practice has crystallised into a convention",
+    "Explain why courts recognise the existence of conventions but decline to enforce them, and identify the two situations where a convention becomes legally relevant anyway — statutory recognition (Sewel) and shaping the boundaries of a legal power (Miller/Cherry)"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Attorney General v Jonathan Cape Ltd [1976] QB 752",
+      "role": "Courts will recognise that a convention exists and describe its content, but will not grant a remedy to enforce it"
+    },
+    {
+      "citation": "Sewel Convention, given statutory recognition at Scotland Act 1998 s 28(8) (inserted by Scotland Act 2016 s 2)",
+      "role": "The clearest example of a convention named in a statute without being converted into a legal rule"
+    },
+    {
+      "citation": "Jennings, The Law and the Constitution — the three-part test (\"the rule of political practice\")",
+      "role": "The standard test for whether a practice has crystallised into a binding convention: precedents, a felt obligation, and a good reason for the rule"
+    },
+    {
+      "citation": "R (Miller) v Secretary of State for Exiting the European Union [2017] UKSC 5",
+      "role": "Confirms the Sewel Convention is a political, not legal, restraint on Parliament — courts have no role in policing observance of it"
+    },
+    {
+      "citation": "R (Miller) v The Prime Minister; Cherry v Advocate General for Scotland [2019] UKSC 41",
+      "role": "Shows a convention-adjacent constraint (accountability to Parliament) informing the legal limits of a prerogative power, without the convention itself becoming law"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Conventions feel soft next to statutes and cases, so students under-revise them — then lose easy marks by writing 'this is illegal' when a convention has been broken, or 'this is just politics' when a convention has actually shaped a legal limit. Where the profile shows this confusion, this note appears.",
+    "profileHooks": {
+      "weakApplication": "You can state the definitions here confidently. The test pool leans hard into fact patterns: can you tell a crystallised convention from a one-off habit, and a broken convention from a broken law?",
+      "weakKnowledge": "Start with Part 1 and get Jennings' test solid before moving on — every later part in this lesson assumes you can run it without being reminded what the three questions are."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "No monarch has refused royal assent to a Bill passed by both Houses since Queen Anne, in 1708. Ask a hundred people whether the King is legally required to sign whatever Parliament sends him, and most will say yes. He isn't. Nothing in statute or case law compels it. If he refused tomorrow, no court could make him sign — and yet everyone in Westminster would treat it as a constitutional crisis, not a Tuesday. That gap between 'nobody doubts this will happen' and 'nothing makes it happen' is where this lesson lives.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The mechanics of conventions themselves are settled; the one live-ish citation below (the Welsh legislative competence reference litigation of 2022–2023) should be checked against the Supreme Court's published judgment list before this lesson is signed off, as its precise neutral citation was not independently re-verified during drafting."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A rule that costs you your job, never your liberty",
+        "voice": "Socratic — opens with a puzzle and lets the student sit in the discomfort before resolving it",
+        "body": [
+          "Here's a question worth pausing on before you read the answer: if a Cabinet minister leaks a decision their department disagreed with, resigns under pressure, and is never prosecuted for anything — has any law been broken?",
+          "Almost certainly not. What's been broken is the convention of collective ministerial responsibility: the practice that ministers publicly support Cabinet decisions or leave the Cabinet. Nobody arrests you for breaching it. Nobody could. And yet it is treated, inside Westminster, as close to inviolable as any statute — a minister who breaches it resigns or is sacked with a speed that most breaches of actual law don't produce.",
+          "That combination — binding in practice, unenforceable in court — is the entire subject of this lesson. A constitutional convention is a non-legal rule of political practice, regarded as binding by those who operate the constitution, which the courts will not enforce directly. Get comfortable with that definition; almost everything else here is testing whether you can apply it rather than recite it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Constitutional convention",
+            "definition": "A non-legal rule of political practice, regarded as binding by the political actors who operate the constitution, whose breach carries political consequences but no legal remedy and no legal invalidity."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A minister breaches the convention of collective responsibility by publicly criticising a Cabinet decision. Can a court grant any remedy against the minister for this breach, as a matter of law?",
+          "options": [
+            "No — breaching a convention is not a legal wrong the courts can remedy",
+            "Yes — a court can order the minister to retract the statement"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The consequence of breaching this convention is political — resignation, dismissal, loss of standing — never a court order. Keep that distinction sharp for the rest of the lesson.",
+          "feedbackIncorrect": "Not as a matter of law. Courts have no remedy for a breach of convention as such — whatever happens to the minister happens through politics (the whip, the Prime Minister, public pressure), not through litigation."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Jennings' test: how do you know a habit has become a rule?",
+        "voice": "structural — a diagnostic tool students will reuse across every application question in this topic",
+        "body": [
+          "Not every repeated political habit is a convention. Governments have done things the same way for decades purely out of inertia, with no sense that departing from the pattern would be wrong. The classic test for telling a genuine convention apart from mere habit comes from Sir Ivor Jennings, and it asks three questions of any claimed rule.",
+          "First: what are the precedents? A single instance rarely establishes a convention — you need a settled pattern of past practice. Second: did the actors in those precedents believe they were bound by a rule, or did they simply happen to act the same way each time by coincidence or preference? Third — and this is the question students most often skip — is there a good reason for the rule? Jennings insisted a convention needs a rationale beyond 'it's always been done this way', because conventions exist to make the more flexible parts of an uncodified constitution work in practice, not to freeze behaviour for its own sake.",
+          "Apply all three together, not one in isolation. A long run of precedents with no felt obligation is just coincidence. A felt obligation with no reason behind it is superstition, not constitutional practice."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Jennings' three-part test",
+            "points": [
+              "Precedent — is there a settled pattern of past practice, not a one-off?",
+              "Felt obligation — did the actors involved believe the practice was binding on them, not merely convenient?",
+              "Good reason — is there a rationale for the rule that connects it to how the constitution is meant to function?"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-07-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in this scenario that is weakest evidence a convention has actually crystallised, on Jennings' test.",
+          "scenarioText": "For the last four general elections, the incoming Prime Minister has given their first broadcast interview to the same news channel, purely because that channel happened to request it first each time. No minister has ever suggested they would be criticised for choosing a different channel.",
+          "tappableSpans": [
+            "the last four general elections",
+            "the same news channel",
+            "request it first each time",
+            "no minister has ever suggested they would be criticised"
+          ],
+          "correctSpan": "no minister has ever suggested they would be criticised",
+          "feedbackCorrect": "Exactly — that's the missing felt obligation. Four repetitions could look like a precedent, but nobody treats departing from the pattern as wrong, and there's no stated reason for it. This is habit, not convention.",
+          "feedbackIncorrect": "Look for the fact that shows nobody believes the pattern is binding. Repetition alone (the four elections, the same channel) isn't enough under Jennings — you also need evidence of a felt obligation and a reason, and this scenario is missing both."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The Crossman diaries: courts describe the rule, then step back",
+        "voice": "case-narrative — tells the story, then draws out the doctrine it produced",
+        "body": [
+          "Richard Crossman was a Cabinet minister in the 1960s who kept an unusually frank diary of Cabinet discussions. After his death, his executors sought to publish it. The government tried to stop publication, arguing that Cabinet confidentiality — the convention that Cabinet discussions stay private so ministers can debate freely and then present a united front — would be undermined.",
+          "The court in Attorney General v Jonathan Cape Ltd did something that repays close reading. It accepted that a convention of Cabinet confidentiality existed, and accepted that breaching it could, in principle, cause real harm to government. But it refused to found an injunction on the convention itself. Instead it asked whether the ordinary law of confidence — a genuinely legal doctrine, with its own separate elements — was made out on these facts. On the facts, by the time of the application, the material was stale enough that confidentiality no longer mattered, and publication was allowed.",
+          "The structure of that reasoning is the point to take away, not the outcome. The court will happily say 'yes, this convention exists, and here is roughly what it requires' — that's just description, and judges do it often. What it will not do is treat the convention's existence as itself giving rise to a legal right or a remedy. If a remedy is available, it has to come from somewhere genuinely legal — here, the separate law of confidence — sitting alongside the convention, not built out of it."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Attorney General v Jonathan Cape Ltd",
+            "citation": "[1976] QB 752",
+            "court": "High Court (Chancery Division)",
+            "year": 1976,
+            "factsShort": "The government sought to restrain publication of a former Cabinet minister's diaries on the ground that they breached the convention of Cabinet confidentiality.",
+            "ratioShort": "Courts may recognise that a constitutional convention exists and describe its content, but will not grant a remedy founded on the convention alone — any remedy must rest on an independent legal doctrine, such as the law of confidence.",
+            "expanded": {
+              "facts": "Richard Crossman's executors proposed to publish his Cabinet diaries, which recorded frank internal discussions from his time as a minister in the 1960s. The Attorney General sought an injunction, arguing publication would breach the convention that Cabinet discussions remain confidential, undermining collective responsibility and candid debate in future Cabinets.",
+              "judgmentExtract": "Lord Widgery CJ accepted that a convention of confidentiality attached to Cabinet discussions and that the courts could, in an appropriate case, restrain a clear and immediate breach — but only by applying the ordinary equitable law of confidence to the facts, asking whether the material remained confidential and whether the public interest in restraint outweighed the public interest in publication. On the facts, enough time had passed that the material's confidentiality had substantially faded, and the injunction was refused.",
+              "significance": "This is the leading illustration of how English courts handle conventions generally: acknowledged as real, described where relevant, but never directly enforced. A convention can inform how a court applies a genuinely legal doctrine (here, confidence) without becoming a source of legal obligation in its own right."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-07-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that captures why the court refused to found a remedy on the convention itself.",
+          "passage": "The court accepted, without real dispute, that a convention of Cabinet confidentiality existed and that flagrant breaches of it could in principle damage the workings of government. But a constitutional convention, however well established, is not a rule of law, and it is only the law of confidence — with its own separate requirements of confidentiality, detriment and the passage of time — that can furnish a remedy the court is able to grant. By the time the application was heard, the confidentiality had substantially faded, and no remedy followed.",
+          "ratioSentence": "But a constitutional convention, however well established, is not a rule of law, and it is only the law of confidence — with its own separate requirements of confidentiality, detriment and the passage of time — that can furnish a remedy the court is able to grant."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Sewel: the convention Parliament put into a statute",
+        "voice": "direct — reads the statutory text closely and makes students do the same",
+        "body": [
+          "Most conventions never touch a statute book at all — Cabinet confidentiality, ministerial resignation, individual responsibility are all unwritten. Sewel is the exception worth knowing precisely, because it shows how far Parliament can go in naming a convention in legislation without turning it into a legal rule.",
+          "The Sewel Convention holds that the UK Parliament will not normally legislate on matters devolved to the Scottish Parliament without that Parliament's consent, expressed through a legislative consent motion. Originally purely political, it was given words in statute by the Scotland Act 2016, which inserted a new subsection into the Scotland Act 1998.",
+          "Read the wording slowly, because every word is doing work an examiner expects you to notice. It does not say Parliament 'may not' legislate without consent — it says Parliament 'will not normally' do so. That phrasing was deliberate, and it was tested directly in Miller (2017): the Supreme Court held that putting the convention into statutory language did not convert it into a legally enforceable rule. Parliament remained free, as a matter of law, to legislate on devolved matters without consent; the only change was that the convention now had a textual home, not a legal one."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Scotland Act 1998, s 28(8) (inserted by Scotland Act 2016, s 2)",
+            "text": "But it is recognised that the Parliament of the United Kingdom will not normally legislate with regard to devolved matters without the consent of the Scottish Parliament.",
+            "elements": [
+              "Uses 'recognised' — describing an existing convention, not creating a new legal duty",
+              "Uses 'will not normally' rather than 'must not' or 'may not'",
+              "Consent is not made a legal precondition of a valid Act of Parliament"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-07-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Section 28(8) of the Scotland Act 1998 uses the words 'will not normally legislate... without consent'. What does the Supreme Court in Miller (2017) hold this language achieves?",
+          "options": [
+            "It gives the Sewel Convention full legal force, so a court could strike down legislation passed without consent",
+            "It puts the convention into statutory words for recognition, but leaves it a political, not legal, constraint — Parliament remains legally free to legislate without consent",
+            "It transfers the power to legislate on devolved matters entirely to the Scottish Parliament"
+          ],
+          "correctIndex": 1,
+          "explanation": "Miller (2017) is explicit on this: statutory recognition of a convention is not the same as converting it into a justiciable legal rule. 'Will not normally' signals political self-restraint, not a legal limit the courts can enforce."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Miller and Cherry: when a convention shapes law without becoming law",
+        "voice": "argumentative — sets up the strongest objection to the doctrine before resolving why it survives",
+        "body": [
+          "By now you might reasonably object: if conventions never bind courts and never become law, why does public law spend so much time on them? Miller (No 2) and Cherry — the 2019 prorogation case — is the answer, and it's subtler than 'the courts finally enforced a convention'. They didn't.",
+          "Boris Johnson advised the Queen to prorogue Parliament for five weeks in the run-up to the Brexit deadline. Nobody argued prorogation itself was unlawful in principle — it's a normal prerogative power. The question was whether this particular exercise of it was lawful, given its exceptional length and effect. The Supreme Court held the power to prorogue has a legal limit: it cannot be used to frustrate or prevent, without reasonable justification, Parliament's ability to carry out its constitutional functions, including holding the executive to account.",
+          "Notice what did the work in that reasoning. The Court did not say 'the convention of ministerial accountability to Parliament is now enforceable'. It said the legal scope of a prerogative power has to be understood against the backdrop of fundamental constitutional principles — parliamentary sovereignty and accountability — and a convention that reflects those principles can inform where a legal boundary sits, without the convention itself becoming the source of the obligation. The convention shaped the shore the legal tide reaches; it didn't become the tide."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often write that Miller (No 2)/Cherry 'made the convention of parliamentary accountability legally binding' or 'enforced the convention against the Prime Minister'.",
+            "whyItsWrong": "The Court enforced a legal limit on the prerogative power to prorogue — a limit derived from established constitutional principles (sovereignty, accountability) that conventions also reflect. It did not convert the underlying convention itself into a rule of law, and it did not purport to give a remedy for 'breach of convention' as such. Keep the convention and the legal principle it echoes analytically separate, even when they point the same way on the facts."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-07-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "The Prime Minister advises the Monarch to prorogue Parliament for six weeks, immediately before a scheduled vote of no confidence, giving no public justification. A backbench MP seeks judicial review. Analyse whether the advice is lawful, applying the reasoning in Miller (No 2)/Cherry.",
+          "factsToOrder": [
+            "The power to prorogue is a prerogative power, not derived from statute",
+            "The prorogation is unusually long and timed immediately before a confidence vote",
+            "No reasonable justification for the length or timing is offered",
+            "Parliament's ability to hold the executive to account is affected",
+            "The advice has a legal effect (prorogation actually occurs)"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 4,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the advice to prorogue for six weeks, timed immediately before a confidence vote and without justification, exceeds the legal limits of the prerogative power to prorogue.",
+            "rule": "Following Miller (No 2)/Cherry, the prerogative power to prorogue is legally limited: it cannot be exercised to frustrate or prevent, without reasonable justification, Parliament's ability to carry out its constitutional functions of scrutiny and accountability. This legal limit is informed by, but distinct from, the underlying constitutional principles that conventions of accountability also reflect.",
+            "application": "The prorogation is unusually long and its timing — immediately before a confidence vote — directly interferes with Parliament's ability to hold the executive to account at a moment when that function is most acute. No reasonable justification has been offered for either the length or the timing. On the Miller (No 2)/Cherry test, this combination of effect and absence of justification is exactly what took the 2019 prorogation outside the lawful scope of the power.",
+            "conclusion": "The advice is likely unlawful: it exceeds the legal limit on the prerogative to prorogue, and a court could quash the prorogation as having had no effect — not because a convention was broken, but because the legal boundary the convention echoes was crossed."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-07-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Define a constitutional convention.",
+      "acceptableAnswers": [
+        "a non-legal rule of political practice regarded as binding",
+        "a political rule that is not enforceable in court",
+        "a binding but non-legal constitutional rule"
+      ],
+      "modelAnswer": "A constitutional convention is a non-legal rule of political practice, regarded as binding by the political actors who operate the constitution, whose breach carries political consequences but no legal remedy."
+    },
+    {
+      "itemId": "public-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In Attorney General v Jonathan Cape Ltd, did the court refuse to accept that a convention of Cabinet confidentiality existed at all?",
+      "options": [
+        "No — it accepted the convention existed, but would not found a remedy on it alone",
+        "Yes — it held there was no such convention"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-07-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is the best description of what happened to the Sewel Convention when it was written into s 28(8) of the Scotland Act 1998?",
+      "options": [
+        "It was converted into a directly enforceable legal duty on Parliament",
+        "It was given statutory recognition and wording, while remaining a political, not legal, constraint",
+        "It ceased to be a convention and became binding only on the Scottish Parliament"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats 'written into a statute' as automatically meaning 'made legally binding'. Miller (2017) rejects exactly that inference: the words 'will not normally' recognise the convention without converting it into a rule courts can enforce."
+    },
+    {
+      "itemId": "public-07-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these steps in the order a court applying Jennings' test would use them to decide whether a claimed practice is a genuine convention.",
+      "items": [
+        "Identify whether there is a settled pattern of past precedents",
+        "Ask whether the actors involved believed the practice was binding on them",
+        "Ask whether there is a good constitutional reason for the rule",
+        "Conclude the practice is a convention only if all three are satisfied together"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "public-07-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Section 28(8) Scotland Act 1998 says Parliament 'will not normally' legislate on devolved matters without consent. If Parliament legislated on a devolved matter without consent, what would be the legal status of that Act?",
+      "options": [
+        "Valid — the courts cannot strike it down for breach of s 28(8), because the subsection recognises a convention rather than imposing a legal precondition",
+        "Invalid — s 28(8) makes consent a condition of a valid Act",
+        "Valid only if the Scottish Parliament formally objects within 28 days"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-07-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below from the Supreme Court's reasoning on Sewel in Miller (2017), highlight the sentence that states the ratio.",
+      "passage": "The Sewel Convention performs an important political function. But the policing of its scope and the manner of its operation are matters for the political world and not for the courts; the legal effect that Parliament gave to the convention by including it in the Scotland Act 1998 was to entrench it as a convention, not to convert it into a rule which can be interpreted, let alone enforced, by the judiciary.",
+      "ratioSentence": "But the policing of its scope and the manner of its operation are matters for the political world and not for the courts; the legal effect that Parliament gave to the convention by including it in the Scotland Act 1998 was to entrench it as a convention, not to convert it into a rule which can be interpreted, let alone enforced, by the judiciary."
+    },
+    {
+      "itemId": "public-07-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a court can grant an injunction based solely on the fact that a constitutional convention has been breached?",
+      "sliderLabels": [
+        "Definitely can",
+        "Definitely cannot"
+      ],
+      "correctPosition": "cannot",
+      "explanation": "A court cannot grant a remedy founded on the convention alone. Any remedy has to rest on an independent legal doctrine — as in Jonathan Cape, where the law of confidence, not the convention itself, was the potential source of a remedy."
+    },
+    {
+      "itemId": "public-07-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most strongly suggests a convention, rather than mere coincidence, has developed.",
+      "scenarioText": "For thirty years, every incoming Chancellor has announced the Budget on a Wednesday. In the most recent instance, when officials floated moving it to a Thursday for scheduling reasons, senior figures in the Treasury objected that doing so 'would not be proper' and the date was kept as Wednesday.",
+      "tappableSpans": [
+        "thirty years",
+        "announced the Budget on a Wednesday",
+        "floated moving it to a Thursday",
+        "would not be proper"
+      ],
+      "correctSpan": "would not be proper",
+      "explanation": "That phrase is evidence of a felt obligation — the missing ingredient that turns a long-running pattern into a convention under Jennings' test, rather than leaving it as thirty years of coincidence or convenience."
+    },
+    {
+      "itemId": "public-07-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario describes a breach of law, rather than a breach of convention?",
+      "scenarioA": "A junior minister votes against a policy their department is publicly committed to, without resigning first.",
+      "scenarioB": "A local authority spends money on a purpose not authorised by any statute or by-law giving it that power.",
+      "correctScenario": "B",
+      "explanation": "A is a breach of the convention of collective/individual ministerial responsibility — a resignation issue, not a legal one. B is ultra vires spending: a public body acting outside its legal powers, which is a genuine question of law reviewable by the courts."
+    },
+    {
+      "itemId": "public-07-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A newly appointed Prime Minister decides, for the first time in modern history, to hold Cabinet meetings entirely in private with no minutes kept at all, breaking with decades of practice. Has this Prime Minister broken a legal rule?",
+      "options": [
+        "Yes — the manner of holding Cabinet meetings is fixed by statute",
+        "No — the manner and conduct of Cabinet meetings is governed by convention and practice, not by law, so there is no legal breach even if long-standing practice is departed from",
+        "Yes — but only because minutes are a statutory requirement under the Public Records Act"
+      ],
+      "correctIndex": 1,
+      "explanation": "How Cabinet conducts its business is a matter of convention and internal practice, not law. Departing from a long-standing practice may be politically controversial, but it engages no legal rule a court could enforce."
+    },
+    {
+      "itemId": "public-07-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "The Scottish Parliament refuses to pass a legislative consent motion for a UK Bill that touches a devolved matter. The UK Parliament legislates anyway. Is the resulting Act legally invalid for want of consent?",
+      "options": [
+        "No — Sewel is a convention; refusal of consent has political consequences but does not affect the Act's legal validity",
+        "Yes — s 28(8) makes consent a legal precondition of validity for any Act touching devolved matters",
+        "Yes, but only if the Scottish Parliament also passes a resolution of protest"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is precisely the scenario Miller (2017) addresses: refusal of consent is a serious political event, but it does not touch the Act's legal validity, because Sewel was never converted into a legal precondition."
+    },
+    {
+      "itemId": "public-07-test-12",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Is individual ministerial responsibility — the convention that a minister answerable for serious departmental failings should resign — a rule of law?",
+      "options": [
+        "No — it is a convention with political, not legal, consequences",
+        "Yes — resignation can be compelled by court order"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-07-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A backbench MP argues in court that the government has 'acted unlawfully' by ignoring a long-standing convention of consulting the Opposition before calling a snap general election, and asks the court to declare the calling of the election unlawful. Analyse whether this claim can succeed.",
+      "factsToOrder": [
+        "The practice of consulting the Opposition is a convention, not a statutory or common law requirement",
+        "The power to call an election is now governed by statute (the Dissolution and Calling of Parliament Act 2022)",
+        "The claimant frames the argument as the government having 'acted unlawfully'",
+        "No statutory or common law duty to consult the Opposition before dissolution exists",
+        "Courts will not grant a remedy for breach of a convention alone"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether a court can declare the calling of an election unlawful on the basis that a convention of consulting the Opposition beforehand was not followed.",
+        "rule": "Courts will recognise that a convention exists but will not enforce it directly or treat its breach as unlawfulness; a remedy requires an independent source of law (statute or common law), not the convention alone (Jonathan Cape; Miller (2017) on Sewel).",
+        "application": "Consulting the Opposition before dissolution, even if it is a genuine convention, is not a legal duty found in the Dissolution and Calling of Parliament Act 2022 or at common law. The claimant's framing — 'acted unlawfully' — mislabels a political failing as a legal one. Without an independent legal duty to consult, there is nothing for the court to enforce.",
+        "conclusion": "The claim cannot succeed. Breach of the consultation convention, however politically damaging, is not unlawfulness a court can remedy; the claimant would need to point to a genuinely legal duty, which does not exist here."
+      }
+    },
+    {
+      "itemId": "public-07-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.6,
+      "prompt": "Which statement best captures what Miller (No 2)/Cherry (2019) actually decided about the relationship between conventions and law?",
+      "options": [
+        "It held that the convention of ministerial accountability to Parliament was thereafter directly enforceable by the courts",
+        "It held that a prerogative power has legal limits informed by constitutional principles which conventions also reflect, without converting the underlying convention itself into a rule of law",
+        "It abolished the distinction between conventions and law for all prerogative powers"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer collapses the case into 'the court enforced a convention'. It didn't: it found a legal limit on a prerogative power, drawing on the same constitutional principles a convention reflects, while keeping the convention itself outside the law — exactly the distinction this whole lesson is built around."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is collapsing 'this convention was broken' into 'this was illegal'. Keep asking: is there an independent legal rule doing the work here, or only a political expectation?",
+    "reviewMisses": true,
+    "linkToPathway": "public.constitution.conventions"
+  }
+}

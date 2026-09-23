@@ -1,0 +1,436 @@
+{
+  "lessonId": "tort-13",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 13,
+  "topicId": "tort.private-nuisance",
+  "title": "Private nuisance",
+  "subtitle": "Standing, unreasonable interference, and the remedy the court actually gives you",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 5
+  },
+  "objectives": [
+    "State who has standing to sue in private nuisance and explain why a proprietary interest in land is generally required",
+    "Explain what makes an interference with the use and enjoyment of land 'unreasonable', including the role of locality and the character of the neighbourhood",
+    "Evaluate when a court will award damages in lieu of an injunction, and distinguish a continuing nuisance from a one-off event with lingering effects"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Hunter v Canary Wharf [1997] AC 655", "role": "Confirms only a claimant with a proprietary interest in land can sue in private nuisance" },
+    { "citation": "Coventry v Lawrence [2014] UKSC 13", "role": "Reworks the reasonableness test, the relevance of locality and planning permission, and the injunction/damages discretion" },
+    { "citation": "Fearn v Tate Gallery [2023] UKSC 4", "role": "Visual intrusion can found a nuisance claim; the defendant's use must be 'common and ordinary', not merely reasonable" },
+    { "citation": "Jalla v Shell [2023] UKSC 16", "role": "A one-off escape with lingering physical consequences is not a 'continuing nuisance' for limitation purposes" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Nuisance problem questions are graded almost entirely on whether you spot the right issue in the right order — standing, then unreasonableness, then remedy. Students who know the cases still lose marks by answering them out of sequence.",
+    "profileHooks": {
+      "weakApplication": "You know the cases. What trips people at your stage is sequencing — checking standing before you even get to whether the interference was unreasonable. Watch the order in the worked examples below.",
+      "weakKnowledge": "Start with Part 1 and don't skip the caseCards — Hunter v Canary Wharf and Fearn v Tate Gallery are both doing structural work later in the lesson, not just decoration."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A tourist leans on the railing of a viewing gallery, phone raised, and looks straight into someone's glass-walled living room forty metres away. No one has trespassed. No one has touched anyone. And yet, the Supreme Court held, something has gone legally wrong. Private nuisance is the tort built for exactly this discomfort: harm that lives entirely in the relationship between two pieces of land, and in what a court thinks a neighbour is entitled to put up with.",
+    "lawStatedNotice": "Law stated as at 22 September 2026, incorporating Fearn v Tate Gallery [2023] UKSC 4 and Jalla v Shell [2023] UKSC 16, both of which remain current statements of the law."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Who is even allowed to sue?",
+        "voice": "argumentative — sets out the restrictive rule, then tests its logic",
+        "body": [
+          "Before you ask whether a defendant's conduct was unreasonable, ask a narrower and less forgiving question: does this claimant have standing to sue in private nuisance at all? The tort protects an interest in land — not a person's comfort as such — and that framing does real work in who gets to walk through the door.",
+          "The leading case is Hunter v Canary Wharf. Residents of London's Docklands sued over interference with television reception caused by the construction of Canary Wharf Tower, and over dust from nearby road works. The House of Lords used the case to settle something that had drifted in earlier authority: could a person with no legal interest in the property — a spouse, a cohabitee, a child living at home — sue in nuisance simply because they lived there and were personally affected? Their Lordships said no, overruling an earlier Court of Appeal decision that had allowed exactly that.",
+          "The reasoning is unapologetically proprietary: private nuisance protects rights in land, so only someone with an interest in the land — a freeholder, or a tenant with exclusive possession — can sue. A lodger without exclusive possession, a guest, an adult child living with their parents: none of them can bring the claim in their own name, however genuinely their quality of life is affected. It is a harsh rule to state out loud, and the House of Lords knew it, and held it anyway — the alternative, they reasoned, was an unworkable expansion of the tort into something closer to a general right to a pleasant home life, actionable by anyone present in it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Private nuisance",
+            "definition": "An unlawful, indirect interference with a person's use or enjoyment of land, or with a right over it, actionable only by someone with a proprietary interest in the land affected."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Hunter v Canary Wharf Ltd",
+            "citation": "[1997] AC 655",
+            "court": "House of Lords",
+            "year": 1997,
+            "factsShort": "Docklands residents sued over TV interference from a new tower and dust from road building; some claimants had no proprietary interest in their homes.",
+            "ratioShort": "Only a claimant with a proprietary interest in the affected land — not merely someone living there — has standing to sue in private nuisance.",
+            "expanded": {
+              "facts": "The construction of Canary Wharf Tower interfered with television signals received by residents in the surrounding area, and separate roadworks generated dust affecting nearby properties. Some claimants owned or rented their homes; others, including children and other family members without any tenancy or ownership interest, were simply resident there.",
+              "judgmentExtract": "The House of Lords held that interference with television reception, without more, was not actionable as a nuisance — there is no right to an uninterrupted signal comparable to a right to light. On standing, it restored the traditional proprietary requirement: a claimant must show a legal interest in the land — ownership, or a tenancy carrying exclusive possession — to sue. Mere occupation or presence in the home is not enough, overruling the wider approach taken in Khorasandjian v Bush.",
+              "significance": "This is the starting checkpoint for every nuisance problem question: before assessing reasonableness at all, confirm the claimant has the standing to raise the issue. Miss this and every later step in your answer is addressed to the wrong question."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Priya's adult son lives with her rent-free and has no tenancy agreement. A neighbour's business generates constant noise that upsets him badly. Can the son sue in private nuisance in his own name?",
+          "options": ["No — he has no proprietary interest in the property", "Yes — he is genuinely affected and that is enough"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. However real the impact on him, Hunter v Canary Wharf confines standing to those with a legal interest in the land — ownership or a tenancy with exclusive possession. Priya could sue; her son, on these facts, cannot.",
+          "feedbackIncorrect": "Not quite — check Hunter v Canary Wharf again. Being genuinely and badly affected is not the test; having a proprietary interest in the land is."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The view from Neo Bankside",
+        "voice": "case-narrative — walks through the facts before extracting the rule",
+        "body": [
+          "Now assume standing is satisfied. The next question is whether the defendant's conduct was, in law, unreasonable — and the most recent, and most surprising, illustration of how the court tests that comes from an art gallery.",
+          "The Tate Modern's extension included a public viewing gallery on its tenth floor. From the gallery, visitors could look directly into the glass-walled flats of Neo Bankside, an adjoining residential development, at close range and in large numbers — hundreds of thousands of visitors a year, some photographing the flats, some simply staring in. The flat owners sued in private nuisance, not for noise or smell or physical damage, but for the sheer intensity of being watched in their own homes.",
+          "The claim faced an obvious difficulty: English law has never straightforwardly recognised 'being overlooked' as an actionable wrong — there is no free-standing right to privacy from a neighbour's windows, and courts had previously treated overlooking as something you simply live with. The Supreme Court, by a majority, held that visual intrusion of this intensity could in principle found a nuisance claim. But the more important move was in how the majority framed the test for reasonableness itself: not whether the Tate's conduct was, balanced against the flat owners' interests, 'reasonable' in a loose sense, but whether operating a public viewing gallery overlooking neighbouring homes was a 'common and ordinary' use of the Tate's land, given its character. It was not — and once a use falls outside what is common and ordinary for that locality, the defendant cannot rely on the usual 'give and take between neighbours' balancing exercise to excuse it."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Fearn v Board of Trustees of the Tate Gallery",
+            "citation": "[2023] UKSC 4",
+            "court": "Supreme Court",
+            "year": 2023,
+            "factsShort": "Tate Modern's public viewing platform allowed constant close-range overlooking into neighbouring glass-walled flats.",
+            "ratioShort": "Visual intrusion can amount to a private nuisance; the touchstone is whether the defendant's use of its own land is 'common and ordinary', not simply whether it is reasonable on the facts.",
+            "expanded": {
+              "facts": "Owners of flats in the Neo Bankside development, whose living areas had floor-to-ceiling glass walls, complained that the Tate's viewing gallery — open to the public and drawing large numbers of visitors daily — subjected them to constant observation and photography from close range.",
+              "judgmentExtract": "The majority held that a substantial and unreasonable interference with the ordinary use and enjoyment of land by overlooking could, in principle, amount to a nuisance, rejecting the argument that visual intrusion could never be actionable. Crucially, the majority reasoned that the correct question is not a free-floating balance of reasonableness but whether the defendant's activity is a common and ordinary use of the land in question; running a major public tourist attraction with a constant viewing platform trained on neighbouring homes was not.",
+              "significance": "Fearn reframes the reasonableness inquiry across the whole tort: ask first whether the defendant's use of its land is common and ordinary for that place, before asking whether it was reasonably conducted. An extraordinary use cannot be rescued by showing the defendant was careful about how it carried the use out."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-13-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "In which scenario is a defendant more likely to succeed in showing its use of land was 'common and ordinary', on the Fearn approach?",
+          "scenarioA": "A homeowner installs an ordinary garden patio with a raised deck, from which they can occasionally see into a neighbour's garden.",
+          "scenarioB": "A business converts a rooftop into a permanent, publicly ticketed observation deck marketed specifically for its views into surrounding private gardens.",
+          "correctScenario": "A",
+          "explanation": "A is the kind of everyday domestic use of land that courts treat as common and ordinary, even if it occasionally allows a view into a neighbour's space. B mirrors the Tate's position in Fearn: a use is deliberately structured around, and intensifies, overlooking, which takes it outside 'common and ordinary' use regardless of how carefully it is run."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Reasonableness, mapped",
+        "voice": "structural — a checklist part built for revision",
+        "body": [
+          "Fearn supplies the headline test, but most nuisance problems are still decided by weighing a cluster of factors that predate it, restated by the Supreme Court in Coventry v Lawrence. Treat these as the working toolkit once you've cleared standing and identified the use.",
+          "Locality and the character of the neighbourhood matter enormously for amenity claims — noise, smell, dust that merely disturb comfort — but not at all for claims of physical damage to property. A factory in an industrial estate is judged by industrial-estate standards for noise; it is not judged more leniently for corroding a neighbour's fence with fumes. Coventry v Lawrence also confirmed that planning permission does not itself authorise what would otherwise be a nuisance, though a permission that changes the character of an area over time can be relevant evidence of what has become the ordinary use of that locality.",
+          "Duration and frequency matter — an isolated one-off event is treated differently from a persistent state of affairs, though a sufficiently serious isolated escape can still found a claim. Sensitivity of the claimant's own use also matters: if the claimant's property is unusually sensitive to interference that would not trouble an ordinary occupier, the law will often not extend nuisance to protect that heightened sensitivity, though it will protect an ordinary use even if the claimant is, incidentally, more affected than most."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Factors in assessing unreasonable interference",
+            "points": [
+              "Locality and character of the neighbourhood — decisive for amenity nuisances (noise, smell, dust); irrelevant to physical damage claims",
+              "Planning permission — does not itself authorise a nuisance, but can be evidence of a change in the character of the area",
+              "Duration and frequency of the interference — persistent states of affairs are treated more readily as nuisances than genuinely isolated events",
+              "Sensitivity of the claimant's use — the law generally protects an ordinary use of land, not an unusually sensitive one",
+              "Malice — deliberately motivated interference can convert an otherwise borderline use into an unreasonable one"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Coventry v Lawrence",
+            "citation": "[2014] UKSC 13",
+            "court": "Supreme Court",
+            "year": 2014,
+            "factsShort": "A claimant bought a house near a long-established motocross and speedway stadium and sued in nuisance for noise.",
+            "ratioShort": "Planning permission does not authorise a nuisance but can evidence a changed locality; moving next to an existing activity is not, by itself, a defence.",
+            "expanded": {
+              "facts": "The stadium had operated motor-sport events for years before the claimant purchased a nearby house. He sued in nuisance for noise once he moved in, and the defendants argued, among other things, that he had 'come to the nuisance' and that planning permission for the stadium's activities protected them.",
+              "judgmentExtract": "The Supreme Court held the claimant's noise claim could succeed: coming to an existing activity is generally no defence, since a defendant cannot fix the character of a neighbourhood in its own favour simply by getting there first and letting others move in around it. Planning permission was relevant only insofar as it evidenced a change in the character of the locality, not as a licence to commit what would otherwise be an actionable nuisance.",
+              "significance": "Beyond its facts, Coventry v Lawrence is the modern restatement of the whole reasonableness inquiry, and the case that reopened the injunction/damages question addressed later in this lesson."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-13-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these questions in the order a court works through them when assessing whether an interference is unreasonable.",
+          "items": [
+            "Does the claimant have a proprietary interest in the affected land?",
+            "Is the defendant's use of its land common and ordinary for that place?",
+            "What does the locality and character of the neighbourhood suggest is tolerable there?",
+            "Was the interference persistent, and is the claimant's own use unusually sensitive?"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure: standing first, then whether the use itself is ordinary at all, then the finer-grained reasonableness factors like locality, duration and sensitivity.",
+          "feedbackIncorrect": "Re-order these — standing comes before anything else, and Fearn's 'common and ordinary use' question logically precedes the finer balancing factors like locality and duration."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "\"But it was here first\" — testing the coming-to-the-nuisance argument",
+        "voice": "Socratic — poses the defence as if it should obviously work, then dismantles it",
+        "body": [
+          "Here is an argument that feels intuitively fair: if a factory has been running for thirty years, and you buy the house next door knowing exactly what you're moving into, shouldn't you be taken to have accepted the noise? Isn't it a bit rich to buy cheap, next to an existing nuisance, and then sue to shut it down or extract damages?",
+          "English law has consistently answered no, and the reasoning is worth sitting with rather than just memorising. If moving next to an existing activity were a defence, the first occupier of any area could effectively fix the character of that locality forever, immunising themselves from liability to every future neighbour regardless of how the activity or its impact changed. The right to sue in nuisance attaches to the land, not to whoever happened to arrive first — a new owner inherits the same right their predecessor had, undiminished by knowledge of what was already there.",
+          "Coventry v Lawrence confirmed this general rule survives, but added a genuine nuance worth distinguishing from the rejected defence: if it is the claimant, after moving in, who changes the use of their own land — for example, converting a barn used for storage into a bedroom, thereby creating a new sensitivity to noise that didn't previously exist on that land — that change of use by the claimant can be relevant to reasonableness. The defence that fails is 'you moved in near an existing nuisance'; the argument that can succeed is the narrower one that the claimant's own subsequent change of use created the sensitivity being complained of."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often state, flatly, that 'coming to the nuisance is a complete defence' after Coventry v Lawrence.",
+            "whyItsWrong": "Coventry v Lawrence reaffirmed the general rule that coming to an existing activity is not a defence. What it added was narrower: if the claimant changes the use of their own land after arriving — creating a new sensitivity that didn't exist before — that specific change can be weighed in the reasonableness analysis. That is not the same as saying moving next to a nuisance is itself a defence."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-13-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A recording studio has operated in a converted warehouse for a decade. A developer buys the flat next door and, after moving in, converts what was previously a storage room into a home office directly against the party wall. The studio's noise now disturbs the office. What is the strongest characterisation of the developer's position?",
+          "options": [
+            "The developer has no claim at all, because they came to the nuisance",
+            "The developer may have a weaker claim than an ordinary neighbour, because they created the new sensitivity themselves by converting the storage room after moving in",
+            "The developer has an unaffected claim, because coming to the nuisance is entirely irrelevant to reasonableness under any circumstances"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The wrong answers pull in opposite directions — one treats 'coming to the nuisance' as a full bar (it isn't), the other treats the claimant's own change of use as irrelevant (Coventry v Lawrence says it can matter). The developer's own decision to convert a storage room into a sensitive-use room after arriving is the kind of self-created sensitivity the case singled out as relevant."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Winning the claim is not the whole game: remedy, and how long you've got",
+        "voice": "advisory — written as guidance to a claimant deciding what to ask for",
+        "body": [
+          "Suppose the claim succeeds. The traditional remedy in nuisance is an injunction — an order stopping the interference — reflecting the idea that a property right shouldn't simply be convertible into cash at the defendant's option. But courts have never treated the injunction as automatic, and Coventry v Lawrence deliberately loosened what had become an over-rigid approach to the alternative: damages in lieu of an injunction.",
+          "The old approach, built around a four-part 'good working rule' from a nineteenth-century case, had hardened in practice into something close to a formula, under which an injunction would almost always follow unless the defendant could tick every box for damages instead. The Supreme Court in Coventry v Lawrence rejected that rigidity. The correct approach, the Court held, is a broader exercise of discretion: is damages an adequate remedy for the claimant; would an injunction be oppressive to the defendant, particularly given the cost and disruption of stopping an established activity; and does the public interest — including in cases with a wider public benefit, like a stadium hosting events people attend — weigh against an injunction? None of these factors is decisive alone, and a court is now expected to weigh them together rather than mechanically working down a checklist.",
+          "Separately, and easy to miss, is a limitation trap that has nothing to do with reasonableness at all: how long ago did the interference happen? Jalla v Shell concerned a 2011 oil spill off the Nigerian coast; claimants argued that because oil residue remained on the shoreline, the nuisance was 'continuing', generating fresh causes of action and keeping their claim alive well past the normal limitation period. The Supreme Court disagreed. A continuing nuisance requires an ongoing state of affairs — repeated or continuous activity or interference by the defendant — not merely the lingering physical consequences of a single, completed event. The spill was a one-off escape; the oil remaining afterwards did not restart the limitation clock, however serious and visible its continuing effects."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Jalla v Shell International Trading and Shipping Co Ltd",
+            "citation": "[2023] UKSC 16",
+            "court": "Supreme Court",
+            "year": 2023,
+            "factsShort": "Claimants argued a 2011 oil spill's continuing residue on the shoreline was a 'continuing nuisance' extending their time to sue.",
+            "ratioShort": "A one-off escape event with lingering physical consequences is not a continuing nuisance; limitation runs from the original event.",
+            "expanded": {
+              "facts": "A 2011 oil spill from an offshore facility affected the Nigerian coastline. By the time proceedings were brought, the ordinary limitation period measured from the spill itself had expired, so claimants argued the continued physical presence of oil constituted an ongoing nuisance, generating fresh, continuing causes of action.",
+              "judgmentExtract": "The Supreme Court held that a continuing nuisance requires repeated or continuing activity, or an ongoing state of affairs caused by the defendant, not merely the persistence of physical consequences from a single completed event. The oil spill was a one-off escape; its lingering presence on the shoreline, however serious, did not amount to a continuing nuisance for limitation purposes.",
+              "significance": "This distinction — between an ongoing activity and the ongoing consequences of a finished one — matters well beyond oil spills. A single collapse, a single escape of water, a single release of a substance is not converted into a continuing nuisance merely because its effects are still visible years later."
+            }
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Injunction or damages in lieu?",
+            "points": [
+              "Injunction remains the presumptive remedy, but is not automatic after Coventry v Lawrence",
+              "Ask: would damages adequately compensate the claimant?",
+              "Ask: would an injunction be oppressive to the defendant, given the cost and disruption of stopping the activity?",
+              "Ask: does the public interest weigh against an injunction in this case?",
+              "These factors are weighed together, not applied as a rigid checklist"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-13-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A small, well-loved community theatre has operated for fifteen years. A new resident moves in next door and successfully proves the noise from evening performances is an actionable nuisance. Closing the theatre entirely would be the only way an injunction could fully stop the noise, and the theatre serves hundreds of local people each week. On the Coventry v Lawrence approach, what is the most likely outcome?",
+          "options": [
+            "An injunction must be granted automatically once the nuisance is proved, regardless of the consequences for the theatre",
+            "The court has genuine discretion to award damages in lieu of an injunction, weighing the adequacy of damages for the claimant against the disruption to the theatre and the public interest in it continuing",
+            "The claim must fail entirely, because a nuisance affecting a business with public benefit can never be actionable"
+          ],
+          "correctIndex": 1,
+          "explanation": "Proving the nuisance and choosing the remedy are separate steps. Coventry v Lawrence confirms the court is not bound to grant an injunction just because the tort is made out — it weighs whether damages would adequately compensate the claimant against the oppressiveness of an injunction and the wider public interest, which here includes the theatre's value to the community."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-13-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What kind of interest in land must a claimant hold to have standing to sue in private nuisance?",
+      "acceptableAnswers": ["a proprietary interest", "ownership or exclusive possession", "a legal interest in the land"],
+      "modelAnswer": "The claimant must have a proprietary interest in the affected land — ownership, or a tenancy carrying exclusive possession — not merely be resident there, as confirmed in Hunter v Canary Wharf."
+    },
+    {
+      "itemId": "tort-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which case restored the requirement that only a person with a proprietary interest in land can sue in private nuisance?",
+      "options": ["Hunter v Canary Wharf", "Coventry v Lawrence"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-13-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT, on its own, a factor in assessing whether an interference is unreasonable?",
+      "options": ["Locality and character of the neighbourhood", "Duration and frequency of the interference", "Whether the defendant is a large or well-resourced company", "Malice on the part of the defendant"],
+      "correctIndex": 2,
+      "trapExplanation": "The size or resources of the defendant is not itself a factor in the reasonableness inquiry — that inquiry is about the nature and impact of the interference, not the defendant's means. Students sometimes import a 'deep pockets' intuition from other torts that has no place here."
+    },
+    {
+      "itemId": "tort-13-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Does planning permission for an activity, by itself, authorise what would otherwise be a private nuisance?",
+      "options": ["No — but it can be evidence of a change in the character of the locality", "Yes — planning permission is a complete defence to nuisance"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-13-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below, adapted from Fearn v Tate Gallery, highlight the sentence stating the core test for reasonableness the majority applied.",
+      "passage": "Overlooking of this intensity was capable of amounting to an actionable nuisance. It was not necessary to show only that the defendant's conduct was, on balance, unreasonable. The correct question was whether the defendant's use of its own land was a common and ordinary use, given the locality; a use that was not common and ordinary could not be excused by showing it was reasonably or carefully carried out.",
+      "ratioSentence": "The correct question was whether the defendant's use of its own land was a common and ordinary use, given the locality; a use that was not common and ordinary could not be excused by showing it was reasonably or carefully carried out."
+    },
+    {
+      "itemId": "tort-13-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the reasoning steps a court follows in deciding whether to grant an injunction or damages in lieu, after Coventry v Lawrence.",
+      "items": [
+        "Confirm the tort of nuisance is made out on the facts",
+        "Ask whether damages would adequately compensate the claimant",
+        "Weigh the oppressiveness of an injunction to the defendant",
+        "Consider the wider public interest and reach a discretionary conclusion"
+      ],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "tort-13-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that 'coming to the nuisance' — moving next to an already-existing activity — is, by itself, a complete defence to a nuisance claim?",
+      "sliderLabels": ["Definitely a complete defence", "Definitely not a defence at all"],
+      "correctPosition": "not a defence at all",
+      "explanation": "Coventry v Lawrence confirmed the long-standing rule: coming to an existing activity is not a defence, because a defendant cannot fix the character of a locality in its own favour by arriving first. The only relevant nuance is where the claimant, after arriving, changes the use of their own land to create a new sensitivity."
+    },
+    {
+      "itemId": "tort-13-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which best captures what Jalla v Shell decided about 'continuing nuisance'?",
+      "options": [
+        "Any nuisance whose harmful effects are still visible years later counts as continuing",
+        "A continuing nuisance requires an ongoing activity or state of affairs caused by the defendant, not merely the lingering physical consequences of a single completed event",
+        "Continuing nuisance was abolished as a category by the decision"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats visible lingering harm as automatically 'continuing'. Jalla draws a sharper line: what continues must be the defendant's activity or interference, not just the physical trace it left behind."
+    },
+    {
+      "itemId": "tort-13-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which claimant is more likely to have standing to sue in private nuisance?",
+      "scenarioA": "A tenant under a two-year lease with exclusive possession of a flat, affected by construction noise next door.",
+      "scenarioB": "A live-in nanny, employed by the flat's tenant, who has no tenancy of her own but is badly disturbed by the same noise.",
+      "correctScenario": "A",
+      "explanation": "The tenant with exclusive possession has the proprietary interest Hunter v Canary Wharf requires. The nanny, however genuinely affected, has no legal interest in the land and cannot sue in her own name."
+    },
+    {
+      "itemId": "tort-13-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most directly supports treating this business's activity as outside a 'common and ordinary' use of its land, on the Fearn approach.",
+      "scenarioText": "A café in a converted house serves customers at outdoor tables in its small garden until 9pm most evenings. A neighbouring flat owner finds the chatter mildly irritating but tolerable.",
+      "tappableSpans": ["converted house", "outdoor tables", "until 9pm most evenings", "mildly irritating but tolerable"],
+      "correctSpan": "mildly irritating but tolerable",
+      "feedbackCorrect": "None of these facts actually support treating the café as extraordinary — that's the point of this item. Ordinary outdoor seating at reasonable hours, causing only mild, tolerable disturbance, is a paradigm example of a common and ordinary use, not an exception to it.",
+      "feedbackIncorrect": "Look again — this scenario is designed so that no fact strongly supports 'non-ordinary use'. Outdoor café seating at ordinary hours causing only mild disturbance sits comfortably within common and ordinary use; contrast it with the Tate's purpose-built, high-intensity viewing platform in Fearn."
+    },
+    {
+      "itemId": "tort-13-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A tannery has operated in an industrial zone for forty years, its noise consistent with other nearby factories. A new resident buys a flat in the same zone, marketed as 'industrial-chic', and complains the tannery's ordinary operating noise disturbs her. Applying the locality principle, what is the most likely outcome for a noise-based claim?",
+      "options": [
+        "Likely to fail — locality and character of the neighbourhood are central to an amenity claim like noise, and industrial-level noise is what this locality's character permits",
+        "Certain to succeed — the resident's subjective distress is all that matters",
+        "Irrelevant — locality only matters for claims of physical property damage"
+      ],
+      "correctIndex": 0,
+      "explanation": "Locality is decisive for amenity claims such as noise. In a genuinely industrial area, industrial-level noise consistent with the character of the neighbourhood is unlikely to be judged unreasonable — this is the reverse of a claim for physical damage, where locality would not excuse the defendant."
+    },
+    {
+      "itemId": "tort-13-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A chemical plant, operating within a residential-adjacent industrial estate, has an isolated equipment failure that releases fumes corroding paintwork on several neighbouring houses. The plant argues locality should excuse it, since the area tolerates industrial activity. Is this argument likely to succeed?",
+      "options": [
+        "No — locality and character of the neighbourhood do not excuse claims for physical damage to property, however tolerant the area is of noise or smell",
+        "Yes — locality excuses any interference arising from an industrial use, including physical damage",
+        "It depends only on whether the plant had planning permission"
+      ],
+      "correctIndex": 0,
+      "explanation": "The locality principle is confined to amenity claims. Physical damage to property is judged without regard to how tolerant the neighbourhood is of the underlying activity — an industrial area does not become a zone where property damage is simply the cost of living nearby."
+    },
+    {
+      "itemId": "tort-13-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Anya owns a house next to a small brewery that has operated since before she moved in. Since she bought the house two years ago, the brewery has doubled its production, and the resulting noise and smell now regularly disturb her evenings. She wants to know whether she can sue, and what she might realistically obtain. Analyse her position.",
+      "factsToOrder": [
+        "Anya owns the house (proprietary interest)",
+        "The brewery pre-dates her purchase but has since doubled production",
+        "Noise and smell are amenity-type interferences, sensitive to locality",
+        "The increase in production is a change by the defendant, not by Anya",
+        "Anya seeks to know both liability and likely remedy"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Anya, as owner, can establish an actionable private nuisance against the brewery, and what remedy she is likely to obtain.",
+        "rule": "A claimant with a proprietary interest may sue where a defendant's use of its land is not common and ordinary, or otherwise unreasonably interferes with the claimant's use and enjoyment, judged with regard to locality, duration and any change in the defendant's activity; coming to an existing activity is not a defence; remedy is discretionary between injunction and damages in lieu, per Coventry v Lawrence.",
+        "application": "Anya has standing as owner. The brewery's pre-existing presence does not defeat her claim — coming to the nuisance is not a defence. What matters is the doubling of production, a change by the defendant increasing the interference beyond what she (or any occupier) originally tolerated; this is unlike the narrow Coventry v Lawrence exception, which concerns a change of use by the claimant, not the defendant. Locality is relevant to whether noise and smell at this new level are still tolerable for the area. On remedy, a court would weigh whether damages adequately compensate Anya against the disruption an injunction would cause the brewery and any public interest in its continued operation.",
+        "conclusion": "Anya has a viable claim; the brewery cannot rely on her having moved in afterward. Whether she obtains an injunction or damages in lieu depends on the Coventry v Lawrence discretionary factors, not on liability alone."
+      }
+    },
+    {
+      "itemId": "tort-13-test-14",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which statement most accurately describes the relationship between the old 'good working rule' for injunctions and the approach taken in Coventry v Lawrence?",
+      "options": [
+        "Coventry v Lawrence abolished injunctions in nuisance entirely",
+        "Coventry v Lawrence replaced a rigid, near-automatic approach to injunctions with a broader, genuinely discretionary weighing of adequacy of damages, oppressiveness, and public interest",
+        "Coventry v Lawrence made injunctions automatic in every successful nuisance claim"
+      ],
+      "correctIndex": 1,
+      "explanation": "The old approach had hardened into something close to a formula favouring injunctions. Coventry v Lawrence deliberately loosened this, restoring a genuine, multi-factor discretion rather than a checklist that almost always produced the same result."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common error in this lesson's test items is collapsing three separate questions into one: whether the claimant has standing, whether the interference was unreasonable, and what remedy follows. Each has its own test and its own leading case — answer them in that order, and don't let a strong case on one bleed into an assumption about the others.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.private-nuisance"
+  }
+}

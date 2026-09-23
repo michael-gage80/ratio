@@ -1,0 +1,497 @@
+{
+  "lessonId": "public-10",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 10,
+  "topicId": "public.judicial-review.illegality",
+  "title": "Illegality",
+  "subtitle": "The first ground of judicial review: acting outside the powers Parliament gave you",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Define illegality as a ground of review and place it within the wider taxonomy alongside irrationality and procedural impropriety",
+    "Distinguish the four principal sub-categories of illegality: error of law, improper purpose, relevant/irrelevant considerations, and fettering or unlawful delegation of discretion",
+    "Apply each sub-category to a novel fact pattern and identify which, if any, is engaged",
+    "Explain the Carltona principle as a lawful exception to the rule against delegation, and its limits"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Padfield v Minister of Agriculture [1968] AC 997",
+      "role": "A discretion must be exercised to promote the policy and objects of the enabling Act — improper purpose"
+    },
+    {
+      "citation": "R v Secretary of State for the Home Department, ex p Fire Brigades Union [1995] 2 AC 513",
+      "role": "A minister may not use a prerogative-adjacent power to frustrate a statutory scheme not yet in force"
+    },
+    {
+      "citation": "Anisminic v Foreign Compensation Commission [1969] 2 AC 147",
+      "role": "Any error of law by a public body taking into account an irrelevant matter can go to jurisdiction, founding review"
+    },
+    {
+      "citation": "R (Roberts) v Commissioner of Police of the Metropolis",
+      "role": "Illustrates improper purpose analysis applied to police stop-and-search powers"
+    },
+    {
+      "citation": "Congreve v Home Office [1976] QB 629",
+      "role": "Revoking valid licences to raise revenue outside the statutory scheme is an improper purpose"
+    },
+    {
+      "citation": "British Oxygen v Minister of Technology [1971] AC 610",
+      "role": "A policy may guide discretion but must not be applied so rigidly as to fetter it"
+    },
+    {
+      "citation": "Carltona v Commissioners of Works [1943] 2 All ER 560",
+      "role": "Departmental decisions may lawfully be taken by officials in a minister's name, as an exception to unlawful delegation"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Illegality is the ground students most often flatten into 'the decision-maker got the law wrong' — true, but it hides a taxonomy of four distinct sub-doctrines, each with its own test and its own case law. This lesson builds the classification system you need to sort a messy fact pattern into the right box before you can argue it.",
+    "profileHooks": {
+      "weakApplication": "You can define each sub-category. The test pool is weighted towards sorting fact patterns into the right one — that's the actual exam skill, and it's harder than it sounds because real facts often gesture at two categories at once.",
+      "weakKnowledge": "Start with Part 1's taxonomy and don't move on until you can name all four sub-categories cold. Everything after this assumes you already have the classification system in your head."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A minister has a statutory power to prosecute anyone importing a listed animal disease without a licence. He uses it to prosecute a trader who is, on the facts, entirely innocent of any wrongdoing — simply to make an example, because publicising a high-profile case would deter smuggling generally. Nothing in the statute is disobeyed on its face: the power to prosecute exists, and he has used it. Is that legal? This lesson is a taxonomy — a sorting system for four different ways a decision-maker can go wrong while staying inside the literal words of their power.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. Illegality is a long-settled common law ground with no pending legislative change; the underlying case law (Padfield, Anisminic, Carltona and their descendants) remains current authority."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A taxonomy, not a single rule",
+        "voice": "doctrinal-taxonomic — builds a classification system before touching any facts",
+        "body": [
+          "Judicial review traditionally rests on three grounds, set out by Lord Diplock in GCHQ: illegality, irrationality and procedural impropriety. Illegality is first for a reason — it is the broadest and, in one sense, the most fundamental. It asks whether the decision-maker correctly understood and stayed within the legal limits of the power Parliament (or the common law, or the prerogative) actually gave them.",
+          "The mistake to avoid from the outset: illegality is not one test. It is an umbrella over at least four distinct sub-categories, each independently sufficient to void a decision, each with its own case law and its own way of failing. Treating 'illegality' as a single box to tick — rather than four separate boxes to check — is the single most common reason students lose marks on problem questions in this area.",
+          "The four sub-categories this lesson builds, in order: (1) simple error of law — misunderstanding the scope or meaning of the power itself; (2) improper purpose — using a real power for a purpose Parliament did not intend; (3) relevant and irrelevant considerations — taking into account something you shouldn't have, or ignoring something you should have; (4) fettering or unlawfully delegating discretion — refusing to actually exercise the judgment Parliament required of you. A single fact pattern can raise more than one."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The four sub-categories of illegality",
+            "points": [
+              "Error of law — misinterpreting the meaning or scope of the statutory power itself",
+              "Improper purpose — exercising a genuine power for a purpose outside what the enabling Act was designed to achieve (Padfield)",
+              "Relevant and irrelevant considerations — taking into account a factor Parliament did not intend to be weighed, or ignoring one it required",
+              "Fettering or unlawful delegation of discretion — applying a rigid policy with no exceptions, or handing the decision to someone not authorised to make it (subject to the Carltona exception)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-10-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Illegality as a ground of judicial review is best understood as:",
+          "options": [
+            "A single test asking whether the decision-maker broke the law in some general sense",
+            "An umbrella covering at least four distinct sub-doctrines, each independently capable of voiding a decision"
+          ],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. Treat illegality as a checklist of four separate questions, not one broad enquiry — a fact pattern can fail on one, several, or none of them.",
+          "feedbackIncorrect": "Not quite — 'illegality' is not a single test. It groups together at least four separately recognised sub-categories, and part of the skill this lesson builds is learning to check each one in turn."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Improper purpose: a real power, used for the wrong reason",
+        "voice": "doctrinal-taxonomic — isolates one category and drills its internal test",
+        "body": [
+          "The clearest illegality cases involve a decision-maker who has a genuine power — nothing invented, nothing beyond their formal authority — but exercises it to achieve something Parliament never intended when it granted that power.",
+          "Padfield is the founding case. The Minister of Agriculture had a discretion under the Agricultural Marketing Act 1958 to refer complaints about the milk pricing scheme to a committee. He refused to refer a complaint he knew was well-founded, precisely because he knew the committee would uphold it and he did not want the political embarrassment of having to act on that finding. The House of Lords held this was unlawful: a discretion conferred by statute must be exercised to promote the policy and objects of the Act, and a minister cannot frustrate that policy by declining to use the power for reasons unconnected with its statutory purpose.",
+          "Congreve extends the same logic to outright revenue-raising. The Home Office tried to revoke television licences purchased early (before a price rise took effect) purely to claw back the difference in cost — using a genuine statutory power of revocation for a purpose (raising money outside the statutory licensing scheme) that had nothing to do with why the revocation power existed. Improper purpose does not require bad faith or corruption; it only requires that the true, operative reason for the decision sits outside what the power was designed to achieve — even a purpose the decision-maker sincerely believes is a good one."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Padfield v Minister of Agriculture, Fisheries and Food",
+            "citation": "[1968] AC 997",
+            "court": "House of Lords",
+            "year": 1968,
+            "factsShort": "The Minister refused to refer a well-founded complaint about the milk marketing scheme to a statutory committee, to avoid the political embarrassment of having to act on its findings.",
+            "ratioShort": "A statutory discretion must be exercised to promote the policy and objects of the Act conferring it; a minister may not frustrate that policy by refusing to exercise the power for reasons unconnected with its statutory purpose.",
+            "expanded": {
+              "facts": "Under the Agricultural Marketing Act 1958, the Minister had a discretion to refer complaints about the operation of a milk marketing scheme to a committee of investigation. Dairy farmers in south-east England complained that the pricing scheme unfairly disadvantaged them. The Minister accepted the complaint had substance but refused to refer it, giving no adequate reason — the real reason, the House of Lords inferred, was that he did not want to be politically obliged to act on an adverse finding.",
+              "judgmentExtract": "Lord Reid held that Parliament must have conferred the discretion to promote the policy and objects of the Act; the Minister's unexplained refusal, in the context of a well-founded complaint, was inconsistent with that policy and therefore unlawful, notwithstanding the broad and apparently unqualified wording of the statutory discretion.",
+              "significance": "Padfield established that even an apparently unfettered discretion is bounded by the implicit purpose of the statute conferring it, and that courts will infer an improper purpose from an unreasoned refusal in circumstances that call for one. It is the foundation of the entire improper purpose sub-category."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-10-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of the Padfield reasoning in order.",
+          "items": [
+            "The Minister holds a genuine statutory discretion to refer complaints to a committee",
+            "A well-founded complaint is made about the milk marketing scheme",
+            "The Minister refuses to refer it, to avoid being politically obliged to act on the outcome",
+            "The House of Lords holds the discretion must be read as bounded by the Act's policy and objects, so this refusal is unlawful"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the shape of every improper purpose case: a real power exists, but the actual operative reason for using (or not using) it sits outside what the statute was there to achieve.",
+          "feedbackIncorrect": "Check the order again — the discretion and its genuine scope come first, then the specific complaint, then the improper reason for refusal, and only then the House of Lords' ruling reading the statute's implicit purpose into the discretion."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Relevant and irrelevant considerations: what the decision-maker weighed, and what they ignored",
+        "voice": "doctrinal-taxonomic — isolates the next category, using a worked scenario to test the boundary",
+        "body": [
+          "This sub-category asks a narrower, more mechanical question than improper purpose: in reaching the decision, did the decision-maker take into account something Parliament did not intend to be relevant, or fail to take into account something Parliament required them to consider?",
+          "The considerations a decision-maker must weigh are found by interpreting the statute — sometimes expressly listed, more often implied from its purpose. A planning authority refusing permission because of a factor entirely unconnected to planning policy — say, personal dislike of the applicant — has taken an irrelevant consideration into account. A licensing authority that fails to consider a statutory factor Parliament plainly intended to be weighed, such as public safety where the Act's purpose is protective, has failed to take into account a relevant one.",
+          "The trap here is treating any consideration the decision-maker happened to mention as automatically relevant or irrelevant. The test is what the statute, properly construed, required or permitted to be weighed — not what seems sensible or fair in the abstract. A factor can be a legitimate consideration in one statutory scheme and an irrelevant one in a different scheme with a different purpose, even on identical facts."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Illustrative statutory discretion (composite, for teaching purposes)",
+            "text": "The licensing authority may grant, refuse or attach conditions to a licence as it considers appropriate, having regard to the safety of the public and the suitability of the applicant.",
+            "elements": [
+              "A discretionary power ('as it considers appropriate')",
+              "An express relevant consideration: public safety",
+              "An express relevant consideration: suitability of the applicant",
+              "Anything outside these purposes is, absent further statutory context, presumptively irrelevant"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-10-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Applying the illustrative statute above, tap the fact that shows the authority taking an irrelevant consideration into account.",
+          "scenarioText": "The licensing authority refuses to renew a taxi driver's licence. Its written reasons state that the driver has two minor speeding convictions relevant to road safety, that a recent inspection found his vehicle in good condition, and that the authority does not like the driver's outspoken criticism of a councillor on social media.",
+          "tappableSpans": [
+            "two minor speeding convictions relevant to road safety",
+            "recent inspection found his vehicle in good condition",
+            "does not like the driver's outspoken criticism of a councillor on social media"
+          ],
+          "correctSpan": "does not like the driver's outspoken criticism of a councillor on social media",
+          "feedbackCorrect": "That's the irrelevant consideration. The statute's purposes are public safety and suitability to hold the licence — a councillor's personal or political dislike of the driver's protected speech has nothing to do with either, and taking it into account is a textbook illegality, entirely separate from whether the refusal is also disproportionate on other grounds.",
+          "feedbackIncorrect": "The speeding convictions and the vehicle inspection both map directly onto the statute's own listed considerations (safety, suitability) — look instead for the factor that has nothing to do with either purpose."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Fettering discretion: policies that stop being guidance and start being rules",
+        "voice": "doctrinal-taxonomic — resolves an apparent tension (policies are lawful, but can go too far)",
+        "body": [
+          "Public bodies are allowed — encouraged, even — to adopt general policies to guide how they exercise a discretion, for consistency and administrative efficiency. The tension this sub-category resolves: at what point does a policy stop guiding a discretion and start replacing it?",
+          "British Oxygen is the leading authority. The Board of Trade had a discretion to make grants for industrial equipment, and adopted a general policy of refusing grants for items below a certain cost, on the basis that processing small claims was administratively inefficient. The House of Lords held this was lawful in principle — provided the Board remained willing, in a genuine case, to listen to an argument that an exception should be made and to actually consider it on its merits. A policy fetters discretion unlawfully only where it is applied so rigidly that the decision-maker will not listen to anything that might justify a departure from it.",
+          "The same underlying principle governs unlawful delegation: a discretion conferred on a named decision-maker generally cannot be handed over wholesale to someone else, because Parliament chose that decision-maker specifically. The one major, deliberate exception is Carltona: departmental decisions may lawfully be taken by civil servants acting in a minister's name, on the practical basis that no minister could personally make every decision assigned to their department. Carltona is not a general licence to delegate — it applies to internal departmental arrangements where the official remains accountable to the minister, not to handing a statutory power to an outside body altogether."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Policy vs unlawful fetter",
+            "description": "The test for when a general policy crosses the line into unlawfully fettering a discretion.",
+            "nodes": [
+              {
+                "id": "policy",
+                "label": "Decision-maker adopts a general policy to guide the exercise of a discretion"
+              },
+              {
+                "id": "exception",
+                "label": "Is the decision-maker still willing to hear and genuinely consider an argument for an exception in an individual case?"
+              },
+              {
+                "id": "lawful",
+                "label": "Yes → policy is lawful guidance (British Oxygen)"
+              },
+              {
+                "id": "unlawful",
+                "label": "No, applied as a rigid, blanket rule with no genuine openness to exceptions → unlawful fetter on discretion"
+              }
+            ],
+            "edges": [
+              {
+                "from": "policy",
+                "to": "exception"
+              },
+              {
+                "from": "exception",
+                "to": "lawful",
+                "label": "Yes"
+              },
+              {
+                "from": "exception",
+                "to": "unlawful",
+                "label": "No"
+              }
+            ],
+            "textAlternative": "A public body may lawfully adopt a general policy to guide a discretion. The policy becomes an unlawful fetter only where the decision-maker refuses, in substance, to consider any case for departing from it — genuine openness to exceptions is what keeps a policy on the lawful side of the line, per British Oxygen."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-10-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that adopting a firm general policy to structure a discretion is, by itself, always unlawful fettering?",
+          "sliderLabels": [
+            "Always unlawful — any firm policy fetters the discretion",
+            "Not automatically — lawful provided genuine exceptions remain possible (British Oxygen)"
+          ],
+          "correctPosition": "not automatically",
+          "explanation": "British Oxygen makes clear that a firm, even strict, general policy is lawful — the illegality only bites where the decision-maker closes their mind entirely to the possibility of an exception, rather than genuinely considering one when a case for it is put."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Error of law and jurisdiction: Anisminic's reach",
+        "voice": "doctrinal-taxonomic — closes the taxonomy with the broadest and most conceptually contested category",
+        "body": [
+          "The broadest sub-category is the simplest to state and the hardest to draw a clean boundary around: a decision-maker who misunderstands the scope or meaning of their own power has acted illegally, because they were never actually exercising the power Parliament gave them at all — they were exercising something else, something outside their authority.",
+          "Anisminic is the landmark case, though it arrived dressed as an ouster clause problem. The Foreign Compensation Commission had to decide whether a claimant's property had been sequestrated by 'the successor in title' of the original owner — a term the Commission misinterpreted, wrongly excluding a category of claimant Parliament intended to include. The House of Lords held that this error of law meant the Commission had asked itself the wrong question, and a decision based on the wrong question was not a valid 'determination' within its jurisdiction at all — it was a nullity, void rather than merely voidable.",
+          "Anisminic's most far-reaching legacy is the collapse of the old distinction between errors 'within jurisdiction' (which courts would not touch) and errors 'going to jurisdiction' (which they would). Modern courts treat almost any material error of law by a public body as potentially reviewable, on the theory that a body has no authority to get the law wrong about the scope of its own powers. This is also precisely why ouster clauses struggle to survive judicial scrutiny, as the previous lesson on getting to court explored: if an error of law voids the decision entirely, a clause purporting to protect 'determinations' from review was never protecting an error-ridden decision in the first place, because it was never a valid determination to begin with."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Anisminic is only relevant to the earlier lesson on ouster clauses and does not belong in a discussion of illegality as a substantive ground.",
+            "whyItsWrong": "Anisminic is doing double duty, and problem questions exploit exactly this overlap. Its substantive holding — that a material error of law can strip a decision-maker of jurisdiction entirely — is itself the broadest form of the illegality ground, independent of any ouster clause being in play. The ouster clause context in the original case is what made the point famous, but the illegality principle stands on its own in any error-of-law scenario, ouster clause or not."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-10-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario more clearly illustrates an Anisminic-style error of law going to jurisdiction, as opposed to a pure improper-purpose or irrelevant-considerations problem?",
+          "scenarioA": "A tribunal, empowered to compensate 'the original owner or their successor in title', wrongly interprets 'successor in title' to exclude a category of claimant Parliament plainly intended to cover, and refuses compensation on that misreading.",
+          "scenarioB": "A minister, holding a genuine and correctly understood power to grant subsidies, refuses a qualifying applicant purely to save departmental budget in a way unconnected to the scheme's purpose.",
+          "correctScenario": "A",
+          "explanation": "A is a misinterpretation of the scope of the power itself — the tribunal asked the wrong legal question about who counted as a claimant, which is the essence of an Anisminic-style error of law. B is a correctly understood power used for a purpose outside the statute's objects — a Padfield-style improper purpose problem, not an error-of-law problem, even though both sit under the broader illegality umbrella."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-10-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the four principal sub-categories of illegality as a ground of judicial review.",
+      "acceptableAnswers": [
+        "error of law, improper purpose, relevant/irrelevant considerations, fettering or unlawful delegation of discretion"
+      ],
+      "modelAnswer": "Error of law (misunderstanding the scope of the power); improper purpose (using a genuine power for a purpose the statute did not intend); relevant and irrelevant considerations (weighing something you shouldn't, or ignoring something you should); and fettering or unlawfully delegating discretion (refusing to genuinely exercise the judgment conferred)."
+    },
+    {
+      "itemId": "public-10-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case established that a statutory discretion must be exercised to promote the policy and objects of the Act conferring it?",
+      "options": [
+        "Padfield v Minister of Agriculture",
+        "British Oxygen v Minister of Technology"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-10-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the recognised sub-categories of illegality?",
+      "options": [
+        "Error of law as to the scope of the power",
+        "Improper purpose",
+        "Disproportionate weight given to a relevant factor",
+        "Fettering or unlawfully delegating discretion"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "Weighing a relevant factor disproportionately is a matter for irrationality (Wednesbury unreasonableness), not illegality. Illegality asks whether the wrong considerations were weighed at all, or the power misunderstood, not whether the right considerations were given the right amount of weight."
+    },
+    {
+      "itemId": "public-10-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the steps of the British Oxygen test for whether a general policy unlawfully fetters a discretion.",
+      "items": [
+        "Decision-maker adopts a general policy to structure how the discretion is exercised",
+        "An individual applicant puts forward a case for departing from the policy",
+        "The decision-maker genuinely listens to and considers that case on its merits",
+        "If genuinely considered (whatever the outcome), the policy remains a lawful guide rather than an unlawful fetter"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "public-10-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "The Carltona principle permits which specific form of delegation?",
+      "options": [
+        "A minister's statutory functions being carried out by departmental officials acting in the minister's name, with the minister remaining accountable",
+        "Any public body transferring its statutory powers to a private contractor",
+        "A minister delegating a decision to a completely different government department with no accountability link"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-10-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Anisminic, highlight the sentence stating the ratio.",
+      "passage": "The Commission had asked itself the wrong question by misconstruing the phrase 'successor in title' so as to exclude a category of claimant Parliament intended to include. A determination made as a result of such a misdirection as to the scope of the Commission's own jurisdiction was not a determination at all within the meaning of the Act, and was therefore a nullity notwithstanding the finality clause.",
+      "ratioSentence": "A determination made as a result of such a misdirection as to the scope of the Commission's own jurisdiction was not a determination at all within the meaning of the Act, and was therefore a nullity notwithstanding the finality clause."
+    },
+    {
+      "itemId": "public-10-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A council has a statutory power to close a market for public health reasons. It closes a market instead to punish traders for supporting a rival council candidate in a recent election. Which sub-category of illegality is most obviously engaged?",
+      "options": [
+        "Improper purpose",
+        "Fettering of discretion",
+        "Simple error of law as to the meaning of 'market'"
+      ],
+      "correctIndex": 0,
+      "explanation": "The power to close the market is genuine and correctly understood, but the true operative reason (political punishment) has nothing to do with the statute's public health purpose — the classic Padfield/Congreve improper purpose pattern."
+    },
+    {
+      "itemId": "public-10-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "An immigration officer has an absolute internal instruction never to grant a discretionary extension of stay for any reason, regardless of individual circumstances, and refuses to hear representations to the contrary. What is the most accurate characterisation?",
+      "options": [
+        "A lawful policy under British Oxygen, since consistency in immigration decisions is desirable",
+        "An unlawful fetter on discretion, because the instruction admits no genuine exception whatsoever",
+        "An improper purpose problem, not a fettering problem"
+      ],
+      "correctIndex": 1,
+      "explanation": "This crosses the British Oxygen line precisely because there is no willingness to hear or consider an exception at all — a rigid, blanket refusal to exercise judgment on individual facts is the paradigm unlawful fetter, distinct from a firm-but-open general policy."
+    },
+    {
+      "itemId": "public-10-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows the decision-maker taking an irrelevant consideration into account.",
+      "scenarioText": "A planning committee refuses permission for a new community centre. Its minutes record concerns about inadequate parking provision, a report showing increased traffic flow risk, and one committee member's remark that the applicant organisation holds religious views the member personally finds objectionable.",
+      "tappableSpans": [
+        "inadequate parking provision",
+        "increased traffic flow risk",
+        "committee member's remark that the applicant organisation holds religious views the member personally finds objectionable"
+      ],
+      "correctSpan": "committee member's remark that the applicant organisation holds religious views the member personally finds objectionable",
+      "explanation": "Parking and traffic are squarely within planning policy considerations. A committee member's personal disapproval of the applicant's religious views has no connection to planning purposes at all, and its presence in the minutes is strong evidence an irrelevant consideration influenced the decision."
+    },
+    {
+      "itemId": "public-10-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario better illustrates unlawful delegation, as distinct from a lawful Carltona arrangement?",
+      "scenarioA": "A junior official in the Home Office signs a routine immigration decision on behalf of the Secretary of State, applying departmental guidance, with the Secretary of State remaining politically accountable for the department's decisions.",
+      "scenarioB": "A minister with a statutory power to determine planning appeals hands the entire decision-making function over to a private consultancy firm with no ministerial oversight or accountability, and simply rubber-stamps whatever the firm recommends.",
+      "correctScenario": "B",
+      "explanation": "A is the textbook lawful Carltona arrangement: an official acting in the minister's name within the same department, with accountability preserved. B hands the actual decision-making power to an outside body with no accountability link back to the minister Parliament entrusted with the power — a genuine, unlawful delegation."
+    },
+    {
+      "itemId": "public-10-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A statute empowers a regulator to suspend a licence 'having regard to the applicant's financial probity'. The regulator suspends a licence because of the applicant's poor personal fitness reputation in an unrelated hobby, with no reference to financial matters at all. Is this most likely an illegality problem?",
+      "options": [
+        "Yes — the regulator has taken an irrelevant consideration into account and ignored the relevant statutory one",
+        "No — probity is a broad enough word to cover any aspect of personal reputation"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-10-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A minister has a statutory discretion to grant export licences 'as the Secretary of State thinks fit'. Aware that a scheduled parliamentary vote next month would, if passed, restrict export licensing generally, the minister rushes through a batch of licence approvals specifically to place them beyond the reach of the anticipated new restrictions before the vote takes place. Analyse whether this is a lawful exercise of the discretion.",
+      "factsToOrder": [
+        "The minister holds a genuine, apparently unfettered discretion to grant export licences",
+        "A parliamentary vote is scheduled that would restrict export licensing if passed",
+        "The minister rushes through licence approvals specifically to place them beyond the reach of the anticipated restriction",
+        "The approvals are not otherwise shown to be improper on their individual merits"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the minister's exercise of an apparently unfettered discretion, timed and motivated to defeat an anticipated statutory change, is an improper purpose.",
+        "rule": "Even a broadly worded discretion ('as the Secretary of State thinks fit') must be exercised consistently with the purpose Parliament intended (Padfield); using a power specifically to frustrate a democratic process or an anticipated statutory scheme, as in the Fire Brigades Union line of authority, is a recognised form of improper purpose.",
+        "application": "Although the discretion's wording is broad and each individual licence approval may be unobjectionable on its own facts, the operative reason for the timing and volume of approvals here is to place decisions beyond the reach of a democratically anticipated restriction — analogous to using executive power to frustrate a statutory scheme Parliament is in the process of enacting, which courts treat with particular suspicion.",
+        "conclusion": "The exercise of discretion is vulnerable to challenge as an improper purpose, notwithstanding the breadth of the statutory wording and the individual lawfulness of each licence on its own facts."
+      }
+    },
+    {
+      "itemId": "public-10-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which best explains why Anisminic's collapse of the 'within jurisdiction' / 'going to jurisdiction' distinction matters beyond the specific facts of that case?",
+      "options": [
+        "It means public bodies can never make a legally binding decision",
+        "It means almost any material error of law by a public body is now potentially reviewable, rather than only errors technically 'going to' jurisdiction under the older, narrower approach",
+        "It means ouster clauses are now automatically void by statute"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers overstate the holding in opposite directions — one treats public decisions as always void, the other treats ouster clauses as categorically abolished. Anisminic's real legacy is narrower but still significant: it widened what counts as a jurisdictional error of law, without abolishing valid decision-making or automatically voiding every ouster clause by statute."
+    },
+    {
+      "itemId": "public-10-test-14",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A decision-maker correctly understands their power, uses it for a purpose entirely consistent with the statute, and weighs only the considerations the statute intends — but a court considers the outcome harsh and disproportionate on the facts. Is this most likely an illegality problem?",
+      "options": [
+        "Yes — any harsh outcome is illegality",
+        "No — this pattern of facts points towards irrationality (Wednesbury/proportionality), not illegality, since none of the four illegality sub-categories is engaged",
+        "No — harsh outcomes are never reviewable on any ground"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is exactly the boundary between illegality and irrationality that the taxonomy in this lesson is built to police: where the power, purpose and considerations are all correctly handled but the outcome itself is unreasonable or disproportionate, the live ground is irrationality, covered in the next lesson — not illegality."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is spotting 'illegality' in a fact pattern but failing to identify which of the four sub-categories is actually engaged — or, worse, reaching for illegality when the real problem is a harsh-but-lawful outcome that belongs under irrationality instead.",
+    "reviewMisses": true,
+    "linkToPathway": "public.judicial-review.illegality"
+  }
+}

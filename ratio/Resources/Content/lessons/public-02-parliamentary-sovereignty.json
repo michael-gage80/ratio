@@ -1,0 +1,457 @@
+{
+  "lessonId": "public-02",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 2,
+  "topicId": "public.constitution.sovereignty",
+  "title": "Parliamentary sovereignty",
+  "subtitle": "The rule that Parliament can make or unmake any law — and the case that quietly asked whether that's still quite true",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State Dicey's orthodox theory of parliamentary sovereignty and its two limbs (positive and negative)",
+    "Explain the enrolled bill rule and the doctrine of implied repeal, and apply the distinction between form and manner-and-form arguments",
+    "Explain what Jackson v Attorney General actually decided and left open, and avoid overstating its effect on the orthodox theory"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Pickin v British Railways Board [1974] AC 765",
+      "role": "Courts will not question the validity of an Act properly entered on the parliamentary roll — the enrolled bill rule"
+    },
+    {
+      "citation": "Ellen Street Estates v Minister of Health [1934] 1 KB 590",
+      "role": "Classic statement of implied repeal: Parliament cannot bind its successors as to the form of future legislation"
+    },
+    {
+      "citation": "Jackson v Attorney General [2005] UKHL 56",
+      "role": "Confirms the Parliament Acts procedure is valid, but contains influential obiter doubting whether sovereignty is truly unlimited"
+    },
+    {
+      "citation": "Parliament Acts 1911 and 1949",
+      "role": "The statutory mechanism whose validity was challenged in Jackson"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Everyone can recite 'Parliament can make or unmake any law whatever.' Far fewer can say what work that sentence is actually doing, or why five Law Lords in Jackson spent pages wondering aloud whether it's still completely true. This lesson treats sovereignty as a live argument, not a settled fact to memorise.",
+    "profileHooks": {
+      "weakApplication": "You know Dicey's formula cold. The test pool here leans on spotting implied repeal versus manner-and-form arguments on new facts — that's where marks are actually lost.",
+      "weakKnowledge": "Start with Part 1 and get Dicey's two limbs exact before moving on — the whole of Part 2 through 5 is built on being able to state them without hedging."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Here is a sentence every LLB student learns to recite: Parliament can make or unmake any law whatever. Here is a question almost none of them can answer on first hearing: could Parliament pass an Act tomorrow abolishing this exact rule? If yes, doesn't that prove Parliament isn't really unlimited — because some future Parliament would then be bound by today's abolition? If no, then the 'unlimited' sovereign has just found something it cannot do. This isn't a trick question. It is, more or less, the question five Law Lords sat down to answer in 2005, in a case about hunting foxes and House of Lords reform that became the most important sovereignty case of the last fifty years."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Dicey's rule, stated properly",
+        "voice": "expository — sets out the orthodox theory with precision before anyone is allowed to argue with it",
+        "body": [
+          "A. V. Dicey's account of parliamentary sovereignty, published in 1885, remains the starting point for every serious discussion of the topic — not because it has gone unchallenged, but because you cannot understand the challenges without first knowing exactly what is being challenged. Get the formula precise, not approximate.",
+          "Dicey's theory has two limbs. The positive limb: Parliament has the right to make or unmake any law whatever. There is no subject matter it cannot legislate on, and no procedural or substantive constraint the courts will impose on what an Act may validly contain. The negative limb, less often quoted but equally essential: no person or body, including a court, has the right to override or set aside an Act of Parliament. The two limbs work together — the first tells you what Parliament can do; the second tells you what nobody else, including the judiciary, can do about it.",
+          "Notice precisely what the theory does not claim. It says nothing about whether Parliament should exercise this power, and nothing about the political constraints — an electorate, international reputation, the practical limits of what officials will actually implement — that plainly shape what Parliament in fact does. Dicey's is a claim about legal, not political, limits. Keep that distinction sharp, because almost every serious challenge to Dicey works by blurring it back together."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Parliamentary sovereignty (Diceyan orthodoxy)",
+            "definition": "The doctrine that Parliament has the legal right to make or unmake any law whatever, and that no other body, including a court, has the right to override or set aside an Act of Parliament once properly made."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-02-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "State Dicey's negative limb of parliamentary sovereignty — the half of the formula about what courts and others cannot do.",
+          "acceptableAnswers": [
+            "no person or body has the right to override or set aside an Act of Parliament",
+            "courts cannot override or set aside an Act of Parliament",
+            "no one may set aside an act of parliament"
+          ],
+          "modelAnswer": "No person or body, including a court, has the right to override or set aside an Act of Parliament.",
+          "feedbackCorrect": "That's the negative limb precisely — it's the half of the doctrine that keeps courts out of the business of striking legislation down.",
+          "feedbackIncorrect": "The negative limb isn't about what Parliament can do — it's about what everyone else, especially courts, cannot do to a validly made Act. Try stating it from the court's side of the relationship."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "How courts actually check whether something is 'an Act'",
+        "voice": "procedural — walks through a courtroom scenario to show the doctrine operating mechanically",
+        "body": [
+          "Suppose a claimant wants to argue that a statute is invalid — not on the grounds that its content is wrong, but that Parliament never properly passed it: a procedural irregularity in one of the Houses, a defect in how the Bill went through committee. Can a court investigate that claim?",
+          "Pickin v British Railways Board answers no, and the reasoning matters more than the answer. Once a Bill has received royal assent and been entered on the parliamentary roll, the enrolled bill rule holds that courts will not look behind that enrolment to examine the internal proceedings by which it was passed. Mr Pickin, a landowner, wanted to argue that a private Act affecting his land had been obtained by a fraud on Parliament during its passage. The House of Lords held this was simply not a matter for the courts: questioning the internal workings of Parliament's legislative process would itself be an unconstitutional trespass on Parliament's own exclusive competence over its own procedure, protected in part by parliamentary privilege.",
+          "The enrolled bill rule is Pickin's specific procedural expression of Dicey's negative limb: courts accept an Act as an Act once properly enrolled, full stop, and refuse to re-open how it got there. This matters directly for Lesson 6's later look at ouster clauses and judicial review — a court's willingness to examine how a minister exercised a delegated power stands in sharp contrast with its refusal, under Pickin, to examine how Parliament itself legislated."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Pickin v British Railways Board",
+            "citation": "[1974] AC 765",
+            "court": "House of Lords",
+            "year": 1974,
+            "factsShort": "A landowner argued a private Act affecting his land should be disregarded because Parliament had been misled during its passage.",
+            "ratioShort": "Courts will not investigate the internal parliamentary process by which an enrolled Act was passed — the enrolled bill rule bars any inquiry into how, procedurally, an Act came to be.",
+            "expanded": {
+              "facts": "British Railways Board relied on a private Act to reclaim land from adjoining owners, including Pickin. Pickin argued the Board had misled Parliament as to certain facts during the Bill's passage, and that the resulting Act should therefore not be applied.",
+              "judgmentExtract": "The House of Lords held unanimously that it was not open to the courts to disregard an Act of Parliament, or to investigate the manner in which it was passed through Parliament, from initiation to royal assent. To do so would be to trespass on the province of Parliament itself.",
+              "significance": "Pickin is the clearest modern statement that UK courts have no jurisdiction to review the internal legislative process. It sits alongside, and reinforces, Dicey's negative limb: the judiciary's role begins once an Act exists, not before."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-02-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under the enrolled bill rule confirmed in Pickin, which of the following could a court properly refuse to investigate?",
+          "options": [
+            "A claim that a properly enrolled Act was obtained through a procedural fraud during its passage through Parliament",
+            "A claim that a minister acted outside the powers an Act of Parliament actually grants",
+            "A claim that a piece of secondary legislation was never laid before Parliament as the parent Act required"
+          ],
+          "correctIndex": 0,
+          "explanation": "Pickin bars inquiry specifically into the internal parliamentary process behind an enrolled Act. The other two examples concern reviewing executive or delegated action against statutory limits — squarely within the ordinary jurisdiction of judicial review, and not touched by the enrolled bill rule at all."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Implied repeal — and the puzzle of binding your successors",
+        "voice": "Socratic — poses the self-entrenchment paradox before Ellen Street Estates resolves it",
+        "body": [
+          "Try this thought experiment. Suppose Parliament passed an Act in 1930 stating: 'no future Act of Parliament shall repeal or amend this Act unless it does so by an Act stating expressly, in its title, that it repeals this Act.' Would a later Parliament, in 1935, be bound by that instruction if it passed an ordinary, inconsistent Act without following the stated procedure?",
+          "This is close to what actually happened. Landlords in Ellen Street Estates argued that the Housing Act 1925 could not override compensation terms fixed by an earlier Act, the Acquisition of Land Act 1919 — because the 1919 Act said, in terms, that its provisions should prevail over any inconsistent enactment 'unless that other enactment expressly provided otherwise'. The Court of Appeal rejected the argument. Maugham LJ's reasoning is the classical statement of implied repeal: the legislature cannot, according to our constitution, bind itself as to the form of subsequent legislation, and it is impossible for Parliament to enact that in a subsequent statute dealing with the same subject matter there can be no implied repeal.",
+          "The deep point is this: if Parliament really could entrench a rule against implied repeal by a later inconsistent Act, that would mean a past Parliament could bind a future one — directly contradicting the positive limb of sovereignty, which says each Parliament is equally supreme and unconstrained. Implied repeal isn't just a technical rule of statutory interpretation; it's the doctrinal guarantee that no Parliament can permanently tie the hands of its successors as to substance. (Recall from Lesson 1 that Thoburn complicates only the form this takes for constitutional statutes — even there, express repeal by a later Parliament remains entirely unconstrained.)"
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Implied repeal — the core proposition",
+            "points": [
+              "Where a later Act is inconsistent with an earlier one on the same subject matter, the earlier Act is repealed to the extent of the inconsistency — even without express words",
+              "This applies whether or not the earlier Act purported to entrench itself against implied repeal",
+              "The rationale is structural: no Parliament can bind its successors as to the substance of future legislation",
+              "Contrast Thoburn (Lesson 1): constitutional statutes require express or unarguably specific repeal, but even they can never be entrenched against a later Parliament's clear intention"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-02-check-03",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "In Ellen Street Estates, could the 1919 Act's own words successfully prevent a later, ordinary inconsistent Act from repealing it by implication?",
+          "options": [
+            "No — the court held such self-entrenchment is ineffective; a later inconsistent Act still repeals by implication",
+            "Yes — Parliament had successfully bound its successors by including the clause"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — Maugham LJ's reasoning is exactly this: Parliament cannot bind itself as to the form of subsequent legislation, so the entrenching clause achieved nothing against the later, inconsistent Housing Act.",
+          "feedbackIncorrect": "Not quite — the whole point of Ellen Street Estates is that the attempted entrenchment failed. A later Parliament remained free to legislate inconsistently, and implied repeal operated regardless of the earlier Act's own wording."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Jackson: hunting, the House of Lords, and an argument that got out of hand",
+        "voice": "argumentative — presents the challengers' case at full strength before showing why it failed procedurally but succeeded rhetorically",
+        "body": [
+          "The Hunting Act 2004 banned hunting with dogs. It had been passed using the Parliament Acts procedure — under the Parliament Act 1911 (as amended by the Parliament Act 1949), a Bill rejected twice by the House of Lords can still become law with royal assent alone, bypassing Lords consent entirely. The Countryside Alliance's real target wasn't really the Hunting Act — it was the 1949 Act itself, which had been passed using the 1911 Act's own procedure, cutting the Lords' delaying power from two years to one.",
+          "Their argument had real force: the 1911 Act was, they said, delegated legislative power granted by the full, three-part Parliament (Commons, Lords and Crown) to a subordinate body (Commons and Crown alone). A subordinate law-making body, on ordinary principles, cannot use its delegated power to enlarge its own power — you cannot use a key to make yourself a master key. If that was right, the 1949 Act was invalid, and everything passed under its amended procedure since — including the Hunting Act — fell with it.",
+          "The House of Lords rejected the argument, unanimously, on the actual point of law: the Parliament Act 1911 was not read as constituting Commons-and-Crown as a subordinate, delegated body at all, but as creating an alternative, freestanding method by which Parliament itself could legislate — meaning the 1949 Act was validly made law, full stop, and the Hunting Act with it. On the narrow question the case actually decided, orthodox sovereignty survived completely intact: Parliament's alternative legislative route was itself an exercise of full parliamentary authority, not a use of some lesser power.",
+          "What makes Jackson essential reading isn't its ratio — it's the obiter. Several Law Lords, especially Lord Steyn and Baroness Hale, mused openly about whether Diceyan orthodoxy is truly the last word: whether, in truly exceptional circumstances, the courts might decline to recognise an Act that purported to abolish judicial review altogether or to undermine the rule of law itself. None of this bound anyone — it was speculation, not decision — but it planted a question later cases like HS2 have kept alive: is sovereignty really unconditional, or does it rest on judicial acceptance that could, at some outer limit, be withdrawn?"
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often write that Jackson 'held that Parliament is no longer fully sovereign' or that it 'limited parliamentary sovereignty'.",
+            "whyItsWrong": "That overstates the actual decision. The ratio of Jackson upheld the validity of the Parliament Acts procedure and, with it, orthodox sovereignty on the point actually litigated. The doubts about sovereignty's outer limits were obiter dicta from individual judges — influential, and worth discussing, but not binding law, and not what the case decided."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-02-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states what Jackson actually decided (as opposed to what individual judges speculated about).",
+          "passage": "The Countryside Alliance argued the Parliament Act 1949 was invalid because the 1911 Act constituted a subordinate law-making body unable to enlarge its own powers. The House of Lords rejected this, holding that the Parliament Act 1911 created an alternative method by which Parliament itself could legislate, so the 1949 Act — and the Hunting Act 2004 passed under it — was validly enacted. Some judges went on to suggest, obiter, that in truly extreme circumstances the courts might not recognise an Act purporting to abolish judicial review altogether.",
+          "ratioSentence": "The House of Lords rejected this, holding that the Parliament Act 1911 created an alternative method by which Parliament itself could legislate, so the 1949 Act — and the Hunting Act 2004 passed under it — was validly enacted."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Manner and form: the argument sovereignty hasn't fully closed off",
+        "voice": "dialectic — leaves the doctrine genuinely open, as the exam question it actually is",
+        "body": [
+          "One thread from Jackson deserves separating out from the rest, because it is the closest thing to a live crack in Diceyan orthodoxy that a court has actually engaged with: the manner and form argument. The claim is not that Parliament can bind its successors as to the substance of what they legislate — Ellen Street Estates forecloses that. It is a narrower claim: that Parliament might be able to bind its successors as to the manner and form in which they legislate, by requiring, for instance, that a particular kind of Act be passed only by a special majority, or only after a referendum, or only using an alternative procedure like the one the Parliament Acts themselves created.",
+          "The Jackson litigation is, on one reading, itself an example: the Parliament Acts procedure is precisely a manner-and-form change that the courts accepted as validly binding on how later Parliaments could legislate without Lords consent. If Parliament can validly redefine what counts as 'an Act of Parliament' procedurally — as Jackson confirms it did in 1911 — then the pure, unqualified version of Dicey's positive limb (no constraint whatsoever) already looks slightly too strong as a description of the current law, even though nobody doubts that each Parliament remains substantively unconstrained.",
+          "Resist the temptation to resolve this neatly for an exam answer — it isn't resolved. The safest position, and the one that rewards marks, is to state the orthodox theory precisely, show you understand Pickin and Ellen Street Estates as its clearest doctrinal supports, and then use Jackson's obiter and the manner-and-form puzzle to show you understand where the theory is genuinely contested rather than settled. A first-class answer holds both things at once: sovereignty remains the operative doctrine of the UK constitution, and serious, unresolved judicial doubt exists about whether it is quite as absolute as Dicey's 1885 formula claims."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Sovereignty: what's settled, what's contested",
+            "description": "A map of which propositions about parliamentary sovereignty are firm law and which remain live academic and judicial debate.",
+            "nodes": [
+              {
+                "id": "settled1",
+                "label": "SETTLED: no court will strike down a properly enrolled Act for its content (Pickin)"
+              },
+              {
+                "id": "settled2",
+                "label": "SETTLED: Parliament cannot bind successors as to substance — implied repeal always available (Ellen Street Estates)"
+              },
+              {
+                "id": "settled3",
+                "label": "SETTLED: the Parliament Acts procedure is a valid alternative legislative route (Jackson ratio)"
+              },
+              {
+                "id": "contested1",
+                "label": "CONTESTED: can Parliament bind successors as to manner and form of future legislation?"
+              },
+              {
+                "id": "contested2",
+                "label": "CONTESTED: would courts refuse to recognise an Act abolishing judicial review or the rule of law itself? (Jackson obiter)"
+              }
+            ],
+            "edges": [],
+            "textAlternative": "Settled law: courts will not strike down a properly enrolled Act for its content (Pickin); Parliament cannot bind its successors as to substance, so implied repeal is always available (Ellen Street Estates); the Parliament Acts procedure is a valid alternative legislative route (the ratio of Jackson). Contested and unresolved: whether Parliament can bind its successors as to the manner and form of future legislation, and whether courts would refuse to recognise an Act that purported to abolish judicial review or the rule of law itself — both raised only in obiter in Jackson."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-02-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How settled, as a matter of decided law rather than judicial speculation, is the proposition that courts would refuse to recognise an Act of Parliament that purported to abolish judicial review entirely?",
+          "sliderLabels": [
+            "Firmly settled law",
+            "Pure unresolved speculation"
+          ],
+          "correctPosition": "Pure unresolved speculation",
+          "explanation": "This proposition comes only from obiter remarks in Jackson (and echoes in HS2) — no case has actually had to decide it, because no Act has ever attempted it. It remains a genuinely open question, not a rule you can cite as settled law."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-02-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State Dicey's positive limb of parliamentary sovereignty.",
+      "acceptableAnswers": [
+        "parliament can make or unmake any law whatever",
+        "parliament has the right to make or unmake any law"
+      ],
+      "modelAnswer": "Parliament has the right to make or unmake any law whatever — there is no subject matter it cannot legislate on."
+    },
+    {
+      "itemId": "public-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which case confirms the enrolled bill rule — that courts will not investigate the internal parliamentary process behind an enrolled Act?",
+      "options": [
+        "Pickin v British Railways Board",
+        "Ellen Street Estates v Minister of Health"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-02-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following did the House of Lords actually decide in Jackson v Attorney General?",
+      "options": [
+        "That parliamentary sovereignty is no longer unlimited",
+        "That the Human Rights Act 1998 cannot be repealed",
+        "That the Parliament Act 1949 was validly enacted using the procedure in the Parliament Act 1911, so the Hunting Act 2004 was lawfully passed"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "The tempting wrong answer overstates Jackson's ratio using its famous obiter about sovereignty's outer limits. The case actually decided a narrower, procedural question about the validity of the 1949 Act — and answered it in favour of orthodox sovereignty, not against it."
+    },
+    {
+      "itemId": "public-02-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case is the classic authority for the doctrine of implied repeal — that Parliament cannot bind itself as to the form of future legislation?",
+      "options": [
+        "Ellen Street Estates v Minister of Health",
+        "Jackson v Attorney General"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-02-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the reasoning steps in Ellen Street Estates.",
+      "items": [
+        "The 1919 Act states its compensation terms prevail unless a later Act expressly says otherwise",
+        "The 1925 Housing Act is inconsistent with the 1919 Act's terms but does not expressly mention it",
+        "The court asks whether Parliament can bind a future Parliament as to the form later legislation must take",
+        "The court holds Parliament cannot bind its successors this way, so the 1925 Act repeals the 1919 Act by implication"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "public-02-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence stating the core rule of implied repeal.",
+      "passage": "The landlords argued the 1919 Act's own wording prevented the 1925 Act from overriding it without express mention. Maugham LJ rejected this: the legislature cannot, according to our constitution, bind itself as to the form of subsequent legislation, and it is impossible for Parliament to enact that in a subsequent statute dealing with the same subject matter there can be no implied repeal. The 1925 Act therefore prevailed to the extent of any inconsistency.",
+      "ratioSentence": "the legislature cannot, according to our constitution, bind itself as to the form of subsequent legislation, and it is impossible for Parliament to enact that in a subsequent statute dealing with the same subject matter there can be no implied repeal."
+    },
+    {
+      "itemId": "public-02-test-07",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "What did the Parliament Act 1911 (as later amended in 1949) actually achieve, according to the ratio in Jackson?",
+      "options": [
+        "It created an alternative valid method for Parliament to legislate without the House of Lords' consent, rather than delegating power to a subordinate body",
+        "It permanently removed the House of Lords from the legislative process for all purposes",
+        "It gave the courts a new power to review the content of Acts of Parliament"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-02-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the phrase that shows this scenario raises a manner-and-form argument rather than an ordinary implied-repeal argument.",
+      "scenarioText": "A later Parliament passes an Act inconsistent with an earlier one, but does so through the exact special procedure — bypassing the ordinary second chamber vote — that the earlier Act itself had established as a valid, alternative legislative route for amending that subject matter.",
+      "tappableSpans": [
+        "a later Parliament passes an Act inconsistent",
+        "does so through the exact special procedure",
+        "bypassing the ordinary second chamber vote",
+        "amending that subject matter"
+      ],
+      "correctSpan": "does so through the exact special procedure",
+      "feedbackCorrect": "Right — the question here is whether the later Parliament validly used a special procedure the earlier Act set up, which is a manner-and-form question, not a straightforward inconsistency case like Ellen Street Estates.",
+      "feedbackIncorrect": "Look for the fact about how the later Act was passed, not just that it was inconsistent. A manner-and-form argument turns on the procedure used, echoing the structure of the Parliament Acts in Jackson."
+    },
+    {
+      "itemId": "public-02-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is governed by the enrolled bill rule in Pickin, rather than by the doctrine of implied repeal?",
+      "scenarioA": "A claimant argues a properly enrolled Act should be disregarded because a key vote during its passage through the Commons was procedurally defective.",
+      "scenarioB": "A claimant argues an earlier Act has been silently overridden by a later, inconsistent Act on the same subject matter.",
+      "correctScenario": "A",
+      "explanation": "A is Pickin territory: it's a challenge to the internal parliamentary process behind an enrolled Act, which courts refuse to investigate at all. B is a substantive implied-repeal question, governed by Ellen Street Estates, not the enrolled bill rule."
+    },
+    {
+      "itemId": "public-02-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "An earlier Act states: 'This Act may only be repealed by a statute passed with the consent of two-thirds of the members of each House.' A later Act, passed by an ordinary simple majority, repeals it expressly but without meeting that condition. Applying Ellen Street Estates, is the repeal effective?",
+      "options": [
+        "No — the two-thirds requirement binds all future Parliaments absolutely",
+        "Yes — Parliament cannot bind its successors as to the form future legislation must take, so an ordinary later Act can still validly repeal the earlier one",
+        "The repeal is only partially effective"
+      ],
+      "correctIndex": 1,
+      "explanation": "This directly tests the implied-repeal principle: attempts at self-entrenchment as to form do not bind a later sovereign Parliament under the orthodox theory. The later Act's repeal, even passed by ordinary majority and ignoring the stated condition, remains fully effective."
+    },
+    {
+      "itemId": "public-02-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A student writes in an exam: 'Jackson v Attorney General held that parliamentary sovereignty no longer applies in the UK.' Is this an accurate statement of the case's ratio?",
+      "options": [
+        "Yes — Jackson is a landmark case abolishing Diceyan sovereignty",
+        "No — Jackson's ratio upheld the validity of the Parliament Acts procedure and, with it, orthodox sovereignty; doubts about sovereignty's limits were only obiter",
+        "No — Jackson was overturned by a later case"
+      ],
+      "correctIndex": 1,
+      "explanation": "This is the single most common overstatement examiners look for. The ratio actually reinforces sovereignty on the narrow point decided; only obiter remarks from individual judges raised broader doubts, and those doubts are not binding law."
+    },
+    {
+      "itemId": "public-02-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Parliament enacts a statute requiring that any future Act purporting to abolish the right to judicial review must first be approved by a national referendum. A later Parliament passes an Act abolishing judicial review outright, without holding any referendum. Analyse, using Jackson and Ellen Street Estates, whether the later Act is valid.",
+      "factsToOrder": [
+        "The earlier Act imposes a referendum requirement on a specific future category of legislation",
+        "The later Act abolishes judicial review without satisfying that requirement",
+        "Ellen Street Estates forecloses binding successors as to substance",
+        "Jackson leaves open, only in obiter, whether manner-and-form entrenchment or fundamental rule-of-law limits could bind a later Parliament"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether a later Parliament is bound by an earlier Act's manner-and-form requirement (a referendum) before it may validly abolish judicial review.",
+        "rule": "Ellen Street Estates confirms Parliament cannot bind successors as to the substance of future legislation. Jackson confirms the orthodox theory as its ratio, but contains influential obiter suggesting manner-and-form entrenchment, and even substantive limits protecting the rule of law, are not conclusively foreclosed.",
+        "application": "On the orthodox, settled position, the later Act validly abolishes judicial review regardless of the referendum requirement, following the logic of implied repeal and Jackson's ratio on the Parliament Acts. However, a strong academic and obiter-supported argument exists that a procedural manner-and-form requirement of this kind differs from an ordinary substantive entrenchment attempt, and that courts might, in a case as extreme as the abolition of judicial review itself, decline to recognise the later Act — though no court has actually so held.",
+        "conclusion": "On settled law the later Act is valid; but this is precisely the point at which orthodox sovereignty is most seriously, if inconclusively, contested, and a strong answer should say so rather than assert false certainty either way."
+      }
+    },
+    {
+      "itemId": "public-02-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which best describes the relationship between Thoburn's constitutional-statute doctrine (Lesson 1) and Diceyan orthodox sovereignty?",
+      "options": [
+        "Thoburn overrules Dicey and establishes that Parliament is legally limited",
+        "Thoburn qualifies only the mechanism of implied repeal for a category of statutes; it does not prevent Parliament expressly repealing any statute, so it leaves the positive limb of sovereignty formally intact",
+        "Thoburn has nothing to do with sovereignty at all"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats any judicial qualification as an outright limit on sovereignty. Thoburn is narrower and more precise than that — it changes only how repeal of certain statutes must be signalled, not whether Parliament remains free to do it."
+    },
+    {
+      "itemId": "public-02-test-14",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A claimant argues in court that an Act of Parliament is invalid purely because its content is, in the claimant's view, morally objectionable and disproportionate. On orthodox Diceyan sovereignty, will a court entertain this argument as a ground to strike the Act down?",
+      "options": [
+        "No — courts have no jurisdiction to invalidate a validly enacted statute on the ground that its content is objectionable",
+        "Yes — courts may strike down any statute they consider disproportionate"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is overstating Jackson — treating judicial musings in obiter as if they were the case's ratio. Always separate what a case actually decided from what individual judges wondered aloud about; Jackson rewards students who can hold both in view without confusing them.",
+    "reviewMisses": true,
+    "linkToPathway": "public.constitution.sovereignty"
+  }
+}

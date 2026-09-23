@@ -1,0 +1,398 @@
+{
+  "lessonId": "tort-08",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 8,
+  "topicId": "tort.negligence.remoteness-scope",
+  "title": "Remoteness and scope of duty",
+  "subtitle": "The type-of-harm test, the egg-shell skull rule, and asking what the duty was for",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the Wagon Mound test for remoteness of damage and explain why it turns on the type of harm, not its extent or precise manner",
+    "Explain the egg-shell skull rule as an exception concerned with the extent of physical harm, and distinguish it from remoteness of type",
+    "Apply the modern 'scope of duty' question — what the duty was actually for — as a step that is analytically prior to, and can resolve a case without reaching, remoteness"
+  ],
+  "leadingAuthorities": [
+    { "citation": "The Wagon Mound (No 1) [1961] AC 388", "role": "Establishes reasonable foreseeability of the type of harm as the test for remoteness, replacing direct consequences" },
+    { "citation": "Hughes v Lord Advocate [1963] AC 837", "role": "Confirms that the precise manner of harm need not be foreseeable, only its type" },
+    { "citation": "Smith v Leech Brain & Co [1962] 2 QB 405", "role": "The egg-shell skull rule: a defendant takes their victim as they find them as to the extent of physical harm" },
+    { "citation": "Meadows v Khan [2021] UKSC 21", "role": "Reframes scope of duty as the analytically prior question — what was the duty actually for?" },
+    { "citation": "Manchester Building Society v Grant Thornton [2021] UKSC 20", "role": "Distinguishes 'advice' from 'information' duties and ties recoverable loss to the purpose of the duty" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students who are confident on breach and causation often stall here because remoteness feels like a vaguer, softer test — 'was it foreseeable?' sounds like a question you can argue either way. Where the profile shows understanding lagging behind other skills, this note appears: 'This lesson is deliberately about precision — the Wagon Mound test has sharp edges once you see where they are.'",
+    "profileHooks": {
+      "weakApplication": "You know the tests here well. The test pool leans on fact patterns that ask you to apply Wagon Mound, the egg-shell rule, and scope of duty to facts that resemble more than one of them at once — that overlap is the actual skill.",
+      "weakKnowledge": "Read Parts 1 to 3 slowly before Part 4 — the modern scope-of-duty cases only make sense once you have Wagon Mound and the egg-shell rule solidly in place as the baseline they're modifying."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A ship's crew spills furnace oil into Sydney Harbour. Days later, welding sparks from a nearby wharf ignite it, and the resulting fire destroys the wharf. Nobody involved thought the oil could catch fire on water — and that single fact turned out to decide the entire case. Remoteness is the law's answer to a deceptively simple question: once you've caused harm, how much of it is actually yours to answer for?",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The Wagon Mound and egg-shell skull rules are long-settled; the 'scope of duty' analysis is a live and still-developing area following recent Supreme Court decisions."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The Wagon Mound: foreseeability of type, not extent or manner",
+        "voice": "maritime narrative — tells the harbour fire as a story before extracting the rule",
+        "body": [
+          "The Wagon Mound was a ship berthed in Sydney Harbour whose crew carelessly allowed furnace oil to spill into the water. The oil spread across the harbour and drifted beneath a nearby wharf, where welding work was underway. Nobody thought oil on water near welding sparks was a fire risk — the evidence at trial was that furnace oil of this kind does not, in the ordinary way, ignite when spread thinly on water. Then it did. Sparks from the welding ignited cotton waste floating in the oil, and the resulting fire destroyed the wharf and two ships.",
+          "The old test for remoteness — direct consequences, however unforeseeable, are recoverable so long as some damage of any kind was foreseeable — would have made the ship owners liable for the fire simply because oil damage of some kind (fouling, for instance) was foreseeable, even though fire was not. The Privy Council rejected that approach as unjust: a defendant should not answer for a type of harm nobody could reasonably have anticipated, merely because a lesser, different type of harm was foreseeable.",
+          "The test the Privy Council substituted is now the foundation of the whole topic: damage is too remote unless it is of a type that was reasonably foreseeable as a consequence of the breach. Foreseeability of the type of harm is what matters — not its extent, and not the precise sequence of events by which it came about. Fire damage and oil-fouling damage are different types of harm; foreseeing one does not mean you answer for the other."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Remoteness of damage (the Wagon Mound test)",
+            "definition": "A defendant is only liable for damage of a type that was reasonably foreseeable as a consequence of the breach. Damage of an unforeseeable type is too remote, even if it resulted directly from the breach and even if some other, foreseeable type of damage also occurred."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Overseas Tankship (UK) Ltd v Morts Dock & Engineering Co (The Wagon Mound No 1)",
+            "citation": "[1961] AC 388",
+            "court": "Privy Council",
+            "year": 1961,
+            "factsShort": "A ship's crew negligently spilled furnace oil into Sydney Harbour; sparks from nearby welding work ignited the oil, destroying a wharf, although fire from oil spread this way was not a foreseeable risk on the evidence.",
+            "ratioShort": "A defendant is liable only for damage of a type reasonably foreseeable from the breach — direct causation alone, without foreseeability of that type of harm, is not enough.",
+            "expanded": {
+              "facts": "The Wagon Mound's crew allowed bunker oil to leak into Sydney Harbour while the ship was taking on fuel. The oil spread across the water and under a wharf owned by Morts Dock, where welding and other hot work was in progress. The trial judge found that a reasonable person in the ship's position would not have foreseen that the oil, spread thinly on the surface of the water, could be set alight — though some fouling damage to the wharf and slipways was foreseeable.",
+              "judgmentExtract": "The Privy Council held that the earlier rule from Re Polemis — that a defendant is liable for all direct consequences of a negligent act, foreseeable or not — was unsound and should no longer be followed. Liability in negligence for consequential damage should be limited to damage of a kind that was reasonably foreseeable, aligning the test for remoteness with the test for breach itself.",
+              "significance": "The Wagon Mound (No 1) is the founding case of modern remoteness doctrine, replacing the older, broader 'direct consequences' rule with a foreseeability-based test that has governed English negligence ever since, subject to the exceptions this lesson goes on to cover."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-08-check-01",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "In The Wagon Mound (No 1), why did the fire damage claim fail?",
+          "options": ["Because the ship owners owed no duty of care to the wharf owners", "Because fire was not a reasonably foreseeable type of harm from oil spread thinly on water, even though some other harm (fouling) was foreseeable", "Because the wharf owners' own welding work was the sole cause of the fire"],
+          "correctIndex": 1,
+          "trapExplanation": "Duty was not the issue, and causation was not seriously disputed either — the oil did in fact cause the fire. The claim failed specifically on remoteness: fire was a different, unforeseeable type of harm from the fouling damage that was foreseeable."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Manner doesn't matter: Hughes v Lord Advocate",
+        "voice": "juxtaposition — sets a narrow wrong reading against the right one, side by side",
+        "body": [
+          "Compare two ways of reading Wagon Mound. Reading one: the defendant must foresee, in detail, roughly how the harm will actually come about. Reading two: the defendant must foresee only the general type of harm; the precise sequence of events is irrelevant. English law adopted reading two, and Hughes v Lord Advocate is the case that nails it down.",
+          "Council workers left a manhole under a tent, surrounded by paraffin warning lamps, unattended. Two boys investigated, and one of them descended into the hole with one of the lamps. The lamp was knocked over, causing an explosion — apparently because paraffin vapour had mixed with air inside the confined manhole in a way nobody anticipated — and the boy suffered severe burns.",
+          "Burning by paraffin lamp was plainly a foreseeable type of harm — that was the entire point of warning lamps around an unattended hazard. What was not foreseeable was the specific mechanism: an explosion, rather than an ordinary fire from a lamp being knocked over and spilling. The House of Lords held this did not matter. Once the type of harm — burning — was foreseeable, it was irrelevant that the precise manner in which it occurred (explosion rather than straightforward fire) was not.",
+          "The lesson generalises: courts do not require defendants to have predicted the choreography of an accident. They require only that the broad category of harm that in fact occurred was one a reasonable person would have anticipated as a consequence of the risk they created."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Hughes v Lord Advocate",
+            "citation": "[1963] AC 837",
+            "court": "House of Lords",
+            "year": 1963,
+            "factsShort": "A boy was badly burned when a paraffin warning lamp, left near an unattended manhole, caused an unforeseen explosion rather than an ordinary foreseeable fire.",
+            "ratioShort": "It is enough that the type of harm (burning) was foreseeable; the precise manner in which it occurred (explosion rather than a straightforward spilled-lamp fire) need not have been.",
+            "expanded": {
+              "facts": "Post Office workers left an open manhole, covered by a tent and surrounded by paraffin lamps as warnings, unattended overnight. Two boys, aged eight and ten, climbed into the shelter and took one of the lamps down into the manhole. The lamp was either dropped or knocked over; paraffin vapour that had accumulated in the confined space ignited in an explosion, and one boy fell into the hole and suffered severe burns.",
+              "judgmentExtract": "The House of Lords held that the risk of a child being burned by one of the lamps was plainly foreseeable — indeed it was precisely the risk the lamps and warnings were meant to guard against being ignored. That the harm occurred via an unusual and unforeseeable mechanism — an explosion rather than a simple fire — did not take it outside the foreseeable type of harm.",
+              "significance": "Hughes confirms that Wagon Mound's foreseeability requirement operates at the level of the general type of harm, not the specific sequence of events. This prevents defendants escaping liability merely because the accident unfolded in an unusual or unexpected way."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-08-check-02",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "In Hughes v Lord Advocate, did the claimant need to show that an explosion specifically was foreseeable?",
+          "options": ["No — only that burning, as a general type of harm, was foreseeable", "Yes — the precise mechanism of harm always needs to be foreseeable"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. Once burning was a foreseeable type of harm, the unusual mechanism (explosion rather than an ordinary fire) made no difference to liability.",
+          "feedbackIncorrect": "Look again at what the House of Lords actually required: foreseeability of the type of harm (burning), not of the specific way it happened (an explosion)."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The egg-shell skull rule: an exception about extent, not type",
+        "voice": "clinical-legal — case-report tone, precise about what the rule does and does not cover",
+        "body": [
+          "Remoteness asks about the type of harm. A separate rule governs the extent of physical harm once a foreseeable type has occurred, and it points the opposite direction from Wagon Mound's caution: the egg-shell (or thin) skull rule provides that a defendant takes their victim as they find them.",
+          "Smith v Leech Brain is the standard illustration. An employee was negligently splashed with molten metal at work, causing a minor burn to his lip. Unknown to anyone, he had a pre-malignant condition; the burn triggered cancer, from which he later died. The employer argued that death from cancer was far too remote a consequence of a minor burn to be recoverable.",
+          "The court rejected that argument. The type of harm — a burn — was entirely foreseeable; that this particular claimant's pre-existing vulnerability made the consequences of that burn catastrophically worse than an ordinary claimant's did not break the chain of liability. The defendant must take the claimant as found, including any unknown physical frailty, and answer for the full extent of the harm that in fact resulted from a foreseeable type of injury.",
+          "Keep the two rules cleanly separated. Wagon Mound restricts liability to a foreseeable type of harm. The egg-shell skull rule then removes any limit on the extent of that type of harm once it is established — it does not let in a wholly different, unforeseeable type of injury. A foreseeable burn that turns out to be fatal because of a hidden condition is recoverable in full; an entirely different and unforeseeable kind of harm is not rescued by the same rule."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Smith v Leech Brain & Co Ltd",
+            "citation": "[1962] 2 QB 405",
+            "court": "High Court (Queen's Bench)",
+            "year": 1962,
+            "factsShort": "A worker was negligently burned on the lip by molten metal; the burn triggered a pre-existing but unknown cancerous condition, from which he later died.",
+            "ratioShort": "A defendant takes the claimant as found: once a foreseeable type of harm occurs, the defendant is liable for its full extent, even if that extent is unforeseeably severe because of the claimant's pre-existing condition.",
+            "expanded": {
+              "facts": "Mr Smith worked as a galvaniser and was struck on the lip by a splash of molten metal due to his employer's negligence, causing what appeared to be a minor burn. Unbeknown to anyone, the tissue at the site of the burn was already pre-malignant. The burn is thought to have promoted the onset of cancer, and Mr Smith died some years later as a result.",
+              "judgmentExtract": "The court held that the test was whether the burn itself — the type of injury — was a foreseeable consequence of the defendant's negligence. It plainly was. The extent to which that injury then proved catastrophic, because of the claimant's own undetected vulnerability, was not a separate question of remoteness at all; the defendant had to take the claimant as he found him.",
+              "significance": "Smith v Leech Brain is the clearest illustration that Wagon Mound's foreseeability requirement operates only at the level of the type of harm. It leaves the pre-existing egg-shell skull principle, developed in earlier case law, fully intact for questions of extent and severity."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes argue that the egg-shell skull rule and Wagon Mound conflict — that the egg-shell rule lets in unforeseeable harm which Wagon Mound is supposed to exclude.",
+            "whyItsWrong": "There is no conflict once the two rules are kept at the level they actually operate on. Wagon Mound governs the foreseeable type of harm; the egg-shell skull rule governs the foreseeable type's unforeseeable extent. A burn is a foreseeable type of harm under Wagon Mound; that it becomes fatal cancer because of an undetected vulnerability is a question of extent, governed by the egg-shell rule, not a different, unforeseeable type of harm that Wagon Mound would exclude."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-08-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that brings the egg-shell skull rule into play here.",
+          "scenarioText": "A shop assistant negligently drops a small box on a customer's foot, causing what should have been a minor bruise. Unknown to anyone, the customer has a rare blood-clotting disorder, and the bruise triggers a severe clot requiring amputation of the toe.",
+          "tappableSpans": ["negligently drops a small box", "minor bruise", "rare blood-clotting disorder", "requiring amputation of the toe"],
+          "correctSpan": "rare blood-clotting disorder",
+          "feedbackCorrect": "That's the trigger. The type of harm (a foot injury from a dropped box) was entirely foreseeable — the claimant's undisclosed vulnerability is what turns a foreseeable minor injury into a severe one, which the egg-shell skull rule holds the defendant fully liable for.",
+          "feedbackIncorrect": "The dropped box and the resulting foot injury are the foreseeable type of harm, not the trigger for this rule. The egg-shell skull rule is about the claimant's hidden vulnerability turning that foreseeable type of harm into something far more severe."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "A prior question: what was the duty actually FOR?",
+        "voice": "reflective — steps back from case detail to ask what the modern courts are really doing",
+        "body": [
+          "Step back from remoteness for a moment and ask a more basic question: before asking whether a loss is too remote, shouldn't we first ask whether the loss is even the kind of loss the duty existed to prevent? Recent Supreme Court authority says yes — and treats that as a question that can resolve a case without ever reaching remoteness at all.",
+          "Meadows v Khan concerned a doctor who negligently failed to test whether a patient was a carrier of a gene for haemophilia. Because of that failure, the patient was not warned of the risk and went on to have a son who had both haemophilia and, entirely coincidentally, autism — a condition unrelated to the genetic testing and something the doctor's negligence had nothing to do with causing. The Supreme Court held that even though the autism was, in a but-for sense, a consequence of the negligent advice (she would not have had this particular child otherwise), it fell outside the scope of the duty. The doctor's duty was to inform her of haemophilia risk, so that she could make an informed choice about that risk — not to protect her, more generally, from every characteristic of any child she might go on to have. Damages were limited to the costs associated with the haemophilia.",
+          "Manchester Building Society v Grant Thornton makes the same structural point in a commercial setting. The Supreme Court distinguished between an 'advice' case, where a professional is responsible for guiding an entire decision and so answers for all the foreseeable consequences of that decision going wrong, and an 'information' case, where a professional supplies one piece of information as an input into a decision someone else is making, and answers only for the consequences of that specific piece of information being wrong — not for the wider commercial venture failing for other reasons.",
+          "The point of both cases is the same: scope of duty is not a technicality bolted onto remoteness, it is analytically prior to it. You ask what the duty was actually for, and whether the loss falls within that purpose, before — or sometimes instead of — asking whether the type of loss was foreseeable. A loss can be entirely foreseeable and still fall outside the scope of the duty that was breached."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Scope of duty",
+            "definition": "The question of what a duty of care was actually established to protect against, and whether the claimant's loss falls within that purpose. Recognised by the Supreme Court in Meadows v Khan and Manchester Building Society v Grant Thornton as analytically prior to, and potentially decisive independently of, remoteness of damage."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Advice v information: Manchester Building Society v Grant Thornton",
+            "points": [
+              "'Advice' duty: the professional guides the whole transaction or decision — liable for all foreseeable consequences of that decision proving wrong",
+              "'Information' duty: the professional supplies one input into someone else's decision — liable only for the foreseeable consequences of that specific input being wrong",
+              "Meadows v Khan: the duty to advise on haemophilia risk did not extend to protecting against an unrelated condition (autism) in the resulting child",
+              "In both cases, the question asked first is 'what was this duty for?' — not 'was this loss foreseeable?'"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-08-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these reasoning steps from Meadows v Khan in the order the Supreme Court's analysis followed.",
+          "items": ["The doctor negligently fails to test for the haemophilia gene", "The mother has a son with both haemophilia and unrelated autism", "The court asks what the duty to test and advise was actually for", "Damages are limited to losses connected to haemophilia, excluding the autism-related costs"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence — and notice that the scope-of-duty question (step 3) is asked before damages are fixed, not as an afterthought to a remoteness analysis.",
+          "feedbackIncorrect": "Reorder around when the court asks what the duty was for relative to the facts about the son's conditions — that question comes after the facts are known and before damages are assessed, and it is what actually limits recovery."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Two frameworks, one sensible sequence",
+        "voice": "comparative — sets the old and new frameworks against each other and shows how they fit together",
+        "body": [
+          "You now have two frameworks that can look like they compete: the classical remoteness analysis (Wagon Mound, Hughes, egg-shell skull) and the modern scope-of-duty analysis (Meadows, Manchester Building Society). They don't compete. They answer different questions, and the sensible approach — and the one examiners reward — is to run scope of duty first.",
+          "Scope of duty asks: what was this duty for, and does this loss fall within that purpose? It is a purpose-based filter that can exclude a loss entirely, regardless of foreseeability — Meadows' autism costs were foreseeable in a but-for sense, arguably even foreseeable as a type of harm broadly speaking, and were excluded anyway because they had nothing to do with what the duty existed to protect against.",
+          "Remoteness then asks, of losses that do fall within the scope of the duty: was this particular type of loss reasonably foreseeable? That's Wagon Mound and Hughes — type of harm, not manner. And within a type of loss that clears both hurdles, the egg-shell skull rule then removes any cap on how severe that loss turns out to be for this particular claimant.",
+          "In most negligence problems — road accidents, workplace injuries, most physical harm cases — the scope of the duty is broad and uncontroversial (a duty to drive carefully protects against the whole range of foreseeable physical injury), so the classical remoteness analysis does almost all the work, as it has for decades. Scope of duty becomes the live, decisive issue mainly in professional negligence and cases involving discrete pieces of advice or information — which is exactly the pattern in both of the modern cases. Recognise which kind of problem you're in before choosing which tool to lead with."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Scope of duty, remoteness, and extent: the full sequence",
+            "description": "How the modern scope-of-duty question fits together with classical remoteness and the egg-shell skull rule.",
+            "nodes": [
+              { "id": "start", "label": "What was the duty actually for — does this loss fall within its purpose? (Meadows; Manchester Building Society)" },
+              { "id": "outside", "label": "Outside the scope of the duty → not recoverable, regardless of foreseeability" },
+              { "id": "inside", "label": "Within scope → was this type of loss reasonably foreseeable? (Wagon Mound; Hughes)" },
+              { "id": "unforeseeable-type", "label": "Unforeseeable type of harm → too remote, not recoverable" },
+              { "id": "foreseeable-type", "label": "Foreseeable type of harm → recoverable" },
+              { "id": "extent", "label": "How severe can that recovery be? Defendant takes the claimant as found (Smith v Leech Brain)" }
+            ],
+            "edges": [
+              { "from": "start", "to": "outside", "label": "Purpose of duty not engaged" },
+              { "from": "start", "to": "inside", "label": "Purpose of duty engaged" },
+              { "from": "inside", "to": "unforeseeable-type", "label": "Different, unforeseeable type" },
+              { "from": "inside", "to": "foreseeable-type", "label": "Same general type" },
+              { "from": "foreseeable-type", "to": "extent", "label": "Extent uncapped by egg-shell rule" }
+            ],
+            "textAlternative": "First ask what the duty was actually for and whether the loss falls within that purpose (Meadows; Manchester Building Society) — if not, the loss is not recoverable regardless of foreseeability. If the loss is within the scope of the duty, ask whether this type of loss was reasonably foreseeable (Wagon Mound; Hughes) — an unforeseeable type of harm is too remote. If the type of harm was foreseeable, it is recoverable, and its extent is uncapped by the egg-shell skull rule (Smith v Leech Brain): the defendant takes the claimant as found."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-08-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is better analysed through the modern scope-of-duty question than through classical Wagon Mound remoteness?",
+          "scenarioA": "A driver negligently causes a collision; the other driver suffers a broken leg that heals unusually slowly because of an undiagnosed bone condition.",
+          "scenarioB": "An accountant negligently miscalculates one figure in a valuation report used to support a business loan; the business later fails for entirely unrelated market reasons, and the lender seeks to recover its whole loan loss.",
+          "correctScenario": "B",
+          "explanation": "B is a Manchester Building Society-style problem: the accountant supplied one piece of information, and the real question is whether the whole loan loss falls within the purpose of that specific duty — likely not, since the business failure had unrelated causes. A is an ordinary physical-injury case where scope of duty is broad and uncontroversial; the live issues are foreseeability of harm type and the egg-shell skull rule for its extent."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the test for remoteness of damage established in The Wagon Mound (No 1).",
+      "acceptableAnswers": ["damage is recoverable only if the type of harm was reasonably foreseeable", "reasonable foreseeability of the type of harm", "foreseeability of the kind of damage, not its extent or manner"],
+      "modelAnswer": "A defendant is liable only for damage of a type that was reasonably foreseeable as a consequence of the breach; damage of an unforeseeable type is too remote, even if it resulted directly from the breach."
+    },
+    {
+      "itemId": "tort-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case established that a defendant is liable only for a foreseeable type of harm, replacing the older 'direct consequences' rule?",
+      "options": ["The Wagon Mound (No 1)", "Hughes v Lord Advocate"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-08-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "What does the egg-shell skull rule actually govern?",
+      "options": ["Whether the type of harm was foreseeable in the first place", "The extent of harm once a foreseeable type of injury has occurred, given a claimant's pre-existing vulnerability", "Whether the defendant owed a duty of care at all"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat the egg-shell rule as a general escape from Wagon Mound, letting in any unforeseeable consequence. It doesn't — it only removes the cap on the severity of a type of harm that was already foreseeable."
+    },
+    {
+      "itemId": "tort-08-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the reasoning steps in Hughes v Lord Advocate.",
+      "items": ["Paraffin lamps are left near an unattended open manhole as a warning", "A boy takes a lamp into the manhole and it is knocked over", "An unforeseen explosion occurs, rather than an ordinary fire", "The court holds foreseeability of burning as a type of harm is enough, regardless of the unusual mechanism"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "tort-08-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Smith v Leech Brain, highlight the sentence that states the ratio.",
+      "passage": "The defendant's negligence caused a burn to the claimant's lip, an injury of a kind that was plainly foreseeable. That the claimant's own pre-malignant condition caused the burn to develop into fatal cancer does not break the chain of causation or render the loss too remote. A defendant must take their victim as they find them, and is liable for the full extent of a foreseeable type of injury however severe it proves in the particular claimant.",
+      "ratioSentence": "A defendant must take their victim as they find them, and is liable for the full extent of a foreseeable type of injury however severe it proves in the particular claimant."
+    },
+    {
+      "itemId": "tort-08-test-06",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that scope of duty (Meadows; Manchester Building Society) can exclude a loss from recovery even where that loss was a reasonably foreseeable type of harm?",
+      "sliderLabels": ["No, foreseeability always governs", "Yes, scope of duty can exclude it regardless of foreseeability"],
+      "correctPosition": "Yes, scope of duty can exclude it regardless of foreseeability",
+      "explanation": "Meadows v Khan is the clearest illustration: the autism-related costs were arguably foreseeable in a but-for sense, but were excluded because they fell outside the purpose of the duty to advise on haemophilia risk specifically."
+    },
+    {
+      "itemId": "tort-08-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A contractor negligently leaves exposed electrical wiring at a building site. A trespasser touches the wiring and suffers burns; entirely separately and unforeseeably, the shock also triggers a pre-existing heart arrhythmia, causing cardiac arrest. Applying Wagon Mound and the egg-shell skull rule together, is the cardiac arrest recoverable?",
+      "options": ["No — cardiac arrest is a wholly different, unforeseeable type of harm from burns, so it is too remote", "Yes — electric shock causing bodily harm was a foreseeable type of harm, and the egg-shell skull rule means the defendant answers for its full extent, including the unforeseeably severe cardiac consequence", "No — because the claimant was a trespasser, no duty was owed at all"],
+      "correctIndex": 1,
+      "explanation": "Electric shock injury generally is the foreseeable type of harm; the fact that this particular claimant's heart condition made the consequences catastrophically worse is a question of extent, not type, and the egg-shell skull rule answers it in the claimant's favour."
+    },
+    {
+      "itemId": "tort-08-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A surveyor is negligently asked only to confirm a single figure — the size of a garden — as one input into a buyer's decision to purchase a property, and gets it wrong. The buyer's purchase then falls through for a series of unrelated reasons (a collapsed mortgage offer, a change in personal circumstances), and the buyer seeks to recover their whole lost deposit. Applying Manchester Building Society, is the whole deposit recoverable?",
+      "options": ["Yes — any loss connected to the purchase decision is recoverable once the surveyor is shown to be negligent", "No — this is an 'information' case; the surveyor answers only for losses flowing from the garden-size figure being wrong, not for the transaction collapsing for unrelated reasons", "No — surveyors never owe a duty of care to buyers"],
+      "correctIndex": 1,
+      "explanation": "This is a classic 'information' duty under Manchester Building Society: the surveyor supplied one discrete input, and is responsible only for the consequences of that specific input being wrong, not for the whole transaction failing for unconnected reasons."
+    },
+    {
+      "itemId": "tort-08-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that makes this a scope-of-duty problem rather than a straightforward remoteness problem.",
+      "scenarioText": "A financial adviser is instructed only to confirm the current interest rate on a specific savings product, as one figure a client will use in their own wider investment decision. The adviser gets the rate wrong. The client's broader investment strategy then fails for entirely separate market reasons unconnected to that rate, and the client seeks to recover the total investment loss.",
+      "tappableSpans": ["instructed only to confirm the current interest rate", "one figure a client will use in their own wider investment decision", "gets the rate wrong", "fails for entirely separate market reasons"],
+      "correctSpan": "one figure a client will use in their own wider investment decision",
+      "feedbackCorrect": "That's the key structural fact. Because the adviser supplied a single input into someone else's broader decision rather than guiding the whole decision, this is an 'information' case — the question is what that narrow duty was for, which comes before any remoteness analysis of the wider investment loss.",
+      "feedbackIncorrect": "Look for the fact that describes the adviser's role in the transaction, not the error itself or the later market failure. What matters for scope of duty is whether the adviser was guiding the whole decision or supplying one discrete input into it."
+    },
+    {
+      "itemId": "tort-08-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario more closely mirrors Hughes v Lord Advocate than The Wagon Mound (No 1)?",
+      "scenarioA": "A warehouse negligently stores flammable chemicals near an open flame; a type of harm (fire damage) occurs that the evidence shows nobody in the defendant's position could reasonably have anticipated from that combination.",
+      "scenarioB": "A council negligently leaves a faulty gas heater in a rented flat; the heater causes a small gas leak that ignites in an unusual way nobody predicted, but a fire or explosion of some kind from a faulty gas heater was clearly a foreseeable risk.",
+      "correctScenario": "B",
+      "explanation": "B mirrors Hughes: the general type of harm (fire or explosion from a faulty gas appliance) was foreseeable, even though the precise mechanism was not — foreseeability of type is enough. A mirrors Wagon Mound's actual finding: an unforeseeable type of harm altogether, which fails at the remoteness stage."
+    },
+    {
+      "itemId": "tort-08-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A driving instructor negligently allows a learner driver to mount a kerb, and the car strikes a pedestrian, causing a broken wrist. Unknown to anyone, the pedestrian had brittle bone disease, and the break was far more severe and slow to heal than it would have been for an ordinary person. Analyse the driving instructor's liability for the full extent of the pedestrian's injury.",
+      "factsToOrder": [
+        "The instructor negligently allows the car to mount the kerb",
+        "The car strikes the pedestrian, causing a broken wrist",
+        "The pedestrian has an undiagnosed brittle bone condition",
+        "The break is far more severe than an ordinary claimant's would have been"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the driving instructor is liable for the full, unforeseeably severe extent of the pedestrian's broken wrist.",
+        "rule": "Under Wagon Mound, a defendant is liable only for a reasonably foreseeable type of harm. Where that type of harm is foreseeable, the egg-shell skull rule (Smith v Leech Brain) requires the defendant to take the claimant as found, and to answer for the full extent of that harm, however unforeseeably severe, because of the claimant's pre-existing vulnerability.",
+        "application": "Physical injury to a pedestrian, including a broken bone, from a car mounting the kerb is plainly a foreseeable type of harm — this is an ordinary road-accident scenario where the scope of the duty (to drive carefully so as not to injure others) is broad and uncontroversial. The pedestrian's undiagnosed brittle bone condition does not change the type of harm; it only affects its severity, which the egg-shell skull rule places on the defendant.",
+        "conclusion": "The driving instructor is liable for the full extent of the wrist injury, including its unforeseeable severity, because the type of harm was foreseeable and the egg-shell skull rule removes any cap on extent."
+      }
+    },
+    {
+      "itemId": "tort-08-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Is the scope-of-duty question in Meadows v Khan and Manchester Building Society a replacement for the Wagon Mound remoteness test, or an additional, prior question?",
+      "options": ["An additional, prior question — it can exclude a loss before remoteness is even reached", "A replacement — remoteness no longer applies after these cases"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-08-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why did the Supreme Court in Meadows v Khan exclude the costs associated with the child's autism, despite the child not existing but for the doctor's negligent failure to test?",
+      "options": ["Because autism-related costs are never recoverable in any negligence claim", "Because the duty to test and advise on haemophilia risk existed to protect against haemophilia-related decisions specifically, and the autism was unrelated to that purpose", "Because the mother had not proved but-for causation"],
+      "correctIndex": 1,
+      "trapExplanation": "But-for causation was not in doubt — in a but-for sense, the son (with all his characteristics) would not exist without the negligence. The case turned instead on scope of duty: the purpose of the specific duty breached did not extend to protecting against unrelated conditions in any resulting child."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is jumping straight to 'was this foreseeable?' without first asking what the duty was actually for. In professional-negligence and advice/information scenarios especially, run the scope-of-duty question first — it can exclude a loss that would otherwise look perfectly foreseeable.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.remoteness-scope"
+  }
+}

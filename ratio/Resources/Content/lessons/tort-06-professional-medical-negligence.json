@@ -1,0 +1,535 @@
+{
+  "lessonId": "tort-06",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 6,
+  "topicId": "tort.negligence.professional-medical",
+  "title": "Professional and medical negligence",
+  "subtitle": "Bolam, Bolitho, and the shift to patient-centred consent",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the Bolam test and explain the Bolitho gloss that qualifies it",
+    "Explain why Bolam governs diagnosis and treatment but not disclosure of risk",
+    "Apply the Montgomery patient-centred test for informed consent, as reaffirmed in McCulloch, to a new fact pattern"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Bolam v Friern Hospital Management Committee [1957] 1 WLR 582",
+      "role": "Establishes that a professional is not negligent if acting in accordance with a responsible body of professional opinion"
+    },
+    {
+      "citation": "Bolitho v City and Hackney HA [1998] AC 232",
+      "role": "Qualifies Bolam: the responsible body's opinion must be capable of withstanding logical analysis"
+    },
+    {
+      "citation": "Montgomery v Lanarkshire Health Board [2015] UKSC 11",
+      "role": "Rejects Bolam for disclosure of risk; introduces a patient-centred test for informed consent"
+    },
+    {
+      "citation": "McCulloch v Forth Valley Health Board [2023] UKSC 26",
+      "role": "Reaffirms and clarifies the scope of Montgomery in the Supreme Court"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often learn Bolam as if it were the whole of professional negligence, then get caught out when a consent question appears and they apply the wrong test. Where the profile shows gaps in core doctrine, this note appears: 'Get the Bolam/Montgomery boundary exactly right before you do anything else in this lesson.'",
+    "profileHooks": {
+      "weakApplication": "You know the tests by name already. This lesson pushes into scenarios where you have to decide which test applies before you can apply it — that boundary call is where most marks are lost.",
+      "weakKnowledge": "Read Parts 1 through 3 carefully before attempting the interactions. If Bolam and Montgomery feel interchangeable to you right now, this lesson is where that gets fixed."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A surgeon chooses a treatment that most of her colleagues would also have chosen. A different surgeon fails to mention a rare but serious risk of the same operation, because most surgeons of his era wouldn't have mentioned it either. One of them has a defence. The other, as the law now stands, almost certainly does not — and for decades, both would have walked away equally protected.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. McCulloch v Forth Valley Health Board [2023] UKSC 26 is the most recent Supreme Court authority on the scope of Montgomery and represents current law."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Bolam: judged by your peers, not by the court",
+        "voice": "explanatory — builds the rule methodically, definition first, story second",
+        "body": [
+          "Professionals are not judged in negligence the way an ordinary defendant is. A layperson's conduct is measured against the reasonable person on the street. A doctor's, solicitor's, or accountant's professional conduct is measured against a different yardstick entirely: the standard of a reasonably competent member of that profession, exercising the ordinary skill of someone practising that particular art.",
+          "The classic formulation comes from Bolam v Friern Hospital Management Committee. John Bolam underwent electro-convulsive therapy for depression without being given muscle relaxants or being physically restrained during the procedure, and suffered serious fractures as a result. At the time, medical opinion on whether to use relaxants or restraints was genuinely divided.",
+          "McNair J directed the jury that a doctor is not negligent if he has acted in accordance with a practice accepted as proper by a responsible body of medical opinion skilled in that particular art, even though other doctors might have taken a contrary view. This is the Bolam test, and it does something significant: it hands a large part of setting the standard of care to the profession itself, not to the court."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Bolam v Friern Hospital Management Committee",
+            "citation": "[1957] 1 WLR 582",
+            "court": "Queen's Bench Division",
+            "year": 1957,
+            "factsShort": "A patient undergoing ECT was not given muscle relaxants or restraints, in line with one of two responsible schools of medical opinion at the time, and suffered fractures.",
+            "ratioShort": "A doctor is not negligent if acting in accordance with a practice accepted as proper by a responsible body of medical opinion, even if other responsible practitioners would have acted differently.",
+            "expanded": {
+              "facts": "John Bolam consented to electro-convulsive therapy but was not warned of the risk of fracture, nor given relaxant drugs or physical restraint during the procedure. He suffered serious physical injuries when his body convulsed uncontrolled. Medical opinion at the time was split: some practitioners favoured relaxants and restraint, others considered the risk of restraint-caused injury higher than the risk from convulsion itself.",
+              "judgmentExtract": "McNair J told the jury that a doctor is not guilty of negligence 'if he has acted in accordance with a practice accepted as proper by a responsible body of medical men skilled in that particular art... merely because there is a body of opinion that would take a contrary view.'",
+              "significance": "Bolam became the governing test not just for medical treatment decisions but, for a time, for the standard of care across the professions generally. Its core move — letting a responsible body of professional opinion define the standard, rather than the court substituting its own judgment — shaped professional negligence law for the following four decades, until Bolitho qualified it and Montgomery removed it from the consent context entirely."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Responsible body of opinion",
+            "definition": "A body of professional practitioners who genuinely hold the view in question as a matter of professional judgment, sufficient in standing and number to be taken seriously — not merely one or two outlying practitioners."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-06-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the original Bolam test, is a doctor negligent simply because another responsible body of doctors would have acted differently?",
+          "options": [
+            "No — following one responsible body's accepted practice is a defence, even if others disagree",
+            "Yes — any professional disagreement about the right approach establishes negligence"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. Bolam does not require unanimity among the profession — following any responsible body of opinion suffices as a defence.",
+          "feedbackIncorrect": "Not quite — Bolam explicitly tolerates professional disagreement. The defendant only needs to show their approach matched one responsible body of opinion, not that it was the only reasonable approach."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Bolitho: a responsible body has to make sense",
+        "voice": "Socratic — poses the loophole as a question, then closes it",
+        "body": [
+          "Here's the obvious problem Bolam creates, and it took over forty years for the House of Lords to fix it properly: if a defendant can find any body of professional opinion, however small, that supports what they did, does that automatically end the inquiry? Could two doctors, sincerely holding an eccentric or poorly reasoned view, immunise a colleague from liability just by existing?",
+          "Bolitho v City and Hackney Health Authority answered no. A two-year-old child suffered catastrophic brain damage after a doctor failed to attend and intubate him during a respiratory crisis; the doctor argued that even if she had attended, she would not have intubated, and that this decision would have been supported by a responsible body of medical opinion.",
+          "Lord Browne-Wilkinson accepted that Bolam still governs, but added a crucial qualification: the court must be satisfied that the body of opinion relied on has a logical basis — that its proponents have directed their minds to the comparative risks and benefits and reached a defensible conclusion. A judge is entitled, in a rare case, to reject an expert opinion as not being reasonable or responsible at all, even where genuinely held.",
+          "This is the Bolitho gloss, and it matters because it puts a floor under Bolam: professional consensus is still the starting point and usually the end point, but it is not an automatic, unreviewable shield. The court retains a residual power to test whether the responsible body's reasoning actually holds up."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Bolitho v City and Hackney Health Authority",
+            "citation": "[1998] AC 232",
+            "court": "House of Lords",
+            "year": 1997,
+            "factsShort": "A doctor failed to attend a child suffering a respiratory crisis; she argued that even if she had attended, she would not have intubated, supported by a responsible body of opinion.",
+            "ratioShort": "A court need not accept a defendant's expert evidence as constituting a responsible body of opinion if that opinion cannot withstand logical analysis.",
+            "expanded": {
+              "facts": "Patrick Bolitho, aged two, suffered episodes of respiratory difficulty while in hospital. The doctor responsible failed to attend on two occasions when called. He later suffered cardiac arrest, leading to severe brain damage. Causation turned on what the doctor would have done had she attended — she gave evidence that she would not have intubated him, and produced expert support for that being a responsible approach.",
+              "judgmentExtract": "Lord Browne-Wilkinson held that the court 'is not bound to hold that a defendant doctor escapes liability for negligent treatment or diagnosis just because he leads evidence from a number of medical experts who are genuinely of opinion that the defendant's treatment or diagnosis accorded with sound medical practice,' unless satisfied that opinion has 'a logical basis' involving a proper weighing of risks and benefits.",
+              "significance": "Bolitho is the necessary second half of the Bolam test. Examiners test it by presenting expert opinion that is genuinely held but poorly reasoned — the correct answer is that Bolam is not automatically satisfied; the opinion must survive logical scrutiny, though Lord Browne-Wilkinson was clear this power would be exercised only rarely, out of respect for genuine clinical judgment."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-06-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of the combined Bolam/Bolitho analysis in the correct order.",
+          "items": [
+            "Identify the practice the defendant professional actually followed",
+            "Ask whether a responsible body of professional opinion supports that practice",
+            "Ask whether that body's opinion has a logical basis, weighing risks and benefits",
+            "If both are satisfied, the defendant is not negligent even if other practitioners disagree"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "Right — Bolam asks whether a responsible body exists; Bolitho then tests whether that body's reasoning actually holds together, before the defence succeeds.",
+          "feedbackIncorrect": "Check the order — Bolitho's logical-analysis check comes after identifying a responsible body under Bolam, not before it; you need something to scrutinise first."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The boundary Bolam never should have crossed",
+        "voice": "argumentative — builds the case for why disclosure had to be different, then delivers the verdict",
+        "body": [
+          "For decades, Bolam was applied not only to diagnosis and treatment but also to what a doctor told a patient about the risks of a proposed procedure. If a responsible body of doctors would have withheld a particular warning, the doctor withholding it was not negligent — even if the patient, had she known, would have refused the treatment entirely.",
+          "This always sat uneasily with a basic idea: deciding what to tell a patient about their own body is not really a matter of clinical skill in the way diagnosing an illness or performing a procedure is. It's closer to a question about autonomy — what a person is entitled to know before they agree to something being done to them. Applying a test built around professional consensus to that question effectively let doctors decide, among themselves, how much their patients deserved to know.",
+          "Montgomery v Lanarkshire Health Board finally corrected this. Nadine Montgomery, a diabetic and small-statured woman, was not warned of a 9-10% risk of shoulder dystocia during vaginal delivery, a risk that in her case materialised, causing her son severe disability. Medical opinion on whether to warn diabetic mothers of this risk was, as in Bolam, divided.",
+          "The Supreme Court held that Bolam has no application to the question of what risks a doctor must disclose. The correct test is whether a reasonable person in the patient's position would be likely to attach significance to the risk, or the doctor is or should reasonably be aware that this particular patient would attach significance to it. This is a patient-centred test, not a profession-centred one — it asks what matters to the patient, not what most doctors would have said."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Montgomery v Lanarkshire Health Board",
+            "citation": "[2015] UKSC 11",
+            "court": "Supreme Court",
+            "year": 2015,
+            "factsShort": "A diabetic mother was not warned of a material risk of shoulder dystocia in vaginal delivery; the risk materialised and her son suffered severe disability.",
+            "ratioShort": "A doctor must take reasonable care to ensure the patient is aware of any material risks, judged by what a reasonable patient in that position would want to know — not by what a responsible body of doctors would disclose.",
+            "expanded": {
+              "facts": "Nadine Montgomery, who had diabetes and was of small stature, was at elevated risk (around 9-10%) of shoulder dystocia if she delivered vaginally. Her obstetrician did not warn her of this risk, partly out of a view that raising it might lead the patient to request a caesarean section that the doctor did not consider necessary. The risk materialised during delivery, and her son suffered cerebral palsy and other injuries.",
+              "judgmentExtract": "The Supreme Court held that 'the doctor is therefore under a duty to take reasonable care to ensure that the patient is aware of any material risks involved in any recommended treatment, and of any reasonable alternative or variant treatments.' Materiality is assessed by 'whether, in the circumstances of the particular case, a reasonable person in the patient's position would be likely to attach significance to the risk, or the doctor is or should reasonably be aware that the particular patient would be likely to attach significance to it.'",
+              "significance": "Montgomery is the decisive break between Bolam-governed clinical judgment and patient-centred consent. It reflects a broader shift in medical law and public expectation toward patient autonomy and shared decision-making, away from a purely paternalistic 'doctor knows what you need to hear' model."
+            }
+          },
+          {
+            "type": "doctrineMap",
+            "title": "Which test applies: Bolam/Bolitho or Montgomery?",
+            "description": "A decision path for choosing the correct test in a professional or medical negligence scenario.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Is the alleged negligence about diagnosis or treatment (what was clinically done)?"
+              },
+              {
+                "id": "yes-treat",
+                "label": "Yes → apply Bolam, qualified by Bolitho's logical-analysis check"
+              },
+              {
+                "id": "no-treat",
+                "label": "No → is it about what the patient was told before consenting to treatment?"
+              },
+              {
+                "id": "yes-disclose",
+                "label": "Yes → apply Montgomery's patient-centred materiality test, as reaffirmed in McCulloch"
+              },
+              {
+                "id": "neither",
+                "label": "Neither → identify the correct duty framework before proceeding"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "yes-treat",
+                "label": "Yes"
+              },
+              {
+                "from": "start",
+                "to": "no-treat",
+                "label": "No"
+              },
+              {
+                "from": "no-treat",
+                "to": "yes-disclose",
+                "label": "Yes"
+              },
+              {
+                "from": "no-treat",
+                "to": "neither",
+                "label": "No"
+              }
+            ],
+            "textAlternative": "First ask whether the alleged negligence concerns diagnosis or treatment — what was clinically done. If so, apply Bolam, qualified by Bolitho. If instead the complaint concerns what the patient was told before consenting, apply Montgomery's patient-centred materiality test, as reaffirmed in McCulloch. If it is neither, the correct duty framework needs to be identified before proceeding."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-06-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario should be analysed under Montgomery rather than Bolam/Bolitho?",
+          "scenarioA": "A surgeon chooses to remove a tumour using a technique that a minority but responsible body of surgeons endorses, rather than the more common technique.",
+          "scenarioB": "A surgeon does not mention a rare but serious risk of nerve damage before an elective operation, because most surgeons of his generation would not have raised it unprompted.",
+          "correctScenario": "B",
+          "explanation": "B concerns disclosure of risk before consent — squarely Montgomery's patient-centred test. A concerns a clinical choice of technique, which remains governed by Bolam as qualified by Bolitho."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What Montgomery actually requires",
+        "voice": "structural — a reference part unpacking the test's components methodically",
+        "body": [
+          "Montgomery's test is easy to state and easy to misapply, because 'material risk' sounds like it should mean 'statistically significant risk', and it doesn't. Materiality has two limbs, and either one on its own is enough to trigger a duty to disclose.",
+          "The first limb is objective: would a reasonable person in the patient's position attach significance to this risk? This isn't measured purely by percentage probability — a low numerical risk of a catastrophic outcome can still be material, just as a higher numerical risk of a trivial complication might not be.",
+          "The second limb is subjective to the particular patient, but only insofar as the doctor knows or ought reasonably to know it: is the doctor aware, or should the doctor reasonably be aware, that this particular patient would attach significance to the risk, even if an average patient might not? A patient who has told her doctor that avoiding any risk to a specific bodily function is important to her professional life, for instance, may be owed disclosure that an average patient would not need.",
+          "The test carries two further important limits worth holding onto. It does not require disclosure of every conceivable risk, however trivial or remote — only material ones. And it is expressly not to be turned into a battleground of hindsight bias, where a bad outcome retrospectively makes any undisclosed risk look, in hindsight, obviously material; materiality is judged looking forward from the time of the consultation, not backward from the injury."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The Montgomery materiality test",
+            "points": [
+              "Limb 1 (objective): would a reasonable person in the patient's position be likely to attach significance to this risk?",
+              "Limb 2 (subjective, knowledge-limited): is the doctor aware, or should the doctor reasonably be aware, that this particular patient would attach significance to it?",
+              "Either limb alone is sufficient — the doctor need not know the patient personally to owe the objective duty",
+              "The test does not require disclosure of trivial or wholly remote risks with no reasonable significance to any patient",
+              "Materiality is assessed prospectively, from the point of the consultation, not with the benefit of hindsight from a bad outcome"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-06-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact most relevant to establishing that this risk was material under the subjective limb of the Montgomery test.",
+          "scenarioText": "A professional violinist tells her surgeon, before a shoulder operation, that even a small loss of fine motor control would end her career. The surgeon proceeds without mentioning a rare risk of exactly that complication, reasoning that most patients would not need to be told about something so unlikely.",
+          "tappableSpans": [
+            "professional violinist",
+            "that even a small loss of fine motor control would end her career",
+            "proceeds without mentioning a rare risk",
+            "most patients would not need to be told"
+          ],
+          "correctSpan": "that even a small loss of fine motor control would end her career",
+          "feedbackCorrect": "Correct. This is exactly the kind of disclosed patient-specific concern that triggers the subjective limb — the surgeon now knows this particular patient would attach significance to a risk an average patient might not.",
+          "feedbackIncorrect": "Look for what the patient actually told the surgeon, not her profession alone or what the surgeon later reasoned. The subjective limb turns on what the doctor was made aware of about this specific patient."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "McCulloch: the Supreme Court holds the line",
+        "voice": "direct — sets up the exam trap plainly and resolves it",
+        "body": [
+          "A common misconception after Montgomery was that the case might quietly narrow over time, or that lower courts would find ways to reintroduce a Bolam-style professional filter into the disclosure question by the back door. McCulloch v Forth Valley Health Board, decided by the Supreme Court in 2023, closes that door.",
+          "The claim concerned a patient who died after not being told about a potential treatment option — a pericardiocentesis — that some, but not all, cardiologists would have considered discussing. A key question was whether Bolam governs the prior, threshold question of which treatment options are even 'reasonable alternatives' that must be raised with a patient at all, before Montgomery's disclosure test kicks in.",
+          "The Supreme Court confirmed that identifying which alternative treatments are reasonable, in the clinical sense, remains a matter of clinical judgment assessed by the Bolam/Bolitho standard — that is a genuinely professional question. But once a treatment is identified as a reasonable alternative, whether the patient had to be told about it, and about its risks, is governed entirely by Montgomery's patient-centred materiality test, with no room for a Bolam-style defence at that second stage.",
+          "McCulloch is worth remembering as confirmation, not innovation: it draws the Bolam/Montgomery line even more precisely, by locating a genuinely clinical threshold question (what counts as a reasonable alternative) before the disclosure question, while leaving Montgomery's patient-centred test fully intact and undiluted for the disclosure question itself."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "McCulloch v Forth Valley Health Board",
+            "citation": "[2023] UKSC 26",
+            "court": "Supreme Court",
+            "year": 2023,
+            "factsShort": "A patient died after not being told about a treatment option that only some cardiologists would have regarded as a reasonable alternative.",
+            "ratioShort": "Whether a treatment counts as a 'reasonable alternative' is a Bolam/Bolitho clinical judgment; whether the patient had to be told about a reasonable alternative, once identified, is governed by Montgomery with no Bolam defence.",
+            "expanded": {
+              "facts": "Mr McCulloch was admitted to hospital with pericarditis and later died from cardiac tamponade. His family argued he should have been told about pericardiocentesis as a possible treatment option, and that had he known, a discussion would have led to different care. Expert evidence was divided on whether a responsible body of cardiologists would have regarded this as a reasonable option to raise at all at the relevant time.",
+              "judgmentExtract": "The Supreme Court held that identifying the reasonable treatment options available to a patient, as a matter of clinical judgment, is properly assessed by the Bolam test as qualified by Bolitho. Once a course of treatment is identified as a reasonable alternative, however, Montgomery governs whether and how it must be discussed with the patient — that question is not subject to a Bolam-style professional defence.",
+              "significance": "McCulloch is the most authoritative modern statement of where the Bolam/Bolitho standard ends and Montgomery begins. It shows the Supreme Court declining any drift back toward professional deference on the disclosure question itself, while being honest that a genuinely clinical threshold question sits upstream of it."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often read McCulloch as reintroducing Bolam into the Montgomery disclosure test, since the case does apply Bolam/Bolitho to part of the analysis.",
+            "whyItsWrong": "McCulloch applies Bolam only to the upstream, genuinely clinical question of which treatments count as reasonable alternatives in the first place. Once that threshold question is answered, Montgomery's patient-centred test governs disclosure in full, with no Bolam defence available at that stage — the two tests are sequenced, not merged."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-06-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that McCulloch v Forth Valley Health Board reintroduced a Bolam-style defence into the Montgomery disclosure test itself?",
+          "sliderLabels": [
+            "Definitely reintroduced a Bolam defence into disclosure",
+            "Definitely left Montgomery's disclosure test untouched"
+          ],
+          "correctPosition": "untouched",
+          "explanation": "McCulloch confines Bolam/Bolitho to the separate, upstream question of what counts as a reasonable treatment alternative. Once that threshold is crossed, Montgomery's patient-centred materiality test governs disclosure with no Bolam defence — the Supreme Court left that part of Montgomery fully intact."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-06-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the Bolam test for professional negligence.",
+      "acceptableAnswers": [
+        "responsible body of professional opinion test",
+        "acting in accordance with a responsible body of medical opinion is not negligent"
+      ],
+      "modelAnswer": "A professional is not negligent if they have acted in accordance with a practice accepted as proper by a responsible body of opinion in that profession, even though other practitioners might take a different view."
+    },
+    {
+      "itemId": "tort-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Does Bolitho abolish the Bolam test?",
+      "options": [
+        "No — it qualifies Bolam by requiring the responsible body's opinion to withstand logical analysis",
+        "Yes — Bolitho replaces Bolam entirely with a judicial-judgment test"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-06-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following does the Bolam test, as qualified by Bolitho, govern?",
+      "options": [
+        "Clinical diagnosis and treatment decisions",
+        "What risks a doctor must disclose to a patient before treatment",
+        "Both diagnosis/treatment and disclosure of risk equally"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Bolam once applied to disclosure of risk too, but Montgomery removed that ground entirely. Bolam/Bolitho now governs clinical diagnosis and treatment judgments, not what a patient must be told."
+    },
+    {
+      "itemId": "tort-06-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In Montgomery, was the applicable test for disclosure based on what a responsible body of doctors would tell a patient?",
+      "options": [
+        "No — the test is what a reasonable person in the patient's position would want to know",
+        "Yes — Montgomery applied the same Bolam test used for treatment decisions"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-06-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the historical development of the law on disclosure of risk before consent.",
+      "items": [
+        "Bolam applied a professional-consensus test to both treatment and disclosure of risk",
+        "Bolitho qualified Bolam by requiring logical analysis of the responsible body's opinion",
+        "Montgomery held Bolam does not apply to disclosure and introduced the patient-centred materiality test",
+        "McCulloch reaffirmed Montgomery's disclosure test while confining Bolam to the threshold question of reasonable alternatives"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "tort-06-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under the Montgomery test, which of the following correctly states the two limbs of materiality?",
+      "options": [
+        "Whether a reasonable person in the patient's position would attach significance to the risk, or the doctor knows or should know this particular patient would",
+        "Whether the risk exceeds a fixed statistical probability threshold, and whether the patient specifically asked about it",
+        "Whether a responsible body of doctors would disclose the risk, and whether the hospital's own policy required disclosure"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-06-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Montgomery, highlight the sentence stating the ratio on materiality.",
+      "passage": "The role of the doctor has changed, and no longer fits the paternalistic model of care. The test of materiality is whether, in the circumstances of the particular case, a reasonable person in the patient's position would be likely to attach significance to the risk, or the doctor is or should reasonably be aware that the particular patient would be likely to attach significance to it. This reflects the shift towards recognising patient autonomy.",
+      "ratioSentence": "The test of materiality is whether, in the circumstances of the particular case, a reasonable person in the patient's position would be likely to attach significance to the risk, or the doctor is or should reasonably be aware that the particular patient would be likely to attach significance to it."
+    },
+    {
+      "itemId": "tort-06-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario best illustrates the Bolitho qualification of Bolam, rather than Bolam alone?",
+      "scenarioA": "A court accepts a defendant's expert evidence of a responsible body of opinion without examining the reasoning behind it, because two practitioners genuinely hold that view.",
+      "scenarioB": "A court examines a defendant's expert evidence of a responsible body of opinion and rejects it because the practitioners had not properly weighed the known risks against the benefits of their approach.",
+      "correctScenario": "B",
+      "explanation": "B is Bolitho: the court tests whether the responsible body's opinion has a logical basis, rather than accepting mere sincerity of belief as sufficient, as illustrated in A."
+    },
+    {
+      "itemId": "tort-06-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A GP prescribes a common medication in line with an approach a responsible body of GPs would endorse, but a rare side effect occurs. The patient sues, alleging the treatment choice itself was negligent. Which test applies?",
+      "options": [
+        "Bolam, as qualified by Bolitho",
+        "Montgomery's patient-centred materiality test",
+        "The reasonable person standard from Nettleship v Weston"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is a treatment-choice complaint, not a disclosure complaint, so Bolam/Bolitho governs: the GP is not negligent for the choice itself if it accords with a responsible, logically defensible body of medical opinion."
+    },
+    {
+      "itemId": "tort-06-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A patient is not told about a 2% risk of permanent numbness following a minor cosmetic procedure. Evidence shows most patients considering this procedure would want to know about any risk of permanent sensory change before consenting. Applying Montgomery, is this risk likely material?",
+      "options": [
+        "Yes — a reasonable person in the patient's position would likely attach significance to a permanent, if uncommon, sensory change before an elective procedure",
+        "No — a 2% risk is too statistically low to ever be material",
+        "It depends entirely on whether a responsible body of cosmetic surgeons would have disclosed it"
+      ],
+      "correctIndex": 0,
+      "explanation": "Materiality is not a fixed percentage threshold. The objective limb asks what a reasonable patient in this position would attach significance to, and a permanent sensory change before an elective procedure is a strong candidate, whatever the exact statistical probability."
+    },
+    {
+      "itemId": "tort-06-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that determines which test — Bolam/Bolitho or Montgomery — should be applied in this scenario.",
+      "scenarioText": "A patient later complains that her surgeon chose to perform an open procedure rather than a keyhole one, a choice a responsible body of surgeons would support as clinically sound, and separately complains that she was never told keyhole surgery was an available option at all.",
+      "tappableSpans": [
+        "chose to perform an open procedure rather than a keyhole one",
+        "a responsible body of surgeons would support as clinically sound",
+        "never told keyhole surgery was an available option at all"
+      ],
+      "correctSpan": "never told keyhole surgery was an available option at all",
+      "feedbackCorrect": "Correct. The choice of procedure itself is a Bolam/Bolitho clinical judgment, but the failure to inform the patient of an alternative option engages Montgomery's disclosure test — the two complaints need two different tests.",
+      "feedbackIncorrect": "There are two separate complaints buried in this scenario. Look for the one about what the patient was, or wasn't, told about her options, rather than the clinical choice the surgeon made."
+    },
+    {
+      "itemId": "tort-06-test-12",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Applying McCulloch, which scenario correctly separates the two stages of analysis?",
+      "scenarioA": "A court first asks, as a Bolam/Bolitho clinical question, whether a proposed treatment was a reasonable alternative at all, and only then asks, under Montgomery, whether the patient should have been told about it.",
+      "scenarioB": "A court applies Bolam/Bolitho throughout, including to the question of whether the patient should have been told about a treatment already accepted as a reasonable alternative.",
+      "correctScenario": "A",
+      "explanation": "A reflects McCulloch's sequencing: Bolam/Bolitho for the clinical threshold question of what counts as a reasonable alternative, then Montgomery, undiluted, for whether the patient had to be told about it."
+    },
+    {
+      "itemId": "tort-06-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Amara attends a consultation before knee surgery. She mentions in passing that she is a competitive rock climber and that maintaining full flexibility matters greatly to her. The surgeon does not mention a rare risk of reduced flexibility associated with the recommended procedure, reasoning that this risk is so uncommon it would not normally be raised with patients. Amara suffers reduced flexibility and sues. Analyse whether the surgeon breached the duty to disclose.",
+      "factsToOrder": [
+        "Amara tells the surgeon she is a competitive rock climber",
+        "Amara states that maintaining full flexibility matters greatly to her",
+        "The risk of reduced flexibility is rare",
+        "The surgeon does not mention this risk, reasoning it is not normally raised",
+        "Amara suffers reduced flexibility"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the surgeon breached the duty to disclose a material risk before Amara consented to surgery.",
+        "rule": "Montgomery requires disclosure of any risk a reasonable person in the patient's position would attach significance to, or any risk the doctor knows or should reasonably know this particular patient would attach significance to — Bolam has no application to this question, as confirmed in McCulloch.",
+        "application": "Even if the low statistical probability of the risk might mean an average patient would not need to be told (arguably satisfying the objective limb regardless, given how significant any flexibility loss is), Amara specifically told the surgeon that flexibility mattered greatly to her professional activity as a climber. This engages the subjective limb directly: the surgeon knew, or should reasonably have known, that this particular patient would attach significance to precisely this risk, however rare. The surgeon's reasoning that the risk is 'not normally raised' reflects exactly the Bolam-style, profession-centred thinking Montgomery rejected for disclosure.",
+        "conclusion": "The surgeon likely breached the duty to disclose: the subjective limb of Montgomery was clearly engaged by what Amara told the surgeon, and a rarity-based justification for withholding the risk is not a defence to that duty."
+      }
+    },
+    {
+      "itemId": "tort-06-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "A student argues that after McCulloch, doctors again have a full Bolam-style defence for any complaint about what they told a patient, since Bolam/Bolitho is applied somewhere in that case. What is the flaw in this argument?",
+      "options": [
+        "McCulloch confines Bolam/Bolitho to the separate, upstream question of what counts as a reasonable treatment alternative; the disclosure question itself remains governed by Montgomery with no Bolam defence available",
+        "McCulloch was decided in Scotland and has no application to English law",
+        "McCulloch only concerns cases involving fatal outcomes, unlike Montgomery"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is conflating 'Bolam appears somewhere in the judgment' with 'Bolam governs disclosure again.' McCulloch is precise about sequencing the two tests, not merging them — the disclosure stage itself remains Montgomery-only."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's test items is applying Bolam/Bolitho to a disclosure-of-risk complaint, or assuming McCulloch reopened the door to a Bolam defence for consent — when McCulloch in fact confines Bolam strictly to the upstream clinical-alternatives question and leaves Montgomery's disclosure test untouched.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.professional-medical"
+  }
+}

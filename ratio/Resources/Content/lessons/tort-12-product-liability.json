@@ -1,0 +1,362 @@
+{
+  "lessonId": "tort-12",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 12,
+  "topicId": "tort.product-liability",
+  "title": "Product liability",
+  "subtitle": "Negligence, strict liability under the CPA 1987, and what counts as a 'defect'",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 5
+  },
+  "objectives": [
+    "Distinguish the negligence route to product liability from the strict liability regime under the Consumer Protection Act 1987",
+    "Apply the CPA's definition of 'defect' as a shortfall in the safety consumers are generally entitled to expect, not a shortfall in performance",
+    "Apply the development risks defence under s 4(1)(e) CPA and explain why courts have construed it narrowly"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Donoghue v Stevenson [1932] AC 562", "role": "Foundational negligence duty on manufacturers — assumed knowledge from the duty-of-care lesson, referenced only as the negligence route's origin" },
+    { "citation": "Consumer Protection Act 1987, ss 2–4", "role": "Creates the strict liability regime, defines 'defect', and sets out the available defences" },
+    { "citation": "A v National Blood Authority [2001] 3 All ER 289", "role": "Defines defect by reference to legitimate public expectation, not avoidability, and construes the development risks defence narrowly" },
+    { "citation": "Wilkes v DePuy International Ltd [2016] EWHC 3096 (QB)", "role": "Refines the legitimate-expectation test, distinguishing standard from non-standard products" },
+    { "citation": "Gee v DePuy International Ltd [2018] EWHC 1208 (QB)", "role": "Applies the Wilkes framework to a further generation of metal-on-metal hip implant claims" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students already know Donoghue v Stevenson as the origin of the duty of care. Where the profile shows the negligence route is secure but the statutory route is shaky, this note appears: 'You know where product liability started — this lesson is about the strict-liability regime Parliament built on top of it, and how much narrower the development risks defence turns out to be than it sounds.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool below leans towards application: expect specific product fact patterns where you have to decide what a consumer was entitled to expect, not just recite s 3.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state clearly why the CPA route does not require proving fault at all — that single distinction from negligence is what the rest of this lesson is built on."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A batch of blood transfusions, screened by the best test then available, still carries an undetectable virus. Nobody was careless. Nobody could have done better. And yet a court held the product defective anyway. Product liability is the one corner of tort where 'nobody's fault' and 'still liable' comfortably coexist — this lesson is about exactly how, and exactly how far that goes.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The Consumer Protection Act 1987 implements what was EU product liability law; post-Brexit retained-EU-law status is stable for present purposes, but keep an eye on any future domestic reform of the regime."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two routes into the same courtroom",
+        "voice": "comparative — sets the two regimes side by side before either is explored in depth",
+        "body": [
+          "When a defective product injures someone, English law offers two quite different causes of action, and it matters enormously which one a claimant chooses. The first is ordinary negligence: the manufacturer's duty of care towards the ultimate consumer, which you have already met in Donoghue v Stevenson. That route requires the claimant to prove the manufacturer fell below the standard of a reasonable manufacturer — carelessness, in other words. It is not re-taught here; what matters for this lesson is simply that it exists, that it remains available, and that it is fault-based.",
+          "The second route is the Consumer Protection Act 1987, which implemented a strict liability regime for defective products. Under the CPA, a claimant does not have to show the producer was careless at all. They need only show the product was defective, that the defect caused their damage, and that the defendant falls within one of the categories of liable 'producer' under s 2 — typically the manufacturer, but also, in some circumstances, an importer or an 'own-branding' supplier.",
+          "Why would a claimant ever bother with fault-based negligence when strict liability is available? Usually they wouldn't, for products within the CPA's scope — but the CPA has its own limits (certain types of loss, limitation periods, and defences unavailable in negligence, most importantly the development risks defence explored later in this lesson). A well-advised claimant pleads both where possible, and a good answer explains why the CPA route is normally the stronger one rather than simply asserting that it is."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Strict liability (in this context)",
+            "definition": "Liability that does not require the claimant to prove fault on the defendant's part — under the CPA 1987, a claimant must prove only that the product was defective and that the defect caused the damage, not that the producer was careless in making it."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-12-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the Consumer Protection Act 1987, must a claimant prove the manufacturer was careless in order to succeed?",
+          "options": ["No — the claimant need only prove the product was defective and that the defect caused the damage", "Yes — carelessness is an essential element of every CPA claim"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. That is the whole point of the statutory route: it strips fault out of the analysis entirely, in exchange for a tightly defined concept of 'defect' and a set of statutory defences.",
+          "feedbackIncorrect": "Not quite — that is the negligence route, not the CPA route. The CPA was designed specifically to remove the need to prove fault; the claimant's task shifts to proving defect and causation instead."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What counts as a 'defect'?",
+        "voice": "definitional — works carefully through the statutory text before the case law that shaped it",
+        "body": [
+          "Everything under the CPA turns on s 3: a product is defective if 'the safety of the product is not such as persons generally are entitled to expect'. Read that sentence twice. It does not ask whether the product performed as well as it could have; it does not ask whether a better design was available; it asks only what level of safety the public was entitled to expect of a product of that description.",
+          "A v National Blood Authority shows how far this consumer-expectation standard can cut against a defendant, even one who did nothing wrong. The claimants had contracted Hepatitis C from blood transfusions. At the time, there was no test capable of screening donated blood for the virus — the risk was, in that narrow sense, unavoidable given the state of scientific knowledge. The defendant argued the blood could not be 'defective' because nothing more could have been done to detect the contamination.",
+          "Burton J rejected that argument. The test under s 3 is not whether the producer could have avoided the defect, but what safety the public was legitimately entitled to expect. The public, he held, was entitled to expect blood free of Hepatitis C — full stop — regardless of whether the producer could have screened it out. Avoidability might be relevant to a defence, but it is not part of the definition of defect itself. This is the case that separates 'defect' cleanly from 'fault': a product can be defective even though nobody could have made it any safer at the time."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Consumer Protection Act 1987, s 3(1)",
+            "text": "There is a defect in a product for the purposes of this Part if the safety of the product is not such as persons generally are entitled to expect; and for those purposes 'safety', in relation to a product, shall include safety with respect to products comprised in that product and safety in the context of risks of damage to property, as well as in the context of risks of death or personal injury.",
+            "elements": ["Safety of the product (not merely its performance)", "Assessed against what persons generally are entitled to expect", "Includes safety of component products", "Covers risk of death, personal injury, and damage to property"]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "A v National Blood Authority",
+            "citation": "[2001] 3 All ER 289",
+            "court": "High Court (QBD)",
+            "year": 2001,
+            "factsShort": "Claimants contracted Hepatitis C from blood transfusions, at a time when no test existed to screen donated blood for the virus.",
+            "ratioShort": "Whether a product is 'defective' under s 3 turns on the safety the public was legitimately entitled to expect, not on whether the producer could have avoided the defect given the state of scientific knowledge — avoidability is a matter for the development risks defence, not the definition of defect.",
+            "expanded": {
+              "facts": "Blood used in transfusions carried the Hepatitis C virus, which could not be detected by any screening test available at the relevant time. Claimants who contracted the virus through transfusion sued the National Blood Authority under the CPA.",
+              "judgmentExtract": "Burton J held that the public was entitled to expect that blood supplied for transfusion would not infect them with a serious virus, regardless of whether the presence of the virus could have been detected. He distinguished the concept of a 'standard' product containing an unwanted element (defective) from a 'non-standard' product which functions differently from the norm by design, and treated the infected blood as falling into the standard, unwanted-element category — automatically defective if it did not meet legitimate safety expectations, without any inquiry into avoidability at that stage.",
+              "significance": "This is the leading authority establishing that 'defect' under the CPA is assessed independently of fault or avoidability. It also introduces the standard/non-standard product distinction later refined in Wilkes — a distinction that becomes central to how courts identify what the public was 'entitled to expect' for a given product."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-12-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "According to s 3(1) CPA and A v National Blood Authority, which factor is NOT part of establishing that a product is defective?",
+          "options": ["The safety the public was generally entitled to expect", "Whether the producer could have avoided the defect given the available scientific knowledge", "The kind of harm safety is assessed against, including personal injury and property damage"],
+          "correctIndex": 1,
+          "explanation": "Avoidability given the state of scientific knowledge is the language of the development risks defence under s 4(1)(e), not of the definition of defect under s 3. National Blood Authority deliberately keeps these two inquiries apart."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Standard products, non-standard products, and legitimate expectation",
+        "voice": "case-narrative — follows the medical device litigation as it works out National Blood Authority's distinction in practice",
+        "body": [
+          "Wilkes v DePuy concerned a metal hip replacement component that fractured inside the claimant's body years after implantation, a type of failure the product's design was not supposed to permit. The court had to work out exactly what a patient was 'entitled to expect' of a complex medical device — a much harder question than for something as binary as virus-free blood.",
+          "Hickinbottom J drew directly on the standard/non-standard distinction from National Blood Authority. A standard product performs as the manufacturer intended, but this particular unit has an unintended feature that makes it more dangerous than others of its type — like a single contaminated bottle in an otherwise safe batch. A non-standard product is one that deviates from the manufacturer's own design specification for the line as a whole. For a standard product, legitimate expectation is usually set at the level of the product line's own design — the question becomes whether this unit performed worse than the norm the manufacturer itself set for that line, not whether some hypothetically safer design existed elsewhere.",
+          "Applying that framework, the court held the hip component that failed in Wilkes was a standard product performing within the range of risk the manufacturer's own design specification anticipated (fractures were a known, disclosed risk of that class of implant, occurring within an acceptable statistical range) — so it was not defective, because it had not fallen short of what patients were legitimately entitled to expect of a device of that type, with its accepted risk profile disclosed to the medical profession."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Wilkes v DePuy International Ltd",
+            "citation": "[2016] EWHC 3096 (QB)",
+            "court": "High Court (QBD)",
+            "year": 2016,
+            "factsShort": "A metal hip replacement component fractured inside the claimant years after implantation; fracture was a known, disclosed risk of that class of device.",
+            "ratioShort": "For a 'standard' product (one performing as the manufacturer's own design intended, even if that design carries known risks), legitimate expectation is assessed against the disclosed risk profile of the product line itself, not against a hypothetically safer alternative design.",
+            "expanded": {
+              "facts": "The claimant received a metal hip implant. One component fractured within his body some years after surgery, requiring revision surgery. Fracture was a known and statistically quantified risk of that implant design, disclosed in the product literature available to surgeons.",
+              "judgmentExtract": "Hickinbottom J held that because the fracture rate fell within the range the product's own design specification anticipated and disclosed, the component was a standard product that performed as intended — the relevant legitimate expectation was set by the disclosed risk profile of that design, and the claimant had not shown the product fell short of it.",
+              "significance": "Wilkes supplies the analytical toolkit for applying National Blood Authority to complex products with inherent, disclosed risks: identify whether the product is standard or non-standard, then measure legitimate expectation against the design's own disclosed risk profile, not against some safer product that does not exist on the market."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-12-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Applying Wilkes, in which scenario is the product more likely to be found 'defective'?",
+          "scenarioA": "A hip implant fractures at a rate consistent with the disclosed, known risk profile published for that design.",
+          "scenarioB": "A single unit from the same product line contains a manufacturing flaw not present in any other unit of that design, causing it to fail far outside the disclosed risk profile.",
+          "correctScenario": "B",
+          "explanation": "B describes exactly the 'standard product with an unwanted feature' scenario from National Blood Authority — a single unit falling short of the safety the design itself was meant to deliver. A mirrors Wilkes itself: performance within the disclosed risk profile of the design is not a shortfall in legitimate expectation, however unfortunate the individual outcome."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Gee, and the limits of the disclosed-risk defence",
+        "voice": "Socratic — poses the harder question Wilkes leaves open, then works through how Gee answers it",
+        "body": [
+          "Wilkes might look like a template manufacturers can rely on freely: disclose a risk, and any failure within that risk's statistical range escapes liability. Is that really the law? Gee v DePuy, dealing with a further generation of metal-on-metal hip claims, tests exactly that proposition.",
+          "The claimants in Gee argued that a class of metal-on-metal hip implants generated unacceptably high rates of metal ion release into surrounding tissue, causing pain, inflammation and revision surgery at rates well above what patients were told to expect, and well above rates for comparable implants using different bearing surfaces. DePuy argued, following Wilkes, that the risks were disclosed and the products performed within their own design specification.",
+          "Applying the Wilkes framework rather than displacing it, the court held that legitimate expectation is not satisfied merely because a manufacturer discloses some risk figure in the abstract — the disclosed risk profile has to actually match the real-world performance of the product, assessed against comparably available alternatives and against what was actually communicated to the medical profession and patients. Where a product's real failure rate significantly exceeded what was represented, or where the comparison with viable safer alternatives on the market at the time showed the design lagging behind reasonably achievable safety, some of the implants were found defective notwithstanding disclosed risk language. Gee therefore confirms Wilkes' framework while refusing to let it become a broad shield: disclosure sets the baseline of legitimate expectation, but only if the disclosure was accurate and the product's real-world performance matched it."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Wilkes and Gee together: assessing legitimate expectation for complex products",
+            "points": [
+              "First classify the product as standard (design performing as intended) or non-standard (deviating from the manufacturer's own specification)",
+              "For a standard product, identify the risk profile actually disclosed to the medical profession and patients",
+              "Compare the product's real-world failure rate against that disclosed profile — a match does not establish defect (Wilkes)",
+              "A significant mismatch between disclosed risk and real-world performance, or an unfavourable comparison with viable safer alternatives, can still establish defect even for a 'standard' product (Gee)",
+              "Disclosure of a risk is therefore a starting point for legitimate expectation, not an automatic defence"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-12-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below (paraphrasing the reasoning in Gee), highlight the sentence that states the ratio.",
+          "passage": "A manufacturer cannot rely on disclosed risk figures in the abstract to defeat a defect claim. Legitimate expectation must be measured against what was actually communicated and against the product's real-world performance, not merely against a risk percentage stated in the abstract. Where real-world failure rates substantially exceeded what patients and clinicians were told to expect, the product fell short of the safety patients were entitled to expect, notwithstanding some disclosure of risk.",
+          "ratioSentence": "Legitimate expectation must be measured against what was actually communicated and against the product's real-world performance, not merely against a risk percentage stated in the abstract."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The development risks defence — narrow by design",
+        "voice": "argumentative — states the defence's apparent strength, then dismantles the wide reading",
+        "body": [
+          "On paper, s 4(1)(e) CPA looks like a generous escape route for manufacturers: it is a defence to show that 'the state of scientific and technical knowledge at the relevant time was not such that a producer of products of the same description as the product in question might be expected to have discovered the defect if it had existed in his products while they were under his control.' Read quickly, this sounds like it should have protected the National Blood Authority — after all, no test existed to detect the Hepatitis C.",
+          "It did not. Burton J's construction of s 4(1)(e) was deliberately, and explicitly, narrow. The defence asks whether the defect was discoverable, given the state of scientific and technical knowledge generally accessible at the time — not whether this particular defendant, acting reasonably and without negligence, could have discovered it. The existence of the risk of Hepatitis C infection in blood was itself known to science, even though no test could yet screen individual donations for it. Because the risk was known in the abstract, the defence did not apply to defeat liability for individual infected units, even though nothing more could actually have been done about any specific bag of blood.",
+          "This is the crucial, counter-intuitive distinction the defence turns on: knowledge of the existence of a type of risk defeats the defence, even where the state of the art makes it impossible to detect or eliminate that risk in any individual product. The defence protects against genuinely undiscoverable risks — the classic example given in the case law is a side effect of a drug that emerges only after years of use, unknown to anyone, anywhere, at the time of supply — not against risks that are known in general terms but merely unavoidable in the individual case. Courts since National Blood Authority have consistently maintained this narrow reading, which is why the development risks defence, despite its prominent place in the statute, succeeds far less often than its wording might suggest."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Consumer Protection Act 1987, s 4(1)(e)",
+            "text": "In any civil proceedings ... it shall be a defence for the person proceeded against to show ... that the state of scientific and technical knowledge at the relevant time was not such that a producer of products of the same description as the product in question might be expected to have discovered the defect if it had existed in his products while they were under his control.",
+            "elements": ["Assessed by the state of scientific and technical knowledge generally, not this producer's own resources", "'Might be expected to have discovered the defect' — a discoverability test, not an avoidability test", "Applies at the time the product was under the producer's control", "Construed narrowly: known risk in the abstract defeats the defence, even if undetectable in the individual unit"]
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume the development risks defence protects a producer wherever it was, in practice, impossible to detect or prevent the specific defect in the specific unit that caused harm.",
+            "whyItsWrong": "National Blood Authority draws a sharper line: the defence turns on whether the type of risk was known to science at all, not on whether it could be eliminated from this particular product. A known-but-unavoidable risk (like undetectable Hepatitis C in blood) does not engage the defence; only a genuinely unknown risk, with no accessible scientific basis for suspecting it existed, does."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-12-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A pharmaceutical company supplies a drug in 2020. In 2024, medical science discovers, for the first time anywhere, a rare side effect nobody had previously suspected or had any scientific basis to look for. A patient harmed by the 2020 batch sues under the CPA. Is the development risks defence likely available?",
+          "options": ["Yes — in 2020 the state of scientific knowledge gave no basis for anyone, anywhere, to have discovered this defect", "No — the defence never applies to pharmaceutical products", "No — because harm eventually occurred, the risk must be treated as having existed and been discoverable all along"],
+          "correctIndex": 0,
+          "explanation": "This is the paradigm case the defence is meant to cover, in contrast with National Blood Authority: a risk genuinely unknown to science at the relevant time, not merely unavoidable in an individual case despite the risk's existence being known in general terms."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-12-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the definition of 'defect' under s 3(1) of the Consumer Protection Act 1987.",
+      "acceptableAnswers": ["safety not such as persons generally are entitled to expect", "shortfall in expected safety, not performance", "safety below what the public is entitled to expect"],
+      "modelAnswer": "A product is defective if the safety of the product is not such as persons generally are entitled to expect, covering risks of death, personal injury and property damage."
+    },
+    {
+      "itemId": "tort-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Does a claimant under the CPA 1987 need to prove the producer was negligent?",
+      "options": ["No — the CPA imposes strict liability, requiring only defect and causation", "Yes — negligence is an essential element of every CPA claim"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-12-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is closest to the correct statement of the development risks defence under s 4(1)(e) CPA?",
+      "options": ["The producer could not, with the resources it actually had, have discovered the defect", "The state of scientific and technical knowledge generally accessible at the time was not such that a producer might be expected to have discovered the defect", "The producer took all reasonable care in the design and manufacture of the product"],
+      "correctIndex": 1,
+      "trapExplanation": "The first and third options both smuggle fault-based reasoning (the producer's own resources or care) back into what is meant to be an objective, knowledge-based test measured against science and technology generally — precisely the error National Blood Authority corrects."
+    },
+    {
+      "itemId": "tort-12-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In A v National Blood Authority, why did the development risks defence fail even though no test existed to detect the virus in individual blood donations?",
+      "options": ["Because the existence of the risk of Hepatitis C infection was itself known to science, even though it could not be detected in individual units", "Because the defence does not apply to any medical products"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-12-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the analytical steps a court takes when assessing whether a complex product like a medical implant is 'defective', following Wilkes and Gee.",
+      "items": ["Classify the product as standard or non-standard", "Identify the risk profile actually disclosed to clinicians and patients", "Compare the product's real-world performance against that disclosed profile", "Find a defect only where real-world performance falls materially short of the legitimate expectation set by the disclosure"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "tort-12-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 3(1) CPA, which types of harm does 'safety' expressly cover?",
+      "options": ["Death, personal injury, and damage to property (including component products)", "Only physical personal injury, not property damage", "Only financial loss flowing from the defect"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-12-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below (paraphrasing National Blood Authority), highlight the sentence stating the ratio on how 'defect' relates to avoidability.",
+      "passage": "Counsel for the defendant argued that a product could not be defective if the state of the art made the defect impossible to detect or eliminate. The court rejected that submission. Avoidability, and the producer's inability to have done anything differently, is a matter properly addressed under the development risks defence, not under the definition of defect itself. The public's legitimate expectation of safety does not shrink merely because meeting it was, at the time, technically impossible.",
+      "ratioSentence": "Avoidability, and the producer's inability to have done anything differently, is a matter properly addressed under the development risks defence, not under the definition of defect itself."
+    },
+    {
+      "itemId": "tort-12-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A batch of vaccines is manufactured correctly according to specification, but one vial is contaminated during bottling due to a random equipment fault not present in any other vial. A patient is harmed by that vial. Is this more like a 'standard' or 'non-standard' product problem in the National Blood Authority/Wilkes sense?",
+      "options": ["Standard product with an unwanted, unintended feature in this unit — a classic route to a finding of defect", "Non-standard product, because the manufacturer never intended contamination in any unit", "Neither category applies — contamination cases fall outside the CPA entirely"],
+      "correctIndex": 0,
+      "explanation": "This is the paradigm 'standard product, unwanted element' scenario — like the infected blood itself — where a single unit falls short of the safety the design was meant to deliver, distinct from Wilkes' non-standard-design analysis of disclosed, line-wide risk."
+    },
+    {
+      "itemId": "tort-12-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A hip implant's product literature discloses a 2% fracture rate. Post-market data later shows the real-world fracture rate is 11%, well above comparable implants using a different design on the market at the same time. Applying Gee, is the manufacturer likely to escape a finding of defect merely because a risk was disclosed?",
+      "options": ["No — Gee holds that disclosure only sets legitimate expectation where it accurately matches real-world performance; a substantial mismatch, especially against safer available alternatives, can still found a finding of defect", "Yes — any disclosure of a numerical risk figure is an absolute defence under Wilkes", "No — because disclosure of risk is never relevant to defect under the CPA"],
+      "correctIndex": 0,
+      "explanation": "Gee confirms Wilkes' framework without letting disclosure become a blanket shield: where actual performance substantially exceeds the disclosed risk, and safer alternatives existed, legitimate expectation has not been met despite the disclosure."
+    },
+    {
+      "itemId": "tort-12-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is more likely to succeed under the development risks defence?",
+      "scenarioA": "A drug causes a side effect that emerges only after ten years of widespread use, which no scientific method available anywhere at the time of supply could have predicted or detected.",
+      "scenarioB": "A blood product carries a known virus that scientists knew could be present in donated blood, but for which no screening test yet existed to check individual donations.",
+      "correctScenario": "A",
+      "explanation": "A mirrors the paradigm case the defence protects: a risk genuinely unknown to science at the time. B mirrors National Blood Authority itself, where the defence failed because the risk's existence, even if undetectable in individual units, was already known."
+    },
+    {
+      "itemId": "tort-12-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that is most directly relevant to whether the development risks defence under s 4(1)(e) applies.",
+      "scenarioText": "A manufacturer supplies a children's toy. Years later, a novel chemical interaction between two components is identified for the first time by researchers anywhere in the world, having produced no known symptoms or scientific suspicion before that point. A child is harmed by a toy sold before the discovery.",
+      "tappableSpans": ["supplies a children's toy", "novel chemical interaction", "identified for the first time by researchers anywhere in the world", "a child is harmed"],
+      "correctSpan": "identified for the first time by researchers anywhere in the world",
+      "feedbackCorrect": "That is the operative fact: the defence turns on whether the state of scientific knowledge, generally, gave any basis to discover the defect — and here it plainly did not, since nobody anywhere had identified the risk before.",
+      "feedbackIncorrect": "Focus on what the state of scientific knowledge generally could have revealed, not on the type of product or the fact of harm. The defence is engaged or defeated by what was knowable to science as a whole, not by anything else in the scenario."
+    },
+    {
+      "itemId": "tort-12-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A manufacturer of surgical staplers discloses, in its literature, a 0.5% malfunction rate based on its own pre-market testing. Post-market surveillance later reveals malfunctions occurring at 6%, and an alternative stapler design on the market at the same time achieves a 0.4% rate using different technology. A patient is injured by a malfunction. Analyse whether the stapler is 'defective' under the CPA, and whether a development risks defence is available.",
+      "factsToOrder": [
+        "Manufacturer disclosed a 0.5% malfunction rate based on pre-market testing",
+        "Real-world malfunction rate is 6%, far above the disclosure",
+        "A comparable, safer alternative design achieved 0.4% on the market at the same time",
+        "The malfunction that injured the claimant was of a known type, not a newly discovered scientific phenomenon"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the stapler is defective under s 3(1) CPA, and whether the manufacturer can rely on the development risks defence under s 4(1)(e).",
+        "rule": "Defect is assessed by reference to the safety the public was legitimately entitled to expect (s 3(1); National Blood Authority), which for a standard product with a disclosed risk profile is measured against that disclosure and real-world performance, not merely an abstract figure (Wilkes; Gee). The development risks defence asks whether the state of scientific knowledge generally could have revealed the defect, not whether the specific defect was avoidable in the individual unit (National Blood Authority).",
+        "application": "Applying Gee, the substantial gap between the disclosed 0.5% rate and the real-world 6% rate, together with a safer comparable alternative achieving 0.4%, means legitimate expectation was not met by the disclosure — the product likely falls short of what patients were entitled to expect. On the development risks defence, the malfunction was of a known type, not a newly discovered scientific phenomenon, so there is no basis to say the state of scientific knowledge could not have revealed the risk; the defence is unlikely to succeed.",
+        "conclusion": "The stapler is likely defective under s 3(1), and the development risks defence is unlikely to assist the manufacturer given the known nature of the malfunction and the availability of safer alternatives."
+      }
+    },
+    {
+      "itemId": "tort-12-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best explains the relationship between the negligence route (Donoghue v Stevenson) and the CPA 1987 route to product liability?",
+      "options": ["The CPA replaced and abolished the negligence route entirely", "Both routes remain available; the CPA route is generally stronger for a claimant because it removes the need to prove fault, though it has its own scope limits and defences", "The CPA route only applies where the negligence route has already failed"],
+      "correctIndex": 1,
+      "trapExplanation": "Negligence was never abolished — it simply became the less attractive option for most product claims once the CPA's strict liability regime existed, precisely because fault is often the hardest element for a claimant to prove."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is collapsing 'defect' into 'fault' — assuming a defence exists wherever the producer could not, in practice, have done anything differently. National Blood Authority and Gee both exist to correct that instinct: ask what the public was entitled to expect, not what the producer could have managed.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.product-liability"
+  }
+}

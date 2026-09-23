@@ -1,0 +1,533 @@
+{
+  "lessonId": "tort-03",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 3,
+  "topicId": "tort.negligence.psychiatric-harm",
+  "title": "Psychiatric harm",
+  "subtitle": "Primary and secondary victims, the Alcock control mechanisms, and why hospitals aren't accidents",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 5
+  },
+  "objectives": [
+    "Distinguish a primary victim from a secondary victim in a psychiatric harm claim, and explain why the law treats them differently",
+    "State and apply the Alcock control mechanisms — close tie of love and affection, proximity in time and space, and perception through the claimant's own unaided senses",
+    "Explain why claims arising from earlier clinical negligence generally fail the accident-based Alcock framework, and state the current law after Paul v Royal Wolverhampton NHS Trust"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Alcock v Chief Constable of South Yorkshire Police [1992] 1 AC 310",
+      "role": "Establishes the three control mechanisms secondary victims must satisfy"
+    },
+    {
+      "citation": "Page v Smith [1996] AC 155",
+      "role": "Primary victims need only show physical injury of some kind was foreseeable, not psychiatric injury specifically"
+    },
+    {
+      "citation": "White v Chief Constable of South Yorkshire Police [1999] 2 AC 455",
+      "role": "Rescuers and employees are not automatically primary victims merely by virtue of their role"
+    },
+    {
+      "citation": "Paul v Royal Wolverhampton NHS Trust [2024] UKSC 1",
+      "role": "Confirms secondary victims cannot recover for psychiatric harm from witnessing the consequences of prior clinical negligence"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is one of the most heavily litigated corners of the duty of care, and one where the Supreme Court has just spoken — twice in one judgment, effectively, since Paul closes off an argument route many students still expect to be open. Where the profile shows application lagging behind recall, this note appears: 'You can probably list the three control mechanisms. This lesson is about knowing when they simply don't apply at all.'",
+    "profileHooks": {
+      "weakApplication": "You've handled the definitions here before. The test pool leans hard into scenario work — expect to be told a story and asked which category, and which mechanism, fits.",
+      "weakKnowledge": "Slow down through Parts 1 and 2. Everything after that assumes you can state the primary/secondary distinction and the three control mechanisms without looking them up."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A phone rings. On the other end, someone tells you your father has collapsed at the hospital where he was being treated — the treatment that, it later turns out, should have caught his condition a year earlier. You arrive in time to watch him die. Is that a claim in negligence? Most students assume it obviously is. The Supreme Court, in January 2024, said it obviously isn't — and this lesson is about understanding exactly why.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. This area changed significantly on 11 January 2024 with the Supreme Court's decision in Paul v Royal Wolverhampton NHS Trust [2024] UKSC 1. Older textbooks and study guides — anything written before 2024 — may present the medical negligence question as unresolved or more open than it now is. Treat Paul as the current, binding statement of the law for secondary victims in the clinical negligence context; it is not a minor gloss on Alcock, it is the answer the profession had been waiting for."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two different claimants, two different tests",
+        "voice": "clarifying — lays out the taxonomy plainly before the difficulty starts",
+        "body": [
+          "Before any of the case law makes sense, one division has to be fixed in place: the law of psychiatric harm asks a different question depending on where the claimant stood relative to the danger.",
+          "A primary victim is someone who was in the actual area of physical danger created by the defendant's negligence, or who reasonably believed they were — even if, as it happens, they were never touched. A secondary victim is someone who was never in danger themselves, but who suffers psychiatric harm because of what happened to somebody else: a parent who watches their child injured, a bystander who witnesses a collision.",
+          "The reason this split matters so much is policy, not sentiment. Courts have long worried that psychiatric harm claims by people who merely witness or hear about another's injury could multiply almost without limit — a road accident might be seen, heard about, or grieved over by dozens of people with a claim to being affected. So the law lets a primary victim's claim proceed on something close to ordinary negligence principles, while boxing secondary victims into a narrow set of conditions that most claimants, however genuinely affected, will fail to meet.",
+          "One threshold point applies to both categories and is easy to lose sight of: the claimant must show a recognised psychiatric illness — anxiety disorder, depression, PTSD — not simply grief, distress, or sorrow, however severe and however understandable. Ordinary grief, however devastating, is not damage the law of negligence compensates."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Recognised psychiatric illness",
+            "definition": "A clinically recognised condition — such as post-traumatic stress disorder, a diagnosed anxiety or depressive disorder — as opposed to ordinary grief, sorrow, or distress, which the law of negligence does not compensate however genuine or severe."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Primary victim vs secondary victim",
+            "points": [
+              "Primary victim: within the zone of physical danger, or reasonably believed themselves to be, as a result of the defendant's negligence",
+              "Secondary victim: never personally in danger, but suffers psychiatric harm from witnessing injury or peril to someone else",
+              "Primary victims: broadly ordinary foreseeability principles apply (see Page v Smith)",
+              "Secondary victims: must additionally satisfy the Alcock control mechanisms before a duty of care is even considered"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-03-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A woman is nearly struck by a reversing lorry that swerves at the last second and misses her entirely. She develops PTSD from the fright. Is she a primary or secondary victim?",
+          "options": [
+            "Primary — she was within the zone of danger, even though she was never touched",
+            "Secondary — she needs a close relationship to someone else who was hurt"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Primary victim status turns on exposure to danger, not on actually being struck — a reasonable belief that you were in danger is enough.",
+          "feedbackIncorrect": "Look again at where she was standing, not at whether she was hit. Primary victim status is about being within the zone of physical danger (or reasonably believing you were), not about suffering physical injury."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The three gates a secondary victim must pass through",
+        "voice": "structural — a reference checklist students will return to before exams",
+        "body": [
+          "Alcock v Chief Constable of South Yorkshire Police arose from the Hillsborough football stadium disaster, in which many people died in a crush at the ground. Relatives of those who died — some who had been at the stadium, some who watched events unfold on television, some who learned what had happened only afterwards — brought claims for psychiatric harm against the police force found responsible for the crush.",
+          "The House of Lords used the case to lay down three control mechanisms that a secondary victim must satisfy, on top of showing a recognised psychiatric illness caused by a sufficiently shocking event. Miss any one of the three, and the claim fails regardless of how genuine or severe the harm is.",
+          "First: a close tie of love and affection with the person endangered or injured. This is presumed for parent-child and spousal relationships; other relationships — siblings, close friends, colleagues — must be proved on the facts, and mere bystander status is never enough on its own.",
+          "Second: proximity in time and space to the event, or to its immediate aftermath. Watching an accident happen, or arriving on the scene shortly afterwards while it is still 'immediate', can qualify — but on the Hillsborough facts, several claimants who identified bodies at a mortuary some hours later were held too far removed in time.",
+          "Third: the psychiatric harm must come through the claimant's own unaided senses — seeing or hearing the event or its aftermath directly, not being told about it by someone else, and not, on the Hillsborough facts, watching it broadcast live on television (where individual victims could not be identified from the footage)."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The three Alcock control mechanisms",
+            "points": [
+              "A close tie of love and affection with the primary victim (presumed for parent/child and spouses; proved for others)",
+              "Proximity in time and space to the event or its immediate aftermath",
+              "Perception through the claimant's own unaided senses, not through a third party's account or broadcast media"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Alcock v Chief Constable of South Yorkshire Police",
+            "citation": "[1992] 1 AC 310",
+            "court": "House of Lords",
+            "year": 1992,
+            "factsShort": "Relatives of those who died in the Hillsborough disaster brought psychiatric harm claims against the police force whose negligence had caused the fatal crush.",
+            "ratioShort": "Secondary victims must show a close tie of love and affection, proximity in time and space to the event or its immediate aftermath, and perception through their own unaided senses.",
+            "expanded": {
+              "facts": "A fatal crush occurred at the Hillsborough stadium during an FA Cup semi-final, following admitted negligence in crowd management by the police. Numerous relatives and friends of those caught in the crush — some present at other parts of the ground, some who watched live television coverage, some who learned of events afterwards — claimed damages for psychiatric illness said to result from what they saw, heard, or were told.",
+              "judgmentExtract": "The House of Lords held that liability to secondary victims had to be kept within limits, given the risk of indeterminate liability to indefinitely large numbers of people affected by a single event. It set out the three requirements now known as the control mechanisms, and held that none of the claimants before it — including those who watched television coverage — satisfied all three.",
+              "significance": "Alcock remains the foundational authority for every secondary victim claim brought since. Its control mechanisms are not guidance to be weighed loosely; each one is a genuine precondition, and failing any single one is fatal to the claim."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-03-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of the Alcock analysis in the order a court works through them for a secondary victim claim.",
+          "items": [
+            "Confirm the claimant has a recognised psychiatric illness",
+            "Ask whether there is a close tie of love and affection with the injured person",
+            "Ask whether the claimant was proximate in time and space to the event or its immediate aftermath",
+            "Ask whether the claimant perceived it through their own unaided senses"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the structure. The illness threshold comes first because it applies to everyone; the three control mechanisms are then checked in turn, and all three must be satisfied.",
+          "feedbackIncorrect": "The illness requirement is the entry point for any psychiatric harm claim, primary or secondary — the three control mechanisms are then layered on top of it specifically for secondary victims."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Page v Smith and the primary victim shortcut",
+        "voice": "case-narrative — tells the story first, names the doctrine after",
+        "body": [
+          "Ian Page was driving carefully when another car, driven negligently, collided with his at moderate speed. Nobody was physically hurt in any conventional sense. But Page suffered from chronic fatigue syndrome, which the collision reactivated into a severe and disabling form — a psychiatric and physical condition he had previously managed to control.",
+          "The defendant argued that this kind of harm was entirely unforeseeable: nobody could have predicted that a minor traffic collision would trigger a dormant fatigue disorder. The House of Lords disagreed with the framing. Because Page had been within the zone of physical danger — a primary victim — the only question was whether physical injury of some kind was a foreseeable consequence of the defendant's negligent driving. It plainly was. The claimant did not additionally have to show that psychiatric injury, specifically, was foreseeable, nor that this particular form of it was foreseeable.",
+          "This is the primary victim's real advantage over the secondary victim: no control mechanisms, no requirement of a shocking event witnessed with your own senses, and no need to show the specific kind of harm was predictable — only that some physical injury was a foreseeable result of the defendant's carelessness, full stop.",
+          "It is tempting to read Page v Smith as opening primary victim status wide — but White v Chief Constable of South Yorkshire Police closed off one obvious extension. Police officers who had worked to rescue and recover victims at Hillsborough, and who suffered psychiatric harm from doing so, argued they should count as primary victims because of their role, or because their employer owed them a duty of care as employees. The House of Lords rejected this: being a rescuer, or being an employee, does not by itself put you in the zone of physical danger. You still have to show actual or reasonably apprehended physical danger to yourself, or satisfy the secondary victim tests like anyone else."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Page v Smith",
+            "citation": "[1996] AC 155",
+            "court": "House of Lords",
+            "year": 1996,
+            "factsShort": "A minor road collision, causing no visible physical injury, reactivated the claimant's dormant chronic fatigue syndrome into a severe, disabling condition.",
+            "ratioShort": "For a primary victim, it is enough that physical injury of some kind was foreseeable — the claimant need not show that psychiatric injury specifically, or this particular form of it, was foreseeable.",
+            "expanded": {
+              "facts": "Page was involved in a collision caused by the defendant's negligent driving. The impact was moderate and caused no external physical injury to Page, but it reactivated myalgic encephalomyelitis (chronic fatigue syndrome), a condition he had previously brought under control, into a severe and permanently disabling state.",
+              "judgmentExtract": "The majority held that once a claimant is a primary victim — within the range of foreseeable physical injury — the ordinary test of reasonable foreseeability of some kind of injury applies, without a separate requirement that psychiatric harm, or the particular illness suffered, be independently foreseeable.",
+              "significance": "Page v Smith draws the sharpest possible line between primary and secondary victims: primary victims are governed by ordinary foreseeability of physical injury; secondary victims face the full Alcock apparatus. Which side of that line a claimant falls on is very often the whole case."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-03-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A police officer helped carry the injured at the scene of a disaster caused by a third party's negligence, but was never herself in any physical danger. How confident are you that White treats her as a primary victim purely because of her role?",
+          "sliderLabels": [
+            "Definitely not a primary victim on role alone",
+            "Definitely a primary victim on role alone"
+          ],
+          "correctPosition": "not a primary victim",
+          "explanation": "White held that being a rescuer, or an employee of the negligent party, does not itself confer primary victim status. She would need to show she was actually or reasonably believed herself to be in physical danger, or else satisfy the full Alcock control mechanisms as a secondary victim."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Why a hospital ward isn't a motorway pile-up",
+        "voice": "analytical — builds the argument for why the framework strains and sometimes breaks",
+        "body": [
+          "Every case so far in this lesson shares a structure: something goes wrong suddenly, visibly, and externally — a stadium crush, a car collision — and a witness reacts to it. Alcock's whole architecture assumes that shape: a discrete, shocking 'event', with a 'before' and an 'after' that a bystander can be proximate to in time and space.",
+          "Clinical negligence rarely has that shape at all. Suppose a doctor negligently fails to diagnose a condition. The negligence itself is invisible — a decision not made, a test not ordered — and it may be months or years before the consequences become visible to anyone. When a family member eventually witnesses the patient's collapse, or death, what exactly are they proximate to? The original negligence happened long before, off-stage, and was never witnessed by anyone. What they actually witnessed was an outcome of an illness, not an 'accident' in the Alcock sense at all.",
+          "For years this produced genuinely inconsistent lower-court results. Some judges were willing to treat the moment a relative witnessed a sudden, horrifying deterioration — a collapse, a fatal event — as itself the qualifying 'event' for Alcock purposes, effectively allowing the clock to restart at the moment harm became visible, long after the negligent act or omission that caused it. Other judges resisted this, on the basis that it stretches 'event' well past anything Alcock had in mind, and turns any progressively-revealed medical consequence into a fresh accident each time it becomes apparent to someone.",
+          "This is precisely the kind of doctrinal seam that ends up in the Supreme Court — because it isn't a detail, it's a fork in how an entire category of claims is decided."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Accident-based framework vs the medical negligence problem",
+            "description": "Why Alcock's structure does not map cleanly onto claims arising from earlier clinical negligence.",
+            "nodes": [
+              {
+                "id": "accident",
+                "label": "Classic Alcock case: sudden external event (crash, collision, structural failure)"
+              },
+              {
+                "id": "witness",
+                "label": "Claimant is proximate in time/space, perceives it with own senses"
+              },
+              {
+                "id": "medneg",
+                "label": "Clinical negligence case: the 'wrong' is an earlier decision or omission, invisible at the time"
+              },
+              {
+                "id": "gap",
+                "label": "Consequences become visible only later — sometimes much later — as illness or death"
+              },
+              {
+                "id": "question",
+                "label": "Is the later visible collapse itself an 'event' the claimant can be proximate to?"
+              }
+            ],
+            "edges": [
+              {
+                "from": "accident",
+                "to": "witness",
+                "label": "fits the framework"
+              },
+              {
+                "from": "medneg",
+                "to": "gap",
+                "label": "negligence precedes harm by months or years"
+              },
+              {
+                "from": "gap",
+                "to": "question",
+                "label": "the unresolved question"
+              }
+            ],
+            "textAlternative": "A classic Alcock case involves a sudden external event that a claimant witnesses in real time. A clinical negligence case instead involves an earlier, invisible act or omission whose consequences only become visible much later, sometimes as a sudden collapse or death. The unresolved question that produced years of inconsistent case law was whether that later, visible moment could itself count as the qualifying 'event' for a secondary victim claim."
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because a relative witnessed a genuinely sudden and shocking death, this must satisfy Alcock in the same way witnessing a car crash would.",
+            "whyItsWrong": "The shock of what is witnessed is not the issue — the issue is what caused it. Alcock's control mechanisms are built around proximity to the defendant's negligent act, not merely to a distressing outcome of it. Witnessing a sudden death caused by an illness that earlier negligence failed to catch is proximity to the illness, not to the negligence."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-03-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario does the claimant's proximity most clearly match the classic Alcock 'accident' structure, rather than the medical negligence problem?",
+          "scenarioA": "A woman watches her husband collapse and die at home from a heart condition that his GP negligently failed to investigate fourteen months earlier.",
+          "scenarioB": "A woman watches her husband struck and seriously injured by a car that mounted the pavement outside their house, moments after it happened.",
+          "correctScenario": "B",
+          "explanation": "B is a sudden external event she witnesses at the time it happens — the classic Alcock shape. A involves an earlier, invisible act of negligence (the missed diagnosis) with consequences that only became visible over a year later; the thing she witnessed is the illness running its course, not the negligence itself."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Paul v Royal Wolverhampton NHS Trust: the Supreme Court closes the gap",
+        "voice": "current-affairs — direct address, presenting the rule as live and consequential rather than settled history",
+        "body": [
+          "In January 2024 the Supreme Court resolved exactly the fork the previous part describes — and it did so decisively, not by splitting the difference. Paul v Royal Wolverhampton NHS Trust concerned a man who suffered a fatal heart attack in the street, in front of two of his young daughters, more than a year after a hospital had allegedly been negligent in failing to diagnose the coronary artery disease that caused it. The daughters developed psychiatric illness from witnessing their father's death and brought claims as secondary victims.",
+          "The Supreme Court held that secondary victims generally cannot recover for psychiatric harm arising from witnessing the consequences of earlier clinical negligence. The reasoning is exactly the structural point from Part 4, now stated as binding law: a doctor's duty is to the patient, and is a duty to exercise reasonable care in diagnosis and treatment — it is not a duty to protect third parties from the shock of witnessing, at some later point, an illness the doctor failed to prevent or catch in time. The 'event' that Alcock's control mechanisms were built around is a sudden external accident; a negligently caused illness manifesting itself, however suddenly and however distressingly, is not that kind of event.",
+          "It matters that this rule applies whatever the manner of the subsequent injury or death — a slow decline witnessed over weeks would fail just as clearly as a sudden street collapse. What the Court drew the line at was the underlying cause: consequences of earlier clinical negligence are categorically different from a contemporaneous accident, and no amount of proximity in time and space to the later event changes that.",
+          "For a student, the practical upshot is blunt: if a problem question involves a claimant witnessing the effects of an earlier missed diagnosis, delayed treatment, or medical error — however dramatic the moment they witnessed — the secondary victim claim now fails as a matter of law, not merely as a matter of difficult fact-finding on proximity. Any pre-2024 source suggesting otherwise is out of date."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Paul v Royal Wolverhampton NHS Trust",
+            "citation": "[2024] UKSC 1",
+            "court": "Supreme Court",
+            "year": 2024,
+            "factsShort": "A man suffered a fatal heart attack in front of his daughters over a year after a hospital allegedly failed to diagnose the heart condition that caused it; the daughters claimed for the psychiatric harm of witnessing his death.",
+            "ratioShort": "Secondary victims cannot generally recover for psychiatric harm caused by witnessing the consequences of earlier clinical negligence, because that is not the kind of sudden external 'accident' Alcock's framework addresses.",
+            "expanded": {
+              "facts": "The claimant's father had attended hospital with symptoms later said to indicate coronary artery disease. The hospital allegedly negligently failed to diagnose and treat the condition. Over a year later, he suffered a fatal heart attack in the street in the presence of his daughters, who witnessed his collapse and death and subsequently developed recognised psychiatric illness.",
+              "judgmentExtract": "The Supreme Court held that a doctor's duty of care is owed to the patient, directed at their diagnosis and treatment, and does not extend to protecting third parties from psychiatric harm caused by later witnessing the consequences of that negligence. The Alcock control mechanisms presuppose an accident — a discrete, external, shocking event — and the gradual or eventual manifestation of a medical condition that earlier negligence failed to prevent does not qualify as such an event, however sudden its final stage appears to the witness.",
+              "significance": "Paul is now the leading and most recent authority on this whole sub-area. It resolves years of inconsistent first-instance and Court of Appeal decisions decisively against secondary victim recovery in the clinical negligence context, and should be treated as the current, binding statement of the law rather than one side of a live debate."
+            }
+          },
+          {
+            "type": "timeline",
+            "title": "The law's development, 1992 to 2024",
+            "events": [
+              {
+                "label": "Alcock v Chief Constable of South Yorkshire Police",
+                "description": "Establishes the three control mechanisms for secondary victims (1992)"
+              },
+              {
+                "label": "Page v Smith",
+                "description": "Confirms primary victims need only show physical injury generally was foreseeable (1996)"
+              },
+              {
+                "label": "White v Chief Constable of South Yorkshire Police",
+                "description": "Rescuers and employees are not automatically primary victims (1999)"
+              },
+              {
+                "label": "Paul v Royal Wolverhampton NHS Trust",
+                "description": "Secondary victims cannot recover for psychiatric harm from witnessing the consequences of prior clinical negligence (2024)"
+              }
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-03-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Which statement best captures what Paul v Royal Wolverhampton NHS Trust actually decided?",
+          "options": [
+            "Secondary victims can never recover psychiatric harm damages under any circumstances",
+            "Secondary victims cannot generally recover for psychiatric harm from witnessing the consequences of earlier clinical negligence, because this is not the kind of sudden external accident Alcock addresses",
+            "Paul overruled Alcock and replaced the three control mechanisms with a single foreseeability test"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "Paul doesn't abolish secondary victim recovery generally, nor does it touch the Alcock control mechanisms for ordinary accident cases — it addresses one specific category, clinical negligence, and holds that category structurally falls outside the accident-based framework altogether."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-03-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the three Alcock control mechanisms a secondary victim must satisfy.",
+      "acceptableAnswers": [
+        "close tie of love and affection, proximity in time and space, perception through own unaided senses"
+      ],
+      "modelAnswer": "A close tie of love and affection with the person endangered; proximity in time and space to the event or its immediate aftermath; and perception of the event through the claimant's own unaided senses."
+    },
+    {
+      "itemId": "tort-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Is a close tie of love and affection presumed, or must it always be proved, for a claimant's spouse?",
+      "options": [
+        "Presumed",
+        "Must always be proved with evidence"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following would NOT satisfy the 'own unaided senses' requirement in Alcock?",
+      "options": [
+        "Seeing the event happen in person",
+        "Hearing the event happen from close by",
+        "Watching a live television broadcast of the event where individuals could not be identified",
+        "Arriving moments later and seeing the immediate aftermath in person"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "Alcock specifically rejected television broadcast as satisfying this requirement on facts where individual victims were not identifiable — the requirement is about direct sensory perception of the event or its immediate aftermath, not indirect or mediated exposure."
+    },
+    {
+      "itemId": "tort-03-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order these cases by the year they were decided.",
+      "items": [
+        "Alcock v Chief Constable of South Yorkshire Police",
+        "Page v Smith",
+        "White v Chief Constable of South Yorkshire Police",
+        "Paul v Royal Wolverhampton NHS Trust"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "tort-03-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage summarising Paul, highlight the sentence that states the ratio.",
+      "passage": "The claimants' father died of a heart attack in their presence, over a year after an earlier alleged failure to diagnose his condition. A doctor's duty of care is owed to the patient and concerns diagnosis and treatment. That duty does not extend to protecting third parties from psychiatric harm caused by later witnessing the consequences of that negligence, because such consequences are not the kind of sudden external accident the Alcock framework addresses.",
+      "ratioSentence": "That duty does not extend to protecting third parties from psychiatric harm caused by later witnessing the consequences of that negligence, because such consequences are not the kind of sudden external accident the Alcock framework addresses."
+    },
+    {
+      "itemId": "tort-03-test-06",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A passenger is thrown across a train carriage during a derailment caused by the operator's negligence, but suffers only psychiatric injury, no physical harm. How confident are you she counts as a primary victim under Page v Smith?",
+      "sliderLabels": [
+        "Definitely not a primary victim",
+        "Definitely a primary victim"
+      ],
+      "correctPosition": "primary victim",
+      "explanation": "She was within the zone of physical danger during the derailment, so she is a primary victim under Page v Smith — she need only show physical injury of some kind was foreseeable, and need not show psychiatric injury specifically was foreseeable."
+    },
+    {
+      "itemId": "tort-03-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A woman's brother is badly injured in a factory explosion caused by the employer's negligence. She was not present, but rushed to the hospital within the hour and saw him in the emergency department, still covered in dust and visibly injured. Does she satisfy the proximity requirement?",
+      "options": [
+        "Yes — arriving at the immediate aftermath, while the scene and the victim's condition were still fresh, can satisfy proximity",
+        "No — she must have witnessed the explosion itself to satisfy proximity",
+        "No — proximity is only satisfied for events witnessed within the same building"
+      ],
+      "correctIndex": 0,
+      "explanation": "Alcock recognises the 'immediate aftermath' as capable of satisfying the time-and-space requirement, not only the event itself — arriving within the hour while her brother's condition is still as it was at the scene is a strong candidate for this, subject to the close-tie and own-senses requirements also being met."
+    },
+    {
+      "itemId": "tort-03-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A close friend (not a relative) witnesses a workplace accident that seriously injures a colleague she has known for twenty years and considers a second sister. She develops PTSD. What must she additionally show that a parent or spouse would not?",
+      "options": [
+        "Nothing — close friends are treated identically to spouses and parents",
+        "That her relationship with the injured person amounted, on the facts, to a close tie of love and affection",
+        "That she suffered a recognised psychiatric illness — friends face a stricter medical threshold"
+      ],
+      "correctIndex": 1,
+      "explanation": "Unlike parent-child and spousal relationships, a close tie of love and affection is not presumed for friendships, however deep — it must be proved on the evidence, though it plainly can be where the facts support it."
+    },
+    {
+      "itemId": "tort-03-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that is most likely to defeat the secondary victim claim.",
+      "scenarioText": "A man's wife is diagnosed, correctly, with a fast-moving infection in hospital. The hospital negligently delays starting antibiotics by six hours. She deteriorates and dies two days later, with her husband present throughout and at the moment of death.",
+      "tappableSpans": [
+        "diagnosed, correctly, with a fast-moving infection",
+        "negligently delays starting antibiotics",
+        "deteriorates and dies two days later",
+        "husband present throughout and at the moment of death"
+      ],
+      "correctSpan": "negligently delays starting antibiotics",
+      "feedbackCorrect": "This is the underlying clinical negligence — under Paul, what the husband witnessed (her decline and death) is the consequence of that negligence, not a sudden external accident, so his claim as a secondary victim generally fails however present and however distressed he was.",
+      "feedbackIncorrect": "Look for the act of negligence itself, rather than the presence or timing of the witness. The fact that defeats the claim is the underlying clinical negligence — Paul treats what follows from it as consequences, not an accident, however closely the husband witnessed them."
+    },
+    {
+      "itemId": "tort-03-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is more likely to succeed as a secondary victim claim after Paul?",
+      "scenarioA": "A mother watches, from the pavement, as her son is struck by a speeding, negligently driven car moments after it mounts the kerb.",
+      "scenarioB": "A mother watches her son collapse and die from an aneurysm that a GP negligently failed to investigate eight months earlier, despite presenting symptoms.",
+      "correctScenario": "A",
+      "explanation": "A is a sudden external accident she witnesses at the time — the classic Alcock structure. B is exactly the Paul scenario: the consequences of earlier clinical negligence, which is now settled as falling outside the framework regardless of how sudden or distressing the final event appears."
+    },
+    {
+      "itemId": "tort-03-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which claimant is more clearly a primary, rather than secondary, victim?",
+      "scenarioA": "A driver who was in a collision himself, and suffers psychiatric harm even though he sustained no visible physical injury.",
+      "scenarioB": "A driver's passenger's partner, who was not in the car, but develops psychiatric harm after being telephoned with news of the crash.",
+      "correctScenario": "A",
+      "explanation": "A was within the zone of physical danger created by the collision, making him a primary victim under Page v Smith regardless of whether he was visibly hurt. B was never in danger and did not perceive the event with her own senses — she would need to satisfy the full Alcock control mechanisms, and being told by phone fails the third of them outright."
+    },
+    {
+      "itemId": "tort-03-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Amir's father is admitted to hospital with chest pain. The hospital negligently discharges him without proper investigation. Nine months later, Amir is present when his father suffers a fatal cardiac arrest at home. Amir develops a diagnosed anxiety disorder as a result. Analyse whether Amir can recover for psychiatric harm as a secondary victim.",
+      "factsToOrder": [
+        "The hospital negligently discharged the father without proper investigation",
+        "Nine months pass between the negligence and the cardiac arrest",
+        "Amir is present and witnesses the cardiac arrest",
+        "Amir develops a diagnosed anxiety disorder"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Amir, as a secondary victim, can recover for psychiatric harm caused by witnessing his father's cardiac arrest, where that arrest resulted from earlier clinical negligence.",
+        "rule": "Secondary victims must satisfy the Alcock control mechanisms, but Paul v Royal Wolverhampton NHS Trust holds that a claim cannot succeed at all where the psychiatric harm arises from witnessing the consequences of earlier clinical negligence, because this is not the kind of sudden external accident the Alcock framework addresses.",
+        "application": "Amir has a recognised psychiatric illness and, on ordinary Alcock reasoning, might well satisfy the close-tie, proximity and own-senses requirements — he witnessed his father's death directly, as his son. But the underlying cause is the hospital's earlier negligent discharge, and what Amir witnessed nine months later is the consequence of that clinical negligence playing out, not a discrete external accident.",
+        "conclusion": "Following Paul, Amir's claim fails as a matter of law, regardless of how the Alcock control mechanisms would otherwise have been applied — the clinical negligence context takes the claim outside the framework altogether."
+      }
+    },
+    {
+      "itemId": "tort-03-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Why did White v Chief Constable of South Yorkshire Police reject the police officers' claim to primary victim status?",
+      "options": [
+        "Because police officers can never recover for psychiatric harm sustained at work",
+        "Because being a rescuer or an employee does not by itself place someone within the zone of physical danger",
+        "Because the officers had not suffered a recognised psychiatric illness"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats this as a blanket bar on police claims, but White is narrower and more precise: role alone (rescuer, employee) is not a shortcut to primary victim status — actual or reasonably apprehended physical danger to the claimant is still required, or the full secondary victim tests must be met."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson is treating a distressing or sudden-seeming event as automatically 'Alcock-shaped'. Always ask what actually caused the harm the claimant witnessed — an external accident, or the working-out of a condition that earlier negligence failed to catch. After Paul, that distinction decides the case before the three control mechanisms are even reached.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.psychiatric-harm"
+  }
+}

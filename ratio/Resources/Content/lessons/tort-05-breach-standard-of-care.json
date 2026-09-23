@@ -1,0 +1,388 @@
+{
+  "lessonId": "tort-05",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 5,
+  "topicId": "tort.negligence.breach",
+  "title": "Breach: the standard of care",
+  "subtitle": "The reasonable person, and how the standard is set",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the objective standard of the reasonable person and explain why it does not lower for beginners",
+    "Explain how the standard adjusts for children and for the nature of the activity undertaken",
+    "Apply the four risk factors courts weigh when setting the standard of care to a new fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Nettleship v Weston [1971] 2 QB 691", "role": "A learner driver is judged against the standard of a competent driver, not a competent learner" },
+    { "citation": "Mullin v Richards [1998] 1 WLR 1304", "role": "A child defendant is judged against a reasonably careful child of the same age" },
+    { "citation": "Bolton v Stone [1951] AC 850", "role": "Low likelihood of harm can mean no breach even where the harm, if it occurs, is serious" },
+    { "citation": "Paris v Stepney BC [1951] AC 367", "role": "The seriousness of harm to a particular claimant can raise the standard owed to them" },
+    { "citation": "Compensation Act 2006, s 1", "role": "Statutory steer against defensive over-precaution that would discourage socially valuable activity" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can define the reasonable person test in one sentence and think that's the hard part. It isn't. Where the profile shows knowledge outpacing application, this note appears: 'You can state the test — this lesson is about setting the dial correctly on new facts.'",
+    "profileHooks": {
+      "weakApplication": "You've defined the objective standard correctly before, more than once. This lesson leans hard into application: expect scenarios that make you weigh risk factors against each other, not recite a definition.",
+      "weakKnowledge": "Slow down through Parts 1 and 2 before the scenarios start. If you can't yet say why Nettleship and Mullin point in different directions, the rest of the lesson will be guesswork rather than reasoning."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two learner drivers, first lesson, same mistake: they mount the kerb and hit a lamppost. One is sued by her instructor, who's injured in the crash. The court doesn't ask 'was that a good first lesson?' It asks something colder — and the answer surprises almost everyone who hears it for the first time.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The common-law standard of care is settled; the Compensation Act 2006, s 1 remains in force as a statutory gloss on how courts weigh precaution against social utility."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The reasonable person doesn't grade on effort",
+        "voice": "conversational — talks the reader through their own likely assumption, then dismantles it",
+        "body": [
+          "If you'd never driven a car before today and you crashed on your very first attempt, you'd probably think the law should go easy on you. You tried your best. You're new. Surely that counts for something?",
+          "It doesn't — not in negligence, and not even a little. The standard of care in tort is objective: it asks what a reasonably competent person, performing that particular task, would have done. It does not ask what a reasonably competent beginner would have done. There is no beginner's discount.",
+          "This is the single most counter-intuitive idea in the whole of breach, and it's worth sitting with before anything else in this lesson makes sense. The law is not interested in your personal capacity, your effort, or your good intentions. It measures your conduct against the task, not against you."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Objective standard",
+            "definition": "The standard of care owed in negligence is fixed by reference to the reasonably competent person undertaking the activity in question — not by reference to the individual defendant's own experience, skill, or intentions."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A first-time babysitter, never having cared for a child before, is judged in negligence against what standard?",
+          "options": ["A reasonably competent babysitter, regardless of her own experience", "A reasonably competent first-time babysitter"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. The task sets the standard, not the defendant's own level of experience at performing it.",
+          "feedbackIncorrect": "Not quite — there is no separate, lower standard for beginners. The law asks what the task demands, not how new the defendant was to it."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Nettleship v Weston: the learner driver problem",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Mrs Weston was taking her third driving lesson. Mr Nettleship, a family friend, agreed to sit beside her and give instruction — checking first, sensibly, that his own insurance covered him as a passenger. During the lesson, Weston lost control on a bend, and Nettleship broke his knee.",
+          "Weston's defence amounted to this: judge me as what I actually was that day — a learner, doing her best, under supervision. The Court of Appeal refused. Lord Denning MR held that the standard expected of a driver is the same for a learner as for anyone else on the road: that of a reasonably competent and experienced driver. The public using the roads, he reasoned, cannot be expected to know or discount for who is behind any given wheel.",
+          "Nettleship is often taught as harsh, and it is — Weston lost despite doing exactly what a beginner does. But the reasoning has a logic worth taking seriously: the standard protects the person injured, not the person performing the task. Claimants don't choose who breaches a duty towards them, so the standard can't bend to accommodate the defendant's personal shortcomings."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Nettleship v Weston",
+            "citation": "[1971] 2 QB 691",
+            "court": "Court of Appeal",
+            "year": 1971,
+            "factsShort": "A learner driver, on her third lesson, injured the friend giving her instruction when she lost control of the car.",
+            "ratioShort": "A learner driver is judged against the standard of a reasonably competent and experienced driver — the standard does not lower to accommodate inexperience.",
+            "expanded": {
+              "facts": "Mrs Weston, a learner driver, asked a family friend, Mr Nettleship, to accompany her and give instruction. He checked his insurance covered him as a passenger before agreeing. During the lesson, Weston approached a bend, panicked, and failed to straighten the wheel in time; the car mounted the kerb and struck a lamppost, fracturing Nettleship's knee.",
+              "judgmentExtract": "Lord Denning MR held that 'the learner driver may be doing her best, but her best is not good enough... the standard of care required of her is the same as of any other driver.' The court rejected the argument that the standard should be individualised to reflect the defendant's stage of training.",
+              "significance": "Nettleship is the leading authority for the proposition that the standard of care is set by the activity, not the individual actor's competence at it. It is regularly contrasted with the child defendant cases, which do adjust the standard — making clear that the adjustment for children is a narrow, deliberate exception rather than a general rule about inexperience."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-05-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events from Nettleship v Weston in order.",
+          "items": [
+            "Nettleship checks his insurance covers him as a passenger",
+            "Weston takes her third driving lesson with Nettleship instructing",
+            "Weston loses control approaching a bend",
+            "The car mounts the kerb and Nettleship is injured"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence — and note that Nettleship's careful preparation (checking his insurance) didn't change the standard Weston was held to; his own foresight isn't the legal issue.",
+          "feedbackIncorrect": "Check the order again — the insurance check happens before the lesson begins, and the loss of control happens before the collision itself."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The one exception that proves the rule: children",
+        "voice": "argumentative — anticipates the objection and answers it directly",
+        "body": [
+          "If the standard never bends for inexperience, why does it bend for children? This looks, at first glance, like a contradiction of everything Part 2 just established. It isn't — but understanding why requires being precise about what the exception actually is.",
+          "In Mullin v Richards, two fifteen-year-old schoolgirls were fencing playfully with plastic rulers. One ruler snapped, and a fragment blinded the claimant in one eye. The Court of Appeal held that a child defendant is judged not against the adult reasonable person, and not against a reasonable child in the abstract, but against a reasonably careful child of the same age as the defendant.",
+          "The distinction from Nettleship is this: Nettleship was performing an adult activity — driving — that carries a fixed, activity-defined standard regardless of who performs it. Mullin was engaged in ordinary childhood horseplay, where age itself is part of what makes the conduct reasonable or not. The exception is narrow: it applies to a child's foreseeability of risk in age-appropriate conduct, not to children who undertake genuinely adult activities, where the Nettleship logic still applies in full."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Mullin v Richards",
+            "citation": "[1998] 1 WLR 1304",
+            "court": "Court of Appeal",
+            "year": 1998,
+            "factsShort": "Two 15-year-old schoolgirls fenced with plastic rulers as a game; one snapped and a fragment blinded the claimant in one eye.",
+            "ratioShort": "A child defendant's conduct is judged against the standard of a reasonably careful child of the same age, not an adult standard.",
+            "expanded": {
+              "facts": "Heidi Mullin and Teresa Richards, both fifteen, were play-fencing with plastic rulers during a lesson, a common and unremarkable form of horseplay at their school. One ruler snapped on impact and a shard flew into Mullin's eye, causing blindness in that eye.",
+              "judgmentExtract": "The Court of Appeal held that the question was whether a reasonably careful and prudent child of the same age would have foreseen a risk of injury from the game. On the facts, the risk was not one this ordinary, unremarkable game would have made apparent even to a careful fifteen-year-old — the injury was not reasonably foreseeable to a child of that age engaged in that activity.",
+              "significance": "Mullin fixes the child standard as age-referenced rather than adult-referenced. It is frequently paired with Nettleship on exams precisely because the two cases look inconsistent until the activity/actor distinction is drawn clearly — an adult undertaking an adult activity gets no discount; a child engaged in ordinary child conduct is judged by a child's foresight."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often extend Mullin to say children always get a lower standard of care, including when performing adult activities like driving a go-kart on a public road or operating machinery.",
+            "whyItsWrong": "The Mullin adjustment is tied to the character of the activity, not simply the defendant's age. A child performing an inherently adult or dangerous activity is generally held to the adult standard for that activity, consistent with Nettleship — the exception exists for ordinary child conduct, not as a blanket discount for anyone under eighteen."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-05-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is the Mullin child standard more clearly the right one to apply?",
+          "scenarioA": "A 14-year-old, larking about at breaktime, throws a snowball that unexpectedly injures a classmate's eye.",
+          "scenarioB": "A 14-year-old operating a ride-on lawnmower on a public path injures a pedestrian.",
+          "correctScenario": "A",
+          "explanation": "A is ordinary child horseplay — Mullin's age-referenced standard applies. B involves operating machinery on a public path, an activity where Nettleship's activity-defined standard is the better analogy, regardless of the operator's age."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Setting the dial: the four risk factors",
+        "voice": "structural — a reference part students will return to before exam scenarios",
+        "body": [
+          "Once you know whose standard applies, the next question is how demanding that standard is on the facts. Courts don't apply a single fixed level of care to every situation — they weigh a defendant's conduct against a bundle of factors that, together, tell you how much precaution was reasonable to expect.",
+          "Two cases, decided in the same year by the House of Lords, sit at opposite ends of this balancing exercise and are best learned as a pair. Bolton v Stone shows the standard being satisfied despite a real risk materialising; Paris v Stepney BC shows the standard rising because of who, specifically, the claimant was.",
+          "Treat the four factors below as a checklist for any breach scenario: likelihood of harm, seriousness of harm, cost and practicability of precautions, and the social utility of what the defendant was doing. An exam scenario will usually load the facts to make two or three of these pull in different directions — your job is to show you can weigh them, not just name them."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The four risk factors in setting the standard",
+            "points": [
+              "Likelihood of harm — how probable was injury, given what the defendant knew or should have known? (Bolton v Stone)",
+              "Seriousness of harm — how severe would the harm be if it occurred, including to a particular claimant's known vulnerability? (Paris v Stepney BC)",
+              "Cost and practicability of precautions — how burdensome, in money, time, or disruption, would eliminating the risk have been?",
+              "Social utility of the defendant's conduct — does the value of the activity itself justify accepting a greater residual risk? (echoed in Compensation Act 2006, s 1)"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Bolton v Stone",
+            "citation": "[1951] AC 850",
+            "court": "House of Lords",
+            "year": 1951,
+            "factsShort": "A cricket ball, hit out of a ground protected by a 17-foot fence, struck a passer-by on a quiet road. Such hits had happened only a handful of times in decades.",
+            "ratioShort": "Where the likelihood of harm is very small, a defendant is not in breach for failing to take further precautions against it, even though the harm that eventuated was real.",
+            "expanded": {
+              "facts": "The cricket ground had been used for decades; a ball had been hit out onto the adjoining road only a handful of times, and no one had previously been hurt. Miss Stone was struck by a ball while standing on the road outside her house.",
+              "judgmentExtract": "The House of Lords held that the risk was so small that a reasonable committee, taking reasonable precautions, was not required to guard against it further. The test is not whether harm was foreseeable at all, but whether a reasonable person would have taken the additional precaution given how remote the risk was.",
+              "significance": "Bolton is the leading case for the principle that a low probability of harm can mean no breach, even where the eventual harm is real and even where some risk was clearly foreseeable in the abstract. It is the counterweight to Paris, and the two are almost always taught, and tested, together."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-05-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "In Paris v Stepney BC, a one-eyed mechanic was not given safety goggles for a task that carried a small risk of eye injury; a metal splinter blinded him completely. Why did the council breach its duty here, when Bolton v Stone found no breach on comparable low-probability facts?",
+          "options": ["Because the seriousness of harm to this particular claimant — total blindness for a man with only one good eye — was far greater than the seriousness of harm to an ordinary two-eyed worker, raising what precautions were reasonable", "Because employers always owe a higher standard of care than cricket clubs", "Because the council could not show the risk was low probability at all"],
+          "correctIndex": 0,
+          "explanation": "Paris turns on the seriousness factor, not likelihood: the probability of a splinter injury may have been comparably low, but the consequence for this claimant — total blindness rather than a minor eye injury — was catastrophic and known to the employer, which raised the standard of precaution reasonably expected."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Social utility and the anti-defensiveness steer",
+        "voice": "direct — sets up the statutory point the tests will probe",
+        "body": [
+          "The fourth risk factor, social utility, asks whether the value of what the defendant was doing justifies tolerating a higher residual risk. A fire engine breaking the speed limit to reach a blaze, or a school running a rugby match despite the inherent risk of injury, are not held to the same standard as ordinary activity carrying no comparable benefit — the utility of the conduct is weighed in the balance.",
+          "Parliament reinforced this judicial instinct with the Compensation Act 2006, s 1. It provides that, in considering a claim in negligence, a court may have regard to whether a requirement to take steps to meet a standard of care might prevent a desirable activity from being undertaken at all, or might discourage people from undertaking functions in connection with such an activity.",
+          "Section 1 doesn't create a new legal test or lower any existing standard — it confirms an approach the courts already took. Its real target was a perceived 'compensation culture', where fear of liability was said to be pushing schools, councils, and volunteers to cancel valuable activities defensively rather than run them with sensible, proportionate precautions. Read it as a steer against over-precaution, not as a shield that excuses genuinely careless conduct."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Compensation Act 2006, s 1",
+            "text": "A court considering a claim in negligence or breach of statutory duty may, in determining whether the defendant should have taken particular steps to meet a standard of care..., have regard to whether a requirement to take those steps might— (a) prevent a desirable activity from being undertaken at all, to a particular extent or in a particular way, or (b) discourage persons from undertaking functions in connection with a desirable activity.",
+            "elements": ["Applies to negligence and breach of statutory duty claims", "Court 'may have regard to' — discretionary, not mandatory", "Considers whether requiring precautions would deter a desirable activity altogether", "Or would discourage people from taking on functions connected with that activity"]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-05-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that Compensation Act 2006, s 1 creates a new, lower legal standard of care for socially valuable activities?",
+          "sliderLabels": ["Definitely creates a new lower standard", "Definitely just confirms existing common-law weighing"],
+          "correctPosition": "confirms",
+          "explanation": "Section 1 does not lower the standard of care or create a new test. It confirms, as a factor a court may weigh, that requiring excessive precaution could deter valuable activity — an approach the common law, including Bolton v Stone, already reflected before the Act was passed."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-05-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the general standard of care applied in the tort of negligence.",
+      "acceptableAnswers": ["the reasonable person standard", "objective standard of a reasonably competent person", "reasonable person test"],
+      "modelAnswer": "The objective standard of the reasonably competent person performing the activity in question, without regard to the individual defendant's own level of skill or experience."
+    },
+    {
+      "itemId": "tort-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Does the standard of care lower for a defendant performing a task for the first time?",
+      "options": ["No — the standard is set by the activity, not the defendant's experience", "Yes — first-time performance of a task is judged more leniently"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following correctly states the standard applied to a child defendant under Mullin v Richards?",
+      "options": ["A reasonably careful child of the same age as the defendant", "The general adult reasonable person standard, with no adjustment", "A reasonably careful child of any age, applied uniformly"],
+      "correctIndex": 0,
+      "trapExplanation": "The Mullin standard is age-specific to the defendant, not a generic 'child standard' applied uniformly regardless of the defendant's actual age — and it does not simply collapse into the adult standard either."
+    },
+    {
+      "itemId": "tort-05-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In Bolton v Stone, did the House of Lords find the cricket club in breach of duty?",
+      "options": ["No — the likelihood of harm was so low that further precautions were not required", "Yes — because a passer-by was in fact struck and injured"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-05-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the reasoning steps a court follows in setting the standard of care in a breach scenario.",
+      "items": ["Identify the activity the defendant was undertaking", "Determine whether any recognised adjustment to the standard applies (e.g. child defendant)", "Weigh the likelihood and seriousness of harm against the cost of precautions and the activity's social utility", "Conclude whether the defendant's conduct fell below the standard set"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "tort-05-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under Compensation Act 2006, s 1, what may a court have regard to when deciding whether particular precautions should have been taken?",
+      "options": ["Whether requiring those precautions might prevent a desirable activity being undertaken, or discourage people from taking on functions connected with it", "Whether the defendant held insurance covering the activity", "Whether the claimant contributed to their own injury"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-05-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Nettleship v Weston, highlight the sentence stating the ratio.",
+      "passage": "The learner driver may be doing her best, but her best is not good enough. She must attain the same standard of care as a driver of skill, experience and care who is sound in wind and limb. The high standard is imposed for the sake of the injured party, not to be a burden on the driver.",
+      "ratioSentence": "She must attain the same standard of care as a driver of skill, experience and care who is sound in wind and limb."
+    },
+    {
+      "itemId": "tort-05-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which pair of cases is correctly matched to the risk factor each principally illustrates?",
+      "scenarioA": "Bolton v Stone illustrates the likelihood-of-harm factor; Paris v Stepney BC illustrates the seriousness-of-harm factor",
+      "scenarioB": "Bolton v Stone illustrates the seriousness-of-harm factor; Paris v Stepney BC illustrates the likelihood-of-harm factor",
+      "correctScenario": "A",
+      "explanation": "Bolton turned on how improbable the harm was, despite a fence and years of incident-free play; Paris turned on how serious the consequence would be for this particular claimant, given his known one-eyed vulnerability."
+    },
+    {
+      "itemId": "tort-05-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A trainee electrician, three days into the job, wires a socket incorrectly, causing a fire. He argues he should be judged as a reasonably competent trainee, not a qualified electrician. Is this argument likely to succeed?",
+      "options": ["No — following Nettleship, he is judged against the standard of a reasonably competent electrician performing that task", "Yes — following Mullin v Richards, his inexperience lowers the standard", "Yes — because he was not yet qualified, no duty of care can arise at all"],
+      "correctIndex": 0,
+      "explanation": "This is a Nettleship scenario: an adult performing a skilled adult task is held to the standard the task demands, regardless of how new he is to it. Mullin's age-based adjustment has no application here."
+    },
+    {
+      "itemId": "tort-05-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A council removes hazard-warning signage from a popular but low-risk footpath after budget cuts, reasoning that installing more permanent barriers would cost far more than the risk of a fall justifies, and that closing the path entirely would deprive residents of a valued amenity. Which two risk factors is the council's reasoning most obviously drawing on?",
+      "options": ["Cost/practicability of precautions and social utility of the activity", "Likelihood of harm and duty of care existence", "Seriousness of harm and causation"],
+      "correctIndex": 0,
+      "explanation": "The council is weighing the expense of a fuller precaution against the benefit residents get from an open path — squarely the cost/practicability and social utility factors, the kind of reasoning s 1 of the 2006 Act was designed to validate where genuinely proportionate."
+    },
+    {
+      "itemId": "tort-05-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that is most relevant to raising the standard of precaution owed, applying Paris v Stepney BC reasoning.",
+      "scenarioText": "A factory issues standard safety glasses to all machine operators. It is aware that one operator, Dana, has only partial vision in her left eye following a childhood injury. Dana is later struck in the right eye by debris and loses her sight entirely.",
+      "tappableSpans": ["issues standard safety glasses to all machine operators", "aware that one operator, Dana, has only partial vision", "struck in the right eye by debris", "loses her sight entirely"],
+      "correctSpan": "aware that one operator, Dana, has only partial vision",
+      "feedbackCorrect": "Right. As in Paris, known individual vulnerability to a claimant raises the seriousness of harm that would follow, which can raise the standard of precaution reasonably owed to that specific person.",
+      "feedbackIncorrect": "Look for the fact about what the employer knew about this specific claimant, rather than what happened to her afterwards — Paris turns on known vulnerability raising the stakes of an otherwise ordinary risk."
+    },
+    {
+      "itemId": "tort-05-test-12",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario should be analysed under the Mullin v Richards child standard, rather than an activity-defined adult standard?",
+      "scenarioA": "A 13-year-old, playing tag in a school playground at lunchtime, shoves a classmate who falls and is hurt.",
+      "scenarioB": "A 13-year-old employed part-time to operate a till at a family shop scans an item incorrectly, overcharging a customer who suffers financial loss.",
+      "correctScenario": "A",
+      "explanation": "A is ordinary childhood play, where Mullin's age-referenced standard is the right frame. B, while unusual for a 13-year-old, concerns performing a defined task (however informally), closer to the Nettleship activity-based approach — though a claim here would also raise separate questions about capacity to be employed at all."
+    },
+    {
+      "itemId": "tort-05-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A voluntary community group runs a free, informal five-a-side football session in a park. A participant, David, is injured when he collides with a goalpost that has no padding. The organisers argue that padding all such posts across every session they run would be prohibitively expensive and might mean cancelling the sessions altogether, which many local families rely on. Analyse whether the organisers breached the standard of care owed to David.",
+      "factsToOrder": [
+        "The football session is free and informally organised by volunteers",
+        "The goalpost had no padding",
+        "David collided with the unpadded post and was injured",
+        "Padding all posts across every session would be expensive",
+        "Cancelling the sessions would remove a valued community activity"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the organisers fell below the standard of care owed to participants by not padding the goalposts.",
+        "rule": "The standard of care is set by weighing the likelihood and seriousness of harm against the cost and practicability of precautions and the social utility of the activity (Bolton v Stone; Paris v Stepney BC), a balance the courts may have regard to alongside Compensation Act 2006, s 1's steer against deterring desirable activities.",
+        "application": "Collisions with unpadded goalposts in informal five-a-side are a foreseeable but not especially likely risk, and while injury can be serious, it is not comparable to the catastrophic, known vulnerability in Paris. Against this sits the real cost of padding every post across every session and the genuine social value of a free, accessible community activity many families rely on — factors s 1 explicitly permits a court to weigh, provided the reasoning is genuine and proportionate rather than a pretext for carelessness.",
+        "conclusion": "On these facts the organisers are likely not in breach: the risk was foreseeable but modest, and the cost of eliminating it entirely is disproportionate to a valuable, low-cost community activity — though a court would still expect some reasonable, low-cost step, such as basic warning or session-day inspection, to have been considered."
+      }
+    },
+    {
+      "itemId": "tort-05-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A student argues that because Bolton v Stone found no breach despite real harm occurring, the reasonable person standard must require proof that harm was more likely than not before any duty of precaution arises. What is wrong with this argument?",
+      "options": ["Bolton does not set a 'more likely than not' threshold for precaution; it shows that a very low, though real, probability can be outweighed within the overall balance of factors, not that low probability alone defeats breach automatically", "Bolton was wrongly decided and has since been overruled", "Bolton only applies to claims involving sporting activities"],
+      "correctIndex": 0,
+      "trapExplanation": "Students often convert Bolton into a bright-line probability rule. It isn't one — likelihood is one factor among several, weighed together, and a differently balanced set of facts (as in Paris) can still produce breach even where probability of harm is comparably low."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's test items is treating 'the standard adjusts for children' as a general rule about inexperience, rather than the narrow age-referenced exception it is — and treating each risk factor in isolation instead of weighing them against each other on the facts given.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.breach"
+  }
+}

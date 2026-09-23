@@ -1,0 +1,412 @@
+{
+  "lessonId": "tort-04",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 4,
+  "topicId": "tort.negligence.economic-loss",
+  "title": "Pure economic loss and negligent misstatement",
+  "subtitle": "Why the cheque bounces but the claim usually doesn't get past the door",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 5
+  },
+  "objectives": [
+    "State the general exclusionary rule against recovery for pure economic loss in negligence, and distinguish it from economic loss that is consequential on physical damage",
+    "Explain the Hedley Byrne exception for negligent misstatement, built on assumption of responsibility and reasonable reliance",
+    "Apply the distinction between defective building/product claims and professional advice claims to a new fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Spartan Steel & Alloys Ltd v Martin & Co (Contractors) Ltd [1973] QB 27", "role": "Illustrates the line between recoverable consequential loss and irrecoverable pure economic loss" },
+    { "citation": "Hedley Byrne & Co Ltd v Heller & Partners Ltd [1964] AC 465", "role": "Founding authority for the negligent misstatement exception, based on assumption of responsibility" },
+    { "citation": "Murphy v Brentwood District Council [1991] 1 AC 398", "role": "Confirms that the cost of repairing a defective building or product is pure economic loss, generally irrecoverable in negligence" },
+    { "citation": "Customs and Excise Commissioners v Barclays Bank plc [2006] UKHL 28", "role": "Restates assumption of responsibility as an objective inquiry into what the defendant undertook" },
+    { "citation": "NRAM Ltd v Steel [2018] UKSC 13", "role": "Confirms the objective test applies strictly to the purpose for which a statement was actually given" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Pure economic loss is the area where students most often reach for 'but it was foreseeable' and get marked down for it — foreseeability was never the test here. Where the profile shows understanding trailing behind recall of the case names, this note appears: 'You know the cases. This lesson is about why the general rule exists at all, and where the one real exception actually starts and stops.'",
+    "profileHooks": {
+      "weakApplication": "The test pool below still leans into scenario recognition — expect to be handed a fact pattern and asked whether it's pure or consequential loss, and whether Hedley Byrne is even in play.",
+      "weakKnowledge": "Start with Parts 1 and 2 and don't skip ahead. Everything from Part 3 onward assumes you can state, without prompting, why pure economic loss is treated differently from physical damage in the first place."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A contractor's digger slices through a cable half a mile away, and a factory floor goes dark mid-shift. The melted metal in the furnace at that instant is ruined — obviously recoverable. The four batches that would have been poured before the power came back on are lost profit, nothing more — and the law, for reasons that will annoy you before they convince you, draws a hard line between the two."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The puzzle: why does it matter what kind of loss it is?",
+        "voice": "problem-first — opens with the puzzle before offering any resolution",
+        "body": [
+          "Negligence usually asks one question about the kind of harm suffered: was it foreseeable? For physical injury to a person, or physical damage to property, that's close to the whole test. Pure economic loss breaks that pattern entirely — foreseeability is necessary but nowhere near sufficient, and in most circumstances a defendant who negligently causes a claimant purely financial loss owes no duty of care at all, however foreseeable that loss was.",
+          "'Pure' economic loss means financial loss that is not consequential on any physical damage to the claimant's own person or property. If your car is damaged in a collision and you lose earnings while it's off the road, that lost income is consequential economic loss — flowing from physical damage to your property, and generally recoverable alongside the repair costs. If, instead, a road is negligently closed for repairs and your shop loses trade because customers can't get to it, with nothing of yours damaged at all, that lost trade is pure economic loss — and as a general rule, irrecoverable.",
+          "The distinction can look almost arbitrary from the claimant's side: the money is gone either way. But the law is drawing a line about how negligence liability should be structured, not measuring which claimant deserves sympathy more. Purely financial harm tends to ripple outward through a web of contracts and relationships — suppliers, customers, employees, competitors — in ways physical damage usually doesn't, and courts have been wary of a duty of care broad enough to reach every ripple."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Pure economic loss",
+            "definition": "Financial loss that does not flow from physical damage to the claimant's own person or property — as a general rule, not recoverable in the tort of negligence."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Consequential economic loss",
+            "definition": "Financial loss that flows from physical damage to the claimant's own person or property — recoverable in negligence alongside damages for that physical damage."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-04-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A delivery van is damaged in a collision caused by the defendant's negligence, and the owner loses a week's hire income while it's repaired. Is the lost hire income pure or consequential economic loss?",
+          "options": ["Consequential — it flows from physical damage to the claimant's own property", "Pure — any financial loss counts as pure economic loss"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Because the van itself was damaged, the lost income that follows from that damage is consequential, not pure — and is recoverable alongside the repair costs.",
+          "feedbackIncorrect": "Check what the loss flows from. 'Pure' economic loss specifically means loss with no physical damage to the claimant's own property behind it — here there plainly was damage, so the lost income riding on it is consequential."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Spartan Steel, line by line",
+        "voice": "forensic — walks through a single case slowly, category by category",
+        "body": [
+          "Spartan Steel & Alloys Ltd v Martin & Co is worth working through carefully because it contains, in one set of facts, both categories of loss side by side. The defendant's employees negligently damaged an electricity cable while digging, cutting power to the claimant's factory for around fourteen hours.",
+          "At the moment power was cut, the claimant had metal ('melt') actually in the furnace, mid-process. That melt was physically damaged by the loss of power and had to be sold at a reduced value — that's physical damage to the claimant's own property, and the loss on that particular melt, including the profit that would have been made on it, was recoverable as consequential loss flowing from the damage.",
+          "But the factory also lost the opportunity to process four further melts during the time power was out — no metal was ever put in the furnace for those batches, nothing of the claimant's was physically damaged, only an opportunity to earn profit was lost. The Court of Appeal held this further loss of profit was pure economic loss and irrecoverable, even though it arose from exactly the same negligent act as the loss that was recoverable.",
+          "Lord Denning's judgment is candid about why: not because the loss was unforeseeable — it obviously wasn't — but because of where the line has to be drawn as a matter of policy. Cutting one cable can affect an unknown number of businesses relying on that supply, for reasons ranging from lost production to spoiled stock to missed deadlines; a duty extending to all of that pure financial fallout risks liability out of all proportion to the negligence, and better sits with insurance and contractual risk allocation than with tort."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Spartan Steel & Alloys Ltd v Martin & Co (Contractors) Ltd",
+            "citation": "[1973] QB 27",
+            "court": "Court of Appeal",
+            "year": 1973,
+            "factsShort": "The defendant's contractors negligently cut a cable supplying the claimant's factory, cutting power for around fourteen hours and interrupting production.",
+            "ratioShort": "Loss on the melt physically damaged when power was cut, including profit on it, was recoverable as consequential loss; loss of profit on further melts never started was pure economic loss and irrecoverable.",
+            "expanded": {
+              "facts": "Contractors working for the defendant negligently damaged an electricity cable while excavating nearby, cutting power to the claimant's steel processing plant. Metal was in the furnace being processed ('melt') at the time and was damaged by the loss of power. The plant could not process further batches for the duration of the outage.",
+              "judgmentExtract": "The Court of Appeal (Lord Denning MR giving the leading judgment) drew a three-way distinction: physical damage to the melt in progress (recoverable); loss of profit on that same melt (recoverable, as consequential on the physical damage); and loss of profit on further melts that were never started (not recoverable, as pure economic loss unconnected to any physical damage to the claimant's property).",
+              "significance": "Spartan Steel is the standard teaching case for the pure/consequential distinction precisely because both kinds of loss arise from one negligent act, on one set of facts, allowing the line to be drawn with nothing else changing."
+            }
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Three losses, one cable cut",
+            "points": [
+              "Physical damage to the melt in the furnace at the time of the outage — recoverable",
+              "Loss of profit on that damaged melt — recoverable, as consequential on the physical damage",
+              "Loss of profit on further melts never started — pure economic loss, not recoverable"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-04-check-02",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A negligently caused power cut ruins food stock in a restaurant's freezer, and separately forces the restaurant to turn away a fully-booked evening's diners with no stock damaged for those covers. Which loss is recoverable, and which is not?",
+          "options": ["The ruined stock is recoverable as physical damage (plus consequential lost profit on it); the turned-away diners are pure economic loss and not recoverable", "Both losses are recoverable, since both were caused by the same negligent act", "Neither loss is recoverable, since power cuts are never actionable in negligence"],
+          "correctIndex": 0,
+          "explanation": "This mirrors Spartan Steel exactly: the stock physically damaged in the freezer supports a claim for that damage and the profit riding on it, but turning away diners for whom no stock was ever touched is pure economic loss — lost opportunity with no physical damage behind it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "How negligent words became actionable at all",
+        "voice": "narrative-historical — traces how an unlikely exception was born",
+        "body": [
+          "For decades English law refused to compensate pure economic loss caused by careless words at all — the reasoning being that statements, unlike careless driving, can be repeated and relied on by an unpredictable number of people, making the potential liability limitless. Hedley Byrne & Co Ltd v Heller & Partners Ltd changed that, though not on its own facts.",
+          "Hedley Byrne, an advertising agency, wanted reassurance about the creditworthiness of a client before extending credit. Their bank asked Heller & Partners, the client's bank, for a reference. Heller gave a favourable reference, but headed it with a disclaimer of responsibility. The client later went into liquidation, and Hedley Byrne lost money it would not have extended on credit but for the favourable reference.",
+          "The House of Lords held, in principle, that a negligent misstatement causing pure economic loss could be actionable where there was a 'special relationship' between the parties — one party possessing or claiming special skill or knowledge, giving information or advice to another who could reasonably be expected to rely on it, and who did in fact rely on it to their detriment. Because Heller's reference carried an express disclaimer, no duty of care actually arose on the facts, and Hedley Byrne lost. But the principle survived, and it is that principle, not the result, that made the case foundational.",
+          "The label given to this 'special relationship' in later cases is assumption of responsibility: the defendant must be taken to have voluntarily undertaken responsibility for the accuracy of what they said, to the claimant, for the purpose the claimant actually relied on it for — and the claimant's reliance on it must have been reasonable in the circumstances."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Hedley Byrne & Co Ltd v Heller & Partners Ltd",
+            "citation": "[1964] AC 465",
+            "court": "House of Lords",
+            "year": 1964,
+            "factsShort": "A bank gave a favourable, but disclaimed, credit reference for a client; the claimant relied on it and lost money when the client later went into liquidation.",
+            "ratioShort": "A negligent misstatement causing pure economic loss is actionable where there is a special relationship of assumed responsibility and reasonable reliance — though the disclaimer meant no duty arose on these facts.",
+            "expanded": {
+              "facts": "Hedley Byrne sought a credit reference on a client through its own bank, which in turn asked Heller & Partners, the client's bankers. Heller gave a favourable reference 'without responsibility'. Hedley Byrne extended credit in reliance on it and lost a substantial sum when the client went into liquidation.",
+              "judgmentExtract": "The House of Lords held that a duty of care could in principle arise in respect of negligent statements causing pure economic loss, wherever there was a special relationship between the parties involving an assumption of responsibility by the maker of the statement and reasonable reliance by the recipient. The express disclaimer of responsibility, however, was effective to negate any such duty on these particular facts.",
+              "significance": "Hedley Byrne is the single most important exception to the general exclusion of pure economic loss in negligence. Every subsequent negligent misstatement case, including the modern restatements in Barclays Bank and NRAM v Steel, is an attempt to give the 'assumption of responsibility' test workable content."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Assumption of responsibility",
+            "definition": "The idea, central to the Hedley Byrne exception, that a defendant who gives information or advice can be taken to have voluntarily undertaken responsibility for its accuracy to a particular claimant, for a particular purpose — the trigger for a duty of care over what would otherwise be irrecoverable pure economic loss."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-04-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the elements of a Hedley Byrne claim in the order a court works through them.",
+          "items": [
+            "Was a statement or advice given by someone with, or claiming, special skill or knowledge?",
+            "Did the defendant assume responsibility for its accuracy to this claimant, for this purpose?",
+            "Did the claimant actually and reasonably rely on it?",
+            "Did the claimant suffer loss as a result of that reliance?"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the shape of the inquiry — skill or knowledge, then assumption of responsibility to this claimant for this purpose, then actual and reasonable reliance, then loss flowing from it.",
+          "feedbackIncorrect": "Assumption of responsibility has to be established before reliance can do any work — a claimant cannot reasonably rely on a duty the defendant never undertook in the first place."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Assumption of responsibility in practice: Barclays Bank and NRAM",
+        "voice": "practitioner briefing — treats the doctrine as a working test to be applied, not history to admire",
+        "body": [
+          "Modern cases have hardened 'assumption of responsibility' from a flexible label into something closer to an objective test: not what the defendant subjectively intended, but what a reasonable person in the claimant's position would understand the defendant to have undertaken, given the purpose for which the statement or service was actually provided.",
+          "Customs and Excise Commissioners v Barclays Bank plc concerned a bank notified of freezing orders over a customer's account, intended to preserve funds for a creditor (the Commissioners) pursuing a debt. The bank negligently allowed funds to be paid out in breach of the orders. The House of Lords held the bank owed no duty of care to the Commissioners: merely complying, or failing to comply, with a court order notified to it did not amount to the bank voluntarily assuming responsibility toward the party the order was designed to benefit. The relationship was not one the bank had undertaken; it had been imposed on the bank by the order itself.",
+          "NRAM Ltd v Steel pushes the same objective focus further. A solicitor acting for a borrower sent a mortgage redemption statement to the wrong recipient, a lender, by mistake — the statement was intended for, and addressed the interests of, the borrower's own dealings, not the lender's. The Supreme Court held no duty of care arose to the lender: the purpose for which the statement was actually prepared and sent mattered more than the fact that the lender happened to receive and rely on it. Assumption of responsibility is assessed by asking what the statement was for and to whom it was directed, not simply who ended up reading it.",
+          "Read together, these cases discipline Hedley Byrne against creeping outward: foreseeable reliance by anyone who happens to see a statement is not enough. The claimant must be someone the defendant can fairly be said to have been speaking to, for the purpose the claimant actually used the statement for."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Assessing assumption of responsibility objectively",
+            "description": "The factors courts weigh in deciding whether a defendant assumed responsibility to a particular claimant.",
+            "nodes": [
+              { "id": "purpose", "label": "What was the statement or service actually given for?" },
+              { "id": "recipient", "label": "Was it directed at this claimant, or merely received by them incidentally?" },
+              { "id": "knowledge", "label": "Did the defendant know, or ought they to have known, this claimant would rely on it for this purpose?" },
+              { "id": "reasonable", "label": "Was the claimant's reliance on it reasonable in these circumstances?" },
+              { "id": "conclusion", "label": "If all point the same way → assumption of responsibility established" }
+            ],
+            "edges": [
+              { "from": "purpose", "to": "recipient" },
+              { "from": "recipient", "to": "knowledge" },
+              { "from": "knowledge", "to": "reasonable" },
+              { "from": "reasonable", "to": "conclusion" }
+            ],
+            "textAlternative": "Assumption of responsibility is assessed objectively by asking: what was the statement or service actually given for; was it directed at this claimant or merely received by them incidentally; did the defendant know or ought they to have known this claimant would rely on it for this purpose; and was the claimant's reliance reasonable. Only where these point the same way is assumption of responsibility established."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Two cases, one lesson",
+            "points": [
+              "Barclays Bank: complying (or failing to comply) with a court order does not, by itself, amount to voluntarily assuming responsibility to the party the order benefits",
+              "NRAM v Steel: a statement sent to the wrong recipient by mistake does not create a duty to that recipient, even if they relied on it, because it was never directed at them for that purpose",
+              "Both: the test asks what the defendant can fairly be said to have undertaken, not merely who foreseeably ended up relying on what was said"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-04-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is a court more likely to find an assumption of responsibility?",
+          "scenarioA": "An accountant is engaged by a company specifically to prepare a report for a named investor considering a takeover, knowing the investor will rely on it to decide whether to proceed.",
+          "scenarioB": "An accountant prepares a routine internal report for a company's own management, which a third party later obtains by chance and relies on to make an unrelated investment decision.",
+          "correctScenario": "A",
+          "explanation": "In A, the accountant knows the specific claimant and the specific purpose the report is for — the hallmarks of assumption of responsibility. In B, exactly as in NRAM v Steel, the third party's reliance was never the purpose the report was prepared for, so no duty arises to them even though their reliance was foreseeable in a loose sense."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Defective buildings, and a modern footnote",
+        "voice": "synthesising — pulls the threads together and gestures forward to current practice",
+        "body": [
+          "One more application of the pure economic loss rule deserves its own case, because students consistently expect the opposite result: what happens when a building or product turns out to be defective, and the owner spends money putting it right before anyone is actually hurt?",
+          "Murphy v Brentwood District Council answered this by overruling an earlier, more generous line of authority. A house was built on inadequate foundations, approved by the local authority under building regulations. Cracks later appeared; the owner sold at a reduced price rather than repair, reflecting the diminished value. The House of Lords held that the cost of repairing, or the loss in value of, a defective building or product is pure economic loss — the defect existed from the moment of construction or manufacture, and the claimant is really complaining about the quality of what they received, which is the traditional territory of contract law, not tort. No physical damage to 'other property' had occurred; the building had simply always been worth less than paid for.",
+          "This sits alongside the Hedley Byrne line, not against it, once the underlying logic is clear: professional advice given for a known purpose to a known recipient can trigger an assumed responsibility, but a builder's or manufacturer's general quality obligations to the world at large do not — there is no equivalent voluntary undertaking to each eventual owner. That is why homeowners today rely heavily on statutory routes — the Defective Premises Act 1972, and warranties or collateral contracts — rather than negligence, to fill the gap Murphy leaves open.",
+          "The reasoning in Murphy remains the backbone of how courts think about construction defects, and it still surfaces in recent litigation. URS Corporation v BDW Trading [2025] UKSC 21, a Supreme Court decision on construction defect claims following the Building Safety Act reforms, worked through economic loss and limitation issues in this same broad territory — a useful modern illustration that the pure economic loss framework from Murphy is still very much live in practice, though the case is dense and largely turns on construction-specific statutory questions that go beyond what this lesson needs."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Murphy v Brentwood District Council",
+            "citation": "[1991] 1 AC 398",
+            "court": "House of Lords",
+            "year": 1991,
+            "factsShort": "A house was built on defective foundations, approved by the local authority; cracks appeared and the owner sold at a reduced price rather than repair.",
+            "ratioShort": "The cost of repairing, or the diminished value of, a defective building or product is pure economic loss, generally irrecoverable in negligence against the builder or approving authority.",
+            "expanded": {
+              "facts": "The claimant's house had been built on foundations inadequate for the site, a defect the local authority's building inspectors negligently failed to catch when approving the plans under building regulations. Cracking later appeared. The claimant, unable to afford repairs, sold the house at a price reflecting its reduced value.",
+              "judgmentExtract": "The House of Lords held that the loss was pure economic loss: the defect had existed since construction, no 'other property' of the claimant had been damaged by it, and the claim was in substance for the diminished quality of what had been built — the proper territory of contract, not the tort of negligence. The earlier, more expansive approach in Anns v Merton London Borough Council was overruled.",
+              "significance": "Murphy remains the leading statement that defective-product and defective-building economic loss generally falls outside negligence, which is precisely why statutory routes like the Defective Premises Act 1972 carry so much of the practical weight in this area today."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "URS Corporation v BDW Trading [2025] UKSC 21",
+            "definition": "A recent Supreme Court decision addressing construction defect and limitation issues in the wake of Building Safety Act reforms — worth knowing as a live illustration that Murphy's economic loss reasoning still frames construction litigation, though its detail is construction-specific and beyond what this lesson requires."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-04-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A buyer discovers, before anyone is hurt, that a newly built extension has a structural defect that will cost £40,000 to fix. How confident are you this cost is recoverable in negligence against the builder, absent any contract claim?",
+          "sliderLabels": ["Definitely not recoverable in negligence", "Definitely recoverable in negligence"],
+          "correctPosition": "not recoverable in negligence",
+          "explanation": "Under Murphy, the cost of repairing a defect discovered before it causes damage to anything else is pure economic loss — the claimant is really complaining about the quality of the building, which is contract territory. Recovery here would typically depend on a contract, warranty, or a statutory route such as the Defective Premises Act 1972."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-04-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the general rule governing recovery for pure economic loss in the tort of negligence.",
+      "acceptableAnswers": ["pure economic loss is generally not recoverable in negligence", "no duty of care for pure economic loss absent a special exception"],
+      "modelAnswer": "As a general rule, pure economic loss — financial loss not flowing from physical damage to the claimant's own person or property — is not recoverable in negligence, subject to narrow exceptions such as Hedley Byrne negligent misstatement."
+    },
+    {
+      "itemId": "tort-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "In Hedley Byrne, did the claimant ultimately win its claim against the bank that gave the reference?",
+      "options": ["No — the express disclaimer of responsibility meant no duty of care arose", "Yes — the House of Lords awarded full damages"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-04-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What is required, in addition to a statement being false and foreseeably relied upon, for a Hedley Byrne duty of care to arise?",
+      "options": ["Nothing further — foreseeable reliance on a false statement is always enough", "An assumption of responsibility by the defendant to this claimant, for this purpose, and reasonable reliance by the claimant", "A pre-existing contract between the parties"],
+      "correctIndex": 1,
+      "trapExplanation": "Foreseeability of reliance alone was exactly what pre-Hedley Byrne law refused to found liability on — the exception exists precisely because something more specific, an assumption of responsibility to this claimant for this purpose plus reasonable reliance, is required."
+    },
+    {
+      "itemId": "tort-04-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these cases in the order they were decided.",
+      "items": ["Hedley Byrne & Co Ltd v Heller & Partners Ltd", "Spartan Steel & Alloys Ltd v Martin & Co (Contractors) Ltd", "Murphy v Brentwood District Council", "Customs and Excise Commissioners v Barclays Bank plc", "NRAM Ltd v Steel"],
+      "correctOrder": [0, 1, 2, 3, 4]
+    },
+    {
+      "itemId": "tort-04-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage summarising Murphy v Brentwood, highlight the sentence that states the ratio.",
+      "passage": "The house's foundations had been inadequate from the moment of construction. No damage had been done to any property other than the building itself. The cost of repairing, or the diminished value of, a defective building is pure economic loss, since the claimant is in substance complaining about the quality of what was built, which is the proper territory of contract rather than the tort of negligence.",
+      "ratioSentence": "The cost of repairing, or the diminished value of, a defective building is pure economic loss, since the claimant is in substance complaining about the quality of what was built, which is the proper territory of contract rather than the tort of negligence."
+    },
+    {
+      "itemId": "tort-04-test-06",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A negligently produced valuation report is prepared for a bank considering a loan to a specific borrower, and the bank relies on it to lend. How confident are you a duty of care arises to the bank?",
+      "sliderLabels": ["Definitely no duty", "Definitely a duty arises"],
+      "correctPosition": "duty arises",
+      "explanation": "This is a textbook Hedley Byrne scenario: the report was prepared for this claimant, for this purpose, and relied on accordingly — the hallmarks of assumption of responsibility that NRAM v Steel confirms are essential."
+    },
+    {
+      "itemId": "tort-04-test-07",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Given Murphy's exclusion of defective-building costs from negligence, which statutory provision was designed to fill part of that gap for dwellings?",
+      "options": ["Defective Premises Act 1972, s 1(1) — imposing a duty on those taking on work for the provision of a dwelling to see that the work is done properly", "Occupiers' Liability Act 1957, s 2 — the common duty of care owed to visitors", "Consumer Rights Act 2015, s 9 — the requirement that goods be of satisfactory quality"],
+      "correctIndex": 0,
+      "explanation": "The Defective Premises Act 1972 creates a statutory duty specifically aimed at the kind of defective-dwelling loss Murphy took outside negligence — it is the standard statutory route referred to when negligence itself won't reach the cost of repair."
+    },
+    {
+      "itemId": "tort-04-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why is URS Corporation v BDW Trading [2025] UKSC 21 relevant to this topic, given it is not a core case to learn in depth?",
+      "options": ["It overrules Murphy v Brentwood and allows recovery for all defective building costs in negligence", "It shows that Murphy's economic loss reasoning continues to frame modern construction defect litigation, even under newer statutory regimes", "It abolishes the pure/consequential economic loss distinction entirely"],
+      "correctIndex": 1,
+      "trapExplanation": "URS does not overturn or replace Murphy — it is a recent illustration of the same underlying economic loss reasoning operating in a modern, statute-heavy construction context. Treat it as evidence the framework is still live, not as a doctrinal shift to learn in detail."
+    },
+    {
+      "itemId": "tort-04-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A negligently caused gas leak forces a factory to shut down for two days. No property of the factory owner is physically damaged, but £30,000 in production is lost. Is this loss recoverable in negligence?",
+      "options": ["No — this is pure economic loss with no physical damage to the claimant's own property behind it", "Yes — any loss caused by an obviously negligent act is recoverable", "Yes, but only if the factory owner can show the defendant intended the shutdown"],
+      "correctIndex": 0,
+      "explanation": "This mirrors the irrecoverable part of Spartan Steel precisely: lost production with nothing of the claimant's physically damaged is pure economic loss, and the general exclusionary rule applies."
+    },
+    {
+      "itemId": "tort-04-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "An accountant carelessly signs off a set of company accounts, unaware that a stranger to the engagement will later read them on a public register and decide, on that basis, to buy shares in the company. The stranger loses money when the company fails. Does Hedley Byrne assist the stranger?",
+      "options": ["No — the accountant never assumed responsibility to this claimant for this purpose; reliance by an unknown member of the public was not what the statement was directed at", "Yes — any negligent misstatement relied on by anyone is actionable", "Yes, because accountants always owe a duty to anyone who reads published accounts"],
+      "correctIndex": 0,
+      "explanation": "This tracks Barclays Bank and NRAM v Steel: the statement (the accounts) was not prepared for this claimant or this purpose, so no assumption of responsibility arises, however foreseeable it might be in a loose sense that someone, somewhere, might rely on published accounts."
+    },
+    {
+      "itemId": "tort-04-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly defeats the assumption of responsibility argument in this scenario.",
+      "scenarioText": "A surveyor is instructed by a mortgage lender to value a house purely for the lender's own internal lending decision. The survey report is marked for the lender's use only. The buyer never sees it, but later, coincidentally, a friend of the buyer who works at the lender mentions the valuation figure to the buyer over dinner, and the buyer relies on it when negotiating the purchase price.",
+      "tappableSpans": ["instructed by a mortgage lender", "marked for the lender's use only", "buyer never sees it", "buyer relies on it when negotiating the purchase price"],
+      "correctSpan": "marked for the lender's use only",
+      "feedbackCorrect": "This is the purpose-limitation point from NRAM v Steel: the report was directed at, and restricted to, the lender's own purpose — a buyer who later hears the figure second-hand, informally, falls well outside any assumption of responsibility to them.",
+      "feedbackIncorrect": "Focus on what the report was actually prepared and marked for, not on how the buyer eventually heard the figure. The restriction to the lender's use only is what rules out any assumption of responsibility toward the buyer."
+    },
+    {
+      "itemId": "tort-04-test-12",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which claimant is more likely to succeed in a pure economic loss claim?",
+      "scenarioA": "A homebuyer who discovers, before any damage occurs, that the roof trusses were negligently installed by the original builder and will cost £15,000 to fix.",
+      "scenarioB": "An investor who was specifically named as the intended reader of an accountant's due diligence report, commissioned for the purpose of that investor's decision whether to fund a takeover, and who relied on it to their financial detriment.",
+      "correctScenario": "B",
+      "explanation": "A is a Murphy-style defective building claim — pure economic loss, generally excluded from negligence. B is a textbook Hedley Byrne scenario: a report prepared for a named recipient, for a known purpose, relied on accordingly — the paradigm case for an assumption of responsibility."
+    },
+    {
+      "itemId": "tort-04-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A firm of solicitors is instructed by a company to prepare a completion statement for a specific, named buyer in a share sale, knowing the buyer will rely on the figures to decide whether to complete. The statement contains a negligent error, understating a liability. The buyer completes and suffers financial loss as a result. Analyse whether the buyer can recover this loss in negligence.",
+      "factsToOrder": [
+        "The solicitors were instructed to prepare the statement for this specific, named buyer",
+        "The solicitors knew the buyer would rely on the figures to decide whether to complete",
+        "The statement contained a negligent error",
+        "The buyer completed and suffered financial loss relying on the error"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the buyer can recover pure economic loss caused by the solicitors' negligent misstatement in the completion statement.",
+        "rule": "Pure economic loss caused by a negligent statement is recoverable under Hedley Byrne where the defendant assumed responsibility for its accuracy to this claimant, for this purpose, and the claimant reasonably relied on it to their detriment, as confirmed by the objective approach in Barclays Bank and NRAM v Steel.",
+        "application": "The statement was prepared specifically for this named buyer, for the known purpose of deciding whether to complete — unlike NRAM v Steel, this is exactly the purpose and recipient the solicitors intended. The buyer's reliance on the figures to decide whether to complete was reasonable and foreseeable to the solicitors, and the loss flows directly from the negligent error.",
+        "conclusion": "The buyer is likely to recover: the facts satisfy assumption of responsibility (specific claimant, specific purpose, known reliance) and reasonable reliance, bringing this within the Hedley Byrne exception to the general exclusion of pure economic loss."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson is reaching for foreseeability as if it were the test for pure economic loss. It isn't, and never has been — the real question is always whether the loss is consequential on physical damage, or, for a statement, whether the defendant assumed responsibility to this claimant for this specific purpose.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.economic-loss"
+  }
+}

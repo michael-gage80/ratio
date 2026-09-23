@@ -1,0 +1,519 @@
+{
+  "lessonId": "public-09",
+  "moduleId": "public",
+  "moduleTitle": "Public Law",
+  "lessonNumber": 9,
+  "topicId": "public.judicial-review.procedure",
+  "title": "Judicial review: getting to court",
+  "subtitle": "Amenability, standing, time limits and the gate before the merits",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify whether a decision is amenable to judicial review by its source and nature",
+    "Apply the sufficient interest test for standing, including for pressure groups and campaigning bodies",
+    "State the time limit for bringing a claim and explain why 'promptly' still matters despite the fixed backstop",
+    "Explain how the permission stage filters claims, and how the 'highly likely' test and ouster clauses can close the door entirely"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Senior Courts Act 1981, s 31",
+      "role": "Statutory basis for judicial review: standing test, discretionary remedies, the 'highly likely' bar"
+    },
+    {
+      "citation": "CPR Part 54",
+      "role": "The procedural rulebook — permission stage, time limits, the claim form and acknowledgment of service"
+    },
+    {
+      "citation": "R v Panel on Take-overs, ex p Datafin [1987] QB 815",
+      "role": "Amenability turns on the nature of the power exercised, not just its formal source"
+    },
+    {
+      "citation": "IRC v National Federation of Self-Employed and Small Businesses [1982] AC 617",
+      "role": "Leading authority on standing — sufficient interest assessed at the permission and substantive stages together"
+    },
+    {
+      "citation": "R (Privacy International) v Investigatory Powers Tribunal [2019] UKSC 22",
+      "role": "Ouster clauses do not oust review for error of law absent the clearest possible statutory language"
+    },
+    {
+      "citation": "Judicial Review and Courts Act 2022, ss 1–2",
+      "role": "Abolished Cart JRs; introduced suspended and prospective-only quashing orders"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students walk into judicial review problem questions and go straight for the grounds — illegality, irrationality, procedural impropriety — and lose marks before they get there. Every JR problem question is a gate before it's a merits question: can this claimant, against this body, on this timeline, even get through the door?",
+    "profileHooks": {
+      "weakApplication": "You know the stages by name. The test pool here is weighted towards spotting when a claim fails on standing or time limits before the grounds are even reached — expect fact patterns that are traps, not definitions.",
+      "weakKnowledge": "Slow down on Part 1 and Part 2. The rest of this lesson assumes you can recite the checklist — source, nature, standing, time — without hesitation, because the fact patterns will not label the issue for you."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A charity wants to challenge a Home Office decision. It has never met the affected individuals, was not a party to the decision, and the six-week limit for the general private law analogue would already have passed. On the facts alone, most students assume the claim is dead on arrival. It isn't — but only because judicial review runs on a completely different set of gatekeeping rules than any other area of civil litigation you've studied so far. This lesson is that gate.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The Judicial Review and Courts Act 2022 reforms (abolition of Cart JRs, suspended and prospective quashing orders) are settled law. Watch for any further procedural reform following ongoing government reviews of judicial review's scope — none is in force as at this date."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Step one: is this even reviewable?",
+        "voice": "procedural checklist — treats the lesson as a sequence of gates to clear in order",
+        "body": [
+          "Before any talk of grounds, judicial review asks a threshold question: is the decision amenable to review at all? The traditional answer looked at the source of the power — statute, prerogative, common law — and treated anything without a public source as off-limits.",
+          "That test cracked in 1987. The Panel on Take-overs and Mergers had no statutory basis whatsoever — it was a self-regulating City body with no formal legal powers over anyone. The Court of Appeal held it was still reviewable, because it performed a public function: it regulated takeovers with the government's blessing, and market participants had no real choice but to submit to it.",
+          "The modern test is therefore about nature, not just source: does the body exercise power that is public in character — because it is woven into a system of governmental regulation, because it affects the public at large, or because there is no other way for someone in the claimant's position to challenge it? A private members' club expelling a member is not reviewable, however unfair the process, because the relationship is contractual through and through. A regulator with no statutory teeth, exercising de facto public control over an entire industry, can be."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Amenability to review",
+            "definition": "The threshold question of whether a decision-maker's power is public in nature and therefore subject to judicial review, assessed by looking at both the source of the power and, since Datafin, its function and effect."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "Datafin held that a body with no statutory or prerogative source of power can still be amenable to judicial review. On what basis?",
+          "options": [
+            "Where it exercises power that is public in nature or function, regardless of its formal source",
+            "Never — a public source of power is always required"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Datafin shifted the test from source alone to source-or-function — a body regulating an entire sector with the government's implicit backing can be reviewable even with no statutory teeth.",
+          "feedbackIncorrect": "Not quite — before Datafin, source was everything. Datafin's contribution was precisely to open a second route: a body can be reviewable through its public function even where its formal source of power is private."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Standing: who is allowed to bring the claim",
+        "voice": "procedural checklist — reference-style, built to be scanned under exam pressure",
+        "body": [
+          "Section 31(3) of the Senior Courts Act 1981 requires a claimant to have 'sufficient interest in the matter to which the application relates.' That phrase is deliberately loose, and the House of Lords in the National Federation case refused to lay down a fixed formula — sufficient interest is assessed in the round, considering the claimant's connection to the decision, the seriousness of the alleged unlawfulness, and whether anyone else is better placed to bring the challenge.",
+          "Two patterns recur in problem questions. First, the directly affected individual: straightforward standing, rarely contested. Second, the pressure group or campaigning body with no personal stake — Greenpeace, a residents' association, a charity. Courts have been increasingly generous here, on the reasoning that if no one with standing brings the challenge, unlawful action goes unchecked entirely. Expertise, a track record of engagement with the issue, and the absence of any more directly affected claimant all count in the group's favour.",
+          "Standing is assessed twice: a low threshold filters out hopeless or vexatious claims at the permission stage, and a fuller assessment happens at the substantive hearing if permission is granted. A claimant who scrapes past permission is not guaranteed to be found to have sufficient interest once the merits are examined."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "IRC v National Federation of Self-Employed and Small Businesses",
+            "citation": "[1982] AC 617",
+            "court": "House of Lords",
+            "year": 1982,
+            "factsShort": "A federation of small businesses challenged an Inland Revenue amnesty for London casual print workers, arguing it was unlawful favouritism.",
+            "ratioShort": "Sufficient interest is not a fixed technical test but a mixed question of fact and law assessed in light of the claimant's relationship to the decision and the legal and factual context — assessed at both permission and substantive stages.",
+            "expanded": {
+              "facts": "The Inland Revenue had granted an informal tax amnesty to casual workers in Fleet Street's print industry, in exchange for those workers registering properly going forward. The Federation, representing other taxpayers with no direct connection to the print industry, argued the arrangement was unlawful and that as taxpayers generally they had standing to challenge it.",
+              "judgmentExtract": "The House of Lords held that standing could not be resolved as a preliminary point in isolation from the merits — the strength of the legal argument and the nature of the duty said to be broken are part of what 'sufficient interest' means. On the facts, the Federation's interest as general taxpayers was too remote from the specific arrangement with print workers to succeed on the merits, though the claim was not struck out for want of standing alone.",
+              "significance": "The case rejects a narrow, technical approach to standing in favour of a flexible one bound up with the substance of the claim. It is the reason later courts have been willing to grant standing to representative and campaigning bodies with no personal stake, where the alternative is that no one can challenge the decision at all."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "public-09-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these stages of the standing enquiry in the order they occur in a claim.",
+          "items": [
+            "Claimant files for permission; a filter screens out hopeless or vexatious claims",
+            "Permission granted on a provisional view that standing is arguable",
+            "Full substantive hearing examines standing again alongside the merits",
+            "Court decides whether sufficient interest was in fact established on the full picture"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the structure — standing is never resolved once and for all at the door. A provisional pass at permission can still fail at the substantive stage once the full legal and factual context is examined.",
+          "feedbackIncorrect": "Check the order again — permission comes first as a filter, then the fuller standing enquiry happens alongside the substantive merits, not before them."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The clock: promptly, and in any event within three months",
+        "voice": "procedural checklist — practical, deadline-driven, written like advice to a claimant",
+        "body": [
+          "CPR 54.5 sets the time limit: a claim form must be filed promptly, and in any event not later than three months after the grounds to make the claim first arose. Read that twice — it is not a straightforward three-month window. 'Promptly' is a free-standing requirement, and a claim filed within three months can still be refused permission, or refused a remedy at the substantive stage, if the court considers it wasn't brought promptly enough on the facts.",
+          "This catches students who treat public law time limits like limitation periods in tort or contract, where the backstop date is the only thing that matters. In judicial review, delay itself can be fatal even inside the three-month window — particularly where third parties have relied on the decision, or where a delayed challenge would cause administrative disruption.",
+          "The court retains a discretion to extend time where there is good reason, but the burden is on the claimant to explain the delay. A claimant who waits eleven weeks with no explanation, even where the underlying decision remains formally within time, is taking a real risk."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "CPR 54.5(1)",
+            "text": "The claim form must be filed— (a) promptly; and (b) in any event not later than 3 months after the grounds to make the claim first arose.",
+            "elements": [
+              "Filed promptly (a free-standing requirement)",
+              "Filed no later than 3 months after grounds first arose (the backstop)",
+              "Both requirements must be satisfied — meeting the backstop alone is not enough",
+              "Court retains discretion to extend time for good reason"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "public-09-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact most likely to sink this claim on time-limit grounds, even though it is filed inside three months.",
+          "scenarioText": "A local authority approves a planning decision on 3 January. A residents' group is aware of the decision from the day it is made, but spends ten weeks deciding internally whether to fund litigation before filing its claim form on 18 March, by which point the developer has already begun demolition works in reliance on the approval.",
+          "tappableSpans": [
+            "approves a planning decision on 3 January",
+            "aware of the decision from the day it is made",
+            "spends ten weeks deciding internally whether to fund litigation",
+            "developer has already begun demolition works in reliance"
+          ],
+          "correctSpan": "spends ten weeks deciding internally whether to fund litigation",
+          "feedbackCorrect": "That's the delay a court will scrutinise. Ten weeks of internal deliberation, with no external obstacle to filing sooner, is exactly the kind of gap that fails the 'promptly' limb even though the claim lands inside the three-month backstop — especially once reliance by a third party (the demolition works) is added to the mix.",
+          "feedbackIncorrect": "The backstop date isn't breached here — look instead for what happened during the three months. The group's own internal delay, with no external justification, is what a court is most likely to treat as a failure to act promptly."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The permission stage: 'highly likely' and the filter that ends most claims",
+        "voice": "procedural checklist — treats permission as the central chokepoint of the whole system",
+        "body": [
+          "Most judicial review claims that fail, fail here. Permission is a paper filter (occasionally an oral hearing) in which the court asks whether the claim is arguable, with a realistic prospect of success — not whether it will succeed. It exists to stop hopeless or abusive claims from tying up defendants and courts in a full hearing.",
+          "Section 31(3C)–(3D) of the Senior Courts Act 1981 adds a sharper edge: the court must refuse permission if it appears highly likely that the outcome for the claimant would not have been substantially different had the conduct complained of not occurred — unless the case raises a matter of exceptional public interest. In plain terms: even a genuine, arguable unlawfulness gets no remedy if the decision would inevitably have come out the same way regardless.",
+          "This is a significant narrowing of access to review, and it sits deliberately in tension with the rule-of-law principle that unlawful action should not go unremedied. Students should be able to state the test and also explain, in a sentence, the policy trade-off it represents: efficiency and finality in administration, against the risk that genuine unlawfulness escapes any consequence."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The permission gate",
+            "description": "The sequence a claim must clear at the permission stage before any grounds are argued on the merits.",
+            "nodes": [
+              {
+                "id": "amenable",
+                "label": "Is the decision-maker's power public in source or nature? (Datafin)"
+              },
+              {
+                "id": "standing",
+                "label": "Does the claimant have sufficient interest? (s 31(3))"
+              },
+              {
+                "id": "time",
+                "label": "Was the claim filed promptly and within three months? (CPR 54.5)"
+              },
+              {
+                "id": "arguable",
+                "label": "Is there an arguable ground with a realistic prospect of success?"
+              },
+              {
+                "id": "highly-likely",
+                "label": "s 31(3C): would the outcome highly likely have been substantially the same anyway?"
+              },
+              {
+                "id": "grant",
+                "label": "Permission granted → proceed to substantive hearing on the grounds"
+              },
+              {
+                "id": "refuse",
+                "label": "Permission refused → claim ends here"
+              }
+            ],
+            "edges": [
+              {
+                "from": "amenable",
+                "to": "standing",
+                "label": "Yes"
+              },
+              {
+                "from": "standing",
+                "to": "time",
+                "label": "Yes"
+              },
+              {
+                "from": "time",
+                "to": "arguable",
+                "label": "Yes"
+              },
+              {
+                "from": "arguable",
+                "to": "highly-likely",
+                "label": "Yes"
+              },
+              {
+                "from": "highly-likely",
+                "to": "refuse",
+                "label": "Highly likely, no exceptional public interest"
+              },
+              {
+                "from": "highly-likely",
+                "to": "grant",
+                "label": "Not highly likely, or exceptional public interest"
+              }
+            ],
+            "textAlternative": "A claim must clear, in sequence: amenability to review, sufficient interest (standing), the time limit, and arguability. Even if all of those are satisfied, section 31(3C) requires the court to refuse permission if it is highly likely the outcome would have been substantially the same regardless of the unlawfulness alleged — unless the case raises a matter of exceptional public interest. Only a claim clearing every gate proceeds to a substantive hearing on the grounds."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-09-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a court can refuse permission under s 31(3C) even where the claimant has identified a genuine, arguable unlawfulness?",
+          "sliderLabels": [
+            "Never — arguable unlawfulness is always enough for permission",
+            "Yes — 'highly likely no different outcome' can bar the claim regardless"
+          ],
+          "correctPosition": "highly likely",
+          "explanation": "Section 31(3C) is deliberately harsh in exactly this way: a genuine, arguable public law error gets no remedy if the court finds it highly likely the outcome would have been substantially the same anyway — the exceptional public interest exception is narrow, not a general escape valve."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Ouster clauses: when Parliament tries to close the door entirely",
+        "voice": "procedural checklist — ends the lesson on the hardest and most contested gate",
+        "body": [
+          "An ouster clause is a statutory provision that purports to exclude judicial review of a decision altogether — 'shall not be questioned in any court of law', or similar wording. Courts have treated these with deep suspicion since Anisminic, on the basis that excluding review from an error of law effectively lets a public body be the final judge of the limits of its own power, which the rule of law will not tolerate.",
+          "Anisminic held that a determination made in excess of jurisdiction, including through an error of law going to the decision-maker's power, was not a 'determination' at all within the meaning of the ouster clause — it was a legal nullity, and so fell outside what the clause protected. This is a famous piece of interpretive gymnastics: rather than confronting Parliament's sovereignty head-on, the House of Lords read the ouster clause narrowly enough that it never actually applied to the error in question.",
+          "Privacy International confirmed this approach still holds for a modern, carefully drafted ouster clause purporting to exclude review of the Investigatory Powers Tribunal entirely, including for errors of law. The Supreme Court held that only the clearest possible statutory language — arguably, none short of express constitutional override — could exclude review for a jurisdictional error of law, because doing so would be inconsistent with the rule of law and the separation of powers. Note the connection to the 2022 Act reforms: Parliament has instead used the softer tools of suspended and prospective-only quashing orders, and the abolition of Cart-style review of Upper Tribunal permission refusals, rather than attempting a blanket ouster clause of the kind Privacy International treats so sceptically."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Anisminic and Privacy International establish that ouster clauses are simply void or ineffective as a matter of law.",
+            "whyItsWrong": "That overstates the holding and risks a sovereignty-flavoured examiner marking you down. The courts have not declared ouster clauses unconstitutional or void — they have interpreted them, narrowly, so that jurisdictional errors of law fall outside what a given clause protects. The door left open by Privacy International is vanishingly narrow, but it is a door of statutory interpretation, not a general judicial power to strike down an Act of Parliament."
+          }
+        ],
+        "interaction": {
+          "itemId": "public-09-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which of these two statutory clauses is more likely to survive judicial scrutiny and genuinely exclude review, applying the Anisminic/Privacy International approach?",
+          "scenarioA": "\"A determination of the Tribunal shall not be called in question in any court of law, and shall be final and conclusive.\"",
+          "scenarioB": "\"Notwithstanding any other enactment or rule of law, no court may consider, on any ground whatsoever including error of law or excess of jurisdiction, any decision of the Board, and this provision is intended to and shall exclude the supervisory jurisdiction of the High Court in its entirety.\"",
+          "correctScenario": "B",
+          "explanation": "A is the classic Anisminic-style clause — general finality wording that courts read narrowly so that a jurisdictional error of law falls outside it entirely, leaving the clause with no practical effect on that ground. B is drafted to confront the courts directly, naming error of law and excess of jurisdiction and expressly targeting the supervisory jurisdiction — the kind of unmistakably clear language Privacy International suggests might be the only route to a truly effective ouster, though even then the outcome is not certain and remains the sharpest live debate in this area."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "public-09-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the time limit under CPR 54.5 for filing a judicial review claim form.",
+      "acceptableAnswers": [
+        "promptly and within three months",
+        "promptly, and in any event not later than 3 months after grounds first arose"
+      ],
+      "modelAnswer": "The claim form must be filed promptly and, in any event, not later than three months after the grounds to make the claim first arose. Both limbs must be satisfied — meeting the three-month backstop does not automatically satisfy the promptness requirement."
+    },
+    {
+      "itemId": "public-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case shifted the test for amenability to judicial review from the formal source of a body's power to its public function?",
+      "options": [
+        "R v Panel on Take-overs, ex p Datafin",
+        "Anisminic v Foreign Compensation Commission"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-09-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under the Senior Courts Act 1981, what is the statutory standing test for bringing a judicial review claim?",
+      "options": [
+        "A direct, personal legal right infringed by the decision",
+        "Sufficient interest in the matter to which the application relates",
+        "Membership of a class expressly named in the enabling statute"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "A 'direct legal right' test is the older, narrower private-law style approach the courts have moved away from. Section 31(3)'s 'sufficient interest' wording is deliberately open-textured, which is what allows representative and campaigning bodies to bring claims even without a personal legal right at stake."
+    },
+    {
+      "itemId": "public-09-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the gates a judicial review claim must pass through before the court reaches the substantive grounds.",
+      "items": [
+        "Is the decision amenable to review (public source or function)?",
+        "Does the claimant have sufficient interest (standing)?",
+        "Was the claim filed promptly and within three months?",
+        "Is there an arguable ground with a realistic prospect of success, surviving the s 31(3C) 'highly likely' test?"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "public-09-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Section 31(3C) of the Senior Courts Act 1981 requires the court to refuse permission in which circumstance?",
+      "options": [
+        "Where it is highly likely the outcome for the claimant would not have been substantially different had the alleged unlawfulness not occurred, absent exceptional public interest",
+        "Where the claimant cannot show sufficient interest",
+        "Where more than three months have passed since the decision"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-09-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Privacy International, highlight the sentence stating the core holding on ouster clauses.",
+      "passage": "The Investigatory Powers Tribunal's decisions were, by statute, expressed to be final and not liable to be questioned in any court. The Supreme Court held that only the most clear and explicit words could exclude the supervisory jurisdiction of the High Court over a decision affected by an error of law going to jurisdiction. General finality language of the kind used here was not sufficient to achieve that result, however emphatically expressed.",
+      "ratioSentence": "The Supreme Court held that only the most clear and explicit words could exclude the supervisory jurisdiction of the High Court over a decision affected by an error of law going to jurisdiction."
+    },
+    {
+      "itemId": "public-09-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A national wildlife charity, with no personal stake in a specific site, wants to challenge a planning permission that threatens a protected habitat. No individual local resident has come forward to challenge it. Applying National Federation, is the charity likely to have standing?",
+      "options": [
+        "No — only directly affected individuals can ever have sufficient interest",
+        "Likely yes — courts assess standing flexibly, and a charity with relevant expertise is more readily granted standing where no more directly affected claimant is bringing the challenge",
+        "Standing is irrelevant once amenability is established"
+      ],
+      "correctIndex": 1,
+      "explanation": "National Federation rejected a rigid personal-right test. Courts weigh the claimant's connection to the issue, expertise, and — critically — whether anyone else is better placed to bring the claim. An expert charity stepping in where no individual claimant exists is exactly the scenario in which standing is most readily found."
+    },
+    {
+      "itemId": "public-09-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A decision is made on 1 February. A claimant, with no obstacle to acting sooner, files a claim form on 25 April — inside the three-month backstop, but after unexplained delay. What is the most accurate description of the risk?",
+      "options": [
+        "None — filing within three months always satisfies CPR 54.5",
+        "The claim may still fail or be refused a remedy for not being filed 'promptly', even though it beats the three-month backstop",
+        "The three-month limit is merely advisory and carries no real consequence"
+      ],
+      "correctIndex": 1,
+      "explanation": "CPR 54.5 has two limbs, not one. Beating the three-month backstop does not cure a failure to act promptly, particularly where the delay is unexplained and especially where third-party reliance has occurred in the meantime."
+    },
+    {
+      "itemId": "public-09-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most strengthens an argument that this body is amenable to judicial review under the Datafin approach.",
+      "scenarioText": "The Independent Advertising Standards Board has no statutory basis and is funded entirely by the advertising industry it regulates. In practice, almost every major broadcaster and publisher submits to its rulings, because government has indicated it will introduce statutory regulation if the industry does not maintain effective self-regulation through the Board.",
+      "tappableSpans": [
+        "no statutory basis",
+        "funded entirely by the advertising industry",
+        "almost every major broadcaster and publisher submits to its rulings",
+        "government has indicated it will introduce statutory regulation if the industry does not maintain effective self-regulation"
+      ],
+      "correctSpan": "government has indicated it will introduce statutory regulation if the industry does not maintain effective self-regulation",
+      "explanation": "This is the Datafin fingerprint: a body without formal legal powers, but operating in the shadow of government threatening statutory intervention, so that submission to its authority is not really voluntary. That governmental backdrop is what turns a private regulator into a public one for amenability purposes."
+    },
+    {
+      "itemId": "public-09-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario more closely reflects the Anisminic approach to reading an ouster clause narrowly, rather than one giving full effect to it?",
+      "scenarioA": "A statute states a tribunal's decisions on eligibility for a scheme are 'final', and a court, faced with an allegation that the tribunal asked the wrong legal question entirely, holds that a decision made in excess of jurisdiction was never a valid 'determination' the clause could protect.",
+      "scenarioB": "A statute expressly names error of law and excess of jurisdiction and states the clause excludes review on those grounds specifically, and a court declines to review a decision on exactly those grounds as a result.",
+      "correctScenario": "A",
+      "explanation": "A is Anisminic itself in substance: the court avoids confronting the ouster clause head-on by holding that a jurisdictional error means there was never a 'determination' within the clause's meaning at all. B describes a clause drafted with the specificity that Privacy International suggests might actually achieve an effective ouster — a live, contested question rather than settled ground."
+    },
+    {
+      "itemId": "public-09-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A member is expelled from a private golf club under its own rules, with no public funding or statutory backing of any kind. Is this decision amenable to judicial review?",
+      "options": [
+        "No — the relationship is purely contractual/private, with no public source or function",
+        "Yes — any body making a decision affecting an individual's interests is reviewable"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "public-09-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A regulator refuses a trader's licence application on 10 January. The trader instructs solicitors immediately, but they spend twelve weeks investigating before filing a claim form on 4 April — three months and three weeks after the decision. The regulator argues the claim is out of time. Analyse whether the claim is likely to be treated as validly brought.",
+      "factsToOrder": [
+        "The decision is made on 10 January",
+        "Solicitors are instructed immediately",
+        "Twelve weeks are spent investigating before filing",
+        "The claim form is filed on 4 April, outside the three-month backstop",
+        "The regulator objects that the claim is out of time"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the claim, filed outside the three-month backstop under CPR 54.5, can still proceed.",
+        "rule": "CPR 54.5 requires filing promptly and within three months; the court has a discretion to extend time for good reason, but the burden is on the claimant to justify the delay, and mere solicitor investigation is not automatically sufficient.",
+        "application": "The claim form was filed after the three-month backstop had already passed, so the claimant needs the court's discretion to extend time, not merely an argument about promptness within time. Twelve weeks of investigation, without more specific justification (such as genuine complexity or a need to gather evidence not otherwise available), is unlikely by itself to amount to the good reason needed, though immediate instruction of solicitors is a point in the claimant's favour that a court may weigh.",
+        "conclusion": "The claim is at real risk of being refused permission as out of time; an extension is possible but not assured, and the claimant should have filed protectively while investigation continued."
+      }
+    },
+    {
+      "itemId": "public-09-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which best explains why the Judicial Review and Courts Act 2022's introduction of suspended and prospective-only quashing orders is relevant to a discussion of ouster clauses?",
+      "options": [
+        "It shows Parliament abandoning attempts to limit judicial review entirely",
+        "It shows Parliament using softer procedural tools to manage the consequences of review, rather than attempting to exclude review outright as an ouster clause would",
+        "It directly overrules Anisminic"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats the 2022 Act as either abandoning limits on review altogether or as a direct assault on Anisminic. Neither is right — the Act works through the remedy stage (what relief a court grants once unlawfulness is found), not through excluding review itself, which is a materially softer and more targeted form of legislative intervention than an ouster clause."
+    },
+    {
+      "itemId": "public-09-test-14",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Permission is refused for a judicial review claim on the basis that it is not arguable. What is the practical effect?",
+      "options": [
+        "The claimant may still proceed straight to a substantive hearing on the grounds",
+        "The claim ends at that stage, subject to any right to renew the application or appeal the refusal",
+        "The claimant automatically wins on the merits"
+      ],
+      "correctIndex": 1,
+      "explanation": "Permission is a genuine gate, not a formality. A refusal at this stage ends the claim in practice, which is why so much of judicial review strategy and doctrine (standing, time limits, arguability, the s 31(3C) test) is concentrated at this single chokepoint rather than at a later merits hearing."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is jumping straight to the grounds of review — illegality, irrationality, procedural impropriety — without first clearing amenability, standing and time limits. In a problem question, a claim that fails at the gate never reaches the merits, however strong the underlying unlawfulness looks.",
+    "reviewMisses": true,
+    "linkToPathway": "public.judicial-review.procedure"
+  }
+}

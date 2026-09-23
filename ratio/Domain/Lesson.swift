@@ -113,7 +113,7 @@ enum LessonComponent: Decodable {
 
     struct DoctrineMap: Decodable {
         struct Node: Decodable { let id: String; let label: String }
-        struct Edge: Decodable { let from: String; let to: String; let label: String }
+        struct Edge: Decodable { let from: String; let to: String; let label: String? }
         let title: String
         let nodes: [Node]
         let edges: [Edge]
@@ -123,7 +123,7 @@ enum LessonComponent: Decodable {
     struct TimelineEvent: Decodable, Hashable {
         let date: String?
         let label: String
-        let description: String
+        let description: String?
     }
 
     case caseCard(CaseCard)

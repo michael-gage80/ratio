@@ -54,6 +54,10 @@ struct TopicGroup: Identifiable {
     private static let titles = [
         "non-fatal": "Non-fatal offences",
         "property": "Property offences",
+        "human-rights-act": "Human Rights Act",
+        "rylands-v-fletcher": "Rylands v Fletcher",
+        "occupiers-liability": "Occupiers' liability",
+        "trespass-to-person": "Trespass to the person",
     ]
 
     /// "general-principles" → "General principles".

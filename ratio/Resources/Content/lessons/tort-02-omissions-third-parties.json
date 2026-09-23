@@ -1,0 +1,565 @@
+{
+  "lessonId": "tort-02",
+  "moduleId": "tort",
+  "moduleTitle": "Tort law",
+  "lessonNumber": 2,
+  "topicId": "tort.negligence.omissions-third-parties",
+  "title": "Omissions, third parties and public authorities",
+  "subtitle": "Why the law rarely punishes failing to make things better",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the general rule against liability for a pure omission or for failing to prevent harm caused by a third party",
+    "Identify the recognised exceptions — control over the third party, assumption of responsibility, and creating the source of danger",
+    "Apply the making-worse/failing-to-make-better distinction to novel fact patterns, including those involving the police and other public authorities"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Smith v Littlewoods Organisation Ltd [1987] AC 241",
+      "role": "General rule against liability for omissions and third-party acts; sets out the recognised exceptions"
+    },
+    {
+      "citation": "Michael v Chief Constable of South Wales Police [2015] UKSC 2",
+      "role": "Police owe no general common law duty to protect individuals from third-party crime absent an assumption of responsibility"
+    },
+    {
+      "citation": "Poole BC v GN [2019] UKSC 25",
+      "role": "Reframes public authority liability around ordinary negligence principles rather than special immunity; distinguishes making worse from failing to protect"
+    },
+    {
+      "citation": "Tindall v Chief Constable of Thames Valley Police [2024] UKSC 33",
+      "role": "Recent Supreme Court restatement clarifying when police conduct makes a situation more dangerous rather than merely failing to prevent it"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students who are comfortable with the general duty-of-care framework often assume any foreseeable harm generates liability. Where the profile shows knowledge is solid but application is shaky, this note appears: 'You know the general rule — this lesson is where the exam actually tests you, on the facts that look like they should be exceptions but aren't.'",
+    "profileHooks": {
+      "weakApplication": "This lesson's test pool leans heavily towards application. Expect dense fact patterns about police, landlords and third parties — the challenge is spotting which exception, if any, is triggered.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state the general rule and name the three exceptions cleanly before moving on — the police cases in Parts 3 to 5 assume you already have that scaffolding."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A fire starts on a neglected patch of council land, spreads to a neighbouring house, and burns it down. Nobody lit the fire deliberately — vandals did that, weeks of unsupervised access made it possible, and the landowner did nothing to stop any of it. Is that landowner liable? The answer turns out to hinge on a distinction so fine that entire Supreme Court judgments have been written trying to hold the line: the difference between making things worse and merely failing to make them better.",
+    "lawStatedNotice": "Law stated as at 22 September 2026, including Tindall v Chief Constable of Thames Valley Police [2024] UKSC 33 as the most recent Supreme Court restatement of this area. This is an actively developing area of case law — watch for further appellate decisions applying Tindall's reasoning to new public-authority fact patterns."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two rules that feel unfair until you see why they exist",
+        "voice": "Socratic",
+        "body": [
+          "Start with a question. You are the only person on a beach who can swim. A stranger is drowning fifty metres out. You do nothing, and they die. Have you committed a tort against them?",
+          "Most students' instinct is 'surely something is wrong here' — and morally, perhaps something is. But English tort law answers no, and it answers no for a reason worth sitting with rather than dismissing: imposing liability for every failure to help would turn negligence law into a general duty of rescue, policing character and courage rather than conduct, and would be almost impossible to apply consistently — how much effort is required, of whom, in what order, when several bystanders are present?",
+          "Now vary the facts. Suppose instead a third party — not you — caused the drowning, by pushing the swimmer in. You watched and did nothing. Are you liable for failing to prevent their act? Again, generally no. English law treats a defendant's failure to prevent harm caused by someone else's deliberate, independent act as fundamentally different from causing that harm directly. Both of these — the pure omission and the failure to prevent third-party harm — sit on the same side of a single line this lesson exists to map: the law is far more reluctant to punish a failure to confer a benefit than a failure not to cause harm."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Pure omission",
+            "definition": "A failure to act that does not itself worsen the claimant's position — as opposed to a positive act, or conduct that makes an existing danger worse. The general rule is that a pure omission attracts no liability in negligence absent a recognised exception."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-02-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "As a general rule, does a bystander who fails to prevent harm caused by a third party's deliberate act owe a duty to the victim?",
+          "options": [
+            "No — the general rule is against liability for failing to prevent third-party harm, absent a recognised exception",
+            "Yes — foreseeability of the harm is always enough to generate a duty"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. The general rule holds even where the harm was entirely foreseeable — foreseeability alone has never been sufficient in this area.",
+          "feedbackIncorrect": "Not quite — hold onto the general rule as genuinely general here. The rest of this lesson is about when it gives way, not about whether foreseeability alone is enough (it isn't)."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Smith v Littlewoods: the three doors that open liability",
+        "voice": "case-narrative",
+        "body": [
+          "Littlewoods bought a disused cinema, intending to redevelop it, and left it empty and largely unsecured for about a month. Local children repeatedly broke in. On one occasion, unknown vandals started a fire inside that spread and destroyed neighbouring properties. The neighbours sued Littlewoods, arguing that as the owner of a building known to attract intruders, it owed a duty to prevent exactly this kind of harm.",
+          "The House of Lords held Littlewoods was not liable. Lord Goff's speech is the leading modern statement of the general rule and its exceptions: a defendant is not normally liable for harm caused by the deliberate wrongdoing of a third party, even on their own property, unless one of several recognised relationships is present — where the defendant has a special degree of control over the third party, where the defendant has assumed responsibility to protect the claimant from exactly this kind of risk, or where the defendant's own conduct created or increased the source of danger in a way that made the third party's intervention foreseeable and likely.",
+          "On the facts, mere knowledge that vandalism was a general possibility was not enough. There was nothing about this empty cinema that made it obviously and specifically a fire risk beyond the generic risk any unsecured building presents — Littlewoods hadn't stored flammable materials, left obvious fire-starting opportunities, or done anything beyond simply failing to secure a door. The bar for the 'creating a source of danger' exception, in other words, is real — carelessness in the abstract is not enough."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "citation": "[1987] AC 241",
+            "court": "House of Lords",
+            "year": 1987,
+            "factsShort": "Littlewoods left a disused cinema unsecured for about a month; local children repeatedly broke in, and vandals eventually started a fire that spread to and destroyed neighbouring properties.",
+            "ratioShort": "There is no general duty to prevent third parties from causing damage to others, even on one's own land, unless the defendant has control over the third party, has assumed responsibility for the claimant's protection, or has created a source of danger that made the third party's intervention foreseeable.",
+            "expanded": {
+              "facts": "Littlewoods purchased a disused cinema in Dunfermline with a view to redevelopment and left it unoccupied and only loosely secured. Over roughly a month, local children broke into the building on multiple occasions, and complaints were made to Littlewoods about this. Vandals eventually entered and started a fire, which spread beyond the cinema and caused significant damage to adjoining properties owned by the claimants.",
+              "judgmentExtract": "Lord Goff: 'The fact that the danger is created by the deliberate wrongdoing of another does not, in itself, and of itself, prevent the defender's conduct from being a cause of the damage... but it does, generally speaking, prevent the defender's failure to prevent the danger, or to protect the pursuer against it, from constituting a breach of duty on his part.' He identified the recognised exceptions as: a special relationship of control between the defendant and the third party; a defendant's assumption of responsibility to guard against the very risk that materialised; and a defendant who negligently creates or permits the creation of a source of danger which it is reasonably foreseeable third parties may spark into life.",
+              "significance": "Smith v Littlewoods remains the leading general statement of English law's approach to liability for the acts of third parties. It confirms that mere ownership of property, or general knowledge that intruders sometimes cause damage, does not itself generate a duty — something more specific, falling into one of the recognised categories, is required. The case supplies the analytical framework every later case in this lesson works within."
+            },
+            "caseName": "Smith v Littlewoods Organisation Ltd"
+          },
+          {
+            "type": "ratioPanel",
+            "label": "The three recognised exceptions",
+            "points": [
+              "Control — the defendant has a special degree of control over the third party who caused the harm (e.g. prison authorities over inmates on a supervised activity)",
+              "Assumption of responsibility — the defendant has specifically undertaken responsibility for protecting the claimant from the very risk that occurred",
+              "Source of danger — the defendant's own conduct created or permitted a source of danger, making it reasonably foreseeable that a third party would interfere with it and cause harm"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-02-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events from Smith v Littlewoods in the order they occurred.",
+          "items": [
+            "Littlewoods acquires the disused cinema for redevelopment",
+            "The building is left unoccupied and only loosely secured",
+            "Children repeatedly break in and complaints are made",
+            "Vandals start a fire that spreads to neighbouring properties"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That sequence is the whole case: despite mounting evidence of intrusion, the House of Lords still found nothing specific enough about the danger created to trigger the source-of-danger exception.",
+          "feedbackIncorrect": "Check the order again — notice how much warning (repeated break-ins, complaints) preceded the fire, and yet the House of Lords still found no duty. That's the key to understanding how high this exception's bar is set."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Michael: the police are not a special exception to the general rule",
+        "voice": "argumentative",
+        "body": [
+          "It's tempting to assume the police must be different — surely an organisation whose entire purpose is preventing harm owes a duty to protect people it knows are in danger? The Supreme Court confronted this directly in Michael v Chief Constable of South Wales Police, and firmly rejected the assumption.",
+          "Joanna Michael called 999, telling the call handler her ex-partner had turned up, threatened her, and left saying he would return to kill her. The call was mistakenly downgraded in priority and officers did not arrive in time; she was murdered. Her family argued the police owed her a duty of care once they had this specific information about a specific threat to a specific, identified person.",
+          "By a majority, the Supreme Court held no duty arose. The reasoning is worth taking seriously rather than dismissing as heartless: the police, like any other member of the public, are not normally under a duty to protect a particular individual from harm caused by a third party, in the absence of a special relationship of control or an assumption of responsibility. Imposing a general duty to protect would risk defensive policing, divert resources towards litigation risk rather than operational judgment, and — crucially — the police were not the ones who created the danger Michael faced; her ex-partner did. The call handler's error, serious as it was, was a failure to confer a benefit (effective protection), not an act that made her situation worse than if she had never called at all."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "citation": "[2015] UKSC 2",
+            "court": "Supreme Court",
+            "year": 2015,
+            "factsShort": "Joanna Michael called 999 reporting a specific, imminent threat to her life from her ex-partner. The call was downgraded in priority; police did not arrive in time and she was murdered.",
+            "ratioShort": "The police owe no general common law duty to protect a specific individual from harm caused by a third party merely because they were warned of the risk, absent an assumption of responsibility or a relationship of control over the third party.",
+            "expanded": {
+              "facts": "Joanna Michael telephoned 999 to report that her former partner had come to her house, found her with a new partner, assaulted him, and left threatening to return and kill her. The call handler recorded this as a lower-priority 'domestic incident' rather than an emergency requiring an immediate response, and this categorisation was not corrected when a second call was made shortly afterwards. Before police arrived, Michael's ex-partner returned and killed her. Her estate and children brought a claim in negligence, alleging the police owed her a duty of care once specifically warned of the threat to her life.",
+              "judgmentExtract": "Lord Toulson (majority): 'The core principle... is that the common law does not normally impose liability on a defendant for injury or damage to the person or property of a claimant caused by the conduct of a third party... Absent special circumstances such as an assumption of responsibility or a relationship of control, the police owe no duty to protect an individual from a danger of violence which they neither create nor increase.'",
+              "significance": "Michael confirms that public authorities, including the police, are treated under exactly the same general principles as any other defendant when it comes to liability for third-party harm — they receive no special immunity, but also no special extended duty simply because protection is their institutional function. The case is frequently cited (and frequently misunderstood by students as police 'immunity') — the correct reading is that ordinary omissions principles apply to them just as to anyone else."
+            },
+            "caseName": "Michael v Chief Constable of South Wales Police"
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often describe Michael as establishing that 'the police have immunity from negligence claims'.",
+            "whyItsWrong": "Michael does not create any special immunity for the police. It applies the same general rule against liability for third-party harm that applies to everyone, and confirms the same exceptions (control, assumption of responsibility, creating the danger) apply to the police as to any other defendant. What defeats the claim is the absence of an exception on these facts, not a blanket immunity."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-02-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Which best describes what Michael v Chief Constable of South Wales Police actually establishes?",
+          "options": [
+            "The police have blanket immunity from negligence liability",
+            "The police are subject to the same general omissions/third-party principles as any other defendant, and no exception applied on these particular facts",
+            "The police owe a duty whenever a caller reports a specific, named threat"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "This is the single most common misreading of Michael. The case is not about immunity — it applies ordinary negligence principles to the police and finds, on these facts, that none of the recognised exceptions to the no-duty rule was triggered."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Poole: assumption of responsibility, and the line between worse and not-better",
+        "voice": "analytical",
+        "body": [
+          "Poole BC v GN sharpens the analytical tools from Michael and applies them to a different public authority: a local council exercising child protection and housing functions. A family, including two children with disabilities, was placed by the council in social housing next to a family that subjected them to years of severe harassment and abuse. The claimants argued the council, aware of the abuse through its social services functions, owed a duty to protect them — including, at points, by failing to remove the children into care sooner, which the claimants said would have protected them.",
+          "The Supreme Court, in a judgment by Lord Reed, used the case to restate the whole area with unusual clarity. He rejected the idea that public authorities occupy a special category either of immunity or of enhanced duty; instead, ordinary common law principles of negligence apply, including the ordinary rules on omissions and third-party acts. The critical analytical move is distinguishing two questions that claimants often blur together: did the defendant's actions make the claimant's situation worse than if the defendant had done nothing at all? Or did the defendant merely fail to confer a benefit — to make things better — that it wasn't already obliged to confer?",
+          "On the facts, the council's housing decisions and social work involvement, however imperfect, did not make the family's situation worse than if the council had never been involved — the source of harm throughout was the neighbours' abuse, not any act of the council. Nor had the council assumed a specific responsibility, through some specific undertaking or course of dealing, to protect this family from this harm in a way that went beyond its general statutory functions. General statutory powers to investigate and safeguard, without more, do not themselves generate a common law duty of care to exercise those powers to a particular standard."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "citation": "[2019] UKSC 25",
+            "court": "Supreme Court",
+            "year": 2019,
+            "factsShort": "A council housed a vulnerable family, including disabled children, next to a family that subjected them to sustained harassment. The claimants argued the council's social services and housing functions generated a duty to protect them, including by intervening sooner.",
+            "ratioShort": "Public authorities are subject to ordinary negligence principles, not a special regime; a duty to protect a claimant from third-party harm requires either the authority's own conduct to have made the claimant's position worse, or a specific assumption of responsibility going beyond the authority's general statutory functions.",
+            "expanded": {
+              "facts": "The claimants, a mother and her two children (both with disabilities), were housed by Poole Borough Council in a property next to a family who subjected them to years of serious anti-social behaviour, harassment and abuse. The council's social services department was aware of the situation through its child protection functions but did not remove the children from the home or rehouse the family for a considerable period. The claimants argued the council owed them a duty of care in respect of both its housing allocation decisions and its ongoing failure to protect them through its child-welfare functions.",
+              "judgmentExtract": "Lord Reed: 'The mere fact that a statutory authority has the power or duty to provide a service to the public does not of itself imply that it owes a common law duty of care in the exercise of that function... Liability may be based on the authority's conduct having made matters worse than if it had not intervened at all, or on a specific assumption of responsibility... but not on the bare fact that it had the power to act and did not act, or acted imperfectly.'",
+              "significance": "Poole is now the leading modern authority on public authority liability for third-party harm, and it is deliberately structured around the making-worse/failing-to-make-better distinction that runs through this entire lesson. It confirms that having statutory powers or duties to help does not, by itself, convert a general public function into a specific common law duty of care owed to identifiable individuals — something closer to an actual assumption of responsibility, or actively harmful conduct, is required."
+            },
+            "caseName": "Poole Borough Council v GN"
+          },
+          {
+            "type": "doctrineMap",
+            "title": "Public authority liability: worse or not-better?",
+            "description": "A decision path for analysing whether a public authority's conduct generates a duty of care in a third-party harm scenario.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Did the authority's own conduct make the claimant's position worse than if it had done nothing at all?"
+              },
+              {
+                "id": "yes-worse",
+                "label": "Yes → ordinary negligence principles apply; a duty may arise"
+              },
+              {
+                "id": "no-worse",
+                "label": "No → has the authority specifically assumed responsibility to protect this claimant from this risk, beyond its general statutory functions?"
+              },
+              {
+                "id": "yes-assumed",
+                "label": "Yes → a duty may arise from that assumption of responsibility"
+              },
+              {
+                "id": "no-assumed",
+                "label": "No → no duty — a failure to exercise a general statutory power is not itself a breach of a common law duty"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "yes-worse",
+                "label": "Yes"
+              },
+              {
+                "from": "start",
+                "to": "no-worse",
+                "label": "No"
+              },
+              {
+                "from": "no-worse",
+                "to": "yes-assumed",
+                "label": "Yes"
+              },
+              {
+                "from": "no-worse",
+                "to": "no-assumed",
+                "label": "No"
+              }
+            ],
+            "textAlternative": "First ask whether the public authority's own conduct made the claimant's position actively worse than if the authority had never become involved at all. If so, ordinary negligence principles apply and a duty may arise. If not, ask whether the authority specifically assumed responsibility to protect this particular claimant from this particular risk, beyond simply having a general statutory power or duty to help. If such a specific assumption of responsibility exists, a duty may arise from it. If neither making things worse nor a specific assumption of responsibility is present, no duty arises — a bare failure to exercise a general statutory power to help is not itself a breach of any common law duty."
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-02-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Applying Poole's framework, which scenario more clearly shows the authority making the claimant's situation worse, rather than merely failing to make it better?",
+          "scenarioA": "A council's social worker, aware a child is at risk from a parent, fails to escalate a referral for several weeks, during which the parent (not the social worker) continues to harm the child.",
+          "scenarioB": "A council's housing officer, wrongly believing a flat has been made safe, tells a vulnerable tenant it is safe to return, prompting the tenant to move back into a flat that in fact still has a dangerous, unrepaired third-party intruder access point the officer's own inspection had missed.",
+          "correctScenario": "B",
+          "explanation": "In A, the source of harm throughout is the parent's own conduct; the social worker's delay is a failure to confer a benefit (faster intervention), which mirrors Poole itself. In B, the officer's own affirmative, inaccurate assurance is what caused the tenant to place themselves back in danger — arguably making the situation worse than if the council had said nothing at all, which is the kind of active conduct Poole treats differently from a bare omission."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Tindall: the Supreme Court draws the line again, more finely",
+        "voice": "exam-focused",
+        "body": [
+          "The most recent word on this area, and the one most likely to appear in a current exam, is Tindall v Chief Constable of Thames Valley Police. Police attended the scene of a road traffic accident caused by black ice, cleared some debris, and left without adequately warning oncoming traffic or gritting the road. A second, fatal accident occurred shortly afterwards on the same icy patch. The claimants argued the police had made the situation worse — or at least failed to make it better in a way that mattered — by attending, partially addressing the hazard, and then leaving without fully resolving it.",
+          "The Supreme Court used Tindall to refine exactly the distinction Poole introduced: had the police, by attending and doing something, made the road more dangerous than if they had never attended at all — or had they simply failed to confer the benefit of a fully cleared, warned-about hazard that a bystander with no prior involvement also wouldn't have had to provide? The Court held that merely attending an accident scene and then leaving, without making the situation actively worse than it already was before police arrived, does not itself generate a duty — the danger (the ice) was created by weather, not the police, and their limited intervention did not increase the risk beyond what already existed.",
+          "Hold onto this for exam technique: the making-worse/failing-to-make-better line is not always intuitive, and recent cases show the Supreme Court actively refining exactly where it sits. When you see a public authority that attended, intervened partially, or knew about a danger but didn't fully resolve it, resist the pull to call that automatically 'making it worse' — ask specifically whether the claimant's position, compared to a world where the authority never turned up at all, was made more dangerous by what the authority actually did, or merely left at the same baseline level of danger it started at."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "citation": "[2024] UKSC 33",
+            "court": "Supreme Court",
+            "year": 2024,
+            "factsShort": "Police attended a road accident caused by black ice, partially cleared debris, and left without warning oncoming traffic or having the road gritted. A second, fatal accident occurred on the same icy patch shortly afterwards.",
+            "ratioShort": "Police who attend an existing danger and leave without resolving it are not liable in negligence unless their own conduct actively made the danger worse than it would otherwise have been; simply failing to eliminate a pre-existing hazard is not itself a breach of duty.",
+            "expanded": {
+              "facts": "An early-morning road accident occurred on a patch of black ice, with a car ending up on the roadside. Police officers attended, moved some debris from the earlier accident, and left the scene without erecting warning signs, closing the road, or arranging for it to be gritted. The ice remained. A second car crashed on the same ice a short time later, resulting in a fatality. The claimants argued that by attending and taking some limited action without resolving the hazard, the police had either made the situation worse or otherwise crossed the line into a duty-generating intervention.",
+              "judgmentExtract": "The Court (summarising the applicable principle): 'The question is not whether the police could have done more, nor whether their intervention was imperfect, but whether what they actually did rendered the road more dangerous than it would have been had they not attended at all. A police response that leaves a pre-existing danger no worse than they found it does not, without more, generate a duty to eliminate that danger entirely.'",
+              "significance": "Tindall is the most recent and most precise Supreme Court statement of the making-worse/failing-to-make-better distinction first crystallised in Poole. It confirms the distinction is not merely theoretical — it decides real cases, including ones with tragic outcomes and clearly imperfect institutional responses. It also signals that partial, well-intentioned but incomplete intervention by a public authority does not, by itself, cross the line into active worsening."
+            },
+            "caseName": "Tindall v Chief Constable of Thames Valley Police"
+          },
+          {
+            "type": "timeline",
+            "title": "Public authority omissions liability: the modern line of cases",
+            "events": [
+              {
+                "date": "1987",
+                "label": "Smith v Littlewoods",
+                "description": "General rule and its three exceptions (control, assumption of responsibility, source of danger) established for third-party harm generally."
+              },
+              {
+                "date": "2015",
+                "label": "Michael v CC South Wales",
+                "description": "Confirms police are subject to ordinary omissions principles, with no special immunity or special extended duty."
+              },
+              {
+                "date": "2019",
+                "label": "Poole BC v GN",
+                "description": "Crystallises the making-worse/failing-to-make-better distinction as the central analytical tool for public authority liability."
+              },
+              {
+                "date": "2024",
+                "label": "Tindall v CC Thames Valley",
+                "description": "Applies and refines the making-worse distinction to a police road-hazard scenario, holding imperfect intervention is not itself active worsening."
+              }
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "tort-02-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A fire crew attends a small kitchen fire, extinguishes the visible flames, and leaves without checking for smouldering material inside a wall cavity, telling the homeowner it is 'all clear'. Hours later the wall cavity reignites and the house burns down. Analyse whether the fire service owes a duty of care, applying the making-worse/failing-to-make-better distinction.",
+          "factsToOrder": [
+            "The fire crew extinguishes the visible flames",
+            "The crew does not check the wall cavity for smouldering material",
+            "The crew affirmatively tells the homeowner it is 'all clear'",
+            "The homeowner relies on that assurance and does not evacuate or call again",
+            "The wall cavity reignites, destroying the house"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 4,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the fire service owes a duty of care for reignition after attending, extinguishing the visible fire, and giving an affirmative 'all clear' assurance without checking the wall cavity.",
+            "rule": "Following Poole and Tindall, a public authority is not liable merely for failing to fully eliminate a pre-existing danger it did not create, unless its own conduct made the situation actively worse than had it not attended at all, or it specifically assumed responsibility for the claimant's safety going beyond its general functions.",
+            "application": "Unlike Tindall, where police simply left a hazard no worse than they found it, here the crew gave an affirmative, specific assurance — 'all clear' — on which the homeowner relied to their detriment, arguably inducing a false sense of safety the homeowner would not otherwise have had (they might have stayed alert or called back had no assurance been given). This looks closer to an assumption of responsibility for the specific risk of reignition, or to conduct making the position worse than baseline (a homeowner with no fire service visit at all might have remained watchful).",
+            "conclusion": "Unlike a bare failure to eliminate a hazard, the specific and inaccurate 'all clear' assurance plausibly crosses the line into either making the situation worse or a specific assumption of responsibility, making a duty of care arguable here in a way it was not on the bare facts of Tindall."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "tort-02-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the general rule governing liability for a pure omission or for failing to prevent harm caused by a third party.",
+      "acceptableAnswers": [
+        "no general duty for pure omissions or to prevent third-party harm",
+        "no liability for a pure omission absent a recognised exception"
+      ],
+      "modelAnswer": "There is no general liability for a pure omission, or for failing to prevent harm caused by a third party's independent act, unless one of the recognised exceptions (control, assumption of responsibility, or creating the source of danger) applies."
+    },
+    {
+      "itemId": "tort-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which case is the leading general authority on liability for harm caused by third parties, setting out the recognised exceptions?",
+      "options": [
+        "Smith v Littlewoods Organisation Ltd",
+        "Michael v Chief Constable of South Wales Police"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-02-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT one of the recognised exceptions from Smith v Littlewoods?",
+      "options": [
+        "Control over the third party",
+        "Assumption of responsibility",
+        "Foreseeability of harm alone",
+        "Creating the source of danger"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "Foreseeability alone has never been sufficient — this is the core trap of the whole topic. Littlewoods itself involved foreseeable harm (repeated break-ins were known) and still no duty arose, because none of the three specific exceptions was made out."
+    },
+    {
+      "itemId": "tort-02-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does Michael v Chief Constable of South Wales Police establish that the police have a special immunity from negligence liability?",
+      "options": [
+        "No — it applies the same general principles that apply to any defendant",
+        "Yes — the police can never be sued in negligence"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-02-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "According to Poole BC v GN, what is required beyond a public authority simply having a statutory power to help, for a duty of care to arise?",
+      "options": [
+        "The authority's conduct must have made the claimant's position worse, or the authority must have specifically assumed responsibility for the claimant's protection",
+        "Nothing further — any statutory power automatically generates a common law duty",
+        "The claimant must show the authority acted with malice"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "tort-02-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the extract below from Poole, highlight the sentence that distinguishes the two bases on which liability can arise.",
+      "passage": "The mere fact that a statutory authority has the power or duty to provide a service to the public does not of itself imply that it owes a common law duty of care in the exercise of that function. Liability may be based on the authority's conduct having made matters worse than if it had not intervened at all, or on a specific assumption of responsibility, but not on the bare fact that it had the power to act and did not act, or acted imperfectly.",
+      "ratioSentence": "Liability may be based on the authority's conduct having made matters worse than if it had not intervened at all, or on a specific assumption of responsibility, but not on the bare fact that it had the power to act and did not act, or acted imperfectly."
+    },
+    {
+      "itemId": "tort-02-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that a public authority which attends a scene, intervenes imperfectly, and leaves without fully resolving a pre-existing hazard has, on that basis alone, made the situation legally 'worse'?",
+      "sliderLabels": [
+        "Definitely made it worse",
+        "Not automatically worse — depends on the specific conduct"
+      ],
+      "correctPosition": "Not automatically worse — depends on the specific conduct",
+      "explanation": "Tindall confirms that imperfect or incomplete intervention is not, by itself, active worsening. The question is always whether the authority's specific conduct left the claimant more exposed than if it had never attended at all."
+    },
+    {
+      "itemId": "tort-02-test-08",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these cases in chronological order.",
+      "items": [
+        "Smith v Littlewoods Organisation Ltd",
+        "Michael v Chief Constable of South Wales Police",
+        "Poole BC v GN",
+        "Tindall v Chief Constable of Thames Valley Police"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "tort-02-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario is closer to triggering the 'assumption of responsibility' exception, rather than remaining a pure omission?",
+      "scenarioA": "A council receives a general complaint that a neighbouring family is noisy, and takes no action.",
+      "scenarioB": "A council specifically agrees, in writing, to provide a support worker to check on a vulnerable tenant twice weekly because of a known risk from a neighbour, and then simply stops sending the worker without telling the tenant.",
+      "correctScenario": "B",
+      "explanation": "B shows a specific undertaking, going beyond the council's general statutory functions, to protect this particular tenant from this particular risk — the hallmark of an assumption of responsibility. A is a bare failure to act on a general complaint, which remains a pure omission."
+    },
+    {
+      "itemId": "tort-02-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A prison allows a known violent inmate unsupervised access to the exercise yard, where he assaults another inmate. Applying Smith v Littlewoods, which exception is most obviously engaged?",
+      "options": [
+        "Assumption of responsibility",
+        "Control over the third party",
+        "Creating the source of danger"
+      ],
+      "correctIndex": 1,
+      "explanation": "Prison authorities have a recognised special degree of control over inmates, which is the paradigm example of the 'control' exception identified in Smith v Littlewoods and long recognised in the case law on custodial settings."
+    },
+    {
+      "itemId": "tort-02-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A council stores flammable chemical waste in an unlocked, unmarked shed on a site frequently used by local teenagers, ignoring repeated warnings from residents. Teenagers ignite the waste, causing an explosion that damages neighbouring homes. Which exception from Smith v Littlewoods is most clearly triggered?",
+      "options": [
+        "Control over the third party",
+        "Assumption of responsibility",
+        "Creating the source of danger"
+      ],
+      "correctIndex": 2,
+      "explanation": "Unlike the cinema in Littlewoods itself, here the council did something specific and dangerous — storing flammable material, unsecured, on a site known to be used by young people who had been the subject of repeated warnings — making third-party interference with a genuinely hazardous source foreseeable in a way mere ownership of an empty building was not."
+    },
+    {
+      "itemId": "tort-02-test-12",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly shows the police conduct made the situation actively worse, rather than merely failing to make it better.",
+      "scenarioText": "Officers attend a car that has broken down in a live traffic lane at night. They place a single warning cone behind the vehicle, then remove the vehicle's working hazard lights 'to inspect them', forget to reactivate the lights, and leave. A following driver, unable to see the stationary car without its hazards, crashes into it.",
+      "tappableSpans": [
+        "attend a car that has broken down",
+        "place a single warning cone",
+        "remove the vehicle's working hazard lights",
+        "forget to reactivate the lights"
+      ],
+      "correctSpan": "remove the vehicle's working hazard lights",
+      "explanation": "Removing a working safety feature that was already reducing the danger — and not restoring it — is a positive act that left the car less visible than it was before the police arrived, which is the kind of active worsening Tindall distinguishes from merely leaving a pre-existing hazard unresolved."
+    },
+    {
+      "itemId": "tort-02-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A caller reports to police that a named individual has just made a credible, specific threat to kill a named third party within the hour. The call is logged correctly as high priority, but due to a staffing shortage no officers are available to respond before the threat is carried out. Applying Michael, is the force likely liable?",
+      "options": [
+        "Yes — the specificity of the threat and the correct logging is enough on its own to generate a duty",
+        "No — without an assumption of responsibility or control over the third party, a correctly assessed but unmet resourcing need does not itself generate a duty",
+        "Yes — any failure to prevent a known threat is automatically a breach"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think that correctly identifying a serious threat changes the analysis, but Michael's reasoning does not turn on how accurately the risk was assessed — it turns on whether a recognised exception (control or assumption of responsibility) is present. Absent that, even a well-identified, unmet risk does not itself generate a duty."
+    },
+    {
+      "itemId": "tort-02-test-14",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario most closely mirrors the reasoning in Tindall v Chief Constable of Thames Valley Police, rather than Poole BC v GN?",
+      "scenarioA": "A council's housing officer wrongly assures a tenant a boiler has been repaired and is safe to use; it explodes because the repair was never actually carried out.",
+      "scenarioB": "Paramedics attend a person who has collapsed from a suspected allergic reaction, administer initial treatment, and leave after the person appears stable; the person later suffers a second, fatal reaction from the same undetected allergen exposure, with no further negligent act by the paramedics beyond not identifying the allergen source.",
+      "correctScenario": "B",
+      "explanation": "B mirrors Tindall: the underlying danger (the allergen) was not created by the paramedics, and their imperfect, incomplete intervention did not make the patient's position worse than if they had never attended. A is closer to Poole's 'making worse' analysis, since the housing officer's affirmative, inaccurate assurance induced reliance and changed the tenant's behaviour in a way that increased risk."
+    },
+    {
+      "itemId": "tort-02-test-15",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A lifeguard, employed and on duty at a supervised beach, sees a swimmer struggling but chooses not to intervene because their shift is about to end. Does a duty of care most likely arise?",
+      "options": [
+        "Yes — the lifeguard's employed role is a recognised assumption of responsibility for the safety of swimmers on that beach",
+        "No — lifeguards are treated identically to any bystander with no special relationship to swimmers"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating any imperfect, incomplete, or well-intentioned intervention by a public authority as automatically 'making things worse'. It isn't — the question is always whether the claimant's position was left more dangerous than a world in which the authority never turned up at all, not whether the authority could, with hindsight, have done more.",
+    "reviewMisses": true,
+    "linkToPathway": "tort.negligence.omissions-third-parties"
+  }
+}

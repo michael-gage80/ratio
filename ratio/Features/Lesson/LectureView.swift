@@ -209,6 +209,7 @@ extension Item {
         case "distinguishTheCase": "Distinguish the case"
         case "statuteParser": "Statute parser"
         case "applyTheRule": "Apply the rule"
+        case "sortIntoBuckets": "Sort into buckets"
         default: type
         }
     }

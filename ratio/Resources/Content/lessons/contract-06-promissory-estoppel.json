@@ -1,0 +1,396 @@
+{
+  "lessonId": "contract-06",
+  "moduleId": "contract",
+  "moduleTitle": "Contract law",
+  "lessonNumber": 6,
+  "topicId": "contract.formation.promissory-estoppel",
+  "title": "Promissory estoppel",
+  "subtitle": "A shield against strict rights, not a sword to create new ones",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the elements of promissory estoppel and identify each one in a fact pattern",
+    "Explain why estoppel operates only as 'a shield, not a sword', applying Combe v Combe",
+    "Assess, on given facts, whether a promissory estoppel is likely to be suspensory or extinctive in effect"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Hughes v Metropolitan Railway Co (1877) 2 App Cas 439", "role": "Origin of the doctrine: a party cannot enforce strict rights where it would be inequitable, having regard to dealings between the parties" },
+    { "citation": "Central London Property Trust Ltd v High Trees House Ltd [1947] KB 130", "role": "Denning J's modern reformulation of the doctrine and its typically suspensory effect" },
+    { "citation": "Combe v Combe [1951] 2 KB 215", "role": "Estoppel is a shield, not a sword — it cannot found a fresh cause of action" },
+    { "citation": "D & C Builders Ltd v Rees [1966] 2 QB 617", "role": "Inequitable conduct by the promisee (exerting pressure) defeats reliance on the doctrine" },
+    { "citation": "Collier v P & MJ Wright (Holdings) Ltd [2007] EWCA Civ 1329", "role": "Illustrates the doctrine operating on part-payment facts, and its potentially extinctive rather than merely suspensory effect" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often walk in here already able to recite 'a shield, not a sword' as a slogan, without being able to say what it rules out in an actual problem question. Where the profile shows the student reaches for the right doctrine but misapplies it to the facts, this note appears: 'You know this is the estoppel lesson — the test is whether you can tell when it helps a party and when it can't.'",
+      "profileHooks": {
+      "weakApplication": "Your recall of the case names here is solid. The pool below leans hard on scenario questions — watch for facts that try to make estoppel the basis of a claim, not a defence to one.",
+      "weakKnowledge": "Go through Parts 1 to 3 slowly and be able to state, unprompted, all four elements of the doctrine before you move on — the later parts assume you already have them."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Picture a landlord who tells a struggling tenant, in plain words, not to worry about rent for a while — and then, years later, sues for every penny he generously waived. Common law, strictly applied, would let him. Equity steps in and says: not if you meant it, and not if she relied on it. This lesson is about how far that promise actually reaches, and where it quietly runs out.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. This doctrine has developed gradually since the nineteenth century and remains actively debated in its precise limits, particularly around extinctive effect; no legislative change is pending."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Where the doctrine began",
+        "voice": "historical narrative — situates the modern rule in its Victorian origin",
+        "body": [
+          "Promissory estoppel is usually taught through Denning's twentieth-century cases, but the doctrine's foundations are older and worth knowing precisely, because Denning himself was reviving, not inventing, a principle. Hughes v Metropolitan Railway Co (1877) is that foundation.",
+          "A landlord served a tenant with formal notice requiring repairs to be completed within six months, on pain of forfeiting the lease. During that period, the two parties entered negotiations about the landlord possibly buying back the lease instead — negotiations which meant the tenant reasonably held off starting the repairs while they continued. The negotiations eventually broke down, with over a month of the notice period still nominally left, but not enough time for the tenant to actually complete the repairs. The landlord then sought to forfeit the lease for non-compliance with the original notice.",
+          "The House of Lords refused to allow it. Lord Cairns LC held that where parties who have existing legal relations enter into negotiations which lead one party reasonably to suppose that strict legal rights will not be enforced, or will be kept in suspense, the person who might otherwise have enforced those rights will not be allowed to do so where it would be inequitable, having regard to the dealings that have taken place. The tenant was given a fresh period to comply, running from the end of the negotiations. This is the doctrine's origin: not a rule about waiving debts specifically, but a broader equitable principle about not going back on the reasonable understanding your own conduct has created."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Hughes v Metropolitan Railway Co",
+            "citation": "(1877) 2 App Cas 439",
+            "court": "House of Lords",
+            "year": 1877,
+            "factsShort": "A landlord's notice to repair, on pain of forfeiture, was effectively put on hold during buy-back negotiations; the tenant relied on this and did not complete repairs within the original period.",
+            "ratioShort": "A party who leads another, by words or conduct, to believe strict legal rights will not be enforced cannot then enforce them where it would be inequitable to do so, having regard to the dealings between them.",
+            "expanded": {
+              "facts": "The Metropolitan Railway Company held a lease from Hughes and received a formal notice requiring repairs within six months, with forfeiture of the lease threatened for non-compliance. Shortly afterwards, the parties began negotiating a possible purchase by Hughes of the company's interest in the lease, during which nothing was done about the repairs. The negotiations ultimately failed. By the time they ended, the six-month notice period had almost, but not quite, expired, leaving insufficient time to carry out the repair works.",
+              "judgmentExtract": "Lord Cairns LC held that it is the first principle upon which courts of equity act that if parties who have entered into definite and distinct terms involving certain legal results afterwards enter upon a course of negotiation which leads one party to suppose that the strict rights arising under the contract will not be enforced, the person who might have enforced those rights will not be allowed to do so where it would be inequitable, having regard to the dealings which have taken place.",
+              "significance": "This is the doctrinal root beneath every later promissory estoppel case, including High Trees. It establishes the core shape of the principle well before Denning's name became attached to it: an existing legal relationship, conduct or words creating a reasonable understanding that strict rights are suspended, and inequity in reverting to those rights without notice."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-06-check-01",
+          "type": "tapTheFact",
+          "skillTag": "knowledge",
+          "prompt": "Tap the fact in the Hughes scenario that makes it inequitable for the landlord simply to enforce the original notice as if nothing else had happened.",
+          "scenarioText": "The landlord serves a notice requiring repairs within six months. The parties then enter buy-back negotiations, during which the tenant does not carry out any repairs. The negotiations fail with little of the notice period left, and the landlord then claims forfeiture for non-compliance with the original notice.",
+          "tappableSpans": ["serves a notice requiring repairs", "enter buy-back negotiations", "tenant does not carry out any repairs", "claims forfeiture"],
+          "correctSpan": "enter buy-back negotiations",
+          "feedbackCorrect": "Right — it's the negotiations themselves that create the reasonable understanding that the strict repair timetable is on hold. Everything that follows (no repairs done, then a forfeiture claim) only becomes inequitable because of that earlier conduct.",
+          "feedbackIncorrect": "Look for the moment the landlord's own conduct creates an expectation. Failing to repair, on its own, would ordinarily just be a breach — it only becomes protected because the negotiations reasonably suggested the timetable was suspended."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Denning's reformulation: High Trees",
+        "voice": "close textual reading — slows down on the judgment's own words",
+        "body": [
+          "Central London Property Trust Ltd v High Trees House Ltd (1947) is the case most students associate with promissory estoppel, and for good reason: Denning J's judgment gives the doctrine its modern, workable shape, even though — famously — the actual decision on the facts didn't strictly require it, making the estoppel reasoning technically obiter.",
+          "The facts: High Trees leased a block of flats from the claimant landlord in 1937 at a full ground rent of £2,500 a year. By 1940, wartime conditions meant London was emptying out and the flats could not be fully let. The parties agreed, in writing, to reduce the rent to £1,250 for the duration of the difficult conditions. High Trees paid the reduced rent throughout the war. By 1945, the flats were fully let again, and the landlord — now under new ownership — sought to recover the full rent going forward, and, testing the water, asked the court whether it could also claim the difference for the last two quarters of 1945.",
+          "Denning J held the landlord could recover the full rent from the point the flats became fully let again, since the 1940 agreement was only ever intended to apply while wartime conditions persisted. But he went further, addressing a question not strictly before him: could the landlord have claimed the arrears for the wartime years themselves, when the reduced-rent agreement was in force? He said no. Even though High Trees had given no fresh consideration for the rent reduction, the landlord's clear promise, intended to be acted on and in fact acted on, meant the landlord could not go back on it for the period the promise covered.",
+          "Notice what this establishes as the doctrine's core elements, even though Denning did not present them as a numbered list: an existing legal relationship between the parties (the lease); a clear and unequivocal promise or representation that strict rights will not be enforced; reliance by the promisee, in the sense of acting on the basis the promise would be kept; and it being inequitable for the promisor simply to go back on the promise. Note too what High Trees signals about effect: the landlord could revert to the full rent for the future once conditions changed, on giving reasonable notice — the estoppel suspended the right, it did not destroy it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Elements of promissory estoppel",
+            "definition": "(1) An existing legal relationship between promisor and promisee; (2) a clear and unequivocal promise or representation, by words or conduct, that strict legal rights will not be enforced; (3) reliance by the promisee on that promise, in the sense of acting on the basis it would be kept; (4) it being inequitable, in all the circumstances, for the promisor to go back on the promise."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "What High Trees actually decided vs what it is famous for",
+            "points": [
+              "Actually decided: the landlord could recover the full rent from the point the flats became fully let again, since the reduced-rent agreement was tied to wartime conditions",
+              "Famous (obiter) reasoning: had the landlord tried to claim the wartime arrears themselves, that claim would have failed — the promise, relied on, could not be gone back on for the period it covered",
+              "The obiter point is what later courts adopted as the modern doctrine of promissory estoppel"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-06-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, adapted from High Trees, highlight the sentence that best captures the reasoning behind the doctrine.",
+          "passage": "The tenant company paid the reduced rent throughout the currency of the wartime arrangement and altered its position in reliance on it. A promise intended to be binding, intended to be acted on, and in fact acted on, is binding so far as its terms properly apply, notwithstanding that there was no consideration for it in the strict sense. The landlord company having accepted that reduced rent for the whole period, it is not open to it now to claim the arrears which it might, if it had chosen, have claimed at the time.",
+          "ratioSentence": "A promise intended to be binding, intended to be acted on, and in fact acted on, is binding so far as its terms properly apply, notwithstanding that there was no consideration for it in the strict sense."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "A shield, not a sword",
+        "voice": "definitional and analytical — pins down exactly what the metaphor rules out",
+        "body": [
+          "The phrase 'a shield, not a sword' is quoted constantly and understood precisely by almost no one under exam pressure. It means this: promissory estoppel can prevent a party from enforcing an existing legal right they would otherwise have — that is the shield. It cannot, by itself, create a brand new legal right or cause of action where none existed before, out of a promise unsupported by consideration — that would be a sword, and the doctrine is not one.",
+          "Combe v Combe (1951) is the case that draws the line precisely, and it does so on facts that make the distinction unmissable. On divorce, a husband promised his wife he would pay her £100 a year in maintenance. The wife, partly in reliance on this promise, did not apply to the divorce court for a maintenance order — something she was entitled to seek at the time. The husband paid nothing, and years later the wife sued him for the arrears, arguing that his promise, though unsupported by any consideration she had given in the traditional sense, was binding because she had relied on it, applying the High Trees reasoning.",
+          "The Court of Appeal rejected her claim. Denning LJ — the very judge who had given estoppel its modern force in High Trees — held that the doctrine could not assist her, because she was using it as the entire foundation of her cause of action, not as a defence to the enforcement of an existing right. High Trees, he explained, was a case where the landlord already had an enforceable right (to the full rent) and was estopped from enforcing part of it; the wife here had no existing right against her husband to maintenance payments outside a court order, and could not manufacture one purely from his unsupported promise plus her reliance on it. Without consideration for the promise itself, ordinary contract principles meant it was simply not enforceable — and estoppel does not fill that gap when the claimant is the one trying to sue on the promise directly.",
+          "The lesson generalises: always ask who is raising the estoppel, and why. If a party raises it to resist the other side's claim — to say 'you promised not to enforce this, and I relied on it' — that is the shield, and it is exactly what the doctrine is for. If a party raises it as the entire basis of their own claim against someone who has made no other binding commitment, that is the sword, and Combe v Combe says it fails."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Combe v Combe",
+            "citation": "[1951] 2 KB 215",
+            "court": "Court of Appeal",
+            "year": 1951,
+            "factsShort": "A husband promised maintenance on divorce; the wife relied on the promise by not seeking a court order, then sued for the promised arrears years later.",
+            "ratioShort": "Promissory estoppel cannot be used to found a new cause of action where the promisee gave no consideration — it operates only as a defence to the enforcement of an existing right, not as an independent source of one.",
+            "expanded": {
+              "facts": "During divorce proceedings, the husband promised to pay his wife £100 a year in maintenance. She did not apply to the divorce court for a maintenance order, in part because of his promise, though the court found this was not the sole reason. The husband never paid, and some years later the wife sued for the full amount of arrears, relying on the promise and her reliance on it, without having given any consideration of her own for the husband's promise.",
+              "judgmentExtract": "Denning LJ held that the principle in High Trees applies only where a party seeks to prevent another from insisting on their strict legal rights when it would be unjust, having regard to dealings between the parties, to allow them to do so — it does not create new rights where none existed. The wife's claim depended entirely on the husband's bare promise; she needed the promise itself to be a binding contract, which required consideration she had not given, and estoppel could not substitute for that missing element.",
+              "significance": "Combe v Combe is the essential companion case to High Trees: without it, students routinely (and wrongly) read High Trees as having quietly abolished the doctrine of consideration. Combe confirms consideration is still required to create a new binding promise; estoppel only ever operates defensively, against the enforcement of a right that already exists."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often argue that because High Trees shows a promise can bind without consideration, any promise relied upon should be enforceable via estoppel.",
+            "whyItsWrong": "High Trees only prevented the landlord from enforcing an existing right (to the full rent) that it already possessed under the lease. Combe v Combe makes clear that where the claimant has no existing right and is relying on the bare promise itself to create one, consideration is still required, and estoppel — a shield, not a sword — cannot supply it."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-06-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A supplier promises a long-standing customer, out of goodwill, a permanent 10% discount on all future orders, with nothing given by the customer in return. The customer places a large order relying on the promised discount, but the supplier then charges full price. Can the customer sue successfully, relying purely on promissory estoppel?",
+          "options": ["Yes — reliance on a clear promise is always enough to bind the promisor under High Trees", "No — the customer has no existing legal right to the discount; estoppel cannot be used as the sole basis for a new claim without consideration, per Combe v Combe", "No — promissory estoppel only ever applies to landlord and tenant relationships"],
+          "correctIndex": 1,
+          "trapExplanation": "The reliance in this scenario looks just as genuine as in High Trees, which tempts a 'yes'. But the customer here is trying to found a fresh claim on a bare, gratuitous promise — exactly the situation Combe v Combe rules out. Estoppel would only help if the supplier already owed the customer something and was trying to insist on the full amount despite having promised otherwise."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When equity refuses to help: D & C Builders v Rees",
+        "voice": "cautionary — builds towards a warning about who can invoke the doctrine",
+        "body": [
+          "Every element of promissory estoppel so far has assumed good faith on the part of the person relying on the promise. D & C Builders Ltd v Rees (1966) is the case that shows what happens when that assumption fails, and it is worth knowing because it demonstrates the doctrine's equitable character in the sharpest possible way.",
+          "D & C Builders, a small firm in financial difficulty, was owed £482 by Mr and Mrs Rees for completed work. Knowing the builders were desperate for cash and would likely be forced into insolvency without it, Mrs Rees telephoned and offered £300 in full settlement, making clear the builders could take it or get nothing at all through prolonged litigation. Reluctantly, and under obvious financial pressure, the builders accepted and cashed a cheque for £300. They later sued for the £182 balance. Mrs Rees raised both an argument that the £300 had been accepted in full and final satisfaction, and, in the alternative, promissory estoppel.",
+          "The Court of Appeal found for the builders on both points. On the settlement argument, the court applied Foakes v Beer: part payment of a debt is not good consideration for discharging the balance. On the estoppel argument — the one that matters most for this lesson — Lord Denning MR held that the doctrine simply did not assist Mrs Rees on these facts, because it is an equitable doctrine, and 'he who seeks equity must do equity.' The builders' acceptance of the reduced sum was not a true, voluntary agreement at all; it had been extracted by taking deliberate advantage of their financial distress. It would not be inequitable — indeed it would be entirely just — for the builders to insist on the balance, whatever assurance had technically been given.",
+          "This is the piece students most often forget to check for: even where the first three elements of the doctrine look satisfied on the surface — an existing debt, a promise to accept less, and apparent reliance on it — the fourth element, inequity, is not automatic. If the party seeking to rely on the promise obtained it through pressure, unfair advantage, or their own bad conduct, a court can simply refuse to find it inequitable for the promisor to go back on it."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "D & C Builders Ltd v Rees",
+            "citation": "[1966] 2 QB 617",
+            "court": "Court of Appeal",
+            "year": 1966,
+            "factsShort": "A debtor, aware the creditor builders were in financial difficulty, pressured them into accepting a reduced sum in full settlement of a debt.",
+            "ratioShort": "Promissory estoppel is an equitable doctrine; a promise extracted by taking unfair advantage of the promisee's financial distress does not make it inequitable for the promisee to go back on it.",
+            "expanded": {
+              "facts": "D & C Builders had completed work for Mr and Mrs Rees and were owed £482. Aware that the builders were in serious financial difficulty and desperate for payment, Mrs Rees telephoned to offer £300 in full settlement, stating bluntly that they would get nothing at all if they did not accept and pursued the matter through the courts. Under this pressure, and facing potential insolvency, the builders accepted a cheque for £300 marked as being in full settlement, then sued for the remaining £182.",
+              "judgmentExtract": "Lord Denning MR held that even accepting the principle that a promise supported by reliance can bind without consideration, that principle is subject to the qualification that the promise must be given freely, not extracted through undue pressure. Here, the creditor's agreement to accept less was obtained by the debtor's exploitation of the creditor's financial weakness, and it would not be inequitable, in those circumstances, for the creditor to insist on payment of the full amount.",
+              "significance": "D & C Builders is the clean counter-example to High Trees: same basic shape (a promise to accept less, apparent reliance), opposite outcome, because the inequity element fails. It confirms that promissory estoppel is not a mechanical checklist — the court retains a genuine equitable discretion, and improper conduct by the party seeking to rely on the promise can defeat the claim outright."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-06-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario more closely resembles D & C Builders v Rees than High Trees?",
+          "scenarioA": "A landlord, entirely unprompted and out of goodwill during a tenant's illness, tells them not to worry about rent for three months; the tenant relies on this and does not seek alternative funds.",
+          "scenarioB": "A cash-strapped creditor is bluntly told by a debtor that they can accept half the debt immediately or spend years chasing all of it through the courts, and reluctantly agrees under that pressure.",
+          "correctScenario": "B",
+          "explanation": "B mirrors D & C Builders: the promise to accept less is extracted through deliberate pressure exploiting the creditor's weak position, which defeats the inequity element even if reliance is present. A mirrors High Trees: a freely given, unprompted promise, genuinely relied upon, with nothing pointing to unfair pressure."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Suspensory or extinctive? Collier and the unsettled edge",
+        "voice": "exploratory — poses the open question the case law hasn't fully closed",
+        "body": [
+          "Here is the question this lesson has been building towards, and one the case law does not answer with total uniformity: when promissory estoppel operates, does it merely pause the promisor's strict rights, or can it permanently kill them off?",
+          "High Trees gives the default answer: normally suspensory. The landlord could not claim the wartime arrears, but nothing stopped it reverting to the full rent once conditions changed and it gave reasonable notice — the underlying right to the full rent was never destroyed, only held in abeyance while the promise operated. This makes sense of the doctrine's equitable character: it prevents a specific injustice (going back on a promise already relied upon) without permanently rewriting the parties' bargain for all time.",
+          "But some situations make reversion impossible or pointless, and Collier v P & MJ Wright (Holdings) Ltd (2007) is the modern illustration of the doctrine tipping towards a genuinely extinctive effect. Mr Collier was one of three partners jointly and severally liable for a partnership debt. After the other two defaulted, the creditor's agent agreed that Collier would only be pursued for his own one-third share, and Collier paid accordingly over an extended period, with the creditor accepting those payments without seeking the rest from him. When the creditor later sought the remaining two-thirds from Collier personally, the Court of Appeal held that, on facts showing the creditor had voluntarily agreed to accept payment by instalments of the smaller sum and Collier had acted on that agreement, it would be inequitable for the creditor to go back on it — and Arden LJ suggested this could operate to extinguish the creditor's right to the balance permanently, not merely suspend it, since there was no sensible future point at which the original, larger joint liability could fairly be revived against Collier alone.",
+          "The better way to hold these cases together, rather than treating them as contradictory, is this: promissory estoppel is suspensory by default, reflecting its equitable, temporary character — but becomes effectively extinctive wherever the nature of the promise, or the passage of time and the promisee's reliance, make it impossible or unfair to revert to the original position. A landlord can give reasonable notice and go back to charging full rent for the future; a creditor who has let a debtor pay off a lesser sum over years, on the understanding that was the whole of it, may find there is no fair 'future' left to revert to. Examiners will often signal which is intended by whether the facts describe an ongoing relationship capable of adjustment (suspensory) or a closed, completed course of dealing (potentially extinctive)."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Suspensory or extinctive: which does the estoppel produce?",
+            "description": "A decision path for assessing the likely effect of a promissory estoppel on the facts.",
+            "nodes": [
+              { "id": "start", "label": "Is the underlying obligation ongoing/continuing (e.g. periodic rent) or a single, fixed debt?" },
+              { "id": "ongoing", "label": "Ongoing → likely suspensory: promisor can revert for the future on reasonable notice (High Trees)" },
+              { "id": "fixed", "label": "Fixed single debt → was the reduced sum paid off in full, with the creditor accepting that as the entirety over time?" },
+              { "id": "fixed-yes", "label": "Yes → potentially extinctive: no sensible 'future' point to revert to (Collier)" },
+              { "id": "fixed-no", "label": "No, or reversion is still practically possible → likely suspensory" }
+            ],
+            "edges": [
+              { "from": "start", "to": "ongoing", "label": "Ongoing" },
+              { "from": "start", "to": "fixed", "label": "Fixed" },
+              { "from": "fixed", "to": "fixed-yes", "label": "Yes" },
+              { "from": "fixed", "to": "fixed-no", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the underlying obligation is ongoing (like periodic rent) or a single fixed debt. Ongoing obligations are typically suspensory: the promisor can revert to the strict right for the future on reasonable notice, as in High Trees. A single fixed debt paid off over time, with the creditor treating the reduced sum as the whole of it, may be extinctive, as suggested in Collier, because there is no sensible future point to revert to. Otherwise, treat the effect as suspensory by default."
+          }
+        ],
+        "interaction": {
+          "itemId": "contract-06-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that promissory estoppel, as a general rule, permanently extinguishes the promisor's original legal rights rather than merely suspending them?",
+          "sliderLabels": ["Always extinctive", "Generally suspensory, exceptionally extinctive"],
+          "correctPosition": "Generally suspensory, exceptionally extinctive",
+          "explanation": "High Trees establishes the default: the doctrine typically suspends strict rights, which can be revived for the future on reasonable notice. Collier shows the exception — on facts where reverting to the original position is impossible or pointless, the effect can be genuinely extinctive."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "contract-06-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the four elements of promissory estoppel.",
+      "acceptableAnswers": ["existing legal relationship, clear promise, reliance, inequity", "existing relationship, unequivocal promise not to enforce rights, reliance, inequitable to go back"],
+      "modelAnswer": "An existing legal relationship between the parties; a clear and unequivocal promise that strict legal rights will not be enforced; reliance by the promisee on that promise; and it being inequitable, in all the circumstances, for the promisor to go back on it."
+    },
+    {
+      "itemId": "contract-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case is usually cited as the origin of the modern doctrine of promissory estoppel?",
+      "options": ["Hughes v Metropolitan Railway Co", "Combe v Combe"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "contract-06-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Does a party relying on promissory estoppel need to show they gave consideration for the promise in question?",
+      "options": ["Yes — otherwise the promise cannot bind the promisor at all", "No — the entire point of the doctrine is that it can bind a promisor despite the absence of consideration, provided the other elements are met", "No, but only where the promisor is a company"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think a lack of consideration is always fatal, since that's the rule everywhere else in contract formation and variation. Promissory estoppel is the deliberate exception: High Trees enforced a promise precisely despite the absence of consideration for it, provided the promisee relied on it and it would be inequitable to resile."
+    },
+    {
+      "itemId": "contract-06-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the events in Central London Property Trust v High Trees House.",
+      "items": ["The landlord lets the flats at a full ground rent of £2,500", "The parties agree, in writing, to a reduced rent of £1,250 during wartime conditions", "High Trees pays the reduced rent throughout the war", "The flats become fully let again, and the landlord seeks to recover full rent for the future"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "contract-06-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below from Combe v Combe, highlight the sentence stating the core 'shield not sword' ratio.",
+      "passage": "The wife seeks to rely on the husband's promise as the very foundation of her claim for maintenance arrears. That is not the office which the principle in the High Trees House case is designed to fulfil. Seeing that the principle never stands alone as giving a cause of action in itself, it can never do away with the necessity of consideration when that is an essential part of the cause of action. The doctrine of estoppel may be used as a shield but not as a sword.",
+      "ratioSentence": "The doctrine of estoppel may be used as a shield but not as a sword."
+    },
+    {
+      "itemId": "contract-06-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following best describes the 'inequity' requirement as applied in D & C Builders v Rees?",
+      "options": ["Inequity is presumed automatically once reliance is shown, regardless of how the promise was obtained", "The court retains a genuine discretion, and a promise extracted through pressure or unfair advantage can mean it is NOT inequitable for the promisor to go back on it", "Inequity only applies to promises made by landlords"],
+      "correctIndex": 1,
+      "explanation": "D & C Builders shows inequity is not a formality that follows automatically once the other elements look satisfied — it is a genuine equitable enquiry, and improper conduct by the party seeking the benefit of the promise can defeat it entirely."
+    },
+    {
+      "itemId": "contract-06-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario is more likely to satisfy the inequity element of promissory estoppel?",
+      "scenarioA": "A supplier, unprompted and in writing, tells a long-standing customer struggling after a fire that it will halve invoices for six months; the customer relies on this and does not seek emergency financing elsewhere.",
+      "scenarioB": "A debtor threatens a struggling creditor that unless they accept 40% of a debt immediately, the debtor will simply declare bankruptcy and the creditor will get nothing; the creditor reluctantly agrees.",
+      "correctScenario": "A",
+      "explanation": "A mirrors High Trees: a freely given promise, genuinely relied upon, with no suggestion of pressure — inequity is straightforwardly satisfied. B mirrors D & C Builders: the promise is extracted through pressure exploiting the creditor's weak position, which tends to defeat, not satisfy, the inequity requirement."
+    },
+    {
+      "itemId": "contract-06-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows reliance in this scenario.",
+      "scenarioText": "A licensor tells a small licensee, in writing, that it will accept 70% of the licence fee for the next two quarters while the licensee recovers from a supply chain disruption. Relying on this, the licensee does not draw down an emergency loan facility it otherwise would have used, and continues trading normally. Two months later the licensor demands the missing 30% for both quarters.",
+      "tappableSpans": ["tells a small licensee, in writing", "does not draw down an emergency loan facility", "continues trading normally", "demands the missing 30%"],
+      "correctSpan": "does not draw down an emergency loan facility",
+      "explanation": "Reliance is shown by the licensee changing its position because of the promise — here, foregoing a loan facility it would otherwise have used. 'Continuing to trade normally' alone would not clearly show a change of position; the foregone loan does."
+    },
+    {
+      "itemId": "contract-06-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A landlord tells a tenant, in writing and unprompted, that rent will be reduced by half for as long as the tenant's shop is closed for refurbishment of the building's shared entrance, which the landlord is carrying out. The tenant relies on this and does not seek to break the lease early. Six months later the refurbishment finishes and the landlord, on reasonable notice, reverts to charging full rent going forward. Is the landlord entitled to do so?",
+      "options": ["Yes — the promise was tied to a temporary state of affairs, and promissory estoppel is generally suspensory: the landlord can revert for the future once conditions change, on reasonable notice", "No — once a promise has been relied upon, it can never be revoked under any circumstances", "No — the tenant's reliance permanently extinguishes the landlord's right to the full rent forever"],
+      "correctIndex": 0,
+      "explanation": "This is a High Trees-style scenario: the promise was expressly tied to a temporary situation, so the estoppel's effect is suspensory. The landlord cannot claim the shortfall for the period the promise covered, but is entitled to revert to the full rent for the future once conditions change and reasonable notice is given."
+    },
+    {
+      "itemId": "contract-06-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A creditor is owed a single, fixed debt of £6,000 by a debtor. The creditor agrees the debtor can pay it off as £4,000 in total, by instalments, and accepts every instalment over eighteen months without ever chasing the remaining £2,000. After the final instalment is paid, can the creditor still claim the £2,000?",
+      "options": ["Yes, automatically, because Foakes v Beer always applies regardless of any estoppel", "Possibly not — on Collier-style facts, where the reduced sum has been paid off in full and accepted as the entirety over time, promissory estoppel may operate to extinguish the balance permanently", "Yes, because promissory estoppel can never apply to a debt owed by an individual"],
+      "correctIndex": 1,
+      "explanation": "While Foakes v Beer means the instalment agreement is not itself good consideration for discharging the balance, Collier v P & MJ Wright shows promissory estoppel can step in on these facts: voluntary acceptance of reduced instalments over time, with no sensible future point to revert to, points towards an extinctive rather than suspensory effect."
+    },
+    {
+      "itemId": "contract-06-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that a party who obtained a promise through deliberate pressure on the promisor can still rely on that promise via promissory estoppel?",
+      "sliderLabels": ["Can always rely on it", "Cannot rely on it"],
+      "correctPosition": "Cannot rely on it",
+      "explanation": "D & C Builders v Rees confirms that promissory estoppel is an equitable doctrine, and a party who exploits the promisor's financial distress to extract a promise cannot then claim it would be inequitable for the promisor to go back on it."
+    },
+    {
+      "itemId": "contract-06-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A landlord who has never had any lease or dealings at all with a stranger nonetheless tells them, casually and in passing, 'don't worry about rent, I'll sort you out a place for free.' The stranger relies on this and turns down other accommodation. Can the stranger sue the landlord for breach of that promise using promissory estoppel?",
+      "options": ["Yes — reliance is present and that is all the doctrine requires", "No — there is no existing legal relationship between the parties, and the stranger is trying to found a fresh cause of action on a bare promise, which Combe v Combe rules out", "Yes — promissory estoppel applies to any clear promise regardless of any prior relationship"],
+      "correctIndex": 1,
+      "trapExplanation": "Reliance alone is not enough, and it's easy to focus only on that element. Two things are missing here: there is no existing legal relationship between the parties for the doctrine to operate against, and the stranger is trying to use the promise as the foundation of a new claim rather than as a defence to an existing right — exactly what Combe v Combe says the doctrine cannot do."
+    },
+    {
+      "itemId": "contract-06-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A wholesaler is owed £20,000 by a long-standing retail customer under an existing supply contract. During a difficult trading period, the wholesaler's director tells the customer, unprompted and in a follow-up email, 'don't worry about the £20,000 for now — pay it whenever things pick up, no rush.' Relying on this, the customer does not seek alternative financing and continues placing new orders on ordinary terms. Three months later, before trading has picked up, the wholesaler suddenly demands immediate payment of the full £20,000 and threatens to stop supply. Analyse whether the wholesaler is entitled to demand immediate payment.",
+      "factsToOrder": [
+        "An existing supply contract and debt of £20,000 already exists between the parties",
+        "The wholesaler makes a clear, unprompted promise not to require payment for the time being",
+        "The customer relies on the promise by not seeking alternative financing and continuing to trade with the wholesaler",
+        "The wholesaler demands immediate full payment before trading has picked up, with no notice given"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the wholesaler is estopped from demanding immediate payment of the £20,000, given its earlier promise and the customer's reliance on it.",
+        "rule": "Promissory estoppel prevents a party from enforcing an existing strict legal right where it has made a clear and unequivocal promise not to do so, the promisee has relied on that promise, and it would be inequitable to go back on it (Hughes v Metropolitan Railway; High Trees); the effect is generally suspensory, allowing reversion to the strict right for the future on reasonable notice (High Trees), though the doctrine only operates as a shield against the enforcement of an existing right, not as a sword (Combe v Combe).",
+        "application": "There is an existing legal relationship and an existing debt under the supply contract, so this is capable of being a shield case, not a sword case. The wholesaler's email is a clear and unequivocal promise not to require payment for the time being. The customer relied on it by forgoing alternative financing and continuing to trade. Nothing on the facts suggests the promise was extracted by pressure or bad faith on the customer's part, so — unlike D & C Builders — inequity is readily satisfied. Because the promise was expressly tied to trading conditions improving, the estoppel is likely suspensory rather than extinctive; but the wholesaler must give the customer reasonable notice before reverting to demanding payment, which it has not done here.",
+        "conclusion": "The wholesaler is likely estopped from demanding immediate full payment without reasonable notice; it may be able to revert to requiring payment for the future once proper notice is given, but the sudden demand, with no notice and before trading has improved, is not currently enforceable."
+      }
+    },
+    {
+      "itemId": "contract-06-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case is the leading modern illustration of promissory estoppel producing a potentially extinctive, rather than merely suspensory, effect on part-payment facts?",
+      "options": ["Collier v P & MJ Wright (Holdings) Ltd", "D & C Builders Ltd v Rees"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating promissory estoppel as a general-purpose fairness doctrine — usable to create a claim (the sword Combe v Combe forbids), or assumed to apply automatically once reliance is shown, ignoring that inequity can be defeated by the claimant's own conduct (D & C Builders) or that the relevant right needs to already exist (Combe v Combe).",
+    "reviewMisses": true,
+    "linkToPathway": "contract.formation.promissory-estoppel"
+  }
+}
