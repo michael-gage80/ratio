@@ -15,8 +15,12 @@ struct UserProfile: Decodable, Equatable {
     var universityOther: String?
     var year: Int?
     var modules: [Module]?
-    /// Written only by the scoring Function once the diagnostic is done (or skipped).
+    /// Written only by the scoring Functions once the diagnostic is done (or skipped),
+    /// then after every test.
     var headline: Headline?
+    var headlineUpdatedAt: Date?
+    /// Set by the moderateAvatar Function when an approved photo goes live.
+    var avatarVersion: Int?
 }
 
 /// Reads and writes `users/{uid}`.

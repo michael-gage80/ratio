@@ -13,7 +13,7 @@ struct SignedInRootView: View {
         Group {
             if let onboarding {
                 if onboarding.isComplete {
-                    SignedInPlaceholderView(profile: onboarding.profile)
+                    MainTabView(uid: uid, profile: onboarding.profile)
                 } else {
                     OnboardingView(model: onboarding)
                 }

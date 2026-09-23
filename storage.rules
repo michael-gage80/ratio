@@ -7,5 +7,17 @@ service firebase.storage {
     match /content/{path=**} {
       allow read: if request.auth != null;
     }
+
+    // Profile photos. The app uploads to upload.jpg; the moderateAvatar Function checks
+    // it and moves it to avatar.jpg, which any signed-in student can see. Only the
+    // owner can upload, and only a small JPEG.
+    match /avatars/{uid}/upload.jpg {
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.contentType == 'image/jpeg'
+        && request.resource.size < 1024 * 1024;
+    }
+    match /avatars/{uid}/avatar.jpg {
+      allow read: if request.auth != null;
+    }
   }
 }

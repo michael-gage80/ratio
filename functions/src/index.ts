@@ -2,8 +2,10 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { initializeApp } from "firebase-admin/app";
 import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";
+import { getStorage } from "firebase-admin/storage";
 import { setGlobalOptions } from "firebase-functions/v2";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
+import { isAcceptable, SafeSearch } from "./avatar.js";
 import { dueDate, review } from "./fsrs.js";
 import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, Skill, SKILLS, TopicEstimates } from "./scoring.js";
 
@@ -61,11 +63,17 @@ export const submitDiagnostic = onCall<SubmitDiagnosticRequest>(async (request):
   }
 
   const batch = db.batch();
+  const now = Timestamp.now();
   for (const [topicId, skills] of Object.entries(topics)) {
-    batch.set(userRef.collection("skills").doc(topicId), { ...skills, updatedAt: FieldValue.serverTimestamp() }, { merge: true });
+    batch.set(userRef.collection("skills").doc(topicId), {
+      ...skills,
+      history: FieldValue.arrayUnion({ at: now, ...skills }),
+      updatedAt: FieldValue.serverTimestamp(),
+    }, { merge: true });
   }
   batch.update(userRef, {
     headline,
+    headlineUpdatedAt: FieldValue.serverTimestamp(),
     diagnosticSkipped: skipped,
     diagnosticCompletedAt: FieldValue.serverTimestamp(),
   });
@@ -91,6 +99,12 @@ function validate(raw: unknown, modules: string[]): ItemResponse[] {
 }
 
 // MARK: - Lesson tests
+
+/** Snapshots of a topic's scores kept for the Me tab's trend charts. */
+const HISTORY_LIMIT = 100;
+/** Reviews at least this far apart count towards delayed retention (PRD north star). */
+const DELAYED_DAYS = 7;
+const DAY_MS = 24 * 60 * 60 * 1000;
 
 interface Lesson {
   lessonId: string;
@@ -121,6 +135,11 @@ interface SubmitTestResult {
   headline: Headline;
   /** When each item comes back for review (ISO 8601). */
   reviews: { itemId: string; dueAt: string }[];
+}
+
+interface Delayed {
+  total: number;
+  correct: number;
 }
 
 /**
@@ -176,6 +195,7 @@ export const submitTest = onCall<SubmitTestRequest>(async (request): Promise<Sub
     const now = new Date();
     const results: SubmitTestResult["results"] = [];
     const reviews: SubmitTestResult["reviews"] = [];
+    const delayed: Delayed = { total: 0, correct: 0 };
     responses.forEach((response, i) => {
       const item = pool.get(response.itemId)!;
       const correct = isCorrect(item, response);
@@ -183,6 +203,10 @@ export const submitTest = onCall<SubmitTestRequest>(async (request): Promise<Sub
       const previous = state.exists
         ? { stability: state.get("stability"), difficulty: state.get("difficulty"), lastReview: (state.get("lastReview") as Timestamp).toDate() }
         : undefined;
+      if (previous && now.getTime() - previous.lastReview.getTime() >= DELAYED_DAYS * DAY_MS) {
+        delayed.total += 1;
+        delayed.correct += correct ? 1 : 0;
+      }
       const next = review(previous, correct ? 3 : 1, now);
       const due = dueDate(next);
       tx.set(itemRefs[i], {
@@ -202,9 +226,53 @@ export const submitTest = onCall<SubmitTestRequest>(async (request): Promise<Sub
     });
 
     const result: SubmitTestResult = { results, topicBefore, topicAfter, headline, reviews };
-    tx.set(skillsRef, { ...topicAfter, updatedAt: FieldValue.serverTimestamp() }, { merge: true });
-    tx.update(userRef, { headline });
-    tx.set(attemptRef, { lessonId: lesson.lessonId, itemIds, result, createdAt: FieldValue.serverTimestamp() });
+    const history = ((skills.get("history") as unknown[] | undefined) ?? [])
+      .concat({ at: Timestamp.fromDate(now), ...topicAfter })
+      .slice(-HISTORY_LIMIT);
+    tx.set(skillsRef, { ...topicAfter, history, updatedAt: FieldValue.serverTimestamp() }, { merge: true });
+    tx.update(userRef, { headline, headlineUpdatedAt: FieldValue.serverTimestamp() });
+    tx.set(attemptRef, { lessonId: lesson.lessonId, itemIds, result, delayed, createdAt: FieldValue.serverTimestamp() });
     return result;
   });
+});
+
+// MARK: - Avatars
+
+// Loaded on first use so the other functions' cold starts don't pay for it.
+let vision: import("@google-cloud/vision").ImageAnnotatorClient | undefined;
+/** The app resizes photos to 512 px JPEGs, well under this. */
+const MAX_AVATAR_BYTES = 1024 * 1024;
+
+/**
+ * Moderates the photo the app has just uploaded to avatars/{uid}/upload.jpg with
+ * Cloud Vision SafeSearch. An accepted photo replaces avatars/{uid}/avatar.jpg, which
+ * other students can see; a refused one is deleted. Either way the upload is removed,
+ * and users/{uid}.avatarVersion changes only when a new photo goes live.
+ */
+export const moderateAvatar = onCall(async (request): Promise<{ approved: boolean }> => {
+  const uid = request.auth?.uid;
+  if (!uid) throw new HttpsError("unauthenticated", "Sign in first.");
+
+  const bucket = getStorage().bucket();
+  const upload = bucket.file(`avatars/${uid}/upload.jpg`);
+  const [exists] = await upload.exists();
+  if (!exists) throw new HttpsError("not-found", "Upload the photo first.");
+  const [metadata] = await upload.getMetadata();
+  if (metadata.contentType !== "image/jpeg" || Number(metadata.size) > MAX_AVATAR_BYTES) {
+    await upload.delete();
+    throw new HttpsError("invalid-argument", "Expected a JPEG under 1 MB.");
+  }
+
+  const [content] = await upload.download();
+  vision ??= new (await import("@google-cloud/vision")).ImageAnnotatorClient();
+  const [annotation] = await vision.safeSearchDetection({ image: { content } });
+  const approved = isAcceptable(annotation.safeSearchAnnotation as SafeSearch | null | undefined);
+
+  if (approved) {
+    await upload.move(`avatars/${uid}/avatar.jpg`);
+    await getFirestore().doc(`users/${uid}`).update({ avatarVersion: Date.now() });
+  } else {
+    await upload.delete();
+  }
+  return { approved };
 });
