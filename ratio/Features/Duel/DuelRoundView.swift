@@ -4,9 +4,8 @@ import SwiftUI
 /// scoreboard with both scores and the timer ring, then the question. A tap locks the
 /// answer; the round is revealed once the student answers or time runs out.
 struct DuelRoundView: View {
-    let model: DuelMatchModel
+    let model: any DuelRoundModel
 
-    @Environment(StudentStore.self) private var student
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -33,8 +32,8 @@ struct DuelRoundView: View {
                             .foregroundStyle(Color.ratioInk2)
                             .multilineTextAlignment(.center)
                             .frame(maxWidth: .infinity)
-                        if model.phase == .revealing, let played = model.lastPlayed {
-                            RevealBanner(played: played, question: question)
+                        if model.roundPhase == .revealing, let played = model.lastPlayed {
+                            RevealBanner(message: model.revealMessage(played, question: question))
                                 .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
                         }
                     }
@@ -44,11 +43,11 @@ struct DuelRoundView: View {
         }
         .padding(.horizontal, 24)
         .padding(.top, 8)
-        .animation(.easeInOut(duration: 0.25), value: model.phase)
+        .animation(.easeInOut(duration: 0.25), value: model.roundPhase)
         .sensoryFeedback(.impact(weight: .medium), trigger: model.pulse)
-        .sensoryFeedback(trigger: model.played.count) { _, _ in
-            guard let winner = model.lastPlayed?.winner else { return .warning }
-            return winner == 0 ? .success : .error
+        .sensoryFeedback(trigger: model.lastPlayed) { _, played in
+            guard let played else { return nil }
+            return played.winner == 0 ? .success : played.winner == 1 ? .error : .warning
         }
     }
 
@@ -56,12 +55,12 @@ struct DuelRoundView: View {
 
     private func label(_ question: DuelQuestion) -> String {
         let skill = Skill(rawValue: question.skill)?.title ?? question.skill
-        let round = question.isFinal ? "Final round" : "Round \(Self.numerals[safe: model.played.count - (model.phase == .revealing ? 1 : 0)] ?? "")"
-        return "\(model.isTutorial ? "Practice · " : "")\(round) · \(question.kind.title) · \(skill)"
+        let round = question.isFinal ? "Final round" : "Round \(Self.numerals[safe: model.roundNumber - 1] ?? "\(model.roundNumber)")"
+        return "\(model.labelPrefix)\(round) · \(question.kind.title) · \(skill)"
     }
 
     private var footer: String {
-        if model.score == [DuelRules.pointsToWin - 1, DuelRules.pointsToWin - 1] && model.phase != .revealing {
+        if model.showsScore && model.score == [DuelRules.pointsToWin - 1, DuelRules.pointsToWin - 1] && model.roundPhase != .revealing {
             return "Tap locks your answer · \(model.score[0]) – \(model.score[1]), next point wins"
         }
         return "Tap locks your answer · First right answer takes the point"
@@ -70,7 +69,7 @@ struct DuelRoundView: View {
 
 /// You, the timer, and the sparring partner — Liquid Glass over the paper.
 private struct Scoreboard: View {
-    let model: DuelMatchModel
+    let model: any DuelRoundModel
 
     @Environment(StudentStore.self) private var student
 
@@ -81,7 +80,7 @@ private struct Scoreboard: View {
                     ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 44)
                     VStack(alignment: .leading, spacing: 6) {
                         Text("You").ratioFont(.h3)
-                        Points(score: model.score[0])
+                        if model.showsScore { Points(score: model.score[0]) }
                     }
                 }
                 Spacer(minLength: 4)
@@ -89,13 +88,13 @@ private struct Scoreboard: View {
                 Spacer(minLength: 4)
                 HStack(spacing: 10) {
                     VStack(alignment: .trailing, spacing: 6) {
-                        Text("Sparring partner").ratioFont(.small).multilineTextAlignment(.trailing)
-                        Text("Level \(model.level)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                        Points(score: model.score[1])
+                        Text(model.opponent.name).ratioFont(.small).multilineTextAlignment(.trailing).lineLimit(2)
+                        Text(model.opponent.detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        if model.showsScore { Points(score: model.score[1]) }
                     }
-                    SparringMark(size: 44)
+                    OpponentMark(opponent: model.opponent, size: 44)
                         .overlay(alignment: .bottomTrailing) {
-                            if model.phase == .playing && model.partnerLocked(at: context.date) {
+                            if model.roundPhase == .playing && model.opponentLocked(at: context.date) {
                                 Text("Locked in")
                                     .ratioFont(.monoLabel)
                                     .foregroundStyle(Color.ratioOxblood)
@@ -116,13 +115,13 @@ private struct Scoreboard: View {
             .overlay { RoundedRectangle(cornerRadius: 28, style: .continuous).strokeBorder(Color.ratioRule) }
         }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("You \(model.score[0]), sparring partner \(model.score[1])")
+        .accessibilityLabel(model.showsScore ? "You \(model.score[0]), \(model.opponent.name) \(model.score[1])" : "You against \(model.opponent.name)")
     }
 
     private func remaining(at date: Date) -> Double {
         let limit = Double(model.limitMs) / 1000
-        switch model.phase {
-        case .playing: return max(0, limit - date.timeIntervalSince(model.roundStart))
+        switch model.roundPhase {
+        case .playing: return max(0, min(limit, limit - date.timeIntervalSince(model.roundStart)))
         case .revealing: return max(0, limit - Double(model.lastPlayed?.you.timeMs ?? model.limitMs) / 1000)
         default: return limit
         }
@@ -184,10 +183,24 @@ struct SparringMark: View {
     }
 }
 
+/// The opponent's mark: rings for a sparring partner, their avatar for a student.
+struct OpponentMark: View {
+    let opponent: DuelOpponent
+    var size: CGFloat = 44
+
+    var body: some View {
+        if opponent.isBot {
+            SparringMark(size: size)
+        } else {
+            ProfilePhoto(uid: opponent.uid ?? opponent.name, initial: opponent.initial, version: opponent.avatarVersion, size: size)
+        }
+    }
+}
+
 /// Fastest finger and Name the case: four options in a 2×2 grid.
 private struct OptionGrid: View {
     let question: DuelQuestion
-    let model: DuelMatchModel
+    let model: any DuelRoundModel
 
     var body: some View {
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)], spacing: 14) {
@@ -212,7 +225,7 @@ private struct OptionGrid: View {
                     .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(state(index).border, lineWidth: state(index) == .plain ? 1 : 2) }
                 }
                 .buttonStyle(.plain)
-                .disabled(model.phase != .playing)
+.disabled(model.roundPhase != .playing || model.yourAnswer != nil)
                 .accessibilityLabel("\(Self.letter(index)): \(question.options[index])\(state(index).spoken)")
             }
         }
@@ -231,7 +244,7 @@ private struct OptionGrid: View {
 private struct SpotTheIssueCard: View {
     let question: DuelQuestion
     let segments: [DuelQuestion.Segment]
-    let model: DuelMatchModel
+    let model: any DuelRoundModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -250,7 +263,7 @@ private struct SpotTheIssueCard: View {
                         .overlay { RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(state == .plain ? Color.ratioRule : state.border) }
                     }
                     .buttonStyle(.plain)
-                    .disabled(model.phase != .playing)
+                    .disabled(model.roundPhase != .playing || model.yourAnswer != nil)
                     .accessibilityLabel("\(segment.text)\(state.spoken)")
                 } else {
                     Text(segment.text).ratioFont(.body).foregroundStyle(Color.ratioInk2).padding(.horizontal, 12)
@@ -268,9 +281,9 @@ private struct SpotTheIssueCard: View {
 private enum OptionState: Equatable {
     case plain, chosen, correct, wrong, partner
 
-    init(index: Int, question: DuelQuestion, model: DuelMatchModel) {
+    init(index: Int, question: DuelQuestion, model: any DuelRoundModel) {
         let yours = model.yourAnswer?.answerIndex == index
-        guard model.phase == .revealing, let played = model.lastPlayed else {
+        guard model.roundPhase == .revealing, let played = model.lastPlayed else {
             self = yours ? .chosen : .plain
             return
         }
@@ -304,7 +317,7 @@ private enum OptionState: Equatable {
         case .chosen: ", your answer"
         case .correct: ", correct answer"
         case .wrong: ", your answer, wrong"
-        case .partner: ", partner's answer"
+        case .partner: ", opponent's answer"
         }
     }
 }
@@ -325,25 +338,13 @@ private struct OptionMarker: View {
 
 /// Who took the point, and why.
 private struct RevealBanner: View {
-    let played: DuelMatchModel.Played
-    let question: DuelQuestion
+    let message: (text: String, good: Bool?)
 
     var body: some View {
-        let youAnswered = played.you.answerIndex != nil
-        let youRight = played.you.answerIndex == question.correctIndex
-        let text: String = switch played.winner {
-        case 0: youRight ? "Your point — \(seconds(played.you.timeMs)) s." : "Your point — your partner answered wrong."
-        case 1: youAnswered && !youRight && played.you.timeMs <= played.them.timeMs
-            ? "Their point — a wrong answer gives it away."
-            : "Their point — right in \(seconds(played.them.timeMs)) s."
-        default: "No point — time ran out."
-        }
-        Label(text, systemImage: played.winner == 0 ? "checkmark" : played.winner == 1 ? "xmark" : "clock")
+        Label(message.text, systemImage: message.good == true ? "checkmark" : message.good == false ? "xmark" : "clock")
             .ratioFont(.h3)
-            .foregroundStyle(played.winner == 0 ? Color.ratioVerdigris : played.winner == 1 ? Color.ratioOxblood : Color.ratioInk2)
+            .foregroundStyle(message.good == true ? Color.ratioVerdigris : message.good == false ? Color.ratioOxblood : Color.ratioInk2)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 8)
     }
-
-    private func seconds(_ ms: Int) -> String { String(format: "%.1f", Double(ms) / 1000) }
 }

@@ -13,6 +13,7 @@ import SwiftUI
 struct ratioApp: App {
     @State private var session: SessionStore
     @State private var content = ContentStore()
+    @State private var links = DeepLinks()
 
     init() {
         FirebaseApp.configure()
@@ -28,7 +29,17 @@ struct ratioApp: App {
             RootView()
                 .environment(session)
                 .environment(content)
-                .onOpenURL { GIDSignIn.sharedInstance.handle($0) }
+                .environment(links)
+                .onOpenURL { url in
+                    if !GIDSignIn.sharedInstance.handle(url) { links.pending = url }
+                }
         }
     }
+}
+
+/// A ratio:// link waiting for the signed-in app to handle it (a friend-lobby invite
+/// can open the app from cold, before sign-in has finished).
+@Observable
+final class DeepLinks {
+    var pending: URL?
 }

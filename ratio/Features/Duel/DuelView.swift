@@ -1,8 +1,8 @@
 import SwiftUI
 
-/// screens/31-duel.png — the Duel tab: rating per module, ranked play, sparring, the
-/// tutorial, and recent matches. Live opponents, friend lobbies and async challenges
-/// arrive with the next phase; until then Find an opponent offers a sparring partner.
+/// screens/31-duel.png — the Duel tab: rating per module, ranked play against other
+/// students, friend lobbies, async challenges waiting for you, sparring, the tutorial,
+/// and recent matches.
 struct DuelView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
@@ -13,13 +13,30 @@ struct DuelView: View {
     @State private var selected: Module?
     @State private var showsMatchmaking = false
     @State private var choosingLevel = false
-    @State private var playing: Match?
+    @State private var lobbyEntry: LobbyEntry?
+    @State private var cover: Cover?
+    @State private var notice: String?
 
-    private struct Match: Identifiable {
+    /// Everything that takes over the screen.
+    private enum Cover: Identifiable {
+        case sparring(Module, level: Int, tutorial: Bool)
+        case live(String)
+        case lobby(String)
+        case challenge(ChallengeSummary)
+
+        var id: String {
+            switch self {
+            case .sparring(let module, let level, let tutorial): "sparring-\(module.rawValue)-\(level)-\(tutorial)"
+            case .live(let id): "live-\(id)"
+            case .lobby(let code): "lobby-\(code)"
+            case .challenge(let challenge): "challenge-\(challenge.id)"
+            }
+        }
+    }
+
+    private struct LobbyEntry: Identifiable {
         let id = UUID()
-        let module: Module
-        let level: Int
-        let isTutorial: Bool
+        let code: String?
     }
 
     /// Modules with lessons to draw duel questions from.
@@ -38,8 +55,9 @@ struct DuelView: View {
                     moduleChips(selected: module)
                     ratingCard(module)
                     extendedTime
+                    waitingForYou
                     VStack(spacing: 12) {
-                        row(icon: "number", title: "Friend lobby", detail: "Play with a code · next build", enabled: false) {}
+                        row(icon: "number", title: "Friend lobby", detail: "Play with a code") { lobbyEntry = LobbyEntry(code: nil) }
                         row(mark: true, title: "Sparring partner", detail: "Practise against a labelled bot, 5 levels") { startSparring() }
                         row(icon: "questionmark", title: "How duels work", detail: "Replay the tutorial") { play(module, level: 1, tutorial: true) }
                     }
@@ -57,8 +75,10 @@ struct DuelView: View {
         .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $showsMatchmaking) {
             if let module {
-                MatchmakingView(module: module, seconds: seconds) {
+                MatchmakingView(module: module, seconds: seconds) { matchId in
                     showsMatchmaking = false
+                    cover = .live(matchId)
+                } spar: {
                     choosingLevel = true
                 }
             }
@@ -72,13 +92,105 @@ struct DuelView: View {
                 .presentationDetents([.medium, .large])
             }
         }
-        .fullScreenCover(item: $playing) { match in
-            DuelMatchView(module: match.module, level: match.level, seconds: seconds, isTutorial: match.isTutorial)
+        .sheet(item: $lobbyEntry) { entry in
+            LobbyEntryView(module: module ?? .crime, seconds: seconds, initialCode: entry.code) { code in
+                lobbyEntry = nil
+                cover = .lobby(code)
+            }
+            .presentationDetents([.medium, .large])
+        }
+        .fullScreenCover(item: $cover) { cover in
+            switch cover {
+            case .sparring(let module, let level, let tutorial):
+                DuelMatchView(module: module, level: level, seconds: seconds, isTutorial: tutorial)
+            case .live(let matchId):
+                LiveMatchView(matchId: matchId)
+            case .lobby(let code):
+                LobbyView(code: code)
+            case .challenge(let challenge):
+                ChallengeView(challenge: challenge)
+            }
         }
         .onChange(of: navigator.showsDuelTutorial, initial: true) { _, shows in
             guard shows, let module else { return }
             navigator.showsDuelTutorial = false
             play(module, level: 1, tutorial: true)
+        }
+        .onChange(of: navigator.lobbyCode, initial: true) { _, code in
+            guard let code else { return }
+            navigator.lobbyCode = nil
+            lobbyEntry = LobbyEntry(code: code)
+        }
+        .alert("Challenge", isPresented: Binding(get: { notice != nil }, set: { if !$0 { notice = nil } })) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(notice ?? "")
+        }
+    }
+
+    // MARK: Async challenges
+
+    @ViewBuilder
+    private var waitingForYou: some View {
+        if !student.challenges.isEmpty {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Waiting for you").ratioFont(.h2)
+                    Spacer()
+                    let toPlay = student.challenges.count { $0.done[student.uid] != true }
+                    if toPlay > 0 {
+                        Text("\(toPlay) \(toPlay == 1 ? "challenge" : "challenges")").ratioFont(.monoLabel).foregroundStyle(Color.ratioOxblood)
+                    }
+                }
+                VStack(spacing: 0) {
+                    ForEach(Array(student.challenges.enumerated()), id: \.element.id) { index, challenge in
+                        if index > 0 { Divider().overlay(Color.ratioRule) }
+                        challengeRow(challenge)
+                    }
+                }
+                .padding(.horizontal, 18)
+                .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+                .overlay { RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.ratioRule) }
+            }
+        }
+    }
+
+    private func challengeRow(_ challenge: ChallengeSummary) -> some View {
+        let opponent = challenge.opponent(of: student.uid)
+        let myTurn = challenge.done[student.uid] != true
+        let hours = max(1, Int(challenge.expiresAt.timeIntervalSinceNow / 3600))
+        return HStack(spacing: 14) {
+            ProfilePhoto(uid: opponent.uid, initial: String(opponent.name.prefix(1)), version: nil, size: 48)
+            VStack(alignment: .leading, spacing: 3) {
+                Text("\(opponent.name) · \(Module(rawValue: challenge.moduleId)?.title ?? "")").ratioFont(.h3)
+                Text(myTurn
+                     ? (challenge.isFrom(student.uid) ? "Your challenge · play your half" : (challenge.done[opponent.uid] == true ? "Played their half" : "Challenged you"))
+                     : "Waiting for their half")
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk2)
+                Text("\(hours) h left").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            }
+            Spacer()
+            if myTurn {
+                Button { cover = .challenge(challenge) } label: {
+                    Text("Play").ratioFont(.h3).foregroundStyle(Color.ratioOnInk).padding(.horizontal, 20).frame(minHeight: 44)
+                        .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.vertical, 14)
+    }
+
+    private func challenge(_ match: MatchSummary) {
+        guard let opponent = match.opponent(of: student.uid), let module = Module(rawValue: match.moduleId) else { return }
+        Task {
+            do {
+                try await DuelService.createChallenge(opponent: opponent.uid, module: module, seconds: seconds)
+                notice = "\(opponent.name) has 24 hours to play their half. It's under Waiting for you."
+            } catch {
+                notice = (error as NSError).localizedDescription
+            }
         }
     }
 
@@ -193,14 +305,19 @@ struct DuelView: View {
 
     @ViewBuilder
     private var recentMatches: some View {
-        let finished = student.matches.filter { $0.status == "complete" && $0.result != nil }
+        let finished = student.matches.filter { $0.status == "complete" && $0.result(for: student.uid) != nil }
         if !finished.isEmpty {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Recent matches").ratioFont(.h2)
                 VStack(spacing: 0) {
                     ForEach(Array(finished.prefix(5).enumerated()), id: \.element.id) { index, match in
                         if index > 0 { Divider().overlay(Color.ratioRule) }
-                        MatchRow(match: match)
+                        MatchRow(match: match, uid: student.uid)
+                            .contextMenu {
+                                if match.isBot == false, let opponent = match.opponent(of: student.uid) {
+                                    Button("Challenge \(opponent.name) to a rematch", systemImage: "arrow.uturn.right") { challenge(match) }
+                                }
+                            }
                     }
                 }
                 .padding(.horizontal, 18)
@@ -215,18 +332,20 @@ struct DuelView: View {
     }
 
     private func play(_ module: Module, level: Int, tutorial: Bool) {
-        playing = Match(module: module, level: level, isTutorial: tutorial)
+        cover = .sparring(module, level: level, tutorial: tutorial)
     }
 }
 
-/// "Won 3–1 · v Sparring partner, level 2 · Yesterday · Crime   +10"
+/// "Won 3–1 · v Omar S. · Yesterday · Crime   +10" — sparring rows say they're practice.
 struct MatchRow: View {
     let match: MatchSummary
+    let uid: String
 
     var body: some View {
-        if let result = match.result {
+        if let result = match.result(for: uid) {
             let won = result.winner == 0
             let delta = result.ratingAfter - result.ratingBefore
+            let sparring = match.isBot != false
             HStack(spacing: 14) {
                 Image(systemName: won ? "checkmark" : result.winner == nil ? "equal" : "minus")
                     .font(.footnote.weight(.semibold))
@@ -234,10 +353,9 @@ struct MatchRow: View {
                     .overlay(Circle().strokeBorder(won ? Color.ratioVerdigris : Color.ratioInk2))
                     .foregroundStyle(won ? Color.ratioVerdigris : Color.ratioInk2)
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("\(won ? "Won" : result.winner == nil ? "Drew" : "Lost") \(result.score[0])–\(result.score[1]) · v Sparring partner")
+                    Text("\(won ? "Won" : result.winner == nil ? "Drew" : "Lost") \(result.score[0])–\(result.score[1]) · v \(sparring ? "Sparring partner" : match.opponent(of: uid)?.name ?? "Student")")
                         .ratioFont(.body)
-                    Text([match.createdAt?.formatted(.relative(presentation: .named)), Module(rawValue: match.moduleId)?.title, "Level \(match.partner?.level ?? 1)", "Practice · not on the boards"]
-                        .compactMap { $0 }.joined(separator: " · "))
+                    Text(details(sparring: sparring))
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
                 }
@@ -250,23 +368,40 @@ struct MatchRow: View {
             .accessibilityElement(children: .combine)
         }
     }
+
+    private func details(sparring: Bool) -> String {
+        let kind: String? = switch match.mode {
+        case "lobby": "Friend lobby"
+        case "challenge": "Challenge"
+        case "ranked": "Ranked"
+        default: nil
+        }
+        let parts: [String?] = sparring
+            ? [match.createdAt?.formatted(.relative(presentation: .named)), Module(rawValue: match.moduleId)?.title, "Level \(match.partner?.level ?? 1)", "Practice · not on the boards"]
+            : [match.createdAt?.formatted(.relative(presentation: .named)), Module(rawValue: match.moduleId)?.title, kind]
+        return parts.compactMap { $0 }.joined(separator: " · ")
+    }
 }
 
-/// screens/33-matchmaking.png — until live matchmaking lands, this shows the format and
-/// offers the labelled sparring partner straight away rather than making the student wait.
+/// screens/33-matchmaking.png — searches for a student within ±100 rating in this
+/// module and time pool, widening every 10 s; after 60 s a labelled sparring partner is
+/// offered instead (PRD: "Ranked (live)").
 private struct MatchmakingView: View {
     let module: Module
     let seconds: Int
+    let found: (String) -> Void
     let spar: () -> Void
 
     @Environment(\.dismiss) private var dismiss
     @Environment(StudentStore.self) private var student
     @State private var started = Date.now
+    @State private var window = 100
+    @State private var failed = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             HStack {
-                Button { dismiss() } label: { Image(systemName: "xmark").font(.title3).frame(width: 44, height: 44) }
+                Button { cancel() } label: { Image(systemName: "xmark").font(.title3).frame(width: 44, height: 44) }
                     .accessibilityLabel("Cancel")
                 Spacer()
                 Text("Matching · \(module.title) · Ranked").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
@@ -291,42 +426,72 @@ private struct MatchmakingView: View {
             }
             TimelineView(.periodic(from: started, by: 1)) { context in
                 let elapsed = Int(context.date.timeIntervalSince(started))
-                HStack(spacing: 16) {
-                    ProgressView().frame(width: 64, height: 64)
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text("Finding a fair match…").ratioFont(.h3)
-                        Text("Searching within ±100 · \(elapsed / 60):\(String(format: "%02d", elapsed % 60))")
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioInk2)
+                VStack(alignment: .leading, spacing: 20) {
+                    HStack(spacing: 16) {
+                        ProgressView().frame(width: 64, height: 64)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(failed ? "Reconnecting…" : "Finding a fair match…").ratioFont(.h3)
+                            Text("Searching within ±\(window) · \(elapsed / 60):\(String(format: "%02d", elapsed % 60))")
+                                .ratioFont(.monoLabel)
+                                .foregroundStyle(Color.ratioInk2)
+                        }
                     }
+                    HStack(alignment: .top, spacing: 14) {
+                        SparringMark(size: 36)
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text(elapsed < 60 ? "No one yet? After 60 s we'll offer a sparring partner, clearly labelled." : "No one's free right now. Spar with a labelled partner instead?")
+                                .ratioFont(.body)
+                            if elapsed >= 60 {
+                                RatioButton("Spar instead →", style: .secondary) { cancel(then: spar) }
+                            }
+                        }
+                    }
+                    .padding(18)
+                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
                 }
             }
-            HStack(alignment: .top, spacing: 14) {
-                SparringMark(size: 36)
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Live opponents arrive in the next build. Spar with a clearly labelled partner meanwhile.")
-                        .ratioFont(.body)
-                    RatioButton("Spar instead →", style: .secondary, action: spar)
-                }
-            }
-            .padding(18)
-            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             HStack(spacing: 0) {
                 fact("Format", "First to 3")
                 Divider()
                 fact("Per question", "\(seconds) s")
                 Divider()
-                fact("Rating", "Glicko-2")
+                fact("Pool", seconds == 10 ? "Standard" : "Extended")
             }
             .fixedSize(horizontal: false, vertical: true)
             .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
             .overlay { RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.ratioRule) }
             Spacer()
-            RatioButton("Cancel", style: .tertiary) { dismiss() }
+            RatioButton("Cancel", style: .tertiary) { cancel() }
         }
         .padding(24)
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
+        .interactiveDismissDisabled()
+        .task { await search() }
+    }
+
+    /// Polls the matchmaker every 3 seconds until paired or cancelled.
+    private func search() async {
+        while !Task.isCancelled {
+            do {
+                let result = try await DuelService.findMatch(module: module, seconds: seconds)
+                failed = false
+                if let matchId = result.matchId {
+                    found(matchId)
+                    return
+                }
+                window = result.window ?? window
+            } catch {
+                failed = true
+            }
+            try? await Task.sleep(for: .seconds(3))
+        }
+    }
+
+    private func cancel(then next: (() -> Void)? = nil) {
+        Task { await DuelService.cancelMatchmaking() }
+        dismiss()
+        next?()
     }
 
     private func fact(_ label: String, _ value: String) -> some View {

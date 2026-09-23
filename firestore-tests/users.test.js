@@ -244,6 +244,44 @@ describe('duels', () => {
   });
 });
 
+describe('lobbies, chat and challenges', () => {
+  test('lobbies and their chat are readable by members only and written by no client', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'lobbies/ABC234'), { host: 'amara', members: ['amara', 'zara'], status: 'open' });
+      await setDoc(doc(ctx.firestore(), 'lobbies/ABC234/messages/m1'), { uid: 'zara', text: 'good luck' });
+    });
+    await assertSucceeds(getDoc(doc(db('zara'), 'lobbies/ABC234')));
+    await assertSucceeds(getDoc(doc(db('amara'), 'lobbies/ABC234/messages/m1')));
+    await assertFails(getDoc(doc(db('omar'), 'lobbies/ABC234')));
+    await assertFails(getDoc(doc(db('omar'), 'lobbies/ABC234/messages/m1')));
+    await assertFails(setDoc(doc(db('amara'), 'lobbies/ABC234/messages/m2'), { uid: 'amara', text: 'unfiltered' }));
+    await assertFails(updateDoc(doc(db('amara'), 'lobbies/ABC234'), { status: 'started' }));
+  });
+
+  test('challenges are readable by their players; their answers by no one', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'challenges/c1'), { players: ['amara', 'zara'], status: 'open' });
+      await setDoc(doc(ctx.firestore(), 'challengeSecrets/c1'), { questions: [] });
+    });
+    await assertSucceeds(getDoc(doc(db('zara'), 'challenges/c1')));
+    await assertFails(getDoc(doc(db('omar'), 'challenges/c1')));
+    await assertFails(getDoc(doc(db('amara'), 'challengeSecrets/c1')));
+    await assertFails(setDoc(doc(db('amara'), 'challenges/c2'), { players: ['amara', 'zara'], status: 'complete' }));
+  });
+
+  test('a block list is the owner\'s to read and no client\'s to write', async () => {
+    await env.withSecurityRulesDisabled((ctx) => setDoc(doc(ctx.firestore(), 'users/amara/blocked/omar'), { at: new Date() }));
+    await assertSucceeds(getDoc(doc(db('amara'), 'users/amara/blocked/omar')));
+    await assertFails(getDoc(doc(db('omar'), 'users/amara/blocked/omar')));
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/blocked/zara'), { at: new Date() }));
+  });
+
+  test('the matchmaking queue is closed to clients', async () => {
+    await assertFails(getDoc(doc(db('amara'), 'matchQueue/amara')));
+    await assertFails(setDoc(doc(db('amara'), 'matchQueue/amara'), { rating: 3000 }));
+  });
+});
+
 describe('lesson progress', () => {
   const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
 

@@ -83,51 +83,55 @@ export function resolveRound(question: DuelQuestion, answers: [Answer, Answer], 
 }
 
 /**
- * Plays a match through. `questions` are the regular rounds in order with the final
- * last; the final is played only at 2–2. Answers for player 0 are by round; player 1's
- * by question (a sparring partner's plan is set per question in advance).
+ * The question for the next round, or null when the match is over: regular rounds in
+ * order, then the final — played only at 2–2, and always the last round.
  */
-export function playMatch(
+export function nextQuestionIndex(questions: DuelQuestion[], score: [number, number], regularPlayed: number, finalPlayed: boolean): number | null {
+  if (Math.max(...score) >= POINTS_TO_WIN || finalPlayed) return null;
+  const finalIndex = questions.findIndex((q) => q.final);
+  if (score[0] === POINTS_TO_WIN - 1 && score[1] === POINTS_TO_WIN - 1 && finalIndex >= 0) return finalIndex;
+  const regular = questions.map((_, i) => i).filter((i) => i !== finalIndex);
+  return regular[regularPlayed] ?? null;
+}
+
+/** Whether an answer counts and is right. */
+export function marked(question: DuelQuestion, answer: Answer, limitMs: number): Answer & { correct: boolean } {
+  return { ...answer, correct: counts(answer, limitMs) && answer.answerIndex === question.correctIndex };
+}
+
+/**
+ * Plays a match through, asking `answerFor` for each player's answer to each round.
+ * Used for sparring (the partner's plan is per question) and async challenges (both
+ * players answered every question in advance).
+ */
+export function playMatchWith(
   questions: DuelQuestion[],
-  playerAnswers: Answer[],
-  opponentPlan: Answer[],
+  answerFor: (player: 0 | 1, questionIndex: number, round: number) => Answer | undefined,
   limitMs: number,
 ): MatchOutcome {
-  const finalIndex = questions.findIndex((q) => q.final);
-  const regular = questions.map((_, i) => i).filter((i) => i !== finalIndex);
   const score: [number, number] = [0, 0];
   const rounds: Round[] = [];
-  let next = 0;
+  let regularPlayed = 0;
   let finalPlayed = false;
   const none: Answer = { answerIndex: null, timeMs: limitMs };
-
-  while (Math.max(...score) < POINTS_TO_WIN) {
-    let questionIndex: number;
-    if (score[0] === POINTS_TO_WIN - 1 && score[1] === POINTS_TO_WIN - 1 && finalIndex >= 0 && !finalPlayed) {
-      questionIndex = finalIndex;
-      finalPlayed = true;
-    } else if (next < regular.length) {
-      questionIndex = regular[next++];
-    } else {
-      break;
-    }
+  for (;;) {
+    const questionIndex = nextQuestionIndex(questions, score, regularPlayed, finalPlayed);
+    if (questionIndex === null) break;
     const question = questions[questionIndex];
-    const answers: [Answer, Answer] = [playerAnswers[rounds.length] ?? none, opponentPlan[questionIndex] ?? none];
+    if (question.final) finalPlayed = true;
+    else regularPlayed += 1;
+    const answers: [Answer, Answer] = [answerFor(0, questionIndex, rounds.length) ?? none, answerFor(1, questionIndex, rounds.length) ?? none];
     const winner = resolveRound(question, answers, limitMs);
     if (winner !== null) score[winner] += 1;
-    rounds.push({
-      questionIndex,
-      answers: [
-        { ...answers[0], correct: counts(answers[0], limitMs) && answers[0].answerIndex === question.correctIndex },
-        { ...answers[1], correct: counts(answers[1], limitMs) && answers[1].answerIndex === question.correctIndex },
-      ],
-      winner,
-    });
-    // After the final, the match is over whatever happened.
-    if (questionIndex === finalIndex) break;
+    rounds.push({ questionIndex, answers: [marked(question, answers[0], limitMs), marked(question, answers[1], limitMs)], winner });
   }
   const winner = score[0] === score[1] ? null : score[0] > score[1] ? 0 : 1;
   return { rounds, score, winner };
+}
+
+/** A sparring match: the student's answers by round, the partner's by question. */
+export function playMatch(questions: DuelQuestion[], playerAnswers: Answer[], opponentPlan: Answer[], limitMs: number): MatchOutcome {
+  return playMatchWith(questions, (player, questionIndex, round) => (player === 0 ? playerAnswers[round] : opponentPlan[questionIndex]), limitMs);
 }
 
 // MARK: - Sparring partners

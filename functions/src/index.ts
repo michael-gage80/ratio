@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { initializeApp } from "firebase-admin/app";
 import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";
@@ -8,11 +8,13 @@ import { logger } from "firebase-functions";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 import { isAcceptable, SafeSearch } from "./avatar.js";
-import { Brief, buildBrief, LessonInfo, londonDate } from "./brief.js";
-import { Answer, DuelLesson, DuelQuestion, matchQuestions, playMatch, questionPool, SPARRING_LEVELS, SPARRING_RD, sparringPlan } from "./duel.js";
+import { Brief, buildBrief, londonDate } from "./brief.js";
+import { duelLessons, HISTORY_LIMIT, lessonInfo, lessons, MODULES, testItems, TopicScores } from "./content.js";
+import { Answer, DuelQuestion, matchQuestions, playMatch, questionPool, SPARRING_LEVELS, SPARRING_RD, sparringPlan } from "./duel.js";
 import { dueDate, review } from "./fsrs.js";
-import { INITIAL, rate, Rating } from "./glicko.js";
-import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, SIGMA_PRIOR, Skill, SKILLS, TopicEstimates, update } from "./scoring.js";
+import { INITIAL } from "./glicko.js";
+import { readSide, Side, StoredRating, writeSide } from "./settle.js";
+import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, SKILLS, TopicEstimates } from "./scoring.js";
 
 initializeApp();
 setGlobalOptions({ region: "europe-west2", maxInstances: 10 });
@@ -105,41 +107,9 @@ function validate(raw: unknown, modules: string[]): ItemResponse[] {
 
 // MARK: - Lesson tests and practice
 
-/** Snapshots of a topic's scores kept for the Me tab's trend charts. */
-const HISTORY_LIMIT = 100;
 /** Reviews at least this far apart count towards delayed retention (PRD north star). */
 const DELAYED_DAYS = 7;
 const DAY_MS = 24 * 60 * 60 * 1000;
-
-interface Lesson {
-  lessonId: string;
-  moduleId: string;
-  moduleTitle: string;
-  topicId: string;
-  title: string;
-  estimatedMinutes: number;
-  lecture: { parts: unknown[] };
-  itemCounts: { testServedPerAttempt: number };
-  testPool: BankItem[];
-}
-
-// The same lessons the app bundles, copied into lib/lessons at build time.
-const lessons = new Map<string, Lesson>(
-  readdirSync(join(__dirname, "lessons"))
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => JSON.parse(readFileSync(join(__dirname, "lessons", f), "utf8")) as Lesson)
-    .sort((a, b) => a.lessonId.localeCompare(b.lessonId))
-    .map((lesson) => [lesson.lessonId, lesson]),
-);
-
-/** Every test item, tagged with its lesson's topic. */
-const testItems = new Map<string, { item: BankItem; lessonId: string }>(
-  [...lessons.values()].flatMap((lesson) =>
-    lesson.testPool.map((item) => [item.itemId, { item: { ...item, topicId: lesson.topicId }, lessonId: lesson.lessonId }] as const),
-  ),
-);
-
-type TopicScores = Partial<Record<Skill, Estimate>>;
 
 interface AttemptResult {
   results: { itemId: string; correct: boolean }[];
@@ -335,17 +305,6 @@ export const submitPractice = onCall<SubmitPracticeRequest>(async (request) => {
 
 // MARK: - Daily brief
 
-const lessonInfo: LessonInfo[] = [...lessons.values()].map((l) => ({
-  lessonId: l.lessonId,
-  moduleId: l.moduleId,
-  moduleTitle: l.moduleTitle,
-  topicId: l.topicId,
-  title: l.title,
-  estimatedMinutes: l.estimatedMinutes,
-  lectureParts: l.lecture.parts.length,
-  testPool: l.testPool.map((i) => ({ itemId: i.itemId, type: i.type, skillTag: i.skillTag })),
-}));
-
 /**
  * Builds and stores users/{uid}/briefs/{date} unless it already exists (a brief is
  * fixed for the day). Returns null for a student who hasn't finished onboarding, or
@@ -417,9 +376,6 @@ export const buildBriefs = onSchedule({ schedule: "0 3 * * *", timeZone: "Europe
 
 // MARK: - Duels: sparring
 
-const duelLessons = [...lessons.values()] as unknown as DuelLesson[];
-const MODULES = ["crime", "contract", "tort", "public", "land", "equity"];
-
 interface StartSparringRequest {
   moduleId?: string;
   /** 1–5. */
@@ -430,12 +386,6 @@ interface StartSparringRequest {
   tutorial?: boolean;
 }
 
-interface StoredRating extends Rating {
-  uid: string;
-  moduleId: string;
-  duels: number;
-  wins: number;
-}
 
 /**
  * Starts a match against a labelled sparring partner (PRD: "Sparring: bots in 5
@@ -501,7 +451,6 @@ export const submitSparring = onCall<SubmitSparringRequest>(async (request) => {
 
   const db = getFirestore();
   const matchRef = db.doc(`matches/${matchId}`);
-  const userRef = db.doc(`users/${uid}`);
   return db.runTransaction(async (tx) => {
     const match = await tx.get(matchRef);
     if (!match.exists || !(match.get("players") as string[]).includes(uid)) throw new HttpsError("not-found", "Unknown match.");
@@ -512,83 +461,15 @@ export const submitSparring = onCall<SubmitSparringRequest>(async (request) => {
     const partner = match.get("partner") as { rating: number };
     const outcome = playMatch(questions, clean, match.get("plan") as Answer[], match.get("limitMs") as number);
 
-    // Rating.
-    const ratingRef = db.doc(`ratings/${uid}_${moduleId}`);
-    const topicIds = [...new Set(outcome.rounds.map((r) => questions[r.questionIndex].topicId))];
-    const skillRefs = topicIds.map((id) => userRef.collection("skills").doc(id));
-    const [ratingDoc, user, ...skillDocs] = await tx.getAll(ratingRef, userRef, ...skillRefs);
-    const before: StoredRating = ratingDoc.exists
-      ? (ratingDoc.data() as StoredRating)
-      : { ...INITIAL, uid, moduleId, duels: 0, wins: 0 };
-    const score = outcome.winner === 0 ? 1 : outcome.winner === 1 ? 0 : 0.5;
-    const after = rate(before, { rating: partner.rating, rd: SPARRING_RD }, score);
-
-    // Profile: every answer the student gave moves that topic's skill and the headline.
-    let headline = (user.get("headline") as Headline | undefined) ?? priorHeadline();
-    const topics: Record<string, TopicScores> = {};
-    topicIds.forEach((id, i) => {
-      topics[id] = {};
-      for (const skill of SKILLS) {
-        const estimate = skillDocs[i].get(skill) as Estimate | undefined;
-        if (estimate) topics[id][skill] = estimate;
-      }
-    });
-    const topicsBefore = structuredClone(topics);
-    const headlineBefore = headline;
-    headline = structuredClone(headline);
-    for (const round of outcome.rounds) {
-      const answer = round.answers[0];
-      if (answer.answerIndex === null) continue;
-      const question = questions[round.questionIndex];
-      const topic = topics[question.topicId];
-      topic[question.skill] = update(topic[question.skill] ?? { theta: headline[question.skill].theta, sigma: SIGMA_PRIOR }, question.difficulty, answer.correct);
-      headline[question.skill] = update(headline[question.skill], question.difficulty, answer.correct);
-    }
-
-    // The skill that moved most, for the result screen.
-    let skillMoved: { topicId: string; skill: Skill; before: Estimate; after: Estimate } | null = null;
-    let biggest = -1;
-    for (const id of topicIds) {
-      for (const skill of SKILLS) {
-        const a = topics[id][skill];
-        if (!a) continue;
-        const b = topicsBefore[id][skill] ?? { theta: headlineBefore[skill].theta, sigma: SIGMA_PRIOR };
-        const change = Math.abs(a.theta - b.theta);
-        if (change > biggest) {
-          biggest = change;
-          skillMoved = { topicId: id, skill, before: b, after: a };
-        }
-      }
-    }
-
-    const now = Timestamp.now();
-    topicIds.forEach((id, i) => {
-      if (Object.keys(topics[id]).length === 0) return;
-      const history = ((skillDocs[i].get("history") as unknown[] | undefined) ?? []).concat({ at: now, ...topics[id] }).slice(-HISTORY_LIMIT);
-      tx.set(skillRefs[i], { ...topics[id], history, updatedAt: FieldValue.serverTimestamp() }, { merge: true });
-    });
-    tx.update(userRef, { headline, headlineUpdatedAt: FieldValue.serverTimestamp() });
-
-    const won = outcome.winner === 0;
-    tx.set(ratingRef, {
+    const side: Side = {
       uid,
       moduleId,
-      rating: after.rating,
-      rd: after.rd,
-      vol: after.vol,
-      duels: before.duels + 1,
-      wins: before.wins + (won ? 1 : 0),
-      updatedAt: FieldValue.serverTimestamp(),
-    });
-
-    const result = {
-      rounds: outcome.rounds,
-      score: outcome.score,
-      winner: outcome.winner,
-      ratingBefore: Math.round(before.rating),
-      ratingAfter: Math.round(after.rating),
-      skillMoved,
+      answers: outcome.rounds.map((round) => ({ question: questions[round.questionIndex], answer: round.answers[0] })),
     };
+    const state = await readSide(tx, db, side);
+    const score = outcome.winner === 0 ? 1 : outcome.winner === 1 ? 0 : 0.5;
+    const settlement = writeSide(tx, state, { rating: partner.rating, rd: SPARRING_RD }, score);
+    const result = { rounds: outcome.rounds, score: outcome.score, winner: outcome.winner, ...settlement };
     tx.update(matchRef, { status: "complete", result, completedAt: FieldValue.serverTimestamp() });
     return result;
   });
@@ -634,3 +515,5 @@ export const moderateAvatar = onCall(async (request): Promise<{ approved: boolea
   }
   return { approved };
 });
+
+export * from "./multiplayer.js";

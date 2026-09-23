@@ -13,6 +13,16 @@ final class AppNavigator {
     var mePath: [Route] = []
     /// Set from Settings to replay the duel tutorial.
     var showsDuelTutorial = false
+    /// A friend-lobby code from a shared link (ratio://lobby/K7MP4X).
+    var lobbyCode: String?
+
+    /// Handles ratio:// links; returns whether it was one.
+    func handle(_ url: URL) -> Bool {
+        guard url.scheme == "ratio", url.host() == "lobby", let code = url.pathComponents.dropFirst().first, code.count == 6 else { return false }
+        lobbyCode = code.uppercased()
+        tab = .duel
+        return true
+    }
 
     /// Pushes onto the current tab's stack.
     func push(_ route: Route) {
@@ -51,6 +61,7 @@ enum Route: Hashable {
 struct MainTabView: View {
     @State private var student: StudentStore
     @State private var navigator = AppNavigator()
+    @Environment(DeepLinks.self) private var links
 
     init(uid: String, profile: UserProfile) {
         _student = State(initialValue: StudentStore(uid: uid, profile: profile))
@@ -86,6 +97,11 @@ struct MainTabView: View {
         .tint(Color.ratioInk)
         .environment(student)
         .environment(navigator)
+        .onChange(of: links.pending, initial: true) { _, url in
+            guard let url else { return }
+            links.pending = nil
+            _ = navigator.handle(url)
+        }
         .onAppear { student.start() }
         .onDisappear { student.stop() }
     }
