@@ -41,6 +41,22 @@ service cloud.firestore {
         allow read: if isOwner(uid);
       }
 
+      // The daily brief — built only by Functions (nightly, or on demand for day 1).
+      match /briefs/{date} {
+        allow read: if isOwner(uid);
+      }
+
+      // The days the student was active, for the weekly streak target. A marker per UK
+      // date and nothing else.
+      match /activity/{date} {
+        allow read: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+          && isAroundNow(date)
+          && request.resource.data.keys().hasOnly(['at'])
+          && request.resource.data.at == request.time;
+      }
+
       // How far through each lecture the student is.
       match /lessons/{lessonId} {
         allow read: if isOwner(uid);
@@ -68,6 +84,13 @@ service cloud.firestore {
         && request.resource.data.status == 'open'
         && request.resource.data.appVersion is string && request.resource.data.appVersion.size() <= 20
         && request.resource.data.createdAt == request.time;
+    }
+
+    // A UK date (yyyy-mm-dd) that could be today somewhere near the server's clock, so
+    // active days can't be backdated. Loose by a day either side for time zones.
+    function isAroundNow(date) {
+      let day = timestamp.date(int(date[0:4]), int(date[5:7]), int(date[8:10]));
+      return request.time > day - duration.value(1, 'd') && request.time < day + duration.value(2, 'd');
     }
 
     function isValidProfileUpdate() {

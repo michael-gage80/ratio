@@ -99,6 +99,8 @@ final class TestModel {
     func submit() async throws -> Result {
         let function = Functions.functions(region: "europe-west2")
             .httpsCallable("submitTest", requestAs: Request.self, responseAs: Result.self)
-        return try await function.call(Request(attemptId: attemptId, lessonId: lesson.id, responses: responses))
+        let result = try await function.call(Request(attemptId: attemptId, lessonId: lesson.id, responses: responses))
+        ActivityRepository.markToday()
+        return result
     }
 }

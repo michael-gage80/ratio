@@ -27,5 +27,20 @@ struct LessonProgressRepository {
         ) { [logger] error in
             if let error { logger.error("Couldn't save progress for \(lessonId, privacy: .public): \(error.localizedDescription, privacy: .public)") }
         }
+        ActivityRepository.markToday()
+    }
+}
+
+/// Marks today (UK time) as an active day at `users/{uid}/activity/{date}`, for the
+/// weekly streak target (PRD: "active on 4 days of 7"). Local-first, like progress.
+enum ActivityRepository {
+    static func markToday() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Firestore.firestore().collection("users").document(uid).collection("activity").document(UKDate.key())
+            .setData(["at": FieldValue.serverTimestamp()]) { error in
+                if let error {
+                    Logger(subsystem: "com.mg.ratio", category: "Activity").error("Couldn't mark today active: \(error.localizedDescription, privacy: .public)")
+                }
+            }
     }
 }

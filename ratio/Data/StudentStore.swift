@@ -1,4 +1,5 @@
 import FirebaseFirestore
+import FirebaseFunctions
 import Foundation
 
 /// Live copies of the student's own documents, shared by the tabs so the Pathway and
@@ -14,8 +15,16 @@ final class StudentStore {
     /// Lecture parts completed, keyed by lesson ID.
     private(set) var partsCompleted: [String: Int] = [:]
     private(set) var attempts: [TestAttempt] = []
+    /// Today's brief, once built.
+    private(set) var brief: DailyBrief?
+    /// Set when today's brief can't be built — none of the student's modules has lessons yet.
+    private(set) var briefUnavailable = false
+    /// UK dates the student was active on, over the last few weeks.
+    private(set) var activeDays: Set<String> = []
 
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
+    @ObservationIgnored private var briefListener: ListenerRegistration?
+    @ObservationIgnored private var briefDate: String?
 
     init(uid: String, profile: UserProfile) {
         self.uid = uid
@@ -51,12 +60,51 @@ final class StudentStore {
                 guard let snapshot else { return }
                 self?.attempts = snapshot.documents.compactMap { try? $0.data(as: TestAttempt.self) }
             },
+            user.collection("activity")
+                .whereField("at", isGreaterThan: Timestamp(date: .now.addingTimeInterval(-Streak.lookbackWeeks * 7 * 86_400)))
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    guard let snapshot else { return }
+                    self?.activeDays = Set(snapshot.documents.map(\.documentID))
+                },
         ]
+        listenToTodaysBrief()
     }
 
     func stop() {
         listeners.forEach { $0.remove() }
         listeners = []
+        briefListener?.remove()
+        briefListener = nil
+        briefDate = nil
+    }
+
+    /// Follows today's brief document, switching over when the UK date changes.
+    func listenToTodaysBrief() {
+        let today = UKDate.key()
+        guard briefDate != today else { return }
+        briefListener?.remove()
+        briefDate = today
+        brief = nil
+        briefUnavailable = false
+        briefListener = Firestore.firestore().collection("users").document(uid).collection("briefs").document(today)
+            .addSnapshotListener { [weak self] snapshot, _ in
+                guard let snapshot, snapshot.exists else { return }
+                self?.brief = try? snapshot.data(as: DailyBrief.self)
+            }
+    }
+
+    private nonisolated struct BriefResponse: Decodable {
+        let brief: DailyBrief?
+    }
+
+    /// Builds today's brief if the nightly job hasn't (day 1, or a new day since the app
+    /// was opened). The listener picks the result up; this only reports "none possible".
+    func ensureBrief() async {
+        listenToTodaysBrief()
+        guard brief == nil else { return }
+        let function = Functions.functions(region: "europe-west2").httpsCallable("getBrief", requestAs: [String: String].self, responseAs: BriefResponse.self)
+        guard let response = try? await function.call([:]) else { return }
+        if let built = response.brief { brief = built } else { briefUnavailable = true }
     }
 }
 
@@ -105,7 +153,11 @@ nonisolated struct ReviewItem: Decodable {
 
 /// `users/{uid}/testAttempts/{attemptId}` (the fields the app needs).
 nonisolated struct TestAttempt: Decodable {
-    var lessonId: String
+    /// Set for lesson tests.
+    var lessonId: String?
+    /// Set for daily-brief steps.
+    var briefDate: String?
+    var stepIndex: Int?
     var createdAt: Date?
     /// Items in this attempt that came back 7 or more days after they were last seen.
     var delayed: Delayed?
@@ -187,4 +239,71 @@ struct Retention {
     let points: [Point]
     /// Points gained or lost over the last four weeks.
     let change: Int?
+}
+
+// MARK: - Brief progress and streak
+
+extension StudentStore {
+    /// A Read step is done once the lecture is finished; the others once they've been scored.
+    func isDone(step index: Int, of brief: DailyBrief, content: ContentStore) -> Bool {
+        guard let step = brief.steps[safe: index] else { return false }
+        if step.kind == .read, let lessonId = step.lessonId {
+            let parts = content.lesson(id: lessonId)?.parts.count ?? 0
+            return parts > 0 && (partsCompleted[lessonId] ?? 0) >= parts
+        }
+        return attempts.contains { $0.briefDate == brief.date && $0.stepIndex == index }
+    }
+
+    /// The first step not yet done, or nil when the brief is complete.
+    func currentStep(of brief: DailyBrief, content: ContentStore) -> Int? {
+        brief.steps.indices.first { !isDone(step: $0, of: brief, content: content) }
+    }
+
+    var streak: Streak { Streak(activeDays: activeDays, today: .now) }
+}
+
+/// The weekly target (PRD: "active on 4 days of 7 ... The count is in weeks, not days").
+/// Never punishes a missed day: the copy only ever says what keeps the week.
+struct Streak {
+    static let lookbackWeeks: Double = 26
+    /// Until the student can set it in Settings (Phase 15).
+    static let target = 4
+
+    /// Monday to Sunday of this week, and whether each was active.
+    let week: [(date: Date, active: Bool)]
+    let todayIndex: Int
+    /// Weeks in a row that met the target, before this one.
+    let previousWeeks: Int
+
+    init(activeDays: Set<String>, today: Date) {
+        let calendar = UKDate.calendar
+        let monday = calendar.dateInterval(of: .weekOfYear, for: today)?.start ?? today
+        week = (0..<7).map { offset in
+            let date = calendar.date(byAdding: .day, value: offset, to: monday) ?? monday
+            return (date, activeDays.contains(UKDate.key(for: date)))
+        }
+        todayIndex = max(0, min(6, (calendar.dateComponents([.day], from: monday, to: today).day ?? 0)))
+
+        var weeks = 0
+        var start = calendar.date(byAdding: .weekOfYear, value: -1, to: monday) ?? monday
+        while weeks < Int(Self.lookbackWeeks) {
+            let active = (0..<7).count { offset in
+                calendar.date(byAdding: .day, value: offset, to: start).map { activeDays.contains(UKDate.key(for: $0)) } ?? false
+            }
+            guard active >= Self.target else { break }
+            weeks += 1
+            start = calendar.date(byAdding: .weekOfYear, value: -1, to: start) ?? start
+        }
+        previousWeeks = weeks
+    }
+
+    var daysThisWeek: Int { week.count { $0.active } }
+
+    var message: String {
+        let remaining = Self.target - daysThisWeek
+        let daysLeft = 7 - todayIndex - (week[todayIndex].active ? 1 : 0)
+        if remaining <= 0 { return "Week done. Anything more is a bonus." }
+        if remaining > daysLeft { return "A fresh week starts on Monday." }
+        return remaining == 1 ? "One more day keeps the week." : "\(remaining) more days keep the week."
+    }
 }

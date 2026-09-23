@@ -8,8 +8,18 @@ final class AppNavigator {
     }
 
     var tab: Tab = .today
+    var todayPath: [Route] = []
     var pathwayPath: [Route] = []
     var mePath: [Route] = []
+
+    /// Pushes onto the current tab's stack.
+    func push(_ route: Route) {
+        switch tab {
+        case .today: todayPath.append(route)
+        case .me: mePath.append(route)
+        default: pathwayPath.append(route)
+        }
+    }
 
     /// Opens a lesson's overview on the Pathway.
     func open(_ lesson: Lesson) {
@@ -19,6 +29,7 @@ final class AppNavigator {
 
     /// "Back to Today" at the end of a debrief.
     func backToToday() {
+        todayPath = []
         pathwayPath = []
         mePath = []
         tab = .today
@@ -27,6 +38,7 @@ final class AppNavigator {
 
 /// Pushed onto the Pathway and Me stacks.
 enum Route: Hashable {
+    case brief
     case module(Module)
     case overview(String)
     case lecture(String)
@@ -46,7 +58,9 @@ struct MainTabView: View {
         @Bindable var navigator = navigator
         TabView(selection: $navigator.tab) {
             Tab("Today", systemImage: "house", value: .today) {
-                TodayPlaceholderView()
+                NavigationStack(path: $navigator.todayPath) {
+                    TodayView().withRoutes()
+                }
             }
             Tab("Pathway", systemImage: "point.topleft.down.to.point.bottomright.curvepath", value: .pathway) {
                 NavigationStack(path: $navigator.pathwayPath) {
@@ -82,15 +96,14 @@ private struct RouteDestination: View {
 
     var body: some View {
         switch route {
+        case .brief:
+            BriefStepView()
         case .module(let module):
             ModuleDrillDownView(module: module)
         case .overview(let id):
             if let lesson = content.lesson(id: id) {
                 LessonOverviewView(lesson: lesson, headline: student.profile.headline) {
-                    switch navigator.tab {
-                    case .me: navigator.mePath.append(.lecture(id))
-                    default: navigator.pathwayPath.append(.lecture(id))
-                    }
+                    navigator.push(.lecture(id))
                 }
             }
         case .lecture(let id):
@@ -104,47 +117,6 @@ private struct RouteDestination: View {
 private extension View {
     func withRoutes() -> some View {
         navigationDestination(for: Route.self) { RouteDestination(route: $0) }
-    }
-}
-
-/// Today until the daily brief lands (Phase 10): a greeting and a way back into lessons.
-private struct TodayPlaceholderView: View {
-    @Environment(StudentStore.self) private var student
-    @Environment(ContentStore.self) private var content
-    @Environment(AppNavigator.self) private var navigator
-
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                Text(Date.now.formatted(.dateTime.weekday(.wide).day().month(.wide)).uppercased())
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioInk2)
-                Text("\(greeting), \(Text("\(student.profile.displayName ?? "there").").italic())")
-                    .ratioFont(.display)
-                VStack(alignment: .leading, spacing: 14) {
-                    Text("Daily brief").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    Text("Your daily brief arrives in the next build. Until then, carry on from the Pathway.")
-                        .ratioFont(.body)
-                    if let lesson = student.nextLesson(in: student.profile.modules ?? Module.allCases, content: content) {
-                        RatioButton("Continue: \(lesson.title)", style: .secondary) { navigator.open(lesson) }
-                    }
-                }
-                .padding(20)
-                .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-                .overlay { RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Color.ratioRule) }
-            }
-            .padding(24)
-        }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
-    }
-
-    private var greeting: String {
-        switch Calendar.current.component(.hour, from: .now) {
-        case 5..<12: "Good morning"
-        case 12..<18: "Good afternoon"
-        default: "Good evening"
-        }
     }
 }
 
