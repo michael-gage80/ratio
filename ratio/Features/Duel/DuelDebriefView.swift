@@ -4,25 +4,26 @@ import SwiftUI
 /// when they missed, one line of reasoning and a way back to the lesson; then speed and
 /// accuracy head to head (PRD: "Debrief").
 struct DuelDebriefView: View {
-    let match: SparringMatch
-    let result: SparringResult
-    let module: Module
+    let record: DuelRecord
     let backToToday: () -> Void
     let revisit: (String) -> Void
 
     private static let numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 
-    private var misses: Int { result.rounds.count { !$0.answers[0].correct } }
+    /// "Partner" or the opponent's first name, for the compact labels.
+    private var them: String { record.isSparring ? "Partner" : record.opponent.name.components(separatedBy: " ").first ?? "Them" }
+
+    private var misses: Int { record.rounds.count { !$0.answers[0].correct } }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
-                Text("Duel debrief · v Sparring partner · \(result.score[0])–\(result.score[1])")
+                Text("Duel debrief · v \(record.opponent.name) · \(record.score[0])–\(record.score[1])")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
                 Text("\(roundsText), \(Text(missesText).italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.h1)
-                ForEach(Array(result.rounds.enumerated()), id: \.offset) { index, round in
-                    if let question = match.questions[safe: round.questionIndex] {
+                ForEach(Array(record.rounds.enumerated()), id: \.offset) { index, round in
+                    if let question = record.questions[safe: round.questionIndex] {
                         roundCard(round, question: question, number: index, running: runningScore(through: index))
                     }
                 }
@@ -42,7 +43,7 @@ struct DuelDebriefView: View {
 
     private var roundsText: String {
         let words = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
-        let n = result.rounds.count
+        let n = record.rounds.count
         return "\(words[safe: n] ?? "\(n)") \(n == 1 ? "round" : "rounds")"
     }
 
@@ -55,14 +56,14 @@ struct DuelDebriefView: View {
     }
 
     private func runningScore(through index: Int) -> (Int, Int) {
-        let upTo = result.rounds.prefix(index + 1)
+        let upTo = record.rounds.prefix(index + 1)
         return (upTo.count { $0.winner == 0 }, upTo.count { $0.winner == 1 })
     }
 
     private func roundCard(_ round: SparringResult.RoundResult, question: DuelQuestion, number: Int, running: (Int, Int)) -> some View {
         let yours = round.answers[0]
         let skill = Skill(rawValue: question.skill)?.title ?? question.skill
-        let who = round.winner == 0 ? "You" : round.winner == 1 ? "Partner" : "No point"
+        let who = round.winner == 0 ? "You" : round.winner == 1 ? them : "No point"
         return VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top) {
                 Text("\(question.isFinal ? "Final round" : "Round \(Self.numerals[safe: number] ?? "")") · \(question.kind.title) · \(skill)")
@@ -115,20 +116,20 @@ struct DuelDebriefView: View {
     // MARK: Head to head
 
     private var headToHead: some View {
-        let answered = { (player: Int) in result.rounds.map { $0.answers[player] }.filter { $0.answerIndex != nil && $0.timeMs <= match.limitMs } }
+        let answered = { (player: Int) in record.rounds.map { $0.answers[player] }.filter { $0.answerIndex != nil && $0.timeMs <= record.limitMs } }
         let speed = { (player: Int) -> Double? in
             let times = answered(player).map { Double($0.timeMs) / 1000 }
             return times.isEmpty ? nil : times.reduce(0, +) / Double(times.count)
         }
-        let accuracy = { (player: Int) in result.rounds.count { $0.answers[player].correct } }
-        let total = result.rounds.count
-        let limit = Double(match.limitMs) / 1000
+        let accuracy = { (player: Int) in record.rounds.count { $0.answers[player].correct } }
+        let total = record.rounds.count
+        let limit = Double(record.limitMs) / 1000
         return VStack(alignment: .leading, spacing: 16) {
             HStack {
                 Text("Head to head").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 Spacer()
                 Label("You", systemImage: "square.fill").foregroundStyle(Color.ratioInk)
-                Label("Partner", systemImage: "square.fill").foregroundStyle(Color.ratioInk2)
+                Label(them, systemImage: "square.fill").foregroundStyle(Color.ratioInk2)
             }
             .ratioFont(.monoLabel)
             comparison("Average speed", note: "Shorter is quicker",
@@ -151,7 +152,7 @@ struct DuelDebriefView: View {
                 Text(note).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
             bar("You", value: you, color: .ratioInk)
-            bar("Partner", value: them, color: .ratioInk2)
+            bar(self.them, value: them, color: .ratioInk2)
         }
     }
 

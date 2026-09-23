@@ -13,6 +13,7 @@ on:
       - "firestore.rules"
       - "storage.rules"
       - "firestore.indexes.json"
+      - "database.rules.json"
       - "firebase.json"
       - "firestore-tests/**"
       - "functions/**"
@@ -25,6 +26,7 @@ on:
       - "firestore.rules"
       - "storage.rules"
       - "firestore.indexes.json"
+      - "database.rules.json"
       - "firebase.json"
       - "firestore-tests/**"
       - "functions/**"
@@ -50,7 +52,7 @@ jobs:
         run: npm ci --prefix functions && npm test --prefix functions
       - run: npm ci --prefix firestore-tests
       - name: Security rules tests
-        run: firebase emulators:exec --only firestore --project demo-ratio "npm --prefix firestore-tests test"
+        run: firebase emulators:exec --only firestore,database --project demo-ratio "npm --prefix firestore-tests test"
 
   deploy:
     needs: test
@@ -72,7 +74,7 @@ jobs:
           fi
           echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/sa.json"
           export GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/sa.json"
-          targets="firestore,storage"
+          targets="firestore,storage,database"
           if [ -f functions/package.json ]; then
             npm ci --prefix functions && npm run build --prefix functions
             targets="$targets,functions"

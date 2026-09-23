@@ -3,16 +3,9 @@ import Foundation
 /// One sparring match (or the tutorial) from start to judgment. Rounds are revealed
 /// locally with `DuelRules`; the finished match is refereed by `submitSparring`.
 @Observable
-final class DuelMatchModel {
+final class DuelMatchModel: DuelRoundModel {
     enum Phase: Equatable {
         case loading, failed, versus, coaching, playing, revealing, submitting, submitFailed, finished
-    }
-
-    struct Played: Equatable {
-        let questionIndex: Int
-        let you: DuelAnswer
-        let them: DuelAnswer
-        let winner: Int?
     }
 
     let module: Module
@@ -23,7 +16,7 @@ final class DuelMatchModel {
     private(set) var match: SparringMatch?
     private(set) var phase: Phase = .loading
     private(set) var score = [0, 0]
-    private(set) var played: [Played] = []
+    private(set) var played: [DuelPlayed] = []
     /// The question being played.
     private(set) var current: Int?
     private(set) var roundStart = Date.now
@@ -45,7 +38,22 @@ final class DuelMatchModel {
 
     var limitMs: Int { match?.limitMs ?? seconds * 1000 }
     var question: DuelQuestion? { current.flatMap { match?.questions[safe: $0] } }
-    var lastPlayed: Played? { played.last }
+    var lastPlayed: DuelPlayed? { played.last }
+
+    var roundPhase: DuelRoundPhase {
+        switch phase {
+        case .coaching: .coaching
+        case .playing: .playing
+        case .revealing: .revealing
+        default: .waiting
+        }
+    }
+
+    var roundNumber: Int { played.count + (phase == .revealing ? 0 : 1) }
+    var labelPrefix: String { isTutorial ? "Practice · " : "" }
+    var opponent: DuelOpponent { .sparring(level: level) }
+
+    func opponentLocked(at date: Date) -> Bool { partnerLocked(at: date) }
 
     func load() async {
         phase = .loading
@@ -150,7 +158,7 @@ final class DuelMatchModel {
         let them = match.plan[safe: current] ?? DuelAnswer(answerIndex: nil, timeMs: limitMs)
         let winner = DuelRules.winner(of: match.questions[current], you: answer, them: them, limitMs: limitMs)
         if let winner { score[winner] += 1 }
-        played.append(Played(questionIndex: current, you: answer, them: them, winner: winner))
+        played.append(DuelPlayed(questionIndex: current, you: answer, them: them, winner: winner))
         phase = .revealing
         clock = Task { [weak self] in
             try? await Task.sleep(for: .seconds(2.4))

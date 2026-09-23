@@ -152,9 +152,14 @@ struct TodayView: View {
     private var duelCard: some View {
         Button { navigator.tab = .duel } label: {
             VStack(alignment: .leading, spacing: 12) {
-                Text("Duel · Sparring").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                let waiting = student.challenges.count { $0.done[student.uid] != true }
+                Text("Duel").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 Text("Find an opponent").ratioFont(.h2)
-                Text("Spar with a labelled partner while live duels are on their way.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                if waiting > 0 {
+                    Text("\(waiting) waiting").ratioFont(.monoData).foregroundStyle(Color.ratioOxblood)
+                } else {
+                    Text("Ranked, a friend lobby, or a sparring partner.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                }
                 Spacer(minLength: 0)
             }
             .padding(18)
@@ -348,7 +353,7 @@ enum TourStop: Int, CaseIterable {
         switch self {
         case .brief: "12 to 20 minutes. Rebuilt each night from yesterday's answers and the reviews that have come due."
         case .streak: "The target is \(Streak.target) active days a week. A missed day costs nothing; only the week counts."
-        case .more: "Spar against a labelled partner, see where you stand this week, and catch up on the law. Boards and news arrive in later builds."
+        case .more: "Duel other students, see where you stand this week, and catch up on the law. Boards and news arrive in later builds."
         }
     }
 }

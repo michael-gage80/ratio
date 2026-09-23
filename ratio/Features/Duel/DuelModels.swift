@@ -96,6 +96,70 @@ nonisolated struct SparringResult: Codable, Equatable {
     }
 }
 
+/// A finished match from the student's side — sparring, live or async (`PlayerRecord`
+/// in functions/src/multiplayer.ts). Answers are [yours, theirs]; winner 0 is you.
+nonisolated struct DuelRecord: Codable, Equatable {
+    var questions: [DuelQuestion]
+    var limitMs: Int
+    var moduleId: String
+    var opponent: Opponent
+    var rounds: [SparringResult.RoundResult]
+    var score: [Int]
+    var winner: Int?
+    var forfeited: Bool?
+    var ratingBefore: Int
+    var ratingAfter: Int
+    var skillMoved: SparringResult.SkillMoved?
+
+    nonisolated struct Opponent: Codable, Equatable {
+        var uid: String?
+        var name: String
+        var initial: String
+        var avatarVersion: Int?
+        /// Set for a sparring partner.
+        var level: Int?
+    }
+
+    var isSparring: Bool { opponent.level != nil }
+
+    private enum CodingKeys: String, CodingKey {
+        case questions, limitMs, moduleId, opponent, rounds, score, winner, forfeited, ratingBefore, ratingAfter, skillMoved
+    }
+
+    /// The Realtime Database drops empty arrays (a match forfeited before its first round).
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        questions = try c.decode([DuelQuestion].self, forKey: .questions)
+        limitMs = try c.decode(Int.self, forKey: .limitMs)
+        moduleId = try c.decode(String.self, forKey: .moduleId)
+        opponent = try c.decode(Opponent.self, forKey: .opponent)
+        rounds = try c.decodeIfPresent([SparringResult.RoundResult].self, forKey: .rounds) ?? []
+        score = try c.decodeIfPresent([Int].self, forKey: .score) ?? [0, 0]
+        winner = try c.decodeIfPresent(Int.self, forKey: .winner)
+        forfeited = try c.decodeIfPresent(Bool.self, forKey: .forfeited)
+        ratingBefore = try c.decode(Int.self, forKey: .ratingBefore)
+        ratingAfter = try c.decode(Int.self, forKey: .ratingAfter)
+        skillMoved = try c.decodeIfPresent(SparringResult.SkillMoved.self, forKey: .skillMoved)
+    }
+
+    /// "Sparring partner, level 2" or "Zara K.".
+    var opponentTitle: String { opponent.level.map { "\(opponent.name), level \($0)" } ?? opponent.name }
+
+    init(match: SparringMatch, result: SparringResult, module: Module) {
+        questions = match.questions
+        limitMs = match.limitMs
+        moduleId = module.rawValue
+        opponent = Opponent(uid: nil, name: match.partner.name, initial: "S", avatarVersion: nil, level: match.partner.level)
+        rounds = result.rounds
+        score = result.score
+        winner = result.winner
+        forfeited = false
+        ratingBefore = result.ratingBefore
+        ratingAfter = result.ratingAfter
+        skillMoved = result.skillMoved
+    }
+}
+
 /// The duel rules, as in functions/src/duel.ts, so rounds can be revealed instantly.
 /// The server replays the match with the same rules and its result is the one kept.
 enum DuelRules {
@@ -170,5 +234,184 @@ enum SparringLevel {
             "Right three times in four, and fast.",
             "Rarely wrong, rarely slow.",
         ][max(0, min(4, level - 1))]
+    }
+}
+
+// MARK: - The round screen's view of a match
+
+enum DuelRoundPhase {
+    /// Before the first round, or between a reveal and the next question.
+    case waiting
+    /// The tutorial's coach marks, with the clock stopped.
+    case coaching
+    case playing
+    case revealing
+}
+
+/// Who's across the board: a labelled sparring partner or another student.
+struct DuelOpponent: Equatable {
+    var name: String
+    /// "Level 2" for a partner; a rating or "Plays later" for a student.
+    var detail: String
+    var isBot: Bool
+    var uid: String?
+    var initial: String
+    var avatarVersion: Int?
+
+    static func sparring(level: Int) -> DuelOpponent {
+        DuelOpponent(name: "Sparring partner", detail: "Level \(level)", isBot: true, uid: nil, initial: "S", avatarVersion: nil)
+    }
+}
+
+struct DuelPlayed: Equatable {
+    let questionIndex: Int
+    let you: DuelAnswer
+    let them: DuelAnswer
+    /// 0 for the student, 1 for the opponent, nil for no point.
+    let winner: Int?
+}
+
+/// What the round screen needs: sparring, live and async matches all provide it.
+protocol DuelRoundModel: AnyObject, Observable {
+    var roundPhase: DuelRoundPhase { get }
+    /// The question on screen; its `correctIndex` is only meaningful once revealed.
+    var question: DuelQuestion? { get }
+    /// 1-based number of the round on screen.
+    var roundNumber: Int { get }
+    var yourAnswer: DuelAnswer? { get }
+    var lastPlayed: DuelPlayed? { get }
+    var roundStart: Date { get }
+    var limitMs: Int { get }
+    /// [you, them].
+    var score: [Int] { get }
+    /// An async half has no running score.
+    var showsScore: Bool { get }
+    var pulse: Int { get }
+    var labelPrefix: String { get }
+    var opponent: DuelOpponent { get }
+    func opponentLocked(at date: Date) -> Bool
+    func answer(_ index: Int)
+    /// The line under a revealed round, and whether it went the student's way.
+    func revealMessage(_ played: DuelPlayed, question: DuelQuestion) -> (text: String, good: Bool?)
+}
+
+extension DuelRoundModel {
+    var showsScore: Bool { true }
+    var labelPrefix: String { "" }
+
+    func revealMessage(_ played: DuelPlayed, question: DuelQuestion) -> (text: String, good: Bool?) {
+        let seconds = { (ms: Int) in String(format: "%.1f", Double(ms) / 1000) }
+        let youRight = played.you.answerIndex == question.correctIndex
+        switch played.winner {
+        case 0:
+            return (youRight ? "Your point — \(seconds(played.you.timeMs)) s." : "Your point — \(opponent.isBot ? "your partner" : opponent.name) answered wrong.", true)
+        case 1:
+            let gaveItAway = played.you.answerIndex != nil && !youRight && played.you.timeMs <= played.them.timeMs
+            return (gaveItAway ? "Their point — a wrong answer gives it away." : "Their point — right in \(seconds(played.them.timeMs)) s.", false)
+        default:
+            return ("No point — nobody got it in time.", nil)
+        }
+    }
+}
+
+// MARK: - Playing other students
+
+extension DuelService {
+    private static func call<Response: Decodable>(_ name: String, _ payload: [String: Any] = [:], as: Response.Type = Response.self) async throws -> Response {
+        let result = try await Functions.functions(region: "europe-west2").httpsCallable(name).call(payload)
+        let data = try JSONSerialization.data(withJSONObject: result.data)
+        return try JSONDecoder().decode(Response.self, from: data)
+    }
+
+    private nonisolated struct Empty: Decodable {}
+
+    // Friend lobbies
+
+    private nonisolated struct Code: Decodable { let code: String }
+    private nonisolated struct MatchID: Decodable { let matchId: String? }
+
+    static func createLobby(module: Module, seconds: Int) async throws -> String {
+        try await call("createLobby", ["moduleId": module.rawValue, "seconds": seconds], as: Code.self).code
+    }
+
+    static func joinLobby(code: String) async throws -> String {
+        try await call("joinLobby", ["code": code], as: Code.self).code
+    }
+
+    static func leaveLobby(code: String) async {
+        _ = try? await call("leaveLobby", ["code": code], as: Empty.self)
+    }
+
+    static func startLobby(code: String) async throws -> String? {
+        try await call("startLobby", ["code": code], as: MatchID.self).matchId
+    }
+
+    nonisolated struct SendResult: Decodable {
+        let sent: Bool
+        /// "contact" or "abuse" when the filter stopped it.
+        let reason: String?
+    }
+
+    static func sendMessage(code: String, text: String) async throws -> SendResult {
+        try await call("sendLobbyMessage", ["code": code, "text": text])
+    }
+
+    static func report(code: String, messageId: String) async throws {
+        _ = try await call("reportMessage", ["code": code, "messageId": messageId], as: Empty.self)
+    }
+
+    static func block(uid: String) async throws {
+        _ = try await call("blockUser", ["uid": uid], as: Empty.self)
+    }
+
+    // Ranked matchmaking
+
+    nonisolated struct Search: Decodable {
+        let matchId: String?
+        /// The rating gap being searched, while waiting.
+        let window: Int?
+    }
+
+    static func findMatch(module: Module, seconds: Int) async throws -> Search {
+        try await call("findMatch", ["moduleId": module.rawValue, "seconds": seconds])
+    }
+
+    static func cancelMatchmaking() async {
+        _ = try? await call("cancelMatchmaking", as: Empty.self)
+    }
+
+    // Async challenges
+
+    private nonisolated struct ChallengeID: Decodable { let challengeId: String }
+
+    @discardableResult
+    static func createChallenge(opponent: String, module: Module, seconds: Int) async throws -> String {
+        try await call("createChallenge", ["opponent": opponent, "moduleId": module.rawValue, "seconds": seconds], as: ChallengeID.self).challengeId
+    }
+
+    nonisolated struct ChallengeStep: Decodable {
+        nonisolated struct Revealed: Decodable {
+            let correct: Bool
+            let correctIndex: Int
+            let why: String
+        }
+
+        let revealed: Revealed?
+        let question: DuelQuestion?
+        let index: Int?
+        let total: Int
+        let limitMs: Int
+        let result: DuelRecord?
+    }
+
+    /// Answers question `index` (nil to fetch the next one) and serves the next.
+    static func playChallenge(id: String, index: Int?, answer: DuelAnswer?) async throws -> ChallengeStep {
+        var payload: [String: Any] = ["challengeId": id]
+        if let index { payload["index"] = index }
+        if let answer {
+            payload["timeMs"] = answer.timeMs
+            if let choice = answer.answerIndex { payload["answerIndex"] = choice }
+        }
+        return try await call("playChallenge", payload)
     }
 }

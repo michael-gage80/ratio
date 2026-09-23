@@ -25,6 +25,8 @@ final class StudentStore {
     private(set) var ratings: [Module: DuelRating] = [:]
     /// The last 20 duels, newest first.
     private(set) var matches: [MatchSummary] = []
+    /// Async challenges still open (PRD: "They have 24 h to play their half").
+    private(set) var challenges: [ChallengeSummary] = []
 
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
     @ObservationIgnored private var briefListener: ListenerRegistration?
@@ -84,6 +86,14 @@ final class StudentStore {
                     self?.matches = snapshot.documents.compactMap { document in
                         (try? document.data(as: MatchSummary.self)).map { var match = $0; match.id = document.documentID; return match }
                     }
+                },
+            Firestore.firestore().collection("challenges").whereField("players", arrayContains: uid).whereField("status", isEqualTo: "open")
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    guard let snapshot else { return }
+                    self?.challenges = snapshot.documents
+                        .compactMap { document in (try? document.data(as: ChallengeSummary.self)).map { var c = $0; c.id = document.documentID; return c } }
+                        .filter { $0.expiresAt > .now }
+                        .sorted { $0.expiresAt < $1.expiresAt }
                 },
         ]
         listenToTodaysBrief()
@@ -199,15 +209,28 @@ nonisolated struct DuelRating: Decodable {
     var isSettled: Bool { rd <= 110 }
 }
 
-/// `matches/{matchId}` (the fields the lists need).
+/// `matches/{matchId}` (the fields the lists need). Sparring keeps one `result`; a match
+/// between students keeps `results` by player and their `names`.
 nonisolated struct MatchSummary: Decodable, Identifiable {
     var id = ""
     var moduleId: String
     var status: String
     var isBot: Bool?
+    var mode: String?
+    var players: [String]?
+    var names: [String: String]?
     var partner: Partner?
     var result: Result?
+    var results: [String: Result]?
     var createdAt: Date?
+
+    /// The result from `uid`'s side.
+    func result(for uid: String) -> Result? { result ?? results?[uid] }
+
+    func opponent(of uid: String) -> (uid: String, name: String)? {
+        guard let other = players?.first(where: { $0 != uid }) else { return nil }
+        return (other, names?[other] ?? "Student")
+    }
 
     nonisolated struct Partner: Decodable {
         var level: Int
@@ -221,7 +244,31 @@ nonisolated struct MatchSummary: Decodable, Identifiable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case moduleId, status, isBot, partner, result, createdAt
+        case moduleId, status, isBot, mode, players, names, partner, result, results, createdAt
+    }
+}
+
+/// `challenges/{id}`: an async challenge between two students.
+nonisolated struct ChallengeSummary: Decodable, Identifiable {
+    var id = ""
+    var players: [String]
+    var names: [String: String]
+    var moduleId: String
+    var limitMs: Int
+    var done: [String: Bool]
+    var expiresAt: Date
+    var createdAt: Date?
+
+    func opponent(of uid: String) -> (uid: String, name: String) {
+        let other = players.first { $0 != uid } ?? ""
+        return (other, names[other] ?? "Student")
+    }
+
+    /// The student who sent it is always players[0].
+    func isFrom(_ uid: String) -> Bool { players.first == uid }
+
+    private enum CodingKeys: String, CodingKey {
+        case players, names, moduleId, limitMs, done, expiresAt, createdAt
     }
 }
 
