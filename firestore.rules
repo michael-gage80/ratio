@@ -22,6 +22,12 @@ service cloud.firestore {
       allow read: if request.auth != null;
     }
 
+    // Boards — written only when Functions settle a human match; any signed-in student
+    // can read them (PRD: "Boards ... written only by Functions").
+    match /boards/{period}/entries/{uid} {
+      allow read: if request.auth != null;
+    }
+
     // Friend lobbies — created and changed only by Functions; members can read them and
     // their chat, which Functions filter before writing (PRD: "Friend lobby").
     match /lobbies/{code} {
@@ -81,6 +87,11 @@ service cloud.firestore {
           && isAroundNow(date)
           && request.resource.data.keys().hasOnly(['at'])
           && request.resource.data.at == request.time;
+      }
+
+      // Students this student has duelled — the Friends board. Written by Functions.
+      match /friends/{otherUid} {
+        allow read: if isOwner(uid);
       }
 
       // Students this student has blocked — written by the blockUser Function.

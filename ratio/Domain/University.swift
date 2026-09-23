@@ -44,6 +44,12 @@ enum UniversityDirectory {
         return list.sorted { sortKey($0.name) < sortKey($1.name) }
     }
 
+    /// "UCL", or the name when there's no common abbreviation.
+    static func shortName(id: String?) -> String? {
+        guard let id, let university = all.first(where: { $0.id == id }) else { return nil }
+        return university.aliases?.first ?? university.name
+    }
+
     private static let bundled: Data? = Bundle.main
         .url(forResource: "universities", withExtension: "json")
         .flatMap { try? Data(contentsOf: $0) }

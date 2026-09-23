@@ -27,6 +27,8 @@ final class StudentStore {
     private(set) var matches: [MatchSummary] = []
     /// Async challenges still open (PRD: "They have 24 h to play their half").
     private(set) var challenges: [ChallengeSummary] = []
+    /// Students this student has duelled, for the Friends board.
+    private(set) var friends: [String] = []
 
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
     @ObservationIgnored private var briefListener: ListenerRegistration?
@@ -87,6 +89,10 @@ final class StudentStore {
                         (try? document.data(as: MatchSummary.self)).map { var match = $0; match.id = document.documentID; return match }
                     }
                 },
+            user.collection("friends").addSnapshotListener { [weak self] snapshot, _ in
+                guard let snapshot else { return }
+                self?.friends = snapshot.documents.map(\.documentID)
+            },
             Firestore.firestore().collection("challenges").whereField("players", arrayContains: uid).whereField("status", isEqualTo: "open")
                 .addSnapshotListener { [weak self] snapshot, _ in
                     guard let snapshot else { return }

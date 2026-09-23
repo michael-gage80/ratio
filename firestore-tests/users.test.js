@@ -282,6 +282,22 @@ describe('lobbies, chat and challenges', () => {
   });
 });
 
+describe('boards', () => {
+  test('entries are readable when signed in and written by no client', async () => {
+    await env.withSecurityRulesDisabled((ctx) => setDoc(doc(ctx.firestore(), 'boards/week-2026-09-21/entries/zara'), { wins: 3 }));
+    await assertSucceeds(getDoc(doc(db('amara'), 'boards/week-2026-09-21/entries/zara')));
+    await assertFails(getDoc(doc(db(null), 'boards/week-2026-09-21/entries/zara')));
+    await assertFails(setDoc(doc(db('amara'), 'boards/week-2026-09-21/entries/amara'), { wins: 99 }));
+  });
+
+  test('a friends list is the owner\'s to read and no client\'s to write', async () => {
+    await env.withSecurityRulesDisabled((ctx) => setDoc(doc(ctx.firestore(), 'users/amara/friends/zara'), { name: 'Zara K.' }));
+    await assertSucceeds(getDoc(doc(db('amara'), 'users/amara/friends/zara')));
+    await assertFails(getDoc(doc(db('zara'), 'users/amara/friends/zara')));
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/friends/omar'), { name: 'Omar S.' }));
+  });
+});
+
 describe('lesson progress', () => {
   const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
 

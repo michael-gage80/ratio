@@ -86,7 +86,9 @@ struct MainTabView: View {
                 }
             }
             Tab("Boards", systemImage: "chart.bar", value: .boards) {
-                ComingSoonView(title: "Boards", art: .pediment, detail: "Daily, weekly and monthly boards arrive with duels.")
+                NavigationStack {
+                    BoardsView()
+                }
             }
             Tab("Me", systemImage: "person", value: .me) {
                 NavigationStack(path: $navigator.mePath) {
@@ -137,24 +139,5 @@ private struct RouteDestination: View {
 private extension View {
     func withRoutes() -> some View {
         navigationDestination(for: Route.self) { RouteDestination(route: $0) }
-    }
-}
-
-private struct ComingSoonView: View {
-    let title: String
-    let art: RatioSpotArt
-    let detail: String
-
-    var body: some View {
-        VStack(spacing: 20) {
-            art.view.frame(width: 120).foregroundStyle(Color.ratioInk)
-            Text(title + ".").ratioFont(.display)
-            Text(detail).ratioFont(.body).multilineTextAlignment(.center).foregroundStyle(Color.ratioInk2)
-            RatioTag("Soon")
-        }
-        .padding(32)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
     }
 }
