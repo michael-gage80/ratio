@@ -11,6 +11,8 @@ final class AppNavigator {
     var todayPath: [Route] = []
     var pathwayPath: [Route] = []
     var mePath: [Route] = []
+    /// Set from Settings to replay the duel tutorial.
+    var showsDuelTutorial = false
 
     /// Pushes onto the current tab's stack.
     func push(_ route: Route) {
@@ -68,7 +70,9 @@ struct MainTabView: View {
                 }
             }
             Tab("Duel", systemImage: "bolt", value: .duel) {
-                ComingSoonView(title: "Duel", art: .scales, detail: "Head-to-head rounds against other students and sparring partners arrive in a later build.")
+                NavigationStack {
+                    DuelView()
+                }
             }
             Tab("Boards", systemImage: "chart.bar", value: .boards) {
                 ComingSoonView(title: "Boards", art: .pediment, detail: "Daily, weekly and monthly boards arrive with duels.")
