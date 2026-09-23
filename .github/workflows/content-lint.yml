@@ -1,18 +1,15 @@
 name: Content lint
 
-# Validates every lesson / diagnostic JSON file against the content schema before it can
-# merge. Inert until Phase 6 adds Content/ (the bundled lesson JSON) and
-# Content/schema/validate_lessons.py alongside it — the path filter below means this
-# workflow simply never fires before then.
+# Validates every lesson and the diagnostic bank (schema, answers that point at real
+# options, spans present in their scenarios, all three skills in each test pool,
+# reading time). Errors fail the check; warnings are listed for the content team.
 
 on:
   pull_request:
     paths:
-      - "Content/**"
-  push:
-    branches: [main]
-    paths:
-      - "Content/**"
+      - "ratio/Resources/Content/**"
+      - "content-tools/**"
+      - ".github/workflows/content-lint.yml"
   workflow_dispatch:
 
 jobs:
@@ -20,18 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
-
-      - name: Install validator dependencies
-        run: pip install jsonschema
-
-      - name: Validate lesson and diagnostic JSON
-        run: |
-          if [ ! -f Content/schema/validate_lessons.py ]; then
-            echo "No Content/schema/validate_lessons.py yet — nothing to validate."
-            exit 0
-          fi
-          python3 Content/schema/validate_lessons.py
+          node-version: "22"
+      - run: npm ci --prefix content-tools
+      - run: node content-tools/validate.mjs

@@ -1,0 +1,400 @@
+{
+  "lessonId": "crime-11",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 11,
+  "topicId": "crime.property.theft-robbery",
+  "title": "Theft and robbery",
+  "subtitle": "The five elements of theft, and what force adds to it",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State and apply the five elements of theft under s 1 Theft Act 1968",
+    "Explain how R v Gomez and R v Hinks establish that appropriation can occur even where the owner consents to the transfer",
+    "Apply the objective Ivey test for dishonesty and distinguish theft from robbery on a new fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Theft Act 1968, ss 1-6, 8", "role": "Statutory source of the five elements of theft and the definition of robbery" },
+    { "citation": "R v Gomez [1993] AC 442", "role": "Appropriation includes an act consented to by the owner, where that consent was obtained by deception" },
+    { "citation": "R v Hinks [2001] 2 AC 241", "role": "Confirms appropriation can occur despite a valid, uncoerced gift in civil law" },
+    { "citation": "Ivey v Genting Casinos [2017] UKSC 67", "role": "Replaces the Ghosh test with a purely objective standard of dishonesty applied to the defendant's actual belief as to the facts" },
+    { "citation": "R v Barton and Booth [2020] EWCA Crim 575", "role": "Confirms the Ivey test applies in criminal law and abolishes Ghosh's second limb" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can list 'appropriation, property, belonging to another, dishonesty, intention permanently to deprive' without much trouble. Where the profile shows recall is solid but application lags, this brief note appears: 'You know the five words — this lesson is about the two of them that don't behave the way you'd expect.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions before. The test pool below leans heavily on fact patterns involving consent, gifts and dishonesty — expect to apply the elements to facts that look, at first glance, like nothing was stolen at all.",
+      "weakKnowledge": "Start with Part 1 and make sure you can name all five elements of theft and the statutory sections behind them before moving on — everything after that assumes you have the checklist cold."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "An elderly, vulnerable man freely hands over most of his savings to a younger acquaintance who has befriended him. No lie was told. No threat was made. He signed the cheques himself. According to the House of Lords, this can still be theft. If that sounds wrong, good — this lesson exists to show you exactly why the law reaches that conclusion, and where the line sits between a generous gift and a crime.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The dishonesty test was reformed by the Supreme Court in Ivey (2017) and confirmed for criminal law by the Court of Appeal in Barton and Booth (2020); this is now settled law."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Theft in five moving parts",
+        "voice": "structural",
+        "body": [
+          "Section 1(1) of the Theft Act 1968 defines theft in a single sentence: a person is guilty of theft if they dishonestly appropriate property belonging to another with the intention of permanently depriving the other of it. Read quickly, that sentence hides five separate elements, each of which the prosecution must prove, and each of which is expanded on by a later section of the Act.",
+          "Appropriation is defined in s 3 as any assumption of the rights of an owner — and, as the next part covers, that definition is far broader than most students first assume. Property is defined in s 4 to include money and all other property, real or personal, with some specific carve-outs. Belonging to another is defined in s 5, and covers not just outright ownership but any proprietary interest, including property someone merely possesses or controls. Dishonesty has no full statutory definition — s 2 only lists situations where a defendant is not dishonest — and is instead governed by the common-law test covered in Part 3. Intention permanently to deprive is defined, and partly extended, by s 6.",
+          "Treat this as a checklist you run through in order on every theft problem, not a form of words to reproduce from memory. Miss one element — most often dishonesty or appropriation — and you will misdiagnose the whole question, arguing about intention to deprive when the real issue is whether an appropriation happened at all."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Theft Act 1968, s 1(1)",
+            "text": "A person is guilty of theft if he dishonestly appropriates property belonging to another with the intention of permanently depriving the other of it.",
+            "elements": ["Appropriation (s 3)", "Property (s 4)", "Belonging to another (s 5)", "Dishonesty (s 2, and the common-law test)", "Intention permanently to deprive (s 6)"]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "The five elements, mapped to their sections",
+            "points": [
+              "Appropriation, s 3 — any assumption of the rights of an owner, however momentary",
+              "Property, s 4 — money and all other property, real or personal, subject to limited exceptions",
+              "Belonging to another, s 5 — any proprietary interest, including mere possession or control, not only outright ownership",
+              "Dishonesty, s 2 plus common law — a threshold set out partly by statutory exclusions, partly by the Ivey test",
+              "Intention permanently to deprive, s 6 — an intention to treat the property as one's own to dispose of regardless of the owner's rights"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-11-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the five elements the prosecution must prove to establish theft under s 1 Theft Act 1968.",
+          "acceptableAnswers": ["appropriation, property, belonging to another, dishonesty, intention permanently to deprive"],
+          "modelAnswer": "Appropriation, property, belonging to another, dishonesty, and intention permanently to deprive.",
+          "feedbackCorrect": "That's the full checklist. Every theft problem should be run through all five, in order.",
+          "feedbackIncorrect": "Re-read s 1(1) — the definition packs five separate elements into one sentence. Missing one usually means misdiagnosing which part of a problem is actually in dispute."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The stereo that was freely handed over — and still stolen",
+        "voice": "case-narrative",
+        "body": [
+          "An assistant manager at an electrical shop helped a friend obtain goods by presenting cheques the assistant manager knew were worthless. The shop's owner authorised the transaction, relying on the cheques, and the goods were handed over with full apparent consent on the owner's part. On one reading, nothing was 'appropriated' at all — the owner agreed to the transfer. The House of Lords in R v Gomez disagreed. It held that an appropriation occurs whenever a defendant assumes any of the rights of an owner, and that this is true even where the owner has consented to the act, if that consent was itself obtained by deception. The owner's authorisation did not prevent an appropriation from having taken place.",
+          "Gomez already stretched appropriation further than many expected. R v Hinks went further still, and removed even the deception. Karen Hinks was a young woman who became a close companion of an elderly man of limited intelligence. Over several months he made her substantial cash gifts and had a large sum transferred into her account — gifts a civil court might well have upheld as valid, given at his own initiative. The House of Lords nonetheless held that receiving a valid gift can amount to an appropriation, and that whether it was dishonest was a question for the jury to decide on the facts, entirely separate from whether the gift was valid as a matter of civil law.",
+          "Put the two cases together and the principle is stark: appropriation asks only whether the defendant assumed any of the owner's rights over the property — not whether the owner agreed, and not whether a civil court would recognise a valid transfer. The dissenting speeches in Hinks warned this blurs criminal and civil law close to the point of collapse, since almost any receipt of a gift now, in principle, satisfies the appropriation element. The majority's answer was that dishonesty — the next element — is what does the real work of separating a lawful gift from a crime."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Gomez",
+            "citation": "[1993] AC 442",
+            "court": "House of Lords",
+            "year": 1993,
+            "factsShort": "A shop assistant manager helped obtain goods using cheques he knew to be worthless; the owner authorised the transaction relying on the cheques.",
+            "ratioShort": "An appropriation occurs even where the owner consents to the transaction, if that consent was obtained by deception; consent does not prevent appropriation.",
+            "expanded": {
+              "facts": "Gomez, an assistant manager, arranged for a shop to supply electrical goods to an acquaintance in exchange for two stolen building society cheques, which he knew were worthless. He persuaded the shop's owner to authorise the sale on the strength of the cheques.",
+              "judgmentExtract": "The House of Lords held that any assumption of an owner's rights amounts to an appropriation under s 3, whether or not the owner consented to it, overruling the more restrictive approach previously suggested in Morris.",
+              "significance": "Gomez fixed appropriation as a broad, consent-independent concept — it is the dishonesty element, not the appropriation element, that filters out lawful transactions from theft."
+            }
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Hinks",
+            "citation": "[2001] 2 AC 241",
+            "court": "House of Lords",
+            "year": 2000,
+            "factsShort": "The defendant received substantial cash gifts from a vulnerable man of limited intelligence; the gifts were valid as a matter of civil law.",
+            "ratioShort": "Receiving a valid gift can still amount to an appropriation; whether it is theft turns entirely on the separate question of dishonesty.",
+            "expanded": {
+              "facts": "Karen Hinks received gifts totalling around £60,000 from Dolarhyde, a man of limited intelligence, over a period of months. There was no finding that she had used deception; the transfers were, on ordinary civil principles, valid gifts.",
+              "judgmentExtract": "The majority confirmed Gomez applies even absent any deception: an appropriation can occur on receipt of an indefeasible gift, and the criminal law's concept of appropriation is not constrained by whether a civil court would set the transaction aside.",
+              "significance": "Hinks confirms appropriation is satisfied by conduct alone, regardless of consent or civil validity — placing the entire weight of distinguishing a gift from a theft onto the dishonesty element."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-11-check-02",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "According to Gomez and Hinks, does an owner's full and genuine consent to a transfer prevent an appropriation from occurring?",
+          "options": ["No — appropriation can occur regardless of the owner's consent; consent is relevant, if at all, to dishonesty", "Yes — genuine consent to the transfer always prevents appropriation from arising", "Only if the consent was given in writing"],
+          "correctIndex": 0,
+          "trapExplanation": "The intuitive answer is that consent should rule out appropriation — that's exactly the pre-Gomez position the House of Lords rejected. After Gomez and Hinks, consent does not prevent appropriation; it may bear on whether the appropriation was dishonest."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "What does 'dishonest' actually mean, and who decides?",
+        "voice": "Socratic",
+        "body": [
+          "If appropriation no longer screens out gifts and consented transfers, the entire question of criminality in cases like Hinks rests on one word: dishonesty. So — how should a jury decide whether someone was dishonest? Ask by whose standard: the defendant's own sense of right and wrong, or everyone else's?",
+          "For over thirty years, the answer was R v Ghosh's two-stage test: first, was the conduct dishonest by the standards of ordinary decent people (an objective question)? Second, did the defendant realise that ordinary decent people would regard it as dishonest (a subjective question)? The second limb caused persistent trouble. It meant a defendant with a genuinely skewed personal code — someone who sincerely believed, say, that taking from a large organisation wasn't really dishonest — could escape liability even where any ordinary person would condemn the conduct outright, because the test asked what the defendant themselves believed others would think, not what they actually thought was right.",
+          "The Supreme Court revisited this in Ivey v Genting Casinos, a civil case about a professional gambler accused of cheating at cards through a technique called edge-sorting. Although decided outside criminal law, the Court's reasoning on dishonesty was treated as authoritative and was confirmed for criminal cases in R v Barton and Booth. The reformulated test asks, first, what was the defendant's actual state of knowledge or belief as to the facts — this part is genuinely subjective, and a genuine factual mistake is still taken into account. Once that factual picture is fixed, the second question is purely objective: was the conduct, given those facts as the defendant believed them to be, dishonest by the standards of ordinary decent people? There is no further requirement that the defendant recognised their own conduct as dishonest by that standard.",
+          "Notice precisely what changed and what didn't. What the defendant believed about the facts still matters enormously — that part of Ghosh survives in substance. What no longer matters is the defendant's own view of where the moral line sits."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Ghosh versus Ivey",
+            "points": [
+              "Ghosh (now abolished): objective standard of ordinary decent people, AND the defendant must have realised their conduct met that standard",
+              "Ivey (current law): the defendant's actual belief as to the facts is established subjectively, then conduct is judged against ordinary decent standards objectively — with no requirement the defendant recognised it as dishonest by that standard",
+              "What survives from Ghosh: a genuine mistake about the facts is still taken into account",
+              "What is abolished: the defendant's own personal view of whether their conduct was honest is now irrelevant"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Ivey v Genting Casinos (UK) Ltd",
+            "citation": "[2017] UKSC 67",
+            "court": "Supreme Court",
+            "year": 2017,
+            "factsShort": "A professional gambler used a technique to gain an advantage at cards, believing it legitimate; the casino refused to pay his winnings, alleging cheating.",
+            "ratioShort": "Dishonesty is assessed by establishing the defendant's actual subjective belief as to the facts, then applying an objective standard of ordinary decent people to those facts — the defendant's own view of the standard is irrelevant.",
+            "expanded": {
+              "facts": "Phil Ivey used 'edge-sorting', exploiting manufacturing imperfections on playing cards to gain an information advantage, while himself believing the technique to be a legitimate advantage-gaining strategy rather than cheating.",
+              "judgmentExtract": "Lord Hughes, giving the judgment, held that the second limb of Ghosh serves no useful purpose and is a mistaken understanding of the law: the test for dishonesty is the defendant's actual knowledge or belief as to the facts, followed by an objective assessment against the standards of ordinary decent people, without any further subjective requirement.",
+              "significance": "Although decided in a civil context, Ivey's reasoning on dishonesty was expressly adopted for criminal law in Barton and Booth, replacing Ghosh across the board, including for theft."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-11-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below adapted from Ivey v Genting Casinos, highlight the sentence that states the current test for dishonesty.",
+          "passage": "The second limb of the Ghosh test serves no useful purpose and is not a reliable guide to the state of the law. The correct approach is first to ascertain the actual state of the individual's knowledge or belief as to the facts, and then to determine whether their conduct was honest or dishonest by applying the objective standards of ordinary decent people. There is no requirement that the individual must appreciate that what they have done is, by those standards, dishonest.",
+          "ratioSentence": "The correct approach is first to ascertain the actual state of the individual's knowledge or belief as to the facts, and then to determine whether their conduct was honest or dishonest by applying the objective standards of ordinary decent people."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Why abolishing Ghosh was overdue",
+        "voice": "argumentative",
+        "body": [
+          "It's worth making the case plainly, because exam answers that simply describe Ivey without engaging with why it changed things miss half the marks available. Ghosh's second limb was not a minor technical flaw — it was a structural invitation to inconsistency. Two defendants who did exactly the same thing, with exactly the same understanding of the facts, could receive different verdicts depending on their own idiosyncratic sense of where the line between honest and dishonest sat. A defendant who genuinely believed 'everyone does this' or 'this doesn't really count' could walk away acquitted, not because a jury found their belief reasonable, but merely because they held it sincerely.",
+          "Ivey's objective standard restores what Ghosh had quietly abandoned: a single, consistent benchmark that doesn't bend to a defendant's personal moral arithmetic. It also brings criminal law's test for dishonesty back into alignment with the test long used in civil law, closing an odd and hard-to-justify gap between the two — the same conduct no longer risks being 'dishonest' for the purposes of a civil fraud claim but not for a criminal one, simply because of what limb of Ghosh was in play.",
+          "The strongest objection worth taking seriously is that a purely objective standard risks catching defendants whose personal or cultural understanding of a situation differs from the mainstream, even where they meant no wrong. But look closely at what the first stage of Ivey actually protects: the defendant's belief about the facts is still taken entirely on their own terms, subjectively. What is no longer protected is a personal view that the resulting conduct, once those facts are accepted, wasn't really wrong. That is a narrower and more defensible target for an objective standard than critics sometimes suggest."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often write that after Ivey, 'the defendant's belief is irrelevant' to dishonesty.",
+            "whyItsWrong": "That overstates the change. The defendant's belief about the facts remains fully relevant and is assessed subjectively — a genuine factual mistake still matters. What Ivey removes is only the second Ghosh limb: the defendant's own view of whether that conduct, once the facts are fixed, was honest by ordinary standards."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-11-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a defendant's own personal moral standard is still relevant to dishonesty under the Ivey test?",
+          "sliderLabels": ["Fully relevant, as under Ghosh", "Entirely irrelevant"],
+          "correctPosition": "Entirely irrelevant",
+          "explanation": "Under Ivey, once the defendant's belief about the facts is established, the standard applied to those facts is purely objective — the defendant's own view of where the moral line sits plays no further role, unlike under Ghosh's second limb."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Robbery: theft with force added",
+        "voice": "direct",
+        "body": [
+          "Robbery is defined in s 8 Theft Act 1968, and it is theft plus three additional elements, all of which must be proved on top of the five elements of theft already covered. First, the defendant must use force on any person, or put or seek to put any person in fear of being then and there subjected to force — actual force is not required, a credible threat suffices. Second, the timing matters precisely: the force or threat must occur immediately before or at the time of the stealing. Third, the force must be used in order to steal — it must be for the purpose of carrying out the theft, not incidental or for some unconnected reason.",
+          "Each of these three additions is worth taking in turn on a problem question, because each is a common trap. On the first, the threshold for 'force' is low — courts have held that even a tug on a bag sufficient to overcome resistance can count, so don't assume a fact pattern needs violence in the everyday sense to qualify. On the second, timing is unforgiving: force used well before or well after the theft itself, disconnected from it, does not convert theft into robbery, however violent it was. On the third, the purpose requirement means force used for an unrelated reason — settling an old grudge, for instance — during an encounter where a theft also happens to occur, does not automatically make that theft a robbery; the force must be deployed in order to steal.",
+          "And remember the foundation underneath all of this: if any one of the five elements of theft is missing — most often because the prosecution can't establish dishonesty, or because there was no relevant appropriation — there is no robbery either, however much force was used. Robbery is not a freestanding offence of violent taking; it is theft, with force bolted on, and the theft still has to be made out in full."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Theft Act 1968, s 8(1)",
+            "text": "A person is guilty of robbery if he steals, and immediately before or at the time of doing so, and in order to do so, he uses force on any person or puts or seeks to put any person in fear of being then and there subjected to force.",
+            "elements": ["Theft is completed (all five elements)", "Force is used, or the victim is put in fear of force, on any person", "The force or threat occurs immediately before or at the time of the stealing", "The force is used in order to steal"]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Robbery: the three additions to theft",
+            "points": [
+              "Force or fear of force, on any person — the threshold for force itself is low",
+              "Immediacy — the force or threat must be immediately before or at the time of the stealing",
+              "Purpose — the force must be used in order to steal, not for some unconnected reason"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-11-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Leon snatches a phone from a stranger's hand while they are distracted, using no more than the light tug needed to pull it free, and runs off. Applying s 8, is this capable of amounting to robbery rather than simple theft?",
+          "options": ["Yes — force used on the victim to overcome resistance, however slight, in order to steal, can satisfy the force element of robbery", "No — robbery requires force sufficient to cause injury"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The force threshold for robbery is low — enough force to overcome resistance to the taking, used in order to steal and immediately at the time of the theft, is capable of satisfying s 8 even without injury.",
+          "feedbackIncorrect": "Reconsider the force threshold. Robbery does not require force sufficient to injure — even a light tug used to overcome resistance and complete the theft can be enough, provided it happens at the time of the stealing and in order to steal."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-11-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the five elements the prosecution must prove to establish theft under s 1 Theft Act 1968.",
+      "acceptableAnswers": ["appropriation, property, belonging to another, dishonesty, intention permanently to deprive"],
+      "modelAnswer": "Appropriation, property, belonging to another, dishonesty, and intention permanently to deprive."
+    },
+    {
+      "itemId": "crime-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does the House of Lords in R v Gomez require deception to have overcome the owner's consent before an appropriation can be found?",
+      "options": ["No — appropriation is satisfied by any assumption of the owner's rights, and consent (however obtained) does not prevent it", "Yes — appropriation can only occur where the owner's consent was itself obtained by deception"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the three additional elements robbery requires beyond theft?",
+      "options": ["Force or threat of force on any person", "The force occurring immediately before or at the time of the stealing", "Force used causing actual physical injury", "The force being used in order to steal"],
+      "correctIndex": 2,
+      "trapExplanation": "Robbery does not require injury. The force threshold is low — enough to overcome resistance can suffice — provided it is used at the right time and for the right purpose."
+    },
+    {
+      "itemId": "crime-11-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 5 Theft Act 1968, 'belonging to another' covers which of the following?",
+      "options": ["Any proprietary interest, including mere possession or control, not only outright legal ownership", "Only property the victim owns outright, in the strict legal sense", "Only property the victim is currently carrying on their person"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-11-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from R v Hinks, highlight the sentence that states the ratio on appropriation.",
+      "passage": "The defendant received substantial gifts from a man of limited intelligence, and those gifts were valid as a matter of civil law. It does not follow, however, that receipt of a valid gift cannot amount to an appropriation for the purposes of s 3. An appropriation occurs whenever the defendant assumes any of the rights of an owner, regardless of whether that assumption is also, in the civil law, a valid transfer. Whether such an appropriation is dishonest is a separate question for the jury.",
+      "ratioSentence": "An appropriation occurs whenever the defendant assumes any of the rights of an owner, regardless of whether that assumption is also, in the civil law, a valid transfer."
+    },
+    {
+      "itemId": "crime-11-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Put these developments in the dishonesty test in the correct chronological order.",
+      "items": ["R v Ghosh sets a two-stage test, partly objective and partly subjective", "Courts and commentators criticise Ghosh's second limb for excusing defendants with skewed personal moral standards", "Ivey v Genting Casinos reformulates dishonesty as subjective belief in the facts, then a purely objective standard", "R v Barton and Booth confirms Ivey applies in criminal law and abolishes Ghosh's second limb"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-11-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a genuine mistake about the facts (not about right and wrong) can still excuse a defendant from dishonesty under Ivey?",
+      "sliderLabels": ["Never relevant now", "Still fully relevant"],
+      "correctPosition": "Still fully relevant",
+      "explanation": "The first stage of Ivey is subjective and establishes the defendant's actual belief as to the facts — a genuine factual mistake remains fully relevant. Only the defendant's own view of the moral standard, Ghosh's second limb, has been removed."
+    },
+    {
+      "itemId": "crime-11-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that is sufficient, on its own, to establish an appropriation in this scenario, applying Gomez and Hinks.",
+      "scenarioText": "An elderly woman, entirely of her own initiative and with full mental capacity, decides to give her gardener a valuable ring as a gift. The gardener accepts it and takes it home.",
+      "tappableSpans": ["entirely of her own initiative", "full mental capacity", "accepts it and takes it home", "valuable ring"],
+      "correctSpan": "accepts it and takes it home",
+      "explanation": "Accepting and taking the property is the assumption of the owner's rights that satisfies appropriation under Gomez and Hinks — the giver's capacity and initiative go to whether the gift is valid in civil law and to dishonesty, not to whether an appropriation occurred at all."
+    },
+    {
+      "itemId": "crime-11-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is most clearly capable of satisfying appropriation under the Gomez/Hinks line of authority?",
+      "scenarioA": "A shopper picks up an item in a supermarket, examines it, and puts it back on the shelf unchanged.",
+      "scenarioB": "A carer persuades a client with full capacity to transfer money into the carer's account as an unprompted gift.",
+      "correctScenario": "B",
+      "explanation": "Scenario B involves the carer assuming a right of the owner (receiving the transferred funds), which is an appropriation regardless of the transfer's validity as a gift. Scenario A involves no assumption of the owner's rights at all — the item is returned unchanged."
+    },
+    {
+      "itemId": "crime-11-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A defendant genuinely, but mistakenly, believes an item on a market stall has been abandoned and takes it. Applying Ivey, what is the first question a court asks about dishonesty?",
+      "options": ["What did the defendant actually believe about the facts (here, that the item was abandoned)?", "Would ordinary decent people consider taking abandoned items dishonest?", "Did the defendant think their own conduct was honest?"],
+      "correctIndex": 0,
+      "explanation": "Ivey's first stage is subjective: establish the defendant's actual belief as to the facts. If genuinely believed abandoned, that belief is taken into account before the objective standard is ever applied."
+    },
+    {
+      "itemId": "crime-11-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "During an unrelated physical altercation arising from a personal grudge, one party notices the other's wallet has fallen out and pockets it as the fight ends, without using any further force to take it. Is this capable of amounting to robbery?",
+      "options": ["Unlikely — the force used was not deployed in order to steal, so the purpose element of s 8 is not satisfied even though a theft may have occurred", "Yes — any force used at around the same time as a theft automatically makes it robbery"],
+      "correctIndex": 0,
+      "explanation": "Section 8 requires the force to be used in order to steal. Force arising from an unrelated grudge, with the theft opportunistically following rather than being the purpose of the force, does not satisfy that element — though theft itself may still be made out."
+    },
+    {
+      "itemId": "crime-11-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Nadia grabs an elderly shopper's handbag, pulling firmly enough to break the strap and overcome the shopper's grip, in order to take the cash inside, and runs off immediately afterward. Analyse whether Nadia has committed robbery.",
+      "factsToOrder": [
+        "Nadia grabs the handbag",
+        "She pulls firmly enough to break the strap and overcome the shopper's grip",
+        "Her purpose is to take the cash inside",
+        "She runs off immediately afterward"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Nadia's taking of the handbag amounts to robbery under s 8 Theft Act 1968.",
+        "rule": "Robbery is theft (s 1) plus the use of force, or putting a person in fear of force, on any person, immediately before or at the time of the stealing, and in order to steal (s 8).",
+        "application": "The underlying theft is made out: Nadia appropriates the handbag, property belonging to the shopper, dishonestly and with intent to permanently deprive her of the cash. The force element is satisfied by the pull sufficient to break the strap and overcome resistance — the low threshold for force in robbery does not require injury. That force is used immediately at the time of the stealing, and its purpose is expressly to take the cash, satisfying the 'in order to steal' requirement.",
+        "conclusion": "Nadia has committed robbery: theft is established, and the force used to break the strap and overcome the shopper's grip was used at the time of, and in order to accomplish, the theft."
+      }
+    },
+    {
+      "itemId": "crime-11-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A frail relative, unprompted and with full capacity, insists on giving a large cash gift to a family member who has done nothing to solicit or pressure it. Does the mere fact that this satisfies appropriation (per Hinks) mean it is automatically theft?",
+      "options": ["No — appropriation is only one of five elements; dishonesty must also be established separately on the facts", "Yes — appropriation alone is sufficient for theft"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-11-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best describes the force threshold required for robbery?",
+      "options": ["Robbery requires force sufficient to cause actual bodily harm or worse", "The force threshold is low — force sufficient to overcome resistance to the taking, used in order to steal at the relevant time, can suffice, without any injury being caused", "Any threat of any kind, however unconnected to the theft, satisfies the force element"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often assume robbery needs injury-level violence because it is treated as a serious offence — but the force threshold itself is low; seriousness comes from the combination of theft and force, not from a high force requirement."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is assuming that because a transfer looked consensual, or looked like an ordinary gift, no appropriation could have occurred. After Gomez and Hinks, appropriation is almost always satisfied — the real analytical work happens at the dishonesty stage, and that's where most fact patterns are actually won or lost.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.property.theft-robbery"
+  }
+}

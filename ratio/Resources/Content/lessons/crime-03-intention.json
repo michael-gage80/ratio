@@ -1,0 +1,406 @@
+{
+  "lessonId": "crime-03",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 3,
+  "topicId": "crime.general-principles.intention",
+  "title": "Meaning to, and knowing you will",
+  "subtitle": "Direct and oblique intention, and the unsettled status of Woollin",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish direct intent from oblique (indirect) intent and identify which fact patterns raise each",
+    "Trace the development of the virtual certainty test through Moloney, Nedrick and Woollin, and state the current model direction",
+    "Recognise the live academic and judicial disagreement over whether Woollin lays down a rule of evidence or a substantive rule of law, and apply the virtual certainty test to new fact patterns without treating that question as settled"
+  ],
+  "leadingAuthorities": [
+    { "citation": "R v Moloney [1985] AC 905", "role": "First modern House of Lords attempt at a foresight direction; the 'natural consequence' formula proved too loose and was later abandoned" },
+    { "citation": "R v Nedrick [1986] 1 WLR 1025", "role": "Court of Appeal reformulates the direction around virtual certainty; jury 'entitled to find' intention, not required to" },
+    { "citation": "R v Woollin [1999] 1 AC 82", "role": "House of Lords approves the Nedrick direction with 'find' in place of 'infer'; the current leading authority" },
+    { "citation": "R v Matthews and Alleyne [2003] EWCA Crim 192", "role": "Court of Appeal treats the Woollin direction as, at most, a rule about evidence rather than a conclusive definition of intention" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Intention sounds like the simplest word in the criminal law until you meet a defendant who swears they never wanted the result, but knew perfectly well it was almost bound to happen. Where the profile shows knowledge ahead of application, this note appears: 'You can already recite Woollin. This lesson is about the fight over what Woollin actually decided.'",
+    "profileHooks": {
+      "weakApplication": "You've done well recalling the case names here. The test pool leans towards understanding and application: expect questions that ask you to use the virtual certainty test on new facts, not just name the cases in order.",
+      "weakKnowledge": "Go through Parts 2 and 3 carefully and make sure you can put Moloney, Nedrick and Woollin in the right order with the right wording attached to each — the later parts assume you already have that chronology fixed."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A defendant tells the jury, quite calmly, that he never wanted anyone to die. He just needed the insurance money, and the fire was supposed to burn an empty room. Fourteen people were asleep two floors up. Whether that account amounts to murder turns out to depend on a single word the House of Lords argued about for over a decade — and on a question the courts still have not agreed how to answer.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. Woollin remains the leading authority on oblique intent; the evidence-versus-substantive-law debate discussed in Part 4 remains unresolved by any binding decision, and this lesson presents it as such."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two roads to intention: direct and oblique",
+        "voice": "comparative — lays the two forms of intent side by side before pulling them apart",
+        "body": [
+          "Most of the criminal law's talk about intention concerns the easy case: the defendant wanted the result, aimed at it, and achieved it. This is direct intent, and it needs almost no doctrine to explain — if you want to kill someone and you kill them, you intended to kill them. The hard cases, the ones that generate case law, arise when the defendant's aim was something else entirely.",
+          "Oblique (or indirect) intent covers exactly that situation: the result was not the defendant's purpose, but the defendant foresaw it as an overwhelmingly likely side effect of achieving their actual goal. The textbook illustration is a bomb placed on an aircraft to trigger an insurance payout on the cargo. The defendant's purpose is the money, not anyone's death — but they know, to a virtual certainty, that the crew will die when the bomb goes off. The law has had to decide whether, and how, that kind of knowing indifference counts as intention.",
+          "Keep the two firmly apart as you go through this lesson. Direct intent is rarely litigated because it rarely needs a legal test — it is simply what the word 'intention' means in ordinary language. Everything from Part 2 onward is about oblique intent, because that is where the courts have spent forty years trying, and repeatedly failing, to get the wording exactly right."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Direct intent v oblique intent",
+            "points": [
+              "Direct intent — the result is the defendant's aim or purpose",
+              "Oblique intent — the result is not the defendant's aim, but is foreseen by the defendant as virtually certain to follow from achieving that aim",
+              "Only oblique intent requires the special direction developed in Moloney, Nedrick and Woollin",
+              "Both forms, once established, satisfy the same mental element — the law does not grade them"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Oblique intent",
+            "definition": "Intention that is not the defendant's direct purpose, but arises where the defendant foresees the result as a virtually certain consequence of achieving some other aim, and the jury finds that the defendant did intend it on that basis."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-03-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A defendant plants a bomb on a cargo plane purely to destroy the cargo for an insurance claim, knowing the crew will certainly die. Is this direct or oblique intent as to the crew's deaths?",
+          "options": ["Direct intent — killing the crew was his purpose", "Oblique intent — killing the crew was not his purpose, but he foresaw it as virtually certain"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. His purpose was the insurance money; the deaths are a foreseen, not desired, side effect — the paradigm case for oblique intent.",
+          "feedbackIncorrect": "His actual purpose was the insurance payout, not anyone's death. That makes this the paradigm oblique intent scenario — foresight of a virtually certain consequence of pursuing a different goal."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "How the law got here: Moloney's false start",
+        "voice": "historical-narrative — narrates the doctrine's wrong turns before the correction arrives",
+        "body": [
+          "The modern law of oblique intent begins with a failure. In R v Moloney, a stepson and stepfather, both drunk, engaged in what was said to be a good-natured challenge over who could load and fire a shotgun faster; the gun went off and killed the stepfather. The trial judge directed the jury that murder required only that the defendant foresaw death or serious harm as a 'natural consequence' of his act. The jury convicted of murder; the House of Lords quashed it.",
+          "The House of Lords held that the trial judge's direction had blurred the line between foresight and intention far too much. Foresight of a natural consequence, on its own, risks equating intention with mere recklessness or even mere probability — exactly what Parliament had legislated against. Section 8 of the Criminal Justice Act 1967 provides that a jury is not bound in law to infer intention merely from the fact that a result was a natural and probable consequence of the defendant's actions; foresight is evidence from which intention may be inferred, nothing more automatic than that.",
+          "Moloney tried to offer juries a workable formula anyway — asking whether death or serious injury was a natural consequence of the defendant's act, and whether the defendant foresaw it as such — but that formula was criticised almost immediately as too loose, because 'natural consequence' does not, on its own, capture just how certain the outcome needs to be before a jury can treat mere foresight as intention. The next two cases exist to fix exactly that problem."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Criminal Justice Act 1967, s 8",
+            "text": "A court or jury, in determining whether a person has committed an offence, (a) shall not be bound in law to infer that he intended or foresaw a result of his actions by reason only of its being a natural and probable consequence of those actions; but (b) shall decide whether he did intend or foresee that result by reference to all the evidence, drawing such inferences from the evidence as appear proper in the circumstances.",
+            "elements": ["No automatic legal presumption of intention from foreseeability alone", "The jury decides intention as a question of fact", "The jury may draw inferences from all the evidence, foresight included"]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Moloney",
+            "citation": "[1985] AC 905",
+            "court": "House of Lords",
+            "year": 1985,
+            "factsShort": "A drunken shooting-speed challenge between a stepfather and stepson ended in the stepfather's death; the trial judge's 'natural consequence' direction on intention was held inadequate.",
+            "ratioShort": "Foresight of a natural consequence is evidence of intention, not a legal substitute for it; the 'natural consequence' formula proved too loose to survive as the standard direction.",
+            "expanded": {
+              "facts": "Moloney and his stepfather, both heavily intoxicated, had a friendly relationship that night and engaged in a challenge about who could load and fire a shotgun fastest. Moloney's gun discharged and killed his stepfather. Moloney said he had not aimed at him and had not realised the gun was pointed at him when it fired.",
+              "judgmentExtract": "Lord Bridge held that the golden rule is that the judge should avoid elaboration of what intention means wherever possible, and where a direction is needed the jury should be asked whether death or serious injury was a natural consequence of the defendant's act, and whether the defendant foresaw it as such — but this could not amount to a rule that such foresight was itself the same thing as intention.",
+              "significance": "Moloney is the starting point for the modern law, valuable mainly for what it got wrong: the 'natural consequence' formula was too imprecise and had to be replaced. It also entrenches the section 8 principle that foresight is evidence of intention, never a conclusive legal presumption of it."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-03-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "According to section 8 of the Criminal Justice Act 1967, what is a jury NOT bound to do?",
+          "options": ["Infer intention merely because a result was a natural and probable consequence of the defendant's act", "Consider foresight as part of the evidence at all", "Reach a verdict without unanimity"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 8 blocks any automatic presumption — foresight is only ever evidence for the jury to weigh, never a shortcut to a finding of intention.",
+          "feedbackIncorrect": "Section 8 is specifically about presumption, not about excluding foresight from evidence altogether. It stops a jury being told they must infer intention from foreseeability alone."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Locking down the test: Nedrick to Woollin",
+        "voice": "precise — treats each word of the model direction as though it were doing legal work, because it is",
+        "body": [
+          "R v Nedrick took Moloney's loose formula and tightened it considerably. Nedrick had poured paraffin through the letterbox of a woman he had a grudge against and set it alight; her child died in the fire. The Court of Appeal held that a jury is not entitled to find the necessary intention unless they feel sure that death or serious bodily harm was a virtual certainty (barring some unforeseen intervention) as a result of the defendant's actions, and that the defendant appreciated that this was the case. That word — virtual certainty, not natural consequence, not high probability — became the standard.",
+          "R v Woollin took Nedrick to the House of Lords and approved it, with one deliberate change. Woollin, in a fit of temper, threw his three-month-old son onto a hard surface, causing fatal head injuries; he said he never intended to kill or seriously injure the baby. The trial judge had directed the jury using language of 'substantial risk', which the House of Lords held was a misdirection — it blurred intention back towards recklessness, precisely the error Moloney had already warned against.",
+          "Lord Steyn approved the Nedrick model direction almost word for word, but substituted 'find' for 'infer': the jury is not entitled to find the necessary intention unless they are satisfied that death or serious bodily harm was a virtual certainty (barring some unforeseen intervention) as a result of the defendant's actions, and that the defendant appreciated that fact. Woollin's own murder conviction was reduced to manslaughter because of the trial misdirection, but the model direction itself was endorsed for the future.",
+          "That one substitution — 'find' instead of 'infer' — looks small on the page and is the reason the next part of this lesson exists at all. 'Infer' sounds evidential: the jury may treat foresight as evidence pointing towards intention. 'Find' sounds closer to definitional: once virtual certainty and appreciation are established, the jury may simply find intention, almost as though the test states what intention is. Whether that reading is right is exactly what courts and academics still disagree about."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Nedrick to Woollin: the wording that changed",
+            "points": [
+              "Nedrick (1986): the jury is 'entitled to infer' intention where death or serious injury is a virtual certainty (barring unforeseen intervention) and the defendant appreciated this",
+              "Woollin (1999): the House of Lords approved the same structure, substituting 'entitled to find' for 'entitled to infer'",
+              "Both versions retain 'entitled to' rather than 'must' — the jury is never legally compelled to find intention, even on proof of virtual certainty",
+              "The change from 'infer' to 'find' is the single textual hook for the evidence-versus-substantive-law debate in Part 4"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "R v Woollin",
+            "citation": "[1999] 1 AC 82",
+            "court": "House of Lords",
+            "year": 1999,
+            "factsShort": "A father, in a fit of temper, threw his three-month-old son onto a hard surface, causing fatal injuries; the trial judge misdirected the jury using 'substantial risk' language.",
+            "ratioShort": "The jury is not entitled to find intention unless death or serious bodily harm was a virtual certainty (barring unforeseen intervention) and the defendant appreciated that fact; 'substantial risk' wrongly imports recklessness.",
+            "expanded": {
+              "facts": "Woollin lost his temper when his baby son began choking and threw him, with considerable force, towards a pram several feet away; the baby struck a hard surface and suffered fatal head injuries. Woollin denied any intention to kill or seriously injure the child. The trial judge directed the jury that they could convict of murder if they concluded Woollin appreciated there was a 'substantial risk' of really serious harm.",
+              "judgmentExtract": "Lord Steyn held that the 'substantial risk' direction was a misdirection, since it blurred the line between intention and recklessness that the law had drawn deliberately. He approved the Nedrick direction, with the modification that the jury should be told they are not entitled to find the necessary intention unless they feel sure that death or serious bodily harm was a virtual certainty (barring some unforeseen intervention) as a result of the defendant's actions, and that the defendant appreciated that such was the case.",
+              "significance": "Woollin is the current leading authority on oblique intent and supplies the model direction still given to juries. Its substitution of 'find' for 'infer' is the single most litigated and debated word-change in this entire area of law, precisely because it reopens the question of what kind of test virtual certainty actually is."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-03-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below adapted from R v Woollin, highlight the sentence stating the model direction the House of Lords approved.",
+          "passage": "The trial judge's direction referring to a 'substantial risk' of serious harm was a misdirection, since it blurred intention with recklessness. The jury is not entitled to find the necessary intention unless they feel sure that death or serious bodily harm was a virtual certainty (barring some unforeseen intervention) as a result of the defendant's actions, and that the defendant appreciated that such was the case. The appeal is allowed and a verdict of manslaughter substituted.",
+          "ratioSentence": "The jury is not entitled to find the necessary intention unless they feel sure that death or serious bodily harm was a virtual certainty (barring some unforeseen intervention) as a result of the defendant's actions, and that the defendant appreciated that such was the case."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The unresolved question: rule of evidence, or rule of law?",
+        "voice": "dialectic — sets out both sides of a live disagreement and deliberately withholds a verdict",
+        "body": [
+          "Here is the question this lesson has been building towards, and it is one the courts have not definitively answered: when Woollin says a jury may 'find' intention on proof of virtual certainty and appreciation, is that a rule about what evidence permits a jury to conclude, or a rule that actually defines what intention means as a matter of law?",
+          "One position — call it the evidential view — holds that Woollin changes nothing about the definition of intention. Intention still means what it always meant: aiming at, or desiring, a result. Virtual certainty plus appreciation is simply evidence so strong that a jury is permitted, though never compelled, to conclude that the defendant really did intend the result in that ordinary sense. On this view, 'entitled to find' preserves exactly the same jury latitude as 'entitled to infer' did in Nedrick — the change of verb is stylistic, not substantive, and section 8 of the 1967 Act continues to forbid any automatic legal presumption.",
+          "The opposing position — call it the substantive view — argues that Woollin has, in practice if not in so many words, redefined intention for oblique-intent cases: foresight of virtual certainty simply is intention, once the jury is satisfied of it, because nothing in the model direction leaves room for the jury to find virtual certainty and appreciation and yet still decline to find intention on any principled basis. Some judges and academics have pointed out that juries are never told what else, beyond virtual certainty and appreciation, they might legitimately weigh against a finding of intention — which suggests the test has quietly become a definition, dressed in the language of discretion.",
+          "This lesson takes no side, because the law has not taken one either. The Court of Appeal in Matthews and Alleyne, which the next part covers, leaned towards treating Woollin as not being a complete and conclusive definition of intention as a matter of law — but even that case stopped short of resolving the debate outright, since it upheld the murder conviction on the facts regardless of how the point was characterised. Any exam answer that asserts the question is settled, in either direction, is overclaiming; the strongest answers show they know both positions and can argue either."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The contested question — both positions, side by side",
+            "points": [
+              "Evidential view: intention keeps its ordinary meaning; virtual certainty plus appreciation is strong evidence a jury may use to find it, nothing more",
+              "Substantive view: Woollin has effectively redefined intention for oblique cases — proven virtual certainty and appreciation leaves the jury nothing principled to weigh against a finding of intention",
+              "Neither the House of Lords in Woollin nor the Court of Appeal in Matthews and Alleyne conclusively resolved which reading is correct",
+              "Treat this as a live, contested point in any assessment answer — present both views rather than asserting a winner"
+            ]
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often write that 'Woollin settled the law: virtual certainty of a result means the defendant intended it.'",
+            "whyItsWrong": "This overstates what Woollin decided. It approved a model direction for juries — it did not purport to hand down a new, exhaustive definition of intention that removes all jury latitude. Treating the point as settled loses marks in an assessment that is testing whether you know the debate exists at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-03-check-04",
+          "type": "recallFirst",
+          "skillTag": "understanding",
+          "prompt": "In your own words, explain the two competing views on whether Woollin states a rule of evidence or a rule of substantive law.",
+          "acceptableAnswers": [
+            "evidential view says virtual certainty is just strong evidence for the jury",
+            "substantive view says virtual certainty effectively defines intention",
+            "the debate is unresolved",
+            "courts have not settled which reading is correct"
+          ],
+          "modelAnswer": "The evidential view holds that Woollin leaves the ordinary meaning of intention untouched — virtual certainty and appreciation are simply strong evidence a jury may, but need not, use to find intention, consistent with section 8 of the 1967 Act. The substantive view holds that Woollin has, in effect, redefined intention for oblique cases, since the model direction gives a jury nothing principled to weigh once virtual certainty and appreciation are proved. Neither the House of Lords nor the Court of Appeal has conclusively chosen between the two readings."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Applying virtual certainty: Matthews and Alleyne",
+        "voice": "applied — walks a fact pattern through the live test the way an examiner would mark it",
+        "body": [
+          "Theory earns marks only once you can run it against facts, and R v Matthews and Alleyne is the case examiners most often build problem questions around. The defendants, believing the victim had robbed one of them, drove him to a river, told him he could not swim, and threw him in from a bridge; he drowned. The trial judge directed the jury in Woollin terms but went further, telling them that if they found virtual certainty and appreciation, they 'should' find intention — arguably converting Woollin's permissive 'entitled to find' into something closer to a command.",
+          "The Court of Appeal upheld the murder convictions. It held that the Woollin direction does not lay down a substantive rule that virtual certainty and appreciation automatically equal intention as a matter of law — but decided it did not need to resolve that question definitively, because on these facts the jury's findings of virtual certainty and appreciation left no realistic room for any conclusion other than intention. The evidence overwhelmed the theoretical distinction.",
+          "The practical lesson for application questions is this: identify whether your fact pattern gives you clean virtual certainty (the defendant knew death or serious injury was practically inevitable, barring some unforeseen intervention) or only a high probability or substantial risk. Only the former triggers Woollin at all — the latter belongs to recklessness, not oblique intent, however tempting it is to reach for the murder charge on emotionally serious facts."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Matthews and Alleyne",
+            "citation": "[2003] EWCA Crim 192",
+            "court": "Court of Appeal",
+            "year": 2003,
+            "factsShort": "The defendants threw a robbery victim, who could not swim, off a bridge into a river; he drowned. The trial judge's direction arguably converted Woollin's permissive test into a mandatory one.",
+            "ratioShort": "The Court of Appeal declined to treat Woollin as a conclusive rule of substantive law, but upheld the convictions because the evidence of virtual certainty and appreciation left no realistic alternative finding.",
+            "expanded": {
+              "facts": "Matthews and Alleyne believed the victim had stolen from one of them. They drove him to a bridge, told him he could not swim, and threw him into the river below despite his pleas; he drowned. The trial judge directed the jury that if they were satisfied the defendants foresaw death as virtually certain, they 'should' find that they intended it.",
+              "judgmentExtract": "The Court of Appeal accepted that the trial judge's direction went further than Woollin's careful wording strictly permitted, since it moved from 'entitled to find' towards something closer to a direction that the jury 'should' find intention. It held that Woollin did not lay down a substantive rule of law equating virtual certainty with intention, but concluded that on the facts before the jury, the evidence of foresight was so strong that the misdirection made no difference to the safety of the conviction.",
+              "significance": "Matthews and Alleyne is the case most often cited for the proposition that the Woollin test is not a conclusive rule of law — but it is equally important for showing that courts can, and do, sidestep resolving the debate by relying on the overwhelming strength of the facts. It is a caution against over-reading any single case as having settled the point."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-03-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Sasha locks the only exit of a small shop and sets it alight to destroy stock for an insurance claim, believing — correctly — that a security guard is asleep inside and that there is no other way out. The guard dies. Is Sasha likely to satisfy the virtual certainty test for oblique intent as to the guard's death?",
+          "options": ["Yes — on these facts death was practically inevitable and Sasha appreciated that", "No — Sasha's purpose was destroying stock, not killing anyone, so intention cannot be found", "No — this is only recklessness, since Sasha did not want the guard to die"],
+          "correctIndex": 0,
+          "explanation": "Sasha's purpose (the insurance claim) is irrelevant to whether intention as to the death can be found — that is exactly what oblique intent covers. Locking the only exit and setting the fire, knowing someone is trapped inside with no way out, is about as clean an example of virtual certainty as the case law provides."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-03-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Define direct intent in your own words.",
+      "acceptableAnswers": ["the result is the defendant's aim or purpose", "defendant wanted or desired the result", "the defendant's goal was to bring about the result"],
+      "modelAnswer": "Direct intent exists where the prohibited result is the defendant's actual aim or purpose in acting."
+    },
+    {
+      "itemId": "crime-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Can oblique intent satisfy the mental element for murder just as fully as direct intent?",
+      "options": ["Yes — once the jury finds intention, the law does not distinguish between the direct and oblique routes to it", "No — oblique intent can only ever support a manslaughter conviction"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which case first introduced 'virtual certainty' as the key phrase, replacing Moloney's 'natural consequence' formula?",
+      "options": ["R v Moloney", "R v Nedrick", "R v Woollin", "R v Matthews and Alleyne"],
+      "correctIndex": 1,
+      "trapExplanation": "Woollin is the case students remember best, so it is the tempting wrong answer — but Woollin approved and slightly amended Nedrick's wording rather than inventing 'virtual certainty' itself. Nedrick coined the phrase; Woollin refined it."
+    },
+    {
+      "itemId": "crime-03-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "Put these cases in the order the doctrine on oblique intent actually developed.",
+      "items": ["R v Moloney (natural consequence direction rejected)", "R v Nedrick (virtual certainty; jury 'entitled to infer')", "R v Woollin (virtual certainty; jury 'entitled to find')", "R v Matthews and Alleyne (Woollin not a conclusive rule of law)"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-03-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Section 8 of the Criminal Justice Act 1967 says a jury 'shall not be bound in law to infer' intention merely from foreseeability. Which best captures why this provision matters to the Moloney-Woollin line of cases?",
+      "options": ["It is the statutory reason foresight can never be used as evidence of intention", "It is the statutory reason no direction can turn foresight alone into an automatic legal presumption of intention, forcing the courts to develop a careful model direction instead", "It only applies to manslaughter, not murder"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "crime-03-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below, highlight the sentence that states the Nedrick/Woollin model direction.",
+      "passage": "Intention is not defined exhaustively by statute. Where a defendant's purpose was something other than the result charged, the jury is not entitled to find the necessary intention unless they feel sure that death or serious bodily harm was a virtual certainty (barring some unforeseen intervention) as a result of the defendant's actions, and that the defendant appreciated that such was the case. This is a direction to be used sparingly, in the rare cases where a simple direction on intention does not suffice.",
+      "ratioSentence": "The jury is not entitled to find the necessary intention unless they feel sure that death or serious bodily harm was a virtual certainty (barring some unforeseen intervention) as a result of the defendant's actions, and that the defendant appreciated that such was the case."
+    },
+    {
+      "itemId": "crime-03-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How settled is the question of whether Woollin states a rule of evidence or a rule of substantive law?",
+      "sliderLabels": ["Fully and conclusively settled", "Genuinely contested and unresolved"],
+      "correctPosition": "genuinely contested and unresolved",
+      "explanation": "Neither Woollin nor Matthews and Alleyne resolved this question definitively — the Court of Appeal in the latter case sidestepped it by relying on the strength of the facts. Treating it as settled, in either direction, overstates the state of the law."
+    },
+    {
+      "itemId": "crime-03-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which of these best represents the 'evidential' view of Woollin, rather than the 'substantive' view?",
+      "scenarioA": "Virtual certainty and appreciation are strong evidence the jury may use to find intention, but intention keeps its ordinary meaning and the jury retains latitude.",
+      "scenarioB": "Once virtual certainty and appreciation are proved, there is nothing left for the jury to weigh — foresight of virtual certainty simply is intention.",
+      "correctScenario": "A",
+      "explanation": "A restates the evidential view: Woollin changes nothing about what intention means, only what evidence can establish it. B is the substantive view — that the test has, in effect, become the definition."
+    },
+    {
+      "itemId": "crime-03-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that most clearly establishes virtual certainty of serious harm.",
+      "scenarioText": "Owen, wanting to frighten a rival rather than hurt him, drives his car directly at him on a narrow, walled alley with no possible escape route, at speed, not slowing down.",
+      "tappableSpans": ["wanting to frighten a rival", "a narrow, walled alley with no possible escape route", "at speed", "not slowing down"],
+      "correctSpan": "a narrow, walled alley with no possible escape route",
+      "explanation": "It is the absence of any escape route, combined with the speed and lack of slowing, that turns this from a mere high-risk scenario into one where serious injury is virtually certain barring some unforeseen event — Owen's stated purpose (frightening, not hurting) does not prevent oblique intent being found."
+    },
+    {
+      "itemId": "crime-03-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant throws a heavy brick from a motorway bridge onto fast-moving traffic below, at night, aiming for 'a bit of excitement' and not caring which vehicle it hits. Is this most likely to be analysed as oblique intent or recklessness as to death?",
+      "options": ["Oblique intent — death or serious injury to someone was virtually certain, even though the defendant did not know which victim would be hit", "Recklessness only — because the defendant did not know exactly who would be struck", "Neither — there is no mental element issue on these facts"],
+      "correctIndex": 0,
+      "explanation": "Virtual certainty does not require the defendant to know the identity of the victim in advance — only that serious harm to someone was practically inevitable. This scenario sits closer to the oblique intent cases than to ordinary recklessness."
+    },
+    {
+      "itemId": "crime-03-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Under Woollin, if a jury is satisfied that a result was virtually certain and that the defendant appreciated this, are they legally obliged to find intention?",
+      "options": ["Yes — proof of virtual certainty and appreciation automatically compels a finding of intention", "No — the model direction uses 'entitled to find', preserving jury latitude even on those facts", "Yes, but only for murder and not for other offences requiring intention"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often read 'entitled to find' as though it means 'must find'. It does not — Woollin's wording deliberately preserves a discretion, which is precisely why the evidence-versus-substance debate in this lesson exists at all."
+    },
+    {
+      "itemId": "crime-03-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "In R v Matthews and Alleyne, did the Court of Appeal need to resolve the evidence-versus-substantive-law debate to decide the case?",
+      "options": ["No — the strength of the evidence of virtual certainty made the point academic on these facts", "Yes — the entire appeal turned on resolving that theoretical question"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-03-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Priya sets fire to a hotel room she rents specifically to claim on her contents insurance, believing the room is on the top floor and that the fire escape stairwell directly outside will let any other guests get out safely; in fact, unknown to her, the stairwell door has been locked for repairs that day and three guests die. Analyse whether Priya had the intention required for murder as to their deaths.",
+      "factsToOrder": [
+        "Priya sets the fire purely for the insurance claim",
+        "She believes the fire escape will let other guests get out safely",
+        "The escape route is in fact locked, unknown to her",
+        "Three guests die"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Priya had the intention required for murder as to the guests' deaths, given that her actual purpose was the insurance claim and she believed the escape route was safe and open.",
+        "rule": "Oblique intent under Woollin requires that death or serious injury was a virtual certainty, barring some unforeseen intervention, and that the defendant appreciated that fact. The test asks what the defendant actually foresaw, not what a reasonable person would have foreseen, and not what turned out, with hindsight, to be true.",
+        "application": "Priya's purpose was the insurance claim, not anyone's death — but that is irrelevant to oblique intent, which does not require death to be the defendant's aim. What matters is her own state of appreciation: she believed the escape route was open and safe, so on her own understanding of the facts, death was not virtually certain to her at all. The locked door was an unforeseen fact she did not know about, which is precisely the kind of 'unforeseen intervention' the Woollin formula treats as taking a case outside virtual certainty, from the defendant's own perspective.",
+        "conclusion": "On these facts, Priya is unlikely to satisfy the virtual certainty test for oblique intent as to the deaths, because she did not appreciate that death was practically inevitable — she believed, wrongly, in a safe means of escape. She may still face liability on other bases (for example gross negligence manslaughter), but murder via oblique intent is a weak argument here."
+      }
+    },
+    {
+      "itemId": "crime-03-test-14",
+      "type": "recallFirst",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Explain, in one or two sentences, why the change of wording from 'infer' (Nedrick) to 'find' (Woollin) matters to the debate over whether Woollin is a rule of evidence or a rule of law.",
+      "acceptableAnswers": [
+        "infer sounds evidential, find sounds more like a definition",
+        "the wording change is the textual hook for the debate",
+        "find suggests the jury is just applying a test rather than weighing evidence"
+      ],
+      "modelAnswer": "'Infer' suggests the jury is drawing a conclusion from evidence, consistent with intention keeping its ordinary meaning; 'find' reads more like applying a definitional test, which is why the change from Nedrick to Woollin is the single textual hook fuelling the argument that Woollin has effectively redefined intention rather than merely describing how it may be evidenced."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating the Woollin evidence-versus-substantive-law question as settled — confidently asserting one answer instead of showing awareness that courts and academics genuinely disagree. A strong answer names both positions; an overconfident one picks a winner the law itself has not picked.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.general-principles.intention"
+  }
+}

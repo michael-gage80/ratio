@@ -5,6 +5,7 @@ import SwiftUI
 struct SignedInRootView: View {
     let uid: String
 
+    @Environment(ContentStore.self) private var content
     @State private var onboarding: OnboardingModel?
     @State private var loadFailed = false
 
@@ -12,7 +13,7 @@ struct SignedInRootView: View {
         Group {
             if let onboarding {
                 if onboarding.isComplete {
-                    SignedInPlaceholderView()
+                    SignedInPlaceholderView(profile: onboarding.profile)
                 } else {
                     OnboardingView(model: onboarding)
                 }
@@ -26,6 +27,7 @@ struct SignedInRootView: View {
         }
         .animation(.easeInOut(duration: 0.3), value: onboarding?.isComplete)
         .task(id: uid) { await load() }
+        .task(id: uid) { await content.refresh() }
     }
 
     private var retry: some View {

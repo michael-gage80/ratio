@@ -1,0 +1,378 @@
+{
+  "lessonId": "crime-12",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 12,
+  "topicId": "crime.property.burglary-fraud",
+  "title": "Burglary and fraud",
+  "subtitle": "Trespass with intent, and the three routes to fraud",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the definitions of burglary under Theft Act 1968 s 9(1)(a) and s 9(1)(b), including the meaning of entry, trespasser and building",
+    "Apply the burglary provisions to fact patterns, distinguishing lawful presence from a trespasser who has exceeded permission",
+    "Explain the three routes to fraud liability under the Fraud Act 2006 and why fraud is a conduct crime requiring no actual gain or loss"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Theft Act 1968, s 9", "role": "Creates the two forms of burglary sharing a single 'entry as trespasser' foundation" },
+    { "citation": "R v Collins [1973] QB 100", "role": "Entry must be effective and substantial, and the defendant must know or be reckless as to trespassing" },
+    { "citation": "R v Walkington [1979] 1 WLR 1169", "role": "A lawful visitor can trespass into 'part of a building' by exceeding the permission they were given" },
+    { "citation": "Fraud Act 2006, ss 1-4", "role": "Sets out the three routes to fraud — false representation, failing to disclose, and abuse of position" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Burglary and fraud look like two offences to memorise separately, but examiners love blending them — a false representation used to talk your way past a doorman, or a trespasser who commits fraud once inside. Where the profile shows solid recall of both offences already, this note appears: mapping how they interact is worth more marks than restating either definition alone.",
+    "profileHooks": {
+      "weakApplication": "You know both offences cold on paper. This lesson leans hard into application — expect fact patterns that force you to pin down the exact moment of entry, or which limb of fraud is actually engaged.",
+      "weakKnowledge": "Slow down on Parts 1 and 2 — get the two-limb structure of burglary fixed before moving to fraud, which borrows some of the same trespass-adjacent thinking about permission and its limits."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A student is let into a friend's halls kitchen to borrow milk. Instead, she drifts down the corridor into her friend's bedroom and pockets a laptop. No window was forced. No lock was picked. Nobody heard a thing. And yet the moment that bedroom door opened, a burglary had already begun — because the crime lives in where she went and why, not in how she got there.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The Theft Act 1968 and Fraud Act 2006 provisions covered here are settled; no live reform is currently before Parliament."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The window, the ladder, and the moment of entry",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Late one night, a young man climbed a ladder to a bedroom window, having decided beforehand — and while very drunk — that he intended to have intercourse with the woman inside whether she consented or not. He was naked but for his socks. The woman, half asleep, saw a silhouette on the windowsill and, believing it was her boyfriend, beckoned him in. He climbed through. Only afterwards did the mistake become clear.",
+          "The legal question was oddly narrow given the facts: had he entered as a trespasser? If the woman's invitation was genuine and given before he crossed the threshold, he entered with permission and burglary was never made out, whatever happened next. If, on the other hand, he was already substantially inside — perched on the sill, effectively across the line — before any invitation could bite, he entered as a trespasser and the offence was complete the moment he knew, or was reckless as to whether, he lacked permission.",
+          "The Court of Appeal quashed the conviction because the trial judge had not left this precise question to the jury: was the entry 'effective and substantial' as a trespasser, or had he already been invited across the line before that entry was complete? The case is remembered less for its facts than for what it forces you to isolate — burglary does not punish being somewhere unpleasant; it punishes crossing a boundary you had no right to cross, at a definable moment in time."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Collins",
+            "citation": "[1973] QB 100",
+            "court": "Court of Appeal",
+            "year": 1972,
+            "factsShort": "A man climbed a ladder to a woman's window intending non-consensual intercourse; she invited him in, mistaking him for her boyfriend, before or as he entered.",
+            "ratioShort": "Entry as a trespasser must be effective and substantial, and the defendant must know or be reckless as to the fact that he is entering without permission.",
+            "expanded": {
+              "facts": "The defendant, having formed the intention while drunk to have intercourse with a woman he knew slightly, regardless of her consent, climbed a ladder to her bedroom window at night, undressed. The woman, roused from sleep and seeing a naked figure on the sill, believed him to be her boyfriend and drew him towards her, inviting him in. He entered and intercourse took place; she realised her mistake only during the act. He was convicted at trial of burglary with intent to rape under the version of s 9(1)(a) then in force.",
+              "judgmentExtract": "The Court of Appeal held that the jury had not been properly directed on two separate questions: first, whether the entry was 'effective and substantial' as a matter of fact — mere presence on a windowsill might not be enough — and second, whether at the moment of that effective entry the defendant knew or was reckless as to the fact that he had no permission to enter. If the invitation preceded completion of the entry, there was no trespass at all, whatever his intentions.",
+              "significance": "Collins fixes 'entry' as something that must be pinpointed in time, not treated impressionistically. It also confirms burglary carries its own fault element as to trespass — a defendant who honestly, even unreasonably, believes he has permission to enter has not entered as a trespasser, because the offence requires knowledge or recklessness as to that fact."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-12-check-01",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in this scenario that is decisive to whether entry as a trespasser occurred.",
+          "scenarioText": "Ravi climbs onto a first-floor windowsill of a house, intending to steal. As he balances there, the occupant — awake and watching — shouts an invitation in for a joke, not realising his intent. Ravi climbs fully inside and steals a watch.",
+          "tappableSpans": ["climbs onto a first-floor windowsill", "intending to steal", "shouts an invitation in", "climbs fully inside"],
+          "correctSpan": "shouts an invitation in",
+          "feedbackCorrect": "Right. Whether Ravi is a trespasser turns on whether that invitation came before his entry was 'effective and substantial'. On these facts it precedes his full entry, so — following Collins — there may be no trespass at all, however dishonest his intent.",
+          "feedbackIncorrect": "Look for the moment permission is granted relative to when entry is complete. Collins turns entirely on that sequencing, not on the defendant's state of undress or intention alone."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Two burglaries in one section",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Section 9 of the Theft Act 1968 does not create one offence of burglary; it creates two, sharing a common foundation. Both require entry into a building or part of a building as a trespasser. Where they diverge is what has to be true about the defendant's state of mind and conduct once that trespass is established.",
+          "Section 9(1)(a) is the forward-looking version: the defendant enters as a trespasser already intending, at the moment of entry, to steal, to inflict grievous bodily harm, or to cause unlawful damage to the building or its contents. The offence is complete the instant the trespassory entry happens, provided that intent is already formed — nothing needs to actually be stolen, hurt, or damaged.",
+          "Section 9(1)(b) is the backward-looking version: the defendant enters as a trespasser with no proven intent of that kind at all, but having entered, goes on to steal or attempt to steal, or to inflict or attempt to inflict grievous bodily harm. No intent to commit unlawful damage completes this limb — that ulterior offence appears only in (a). The offence crystallises at the point of the subsequent act, not at entry.",
+          "Keep the two limbs separate on the page even when the facts blur them. A student who enters intending only to look around, then decides on impulse to steal once inside, has never committed s 9(1)(a) burglary — there was no intent at entry — but is squarely caught by s 9(1)(b) once the theft or attempted theft happens."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Theft Act 1968, s 9(1)",
+            "text": "A person is guilty of burglary if — (a) he enters any building or part of a building as a trespasser and with intent to commit any such offence as is mentioned in subsection (2) below; or (b) having entered any building or part of a building as a trespasser he steals or attempts to steal anything in the building or that part of it or inflicts or attempts to inflict on any person therein any grievous bodily harm.",
+            "elements": ["Entry", "Of a building or part of a building", "As a trespasser", "(a) with the relevant intent at entry, or (b) followed by the relevant subsequent conduct"]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "s 9(2) — the ulterior offences available under s 9(1)(a)",
+            "points": [
+              "Stealing anything in the building",
+              "Inflicting grievous bodily harm on any person in the building",
+              "Doing unlawful damage to the building or anything in it"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-12-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these in the order the facts must occur for a s 9(1)(b) burglary conviction.",
+          "items": [
+            "Defendant enters a building or part of one",
+            "The entry is as a trespasser, known or reckless as such",
+            "No relevant intent needs to be proven at this point",
+            "Defendant steals, attempts to steal, or inflicts or attempts GBH"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the shape of (b): the trespassory entry comes first and carries no forward-looking intent requirement — liability crystallises only once the subsequent theft or violence (or attempt) actually happens.",
+          "feedbackIncorrect": "Re-check where the intent requirement sits. Under s 9(1)(b) there is no need to prove any intent at the moment of entry — what matters is what the defendant actually goes on to do once inside."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Is a shop customer ever a burglar?",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Ask yourself this before reading on: if a store is open to the public, and a customer walks in through the front door during trading hours, can that customer ever be a trespasser inside that same building? Every instinct says no — the store invited them in.",
+          "Now narrow the question. The store invited the public in to browse the shop floor and buy goods. Did it invite anyone behind the till, into the stockroom, or past a rope marking a staff-only area? Permission to enter a building is rarely unconditional — it is usually permission to enter for a purpose, or to go to particular parts of it.",
+          "This is exactly the trap in R v Walkington. The defendant walked into a department store during opening hours — plainly lawful entry to the building as a whole — then stepped behind a three-sided till counter, an area customers were never meant to enter, intending to steal from the till. The Court of Appeal held he could be a trespasser 'in part of a building' the instant he crossed into that till area, even though nobody had stopped him walking through the front door.",
+          "So the answer to the opening question is: yes, a lawful customer can become a trespasser mid-visit, without ever leaving the building — because 'building' in s 9 is read down to the smallest unit of space the defendant's permission actually covered."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Walkington",
+            "citation": "[1979] 1 WLR 1169",
+            "court": "Court of Appeal",
+            "year": 1979,
+            "factsShort": "A customer in a department store, lawfully on the shop floor, stepped behind a roped-off till counter intending to steal from it.",
+            "ratioShort": "A person with general permission to be in a building can still be a trespasser in a physically or functionally demarcated part of it, if they exceed the permission given for that part.",
+            "expanded": {
+              "facts": "The defendant entered a department store shortly before closing time, when few customers were present. He walked behind a three-sided counter area, itself enclosed on three sides and clearly set apart from the public shop floor, and opened a till drawer looking for money, finding it empty. He was charged with burglary contrary to s 9(1)(a) — entering part of a building as a trespasser with intent to steal.",
+              "judgmentExtract": "The Court of Appeal upheld the conviction, holding that the till area was properly regarded as 'part of a building' for the purposes of s 9, separate from the area the public was licensed to enter. Once the defendant stepped behind the counter, he exceeded the permission given to him as a customer and became a trespasser in that part, notwithstanding his lawful presence in the store as a whole.",
+              "significance": "Walkington is the leading illustration that 'trespasser' and 'building' in s 9 must be read together with the scope of the defendant's permission, not just the four walls of the structure. It gives examiners an easy trap: any fact pattern with a roped-off area, a staff corridor, or a 'no entry' sign inside an otherwise open building is testing this exact point."
+            }
+          },
+          {
+            "type": "keyConcept",
+            "term": "Exceeding permission",
+            "definition": "A person becomes a trespasser the moment they go beyond the physical area, purpose, or time period their permission to be in a building actually covered — general lawful entry to a building does not immunise entry into every part of it."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-12-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is a Walkington-style trespass in 'part of a building' most clearly made out?",
+          "scenarioA": "A customer browses freely across an entire open-plan supermarket floor, then leaves without buying anything.",
+          "scenarioB": "A customer in a bank walks past a clearly marked 'staff only' door into the back office, intending to steal from an unattended till.",
+          "correctScenario": "B",
+          "explanation": "In B, the customer's permission covered the public banking hall only; crossing the marked staff-only door takes them into a distinct part of the building they had no permission to enter, mirroring Walkington precisely. In A, the customer never leaves the area their permission covered, so no part-of-a-building trespass arises."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Three ways to commit the same crime",
+        "voice": "direct — plain exposition of the statutory routes",
+        "body": [
+          "Fraud under the Fraud Act 2006 is a single offence with three distinct routes into it, set out in ss 2 to 4. You only ever need to prove one route, and an indictment will usually specify which.",
+          "Section 2, fraud by false representation, requires the defendant to make a representation that is untrue or misleading, knowing that it is or might be, with intent to make a gain for themselves or another, or to cause loss to another or expose another to a risk of loss. The representation can be express or implied, and can be made to a machine as well as to a person.",
+          "Section 3, fraud by failing to disclose information, applies where the defendant is under a legal duty to disclose information to another and fails to do so, again with the same intent to gain or cause loss or risk of loss. The duty must be a genuine legal duty — arising from statute, contract, a fiduciary relationship, or similar — not merely a moral obligation to speak up.",
+          "Section 4, fraud by abuse of position, applies where the defendant occupies a position in which they are expected to safeguard, or not act against, the financial interests of another, and abuses that position — which can include a straightforward omission — again with the intent to gain or cause loss or risk of loss.",
+          "The single feature tying all three together, and the one most often missed, is that fraud is a conduct crime. It is complete the moment the false representation is made, the disclosure duty is breached, or the position is abused, with the required intent present at that moment. No gain has to be made. No loss has to actually occur."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Fraud Act 2006, ss 2-4",
+            "text": "s 2: A person is in breach of this section if he dishonestly makes a false representation, and intends, by making the representation, to make a gain for himself or another, or to cause loss to another or to expose another to a risk of loss. s 3: A person is in breach of this section if he dishonestly fails to disclose to another person information which he is under a legal duty to disclose, and intends, by failing to disclose the information, to make a gain or cause loss or expose to a risk of loss. s 4: A person is in breach of this section if he occupies a position in which he is expected to safeguard, or not act against, the financial interests of another person, dishonestly abuses that position, and intends, by means of the abuse, to make a gain or cause loss or expose to a risk of loss.",
+            "elements": ["Dishonesty (throughout all three routes)", "s 2: a false representation, known or believed to be untrue or misleading", "s 3: breach of an existing legal duty to disclose", "s 4: abuse of a position of expected financial trust", "Intent to gain, cause loss, or expose to risk of loss"]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Conduct crime",
+            "definition": "An offence that is complete upon the defendant's own act or omission and accompanying state of mind, without requiring any particular result to follow — fraud is complete on the false representation, non-disclosure, or abuse of position itself, whether or not any gain or loss actually results."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-12-check-04",
+          "type": "statuteParser",
+          "skillTag": "application",
+          "prompt": "A company director quietly diverts client funds she is trusted to manage into her own account, telling nobody. Which route to fraud best fits these facts?",
+          "options": ["Fraud by false representation, s 2", "Fraud by failing to disclose information, s 3", "Fraud by abuse of position, s 4"],
+          "correctIndex": 2,
+          "feedbackCorrect": "Right. She occupies a position expected to safeguard the clients' financial interests and abuses it — no representation is made, and there is no separate legal duty to disclose in play here, so s 4 is the natural fit.",
+          "feedbackIncorrect": "Look for what triggers liability: no false statement is made (ruling out s 2), and the facts describe a trusted role being abused rather than a disclosure duty being breached — that points to s 4, abuse of position."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why fraud doesn't need a victim to lose anything",
+        "voice": "argumentative — states the strongest objection, then answers it",
+        "body": [
+          "Here is the objection students raise most often, and it deserves a real answer rather than a dismissal: if nobody actually loses money, and the defendant gains nothing, in what sense has a crime really happened? Calling it 'fraud' when the con failed seems, on this view, to punish an attempt as if it were the completed offence.",
+          "The objection has real force in other areas of criminal law, where we generally do distinguish an attempt from a completed offence and punish it differently. But the Fraud Act 2006 deliberately rejected that structure for this offence, and for a defensible reason: fraud is fundamentally about deception deployed with a dishonest purpose, and that deception is just as objectionable, and just as hard to detect and prevent, whether or not it happens to succeed on this occasion.",
+          "Think about why the pre-2006 law — built around deception offences requiring an actual, causally-linked obtaining of property or a pecuniary advantage — was replaced. Prosecutors were repeatedly defeated not because the defendant's conduct was any less dishonest, but because a bank's fraud-detection software caught the false representation before any money moved, or because the intended victim happened to see through the lie. The 2006 Act closes that gap deliberately: the wrong is in the dishonest act done with intent, not in whether it worked.",
+          "So the conduct-crime structure isn't a technicality to memorise and move past — it is the entire point of the reform. A defendant who sends a fraudulent invoice that is spotted and binned before payment is, in law, just as much a fraudster as one whose invoice is paid in full."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often answer that a fraud charge fails, or should be reduced to an attempt, where the defendant did not actually obtain any money or property.",
+            "whyItsWrong": "Fraud under the 2006 Act is complete on the false representation, non-disclosure, or abuse of position itself, made with the required dishonest intent to gain or cause loss or risk of loss. Whether the defendant actually gained anything, or the victim actually lost anything, goes only to sentencing — it is not an element of the offence and its absence is not a defence."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-12-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a defendant must actually make a gain, or a victim actually suffer a loss, for fraud under the Fraud Act 2006 to be complete?",
+          "sliderLabels": ["Definitely required", "Definitely not required"],
+          "correctPosition": "not required",
+          "explanation": "Fraud is a conduct crime. It is complete the moment the false representation is made, the disclosure duty breached, or the position abused, with the requisite dishonest intent — an actual gain or loss is neither element nor precondition."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-12-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "State the two things every burglary under s 9 Theft Act 1968 requires, regardless of which limb is charged.",
+      "acceptableAnswers": ["entry", "trespasser", "entry as a trespasser into a building or part of a building"],
+      "modelAnswer": "Every burglary requires entry into a building or part of a building, and that entry must be as a trespasser — the two limbs of s 9(1) then differ only in what has to follow or accompany that trespassory entry."
+    },
+    {
+      "itemId": "crime-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under s 9(1)(b), must the defendant have intended to steal or cause GBH at the moment of entry?",
+      "options": ["No — no such intent needs to be proven at entry; liability turns on what is done afterwards", "Yes — the same forward-looking intent as s 9(1)(a) is always required"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-12-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following is one of the three ulterior offences listed in s 9(2), available under s 9(1)(a)?",
+      "options": ["Stealing anything in the building", "Committing any sexual offence", "Trespassing itself"],
+      "correctIndex": 0,
+      "trapExplanation": "Rape was historically included among the s 9(2) intents but was removed by later reform; today the s 9(2) list is stealing, inflicting grievous bodily harm, and unlawful damage. 'Trespassing itself' cannot be the ulterior intent, since trespass is the foundation the ulterior intent must accompany, not the intent itself."
+    },
+    {
+      "itemId": "crime-12-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the reasoning steps a court follows when a lawful visitor is alleged to have become a trespasser mid-visit, as in Walkington.",
+      "items": ["Identify the area the defendant had permission to enter", "Identify the area the defendant actually entered", "Compare whether the second area falls outside the first", "If it does, treat that area as 'part of a building' the defendant entered as a trespasser"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-12-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A landlord fails to tell a prospective tenant, whom he is contractually obliged to inform, that the flat has an unresolved damp problem, intending the tenant to sign the lease regardless. Which route to fraud does this describe?",
+      "options": ["Fraud by false representation, s 2", "Fraud by failing to disclose information, s 3", "Fraud by abuse of position, s 4"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "crime-12-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Collins, highlight the sentence stating the ratio on entry.",
+      "passage": "The jury should have been directed to consider two questions. First, whether the entry was effective and substantial, since mere presence on a windowsill might not suffice. Second, and separately, whether at that moment the defendant knew, or was reckless as to whether, he had the permission of the occupier to enter. Only if both were answered in the defendant's disfavour could a conviction properly stand.",
+      "ratioSentence": "Second, and separately, whether at that moment the defendant knew, or was reckless as to whether, he had the permission of the occupier to enter."
+    },
+    {
+      "itemId": "crime-12-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Maya has a key to her ex-partner's flat, given during their relationship and never asked back, but the relationship ended two years ago. She lets herself in one evening while he is out and takes his laptop. Has she entered as a trespasser?",
+      "options": ["Yes — permission of this kind is not indefinite, and continuing to use an old key without ongoing consent is capable of amounting to trespass", "No — once given a key, permission to enter can never be withdrawn or lapse", "No — because she once had lawful access, nothing she does with that access can be trespass"],
+      "correctIndex": 0,
+      "explanation": "Permission to enter is not a one-off, permanent grant merely because a key was once handed over. Whether Maya remains a lawful entrant is a question of fact about whether her ex-partner's permission still extends to her, which two years' separation and an unreturned key put squarely in issue."
+    },
+    {
+      "itemId": "crime-12-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most directly establishes the ulterior intent needed for a s 9(1)(a) charge.",
+      "scenarioText": "Owen climbs through an open ground-floor window of a house he has never visited before, having decided beforehand that if there is nothing worth stealing he will simply leave. He finds nothing worth taking and climbs back out.",
+      "tappableSpans": ["climbs through an open ground-floor window", "never visited before", "having decided beforehand", "climbs back out"],
+      "correctSpan": "having decided beforehand",
+      "explanation": "The s 9(1)(a) intent must exist at the moment of entry. A conditional intent — to steal only if something worth taking is found — still counts, so the decisive fact is that Owen had already formed that conditional intent before he entered, not what he actually found or did afterwards."
+    },
+    {
+      "itemId": "crime-12-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is properly charged under s 9(1)(b) rather than s 9(1)(a)?",
+      "scenarioA": "A defendant breaks a garden gate and enters a garage already intending to steal any power tools inside, and does so.",
+      "scenarioB": "A defendant wanders uninvited into an unlocked garage purely out of curiosity, with no plan at all, then spots and steals a bicycle once inside.",
+      "correctScenario": "B",
+      "explanation": "In A, the intent to steal exists at the point of entry, so s 9(1)(a) is the natural charge. In B, no relevant intent existed at entry — the decision to steal formed only once inside — so liability, if any, arises under s 9(1)(b) from the subsequent theft."
+    },
+    {
+      "itemId": "crime-12-test-10",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that a defendant can be guilty of fraud by false representation even if the person they lied to never actually believed the lie?",
+      "sliderLabels": ["Definitely not guilty", "Definitely can still be guilty"],
+      "correctPosition": "can still be guilty",
+      "explanation": "Fraud is a conduct crime turning on the defendant's own dishonest act and intent, not on whether the representation actually deceived anyone or produced any result — a representation that fooled no one can still complete the offence."
+    },
+    {
+      "itemId": "crime-12-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Priya is a temporary receptionist at a dental surgery with no authority to enter the records room. During a quiet shift she lets herself into the records room, intending only to look for her own old file out of curiosity, but once there she photographs a patient's payment card details and later uses them, falsely representing to an online retailer that she is the cardholder. Analyse Priya's potential liability for burglary and fraud.",
+      "factsToOrder": [
+        "Priya has no permission to enter the records room",
+        "She enters intending only to look at her own file, not to steal",
+        "Once inside she photographs another patient's card details",
+        "She later makes a false representation to an online retailer using those details",
+        "She does so intending to obtain goods dishonestly"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Priya is liable for burglary on entering the records room, and separately for fraud by false representation on her later use of the card details.",
+        "rule": "Burglary under s 9(1)(b) requires entry as a trespasser followed by theft or attempted theft; s 9(1)(a) requires the relevant intent at entry itself. Fraud by false representation under s 2 Fraud Act 2006 requires a dishonest untrue representation made with intent to gain, cause loss, or expose to risk of loss, and is complete on the making of that representation regardless of outcome.",
+        "application": "Priya has no permission to enter the records room, so her entry is as a trespasser; but she has no intent to steal at that point, only curiosity, so s 9(1)(a) is not made out. Because she goes on to take (photograph and later exploit) the card information, s 9(1)(b) is the better fit, treating the information's exploitation as analogous to appropriation for these purposes; examiners will accept either a cautious flag that photographing information raises separate issues from stealing 'property', or an argument that the theft element is weak and the stronger charge is fraud alone. Her later false representation to the retailer that she is the cardholder, made dishonestly and with intent to obtain goods, completes fraud under s 2 the moment it is made, whether or not the retailer is deceived or any goods are actually supplied.",
+        "conclusion": "Priya is a trespasser in the records room and, depending on how the taking of information is characterised, may face s 9(1)(b) burglary; she is on stronger ground for fraud by false representation under s 2, which is complete on the dishonest representation to the retailer alone."
+      }
+    },
+    {
+      "itemId": "crime-12-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A care worker entrusted with an elderly client's bank card quietly uses it to pay her own bills, without ever saying anything false to anyone. Is this best charged as fraud by abuse of position?",
+      "options": ["Yes — she occupies a position of expected financial trust and abuses it, with no representation needed", "No — fraud always requires a false statement to someone"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-12-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A defendant submits a fraudulent expenses claim which their employer's finance system automatically rejects before any payment is made. Which best describes their liability?",
+      "options": ["No offence, because nothing was ever paid out and no one actually lost money", "Fraud by false representation is complete, because the offence turns on the dishonest representation and intent, not on any resulting payment", "Only an attempt, since the fraud was never completed"],
+      "correctIndex": 1,
+      "trapExplanation": "The instinct to treat a blocked or failed claim as 'no crime' or 'only an attempt' misunderstands fraud's structure as a conduct crime — the offence is complete on the dishonest representation made with the requisite intent, and it makes no difference that the payment never actually went through."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake across this lesson's items is collapsing the two burglary limbs into one another — forgetting that s 9(1)(a) needs intent at entry while s 9(1)(b) needs a subsequent act — and assuming fraud needs a successful outcome when it is complete on the dishonest conduct alone.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.property.burglary-fraud"
+  }
+}

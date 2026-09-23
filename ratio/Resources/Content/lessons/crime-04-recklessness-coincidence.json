@@ -1,0 +1,365 @@
+{
+  "lessonId": "crime-04",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 4,
+  "topicId": "crime.general-principles.recklessness-coincidence",
+  "title": "Recklessness, coincidence and transferred malice",
+  "subtitle": "Subjective recklessness after Caldwell, the coincidence of actus reus and mens rea, and the limits of transferred malice",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the Cunningham test for subjective recklessness and explain why R v G restored it as the general test, overruling Caldwell's objective standard",
+    "Explain the coincidence principle and apply the continuing act doctrine (Fagan) and the single transaction doctrine (Thabo Meli) to fact patterns where actus reus and mens rea appear separated in time",
+    "Explain transferred malice and identify its central limit: malice transfers within the same type of offence, but not between different types of offence"
+  ],
+  "leadingAuthorities": [
+    { "citation": "R v Cunningham [1957] 2 QB 396", "role": "Establishes the subjective test: D must have foreseen the risk of the particular kind of harm and taken it anyway" },
+    { "citation": "R v G [2003] UKHL 50", "role": "Overrules Caldwell; restores subjective foresight as the general test for recklessness" },
+    { "citation": "Fagan v MPC [1969] 1 QB 439", "role": "Continuing act doctrine — an ongoing actus reus can pick up mens rea formed after it began" },
+    { "citation": "Thabo Meli v R [1954] 1 WLR 228", "role": "Single transaction doctrine — a series of acts can be treated as one continuing act for coincidence purposes" },
+    { "citation": "R v Latimer (1886) 17 QBD 359", "role": "Transferred malice — intent to harm one person transfers to the actual victim of the same type of offence" },
+    { "citation": "A-G's Reference (No 3 of 1994) [1998] AC 245", "role": "Confirms transferred malice does not cross between different types of offence" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Older textbooks and even some lecturers still reach for 'Caldwell recklessness' as though it were live law — it was overruled two decades ago. Where the profile shows a student citing objective recklessness as if it still governs generally, this note appears: 'Check your source's date — this is one of the most commonly mis-taught points in the whole syllabus.'",
+    "profileHooks": {
+      "weakApplication": "You know the definitions here. The test pool leans hard on fact patterns — spotting the moment mens rea and actus reus actually coincide, and where malice can and can't transfer.",
+      "weakKnowledge": "Slow down on Parts 1 and 2 before anything else. If you can't state the Cunningham test and say precisely what R v G changed, the rest of this lesson won't make sense yet."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A driver overtakes on a blind bend, convinced — genuinely, foolishly — that nothing is coming. A different driver overtakes on the same bend having actually clocked the headlights and gambled anyway. Both crash. The law has, at different points in its history, treated these two people identically and treated them as worlds apart. This lesson is about which answer is correct, and why it took the House of Lords until 2003 to say so properly.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The recklessness and coincidence doctrines here are settled common law; no legislative change is pending in this area."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Cunningham: recklessness as a state of mind, not a failing",
+        "voice": "case-narrative — tells the 1957 case in full before naming the test",
+        "body": [
+          "Roy Cunningham wanted cash from his prospective mother-in-law's gas meter. He wrenched it from the wall and took the money inside it — but the meter was connected to the mains, and coal gas leaked through a cracked wall into the house next door, where a woman was sleeping. She was seriously poisoned. Cunningham was charged under the Offences Against the Person Act 1861 with 'maliciously' administering a noxious substance so as to endanger life.",
+          "The trial judge told the jury that 'malicious' simply meant wicked — that if what Cunningham did was morally wrong, that was enough. The Court of Criminal Appeal quashed the conviction. 'Maliciously', it held, requires either an intention to cause the particular kind of harm, or recklessness as to whether such harm should occur — meaning the defendant himself foresaw that the particular kind of harm might happen, and went on to take the risk anyway.",
+          "This is the origin of what every criminal lawyer now calls subjective recklessness: the question is not whether a reasonable person would have foreseen the risk, and not whether the defendant's conduct was careless by some external standard. The question is what was actually going on in this defendant's head. Did he see the risk, and decide to run it regardless?"
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Subjective (Cunningham) recklessness",
+            "definition": "D is reckless as to a result if D foresaw a risk that the result might occur, and unreasonably went on to take that risk. The test asks what this defendant actually foresaw, not what a reasonable person would have foreseen."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-04-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Before reading on: in one sentence, what does 'recklessness' mean under the Cunningham test?",
+          "acceptableAnswers": ["D foresaw the risk and took it anyway", "conscious foresight of the risk and going on to take it", "D actually foresaw the risk of harm and unreasonably ran it"],
+          "modelAnswer": "D foresaw a risk that the relevant harm might occur, and unreasonably went on to take that risk — foresight is judged subjectively, by what this defendant actually had in mind."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The Caldwell detour, and why the House of Lords reversed it",
+        "voice": "argumentative — builds the case against Caldwell before delivering the correction",
+        "body": [
+          "For nearly two decades, English law lived with a second, rival test. In Metropolitan Police Commissioner v Caldwell (1982), the House of Lords held that a defendant could also be reckless if he gave no thought at all to an obvious risk — even if it genuinely never crossed his mind. This was objective recklessness: liability not for what you foresaw, but for what an ordinary person would have foreseen, whether or not you were capable of foreseeing it yourself.",
+          "The case that exposed how unjust this could be was Elliott v C (1983): a fourteen-year-old girl with learning difficulties and no sleep set fire to a shed using white spirit. She genuinely did not appreciate the risk of the fire spreading — a risk that would have been obvious to a reasonable adult, but not to her. Convicted anyway, because Caldwell asked only whether the risk was obvious 'to a reasonably prudent person', not whether it was obvious to her.",
+          "R v G (2003) is the House of Lords, twenty years on, admitting the mistake. Two boys, aged 11 and 12, set fire to newspapers under a wheelie bin outside a shop, expecting the fire to burn itself out on the concrete. It spread and caused over £1 million of damage. Neither boy appreciated the risk. Lord Bingham held that it is 'neither moral nor just to convict a defendant on the strength of what someone else would have appreciated, if the defendant himself had no such appreciation.' Caldwell was overruled. Subjective recklessness was restored as the general test — for criminal damage, and, the courts have since made clear, as the default test for recklessness across the criminal law generally, absent a statute saying otherwise.",
+          "Treat any exam answer, or any source, that states recklessness in Caldwell terms as describing law that has not been good law since 2003 — unless a specific statute clearly imports an objective standard for its own purposes."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v G",
+            "citation": "[2003] UKHL 50",
+            "court": "House of Lords",
+            "year": 2003,
+            "factsShort": "Two young boys set fire to newspapers under a bin, not appreciating the risk of the fire spreading; it caused over £1 million of damage.",
+            "ratioShort": "A defendant is reckless only if he himself foresaw the risk and took it unreasonably — Caldwell's objective test is overruled.",
+            "expanded": {
+              "facts": "The two defendants, aged 11 and 12, set fire to newspapers they found behind a shop and left them under a wheelie bin, assuming the newspapers would burn out on the concrete floor. Instead the bin caught fire, which spread to the shop and adjoining buildings, causing extensive damage. Neither boy appreciated any risk of the fire spreading in this way; their age and understanding meant the risk, though obvious to an adult, was not obvious to them.",
+              "judgmentExtract": "The House of Lords held that a person acts 'recklessly' within the meaning of the Criminal Damage Act 1971 with respect to a circumstance when he is aware of a risk that it exists or will exist, or with respect to a result when he is aware of a risk that it will occur, and it is, in the circumstances known to him, unreasonable to take that risk. Lord Bingham described convicting a child for failing to foresee a risk an adult would have foreseen as offending 'the ordinary principles of consistency and rationality'.",
+              "significance": "R v G is the leading modern authority restoring subjective recklessness as the default test in English criminal law. It corrects two decades of Caldwell-era injustice and confirms that a defendant's own age, understanding and characteristics are relevant to what they personally foresaw."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-04-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "After R v G (2003), can a defendant who genuinely never thought about an obvious risk still be convicted on the basis of what a reasonable person would have foreseen?",
+          "options": ["No — recklessness requires the defendant's own subjective foresight of the risk", "Yes — objective recklessness under Caldwell still applies generally"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. R v G overruled Caldwell specifically to remove that possibility — foresight has to be the defendant's own.",
+          "feedbackIncorrect": "That was Caldwell's position, and it was overruled in 2003 precisely because it convicted people for failing to foresee what they were incapable of foreseeing. The current test is entirely subjective."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Coincidence: why the timing of mens rea matters at all",
+        "voice": "structural — sets out the principle as a rule with a named escape route",
+        "body": [
+          "A basic principle of criminal liability, easy to state and easy to forget under exam pressure: the actus reus and the mens rea must coincide in time. If a defendant does the guilty act before forming the guilty mind, or forms the guilty mind before doing the act but changes course, there is — in principle — no crime at that moment, because the two elements were never present together.",
+          "The difficulty is that real facts are messier than that rule suggests. What happens when a defendant's conduct is not a single instant but an ongoing state of affairs — and the guilty mind arrives partway through? Fagan v Metropolitan Police Commissioner answers exactly this question.",
+          "Fagan accidentally drove his car onto a policeman's foot while parking. At that moment he had no intention to harm anyone — no mens rea. The officer told him to move the car; Fagan, now fully aware what had happened, swore at him and deliberately left the car where it was for several seconds before eventually moving it. The Divisional Court held that this was assault: the act of driving onto the foot was not a single completed event but a continuing act — the car remained on the officer's foot throughout — and at the point Fagan formed the intention to leave it there, the actus reus (the continuing application of force) and the mens rea (the deliberate decision to keep it there) coincided."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The continuing act doctrine",
+            "points": [
+              "An actus reus that is a state of affairs, not an instant, continues for as long as that state of affairs persists",
+              "If mens rea is formed at any point while the actus reus is still continuing, the coincidence requirement is satisfied",
+              "It does not matter that the defendant had no guilty mind at the very start — only that the two elements were present together at some point",
+              "This doctrine will not rescue a defendant where the actus reus was genuinely a single, completed, instantaneous act with nothing left continuing"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-04-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the Fagan facts in the order the coincidence analysis relies on.",
+          "items": [
+            "Fagan accidentally drives the car onto the officer's foot",
+            "The officer tells him to move the car",
+            "Fagan realises what has happened and deliberately leaves the car in place",
+            "The court finds the continuing application of force coincides with the mens rea formed at that later point"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the doctrine in miniature: the act starts innocently, and the crime crystallises only once awareness and choice arrive while the act is still ongoing.",
+          "feedbackIncorrect": "Check the order again — the key move is that Fagan's realisation and deliberate inaction happen while the car is still on the officer's foot, not before or after the actus reus has ended."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Thabo Meli: when the 'act' is really a sequence",
+        "voice": "Socratic — poses the puzzle of the second act before resolving it",
+        "body": [
+          "Here is a harder version of the same problem. Suppose a defendant forms a clear intention to kill, attacks the victim, and — believing the victim dead — disposes of the body in a way that (unknown to the defendant) is what actually causes death. At the moment of the fatal act, the defendant had no intention to kill: he believed his victim was already a corpse. Does the coincidence principle mean there is no murder?",
+          "This is precisely what happened in Thabo Meli v R. The defendants, following a plan, struck the victim over the head intending to kill him, then — believing him dead — rolled his body off a cliff to make it look like an accident. In fact, the blow had only rendered him unconscious; he died from exposure after being left at the foot of the cliff. Their argument was that at the point of the act that actually killed him (leaving him exposed), they had no mens rea, because they believed him already dead.",
+          "The Privy Council rejected this. It held that where a defendant carries out a preconceived plan involving a series of acts, it is 'impossible to divide up' what was really one composite transaction and ask, act by act, whether each one coincided with mens rea. The initial attack and the disposal were treated as a single transaction, and since the mens rea for murder was present at the start of that transaction, it did not matter that it had, strictly, evaporated by the time the fatal act occurred."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Thabo Meli v R",
+            "citation": "[1954] 1 WLR 228",
+            "court": "Privy Council",
+            "year": 1954,
+            "factsShort": "Defendants struck the victim intending to kill him, then, believing him dead, threw the body off a cliff — the actual cause of death was exposure after the fall, not the blow.",
+            "ratioShort": "A preconceived series of acts forming one transaction can be treated as a single continuing act for coincidence purposes, even where mens rea is absent at the precise moment of the fatal act.",
+            "expanded": {
+              "facts": "The defendants planned to kill the victim and make it look like an accident. They struck him on the head, intending to kill him, and — genuinely believing he was dead — rolled his unconscious body off a cliff. Medical evidence showed the head injury alone had not killed him; he died from exposure while lying at the base of the cliff.",
+              "judgmentExtract": "The Privy Council held that it was not necessary to identify a single moment at which act and intent coincided precisely, where the facts show a preconceived plan carried out in a series of acts forming one transaction. The mens rea present at the outset of that transaction was sufficient, even though it was not present at the exact instant of the act that in fact caused death.",
+              "significance": "Thabo Meli establishes the single transaction doctrine, a second and distinct route to satisfying coincidence alongside Fagan's continuing act doctrine. It matters most where a defendant's plan unfolds in discrete stages and the strict, moment-by-moment mens rea has technically lapsed by the final, causative stage."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-04-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that Thabo Meli and Fagan rest on the same legal doctrine (continuing act) rather than two distinct doctrines?",
+          "sliderLabels": ["Same doctrine", "Two distinct doctrines"],
+          "correctPosition": "Two distinct doctrines",
+          "explanation": "They reach similar results but by different routes. Fagan treats a single ongoing actus reus as continuing until mens rea attaches to it. Thabo Meli instead treats a planned series of separate acts as one composite transaction, so mens rea at the start of the plan suffices even once the actus reus that actually causes the result is a later, distinct act."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Transferred malice, and the line it will not cross",
+        "voice": "direct — states the rule and its limit plainly, then tests both",
+        "body": [
+          "Transferred malice deals with a different mismatch: not a mismatch in time, but a mismatch in target. A defendant intends to harm one person, misses, and instead harms someone else entirely. The doctrine allows the mens rea aimed at the intended victim to be 'transferred' to the actual victim, so the defendant is still guilty of the offence committed against the person actually harmed.",
+          "R v Latimer is the classic illustration. Latimer, in a pub fight, aimed a blow with his belt at one man, missed, and the belt bounced off and struck a woman standing nearby, wounding her severely. He argued he had no mens rea towards her — he never intended to hit her at all. The Court for Crown Cases Reserved rejected this: his malicious intent towards the man transferred to the woman he actually wounded, and he was guilty of unlawfully and maliciously wounding her.",
+          "The limit is what examiners actually test, and it is easy to get backwards. Malice transfers between victims of the same type of offence — intent to wound one person becomes intent to wound whoever is actually wounded. It does not transfer between different types of offence. A-G's Reference (No 3 of 1994) makes this precise: a man stabbed his pregnant girlfriend intending to injure her; the child was born prematurely as a result and later died from complications caused by the stabbing. The House of Lords held his malice towards the mother could not simply be transferred to found a charge of murdering the child — the fetus was not, at the time of the stabbing, a legal person capable of being the target of that intent, and malice cannot be transferred twice over (from mother, to fetus, to the child it later became). He could not be convicted of murder on a transferred malice basis, though a conviction for manslaughter was available on different reasoning, via the unlawful and dangerous act itself.",
+          "The rule to hold onto: transferred malice moves intent sideways, to a different victim, within the same offence. It does not convert an intent to harm a person into the mens rea for a wholly different offence, and it does not stack across two transfers."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume transferred malice is a general escape hatch — that any mens rea, aimed at anyone or anything, can be redirected to whatever harm actually results.",
+            "whyItsWrong": "Transferred malice only moves intent between victims of the same offence type. Intent to injure a person cannot transfer to found liability for criminal damage to property (or vice versa), and — as A-G's Reference (No 3 of 1994) shows — it cannot be stretched across a chain of transfers to reach a victim (like the later-born child) who did not legally exist as a person at the moment the malice was formed."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-04-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "Dara throws a rock at Sam intending to hit him. The rock misses Sam, smashes a shop window, and a shard cuts a passer-by. Which statement is correct?",
+          "options": [
+            "Dara's malice towards Sam transfers automatically to make him guilty of maliciously wounding the passer-by AND criminal damage to the window",
+            "Dara's intent to harm Sam can transfer to found liability for harming the passer-by if wounded, but cannot by itself found liability for the criminal damage, which is a different type of offence requiring its own mens rea as to property",
+            "Because Dara missed his intended target entirely, transferred malice cannot apply to anyone"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The first option treats transferred malice as crossing offence types — exactly what Latimer does not permit. The mens rea for an offence against the person can transfer to another person actually harmed by the same offence, but it cannot, on its own, supply the separate mens rea an offence against property requires."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-04-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the Cunningham test for recklessness.",
+      "acceptableAnswers": ["D foresaw the risk and took it anyway", "subjective foresight of the risk, unreasonably taken"],
+      "modelAnswer": "D is reckless if D foresaw a risk that the relevant harm might occur, and unreasonably went on to take that risk — judged by what this defendant actually foresaw, not by what a reasonable person would have foreseen."
+    },
+    {
+      "itemId": "crime-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case overruled Caldwell and restored subjective recklessness as the general test?",
+      "options": ["R v G [2003] UKHL 50", "R v Cunningham [1957] 2 QB 396"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-04-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of these correctly describes the current test for recklessness in English criminal law?",
+      "options": [
+        "Whether a reasonable person would have foreseen an obvious risk, regardless of what the defendant actually thought",
+        "Whether the defendant personally foresaw the risk and unreasonably went on to take it",
+        "Whether the defendant intended the result, since recklessness and intention are now the same test"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The first option is Caldwell's objective test, overruled in R v G. The third collapses recklessness into intention, which misstates both concepts — recklessness is a lesser, foresight-based state of mind, distinct from intending a result."
+    },
+    {
+      "itemId": "crime-04-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order these events from Thabo Meli as the single transaction doctrine analyses them.",
+      "items": ["Defendants form a plan to kill and stage an accident", "Defendants strike the victim intending to kill", "Believing him dead, defendants roll his body off a cliff", "Victim dies from exposure, not from the original blow"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-04-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "R v G was decided under the Criminal Damage Act 1971. Which element of a criminal damage offence did the House of Lords redefine in that case?",
+      "options": ["The meaning of 'recklessness' as to whether property would be destroyed or damaged", "The definition of 'property' capable of being damaged", "The territorial scope of the Act"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-04-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage summarising R v G, highlight the sentence stating the ratio.",
+      "passage": "The defendants were young boys who did not appreciate the risk their fire posed. The House of Lords considered the Caldwell test unjust. A person acts recklessly if he is aware of a risk and it is unreasonable, in the circumstances known to him, to take that risk. The appeal was allowed and the convictions quashed.",
+      "ratioSentence": "A person acts recklessly if he is aware of a risk and it is unreasonable, in the circumstances known to him, to take that risk."
+    },
+    {
+      "itemId": "crime-04-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that the continuing act doctrine (Fagan) can apply to an actus reus that was genuinely a single, instantaneous, completed act with nothing left ongoing?",
+      "sliderLabels": ["Applies", "Does not apply"],
+      "correctPosition": "Does not apply",
+      "explanation": "The continuing act doctrine depends on the actus reus being a state of affairs that persists in time. If the act was truly instantaneous and complete, there is nothing left continuing for a later-formed mens rea to attach to, and Fagan gives no help."
+    },
+    {
+      "itemId": "crime-04-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that is the moment actus reus and mens rea coincide on Fagan reasoning.",
+      "scenarioText": "Reversing without looking, Priti accidentally pins a cyclist's bike against a wall with her car, trapping the cyclist's leg. The cyclist shouts for her to move. Priti, now realising what has happened and irritated by the shouting, deliberately waits another thirty seconds before reversing off.",
+      "tappableSpans": ["accidentally pins a cyclist's bike", "shouts for her to move", "realising what has happened", "deliberately waits another thirty seconds"],
+      "correctSpan": "deliberately waits another thirty seconds",
+      "feedbackCorrect": "Right — that is where realisation turns into a choice to keep the continuing act going, which is the point of coincidence under Fagan.",
+      "feedbackIncorrect": "Realising what happened matters, but the coincidence is complete only once that awareness turns into a deliberate choice to continue the act — look for the moment she decides to keep it going, not just the moment she notices."
+    },
+    {
+      "itemId": "crime-04-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is a valid application of transferred malice?",
+      "scenarioA": "Ben throws a punch at Cara intending to hurt her; he misses and instead strikes Dev, who is standing next to her, causing him injury.",
+      "scenarioB": "Ben throws a punch at Cara intending to hurt her; he misses, the punch instead knocks over and smashes a display of glassware.",
+      "correctScenario": "A",
+      "explanation": "A is a straightforward Latimer-style transfer: intent to injure a person transfers to the person actually injured. B fails because the actual harm (property damage) is a different type of offence from the one Ben's malice was aimed at — malice does not transfer across offence types."
+    },
+    {
+      "itemId": "crime-04-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Kofi swings a cricket bat at Leo intending to hit him. Leo ducks and the bat instead strikes Mara, breaking her arm. Is Kofi guilty of an offence against Mara?",
+      "options": ["Yes — his malice towards Leo transfers to Mara as the actual victim of the same type of offence", "No — because he never intended to hit Mara specifically, he has no mens rea as to her at all", "No — transferred malice only applies to murder"],
+      "correctIndex": 0,
+      "explanation": "This is Latimer on near-identical facts. Kofi's intent to strike Leo transfers to Mara, the person actually struck, because the offence — an offence against the person — is the same in both cases."
+    },
+    {
+      "itemId": "crime-04-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A defendant plans to poison a colleague's coffee, believes she has succeeded and, thinking the colleague already dead, dumps her (still alive but unconscious) in a canal to dispose of the 'body'. The colleague drowns. At the moment of dumping her in the canal, the defendant believed she was already dead. Does the coincidence principle prevent a murder conviction?",
+      "options": ["No — this is a single transaction under Thabo Meli, so the mens rea formed at the outset of the plan suffices", "Yes — because there was no intent to kill at the precise moment of the fatal act, coincidence fails and no offence is committed", "No — because the continuing act doctrine from Fagan applies instead"],
+      "correctIndex": 0,
+      "explanation": "This is a Thabo Meli-style single transaction: a planned sequence of acts (poisoning, then disposal) treated as one continuing enterprise, so the murderous intent present at the start covers the act that actually causes death, even though that intent had, strictly, lapsed by the final stage."
+    },
+    {
+      "itemId": "crime-04-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Noor, in a crowded market, throws a bottle at a market stall she believes is selling counterfeit goods, intending only to damage the stall. She misjudges the throw; the bottle misses the stall entirely and strikes a child standing nearby, causing a serious cut. Analyse Noor's liability for an offence against the child.",
+      "factsToOrder": [
+        "Noor intends to damage the stall (property), not to harm any person",
+        "The bottle misses the stall entirely",
+        "The bottle strikes and seriously injures the child",
+        "No mens rea was ever formed as to harming a person"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Noor's intent to damage property can be transferred to found liability for an offence against the person committed against the child.",
+        "rule": "Transferred malice (Latimer) allows mens rea to transfer to the actual victim only within the same type of offence; it does not transfer between different types of offence (A-G's Reference (No 3 of 1994)).",
+        "application": "Noor's mens rea was formed entirely in relation to property damage — she intended to damage the stall, not to harm any person. The child's injury, though caused by the same physical act, is a different type of offence (against the person, not property). Transferred malice cannot bridge that gap: there is no available mens rea to transfer to an offence against the person.",
+        "conclusion": "Noor is not guilty of an offence against the person against the child on a transferred malice basis, since malice does not transfer between offence types; any liability towards the child would need to be established on some other basis, such as recklessness as to injuring a bystander if the facts supported it."
+      }
+    },
+    {
+      "itemId": "crime-04-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant intends to slash the tyres of one car but, in poor light, slashes the tyres of the car parked next to it instead. Does transferred malice apply?",
+      "options": ["Yes — the intent to damage property transfers to the property actually damaged, since it is the same type of offence", "No — transferred malice never applies to criminal damage"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two most common mistakes in this lesson's test items are stating recklessness in Caldwell's overruled objective terms, and treating transferred malice as a general escape hatch that can cross from an offence against property to an offence against the person (or vice versa). Both are traps this lesson is built to close.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.general-principles.recklessness-coincidence"
+  }
+}

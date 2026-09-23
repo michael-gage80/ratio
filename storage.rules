@@ -1,0 +1,11 @@
+rules_version = '2';
+
+// Deny by default. Content bundles are readable by any signed-in student and written
+// only by the publishing job (Admin SDK, which bypasses these rules).
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /content/{path=**} {
+      allow read: if request.auth != null;
+    }
+  }
+}

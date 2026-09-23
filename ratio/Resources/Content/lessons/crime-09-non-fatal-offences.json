@@ -1,0 +1,418 @@
+{
+  "lessonId": "crime-09",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 9,
+  "topicId": "crime.non-fatal.ladder",
+  "title": "The ladder",
+  "subtitle": "Non-fatal offences against the person, from a raised fist to intent to maim",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the elements and mens rea of common assault, battery, s 47 ABH, s 20 GBH/wounding, and s 18 GBH/wounding with intent",
+    "Explain how 'harm' extends to recognised psychiatric injury and how the offences can be committed without physical contact",
+    "Apply the ladder to a fact pattern and select the correctly charged rung, justifying it by mens rea and degree of harm"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Criminal Justice Act 1988, s 39", "role": "Statutory basis for common assault and battery as summary offences" },
+    { "citation": "Offences Against the Person Act 1861, ss 18, 20, 47", "role": "The three indictable rungs of the ladder, in ascending order of seriousness" },
+    { "citation": "R v Ireland; R v Burstow [1998] AC 147", "role": "Confirms recognised psychiatric injury counts as harm, and that assault and s 20 GBH can be committed without physical contact" },
+    { "citation": "R v Savage; DPP v Parmenter [1992] 1 AC 699", "role": "Sets the mens rea for s 47 (no need to foresee ABH) and for s 20/s 18 (foresight of some physical harm, the 'Mowatt' standard)" },
+    { "citation": "R v Roberts (1972) 56 Cr App R 95", "role": "The victim's own reaction breaks the chain of causation only if it is so unreasonable — so 'daft' — that no reasonable person would have foreseen it" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Almost every student can list 'assault, battery, ABH, GBH' in order. Very few can say, cleanly, what separates the mens rea of one rung from the next — and that's exactly where marks are lost. Where the profile shows knowledge ahead of application, this note appears: 'You know the ladder exists. This lesson is about placing a set of facts on the right rung.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well recalling the five offences before. The test pool below leans hard on fact patterns: expect to be asked which offence fits, not to define each one in turn.",
+      "weakKnowledge": "Slow down through Parts 1 and 4 — get the five offences and their mens rea fixed first. Everything from Part 3 onward assumes you can already name the rung before you're asked to justify it."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "The phone rings at 2am. No one speaks. It happens again the next night, and the next, for weeks. Nobody has been touched. No weapon has been drawn. And yet, by the time this lesson is finished, you'll be able to explain exactly why that silence can amount to a criminal assault — and, if it goes on long enough, to grievous bodily harm.",
+    "lawStatedNotice": "Law stated as at 22 September 2026. The Offences Against the Person Act 1861 remains in force largely unreformed since Victorian times; a modernisation bill has been proposed in previous Parliaments but not enacted — check for any change before relying on this in practice."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Five offences, one climbing scale",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Non-fatal offences against the person aren't five unrelated crimes to memorise separately. They're a single ladder of increasing severity, and almost every exam question in this area is really asking one thing: which rung do these facts belong on?",
+          "At the bottom sit assault and battery — both summary-only offences under s 39 of the Criminal Justice Act 1988, despite being defined by the older common law rather than that Act itself. Above them, three indictable offences come from the Offences Against the Person Act 1861: s 47 (assault occasioning actual bodily harm), s 20 (unlawfully and maliciously wounding or inflicting grievous bodily harm), and s 18 (wounding or causing grievous bodily harm with intent) — the most serious of the three and the one carrying a maximum sentence of life imprisonment.",
+          "Two things climb together as you go up the ladder: the degree of harm required, and the mens rea required. Get in the habit of checking both, separately, for every fact pattern — a question will often give you facts that satisfy the harm threshold for one rung but only the mens rea for a lower one, and the correct charge is always set by whichever is lower."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The ladder of non-fatal offences",
+            "description": "Five offences ordered by severity, with the harm and mens rea required at each rung.",
+            "nodes": [
+              { "id": "assault", "label": "Common assault (s 39 CJA 1988) — causing V to apprehend immediate unlawful force" },
+              { "id": "battery", "label": "Battery (s 39 CJA 1988) — applying unlawful force to V" },
+              { "id": "s47", "label": "s 47 OAPA 1861 — assault or battery occasioning actual bodily harm" },
+              { "id": "s20", "label": "s 20 OAPA 1861 — unlawfully and maliciously wounding or inflicting GBH" },
+              { "id": "s18", "label": "s 18 OAPA 1861 — wounding or causing GBH with intent to cause GBH" }
+            ],
+            "edges": [
+              { "from": "assault", "to": "battery", "label": "or" },
+              { "from": "battery", "to": "s47", "label": "harm results" },
+              { "from": "s47", "to": "s20", "label": "harm becomes serious" },
+              { "from": "s20", "to": "s18", "label": "intent to cause serious harm" }
+            ],
+            "textAlternative": "The ladder runs: common assault (apprehension of immediate unlawful force) and battery (application of unlawful force) at the bottom, both under s 39 CJA 1988; then s 47 OAPA 1861 (assault or battery occasioning actual bodily harm); then s 20 OAPA 1861 (unlawfully and maliciously wounding or inflicting GBH); then s 18 OAPA 1861 at the top (wounding or causing GBH with intent). Each rung requires more harm and, from s 20 upward, a different quality of mens rea than the one below it."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-09-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Which statute actually creates the offences of common assault and battery, even though the classic definitions come from the common law?",
+          "options": ["Criminal Justice Act 1988, s 39", "Offences Against the Person Act 1861, s 47", "Offences Against the Person Act 1861, s 20"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 39 CJA 1988 sets these out as summary offences and fixes their maximum sentence, even though their substantive definitions remain rooted in the older common law.",
+          "feedbackIncorrect": "Look again — s 39 of the Criminal Justice Act 1988 is the modern statutory basis for assault and battery, distinct from the three indictable offences under the 1861 Act."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Assault and battery: two offences hiding inside one sentence",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Try this before reading on: a man makes a series of silent phone calls to a woman late at night, over several weeks, saying nothing at all. Has he assaulted her? There's no fist, no weapon, not even a word. What could possibly be apprehended from silence?",
+          "The House of Lords said yes, he had. Assault requires the victim to apprehend the immediate application of unlawful force — and silence on the other end of a phone line, in context, can cause exactly that apprehension, because the caller's presence and the possibility of them acting on it is what generates the fear. 'Immediate' doesn't mean 'instantaneous' in every case; it means the victim reasonably fears force could follow within a relevant timeframe, which the House of Lords accepted a persistent silent caller could create.",
+          "Battery is the easier of the two to picture: it's the application of unlawful force to another person, however slight — a push, a flick, even pouring a drink over someone. It doesn't need to hurt. What it needs is force, applied without lawful excuse or consent, and (unlike assault, which is about fear of what's coming) no apprehension is required at all — a battery can be committed on someone asleep, or from behind, who never saw it coming."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Common assault",
+            "definition": "Intentionally or recklessly causing another person to apprehend the immediate application of unlawful force — no physical contact is required, and words (or their absence) can be enough."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Battery",
+            "definition": "Intentionally or recklessly applying unlawful force to another person, however slight — no apprehension by the victim is required, and it can be committed without the victim ever perceiving it."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-09-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "According to Ireland, can silent telephone calls, repeated over time, amount to an assault?",
+          "options": ["Yes — if they cause the victim to apprehend immediate unlawful force", "No — assault always requires words or a visible gesture"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. The House of Lords held that a silent caller can cause exactly the apprehension of possible imminent force that the offence requires — the medium doesn't matter, the effect does.",
+          "feedbackIncorrect": "Reconsider — Ireland is the leading authority precisely because it confirms assault can be committed without any words or visible gesture at all, provided the necessary apprehension is caused."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Actual bodily harm — and the chain that isn't broken by a foreseeable reaction",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "A young woman accepted a lift home from a man she'd just met. He began making unwanted sexual advances and, at one point, tried to remove her coat while the car was moving. Frightened about what might happen next, she opened the door and jumped out of the moving vehicle, injuring herself on the road.",
+          "He was charged with assault occasioning actual bodily harm — even though he never laid a hand on her that caused the injuries. Her injuries came from her own decision to jump. The Court of Appeal had to decide whether that decision broke the chain of causation between his conduct and her harm.",
+          "It didn't. The court held that the defendant's unlawful act (the assault created by his conduct and the threat it carried) caused the actual bodily harm, because the victim's reaction — jumping from a moving car to escape a perceived threat to her safety — was a reasonably foreseeable response, not so 'daft' or disproportionate as to be her own independent, unforeseeable act. The test is whether the victim's self-preserving response was within the range of reactions a reasonable person might make in that situation, given what the defendant had done.",
+          "This matters for actual bodily harm generally: s 47 doesn't require the defendant to have directly inflicted the injury with their own hands. It requires an assault or battery that occasions — causes — actual bodily harm, and 'occasions' leaves room for exactly this kind of indirect, victim-mediated chain, so long as the chain isn't broken by an unforeseeably extreme reaction."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Roberts",
+            "citation": "(1972) 56 Cr App R 95",
+            "court": "Court of Appeal",
+            "year": 1972,
+            "factsShort": "V jumped from a moving car to escape D's unwanted sexual advances, injuring herself; D was convicted of ABH for the resulting injuries.",
+            "ratioShort": "A victim's self-preserving reaction to an assault breaks the chain of causation only if it is so unreasonable, or 'daft', that no reasonable person in that situation would have made it.",
+            "expanded": {
+              "facts": "Roberts gave a young woman a lift and, during the journey, made unwanted advances and attempted to pull off her coat. Fearing further sexual assault, she opened the car door and jumped out while it was moving, sustaining injuries.",
+              "judgmentExtract": "The Court of Appeal held that the defendant's unlawful act caused the victim's injuries where her reaction was the natural consequence of what he had done, and that this would only cease to be so if her reaction was so daft as to be unexpected by any reasonable person, given the situation she found herself in.",
+              "significance": "Roberts sets the test for causation via a victim's own self-protective act: the reasonable foreseeability of the reaction, not whether the defendant physically touched the victim at the point of injury. It's the standard route for ABH charges where a victim is injured escaping, rather than being struck."
+            }
+          },
+          {
+            "type": "statuteBlock",
+            "citation": "Offences Against the Person Act 1861, s 47",
+            "text": "Whosoever shall be convicted on indictment of any assault occasioning actual bodily harm shall be liable... to imprisonment for the term of five years.",
+            "elements": ["An assault or a battery", "Occasioning (causing)", "Actual bodily harm — harm that is more than merely trifling or transient"]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-09-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that determines whether the chain of causation is broken in a Roberts-style scenario.",
+          "scenarioText": "A passenger, frightened by the driver's aggressive advances, unbuckles her seatbelt and, rather than opening the door, decides — entirely calmly, with the car stationary at a red light and no threat currently present — to walk two miles home in bare feet across broken glass out of general annoyance at the evening.",
+          "tappableSpans": ["frightened by the driver's aggressive advances", "unbuckles her seatbelt", "entirely calmly, with the car stationary at a red light and no threat currently present", "walk two miles home in bare feet across broken glass"],
+          "correctSpan": "entirely calmly, with the car stationary at a red light and no threat currently present",
+          "explanation": "This is the fact that would break the Roberts chain: a calm decision, made once any immediate threat has passed, to do something extreme and unconnected to escaping danger is no longer a reasonably foreseeable self-preserving reaction — it looks like an independent, unreasonable choice."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Same word, different rungs: 'maliciously' at s 20 and 'with intent' at s 18",
+        "voice": "argumentative — presses on a distinction students routinely collapse",
+        "body": [
+          "Students frequently write that s 20 and s 18 are basically the same offence with different sentences attached. They are not, and the exam rewards knowing precisely where they diverge: the physical elements can be identical — wounding, or grievous (really serious) bodily harm — but the mental elements are worlds apart.",
+          "Section 20 requires the defendant to act 'maliciously', which the House of Lords has confirmed means intentionally or recklessly — but recklessly only as to causing some physical harm, not necessarily the serious harm that actually results. This is sometimes called the Mowatt standard, applied and confirmed in the conjoined appeals of Savage and Parmenter: in Savage, a woman threw beer over a rival in a pub; the glass slipped from her hand and cut the victim. She was convicted of an offence under s 20 at trial (later substituted for s 47 on appeal because she plainly had the mens rea for a battery and ABH resulted, but not necessarily foresight of the wounding). In Parmenter, a father who shook his baby, causing injury, without any appreciation that his handling might cause harm, could not be convicted under s 20 because that minimal foresight of some physical harm was missing.",
+          "Section 18 demands something categorically different: intent — a specific, subjective intention to cause grievous bodily harm (or, on the wounding limb, an intention to resist or prevent lawful arrest coupled with the relevant harm). Recklessness, however obvious the risk, will never do for s 18. That single word — 'maliciously' meaning foresight of some harm, versus 'with intent' meaning aiming to cause serious harm — is the entire distance between a s 20 and a s 18 charge on otherwise identical facts."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Offences Against the Person Act 1861, ss 18 and 20",
+            "text": "s 20: Whosoever shall unlawfully and maliciously wound or inflict any grievous bodily harm upon any other person... shall be guilty of an offence. s 18: Whosoever shall unlawfully and maliciously... wound or cause any grievous bodily harm to any person... with intent to do some... grievous bodily harm... shall be guilty of an offence.",
+            "elements": ["s 20: wounding or GBH + malice (intention or recklessness as to some physical harm)", "s 18: wounding or GBH + specific intent to cause GBH (or to resist arrest)"]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Maliciously (the Mowatt/Savage standard)",
+            "definition": "For s 20, means the defendant intended, or was subjectively reckless as to, causing some physical harm — not necessarily the wounding or grievous harm that actually resulted."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-09-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below adapted from Savage and Parmenter, highlight the sentence stating the mens rea standard for s 20.",
+          "passage": "It is unnecessary to prove that the defendant foresaw that his act might cause physical harm of the gravity described in the section, i.e. a wound or serious physical injury. It is enough that he should have foreseen that some physical harm to some person, albeit of a minor character, might result. This does not mean that the defendant must have foreseen the precise wound or injury that in fact occurred.",
+          "ratioSentence": "It is enough that he should have foreseen that some physical harm to some person, albeit of a minor character, might result."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Harm without a hand laid on you",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Return to the silent caller from the start of this lesson. His campaign didn't stop at causing fear on individual nights — over months, it caused his victim a recognised psychiatric illness. The House of Lords, hearing his case alongside that of a separate stalker who sent hate mail and made further silent calls causing his victim severe depression, confirmed something that surprises most students: 'bodily harm' in the 1861 Act includes recognised psychiatric injury, not just physical injury, and grievous bodily harm can be 'inflicted' under s 20 without any direct or indirect application of physical force at all.",
+          "This closes a gap that would otherwise have looked absurd: a campaign of psychological terror, conducted entirely by phone and letter, causing genuine and serious psychiatric illness, would have fallen outside the Act if 'harm' meant only physical injury and 'inflict' meant only a physical blow. The House of Lords rejected both restrictions. 'Inflict' does not require an assault or a technical application of force in the way that word was once thought to demand — it requires only that the defendant's act, direct or not, in fact caused the grievous harm.",
+          "The trap here runs in both directions. Students under-claim, assuming psychiatric harm 'doesn't really count' without a doctor's diagnosis on the exam facts — it does, provided the facts support a recognised condition rather than mere distress, fear, or panic (those, alone, support only common assault). And students over-claim, assuming any unpleasant course of conduct automatically reaches GBH level — it must still be shown to amount, on the medical evidence, to serious harm, with the necessary mens rea (malice for s 20; specific intent for s 18) proved separately."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Burstow",
+            "citation": "[1998] AC 147",
+            "court": "House of Lords",
+            "year": 1998,
+            "factsShort": "D conducted a lengthy campaign of harassment including silent calls, hate mail, and appearing near V's home, causing her a severe depressive illness.",
+            "ratioShort": "Recognised psychiatric injury is 'bodily harm' for the purposes of s 20 and s 18, and GBH can be 'inflicted' without any direct or indirect physical force.",
+            "expanded": {
+              "facts": "Burstow had a brief relationship with the victim, and after it ended pursued a sustained campaign of harassment against her over several years, including silent and abusive telephone calls, offensive letters, appearing at her home, and taking photographs of her. She developed a severe depressive illness as a result.",
+              "judgmentExtract": "The House of Lords, hearing Burstow's appeal alongside Ireland's, held that the word 'inflict' in s 20 does not require an assault, battery, or any application of direct or indirect physical force — it requires only that the defendant's conduct caused grievous bodily harm, which may include recognised psychiatric illness proved by appropriate medical evidence.",
+              "significance": "Burstow (with Ireland) is the authority that brings stalking and psychological harassment fully within the non-fatal offences ladder, confirming that 'harm' is not confined to physical injury and that direct physical contact is not a precondition for the most serious non-fatal offences."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because s 20 and s 18 speak of 'wounding or grievous bodily harm', a defendant who never touched the victim cannot be guilty of either.",
+            "whyItsWrong": "Burstow confirms 'inflict' does not require physical contact, direct or indirect — a course of conduct that causes recognised psychiatric injury can satisfy the harm element of s 20 (or s 18, with the necessary intent), entirely without a touch."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-09-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "Ade sends his ex-partner threatening messages and repeatedly waits outside her workplace over six months, intending to frighten her into taking him back. She is later diagnosed by a psychiatrist with post-traumatic stress disorder as a result. Analyse the most serious non-fatal offence Ade is likely to have committed.",
+          "factsToOrder": [
+            "Ade's conduct is sustained over six months",
+            "There is no physical contact at any point",
+            "Ade's stated intention is to frighten her into taking him back, not to cause serious harm",
+            "A psychiatrist diagnoses PTSD, a recognised psychiatric condition",
+            "The diagnosis is causally linked to the campaign of conduct"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether Ade's course of conduct amounts to an offence under s 20 (rather than a lower or higher rung of the ladder).",
+            "rule": "Section 20 requires unlawfully and maliciously inflicting grievous bodily harm; 'inflict' does not require physical contact and 'bodily harm' includes recognised psychiatric injury (Ireland; Burstow). 'Maliciously' requires only foresight of some physical harm, not the serious harm that results.",
+            "application": "PTSD is a recognised psychiatric condition capable of amounting to grievous bodily harm, and Burstow confirms no physical contact is needed to 'inflict' it. The harder question is mens rea: Ade need not have foreseen a diagnosable psychiatric illness specifically, only that his sustained, threatening conduct might cause some harm — which a course of deliberate intimidation over six months plainly supports. Section 18 would require proof Ade specifically intended to cause grievous bodily harm; his stated aim (frightening her into returning) does not, without more, establish that specific intent.",
+            "conclusion": "Ade is most likely guilty of an offence under s 20 OAPA 1861 rather than s 18, absent further evidence of a specific intent to cause serious harm."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-09-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "List the five non-fatal offences against the person, from least to most serious.",
+      "acceptableAnswers": ["assault, battery, s47 ABH, s20 GBH/wounding, s18 GBH/wounding with intent"],
+      "modelAnswer": "Common assault, battery, s 47 actual bodily harm, s 20 unlawful/malicious wounding or GBH, and s 18 wounding or GBH with intent."
+    },
+    {
+      "itemId": "crime-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Does battery require the victim to be aware of, or apprehend, the force applied?",
+      "options": ["No — battery is the application of force; awareness is irrelevant", "Yes — the victim must apprehend it in advance, just like assault"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-09-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which mental state is required for a s 18 conviction that is NOT required for s 20?",
+      "options": ["Recklessness as to some physical harm", "Specific intent to cause grievous bodily harm (or resist arrest)", "Knowledge that the victim would suffer psychiatric harm"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think s 18 just needs a higher degree of foresight of harm, but the real distinction is categorical: s 18 needs a specific subjective intention to cause serious harm, which recklessness — however extreme — can never supply."
+    },
+    {
+      "itemId": "crime-09-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "What does 'maliciously' mean in the context of s 20, according to Savage and Parmenter?",
+      "options": ["Intention or subjective recklessness as to causing some physical harm, not necessarily the serious harm that results", "A specific intention to cause the exact wound or GBH that occurred", "Any negligent failure to consider the risk of harm"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-09-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Put these in the order a lawyer should check them when classifying a non-fatal offence on the facts.",
+      "items": ["Identify the degree of harm actually caused (none, some, ABH, GBH/wounding)", "Identify the defendant's state of mind towards causing harm", "Match the lower of the harm level and mens rea level to a rung of the ladder", "Confirm the elements of that specific offence are all satisfied on the facts"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-09-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Ireland, highlight the sentence explaining how silence can satisfy the 'immediacy' requirement of assault.",
+      "passage": "The proposition that a gesture may amount to an assault is not in doubt. The question is whether a silent caller may be guilty of an assault. The answer must be yes, because the victim may apprehend the possibility of immediate personal violence, and the silent caller's purpose in remaining silent may be to increase the victim's fear, which the victim may reasonably believe could be realised within a relevant time frame.",
+      "ratioSentence": "The answer must be yes, because the victim may apprehend the possibility of immediate personal violence, and the silent caller's purpose in remaining silent may be to increase the victim's fear, which the victim may reasonably believe could be realised within a relevant time frame."
+    },
+    {
+      "itemId": "crime-09-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A shove in a crowded bar causes no visible injury but the victim briefly stumbles. No harm beyond the application of force itself results. Which offence best fits?",
+      "options": ["Battery", "Assault", "s 47 ABH"],
+      "correctIndex": 0,
+      "explanation": "Unlawful force was applied, however slight, and no actual bodily harm resulted — this sits at the battery rung, not higher."
+    },
+    {
+      "itemId": "crime-09-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "D throws a punch intending only to scare V, not to make contact; V ducks, stumbles backwards and twists an ankle. D had no intent or foresight that V would be physically harmed by the punch missing. What is the likely charge?",
+      "options": ["s 47 ABH", "s 20 GBH", "No offence at all"],
+      "correctIndex": 0,
+      "explanation": "The punch (or the resulting apprehension) is an assault; V's twisted ankle from a reasonably foreseeable evasive reaction occasions actual bodily harm under the Roberts causation principle. Section 47 does not require foresight of the ABH itself, only of the underlying assault or battery."
+    },
+    {
+      "itemId": "crime-09-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that would most clearly point towards a s 18 charge rather than s 20.",
+      "scenarioText": "D, in a rage after being sacked, tells a colleague he is going to 'make sure you never walk properly again', then deliberately strikes his knee repeatedly with a metal bar, causing a fracture.",
+      "tappableSpans": ["in a rage after being sacked", "tells a colleague he is going to 'make sure you never walk properly again'", "deliberately strikes his knee repeatedly with a metal bar", "causing a fracture"],
+      "correctSpan": "tells a colleague he is going to 'make sure you never walk properly again'",
+      "explanation": "This statement, combined with the deliberate targeted blows, evidences a specific intent to cause serious harm — the mens rea threshold that separates s 18 from s 20, which needs only foresight of some physical harm."
+    },
+    {
+      "itemId": "crime-09-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely mirrors Roberts (causation via the victim's own foreseeable reaction) rather than a straightforward direct battery?",
+      "scenarioA": "D corners V in an alley and punches her in the face, breaking her nose.",
+      "scenarioB": "D lunges aggressively at V on a train platform; V steps backwards to avoid him and falls off the platform edge, breaking her wrist.",
+      "correctScenario": "B",
+      "explanation": "B is the Roberts pattern: D never touches V, but V's foreseeable self-protective reaction to the threat causes the injury. A is a direct battery with no causation question to resolve."
+    },
+    {
+      "itemId": "crime-09-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant sends hundreds of threatening messages over a year, causing the victim a diagnosed anxiety disorder, but never comes near her physically. Could this satisfy the harm element of s 20?",
+      "options": ["Yes — recognised psychiatric injury counts as GBH, and 'inflict' does not require physical contact", "No — s 20 always requires a physical wound or injury"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-09-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 4,
+      "prompt": "D, angry during an argument, grabs a kitchen knife and slashes V across the forearm 'to teach her a lesson', causing a deep wound requiring stitches, but says afterwards he only meant to scare her, not to really hurt her. Analyse the appropriate charge.",
+      "factsToOrder": [
+        "D deliberately picks up a knife during the argument",
+        "D slashes V's forearm with it",
+        "The wound is deep enough to require stitches",
+        "D claims he only intended to scare, not injure, V"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether D's conduct satisfies s 20 (malicious wounding) or requires the higher intent for s 18.",
+        "rule": "Section 20 requires wounding or GBH plus malice — intention or recklessness as to some physical harm (Savage/Parmenter). Section 18 requires the same physical element plus a specific intent to cause GBH.",
+        "application": "A deep cut requiring stitches is a 'wound' (breaking of the skin). D's own account — that he intended only to scare, not injure — if accepted, negates the specific intent s 18 demands, but deliberately slashing someone with a knife plainly involves at least foresight that some physical harm would result, satisfying malice for s 20. A jury could reject D's account and find the deliberate, targeted use of a knife shows intent to cause serious harm, supporting s 18 instead.",
+        "conclusion": "On D's own account, s 20 is clearly made out; whether s 18 is also available depends on whether a jury accepts or rejects his stated intention, given the deliberate use of a knife."
+      }
+    },
+    {
+      "itemId": "crime-09-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Why did Burstow's conviction not fail simply because he never physically touched his victim?",
+      "options": ["Because 'inflict' in s 20 does not require an assault or any direct or indirect application of physical force", "Because s 20 was amended to remove any harm requirement", "Because psychiatric harm is treated as automatically satisfying s 18 rather than s 20"],
+      "correctIndex": 0,
+      "trapExplanation": "It's easy to assume 'inflict' must mean a physical blow of some kind, given the word's ordinary meaning — but the House of Lords rejected that reading specifically to capture sustained psychological harassment."
+    },
+    {
+      "itemId": "crime-09-test-14",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that ordinary fear, distress, or anxiety — without a formal psychiatric diagnosis — is enough to satisfy the 'harm' element of s 47, s 20, or s 18?",
+      "sliderLabels": ["Definitely enough on its own", "Not enough without a recognised medical condition"],
+      "correctPosition": "Not enough without a recognised medical condition",
+      "explanation": "Ireland and Burstow require a recognised psychiatric condition, supported by appropriate medical evidence, to count as bodily harm — mere fear, distress or anxiety, however genuine, is not itself sufficient for these offences (though it may support a common assault charge based on apprehension alone)."
+    },
+    {
+      "itemId": "crime-09-test-15",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "D and V argue; D raises a fist as if to strike but a bystander pulls D away before any contact or injury occurs. What is the most that can be charged?",
+      "options": ["Common assault", "Battery", "s 47 ABH"],
+      "correctIndex": 0,
+      "explanation": "No force was applied and no harm resulted, but raising a fist plainly caused V to apprehend immediate unlawful force — the classic fact pattern for common assault alone."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is anchoring on the physical severity of the outcome alone and skipping the mens rea check — picking s 18 because the injury looks serious, or s 20 because a weapon was involved, without separately confirming the defendant's state of mind matches that rung rather than a lower one.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.non-fatal.ladder"
+  }
+}

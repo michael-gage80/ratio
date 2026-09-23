@@ -1,9 +1,15 @@
 import Foundation
 
-/// A question from the content JSON — the diagnostic bank now, lesson test pools and
-/// in-line checks later. Types match the PRD's "In-line games and test types"; the two
-/// lesson-only types (IRAC builder, highlight the ratio) arrive with the lesson engine.
+/// A question from the content JSON — the diagnostic bank, lesson in-line checks and
+/// test pools. Types match the PRD's "In-line games and test types".
 struct Item: Decodable, Identifiable {
+    struct IRACAnswer: Decodable {
+        let issue: String
+        let rule: String
+        let application: String
+        let conclusion: String
+    }
+
     enum Kind {
         /// quickCheck, mcqWithTrap, applyTheRule, statuteParser — and distinguishTheCase,
         /// whose two scenarios are the options.
@@ -13,6 +19,11 @@ struct Item: Decodable, Identifiable {
         case slider(labels: [String], correctSide: Int)
         case sequence(items: [String], correctOrder: [Int])
         case recall(modelAnswer: String)
+        /// The passage split into sentences; the student taps the one stating the ratio.
+        case highlight(sentences: [String], ratioSentence: String)
+        /// Shown as a worked example (scaffold level 1) until the IRAC builder's fading
+        /// levels arrive.
+        case irac(facts: [String], modelAnswer: IRACAnswer)
     }
 
     let id: String
@@ -47,9 +58,37 @@ struct Item: Decodable, Identifiable {
             return correctSide == 1 ? value > 0.5 : value < 0.5
         case .sequence(_, let correctOrder):
             return response.order == correctOrder
-        case .recall:
+        case .recall, .irac:
             return response.selfMarkedCorrect == true
+        case .highlight(_, let ratioSentence):
+            return response.span.map { Self.sentence($0, states: ratioSentence) } ?? false
         }
+    }
+
+    /// Splits a passage where a full stop, question or exclamation mark is followed by
+    /// whitespace — the same split as content-tools/validate.mjs.
+    static func sentences(in passage: String) -> [String] {
+        var result: [String] = []
+        var rest = Substring(passage)
+        while let match = rest.firstMatch(of: /.+?[.!?](?=\s|$)/.dotMatchesNewlines()) {
+            result.append(String(match.output))
+            rest = rest[match.range.upperBound...]
+        }
+        result.append(String(rest))
+        return result.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
+    }
+
+    /// Same rule as content-tools/validate.mjs: a sentence "states" the ratio if either
+    /// contains the other, ignoring case, spacing and the final full stop — the ratio
+    /// can be a clause of a longer sentence.
+    static func sentence(_ sentence: String, states ratio: String) -> Bool {
+        func normalise(_ s: String) -> String {
+            s.lowercased()
+                .split(whereSeparator: \.isWhitespace).joined(separator: " ")
+                .trimmingCharacters(in: CharacterSet(charactersIn: ". "))
+        }
+        let (a, b) = (normalise(sentence), normalise(ratio))
+        return a.contains(b) || b.contains(a)
     }
 
     // MARK: Decoding
@@ -61,6 +100,8 @@ struct Item: Decodable, Identifiable {
         case sliderLabels, correctPosition
         case items, correctOrder
         case modelAnswer
+        case passage, ratioSentence
+        case factsToOrder
         case briefExplanation, explanation, trapExplanation, feedbackCorrect, feedbackIncorrect
     }
 
@@ -101,6 +142,12 @@ struct Item: Decodable, Identifiable {
                              correctOrder: try c.decode([Int].self, forKey: .correctOrder))
         case "recallFirst":
             kind = .recall(modelAnswer: try c.decode(String.self, forKey: .modelAnswer))
+        case "highlightTheRatio":
+            let passage = try c.decode(String.self, forKey: .passage)
+            kind = .highlight(sentences: Self.sentences(in: passage), ratioSentence: try c.decode(String.self, forKey: .ratioSentence))
+        case "irac":
+            kind = .irac(facts: try c.decode([String].self, forKey: .factsToOrder),
+                         modelAnswer: try c.decode(IRACAnswer.self, forKey: .modelAnswer))
         default:
             throw DecodingError.dataCorruptedError(forKey: .type, in: c, debugDescription: "Unsupported item type \(type)")
         }

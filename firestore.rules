@@ -31,6 +31,18 @@ service cloud.firestore {
       match /skills/{topicId} {
         allow read: if isOwner(uid);
       }
+
+      // How far through each lecture the student is.
+      match /lessons/{lessonId} {
+        allow read: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && lessonId.matches('^[a-z]+-[0-9]{2}$')
+          && request.resource.data.keys().hasOnly(['partsCompleted', 'updatedAt'])
+          && request.resource.data.partsCompleted is int
+          && request.resource.data.partsCompleted >= 0
+          && request.resource.data.partsCompleted <= 10
+          && request.resource.data.updatedAt == request.time;
+      }
     }
 
     function isValidProfileUpdate() {

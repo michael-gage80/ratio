@@ -1,0 +1,360 @@
+{
+  "lessonId": "crime-05",
+  "moduleId": "crime",
+  "moduleTitle": "Criminal law",
+  "lessonNumber": 5,
+  "topicId": "crime.general-principles.strict-corporate-liability",
+  "title": "Strict liability and corporate liability",
+  "subtitle": "When mens rea is dispensed with, and how the criminal law reaches into a company",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the presumption that mens rea is required for statutory offences and apply the Gammon factors used to decide when that presumption is displaced",
+    "Describe the traditional identification doctrine for corporate criminal liability and explain the limitation exposed by cases like Tesco v Nattrass",
+    "State the new senior manager attribution test introduced by the Crime and Policing Act 2026 s 250, and explain how it differs in scope and effect from the Economic Crime and Corporate Transparency Act 2023 s 196 regime it supersedes"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Sweet v Parsley [1970] AC 132", "role": "Establishes the strength of the presumption that mens rea is required, even where a statute is silent" },
+    { "citation": "B v DPP [2000] 2 AC 428", "role": "Confirms the presumption remains strong even for offences carrying real stigma and imprisonment" },
+    { "citation": "Gammon (Hong Kong) Ltd v A-G of Hong Kong [1985] AC 1", "role": "Sets out the factors courts weigh when deciding whether the presumption of mens rea is displaced" },
+    { "citation": "Tesco Supermarkets Ltd v Nattrass [1972] AC 153", "role": "Defines the traditional identification doctrine — only a company's 'directing mind and will' can attribute liability to it" },
+    { "citation": "Economic Crime and Corporate Transparency Act 2023, s 196", "role": "The prior senior manager attribution regime — economic crime offences only" },
+    { "citation": "Crime and Policing Act 2026, s 250", "role": "In force 29 June 2026 — extends senior manager attribution to all offences, with no statutory defence" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson contains a live currency point: the corporate liability regime changed substantially on 29 June 2026. Where the profile shows a student's source material predates that date, this note appears: 'Your notes on corporate liability are very likely describing the old, narrower regime — check the date on whatever you're revising from before you rely on it.'",
+    "profileHooks": {
+      "weakApplication": "The strict liability half of this lesson rewards fact-pattern practice — spotting which Gammon factors point towards or away from strict liability. Expect scenario-heavy questions.",
+      "weakKnowledge": "Get the presumption of mens rea and the identification doctrine solid before Part 5 — the new senior manager test only makes sense as a reaction against the limits of what came before it."
+    }
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A shopkeeper sells a scratch card to a fourteen-year-old, checks nothing, and is convicted the same afternoon — no intention, no recklessness, no defence that she believed him older. Three miles away, a multinational's local manager quietly ignores a safety warning that later kills someone, and for decades the company itself walked away clean, because no single person inside it counted, in law, as the company's 'mind'. This lesson is about two very different ways the criminal law solves the problem of blame without a guilty mind — and about a rule for the second problem that is, as you read this, only months old.",
+    "lawStatedNotice": "Live currency point: corporate criminal liability changed materially with effect from 29 June 2026, under the Crime and Policing Act 2026, s 250. Any textbook, lecture note or past paper written before that date will describe only the earlier, narrower regime under the Economic Crime and Corporate Transparency Act 2023, s 196 (economic crime offences only). Part 5 of this lesson sets out the new law and flags exactly what changed and when."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The starting presumption: no crime without a guilty mind",
+        "voice": "direct — states the presumption and its practical weight without preamble",
+        "body": [
+          "Most criminal offences require the prosecution to prove mens rea — some blameworthy state of mind, whether intention, recklessness or knowledge. Where a statute creating an offence is silent about the mental element required, English law does not assume Parliament meant to dispense with one. Instead, courts apply a presumption: mens rea is required unless Parliament has clearly indicated otherwise, expressly or by necessary implication.",
+          "Sweet v Parsley is the leading illustration of how strong this presumption is. A landlady let rooms in a farmhouse to tenants and had, in practice, almost nothing to do with what went on inside. Unknown to her, the tenants used the premises to smoke cannabis. She was charged under the Dangerous Drugs Act 1965 with 'being concerned in the management of premises used for the purpose of smoking cannabis' — a provision that, read literally, said nothing about her state of mind at all.",
+          "The House of Lords quashed her conviction. Lord Reid held that a court should not read a statute as displacing the requirement for mens rea unless the words compel that reading, because doing so risks convicting the truly innocent — someone who has done nothing that could reasonably be regarded as culpable. Miss Sweet had no idea what her tenants were doing and had taken no risk that a reasonable person would recognise; convicting her regardless would strip the word 'crime' of its usual moral content."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Presumption of mens rea",
+            "definition": "Where a statute is silent, courts presume Parliament intended a mental element to be required for a statutory offence, and will only read the offence as one of strict liability where the wording, subject matter or purpose of the statute clearly displaces that presumption."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "If a statute creating a new offence says nothing at all about the required mental state, what does English law presume?",
+          "options": ["That mens rea is required unless the statute clearly displaces the presumption", "That the offence is automatically one of strict liability"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — silence is read in favour of requiring fault, not against it.",
+          "feedbackIncorrect": "The presumption runs the other way: courts start from the assumption that Parliament intended mens rea to be required, and only depart from that where the statute clearly says or implies otherwise."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "When the presumption gives way: Gammon and the strict-liability offences",
+        "voice": "case-narrative — walks through Gammon's reasoning, then tests it against a harder case",
+        "body": [
+          "The presumption is strong but not absolute. Gammon (Hong Kong) Ltd v Attorney-General of Hong Kong concerned building contractors prosecuted after deviating from approved construction plans in a way that risked the safety of a building. The relevant regulations did not mention any mental element. The Privy Council upheld strict liability, and in doing so set out the framework courts still use today to decide whether a presumption of mens rea has been displaced.",
+          "Lord Scarman's judgment identifies several factors that pull towards strict liability: the presumption is particularly strong for offences that are 'truly criminal' in character, but it can be displaced where the statute deals with an issue of real social concern (public safety being the paradigm example), where strict liability would genuinely help promote the statute's purpose by encouraging greater vigilance, and where the wording of the statute points that way. Even then, strict liability should only be imposed if it will actually be effective in promoting the statute's object — punishing a defendant who could have done nothing to prevent the harm achieves little.",
+          "B v DPP shows the presumption pushing back even where a serious, stigmatic offence is involved. A fifteen-year-old boy was charged with inciting a child under 14 to commit an act of gross indecency, honestly (if unreasonably) believing the girl was over 14. The House of Lords held the presumption of mens rea applied in full force: the offence carried real social stigma and a risk of imprisonment, and Parliament had not clearly displaced the need for a genuine, even if mistaken, belief as to age. His conviction was quashed. B v DPP is worth holding next to Gammon precisely because it shows that seriousness cuts against strict liability, not towards it — the more a conviction stigmatises the defendant, the stronger the presumption that fault must be proved."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The Gammon factors",
+            "points": [
+              "Presumption of mens rea applies to every statutory offence, and is particularly strong for offences that are 'truly criminal' in character",
+              "The presumption can be displaced only where the statute clearly indicates this, expressly or by necessary implication",
+              "Displacement is more likely where the statute deals with an issue of real social concern, especially public safety or public welfare regulation",
+              "Even then, strict liability should only be imposed where it will actually help achieve the statute's purpose — e.g. by encouraging greater vigilance to prevent the prohibited act"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-05-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in B v DPP that most strongly supported keeping the presumption of mens rea in place, rather than displacing it.",
+          "scenarioText": "B, aged fifteen, was charged with inciting a child under 14 to an act of gross indecency. He honestly believed, though mistakenly, that the girl was over 14. The offence carried a real risk of imprisonment and significant social stigma if proved.",
+          "tappableSpans": ["aged fifteen", "honestly believed, though mistakenly", "real risk of imprisonment and significant social stigma"],
+          "correctSpan": "real risk of imprisonment and significant social stigma",
+          "feedbackCorrect": "Right. The seriousness and stigma of the offence is exactly what Gammon and B v DPP treat as strengthening, not weakening, the presumption that fault must be proved.",
+          "feedbackIncorrect": "Look for the factor about the offence's seriousness rather than B's own state of mind — it's the offence carrying real stigma and imprisonment that pulls hardest against strict liability under the Gammon framework."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Finding the 'mind' of a company: the identification doctrine",
+        "voice": "structural — presents the doctrine as a formal rule before showing where it broke down",
+        "body": [
+          "A company cannot form an intention the way a person can — it has no mind of its own. English law's traditional solution was the identification doctrine: a company is criminally liable, for offences requiring mens rea, only through the acts and states of mind of those individuals who are properly regarded as the company's 'directing mind and will' — typically its board of directors, managing director, or others to whom real management and decision-making power has been delegated at the very top.",
+          "Tesco Supermarkets Ltd v Nattrass is the case that defines the doctrine's boundary. Tesco was prosecuted for a misleading price display in one of its stores, contrary to consumer protection legislation, after a store manager failed to ensure a promotional price was correctly applied. Tesco's defence was that the failure was entirely down to the store manager, whose default the company could not reasonably have prevented.",
+          "The House of Lords agreed. Lord Reid held that a store manager, however senior within a single branch, was not part of the company's directing mind and will — he was simply an employee carrying out functions the company had entrusted to him, not someone whose acts and state of mind were, in law, the company's own. The company could rely on a statutory due diligence defence because the fault lay with someone junior enough to be treated as a mere agent, not as the company itself."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The identification doctrine",
+            "description": "How the traditional common law route attributes mens rea to a corporate defendant.",
+            "nodes": [
+              { "id": "start", "label": "Did the individual whose conduct is in question hold a role amounting to the company's directing mind and will (e.g. board-level, or delegated equivalent authority)?" },
+              { "id": "yes", "label": "Yes → that individual's acts and state of mind are attributed to the company; the company can be criminally liable" },
+              { "id": "no", "label": "No → the individual is a mere employee or agent; their conduct is not, in law, the company's own conduct" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes", "label": "Directing mind" },
+              { "from": "start", "to": "no", "label": "Not directing mind" }
+            ],
+            "textAlternative": "Under the identification doctrine, a company is only criminally liable for an offence requiring mens rea if the individual responsible held a role amounting to the company's directing mind and will — typically board level or equivalent delegated authority. If the individual was a mere employee or branch manager, their state of mind is not attributed to the company at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-05-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these Tesco v Nattrass facts in order.",
+          "items": [
+            "A promotional price is not correctly applied by a store manager",
+            "Tesco is prosecuted for the resulting misleading price display",
+            "Tesco argues the fault lay solely with the store manager, not the company",
+            "The House of Lords holds the store manager was not part of the company's directing mind and will"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the case — the outcome turns entirely on where the manager sat in the company's hierarchy, not on what actually went wrong at store level.",
+          "feedbackIncorrect": "Check the order again — the legal question only arises once Tesco is prosecuted and argues the fault was the manager's alone; the House of Lords' ruling on his status comes last."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Why the identification doctrine let big companies off the hook",
+        "voice": "argumentative — makes the critique explicit and follows it to its statutory response",
+        "body": [
+          "The problem with the identification doctrine is not hard to see once you say it out loud: the larger and more diffuse a company's decision-making, the harder it becomes to point to any single individual who counts as its 'directing mind and will'. A small company run by two directors who make every decision themselves is easy to pin liability on. A multinational with layered management, regional boards and devolved authority is not — by the time you find someone senior enough to be 'the company', they are usually several steps removed from whatever actually went wrong on the ground.",
+          "This produced a structural unfairness that ran in exactly the wrong direction: the companies best placed to cause serious harm at scale were the ones best insulated from criminal liability, precisely because their governance was too complex for a doctrine built around a single controlling mind. Individual employees, including quite senior ones, could be prosecuted; the corporate entity itself very often could not.",
+          "Parliament's first serious attempt to fix this, for one category of harm, was the Economic Crime and Corporate Transparency Act 2023, s 196. It introduced a 'senior manager' attribution test for a defined list of economic crime offences — fraud, false accounting, money laundering and similar offences — under which a company could be criminally liable where a senior manager (a person playing a significant role in decision-making about how the whole or a substantial part of the business is managed or organised) committed the relevant offence acting within the actual or apparent scope of their authority. This was a real advance on identification-doctrine liability, because 'senior manager' is a functional test, not a search for the single directing mind — but it was deliberately narrow: it applied only to that specific list of economic crime offences, and left the identification doctrine as the applicable test for everything else."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often describe the 2023 senior manager test as a general reform of corporate criminal liability, applicable across the board.",
+            "whyItsWrong": "The Economic Crime and Corporate Transparency Act 2023, s 196 was always limited to a defined list of economic crime offences. For every other offence — health and safety failures, manslaughter, environmental offences, and so on — the old identification doctrine from Tesco v Nattrass continued to apply, with all its limitations for large, diffusely managed companies, right up until the position changed again in 2026."
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-05-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that, before 29 June 2026, the ECCTA 2023 s 196 senior manager test applied to corporate liability for all criminal offences generally?",
+          "sliderLabels": ["Applied generally", "Economic crime offences only"],
+          "correctPosition": "Economic crime offences only",
+          "explanation": "The 2023 regime was deliberately narrow — confined to a defined list of economic crime offences such as fraud and false accounting. Outside that list, the traditional identification doctrine from Tesco v Nattrass remained the applicable test until the 2026 reform."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The 2026 reform: senior manager liability for everything",
+        "voice": "advisory — flags this as breaking news within the law, not settled doctrine, and is explicit about dates",
+        "body": [
+          "Read this part carefully, and treat it differently from the rest of the lesson: this is not settled, long-standing doctrine, it is a change that took effect on 29 June 2026 — a few months before the date this lesson is being written. If any source you are revising from — a textbook, a set of lecture slides, a past exam paper — predates that, it will very likely describe only the narrower 2023 regime covered in Part 4, and will not mention what follows at all.",
+          "The Crime and Policing Act 2026, s 250 replaces the economic-crime-only senior manager test with a general one. From 29 June 2026, a company can be criminally liable for any offence — not merely the defined list of economic crimes under the 2023 Act — where a senior manager of that company commits the offence while acting within the actual or apparent scope of their authority. The 'senior manager' concept carries over the same basic idea as the 2023 regime: someone who plays a significant role in making decisions about how the whole or a substantial part of the company's activities are to be managed or organised, rather than someone occupying a purely junior or narrowly operational role.",
+          "Two features of s 250 make it substantially tougher than what came before, and both are worth stating precisely rather than approximately. First, scope: it is no longer limited to economic crime — a senior manager's health and safety failure, environmental offence, or any other criminal offence committed within the scope of their role can now found liability for the company itself, on exactly the same attribution logic that used to be reserved for fraud-type offences. Second, and just as significant: unlike some other corporate liability regimes Parliament has created in recent years (including the 'failure to prevent fraud' offence under the 2023 Act, which does carry a defence where the organisation can show it had reasonable fraud prevention procedures in place), s 250 provides no equivalent 'reasonable procedures' defence. A company cannot escape liability under s 250 by showing it had good compliance systems in place; if a senior manager commits the offence within the scope of their authority, the company is liable regardless of how robust its procedures were.",
+          "For exam purposes, this means the identification doctrine and Tesco v Nattrass are not simply obsolete — they still matter as the backdrop against which s 250 was enacted, and as the applicable test for anything falling outside a 'senior manager's' role, such as conduct by a genuinely junior employee acting outside any managerial function. But for any offence where the culpable individual qualifies as a senior manager, the analysis after 29 June 2026 starts and ends with s 250, not with searching for a 'directing mind'."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Crime and Policing Act 2026, s 250",
+            "text": "Where a senior manager of an organisation, acting within the actual or apparent scope of their authority, commits a criminal offence, the organisation also commits that offence. No defence is available on the basis that the organisation had reasonable procedures in place to prevent the offence.",
+            "elements": [
+              "A senior manager of the organisation",
+              "Commits a criminal offence (any offence, not limited to economic crime)",
+              "Acting within the actual or apparent scope of their authority",
+              "No 'reasonable procedures' defence available to the organisation"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "crime-05-check-05",
+          "type": "statuteParser",
+          "skillTag": "application",
+          "prompt": "A regional operations director at a large logistics company — someone with real authority over how a substantial part of the business is run — deliberately falsifies safety inspection records within the scope of that role, and a worker is later injured as a result. The falsification took place on 15 July 2026. Under s 250 of the Crime and Policing Act 2026, can the company argue it had a robust health and safety compliance programme as a defence?",
+          "options": ["No — s 250 provides no 'reasonable procedures' defence, unlike the failure to prevent fraud offence", "Yes — s 250 mirrors the fraud prevention regime and allows a reasonable procedures defence", "The question doesn't arise, because s 250 only covers economic crime offences"],
+          "correctIndex": 0
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "crime-05-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the presumption English law applies when a statute creating an offence is silent about the required mental element.",
+      "acceptableAnswers": ["mens rea is presumed to be required unless clearly displaced", "presumption in favour of mens rea"],
+      "modelAnswer": "Courts presume Parliament intended mens rea to be required, and will only treat the offence as one of strict liability where the wording, subject matter or purpose of the statute clearly displaces that presumption (Sweet v Parsley)."
+    },
+    {
+      "itemId": "crime-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case set out the framework of factors courts use to decide whether the presumption of mens rea has been displaced?",
+      "options": ["Gammon (Hong Kong) Ltd v A-G of Hong Kong", "Tesco Supermarkets Ltd v Nattrass"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement about the presumption of mens rea is correct?",
+      "options": [
+        "The more serious and stigmatic an offence, the more likely the presumption of mens rea is to be displaced",
+        "The more serious and stigmatic an offence, the stronger the presumption of mens rea, as confirmed in B v DPP",
+        "The presumption of mens rea only applies to offences created before 1900"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to assume serious offences are more likely to attract strict liability, since the stakes are higher — B v DPP shows the opposite: seriousness and stigma strengthen the presumption that fault must be proved, not weaken it."
+    },
+    {
+      "itemId": "crime-05-test-04",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In this passage summarising Sweet v Parsley, highlight the sentence that states the ratio.",
+      "passage": "The landlady had no knowledge of what her tenants were doing on the premises. The House of Lords considered the effect of convicting someone entirely without fault. A court should not hold that a statute displaces the need for mens rea unless the words of the statute compel that conclusion. Her conviction was quashed.",
+      "ratioSentence": "A court should not hold that a statute displaces the need for mens rea unless the words of the statute compel that conclusion."
+    },
+    {
+      "itemId": "crime-05-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court follows when applying the Gammon framework to a silent statute.",
+      "items": ["Start from the presumption that mens rea is required", "Ask whether the statute's wording clearly displaces the presumption", "If unclear, ask whether the offence deals with an issue of real social concern such as public safety", "Ask whether strict liability would actually help promote the statute's purpose before imposing it"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "crime-05-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Under the Crime and Policing Act 2026, s 250, which of the following is an element the prosecution must establish against the company?",
+      "options": ["That a senior manager committed the offence acting within the actual or apparent scope of their authority", "That the company failed to have reasonable procedures in place", "That the offence was an economic crime offence listed in a schedule to the Act"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "crime-05-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a company can defend a s 250 Crime and Policing Act 2026 charge by showing it had reasonable compliance procedures in place?",
+      "sliderLabels": ["Yes, that is a defence", "No such defence exists under s 250"],
+      "correctPosition": "No such defence exists under s 250",
+      "explanation": "Unlike the failure to prevent fraud offence under the Economic Crime and Corporate Transparency Act 2023, s 250 provides no 'reasonable procedures' defence. If a senior manager commits the offence within the scope of their authority, the company is liable regardless of its compliance systems."
+    },
+    {
+      "itemId": "crime-05-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Applying Tesco v Nattrass reasoning (identification doctrine only, ignoring the 2026 reform), in which scenario would the company most clearly NOT be liable through attribution of the individual's state of mind?",
+      "scenarioA": "The company's managing director personally authorises a misleading advertising campaign.",
+      "scenarioB": "A single branch's assistant manager, with no company-wide decision-making authority, misapplies a pricing policy at that one branch.",
+      "correctScenario": "B",
+      "explanation": "B mirrors Tesco v Nattrass exactly: a manager without company-wide authority is not the directing mind and will, so their fault is not attributed to the company under the identification doctrine. A involves someone plainly at the top of the company's decision-making, whose acts are attributed to it."
+    },
+    {
+      "itemId": "crime-05-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A statute prohibits selling alcohol to a person under 18 and says nothing about the seller's state of mind. Applying Gammon, which factor most strongly supports reading this as a strict liability offence?",
+      "options": ["It regulates an activity involving a genuine issue of public/social concern (protecting minors), where strict liability may encourage greater vigilance by sellers", "The offence carries a very short limitation period", "The offence was created recently"],
+      "correctIndex": 0,
+      "explanation": "Protection of minors from alcohol sales is the classic public-welfare rationale Gammon identifies: strict liability here is likely to promote the statute's purpose by pushing sellers to check age carefully every time, rather than relying on genuine belief after the fact."
+    },
+    {
+      "itemId": "crime-05-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "On 10 August 2026, a company's head of national sales — someone with real authority over how sales operations across the business are managed — personally commits fraud against a client within the scope of that role. Which regime governs the company's liability?",
+      "options": ["Crime and Policing Act 2026, s 250 — in force from 29 June 2026, applying the senior manager test generally", "Economic Crime and Corporate Transparency Act 2023, s 196 only, since s 250 does not apply to fraud", "The identification doctrine only, since a head of national sales is not a director"],
+      "correctIndex": 0,
+      "explanation": "After 29 June 2026, s 250 governs senior manager attribution for any offence, including fraud, superseding the narrower 2023 regime as the primary route (though the facts would likely also satisfy the 2023 test, since fraud remains within its scope too)."
+    },
+    {
+      "itemId": "crime-05-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that determines whether this employee counts as a 'senior manager' for the purposes of s 250.",
+      "scenarioText": "Priya is a delivery driver for a national courier company. On her own initiative, she falsifies delivery records for her own route to hide missed deliveries. She has no authority over how any part of the business is managed or organised beyond her own daily round.",
+      "tappableSpans": ["delivery driver", "on her own initiative", "no authority over how any part of the business is managed or organised"],
+      "correctSpan": "no authority over how any part of the business is managed or organised",
+      "feedbackCorrect": "Correct — the senior manager test turns on managerial authority over the business, not job title or motive. Without that authority, Priya's conduct does not attribute liability to the company under s 250.",
+      "feedbackIncorrect": "Job title alone doesn't answer the question — look for the fact about whether she has authority over how any part of the business is managed or organised, which is the actual test under s 250."
+    },
+    {
+      "itemId": "crime-05-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "In September 2026, a factory's site director — responsible for deciding how the whole site's operations are run — deliberately disables a safety alarm within the scope of managing the site, to avoid production delays. A worker is injured. The company has an extensive, well-regarded health and safety compliance programme. Analyse the company's criminal liability.",
+      "factsToOrder": [
+        "The individual is a site director with authority over how the whole site is managed",
+        "The act (disabling the alarm) is within the scope of that managerial role",
+        "The event occurs in September 2026, after s 250 is in force",
+        "The company has a strong compliance programme in place"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the company is criminally liable for the site director's conduct under the Crime and Policing Act 2026, s 250, and whether its compliance programme provides a defence.",
+        "rule": "Under s 250, a company commits the offence a senior manager commits, where the senior manager acts within the actual or apparent scope of their authority; no 'reasonable procedures' defence is available under s 250.",
+        "application": "The site director's authority over how the whole site is managed makes them a senior manager for s 250 purposes, and disabling the alarm to manage production falls within the scope of that role. Since the event postdates 29 June 2026, s 250 applies. The company's compliance programme, however strong, is irrelevant to liability, because s 250 provides no reasonable procedures defence — unlike the failure to prevent fraud offence under the 2023 Act.",
+        "conclusion": "The company is criminally liable for the offence committed by the site director under s 250, notwithstanding its compliance programme."
+      }
+    },
+    {
+      "itemId": "crime-05-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A student's essay, apparently drafted from 2024 materials, states that corporate senior manager liability applies only to economic crime offences. Is this a fair statement of the law as at the date this lesson is written?",
+      "options": ["No — since 29 June 2026, s 250 of the Crime and Policing Act 2026 extends senior manager liability to all offences", "Yes — this remains an accurate and complete statement of the current law"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is applying rules from the wrong era: reading strict liability into cases where seriousness should strengthen the presumption of mens rea (B v DPP), and describing corporate senior manager liability as limited to economic crime after 29 June 2026, when s 250 of the Crime and Policing Act 2026 extended it to all offences with no reasonable procedures defence.",
+    "reviewMisses": true,
+    "linkToPathway": "crime.general-principles.strict-corporate-liability"
+  }
+}
