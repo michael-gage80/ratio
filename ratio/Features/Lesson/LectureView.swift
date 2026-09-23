@@ -7,6 +7,8 @@ struct LectureView: View {
     let lesson: Lesson
     /// Fallback for the IRAC scaffold level when this topic hasn't been assessed yet.
     let headline: Headline?
+    /// Called when the student finishes the debrief and heads back to Today.
+    let onExit: () -> Void
 
     @Environment(ContentStore.self) private var content
     @State private var applicationEstimate: Estimate?
@@ -15,7 +17,7 @@ struct LectureView: View {
     /// The current part's answer, once locked in.
     @State private var lockedResponse: ItemResponse?
     @State private var loaded = false
-    @State private var showsTestsNotice = false
+    @State private var showsExamRoom = false
 
     private let progress = LessonProgressRepository()
     private static let numerals = ["I", "II", "III", "IV", "V", "VI"]
@@ -34,6 +36,9 @@ struct LectureView: View {
                         }
                     }
                     lockedRow(nil, index: lesson.parts.count)
+                    if loaded && partsCompleted >= lesson.parts.count {
+                        RatioButton("Take the tests") { showsExamRoom = true }
+                    }
                     Text("Educational, not legal advice · Law stated as at \(lesson.lawStatedDate)")
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
@@ -61,10 +66,11 @@ struct LectureView: View {
             guard let response, let item = lesson.parts[safe: partsCompleted]?.interaction else { return nil }
             return item.isCorrect(response) ? .success : .error
         }
-        .alert("Tests arrive next phase", isPresented: $showsTestsNotice) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text("You've finished the lecture. The exam-room tests and debrief come in the next build.")
+        .fullScreenCover(isPresented: $showsExamRoom) {
+            ExamRoomView(lesson: lesson, headline: headline) {
+                showsExamRoom = false
+                onExit()
+            }
         }
     }
 
@@ -172,7 +178,7 @@ struct LectureView: View {
         lockedResponse = nil
         progress.save(lessonId: lesson.id, partsCompleted: partsCompleted)
         if isLast {
-            showsTestsNotice = true
+            showsExamRoom = true
         } else if let next = lesson.parts[safe: partsCompleted] {
             withAnimation { scroll.scrollTo(next.id, anchor: .top) }
         }

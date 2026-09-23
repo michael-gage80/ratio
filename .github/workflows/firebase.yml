@@ -16,6 +16,8 @@ on:
       - "firebase.json"
       - "firestore-tests/**"
       - "functions/**"
+      # The Functions grade against their own copy of the content.
+      - "ratio/Resources/Content/**"
       - ".github/workflows/firebase.yml"
   push:
     branches: [main]
@@ -26,6 +28,8 @@ on:
       - "firebase.json"
       - "firestore-tests/**"
       - "functions/**"
+      # The Functions grade against their own copy of the content.
+      - "ratio/Resources/Content/**"
       - ".github/workflows/firebase.yml"
   workflow_dispatch:
 

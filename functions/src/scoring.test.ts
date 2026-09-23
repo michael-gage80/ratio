@@ -93,6 +93,27 @@ test("the slider is correct on the side whose label contains the answer, never t
   assert.ok(isCorrect(leftAnswer, { itemId: "i", sliderValue: 0.25 }));
 });
 
+test("highlight the ratio accepts the sentence containing it; IRAC needs every part right", () => {
+  const highlight = item({ type: "highlightTheRatio", ratioSentence: "The jury may find intention." });
+  assert.ok(isCorrect(highlight, { itemId: "i", span: "Where it was certain, the jury may find intention." }));
+  assert.ok(!isCorrect(highlight, { itemId: "i", span: "The appeal is allowed." }));
+  const irac = item({ type: "irac", factsToOrder: ["a", "b", "c"] });
+  assert.ok(isCorrect(irac, { itemId: "i", order: [2, 0, 1], choiceIndex: 0, selfMarkedCorrect: true }));
+  assert.ok(!isCorrect(irac, { itemId: "i", order: [0, 1, -1], selfMarkedCorrect: true }), "a decoy placed");
+  assert.ok(!isCorrect(irac, { itemId: "i", order: [0, 1], selfMarkedCorrect: true }), "a fact missing");
+  assert.ok(!isCorrect(irac, { itemId: "i", order: [0, 1, 2], choiceIndex: 1, selfMarkedCorrect: true }), "wrong rule");
+  assert.ok(isCorrect(irac, { itemId: "i", selfMarkedCorrect: true }), "level 4 has only the written part");
+});
+
+test("scoring can continue from existing estimates without mutating them", () => {
+  const items = new Map<string, BankItem>([["a", item({ itemId: "a", topicId: "crime.x", correctIndex: 0 })]]);
+  const start = { topics: { "crime.x": { knowledge: { theta: 1, sigma: 0.5 } } }, headline: { ...priorHeadline(), knowledge: { theta: 1, sigma: 0.5 } } };
+  const { topics, headline } = scoreResponses([{ itemId: "a", choiceIndex: 0 }], items, start);
+  assert.ok(topics["crime.x"].knowledge!.theta > 1);
+  assert.ok(headline.knowledge.theta > 1);
+  assert.equal(start.topics["crime.x"].knowledge.theta, 1);
+});
+
 test("scoring ignores unknown items and builds per-topic estimates in answer order", () => {
   const items = new Map<string, BankItem>([
     ["a", item({ itemId: "a", topicId: "crime.x", skillTag: "application", correctIndex: 0 })],
