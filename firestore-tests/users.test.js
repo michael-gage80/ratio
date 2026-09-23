@@ -192,6 +192,37 @@ describe('review schedules and test attempts', () => {
   });
 });
 
+describe('daily briefs', () => {
+  test('are readable by their owner and writable by no client', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'users/amara/briefs/2026-09-23'), { steps: [] });
+    });
+    await assertSucceeds(getDoc(doc(db('amara'), 'users/amara/briefs/2026-09-23')));
+    await assertFails(getDoc(doc(db('zara'), 'users/amara/briefs/2026-09-23')));
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/briefs/2026-09-24'), { steps: [] }));
+  });
+});
+
+describe('activity', () => {
+  const today = new Date().toISOString().slice(0, 10);
+  const day = (uid, date = today) => doc(db(uid), `users/${uid}/activity/${date}`);
+
+  test('a student can mark and read their own active days', async () => {
+    await assertSucceeds(setDoc(day('amara'), { at: serverTimestamp() }));
+    await assertSucceeds(setDoc(day('amara'), { at: serverTimestamp() }));
+    await assertSucceeds(getDoc(day('amara')));
+    await assertFails(getDoc(doc(db('zara'), `users/amara/activity/${today}`)));
+  });
+
+  test("days can't be backdated, forged for others, or carry anything else", async () => {
+    await assertFails(setDoc(day('amara'), { at: new Date(0) }));
+    await assertFails(setDoc(doc(db('zara'), `users/amara/activity/${today}`), { at: serverTimestamp() }));
+    await assertFails(setDoc(day('amara', 'yesterday'), { at: serverTimestamp() }));
+    await assertFails(setDoc(day('amara', '2025-01-06'), { at: serverTimestamp() }));
+    await assertFails(setDoc(day('amara'), { at: serverTimestamp(), minutes: 90 }));
+  });
+});
+
 describe('lesson progress', () => {
   const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
 

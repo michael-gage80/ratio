@@ -53,6 +53,14 @@ final class ContentStore {
         modules.values.lazy.flatMap(\.lessons).first { $0.id == id }
     }
 
+    /// A test item and its lesson, for brief steps that draw items from anywhere.
+    func testItem(id: String) -> (item: Item, lesson: Lesson)? {
+        for lesson in modules.values.lazy.flatMap(\.lessons) {
+            if let item = lesson.testPool.first(where: { $0.id == id }) { return (item, lesson) }
+        }
+        return nil
+    }
+
     /// Fact and rule decoys for an IRAC item: real facts and rules from the other IRAC
     /// problems in the same module, picked in a stable order for the item.
     func iracDecoys(for itemId: String, in module: Module) -> (facts: [String], rules: [String]) {

@@ -223,17 +223,25 @@ private struct RetentionCard: View {
 /// Until the full Settings screen (Phase 15): the account, logging out, and debug tools.
 private struct SettingsSheet: View {
     @Environment(SessionStore.self) private var session
+    @Environment(AppNavigator.self) private var navigator
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("tour.today.seen") private var tourSeen = false
 
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     Text("Full settings arrive in a later build.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                    Button("Replay the Today tour") {
+                        tourSeen = false
+                        navigator.backToToday()
+                        dismiss()
+                    }
                     Button("Log out", role: .destructive) { session.signOut() }
                 }
                 #if DEBUG
                 Section("Debug") {
+                    RatioGlassDebugToggle()
                     NavigationLink("Interaction gallery") { InteractionGalleryView() }
                     NavigationLink("Design system catalog") { DesignSystemCatalogView() }
                 }
