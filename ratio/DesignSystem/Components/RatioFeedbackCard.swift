@@ -23,10 +23,12 @@ public struct RatioWhyCard: View {
 }
 
 public struct RatioTrapCard: View {
-    private let commonWrongAnswer: String
+    private let commonWrongAnswer: String?
     private let whyItsWrong: String
 
-    public init(commonWrongAnswer: String, whyItsWrong: String) {
+    /// `commonWrongAnswer` is the lesson `theTrap` component's quoted wrong answer;
+    /// item-level trap explanations already name it, so they pass `nil`.
+    public init(commonWrongAnswer: String? = nil, whyItsWrong: String) {
         self.commonWrongAnswer = commonWrongAnswer
         self.whyItsWrong = whyItsWrong
     }
@@ -34,7 +36,9 @@ public struct RatioTrapCard: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("The trap").ratioFont(.monoLabel).foregroundStyle(Color.ratioOxblood)
-            Text(commonWrongAnswer).ratioFont(.bodyEmphasis).foregroundStyle(Color.ratioOxblood)
+            if let commonWrongAnswer {
+                Text(commonWrongAnswer).ratioFont(.bodyEmphasis).foregroundStyle(Color.ratioOxblood)
+            }
             Text(whyItsWrong).ratioFont(.body).foregroundStyle(Color.ratioInk)
         }
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -1,0 +1,609 @@
+{
+  "diagnosticId": "onboarding-diagnostic-v1",
+  "purpose": "The onboarding diagnostic referenced in the PRD's Onboarding, splash and diagnostic section: a short adaptive test that sets each student's first profile (knowledge, understanding, application scores with wide uncertainty bands) before their first lesson.",
+  "totalItemsServedPerAttempt": 10,
+  "estimatedMinutes": 4,
+  "canBeSkipped": true,
+  "skippedProfileNote": "If skipped, the student receives a default profile with maximally wide uncertainty bands (σ at its starting maximum) on every skill in their chosen modules, per the PRD's scoring model. No items in this bank are served in that case.",
+  "designNotes": [
+    "Every item in this bank is written at a foundational level: what a strong A-level student or an incoming fresher would know from general study, not from having taken any Ratio lesson. This sets a clean, non-circular baseline for the Elo-style scoring model — the diagnostic must not assume the content it is about to measure the need for.",
+    "Item types are restricted to ones a student can complete in roughly 20–25 seconds: quickCheck, mcqWithTrap, recallFirst, tapTheFact, applyTheRule, distinguishTheCase (short form), thresholdSlider, statuteParser, sequence (3–4 items only). No irac or highlightTheRatio items — both assume more reading time than a 4-minute, 10-question diagnostic allows.",
+    "difficultyStart uses the same 0–1 scale as lesson testPool items. Diagnostic items sit low (0.15–0.40) to avoid over-penalising genuine beginners; the adaptive engine, not question difficulty, does the work of placing stronger students accurately as they answer correctly.",
+    "Each item still carries a topicId matching (or closely adjacent to) the module's real lesson topics, so a diagnostic answer seeds a genuine topic-level θ/σ pair rather than only a module-level guess."
+  ],
+  "itemCounts": {
+    "perModule": 8,
+    "totalBank": 48
+  },
+  "skillDistributionTarget": {
+    "knowledge": "3 of 8 per module (~24 of 48)",
+    "understanding": "3 of 8 per module (~24 of 48)",
+    "application": "2 of 8 per module (~18 of 48)",
+    "note": "Slightly lighter on application because application items need a scenario a pre-lesson student can still reason through unaided — harder to write well at foundational level than knowledge/understanding items."
+  },
+  "selectionLogic": {
+    "description": "How the app should turn this 48-item bank into the 10 items an individual student actually sees. This is a specification for the Cloud Function that runs the diagnostic, not itself part of the content bundle.",
+    "steps": [
+      "1. Take the modules the student selected in the Year + modules onboarding step (they may have picked between 1 and 6).",
+      "2. Allocate 10 slots across those modules as evenly as possible (e.g. 1 module = 10 slots there; 3 modules = 4/3/3; 6 modules = 2/2/2/2/1/1, rotating which modules get the extra slot between cohorts so no module is systematically shortchanged).",
+      "3. Within each module's allocation, prioritise skill spread over topic spread: try to serve at least one knowledge, one understanding and one application item per module before repeating a skill, subject to how many slots that module has.",
+      "4. Item selection within a skill is adaptive: start each module at its median-difficulty item for that skill; a correct answer moves the next pick from that module up one difficulty step (if available), an incorrect answer moves it down one step. This is the same K(σ)-driven logic as the main scoring model, applied provisionally during onboarding before σ has stabilised.",
+      "5. If a module has fewer unanswered items left than its remaining slot allocation (unlikely at 8 items per module against a max of 10 slots on a single-module diagnostic), spill the remainder to the next most under-represented module rather than repeating an item.",
+      "6. Record every served item's topicId, skillTag and correctness so the first profile (see the PRD's Onboarding table, 'First profile' row) can be generated immediately after the 'Analysing' screen, per-topic, not just per-module."
+    ]
+  },
+  "lawStatedAt": "2026-09-22",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "modules": {
+    "crime": {
+      "moduleTitle": "Criminal law",
+      "items": [
+        {
+          "itemId": "diag-crime-01",
+          "topicId": "crime.general-principles.actus-reus",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "In English criminal law, if a stranger walks past someone collapsed on the pavement and does nothing, have they generally committed an offence?",
+          "options": ["No — there is no general duty to rescue a stranger", "Yes — failing to help anyone in danger is itself an offence"],
+          "correctIndex": 0,
+          "briefExplanation": "English law starts from no general duty to act; a duty only arises in specific recognised situations."
+        },
+        {
+          "itemId": "diag-crime-02",
+          "topicId": "crime.general-principles.causation",
+          "skillTag": "application",
+          "difficultyStart": 0.3,
+          "type": "applyTheRule",
+          "prompt": "Amir punches Ben, who falls and hits his head. An ambulance is delayed by an unrelated traffic jam and Ben dies from the head injury before it arrives. Does the delay usually break the chain of causation from Amir's punch?",
+          "options": ["No — an ordinary delay in treatment does not usually break the chain", "Yes — any delay in medical care automatically breaks the chain"],
+          "correctIndex": 0,
+          "briefExplanation": "The original injury normally remains an operating and substantial cause of death unless the intervening event is itself extraordinary and independent."
+        },
+        {
+          "itemId": "diag-crime-03",
+          "topicId": "crime.general-principles.intention",
+          "skillTag": "understanding",
+          "difficultyStart": 0.35,
+          "type": "mcqWithTrap",
+          "prompt": "Which best describes 'oblique intent' in criminal law?",
+          "options": ["Where D directly wants the result to happen", "Where the result was virtually certain to happen from D's act, and D knew that", "Where D merely foresaw a small risk of the result"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answer confuses oblique intent with recklessness (mere foresight of a risk) — oblique intent requires virtual certainty, not just a possibility."
+        },
+        {
+          "itemId": "diag-crime-04",
+          "topicId": "crime.homicide.murder",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the sentence a court must impose on a defendant convicted of murder in England and Wales.",
+          "acceptableAnswers": ["mandatory life sentence", "life imprisonment", "mandatory life"],
+          "modelAnswer": "Murder carries a mandatory life sentence — the judge has no discretion to impose anything less, only to set the minimum term before parole can be considered."
+        },
+        {
+          "itemId": "diag-crime-05",
+          "topicId": "crime.non-fatal.ladder",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which scenario describes the more serious non-fatal offence?",
+          "scenarioA": "A push that causes a minor, fleeting bruise.",
+          "scenarioB": "A blow that fractures the victim's cheekbone, requiring surgery.",
+          "correctScenario": "B",
+          "explanation": "A fracture requiring surgery is grievous bodily harm; a fleeting bruise is at most actual bodily harm — the offences (and maximum sentences) differ sharply by the severity of harm caused."
+        },
+        {
+          "itemId": "diag-crime-06",
+          "topicId": "crime.property.theft-robbery",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact that turns this from theft into robbery.",
+          "scenarioText": "Lena takes a phone from a stranger's open bag while they are looking away, then, when the stranger notices and grabs her arm, shoves them hard to get away with it.",
+          "tappableSpans": ["takes a phone from a stranger's open bag", "looking away", "grabs her arm", "shoves them hard to get away with it"],
+          "correctSpan": "shoves them hard to get away with it",
+          "feedbackCorrect": "Robbery is theft plus force used to steal or to get away with the theft at the time — the shove is what elevates this above simple theft.",
+          "feedbackIncorrect": "Look for the moment force is used in connection with the theft, not just the taking itself."
+        },
+        {
+          "itemId": "diag-crime-07",
+          "topicId": "crime.defences.capacity",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that voluntarily getting drunk is generally a defence to a crime requiring only basic intent (like criminal damage)?",
+          "sliderLabels": ["Definitely a valid defence", "Definitely not a defence"],
+          "correctPosition": "not a defence",
+          "explanation": "Voluntary intoxication is not a defence to basic intent offences — the policy is that getting deliberately drunk cannot excuse reckless conduct."
+        },
+        {
+          "itemId": "diag-crime-08",
+          "topicId": "crime.participation.complicity",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "quickCheck",
+          "prompt": "If two people plan a burglary together and both play an active role in carrying it out, can both be criminally liable, even if only one physically enters the building?",
+          "options": ["Yes — a person can be liable as an accessory for assisting or encouraging an offence without personally committing every element", "No — only the person who physically commits the offence can ever be liable"],
+          "correctIndex": 0,
+          "briefExplanation": "The law of complicity holds accessories (those who aid, abet, counsel or procure) liable alongside the principal offender."
+        }
+      ]
+    },
+    "contract": {
+      "moduleTitle": "Contract law",
+      "items": [
+        {
+          "itemId": "diag-contract-01",
+          "topicId": "contract.formation.offer-acceptance",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "Is a price displayed on a shop shelf normally a binding 'offer' that a customer accepts just by picking the item up?",
+          "options": ["No — it is usually only an invitation to treat; the customer makes the offer at the till", "Yes — displaying a price is always a binding offer"],
+          "correctIndex": 0,
+          "briefExplanation": "Shop displays are the classic example of an invitation to treat, not an offer capable of acceptance by the shopper."
+        },
+        {
+          "itemId": "diag-contract-02",
+          "topicId": "contract.formation.consideration",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Which of these can usually count as valid consideration for a contract?",
+          "options": ["A promise to do something you are already legally obliged to do for that same person", "Paying a token sum of £1 for something worth far more", "A promise based only on something you did last month, before any agreement existed"],
+          "correctIndex": 1,
+          "trapExplanation": "Consideration must be sufficient but need not be adequate — a nominal £1 counts. Past consideration and performing an existing duty owed to the same party are both generally NOT valid consideration."
+        },
+        {
+          "itemId": "diag-contract-03",
+          "topicId": "contract.terms.express-implied",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "A takeaway sells a meal that turns out to contain a common allergen with no warning, though nothing was said about allergens when it was ordered. Could a term about the food's safety and quality still apply?",
+          "options": ["Yes — certain terms (e.g. about satisfactory quality) can be implied into a contract even if never discussed", "No — only terms both parties actually spoke about can ever apply"],
+          "correctIndex": 0,
+          "briefExplanation": "Terms can be implied by statute (e.g. consumer protection legislation) or by law, not only by what the parties expressly agreed."
+        },
+        {
+          "itemId": "diag-contract-04",
+          "topicId": "contract.vitiating-factors.misrepresentation",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which is more likely to be an actionable misrepresentation?",
+          "scenarioA": "A seller says 'in my opinion, this is a great investment' about a volatile stock.",
+          "scenarioB": "A seller falsely states 'this car has never been in an accident' when they know it has.",
+          "correctScenario": "B",
+          "explanation": "Misrepresentation requires a false statement of fact (or sometimes a statement of opinion the speaker doesn't genuinely hold) — a bare, honestly-held opinion about future value is not itself an actionable statement of fact."
+        },
+        {
+          "itemId": "diag-contract-05",
+          "topicId": "contract.remedies.damages",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact most relevant to calculating contract damages here.",
+          "scenarioText": "A builder breaches a contract to renovate a kitchen. The homeowner has to pay another firm £3,000 more to finish the same job to the agreed standard.",
+          "tappableSpans": ["A builder breaches a contract", "renovate a kitchen", "pay another firm £3,000 more", "finish the same job to the agreed standard"],
+          "correctSpan": "pay another firm £3,000 more",
+          "feedbackCorrect": "Contract damages are usually assessed to put the claimant in the position they would have been in had the contract been performed — the extra cost to get the promised result is the clearest measure of that loss.",
+          "feedbackIncorrect": "Focus on the figure that shows what it actually cost to get the result that was promised."
+        },
+        {
+          "itemId": "diag-contract-06",
+          "topicId": "contract.discharge.frustration",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the doctrine that can discharge a contract when, after it is made, an unforeseen event makes performance impossible or radically different, through no fault of either party.",
+          "acceptableAnswers": ["frustration", "doctrine of frustration"],
+          "modelAnswer": "Frustration — it automatically discharges the contract going forward; it does not require either party to be at fault."
+        },
+        {
+          "itemId": "diag-contract-07",
+          "topicId": "contract.privity",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "statuteParser",
+          "prompt": "Under the general common law rule of privity, who can normally sue to enforce a contract?",
+          "options": ["Only a party to the contract", "Anyone who benefits from the contract, whether or not they were a party to it", "Any family member of a party to the contract"],
+          "correctIndex": 0,
+          "briefExplanation": "Privity of contract means only the parties to an agreement can generally sue on it or be sued under it — statutory exceptions exist but the starting rule is party-only enforcement."
+        },
+        {
+          "itemId": "diag-contract-08",
+          "topicId": "contract.vitiating-factors.duress-undue-influence",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that a contract signed only because of an illegitimate, high-pressure threat (rather than ordinary hard bargaining) can be set aside?",
+          "sliderLabels": ["Definitely cannot be set aside", "Can potentially be set aside"],
+          "correctPosition": "can potentially be set aside",
+          "explanation": "Economic duress and other forms of illegitimate pressure can make a contract voidable — ordinary tough negotiation does not, but genuine coercion can."
+        }
+      ]
+    },
+    "tort": {
+      "moduleTitle": "Tort law",
+      "items": [
+        {
+          "itemId": "diag-tort-01",
+          "topicId": "tort.negligence.duty-of-care",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "In negligence, does a defendant automatically owe a duty of care to literally everyone they might ever affect?",
+          "options": ["No — a duty of care depends on the relationship and circumstances, not on affecting someone at all", "Yes — everyone owes a duty of care to everyone else in all situations"],
+          "correctIndex": 0,
+          "briefExplanation": "Duty of care is not universal; courts assess foreseeability, proximity and whether imposing a duty is fair, just and reasonable (or follow an established category)."
+        },
+        {
+          "itemId": "diag-tort-02",
+          "topicId": "tort.negligence.breach",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "The standard of care in negligence is generally judged against which benchmark?",
+          "options": ["What this particular defendant personally believed was safe", "What a reasonable person in the defendant's position would have done", "What the single most cautious expert in the field would have done"],
+          "correctIndex": 1,
+          "trapExplanation": "The test is objective (the reasonable person), not the defendant's own subjective view, and not an unreasonably high 'most cautious possible' standard."
+        },
+        {
+          "itemId": "diag-tort-03",
+          "topicId": "tort.negligence.causation",
+          "skillTag": "application",
+          "difficultyStart": 0.3,
+          "type": "applyTheRule",
+          "prompt": "A doctor fails to examine a patient properly, but even a proper examination would have missed the same rare condition anyway. Did the doctor's failure cause the patient's harm, on a basic 'but for' analysis?",
+          "options": ["No — the harm would have happened even but for the failure", "Yes — any failure to examine properly automatically counts as the cause"],
+          "correctIndex": 0,
+          "briefExplanation": "The 'but for' test asks whether the harm would have occurred anyway absent the breach — if so, factual causation is not established on that basis alone."
+        },
+        {
+          "itemId": "diag-tort-04",
+          "topicId": "tort.occupiers-liability",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the area of tort law that governs the duty a landowner or occupier owes to people who come onto their premises.",
+          "acceptableAnswers": ["occupiers liability", "occupiers' liability"],
+          "modelAnswer": "Occupiers' liability — it sets different standards depending on whether the person is a lawful visitor or a trespasser."
+        },
+        {
+          "itemId": "diag-tort-05",
+          "topicId": "tort.vicarious-liability",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "In which scenario is an employer more likely to be vicariously liable?",
+          "scenarioA": "An employee causes an accident while delivering goods during their normal shift, as instructed.",
+          "scenarioB": "A former employee, months after leaving the job, causes harm entirely unconnected to their old role.",
+          "correctScenario": "A",
+          "explanation": "Vicarious liability generally requires an employment-like relationship and conduct closely connected to that role — conduct by someone no longer employed, unrelated to the job, falls outside it."
+        },
+        {
+          "itemId": "diag-tort-06",
+          "topicId": "tort.nuisance",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact most relevant to a private nuisance claim here.",
+          "scenarioText": "A factory next door begins operating loud machinery through the night, every night, making it impossible for neighbours to sleep, and has done so for six months.",
+          "tappableSpans": ["A factory next door", "loud machinery through the night, every night", "impossible for neighbours to sleep", "for six months"],
+          "correctSpan": "impossible for neighbours to sleep",
+          "feedbackCorrect": "Private nuisance is about unreasonable interference with the use and enjoyment of land — the substantial, ongoing interference with sleep is the clearest sign of it.",
+          "feedbackIncorrect": "Look for the fact that shows a real interference with using and enjoying the neighbouring land, not just the source of the noise."
+        },
+        {
+          "itemId": "diag-tort-07",
+          "topicId": "tort.defences",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that a claimant who was partly careless themselves can still recover some damages in negligence, just reduced?",
+          "sliderLabels": ["No — any carelessness by the claimant bars the claim entirely", "Yes — damages can be reduced rather than barred"],
+          "correctPosition": "damages can be reduced rather than barred",
+          "explanation": "Contributory negligence generally reduces damages in proportion to the claimant's own fault, rather than acting as a complete bar."
+        },
+        {
+          "itemId": "diag-tort-08",
+          "topicId": "tort.negligence.psychiatric-harm",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.3,
+          "type": "quickCheck",
+          "prompt": "Does English tort law treat claims for pure psychiatric injury (with no accompanying physical injury) the same as claims for physical injury?",
+          "options": ["No — psychiatric injury claims are subject to additional, stricter control mechanisms", "Yes — they are treated identically in every respect"],
+          "correctIndex": 0,
+          "briefExplanation": "The law has historically been more cautious about pure psychiatric harm, imposing extra requirements (e.g. around proximity and how the harm was suffered) not applied to physical injury claims."
+        }
+      ]
+    },
+    "public": {
+      "moduleTitle": "Public law",
+      "items": [
+        {
+          "itemId": "diag-public-01",
+          "topicId": "public.constitution.sovereignty",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "quickCheck",
+          "prompt": "Does the UK have a single written constitutional document, in the way the US does?",
+          "options": ["No — the UK constitution is uncodified, drawn from statute, common law and convention", "Yes — the UK has one master constitutional document"],
+          "correctIndex": 0,
+          "briefExplanation": "The UK's constitution is famously uncodified, spread across many sources rather than one entrenched document."
+        },
+        {
+          "itemId": "diag-public-02",
+          "topicId": "public.constitution.rule-of-law",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Which best captures a core idea behind 'the rule of law'?",
+          "options": ["The government can act however it likes as long as it has good intentions", "Everyone, including the government, is subject to and accountable under the law", "Laws only need to be followed by ordinary citizens, not public officials"],
+          "correctIndex": 1,
+          "trapExplanation": "The rule of law's core claim is that government power is itself constrained by law — good intentions or official status do not exempt anyone from legal accountability."
+        },
+        {
+          "itemId": "diag-public-03",
+          "topicId": "public.judicial-review.grounds",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "A minister has a discretionary power to grant licences 'as they see fit', but refuses every application from a particular region regardless of its merits, without ever considering the individual facts. What is this most likely to be an example of?",
+          "options": ["Fettering discretion — applying a blanket policy without considering individual cases", "A perfectly lawful use of a wide discretionary power"],
+          "correctIndex": 0,
+          "briefExplanation": "A decision-maker with discretion must not apply a rigid policy that shuts out genuine consideration of individual cases — doing so is a recognised ground of judicial review."
+        },
+        {
+          "itemId": "diag-public-04",
+          "topicId": "public.prerogative",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the term for the residual, historic powers exercised by the Crown (in practice, the government) that do not derive from an Act of Parliament.",
+          "acceptableAnswers": ["royal prerogative", "the prerogative", "prerogative power", "prerogative powers"],
+          "modelAnswer": "The royal prerogative — examples include declaring war and making treaties, though its exercise can still be subject to judicial review in some circumstances."
+        },
+        {
+          "itemId": "diag-public-05",
+          "topicId": "public.judicial-review.illegality",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which is a clearer example of the 'illegality' ground of judicial review?",
+          "scenarioA": "A public body makes a decision that later turns out to be unpopular with the public.",
+          "scenarioB": "A public body makes a decision based on a factor Parliament never intended it to consider under the relevant statute.",
+          "correctScenario": "B",
+          "explanation": "Illegality is about acting outside the powers actually granted, including taking account of irrelevant considerations — mere unpopularity is not a legal ground for review."
+        },
+        {
+          "itemId": "diag-public-06",
+          "topicId": "public.human-rights-act",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact most relevant to whether the Human Rights Act 1998 applies here.",
+          "scenarioText": "A private landlord evicts a tenant. Separately, a local council housing department makes a decision affecting a different tenant's home.",
+          "tappableSpans": ["A private landlord evicts a tenant", "Separately", "a local council housing department", "makes a decision affecting a different tenant's home"],
+          "correctSpan": "a local council housing department",
+          "feedbackCorrect": "The Human Rights Act binds public authorities — a local council exercising public functions is squarely covered, unlike a purely private landlord acting in a private capacity.",
+          "feedbackIncorrect": "Look for which actor is a public authority, since the Human Rights Act's duties apply to public authorities, not private individuals or companies as such."
+        },
+        {
+          "itemId": "diag-public-07",
+          "topicId": "public.judicial-review.irrationality-proportionality",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that courts can strike down a decision merely because they personally disagree with it on the merits?",
+          "sliderLabels": ["Yes — disagreeing on the merits is enough", "No — review is not an appeal on the merits"],
+          "correctPosition": "review is not an appeal on the merits",
+          "explanation": "Judicial review is not a merits appeal — courts review the legality of how a decision was reached, not simply whether they would have decided differently."
+        },
+        {
+          "itemId": "diag-public-08",
+          "topicId": "public.devolution",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.3,
+          "type": "statuteParser",
+          "prompt": "Which of these is a devolved legislature within the UK?",
+          "options": ["The Scottish Parliament", "The UK Cabinet", "The Judicial Committee of the Privy Council"],
+          "correctIndex": 0,
+          "briefExplanation": "The Scottish Parliament (along with the Senedd and the Northern Ireland Assembly) is a devolved legislature with defined legislative competence, distinct from the UK Parliament at Westminster."
+        }
+      ]
+    },
+    "land": {
+      "moduleTitle": "Land law",
+      "items": [
+        {
+          "itemId": "diag-land-01",
+          "topicId": "land.estates.formalities",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "quickCheck",
+          "prompt": "Can you normally transfer legal ownership of land in England and Wales with just a verbal agreement?",
+          "options": ["No — formalities such as a written contract and a deed are generally required", "Yes — a spoken agreement is always enough on its own"],
+          "correctIndex": 0,
+          "briefExplanation": "Land transactions are subject to strict formality requirements; a purely verbal deal will not, by itself, transfer legal title."
+        },
+        {
+          "itemId": "diag-land-02",
+          "topicId": "land.registration.priority",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "In registered land, what generally determines whether a buyer takes the land free of an existing interest?",
+          "options": ["Whether the buyer personally liked the previous owner", "Whether that interest is protected on the register (or otherwise binding, e.g. as an overriding interest)", "Whether the interest is more than 50 years old"],
+          "correctIndex": 1,
+          "trapExplanation": "Priority in registered land turns on registration (or overriding status), not on the age of the interest or anything to do with personal relationships."
+        },
+        {
+          "itemId": "diag-land-03",
+          "topicId": "land.co-ownership",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "Two friends buy a house together as joint tenants. One of them later wants to leave their share to a sibling in their will instead of it passing automatically to the other. What must happen first?",
+          "options": ["The joint tenancy must be severed, turning it into a tenancy in common", "Nothing — a will can override a joint tenancy automatically on death"],
+          "correctIndex": 0,
+          "briefExplanation": "Under a joint tenancy, the right of survivorship means a share cannot be left by will unless the joint tenancy is first severed into a tenancy in common."
+        },
+        {
+          "itemId": "diag-land-04",
+          "topicId": "land.leases-licences",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the key factor that distinguishes a lease from a mere licence to occupy property.",
+          "acceptableAnswers": ["exclusive possession", "exclusive possession for a term"],
+          "modelAnswer": "Exclusive possession (usually alongside a certain term and rent) — a licence, by contrast, gives only personal permission to be on the land without that right to exclude others, including the owner."
+        },
+        {
+          "itemId": "diag-land-05",
+          "topicId": "land.easements",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which is more likely to be capable of existing as an easement?",
+          "scenarioA": "A right to walk across a neighbour's path to reach the road.",
+          "scenarioB": "A right to enjoy an unobstructed, pleasant view over a neighbour's field.",
+          "correctScenario": "A",
+          "explanation": "A right of way is a classic, well-recognised easement; a right to a view is traditionally not capable of being an easement under English law."
+        },
+        {
+          "itemId": "diag-land-06",
+          "topicId": "land.adverse-possession",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact most relevant to a possible adverse possession claim here.",
+          "scenarioText": "A neighbour has, for over a decade, treated a strip of land as their own — fencing it, gardening it and excluding the registered owner — without ever asking permission.",
+          "tappableSpans": ["for over a decade", "fencing it, gardening it", "excluding the registered owner", "without ever asking permission"],
+          "correctSpan": "excluding the registered owner",
+          "feedbackCorrect": "Adverse possession requires factual possession plus an intention to possess (excluding the world, including the true owner) — that exclusive control is the crux of the doctrine.",
+          "feedbackIncorrect": "Focus on the fact showing control and exclusion of the true owner, not just how long or how the land was used."
+        },
+        {
+          "itemId": "diag-land-07",
+          "topicId": "land.covenants",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that the burden of a positive covenant (e.g. a duty to pay for a shared fence's upkeep) generally runs with the land in equity, the way a restrictive covenant's burden can?",
+          "sliderLabels": ["Yes — positive burdens run just as easily", "No — positive burdens generally do not run in equity"],
+          "correctPosition": "positive burdens generally do not run in equity",
+          "explanation": "The equitable rule that lets a covenant's burden bind successors is traditionally limited to restrictive (negative) covenants — positive covenants are a well-known problem area."
+        },
+        {
+          "itemId": "diag-land-08",
+          "topicId": "land.mortgages",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.3,
+          "type": "statuteParser",
+          "prompt": "If a borrower defaults on a mortgage, does the lender automatically become the outright owner of the property?",
+          "options": ["No — the borrower keeps an equity of redemption and the lender's remedies (like sale) are subject to legal limits", "Yes — default automatically transfers full ownership to the lender"],
+          "correctIndex": 0,
+          "briefExplanation": "Equity protects a borrower's right to redeem the mortgage, and a lender's power of sale (or other remedies) is exercised subject to duties and court oversight, not as an automatic forfeiture."
+        }
+      ]
+    },
+    "equity": {
+      "moduleTitle": "Equity and trusts",
+      "items": [
+        {
+          "itemId": "diag-equity-01",
+          "topicId": "equity.trusts.certainty",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "quickCheck",
+          "prompt": "For a valid express trust, must it be certain who the beneficiaries are (or how to identify them)?",
+          "options": ["Yes — certainty of objects (beneficiaries) is one of the three certainties required", "No — a trust can leave the beneficiaries completely undefined"],
+          "correctIndex": 0,
+          "briefExplanation": "The three certainties — intention, subject matter and objects — are all required for a valid express trust; uncertain beneficiaries generally causes it to fail."
+        },
+        {
+          "itemId": "diag-equity-02",
+          "topicId": "equity.trusts.formalities",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Declaring a trust of land generally requires which formality?",
+          "options": ["Nothing — it can always be done purely verbally with no written evidence at all", "Written evidence, signed by the person able to declare the trust", "Registration at the Land Registry before the trust can exist at all"],
+          "correctIndex": 1,
+          "trapExplanation": "Trusts of land need written evidence under the relevant statutory formality rule — a purely oral declaration will not satisfy it, though this is a formality requirement rather than a Land Registry registration step."
+        },
+        {
+          "itemId": "diag-equity-03",
+          "topicId": "equity.trusts.resulting-trusts",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "Two unmarried partners buy a house. Only one is on the legal title, but the other contributed significantly to the purchase price, with no discussion of ownership shares. Could equity potentially recognise the second partner as having a beneficial interest anyway?",
+          "options": ["Yes — equity can recognise a beneficial interest arising from contribution and common intention, even without formal documentation", "No — only the person on the legal title can ever have any interest in the property"],
+          "correctIndex": 0,
+          "briefExplanation": "Resulting and constructive trusts allow equity to recognise a beneficial interest that doesn't match the legal title, particularly around shared homes and financial contributions."
+        },
+        {
+          "itemId": "diag-equity-04",
+          "topicId": "equity.proprietary-estoppel",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.3,
+          "type": "recallFirst",
+          "prompt": "Name the three elements generally required to establish a proprietary estoppel claim.",
+          "acceptableAnswers": ["assurance, reliance, detriment", "assurance reliance and detriment"],
+          "modelAnswer": "A clear assurance, reliance on that assurance, and detriment suffered as a result — together making it unconscionable for the person who gave the assurance to go back on it."
+        },
+        {
+          "itemId": "diag-equity-05",
+          "topicId": "equity.trusts.constructive-trusts",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which is a more typical trigger for a constructive trust?",
+          "scenarioA": "A person deliberately acquiring property through their own unconscionable conduct at another's expense.",
+          "scenarioB": "A person receiving a straightforward, properly documented gift with no wrongdoing involved.",
+          "correctScenario": "A",
+          "explanation": "Constructive trusts are typically imposed by equity to prevent unconscionable conduct or unjust retention of a benefit — a clean, properly documented gift does not usually call for one."
+        },
+        {
+          "itemId": "diag-equity-06",
+          "topicId": "equity.breach-of-trust",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact most relevant to whether this trustee has breached their duty.",
+          "scenarioText": "A trustee invests all of the trust fund in a single speculative venture, without taking any advice or considering the fund's overall risk, and the fund loses significant value.",
+          "tappableSpans": ["invests all of the trust fund", "in a single speculative venture", "without taking any advice or considering the fund's overall risk", "loses significant value"],
+          "correctSpan": "without taking any advice or considering the fund's overall risk",
+          "feedbackCorrect": "Trustees owe duties of care in how they exercise investment powers, including proper consideration of suitability and diversification — the failure to consider risk at all is the clearest breach here, not merely that the investment lost money.",
+          "feedbackIncorrect": "An investment losing money isn't automatically a breach — look for the fact showing the trustee failed to exercise proper care in making the decision."
+        },
+        {
+          "itemId": "diag-equity-07",
+          "topicId": "equity.trustees-duties",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that a trustee can simply do whatever they personally think is best for the trust, with no accountability to the beneficiaries?",
+          "sliderLabels": ["Yes — trustees have unchecked discretion", "No — trustees owe enforceable fiduciary duties to beneficiaries"],
+          "correctPosition": "trustees owe enforceable fiduciary duties to beneficiaries",
+          "explanation": "Trusteeship carries real, enforceable duties — beneficiaries can hold trustees to account, including through the courts, for breaches of those duties."
+        },
+        {
+          "itemId": "diag-equity-08",
+          "topicId": "equity.tracing",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.3,
+          "type": "sequence",
+          "prompt": "Put these steps in the right order for a beneficiary trying to recover trust money that a trustee wrongly paid into their own personal bank account.",
+          "items": ["Identify that trust money was mixed into the trustee's personal account", "Trace the trust money through the mixed fund using equitable tracing rules", "Claim a proprietary interest in identifiable remaining funds or assets bought with them", "Recover the traced value, subject to the rules on mixed funds"],
+          "correctOrder": [0, 1, 2, 3]
+        }
+      ]
+    }
+  }
+}

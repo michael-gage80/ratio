@@ -40,6 +40,8 @@ jobs:
           distribution: temurin
           java-version: "21"
       - run: npm install -g firebase-tools
+      - name: Functions build + scoring tests
+        run: npm ci --prefix functions && npm test --prefix functions
       - run: npm ci --prefix firestore-tests
       - name: Security rules tests
         run: firebase emulators:exec --only firestore --project demo-ratio "npm --prefix firestore-tests test"
