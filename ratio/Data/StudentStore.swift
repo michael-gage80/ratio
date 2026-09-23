@@ -21,6 +21,10 @@ final class StudentStore {
     private(set) var briefUnavailable = false
     /// UK dates the student was active on, over the last few weeks.
     private(set) var activeDays: Set<String> = []
+    /// Duel ratings, keyed by module.
+    private(set) var ratings: [Module: DuelRating] = [:]
+    /// The last 20 duels, newest first.
+    private(set) var matches: [MatchSummary] = []
 
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
     @ObservationIgnored private var briefListener: ListenerRegistration?
@@ -65,6 +69,21 @@ final class StudentStore {
                 .addSnapshotListener { [weak self] snapshot, _ in
                     guard let snapshot else { return }
                     self?.activeDays = Set(snapshot.documents.map(\.documentID))
+                },
+            Firestore.firestore().collection("ratings").whereField("uid", isEqualTo: uid)
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    guard let snapshot else { return }
+                    self?.ratings = Dictionary(snapshot.documents.compactMap { document in
+                        (try? document.data(as: DuelRating.self)).flatMap { rating in Module(rawValue: rating.moduleId).map { ($0, rating) } }
+                    }, uniquingKeysWith: { first, _ in first })
+                },
+            Firestore.firestore().collection("matches").whereField("players", arrayContains: uid)
+                .order(by: "createdAt", descending: true).limit(to: 20)
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    guard let snapshot else { return }
+                    self?.matches = snapshot.documents.compactMap { document in
+                        (try? document.data(as: MatchSummary.self)).map { var match = $0; match.id = document.documentID; return match }
+                    }
                 },
         ]
         listenToTodaysBrief()
@@ -165,6 +184,44 @@ nonisolated struct TestAttempt: Decodable {
     nonisolated struct Delayed: Decodable {
         var total: Int
         var correct: Int
+    }
+}
+
+/// `ratings/{uid}_{moduleId}`: Glicko-2 for one module (PRD: "starting at 1,200").
+nonisolated struct DuelRating: Decodable {
+    var moduleId: String
+    var rating: Double
+    var rd: Double
+    var duels: Int
+    var wins: Int
+
+    /// Below this deviation the rating reads as settled (functions/src/glicko.ts).
+    var isSettled: Bool { rd <= 110 }
+}
+
+/// `matches/{matchId}` (the fields the lists need).
+nonisolated struct MatchSummary: Decodable, Identifiable {
+    var id = ""
+    var moduleId: String
+    var status: String
+    var isBot: Bool?
+    var partner: Partner?
+    var result: Result?
+    var createdAt: Date?
+
+    nonisolated struct Partner: Decodable {
+        var level: Int
+    }
+
+    nonisolated struct Result: Decodable {
+        var score: [Int]
+        var winner: Int?
+        var ratingBefore: Int
+        var ratingAfter: Int
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case moduleId, status, isBot, partner, result, createdAt
     }
 }
 

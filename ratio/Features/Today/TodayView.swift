@@ -152,9 +152,9 @@ struct TodayView: View {
     private var duelCard: some View {
         Button { navigator.tab = .duel } label: {
             VStack(alignment: .leading, spacing: 12) {
-                Text("Duel · Soon").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                Text("Find an opponent").ratioFont(.h2).foregroundStyle(Color.ratioInk2)
-                Text("Duels arrive in a later build.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                Text("Duel · Sparring").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Text("Find an opponent").ratioFont(.h2)
+                Text("Spar with a labelled partner while live duels are on their way.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
                 Spacer(minLength: 0)
             }
             .padding(18)
@@ -348,7 +348,7 @@ enum TourStop: Int, CaseIterable {
         switch self {
         case .brief: "12 to 20 minutes. Rebuilt each night from yesterday's answers and the reviews that have come due."
         case .streak: "The target is \(Streak.target) active days a week. A missed day costs nothing; only the week counts."
-        case .more: "Spar with other students, see where you stand this week, and catch up on the law. These arrive in later builds."
+        case .more: "Spar against a labelled partner, see where you stand this week, and catch up on the law. Boards and news arrive in later builds."
         }
     }
 }

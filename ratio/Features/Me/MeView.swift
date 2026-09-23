@@ -21,6 +21,7 @@ struct MeView: View {
                 ProfileCard(headline: student.headline, updatedAt: profile.headlineUpdatedAt)
                 RetentionCard(retention: student.retention)
                 modules
+                duels
             }
             .padding(24)
         }
@@ -94,6 +95,49 @@ struct MeView: View {
             try await AvatarImages.upload(item, uid: student.uid)
         } catch {
             uploadError = (error as? LocalizedError)?.errorDescription ?? "We couldn't upload your photo. Check your connection and try again."
+        }
+    }
+
+    // MARK: Duels
+
+    @ViewBuilder
+    private var duels: some View {
+        let rated = Module.allCases.compactMap { module in student.ratings[module].map { (module, $0) } }
+        let finished = student.matches.filter { $0.status == "complete" && $0.result != nil }
+        if !rated.isEmpty {
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Duel ratings").ratioFont(.h2).padding(.bottom, 12)
+                HStack {
+                    Text("Module")
+                    Spacer()
+                    Text("Rating").frame(width: 70, alignment: .trailing)
+                    Text("Duels").frame(width: 56, alignment: .trailing)
+                    Text("Won").frame(width: 44, alignment: .trailing)
+                }
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+                .padding(.bottom, 8)
+                ForEach(rated, id: \.0) { module, rating in
+                    Divider().overlay(Color.ratioRule)
+                    HStack {
+                        Text(module.title).ratioFont(.h3)
+                        Spacer()
+                        Text(Int(rating.rating.rounded()).formatted()).frame(width: 70, alignment: .trailing)
+                        Text("\(rating.duels)").frame(width: 56, alignment: .trailing)
+                        Text("\(rating.wins)").frame(width: 44, alignment: .trailing)
+                    }
+                    .ratioFont(.monoData)
+                    .padding(.vertical, 14)
+                    .accessibilityElement(children: .combine)
+                }
+                if !finished.isEmpty {
+                    Text("Recent duels").ratioFont(.h2).padding(.top, 24).padding(.bottom, 4)
+                    ForEach(finished) { match in
+                        Divider().overlay(Color.ratioRule)
+                        MatchRow(match: match)
+                    }
+                }
+            }
         }
     }
 
@@ -235,6 +279,11 @@ private struct SettingsSheet: View {
                     Button("Replay the Today tour") {
                         tourSeen = false
                         navigator.backToToday()
+                        dismiss()
+                    }
+                    Button("Replay the duel tutorial") {
+                        navigator.tab = .duel
+                        navigator.showsDuelTutorial = true
                         dismiss()
                     }
                     Button("Log out", role: .destructive) { session.signOut() }

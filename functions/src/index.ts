@@ -9,8 +9,10 @@ import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { onSchedule } from "firebase-functions/v2/scheduler";
 import { isAcceptable, SafeSearch } from "./avatar.js";
 import { Brief, buildBrief, LessonInfo, londonDate } from "./brief.js";
+import { Answer, DuelLesson, DuelQuestion, matchQuestions, playMatch, questionPool, SPARRING_LEVELS, SPARRING_RD, sparringPlan } from "./duel.js";
 import { dueDate, review } from "./fsrs.js";
-import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, Skill, SKILLS, TopicEstimates } from "./scoring.js";
+import { INITIAL, rate, Rating } from "./glicko.js";
+import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, SIGMA_PRIOR, Skill, SKILLS, TopicEstimates, update } from "./scoring.js";
 
 initializeApp();
 setGlobalOptions({ region: "europe-west2", maxInstances: 10 });
@@ -411,6 +413,185 @@ export const buildBriefs = onSchedule({ schedule: "0 3 * * *", timeZone: "Europe
     });
   }
   logger.info("Built briefs", { students: users.size, failed });
+});
+
+// MARK: - Duels: sparring
+
+const duelLessons = [...lessons.values()] as unknown as DuelLesson[];
+const MODULES = ["crime", "contract", "tort", "public", "land", "equity"];
+
+interface StartSparringRequest {
+  moduleId?: string;
+  /** 1–5. */
+  level?: number;
+  /** 15 or 20 for extended time. */
+  seconds?: number;
+  /** The 3-question first-time practice duel: not stored, not rated. */
+  tutorial?: boolean;
+}
+
+interface StoredRating extends Rating {
+  uid: string;
+  moduleId: string;
+  duels: number;
+  wins: number;
+}
+
+/**
+ * Starts a match against a labelled sparring partner (PRD: "Sparring: bots in 5
+ * difficulty bands ... always labelled"). The partner's answers are fixed now, on the
+ * server; the student's are marked against the stored questions on submission.
+ */
+export const startSparring = onCall<StartSparringRequest>(async (request) => {
+  const uid = request.auth?.uid;
+  if (!uid) throw new HttpsError("unauthenticated", "Sign in first.");
+  const { moduleId, level, seconds, tutorial } = request.data ?? {};
+  if (typeof moduleId !== "string" || !MODULES.includes(moduleId)) throw new HttpsError("invalid-argument", "Unknown module.");
+  if (!Number.isInteger(level) || level! < 1 || level! > 5) throw new HttpsError("invalid-argument", "Level must be 1–5.");
+  const limitMs = (seconds === 15 || seconds === 20 ? seconds : 10) * 1000;
+
+  const pool = questionPool(duelLessons.filter((l) => l.moduleId === moduleId), Math.random);
+  const questions = matchQuestions(pool, Math.random, tutorial === true);
+  if (!questions) throw new HttpsError("failed-precondition", "This module doesn't have enough questions for a duel yet.");
+  const plan = sparringPlan(questions, level!, limitMs, Math.random);
+  const partner = { name: "Sparring partner", level, rating: SPARRING_LEVELS[level! - 1].rating };
+
+  const db = getFirestore();
+  const ratingDoc = await db.doc(`ratings/${uid}_${moduleId}`).get();
+  const rating = ratingDoc.exists ? (ratingDoc.data() as StoredRating) : { ...INITIAL, duels: 0, wins: 0 };
+  if (tutorial === true) return { matchId: null, questions, plan, partner, limitMs, rating };
+
+  const matchRef = db.collection("matches").doc();
+  await matchRef.set({
+    players: [uid],
+    mode: "sparring",
+    isBot: true,
+    moduleId,
+    partner,
+    limitMs,
+    questions,
+    plan,
+    status: "active",
+    createdAt: FieldValue.serverTimestamp(),
+  });
+  return { matchId: matchRef.id, questions, plan, partner, limitMs, rating };
+});
+
+interface SubmitSparringRequest {
+  matchId?: string;
+  /** The student's answer for each round played, in order. */
+  answers?: Answer[];
+}
+
+/**
+ * Referees a finished sparring match from the stored questions and plan: decides every
+ * round, updates the Glicko-2 rating for the module, and moves the profile (PRD: duel
+ * answers feed the profile, never the review queue). Idempotent.
+ */
+export const submitSparring = onCall<SubmitSparringRequest>(async (request) => {
+  const uid = request.auth?.uid;
+  if (!uid) throw new HttpsError("unauthenticated", "Sign in first.");
+  const { matchId, answers } = request.data ?? {};
+  if (typeof matchId !== "string" || !/^[A-Za-z0-9]{10,40}$/.test(matchId)) throw new HttpsError("invalid-argument", "Unknown match.");
+  if (!Array.isArray(answers) || answers.length > 12) throw new HttpsError("invalid-argument", "Unexpected answers.");
+  const clean: Answer[] = answers.map((a) => ({
+    answerIndex: Number.isInteger(a?.answerIndex) ? a.answerIndex : null,
+    timeMs: typeof a?.timeMs === "number" && Number.isFinite(a.timeMs) ? Math.round(a.timeMs) : Number.MAX_SAFE_INTEGER,
+  }));
+
+  const db = getFirestore();
+  const matchRef = db.doc(`matches/${matchId}`);
+  const userRef = db.doc(`users/${uid}`);
+  return db.runTransaction(async (tx) => {
+    const match = await tx.get(matchRef);
+    if (!match.exists || !(match.get("players") as string[]).includes(uid)) throw new HttpsError("not-found", "Unknown match.");
+    if (match.get("status") === "complete") return match.get("result");
+
+    const questions = match.get("questions") as DuelQuestion[];
+    const moduleId = match.get("moduleId") as string;
+    const partner = match.get("partner") as { rating: number };
+    const outcome = playMatch(questions, clean, match.get("plan") as Answer[], match.get("limitMs") as number);
+
+    // Rating.
+    const ratingRef = db.doc(`ratings/${uid}_${moduleId}`);
+    const topicIds = [...new Set(outcome.rounds.map((r) => questions[r.questionIndex].topicId))];
+    const skillRefs = topicIds.map((id) => userRef.collection("skills").doc(id));
+    const [ratingDoc, user, ...skillDocs] = await tx.getAll(ratingRef, userRef, ...skillRefs);
+    const before: StoredRating = ratingDoc.exists
+      ? (ratingDoc.data() as StoredRating)
+      : { ...INITIAL, uid, moduleId, duels: 0, wins: 0 };
+    const score = outcome.winner === 0 ? 1 : outcome.winner === 1 ? 0 : 0.5;
+    const after = rate(before, { rating: partner.rating, rd: SPARRING_RD }, score);
+
+    // Profile: every answer the student gave moves that topic's skill and the headline.
+    let headline = (user.get("headline") as Headline | undefined) ?? priorHeadline();
+    const topics: Record<string, TopicScores> = {};
+    topicIds.forEach((id, i) => {
+      topics[id] = {};
+      for (const skill of SKILLS) {
+        const estimate = skillDocs[i].get(skill) as Estimate | undefined;
+        if (estimate) topics[id][skill] = estimate;
+      }
+    });
+    const topicsBefore = structuredClone(topics);
+    const headlineBefore = headline;
+    headline = structuredClone(headline);
+    for (const round of outcome.rounds) {
+      const answer = round.answers[0];
+      if (answer.answerIndex === null) continue;
+      const question = questions[round.questionIndex];
+      const topic = topics[question.topicId];
+      topic[question.skill] = update(topic[question.skill] ?? { theta: headline[question.skill].theta, sigma: SIGMA_PRIOR }, question.difficulty, answer.correct);
+      headline[question.skill] = update(headline[question.skill], question.difficulty, answer.correct);
+    }
+
+    // The skill that moved most, for the result screen.
+    let skillMoved: { topicId: string; skill: Skill; before: Estimate; after: Estimate } | null = null;
+    let biggest = -1;
+    for (const id of topicIds) {
+      for (const skill of SKILLS) {
+        const a = topics[id][skill];
+        if (!a) continue;
+        const b = topicsBefore[id][skill] ?? { theta: headlineBefore[skill].theta, sigma: SIGMA_PRIOR };
+        const change = Math.abs(a.theta - b.theta);
+        if (change > biggest) {
+          biggest = change;
+          skillMoved = { topicId: id, skill, before: b, after: a };
+        }
+      }
+    }
+
+    const now = Timestamp.now();
+    topicIds.forEach((id, i) => {
+      if (Object.keys(topics[id]).length === 0) return;
+      const history = ((skillDocs[i].get("history") as unknown[] | undefined) ?? []).concat({ at: now, ...topics[id] }).slice(-HISTORY_LIMIT);
+      tx.set(skillRefs[i], { ...topics[id], history, updatedAt: FieldValue.serverTimestamp() }, { merge: true });
+    });
+    tx.update(userRef, { headline, headlineUpdatedAt: FieldValue.serverTimestamp() });
+
+    const won = outcome.winner === 0;
+    tx.set(ratingRef, {
+      uid,
+      moduleId,
+      rating: after.rating,
+      rd: after.rd,
+      vol: after.vol,
+      duels: before.duels + 1,
+      wins: before.wins + (won ? 1 : 0),
+      updatedAt: FieldValue.serverTimestamp(),
+    });
+
+    const result = {
+      rounds: outcome.rounds,
+      score: outcome.score,
+      winner: outcome.winner,
+      ratingBefore: Math.round(before.rating),
+      ratingAfter: Math.round(after.rating),
+      skillMoved,
+    };
+    tx.update(matchRef, { status: "complete", result, completedAt: FieldValue.serverTimestamp() });
+    return result;
+  });
 });
 
 // MARK: - Avatars

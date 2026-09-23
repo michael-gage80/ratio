@@ -223,6 +223,27 @@ describe('activity', () => {
   });
 });
 
+describe('duels', () => {
+  test('a match is readable only by its players and written by no client', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'matches/m1'), { players: ['amara'], status: 'active' });
+    });
+    await assertSucceeds(getDoc(doc(db('amara'), 'matches/m1')));
+    await assertFails(getDoc(doc(db('zara'), 'matches/m1')));
+    await assertFails(setDoc(doc(db('amara'), 'matches/m2'), { players: ['amara'], status: 'complete' }));
+    await assertFails(updateDoc(doc(db('amara'), 'matches/m1'), { status: 'complete' }));
+  });
+
+  test('ratings are readable when signed in and written by no client', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'ratings/amara_crime'), { rating: 1200 });
+    });
+    await assertSucceeds(getDoc(doc(db('zara'), 'ratings/amara_crime')));
+    await assertFails(getDoc(doc(db(null), 'ratings/amara_crime')));
+    await assertFails(setDoc(doc(db('amara'), 'ratings/amara_crime'), { rating: 2800 }));
+  });
+});
+
 describe('lesson progress', () => {
   const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
 

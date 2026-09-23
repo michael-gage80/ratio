@@ -11,6 +11,17 @@ service cloud.firestore {
       return request.auth != null && request.auth.uid == uid;
     }
 
+    // Duel matches — created and refereed only by Functions; each player can read their own.
+    match /matches/{matchId} {
+      allow read: if request.auth != null && request.auth.uid in resource.data.players;
+    }
+
+    // Duel ratings per student and module — written only by Functions. Readable by any
+    // signed-in student (they appear on boards and versus screens).
+    match /ratings/{ratingId} {
+      allow read: if request.auth != null;
+    }
+
     match /users/{uid} {
       allow read: if isOwner(uid);
 
