@@ -63,6 +63,9 @@ export interface BankItem {
   sliderLabels?: [string, string];
   correctPosition?: string;
   correctOrder?: number[];
+  passage?: string;
+  ratioSentence?: string;
+  factsToOrder?: string[];
 }
 
 /** What the app sends for one answered item. Only the field for its type is set. */
@@ -105,9 +108,30 @@ export function isCorrect(item: BankItem, response: ItemResponse): boolean {
       );
     case "recallFirst":
       return response.selfMarkedCorrect === true;
+    case "highlightTheRatio":
+      return !!response.span && !!item.ratioSentence && sentenceStatesRatio(response.span, item.ratioSentence);
+    case "irac": {
+      // Mirrors the app: facts placed must be exactly the real ones (decoys arrive as
+      // -1), any rule chosen must be the right one (0), and the written part must have
+      // been marked as covering the model answer.
+      if (response.order) {
+        const facts = item.factsToOrder?.length ?? 0;
+        const placed = new Set(response.order);
+        if (placed.size !== facts || [...placed].some((i) => i < 0 || i >= facts)) return false;
+      }
+      if (response.choiceIndex !== undefined && response.choiceIndex !== 0) return false;
+      return response.selfMarkedCorrect === true;
+    }
     default:
       return false;
   }
+}
+
+/** Same rule as the app and the content lint: either contains the other, ignoring case, spacing and the final full stop. */
+export function sentenceStatesRatio(sentence: string, ratio: string): boolean {
+  const normalise = (s: string) => s.toLowerCase().replace(/\s+/g, " ").replace(/[.\s]+$/, "").trim();
+  const [a, b] = [normalise(sentence), normalise(ratio)];
+  return a.includes(b) || b.includes(a);
 }
 
 /** The end of the slider whose label contains the correct position (default: right). */
@@ -117,13 +141,17 @@ export function sliderCorrectSide(item: BankItem): 0 | 1 {
   return target && left.includes(target) ? 0 : 1;
 }
 
-/** Scores a diagnostic in answer order, returning per-topic estimates and the headline. */
+/**
+ * Scores answers in order, returning the updated per-topic estimates and headline.
+ * Starts from the prior (the diagnostic) or from the student's current estimates.
+ */
 export function scoreResponses(
   responses: ItemResponse[],
   itemsById: Map<string, BankItem>,
+  start: { topics?: TopicEstimates; headline?: Headline } = {},
 ): { topics: TopicEstimates; headline: Headline } {
-  const topics: TopicEstimates = {};
-  const headline = priorHeadline();
+  const topics: TopicEstimates = structuredClone(start.topics ?? {});
+  const headline: Headline = structuredClone(start.headline ?? priorHeadline());
   for (const response of responses) {
     const item = itemsById.get(response.itemId);
     if (!item) continue;

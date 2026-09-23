@@ -2,9 +2,11 @@
   "name": "ratio-functions",
   "private": true,
   "main": "lib/index.js",
-  "engines": { "node": "22" },
+  "engines": {
+    "node": "22"
+  },
   "scripts": {
-    "build": "tsc && cp ../ratio/Resources/Content/diagnostic-bank.json lib/",
+    "build": "tsc && cp ../ratio/Resources/Content/diagnostic-bank.json lib/ && rm -rf lib/lessons && cp -R ../ratio/Resources/Content/lessons lib/lessons",
     "lint": "tsc --noEmit",
     "test": "npm run build && node --test 'lib/**/*.test.js'"
   },

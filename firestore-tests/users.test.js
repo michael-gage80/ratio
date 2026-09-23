@@ -178,6 +178,20 @@ describe('scores', () => {
   });
 });
 
+describe('review schedules and test attempts', () => {
+  test('are readable by their owner and writable by no client', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'users/amara/items/crime-03-test-01'), { due: new Date(), stability: 3 });
+      await setDoc(doc(ctx.firestore(), 'users/amara/testAttempts/a1'), { lessonId: 'crime-03' });
+    });
+    for (const path of ['users/amara/items/crime-03-test-01', 'users/amara/testAttempts/a1']) {
+      await assertSucceeds(getDoc(doc(db('amara'), path)));
+      await assertFails(getDoc(doc(db('zara'), path)));
+      await assertFails(setDoc(doc(db('amara'), path), { due: new Date(), stability: 999 }));
+    }
+  });
+});
+
 describe('lesson progress', () => {
   const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
 

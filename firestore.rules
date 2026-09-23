@@ -32,6 +32,15 @@ service cloud.firestore {
         allow read: if isOwner(uid);
       }
 
+      // Each item's spaced-review schedule (FSRS) and each test attempt — written only
+      // by the submitTest Function.
+      match /items/{itemId} {
+        allow read: if isOwner(uid);
+      }
+      match /testAttempts/{attemptId} {
+        allow read: if isOwner(uid);
+      }
+
       // How far through each lecture the student is.
       match /lessons/{lessonId} {
         allow read: if isOwner(uid);

@@ -68,7 +68,7 @@ struct SignedInPlaceholderView: View {
                     }
                 case .lecture(let id):
                     if let lesson = content.lesson(id: id) {
-                        LectureView(lesson: lesson, headline: profile.headline)
+                        LectureView(lesson: lesson, headline: profile.headline) { path.removeAll() }
                     }
                 case .gallery:
                     #if DEBUG
