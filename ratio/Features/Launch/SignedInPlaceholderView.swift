@@ -13,6 +13,7 @@ struct SignedInPlaceholderView: View {
     enum Route: Hashable {
         case overview(String)
         case lecture(String)
+        case gallery
     }
 
     var body: some View {
@@ -48,6 +49,7 @@ struct SignedInPlaceholderView: View {
                 }
                 Section {
                     #if DEBUG
+                    NavigationLink("Interaction gallery", value: Route.gallery)
                     Button("Design system catalog") { showsCatalog = true }
                     #endif
                     Button("Log out", role: .destructive) { session.signOut() }
@@ -66,8 +68,12 @@ struct SignedInPlaceholderView: View {
                     }
                 case .lecture(let id):
                     if let lesson = content.lesson(id: id) {
-                        LectureView(lesson: lesson)
+                        LectureView(lesson: lesson, headline: profile.headline)
                     }
+                case .gallery:
+                    #if DEBUG
+                    InteractionGalleryView()
+                    #endif
                 }
             }
         }

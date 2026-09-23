@@ -9,7 +9,12 @@ struct ItemInteractionView: View {
     let item: Item
     /// Set once the student has locked in; the view then shows the outcome.
     let lockedResponse: ItemResponse?
+    var context = InteractionContext()
     let onLock: (ItemResponse) -> Void
+
+    /// Bumped by Reset to rebuild the interaction with fresh state.
+    @State private var resetCount = 0
+    @State private var reporting = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
@@ -17,6 +22,39 @@ struct ItemInteractionView: View {
                 .ratioFont(.h2)
                 .fixedSize(horizontal: false, vertical: true)
 
+            interaction
+                .id(resetCount)
+
+            if let lockedResponse {
+                feedback(correct: item.isCorrect(lockedResponse))
+            }
+
+            footer
+        }
+        .sheet(isPresented: $reporting) {
+            ReportErrorSheet(itemId: item.id, lessonId: context.lessonId)
+        }
+    }
+
+    /// Board rules 4 and 6: "Reset is always one tap away" and "Every item carries
+    /// 'Spotted an error? Report it'". Reset only before locking in — after that the
+    /// answer has been shown.
+    private var footer: some View {
+        HStack {
+            if lockedResponse == nil {
+                Button("Reset") { resetCount += 1 }
+                    .ratioFont(.monoLabel)
+                    .underline()
+            }
+            Spacer()
+            RatioReportErrorLink { reporting = true }
+        }
+        .foregroundStyle(Color.ratioInk2)
+        .frame(minHeight: 44)
+    }
+
+    @ViewBuilder
+    private var interaction: some View {
             switch item.kind {
             case .choice(let options, let correctIndex):
                 ChoiceInteraction(itemId: item.id, options: options, correctIndex: correctIndex, locked: lockedResponse, onLock: onLock)
@@ -26,18 +64,15 @@ struct ItemInteractionView: View {
                 SliderInteraction(itemId: item.id, labels: labels, correctSide: correctSide, locked: lockedResponse, onLock: onLock)
             case .sequence(let items, let correctOrder):
                 SequenceInteraction(itemId: item.id, items: items, correctOrder: correctOrder, locked: lockedResponse, onLock: onLock)
-            case .recall(let modelAnswer):
-                RecallInteraction(itemId: item.id, modelAnswer: modelAnswer, locked: lockedResponse, onLock: onLock)
+            case .recall(let modelAnswer, let keyPoints):
+                RecallInteraction(itemId: item.id, modelAnswer: modelAnswer, keyPoints: keyPoints, locked: lockedResponse, onLock: onLock)
             case .highlight(let sentences, let ratioSentence):
                 HighlightInteraction(itemId: item.id, sentences: sentences, ratioSentence: ratioSentence, locked: lockedResponse, onLock: onLock)
             case .irac(let facts, let modelAnswer):
-                IRACWorkedExample(itemId: item.id, facts: facts, answer: modelAnswer, locked: lockedResponse, onLock: onLock)
+                IRACInteraction(itemId: item.id, facts: facts, answer: modelAnswer, level: context.iracLevel,
+                                decoyFacts: context.decoyFacts, decoyRules: context.decoyRules,
+                                locked: lockedResponse, onLock: onLock)
             }
-
-            if let lockedResponse {
-                feedback(correct: item.isCorrect(lockedResponse))
-            }
-        }
     }
 
     @ViewBuilder
@@ -287,50 +322,46 @@ private struct SequenceInteraction: View {
 
 // MARK: - Recall first
 
-/// Retrieval before reveal: the student writes what they remember, sees the model
-/// answer, then marks themselves against it.
+/// Retrieval before reveal: the student writes what they remember first, then it's
+/// marked against the model answer — on-device where possible, otherwise by the student.
 private struct RecallInteraction: View {
     let itemId: String
     let modelAnswer: String
+    let keyPoints: [String]
     let locked: ItemResponse?
     let onLock: (ItemResponse) -> Void
 
     @State private var answer = ""
-    @State private var revealed = false
+    @State private var submitted = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             RatioTextField("Your answer", placeholder: "Type what you remember…", text: $answer, axis: .vertical)
-                .disabled(revealed)
+                .disabled(submitted || locked != nil)
 
-            if revealed {
-                VStack(alignment: .leading, spacing: 6) {
+            if let locked {
+                VStack(alignment: .leading, spacing: 10) {
                     Text("Model answer").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     Text(modelAnswer).ratioFont(.body)
+                    Label(locked.selfMarkedCorrect == true ? "Recalled" : "One to revisit",
+                          systemImage: locked.selfMarkedCorrect == true ? "checkmark.circle.fill" : "arrow.uturn.backward.circle.fill")
+                        .ratioFont(.small)
+                        .foregroundStyle(locked.selfMarkedCorrect == true ? Color.ratioVerdigris : Color.ratioOxblood)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(16)
                 .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-
-                if let locked {
-                    Label(locked.selfMarkedCorrect == true ? "You marked this as recalled" : "Marked as one to revisit",
-                          systemImage: locked.selfMarkedCorrect == true ? "checkmark.circle.fill" : "arrow.uturn.backward.circle.fill")
-                        .ratioFont(.small)
-                        .foregroundStyle(locked.selfMarkedCorrect == true ? Color.ratioVerdigris : Color.ratioOxblood)
-                } else {
-                    Text("Did your answer cover the key point?").ratioFont(.small).foregroundStyle(Color.ratioInk2)
-                    HStack(spacing: 10) {
-                        RatioButton("I missed it", style: .tertiary) { lock(correct: false) }
-                        RatioButton("I got it", style: .secondary) { lock(correct: true) }
-                    }
+            } else if submitted {
+                FreeTextVerdictView(studentAnswer: answer, modelAnswer: modelAnswer, keyPoints: keyPoints) { covered in
+                    onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: covered))
                 }
             } else {
-                RatioButton("Reveal", isEnabled: !answer.trimmingCharacters(in: .whitespaces).isEmpty) {
-                    withAnimation { revealed = true }
+                RatioButton(AnswerMarker.isAvailable ? "Check" : "Reveal",
+                            isEnabled: !answer.trimmingCharacters(in: .whitespaces).isEmpty) {
+                    withAnimation { submitted = true }
                 }
                 Button("I can't recall — show me") {
-                    withAnimation { revealed = true }
-                    lock(correct: false)
+                    onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: false))
                 }
                 .ratioFont(.small)
                 .italic()
@@ -338,10 +369,6 @@ private struct RecallInteraction: View {
                 .frame(maxWidth: .infinity)
             }
         }
-    }
-
-    private func lock(correct: Bool) {
-        onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: correct))
     }
 }
 
@@ -411,58 +438,11 @@ private struct HighlightInteraction: View {
     }
 }
 
-// MARK: - IRAC (worked example)
-
-/// Scaffold level 1 of the IRAC builder (PRD: "worked examples, then fading"): the
-/// full model answer with the key facts, before any support is taken away.
-private struct IRACWorkedExample: View {
-    let itemId: String
-    let facts: [String]
-    let answer: Item.IRACAnswer
-    let locked: ItemResponse?
-    let onLock: (ItemResponse) -> Void
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text("Worked example · scaffold 1 of 4")
-                .ratioFont(.monoLabel)
-                .foregroundStyle(Color.ratioInk2)
-            VStack(alignment: .leading, spacing: 6) {
-                Text("Key facts").ratioFont(.monoLabel)
-                ForEach(facts, id: \.self) { fact in
-                    Label(fact, systemImage: "circle.fill")
-                        .labelStyle(BulletLabelStyle())
-                        .ratioFont(.small)
-                }
-            }
-            section("Issue", answer.issue)
-            section("Rule", answer.rule)
-            section("Application", answer.application)
-            section("Conclusion", answer.conclusion)
-            if locked == nil {
-                RatioButton("I've read the worked example", style: .secondary) {
-                    onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: true))
-                }
-            }
-        }
-    }
-
-    private func section(_ title: String, _ text: String) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            Text(text).ratioFont(.body)
-        }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-    }
-}
-
-private struct BulletLabelStyle: LabelStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: 8) {
-            Text("·").foregroundStyle(Color.ratioOxblood)
-            configuration.title
-        }
-    }
+/// What an item needs to know about where it's shown: the IRAC scaffold level and
+/// decoys (lessons only), and the lesson for error reports.
+struct InteractionContext {
+    var iracLevel = 1
+    var decoyFacts: [String] = []
+    var decoyRules: [String] = []
+    var lessonId: String?
 }

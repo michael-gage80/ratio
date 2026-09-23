@@ -18,7 +18,7 @@ struct Item: Decodable, Identifiable {
         /// 0 = the left label is correct, 1 = the right.
         case slider(labels: [String], correctSide: Int)
         case sequence(items: [String], correctOrder: [Int])
-        case recall(modelAnswer: String)
+        case recall(modelAnswer: String, acceptableAnswers: [String])
         /// The passage split into sentences; the student taps the one stating the ratio.
         case highlight(sentences: [String], ratioSentence: String)
         /// Shown as a worked example (scaffold level 1) until the IRAC builder's fading
@@ -58,7 +58,14 @@ struct Item: Decodable, Identifiable {
             return correctSide == 1 ? value > 0.5 : value < 0.5
         case .sequence(_, let correctOrder):
             return response.order == correctOrder
-        case .recall, .irac:
+        case .recall:
+            return response.selfMarkedCorrect == true
+        case .irac(let facts, _):
+            // Levels 2–4: the facts placed must be exactly the real ones (decoys arrive
+            // as -1), any rule chosen must be the right one (0), and the written part
+            // must have been marked as covering the model answer.
+            if let placed = response.order, Set(placed) != Set(facts.indices) { return false }
+            if let rule = response.choiceIndex, rule != 0 { return false }
             return response.selfMarkedCorrect == true
         case .highlight(_, let ratioSentence):
             return response.span.map { Self.sentence($0, states: ratioSentence) } ?? false
@@ -99,7 +106,7 @@ struct Item: Decodable, Identifiable {
         case scenarioText, tappableSpans, correctSpan
         case sliderLabels, correctPosition
         case items, correctOrder
-        case modelAnswer
+        case modelAnswer, acceptableAnswers
         case passage, ratioSentence
         case factsToOrder
         case briefExplanation, explanation, trapExplanation, feedbackCorrect, feedbackIncorrect
@@ -141,7 +148,8 @@ struct Item: Decodable, Identifiable {
             kind = .sequence(items: try c.decode([String].self, forKey: .items),
                              correctOrder: try c.decode([Int].self, forKey: .correctOrder))
         case "recallFirst":
-            kind = .recall(modelAnswer: try c.decode(String.self, forKey: .modelAnswer))
+            kind = .recall(modelAnswer: try c.decode(String.self, forKey: .modelAnswer),
+                           acceptableAnswers: try c.decodeIfPresent([String].self, forKey: .acceptableAnswers) ?? [])
         case "highlightTheRatio":
             let passage = try c.decode(String.self, forKey: .passage)
             kind = .highlight(sentences: Self.sentences(in: passage), ratioSentence: try c.decode(String.self, forKey: .ratioSentence))

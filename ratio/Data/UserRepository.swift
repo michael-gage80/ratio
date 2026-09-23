@@ -1,3 +1,4 @@
+import FirebaseAuth
 import FirebaseFirestore
 
 /// The student's `users/{uid}` document (PRD: "Core Firestore collections"). Fields
@@ -43,5 +44,19 @@ struct UserRepository {
     /// document holds nothing but its creation time.
     func deleteProfile(uid: String) async throws {
         try await document(uid).delete()
+    }
+}
+
+/// Reads the student's per-topic skill estimates, written by the scoring Function.
+struct SkillRepository {
+    /// The estimate for one skill in a topic, or `nil` if it hasn't been assessed yet.
+    func estimate(topicId: String, skill: Skill) async -> Estimate? {
+        guard let uid = Auth.auth().currentUser?.uid else { return nil }
+        let snapshot = try? await Firestore.firestore()
+            .collection("users").document(uid).collection("skills").document(topicId)
+            .getDocument()
+        guard let map = snapshot?.data()?[skill.rawValue] as? [String: Double],
+              let theta = map["theta"], let sigma = map["sigma"] else { return nil }
+        return Estimate(theta: theta, sigma: sigma)
     }
 }
