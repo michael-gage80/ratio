@@ -517,3 +517,4 @@ export const moderateAvatar = onCall(async (request): Promise<{ approved: boolea
 });
 
 export * from "./multiplayer.js";
+export * from "./newsIngest.js";

@@ -51,6 +51,7 @@ final class AppNavigator {
 /// Pushed onto the Pathway and Me stacks.
 enum Route: Hashable {
     case brief
+    case news
     case module(Module)
     case overview(String)
     case lecture(String)
@@ -120,6 +121,8 @@ private struct RouteDestination: View {
         switch route {
         case .brief:
             BriefStepView()
+        case .news:
+            NewsCentreView()
         case .module(let module):
             ModuleDrillDownView(module: module)
         case .overview(let id):
