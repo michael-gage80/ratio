@@ -340,6 +340,12 @@ describe('settings, plans and devices', () => {
     await assertSucceeds(deleteDoc(device('amara')));
   });
 
+  test('app config is readable when signed in and written by no client', async () => {
+    await assertSucceeds(getDoc(doc(db('amara'), 'config/app')));
+    await assertFails(getDoc(doc(db(null), 'config/app')));
+    await assertFails(setDoc(doc(db('amara'), 'config/app'), { plusForEveryone: true }));
+  });
+
   test('usage counts and licences are closed to clients', async () => {
     await assertFails(setDoc(doc(db('amara'), 'users/amara/usage/2026-09-24'), { duels: 0 }));
     await assertFails(getDoc(doc(db('amara'), 'licences/KCL-2026')));

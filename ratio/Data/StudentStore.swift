@@ -35,6 +35,9 @@ final class StudentStore {
     private(set) var quiz: SundayQuiz?
     /// Duels started today, for the free plan's allowance (kept by Functions).
     private(set) var duelsToday = 0
+    /// Everyone has Plus during the beta — config/app.plusForEveryone, off at launch
+    /// (same default as functions/src/entitlement.ts).
+    private(set) var plusForEveryone = true
 
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
     @ObservationIgnored private var briefListener: ListenerRegistration?
@@ -51,6 +54,7 @@ final class StudentStore {
 
     /// Ratio Plus: an active App Store subscription or a valid university licence.
     var isPlus: Bool {
+        if plusForEveryone { return true }
         if let subscription = profile.subscription, subscription.revoked != true, subscription.expiresAt > .now { return true }
         if let licence = profile.licence, licence.revoked != true, licence.expiresAt > .now { return true }
         #if DEBUG
@@ -136,6 +140,10 @@ final class StudentStore {
                     let weekAgo = UKDate.key(for: .now.addingTimeInterval(-6 * 86_400))
                     self?.quiz = latest.flatMap { $0.sunday >= weekAgo ? $0 : nil }
                 },
+            Firestore.firestore().collection("config").document("app").addSnapshotListener { [weak self] snapshot, _ in
+                guard let snapshot else { return }
+                self?.plusForEveryone = snapshot.data()?["plusForEveryone"] as? Bool ?? true
+            },
             user.collection("usage").document(UKDate.key()).addSnapshotListener { [weak self] snapshot, _ in
                 self?.duelsToday = snapshot?.data()?["duels"] as? Int ?? 0
             },

@@ -13,7 +13,7 @@ import { Answer, DuelQuestion, matchQuestions, playMatch, questionPool, SPARRING
 import { dueDate, review } from "./fsrs.js";
 import { INITIAL } from "./glicko.js";
 import { countDuel } from "./account.js";
-import { studyModules } from "./entitlement.js";
+import { everyoneHasPlus, studyModules } from "./entitlement.js";
 import { readSide, Side, StoredRating, writeSide } from "./settle.js";
 import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, SKILLS, TopicEstimates } from "./scoring.js";
 
@@ -332,7 +332,7 @@ async function ensureBrief(uid: string, now: Date): Promise<Brief | null> {
     date,
     now,
     // Free students' briefs stay within their free module (PRD: "Daily brief and spaced review: within the free module").
-    modules: studyModules({ ...user.data(), modules: modules.map((m) => LEGACY_MODULE_IDS[m] ?? m) }),
+    modules: studyModules({ ...user.data(), modules: modules.map((m) => LEGACY_MODULE_IDS[m] ?? m) }, await everyoneHasPlus()),
     headline,
     topics: Object.fromEntries(skills.docs.map((d) => [d.id, d.data() as TopicScores])),
     lessons: lessonInfo,

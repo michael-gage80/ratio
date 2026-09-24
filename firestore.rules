@@ -22,6 +22,12 @@ service cloud.firestore {
       allow read: if request.auth != null;
     }
 
+    // App-wide switches (e.g. plusForEveryone during the beta) — set in the Firebase
+    // console; readable by any signed-in student.
+    match /config/{docId} {
+      allow read: if request.auth != null;
+    }
+
     // The news centre and the Sunday quiz — written by the ingest Function and the admin
     // script; readable by any signed-in student.
     match /news/{storyId} {
