@@ -228,7 +228,7 @@ struct MainTabView: View {
     }
 }
 
-private struct RouteDestination: View {
+struct RouteDestination: View {
     let route: Route
 
     @Environment(ContentStore.self) private var content
@@ -269,7 +269,8 @@ private struct RouteDestination: View {
     }
 }
 
-private extension View {
+extension View {
+    /// Pushes `Route`s on the enclosing NavigationStack.
     func withRoutes() -> some View {
         navigationDestination(for: Route.self) { RouteDestination(route: $0) }
     }
