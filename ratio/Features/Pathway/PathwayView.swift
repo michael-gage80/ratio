@@ -9,7 +9,7 @@ struct PathwayView: View {
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
     @Environment(\.dynamicTypeSize) private var typeSize
-    @State private var selected: Module?
+    private var selected: Module? { navigator.lessonsModule }
     @State private var peeking: String?
 
     private var mine: [Module] { student.modules }
@@ -69,7 +69,9 @@ struct PathwayView: View {
                     let isMine = mine.contains(module)
                     Button {
                         withAnimation(RatioMotion.tap) {
-                            selected = module
+                            navigator.lessonsModule = module
+                            // Keep the iPad sidebar's highlighted module in step.
+                            if case .module = navigator.tab { navigator.tab = .module(module) }
                             peeking = nil
                         }
                     } label: {
