@@ -24,13 +24,24 @@ export type TopicScores = Partial<Record<Skill, Estimate>>;
 /** Snapshots of a topic's scores kept for the Me tab's trend charts. */
 export const HISTORY_LIMIT = 100;
 
-export const MODULES = ["crime", "contract", "tort", "public", "land", "equity", "companylaw", "eulaw", "humanrights", "jurisprudence", "employmentlaw", "familylaw"];
+export const MODULES = ["crime", "contract", "tort", "public", "land", "equity", "companylaw", "eulaw", "humanrights", "jurisprudence", "employmentlaw", "familylaw",
+  // SQE1 (Functioning Legal Knowledge), Ratio-Lesson-Spine.md part two.
+  "sqe1-dispute-resolution", "sqe1-legal-system-legal-services", "sqe1-business-law-practice", "sqe1-property-practice", "sqe1-wills-estates", "sqe1-solicitors-accounts", "sqe1-criminal-law-practice"];
+
+/**
+ * Items without a `difficultyStart` are treated as middling (0.5), as the app does; the
+ * scoring and duel code need a number (undefined would make every score NaN).
+ */
+function withDefaults(lesson: Lesson): Lesson {
+  for (const item of lesson.testPool) item.difficultyStart ??= 0.5;
+  return lesson;
+}
 
 export const lessons = new Map<string, Lesson>(
   readdirSync(join(__dirname, "lessons"))
     // Only real lesson files: iCloud leaves "name 2.json" copies behind in synced folders.
-    .filter((f) => /^[a-z]+-\d{2}-[a-z0-9-]+\.json$/.test(f))
-    .map((f) => JSON.parse(readFileSync(join(__dirname, "lessons", f), "utf8")) as Lesson)
+    .filter((f) => /^[a-z0-9]+(-[a-z]+)?-\d{2}-[a-z0-9-]+\.json$/.test(f))
+    .map((f) => withDefaults(JSON.parse(readFileSync(join(__dirname, "lessons", f), "utf8")) as Lesson))
     .sort((a, b) => a.lessonId.localeCompare(b.lessonId))
     .map((lesson) => [lesson.lessonId, lesson]),
 );

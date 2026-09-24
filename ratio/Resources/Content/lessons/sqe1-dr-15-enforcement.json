@@ -1,0 +1,349 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-dr-15",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 15,
+  "topicId": "sqe1.dispute-resolution.enforcement",
+  "title": "A judgment is not money in the bank",
+  "subtitle": "Enforcing a money judgment against an unwilling debtor",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify the principal methods of enforcing a money judgment — writ/warrant of control, third party debt order, charging order, and attachment of earnings — and what each actually does",
+    "Select the enforcement method best suited to a judgment debtor's known circumstances, from a fact pattern",
+    "State the effect of an unsatisfied judgment on the limitation period for enforcing it, and what a judgment creditor must do to enforce after that period has run"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Parts 70–73", "role": "Governs the general rules on enforcement and the four principal enforcement methods for a money judgment" },
+    { "citation": "Limitation Act 1980, s 24", "role": "Sets the six-year limitation period for enforcing a judgment by action, and its effect on execution after that period" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the last stage of the civil-claim arc this module has followed — pre-action conduct, issue, interim applications, evidence, settlement, costs, trial, appeal, and now enforcement, where a judgment on paper either becomes money in a client's account or doesn't. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can name the enforcement methods — this lesson checks whether you can choose the right one for a specific debtor.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans hard on matching a method to a debtor's actual circumstances — expect fact patterns describing an employee, a homeowner, or a bank account, not bare definitions.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — knowing what each enforcement method actually does to a debtor's assets is what every later part of this lesson assumes."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Twelve lessons ago, this module opened with a client deciding whether a claim was even worth pursuing. If everything since — protocol, proceedings, disclosure, trial, maybe an appeal — has worked, the reward is a piece of paper: a sealed order that says the defendant owes a sum of money. That paper is not the money. A significant proportion of civil judgments are never voluntarily paid, and this lesson is about the last, entirely practical, question the whole claim has been building towards: how do you actually get paid?"
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The judgment debtor's assets: what can actually be reached",
+        "voice": "structural — orients the whole lesson around a single question",
+        "body": [
+          "Enforcement is not one procedure; it is a family of separate procedures, each aimed at a different kind of asset a judgment debtor might have. Before picking a method, a solicitor needs, so far as possible, information about what the debtor actually owns, earns, or is owed by others — a debtor with no traceable assets is, practically, unenforceable against, whatever method is chosen.",
+          "CPR Part 71 provides the tool for finding that out: an order to obtain information, requiring the judgment debtor to attend court and answer questions, on oath, about their means — income, employment, bank accounts, property, and other assets. This is often the sensible first step before committing to a specific enforcement route, since choosing the wrong method wastes the creditor's own costs.",
+          "Four methods dominate SQE1's coverage of what happens once that picture is available: a writ or warrant of control (seizing and selling goods), a third party debt order (freezing money a third party, typically a bank, owes the debtor), a charging order (securing the debt against the debtor's property), and attachment of earnings (deducting from the debtor's wages at source). Each targets a genuinely different asset."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Order to obtain information",
+            "definition": "A CPR Part 71 order requiring a judgment debtor to attend court and answer questions on oath about their income, assets and means — typically the sensible first step in choosing an enforcement method, since it reveals what there actually is to enforce against."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-15-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the CPR mechanism used to require a judgment debtor to attend court and answer questions about their means.",
+          "acceptableAnswers": ["order to obtain information", "Part 71 order", "order to obtain information from a judgment debtor"],
+          "modelAnswer": "An order to obtain information under CPR Part 71, requiring the debtor to attend court and answer questions on oath about their income, assets and means."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Seizing goods: writ and warrant of control",
+        "voice": "practical — works from the mechanism to the practical limits",
+        "body": [
+          "The most visible enforcement method — bailiffs or enforcement agents attending premises and removing goods for sale — is, in the High Court, a writ of control, and, in the County Court, a warrant of control. Both authorise an enforcement agent to take control of the debtor's goods and sell them to satisfy the judgment debt, interest, and enforcement costs.",
+          "The method has real practical limits that SQE1 likes to test. Certain items are exempt from seizure — tools and equipment necessary for the debtor's employment or business up to a prescribed value, and items reasonably required for the domestic needs of the debtor's household (basic clothing, bedding, and similar). Enforcement agents also cannot force entry to residential premises to execute a first visit in most circumstances, and goods belonging to a third party (rather than the debtor) cannot be taken.",
+          "This method suits a debtor with tangible, valuable, saleable goods — a business with stock or equipment, for instance. It is a poor fit for a debtor whose real wealth sits in a bank account, a salary, or land, which is precisely why the other three methods exist alongside it."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Writ/warrant of control at a glance",
+            "points": [
+              "High Court: writ of control. County Court: warrant of control.",
+              "An enforcement agent takes control of the debtor's goods and sells them to satisfy the debt, interest and costs",
+              "Tools of the trade (to a prescribed value) and basic household necessities are exempt from seizure",
+              "Third-party-owned goods cannot be taken; forced entry to residential premises is restricted",
+              "Best suited to a debtor with tangible, saleable assets, not one whose wealth is in a bank account or salary"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-15-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Which enforcement method is used in the High Court to authorise an enforcement agent to seize and sell a debtor's goods?",
+          "options": ["A writ of control", "A warrant of control", "A charging order"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — writ of control in the High Court; the equivalent County Court instrument is a warrant of control. Same mechanism, different court, different name.",
+          "feedbackIncorrect": "That's the County Court equivalent (warrant of control) or a different method entirely. The High Court instrument for seizing and selling goods is a writ of control."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Freezing a bank account, and charging a home",
+        "voice": "case-narrative — walks through two contrasting scenarios before naming the doctrine",
+        "body": [
+          "Suppose the debtor has no valuable goods to seize, but does have £40,000 sitting in a business bank account. A writ of control is useless here — there is nothing tangible to take. A third party debt order, under CPR Part 72, is the tool: it freezes a debt owed to the judgment debtor by a third party — most commonly a bank holding the debtor's account — and, once made final, requires that third party to pay the frozen sum directly to the judgment creditor.",
+          "The order is made in two stages. An interim third party debt order freezes the account (or the relevant sum) as soon as it is served on the bank, preventing the debtor from withdrawing or dissipating the funds. At a later hearing, the court decides whether to make the order final, at which point the bank pays out. The bank itself is not a wrongdoer here and is protected provided it complies with the order.",
+          "Now suppose instead the debtor's main asset is a house, with substantial equity but no spare cash. Seizing goods or freezing an account achieves nothing useful. A charging order, under CPR Part 73, secures the judgment debt against the debtor's interest in specified property (typically land, but also securities) — it does not itself produce cash, but it means the debt must be paid out of the proceeds if and when the property is sold, and it gives the creditor priority over later-created interests. Where the debtor simply won't sell voluntarily, the creditor may (though it is a separate and more drastic step, granted only where proportionate) apply for an order for sale to force the point."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, Part 72 (summary)",
+            "text": "The court may make an order (a 'third party debt order') requiring a third party who owes money to the judgment debtor to pay that money, or a specified part of it, to the judgment creditor. An interim order takes effect on service on the third party; the court will then decide, at a further hearing, whether to make the order final.",
+            "elements": ["Targets a debt a third party (typically a bank) owes the judgment debtor", "Interim stage freezes the sum on service", "Final stage requires the third party to pay the creditor directly"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-15-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that makes a third party debt order the appropriate method here, rather than a charging order.",
+          "scenarioText": "The judgment debtor owns no property outright but holds £22,000 in a savings account with a bank that has confirmed the funds are readily available and not otherwise encumbered.",
+          "tappableSpans": ["owns no property outright", "£22,000 in a savings account", "confirmed the funds are readily available", "not otherwise encumbered"],
+          "correctSpan": "£22,000 in a savings account",
+          "feedbackCorrect": "Right — a sum held by a third party (the bank) on the debtor's behalf is exactly what a third party debt order targets. There is no property here for a charging order to attach to.",
+          "feedbackIncorrect": "Look for the asset itself, not the surrounding detail. It's the money sitting in a bank account — a debt the bank owes the debtor — that a third party debt order is designed to freeze and redirect."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Attachment of earnings, and matching the method to the debtor",
+        "voice": "reference — closes the survey of methods and builds the matching framework",
+        "body": [
+          "The fourth principal method targets a different asset again: ongoing income from employment. An attachment of earnings order, available only against an employed individual debtor (not a company, and not someone who is self-employed or unemployed), requires the debtor's employer to deduct a specified amount from the debtor's wages each pay period and pay it to the court, which forwards it to the creditor. The deducted amount is calculated to leave the debtor a protected earnings rate — a minimum sum below which no deduction is taken, so the debtor is not deprived of a basic income.",
+          "Put the four methods together and a genuine skill emerges: choosing the right one is a matching exercise against the debtor's actual, known circumstances, not a matter of picking whichever method sounds most aggressive. A debtor with valuable stock in trade suits seizure of goods. A debtor with liquid funds in an account suits a third party debt order. A debtor whose wealth is illiquid, tied up in a house, suits a charging order. A debtor in steady employment with no other realisable assets suits attachment of earnings. Methods are not mutually exclusive — a creditor can, and often does, pursue more than one simultaneously against different assets, subject to not recovering more than the judgment debt overall.",
+          "SQE1's application questions in this area are almost always built the same way: a fact pattern describing a debtor's circumstances, asking which method (or combination) is most appropriate — and the wrong answers are usually a method that targets an asset the debtor, on the facts given, simply doesn't have."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Choosing an enforcement method",
+            "description": "A decision path matching a judgment debtor's known circumstances to the appropriate enforcement route.",
+            "nodes": [
+              { "id": "start", "label": "What does the creditor know about the debtor's assets?" },
+              { "id": "goods", "label": "Valuable, saleable goods (stock, equipment) → writ/warrant of control" },
+              { "id": "bank", "label": "Cash held by a third party (bank account) → third party debt order" },
+              { "id": "property", "label": "Equity in land or securities, illiquid → charging order (± order for sale)" },
+              { "id": "earnings", "label": "Steady employment, individual debtor → attachment of earnings" },
+              { "id": "unknown", "label": "Unknown → order to obtain information first" }
+            ],
+            "edges": [
+              { "from": "start", "to": "goods" },
+              { "from": "start", "to": "bank" },
+              { "from": "start", "to": "property" },
+              { "from": "start", "to": "earnings" },
+              { "from": "start", "to": "unknown" }
+            ],
+            "textAlternative": "Match the enforcement method to the debtor's known assets: valuable saleable goods point to a writ or warrant of control; cash held by a third party such as a bank points to a third party debt order; illiquid equity in land or securities points to a charging order, potentially with an order for sale; steady employment with an individual debtor points to attachment of earnings; and where the debtor's circumstances are unknown, an order to obtain information should come first."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-15-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A judgment debtor is a self-employed sole trader with no employees, no property, and irregular income paid directly by clients rather than through PAYE. Which enforcement method is unavailable against this debtor?",
+          "options": ["A writ or warrant of control against business goods", "An attachment of earnings order", "A third party debt order against a bank account", "An order to obtain information"],
+          "correctIndex": 1,
+          "explanation": "Attachment of earnings requires an employer making regular PAYE deductions — it is not available against a self-employed individual with no employer to serve the order on. The other three routes remain available in principle, depending on what assets the debtor turns out to have."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The clock does not stop at judgment: limitation on enforcement",
+        "voice": "direct — closes the module by naming the trap and completing the claim's arc",
+        "body": [
+          "This module opened, in Lesson 2, with the Limitation Act 1980's core periods for bringing a claim in the first place. It closes here, because limitation does not vanish once judgment is obtained — it simply changes shape. Under s 24 of the Act, an action to enforce a judgment must be brought within six years of the date the judgment became enforceable, and this is the trap SQE1 most often sets in this topic: students who correctly recall the six-year contract limitation period sometimes assume a money judgment, once obtained, can be enforced indefinitely. It cannot.",
+          "The consequence of that six-year period expiring is not, in practice, that the debt disappears — a judgment debt does not become statute-barred in the same final way an unissued claim does. Rather, after six years a creditor generally needs the court's permission to proceed with certain enforcement methods (most commonly, execution against goods), because the ordinary machinery is treated as stale; permission is not automatically refused, but it must be actively sought and justified, typically by showing why enforcement was not pursued sooner.",
+          "Zoom out, and this closes the arc the whole module has followed: pre-action conduct assessed whether a claim was worth bringing at all; limitation (Lesson 2) set the window to bring it; issue, interim applications, evidence and trial tested and resolved the claim; costs and Part 36 shaped the incentives throughout; and enforcement — bounded by its own limitation clock — is the mechanism that turns a resolved dispute into an actual, collected sum. A judgment sitting unenforced past that six-year window is the same lesson taught twice: in litigation, a right nobody actively pursues within its time limit is, functionally, no right at all."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that once a money judgment is obtained, it can be enforced at any point in the future with no time limit at all.",
+            "whyItsWrong": "Limitation Act 1980, s 24 imposes a six-year limitation period for enforcing a judgment, running from the date it became enforceable. After that period, a creditor generally needs the court's permission for certain enforcement steps — the judgment does not become permanently and freely enforceable just because it was validly obtained."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-15-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A creditor obtained a money judgment seven and a half years ago and never took any enforcement step. They now wish to enforce it by seizing the debtor's goods. What is the position?",
+          "options": ["The judgment can be enforced freely at any time with no restriction", "The six-year period under Limitation Act 1980, s 24 has passed, and the creditor will generally need the court's permission to proceed with enforcement", "The judgment automatically lapses and the underlying debt is extinguished entirely", "Enforcement is barred permanently and no application of any kind can revive it"],
+          "correctIndex": 1,
+          "trapExplanation": "The common error is either assuming no time limit applies to enforcement at all, or overcorrecting into assuming the debt is simply extinguished. Neither is right: s 24 sets a six-year period, after which the creditor generally needs the court's permission to proceed — a real but not insurmountable obstacle."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-15-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "What is the purpose of a CPR Part 71 order to obtain information?",
+      "options": ["To require the judgment debtor to attend court and answer questions on oath about their means", "To transfer the judgment debt to a third party automatically", "To set the limitation period for enforcing the judgment", "To grant permission to appeal the judgment"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "In the County Court, what is the enforcement instrument that authorises seizure and sale of a judgment debtor's goods?",
+      "options": ["A warrant of control", "A writ of control", "A third party debt order", "A charging order"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-15-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Against which type of judgment debtor is an attachment of earnings order available?",
+      "options": ["An employed individual", "A limited company", "A self-employed sole trader with no employer", "An unemployed individual"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-15-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT one of the four principal methods of enforcing a money judgment covered in this lesson?",
+      "options": ["Third party debt order", "Charging order", "Attachment of earnings", "Freezing injunction"],
+      "correctIndex": 3,
+      "trapExplanation": "A freezing injunction is a pre-emptive interim remedy preventing a defendant from dissipating assets before or during a claim — it is not a post-judgment enforcement method in the same family as writ/warrant of control, third party debt orders, charging orders, or attachment of earnings."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement correctly describes the two stages of a third party debt order?",
+      "options": ["Both stages are final and irreversible from the moment of service", "An interim order freezes the sum on service; a final order, made at a later hearing, requires the third party to pay the creditor", "The order is always made final without any interim stage", "The debtor's consent is required before an interim order can be made"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes assume the order is a single, final step. It is deliberately two-staged: an interim order freezes funds immediately on service, protecting the position, before the court decides at a further hearing whether to make it final."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A judgment debtor is a homeowner with substantial equity in their house but very little cash and no valuable goods. Which enforcement method most directly secures the debt against that asset?",
+      "options": ["A writ or warrant of control", "A charging order", "An attachment of earnings order", "A third party debt order"],
+      "correctIndex": 1,
+      "trapExplanation": "The temptation is to reach for seizure of goods by default. But there are no valuable goods here — the debtor's wealth is in illiquid property equity, which a charging order is specifically designed to secure the debt against."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A judgment debtor runs a small retail shop with stock worth well over the judgment sum, but the business bank account is usually near zero. What is the most appropriate first enforcement method?",
+      "options": ["A third party debt order against the bank account", "A writ or warrant of control against the shop's stock", "An attachment of earnings order", "A charging order against the debtor's home"],
+      "correctIndex": 1,
+      "explanation": "Seizure and sale of goods is aimed exactly at this asset profile — valuable, saleable stock — whereas the near-empty bank account makes a third party debt order pointless on these facts."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A judgment debtor is in full-time, stable employment on PAYE, owns no property, and has no spare cash in any account after living costs. Which method is best suited to their circumstances?",
+      "options": ["A charging order", "An attachment of earnings order", "A writ or warrant of control", "A third party debt order against a bank account with no available funds"],
+      "correctIndex": 1,
+      "explanation": "Attachment of earnings deducts directly from ongoing PAYE wages, calculated to preserve a protected earnings rate — the right fit for a debtor whose only realistic asset is steady employment income."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A creditor knows almost nothing about a judgment debtor's financial circumstances beyond an old employer's address. What is the most sensible first enforcement-related step?",
+      "options": ["Apply immediately for a charging order regardless of whether the debtor owns property", "Apply for an order to obtain information under CPR Part 71 before committing to a specific enforcement method", "Issue a writ of control speculatively", "Do nothing until the limitation period has expired"],
+      "correctIndex": 1,
+      "explanation": "Where the debtor's assets are unknown, establishing what there actually is to enforce against — through an order to obtain information — avoids wasting costs on a method aimed at an asset the debtor may not have."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under Limitation Act 1980, s 24, what is the limitation period for enforcing a judgment, and from when does it run?",
+      "options": ["Three years, from the date proceedings were first issued", "Six years, from the date the judgment became enforceable", "Twelve years, from the date the cause of action first accrued", "There is no limitation period once judgment has been obtained"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-15-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which category of items is generally exempt from seizure under a writ or warrant of control?",
+      "options": ["Any goods found on the debtor's premises, without exception", "Tools and equipment necessary for the debtor's employment or business, up to a prescribed value, and basic household necessities", "Only cash held on the premises", "Goods owned by the debtor's employer"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-15-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A creditor seeks to enforce a judgment seven years after it became enforceable, with no prior enforcement steps taken. Consistent with Limitation Act 1980, s 24, what is generally required before certain enforcement methods can proceed?",
+      "options": ["Nothing further — enforcement proceeds exactly as it would within six years", "The court's permission, since the six-year period has elapsed", "A fresh claim form re-litigating the original dispute from scratch", "Automatic extinction of the debt, with no possibility of enforcement at all"],
+      "correctIndex": 1,
+      "explanation": "Once the six-year period in s 24 has passed, the creditor generally needs the court's permission to proceed with enforcement — the debt is not automatically extinguished, but the ordinary machinery is no longer available as of right."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A judgment debtor holds funds in a personal bank account and also owns a rental property with significant unencumbered equity. The creditor wants to maximise the chance of prompt payment. What is the most defensible approach?",
+      "options": ["Choose only one method and abandon the other asset entirely, since only one enforcement route can ever be used", "Pursue a third party debt order against the bank account and consider a charging order against the property in parallel, without recovering more than the judgment debt overall", "Wait for the six-year limitation period to run before taking any step", "Apply for an attachment of earnings order, since it is always the fastest method regardless of the debtor's circumstances"],
+      "correctIndex": 1,
+      "explanation": "Enforcement methods are not mutually exclusive — a creditor can pursue more than one route against different assets simultaneously, provided total recovery does not exceed the judgment debt, interest and enforcement costs."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A judgment creditor obtains a charging order over the debtor's house but the debtor refuses to sell and the debt remains unpaid. What is the correct next step available to the creditor?",
+      "options": ["Nothing further can be done; a charging order is the end of the enforcement process", "Apply separately for an order for sale, recognising it is a more drastic step granted only where proportionate", "Automatically take possession of the property without further application", "Convert the charging order into a writ of control against the property"],
+      "correctIndex": 1,
+      "trapExplanation": "A charging order only secures the debt against the property — it does not itself force a sale. Students sometimes assume it produces cash automatically; a separate, more drastic application for an order for sale is needed to actually force the point."
+    },
+    {
+      "itemId": "sqe1-dr-15-test-15",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement correctly distinguishes a third party debt order from a charging order?",
+      "options": ["A third party debt order targets a debt owed to the judgment debtor by a third party (such as a bank); a charging order secures the debt against the judgment debtor's own property or securities", "They are two names for the identical procedure under different CPR Parts", "A charging order can only be used against cash in a bank account", "A third party debt order can only be used against land"],
+      "correctIndex": 0,
+      "trapExplanation": "The two are easy to conflate because both are 'secure the money somewhere' methods. But they target fundamentally different assets: a third party debt order reaches money a third party owes the debtor, while a charging order attaches to property the debtor themselves owns."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is picking an enforcement method that sounds forceful without checking it actually matches an asset the debtor is shown to have — and assuming a money judgment can be enforced indefinitely once obtained. It closes this module's civil-claim arc: a resolved dispute only becomes a collected debt if enforcement is chosen carefully and pursued within its own limitation clock.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.enforcement"
+  }
+}

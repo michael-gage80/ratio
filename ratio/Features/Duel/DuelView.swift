@@ -44,7 +44,7 @@ struct DuelView: View {
 
     /// Modules with lessons to draw duel questions from.
     private var modules: [Module] {
-        (student.profile.modules ?? Module.allCases).filter { !content.lessons(in: $0).isEmpty }
+        student.modules.filter { !content.lessons(in: $0).isEmpty }
     }
 
     /// Mixed first, then each module.

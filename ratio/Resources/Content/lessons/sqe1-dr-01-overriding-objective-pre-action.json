@@ -1,0 +1,358 @@
+{
+  "lessonId": "sqe1-dr-01",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "track": "SQE1",
+  "lessonNumber": 1,
+  "topicId": "sqe1.dispute-resolution.overriding-objective-pre-action",
+  "title": "Justly, and at proportionate cost",
+  "subtitle": "The overriding objective and pre-action conduct",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the overriding objective under CPR 1.1 and explain the factors a court weighs in furthering it",
+    "Identify the pre-action protocols — general and subject-specific — and what compliance requires before proceedings are issued",
+    "Apply the consequences of pre-action non-compliance to a fact pattern, including costs sanctions and case-management directions"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 1", "role": "States the overriding objective (r 1.1), the court's duty to manage cases in furtherance of it (r 1.4), and the parties' duty to help the court (r 1.3)" },
+    { "citation": "Practice Direction — Pre-Action Conduct and Protocols", "role": "Sets the general pre-action standard and the sanctions the court may impose for non-compliance, and signposts the subject-specific protocols" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Every FLK1 dispute resolution question is really asking one background question first: what stage is this claim at, and is the court's discretion being exercised justly and proportionately? Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the rule in CPR 1.1 — this lesson checks whether you can spot it operating inside a fact pattern.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards scenario-based questions: expect a client story with a procedural misstep buried in it, not a bare definition.",
+      "weakKnowledge": "Start with Part 1 and take your time over the overriding objective's wording — the proportionality factors and the pre-action protocol structure in the rest of this lesson both assume you can recite CPR 1.1 without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two claims, identical facts, identical sums in dispute. One party sends a detailed letter of claim, waits the standard response period, and only issues proceedings once settlement has genuinely failed. The other issues a claim form the day the cause of action arises, skipping every pre-action step. Both cases end up before the same district judge — but only one of them starts the litigation with the court's goodwill, and it shows in the costs order. This lesson is about the rule that makes that difference, and the conduct standard that sits underneath it."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The overriding objective: what 'dealing with cases justly' actually means",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "CPR 1.1 is the single most quoted rule in civil procedure, and for good reason: every other rule in the CPR is meant to be read, applied and — where the court has a discretion — exercised in light of it. It does not decide any individual case. It tells the court, and the parties, what they are trying to achieve while they argue about everything else.",
+          "The rule has two limbs that are easy to recite separately and easy to forget are linked. The court must deal with cases justly, and it must deal with them at proportionate cost. Justice without regard to cost was the old regime's failure mode — cases could be litigated exhaustively regardless of what was actually at stake. The 'proportionate cost' limb is what stops that: a dispute about a £3,000 debt does not get the same procedural machinery as a £3 million professional negligence claim, even though both deserve a fair hearing.",
+          "CPR 1.2 then makes this binding on the court itself — it must give effect to the overriding objective whenever it exercises any power under the Rules or interprets any rule. CPR 1.3 places a mirror duty on the parties: they must help the court to further the overriding objective. That last point matters more than students usually credit it: a party who obstructs, delays or litigates disproportionately is not merely being tactically aggressive — they are arguably breaching a rule."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, r 1.1",
+            "text": "(1) These Rules are a new procedural code with the overriding objective of enabling the court to deal with cases justly and at proportionate cost. (2) Dealing with a case justly and at proportionate cost includes, so far as is practicable — (a) ensuring that the parties are on an equal footing and can participate fully in proceedings; (b) saving expense; (c) dealing with the case in ways which are proportionate to the amount of money involved, the importance of the case, the complexity of the issues, and the financial position of each party; (d) ensuring that it is dealt with expeditiously and fairly; (e) allotting to it an appropriate share of the court's resources, while taking into account the need to allot resources to other cases; and (f) enforcing compliance with rules, practice directions and orders.",
+            "elements": ["Dealing with cases justly", "Dealing with cases at proportionate cost", "Six practicable components under r 1.1(2), including equal footing, saving expense, and proportionality to amount/importance/complexity/financial position"]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Overriding objective",
+            "definition": "The CPR 1.1 principle that governs how the court exercises every discretion and interprets every rule: cases must be dealt with justly and at proportionate cost, with justice and proportionality read together, not traded off against each other."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-01-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the two limbs of the overriding objective under CPR 1.1(1).",
+          "acceptableAnswers": ["dealing with cases justly and at proportionate cost", "justly and at proportionate cost", "just and proportionate"],
+          "modelAnswer": "Dealing with cases justly, and dealing with them at proportionate cost — the two limbs are read together, not as alternatives."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Proportionality in practice: the factors that drive case management",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "CPR 1.1(2)(c) lists what proportionality is measured against, and it is worth learning as a checklist rather than a vague impression: the amount of money involved, the importance of the case, the complexity of the issues, and the financial position of each party. Notice that 'importance' is not the same as 'value' — a modest damages claim can raise an important point of principle or precedent, and the court is entitled to allot it more resource on that basis alone.",
+          "This list does real work at every stage of a claim, not just at the start. It is the same list the court returns to when allocating a case to a track (a later lesson in this module), when deciding whether to permit expert evidence, when setting a trial timetable, and when assessing costs on the standard basis. Learn it once here and you will recognise it operating under a dozen different procedural headings later in the module.",
+          "CPR 1.4 then converts the objective into an active duty: the court must further the overriding objective by actively managing cases. Active case management includes encouraging cooperation between the parties, identifying the issues at an early stage, deciding the order in which issues are to be resolved, encouraging the parties to use ADR, and fixing timetables. An examiner testing this will usually describe a judge doing one of these things and ask you to identify which CPR 1.4 power is in play, or whether the court's decision is a legitimate exercise of it."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The proportionality factors — CPR 1.1(2)(c)",
+            "points": [
+              "The amount of money involved",
+              "The importance of the case (not the same as its value)",
+              "The complexity of the issues",
+              "The financial position of each party"
+            ]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Active case management — CPR 1.4(2), selected powers",
+            "points": [
+              "Encouraging the parties to cooperate with each other in the conduct of proceedings",
+              "Identifying the issues at an early stage",
+              "Deciding promptly which issues need full investigation and trial, and disposing summarily of the others",
+              "Helping the parties to settle the whole or part of the case, and encouraging the use of ADR",
+              "Fixing timetables and controlling the progress of the case"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-01-check-02",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "A £4,000 debt claim also raises a novel point about the enforceability of a standard clause used across an entire industry. Is the court entitled to treat this as an 'important' case under CPR 1.1(2)(c) despite its modest value?",
+          "options": ["Yes — importance is assessed separately from the amount in dispute", "No — importance is measured only by the sum claimed"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Amount and importance are two separate limbs of the proportionality factors — a low-value claim can still be an important one.",
+          "feedbackIncorrect": "Look again at CPR 1.1(2)(c): amount and importance are listed as distinct factors. A claim's value doesn't cap how important the court may treat it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Before you issue: the pre-action protocols",
+        "voice": "structural — reference-style, building the framework the rest of the module assumes",
+        "body": [
+          "Litigation is not supposed to start cold. The Practice Direction — Pre-Action Conduct and Protocols (the general PD-PAC) sets a baseline standard of conduct that applies to every dispute where no subject-specific protocol exists, and several subject areas have their own tailored protocol that takes priority over the general PD where it applies: personal injury, clinical negligence, construction and engineering, professional negligence, judicial review, debt claims, and possession claims, among others.",
+          "The general standard follows a recognisable shape. Before proceedings are issued, the prospective claimant should write a concise letter of claim setting out the basis of the claim and the remedy sought; the prospective defendant should normally respond within a reasonable period (often 14 days for a straightforward matter, longer for something complex) either admitting the claim, making an offer, or explaining why it is rejected; and both parties should exchange the information and documents needed to understand each other's case, and should consider whether some form of ADR might resolve the dispute without the need for proceedings at all.",
+          "The point of all this is not delay for its own sake. It is meant to allow the parties to understand each other's case well enough to settle it, or narrow it, before either side has spent money on issuing. A protocol-compliant letter of claim genuinely can end a dispute — many do."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The general pre-action standard — PD-PAC",
+            "points": [
+              "Claimant sends a concise letter of claim: basis of claim, key facts, remedy sought",
+              "Defendant responds within a reasonable period — acknowledging, admitting, offering, or explaining rejection",
+              "Parties exchange the information and documents reasonably needed to understand each other's case",
+              "Parties consider ADR before issuing, and keep considering it throughout",
+              "Subject-specific protocols (e.g. personal injury, clinical negligence, construction, professional negligence, debt, possession) take priority over the general PD where one applies"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-01-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that shows this claimant has NOT complied with the pre-action standard.",
+          "scenarioText": "A prospective claimant believes she has a professional negligence claim against her former accountant. She reviews the relevant protocol, gathers her supporting documents, and issues a claim form the same afternoon without sending any letter setting out the basis of her claim or giving the accountant a chance to respond.",
+          "tappableSpans": ["reviews the relevant protocol", "gathers her supporting documents", "issues a claim form the same afternoon without sending any letter", "giving the accountant a chance to respond"],
+          "correctSpan": "issues a claim form the same afternoon without sending any letter",
+          "feedbackCorrect": "That's the breach. Reviewing the protocol and gathering documents is preparation, not compliance — the standard requires a letter of claim and a genuine opportunity to respond before proceedings are issued.",
+          "feedbackIncorrect": "Look for the step that was skipped rather than the steps that were taken. Preparing documents isn't the same as sending the letter of claim and allowing a response period — that's the omission that breaches the standard."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What the court does when you skip it",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Non-compliance with a pre-action protocol is not, by itself, a bar to issuing proceedings — a claimant who ignores the protocol entirely can still issue a valid claim form. What changes is how the court treats that claimant once the case is under way, and the sanctions are real enough that most practitioners treat protocol compliance as non-optional.",
+          "The court can take non-compliance into account when giving directions for the management of proceedings, and — critically for a costs-conscious client — when making orders for costs. A party who complied fully can expect that reflected favourably in a costs order; a party who did not can face a costs penalty even if they ultimately win the claim on its merits. In an extreme case the court can go further still: staying the proceedings so the parties can complete the missed protocol steps, or, more rarely, imposing sanctions that affect interest or the substance of the award.",
+          "The sequence matters for exam purposes because questions often test whether a student understands that non-compliance is a case-management and costs issue, not a jurisdictional one. A claim form issued in flagrant disregard of the protocol is still validly issued — it is simply issued by a claimant who has handed the court a reason to penalise them later."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Consequences of pre-action non-compliance",
+            "description": "What follows when a party has not complied with the applicable pre-action protocol or the general PD-PAC standard.",
+            "nodes": [
+              { "id": "issue", "label": "Claimant issues proceedings without complying with the protocol" },
+              { "id": "valid", "label": "The claim form is still validly issued — non-compliance is not a bar to issuing" },
+              { "id": "directions", "label": "Court may reflect non-compliance in case-management directions" },
+              { "id": "costs", "label": "Court may reflect non-compliance in costs orders, even against an otherwise winning party" },
+              { "id": "stay", "label": "In a more serious case, court may stay proceedings so protocol steps can be completed" }
+            ],
+            "edges": [
+              { "from": "issue", "to": "valid" },
+              { "from": "valid", "to": "directions" },
+              { "from": "valid", "to": "costs" },
+              { "from": "valid", "to": "stay" }
+            ],
+            "textAlternative": "Issuing proceedings without pre-action compliance does not invalidate the claim form. But the court may respond to the non-compliance through case-management directions, through costs orders (even against a party who wins on the merits), and in a more serious case by staying the proceedings so the missed protocol steps can be completed."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-01-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events in the order they would occur for a claimant who issues proceedings without complying with the applicable pre-action protocol.",
+          "items": [
+            "Claimant issues a claim form without sending a letter of claim",
+            "The claim form is accepted and proceedings begin — non-compliance does not block issue",
+            "At a case management stage, the court notes the non-compliance",
+            "The court reflects the non-compliance in its costs order, notwithstanding the outcome on the merits"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: issuing is not blocked by non-compliance, but the consequences surface later, in case management and costs — not at the point of issue.",
+          "feedbackIncorrect": "Check the order again — non-compliance never stops a claim form being issued. The consequences arrive afterwards, through the court's case-management and costs powers."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Reading the two rules together",
+        "voice": "reflective — closes the lesson by tying the two halves together",
+        "body": [
+          "The overriding objective and the pre-action protocols are not two separate topics that happen to sit in the same lesson — the protocols exist to serve the overriding objective. Requiring parties to exchange information and consider settlement before issuing is precisely what 'saving expense' and 'dealing with cases at proportionate cost' mean in practice, at the earliest possible stage, before the court has spent any resource on the case at all.",
+          "That is also why the sanctions for non-compliance are calibrated the way they are. The court does not usually refuse to hear a non-compliant claimant's case — that would be inconsistent with dealing with the case justly. It instead uses its costs and case-management powers, which is where CPR 1.1(2)(f) — enforcing compliance with rules and practice directions — actually bites.",
+          "For SQE1 purposes, expect fact patterns that test both halves at once: a scenario describing a party's pre-action conduct, asking what the likely case-management or costs consequence will be, framed by reference to the overriding objective's own language. Read the facts for what each side actually did before proceedings started, not just what the claim itself is about."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Costs sanction for pre-action non-compliance",
+            "definition": "A costs order — a reduction in the costs otherwise recoverable, or a costs award against an otherwise successful party — imposed to reflect a party's failure to comply with the applicable pre-action protocol or the general PD-PAC standard."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-01-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A claimant fully complies with the relevant pre-action protocol; the defendant ignores the letter of claim entirely and never responds. Proceedings are issued and the claimant wins at trial. What is the most likely costs consequence of the defendant's pre-action conduct?",
+          "options": ["None — costs simply follow the event and pre-action conduct is irrelevant once trial has occurred", "The court may reflect the defendant's non-compliance in the costs order, over and above the ordinary result that costs follow the event", "The claim form would have been struck out for the defendant's failure to respond"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answer treats the 'costs follow the event' default as the whole story. It isn't — CPR case-management and costs powers let the court additionally penalise a non-compliant party's conduct, which is a separate lever from who won. Striking out the claim form makes no sense here since it was the defendant, not the claimant, who was non-compliant."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-01-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A district judge is deciding how much case-management resource to allocate to a modest-value contract dispute that nonetheless turns on a novel point likely to affect many similar contracts. Under CPR 1.1(2)(c), which factor most directly justifies allocating more resource than the claim's value alone would suggest?",
+      "options": ["The amount of money involved", "The importance of the case", "The financial position of the parties", "The complexity of the issues"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-01-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which CPR provision places a duty on the parties themselves — not just the court — to help further the overriding objective?",
+      "options": ["CPR 1.1", "CPR 1.2", "CPR 1.3", "CPR 1.4"],
+      "correctIndex": 2
+    },
+    {
+      "itemId": "sqe1-dr-01-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "A firm advises a client that once proceedings are issued, the court's duty to further the overriding objective effectively ends and the case simply runs its course under the ordinary rules. Is this advice accurate?",
+      "options": ["Yes — the overriding objective governs only the decision to issue proceedings", "No — CPR 1.2 requires the court to give effect to the overriding objective whenever it exercises any power under the Rules or interprets any rule, throughout the case", "Yes — CPR 1.4 only applies at the allocation stage", "No — the overriding objective only governs costs decisions made after judgment"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-01-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A claimant's solicitor sends a detailed letter of claim in a professional negligence matter. The Professional Negligence Pre-Action Protocol applies. Should the solicitor instead follow the general PD-PAC standard because it is the default position under the Rules?",
+      "options": ["Yes — the general PD-PAC always takes priority over subject-specific protocols", "No — a subject-specific protocol, where one exists and applies, takes priority over the general PD-PAC", "It makes no difference which is followed, since both impose identical requirements", "Yes, unless the parties agree in writing to use the subject-specific protocol instead"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-01-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT one of the practicable components of dealing with a case justly and at proportionate cost listed in CPR 1.1(2)?",
+      "options": ["Ensuring the parties are on an equal footing", "Saving expense", "Guaranteeing that every claim reaches trial within six months of issue", "Allotting an appropriate share of the court's resources, taking into account other cases"],
+      "correctIndex": 2,
+      "trapExplanation": "CPR 1.1(2) contains no guaranteed trial timetable — that would be inconsistent with proportionality, since case duration is meant to reflect the claim's value, importance and complexity, not a fixed universal deadline. The other three are genuine components of the rule."
+    },
+    {
+      "itemId": "sqe1-dr-01-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A defendant argues that because the claimant sent a letter of claim only three days before the limitation period expired, the defendant had no realistic chance to comply with the response timetable, and that this excuses the defendant from any consequence for later ignoring the letter altogether. Is the defendant's reasoning sound?",
+      "options": ["Yes — a claimant who leaves compliance too late forfeits any right to complain about the defendant's later conduct", "No — a short pre-limitation letter may affect how the court weighs the claimant's own compliance, but it does not excuse the defendant's separate failure to engage at all once proceedings are in prospect", "Yes — PD-PAC only applies where at least three months remain before limitation expires", "No — PD-PAC removes any response obligation once limitation is close to expiry"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat one party's imperfect compliance as cancelling out the other's, but the court assesses each party's conduct separately. A claimant's lateness may be relevant context, but it doesn't licence the defendant to ignore the letter altogether."
+    },
+    {
+      "itemId": "sqe1-dr-01-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant issues a claim form without ever sending a letter of claim, in flagrant disregard of the applicable protocol. The defendant applies to strike out the claim form on the basis that the pre-action standard was not met. What is the most likely outcome?",
+      "options": ["The claim form is struck out, since pre-action compliance is a precondition to a validly issued claim", "The claim form remains validly issued; non-compliance is instead addressed through case-management directions and costs, and in a serious case, a stay", "The claim automatically transfers to the small claims track as a sanction", "The court has no power to respond to the non-compliance once proceedings are issued"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming non-compliance is jurisdictional — that it stops a claim form being valid. It isn't: the sanctions are case-management and costs-based (and, in a serious case, a stay), not a bar on issuing."
+    },
+    {
+      "itemId": "sqe1-dr-01-test-08",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under the general PD-PAC standard, which step should ordinarily occur before a defendant's letter of claim response is due?",
+      "options": ["The claimant sends a concise letter of claim setting out the basis of the claim and the remedy sought", "The claimant issues the claim form", "The court allocates the case to a track", "The parties exchange witness statements"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-01-test-09",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A defendant responds to a letter of claim within the protocol period, admits part of the claim, and proposes mediation on the balance. The claimant refuses mediation outright and issues proceedings the next day without further correspondence. If the claimant later wins at trial on the disputed balance, what is the court most likely to do regarding the claimant's refusal of ADR?",
+      "options": ["Disregard it entirely, since the claimant won on the merits", "Potentially depart from the general costs rule to reflect the claimant's unreasonable refusal to engage with ADR", "Strike out the claim retrospectively", "Automatically award the claimant indemnity costs regardless of the refusal"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-01-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A solicitor is advising a client who wants to issue proceedings today against a debtor, even though no letter of claim has yet been sent and the applicable protocol has not been followed. The client is anxious mainly to stop the debtor disposing of assets. What is the most accurate advice?",
+      "options": ["Issuing today is impossible until the pre-action protocol is fully completed", "Issuing today is possible, but the client should understand it may lead to adverse costs or case-management consequences later, distinct from any separate need to justify urgent relief", "Pre-action protocols only apply to personal injury claims, so this is not a live issue here", "The court will automatically stay any claim issued without prior protocol compliance"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-01-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant complies fully with the pre-action protocol, including a genuine offer to settle. The defendant fails to respond at all within the response period, and the claimant issues proceedings four weeks later. At the first case management conference, what is the court most likely to take into account when giving directions?",
+      "options": ["Only the value of the claim, since pre-action conduct is irrelevant to case management", "The defendant's failure to engage with the pre-action process, alongside the ordinary case-management factors", "Whether the claimant used the correct court form to issue the claim", "Nothing — case management conferences only address disclosure and evidence, never pre-action conduct"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-01-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Under CPR 1.4(2), which of the following is an example of the court's active case management powers?",
+      "options": ["Encouraging the parties to use alternative dispute resolution", "Determining the credibility of a witness before any evidence is heard", "Setting the level of damages before liability is established", "Instructing a party's expert witness on what opinion to give"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-01-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under CPR 1.1(2), proportionality is to be assessed by reference to the amount of money involved, the importance of the case, the complexity of the issues, and which further factor?",
+      "options": ["The financial position of each party", "The seniority of the solicitors instructed", "The number of witnesses each party intends to call", "The geographic location of the parties"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-01-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant argues that because her claim is worth only £2,500, the court should not require her to comply with any pre-action protocol at all. Which principle best answers this argument?",
+      "options": ["Low-value claims are automatically exempt from the general PD-PAC standard", "Proportionality shapes how much pre-action conduct is required, not whether any is required at all, and even the small claims track expects reasonable pre-action engagement", "Only claims allocated to the multi-track are subject to pre-action protocols", "Pre-action protocols apply only to claims above the fast track threshold"],
+      "correctIndex": 1
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating pre-action non-compliance as a jurisdictional bar to issuing proceedings. It isn't — a non-compliant claim form is still validly issued. The consequences bite through the court's case-management and costs powers, and occasionally through a stay, not through refusing to hear the case.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.overriding-objective-pre-action"
+  }
+}

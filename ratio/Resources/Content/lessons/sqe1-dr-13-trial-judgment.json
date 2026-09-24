@@ -1,0 +1,346 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-dr-13",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 13,
+  "topicId": "sqe1.dispute-resolution.trial-judgment",
+  "title": "The day itself",
+  "subtitle": "Conduct of trial, proof, and the form of judgment",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State who bears the burden of proof in a civil claim, and the standard it must be discharged to",
+    "Describe the standard order of events at a civil trial, including the roles of examination-in-chief, cross-examination and re-examination",
+    "Distinguish a money judgment from other forms of final order, and identify what a court's order must contain to be enforceable"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 39", "role": "Governs the conduct of hearings and trials, including public/private hearings and the trial timetable" },
+    { "citation": "Civil Procedure Rules, r 32.2", "role": "Requires evidence at trial to be given orally in public, unless the court or a rule provides otherwise" },
+    { "citation": "Miller v Minister of Pensions [1947] 2 All ER 372", "role": "Denning J's classic formulation of the civil standard — the balance of probabilities" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "By the time a claim reaches trial, everything this module has covered — pleadings, disclosure, witness evidence, Part 36 — converges on a single day, or a run of days, with a fixed structure. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the sequence — this lesson checks you can place a specific event inside it.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans towards short scenario questions: expect 'what happens next at trial', not bare definitions.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — the burden and standard of proof, and the order of speeches and evidence, are the scaffolding the rest of this lesson assumes you have fixed."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Eleven lessons of this module have been about avoiding this day — settling, striking out, forcing an admission, running the numbers on a Part 36 offer. Trial is what happens when none of that works. It has a fixed shape: who goes first, who bears the risk of the evidence not adding up, and what the judge is actually allowed to write at the end of it. SQE1 tests all three."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Who has to prove what, and how convincingly",
+        "voice": "structural — establishes the two ideas the rest of the lesson assumes",
+        "body": [
+          "Two questions sit underneath every civil trial, and SQE1 expects you to answer both without hesitation: who carries the burden of proving a given fact, and how sure does the tribunal need to be before that fact is treated as established?",
+          "The general rule on burden is simple to state and easy to misapply: he who asserts must prove. A claimant bears the legal burden of proving the facts that make up their cause of action; a defendant who raises a substantive defence (for example, contributory negligence, or an exemption clause) bears the burden of proving that defence. The burden can shift on particular issues — but the starting position is always that the party making the allegation proves it.",
+          "The standard is the balance of probabilities: is it more likely than not that the fact occurred? Denning J's formulation in Miller v Minister of Pensions remains the standard reference — a civil tribunal need not feel sure, in the way a criminal jury must; it must simply conclude the event was more probable than not. This is a single, fixed standard. Unlike some common-law jurisdictions, English civil procedure does not raise the standard for serious allegations (such as fraud) pleaded in a civil claim — what changes with seriousness is only how cogent the evidence needs to be to persuade the tribunal that the more-probable-than-not threshold is met, not the legal standard itself."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Balance of probabilities",
+            "definition": "The civil standard of proof: a fact is treated as proved if the tribunal concludes it is more likely than not to have occurred. Applies uniformly across civil claims, including serious allegations such as fraud — no separate, higher civil standard exists."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-13-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the standard of proof that applies in an ordinary civil claim.",
+          "acceptableAnswers": ["balance of probabilities", "more likely than not", "more probable than not"],
+          "modelAnswer": "The balance of probabilities — the fact in issue is treated as proved if it is more likely than not to have occurred."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The shape of a trial",
+        "voice": "reference — a checklist students will return to",
+        "body": [
+          "A trial has a settled running order, and SQE1 likes to test whether you can place a specific event correctly within it rather than merely list the stages. The claimant, carrying the burden on the claim, opens: a short opening (often dispensed with or reduced to a skeleton argument in the lower tracks) sets out the issues the judge needs to resolve.",
+          "Evidence follows. Witness statements normally stand as evidence-in-chief under CPR 32.5 — the witness is not routinely taken back through their whole statement in the witness box, though limited supplementary questions may be allowed. The witness is then cross-examined by the opposing party, whose task is to test or undermine that evidence, before a short re-examination by the party who called the witness — confined strictly to matters arising out of cross-examination, not a chance to reopen the whole case.",
+          "Once all evidence is heard, the parties make closing submissions — the defendant first in most trials, since the claimant, bearing the burden, has the final word before judgment. The judge then gives judgment, either immediately (ex tempore) or reserved to a later date, with reasons."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Running order at trial",
+            "points": [
+              "Claimant's opening (often abbreviated or skeleton-only)",
+              "Claimant's evidence — witness statements stand as evidence-in-chief, then cross-examination, then re-examination",
+              "Defendant's evidence — same structure, in reverse roles",
+              "Closing submissions — defendant first, claimant last",
+              "Judgment — ex tempore or reserved, with reasons"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-13-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these trial events in the order they occur.",
+          "items": [
+            "Claimant's witness is cross-examined by the defendant's advocate",
+            "Claimant's witness is re-examined, confined to matters raised in cross-examination",
+            "Defendant's closing submissions",
+            "Claimant's closing submissions, made last"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: cross-examination tests the evidence, re-examination repairs only what cross-examination opened up, and closing submissions run defendant-then-claimant so the party carrying the burden speaks last.",
+          "feedbackIncorrect": "Check the order again — cross-examination always comes before re-examination for the same witness, and in closings the defendant goes first, leaving the claimant — who carries the burden — the last word before judgment."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Public justice, and when it isn't",
+        "voice": "statute-first — reads the rule, then works the exceptions",
+        "body": [
+          "CPR r 32.2 states the default plainly: at trial, evidence is given orally and in public, unless a rule or court order provides otherwise. Open justice is the constitutional default, not a courtesy — it is what allows scrutiny of how courts actually decide cases.",
+          "CPR Part 39 then supplies the mechanism for departing from that default. A hearing may be held in private in defined circumstances — where publicity would defeat the object of the hearing, where it involves confidential information (including personal financial information) and publicity would damage that confidentiality, or where the court considers it necessary in the interests of justice. These grounds are narrow by design: a party's preference for privacy, without more, does not satisfy them.",
+          "Part 39 also governs the trial timetable and the consequences of non-attendance — a claim can be struck out if the claimant fails to attend and the court proceeds in their absence, and a defendant's non-attendance does not prevent the trial going ahead against them."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, r 39.2",
+            "text": "The general rule is that a hearing is to be in public... A hearing, or any part of it, may be in private if... publicity would defeat the object of the hearing; it involves confidential information... and publicity would damage that confidentiality; or the court considers this to be necessary, in the interests of justice.",
+            "elements": ["Default: hearing in public", "Private hearing only on one of the listed grounds", "A party's mere preference for privacy is not itself a ground"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-13-check-03",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "A claimant asks the court to hear a breach of contract trial in private simply because they find the dispute embarrassing. Is that, without more, sufficient under CPR 39.2?",
+          "options": ["No — embarrassment alone is not one of the recognised grounds for a private hearing", "Yes — any party can request privacy for any reason"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The grounds in r 39.2 are specific — defeating the object of the hearing, protecting genuine confidentiality, or the interests of justice — and general embarrassment does not, on its own, meet any of them.",
+          "feedbackIncorrect": "Look again at r 39.2's grounds. They're narrow and specific; a party simply preferring privacy does not, without more, satisfy any of them, and the public default holds."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What a judgment actually is",
+        "voice": "practical — moves from the abstract rule to the document a solicitor has to draft",
+        "body": [
+          "'Judgment' is sometimes used loosely to mean the whole outcome of a trial, but for SQE1 purposes it pays to be precise: a judgment is the court's formal decision, and it comes in different shapes depending on what the claim sought.",
+          "A money judgment orders the defendant to pay a specified sum — the most common outcome in a damages claim, and the form of judgment that unlocks the enforcement methods covered in the next lesson. Other final orders do different work: a declaration states the parties' legal position without ordering anyone to do anything (useful, for example, in a dispute over the true construction of a contract term); an injunction orders a party to do, or not do, something; an order for specific performance compels a party to complete a contractual obligation, typically where damages would be an inadequate remedy.",
+          "Getting the form of order right matters practically, not just academically: a solicitor drafting a proposed order after trial has to translate the judge's oral or written reasons into an order the court office can seal and, where relevant, into the specific figure and payment terms that make a money judgment enforceable."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "What form should the judgment take?",
+            "description": "A decision path for classifying the order sought by a successful claim.",
+            "nodes": [
+              { "id": "start", "label": "Was the claim for a specific sum of money (e.g. damages, debt)?" },
+              { "id": "yes-money", "label": "Yes → money judgment: an order to pay a specified sum" },
+              { "id": "no-money", "label": "No → did the claimant seek a statement of legal rights, with no order to act?" },
+              { "id": "yes-decl", "label": "Yes → declaration" },
+              { "id": "no-decl", "label": "No → did the claimant seek to stop, or compel, specific conduct?" },
+              { "id": "yes-inj", "label": "Yes, and damages would be adequate → consider whether injunction/specific performance is still appropriate; if damages inadequate → injunction or specific performance" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-money", "label": "Yes" },
+              { "from": "start", "to": "no-money", "label": "No" },
+              { "from": "no-money", "to": "yes-decl", "label": "Yes" },
+              { "from": "no-money", "to": "no-decl", "label": "No" },
+              { "from": "no-decl", "to": "yes-inj", "label": "Yes" }
+            ],
+            "textAlternative": "To classify the order: if the claim sought a specific sum, the outcome is a money judgment. If not, and the claimant sought only a statement of legal rights with no order to act, the outcome is a declaration. If the claimant instead sought to stop or compel specific conduct, and damages would be an inadequate remedy, the outcome is an injunction or an order for specific performance."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-13-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that tells you this claim will end in a money judgment rather than a declaration.",
+          "scenarioText": "The claimant sues a former business partner, seeking a ruling that a disputed clause in their partnership deed means profits should be split 60/40 rather than equally, and separately claims £42,000 representing the shortfall she says she was underpaid as a result.",
+          "tappableSpans": ["a ruling that a disputed clause in their partnership deed means profits should be split 60/40", "separately claims £42,000 representing the shortfall", "she says she was underpaid"],
+          "correctSpan": "separately claims £42,000 representing the shortfall",
+          "feedbackCorrect": "Right — the construction point alone would attract a declaration, but the claim for a specified sum (£42,000) is what produces a money judgment, and both orders can be made in the same claim.",
+          "feedbackIncorrect": "Look for the part of the claim that seeks a specific sum of money, rather than a ruling on what the contract means. The declaration point and the money claim can coexist in a single action, but only the sum claimed produces a money judgment."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The trap: 'the judge agreed with me' is not the same as 'I have an enforceable order'",
+        "voice": "direct — sets up the trap the test pool probes",
+        "body": [
+          "The single most common error at this stage of a claim is treating the judge's spoken or written reasons as if they were the order itself. They are not. Reasons explain why the court decided as it did; the order is the operative document — drawn up, and in most cases approved or settled by the parties before being sealed by the court — that actually binds the parties and can be enforced.",
+          "This distinction has teeth. A judgment creditor cannot go straight to enforcement (Lesson 15's territory) on the strength of a judge's oral remarks at the end of the hearing; they need a sealed order that states, precisely, what sum is owed, by when, and on what terms (for example, whether payment is to be made forthwith, by instalments, or on a specified date). Ambiguity in the drawn order is a solicitor's failure, not the judge's — Part 39 and the accompanying practice direction place the burden of getting the order right on the parties, usually the successful party's advocate.",
+          "Watch for exam scenarios that describe a judge announcing a result and then ask what the claimant can do immediately. The honest answer is usually: draw up the order, get it approved or settled, and have it sealed — not: proceed straight to enforcement."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often answer that a claimant can begin enforcement as soon as the judge announces they have won and states a figure from the bench.",
+            "whyItsWrong": "The judge's oral remarks are reasons, not the order. Enforcement requires the sealed order itself — which specifies the exact sum, currency of payment (forthwith, instalments, or a fixed date) and any conditions — and that document has to be drawn up and sealed before enforcement machinery can be used."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-13-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A judge announces at the end of a one-day trial: 'I find for the claimant and award £30,000.' No written order has yet been drawn up or sealed. What should the claimant's solicitor do next?",
+          "options": ["Instruct enforcement agents immediately, since the figure has been stated in open court", "Arrange for the order to be drawn up, approved or settled as required, and sealed by the court before taking any enforcement step", "Wait for the defendant to volunteer payment with no further step required", "Appeal immediately to preserve the claimant's position"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting error is treating the judge's spoken figure as an enforceable order. It isn't — enforcement requires the sealed order itself, which has to be drawn up and, in most cases, approved or settled by the parties first."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-13-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "A claimant sues for breach of contract. Who bears the legal burden of proving the elements of that claim?",
+      "options": ["The claimant", "The defendant", "The court, of its own motion", "Whoever's advocate speaks first at trial"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A defendant pleads contributory negligence as a partial defence to a personal injury claim. Who bears the burden of proving contributory negligence?",
+      "options": ["The claimant, as part of proving the claim", "The defendant, since it is a defence the defendant has raised", "Neither party — the court determines it without evidence", "The claimant's expert witness alone"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-13-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "A claimant in a civil fraud claim argues the court should require a higher standard of proof than usual because the allegation is serious. Is the claimant correct?",
+      "options": ["No — the balance of probabilities applies uniformly to civil claims, including fraud; seriousness affects the cogency of evidence needed, not the legal standard", "Yes — fraud must be proved beyond reasonable doubt in civil proceedings", "Yes — fraud requires proof to a 'clear and convincing' intermediate standard", "No — fraud actually requires a lower standard than other civil claims"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-13-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following correctly describes the purpose of re-examination at trial?",
+      "options": ["A chance to reopen the whole case and add new evidence not previously given", "Questions confined to matters arising out of cross-examination, put by the party who called the witness", "A second round of cross-examination by the opposing party", "An opportunity for the judge alone to question the witness"],
+      "correctIndex": 1,
+      "trapExplanation": "Re-examination is deliberately narrow — it repairs only what cross-examination opened up. Treating it as a second opening for fresh evidence, or confusing it with a further round of cross-examination, is the common error."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A litigant asks the court to hold an entire commercial trial in private, saying only that the parties would 'prefer not to have competitors watching.' Applying CPR r 39.2, how is the court likely to respond?",
+      "options": ["Grant the request, since both parties consent to privacy", "Refuse, unless the request fits one of the specific grounds in r 39.2 such as protecting genuine confidential information or the interests of justice", "Grant the request automatically for any commercial dispute", "Refuse, because private hearings are never available in civil claims"],
+      "correctIndex": 1,
+      "trapExplanation": "Party agreement alone does not satisfy r 39.2 — the grounds are specific and narrow. A generalised commercial-sensitivity preference, without identifying genuinely confidential material or another listed ground, is not enough."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant fails to attend trial without explanation, having been properly notified of the date. The defendant does attend and is ready to proceed. What is the court most likely to do?",
+      "options": ["Automatically find for the claimant in their absence", "Proceed with the trial in the claimant's absence, which may result in the claim being struck out or dismissed", "Adjourn the trial indefinitely until the claimant reappears", "Treat the claimant's absence as irrelevant and order a retrial at a later date regardless of outcome"],
+      "correctIndex": 1,
+      "trapExplanation": "Non-attendance does not automatically favour the absent party — quite the opposite for a claimant, who carries the burden of proof and risks the claim being struck out or dismissed if they are not there to advance it."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A claimant succeeds at trial on a claim for £18,500 in unpaid invoices. What form should the resulting order take?",
+      "options": ["A declaration only, since the dispute concerns a contractual relationship", "A money judgment ordering payment of the sum found due", "An injunction restraining the defendant from further trading", "An order for specific performance of the underlying contract"],
+      "correctIndex": 1,
+      "explanation": "A claim for a specified sum that succeeds produces a money judgment — the standard outcome for a debt or damages claim, and the form of order that unlocks enforcement."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant asks the court only to rule on the correct interpretation of a disputed rent-review clause in a commercial lease, seeking no payment and no order that either party do anything. What form of order is being sought?",
+      "options": ["A money judgment", "A declaration", "An injunction", "A warrant of control"],
+      "correctIndex": 1,
+      "explanation": "A ruling that states the parties' legal position without ordering payment or conduct is a declaration — exactly the tool for resolving a pure question of contractual construction."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant seeks to stop a former employee from breaching a valid restrictive covenant, arguing damages would not adequately compensate the ongoing harm to client relationships. What form of order is most consistent with this claim?",
+      "options": ["A declaration", "A money judgment", "An injunction", "A charging order"],
+      "correctIndex": 2,
+      "explanation": "Where damages would be an inadequate remedy for ongoing conduct, an injunction — ordering the defendant to stop the conduct — is the appropriate form of final order, not a money judgment or a bare declaration."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Under CPR r 32.2, what is the default rule for how evidence is given at trial?",
+      "options": ["In writing only, with no oral evidence permitted", "Orally and in public, unless a rule or court order provides otherwise", "In private, unless a party requests a public hearing", "By video link only, to reduce cost"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-13-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under CPR r 39.2, which of the following is a recognised ground for holding a hearing in private?",
+      "options": ["The parties would both prefer it, for convenience", "Publicity would defeat the object of the hearing", "One party's solicitor is unavailable for a public listing", "The claim value is below the small claims limit"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-13-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Witness statements exchanged before trial normally stand as which part of a witness's evidence under CPR Part 32?",
+      "options": ["Evidence-in-chief", "Cross-examination", "Re-examination", "Closing submissions"],
+      "correctIndex": 0,
+      "explanation": "CPR r 32.5 provides that a witness statement stands as the witness's evidence-in-chief unless the court orders otherwise — the witness is not routinely walked back through the whole statement orally."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "At the end of a two-day trial, the judge says from the bench: 'Judgment for the claimant, damages to be assessed at £55,000, with a written judgment to follow.' The claimant's solicitor wants to enforce that figure the same afternoon. What is the correct next step?",
+      "options": ["Instruct enforcement agents immediately based on the figure given orally", "Wait for the written judgment, then ensure the order is drawn up, approved or settled, and sealed before taking any enforcement step", "Do nothing until the defendant confirms agreement with the figure", "Apply for permission to appeal before anything else can happen"],
+      "correctIndex": 1,
+      "explanation": "The judge's remarks are reasons, not the order. Enforcement requires the sealed order stating the precise sum and payment terms — that has to be drawn up and sealed first."
+    },
+    {
+      "itemId": "sqe1-dr-13-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which statement best describes the relationship between a judge's reasons for judgment and the court's order?",
+      "options": ["They are the same document and no separate order needs to be drawn up", "The reasons explain the decision; the order is the separate, operative document that must be drawn up and sealed before it can be enforced", "The order is drafted by the judge alone and the parties have no role in settling its terms", "Reasons are only given in written judgments, never after an oral decision"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often conflate the two because both emerge from the same hearing. But only the sealed order is the operative, enforceable document — the reasons are the explanation for it, and in most cases the parties draw up and settle the order's terms before it is sealed."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating what the judge says in court as if it were, itself, an enforceable order — and assuming the civil standard of proof shifts for serious allegations like fraud. Neither is true: the sealed order is what matters for enforcement, and the balance of probabilities is a single, fixed standard throughout civil claims.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.trial-judgment"
+  }
+}

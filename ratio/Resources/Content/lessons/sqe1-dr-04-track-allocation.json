@@ -1,0 +1,338 @@
+{
+  "lessonId": "sqe1-dr-04",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 4,
+  "topicId": "sqe1.dispute-resolution.track-allocation",
+  "title": "Four tracks, four regimes",
+  "subtitle": "Track allocation under CPR Part 26",
+  "estimatedMinutes": 18,
+  "track": "SQE1",
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the four case management tracks and the monetary/complexity thresholds that separate them under CPR Part 26",
+    "Explain why track allocation determines the procedural and costs regime that governs a claim, not just its case management timetable",
+    "Apply the allocation criteria — including the intermediate track's complexity bands — to a fact pattern and identify the likely track and its costs consequence"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 26", "role": "Sets out the four tracks and the allocation criteria the court applies" },
+    { "citation": "CPR 45, Section IIIA", "role": "The extended fixed recoverable costs regime attaching to the intermediate track (and most fast track claims) since October 2023" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Candidates often treat track allocation as a filing formality. SQE1 tests it as a substantive gateway question: the track decided at the start of a claim silently answers half the exam's later questions about costs, disclosure and trial length. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the thresholds — this lesson checks whether you can see why they matter downstream.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the bare thresholds before. The test pool below leans on fact patterns that require you to allocate a claim and then reason about what follows from that allocation.",
+      "weakKnowledge": "Start with Part 1 and fix the four monetary bands before moving on — everything else in this lesson, and in Lesson 12 on costs, assumes you can place a claim value into the right track without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two claims, both worth £40,000, both about a defective roof. One is allocated to the intermediate track and runs to trial on fixed costs no matter how hard-fought it gets. The other is bumped up to the multi-track because of a genuine dispute over a complex expert report, and costs become whatever the court thinks reasonable. Same value, completely different economics — and the difference turns entirely on a decision made months before trial, often on paper, that most students underrate until it's tested against them.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. This lesson's live watch item is the intermediate track and its extended fixed recoverable costs regime under CPR 45, Section IIIA, which commenced on 1 October 2023 — genuinely recent as reforms of this kind go, and practitioner commentary continues to report disputed applications, particularly at the boundary between the fast and intermediate tracks and in classifying a case's complexity band. Treat any exam or practice scenario touching the intermediate track as an area where the detail may still be settling, and check this note against current guidance before relying on it for a live matter."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Why allocation is a gateway, not a formality",
+        "voice": "argumentative — states the practical stakes before the rule",
+        "body": [
+          "Every defended civil claim in England and Wales is allocated to one of four tracks once a defence is filed. On paper this looks like administrative housekeeping — a court clerk sorting claims by size. In practice, the track a claim lands on fixes almost everything that follows: how much disclosure the parties will give, whether expert evidence needs permission, how a trial is timetabled, and — critically — what regime of costs recovery applies win or lose.",
+          "CPR 1.1's overriding objective (dealing with cases justly and at proportionate cost) is the rationale behind the whole system: track allocation is the mechanism by which 'proportionate' gets translated into an actual number of hours a court and the parties will spend on a given dispute. A £8,000 dispute over a faulty sofa should not consume the procedural machinery of a £200,000 breach of contract claim, and the tracks exist to prevent that from happening by default.",
+          "SQE1 tests this gateway function directly: a question will often give you a claim value and ask not 'which track' but 'what follows from that track' — whether fixed costs apply, whether permission for expert evidence is needed, or whether the claimant can expect to recover their costs at all if they win."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Track allocation",
+            "definition": "The court's assignment of a defended claim to one of four case management tracks under CPR Part 26, based primarily on the value of the claim and its complexity — the decision that then fixes the procedural and costs regime governing the rest of the litigation."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-04-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the overriding objective provision that track allocation is designed to serve.",
+          "acceptableAnswers": ["CPR 1.1", "the overriding objective", "dealing with cases justly and at proportionate cost"],
+          "modelAnswer": "CPR 1.1 — the overriding objective of dealing with cases justly and at proportionate cost. Track allocation is the practical mechanism for applying that objective to an individual claim."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The four tracks and their thresholds",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "CPR Part 26 sets out four tracks, primarily distinguished by the financial value of the claim, with complexity as a secondary factor that can move a claim up a band even where the value alone would suggest otherwise.",
+          "The small claims track handles claims up to £10,000 (£1,500 for most personal injury claims because of their different costs treatment). It is designed for litigants in person: costs recovery is severely restricted, and the hearing is informal. The fast track covers £10,001 to £25,000, with a trial expected to last no more than one day and limited expert evidence. The intermediate track — the newest of the four, introduced in October 2023 — covers £25,001 to £100,000 for claims that are not overly complex: it assumes a trial of no more than three days, no more than two expert witnesses per party, and comes with its own extended fixed recoverable costs regime. The multi-track takes everything above £100,000, plus any lower-value claim whose complexity — multiple experts, difficult points of law, a trial likely to exceed three days — takes it outside what the intermediate track is designed to manage.",
+          "Complexity, not just value, can move a claim: a £40,000 professional negligence claim turning on conflicting expert evidence may be allocated to the multi-track even though its value sits squarely in the intermediate track's band, because the intermediate track assumes a case that is straightforward enough to try in three days on limited expert evidence."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The four tracks at a glance",
+            "points": [
+              "Small claims — up to £10,000 (£1,500 for most personal injury); informal hearing, restricted costs recovery",
+              "Fast track — £10,001 to £25,000; trial capped at one day, limited expert evidence",
+              "Intermediate track — £25,001 to £100,000, not overly complex; trial capped at three days, up to two experts per party, extended fixed recoverable costs (CPR 45 Section IIIA)",
+              "Multi-track — above £100,000, or any lower-value claim whose complexity takes it outside the intermediate track's assumptions; costs generally assessed rather than fixed"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-04-check-02",
+          "type": "sequence",
+          "skillTag": "knowledge",
+          "prompt": "Put these claim values in the order of the track they would normally be allocated to, from the lowest track to the highest.",
+          "items": ["£4,500 consumer goods claim", "£18,000 breach of contract claim", "£60,000 straightforward debt claim", "£250,000 commercial dispute"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the value ladder: small claims, fast track, intermediate track, multi-track — exactly the bands in CPR Part 26, assuming none of these claims carries complexity that would bump it up a band.",
+          "feedbackIncorrect": "Check the bands again: up to £10,000 is small claims, £10,001–£25,000 is fast track, £25,001–£100,000 is intermediate, and above £100,000 is multi-track — value alone places each of these claims in that order."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The intermediate track: why it exists and what it changed",
+        "voice": "case-narrative — walks through the reform before naming the rule",
+        "body": [
+          "Before October 2023, a claim worth £40,000 could only go to the fast track (which capped its procedural ambition unrealistically low for that value) or the multi-track (which brought full costs budgeting and case management machinery that was often disproportionate for a genuinely straightforward mid-value dispute). The intermediate track was created to fill that gap: a track built for claims that are neither trivial nor especially complex, but sit in a value band the old two-track system handled badly.",
+          "The trade-off built into the intermediate track is fixed recoverable costs. Under CPR 45, Section IIIA, most claims allocated to the intermediate track — and, since the same reform, most fast track claims too — recover costs according to a fixed grid tied to the complexity band and the stage the claim reached, not according to what was actually and reasonably spent. This is a genuinely significant change to the economics of mid-value litigation: a party can no longer assume that winning means recovering whatever it actually cost to win.",
+          "The intermediate track further sub-divides claims into four complexity bands (1 to 4), each with its own fixed costs figures — band 1 for the simplest claims, band 4 for those nearer the multi-track boundary. Getting the band wrong, or arguing a claim should sit in a different band, is exactly the kind of dispute practitioner commentary continues to report since the reform took effect — which is why this lesson carries a live-watch flag rather than treating the position as fully settled."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, Part 26 (allocation) and CPR 45, Section IIIA (intermediate track fixed costs)",
+            "text": "Part 26 governs allocation to a track based on the value and complexity of a claim. CPR 45, Section IIIA sets fixed recoverable costs for claims allocated to the intermediate track (and most fast track claims), assessed by reference to the complexity band assigned to the claim and the stage of proceedings reached at conclusion, rather than by detailed or standard assessment of costs actually incurred.",
+            "elements": ["Allocation decides the track (CPR 26)", "The intermediate track assigns a complexity band (1–4)", "Fixed recoverable costs are read off a grid tied to that band and the stage reached (CPR 45, Section IIIA)", "Detailed assessment of actual costs is displaced for claims within this regime"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-04-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under CPR 45, Section IIIA, what primarily determines the amount of costs a winning party recovers on the intermediate track?",
+          "options": ["A fixed grid tied to the claim's complexity band and the stage reached, not the costs actually and reasonably incurred", "Whatever the winning party's solicitor billed, subject to a cap of £100,000", "The losing party's ability to pay, assessed by the court at trial", "Nothing — costs do not follow the event on the intermediate track"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The whole point of the extended fixed recoverable costs regime is to replace assessment of actual spend with a predictable figure read off a grid by band and stage.",
+          "feedbackIncorrect": "Look again at what Section IIIA actually fixes: it isn't a cap on actual billed costs or an ability-to-pay test — it substitutes a fixed grid, by complexity band and stage reached, for assessment of what was actually and reasonably spent."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Allocating a claim: value, complexity, and the questionnaire",
+        "voice": "Socratic — poses the allocation decision before resolving it",
+        "body": [
+          "How does a court actually decide which track a claim goes to? The starting point is the value of the claim as stated on the claim form — but value is a starting point, not the end of the enquiry. Parties complete a directions questionnaire that asks about the number of witnesses, whether expert evidence is needed, the estimated trial length, and any factors suggesting the claim is more complex than its value alone would suggest.",
+          "The court then applies CPR 26.13's non-exhaustive list of matters relevant to allocation: the financial value, the nature of the remedy sought, the complexity of the facts, law or evidence, the number of parties, the value of any counterclaim, the amount of oral evidence required, and the importance of the claim to non-parties (for example, a test case). No single factor is decisive — a claim can be pushed up a track by complexity even where its value alone would place it lower.",
+          "This is where SQE1 fact patterns most often trap candidates: they read the claim value, place it in the matching band, and stop — missing a fact in the scenario (conflicting expert evidence, multiple parties, a novel point of law) that the examiner has planted specifically to push the claim up a track."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Allocating a claim: the decision path",
+            "description": "How a court moves from claim value to a final track allocation.",
+            "nodes": [
+              { "id": "start", "label": "What is the financial value of the claim?" },
+              { "id": "band", "label": "Place the claim in its presumptive band (small claims / fast / intermediate / multi-track)" },
+              { "id": "complexity", "label": "Does complexity (facts, law, evidence, number of parties, importance to non-parties) suggest a higher track?" },
+              { "id": "up", "label": "Yes — allocate to the higher track despite the value" },
+              { "id": "stay", "label": "No — allocate to the presumptive value-based track" }
+            ],
+            "edges": [
+              { "from": "start", "to": "band", "label": "" },
+              { "from": "band", "to": "complexity", "label": "" },
+              { "from": "complexity", "to": "up", "label": "Yes" },
+              { "from": "complexity", "to": "stay", "label": "No" }
+            ],
+            "textAlternative": "Allocation starts with the claim's financial value, which places it in a presumptive track band. The court then checks CPR 26.13 complexity factors — the nature of the facts, law or evidence, the number of parties, and the claim's importance to non-parties. If those factors suggest the claim is more demanding than its value implies, it can be allocated to a higher track than value alone would suggest; otherwise it stays in the presumptive band."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-04-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A claim is worth £35,000 but turns on conflicting expert engineering evidence from four separate experts and a genuinely difficult point of causation. Which track is it most likely to be allocated to?",
+          "options": ["Intermediate track, because the value falls squarely within £25,001–£100,000", "Multi-track, because the complexity of the evidence and issues takes it outside the intermediate track's assumptions despite the value", "Fast track, because £35,000 is a relatively modest sum", "Small claims track, if both parties consent"],
+          "correctIndex": 1,
+          "explanation": "Value gives a presumptive band, but complexity can override it. The intermediate track assumes no more than two experts per party and a trial capped at three days; four experts and a genuinely difficult causation issue take this claim outside those assumptions, pointing to the multi-track."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why this decision echoes through the rest of the claim",
+        "voice": "reflective — closes by tying allocation to what comes later in the module",
+        "body": [
+          "It's worth being explicit about why this single decision, taken early in a claim's life, deserves a whole lesson rather than a line in a case management chapter. Every later stage of the module assumes you know the track: disclosure obligations, permission for expert evidence, and — most directly — the costs regime in Lesson 12 all branch on the answer this lesson teaches.",
+          "The practical consequence students most often underweight is this: allocation to the intermediate or fast track removes the parties' ability to recover costs based on what was actually and reasonably spent, replacing it with a fixed figure. That changes litigation strategy itself — a party facing fixed costs has less incentive to run up costly interim applications it cannot fully recover even if it wins, which is one reason the reform was introduced in the first place.",
+          "Keep the live-watch framing in mind as you move through the rest of this module: the intermediate track is the one area of this syllabus where the underlying law is genuinely still bedding in, and where a well-informed answer sometimes has to acknowledge a boundary dispute rather than state a single settled rule."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Extended fixed recoverable costs",
+            "definition": "The CPR 45, Section IIIA regime applying to most fast track and intermediate track claims since October 2023, under which recoverable costs are read from a fixed grid tied to complexity band and procedural stage, rather than assessed by reference to costs actually and reasonably incurred."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-04-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a claim's track allocation affects only case management timetabling, and not the costs a winning party can recover?",
+          "sliderLabels": ["Confident — allocation is only about timetabling", "Confident — allocation also fixes the costs regime"],
+          "correctPosition": "Confident — allocation also fixes the costs regime",
+          "explanation": "Allocation does far more than set a timetable. For the fast and intermediate tracks in particular, it triggers the extended fixed recoverable costs regime under CPR 45, Section IIIA — fixing what a winning party can recover regardless of what it actually spent."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-04-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "A claimant issues proceedings for £8,500 in a straightforward consumer goods dispute, with no unusual complexity. Which track is the claim most likely to be allocated to?",
+      "options": ["Small claims track", "Fast track", "Intermediate track", "Multi-track"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A straightforward debt claim is valued at £70,000, with no complexity flagged in the directions questionnaire. Which track applies?",
+      "options": ["Fast track", "Intermediate track", "Multi-track", "Small claims track"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-04-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "A solicitor tells a client that winning a £40,000 intermediate track claim means recovering whatever the firm actually billed for the litigation. Is this correct?",
+      "options": ["No — recoverable costs are fixed by reference to the claim's complexity band and stage reached under CPR 45, Section IIIA, not the sum actually billed", "Yes — the intermediate track always allows recovery of actual reasonable costs", "No — the intermediate track never permits any costs recovery at all", "Yes, provided the costs were reasonable and proportionate on assessment"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-04-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the four tracks created under CPR Part 26?",
+      "options": ["Small claims track", "Fast track", "Standard track", "Multi-track"],
+      "correctIndex": 2,
+      "trapExplanation": "'Standard track' sounds plausible but does not exist — the four tracks are small claims, fast, intermediate and multi-track. This is exactly the kind of plausible-sounding distractor SQE1 uses to test precise recall of the scheme."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A £45,000 claim requires five expert witnesses and a trial estimated at five days because of genuinely difficult technical issues. A junior colleague assumes it will be allocated to the intermediate track because its value falls within £25,001–£100,000. Why might this be wrong?",
+      "options": ["Because value is the only factor a court can consider under CPR Part 26", "Because the complexity of the evidence and the trial length take the claim outside the intermediate track's assumptions, pointing instead to the multi-track", "Because claims involving expert evidence can never be allocated below the multi-track", "Because the intermediate track was abolished in October 2023"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming value alone decides allocation. CPR 26.13's complexity factors can move a claim to a higher track than its value suggests, and this claim's expert evidence and trial length are well outside the intermediate track's assumptions of up to two experts per party and a three-day trial cap."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A claimant's solicitor is deciding how much detail to put into a costs schedule for a £60,000 breach of contract claim likely to be allocated to the intermediate track. What should the solicitor bear in mind?",
+      "options": ["A detailed costs schedule will not change what is recoverable, because recoverable costs are fixed by band and stage under CPR 45, Section IIIA rather than assessed on the actual spend", "Detailed costs schedules are compulsory on the intermediate track and directly determine recovery", "Costs are irrelevant on the intermediate track because none are recoverable", "The schedule should focus only on disbursements, since solicitors' fees are never recoverable on this track"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting answer treats a costs schedule as decisive, as it would be under standard or detailed assessment. On the intermediate track, the fixed recoverable costs regime displaces that approach — the schedule doesn't drive recovery in the way it would on the multi-track."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claim for £12,000 arising from a botched home renovation is straightforward, involves one witness each side, and no expert evidence. Which track applies, and what is the main practical consequence for costs recovery?",
+      "options": ["Fast track — subject to the extended fixed recoverable costs regime introduced alongside the intermediate track reform", "Small claims track — costs recovery will be heavily restricted even for the winning party", "Intermediate track — complexity band 1 fixed costs will apply", "Multi-track — costs will be assessed on the standard basis"],
+      "correctIndex": 0,
+      "explanation": "£12,000 falls in the fast track band (£10,001–£25,000). Since the October 2023 reform, most fast track claims are also brought within the extended fixed recoverable costs regime, not just the intermediate track."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A litigant in person brings a £2,200 claim over a faulty appliance. She wins at the hearing and asks whether she can recover her time spent preparing the case and her solicitor's advice fee incurred before issuing. What is the likely position on the small claims track?",
+      "options": ["Costs recovery on the small claims track is heavily restricted, so most of these amounts will not be recoverable even though she won", "She can recover all costs actually and reasonably incurred, as on the multi-track", "She can recover costs only if she used a solicitor throughout the litigation", "No costs of any kind are ever recoverable on the small claims track, including court fees"],
+      "correctIndex": 0,
+      "explanation": "The small claims track is designed for litigants in person and deliberately restricts costs recovery — typically limited to fixed items like the court fee and limited expenses, not solicitors' costs or the litigant's own time, even for a successful party."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-09",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "A personal injury claim is valued at £1,200. Which threshold applies for allocating this specific type of claim to the small claims track?",
+      "options": ["£1,500, not the general £10,000 threshold, because personal injury claims have their own lower small claims limit", "£10,000, the same as any other type of claim", "£500, a special threshold unique to personal injury", "There is no small claims track available for personal injury claims"],
+      "correctIndex": 0,
+      "explanation": "Most personal injury claims have a lower small claims threshold of £1,500 rather than the general £10,000 limit, reflecting the different costs and evidential considerations in injury claims."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under CPR 26.13, which of the following is a matter the court may take into account when deciding allocation, beyond the claim's financial value?",
+      "options": ["The complexity of the facts, law or evidence involved", "The claimant's personal opinion of how the defendant has behaved outside the litigation", "The number of social media followers either party has", "Whether either party would prefer a jury trial"],
+      "correctIndex": 0,
+      "explanation": "CPR 26.13 lists the complexity of facts, law or evidence among the matters the court may weigh alongside value — allocation is not decided on value alone."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A claim's value sits within the intermediate track band, but the court considers it raises a point of law of general public importance affecting many other potential claimants. What is the likely effect of this factor under CPR 26.13?",
+      "options": ["It may justify allocating the claim to the multi-track despite its value falling within the intermediate track band", "It is irrelevant, since only financial value is considered under CPR 26.13", "It automatically moves the claim to the small claims track for a quicker resolution", "It has no bearing on allocation but affects only the costs order at the end of trial"],
+      "correctIndex": 0,
+      "explanation": "General public importance to non-parties is one of the CPR 26.13 factors that can push a claim to a higher track than its bare value would suggest."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant argues that a £90,000 claim, though within the intermediate track's value band, should be allocated to the multi-track because it involves five separate parties and a genuinely difficult expert dispute. On the framework in CPR 26.13 and the intermediate track's design assumptions, is the defendant's argument sound?",
+      "options": ["Yes — the number of parties and the complexity of the expert dispute are both matters that can take a claim outside the intermediate track's assumptions of a straightforward, limited-expert case", "No — once a claim's value falls within a track's band, complexity can never change the allocation", "No — only the number of parties is relevant to allocation, not the nature of the expert evidence", "Yes, but only because the value is close to the £100,000 upper limit, not because of the complexity factors"],
+      "correctIndex": 0,
+      "explanation": "Both the number of parties and the difficulty of the expert dispute are complexity factors under CPR 26.13 that can move a claim within value of the intermediate track band up to the multi-track."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-13",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A trainee solicitor is asked to explain, in one sentence, why the intermediate track was introduced in October 2023. Which explanation best captures the reform's purpose?",
+      "options": ["To create a track for claims too substantial for the fast track but not complex enough to justify the full case management and costs-assessment machinery of the multi-track", "To abolish the small claims track entirely and route all claims above £1,500 through a single new process", "To remove costs recovery altogether for claims between £25,000 and £100,000", "To replace the multi-track for all claims regardless of value or complexity"],
+      "correctIndex": 0,
+      "explanation": "The intermediate track fills the gap the two-track system left for mid-value, relatively straightforward claims — giving them a proportionate procedure and predictable fixed costs, without the full multi-track machinery."
+    },
+    {
+      "itemId": "sqe1-dr-04-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A claim for £55,000 is allocated to the intermediate track. Midway through proceedings, the defendant's disclosure reveals a genuinely novel and difficult point of contractual interpretation that neither party anticipated, and the trial estimate grows to four days. What is the most accurate description of the position?",
+      "options": ["The court may reallocate the claim to the multi-track, since it may no longer fit the intermediate track's assumptions of limited complexity and a trial capped at three days", "The claim must remain on the intermediate track regardless of any later change in circumstances, since allocation is fixed permanently at the first case management stage", "The claim automatically reverts to the fast track because a longer trial estimate reduces the trial's complexity classification", "The parties can privately agree to move the claim to whichever track they prefer without the court's involvement"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is treating the original allocation as unchangeable. Allocation is not a one-off decision immune from later developments — the court retains case management power to reallocate where new complexity emerges, and the parties cannot simply agree a different track between themselves without the court."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is stopping at the claim's stated value and never checking whether a complexity factor — multiple experts, difficult points of law, several parties — should push the claim to a higher track, along with underestimating how directly the intermediate and fast tracks' fixed costs regime changes what a winning party actually recovers.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.track-allocation"
+  }
+}

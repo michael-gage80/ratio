@@ -1,0 +1,346 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-12",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 12,
+  "topicId": "sqe1.legal-system.code-conduct-court-regulator",
+  "title": "The SRA Code of Conduct II: undertakings, duties to the court, and cooperation with the regulator",
+  "subtitle": "Binding promises, honesty in litigation, and what happens when something goes wrong",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the binding nature of an undertaking and the consequences of breaching one",
+    "State a solicitor's duties not to mislead the court, misuse evidence, or waste its time, and the duties to report serious misconduct and cooperate with SRA investigations",
+    "Apply these duties to realistic scenarios, including recognising when acting promptly and honestly on discovering an error is itself required"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Code of Conduct for Solicitors, paras 1.2–1.4", "role": "Duties not to take unfair advantage, to act with integrity, and not to mislead the court or others" },
+    { "citation": "SRA Code of Conduct for Solicitors, paras 2.1–2.7", "role": "Specific duties in litigation: not influencing evidence improperly, not wasting the court's time, complying with court orders" },
+    { "citation": "SRA Code of Conduct for Solicitors, paras 7.3–7.8", "role": "Duties to report serious misconduct, cooperate with SRA investigations, and notify the SRA of material changes" },
+    { "citation": "Beckwith v SRA [2020] EWHC 3231 (Admin)", "role": "Marks the limit of the profession's reach into a solicitor's private life absent a sufficient connection to practice" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the most scenario-driven lesson in the module, because SQE1 tests these duties almost entirely through realistic fact patterns — a missed deadline, a document sent by mistake, a colleague's conduct you're unsure whether to report.",
+    "profileHooks": {
+      "weakApplication": "You know the rules here in the abstract. The test pool is deliberately dense with fact patterns — read each stem slowly and identify exactly which duty is engaged before looking at the options.",
+      "weakKnowledge": "Before working through the scenarios, make sure you can state each duty precisely: an undertaking is binding regardless of formality, and the reporting duty in para 7.3 is triggered by a reasonable belief, not certainty."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A solicitor types one sentence in an email — 'we undertake to hold the funds until completion' — and from that moment, breaking that promise is treated by the profession roughly as seriously as breaking a court order. Nobody signed anything. No contract was formed. This lesson is about why words alone can bind a solicitor absolutely, and what the profession expects when things go wrong regardless.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the SRA Code of Conduct for Solicitors 2019. Beckwith v SRA remains the leading appellate authority on the reach of professional regulation into a solicitor's private life; the boundary it draws continues to be worked out case by case, so treat its precise limits as a developing rather than a fully settled area."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "An undertaking: a promise with no escape hatch",
+        "voice": "case-narrative — builds the stakes before naming the rule",
+        "body": [
+          "A solicitor tells the other side's firm, by email, 'we will hold the sale proceeds and will not release them until your client's charge is registered'. There is no signature, no witness, no formal deed. And yet, from the moment that email is sent, the solicitor is bound by it in a way ordinary promises never are.",
+          "An undertaking is a statement, given by a solicitor in the course of practice, that they will do something (or refrain from doing something), which the recipient is entitled to rely on. It requires no consideration, no particular form of words, and no special formality — an oral undertaking given in a phone call is just as binding as a formal deed.",
+          "The consequence of breach is severe on two separate fronts. First, it is professional misconduct in its own right, regardless of whether the breach was deliberate or merely careless — an undertaking broken by an honest oversight is still broken. Second, because undertakings given by solicitors are supervised by the court's inherent jurisdiction over its officers, a court can compel performance or compensate the recipient directly, without the recipient needing to sue in contract at all."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Undertaking",
+            "definition": "A statement, given by a solicitor in the course of practice, that they will do or refrain from doing something, on which the recipient is entitled to rely — binding regardless of form, consideration, or formality, and enforceable via the court's supervisory jurisdiction over solicitors as its officers."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-12-check-01",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this exchange that creates a binding undertaking.",
+          "scenarioText": "In a phone call about a property completion, the buyer's solicitor says: 'I think completion should happen by Friday, and I'll try to get the funds to you by then.' The seller's solicitor replies, 'Good, please confirm you will send the funds by 5pm Friday.' The buyer's solicitor says, 'Yes — you have my word, the funds will be with you by 5pm Friday.'",
+          "tappableSpans": ["completion should happen by Friday", "I'll try to get the funds to you by then", "please confirm you will send the funds by 5pm Friday", "you have my word, the funds will be with you by 5pm Friday"],
+          "correctSpan": "you have my word, the funds will be with you by 5pm Friday",
+          "feedbackCorrect": "That's the undertaking. Earlier statements were tentative ('I think', 'I'll try') — this is an unqualified promise the other side is entitled to rely on, given orally, and it binds regardless.",
+          "feedbackIncorrect": "Look for the point where the language stops being tentative. 'I'll try' is not a promise the other side can rely on absolutely — the undertaking is created by the clear, unqualified commitment that follows it."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Honesty with the court: three duties that operate together",
+        "voice": "structural — sets out the duties as a working checklist",
+        "body": [
+          "Section 1 and Section 2 of the Code, taken together, impose three duties that solicitors conducting litigation are tested on constantly: do not mislead the court, do not misuse or improperly influence evidence, and do not waste the court's time.",
+          "'Not misleading the court' extends beyond outright lies. It also covers omissions calculated to create a false impression, and being complicit in a client or witness misleading the court — a solicitor who says nothing while a client repeats a known falsehood in evidence is not neutral; silence in that position is itself a form of complicity.",
+          "'Not misusing evidence' covers coaching a witness to change their account to fit a preferred version of events, as opposed to legitimate preparation for giving evidence (which is permitted and, for expert witnesses especially, expected). 'Not wasting the court's time' covers conduct such as pursuing hopeless applications, or failing to tell the court about a settled case or a withdrawn point once it is known — court time is a public resource, and a solicitor's duty to the client does not extend to consuming more of it than the case genuinely requires."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Three duties to the court",
+            "points": [
+              "Do not mislead the court, by act or omission, or be complicit in a client's or witness's false evidence",
+              "Do not improperly influence or coach evidence to fit a preferred version of events (legitimate witness preparation is permitted)",
+              "Do not waste the court's time, including by pursuing hopeless points or failing to update the court once a matter has settled or narrowed"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-12-check-02",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A solicitor helps a witness prepare to give evidence by talking through the questions they may be asked and the documents they may be shown, without altering the substance of the witness's account. Does this breach the duty not to misuse evidence?",
+          "options": ["Yes — any contact with a witness before they give evidence is improper", "No — this is legitimate witness preparation, distinct from coaching the witness to change their account", "Yes, but only if the witness is an expert", "No, but only if the other side consents in advance"],
+          "correctIndex": 1,
+          "trapExplanation": "Students sometimes treat any pre-evidence contact with a witness as suspect. The line the Code actually draws is between preparing a witness to give their genuine evidence clearly and coaching them to change what that evidence actually is — the former is routine and proper.",
+          "feedbackCorrect": "Right. Familiarising a witness with the process is legitimate preparation; it becomes improper only when it starts to shape the substance of what the witness says.",
+          "feedbackIncorrect": "Reconsider what actually happened here — the substance of the evidence was untouched. The duty is breached by coaching that changes an account, not by ordinary preparation."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Reporting serious misconduct, and cooperating with the SRA",
+        "voice": "argumentative — states the duty, then addresses the discomfort around it",
+        "body": [
+          "Paragraph 7.3 requires a solicitor to report promptly to the SRA any facts or matters they reasonably believe are capable of amounting to a serious breach of the regulatory arrangements — by anyone, including themselves. The threshold is a reasonable belief, not certainty and not proof; a solicitor does not need to have concluded misconduct definitely occurred before the duty is engaged.",
+          "This duty sits uneasily with instincts most people have — loyalty to colleagues, reluctance to escalate, hope that a problem resolves itself. The Code addresses that tension directly: a solicitor must not attempt to prevent someone else from reporting to the SRA, and must not subject anyone to detrimental treatment for making, or proposing to make, a report held on reasonable grounds.",
+          "Cooperation continues once an investigation starts. A solicitor must respond to reasonable requests from the SRA for information relevant to its regulatory functions — including information about the solicitor's own conduct — and must notify the SRA promptly of material changes, such as becoming subject to a serious sanction elsewhere. None of this depends on the underlying conduct turning out, in the end, to have been genuine misconduct at all; the duty is triggered by the reasonable belief at the time."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume the reporting duty only applies once a solicitor is sure misconduct has occurred, or believe reporting a colleague is optional if the solicitor would rather stay out of it.",
+            "whyItsWrong": "The threshold is a reasonable belief that conduct is capable of amounting to a serious breach — a lower bar than certainty. The duty is mandatory, not discretionary, once that threshold is met, and applies to conduct by anyone regulated, not just third parties outside the solicitor's own firm."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-12-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A solicitor discovers that a colleague at her firm has, on several occasions, backdated attendance notes to make it look as though advice was given earlier than it actually was. She isn't certain how serious this is, and is reluctant to cause trouble. What does para 7.3 require?",
+          "options": ["Nothing, unless she is completely certain the conduct amounts to serious misconduct", "She should report it promptly to the SRA, since she reasonably believes it is capable of amounting to a serious breach, even without certainty", "She should raise it only with the colleague directly and take no further action", "She should wait until a client complains before doing anything"],
+          "correctIndex": 1,
+          "explanation": "Reasonable belief that conduct is capable of amounting to a serious breach is enough to engage para 7.3 — certainty is not required, and reluctance to cause difficulty for a colleague does not excuse non-reporting once the threshold is met."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When something goes wrong: acting promptly and honestly",
+        "voice": "Socratic — poses the dilemma most students get instinctively wrong",
+        "body": [
+          "Here's the scenario that trips up more students than any other in this area: a solicitor realises, three days after sending it, that a completion statement sent to a client contained a material error that favours the client. Nobody has noticed. Does anything require the solicitor to say anything at all?",
+          "The instinctive answer — 'only if the client asks' — is wrong. The obligations of competence and of acting with honesty and integrity are ongoing, not limited to the moment a document is first produced. A solicitor who becomes aware of a material error is expected to correct the position honestly and promptly, not to let a favourable mistake stand simply because raising it is awkward or might look bad.",
+          "This connects directly to the reporting duties in Part 3: a pattern of covering up errors, rather than disclosing and correcting them, is itself capable of becoming the more serious problem — turning an honest mistake into a question of integrity. The safest, and the required, response to discovering an error is almost always the same: disclose it promptly and deal with the consequences, rather than hope it goes unnoticed."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Duty to correct known errors",
+            "definition": "On becoming aware of a material error affecting a client or a matter, a solicitor is expected to act promptly and honestly to correct the position, rather than allow a mistake — even one that happens to favour a client, or is merely inconvenient to raise — to stand undisclosed."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-12-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario does the duty to act promptly and honestly about an error most clearly arise?",
+          "scenarioA": "A solicitor spots a minor typo in a draft letter before it is sent, and corrects it before sending.",
+          "scenarioB": "A solicitor realises, a week after completion, that a client was undercharged by a significant sum due to a calculation error in the final invoice, and says nothing because raising it feels awkward.",
+          "correctScenario": "B",
+          "explanation": "B is the live scenario: a material error has already taken effect and gone unnoticed by the client, and the solicitor is choosing silence out of discomfort rather than correcting the position. A is simply competent proofreading before anything went wrong — no duty to disclose arises because there was never an uncorrected error in the first place."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Where the profession's reach stops: Beckwith v SRA",
+        "voice": "case-narrative — walks the facts before drawing the limiting principle",
+        "body": [
+          "Everything in this lesson so far shows the profession reaching deep into a solicitor's conduct — undertakings given informally, errors that must be disclosed unprompted, misconduct that must be reported even on a reasonable belief short of certainty. It's tempting to conclude the SRA's reach is essentially unlimited. Beckwith v SRA shows that it isn't.",
+          "Ryan Beckwith, a senior partner, had a sexual encounter with a more junior solicitor at his firm after a work social event, in circumstances the SRA's disciplinary tribunal found engaged the Principle protecting public trust and confidence in the profession, given the seniority imbalance involved. The tribunal found the conduct breached that Principle even though it occurred in a private, personal context outside any client matter.",
+          "The High Court disagreed, and its reasoning is the point worth remembering. Regulating a solicitor's private life requires a sufficiently close connection to the solicitor's practice or to public confidence in the profession specifically — it is not enough that the conduct is, in isolation, something the SRA or a tribunal might personally disapprove of. Consensual conduct between adults in their personal lives is not, without more, fair game for professional discipline, and the court was clear that regulators should be cautious about expanding into private life without a clearly articulated professional connection.",
+          "The lesson to take from Beckwith is not that private conduct is always beyond reach — serious dishonesty or violence in a solicitor's private life, for instance, can still properly engage the Principles. It's that the connection to the profession must be real and specifically explained, not simply assumed because a regulator, in hindsight, disapproves of what happened."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Beckwith v SRA",
+            "citation": "[2020] EWHC 3231 (Admin)",
+            "court": "High Court (Administrative Court)",
+            "year": 2020,
+            "factsShort": "A senior partner had a consensual sexual encounter with a junior colleague after a work social event; the SRA tribunal found this breached the Principle protecting public trust because of the seniority imbalance.",
+            "ratioShort": "Professional regulation of a solicitor's private life requires a sufficiently close and clearly articulated connection to practice or public confidence in the profession — it is not enough that a regulator disapproves of consensual private conduct in isolation.",
+            "expanded": {
+              "facts": "Ryan Beckwith, a partner and the junior solicitor's supervisor (though not on the specific matters she worked on), had a sexual encounter with her after a work leaving party at which both had been drinking heavily. She later complained to the firm and then to the SRA. The SRA Solicitors Disciplinary Tribunal found his conduct breached the Principle then requiring integrity and the Principle now split into upholding public trust, largely on the basis of the imbalance of seniority between them.",
+              "judgmentExtract": "The Divisional Court allowed Beckwith's appeal, holding that the tribunal had erred in treating the seniority imbalance, on facts otherwise involving consensual adult conduct in a personal setting, as sufficient on its own to engage professional regulation. The court emphasised that there is, in general, a distinction to be drawn between a person's professional and private lives, and that regulatory intervention into private conduct needs a clear and specific justification connecting it to the profession.",
+              "significance": "Beckwith is the leading authority cautioning against treating every instance of private conduct a regulator finds troubling as automatically a professional conduct matter. It sits alongside, rather than contradicts, the broad reach of Principle 2 discussed earlier in this module — the reach is broad in principle, but it is not unlimited, and the connection to practice or public confidence must be made out on the specific facts."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-12-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A solicitor is convicted of a minor, non-violent driving offence entirely unconnected to her practice, with no dishonesty involved. A member of the public who recognises her from a newspaper photograph reports it to the SRA, arguing it undermines public trust in the profession. Applying the reasoning in Beckwith, analyse whether this is likely to engage professional regulation.",
+          "factsToOrder": [
+            "The offence is minor and non-violent",
+            "The offence is entirely unconnected to the solicitor's practice",
+            "No dishonesty is involved",
+            "A member of the public personally disapproves and reports it"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether this private conduct is sufficiently connected to the solicitor's practice or to public confidence in the profession to engage professional regulation.",
+            "rule": "Following Beckwith, regulating private conduct requires a sufficiently close and clearly articulated connection to practice or to public confidence in the profession specifically — it is not enough that the conduct, viewed in isolation, is something a member of the public or a regulator disapproves of.",
+            "application": "The offence is minor, non-violent, unconnected to practice, and involves no dishonesty. A member of the public's personal disapproval, without more, does not supply the kind of specific professional connection Beckwith requires — there is nothing here comparable to the seniority-imbalance argument that was itself rejected as insufficient in Beckwith.",
+            "conclusion": "This is unlikely, on these facts, to engage professional regulation — the conduct lacks a sufficiently close connection to practice or to public confidence in the profession specifically."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-12-test-01",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which of the following is required for a solicitor's statement to amount to a binding undertaking?",
+      "options": ["It must be given in writing and signed as a deed", "It must be a statement that the recipient is entitled to rely on, given by the solicitor in the course of practice — no particular form or consideration is required", "It must be approved in advance by the solicitor's firm's compliance officer", "It must relate to the payment of money only"],
+      "correctIndex": 1,
+      "explanation": "An undertaking requires no particular formality, consideration, or written form — an oral undertaking given over the phone is just as binding as a formal deed, provided it is a statement the recipient is entitled to rely on, given in the course of practice."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-02",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A solicitor tells opposing counsel in a phone call, 'my firm will undertake to retain the disputed documents pending trial.' Three weeks later, unaware the case is still live, a junior colleague at the same firm destroys the documents as part of a routine file clear-out. What is the position?",
+      "options": ["No breach has occurred, since the solicitor who gave the undertaking did not personally destroy the documents", "The undertaking has been breached; the destruction by a colleague at the same firm does not excuse it, and this is professional misconduct regardless of the lack of deliberate intent", "The undertaking was never binding, because it was given orally rather than in writing", "The undertaking lapsed automatically after two weeks"],
+      "correctIndex": 1,
+      "explanation": "An undertaking binds the solicitor (and, in practice, the firm acting through them) to ensure the promised outcome occurs. A colleague's unconnected mistake does not excuse a breach — the undertaking is broken by the documents being destroyed, whatever the internal cause, and this is misconduct regardless of whether the breach was deliberate."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-03",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Which of the following best describes the distinction between legitimate witness preparation and improperly influencing evidence?",
+      "options": ["Any contact with a witness before trial is improper", "Preparing a witness to give their genuine account clearly and confidently is legitimate; coaching them to change the substance of their account is not", "Preparation is only legitimate if conducted by counsel, never by a solicitor", "Preparation is legitimate only for expert witnesses, never for witnesses of fact"],
+      "correctIndex": 1,
+      "explanation": "The Code permits helping a witness understand the process and present their genuine evidence clearly; it prohibits shaping what that evidence actually says. This distinction applies to both witnesses of fact and expert witnesses, and to preparation carried out by solicitors as much as by counsel."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-04",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "During cross-examination preparation, a solicitor notices her client's witness statement omits a fact that, if included, would significantly weaken the client's case but which the witness has separately confirmed is true. The solicitor says nothing about it and lets the statement stand as drafted. What is the correct analysis?",
+      "options": ["No issue arises, since the solicitor did not add anything false to the statement", "This is capable of misleading the court by omission if the omission is calculated to create a false impression, and the solicitor's silence does not make it acceptable", "The issue only arises if the other side specifically asks about the fact", "There is no duty regarding omissions, only regarding express false statements"],
+      "correctIndex": 1,
+      "trapExplanation": "Focusing only on what was actively said misses that the duty not to mislead the court extends to omissions calculated to create a false impression — staying silent while a materially incomplete statement stands is not automatically neutral just because nothing false was added.",
+      "explanation": "The duty not to mislead the court is not confined to affirmative false statements; a solicitor who knowingly allows a materially incomplete account to stand, where the omission creates a false impression, is at real risk of breaching that duty by omission."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-05",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "What threshold must be met before the duty to report under para 7.3 is engaged?",
+      "options": ["Certainty that serious misconduct has occurred", "A reasonable belief that facts or matters are capable of amounting to a serious breach of the regulatory arrangements", "A formal finding by a court or tribunal", "A written complaint from the affected client"],
+      "correctIndex": 1,
+      "explanation": "Para 7.3 is triggered by a reasonable belief that conduct is capable of amounting to a serious breach — a materially lower threshold than certainty, a formal finding, or a client complaint, none of which are required."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-06",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A solicitor learns that a junior colleague deliberately misled a client about the likely cost of a matter to secure the instruction, and reasonably believes this is capable of being a serious breach. The colleague asks him, as a favour, to say nothing and let it be handled 'internally'. What should the solicitor do?",
+      "options": ["Agree, since internal handling is always preferable to involving the regulator", "Report the matter to the SRA promptly, since the duty is mandatory once the reasonable-belief threshold is met, and he must not be prevented from reporting", "Wait to see if the client complains before doing anything", "Report it only if he is the colleague's supervisor"],
+      "correctIndex": 1,
+      "explanation": "Once a solicitor reasonably believes conduct is capable of amounting to a serious breach, the duty to report is mandatory, not a matter of internal discretion — and the Code separately prohibits attempting to prevent someone from reporting, which an informal request to 'handle it internally' risks becoming."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-07",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Which of the following best describes the Code's protection for a solicitor who makes a report to the SRA on reasonably held grounds?",
+      "options": ["The solicitor must not be subjected to detrimental treatment for making, or proposing to make, the report", "The solicitor loses client confidentiality privileges as a result of reporting", "The report must be anonymous to be protected", "There is no specific protection beyond the general duty of good faith"],
+      "correctIndex": 0,
+      "explanation": "The Code expressly prohibits subjecting anyone to detrimental treatment for making, or proposing to make, a report held on reasonable grounds — this protects the reporting solicitor (or other person) specifically, and does not depend on the report being anonymous."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-08",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A solicitor realises, two months after a transaction completed, that she gave a client materially incorrect advice about a tax consequence, which the client has not noticed and which has not yet caused any loss. What should she do?",
+      "options": ["Nothing, since no loss has occurred yet", "Disclose the error to the client promptly and address the position honestly, even though no loss has yet materialised", "Wait until the tax consequence actually arises before saying anything", "Correct her file note only, without telling the client"],
+      "correctIndex": 1,
+      "trapExplanation": "Waiting for actual loss to materialise before disclosing feels cautious, but it inverts the duty — the obligation to act promptly and honestly about a known material error is not conditional on loss having already occurred, and delay itself risks compounding the problem.",
+      "explanation": "The duty to act promptly and honestly when something goes wrong is triggered by becoming aware of the error, not by the client suffering identifiable loss — correcting a private file note while leaving the client uninformed does not satisfy it."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-09",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Which of the following best reflects the principle established in Beckwith v SRA?",
+      "options": ["A solicitor's private life is entirely beyond the reach of professional regulation in every circumstance", "Regulating private conduct requires a sufficiently close and specifically articulated connection to practice or to public confidence in the profession, not merely that a regulator disapproves of the conduct", "Seniority imbalance between two adults is always sufficient, on its own, to engage professional regulation of private conduct", "Only conduct that occurs on a firm's premises can ever be regulated"],
+      "correctIndex": 1,
+      "explanation": "Beckwith did not place private life entirely outside regulatory reach — it held that a sufficiently close and clearly explained connection to practice or public confidence is required, and rejected the argument that a seniority imbalance was, on its own and without more, enough to supply that connection."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-10",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A solicitor is convicted of driving with excess alcohol, entirely unconnected to any client matter, and this is reported in a local newspaper. Applying the reasoning in Beckwith, is this necessarily beyond the reach of professional regulation?",
+      "options": ["Yes — any private conduct unconnected to a specific client is automatically excluded", "Not necessarily — Beckwith requires a sufficiently close connection to practice or public confidence to be shown, but does not hold that all private conduct, including some criminal offences, is automatically excluded", "No — all criminal convictions are automatically regulatory matters regardless of connection to practice", "Yes, because Beckwith held that only dishonesty offences can ever be regulated"],
+      "correctIndex": 1,
+      "explanation": "Beckwith requires the connection to be shown on the specific facts, rather than assumed — it does not create a blanket rule excluding all private conduct, and a criminal conviction, depending on its nature and any wider implications for trust in the profession, may still be capable of engaging regulation where that connection can genuinely be made out."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-11",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which of the following best describes the duty not to waste the court's time?",
+      "options": ["It applies only to criminal proceedings", "It includes not pursuing hopeless applications and updating the court once a matter has settled or narrowed", "It applies only where the solicitor is acting for the losing party", "It is satisfied so long as the solicitor personally believes the point is arguable, regardless of the evidence"],
+      "correctIndex": 1,
+      "explanation": "The duty not to waste the court's time covers conduct such as pursuing applications with no real prospect of success and failing to notify the court once a case has settled or a point has fallen away — it applies across civil and criminal proceedings and to any party."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-12",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A solicitor is asked by the SRA to provide information about her own conduct as part of an investigation into a colleague. She is concerned that some of the information may reflect poorly on her personally. What does para 7.4 require?",
+      "options": ["She may withhold information that could reflect poorly on her personally", "She must respond to the SRA's reasonable request for information relevant to its regulatory functions, even where it concerns her own conduct", "She must respond only if her own conduct is not itself under investigation", "She may respond through her firm's compliance officer only, never directly"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think cooperation only extends to information about other people, but para 7.4 is not limited that way — a personal interest in the outcome, or discomfort at what the information might show, is not a recognised basis for withholding it from a reasonable regulatory request.",
+      "explanation": "The duty to cooperate with the SRA extends to information about the solicitor's own conduct, not only third parties — a concern that the information may be personally unflattering does not provide a basis to withhold it from a reasonable regulatory request."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-13",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A solicitor's firm agrees a settlement with the other side that both clients want, but the solicitor personally believes the client could have achieved a better outcome by continuing to trial. The client, having taken advice, confirms in writing that they wish to accept the settlement. What should the solicitor do?",
+      "options": ["Refuse to put the agreement forward to the court, since it is not the outcome the solicitor would have advised", "Put the properly negotiated agreement forward, since unreasonably refusing to do so on a client's clear instructions is not consistent with the solicitor's duties", "Delay putting the agreement forward until the solicitor is personally persuaded it is the best outcome", "Advise the court directly that the client is making a mistake"],
+      "correctIndex": 1,
+      "explanation": "Once a client has given clear, informed instructions to accept a properly negotiated agreement, a solicitor's own view that a better outcome was available does not justify unreasonably refusing to put the agreement forward — the client's informed decision, within the bounds of what the Principles permit, governs here."
+    },
+    {
+      "itemId": "sqe1-ls-12-test-14",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "A solicitor argues that because his firm's compliance officer has not raised any concern, he has no personal duty to consider reporting a colleague's conduct under para 7.3. Which of the following best evaluates that argument?",
+      "options": ["The argument is correct — the reporting duty rests solely with the firm's compliance officer", "The argument is incorrect — the duty to report a reasonably held belief in serious misconduct is a personal duty on every solicitor, not one discharged by leaving it to the compliance officer", "The argument is correct only in firms without a designated compliance officer", "The argument is incorrect only if the colleague is more senior than the solicitor"],
+      "correctIndex": 1,
+      "explanation": "The reporting duty under para 7.3 is personal to each solicitor holding the reasonable belief — the existence of a compliance officer role within a firm does not transfer or discharge an individual solicitor's own duty to report."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring traps here are treating an undertaking as needing formality it does not need, treating the reporting duty as requiring certainty rather than reasonable belief, and — pulling the other way — assuming the profession's reach into private life is unlimited when Beckwith shows it requires a genuine, specific connection to practice or public confidence.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.code-conduct-court-regulator"
+  }
+}

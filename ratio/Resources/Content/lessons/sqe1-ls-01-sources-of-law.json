@@ -1,0 +1,339 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-01",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 1,
+  "topicId": "sqe1.legal-system.sources-of-law",
+  "title": "Sources of law: legislation and case law",
+  "subtitle": "Primary and secondary legislation, and how statute and case law fit together",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish primary legislation from secondary legislation and explain how each is made and brought into force",
+    "Explain how case law relates to statute, including how courts fill gaps, interpret provisions, and remain subject to Parliament's sovereignty",
+    "Apply knowledge of an Act's structure and standard citation conventions to locate and correctly identify a specific statutory provision or case report"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Interpretation Act 1978", "role": "Supplies default rules of construction, commencement and definitions that apply across almost all later Acts unless displaced" },
+    { "citation": "R (Miller) v The Prime Minister [2019] UKSC 41", "role": "Illustrates the constitutional relationship between statute, common law principle and parliamentary sovereignty" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Every other SQE1 subject assumes you can find and read the law confidently. Where the profile shows this foundation is shaky, this note appears: 'Before the substantive law makes sense, you need to be fluent in where it actually comes from.'",
+    "profileHooks": {
+      "weakApplication": "You know the theory here. The test pool below leans on citation-reading and Act-structure questions — expect to locate provisions, not just define terms.",
+      "weakKnowledge": "Take Parts 1 and 2 slowly. Everything later in the SQE1 legal system module assumes you can tell primary from secondary legislation without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Open a law report and open an Act of Parliament side by side. One reads like a set of instructions issued in advance; the other reads like a record of an argument that already happened. Both are 'the law' — and knowing which one governs a given problem, and how they talk to each other, is the single most useful piece of legal-system knowledge you'll ever use in practice.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The core framework here — the Interpretation Act 1978, the structure of primary and secondary legislation, and the reporting conventions — is long-settled and not subject to imminent reform."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two sources, one legal system",
+        "voice": "expository — sets up the map before filling in detail",
+        "body": [
+          "England and Wales has no single law code. Instead, the law comes from two main sources that work together: legislation (law made deliberately, in advance, by a law-making body) and case law (law made or clarified by judges deciding real disputes, building on what came before).",
+          "Legislation itself splits in two. Primary legislation is an Act of Parliament — passed by the House of Commons, the House of Lords, and given Royal Assent. Secondary (or 'delegated') legislation is made under powers that an Act of Parliament hands to someone else — usually a government minister — most commonly in the form of a statutory instrument (SI).",
+          "Case law is not a free-standing alternative to legislation; it operates alongside it. Judges apply and interpret statutes, and where no statute covers a point, they apply the common law — principles built up, case by case, over centuries. Either way, the doctrine of precedent (covered in a later lesson) governs how much weight a given decision carries."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Delegated legislation",
+            "definition": "Legislation made by a body other than Parliament (typically a minister) under powers conferred by a 'parent' or 'enabling' Act — most commonly a statutory instrument."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-01-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A statutory instrument made by a government minister under powers granted by an Act of Parliament is an example of which type of legislation?",
+          "options": ["Primary legislation", "Secondary legislation", "Case law", "Retained EU law"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. A minister has no independent law-making power — only what the parent Act delegates, and an SI is the usual vehicle for exercising it.",
+          "feedbackIncorrect": "Look again at where the power comes from. The minister isn't legislating from scratch — they're exercising authority an Act of Parliament has handed down, which is the hallmark of secondary legislation."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Anatomy of an Act",
+        "voice": "structural — a reference part students will return to",
+        "body": [
+          "Every Act of Parliament follows a recognisable structure, and reading it correctly is a practical skill, not just theory. The short title (e.g. 'Consumer Rights Act 2015') is how you cite it day to day; the long title states its full purpose and can occasionally be used as an aid to interpretation. Each Act is also given a chapter number for the calendar year it received Royal Assent.",
+          "Below the title, an Act divides into Parts (thematic groupings), then sections (the core numbered units — 's 1', 's 2', and so on), which divide further into subsections ('s 1(1)'), paragraphs ('s 1(1)(a)') and sub-paragraphs. Schedules sit at the end and carry detail that would clutter the main text — transitional provisions, repeals, or detailed technical lists — but have the same legal force as the sections that introduce them.",
+          "Two sections matter more than they look: the interpretation (or 'definitions') section, usually near the end, which fixes what key terms mean throughout the Act; and the commencement section, which states when the Act (or parts of it) actually comes into force — Royal Assent and commencement are not the same date, and an Act can sit unenforced for years if commencement is left to a minister's order."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Interpretation Act 1978, s 4",
+            "text": "An Act or provision of an Act comes into force— (a) where provision is made for it to come into force on a particular date, at the beginning of that date; (b) where no provision is made for its coming into force, at the beginning of the day on which the Act receives the Royal Assent.",
+            "elements": ["Commencement date fixed by the Act itself", "Absent a stated date, commencement is on Royal Assent", "Commencement is calculated from the very beginning of the relevant day"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-01-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "An Act receives Royal Assent on 10 March but its commencement section states that s 5 comes into force 'on a day to be appointed by the Secretary of State'. On what date does s 5 come into force?",
+          "options": ["10 March, the date of Royal Assent", "Immediately, because all sections commence automatically on Assent", "Whatever date the Secretary of State later specifies by commencement order", "One year after Royal Assent by default"],
+          "correctIndex": 2,
+          "feedbackCorrect": "Correct. Royal Assent is only the default commencement date where the Act is silent — here the Act expressly defers commencement to a later appointed day.",
+          "feedbackIncorrect": "Re-read the commencement wording: it expressly defers the date to a later appointed order, so Royal Assent itself does not bring s 5 into force."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Secondary legislation: the detail-filling layer",
+        "voice": "practical — explains why SIs exist and how they're checked",
+        "body": [
+          "Parliament cannot debate every technical detail of modern regulation line by line, so Acts routinely delegate power to fill in the detail later — setting fees, prescribing forms, updating thresholds for inflation, or bringing provisions into force. This delegated power is always bounded by the enabling Act: a minister cannot use an SI to do something the parent Act does not authorise (acting outside that scope is 'ultra vires' and the SI can be struck down).",
+          "Most SIs go through one of two parliamentary procedures. Under the negative resolution procedure, an SI becomes law automatically unless either House votes to annul it within a set period — the default for routine matters. Under the affirmative resolution procedure, the SI cannot come into force unless both Houses actively approve it — used for more significant delegated powers.",
+          "A small number of enabling Acts go further and allow a minister to amend or repeal provisions of the parent Act itself by SI — these are informally called 'Henry VIII clauses', after the king's use of proclamations with the force of statute, and they attract particular scrutiny precisely because they let secondary legislation alter primary legislation."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Checking delegated power",
+            "points": [
+              "Identify the parent Act and the specific section granting the power",
+              "Check the SI does no more than the parent Act authorises (else it risks being ultra vires)",
+              "Identify which procedure applies — negative (annulled if rejected) or affirmative (must be approved)",
+              "A 'Henry VIII clause' is delegated power to amend the parent Act itself — treat with particular caution"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-01-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "An enabling Act authorises the Secretary of State to 'prescribe by regulations the fee payable for an application under section 6'. The Secretary of State instead uses the regulations to abolish the right of appeal created by section 8 of the same Act. What is the most likely legal consequence?",
+          "options": ["Nothing — any regulation made under the Act is automatically valid", "The regulations are likely ultra vires, because abolishing an appeal right goes beyond the fee-setting power granted", "The regulations automatically repeal section 8, since secondary legislation always overrides primary legislation", "The regulations are valid provided they were approved under the affirmative procedure"],
+          "correctIndex": 1,
+          "explanation": "Delegated power is bounded by what the parent Act actually grants. A power to set fees does not stretch to abolishing an appeal right — that exceeds the scope of the delegation and the regulations are vulnerable to challenge as ultra vires, regardless of which procedure was used."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "How case law and statute talk to each other",
+        "voice": "argumentative — resolves a common misconception",
+        "body": [
+          "Students often imagine statute and case law as two separate, competing sources. In practice they're deeply intertwined. Once Parliament legislates on a topic, that statute displaces any inconsistent common law rule — Parliament is sovereign, and a valid Act prevails over judge-made law. But statutes rarely legislate exhaustively: they leave gaps, use general language, or simply don't anticipate every fact pattern, and it falls to judges to interpret and apply the words Parliament chose.",
+          "This is where case law does its most important modern work: not usually creating law from nothing, but interpreting what a statute means and applying it to new facts (the next lesson covers exactly how). Once a higher court has settled that interpretation, the doctrine of precedent means later courts follow it — so a statute's practical meaning is often found as much in the case law interpreting it as in its bare text.",
+          "Where no statute governs a point at all, judges still develop the law directly through case law — most of contract law and much of tort law remains, at its core, common law, continually refined decision by decision."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Where does the answer to a legal problem come from?",
+            "description": "A quick decision path for locating governing law.",
+            "nodes": [
+              { "id": "start", "label": "Does a statute (primary or secondary) cover this point?" },
+              { "id": "yes-statute", "label": "Yes → read the statute; check case law interpreting the relevant words" },
+              { "id": "no-statute", "label": "No → is there existing common law on the point?" },
+              { "id": "yes-common", "label": "Yes → apply the relevant precedent" },
+              { "id": "no-common", "label": "No → courts may develop the law incrementally, reasoning from analogous principles" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-statute", "label": "Yes" },
+              { "from": "start", "to": "no-statute", "label": "No" },
+              { "from": "no-statute", "to": "yes-common", "label": "Yes" },
+              { "from": "no-statute", "to": "no-common", "label": "No" }
+            ],
+            "textAlternative": "First check whether a statute covers the point. If it does, read the statute and check case law interpreting its wording. If no statute applies, check whether existing common law covers the point and apply the relevant precedent. If neither exists, courts may develop the law incrementally from analogous principles."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-01-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a court would realistically take when facing a new legal problem.",
+          "items": [
+            "Check whether any Act or statutory instrument governs the point",
+            "If a statute applies, check how higher courts have interpreted the relevant wording",
+            "If no statute applies, look for governing common law principle",
+            "Apply the resulting rule to the facts before the court"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the practical order: statute first, its case law gloss second, common law as the fallback, and application last.",
+          "feedbackIncorrect": "Statute is always checked first — case law interpreting it is consulted once you know a statute applies, and pure common law is the fallback only once you've confirmed no statute covers the point."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Reading and citing a case",
+        "voice": "direct — practical citation literacy",
+        "body": [
+          "Case law is recorded in law reports, and being able to read a citation tells you a great deal before you've read a word of the judgment. The most authoritative traditional series is the Law Reports (cited, for example, as [1993] AC 593 — 'AC' for Appeal Cases, the House of Lords and Privy Council series; other series include 'QB'/'KB' for King's/Queen's Bench, 'Ch' for Chancery, and 'Fam' for Family Division). The Weekly Law Reports (WLR) and All England Law Reports (All ER) are widely used alternatives.",
+          "Since the mid-2000s, courts have also assigned neutral citations independent of any publisher — for example [2023] UKSC 12 (Supreme Court), [2023] EWCA Civ 45 (Court of Appeal, Civil Division), or [2023] EWHC 123 (Ch) (High Court, Chancery Division). A neutral citation tells you the court and the sequential judgment number for that year, regardless of which law report later publishes it.",
+          "Reading the citation before the case name gives you a shortcut to authority: a decision cited only as [2023] EWHC ... (a first-instance High Court decision) does not bind in the way a Court of Appeal or Supreme Court decision does — a distinction the next two lessons build on directly."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Neutral citation",
+            "definition": "A citation assigned by the court itself (e.g. [2023] UKSC 12), identifying the court and judgment number independently of any commercial law report series."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-01-check-05",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the part of this citation that tells you which court decided the case.",
+          "scenarioText": "The case is cited as Smith v Jones [2024] EWCA Civ 210.",
+          "tappableSpans": ["Smith v Jones", "[2024]", "EWCA Civ", "210"],
+          "correctSpan": "EWCA Civ",
+          "feedbackCorrect": "Correct. 'EWCA Civ' identifies the Court of Appeal, Civil Division — the court component of a neutral citation always sits here.",
+          "feedbackIncorrect": "The case name and year don't identify the court. Look at the abbreviation between the year and the sequence number — that's where the court is coded."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-01-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Riya needs to know whether a document is primary or secondary legislation. She reads that it was 'made by the Secretary of State under powers conferred by section 12 of the Housing Act 2022'. What is it?",
+      "options": ["Primary legislation", "Secondary legislation", "A Law Commission report", "A binding precedent"],
+      "correctIndex": 1,
+      "explanation": "Anything made under delegated power from a parent Act — rather than passed through Parliament and given Royal Assent itself — is secondary legislation, typically a statutory instrument."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following best describes the 'long title' of an Act of Parliament?",
+      "options": ["The everyday name used to cite the Act, such as 'Fraud Act 2006'", "A statement of the Act's full purpose, which can occasionally assist with interpretation", "The final schedule listing repealed provisions", "The chapter number assigned for the year of Royal Assent"],
+      "correctIndex": 1,
+      "explanation": "The short title is the everyday citation name; the long title sets out the Act's purpose in full and can, in limited circumstances, be used as an intrinsic aid to interpretation."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A solicitor is asked which source of law generally prevails where a valid Act of Parliament conflicts with an existing common law rule. Which is correct?",
+      "options": ["The common law rule prevails, because judges are better placed to adapt the law", "The Act of Parliament prevails, reflecting the sovereignty of Parliament", "Neither prevails — the court must apply whichever is more recent in date, regardless of source", "The Act only prevails if it expressly states that it overrides the common law"],
+      "correctIndex": 1,
+      "trapExplanation": "Some students assume an Act must expressly say it overrides the common law to take effect — it doesn't. A validly enacted statute displaces an inconsistent common law rule by virtue of parliamentary sovereignty alone; no express override clause is required.",
+      "explanation": "Parliamentary sovereignty means a valid Act automatically prevails over an inconsistent common law rule, without needing to say so expressly."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A trainee reads a case cited as [2024] UKSC 3. Which of the following is the trainee correct to conclude?",
+      "options": ["The case was reported in the 'UKSC' series of the Law Reports", "The case is the third judgment of the year from the Supreme Court, identified by its neutral citation", "The case was decided under EU-derived law", "The citation confirms the case is binding on the Court of Appeal"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to read 'UKSC' as a law report series name like 'AC' or 'WLR' — it isn't. It is the court code within a neutral citation, assigned by the court itself, not by a commercial reporter.",
+      "explanation": "A neutral citation such as [2024] UKSC 3 identifies the deciding court (Supreme Court) and its sequence number for the year — it is not a law report series and, on its own, says nothing about whether the decision binds a particular lower court."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Section 3(2) of a fictional Act reads: 'A person commits an offence under this section if, without reasonable excuse, they fail to comply with a notice served under subsection (1).' A defendant is prosecuted despite having a plausible explanation for non-compliance. What must a court first determine?",
+      "options": ["Whether the defendant is a body corporate, since only companies can commit offences under this section", "Whether the defendant's explanation amounts to a 'reasonable excuse' within the meaning of the provision", "Whether the notice was served in a different calendar year", "Whether subsection (1) has since been repealed by a later Act"],
+      "correctIndex": 1,
+      "explanation": "The offence is only made out where there is no reasonable excuse — reading the subsection carefully shows that 'reasonable excuse' is a live element the prosecution must negative, not background context."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "An Act's commencement section is silent as to when section 9 comes into force, and the Act says nothing else about it. Applying the Interpretation Act 1978, when does section 9 come into force?",
+      "options": ["One month after Royal Assent, as a general default", "At the beginning of the day the Act receives Royal Assent", "Only once a statutory instrument is made bringing it into force", "It never comes into force without an express commencement date"],
+      "correctIndex": 1,
+      "explanation": "Section 4 of the Interpretation Act 1978 supplies the default: where an Act makes no provision for a section's commencement, it comes into force at the beginning of the day of Royal Assent."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-07",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A parent Act grants a minister power to 'make regulations prescribing the standard fee for registration under this Act, subject to the negative resolution procedure'. The minister lays a statutory instrument setting the fee, and no motion to annul is made within the statutory period. What is the effect?",
+      "options": ["The instrument never takes legal effect without an affirmative vote", "The instrument becomes law, since it was not annulled within the period allowed", "The instrument is automatically void because fees cannot be set by secondary legislation", "The instrument only takes effect once approved by the Supreme Court"],
+      "correctIndex": 1,
+      "explanation": "Under the negative resolution procedure, an SI becomes law unless a motion to annul it succeeds within the allotted period — silence, as here, means it stands."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A client asks whether a rule limiting damages for a certain type of claim comes from an Act of Parliament or from judge-made law. The solicitor finds no relevant statute but locates a line of Court of Appeal decisions establishing the limit. What should the solicitor tell the client?",
+      "options": ["The rule cannot be valid because only Parliament can limit damages", "The rule is a common law rule, developed through case law rather than statute", "The rule must be secondary legislation, since it was created by a court", "The rule has no legal force until Parliament enacts it as a statute"],
+      "correctIndex": 1,
+      "explanation": "Where no statute covers a point, courts develop the law directly through case law. A rule built up through a line of decisions, with no underlying Act, is a common law rule, and remains fully binding as such."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A junior lawyer needs the most authoritative version of a 1993 House of Lords decision for a skeleton argument. She has two citations available: one from the All England Law Reports and one from the Law Reports' 'AC' series. Which should she prefer, and why?",
+      "options": ["The All England Law Reports citation, because it was published first", "The 'AC' (Appeal Cases) citation, as the Law Reports are generally treated as the most authoritative series", "Neither — only the neutral citation, if one exists for a case this old, may be used in court", "It makes no difference; courts do not distinguish between report series"],
+      "correctIndex": 1,
+      "explanation": "Where a case is reported in the Law Reports (AC, QB/KB, Ch, Fam), that series is conventionally treated as the most authoritative and is the citation of choice, even where other report series are also available."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "An enabling Act allows a minister to make regulations 'as to the form of application' under the Act. The minister instead makes regulations under the same power creating an entirely new criminal offence. Is this likely to be a valid exercise of the delegated power?",
+      "options": ["Yes — any regulations made under the Act are automatically valid", "No — creating a new offence goes beyond a power limited to prescribing the form of applications, so the regulations are likely ultra vires", "Yes, provided the regulations went through the affirmative resolution procedure", "No — secondary legislation can never create criminal offences under any circumstances"],
+      "correctIndex": 1,
+      "explanation": "Delegated power is confined to what the parent Act actually grants. A power over the 'form of application' does not extend to creating substantive criminal liability, so regulations doing so are vulnerable as ultra vires — the procedure used does not cure that defect."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A solicitor is asked to advise on the meaning of a phrase in section 7 of an Act. No case has yet interpreted section 7, but several Court of Appeal decisions have interpreted very similarly worded provisions in other Acts. What is the most accurate advice?",
+      "options": ["Those decisions are irrelevant because they concern a different statute entirely", "Those decisions cannot be cited in any circumstances", "Those decisions may offer persuasive guidance on how similarly worded provisions tend to be interpreted, though they are not directly binding on the meaning of section 7 itself", "Those decisions automatically bind the interpretation of section 7 because the wording is similar"],
+      "correctIndex": 2,
+      "explanation": "Case law interpreting differently worded (even similarly worded) provisions in another statute is not directly binding on this Act, but courts often find such reasoning persuasive, particularly where the language and legislative purpose are closely comparable."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A statutory instrument is challenged on the basis that the minister used it to do something the enabling Act never authorised. What is this type of challenge generally called?",
+      "options": ["A challenge on grounds of ultra vires", "A challenge on grounds of stare decisis", "A challenge on grounds of obiter dicta", "A challenge on grounds of ratio decidendi"],
+      "correctIndex": 0,
+      "explanation": "A challenge to secondary legislation on the basis that it exceeds the powers delegated by the parent Act is a challenge on grounds of ultra vires — 'beyond the powers'."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "Which of the following best describes the practical relationship between an Act of Parliament and the case law that later interprets it?",
+      "options": ["The case law replaces the statute, so only the case law needs to be consulted afterwards", "The statute remains the governing text, but the case law fixes how its wording is understood and applied by later courts", "The case law is only relevant if the statute is later repealed", "Interpreting case law and the statute it interprets carry entirely independent legal force and can be relied on separately"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think that once a case interprets a statute, the case 'takes over' from the text — in practice the statute remains the source of the rule, with precedent fixing its accepted meaning; you cannot rely on one without the other.",
+      "explanation": "The statute stays the governing legal text; case law interpreting it becomes an essential gloss that later courts follow, but the two operate together rather than one replacing the other."
+    },
+    {
+      "itemId": "sqe1-ls-01-test-14",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "An Act contains a definitions section stating: '\"vehicle\" includes any mechanically propelled conveyance intended for use on a road.' A dispute arises over whether a ride-on lawnmower used only on private land counts as a 'vehicle' for the purposes of the Act. Where should the court look first?",
+      "options": ["The long title of the Act, ignoring the definitions section entirely", "The Act's own interpretation/definitions section, since it directly defines the term in dispute", "A dictionary published after the Act was passed", "Case law interpreting an unrelated Act that also uses the word 'vehicle'"],
+      "correctIndex": 1,
+      "explanation": "Where an Act supplies its own definition of a disputed term, that definition governs the meaning within the Act and is the natural starting point, ahead of external aids or definitions used in unrelated statutes."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common slip in this lesson is treating case law and statute as competitors rather than as a single interacting system — remember that a statute stays the governing text even once case law has settled how it's read, and that secondary legislation is only as valid as the power the parent Act actually grants it.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.sources-of-law"
+  }
+}

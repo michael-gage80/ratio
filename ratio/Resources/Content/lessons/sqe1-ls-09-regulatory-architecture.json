@@ -1,0 +1,360 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-09",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 9,
+  "topicId": "sqe1.legal-system.regulatory-architecture",
+  "title": "The regulatory architecture",
+  "subtitle": "The Legal Services Board, the SRA, the Solicitors Disciplinary Tribunal, and the Legal Ombudsman",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Describe the Legal Services Board's oversight role in relation to approved regulators, and distinguish it from front-line regulation of individual solicitors and firms",
+    "Explain the SRA's risk-based, entity-focused approach to supervising solicitors and firms, and the Solicitors Disciplinary Tribunal's role as the ultimate sanction",
+    "Distinguish a service complaint properly directed to the Legal Ombudsman from a conduct complaint properly directed to the SRA, and apply that distinction to a fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Legal Services Act 2007, Part 3", "role": "Establishes the Legal Services Board and its oversight functions in relation to approved regulators" },
+    { "citation": "Legal Services Act 2007, Part 6", "role": "Establishes the Office for Legal Complaints and the Legal Ombudsman scheme for service complaints" },
+    { "citation": "Solicitors Act 1974, s 46 (as amended)", "role": "Establishes the Solicitors Disciplinary Tribunal and its jurisdiction over solicitors' conduct" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can name 'the SRA' as the solicitors' regulator without hesitation. Where the profile shows knowledge is ahead of understanding, this note appears: 'You know the names — this lesson is about which body actually deals with which kind of problem.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans on scenarios: expect to route a complaint to the right body, not just to name the bodies.",
+      "weakKnowledge": "Start with Parts 1 and 2 and take your time over what each body actually does — later parts assume you can place the SRA, the LSB, the SDT and the Legal Ombudsman correctly without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A client is unhappy with her solicitor. Perhaps the solicitor was rude, slow, and overcharged her — or perhaps the solicitor lied to the court, or stole from the client account. Both are complaints about the same firm, but they go to entirely different bodies, are judged by entirely different standards, and can end in entirely different outcomes. This lesson is about telling those two situations apart, and mapping the architecture of bodies built to handle each."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A regulator of regulators: the Legal Services Board",
+        "voice": "structural — sets the top of the architecture before descending into it",
+        "body": [
+          "The Legal Services Act 2007 did not create a single regulator for all lawyers. It kept the existing pattern of separate approved regulators — the SRA for solicitors, the Bar Standards Board for barristers, CILEX Regulation for chartered legal executives, and others — but placed a new oversight body above all of them: the Legal Services Board.",
+          "The LSB does not itself regulate individual solicitors or barristers, and it does not investigate individual complaints about a named practitioner. Its role, under Part 3 of the Act, is oversight of the approved regulators themselves: approving and, where necessary, sanctioning them, monitoring whether they are meeting the regulatory objectives covered in the previous lesson, and stepping in only where a regulator's own performance is the problem.",
+          "This two-tier structure is easy to blur under exam pressure. If a question describes a body investigating a single solicitor's conduct, that is front-line regulation (the SRA); if it describes a body reviewing whether the SRA itself is regulating effectively, that is the LSB's oversight function."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Approved regulator",
+            "definition": "A body designated under the Legal Services Act 2007 to regulate a branch of the legal profession for one or more reserved legal activities — e.g. the SRA for solicitors — itself overseen by the Legal Services Board."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does the Legal Services Board investigate complaints about individual solicitors?",
+          "options": ["No — it oversees approved regulators such as the SRA, rather than regulating individual practitioners directly", "Yes — it is the primary body clients complain to about a named solicitor"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The LSB sits above the approved regulators, overseeing their performance — it is not the front door for a complaint about a specific solicitor.",
+          "feedbackIncorrect": "Not quite — the LSB's function is oversight of the approved regulators themselves, not investigation of individual practitioners. That front-line role belongs to bodies such as the SRA."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The SRA: risk-based, entity-focused supervision",
+        "voice": "comparative — contrasts an older model with the current approach",
+        "body": [
+          "The Solicitors Regulation Authority regulates solicitors and, since reforms extending its remit, the firms through which most of them practise. Its supervisory approach today is generally described as risk-based and entity-focused: rather than treating every firm identically regardless of size or risk profile, the SRA directs closer supervisory attention towards firms and circumstances presenting a higher risk of harm to clients or the public.",
+          "Entity-focused regulation reflects a shift from the older assumption that regulating only individual solicitors was sufficient. Firms themselves — as authorised entities — now hold obligations directly: maintaining proper systems, safeguarding client money, and meeting standards set out in the SRA's own codes of conduct, quite apart from the personal obligations owed by each solicitor within the firm.",
+          "This matters for how the SRA actually uses its powers day to day: it monitors data and risk indicators across the sector, investigates where those indicators or specific complaints suggest a problem, and can act against a firm as such, not only against the individuals working in it."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The SRA's risk-based, entity-focused model",
+            "points": [
+              "Regulates both individual solicitors and the authorised firms they practise through",
+              "Directs supervisory attention according to assessed risk, rather than treating all firms identically",
+              "Firms hold direct regulatory obligations (systems, client money, codes of conduct) as entities, not only through the individuals in them",
+              "Can take action against a firm as an entity, separately from action against any individual solicitor"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-09-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order they typically occur in the SRA's risk-based supervisory approach.",
+          "items": [
+            "The SRA monitors risk indicators and data across regulated firms",
+            "A firm or individual is flagged as higher risk, or a specific complaint or report is received",
+            "The SRA investigates the firm or individual in more depth",
+            "The SRA takes proportionate action, which may range from guidance to referral for formal sanction"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That is the general shape of risk-based supervision: broad monitoring first, targeted investigation once risk is flagged, then a proportionate response.",
+          "feedbackIncorrect": "Check the order again — broad monitoring comes first, then a trigger (risk flag or complaint), then investigation, and only then a proportionate response."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The Solicitors Disciplinary Tribunal: the ultimate sanction",
+        "voice": "case-narrative — builds up to why the SDT sits apart from the SRA",
+        "body": [
+          "Where the SRA's own investigation and enforcement powers are not sufficient to the seriousness of the conduct in question — most obviously, dishonesty, serious breaches of the SRA's codes, or conduct calling into question a solicitor's fitness to practise — the matter can be referred to the Solicitors Disciplinary Tribunal.",
+          "The SDT is a separate, independent statutory tribunal, not simply an internal SRA disciplinary panel. This separation matters: the body investigating and prosecuting a case (the SRA) is distinct from the body that adjudicates it (the SDT), which mirrors the separation between investigator and judge found more generally across English legal institutions.",
+          "The SDT's sanctions can be severe, up to and including striking a solicitor off the roll, and its decisions are a matter of public record. It represents the ultimate sanction in the disciplinary architecture — the point past which the SRA's own supervisory and enforcement tools give way to formal, adjudicated, tribunal-imposed consequences."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Solicitors Act 1974, s 46 (as amended)",
+            "text": "There shall continue to be a tribunal, known as the Solicitors Disciplinary Tribunal, for the exercise of the jurisdiction conferred on the Tribunal by this Act.",
+            "elements": ["The SDT is a distinct statutory tribunal, not part of the SRA", "It exercises jurisdiction conferred by statute over solicitors' conduct", "Its role follows referral, typically from the SRA, for the most serious matters"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-09-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that most clearly points towards SDT referral rather than SRA-level supervisory action alone.",
+          "scenarioText": "A solicitor is late responding to two client emails, then separately is found to have deliberately backdated a document and misled the court about when it was created.",
+          "tappableSpans": ["late responding to two client emails", "deliberately backdated a document", "misled the court", "about when it was created"],
+          "correctSpan": "deliberately backdated a document",
+          "feedbackCorrect": "That's the dishonesty element — deliberate falsification going to fitness to practise is exactly the category of conduct that moves a matter towards SDT referral rather than routine supervisory handling.",
+          "feedbackIncorrect": "Look for the deliberate, dishonest element rather than the administrative lapse. Slow email responses are a service-quality issue; deliberately falsifying a document is the kind of conduct that escalates towards the SDT."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The Legal Ombudsman: service complaints, not conduct complaints",
+        "voice": "Socratic — poses the distinction before resolving it",
+        "body": [
+          "Here is the question this part exists to answer precisely: if a client is unhappy with a solicitor, how do they know whether to complain to the SRA or to the Legal Ombudsman? The two schemes exist for genuinely different purposes, and mixing them up is one of the most common errors in this area.",
+          "The Legal Ombudsman, established under Part 6 of the Act through the Office for Legal Complaints, deals with service complaints — poor service, such as unreasonable delay, failure to communicate, or overcharging, judged against what was reasonable in the circumstances. It can order remedies for the individual client, including compensation, a fee reduction, or correction of the work.",
+          "The SRA, by contrast, deals with conduct complaints — breaches of professional standards that raise wider public-interest and regulatory concerns, such as dishonesty, conflicts of interest, or breaches of the SRA's codes, regardless of whether any individual client suffered quantifiable loss. The two are not mutually exclusive on a single set of facts: the same underlying events can generate both a service complaint to the Ombudsman and a conduct referral to the SRA, but they are assessed under different tests by different bodies with different remedies available."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Service complaint vs conduct complaint",
+            "points": [
+              "Legal Ombudsman: service complaints (delay, poor communication, overcharging) — individual client remedy, e.g. compensation or fee reduction",
+              "SRA: conduct complaints (dishonesty, breach of codes, conflicts of interest) — regulatory and public-interest response, e.g. warning, fine, or SDT referral",
+              "The same facts can generate both types of complaint at once, assessed separately by each body",
+              "The Legal Ombudsman does not impose professional sanctions; the SRA does not compensate individual clients"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-09-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A client complains that her solicitor took eleven months to progress a straightforward conveyancing matter and repeatedly failed to return calls. Which body is the proper first destination for this complaint?",
+          "options": ["The Solicitors Disciplinary Tribunal", "The Legal Ombudsman", "The Legal Services Board", "The police"],
+          "correctIndex": 1,
+          "trapExplanation": "Delay and poor communication feel serious to the client, tempting an escalation straight to the SDT or LSB. But without a dishonesty or wider public-interest element, this is a service complaint properly directed to the Legal Ombudsman in the first instance.",
+          "explanation": "Delay and poor communication are classic service-quality issues, which the Legal Ombudsman exists to address, including by ordering compensation or a fee reduction — not conduct issues requiring SRA or SDT involvement on these facts alone."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting the architecture together",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "SQE1 questions in this area typically give you a scenario and ask which body should handle it, or what kind of body a described institution is. The reliable method is to ask two questions in order: first, is this about an individual practitioner or firm's conduct/service, or about whether a regulator itself is doing its job properly? Second, if it is about a practitioner or firm, is the substance a service complaint or a conduct complaint?",
+          "A common trap is assuming any complaint 'goes to the SRA' by default, because the SRA is the most familiar name. In fact most day-to-day client dissatisfaction — delay, cost, communication — is squarely Legal Ombudsman territory, and the SRA's resources are concentrated on conduct raising genuine public-interest concerns.",
+          "A second trap is treating the LSB as a complaints body at all. It is not: it is the oversight regulator of regulators, engaged only where the question is about the performance of an approved regulator itself, which is a comparatively rare scenario in practice and in the exam."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Routing a complaint about legal services",
+            "description": "A flowchart for identifying the correct body for a complaint or regulatory question.",
+            "nodes": [
+              { "id": "start", "label": "Is the question about whether an approved regulator (e.g. the SRA) is itself performing its regulatory function properly?" },
+              { "id": "yes-lsb", "label": "Yes → Legal Services Board (oversight of regulators)" },
+              { "id": "no-lsb", "label": "No → is this about an individual solicitor or firm?" },
+              { "id": "service", "label": "Poor service (delay, communication, cost) → Legal Ombudsman" },
+              { "id": "conduct", "label": "Conduct/public-interest concern (dishonesty, breach of codes) → SRA, potentially referred to the SDT" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-lsb", "label": "Yes" },
+              { "from": "start", "to": "no-lsb", "label": "No" },
+              { "from": "no-lsb", "to": "service", "label": "Service issue" },
+              { "from": "no-lsb", "to": "conduct", "label": "Conduct issue" }
+            ],
+            "textAlternative": "First ask whether the question concerns a regulator's own performance — if so, this is Legal Services Board oversight territory. If not, and the question concerns an individual solicitor or firm, distinguish a poor-service complaint (delay, communication, cost), which goes to the Legal Ombudsman, from a conduct or public-interest concern (dishonesty, breach of codes), which goes to the SRA and may be referred on to the Solicitors Disciplinary Tribunal."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-09-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is most clearly a matter for the SRA (and potentially the SDT) rather than the Legal Ombudsman?",
+          "scenarioA": "A solicitor overcharges a client by failing to give a clear costs estimate at the outset, and the client wants a fee reduction.",
+          "scenarioB": "A solicitor knowingly submits a client's forged signature on a court document to save time.",
+          "correctScenario": "B",
+          "explanation": "B involves deliberate dishonesty going to the solicitor's fitness to practise and the integrity of court proceedings — a conduct matter for the SRA, potentially referred to the SDT. A involves a costs and communication failure, a service issue for the Legal Ombudsman."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-09-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which body has oversight responsibility for approved regulators such as the SRA and the Bar Standards Board?",
+      "options": ["The Legal Ombudsman", "The Legal Services Board", "The Solicitors Disciplinary Tribunal", "The Law Society"],
+      "correctIndex": 1,
+      "explanation": "The Legal Services Board, established under Part 3 of the Legal Services Act 2007, oversees the approved regulators, rather than regulating individual practitioners directly."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A client is dissatisfied because her solicitor quoted a fixed fee but then billed significantly more without clear explanation. She wants her money back. Which body should she approach first?",
+      "options": ["The Solicitors Disciplinary Tribunal", "The Legal Ombudsman", "The Legal Services Board", "The Bar Standards Board"],
+      "correctIndex": 1,
+      "trapExplanation": "Money being at stake tempts students towards the SDT, on the assumption that anything serious enough to involve a financial dispute must be a conduct matter. Overcharging without more is a service complaint, which the Legal Ombudsman can remedy directly for the individual client.",
+      "explanation": "This is an unexplained overcharging complaint — a classic service issue that the Legal Ombudsman can address, including by ordering a fee reduction, without needing SRA or SDT involvement on these facts alone."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-03",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under which Part of the Legal Services Act 2007 was the Office for Legal Complaints, and with it the Legal Ombudsman scheme, established?",
+      "options": ["Part 1", "Part 3", "Part 6", "Schedule 2"],
+      "correctIndex": 2,
+      "explanation": "Part 6 of the Act establishes the Office for Legal Complaints, which operates the Legal Ombudsman scheme for handling service complaints against authorised persons."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A solicitor is found to have knowingly misappropriated funds from the client account. Which outcome is most consistent with the regulatory architecture described in this module?",
+      "options": ["The Legal Ombudsman orders compensation and the matter ends there", "The SRA investigates and, given the seriousness, may refer the matter to the Solicitors Disciplinary Tribunal", "The Legal Services Board personally investigates and sanctions the solicitor", "No formal body has jurisdiction, as this is a purely civil matter between solicitor and client"],
+      "correctIndex": 1,
+      "explanation": "Deliberate misappropriation is a serious conduct matter going to dishonesty and fitness to practise — squarely within the SRA's investigative role, with potential referral to the SDT for the most serious sanctions."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Is the Solicitors Disciplinary Tribunal part of the SRA?",
+      "options": ["Yes, it is an internal disciplinary panel of the SRA", "No, it is a separate, independent statutory tribunal", "Yes, but only for the most serious cases", "No, it is part of the Legal Services Board"],
+      "correctIndex": 1,
+      "explanation": "The SDT is established as a distinct statutory tribunal under the Solicitors Act 1974, separate from the SRA, which investigates and refers cases to it rather than adjudicating them itself."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A trainee describes the SRA's supervisory model as treating every firm identically, applying the same level of scrutiny regardless of size or history. Is this an accurate description of current practice?",
+      "options": ["Yes, uniform treatment is the SRA's guiding principle", "No — the SRA's approach is risk-based and entity-focused, directing closer scrutiny towards higher-risk firms and circumstances", "Yes, but only for sole practitioners", "No, because the SRA does not regulate firms at all, only individuals"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to imagine a regulator as applying one uniform standard to everyone equally, which sounds fairer. In practice the SRA's actual approach is explicitly risk-based, not uniform, and firms themselves — not just individuals — are directly regulated.",
+      "explanation": "The SRA directs supervisory attention according to assessed risk rather than applying identical scrutiny to every firm, and its entity-focused approach means firms hold direct obligations as authorised entities, separate from the individuals within them."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-07",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "What is the general relationship between the Legal Services Board's oversight function under Part 3 of the Act and the SRA's regulation of individual solicitors?",
+      "options": ["They are the same function performed by different names for the same body", "The LSB oversees the SRA's performance as a regulator; the SRA in turn regulates solicitors and firms directly", "The LSB regulates solicitors directly, and the SRA merely advises it", "There is no relationship — they operate in entirely separate legal frameworks"],
+      "correctIndex": 1,
+      "explanation": "The structure is two-tiered: the LSB oversees approved regulators like the SRA under Part 3, while the SRA itself carries out the front-line regulation of individual solicitors and firms."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client believes her solicitor gave negligent advice that cost her money, but there is no suggestion of dishonesty or a breach of the SRA's codes — only an arguable professional error. What is the most likely appropriate route for the client, alongside any separate civil negligence claim?",
+      "options": ["A complaint to the Legal Ombudsman about the standard of service received", "Immediate referral to the Solicitors Disciplinary Tribunal", "A complaint to the Legal Services Board", "No regulatory or complaints route is available"],
+      "correctIndex": 0,
+      "explanation": "Without a dishonesty or public-interest conduct element, this sits closer to a service-quality complaint, for which the Legal Ombudsman is the appropriate complaints route, independent of any separate civil claim in negligence."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-09",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Can the same set of facts give rise to both a Legal Ombudsman service complaint and an SRA conduct referral?",
+      "options": ["No, the two schemes are mutually exclusive on any given set of facts", "Yes, the same events can generate both, assessed separately by each body", "No, a matter must first exhaust the Legal Ombudsman process before the SRA can ever be involved", "Yes, but only if the client formally elects one route over the other"],
+      "correctIndex": 1,
+      "explanation": "The two schemes serve different purposes and are not mutually exclusive — the same underlying facts can generate a service complaint to the Ombudsman and a conduct referral to the SRA simultaneously."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A member of the public is concerned not about a specific solicitor, but that the SRA itself appears to be systematically under-investigating a category of serious complaints across the profession. Which body is designed to address a concern of that nature?",
+      "options": ["The Legal Ombudsman", "The Solicitors Disciplinary Tribunal", "The Legal Services Board", "The relevant firm's own internal complaints procedure"],
+      "correctIndex": 2,
+      "trapExplanation": "Because the complaint concerns 'the SRA', it is tempting to route it to a body that deals with individual solicitors, such as the Ombudsman or SDT. But a concern about the SRA's own regulatory performance is precisely the LSB's oversight remit, not a complaint about any individual practitioner.",
+      "explanation": "A concern about whether an approved regulator itself is performing its regulatory function properly falls within the Legal Services Board's oversight role under Part 3 — distinct from complaints about individual solicitors or firms."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "What is the practical significance of the SDT being described as 'independent' of the SRA?",
+      "options": ["It means the SDT sets its own regulatory objectives, unconnected to the Act", "It means the body investigating and referring a case (the SRA) is distinct from the body adjudicating it (the SDT)", "It means the SDT has no power to sanction solicitors, only to advise the SRA", "It means solicitors may choose whether the SRA or the SDT hears their case"],
+      "correctIndex": 1,
+      "explanation": "Independence here reflects a separation of functions: the SRA investigates and prosecutes serious conduct matters, while the SDT, as a distinct statutory tribunal, adjudicates and imposes sanctions — mirroring investigator/adjudicator separation seen elsewhere in the legal system."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm consistently fails to respond to client queries within a reasonable time across multiple unrelated matters, generating a pattern of similar complaints, but no dishonesty is alleged. What is the most accurate description of how this is likely to be handled across the architecture?",
+      "options": ["Only the Legal Ombudsman can ever be involved, however often the pattern recurs", "Individual clients may bring service complaints to the Legal Ombudsman, while the SRA may also take an interest in the pattern as a risk indicator about the firm's systems", "Only the SDT has jurisdiction, since multiple complaints automatically escalate a matter to tribunal level", "The Legal Services Board would handle each individual client complaint directly"],
+      "correctIndex": 1,
+      "explanation": "Individual service failures remain Legal Ombudsman territory for each affected client, but a recurring pattern across a firm can also become a risk indicator the SRA takes into account in its entity-focused, risk-based supervision of the firm's systems."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following remedies is the Legal Ombudsman able to order for an individual client, that the SRA does not itself provide?",
+      "options": ["Striking a solicitor off the roll", "Compensation or a fee reduction for the individual client", "A criminal conviction against the solicitor", "Suspension of the solicitor's practising certificate"],
+      "correctIndex": 1,
+      "explanation": "The Legal Ombudsman can order individual remedies such as compensation or a fee reduction; professional sanctions such as striking off or suspension are matters for the SRA and, in the most serious cases, the SDT, not the Ombudsman."
+    },
+    {
+      "itemId": "sqe1-ls-09-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A student writes: 'The SRA is the ultimate sanctioning body for solicitor misconduct in England and Wales.' Is this an accurate summary of the architecture?",
+      "options": ["Yes, the SRA is always the final decision-maker", "No — for the most serious conduct matters, the SRA refers on to the Solicitors Disciplinary Tribunal, which is the ultimate sanction", "Yes, but only because the Legal Services Board delegates that power to it", "No, because the SRA has no sanctioning powers of any kind"],
+      "correctIndex": 1,
+      "trapExplanation": "Because the SRA is the most familiar name, students often assume it sits at the very top of the sanctioning architecture. In fact the SRA holds its own proportionate powers but refers the most serious matters onward to the SDT, which is the ultimate sanction.",
+      "explanation": "The SRA has its own range of proportionate regulatory powers, but for the most serious matters — including those threatening a solicitor's fitness to practise — referral to the independent SDT, with its power to strike off, represents the ultimate sanction in the architecture."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is misrouting a complaint — treating every unhappy client as an SRA or SDT matter, or treating a regulator's own performance as something an individual complaints body should address. Ask first whether the concern is about a practitioner's service, a practitioner's conduct, or a regulator's own performance, and only then pick the body.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.regulatory-architecture"
+  }
+}

@@ -89,9 +89,18 @@ function lintLesson(file) {
   }
   const { lessonId, moduleId, lessonNumber, topicId, itemCounts, lecture, testPool } = lesson;
 
-  if (!lessonId.startsWith(`${moduleId}-`)) errors.push(`${where}: lessonId ${lessonId} doesn't start with ${moduleId}-`);
-  if (Number(lessonId.split('-')[1]) !== lessonNumber) errors.push(`${where}: lessonNumber ${lessonNumber} doesn't match ${lessonId}`);
-  if (!topicId.startsWith(`${moduleId}.`)) errors.push(`${where}: topicId ${topicId} isn't in module ${moduleId}`);
+  // SQE1 lessons are "sqe1-<subject code>-NN" with topics "sqe1.<subject>.<slug>", where
+  // the subject is the start of the module's name ("dispute-resolution" in
+  // "sqe1-dispute-resolution"); LLB lessons are "<module>-NN" with topics "<module>.…".
+  const sqe = moduleId.startsWith('sqe1-');
+  if (sqe !== (lesson.track === 'SQE1')) errors.push(`${where}: track and moduleId disagree`);
+  const [prefix, number] = sqe ? [/^sqe1-[a-z]+-/, lessonId.split('-')[2]] : [new RegExp(`^${moduleId}-`), lessonId.split('-')[1]];
+  if (!prefix.test(lessonId)) errors.push(`${where}: lessonId ${lessonId} doesn't fit module ${moduleId}`);
+  if (Number(number) !== lessonNumber) errors.push(`${where}: lessonNumber ${lessonNumber} doesn't match ${lessonId}`);
+  const subject = sqe && topicId.split('.')[1];
+  if (sqe ? !(topicId.startsWith('sqe1.') && moduleId.slice(5).startsWith(subject)) : !topicId.startsWith(`${moduleId}.`)) {
+    errors.push(`${where}: topicId ${topicId} isn't in module ${moduleId}`);
+  }
   if (itemCounts.lecture !== lecture.parts.length) errors.push(`${where}: itemCounts.lecture is ${itemCounts.lecture} but there are ${lecture.parts.length} parts`);
   if (itemCounts.testPool !== testPool.length) errors.push(`${where}: itemCounts.testPool is ${itemCounts.testPool} but the pool has ${testPool.length}`);
   if (itemCounts.testServedPerAttempt > testPool.length) errors.push(`${where}: serves more test items than the pool holds`);
@@ -115,6 +124,8 @@ function lintLesson(file) {
     warnings.push(`${where}: whyThisMattersTemplate.default contains an authoring note ("Where the profile shows…") — move it to profileHooks`);
   }
   if (lesson.reviewedBy === null) warnings.push(`${where}: not yet reviewed (reviewedBy is null)`);
+  const unrated = testPool.filter((i) => i.difficultyStart === undefined).length;
+  if (unrated) warnings.push(`${where}: ${unrated} test item(s) have no difficultyStart (scored as 0.5)`);
 }
 
 function lintDiagnosticBank() {
@@ -132,7 +143,7 @@ function lintDiagnosticBank() {
   }
 }
 
-const files = readdirSync(LESSONS).filter((f) => /^[a-z]+-\d{2}-[a-z0-9-]+\.json$/.test(f)).sort();
+const files = readdirSync(LESSONS).filter((f) => /^[a-z0-9]+(-[a-z]+)?-\d{2}-[a-z0-9-]+\.json$/.test(f)).sort();
 files.forEach(lintLesson);
 lintDiagnosticBank();
 

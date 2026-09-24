@@ -14,6 +14,8 @@ struct UserProfile: Decodable, Equatable {
     var universityId: String?
     var universityOther: String?
     var year: Int?
+    /// SQE1 students: the sitting they're aiming for, "2027-01".
+    var sqeSitting: String?
     var modules: [Module]?
     /// Written only by the scoring Functions once the diagnostic is done (or skipped),
     /// then after every test.

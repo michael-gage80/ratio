@@ -48,7 +48,7 @@ struct DiagnosticStep: View {
     private func load() {
         loadFailed = false
         do {
-            let model = DiagnosticModel(modules: onboarding.profile.modules ?? [], seed: onboarding.uid, bank: try DiagnosticBank.load())
+            let model = DiagnosticModel(modules: (onboarding.profile.modules ?? []).filter { $0.programme == onboarding.programme }, seed: onboarding.uid, bank: try DiagnosticBank.load())
             diagnostic = model
             // Modules added after the diagnostic bank have no questions yet: start
             // those students on the default profile, as if they'd skipped.

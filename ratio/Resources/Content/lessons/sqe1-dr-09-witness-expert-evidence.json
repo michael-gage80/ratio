@@ -1,0 +1,342 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-dr-09",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 9,
+  "topicId": "sqe1.dispute-resolution.witness-expert-evidence",
+  "title": "Whose word counts, and who the expert really works for",
+  "subtitle": "Witness statements, hearsay notices and expert evidence under Parts 32 and 35",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the function of a witness statement as evidence-in-chief under Part 32, and when a hearsay notice is required",
+    "Explain the requirement for the court's permission to rely on expert evidence under Part 35, and the expert's overriding duty to the court",
+    "Apply the single joint expert framework and the hearsay/permission rules to fact patterns involving contested factual and expert evidence"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 32", "role": "Witness statements as evidence-in-chief, and the rules on hearsay evidence at trial" },
+    { "citation": "Civil Procedure Rules, Part 35", "role": "Expert evidence: the permission requirement, the expert's overriding duty, and single joint experts" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Both halves of this lesson turn on the same underlying idea: evidence at a civil trial is tightly managed by the court, not simply produced by whichever side wants to call it. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the rules exist — this lesson checks whether you can spot when a party has skipped a step it needed the court's permission for.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans on scenarios where a party tries to introduce evidence without following the correct procedure — expect to be tested on what should have happened, not just what the rule says in the abstract.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — the role of a witness statement as evidence-in-chief is the foundation the rest of the lesson, including the expert evidence material, is built on."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "An expert witness is paid by one side, instructed by one side, and often meets only one side's lawyers before trial — and yet the entire system depends on that expert owing their real loyalty to the court, not their client. This lesson is about how civil procedure tries to make that promise credible: through permission requirements, overriding duties, and a mechanism — the single joint expert — that removes the conflict altogether by giving both sides the same witness."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The witness statement as evidence-in-chief",
+        "voice": "structural — sets out the mechanics before the traps",
+        "body": [
+          "In civil trials, a witness's evidence-in-chief is not typically given live, from the witness box, in the way television courtroom drama suggests. Under CPR 32.5, a witness statement served in advance of trial stands as that witness's evidence-in-chief, unless the court orders otherwise. The witness confirms the statement is true, and it then goes in as their account, with the witness available for cross-examination on its contents.",
+          "This is a deliberate efficiency: it means the court and the parties know, well before trial, exactly what each witness is going to say, which shapes case preparation, settlement negotiations and the scope of cross-examination.",
+          "Because so much rests on the written statement, CPR Part 32 imposes real formality: a witness statement must be verified by a statement of truth, and it must be in the witness's own words as far as practicable, addressing only matters within their own knowledge. Directions typically set a deadline for the sequential or simultaneous exchange of witness statements — miss it, and the witness's evidence may not be admitted at all without the court's permission."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Evidence-in-chief",
+            "definition": "The evidence a witness gives in support of the party calling them. In civil trials, a served witness statement stands as the evidence-in-chief under CPR 32.5, subject to the court's discretion to order otherwise."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-09-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Under CPR 32.5, what does a witness statement served in advance of trial ordinarily stand as, unless the court orders otherwise?",
+          "acceptableAnswers": ["evidence-in-chief", "the witness's evidence in chief"],
+          "modelAnswer": "The witness's evidence-in-chief — the witness confirms it is true, and it stands as their account, subject to cross-examination."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Hearsay: notice, not automatic exclusion",
+        "voice": "structural — reference-style, building the framework the rest of the lesson assumes",
+        "body": [
+          "Civil proceedings do not exclude hearsay evidence outright the way criminal proceedings once did more strictly — the Civil Evidence Act 1995 abolished the old rule against hearsay in civil cases. But admissibility is not the same as being received without safeguards, and Part 32 layers a notice requirement on top.",
+          "Where a party intends to rely on hearsay evidence — an out-of-court statement adduced to prove the truth of its contents, whether from a witness who won't be called or from a document — CPR 33 and the accompanying practice direction require that party to serve notice of that intention on the other parties, generally by serving the witness statement itself where the hearsay is contained in one, or by separate notice otherwise.",
+          "The point of the notice is not to block hearsay but to let the other side test it properly: they can apply to call the maker of the statement for cross-examination, or ask the court to attach less weight to evidence that was never tested. Failing to give proper notice does not automatically exclude the evidence, but it does affect the weight the court gives it, and can expose the defaulting party to costs consequences."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Hearsay in civil proceedings: what to remember",
+            "points": [
+              "Hearsay is admissible in civil proceedings — the Civil Evidence Act 1995 abolished the general rule against it",
+              "A party relying on hearsay must give notice, usually by serving the relevant witness statement or a separate hearsay notice",
+              "Failure to give proper notice affects weight and can carry costs consequences — it does not automatically exclude the evidence",
+              "The opposing party can apply to have the maker of a hearsay statement called for cross-examination in appropriate cases"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-09-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Is hearsay evidence automatically inadmissible in civil proceedings in England and Wales?",
+          "options": ["No — the Civil Evidence Act 1995 abolished the general rule against hearsay in civil cases, though notice requirements apply", "Yes — hearsay remains automatically excluded in civil proceedings, exactly as in criminal proceedings"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Civil proceedings admit hearsay subject to notice requirements affecting weight, unlike the stricter historical position in criminal law.",
+          "feedbackIncorrect": "Civil proceedings are more permissive than you might expect here — the Civil Evidence Act 1995 abolished the general exclusionary rule against hearsay in civil cases; the safeguard is a notice requirement, not exclusion."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "No expert evidence without asking first",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Unlike witness evidence of fact, expert evidence in civil proceedings cannot simply be produced at trial — CPR 35.4 requires the court's permission before any party may call an expert or put in evidence an expert's report. A party cannot simply instruct an expert and assume the report will be admitted; it must apply, typically identifying the field of expertise and, where practicable, naming the expert.",
+          "This permission requirement exists because expert evidence is expensive, time-consuming, and easily multiplied — without control, every case could sprout competing experts on every conceivable issue. CPR 35.1 makes the underlying policy explicit: expert evidence is restricted to that which is reasonably required to resolve the proceedings.",
+          "The court's case management powers under Part 35 extend to directing that expert evidence be given by a single joint expert instructed by both parties, rather than each side instructing its own — a mechanism covered in Part 5 of this lesson, and one of the clearest illustrations of the overriding objective's proportionality principle in action."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, r 35.1 and r 35.4(1)",
+            "text": "r 35.1: Expert evidence shall be restricted to that which is reasonably required to resolve the proceedings. r 35.4(1): No party may call an expert or put in evidence an expert's report without the court's permission.",
+            "elements": ["Expert evidence must be reasonably required to resolve the proceedings (r 35.1)", "Court permission is required before any expert may be called or their report put in evidence (r 35.4(1))", "The court can limit the field of expertise, and can direct a single joint expert"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-09-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact showing this party has skipped a required procedural step for expert evidence.",
+          "scenarioText": "A defendant instructs a structural engineer to prepare a report on the cause of a building defect. The report is completed and, without any application to the court, the defendant simply serves it on the claimant two weeks before trial, intending to rely on it.",
+          "tappableSpans": ["instructs a structural engineer", "report is completed", "without any application to the court", "serves it on the claimant two weeks before trial"],
+          "correctSpan": "without any application to the court",
+          "feedbackCorrect": "Right. Instructing an expert and preparing a report is not itself a problem — the missing step is that no permission was sought from the court, which CPR 35.4(1) requires before any expert report can be put in evidence.",
+          "feedbackIncorrect": "Look for the missing procedural step, not the underlying activity of instructing an expert, which is unremarkable. What's absent here is any application for the court's permission, required under CPR 35.4(1) before an expert report can be relied on."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Whose expert is it, really?",
+        "voice": "Socratic — poses the tension before resolving it",
+        "body": [
+          "Here is the question that defines this topic: an expert is instructed and paid by one party — so why does the law insist their duty runs to the court instead? Because the value of expert evidence depends entirely on its independence. An expert who simply advocates for whoever pays them ceases to be useful evidence and becomes closer to advocacy dressed up as opinion.",
+          "CPR 35.3 makes this explicit and puts it above the expert's obligations to whoever instructed them: it is the duty of an expert to help the court on matters within their expertise, and this duty overrides any obligation to the person from whom the expert has received instructions or by whom they are paid.",
+          "This has real teeth. An expert's report must state the substance of all material instructions, so the court and the other party can check the expert hasn't been fed a one-sided brief. An expert who departs from independence — arguing a client's case rather than giving an honest opinion — risks having their evidence given little or no weight, whatever their formal qualifications."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Testing whether expert evidence should carry weight",
+            "description": "A quick decision path for assessing an expert's evidence against the CPR 35.3 duty.",
+            "nodes": [
+              { "id": "start", "label": "Has the court given permission for this expert evidence under CPR 35.4?" },
+              { "id": "no-perm", "label": "No → evidence should not be admitted without permission being sought" },
+              { "id": "yes-perm", "label": "Yes → does the report disclose the substance of material instructions and address the CPR 35.3 overriding duty to the court?" },
+              { "id": "no-duty", "label": "No → the evidence's independence, and so its weight, is open to serious challenge" },
+              { "id": "yes-duty", "label": "Yes → the report is on a sound procedural footing; its persuasiveness then turns on its substance" }
+            ],
+            "edges": [
+              { "from": "start", "to": "no-perm", "label": "No" },
+              { "from": "start", "to": "yes-perm", "label": "Yes" },
+              { "from": "yes-perm", "to": "no-duty", "label": "No" },
+              { "from": "yes-perm", "to": "yes-duty", "label": "Yes" }
+            ],
+            "textAlternative": "First check whether the court gave permission for the expert evidence under CPR 35.4. If not, it should not have been admitted. If permission was given, check whether the report properly discloses material instructions and reflects the CPR 35.3 overriding duty to the court. If it reads as one-sided advocacy for the instructing party, its independence and weight are open to serious challenge, even though it was procedurally admitted."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-09-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that an expert's duty to help the court overrides their obligations to the party who instructed and is paying them?",
+          "sliderLabels": ["Definitely does not override it", "Definitely does override it"],
+          "correctPosition": "does override it",
+          "explanation": "CPR 35.3 states this explicitly: the expert's duty to the court overrides any obligation to the instructing or paying party. This is the doctrinal core of the whole expert evidence regime."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "One expert, both parties: the single joint expert",
+        "voice": "direct — closes by rehearsing the mechanism the test pool will probe",
+        "body": [
+          "The most direct solution to the tension in Part 4 is to remove the possibility of dueling experts altogether. Under CPR 35.7, where two or more parties wish to submit expert evidence on a particular issue, the court can direct that the evidence be given by a single expert instructed jointly by all of them — a single joint expert, or SJE.",
+          "An SJE is not simply 'more independent' than a party-instructed expert; structurally, they cannot be captured by one side's narrative in the same way, because both parties are entitled to give instructions, to see all instructions given by the other side, and to put written questions to the expert about their report under CPR 35.6. The parties are typically jointly and severally liable for the SJE's fees, subject to any court order or agreement otherwise.",
+          "The court's willingness to order an SJE tends to track how genuinely contested the underlying issue is: on a straightforward, largely uncontroversial technical question (the up-to-date market value of a specific item, for example), a single joint expert is efficient and proportionate. On a genuinely disputed, high-value issue where each party's case turns on a different account of causation or valuation methodology, the court is far more likely to permit each side its own expert, precisely because a single expert's judgment call would effectively decide the case."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume a single joint expert is simply the default, or that any party can insist on their own separate expert if they'd prefer one.",
+            "whyItsWrong": "Whether expert evidence is given by a single joint expert or by each party's own expert is a case management decision for the court, exercised having regard to the value and complexity of the issue — a party does not have an automatic right to insist on its own expert once the court has directed an SJE, nor is an SJE automatic on every issue."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-09-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is the court most likely to direct a single joint expert rather than permitting each party its own?",
+          "scenarioA": "A modest fast-track claim where the only expert issue is the routine repair cost of a damaged vehicle, a matter with an established, largely uncontroversial valuation method.",
+          "scenarioB": "A multi-track claim where liability turns entirely on competing, genuinely disputed theories of the mechanical cause of a catastrophic industrial failure, each side's case built around a different account.",
+          "correctScenario": "A",
+          "explanation": "A is the classic single joint expert case: a proportionate, largely uncontentious technical question in a lower-value claim. B is the kind of genuinely and centrally disputed issue where the court is far more likely to allow each party its own expert, because a single expert's conclusion would effectively decide the case."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-09-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under CPR 32.5, what does a served witness statement ordinarily stand as at trial, absent a contrary order?",
+      "options": ["The witness's evidence-in-chief", "A summary for the judge's convenience only, with no evidential status", "Hearsay evidence requiring separate notice", "An expert report requiring CPR 35.4 permission"],
+      "correctIndex": 0,
+      "explanation": "CPR 32.5 provides that a witness statement served in advance of trial stands as that witness's evidence-in-chief unless the court orders otherwise."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which Act abolished the general rule against hearsay evidence in civil proceedings?",
+      "options": ["The Civil Evidence Act 1995", "The Criminal Justice Act 2003", "The Civil Procedure Act 1997", "The Evidence Act 1938"],
+      "correctIndex": 0,
+      "explanation": "The Civil Evidence Act 1995 abolished the general common law rule against hearsay in civil proceedings, subject to the notice requirements now found in the CPR."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Under CPR 35.4, may a party call an expert witness or put in an expert's report without first obtaining the court's permission?",
+      "options": ["No — no party may call an expert or put in evidence an expert's report without the court's permission", "Yes — permission is only needed if the other side objects", "Yes — permission is only required in claims allocated to the multi-track", "No — but only if the expert has already agreed to attend trial"],
+      "correctIndex": 0,
+      "explanation": "CPR 35.4(1) is an absolute requirement: no expert evidence may be called or put in without the court's permission, regardless of whether the other side objects."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following best describes the expert's overriding duty under CPR 35.3?",
+      "options": ["A duty to advocate persuasively for the party who instructed them", "A duty to help the court on matters within the expert's expertise, which overrides any obligation to the person instructing or paying them", "A duty to agree with any other expert instructed by the opposing party", "A duty only to disclose instructions if directly asked by the court"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats the expert as an advocate for their instructing party — the opposite of CPR 35.3, which makes the duty to the court paramount and overriding, and requires disclosure of the substance of material instructions without being asked."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A party intends to rely at trial on an out-of-court written statement from a witness who has since become unavailable, to prove the truth of what the statement says. The party has not served any notice of this. What is the most likely consequence?",
+      "options": ["The statement is automatically and permanently inadmissible", "The statement is not automatically excluded, but the failure to give proper notice is likely to affect the weight the court gives it, and may carry costs consequences", "The trial must be adjourned indefinitely until notice is given", "The statement becomes admissible only if the opposing party consents"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often assume a missed procedural notice means automatic exclusion, as in some criminal evidence contexts. Civil hearsay is different: the Civil Evidence Act 1995 admits hearsay in principle, and a failure to give proper notice affects weight and can trigger costs consequences rather than outright exclusion."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A single joint expert has been directed under CPR 35.7. One of the two instructing parties is dissatisfied with the expert's conclusions and wants to instruct its own separate expert on the same issue instead. What is the correct position?",
+      "options": ["The party may automatically instruct its own expert in addition, since each party has an unqualified right to its own expert evidence", "The party generally cannot simply instruct its own expert on the same issue without the court's permission, since the single joint expert direction was itself a case management decision", "The single joint expert's report is automatically excluded once a party expresses dissatisfaction", "The dissatisfied party must accept the report and has no further options at all, including under CPR 35.6"],
+      "correctIndex": 1,
+      "trapExplanation": "Dissatisfaction with a single joint expert's conclusions is not itself a route back to party-instructed experts — that would defeat the purpose of the direction. The dissatisfied party's remedies (such as putting written questions under CPR 35.6, or seeking permission for a further expert in an appropriate case) are narrower than simply instructing a rival expert unilaterally."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant's key witness dies shortly before trial. The claimant wants to rely on that witness's previously signed statement to prove the facts it describes. What must the claimant do to rely on this evidence properly?",
+      "options": ["Nothing — the statement automatically becomes inadmissible on the witness's death", "Give notice that it intends to rely on the statement as hearsay evidence, since the maker cannot be called to give live evidence or be cross-examined", "Apply for the court's permission under CPR 35.4, as if it were expert evidence", "Ask the court to strike out the defence, since the defendant cannot now cross-examine the witness"],
+      "correctIndex": 1,
+      "explanation": "A statement from a witness who cannot be called to give evidence and be cross-examined is classic hearsay when relied on for the truth of its contents — the claimant must give proper notice under Part 33, which then goes to weight rather than admissibility."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A party wishes to instruct a forensic accountant to give expert evidence on a complex, disputed valuation issue central to a multi-track claim. What is the correct first procedural step?",
+      "options": ["Instruct the accountant, obtain the report, and serve it on the other side without more", "Apply to the court for permission to rely on expert evidence in that field, before (or alongside) instructing the expert", "Wait until trial and simply call the accountant to give oral evidence", "Ask the opposing party's solicitor for informal consent instead of applying to the court"],
+      "correctIndex": 1,
+      "explanation": "CPR 35.4(1) requires the court's permission before any expert evidence can be relied on. The correct procedural sequence is to seek that permission — typically identifying the field of expertise — rather than simply commissioning and serving a report."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-09",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "An expert's report on a construction dispute reads almost entirely as an argument for why the instructing party should win, omits reference to any instructions received, and does not engage with the opposing expert's contrary points at all. What is the most likely consequence for this evidence?",
+      "options": ["It will automatically be excluded from the trial entirely", "The court is likely to give it little or no weight, since it fails to reflect the CPR 35.3 duty to the court and the requirement to disclose material instructions", "It becomes conclusive proof of the instructing party's case, since experts are presumed independent", "Nothing — CPR 35.3 has no practical consequences if breached"],
+      "correctIndex": 1,
+      "explanation": "A report reading as one-sided advocacy, without disclosing instructions, is exactly what CPR 35.3 is designed to prevent. The typical consequence is not automatic exclusion but a serious loss of weight, since the report's independence — the whole basis of its evidential value — is compromised."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under CPR 35.1, what is the express policy restriction placed on expert evidence generally?",
+      "options": ["Expert evidence shall be restricted to that which is reasonably required to resolve the proceedings", "Expert evidence must always be given orally at trial and never in writing", "Expert evidence can never be given by a jointly instructed expert", "Expert evidence is restricted to cases worth more than £100,000"],
+      "correctIndex": 0,
+      "explanation": "CPR 35.1 sets the overarching restriction: expert evidence is confined to what is reasonably required to resolve the proceedings, underpinning the court's permission-based control of the whole topic."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under CPR 35.6, what may a party do in relation to a single joint expert's report once it has been served?",
+      "options": ["Nothing further — the report is final and unchallengeable once served", "Put written questions to the expert about the report, generally once and for the purpose of clarification", "Instruct a rival expert automatically, without needing the court's permission", "Demand the expert change their conclusion to favour that party"],
+      "correctIndex": 1,
+      "explanation": "CPR 35.6 allows a party to put written questions to an expert (including a single joint expert) about their report, generally once, for the purpose of clarifying it — an important, but limited, mechanism for testing the evidence short of cross-examination."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Under CPR 35.7, when may the court direct that expert evidence on an issue be given by a single joint expert?",
+      "options": ["Only where all parties consent in writing in advance", "Where two or more parties wish to submit expert evidence on a particular issue, the court may direct that evidence on that issue is given by a single joint expert", "Only in claims allocated to the small claims track", "Never — single joint experts were abolished by the Civil Procedure Rules"],
+      "correctIndex": 1,
+      "explanation": "CPR 35.7 gives the court a case management power, not dependent on party consent, to direct a single joint expert where two or more parties wish to adduce expert evidence on the same issue."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-13",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A witness statement served for trial contains, in one paragraph, the witness's account of what a third party (who will not be a witness at trial) told them about the events in question, relied on to prove that account was true. What is the correct characterisation of that paragraph?",
+      "options": ["It is inadmissible under all circumstances and must be struck from the statement", "It is hearsay evidence within the statement, and notice of the intention to rely on it as such is generally required, typically satisfied by serving the statement itself", "It automatically converts the whole statement into an expert report requiring CPR 35.4 permission", "It has no evidential significance because it appears inside a witness statement rather than a separate document"],
+      "correctIndex": 1,
+      "explanation": "A witness recounting an out-of-court statement made by someone else, relied on for its truth, is hearsay within the witness statement. Notice requirements under Part 33 still apply, though they are commonly satisfied by the act of serving the statement containing it."
+    },
+    {
+      "itemId": "sqe1-dr-09-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement about a single joint expert's fees is most accurate?",
+      "options": ["The instructing parties are typically jointly and severally liable for the expert's fees, subject to any court order or agreement otherwise", "The claimant alone is always liable for a single joint expert's fees", "Single joint experts are never paid, as their role is treated as a public duty", "Fees for a single joint expert are fixed by statute at a flat rate regardless of the case"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answers assume one party bears the cost alone or that the arrangement is unpaid. In practice, the parties who jointly instruct a single joint expert are typically jointly and severally liable for the fees, subject to whatever the court orders or the parties agree."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's items is assuming a missed procedural step (no hearsay notice, no CPR 35.4 permission sought) automatically excludes the evidence. In civil procedure the usual consequence is a hit to weight, cost consequences, or a need to seek permission retrospectively — not automatic exclusion. Read each scenario for what actually follows from the rule, not the harshest-sounding outcome.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.witness-expert-evidence"
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "lessonId": "sqe1-dr-03",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "track": "SQE1",
+  "lessonNumber": 3,
+  "topicId": "sqe1.dispute-resolution.starting-proceedings",
+  "title": "Getting the claim on the court's record",
+  "subtitle": "Claim forms and statements of case",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Choose between Part 7 (ordinary claims) and Part 8 (no substantial factual dispute) procedure for a given claim",
+    "Identify the required contents and correct sequence of the statements of case — particulars of claim, defence and reply",
+    "Apply the service rules to a fact pattern and identify the consequences of a claim form not served within the required time"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 7", "role": "The ordinary procedure for starting a claim by claim form, including service requirements and time limits" },
+    { "citation": "Civil Procedure Rules, Part 8", "role": "The alternative procedure for claims unlikely to involve a substantial dispute of fact" },
+    { "citation": "Civil Procedure Rules, Part 16", "role": "Statements of case: the required contents of particulars of claim, defence and reply" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Choosing the wrong procedure or missing a service deadline can end a claim before the substantive dispute is ever argued. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know Part 7 exists — this lesson checks whether you can spot when Part 8 is actually the right choice, and whether a claim form has genuinely been served in time.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards scenario-based questions: expect a fact pattern with a procedural deadline buried in it, not a bare question about what CPR 7 or 8 says.",
+      "weakKnowledge": "Start with Part 1 and fix the Part 7/Part 8 distinction first — the statement of case and service material in the rest of this lesson both assume you already know which procedural track you're on."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A solicitor drafts a flawless particulars of claim, files it with the court well within the limitation period, and then simply forgets to serve it on the defendant before the deadline runs out. The claim was never defective on its merits — it died on a procedural technicality that has nothing to do with who was right. This lesson is about the machinery that turns a decision to sue into a validly commenced, properly framed claim: which procedure to use, what the statements of case must say, and how — and by when — the other side actually has to be told."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Part 7 or Part 8: two different starting points",
+        "voice": "structural — sets the framework the rest of the lesson assumes",
+        "body": [
+          "Civil proceedings in England and Wales are usually started using the Part 7 procedure: the claimant issues a claim form, and — either with the claim form or shortly afterwards — serves particulars of claim setting out the full factual and legal basis of the claim. Part 7 is the default because it anticipates a genuine factual dispute that will need to be pleaded, responded to, and potentially tried on evidence.",
+          "Part 8 exists for a narrower category of claim: one where the claimant seeks the court's decision on a question that is unlikely to involve a substantial dispute of fact. Typical Part 8 claims include applications for the court to construe the meaning of a document, claims for a declaration where the underlying facts are agreed, and a number of claims where a specific rule or practice direction requires Part 8 procedure to be used. Instead of a claim form followed by particulars of claim, a Part 8 claim form itself states the question the claimant wants the court to decide and the remedy sought, and is generally accompanied by written evidence from the outset.",
+          "The choice matters procedurally, not just administratively: Part 8 dispenses with several features of Part 7 litigation that assume a genuine factual contest — there is, for example, no filing of a defence in the ordinary Part 7 sense, and the timetable and evidential approach are both lighter-touch. Using Part 8 for a claim that does involve a real factual dispute risks the court ordering the claim to continue under Part 7 instead."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Part 7 vs Part 8 at a glance",
+            "points": [
+              "Part 7 — the default procedure: claim form plus particulars of claim, anticipating a genuine factual dispute to be pleaded and potentially tried",
+              "Part 8 — for claims unlikely to involve a substantial dispute of fact: construction of a document, agreed-fact declarations, or claims a rule specifically directs to Part 8",
+              "A Part 8 claim form states the question and remedy sought directly, generally with evidence filed from the outset, rather than being followed by separate particulars of claim",
+              "The court can direct a Part 8 claim to continue under Part 7 if it turns out to involve a substantial factual dispute after all"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Substantial dispute of fact",
+            "definition": "The threshold question for choosing procedure under CPR 8: where the facts underlying a claim are genuinely contested and will require investigation or evidence to resolve, Part 7 (not Part 8) is the appropriate procedure."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-03-check-01",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of the following claims is more clearly suited to Part 8 procedure?",
+          "scenarioA": "A claimant seeks damages for breach of contract, alleging the defendant supplied defective goods; the defendant disputes that the goods were defective at all.",
+          "scenarioB": "Two commercial parties agree on every relevant fact but disagree on how a clause in their signed contract should be interpreted, and ask the court to construe the clause.",
+          "correctScenario": "B",
+          "explanation": "B is the textbook Part 8 case: the facts are agreed, and the only question is one of construction — the court's decision on a legal question, not a factual dispute. A involves a live factual dispute about the condition of the goods, which calls for Part 7."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The particulars of claim: what must be pleaded",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Under a Part 7 claim, the particulars of claim is the document that actually sets out the claimant's case in full: the facts relied on, the legal basis of the claim, and the remedy sought. CPR 16.4 sets out the minimum required contents, and getting this right matters because a defendant is entitled to know precisely what case they have to meet before they are required to respond to it.",
+          "At minimum, the particulars of claim must include a concise statement of the facts on which the claimant relies, and, where the claim includes a claim for personal injury, details of the claimant's injuries and, generally, a schedule of past and future expenses and losses. Where interest is claimed, the particulars must state whether it is claimed under a contractual provision or a statutory power, the relevant provision, the rate, and the period for which it is claimed.",
+          "Every statement of case must be verified by a statement of truth — a declaration that the party (or their representative) believes the facts stated in the document are true. This is not a formality: a false statement of truth, made without an honest belief in its truth, can amount to contempt of court, and a solicitor who signs one carelessly risks both the client's case and their own professional position."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, r 16.4",
+            "text": "(1) Particulars of claim must include — (a) a concise statement of the facts on which the claimant relies; (b) if the claimant is seeking interest, a statement to that effect and the details set out in paragraph (2); (c) if the claimant is seeking aggravated damages or exemplary damages, a statement to that effect and the grounds for claiming them; (d) if the claimant is seeking provisional damages, a statement to that effect and the grounds for claiming them; and (e) such other matters as may be set out in a practice direction.",
+            "elements": ["Concise statement of facts relied on", "Details of any interest claimed, and its basis", "Details of any aggravated, exemplary or provisional damages claimed", "Any further contents required by practice direction (e.g. personal injury details, schedule of loss)"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-03-check-02",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Under CPR 16.4, if a claimant is seeking interest on a debt claim, what must the particulars of claim state about it?",
+          "options": ["Nothing — interest need not be pleaded and can simply be claimed at trial", "Whether the interest is claimed under a contract or statute, the relevant provision, the rate, and the period", "Only the total sum of interest claimed, with no further detail", "The name of the judge expected to hear the interest application"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. CPR 16.4 requires the basis, provision, rate and period for any interest claim to be set out — a bare figure isn't enough.",
+          "feedbackIncorrect": "CPR 16.4 is specific here: a claim for interest must state its basis (contractual or statutory), the provision relied on, the rate, and the period — not just a final figure."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Defence and reply: the statements of case in sequence",
+        "voice": "structural — reference-style, students return to this as a map",
+        "body": [
+          "Once the particulars of claim are served, the defendant must respond with a defence. CPR 16.5 sets out how a defence must engage with each allegation: for each fact alleged by the claimant, the defendant must state which allegations are admitted, which are denied (with the defendant's own version of events, where different), and which the defendant is unable to admit or deny but requires the claimant to prove. A bare denial without reasons, or silence on a point, risks being treated as an admission of that allegation.",
+          "If the claimant wishes to respond to matters raised in the defence — for example, to plead a fact that answers a new point the defendant has raised, rather than simply repeating the particulars of claim — the claimant may file a reply. A reply is optional and comparatively rare; most claims proceed from particulars of claim to defence without one, because most defences do not raise anything genuinely new that the particulars of claim did not already anticipate.",
+          "The order matters for both drafting and exam purposes: particulars of claim first, then defence (responding point by point), then — occasionally — a reply. Confusing the order, or assuming a reply is compulsory, is a common source of error."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "CPR 16.5 — how a defence must respond to each allegation",
+            "points": [
+              "Admit the allegation",
+              "Deny the allegation and state the defendant's own version of events, where it differs",
+              "State that the defendant is unable to admit or deny the allegation, but requires the claimant to prove it",
+              "A bare denial with no reasons or a failure to deal with an allegation at all risks being treated as an admission"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-03-check-03",
+          "type": "sequence",
+          "skillTag": "knowledge",
+          "prompt": "Put these statements of case in the order they are normally filed and served in a Part 7 claim.",
+          "items": [
+            "Particulars of claim, setting out the claimant's case",
+            "Defence, responding to each allegation as admitted, denied, or requiring proof",
+            "Reply, if the claimant needs to respond to a new point raised in the defence"
+          ],
+          "correctOrder": [0, 1, 2],
+          "feedbackCorrect": "That's the sequence — particulars of claim, then defence, and only occasionally a reply where the defence has raised something genuinely new.",
+          "feedbackIncorrect": "Check the order again: the particulars of claim always comes first, the defence responds to it, and a reply — where one is filed at all — comes last, responding only to new points in the defence."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Serving the claim form: the clock within the clock",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Issuing a claim form and serving it are two different steps, and SQE1 questions frequently turn on confusing them. Issue is what stops the limitation clock — once the claim form is issued (received by the court, with the appropriate fee) within the limitation period, the claim itself is in time, even if the defendant does not yet know about it.",
+          "Service is a separate, later step, and it has its own strict time limit: under CPR 7.5, the claim form must generally be served within four months of the date of issue (extended to six months for service outside the jurisdiction). This gives the claimant some breathing room after issue — commonly used to finalise settlement discussions or gather further evidence — but it is a genuinely hard deadline, not a target.",
+          "The method of service matters too: personal service, first class post, document exchange, fax or other electronic means, and leaving the document at a specified place are all recognised methods, each with its own deemed date of service rules. A claimant relying on the wrong deemed service date, or miscounting the four-month period, is one of the most common ways a procedurally sound claim goes wrong."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Issue vs service",
+            "description": "Two separate steps, each with its own clock.",
+            "nodes": [
+              { "id": "issue", "label": "Claim form issued by the court, within the limitation period — this stops the limitation clock" },
+              { "id": "window", "label": "Four-month window opens (six months for service out of the jurisdiction)" },
+              { "id": "serve", "label": "Claim form served on the defendant within that window, by a recognised method" },
+              { "id": "notice", "label": "Defendant now has formal notice and the claim proceeds — acknowledgment of service, defence, etc." }
+            ],
+            "edges": [
+              { "from": "issue", "to": "window" },
+              { "from": "window", "to": "serve" },
+              { "from": "serve", "to": "notice" }
+            ],
+            "textAlternative": "Issue stops the limitation clock. A separate four-month window (six months out of the jurisdiction) then opens for the claimant to serve the claim form on the defendant by a recognised method, after which the claim formally proceeds."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-03-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that shows this claimant has, on these facts, complied with the CPR 7.5 service deadline.",
+          "scenarioText": "A claimant issues a claim form on 1 January, well within the limitation period. She spends the next three months negotiating with the defendant and finally serves the claim form by first class post on 25 April, within four months of issue, using a method recognised under the Rules.",
+          "tappableSpans": ["issues a claim form on 1 January", "spends the next three months negotiating", "serves the claim form by first class post on 25 April", "within four months of issue"],
+          "correctSpan": "within four months of issue",
+          "feedbackCorrect": "Right. What matters for CPR 7.5 compliance is that service happened within four months of issue — the negotiating period in between doesn't affect that deadline one way or the other.",
+          "feedbackIncorrect": "Negotiating doesn't extend or shorten the service deadline. Look for the fact that confirms service actually happened within the four-month window measured from issue."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "What happens if service is missed",
+        "voice": "reflective — closes the lesson by tying the consequences back to limitation",
+        "body": [
+          "A claim form that is not served within the CPR 7.5 period is not automatically fatal to the underlying claim — but it is close to fatal in practice, and this is where this lesson connects directly back to the limitation periods covered earlier in the module.",
+          "The claimant can apply to extend the time for service under CPR 7.6, but the court's approach differs sharply depending on when the application is made. An application made before the four-month period expires is judged more leniently. An application made after the period has already expired faces a much higher bar: broadly, the claimant must show the court has failed to serve the claim form despite the claimant's reasonable steps to do so, or that the claimant has taken all reasonable steps but has been unable to serve it, and that in either case the application was made promptly.",
+          "If service is missed and no extension is granted, the claim form itself becomes ineffective, and if the limitation period has since expired, the claimant may be unable to start a fresh claim at all — the substantive claim can be lost entirely, not merely delayed. This is precisely why practitioners treat the service deadline with the same seriousness as limitation itself: a claim can be perfectly issued in time and still fail for want of proper service."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "CPR 7.6 extension of time for service",
+            "definition": "The court's power to extend the period for serving a claim form. Judged leniently if applied for before the original period expires; judged strictly — requiring reasonable steps to serve, or an inability to serve despite reasonable steps, and promptness — if applied for after the period has already expired."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-03-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A claimant fails to serve a claim form within the CPR 7.5 four-month period. The limitation period for the underlying claim has now also expired. What is the most accurate statement of the claimant's position?",
+          "options": ["The claimant can simply issue a fresh claim form at any time, since limitation only matters at the first issue", "If no extension of time for service is granted, the claim form becomes ineffective, and because limitation has now expired, the claimant may be unable to bring the claim again at all", "The four-month service period is merely directory, so no real consequence follows from missing it", "The court must automatically grant an extension of time for service whenever limitation has since expired"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answers either treat the service deadline as a formality with no teeth, or assume a fresh claim form is always available regardless of limitation. Neither is right: an unserved, unextended claim form becomes ineffective, and a fresh claim started after limitation has expired will itself be time-barred."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-03-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which CPR Part governs the alternative procedure for claims unlikely to involve a substantial dispute of fact?",
+      "options": ["Part 7", "Part 8", "Part 16", "Part 24"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under CPR 7.5, within how long of the date of issue must a claim form generally be served on a defendant within the jurisdiction?",
+      "options": ["14 days", "One month", "Four months", "Six months"],
+      "correctIndex": 2
+    },
+    {
+      "itemId": "sqe1-dr-03-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A defendant's stated defence simply says 'the defendant denies the claim' without engaging with any specific allegation in the particulars of claim. Under CPR 16.5, is this an adequate defence?",
+      "options": ["Yes — a general denial is always sufficient however it is worded", "No — the defence must state, for each allegation, whether it is admitted, denied (with reasons and the defendant's version), or not admitted and requiring proof, and a bare denial risks being treated as an admission", "Yes, provided it is filed within the correct time limit", "No — only because the defence must be filed on a specific court form"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A claimant issues a claim form on the last day of the limitation period. Has the claim already become time-barred if the claimant then serves it, correctly, three months later?",
+      "options": ["Yes — service, not issue, is what must occur within the limitation period", "No — issuing the claim form within the limitation period is what matters for limitation purposes; service is governed by the separate CPR 7.5 period", "Yes — both issue and service must occur within the limitation period", "No — limitation is irrelevant once proceedings have been contemplated"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT a way a defendant may properly respond to an individual allegation in the particulars of claim under CPR 16.5?",
+      "options": ["Admit the allegation", "Deny the allegation and give the defendant's own version of events", "State that the allegation is not admitted, requiring the claimant to prove it", "Ignore the allegation entirely, since silence is treated as a valid response"],
+      "correctIndex": 3,
+      "trapExplanation": "Silence is not a recognised response under CPR 16.5 — failing to deal with an allegation risks it being treated as an admission, which is the opposite of what a defendant usually intends."
+    },
+    {
+      "itemId": "sqe1-dr-03-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant chooses Part 8 procedure for a claim that, on closer inspection, turns out to involve a genuinely contested factual dispute about what was said in a meeting. What is the most likely consequence?",
+      "options": ["The claim is automatically struck out and cannot be revived", "The court may direct that the claim continue as if it had been started under Part 7", "Nothing — Part 8 and Part 7 are interchangeable at the claimant's discretion at any stage", "The claimant must pay the defendant's costs of the entire claim regardless of outcome"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming a wrong procedural choice is either fatal or entirely without consequence. In fact the court has a middle option: converting the claim to continue under Part 7, which is the procedure actually suited to a genuine factual dispute."
+    },
+    {
+      "itemId": "sqe1-dr-03-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant fails to serve a claim form within the four-month period under CPR 7.5, and the limitation period for the claim has not yet expired. Which of the following best describes the claimant's realistic options?",
+      "options": ["None — an unserved claim form can never be revived once the four months has passed", "The claimant may apply under CPR 7.6 for an extension, though the application will be judged more strictly than if made before the period expired, or, since limitation has not yet run out, may instead issue a fresh claim form", "The claimant must wait for the defendant's consent before taking any further step", "The claim automatically converts to Part 8 procedure once service is missed"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is treating a missed service deadline as always fatal. Because limitation has not yet expired here, the claimant retains a real fallback — a fresh claim form — in addition to a (stricter, but available) CPR 7.6 extension application."
+    },
+    {
+      "itemId": "sqe1-dr-03-test-08",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which document, in an ordinary Part 7 claim, sets out the full factual and legal basis of the claimant's case?",
+      "options": ["The claim form alone, without any further document", "The particulars of claim", "The defendant's acknowledgment of service", "The allocation questionnaire"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-09",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A defence raises, for the first time, a new factual allegation that the particulars of claim did not anticipate — that the claimant had orally agreed to vary the contract. The claimant wishes to respond specifically to that new allegation. Which statement of case should the claimant use?",
+      "options": ["An amended particulars of claim, filed as of right at any time", "A reply", "A fresh claim form covering the new point", "There is no mechanism to respond; the point can only be addressed at trial"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant issues a claim form on 1 February. She attempts service by post on 5 June, four months and four days after issue, having made no earlier attempt and no application for an extension. What is the most likely position?",
+      "options": ["Service is valid, since a few days' delay is always disregarded by the court", "Service is out of time under CPR 7.5, and without a successful CPR 7.6 extension application the claim form will be ineffective", "Service is automatically valid provided it occurs within six months, regardless of location", "The claim form remains valid indefinitely once issued, so the service date is immaterial"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Two parties agree on every fact underlying a dispute but disagree only about the proper legal construction of a clause in a written agreement. Which procedure should the claimant use to bring this dispute to court, and why?",
+      "options": ["Part 7, because all civil claims must start that way regardless of subject matter", "Part 8, because the claim does not involve a substantial dispute of fact and turns on a question of construction", "Neither — construction disputes cannot be brought to court without a full trial of fact", "Part 7, because construction disputes always require disclosure and witness evidence"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under CPR 16.4, if a claimant is seeking aggravated or exemplary damages, what must the particulars of claim include?",
+      "options": ["Nothing specific — general damages wording covers this automatically", "A statement that such damages are sought and the grounds for claiming them", "Only the total monetary figure claimed", "A certificate signed by counsel confirming the claim is properly brought"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A statement of case is verified by a statement of truth signed by a party who does not, in fact, believe the facts stated are true. Under the Civil Procedure Rules, what is the significance of this?",
+      "options": ["Nothing — the statement of truth is a purely administrative formality with no legal consequence", "It may amount to contempt of court, since the statement of truth is a declaration of honest belief in the facts stated", "It automatically invalidates the whole claim form, regardless of the underlying facts", "It only matters if the case reaches trial and is never relevant before then"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-03-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant needs to serve a claim form on a defendant based outside the jurisdiction. Under CPR 7.5, how long does the claimant have to serve the claim form, compared with a defendant served within the jurisdiction?",
+      "options": ["The same four-month period applies regardless of location", "Six months, rather than the standard four months for service within the jurisdiction", "Two months, a shorter period reflecting the urgency of cross-border claims", "There is no fixed period for service outside the jurisdiction"],
+      "correctIndex": 1
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating issue and service as the same event, or assuming a procedural misstep (wrong Part chosen, service missed) is either automatically fatal or entirely without consequence. Read carefully for which specific deadline or rule is actually engaged before choosing an answer.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.starting-proceedings"
+  }
+}

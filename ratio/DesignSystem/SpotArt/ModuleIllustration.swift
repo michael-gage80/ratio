@@ -32,6 +32,13 @@ struct ModuleIllustration: View {
         case .jurisprudence: AnyShape(ColumnScrollShape())
         case .employmentLaw: AnyShape(BriefcaseClockShape())
         case .familyLaw: AnyShape(LinkedRingsShape())
+        case .sqeDisputeResolution: AnyShape(BundleGavelShape())
+        case .sqeLegalSystem: AnyShape(CourtsArchShape())
+        case .sqeBusinessLaw: AnyShape(LedgerHandshakeShape())
+        case .sqePropertyPractice: AnyShape(TerraceDeedsShape())
+        case .sqeWills: AnyShape(WillQuillShape())
+        case .sqeAccounts: AnyShape(AccountBookShape())
+        case .sqeCriminalPractice: AnyShape(BlueLampClipboardShape())
         }
     }
 }
@@ -508,6 +515,412 @@ private struct LinkedRingsShape: Shape {
     }
 }
 
+/// SQE Dispute resolution — a court bundle tied in tape, tabbed dividers, and a gavel.
+private struct BundleGavelShape: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        // Bundle cover, with the sheets beneath showing along the shaded edges
+        p.rect(0.08, 0.32, 0.5, 0.54)
+        p.polyline([pt(0.1, 0.86), pt(0.1, 0.88), pt(0.6, 0.88), pt(0.6, 0.34), pt(0.58, 0.34)])
+        p.polyline([pt(0.12, 0.88), pt(0.12, 0.9), pt(0.62, 0.9), pt(0.62, 0.36), pt(0.6, 0.36)])
+        // Tabbed dividers standing proud of the right edge, alternate tabs shaded
+        for (i, y) in ([0.42, 0.53, 0.64, 0.75] as [CGFloat]).enumerated() {
+            let tab = [pt(0.62, y), pt(0.68, y + 0.01), pt(0.68, y + 0.05), pt(0.62, y + 0.06)]
+            p.polyline(tab)
+            if i.isMultiple(of: 2) { p.hatch(tab, spacing: 0.018, inset: 0.008) }
+        }
+        // Backsheet label, top left
+        p.rect(0.13, 0.37, 0.2, 0.13)
+        p.polyline([pt(0.16, 0.415), pt(0.3, 0.415)])
+        p.polyline([pt(0.16, 0.455), pt(0.26, 0.455)])
+        // Tape: one band down, one across, broken at the knot
+        let knot = CGRect(x: 0.395, y: 0.615, width: 0.04, height: 0.04)
+        for x in [0.4, 0.43] as [CGFloat] {
+            p.polyline([pt(x, 0.32), pt(x, knot.minY)])
+            p.polyline([pt(x, knot.maxY), pt(x, 0.86)])
+        }
+        for y in [0.62, 0.65] as [CGFloat] {
+            p.polyline([pt(0.08, y), pt(knot.minX, y)])
+            p.polyline([pt(knot.maxX, y), pt(0.58, y)])
+        }
+        // Shade down the right of the cover, either side of the tape
+        for (top, bottom) in [(0.32, 0.62), (0.65, 0.86)] as [(CGFloat, CGFloat)] {
+            p.hatch([pt(0.48, top), pt(0.58, top), pt(0.58, bottom), pt(0.48, bottom)], spacing: 0.03, angle: .degrees(90), inset: 0.012)
+        }
+        // Bow: knot, two loops, two tails
+        p.addRect(knot)
+        p.leaf(at: pt(knot.minX, knot.minY + 0.01), angle: -.pi * 0.8, length: 0.12, width: 0.05)
+        p.leaf(at: pt(knot.maxX, knot.minY + 0.01), angle: -.pi * 0.2, length: 0.12, width: 0.05)
+        p.polyline([pt(0.4, knot.maxY), pt(0.33, 0.76), pt(0.36, 0.75), pt(0.35, 0.79)])
+        p.polyline([pt(0.43, knot.maxY), pt(0.5, 0.75), pt(0.47, 0.745), pt(0.49, 0.78)])
+        // Gavel, drawn level about the head's centre, then scaled and tilted
+        var g = Path()
+        g.polyline([pt(-0.2, -0.075), pt(0.2, -0.075)])
+        g.polyline([pt(-0.2, 0.075), pt(0.2, 0.075)])
+        g.ellipse(pt(-0.2, 0), 0.03, 0.075)
+        g.arc(pt(0.2, 0), 0.03, 0.075, from: -90, to: 90)
+        for x in [-0.13, 0.11] as [CGFloat] {
+            g.arc(pt(x, 0), 0.02, 0.075, from: -90, to: 90)
+        }
+        g.hatch([pt(-0.17, 0.025), pt(0.2, 0.025), pt(0.2, 0.075), pt(-0.17, 0.075)], spacing: 0.024, inset: 0.012)
+        g.polyline([pt(-0.022, 0.075), pt(-0.022, 0.44)])
+        g.polyline([pt(0.022, 0.075), pt(0.022, 0.44)])
+        g.polyline([pt(0.008, 0.11), pt(0.008, 0.42)])
+        g.arc(pt(0, 0.44), 0.022, 0.02, from: 0, to: 180)
+        p.addPath(g, transform: CGAffineTransform(translationX: 0.68, y: 0.17).rotated(by: -.pi / 4).scaledBy(x: 0.78, y: 0.78))
+        return p.scaled(to: r)
+    }
+}
+
+/// SQE Legal system — the Royal Courts of Justice entrance: a Gothic arch with tracery
+/// under a gable, between two spired turrets.
+private struct CourtsArchShape: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        // Ground line and step
+        p.polyline([pt(0.06, 0.9), pt(0.94, 0.9)])
+        p.polyline([pt(0.3, 0.9), pt(0.3, 0.875), pt(0.7, 0.875), pt(0.7, 0.9)])
+        // Turrets: shaft, corbel band, spire, a lancet or two, shade on the right face
+        for x in [0.1, 0.78] as [CGFloat] {
+            p.polyline([pt(x, 0.9), pt(x, 0.3)])
+            p.polyline([pt(x + 0.12, 0.9), pt(x + 0.12, 0.3)])
+            p.rect(x - 0.015, 0.27, 0.15, 0.03)
+            p.polyline([pt(x, 0.27), pt(x + 0.06, 0.08), pt(x + 0.12, 0.27)])
+            p.polyline([pt(x + 0.06, 0.08), pt(x + 0.075, 0.27)])
+            p.circle(pt(x + 0.06, 0.065), 0.013)
+            for (spring, sill) in [(0.4, 0.46), (0.6, 0.7)] as [(CGFloat, CGFloat)] {
+                p.closedPolygon([pt(x + 0.035, sill)] + pointedArch(x + 0.035, x + 0.07, spring: spring) + [pt(x + 0.07, sill)])
+            }
+            p.polyline([pt(x + 0.1, 0.32), pt(x + 0.1, 0.88)])
+            p.hatch([pt(x + 0.075, 0.27), pt(x + 0.06, 0.08), pt(x + 0.12, 0.27)], spacing: 0.024, angle: .degrees(90), inset: 0.012)
+        }
+        // Wall between the turrets, and a small lancet either side of the arch
+        p.polyline([pt(0.22, 0.4), pt(0.3, 0.4)])
+        p.polyline([pt(0.7, 0.4), pt(0.78, 0.4)])
+        for a in [0.245, 0.705] as [CGFloat] {
+            p.closedPolygon([pt(a, 0.66)] + pointedArch(a, a + 0.05, spring: 0.54) + [pt(a + 0.05, 0.66)])
+        }
+        // Gable over the arch, doubled, with a finial
+        p.polyline([pt(0.26, 0.4), pt(0.5, 0.14), pt(0.74, 0.4)])
+        p.polyline([pt(0.3, 0.4), pt(0.5, 0.185), pt(0.7, 0.4)])
+        p.circle(pt(0.5, 0.12), 0.014)
+        // Arch: three receding orders down to the ground
+        for (a, b) in [(0.32, 0.68), (0.345, 0.655), (0.37, 0.63)] as [(CGFloat, CGFloat)] {
+            p.polyline([pt(a, 0.875)] + pointedArch(a, b, spring: 0.6) + [pt(b, 0.875)])
+        }
+        // Shade in the right-hand reveal
+        p.hatch([pt(0.63, 0.6), pt(0.68, 0.6), pt(0.68, 0.875), pt(0.63, 0.875)], spacing: 0.03, inset: 0.008)
+        // Tracery in the arch head: transom, two sub-arches, a quatrefoil in a roundel
+        p.polyline([pt(0.37, 0.6), pt(0.63, 0.6)])
+        p.polyline(pointedArch(0.37, 0.5, spring: 0.6))
+        p.polyline(pointedArch(0.5, 0.63, spring: 0.6))
+        p.circle(pt(0.5, 0.45), 0.042)
+        for (dx, dy) in [(0.0, -0.018), (0.018, 0.0), (0.0, 0.018), (-0.018, 0.0)] as [(CGFloat, CGFloat)] {
+            p.circle(pt(0.5 + dx, 0.45 + dy), 0.016)
+        }
+        // Double doors with panels
+        p.polyline([pt(0.5, 0.6), pt(0.5, 0.875)])
+        for x in [0.395, 0.525] as [CGFloat] {
+            p.rect(x, 0.64, 0.08, 0.08)
+            p.rect(x, 0.76, 0.08, 0.08)
+        }
+        return p.scaled(to: r)
+    }
+}
+
+/// SQE Business law — a handshake over an open ledger.
+private struct LedgerHandshakeShape: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        // Sleeves and cuffs, one from each side
+        for side in [-1.0, 1.0] as [CGFloat] {
+            let x = { (u: CGFloat) in 0.5 + side * (u - 0.5) }
+            p.polyline([pt(x(0.04), 0.2), pt(x(0.2), 0.19)])
+            p.polyline([pt(x(0.04), 0.42), pt(x(0.2), 0.41)])
+            p.closedPolygon([pt(x(0.2), 0.17), pt(x(0.25), 0.17), pt(x(0.25), 0.43), pt(x(0.2), 0.43)])
+            p.polyline([pt(x(0.06), 0.37), pt(x(0.2), 0.365)])
+            p.polyline([pt(x(0.04), 0.2), pt(x(0.04), 0.42)])
+        }
+        // Left hand: back of the hand running in under the other's fingers, and its thumb
+        // laid over the other hand's back
+        p.move(to: pt(0.25, 0.21))
+        p.addQuadCurve(to: pt(0.38, 0.22), control: pt(0.32, 0.2))
+        p.move(to: pt(0.25, 0.4))
+        p.addQuadCurve(to: pt(0.4, 0.41), control: pt(0.33, 0.43))
+        p.move(to: pt(0.37, 0.22))
+        p.addQuadCurve(to: pt(0.5, 0.17), control: pt(0.43, 0.15))
+        p.addQuadCurve(to: pt(0.51, 0.215), control: pt(0.54, 0.19))
+        p.addQuadCurve(to: pt(0.44, 0.235), control: pt(0.47, 0.22))
+        // Right hand: back of the hand and palm edge from the cuff, fingers wrapped round
+        p.move(to: pt(0.75, 0.21))
+        p.addQuadCurve(to: pt(0.6, 0.2), control: pt(0.67, 0.19))
+        p.move(to: pt(0.75, 0.4))
+        p.addQuadCurve(to: pt(0.52, 0.41), control: pt(0.64, 0.43))
+        let fingers: [(y: CGFloat, tip: CGFloat)] = [(0.235, 0.4), (0.28, 0.37), (0.325, 0.37), (0.37, 0.39)]
+        let fh: CGFloat = 0.045
+        for f in fingers {
+            p.move(to: pt(0.53, f.y))
+            p.addLine(to: pt(f.tip + fh / 2, f.y))
+            p.addArc(center: pt(f.tip + fh / 2, f.y + fh / 2), radius: fh / 2, startAngle: .degrees(270), endAngle: .degrees(90), clockwise: true)
+            p.addLine(to: pt(0.53, f.y + fh))
+        }
+        // Knuckle line where the fingers turn
+        p.move(to: pt(0.53, 0.235))
+        p.addQuadCurve(to: pt(0.53, 0.415), control: pt(0.57, 0.325))
+        // Open ledger: two pages curving to the gutter, the page block beneath
+        for side in [-1.0, 1.0] as [CGFloat] {
+            let x = { (u: CGFloat) in 0.5 + side * (u - 0.5) }
+            p.move(to: pt(x(0.1), 0.52))
+            p.addQuadCurve(to: pt(0.5, 0.58), control: pt(x(0.3), 0.49))
+            p.move(to: pt(x(0.1), 0.86))
+            p.addQuadCurve(to: pt(0.5, 0.9), control: pt(x(0.3), 0.83))
+            p.polyline([pt(x(0.1), 0.52), pt(x(0.1), 0.86)])
+            p.move(to: pt(x(0.1), 0.86))
+            p.polyline([pt(x(0.1), 0.86), pt(x(0.08), 0.88)])
+            p.move(to: pt(x(0.08), 0.88))
+            p.addQuadCurve(to: pt(0.5, 0.925), control: pt(x(0.3), 0.855))
+            // Ruled lines following the page's curve, and two money columns
+            let top = { (u: CGFloat) -> CGFloat in
+                let t = (u - 0.1) / 0.4
+                return (1 - t) * (1 - t) * 0.52 + 2 * t * (1 - t) * 0.49 + t * t * 0.58
+            }
+            for d in [0.07, 0.13, 0.19, 0.25] as [CGFloat] {
+                p.polyline(stride(from: 0.14, through: 0.46, by: 0.02).map { pt(x($0), top($0) + d) })
+            }
+            for u in [0.36, 0.42] as [CGFloat] {
+                p.polyline([pt(x(u), top(u) + 0.03), pt(x(u), top(u) + 0.29)])
+            }
+        }
+        p.polyline([pt(0.5, 0.58), pt(0.5, 0.9)])
+        return p.scaled(to: r)
+    }
+}
+
+/// SQE Property practice — a Georgian terrace house with rolled title deeds before it.
+private struct TerraceDeedsShape: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        // Chimney stacks with pots
+        for x in [0.24, 0.68] as [CGFloat] {
+            p.rect(x, 0.06, 0.08, 0.05)
+            p.rect(x + 0.012, 0.035, 0.022, 0.025)
+            p.rect(x + 0.046, 0.035, 0.022, 0.025)
+        }
+        // Parapet coping and facade; coping, string course and pavement run on into the terrace
+        p.rect(0.18, 0.11, 0.64, 0.025)
+        p.polyline([pt(0.1, 0.11), pt(0.18, 0.11)])
+        p.polyline([pt(0.82, 0.11), pt(0.9, 0.11)])
+        p.polyline([pt(0.2, 0.135), pt(0.2, 0.68), pt(0.8, 0.68), pt(0.8, 0.135)])
+        p.polyline([pt(0.1, 0.48), pt(0.9, 0.48)])
+        p.polyline([pt(0.1, 0.7), pt(0.9, 0.7)])
+        // Sash windows: frame, meeting rail, glazing bar, flat-arch lintel, sill
+        func window(_ cx: CGFloat, _ top: CGFloat, _ h: CGFloat) {
+            let w: CGFloat = 0.09
+            p.rect(cx - w / 2, top, w, h)
+            p.polyline([pt(cx - w / 2, top + h / 2), pt(cx + w / 2, top + h / 2)])
+            p.polyline([pt(cx, top), pt(cx, top + h)])
+            p.polyline([pt(cx - w / 2 - 0.012, top - 0.015), pt(cx + w / 2 + 0.012, top - 0.015)])
+            p.polyline([pt(cx - w / 2 - 0.01, top + h + 0.012), pt(cx + w / 2 + 0.01, top + h + 0.012)])
+            p.hatch([pt(cx, top), pt(cx + w / 2, top), pt(cx + w / 2, top + h), pt(cx, top + h)], spacing: 0.02, angle: .degrees(90), inset: 0.008)
+        }
+        for cx in [0.3, 0.5, 0.7] as [CGFloat] {
+            window(cx, 0.18, 0.07)
+            window(cx, 0.3, 0.13)
+        }
+        window(0.5, 0.53, 0.1)
+        window(0.7, 0.53, 0.1)
+        // Front door: fanlight with radial bars, panelled door shaded dark, step
+        let fan = pt(0.3, 0.56)
+        p.arc(fan, 0.045, 0.045, from: 180, to: 360)
+        p.radialHatch(fan, from: 0.012, to: 0.045, angles: stride(from: 210.0, through: 330.0, by: 30.0))
+        p.polyline([pt(0.255, 0.56), pt(0.345, 0.56)])
+        p.rect(0.255, 0.56, 0.09, 0.12)
+        p.hatch([pt(0.255, 0.56), pt(0.345, 0.56), pt(0.345, 0.68), pt(0.255, 0.68)], spacing: 0.02, angle: .degrees(90), inset: 0.01)
+        // Rolled deeds: one behind, one in front tied with ribbon, shaded beneath
+        p.polyline([pt(0.4, 0.73), pt(0.88, 0.73)])
+        p.polyline([pt(0.74, 0.81), pt(0.88, 0.81)])
+        p.arc(pt(0.4, 0.77), 0.016, 0.04, from: 180, to: 360)
+        p.arc(pt(0.88, 0.77), 0.016, 0.04, from: -90, to: 90)
+        p.polyline([pt(0.12, 0.78), pt(0.72, 0.78)])
+        p.polyline([pt(0.12, 0.9), pt(0.72, 0.9)])
+        p.ellipse(pt(0.12, 0.84), 0.024, 0.06)
+        p.ellipse(pt(0.122, 0.845), 0.011, 0.03)
+        p.arc(pt(0.72, 0.84), 0.024, 0.06, from: -90, to: 90)
+        p.hatch([pt(0.14, 0.86), pt(0.72, 0.86), pt(0.72, 0.9), pt(0.14, 0.9)], spacing: 0.014)
+        for x in [0.42, 0.45] as [CGFloat] { p.arc(pt(x, 0.84), 0.014, 0.06, from: -90, to: 90) }
+        p.polyline([pt(0.43, 0.9), pt(0.39, 0.95), pt(0.42, 0.94), pt(0.43, 0.96)])
+        p.polyline([pt(0.455, 0.9), pt(0.5, 0.95), pt(0.47, 0.945)])
+        return p.scaled(to: r)
+    }
+}
+
+/// SQE Wills — a folded will closed with a wax seal, and a quill.
+private struct WillQuillShape: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        // Folded packet, a second edge on the shaded side
+        p.rect(0.08, 0.3, 0.54, 0.56)
+        p.polyline([pt(0.11, 0.86), pt(0.11, 0.89), pt(0.65, 0.89), pt(0.65, 0.33), pt(0.62, 0.33)])
+        // Flap folded down to a point, stopping at the seal, with its shadow beneath
+        let seal = pt(0.35, 0.56)
+        p.polyline([pt(0.08, 0.3), pt(0.285, 0.498)])
+        p.polyline([pt(0.62, 0.3), pt(0.415, 0.498)])
+        p.polyline([pt(0.08, 0.34), pt(0.275, 0.528)])
+        p.polyline([pt(0.62, 0.34), pt(0.425, 0.528)])
+        // Shade down the right of the packet
+        p.hatch([pt(0.54, 0.6), pt(0.62, 0.6), pt(0.62, 0.86), pt(0.54, 0.86)], spacing: 0.028, angle: .degrees(90), inset: 0.012)
+        // Endorsement on the outside
+        p.polyline([pt(0.2, 0.72), pt(0.5, 0.72)])
+        p.polyline([pt(0.25, 0.78), pt(0.45, 0.78)])
+        // Wax seal: scalloped rim, inner die shaded
+        p.closedPolygon((0..<120).map { i -> CGPoint in
+            let t = CGFloat(i) / 120 * 2 * .pi
+            let rad = 0.08 + 0.006 * cos(14 * t)
+            return CGPoint(x: seal.x + rad * cos(t), y: seal.y + rad * sin(t))
+        })
+        p.circle(seal, 0.05)
+        p.hatch(arcPoints(seal, 0.05, 0.05, from: 0, to: 360), spacing: 0.024, angle: .degrees(-45), inset: 0.008)
+        // Quill, drawn level from the nib (origin) along +x, then stood up on the right
+        var q = Path()
+        // Barrel tapering to a slit nib
+        q.polyline([pt(0, 0), pt(0.08, -0.014), pt(0.3, -0.014)])
+        q.polyline([pt(0, 0), pt(0.08, 0.014), pt(0.3, 0.014)])
+        q.polyline([pt(0.01, 0), pt(0.05, 0)])
+        // Shaft running on to the tip
+        q.polyline([pt(0.3, 0), pt(0.84, 0)])
+        // Vane: broad on one side, narrow on the other, with a notch cut in the broad side
+        q.move(to: pt(0.24, 0))
+        q.addCurve(to: pt(0.5, -0.07), control1: pt(0.3, -0.05), control2: pt(0.4, -0.07))
+        q.polyline([pt(0.5, -0.07), pt(0.54, -0.05), pt(0.56, -0.08)])
+        q.addCurve(to: pt(0.86, 0), control1: pt(0.7, -0.085), control2: pt(0.82, -0.04))
+        q.move(to: pt(0.28, 0))
+        q.addCurve(to: pt(0.86, 0), control1: pt(0.45, 0.05), control2: pt(0.75, 0.04))
+        // Barbs on the narrow, shaded side
+        for x in stride(from: 0.36, through: 0.76, by: 0.04) as StrideThrough<CGFloat> {
+            q.polyline([pt(x, 0.006), pt(x + 0.04, 0.026)])
+        }
+        p.addPath(q, transform: CGAffineTransform(translationX: 0.72, y: 0.93).rotated(by: -76 * .pi / 180))
+        return p.scaled(to: r)
+    }
+}
+
+/// SQE Accounts — a page of a two-column (debit and credit) account, ruled and cast.
+private struct AccountBookShape: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        // Page with its lower corner turned up (shaded), sheets beneath
+        p.polyline([pt(0.72, 0.9), pt(0.14, 0.9), pt(0.14, 0.08), pt(0.86, 0.08), pt(0.86, 0.76), pt(0.72, 0.9)])
+        p.polyline([pt(0.72, 0.9), pt(0.74, 0.78), pt(0.86, 0.76)])
+        p.hatch([pt(0.72, 0.9), pt(0.74, 0.78), pt(0.86, 0.76)], spacing: 0.025, angle: .degrees(-45), inset: 0.01)
+        p.polyline([pt(0.17, 0.9), pt(0.17, 0.93), pt(0.73, 0.93)])
+        p.polyline([pt(0.86, 0.79), pt(0.89, 0.79), pt(0.89, 0.11), pt(0.86, 0.11)])
+        // Account heading and the T: a double rule across, a double rule down the middle
+        p.polyline([pt(0.36, 0.14), pt(0.64, 0.14)])
+        p.polyline([pt(0.14, 0.2), pt(0.86, 0.2)])
+        p.polyline([pt(0.14, 0.215), pt(0.86, 0.215)])
+        p.polyline([pt(0.493, 0.215), pt(0.493, 0.8)])
+        p.polyline([pt(0.507, 0.215), pt(0.507, 0.8)])
+        // Money column on each side
+        p.polyline([pt(0.37, 0.215), pt(0.37, 0.8)])
+        p.polyline([pt(0.74, 0.215), pt(0.74, 0.76)])
+        // Entries: narrative and figure, one row each
+        let debits: [(CGFloat, CGFloat)] = [(0.3, 0.4), (0.25, 0.42), (0.32, 0.39), (0.22, 0.41)]
+        let credits: [(CGFloat, CGFloat)] = [(0.67, 0.77), (0.62, 0.79), (0.69, 0.76)]
+        for (i, (text, figure)) in debits.enumerated() {
+            let y = 0.28 + CGFloat(i) * 0.07
+            p.polyline([pt(0.18, y), pt(text, y)])
+            p.polyline([pt(figure, y), pt(0.475, y)])
+        }
+        for (i, (text, figure)) in credits.enumerated() {
+            let y = 0.28 + CGFloat(i) * 0.07
+            p.polyline([pt(0.54, y), pt(text, y)])
+            p.polyline([pt(figure, y), pt(0.84, y)])
+        }
+        // Balance carried down, then both sides cast: rule, total, double rule
+        p.polyline([pt(0.54, 0.49), pt(0.65, 0.49)])
+        p.polyline([pt(0.79, 0.49), pt(0.84, 0.49)])
+        for (a, b) in [(0.39, 0.475), (0.76, 0.84)] as [(CGFloat, CGFloat)] {
+            p.polyline([pt(a, 0.6), pt(b, 0.6)])
+            p.polyline([pt(a + 0.02, 0.65), pt(b, 0.65)])
+            p.polyline([pt(a, 0.69), pt(b, 0.69)])
+            p.polyline([pt(a, 0.705), pt(b, 0.705)])
+        }
+        return p.scaled(to: r)
+    }
+}
+
+/// SQE Criminal practice — a police station's blue lamp on its bracket, and a custody
+/// record on a clipboard.
+private struct BlueLampClipboardShape: Shape {
+    func path(in r: CGRect) -> Path {
+        var p = Path()
+        let cx: CGFloat = 0.27
+        // Wall plate, arm and scrolled brace
+        p.rect(0.04, 0.05, 0.03, 0.2)
+        p.polyline([pt(0.07, 0.09), pt(cx + 0.02, 0.09)])
+        p.polyline([pt(0.07, 0.11), pt(cx + 0.02, 0.11)])
+        p.move(to: pt(0.07, 0.22))
+        p.addQuadCurve(to: pt(0.2, 0.11), control: pt(0.16, 0.2))
+        p.polyline((0...30).map { i -> CGPoint in
+            let f = CGFloat(i) / 30
+            let t = f * 1.6 * .pi
+            let rad = 0.025 * (1 - f * 0.7)
+            return CGPoint(x: 0.1 + rad * cos(t + .pi / 2), y: 0.185 + rad * sin(t + .pi / 2))
+        })
+        // Hanging ring, finial and domed cap
+        p.circle(pt(cx, 0.125), 0.014)
+        p.circle(pt(cx, 0.152), 0.01)
+        p.arc(pt(cx, 0.21), 0.06, 0.048, from: 180, to: 360)
+        p.polyline([pt(cx - 0.06, 0.21), pt(cx + 0.06, 0.21)])
+        // Roof and rim, overhanging the glass
+        p.polyline([pt(cx - 0.06, 0.21), pt(cx - 0.13, 0.25), pt(cx + 0.13, 0.25), pt(cx + 0.06, 0.21)])
+        p.rect(cx - 0.13, 0.25, 0.26, 0.02)
+        p.hatch([pt(cx - 0.02, 0.215), pt(cx + 0.06, 0.215), pt(cx + 0.12, 0.25), pt(cx - 0.02, 0.25)], spacing: 0.02, angle: .degrees(90), inset: 0.004)
+        // Glass: front face and a narrower side face in shade, tapering to the base
+        let lt = pt(cx - 0.11, 0.27), lb = pt(cx - 0.08, 0.58)
+        let ct = pt(cx + 0.05, 0.27), cb = pt(cx + 0.04, 0.58)
+        let rt = pt(cx + 0.11, 0.27), rb = pt(cx + 0.08, 0.58)
+        p.polyline([lt, lb])
+        p.polyline([ct, cb])
+        p.polyline([rt, rb])
+        p.hatch([ct, rt, rb, cb], spacing: 0.02, angle: .degrees(90), inset: 0.006)
+        // "POLICE" panel across the top of the front face: band with letter strokes
+        p.polyline([pt(cx - 0.107, 0.3), pt(cx + 0.049, 0.3)])
+        p.polyline([pt(cx - 0.102, 0.35), pt(cx + 0.048, 0.35)])
+        for i in 0..<6 {
+            let x = cx - 0.08 + CGFloat(i) * 0.022
+            p.polyline([pt(x, 0.312), pt(x, 0.338)])
+        }
+        // Glazing bar, base rim, cone and drop
+        p.polyline([pt(cx - 0.095, 0.46), pt(cx + 0.045, 0.46)])
+        p.rect(cx - 0.09, 0.58, 0.18, 0.02)
+        p.polyline([pt(cx - 0.08, 0.6), pt(cx, 0.68), pt(cx + 0.08, 0.6)])
+        p.circle(pt(cx, 0.695), 0.015)
+        // Clipboard: board with its edge showing, sheet, clip
+        p.addRoundedRect(in: CGRect(x: 0.48, y: 0.26, width: 0.42, height: 0.66), cornerSize: CGSize(width: 0.03, height: 0.03))
+        p.polyline([pt(0.51, 0.92), pt(0.51, 0.94), pt(0.9, 0.94), pt(0.92, 0.92), pt(0.92, 0.29), pt(0.9, 0.28)])
+        p.polyline([pt(0.52, 0.3), pt(0.6, 0.3)])
+        p.polyline([pt(0.78, 0.3), pt(0.86, 0.3)])
+        p.polyline([pt(0.52, 0.3), pt(0.52, 0.88), pt(0.86, 0.88), pt(0.86, 0.3)])
+        let clip = [pt(0.6, 0.32), pt(0.6, 0.25), pt(0.64, 0.21), pt(0.74, 0.21), pt(0.78, 0.25), pt(0.78, 0.32)]
+        p.closedPolygon(clip)
+        p.circle(pt(0.69, 0.245), 0.014)
+        p.hatch([pt(0.6, 0.28), pt(0.78, 0.28), pt(0.78, 0.32), pt(0.6, 0.32)], spacing: 0.016, inset: 0.008)
+        // Custody record: heading, tick-box rows, signature over its line
+        p.polyline([pt(0.57, 0.38), pt(0.81, 0.38)])
+        for (i, end) in ([0.81, 0.77, 0.8, 0.74] as [CGFloat]).enumerated() {
+            let y = 0.46 + CGFloat(i) * 0.08
+            p.rect(0.57, y - 0.02, 0.035, 0.035)
+            p.polyline([pt(0.63, y), pt(end, y)])
+        }
+        p.move(to: pt(0.6, 0.81))
+        p.addCurve(to: pt(0.68, 0.78), control1: pt(0.62, 0.75), control2: pt(0.66, 0.74))
+        p.addCurve(to: pt(0.76, 0.79), control1: pt(0.7, 0.82), control2: pt(0.73, 0.75))
+        p.polyline([pt(0.57, 0.83), pt(0.81, 0.83)])
+        return p.scaled(to: r)
+    }
+}
+
 // MARK: - Drawing helpers (unit coordinates)
 
 private nonisolated func pt(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: x, y: y) }
@@ -518,6 +931,12 @@ private nonisolated func arcPoints(_ c: CGPoint, _ rx: CGFloat, _ ry: CGFloat, f
         let t = (from + (to - from) * CGFloat(i) / CGFloat(count)) * .pi / 180
         return CGPoint(x: c.x + rx * cos(t), y: c.y + ry * sin(t))
     }
+}
+
+/// An equilateral Gothic arch from (`a`, `spring`) up to its point and down to (`b`, `spring`).
+private nonisolated func pointedArch(_ a: CGFloat, _ b: CGFloat, spring y: CGFloat) -> [CGPoint] {
+    let w = b - a
+    return arcPoints(pt(b, y), w, w, from: 180, to: 240, count: 16) + arcPoints(pt(a, y), w, w, from: 300, to: 360, count: 16).dropFirst()
 }
 
 /// A point and its tangent on a cubic Bézier at `t`.

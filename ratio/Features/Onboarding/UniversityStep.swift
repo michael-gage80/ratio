@@ -1,7 +1,9 @@
 import SwiftUI
 
 /// screens/05-university.png — searchable list of law schools in England and Wales,
-/// plus free text for anyone whose university isn't listed (PRD: "University").
+/// plus free text for anyone whose university isn't listed (PRD: "University"). SQE1
+/// students are asked where they're preparing: a university, a law school or provider,
+/// or on their own.
 struct UniversityStep: View {
     let model: OnboardingModel
 
@@ -17,6 +19,9 @@ struct UniversityStep: View {
 
     private let universities = UniversityDirectory.all
     private static let maxLength = 80
+    static let independent = "Studying independently"
+
+    private var isSQE: Bool { model.programme == .sqe1 }
 
     init(model: OnboardingModel) {
         self.model = model
@@ -30,8 +35,10 @@ struct UniversityStep: View {
 
     var body: some View {
         OnboardingStepLayout(
-            title: "Where do you study?",
-            subtitle: "We use this for your university board. It's never shown with your surname.",
+            title: isSQE ? "Where are you studying for the SQE?" : "Where do you study?",
+            subtitle: isSQE
+                ? "A university, a law school or provider, or on your own. It's never shown with your surname."
+                : "We use this for your university board. It's never shown with your surname.",
             canContinue: canContinue,
             onContinue: continueTapped
         ) {
@@ -119,7 +126,7 @@ struct UniversityStep: View {
     @ViewBuilder
     private var otherRow: some View {
         if choice == .other {
-            RatioTextField("Your university", text: $otherName)
+            RatioTextField(isSQE ? "Your law school or provider" : "Your university", text: $otherName)
                 .textContentType(.organizationName)
                 .focused($otherFieldFocused)
                 .onChange(of: otherName) { _, new in
@@ -127,10 +134,27 @@ struct UniversityStep: View {
                 }
                 .onAppear { otherFieldFocused = otherName.isEmpty }
         } else {
+            if isSQE {
+                Button {
+                    choice = .other
+                    otherName = Self.independent
+                    otherFieldFocused = false
+                } label: {
+                    Text(Self.independent)
+                        .ratioFont(.body)
+                        .padding(RatioSpace.s)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule)
+                        }
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.ratioPress)
+            }
             Button {
                 choice = .other
             } label: {
-                Text("My university isn't listed")
+                Text(isSQE ? "My law school or provider isn't listed" : "My university isn't listed")
                     .ratioFont(.body)
                     .italic()
                     .padding(RatioSpace.s)

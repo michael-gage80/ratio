@@ -118,7 +118,7 @@ struct LibraryView: View {
         Menu {
             Picker("Module", selection: $module) {
                 Text("All modules").tag(Module?.none)
-                ForEach(Module.allCases) { Text($0.title).tag(Module?.some($0)) }
+                ForEach(student.programme.modules) { Text($0.title).tag(Module?.some($0)) }
             }
         } label: {
             Image(systemName: module == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")

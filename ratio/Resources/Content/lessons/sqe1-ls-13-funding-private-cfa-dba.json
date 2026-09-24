@@ -1,0 +1,331 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-13",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 13,
+  "topicId": "sqe1.legal-system.funding-private",
+  "title": "Funding legal services I: private retainers, CFAs, and DBAs",
+  "subtitle": "Success fees, percentage caps, and where contingency funding is banned outright",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the private retainer and the solicitor's duty to give the client clear costs information",
+    "State the requirements of a conditional fee agreement under CLSA 1990 s 58, including the success fee cap and its irrecoverability from the losing party post-LASPO",
+    "Apply the percentage caps on damages-based agreements to different claim types, and identify when CFAs and DBAs cannot be used at all"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Courts and Legal Services Act 1990, s 58", "role": "Statutory basis for conditional fee agreements and the success fee" },
+    { "citation": "Conditional Fee Agreements Order 2013", "role": "Caps the success fee at 100% of base costs; caps recovery from damages in personal injury claims at 25%" },
+    { "citation": "Damages-Based Agreements Regulations 2013", "role": "Sets the percentage caps for DBAs by claim type" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Funding questions look procedural until a client's damages depend on the answer. Where the profile shows application lagging knowledge, this note appears: 'You can define a CFA — the harder skill is doing the percentage arithmetic under pressure.'",
+    "profileHooks": {
+      "weakApplication": "You know the definitions here. The test pool leans hard on applying the caps to fact patterns — expect numbers, not just labels.",
+      "weakKnowledge": "Slow down on Parts 1 and 2. Everything after depends on knowing which funding route is even on the table before you start doing the maths."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A client wins £80,000 in damages after a road accident. Her solicitor took the case on a 'no win, no fee' basis. How much of that £80,000 does she actually keep? The answer isn't 'all of it' — and getting it wrong on paper, or in an exam, usually means missing one specific percentage cap.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The percentage caps and the post-LASPO recoverability rules are stable; watch for periodic Ministry of Justice consultations on raising the personal injury success fee cap, which have not yet resulted in a change."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The private retainer: the default, and its duties",
+        "voice": "grounding — establishes the baseline before the exceptions",
+        "body": [
+          "Most solicitor-client relationships are funded the plainest way possible: a private retainer. The client instructs the solicitor, agrees to pay for the work regardless of outcome, and is billed by the hour, by a fixed fee, or by some blend of the two. Nothing here is contingent on winning.",
+          "What makes a private retainer well run isn't the pricing model — it's transparency. The SRA Transparency Rules and the Codes of Conduct require solicitors to give clients clear information about costs at the outset: how the fee will be calculated, a realistic estimate or range, what triggers additional charges, and updates if the estimate is going to be exceeded. A client who is surprised by their final bill is, in most cases, a client who was under-informed at the start.",
+          "This matters for SQE1 because 'funding' questions often test whether you can spot that a private retainer is actually what's on the facts — before reaching for a CFA or DBA analysis that isn't needed at all."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Private retainer",
+            "definition": "A funding arrangement under which the client pays the solicitor's fees regardless of the outcome of the matter, subject to the solicitor's duty to give clear, ongoing information about costs."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under a private retainer, does the client's liability to pay the solicitor's fees depend on winning the case?",
+          "options": ["No — fees are payable regardless of outcome", "Yes — fees are only payable if the client succeeds"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. That's the defining feature that distinguishes a private retainer from every contingency-based option in this lesson.",
+          "feedbackIncorrect": "Not quite — a private retainer is the non-contingent baseline. Outcome-dependent fees are what CFAs and DBAs are for, which is where the rest of this lesson goes."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Conditional fee agreements: the success fee under s 58",
+        "voice": "structural — walks the statutory mechanics in order",
+        "body": [
+          "A conditional fee agreement (CFA) is the 'no win, no fee' arrangement most clients have heard of. Courts and Legal Services Act 1990, s 58 makes CFAs enforceable, subject to conditions set out in secondary legislation.",
+          "The mechanics: if the client loses, the solicitor recovers nothing for the work done (a 'no win' CFA), or a reduced amount (a 'no win, lower fee' variant). If the client wins, the solicitor recovers their normal fee plus a success fee — an uplift that compensates for the risk of running cases that lose. The success fee is expressed as a percentage of the normal fee, and s 58 caps that percentage at 100%.",
+          "The detail that trips up almost everyone: since LASPO's reforms took effect in April 2013, the success fee is no longer recoverable from the losing party. Before then, a winning client's success fee was added to the costs order against their opponent. Now, the success fee comes out of the client's own damages — which is exactly why, for personal injury claims specifically, the amount of damages that can be used to pay the success fee is itself capped at 25% (excluding damages for future care and future losses)."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Courts and Legal Services Act 1990, s 58",
+            "text": "A conditional fee agreement which satisfies all of the conditions applicable to it by virtue of this section shall not be unenforceable by reason only of its being a conditional fee agreement; but... any other conditional fee agreement shall be unenforceable.",
+            "elements": ["Agreement is 'conditional' on a specified outcome (e.g. success)", "Complies with the conditions prescribed by order", "Success fee, if any, does not exceed the percentage cap", "Agreement is in the prescribed form"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-13-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under the post-LASPO regime, from whom is a CFA success fee recovered when the client wins?",
+          "options": ["From the losing party, as part of the costs order", "From the client, out of their own damages, subject to any applicable cap", "From the Legal Aid Agency", "It cannot be recovered from anyone"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct. This is the single most tested LASPO change to CFAs: the success fee shifted from the losing party's pocket to the client's damages.",
+          "feedbackIncorrect": "Look again at what LASPO changed in 2013. Before then the losing party paid the success fee; since then, the client pays it out of their own damages — subject to the 25% cap in personal injury cases."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Damages-based agreements: percentage caps by claim type",
+        "voice": "reference-style — the numbers students must hold precisely",
+        "body": [
+          "A damages-based agreement (DBA) is a different contingency model, governed by the Damages-Based Agreements Regulations 2013. Instead of an hourly fee plus success uplift, the solicitor's payment is a straight percentage of whatever damages the client recovers. Lose, and the solicitor is paid nothing.",
+          "The percentage is capped, and the cap depends on the type of claim — this is the detail SQE1 tests most directly, because the three figures are easy to transpose under pressure: personal injury claims are capped at 25% of damages (again excluding damages for future care and future losses), employment tribunal matters are capped at 35%, and other civil claims generally are capped at 50%.",
+          "Both figures — CFA success fee cap and DBA payment cap — are inclusive of VAT. Get the claim type wrong and you'll apply the wrong percentage; that's the trap this lesson's test pool leans on."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "DBA percentage caps by claim type",
+            "points": [
+              "Personal injury claims — capped at 25% of damages (excluding damages for future care and future loss)",
+              "Employment tribunal matters — capped at 35% of the sum recovered",
+              "Other civil claims (the general rule) — capped at 50% of damages recovered"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-13-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client enters a DBA for an employment tribunal claim and recovers £40,000. What is the maximum the solicitor can lawfully take under the DBA cap?",
+          "options": ["£10,000 (25%)", "£14,000 (35%)", "£20,000 (50%)", "£40,000 (100%)"],
+          "correctIndex": 1,
+          "explanation": "Employment tribunal matters are capped at 35% under the Damages-Based Agreements Regulations 2013 — not the 25% personal injury figure or the 50% general civil figure, which are easy to reach for by mistake."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Where contingency funding is banned outright",
+        "voice": "direct — states the rule, then closes off the exception students look for",
+        "body": [
+          "Both CFAs and DBAs are creatures of civil litigation economics: a solicitor takes on risk in exchange for a share of, or uplift on, a financial recovery. That logic has no place in two areas of practice, and the law says so directly.",
+          "CFAs and DBAs cannot be used to fund family proceedings. The policy reason is straightforward: giving a solicitor a financial stake in the size of a financial settlement, or in whether a party 'wins' a dispute about children or matrimonial assets, sits badly with the welfare-focused, often non-adversarial aims of family law.",
+          "The same ban applies to criminal defence work. There is no 'damages' outcome to share in a criminal case, and a contingency fee tied to acquittal would create an obvious conflict between a solicitor's financial interest and their duty to the court and to justice. Criminal defence is funded through private retainer or criminal legal aid — never through a CFA or DBA."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume the ban on DBAs and CFAs is limited to family financial remedy proceedings specifically, and that other family matters (e.g. contested Children Act proceedings) might still permit one.",
+            "whyItsWrong": "The ban covers family proceedings generally, not just financial remedy claims. Whatever the specific family matter, contingency fee funding of this kind is not available — the same blanket exclusion applies across criminal defence work too."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-13-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that makes this funding proposal unlawful.",
+          "scenarioText": "A solicitor is instructed to defend a client charged with fraud. The client cannot afford hourly fees, so the solicitor proposes a damages-based agreement under which the solicitor takes 30% of any compensation the client later recovers in an unrelated civil claim, in exchange for running the criminal defence for free.",
+          "tappableSpans": ["defend a client charged with fraud", "cannot afford hourly fees", "damages-based agreement", "running the criminal defence for free"],
+          "correctSpan": "damages-based agreement",
+          "feedbackCorrect": "That's the defect. Whatever the payment is pegged to, a DBA cannot be used to fund criminal defence work at all — the ban is on the funding mechanism, full stop.",
+          "feedbackIncorrect": "The problem isn't affordability or the fraud charge itself — it's the choice of funding mechanism. A DBA (or a CFA) is simply not available for criminal defence work, however it's structured."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Choosing between the routes",
+        "voice": "synthesising — pulls the lesson together into a decision skill",
+        "body": [
+          "Put the three routes side by side and a pattern emerges. A private retainer transfers no risk to the solicitor and requires no contingency analysis — but the client pays win or lose. A CFA keeps the fee structure close to ordinary hourly billing, with the success fee as an add-on funded from the client's damages. A DBA replaces the fee structure entirely with a single percentage of recovery.",
+          "In practice, the choice often turns on the client's risk tolerance, the strength of the claim, and — critically for SQE1 — whether the matter is even eligible for contingency funding at all. A strong personal injury claim might suit a CFA or a DBA; a family finance dispute or a criminal charge rules both out before the comparison even starts.",
+          "The examiner's favourite move is to give you a fact pattern with a perfectly plausible CFA or DBA structure, set inside a family or criminal matter. Spotting the area of law first is the shortcut that saves you from doing the percentage arithmetic on a route that was never available."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Threshold question",
+            "definition": "Before analysing the terms of any proposed CFA or DBA, always check first whether the matter is family proceedings or criminal defence work — if so, neither route is available regardless of how the fee is structured."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-13-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "In which scenario is a damages-based agreement actually available as a funding route?",
+          "scenarioA": "A client seeking a financial remedy following divorce wants to fund the proceedings on a 'percentage of the settlement' basis.",
+          "scenarioB": "A client bringing a workplace discrimination claim in the employment tribunal wants to fund the claim on a 'percentage of the award' basis.",
+          "correctScenario": "B",
+          "explanation": "Employment tribunal claims are ordinary civil-type matters for funding purposes, so a DBA (capped at 35%) is available. Family financial remedy proceedings fall within the blanket ban on CFAs and DBAs in family work — no percentage structure rescues it."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-13-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A client instructs a solicitor on standard hourly-rate terms, payable regardless of outcome. Which funding arrangement is this?",
+      "options": ["A private retainer", "A conditional fee agreement", "A damages-based agreement", "Third-party litigation funding"],
+      "correctIndex": 0,
+      "explanation": "Payment that does not depend on the outcome is the hallmark of a private retainer, not any of the contingency-based arrangements."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which statutory provision makes conditional fee agreements enforceable in England and Wales?",
+      "options": ["Courts and Legal Services Act 1990, s 58", "Legal Services Act 2007, s 1", "Solicitors Act 1974, s 20", "LASPO 2012, s 44"],
+      "correctIndex": 0,
+      "explanation": "CLSA 1990 s 58 is the enabling provision for CFAs; LASPO 2012 s 44 is the provision that later removed recoverability of the success fee from the losing party."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A solicitor's client care letter fails to give any indication of likely costs at the outset of the retainer. Which duty has most clearly been breached?",
+      "options": ["The duty to give clear costs information under the Transparency Rules and Codes of Conduct", "The duty under CLSA 1990 s 58", "The duty under the Damages-Based Agreements Regulations 2013", "There is no duty to disclose costs before work begins"],
+      "correctIndex": 0,
+      "explanation": "The costs information duty applies to private retainers generally, independent of whether the matter is later funded by a CFA or DBA."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "A client wants to know the maximum percentage uplift a solicitor can charge as a success fee under a CFA, as a percentage of the normal fee. What is the cap?",
+      "options": ["25%", "35%", "50%", "100%"],
+      "correctIndex": 3,
+      "trapExplanation": "Students often substitute one of the DBA claim-type caps (25%, 35%, 50%) here. The CFA success fee cap under s 58 is a flat 100% of the normal fee — a different figure measuring a different thing (an uplift on fees, not a share of damages)."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A client won her claim under a CFA entered into in 2025. Who is liable to pay her solicitor's success fee?",
+      "options": ["The losing party, as part of the costs order", "The client, out of her own damages, subject to the personal injury cap where applicable", "The Legal Aid Agency", "Neither party — success fees are irrecoverable from 2025 onwards"],
+      "correctIndex": 1,
+      "trapExplanation": "The pre-2013 position (losing party pays) is a common wrong answer because it's the more 'intuitive' outcome. Post-LASPO, the success fee is deducted from the client's own damages."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client with a personal injury claim recovers £100,000, made up of £70,000 general damages and £30,000 for future care costs. What is the maximum sum against which the success fee cap can be applied?",
+      "options": ["£100,000", "£70,000", "£30,000", "£25,000"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is applying the 25% cap to the full £100,000. Damages for future care and future loss are excluded from the base figure — the cap applies only to the £70,000 remaining."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A solicitor proposes a CFA to fund a client's contested residence dispute about her children following separation. Is this lawful?",
+      "options": ["Yes, provided the success fee stays within the statutory cap", "Yes, because CFAs are only banned in financial remedy proceedings, not children matters", "No — CFAs cannot be used to fund family proceedings at all", "No, but only because family proceedings never attract a costs order"],
+      "correctIndex": 2,
+      "trapExplanation": "The ban on CFAs (and DBAs) in family proceedings is not limited to financial remedy claims — it covers family proceedings generally, including disputes about children."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client enters a DBA for a civil debt claim (not personal injury or employment) and recovers £20,000. What is the maximum the solicitor can lawfully retain under the applicable DBA cap?",
+      "options": ["£5,000 (25%)", "£7,000 (35%)", "£10,000 (50%)", "£20,000 (100%)"],
+      "correctIndex": 2,
+      "explanation": "General civil claims outside personal injury and employment fall under the default 50% cap in the Damages-Based Agreements Regulations 2013."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm is approached to represent a client at trial on an indictment for burglary. The client asks whether the firm will take the case on a 'no win, no fee' or percentage-of-outcome basis. What should the solicitor tell the client?",
+      "options": ["That a CFA is available but a DBA is not", "That a DBA is available but a CFA is not", "That neither a CFA nor a DBA is available for criminal defence work", "That both are available, subject to the relevant percentage caps"],
+      "correctIndex": 2,
+      "explanation": "Both CFAs and DBAs are banned outright in criminal defence work. Funding here is by private retainer or criminal legal aid, not contingency fee arrangements."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-10",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which regulations set out the permitted percentage caps for damages-based agreements?",
+      "options": ["Damages-Based Agreements Regulations 2013", "Conditional Fee Agreements Order 2013", "SRA Transparency Rules", "Civil Procedure Rules Part 44"],
+      "correctIndex": 0,
+      "explanation": "The 2013 DBA Regulations set the claim-type caps (25% personal injury, 35% employment, 50% general civil); the CFA Order deals with the separate success fee cap."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A CFA is drafted so that it does not satisfy any of the conditions prescribed under CLSA 1990 s 58. What is the consequence for the agreement?",
+      "options": ["It remains enforceable but the success fee is void", "It is automatically converted into a private retainer", "It is unenforceable", "It becomes a deemed DBA"],
+      "correctIndex": 2,
+      "explanation": "Section 58 makes clear that a conditional fee agreement failing to satisfy the prescribed conditions is unenforceable, not merely defective in one respect."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A solicitor tells a client that the DBA percentage cap figures quoted are exclusive of VAT, and VAT will be charged separately on top. Is this correct?",
+      "options": ["Yes — VAT is always additional to the cap", "No — the percentage caps are inclusive of VAT", "Only for employment tribunal matters", "Only for personal injury claims"],
+      "correctIndex": 1,
+      "explanation": "The DBA percentage caps (and the CFA success fee treatment of damages in personal injury claims) are expressed inclusive of VAT — a solicitor cannot add VAT on top of the capped percentage."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client asks her solicitor whether a success fee under a CFA could, in principle, exceed the amount of the solicitor's normal fee for the case. What is the correct answer?",
+      "options": ["No — a success fee can never exceed the normal fee", "Yes — it can equal but not exceed 100% of the normal fee", "Yes — there is no cap on the success fee", "No — the success fee is always a fixed sum regardless of the normal fee"],
+      "correctIndex": 1,
+      "explanation": "The success fee is capped at 100% of the normal fee — meaning, at most, it can double the fee payable, but not exceed that uplift."
+    },
+    {
+      "itemId": "sqe1-ls-13-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What is the correct DBA percentage cap for a personal injury claim, applied to the relevant portion of damages?",
+      "options": ["25%", "35%", "50%", "100%"],
+      "correctIndex": 0,
+      "trapExplanation": "The 35% and 50% figures belong to employment and general civil claims respectively; 100% is the CFA success fee cap, not a DBA figure at all. Personal injury sits at the lowest of the three DBA caps."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring failure mode in this lesson is applying the wrong percentage cap to the wrong claim type, or forgetting that family and criminal work are off the table for both CFAs and DBAs regardless of how the fee is structured. Check the area of law and the claim type before reaching for a percentage.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.funding-private"
+  }
+}

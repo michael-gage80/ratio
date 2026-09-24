@@ -25,7 +25,7 @@ struct WelcomeView: View {
             hero
             Spacer(minLength: RatioSpace.m)
             VStack(spacing: RatioSpace.s) {
-                Text("Ratio · for LLB students")
+                Text("Ratio · for LLB and SQE1 students")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
                 Text("Think like a \(Text("lawyer.").italic().foregroundStyle(Color.ratioOxblood))\nLearn like a \(Text("game.").italic().foregroundStyle(Color.ratioOxblood))")

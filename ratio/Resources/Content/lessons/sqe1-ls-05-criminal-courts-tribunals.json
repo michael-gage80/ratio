@@ -1,0 +1,335 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-05",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 5,
+  "topicId": "sqe1.legal-system.criminal-courts-tribunals",
+  "title": "Court structure and hierarchy: the criminal courts and tribunals",
+  "subtitle": "The Magistrates' Court, the Crown Court, the Court of Appeal (Criminal Division), and the tribunal system",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Describe the jurisdiction of the Magistrates' Court and the Crown Court, and explain how offence classification determines where a case is tried",
+    "Explain the appellate role of the Court of Appeal (Criminal Division) and the chamber structure of the First-tier and Upper Tribunals",
+    "Apply the classification of offences and tribunal subject-matter rules to route a given case or dispute to the correct forum"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Courts Act 2003", "role": "Provides the modern statutory framework for the administration of the Magistrates' Court and Crown Court and criminal procedure rule-making" },
+    { "citation": "Tribunals, Courts and Enforcement Act 2007", "role": "Creates the unified First-tier Tribunal and Upper Tribunal, organised into chambers" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "A criminal case's classification decides everything downstream: which court, which judge, whether there's a jury, and what the maximum sentence can be. Miss the classification and you've misjudged the whole matter.",
+    "profileHooks": {
+      "weakApplication": "You can name the courts — the test pool here leans on routing real fact patterns through offence classification and tribunal subject matter, so expect scenarios, not definitions.",
+      "weakKnowledge": "Work through Part 1 slowly and fix the three offence categories in your mind before moving on — everything else in this lesson depends on being able to classify an offence correctly."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two defendants are charged the same week: one for shoplifting, one for murder. Both start, in a sense, in the same building — but from the moment the charge is read, they are on entirely different tracks through the system, heard by different judges, under different rules, with different maximum outcomes. This lesson maps that fork, and the tribunal system that sits alongside it.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The classification of offences (summary, either-way, indictable-only) and the core Magistrates'/Crown Court split are stable. The tribunal chamber structure has been periodically reorganised since 2007 and individual chambers are sometimes renamed or merged; treat named chambers as illustrative of the current arrangement rather than fixed for all time."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Classifying the offence: the fork in the road",
+        "voice": "structural — sets out the triage that governs everything else",
+        "body": [
+          "Every criminal offence in England and Wales falls into one of three categories, and that category — not the seriousness of the facts in any given case, though the two often correlate — determines where it is tried. Summary offences are the least serious and can only be tried in the Magistrates' Court. Indictable-only offences are the most serious (murder, rape, robbery) and must be tried in the Crown Court. Either-way offences, as the name suggests, can be tried in either court, depending on their seriousness and, often, the defendant's own election.",
+          "The Magistrates' Court is where almost all criminal cases start, regardless of eventual category — even a murder charge has its first hearing there before being sent up. It is staffed either by a bench of lay magistrates (unpaid, trained volunteers sitting usually in threes) or by a single legally qualified District Judge (Magistrates' Courts).",
+          "Sentencing powers in the Magistrates' Court are capped by statute — currently limited to a maximum of twelve months' custody for a single either-way offence, and lower limits for summary offences — which is itself a structural reason why more serious matters must move to the Crown Court, where sentencing powers are far greater."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Offence classification",
+            "definition": "The statutory categorisation of a criminal offence as summary, either-way, or indictable-only, which determines whether it can only be tried in the Magistrates' Court, only in the Crown Court, or potentially either."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-05-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the three categories into which every criminal offence is classified.",
+          "acceptableAnswers": ["summary, either-way, indictable-only", "summary, either way, indictable only", "summary offences, either-way offences, indictable-only offences"],
+          "modelAnswer": "Summary offences (Magistrates' Court only), either-way offences (either court), and indictable-only offences (Crown Court only)."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "From Magistrates' Court to Crown Court: how a case moves",
+        "voice": "process-driven — walks through the mechanics students must be able to trace",
+        "body": [
+          "Indictable-only offences are sent to the Crown Court almost immediately, at the defendant's first appearance in the Magistrates' Court — there is no meaningful decision to make about venue, because the classification has already made it for everyone.",
+          "Either-way offences go through a more deliberate process. The Magistrates' Court first considers allocation — whether the offence is suitable for summary trial, taking into account the seriousness of the facts, the adequacy of the magistrates' sentencing powers, and any representations from the prosecution and defence. If the magistrates accept jurisdiction, the defendant still has the right to elect Crown Court trial even if the magistrates would have kept it — reflecting a long-standing right to jury trial for matters above the purely minor. If the magistrates decline jurisdiction, believing their sentencing powers are inadequate, the case goes to the Crown Court regardless of what the defendant wants.",
+          "Summary offences, by contrast, simply stay in the Magistrates' Court — there is no election and no allocation decision to make, because the classification permits nowhere else for the trial to happen."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "How each category reaches its trial court",
+            "points": [
+              "Summary — stays in the Magistrates' Court; no election, no allocation decision",
+              "Either-way — allocation decision by magistrates; defendant may also elect Crown Court trial even if magistrates accept jurisdiction",
+              "Indictable-only — sent to the Crown Court at (or very shortly after) the first Magistrates' Court appearance, with no choice for anyone"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-05-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in order for an either-way offence where the magistrates accept jurisdiction but the defendant elects Crown Court trial anyway.",
+          "items": [
+            "Defendant first appears in the Magistrates' Court",
+            "Magistrates consider allocation and decide their sentencing powers are adequate",
+            "Defendant is asked whether they consent to summary trial or elect Crown Court trial",
+            "Defendant elects Crown Court trial; case proceeds to the Crown Court"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence — allocation is the magistrates' decision about whether they *could* keep the case; election is the defendant's separate right to insist on a jury even when they could.",
+          "feedbackIncorrect": "Check the order again: allocation (the magistrates' assessment) comes before election (the defendant's own choice) — and election only becomes relevant once the magistrates have decided they would be willing to keep the case."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The Crown Court: trial by jury and the judges who sit there",
+        "voice": "descriptive — fills in the institution once the routing is understood",
+        "body": [
+          "The Crown Court, given its modern statutory footing by the Courts Act 2003, is a single court sitting at numerous centres, and it is where indictable-only offences are tried, either-way offences sent up are tried, and where sentencing takes place when a case has been sent from the Magistrates' Court for sentence because magistrates' powers were inadequate.",
+          "Trial in the Crown Court is by jury of twelve, drawn from the local population — this is the institutional heart of the 'right to jury trial' that either-way election protects. The judge's role is to direct the jury on the law and manage the trial; the jury alone decides guilt on the facts.",
+          "Judges sitting in the Crown Court range across seniority: Recorders (part-time, often practising barristers or solicitors sitting as judges), Circuit Judges (full-time), and, for the most serious or high-profile cases, High Court Judges. The seriousness and complexity of the case, not a fixed rule, generally determines which tier of judge presides."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Courts Act 2003, s 1 (effect)",
+            "text": "The Courts Act 2003 provides the modern statutory basis for the unified administration of the courts of England and Wales, including the Magistrates' Court and the Crown Court, and confers rule-making power for criminal procedure through the Criminal Procedure Rules.",
+            "elements": ["Unified administrative framework for the criminal courts", "Rule-making power for criminal procedure", "Underpins the modern operation of both the Magistrates' Court and the Crown Court"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-05-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that it is the jury, rather than the judge, who decides guilt in a Crown Court trial?",
+          "sliderLabels": ["The judge decides guilt", "The jury decides guilt"],
+          "correctPosition": "The jury decides guilt",
+          "explanation": "The judge directs the jury on the applicable law and manages the trial process, including sentencing on conviction — but the decision on guilt itself, on the facts, belongs to the jury alone."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Appeals: the Court of Appeal (Criminal Division) and beyond",
+        "voice": "careful — draws the distinction students most often blur",
+        "body": [
+          "The Court of Appeal (Criminal Division), headed by the Lord Chief Justice, hears appeals against conviction or sentence from the Crown Court. Permission to appeal is generally required, and the Court's role is corrective — reviewing whether a conviction is unsafe, or a sentence is manifestly excessive or wrong in principle — not rehearing the case as a second trial.",
+          "A common point of confusion: appeals from the Magistrates' Court do not go to the Court of Appeal (Criminal Division) at all. A defendant convicted in the Magistrates' Court has two distinct routes — an appeal to the Crown Court against conviction or sentence, heard afresh (a full rehearing), or, on a point of law only, an appeal by way of case stated to the High Court (King's Bench Division), or judicial review of a procedural failing.",
+          "The Court of Appeal (Criminal Division) only enters the picture once a case has already been through the Crown Court — either as the trial court for an indictable or either-way matter, or as the court hearing an appeal from the Magistrates' Court. From the Court of Appeal, a further appeal to the Supreme Court is possible only where the case involves a point of law of general public importance, certified as such, with permission from the Court of Appeal or the Supreme Court itself."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume any criminal conviction, from any court, can be appealed straight to the Court of Appeal (Criminal Division).",
+            "whyItsWrong": "The Court of Appeal (Criminal Division) hears appeals from the Crown Court only. A Magistrates' Court conviction is appealed to the Crown Court (a full rehearing) or, on a point of law, to the High Court by case stated — the Court of Appeal is simply not the route from a Magistrates' Court decision."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-05-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two defendants want to appeal. In which scenario does the appeal go to the Court of Appeal (Criminal Division)?",
+          "scenarioA": "A defendant convicted after a jury trial in the Crown Court for robbery believes the trial judge misdirected the jury on the law.",
+          "scenarioB": "A defendant convicted in the Magistrates' Court for a minor public order offence disputes the magistrates' finding of fact.",
+          "correctScenario": "A",
+          "explanation": "Scenario A is a Crown Court conviction, so an appeal on the basis of legal misdirection is the Court of Appeal (Criminal Division)'s territory. Scenario B is a Magistrates' Court conviction — the route there is to the Crown Court for a full rehearing, or by case stated to the High Court if the point is purely one of law."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Tribunals: a parallel system for specialist disputes",
+        "voice": "expansive — introduces a structure many students underweight",
+        "body": [
+          "Alongside the courts sits the tribunal system, unified in its modern form by the Tribunals, Courts and Enforcement Act 2007, which created the First-tier Tribunal and the Upper Tribunal, each organised into subject-specific chambers rather than a single undifferentiated body.",
+          "The First-tier Tribunal hears the great majority of first-instance tribunal disputes, organised into chambers covering areas such as social entitlement (benefits appeals), health, education and social care, immigration and asylum, tax, property, and general regulatory matters. Each chamber has its own specialist judges and, often, lay members with relevant expertise sitting alongside them.",
+          "The Upper Tribunal, also organised into chambers (including Administrative Appeals, Tax and Chancery, Lands, and Immigration and Asylum), primarily hears appeals from the corresponding First-tier chamber, generally on a point of law, and also exercises a judicial review jurisdiction for certain matters transferred to it from the High Court. From the Upper Tribunal, a further appeal on a point of law can reach the Court of Appeal.",
+          "The structural idea worth holding onto is that tribunals were built to bring specialist, less formal, and more accessible adjudication to disputes — often between an individual and the state, or in specialist regulatory areas — while still sitting within a coherent, appealable hierarchy that ultimately connects back to the ordinary court structure."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Routing a tribunal dispute",
+            "description": "A simplified path for identifying the right tribunal chamber and appeal route.",
+            "nodes": [
+              { "id": "start", "label": "What is the subject matter of the dispute?" },
+              { "id": "benefits", "label": "Benefits/social entitlement → First-tier Tribunal, Social Entitlement Chamber" },
+              { "id": "tax", "label": "Tax → First-tier Tribunal, Tax Chamber" },
+              { "id": "immigration", "label": "Immigration/asylum → First-tier Tribunal, Immigration and Asylum Chamber" },
+              { "id": "appeal", "label": "Appeal from any First-tier chamber decision, on a point of law → corresponding Upper Tribunal chamber" },
+              { "id": "further", "label": "Further appeal on a point of law → Court of Appeal" }
+            ],
+            "edges": [
+              { "from": "start", "to": "benefits", "label": "Benefits" },
+              { "from": "start", "to": "tax", "label": "Tax" },
+              { "from": "start", "to": "immigration", "label": "Immigration" },
+              { "from": "benefits", "to": "appeal", "label": "On appeal" },
+              { "from": "tax", "to": "appeal", "label": "On appeal" },
+              { "from": "immigration", "to": "appeal", "label": "On appeal" },
+              { "from": "appeal", "to": "further", "label": "Further appeal" }
+            ],
+            "textAlternative": "Identify the subject matter first — benefits go to the Social Entitlement Chamber, tax to the Tax Chamber, immigration and asylum to the Immigration and Asylum Chamber, all within the First-tier Tribunal. An appeal from any of these, generally on a point of law, goes to the corresponding chamber of the Upper Tribunal. A further appeal on a point of law can then reach the Court of Appeal."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-05-check-05",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that best states why the tribunal system is organised into chambers.",
+          "passage": "Tribunals hear a very wide range of disputes, from welfare benefits to tax to immigration status. Rather than a single generalist body attempting to handle all of these, the system is organised into chambers so that each area is heard by judges — and often lay members — with relevant specialist expertise. This chamber structure also allows a coherent, subject-specific appeal route to the corresponding Upper Tribunal chamber.",
+          "ratioSentence": "Rather than a single generalist body attempting to handle all of these, the system is organised into chambers so that each area is heard by judges — and often lay members — with relevant specialist expertise."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-05-test-01",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "A defendant is charged with murder. Which court will ultimately try the case?",
+      "options": ["The Magistrates' Court", "The Crown Court", "The First-tier Tribunal", "The Court of Appeal (Criminal Division), as the trial court"],
+      "correctIndex": 1,
+      "explanation": "Murder is an indictable-only offence, so it is sent to the Crown Court for trial almost immediately after the first Magistrates' Court appearance."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-02",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A defendant is charged with an either-way offence. The magistrates consider allocation and decide their sentencing powers would be adequate for the facts, and the defendant is content to be tried summarily. What happens next?",
+      "options": ["The case must still go to the Crown Court regardless of what anyone decided", "The case can proceed to summary trial in the Magistrates' Court", "The case is automatically dismissed", "The defendant must be tried in the First-tier Tribunal instead"],
+      "correctIndex": 1,
+      "explanation": "Where the magistrates accept jurisdiction and the defendant does not elect Crown Court trial, an either-way offence can proceed to summary trial in the Magistrates' Court."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-03",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "The Courts Act 2003 is best described as doing which of the following?",
+      "options": ["Creating the offence classification system of summary, either-way and indictable-only offences", "Providing the modern statutory framework for the administration of the Magistrates' Court and Crown Court and criminal procedure rule-making", "Abolishing the Magistrates' Court", "Establishing the tribunal chamber structure"],
+      "correctIndex": 1,
+      "explanation": "The 2003 Act is the modern administrative and procedural backbone for the criminal courts — it does not itself create offence classifications (a matter of the substantive criminal law and separate procedural statutes) or the tribunal system (that is the 2007 Act)."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-04",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A defendant convicted in the Magistrates' Court wants to challenge the conviction on the basis that the magistrates got the facts wrong. What is the most appropriate route?",
+      "options": ["Appeal directly to the Court of Appeal (Criminal Division)", "Appeal to the Crown Court, which can rehear the case in full", "Appeal directly to the Supreme Court", "No appeal is possible from the Magistrates' Court"],
+      "correctIndex": 1,
+      "trapExplanation": "The Court of Appeal (Criminal Division) only hears appeals from the Crown Court, not the Magistrates' Court. A factual dispute from a Magistrates' Court conviction goes to the Crown Court for a full rehearing, not upward to the Court of Appeal."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-05",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Who decides guilt in a Crown Court jury trial?",
+      "options": ["The judge alone", "The jury", "The Crown Prosecution Service", "The Recorder only, never a Circuit Judge"],
+      "correctIndex": 1,
+      "explanation": "The jury decides guilt on the facts; the judge directs on the law, manages the trial, and passes sentence if the defendant is convicted."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-06",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Under the Tribunals, Courts and Enforcement Act 2007, how is the modern tribunal system principally organised?",
+      "options": ["As a single undifferentiated tribunal hearing all subject matter", "Into a First-tier Tribunal and Upper Tribunal, each divided into subject-specific chambers", "As part of the Magistrates' Court", "Only as an appellate body, with no first-instance jurisdiction"],
+      "correctIndex": 1,
+      "explanation": "The 2007 Act's central structural achievement is the two-tier system of First-tier and Upper Tribunal, each split into chambers by subject matter, replacing a patchwork of separate historic tribunals."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-07",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "An individual wants to appeal a decision refusing their welfare benefits claim. Which body should hear the first-instance appeal?",
+      "options": ["The Crown Court", "The First-tier Tribunal, Social Entitlement Chamber", "The Court of Appeal (Civil Division)", "The Upper Tribunal, Tax and Chancery Chamber"],
+      "correctIndex": 1,
+      "explanation": "Benefits and welfare disputes are heard by the Social Entitlement Chamber of the First-tier Tribunal, the specialist chamber for this subject matter."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-08",
+      "skillTag": "knowledge",
+      "type": "mcqWithTrap",
+      "prompt": "A defendant is charged with a summary-only offence. Which of the following best describes their options as to venue?",
+      "options": ["They may elect Crown Court trial if they prefer a jury", "The offence can only be tried in the Magistrates' Court, with no election or allocation decision available", "The Magistrates' Court decides whether to send it to the Crown Court based on seriousness", "It can be tried in the First-tier Tribunal instead"],
+      "correctIndex": 1,
+      "trapExplanation": "Election to Crown Court trial is a feature of either-way offences, not summary ones. A summary offence simply has no route out of the Magistrates' Court — there is nothing to elect or allocate."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-09",
+      "skillTag": "understanding",
+      "type": "quickCheck",
+      "prompt": "What is the general role of the Court of Appeal (Criminal Division) when hearing an appeal against conviction?",
+      "options": ["To rehear all the evidence as a fresh trial with a new jury", "To review whether the conviction is unsafe, not to rehear the case from scratch", "To decide only on sentence, never on conviction", "To act as a tribunal chamber for criminal matters"],
+      "correctIndex": 1,
+      "explanation": "The Court's function is corrective review — assessing whether a conviction is unsafe — rather than a full retrial of the facts."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-10",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "An individual disputes a decision of the First-tier Tribunal, Immigration and Asylum Chamber, and wants to appeal on a point of law. Where should the appeal generally go?",
+      "options": ["The Crown Court", "The Upper Tribunal, Immigration and Asylum Chamber", "The Magistrates' Court", "Directly to the Supreme Court"],
+      "correctIndex": 1,
+      "explanation": "Appeals from a First-tier Tribunal chamber, generally on a point of law, go to the corresponding chamber of the Upper Tribunal — here, the Immigration and Asylum Chamber."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-11",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which of these is an indictable-only offence, meaning it must be tried in the Crown Court?",
+      "options": ["Common assault", "Most road traffic offences", "Robbery", "A minor public order offence"],
+      "correctIndex": 2,
+      "explanation": "Robbery is classified as indictable-only, given its seriousness, and so must be tried in the Crown Court rather than the Magistrates' Court."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-12",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Which statement best captures the relationship between the Upper Tribunal's judicial review jurisdiction and the High Court's?",
+      "options": ["The Upper Tribunal has no judicial review jurisdiction at all", "For certain matters, judicial review jurisdiction has been transferred to the Upper Tribunal from the High Court, alongside its role hearing appeals from the First-tier Tribunal", "The Upper Tribunal replaces the High Court entirely for all civil matters", "Judicial review can only ever be brought in the Administrative Court"],
+      "correctIndex": 1,
+      "explanation": "The Upper Tribunal has been given a judicial review jurisdiction for certain categories of case, sitting alongside its main function of hearing appeals from the First-tier Tribunal — it has not displaced the High Court's Administrative Court generally."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-13",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A defendant convicted in the Magistrates' Court believes the magistrates made an error of law, not fact, in interpreting the relevant statute. What is an appropriate route for this specific kind of challenge?",
+      "options": ["Only a full rehearing in the Crown Court, which cannot consider points of law", "An appeal by way of case stated to the High Court (King's Bench Division), focused on the point of law", "Direct appeal to the Court of Appeal (Criminal Division)", "No route exists for a point of law from the Magistrates' Court"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to send every Magistrates' Court appeal to the Crown Court by default. But where the challenge is specifically to a point of law, case stated to the High Court is the more precise and commonly used route, distinct from a full Crown Court rehearing on the facts."
+    },
+    {
+      "itemId": "sqe1-ls-05-test-14",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Who heads the Court of Appeal (Criminal Division)?",
+      "options": ["The Master of the Rolls", "The Lord Chief Justice", "The President of the Supreme Court", "The Senior Presiding Judge for the First-tier Tribunal"],
+      "correctIndex": 1,
+      "explanation": "The Lord Chief Justice, as head of the judiciary of England and Wales, presides over the Criminal Division of the Court of Appeal."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two recurring errors in this lesson are collapsing 'either-way' into a choice that belongs entirely to the defendant (allocation by the magistrates comes first, and can override the defendant's preference), and assuming the Court of Appeal (Criminal Division) is the universal appeal destination from any criminal conviction — it hears appeals from the Crown Court only, not the Magistrates' Court.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.criminal-courts-tribunals"
+  }
+}

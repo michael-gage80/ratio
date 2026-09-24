@@ -1,0 +1,344 @@
+{
+  "lessonId": "sqe1-dr-02",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "track": "SQE1",
+  "lessonNumber": 2,
+  "topicId": "sqe1.dispute-resolution.limitation-periods",
+  "title": "The clock that never stops for you",
+  "subtitle": "Limitation periods under the Limitation Act 1980",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the core limitation periods under the Limitation Act 1980 — six years for contract and most tort claims, three years for personal injury",
+    "Identify the date of accrual for a contract claim and a tort claim, and compute a limitation date from a fact pattern",
+    "Apply the discretionary extension under s 33 to a personal injury fact pattern and identify the factors the court weighs"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Limitation Act 1980, s 2", "role": "The six-year limitation period for actions founded on tort" },
+    { "citation": "Limitation Act 1980, s 5", "role": "The six-year limitation period for actions founded on simple contract" },
+    { "citation": "Limitation Act 1980, s 11", "role": "The three-year limitation period for personal injury claims in negligence, nuisance or breach of duty" },
+    { "citation": "Limitation Act 1980, s 33", "role": "The court's discretion to disapply the s 11 personal injury time limit" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Get limitation wrong and nothing else in a dispute resolution question matters — a claim issued a day late fails regardless of its merits. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the six-year and three-year rules — this lesson is about computing the actual date from a messy fact pattern.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards date-computation scenarios: expect a fact pattern with several possible trigger dates, not a bare question about the length of the period.",
+      "weakKnowledge": "Start with Part 1 and fix the two headline periods first — six years for contract and most tort, three years for personal injury — before moving on to accrual and the s 33 discretion, which both assume you already have those numbers cold."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A claimant has a genuinely strong case, a cooperative witness, and a defendant who plainly caused the harm. None of it matters, because the claim form is filed one day after the limitation period expired. Limitation is the one area of civil procedure where being right on the merits and losing the case are entirely compatible outcomes — which is exactly why SQE1 tests it so relentlessly, and why this lesson spends as much time on arithmetic as on doctrine."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The two headline periods",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "The Limitation Act 1980 sets fixed time limits within which a claimant must start proceedings. Miss the limit and the claim isn't lost on its merits — it becomes time-barred, meaning the defendant acquires a complete defence regardless of how strong the underlying case is. Limitation does not extinguish the cause of action itself in most cases; it bars the remedy. In practice, for a claimant, the effect is the same: the claim cannot succeed.",
+          "Two periods carry almost all of SQE1's limitation questions. Section 5 sets a six-year period for actions founded on simple contract, running from the date the cause of action accrued. Section 2 sets a six-year period for actions founded on tort, again running from accrual — this is the general tort period and covers most tort claims other than personal injury. Section 11 then carves out a shorter, three-year period specifically for personal injury claims brought in negligence, nuisance or breach of duty, reflecting the policy that personal injury claimants and evidence about injuries both deteriorate faster than a typical commercial dispute.",
+          "Get the default pairing fixed first: six years is the general rule for both contract and tort; three years is the exception carved out for personal injury. Nearly every SQE1 limitation question is testing whether you can correctly sort a fact pattern into one of these two buckets before you even reach the harder question of accrual."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Limitation Act 1980, ss 2, 5, 11",
+            "text": "s 2: An action founded on tort shall not be brought after the expiration of six years from the date on which the cause of action accrued. s 5: An action founded on simple contract shall not be brought after the expiration of six years from the date on which the cause of action accrued. s 11: This section applies to any action for damages for negligence, nuisance or breach of duty ... where the damages claimed ... consist of or include damages in respect of personal injuries. ... the period applicable is three years from ... the date on which the cause of action accrued, or the date of knowledge (if later) of the person injured.",
+            "elements": ["s 2 — six years, tort generally", "s 5 — six years, simple contract", "s 11 — three years, personal injury claims specifically, running from accrual or date of knowledge if later"]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Time-barred",
+            "definition": "A claim brought after the applicable limitation period has expired. The cause of action is not usually extinguished, but the defendant acquires a full defence, and a claimant cannot succeed on a time-barred claim."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-02-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "State the limitation period for a personal injury claim in negligence, and the limitation period for an ordinary breach of contract claim.",
+          "acceptableAnswers": ["3 years personal injury, 6 years contract", "three years for personal injury, six years for contract", "s11 three years, s5 six years"],
+          "modelAnswer": "Three years for personal injury (s 11), and six years for an action founded on simple contract (s 5)."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Accrual: when does the clock actually start?",
+        "voice": "structural — reference-style, students will return to this",
+        "body": [
+          "Knowing the length of the period is only half the exam question — the other half is knowing when it starts running, and accrual rules differ meaningfully between contract and tort.",
+          "For a contract claim, the cause of action accrues on the date of breach, not the date the claimant discovers the breach and not the date damage is actually suffered. A breach that goes unnoticed for years can still start the clock the moment it occurred — this catches out claimants who assume 'I only just found out' resets the period; for a straightforward contract claim, it does not.",
+          "For a tort claim, accrual depends on whether the tort is actionable per se or requires proof of damage. Torts actionable per se (such as trespass) accrue on the date of the wrongful act itself. Torts that require proof of damage to be actionable at all (most negligence claims, for example) accrue only once damage has actually occurred — which can be later than the defendant's breach of duty, and sometimes later still than the claimant's awareness of it."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Accrual — the default rules",
+            "points": [
+              "Contract (s 5): accrues on the date of breach, regardless of when the claimant discovers it",
+              "Tort actionable per se (e.g. trespass): accrues on the date of the wrongful act",
+              "Tort requiring proof of damage (e.g. most negligence): accrues on the date damage actually occurs",
+              "Personal injury (s 11): accrues on the date of accrual as above, OR the claimant's date of knowledge of the injury, if that is later"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-02-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that fixes the date this contract claim accrues.",
+          "scenarioText": "A supplier delivers defective goods on 1 March. The buyer does not notice the defect until routine testing on 1 September. The buyer complains to the supplier on 15 September, and the supplier admits the fault on 20 September.",
+          "tappableSpans": ["delivers defective goods on 1 March", "does not notice the defect until", "1 September", "complains to the supplier on 15 September", "admits the fault on 20 September"],
+          "correctSpan": "delivers defective goods on 1 March",
+          "feedbackCorrect": "Right. A contract claim accrues on the date of breach — here, delivery of defective goods — regardless of when the buyer noticed, complained, or received an admission.",
+          "feedbackIncorrect": "For a contract claim, look for the date of breach itself, not the date of discovery or complaint. Delivery of the defective goods is the breach, and that is when time starts running under s 5."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Personal injury: accrual or the date of knowledge, whichever is later",
+        "voice": "case-narrative — walks through the mechanics before naming the doctrine",
+        "body": [
+          "Section 11 does something the general contract and tort rules do not: it allows the three-year clock to start on the date of knowledge, rather than the date of accrual, whenever the date of knowledge is later. This exists because personal injury, and especially disease, can take years to manifest or be correctly attributed to its cause — an asbestos-related illness, for example, may not surface for decades after exposure.",
+          "'Date of knowledge' broadly means the date the claimant first knew that the injury was significant, that it was attributable to the act or omission alleged to constitute negligence, nuisance or breach of duty, and the identity of the defendant. It is a subjective-but-informed standard: knowledge that could reasonably have been acquired with appropriate expert advice counts too, so a claimant cannot simply avoid the clock starting by declining to investigate an obvious injury.",
+          "For exam purposes, the two-limb structure is the thing to hold onto: the three-year period for personal injury runs from whichever is later — the date of accrual (broadly, when the injury occurred) or the date of knowledge. A fact pattern that gives you a date of injury and a separate, later date of diagnosis or attribution is testing whether you can spot that the later date controls."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Limitation Act 1980, s 11(4)",
+            "text": "... the period applicable is three years from — (a) the date on which the cause of action accrued; or (b) the date of knowledge (if later) of the person injured.",
+            "elements": ["Two candidate start dates for a personal injury claim", "The later of the two controls", "Date of knowledge covers significance of injury, attribution to the defendant's conduct, and the defendant's identity"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-02-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A claimant is injured in an accident on 1 January 2020 but does not learn the injury was attributable to the defendant's negligence until a specialist report on 1 January 2023. Under s 11, when does the three-year period begin?",
+          "options": ["1 January 2020 — the date of the accident always controls", "1 January 2023 — the later date of knowledge controls under s 11(4)(b)", "The claim is automatically time-barred because more than three years passed before knowledge was gained", "1 January 2021 — one year after the accident, as a compromise date"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct. Section 11(4)(b) takes the later of accrual and date of knowledge — here, the date of knowledge governs.",
+          "feedbackIncorrect": "Section 11(4) expressly takes whichever date is later between accrual and date of knowledge. Here that is the date the specialist report gave the claimant knowledge of attribution, not the accident date."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When the court can extend time: section 33",
+        "voice": "argumentative — states the rule, then the tension it manages",
+        "body": [
+          "Even a personal injury claim brought outside the three-year window is not automatically dead. Section 33 gives the court a discretion to disapply the s 11 time limit if it would be equitable to allow the claim to proceed, having regard to the degree to which the time limit prejudices the claimant against the degree to which disapplying it would prejudice the defendant.",
+          "This discretion is confined to personal injury (and a small number of related) claims — it does not exist for an ordinary contract or general tort claim under ss 2 or 5. That confinement is itself a common exam trap: students sometimes assume s 33 is a general safety net for any late claim, when it is a personal-injury-specific tool.",
+          "The court weighs a non-exhaustive list of factors: the length of and reasons for the claimant's delay; the extent to which the evidence is likely to be less cogent because of the delay; the conduct of the defendant after the cause of action arose, including their responsiveness to any request for information; the duration of any disability of the claimant arising after the accrual date; the extent to which the claimant acted promptly and reasonably once they knew they might have a claim; and the steps taken by the claimant to obtain relevant advice."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Section 33 — factors the court weighs",
+            "points": [
+              "Length of, and reasons for, the claimant's delay",
+              "Effect of delay on the cogency of the evidence",
+              "Conduct of the defendant after the cause of action arose, including responsiveness to requests for information",
+              "Duration of any disability of the claimant arising after the date of accrual",
+              "Promptness and reasonableness of the claimant's conduct once aware a claim might exist",
+              "Steps taken by the claimant to obtain expert medical, legal or other advice, and the nature of that advice"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-02-check-04",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does the s 33 discretion to disapply the limitation period apply to an ordinary breach of contract claim under s 5?",
+          "options": ["No — s 33 is confined to personal injury claims under s 11, not general contract or tort claims", "Yes — s 33 applies to any time-barred claim, regardless of cause of action"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 33 is a personal-injury-specific safety valve — there is no equivalent general discretion for an ordinary contract claim under s 5.",
+          "feedbackIncorrect": "Section 33 is confined to personal injury claims falling within s 11. A contract claim under s 5 has no equivalent discretionary extension."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Doing the arithmetic: computing a limitation date",
+        "voice": "direct — a worked, practical part",
+        "body": [
+          "SQE1 questions on limitation are frequently pure computation dressed up as a fact pattern: identify the correct trigger date, identify the correct period length, and add them together. Getting the doctrine right and then getting the arithmetic wrong produces the same wrong answer as getting the doctrine wrong in the first place, so it is worth treating this as a discrete skill.",
+          "The method is mechanical once you've correctly classified the claim. First, classify the cause of action — contract, general tort, or personal injury — because that decides which section and which period length applies. Second, identify the correct trigger date under that section's accrual rule — date of breach for contract, date of damage for most torts, the later of accrual or date of knowledge for personal injury. Third, add the period (six years or three years) to that date to reach the final day on which proceedings can validly be issued.",
+          "A frequent trap is applying the wrong accrual rule to the right period, or the right accrual rule to the wrong claim type — for example, using the personal injury 'date of knowledge' concept for a claim in property damage, where it does not apply at all. Read the facts for what kind of claim this actually is before reaching for a start date."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Computing a limitation date",
+            "description": "The three-step method for working out when a claim becomes time-barred.",
+            "nodes": [
+              { "id": "classify", "label": "Classify the cause of action: contract, general tort, or personal injury" },
+              { "id": "trigger", "label": "Identify the correct trigger date under that section's accrual rule" },
+              { "id": "add", "label": "Add the applicable period (6 years, or 3 years for personal injury) to the trigger date" },
+              { "id": "check33", "label": "For personal injury claims issued late, consider whether s 33 discretion might apply" }
+            ],
+            "edges": [
+              { "from": "classify", "to": "trigger" },
+              { "from": "trigger", "to": "add" },
+              { "from": "add", "to": "check33" }
+            ],
+            "textAlternative": "To compute a limitation date: classify the cause of action (contract, general tort, or personal injury); identify the correct trigger date under that claim type's accrual rule; add the applicable period to that date; and, for a late personal injury claim, consider whether the s 33 discretion might rescue it."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-02-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A claimant suffers a workplace injury on 10 June 2022 and immediately knows the injury is significant and attributable to her employer's breach of duty. She does not issue proceedings. What is the latest date, absent any s 33 extension, on which she can validly issue her claim?",
+          "options": ["10 June 2025 — three years from accrual, since accrual and date of knowledge coincide here", "10 June 2028 — six years from accrual, treating this as an ordinary tort claim", "10 June 2025 is irrelevant; a personal injury claim has no fixed limitation date at all", "9 June 2025, since the period runs to the day before the anniversary"],
+          "correctIndex": 0,
+          "explanation": "This is a personal injury claim, so s 11's three-year period applies. Because the claimant knew of the significant, attributable injury immediately, accrual and date of knowledge are the same date — 10 June 2022 — and three years takes the limitation date to 10 June 2025."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-02-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under the Limitation Act 1980, what is the standard limitation period for an action founded on simple contract?",
+      "options": ["Three years", "Six years", "Twelve years", "One year"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under s 11 of the Limitation Act 1980, what is the standard limitation period for a claim for damages for personal injury caused by negligence?",
+      "options": ["One year", "Three years", "Six years", "Ten years"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-02-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A client asks whether discovering a breach of contract years after it happened restarts the six-year limitation clock under s 5. What is the correct answer?",
+      "options": ["Yes — the clock restarts from the date of discovery in every case", "No — a contract claim accrues on the date of breach, regardless of when the breach is discovered", "Yes, but only if the breach was deliberately concealed by the defendant", "No — contract claims have no limitation period at all"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-02-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A tenant trespasses on a neighbour's land on 1 May 2018, an act that is actionable without the neighbour needing to prove any loss. The neighbour first notices the trespass on 1 May 2023. From which date does the six-year period under s 2 begin to run?",
+      "options": ["1 May 2018 — the date of the wrongful act, since trespass is actionable per se", "1 May 2023 — the date the neighbour noticed", "The claim has no limitation period because trespass is a continuing wrong", "1 May 2020 — the midpoint between the act and discovery"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-02-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT a factor listed under s 33 for the court to weigh when deciding whether to disapply the s 11 time limit?",
+      "options": ["The length of, and reasons for, the claimant's delay", "The effect of the delay on the cogency of the evidence", "The seniority of the solicitor instructed by the claimant", "The conduct of the defendant after the cause of action arose"],
+      "correctIndex": 2,
+      "trapExplanation": "The seniority of the instructed solicitor is not a s 33 factor at all — the list focuses on delay, evidential cogency, defendant conduct, the claimant's disability, promptness, and steps taken to obtain advice, not the seniority of whoever is instructed."
+    },
+    {
+      "itemId": "sqe1-dr-02-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant argues that because she suffered psychiatric harm as a secondary consequence of a breach of contract, her whole claim — including the contractual elements — should benefit from s 11's three-year personal injury period rather than s 5's six-year contract period, since three years is more generous to her employer's argument that her claim should be simplified. Is her characterisation correct?",
+      "options": ["Yes — any claim touching on personal injury automatically becomes subject to s 11 in its entirety", "No — the correct period depends on how the specific cause of action is properly classified; a breach of contract claim remains governed by s 5 unless it independently falls within the negligence, nuisance or breach of duty language of s 11", "Yes, because s 11 always overrides s 5 whenever both could apply", "No — s 5 and s 11 never apply to claims arising from the same facts"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming any personal injury element automatically pulls the whole claim into s 11. Classification is done cause of action by cause of action — a genuine breach of contract claim stays under s 5 unless the specific claim independently falls within s 11's own language."
+    },
+    {
+      "itemId": "sqe1-dr-02-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant was injured in an accident on 1 March 2018 but did not learn her injury was attributable to the defendant's negligence until 1 March 2021, following expert investigation. She issues proceedings on 15 March 2024. Absent a s 33 extension, is her claim time-barred?",
+      "options": ["No — because the date of knowledge (1 March 2021) is later than accrual, the three-year period runs to 1 March 2024, and the claim issued after that date is time-barred by 14 days", "Yes — because more than three years have passed since the accident, regardless of date of knowledge", "No — personal injury claims have no fixed limitation period once knowledge is delayed", "No — the claim is in time because six years have not yet passed since the accident"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is reasoning only from the accident date and concluding the claim is hopelessly out of time, or alternatively assuming a six-year period applies. The later date of knowledge (2021) is the correct trigger, and three years from it (2024) has technically already passed by the time the claim is issued — so the claim is time-barred, though a s 33 application remains available."
+    },
+    {
+      "itemId": "sqe1-dr-02-test-08",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which limitation period applies to an action founded on tort generally, excluding personal injury claims?",
+      "options": ["Six years from accrual under s 2", "Three years from accrual under s 11", "Six years from the date of knowledge under s 5", "Twelve years from accrual under s 2"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-02-test-09",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A claimant's building suffers subsidence caused by the defendant's negligent excavation. The excavation took place on 1 January 2019, but visible structural damage did not appear until 1 January 2021. When does the claimant's cause of action in negligence accrue, for the purpose of the s 2 six-year period?",
+      "options": ["1 January 2019 — the date of the negligent excavation", "1 January 2021 — the date the damage actually occurred, since this tort requires proof of damage to be actionable", "The claim accrues only once the claimant discovers the cause of the subsidence", "The claim never accrues because subsidence is a continuing wrong with no fixed start date"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-02-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant is diagnosed with a disease caused by historic workplace exposure. The exposure ended on 1 June 2010; the claimant only became aware her condition was attributable to that exposure on 1 June 2024, following diagnosis. She wishes to issue proceedings in July 2024, more than three years after exposure ended but within weeks of gaining knowledge. What is the most accurate advice?",
+      "options": ["Her claim is automatically time-barred because more than three years have passed since exposure ended", "Her claim is in time, because under s 11(4)(b) the three-year period runs from the later date of knowledge, which is only weeks old", "She needs a s 33 application regardless, because more than three years have passed since exposure began", "Her claim has no limitation period because it involves a disease rather than a single accident"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-02-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A claimant's personal injury claim is four years out of time under s 11. The delay arose because the defendant repeatedly gave incomplete answers to the claimant's pre-action enquiries, and expert medical evidence about the injury remains just as clear today as it would have been at the time. The claimant instructed solicitors and acted promptly once she understood she had a viable claim. Which outcome does this fact pattern most strongly support?",
+      "options": ["The court is unlikely to exercise its s 33 discretion, since any delay is fatal regardless of the reasons", "The court may well exercise its s 33 discretion in the claimant's favour, given the defendant's own conduct, the claimant's promptness once aware, and the unaffected cogency of the evidence", "Section 33 cannot apply because more than three years, rather than the full six-year period, have passed", "The claim is automatically revived without any application, because the defendant caused the delay"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-02-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under s 11(4) of the Limitation Act 1980, the three-year personal injury period runs from the date of accrual, or from which alternative date if it is later?",
+      "options": ["The date of knowledge of the person injured", "The date proceedings are first threatened", "The date the defendant admits liability", "The date the claimant instructs a solicitor"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-02-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A claimant argues that s 33 should be available to extend the limitation period on her breach of contract claim, since she only discovered the breach after the six-year period under s 5 had already expired. Is she correct that s 33 can assist her?",
+      "options": ["Yes — s 33 applies to any claim under the Limitation Act 1980", "No — s 33's discretion to disapply the time limit applies only to personal injury claims within s 11, not to contract claims under s 5", "Yes, provided the defendant concealed the breach deliberately", "No — s 33 was repealed and no longer has any effect"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-02-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant's personal injury claim will be six weeks out of time under s 11 if issued next month. Which of the following, on its own, most directly supports an application under s 33?",
+      "options": ["The claimant simply preferred to wait before issuing, for no particular reason", "The delay has had no material effect on the cogency of the available evidence, and the claimant acted promptly once she appreciated she had a viable claim", "The claim is for breach of a commercial contract rather than personal injury", "The defendant has already indicated it intends to contest liability at trial"],
+      "correctIndex": 1
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is anchoring on the wrong trigger date — using the date of the wrongful act when the correct trigger is the date of damage or the date of knowledge, or vice versa. Classify the cause of action first, then find its specific accrual rule, before doing any arithmetic.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.limitation-periods"
+  }
+}

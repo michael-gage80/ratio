@@ -2,7 +2,8 @@ import SwiftUI
 
 /// The exam room — screens/21-tests-intro-exam-room.png and 22-test-item.png — then the
 /// debrief (23). A dark full-screen moment: "without the notes". Answers aren't marked
-/// one by one here; everything is revealed in the debrief.
+/// one by one here; everything is revealed in the debrief. SQE1 lessons run as "SQE1
+/// practice", with the real exam's pace (about 1 min 42 s a question) shown as a guide.
 struct ExamRoomView: View {
     let lesson: Lesson
     let headline: Headline?
@@ -17,6 +18,10 @@ struct ExamRoomView: View {
     @State private var submitFailed = false
     @State private var confirmingLeave = false
     @State private var applicationEstimate: Estimate?
+    /// When the question on screen was shown, for the SQE1 pace guide.
+    @State private var questionStart = Date.now
+
+    private var isSQE: Bool { lesson.moduleId.programme == .sqe1 }
 
     init(lesson: Lesson, headline: Headline?, onFinish: @escaping () -> Void) {
         self.lesson = lesson
@@ -48,9 +53,10 @@ struct ExamRoomView: View {
             } else if let item = model.current {
                 ScrollView {
                     VStack(alignment: .leading, spacing: RatioSpace.m) {
-                        Text("Test \(model.responses.count + 1) of \(model.items.count) · \(item.typeTitle)")
+                        Text("\(isSQE ? "Question" : "Test") \(model.responses.count + 1) of \(model.items.count)\(isSQE ? "" : " · \(item.typeTitle)")")
                             .ratioFont(.monoLabel)
                             .foregroundStyle(Color.ratioInk2)
+                        if isSQE { PaceGuide(start: questionStart) }
                         ItemInteractionView(item: item, lockedResponse: nil, context: context(for: item)) { response in
                             model.answer(response)
                             if model.isFinished { Task { await submit() } }
@@ -69,6 +75,8 @@ struct ExamRoomView: View {
             }
         }
         .animation(RatioMotion.reveal, value: model.responses.count)
+        .onChange(of: model.responses.count) { questionStart = .now }
+        .onChange(of: started) { questionStart = .now }
         .ratioPage()
         .ratioFeedback(.impact(weight: .light), trigger: model.responses.count)
         .confirmationDialog("Leave the exam room?", isPresented: $confirmingLeave, titleVisibility: .visible) {
@@ -93,7 +101,7 @@ struct ExamRoomView: View {
                 .accessibilityHidden(true)
             } else {
                 Spacer()
-                Text("Exam room").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Text(isSQE ? "SQE1 practice" : "Exam room").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
         }
         .padding(.horizontal, RatioSpace.s)
@@ -107,7 +115,9 @@ struct ExamRoomView: View {
                     .foregroundStyle(Color.ratioInk2)
                 Text("Without the \(Text("notes.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
                 if !model.items.isEmpty {
-                    Text("\(model.items.count) items weighted to \(model.weakestSkill.phrase). A retake draws new ones.")
+                    Text(isSQE
+                         ? "\(model.items.count) single-best-answer questions, weighted to \(model.weakestSkill.phrase). Aim for about 1 min 42 s each, as in SQE1. Nothing is marked until the end."
+                         : "\(model.items.count) items weighted to \(model.weakestSkill.phrase). A retake draws new ones.")
                         .ratioFont(.h3)
                 }
                 VStack(spacing: 0) {
@@ -195,5 +205,39 @@ struct ExamRoomView: View {
         } catch {
             submitFailed = true
         }
+    }
+}
+
+/// SQE1 pace: the real exam allows about 1 min 42 s a question. A guide, not a limit —
+/// the bar fills over that time and the elapsed time turns oxblood after it.
+private struct PaceGuide: View {
+    let start: Date
+    private static let pace: TimeInterval = 102
+
+    var body: some View {
+        TimelineView(.periodic(from: start, by: 1)) { context in
+            let elapsed = max(0, context.date.timeIntervalSince(start))
+            let over = elapsed > Self.pace
+            HStack(spacing: RatioSpace.xs) {
+                GeometryReader { proxy in
+                    ZStack(alignment: .leading) {
+                        Capsule().fill(Color.ratioRule)
+                        Capsule().fill(over ? Color.ratioOxblood : Color.ratioInk2)
+                            .frame(width: proxy.size.width * min(1, elapsed / Self.pace))
+                    }
+                }
+                .frame(height: 3)
+                Text("\(Self.clock(elapsed)) / 1:42")
+                    .ratioFont(.monoData)
+                    .foregroundStyle(over ? Color.ratioOxblood : Color.ratioInk2)
+                    .fixedSize()
+            }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Pace: \(Int(elapsed)) seconds of about 102")
+        }
+    }
+
+    private static func clock(_ seconds: TimeInterval) -> String {
+        String(format: "%d:%02d", Int(seconds) / 60, Int(seconds) % 60)
     }
 }

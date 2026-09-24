@@ -1,0 +1,337 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-dr-14",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 14,
+  "topicId": "sqe1.dispute-resolution.appeals",
+  "title": "Losing, and what comes after",
+  "subtitle": "Permission to appeal, appeal routes, and review versus rehearing",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the test for permission to appeal under CPR Part 52, and identify who may grant it",
+    "Work out the correct appeal route for a decision, depending on the level of the court or judge that made it",
+    "Explain why an appeal is ordinarily a review of the decision below rather than a fresh trial, and identify the limited circumstances in which it becomes a rehearing"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 52", "role": "Governs permission to appeal, appeal routes, and the powers of the appeal court" },
+    { "citation": "Civil Procedure Rules, r 52.6", "role": "States the permission test: a real prospect of success, or some other compelling reason for the appeal to be heard" },
+    { "citation": "Civil Procedure Rules, r 52.21", "role": "Confirms every appeal is limited to a review of the lower court's decision unless a rule or practice direction provides, or the court considers it in the interests of justice to hold a rehearing" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson sits between two ideas that feel similar but examine very differently: getting permission to appeal, and what an appeal actually does once permission is granted. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can state the permission test — this lesson checks whether you can route a specific appeal correctly.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans towards routing questions: which court, which permission threshold, review or rehearing — expect to work a scenario, not just recite the rule.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — the r 52.6 permission test is the gate everything else in this lesson passes through."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A losing party does not get to appeal simply because they disagree with the result — that would turn every first-instance decision into a rehearsal for a second one. English civil procedure puts a gate in front of every appeal, and then, once through it, deliberately limits what the appeal court is allowed to do. This lesson is about both: the gate, and the narrower door behind it."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The gate: permission to appeal",
+        "voice": "structural — states the test precisely before working through its two limbs",
+        "body": [
+          "With very limited exceptions, a party cannot appeal a civil decision as of right. CPR r 52.6 sets a permission threshold that must be cleared first, and it is usually sought from the lower court at the end of the hearing that produced the decision being appealed — if refused there, the applicant can renew the application to the appeal court itself.",
+          "The test has two limbs, and only one needs to be satisfied: permission will be given where the court considers that the appeal would have a real prospect of success, or that there is some other compelling reason for the appeal to be heard. 'Real prospect of success' is a deliberately modest threshold — more than fanciful, but well short of a probability of success — the same phrase, doing the same work, as the summary judgment test from Lesson 5.",
+          "The second limb catches cases that might not obviously succeed but raise something the appellate system needs to address anyway — a point of general public importance, a conflicting line of first-instance authority that needs resolving, or a procedural irregularity serious enough to undermine confidence in the process. It is used sparingly."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Real prospect of success",
+            "definition": "The primary limb of the CPR r 52.6 permission test: more than a fanciful chance of success, though well short of probable success. The same threshold language used for summary judgment under CPR Part 24, applied here to the decision of whether an appeal may proceed at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-14-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "State the two-limb test for permission to appeal under CPR r 52.6.",
+          "acceptableAnswers": ["real prospect of success or some other compelling reason", "real prospect of success, or another compelling reason for the appeal to be heard"],
+          "modelAnswer": "Permission is given if the court considers the appeal would have a real prospect of success, or that there is some other compelling reason for the appeal to be heard."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Working out where an appeal goes",
+        "voice": "reference — a routing table students will return to",
+        "body": [
+          "Once permission is secured, the next question is jurisdictional: which court hears the appeal? The route depends on the level of the court or judge who made the decision being appealed, not on the subject matter of the claim — a point that regularly trips students who assume appeal routing tracks track allocation or claim value.",
+          "As a general framework: an appeal from a decision of a District Judge in the County Court goes to a Circuit Judge; an appeal from a Circuit Judge in the County Court, or from a High Court Master or District Judge, goes to a High Court Judge; an appeal from a decision of a High Court Judge goes to the Court of Appeal. Final decisions of the Court of Appeal may, with permission, go on to the Supreme Court.",
+          "There is one important cross-cutting exception worth flagging precisely because it looks like an anomaly: where the decision under appeal was itself a final decision in a multi-track claim, the appeal 'leapfrogs' the intermediate tier and goes directly to the next level up in the standard route above — the general architecture is that final decisions in the more substantial claims bypass one tier of the usual route. Precise routing in any given scenario turns on the destination table in Practice Direction 52A, which SQE1 questions will usually give you enough facts to apply rather than expecting the table memorised in full."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Appeal routes: decision-maker below → appeal court",
+            "points": [
+              "District Judge (County Court) → Circuit Judge",
+              "Circuit Judge (County Court) or High Court Master/District Judge → High Court Judge",
+              "High Court Judge → Court of Appeal",
+              "Court of Appeal (final decision) → Supreme Court, with permission",
+              "Routing depends on the level of the decision-maker below, not the subject matter or value of the claim"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-14-check-02",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "An appeal route is being worked out for a civil claim. Does the appeal route primarily depend on the claim's track allocation, or on the level of the judge who made the decision being appealed?",
+          "options": ["The level of the judge who made the decision below", "The track the claim was allocated to"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Appeal routing tracks the decision-maker's level in the judicial hierarchy — District Judge, Circuit Judge, High Court Judge and so on — not the track or value of the underlying claim.",
+          "feedbackIncorrect": "Track allocation governs the procedure before trial (Lesson 4), but appeal routing is keyed to who made the decision being appealed, not the claim's track or value."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Review, not rehearing",
+        "voice": "statute-first — reads the default, then the exception, precisely",
+        "body": [
+          "The single idea that does the most work in this lesson, and the one SQE1 tests most persistently, is this: an appeal is not a second trial. CPR r 52.21 states the default squarely — every appeal is limited to a review of the decision of the lower court, unless a rule or practice direction provides otherwise, or the court considers that in the circumstances of an individual appeal it would be in the interests of justice to hold a rehearing.",
+          "A review means the appeal court works from the record of what happened below — the judgment, the transcript, the documents that were before the first court — rather than hearing the evidence again from scratch. It asks whether the decision below was wrong, or unjust because of a serious procedural or other irregularity, not whether the appeal court would have reached the same result if it had tried the case itself.",
+          "This matters enormously for how far an appellant can push a factual finding. An appeal court will be markedly reluctant to interfere with a trial judge's findings of fact, particularly findings that depended on assessing a witness's credibility in the witness box — the appeal court, working from a transcript, was not there to see the witness give evidence, and the law defers to the trial judge's advantage in that respect."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, r 52.21",
+            "text": "Every appeal will be limited to a review of the decision of the lower court unless a practice direction makes different provision for a particular category of appeal, or the court considers that in the circumstances of an individual appeal it would be in the interests of justice to hold a re-hearing.",
+            "elements": ["Default: review of the decision below, not a rehearing", "Exception: a practice direction requires a rehearing for that category of appeal", "Exception: the court decides a rehearing is in the interests of justice on the facts of the individual appeal"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-14-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under CPR r 52.21, what is the default character of a civil appeal?",
+          "options": ["A rehearing of all the evidence from scratch", "A review of the decision of the lower court, working from the record of what happened below", "An entirely fresh claim, independent of the proceedings below", "A paper-only exercise with no discretion to consider new evidence at all"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. The default is review — the appeal court works from the record below and asks whether that decision was wrong or unjust because of a serious irregularity, not whether it would decide the case the same way from scratch.",
+          "feedbackIncorrect": "r 52.21's default is review, not rehearing. A rehearing only happens where a practice direction requires it for that category of appeal, or the court decides it is in the interests of justice on the individual facts."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Why appeal courts defer to findings of fact",
+        "voice": "Socratic — poses the puzzle before resolving it with the doctrine",
+        "body": [
+          "Here's the puzzle worth sitting with before the rule resolves it: if the appeal court reads exactly the same transcript, exactly the same documents, and exactly the same expert reports as the trial judge, why would it ever reach a different conclusion on the facts — and if it wouldn't, why bother distinguishing 'review' from 'rehearing' at all?",
+          "The answer is that the trial judge did not only read the transcript — they watched the witnesses give live evidence, observed demeanour under cross-examination, and absorbed the cumulative texture of a hearing in a way no transcript fully captures. That advantage is precisely what a review, as opposed to a rehearing, is designed to respect: the appeal court accepts it is working with less than the trial judge had, and calibrates its willingness to overturn a factual finding accordingly.",
+          "This is why appeals succeed far more often on points of law, or on identifiable procedural irregularity, than on 'the judge got the facts wrong.' A finding of fact will only be overturned where it was one no reasonable judge could have reached on the evidence — not merely one the appeal court might have reached differently."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Will the appeal court interfere with a finding below?",
+            "description": "A decision path distinguishing pure error of law from a challenge to a factual finding.",
+            "nodes": [
+              { "id": "start", "label": "Is the ground of appeal a point of law, or an identifiable procedural irregularity?" },
+              { "id": "yes-law", "label": "Yes → ordinary review standard applies; the appeal court corrects the error" },
+              { "id": "no-law", "label": "No → is it a challenge to a trial judge's finding of fact, especially one based on witness credibility?" },
+              { "id": "yes-fact", "label": "Yes → high deference; overturned only if no reasonable judge could have reached that finding on the evidence" },
+              { "id": "no-fact", "label": "No → assess against the general 'wrong, or unjust because of serious irregularity' standard" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-law", "label": "Yes" },
+              { "from": "start", "to": "no-law", "label": "No" },
+              { "from": "no-law", "to": "yes-fact", "label": "Yes" },
+              { "from": "no-law", "to": "no-fact", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the ground of appeal is a point of law or an identifiable procedural irregularity — if so, the ordinary review standard lets the appeal court correct the error. If instead it is a challenge to a factual finding, especially one turning on witness credibility, the appeal court defers heavily and will only overturn it if no reasonable judge could have reached that finding on the evidence before them."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-14-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two grounds of appeal. Which is more likely to succeed on review, rather than being met with high deference?",
+          "scenarioA": "The trial judge preferred the claimant's witness's account of a disputed conversation over the defendant's, having watched both give live evidence and be cross-examined at length.",
+          "scenarioB": "The trial judge applied the wrong limitation period from the outset, using the six-year contract period when the claim was, on its pleaded facts, a personal injury claim subject to the three-year period.",
+          "correctScenario": "B",
+          "explanation": "B is a pure error of law — applying the wrong statutory limitation period — which an appeal court reviewing the decision can correct without needing to have seen any witness. A is a credibility-based finding of fact, exactly the category an appeal court defers to heavily, since it lacked the trial judge's advantage of watching the witnesses give evidence."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The trap: assuming permission and success are the same question",
+        "voice": "direct — closes by naming the mistake the test pool probes hardest",
+        "body": [
+          "The recurring error in this area is collapsing two separate questions into one: 'will the court let this appeal be heard' and 'will the appeal succeed' are not the same test, and SQE1 scenario questions are frequently built around a fact pattern that satisfies one but not the other.",
+          "Permission under r 52.6 asks only whether the appeal has a real prospect of success or some other compelling reason to be heard — a relatively modest bar, deliberately calibrated to filter out hopeless appeals without shutting out arguable ones. Whether the appeal actually succeeds is a separate question, decided later, applying the review standard from r 52.21: was the decision below wrong, or unjust because of a serious procedural irregularity?",
+          "A related trap: students sometimes assume permission is only available from the appeal court. In fact the first attempt is usually made to the lower court, at the end of the hearing that produced the decision — only if that is refused does the applicant renew the application to the appeal court itself, which can (and sometimes does) take a different view."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often treat 'permission granted' as meaning the appeal court has already found the decision below was wrong, and answer accordingly.",
+            "whyItsWrong": "Permission and merits are decided under different tests, at different stages. Permission (r 52.6) asks only whether the appeal clears a modest threshold — real prospect of success, or another compelling reason. The full merits (r 52.21) are decided later, on review of the decision below, and the appeal can still fail even once permission has been granted."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-14-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A High Court Judge grants permission to appeal a District Judge's case-management decision, on the basis it has a real prospect of success. What does that grant of permission, by itself, establish?",
+          "options": ["That the appeal will succeed, since permission would not otherwise have been granted", "Only that the appeal clears the threshold to be heard — the merits are still to be decided applying the review standard", "That the original decision was wrong in law", "That the case will now proceed as a full rehearing of the original evidence"],
+          "correctIndex": 1,
+          "trapExplanation": "Permission and success are separate questions under separate tests. Granting permission confirms only that the r 52.6 threshold is met; whether the decision below was actually wrong, or unjust because of a serious irregularity, is decided afterwards under r 52.21."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-14-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under CPR r 52.6, what is the primary limb of the test for permission to appeal?",
+      "options": ["The appeal would have a real prospect of success", "The appellant simply disagrees with the outcome", "The claim exceeds the small claims limit", "The original hearing lasted more than one day"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Besides a real prospect of success, what is the other limb of the CPR r 52.6 permission test?",
+      "options": ["Some other compelling reason for the appeal to be heard", "The respondent's consent to the appeal proceeding", "A change in the composition of the appeal court since the decision below", "The value of the claim exceeding £100,000"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-14-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "Where should a party normally apply first for permission to appeal a decision?",
+      "options": ["The lower court, at the end of the hearing that produced the decision", "The Supreme Court, regardless of the level of the decision below", "The Court of Appeal only, in every case", "There is no need to apply — appeals proceed automatically once filed"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-14-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following best explains why an appeal court is reluctant to overturn a trial judge's finding based on witness credibility?",
+      "options": ["Appeal courts are not permitted to consider factual findings at all", "The trial judge watched the witnesses give live evidence, an advantage the appeal court — working from the record — does not share", "Witness credibility is never relevant to a civil trial's outcome", "The rules simply forbid any challenge to findings of fact under any circumstances"],
+      "correctIndex": 1,
+      "trapExplanation": "The deference is not an absolute bar on challenging facts, nor is it based on witness evidence being irrelevant — it flows specifically from the trial judge's advantage of having observed the witnesses give live evidence, which the appeal court, working from a transcript, did not have."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A District Judge in the County Court strikes out a claim. The claimant wants to appeal. Which court would ordinarily hear that appeal?",
+      "options": ["A Circuit Judge", "The Court of Appeal directly", "The Supreme Court directly", "Another District Judge sitting in the same court"],
+      "correctIndex": 0,
+      "trapExplanation": "Students often default to 'the Court of Appeal' for any civil appeal. Routing depends on the level of the decision-maker below — a District Judge's decision is appealed to a Circuit Judge, not straight to the Court of Appeal."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A High Court Judge gives a final judgment after a multi-track trial. Which court hears an appeal against that decision?",
+      "options": ["A Circuit Judge", "The Court of Appeal", "The Supreme Court directly, with no intermediate step", "A High Court Master"],
+      "correctIndex": 1,
+      "explanation": "An appeal from a High Court Judge's decision goes to the Court of Appeal — the next tier up in the standard routing framework."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A party seeks to appeal a Court of Appeal decision that finally disposed of the claim. What must they first obtain, and from whom might it be sought?",
+      "options": ["Nothing — appeals from the Court of Appeal proceed automatically", "Permission to appeal, which may be sought from the Court of Appeal or, if refused, from the Supreme Court itself", "A fresh claim form, since no appeal route exists from the Court of Appeal", "A County Court order confirming the value of the claim"],
+      "correctIndex": 1,
+      "explanation": "As with other levels, permission is required before a further appeal to the Supreme Court can proceed — it may be sought from the Court of Appeal itself or, if refused there, renewed before the Supreme Court."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Under CPR r 52.21, when will an appeal be conducted as a rehearing rather than a review?",
+      "options": ["Whenever the appellant requests it", "Where a practice direction requires it for that category of appeal, or the court considers a rehearing necessary in the interests of justice", "Never — rehearings do not exist in the civil appeal system", "Automatically, whenever new evidence has come to light since trial"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "sqe1-dr-14-test-09",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In an appeal conducted as a review under CPR r 52.21, what does the appeal court primarily examine?",
+      "options": ["The record of the decision below — judgment, transcript, and documents that were before the lower court", "Entirely new evidence gathered specifically for the appeal", "The credibility of witnesses giving fresh oral evidence to the appeal court", "Only the pleadings, without reference to the judgment below"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-14-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A ground of appeal alleges the trial judge misdirected herself on the applicable legal test for negligence. Under the review standard, how is this ground assessed compared with a challenge to a factual finding on witness credibility?",
+      "options": ["Identically — both receive the same high level of deference", "More readily corrected — a pure point of law does not depend on the trial judge's advantage of having seen the witnesses", "It cannot be raised on appeal at all", "It can only be raised as a fresh claim, not an appeal"],
+      "correctIndex": 1,
+      "explanation": "Points of law do not turn on having observed live witness evidence, so an appeal court reviewing the decision below is well placed to correct a misdirection on the law, unlike a credibility-based factual finding."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A litigant's appeal does not obviously look strong on the merits, but raises a genuinely novel and unresolved question about the interpretation of a widely used standard-form contract clause used across the industry. Under r 52.6, on what basis might permission still be granted?",
+      "options": ["It cannot be granted unless the appeal has a real prospect of success", "On the 'some other compelling reason' limb, given the wider importance of resolving the point", "Only if the respondent consents", "Only if the claim was allocated to the multi-track"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes treat 'real prospect of success' as the only route to permission. The second limb — some other compelling reason, such as a point of wider public or commercial importance — exists precisely for cases like this."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A party is refused permission to appeal by the District Judge who made the original decision. What is the party's next available step, assuming they still wish to pursue the appeal?",
+      "options": ["Nothing further is available — the refusal is final", "Renew the application for permission before the appeal court (here, a Circuit Judge)", "Start an entirely new claim on the same facts", "Apply directly to the Supreme Court, bypassing the intermediate courts"],
+      "correctIndex": 1,
+      "explanation": "A refusal by the lower court is not final — the applicant may renew the permission application before the appeal court itself, which can reach a different view."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which statement best captures the relationship between permission to appeal and the eventual outcome of the appeal?",
+      "options": ["They are the same decision, made at the same hearing on the same test", "Permission asks only whether the appeal clears a threshold to be heard; the outcome is decided separately, applying the review standard to the decision below", "Permission is only relevant to appeals to the Supreme Court", "Once permission is granted, the respondent may no longer contest the appeal"],
+      "correctIndex": 1,
+      "trapExplanation": "Collapsing 'permission granted' into 'appeal will succeed' is the single most common error in this area. They are distinct questions, decided under distinct tests, and an appeal can still fail on its merits after permission is granted."
+    },
+    {
+      "itemId": "sqe1-dr-14-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which CPR Part governs permission to appeal, appeal routes, and the powers of the appeal court in civil proceedings?",
+      "options": ["Part 52", "Part 36", "Part 44", "Part 24"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating permission to appeal and the eventual success of the appeal as one and the same decision, and assuming appeal routing tracks claim value or track allocation rather than the level of the decision-maker below.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.appeals"
+  }
+}
