@@ -25,9 +25,8 @@ struct OnboardingView: View {
             .id(model.step)
             .transition(reduceMotion ? .opacity : .asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)).combined(with: .opacity))
         }
-        .animation(.easeInOut(duration: 0.3), value: model.step)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .animation(RatioMotion.reveal, value: model.step)
+        .ratioPage()
         .disabled(model.isSaving)
         .alert(model.errorMessage ?? "", isPresented: Binding(
             get: { model.errorMessage != nil },
@@ -39,8 +38,8 @@ struct OnboardingView: View {
 
     private var header: some View {
         let number = model.step?.rawValue ?? OnboardingModel.totalSteps
-        return VStack(alignment: .leading, spacing: 16) {
-            HStack(spacing: 16) {
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
+            HStack(spacing: RatioSpace.s) {
                 if model.canGoBack {
                     Button {
                         model.goBack()
@@ -48,7 +47,9 @@ struct OnboardingView: View {
                         Image(systemName: "chevron.left")
                             .font(.title3)
                             .frame(width: 44, height: 44, alignment: .leading)
+                            .contentShape(Rectangle())
                     }
+                    .buttonStyle(.ratioPress)
                     .accessibilityLabel("Back")
                 }
                 Text(String(format: "%02d / %02d", number, OnboardingModel.totalSteps))
@@ -66,11 +67,11 @@ struct OnboardingView: View {
                         .frame(width: proxy.size.width * CGFloat(number) / CGFloat(OnboardingModel.totalSteps))
                 }
             }
-            .frame(height: 3)
+            .frame(height: 4)
             .accessibilityHidden(true)
         }
-        .padding(.horizontal, 24)
-        .padding(.top, 8)
+        .padding(.horizontal, RatioSpace.m)
+        .padding(.top, RatioSpace.xs)
     }
 }
 
@@ -84,9 +85,9 @@ struct OnboardingStepLayout<Content: View>: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text(title).ratioFont(.h1)
+            VStack(alignment: .leading, spacing: RatioSpace.l) {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    Text(title).ratioFont(.h1).accessibilityAddTraits(.isHeader)
                     if let subtitle {
                         Text(subtitle)
                             .ratioFont(.body)
@@ -95,13 +96,13 @@ struct OnboardingStepLayout<Content: View>: View {
                 }
                 content
             }
-            .padding(24)
+            .padding(RatioSpace.m)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             RatioButton("Continue", style: .secondary, isEnabled: canContinue, action: onContinue)
-                .padding(24)
+                .padding(RatioSpace.m)
                 .background(Color.ratioParchment)
         }
     }

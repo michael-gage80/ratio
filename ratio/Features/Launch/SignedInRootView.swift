@@ -22,26 +22,21 @@ struct SignedInRootView: View {
             } else {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.ratioParchment.ignoresSafeArea())
+                    .ratioPage()
             }
         }
-        .animation(.easeInOut(duration: 0.3), value: onboarding?.isComplete)
+        .animation(RatioMotion.reveal, value: onboarding?.isComplete)
         .task(id: uid) { await load() }
         .task(id: uid) { await content.refresh() }
     }
 
     private var retry: some View {
-        VStack(spacing: 20) {
-            Text("We couldn't load your profile.")
-                .ratioFont(.h3)
-            RatioButton("Try again", style: .secondary) {
-                Task { await load() }
-            }
+        RatioErrorState(message: "Your profile didn't load. Check your connection and try again.") {
+            Task { await load() }
         }
-        .padding(24)
+        .padding(RatioSpace.m)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
     }
 
     private func load() async {

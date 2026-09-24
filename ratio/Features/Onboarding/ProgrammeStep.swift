@@ -25,7 +25,7 @@ struct ProgrammeStep: View {
             canContinue: !model.isSaving,
             onContinue: { Task { await model.saveProgramme(waitlist: waitlist) } }
         ) {
-            VStack(spacing: 12) {
+            VStack(spacing: RatioSpace.s) {
                 row(name: "LLB", detail: "Bachelor of Laws · undergraduate", isSelected: true) {
                     Image(systemName: "record.circle")
                         .font(.title2)
@@ -46,7 +46,7 @@ struct ProgrammeStep: View {
                             }
                         }
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.ratioPress)
                     .accessibilityHint(isOnList ? "Stops the launch email" : "Emails you when it launches")
                 }
             }
@@ -54,8 +54,8 @@ struct ProgrammeStep: View {
     }
 
     private func row(name: String, detail: String, isSelected: Bool, @ViewBuilder accessory: () -> some View) -> some View {
-        HStack(spacing: 12) {
-            VStack(alignment: .leading, spacing: 4) {
+        HStack(spacing: RatioSpace.s) {
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                 Text(name)
                     .ratioFont(.h3)
                     .foregroundStyle(isSelected ? Color.ratioInk : Color.ratioInk2)
@@ -63,14 +63,14 @@ struct ProgrammeStep: View {
                     .ratioFont(.small)
                     .foregroundStyle(Color.ratioInk2)
             }
-            Spacer(minLength: 8)
+            Spacer(minLength: RatioSpace.xs)
             accessory()
         }
-        .padding(20)
+        .padding(RatioSpace.s)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
         .overlay {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
+            RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
                 .strokeBorder(isSelected ? Color.ratioInk : Color.ratioRule, lineWidth: isSelected ? 2 : 1)
         }
         .contentShape(Rectangle())

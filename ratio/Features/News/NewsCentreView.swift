@@ -21,21 +21,23 @@ struct NewsCentreView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
                 masthead
                 moduleChips
                 if let lead {
                     LeadStory(story: lead) { open(lesson: $0) }
                 }
                 if stories.isEmpty {
-                    Text(student.news.isEmpty ? "The week's headlines appear here as they're published." : "No stories for \(module?.title ?? "this module") this week.")
-                        .ratioFont(.body).italic().foregroundStyle(Color.ratioInk2).padding(.vertical, 24)
+                    RatioEmptyState(art: .pediment, message: student.news.isEmpty
+                        ? "The week's headlines appear here as they're published."
+                        : "No stories for \(module?.title ?? "this module") this week.",
+                        actionTitle: module == nil ? nil : "Show all modules") { module = nil }
                 } else {
                     Text("From the week · Headline and link only").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     ForEach(days, id: \.title) { day in
                         VStack(alignment: .leading, spacing: 0) {
                             Text(day.title).ratioFont(.h2).italic()
-                            Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, 8)
+                            Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, RatioSpace.xs)
                             ForEach(day.stories) { story in
                                 StoryRow(story: story) { open(lesson: $0) }
                                 Divider().overlay(Color.ratioRule)
@@ -49,10 +51,9 @@ struct NewsCentreView: View {
                 Text("Headlines link to the publisher.")
                     .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         // No back button: swipe from the left edge to go back.
         .toolbar(.hidden, for: .navigationBar)
         .fullScreenCover(isPresented: $takingQuiz) {
@@ -61,18 +62,22 @@ struct NewsCentreView: View {
     }
 
     private var masthead: some View {
-        VStack(spacing: 12) {
+        // The deliberate exception to the page header: a newspaper masthead (screen 43).
+        VStack(spacing: RatioSpace.s) {
             Rectangle().fill(Color.ratioInk).frame(height: 1)
-            Text("The Week \(Text("in").italic()) Law").ratioFont(.display).frame(maxWidth: .infinity)
+            Text("The Week \(Text("in").italic()) Law").ratioFont(.display).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+                .accessibilityAddTraits(.isHeader)
             Rectangle().fill(Color.ratioInk).frame(height: 1)
             let monday = UKDate.calendar.dateInterval(of: .weekOfYear, for: .now)?.start ?? .now
             Text("Week of \(monday.formatted(.dateTime.day().month(.wide).year())) · UK law").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                .multilineTextAlignment(.center)
         }
+        .padding(.top, RatioSpace.xs)
     }
 
     private var moduleChips: some View {
         ScrollView(.horizontal) {
-            HStack(spacing: 8) {
+            HStack(spacing: RatioSpace.xs) {
                 chip("All", selected: module == nil) { module = nil }
                 ForEach(Module.allCases) { m in
                     chip(m.title, selected: module == m) { module = m }
@@ -80,18 +85,21 @@ struct NewsCentreView: View {
             }
         }
         .scrollIndicators(.hidden)
+        // Chips run to the screen edges rather than stopping at the page margin.
+        .padding(.horizontal, -RatioSpace.m)
+        .contentMargins(.horizontal, RatioSpace.m, for: .scrollContent)
     }
 
     private func chip(_ title: String, selected: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Text(title)
                 .ratioFont(.body)
-                .padding(.horizontal, 16)
+                .padding(.horizontal, RatioSpace.s)
                 .frame(minHeight: 44)
                 .foregroundStyle(selected ? Color.ratioOnInk : Color.ratioInk)
                 .background(selected ? Color.ratioInk : Color.ratioSunk, in: Capsule())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
         .accessibilityAddTraits(selected ? .isSelected : [])
     }
 
@@ -117,11 +125,11 @@ private struct LeadStory: View {
     let openLesson: (String) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack(alignment: .top) {
                 Text("Lead · \(story.source) · \(story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow)))")
                     .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                Spacer()
+                Spacer(minLength: RatioSpace.xs)
                 if let module = story.modules.first.flatMap(Module.init(rawValue:)) { RatioTag(module.title) }
             }
             Text(story.title).ratioFont(.h1)
@@ -134,11 +142,10 @@ private struct LeadStory: View {
                         .ratioFont(.monoLabel)
                 }
                 .foregroundStyle(Color.ratioInk)
+                .frame(minHeight: 44)
             }
         }
-        .padding(22)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 26, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 }
 
@@ -147,18 +154,17 @@ struct WhyItMattersBox: View {
     let openLesson: (String) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Why it matters").ratioFont(.monoLabel).foregroundStyle(Color.ratioOxblood)
             Text(why.text).ratioFont(.body)
             Text("Links to \(Module(rawValue: why.moduleId)?.title ?? why.moduleId): \(why.lessonTitle).").ratioFont(.small).foregroundStyle(Color.ratioInk2)
             Button { openLesson(why.lessonId) } label: {
                 Text("Try the lesson →").ratioFont(.body).italic().underline().foregroundStyle(Color.ratioOxblood)
+                    .frame(minHeight: 44)
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.ratioPress)
         }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .ratioPanel()
     }
 }
 
@@ -167,29 +173,29 @@ private struct StoryRow: View {
     let openLesson: (String) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Link(destination: story.link ?? URL(fileURLWithPath: "/")) {
-                HStack(alignment: .top, spacing: 12) {
-                    VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .top, spacing: RatioSpace.s) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
                         Text(story.title).ratioFont(.h3).multilineTextAlignment(.leading)
                         Text(([story.source, story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow))]
                               + story.modules.prefix(1).compactMap { Module(rawValue: $0)?.title }).joined(separator: " · "))
                             .ratioFont(.monoLabel)
                             .foregroundStyle(Color.ratioInk2)
                     }
-                    Spacer(minLength: 8)
+                    Spacer(minLength: RatioSpace.xs)
                     Image(systemName: "arrow.up.right").foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
                 }
                 .contentShape(Rectangle())
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.ratioPress)
             .disabled(story.link == nil)
             .accessibilityHint("Opens the story at \(story.source)")
             if let why = story.whyItMatters {
                 WhyItMattersBox(why: why, openLesson: openLesson)
             }
         }
-        .padding(.vertical, 14)
+        .padding(.vertical, RatioSpace.s)
     }
 }
 
@@ -206,7 +212,7 @@ private struct QuizCard: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text(sundayTitle).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text("Sunday quiz · \(Text("\(quiz.questions.count) questions").italic().foregroundStyle(Color.ratioOxblood)) on the week").ratioFont(.h2)
             if score >= 0 {
@@ -217,9 +223,7 @@ private struct QuizCard: View {
                 RatioButton("Take the quiz →", style: .secondary, action: start)
             }
         }
-        .padding(22)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 26, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 
     private var sundayTitle: String {
@@ -230,7 +234,7 @@ private struct QuizCard: View {
 
 private struct TrailingIconLabel: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: 6) {
+        HStack(spacing: RatioSpace.xs) {
             configuration.title
             configuration.icon
         }

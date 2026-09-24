@@ -21,7 +21,7 @@ struct RootView: View {
                     SignedInRootView(uid: uid)
                 }
             }
-            .animation(.easeInOut(duration: 0.35), value: session.state)
+            .animation(RatioMotion.reveal, value: session.state)
             // The splash sits on top and turns away once the session is known.
             if !splashGone {
                 SplashCover(ready: minimumShown && session.state != .launching) { splashGone = true }
