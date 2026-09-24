@@ -21,6 +21,12 @@ enum DebugHooks {
         arguments.firstIndex(of: "-screen").flatMap { arguments.indices.contains($0 + 1) ? arguments[$0 + 1] : nil }
     }
 
+    /// "gallery-sequence" → the gallery's position for that interaction type.
+    static var galleryIndex: Int {
+        let order = ["recallFirst", "quickCheck", "thresholdSlider", "tapTheFact", "irac", "sequence"]
+        return screen.flatMap { $0.split(separator: "-").last.map(String.init) }.flatMap { order.firstIndex(of: $0) } ?? 0
+    }
+
     static func configure() {
         guard usesEmulators else { return }
         let host = "127.0.0.1"

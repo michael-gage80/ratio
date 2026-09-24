@@ -54,6 +54,7 @@ struct PracticeSessionView: View {
                     }
                     .padding(RatioSpace.m)
                 }
+                .holdsStillWhileReordering()
                 .scrollDismissesKeyboard(.interactively)
                 .transition(.push(from: .trailing))
             } else {

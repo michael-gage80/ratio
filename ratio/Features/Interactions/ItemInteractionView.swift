@@ -270,8 +270,10 @@ private struct SliderInteraction: View {
 
 // MARK: - Sequence
 
-/// Drag rows into order, or tap a row and move it up or down — the non-drag route the
-/// PRD requires, also offered to VoiceOver as each row's move actions.
+/// Drag rows into order: press and hold a row (or grab its handle) and the others make
+/// way as it moves. Tapping a row and using Move up / Move down does the same without
+/// dragging — the route the PRD requires, also offered to VoiceOver as each row's
+/// move actions.
 private struct SequenceInteraction: View {
     let itemId: String
     let items: [String]
@@ -281,6 +283,14 @@ private struct SequenceInteraction: View {
 
     @State private var order: [Int]
     @State private var selected: Int?
+    /// The row being dragged, how far the finger has moved, and how much of that the
+    /// reordering has already absorbed (the rows it has passed).
+    @State private var dragging: Int?
+    @State private var translation: CGFloat = 0
+    @State private var absorbed: CGFloat = 0
+    @State private var frames: [Int: CGRect] = [:]
+
+    private static let space = "sequence"
 
     init(itemId: String, items: [String], correctOrder: [Int], locked: ItemResponse?, onLock: @escaping (ItemResponse) -> Void) {
         self.itemId = itemId
@@ -295,9 +305,18 @@ private struct SequenceInteraction: View {
 
     var body: some View {
         VStack(spacing: RatioSpace.xs) {
-            ForEach(Array(order.enumerated()), id: \.element) { position, index in
-                row(position: position, index: index)
+            if locked == nil {
+                Text("Hold and drag to reorder, or tap a row and move it.")
+                    .ratioFont(.small)
+                    .foregroundStyle(Color.ratioInk2)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
+            VStack(spacing: RatioSpace.xs) {
+                ForEach(Array(order.enumerated()), id: \.element) { position, index in
+                    row(position: position, index: index)
+                }
+            }
+            .coordinateSpace(name: Self.space)
             if locked == nil {
                 ViewThatFits(in: .horizontal) {
                     HStack(spacing: RatioSpace.xs) { moveButtons }
@@ -311,6 +330,9 @@ private struct SequenceInteraction: View {
                 RatioWhyCard("The right order: " + correctOrder.enumerated().map { "\($0.offset + 1). \(items[$0.element])" }.joined(separator: "  "))
             }
         }
+        // Lets the scroll view hold still while a row is being dragged.
+        .preference(key: ReorderingKey.self, value: dragging != nil)
+        .ratioFeedback(.selection, trigger: dragging) { old, new in old == nil && new != nil }
     }
 
     @ViewBuilder private var moveButtons: some View {
@@ -322,20 +344,70 @@ private struct SequenceInteraction: View {
         let state: RatioOptionState = if let locked {
             locked.order?[position] == correctOrder[position] ? .correct : .incorrect
         } else {
-            selected == index ? .selected : .default
+            selected == index || dragging == index ? .selected : .default
         }
-        return RatioOptionRow(letter: "\(position + 1)", text: items[index], state: state,
-                              action: locked == nil ? { selected = index } : nil)
-            .draggable(String(index)) { Text(items[index]).ratioFont(.body).padding(RatioSpace.s) }
-            .dropDestination(for: String.self) { dropped, _ in
-                guard locked == nil, let from = dropped.first.flatMap(Int.init), let source = order.firstIndex(of: from), source != position else { return false }
-                withAnimation(RatioMotion.tap) {
-                    order.move(fromOffsets: IndexSet(integer: source), toOffset: position > source ? position + 1 : position)
-                }
-                return true
+        let isDragged = dragging == index
+        return HStack(spacing: RatioSpace.xxs) {
+            RatioOptionRow(letter: "\(position + 1)", text: items[index], state: state,
+                           action: locked == nil ? { selected = index } : nil)
+            if locked == nil {
+                Image(systemName: "line.3.horizontal")
+                    .foregroundStyle(Color.ratioInk2)
+                    .frame(width: 32, height: 44)
+                    .contentShape(Rectangle())
+                    // The handle drags straight away; the rest of the row after a hold.
+                    .highPriorityGesture(dragGesture(for: index, hold: 0))
+                    .accessibilityHidden(true)
             }
+        }
+            .onGeometryChange(for: CGRect.self) { $0.frame(in: .named(Self.space)) } action: { frames[index] = $0 }
+            .offset(y: isDragged ? translation - absorbed : 0)
+            .scaleEffect(isDragged ? 1.02 : 1)
+            .shadow(color: .black.opacity(isDragged ? 0.12 : 0), radius: 12, y: 6)
+            .zIndex(isDragged ? 1 : 0)
+            .highPriorityGesture(locked == nil ? dragGesture(for: index, hold: 0.25) : nil)
             .accessibilityAction(named: "Move up") { selected = index; move(by: -1) }
             .accessibilityAction(named: "Move down") { selected = index; move(by: 1) }
+    }
+
+    /// Lifts the row (after `hold` seconds), follows the finger, and moves it past each
+    /// neighbour whose middle it crosses.
+    private func dragGesture(for index: Int, hold: Double) -> some Gesture {
+        LongPressGesture(minimumDuration: hold)
+            .sequenced(before: DragGesture(minimumDistance: 0, coordinateSpace: .named(Self.space)))
+            .onChanged { value in
+                guard case .second(true, let drag) = value else { return }
+                if dragging == nil {
+                    dragging = index
+                    selected = index
+                    absorbed = 0
+                }
+                translation = drag?.translation.height ?? 0
+                reorder(index)
+            }
+            .onEnded { _ in
+                withAnimation(RatioMotion.tap) {
+                    dragging = nil
+                    translation = 0
+                    absorbed = 0
+                }
+            }
+    }
+
+    private func reorder(_ index: Int) {
+        guard let frame = frames[index] else { return }
+        let middle = frame.midY + translation - absorbed
+        while let position = order.firstIndex(of: index) {
+            if position + 1 < order.count, let below = frames[order[position + 1]], middle > below.midY {
+                withAnimation(RatioMotion.tap) { order.swapAt(position, position + 1) }
+                absorbed += below.height + RatioSpace.xs
+            } else if position > 0, let above = frames[order[position - 1]], middle < above.midY {
+                withAnimation(RatioMotion.tap) { order.swapAt(position, position - 1) }
+                absorbed -= above.height + RatioSpace.xs
+            } else {
+                break
+            }
+        }
     }
 
     private func canMove(by offset: Int) -> Bool {
@@ -346,6 +418,29 @@ private struct SequenceInteraction: View {
     private func move(by offset: Int) {
         guard let selected, let position = order.firstIndex(of: selected), order.indices.contains(position + offset) else { return }
         withAnimation(RatioMotion.tap) { order.swapAt(position, position + offset) }
+    }
+}
+
+/// Whether a row is being dragged into order somewhere inside a scroll view.
+struct ReorderingKey: PreferenceKey {
+    static let defaultValue = false
+    static func reduce(value: inout Bool, nextValue: () -> Bool) { value = value || nextValue() }
+}
+
+extension View {
+    /// Holds a scroll view still while a sequence row inside it is being dragged.
+    func holdsStillWhileReordering() -> some View {
+        modifier(ReorderScrollLock())
+    }
+}
+
+private struct ReorderScrollLock: ViewModifier {
+    @State private var reordering = false
+
+    func body(content: Content) -> some View {
+        content
+            .scrollDisabled(reordering)
+            .onPreferenceChange(ReorderingKey.self) { reordering = $0 }
     }
 }
 

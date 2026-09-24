@@ -5,7 +5,8 @@ import SwiftUI
 /// each one right and wrong, with every IRAC scaffold level. Debug builds only.
 struct InteractionGalleryView: View {
     @Environment(ContentStore.self) private var content
-    @State private var index = 0
+    /// `-screen gallery-sequence` (debug hooks) opens on that type.
+    @State private var index = DebugHooks.galleryIndex
     @State private var iracLevel = 1
     @State private var locked: ItemResponse?
 
@@ -53,6 +54,7 @@ struct InteractionGalleryView: View {
             }
             .padding(24)
         }
+        .holdsStillWhileReordering()
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
         .navigationTitle("Interaction gallery")

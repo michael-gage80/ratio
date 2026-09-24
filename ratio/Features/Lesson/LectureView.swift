@@ -54,6 +54,7 @@ struct LectureView: View {
                 .padding(.top, RatioSpace.s)
                 .padding(.bottom, RatioSpace.xl)
             }
+            .holdsStillWhileReordering()
             .scrollDismissesKeyboard(.interactively)
         }
         .ratioPage()
