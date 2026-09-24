@@ -1,8 +1,9 @@
 import SwiftUI
 
-/// screens/25-pathway.png — each chosen module as a map of its lessons, grouped by
-/// topic, with the student's state on every lesson (PRD: "Pathway"). Tap a lesson to
-/// open it; press and hold to peek at its topic scores.
+/// screens/25-pathway.png — the Lessons tab: every module as a map of its lessons,
+/// grouped by topic, with the student's state on every lesson. The student's own modules
+/// come first; the rest follow, dimmed, to add. Tap a lesson to open it; press and hold
+/// to peek at its topic scores. The Library sits at the top.
 struct PathwayView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
@@ -10,19 +11,23 @@ struct PathwayView: View {
     @State private var selected: Module?
     @State private var peeking: String?
 
-    private var modules: [Module] { student.profile.modules ?? Module.allCases }
+    private var mine: [Module] { student.profile.modules ?? [] }
+    /// The student's modules, then every other module.
+    private var modules: [Module] { mine + Module.allCases.filter { !mine.contains($0) } }
     private var module: Module { selected ?? modules.first ?? .crime }
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Pathway.").ratioFont(.display)
-                    Text([student.profile.year.map { "Year \($0)" }, "Ordered by your modules"].compactMap { $0 }.joined(separator: " · "))
+                    Text("Lessons\(Text(".").foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
+                    Text([student.profile.year.map { "Year \($0)" }, "Your modules first"].compactMap { $0 }.joined(separator: " · "))
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
                 }
                 .padding(.horizontal, 24)
+
+                libraryLink.padding(.horizontal, 24)
 
                 moduleCards
 
@@ -70,7 +75,8 @@ struct PathwayView: View {
                         }
                     } label: {
                         ModuleCard(module: module, mastery: student.mastery(of: content.lessons(in: module)), isSelected: module == self.module,
-                                   plan: student.isPlus ? nil : (student.canStudy(module) ? "Free" : "Ratio Plus"))
+                                   plan: student.isPlus || !mine.contains(module) ? nil : (student.canStudy(module) ? "Free" : "Ratio Plus"),
+                                   isMine: mine.contains(module))
                     }
                     .buttonStyle(.plain)
                 }
@@ -95,7 +101,42 @@ struct PathwayView: View {
                     .foregroundStyle(Color.ratioInk2)
             }
             Rectangle().fill(Color.ratioInk).frame(height: 1)
+            if !mine.contains(module) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Not one of your modules.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                    Spacer()
+                    Button("Add to my modules") { add(module) }
+                        .ratioFont(.h3)
+                        .foregroundStyle(Color.ratioOxblood)
+                        .frame(minHeight: 44)
+                }
+            }
         }
+    }
+
+    private func add(_ module: Module) {
+        Task { try? await UserRepository().update(uid: student.uid, ["modules": (mine + [module]).map(\.rawValue)]) }
+    }
+
+    private var libraryLink: some View {
+        Button { navigator.pathwayPath.append(.library) } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "books.vertical")
+                    .font(.title3)
+                    .frame(width: 44, height: 44)
+                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Library").ratioFont(.h3)
+                    Text("Cases, legislation and doctrine maps").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                }
+                Spacer()
+                Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2)
+            }
+            .padding(14)
+            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule) }
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: Lessons
@@ -193,10 +234,12 @@ private struct ModuleCard: View {
     let isSelected: Bool
     /// "Free" or "Ratio Plus" on the free plan (screen 25).
     var plan: String?
+    /// Modules the student hasn't chosen are dimmed.
+    var isMine = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            RatioSpotArt.for(module).view
+            ModuleIllustration(module: module)
                 .frame(height: 96)
                 .frame(maxWidth: .infinity)
                 .padding(.top, 8)
@@ -220,8 +263,9 @@ private struct ModuleCard: View {
                 .strokeBorder(isSelected ? Color.ratioInk : Color.ratioRule, lineWidth: isSelected ? 2 : 1)
         }
         .foregroundStyle(Color.ratioInk)
+        .opacity(isMine ? 1 : 0.55)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(module.title), \(mastery.map { "\($0)% secure" } ?? "in preparation")")
+        .accessibilityLabel("\(module.title), \(isMine ? mastery.map { "\($0)% secure" } ?? "in preparation" : "not one of your modules")")
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
     }
 }

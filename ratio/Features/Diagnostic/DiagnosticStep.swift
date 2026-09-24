@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Onboarding step 6 — screens/07-diagnostic.png. Ten adaptive questions (fewer if
+/// Onboarding step 6 — screens/07-diagnostic.png. Six adaptive questions (fewer if
 /// the chosen modules hold fewer), each with feedback, then Analysing and the first
 /// profile. Can be skipped for a default profile with wide bands.
 struct DiagnosticStep: View {
@@ -57,7 +57,7 @@ struct DiagnosticStep: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     HStack {
-                        Text("\(diagnostic.total) questions · about 4 minutes · no penalties")
+                        Text("\(diagnostic.total) questions · about 2 minutes · no penalties")
                             .ratioFont(.monoLabel)
                             .foregroundStyle(Color.ratioInk2)
                         Spacer()

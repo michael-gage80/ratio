@@ -8,7 +8,7 @@ final class DuelMatchModel: DuelRoundModel {
         case loading, failed, versus, coaching, playing, revealing, submitting, submitFailed, finished
     }
 
-    let module: Module
+    let scope: DuelScope
     let level: Int
     let seconds: Int
     let isTutorial: Bool
@@ -31,8 +31,8 @@ final class DuelMatchModel: DuelRoundModel {
     @ObservationIgnored private var finalPlayed = false
     @ObservationIgnored private var clock: Task<Void, Never>?
 
-    init(module: Module, level: Int, seconds: Int, isTutorial: Bool) {
-        self.module = module
+    init(scope: DuelScope, level: Int, seconds: Int, isTutorial: Bool) {
+        self.scope = scope
         self.level = level
         self.seconds = seconds
         self.isTutorial = isTutorial
@@ -60,7 +60,7 @@ final class DuelMatchModel: DuelRoundModel {
     func load() async {
         phase = .loading
         do {
-            match = try await DuelService.startSparring(module: module, level: level, seconds: seconds, tutorial: isTutorial)
+            match = try await DuelService.startSparring(scope: scope, level: level, seconds: seconds, tutorial: isTutorial)
             if isTutorial {
                 prepareRound()
                 phase = .coaching

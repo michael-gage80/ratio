@@ -260,7 +260,8 @@ private struct SliderInteraction: View {
 
 // MARK: - Sequence
 
-/// Tap a row, then move it — the non-drag route the PRD requires for VoiceOver.
+/// Drag rows into order, or tap a row and move it up or down — the non-drag route the
+/// PRD requires, also offered to VoiceOver as each row's move actions.
 private struct SequenceInteraction: View {
     let itemId: String
     let items: [String]
@@ -309,6 +310,16 @@ private struct SequenceInteraction: View {
         }
         return RatioOptionRow(letter: "\(position + 1)", text: items[index], state: state,
                               action: locked == nil ? { selected = index } : nil)
+            .draggable(String(index)) { Text(items[index]).ratioFont(.body).padding(12) }
+            .dropDestination(for: String.self) { dropped, _ in
+                guard locked == nil, let from = dropped.first.flatMap(Int.init), let source = order.firstIndex(of: from), source != position else { return false }
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    order.move(fromOffsets: IndexSet(integer: source), toOffset: position > source ? position + 1 : position)
+                }
+                return true
+            }
+            .accessibilityAction(named: "Move up") { selected = index; move(by: -1) }
+            .accessibilityAction(named: "Move down") { selected = index; move(by: 1) }
     }
 
     private func canMove(by offset: Int) -> Bool {

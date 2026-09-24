@@ -325,6 +325,18 @@ describe('settings, plans and devices', () => {
     await assertFails(updateDoc(amara(), { consents: { marketing: true } }));
   });
 
+  test('the streak reminder and home layout can be saved, within limits', async () => {
+    await assertSucceeds(updateDoc(amara(), { settings: { streakReminder: false, streakTime: '19:30', homeOrder: ['duel', 'streak'], homeHidden: ['news'] } }));
+    await assertFails(updateDoc(amara(), { settings: { streakTime: '7pm' } }));
+    await assertFails(updateDoc(amara(), { settings: { streakReminder: 'yes' } }));
+    await assertFails(updateDoc(amara(), { settings: { homeHidden: Array(11).fill('news') } }));
+  });
+
+  test('the notifications page can mark itself read, only at the server time', async () => {
+    await assertSucceeds(updateDoc(amara(), { notificationsReadAt: serverTimestamp() }));
+    await assertFails(updateDoc(amara(), { notificationsReadAt: new Date(Date.now() + 86_400_000) }));
+  });
+
   test("a student can't give themselves Plus, a licence or a different free module", async () => {
     const future = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
     await assertFails(updateDoc(amara(), { subscription: { expiresAt: future } }));

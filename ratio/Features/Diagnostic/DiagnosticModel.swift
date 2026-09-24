@@ -10,6 +10,9 @@ final class DiagnosticModel {
     private(set) var current: Item?
     /// 1-based position of the current question.
     private(set) var number = 0
+    /// Six questions (the bank serves up to ten; Mike cut it to six to get students in faster).
+    static let questions = 6
+
     let total: Int
     /// Set when the current item is locked in; cleared on `advance()`.
     private(set) var lastAnswerCorrect: Bool?
@@ -25,7 +28,7 @@ final class DiagnosticModel {
     init(modules: [Module], seed: String, bank: DiagnosticBank) {
         let pools = Dictionary(uniqueKeysWithValues: modules.map { ($0, bank.items(for: $0)) })
         remaining = pools
-        total = min(bank.itemsPerAttempt, pools.values.reduce(0) { $0 + $1.count })
+        total = min(Self.questions, pools.values.reduce(0) { $0 + $1.count })
         slots = Self.slotPlan(modules: modules, total: total, seed: seed)
         advance()
     }

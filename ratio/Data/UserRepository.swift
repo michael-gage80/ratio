@@ -29,6 +29,8 @@ struct UserProfile: Decodable, Equatable {
     var freeModuleChanges: Int?
     var settings: StudySettings?
     var consents: Consents?
+    /// When the notifications page was last opened.
+    var notificationsReadAt: Date?
 
     nonisolated struct Subscription: Decodable, Equatable {
         var plan: String
@@ -57,6 +59,12 @@ nonisolated struct StudySettings: Codable, Equatable {
     var briefReminder: Bool?
     /// "08:30".
     var briefTime: String?
+    var streakReminder: Bool?
+    /// "19:00".
+    var streakTime: String?
+    /// Today's cards in the student's order, and the ones they've hidden.
+    var homeOrder: [String]?
+    var homeHidden: [String]?
     var quietStart: String?
     var quietEnd: String?
 }

@@ -1,6 +1,42 @@
 import FirebaseFunctions
 import Foundation
 
+/// What a duel is played on: one module, or "mixed" — questions from the student's own
+/// modules (between two students, the ones they share), with its own rating and pool.
+nonisolated enum DuelScope: Hashable, Identifiable {
+    case mixed
+    case module(Module)
+
+    init?(id: String) {
+        if id == "mixed" { self = .mixed } else if let module = Module(rawValue: id) { self = .module(module) } else { return nil }
+    }
+
+    var id: String {
+        switch self {
+        case .mixed: "mixed"
+        case .module(let module): module.rawValue
+        }
+    }
+
+    @MainActor var title: String {
+        switch self {
+        case .mixed: "Mixed"
+        case .module(let module): module.title
+        }
+    }
+
+    /// "Mixed", "Crime", or the raw ID if it's unknown.
+    @MainActor static func title(of id: String) -> String { DuelScope(id: id)?.title ?? id }
+}
+
+/// Seconds a question: 15 for everyone, or 30 with extra time (Settings → Accessibility),
+/// which is matched in its own pool.
+enum DuelTime {
+    static let standard = 15
+    static let extended = 30
+    static func seconds(extended: Int) -> Int { extended == Self.extended ? Self.extended : Self.standard }
+}
+
 /// A duel question as served by `startSparring` (functions/src/duel.ts).
 nonisolated struct DuelQuestion: Codable, Equatable, Identifiable {
     var id: String
@@ -145,10 +181,10 @@ nonisolated struct DuelRecord: Codable, Equatable {
     /// "Sparring partner, level 2" or "Zara K.".
     var opponentTitle: String { opponent.level.map { "\(opponent.name), level \($0)" } ?? opponent.name }
 
-    init(match: SparringMatch, result: SparringResult, module: Module) {
+    init(match: SparringMatch, result: SparringResult, scope: DuelScope) {
         questions = match.questions
         limitMs = match.limitMs
-        moduleId = module.rawValue
+        moduleId = scope.id
         opponent = Opponent(uid: nil, name: match.partner.name, initial: "S", avatarVersion: nil, level: match.partner.level)
         rounds = result.rounds
         score = result.score
@@ -207,9 +243,9 @@ enum DuelService {
 
     private static var functions: Functions { Functions.functions(region: "europe-west2") }
 
-    static func startSparring(module: Module, level: Int, seconds: Int, tutorial: Bool = false) async throws -> SparringMatch {
+    static func startSparring(scope: DuelScope, level: Int, seconds: Int, tutorial: Bool = false) async throws -> SparringMatch {
         try await functions.httpsCallable("startSparring", requestAs: StartRequest.self, responseAs: SparringMatch.self)
-            .call(StartRequest(moduleId: module.rawValue, level: level, seconds: seconds, tutorial: tutorial))
+            .call(StartRequest(moduleId: scope.id, level: level, seconds: seconds, tutorial: tutorial))
     }
 
     static func submitSparring(matchId: String, answers: [DuelAnswer]) async throws -> SparringResult {
@@ -330,8 +366,8 @@ extension DuelService {
     private nonisolated struct Code: Decodable { let code: String }
     private nonisolated struct MatchID: Decodable { let matchId: String? }
 
-    static func createLobby(module: Module, seconds: Int) async throws -> String {
-        try await call("createLobby", ["moduleId": module.rawValue, "seconds": seconds], as: Code.self).code
+    static func createLobby(scope: DuelScope, seconds: Int) async throws -> String {
+        try await call("createLobby", ["moduleId": scope.id, "seconds": seconds], as: Code.self).code
     }
 
     static func joinLobby(code: String) async throws -> String {
@@ -372,8 +408,8 @@ extension DuelService {
         let window: Int?
     }
 
-    static func findMatch(module: Module, seconds: Int) async throws -> Search {
-        try await call("findMatch", ["moduleId": module.rawValue, "seconds": seconds])
+    static func findMatch(scope: DuelScope, seconds: Int) async throws -> Search {
+        try await call("findMatch", ["moduleId": scope.id, "seconds": seconds])
     }
 
     static func cancelMatchmaking() async {
@@ -385,8 +421,13 @@ extension DuelService {
     private nonisolated struct ChallengeID: Decodable { let challengeId: String }
 
     @discardableResult
-    static func createChallenge(opponent: String, module: Module, seconds: Int) async throws -> String {
-        try await call("createChallenge", ["opponent": opponent, "moduleId": module.rawValue, "seconds": seconds], as: ChallengeID.self).challengeId
+    static func createChallenge(opponent: String, scope: DuelScope, seconds: Int) async throws -> String {
+        try await call("createChallenge", ["opponent": opponent, "moduleId": scope.id, "seconds": seconds], as: ChallengeID.self).challengeId
+    }
+
+    /// Turns down a challenge before playing it; no rating changes.
+    static func declineChallenge(id: String) async throws {
+        _ = try await call("declineChallenge", ["challengeId": id], as: Empty.self)
     }
 
     nonisolated struct ChallengeStep: Decodable {

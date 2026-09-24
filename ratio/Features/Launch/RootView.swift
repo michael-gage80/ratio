@@ -4,15 +4,16 @@ import SwiftUI
 /// app (PRD: "Onboarding, splash and diagnostic" flowchart).
 struct RootView: View {
     @Environment(SessionStore.self) private var session
-    @State private var splashFinished = false
+    @State private var minimumShown = false
+    @State private var splashGone = false
 
     var body: some View {
-        Group {
-            if !splashFinished || session.state == .launching {
-                SplashView()
-            } else {
+        ZStack {
+            Group {
                 switch session.state {
-                case .launching, .signedOut:
+                case .launching:
+                    Color.ratioParchment.ignoresSafeArea()
+                case .signedOut:
                     WelcomeView()
                 case .awaitingEmailVerification(let email):
                     VerifyEmailView(email: email)
@@ -20,14 +21,17 @@ struct RootView: View {
                     SignedInRootView(uid: uid)
                 }
             }
+            .animation(.easeInOut(duration: 0.35), value: session.state)
+            // The splash sits on top and turns away once the session is known.
+            if !splashGone {
+                SplashCover(ready: minimumShown && session.state != .launching) { splashGone = true }
+            }
         }
-        .animation(.easeInOut(duration: 0.35), value: splashFinished)
-        .animation(.easeInOut(duration: 0.35), value: session.state)
         .task {
-            // Long enough for the ring to read as deliberate; well inside the PRD's
+            // Long enough for the splash to read as deliberate; well inside the PRD's
             // "hands off in under 2 s".
             try? await Task.sleep(for: .seconds(1.2))
-            splashFinished = true
+            minimumShown = true
         }
         .alert(
             session.errorMessage ?? "",

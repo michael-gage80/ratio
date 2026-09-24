@@ -19,6 +19,7 @@ struct SettingsView: View {
     @AppStorage(RatioPreferences.haptics) private var haptics = true
     @AppStorage("duel.extendedSeconds") private var extendedSeconds = 0
     @AppStorage("tour.today.seen") private var tourSeen = false
+    @AppStorage("duel.tutorialSeen") private var duelTutorialSeen = false
 
     @State private var sheet: Sheet?
     @State private var message: String?
@@ -29,7 +30,7 @@ struct SettingsView: View {
     @State private var iconName = UIApplication.shared.alternateIconName
 
     private enum Sheet: String, Identifiable {
-        case name, modules, freeModule, report, licence, notice
+        case name, modules, year, freeModule, report, licence, notice
         var id: String { rawValue }
     }
 
@@ -69,6 +70,7 @@ struct SettingsView: View {
             switch sheet {
             case .name: NameSheet(profile: profile, uid: student.uid)
             case .modules: ModulesSheet(profile: profile, uid: student.uid)
+            case .year: YearSheet(uid: student.uid, year: profile.year).presentationDetents([.height(260)])
             case .freeModule: FreeModuleSheet()
             case .report: ReportErrorSheet(itemId: "general", lessonId: nil)
             case .licence: LicenceCodeSheet().presentationDetents([.medium])
@@ -112,7 +114,6 @@ struct SettingsView: View {
             }
             SettingsRow("Linked sign-in", value: linkedSignIn)
             SettingsRow("Display name", value: displayName) { sheet = .name }
-            SettingsRow("Avatar", value: "Change on Me") { navigator.mePath.removeAll() }
         }
     }
 
@@ -178,7 +179,8 @@ struct SettingsView: View {
 
     private var study: some View {
         SettingsSection(number: "III", title: "Study") {
-            SettingsRow("Year and modules", value: "Year \(profile.year ?? 1) · \(profile.modules?.count ?? 0) modules") { sheet = .modules }
+            SettingsRow("Modules", value: "\(profile.modules?.count ?? 0) of \(Module.allCases.count)") { sheet = .modules }
+            SettingsRow("Year of study", value: profile.year.map { "Year \($0)" } ?? "Add") { sheet = .year }
             if !student.isPlus {
                 SettingsRow("Free module", detail: profile.freeModuleChanges ?? 0 >= 1 ? "Changed once already" : "You can change it once",
                             value: student.freeModule?.title ?? "—") { sheet = .freeModule }
@@ -209,6 +211,13 @@ struct SettingsView: View {
             if settings.briefReminder ?? true {
                 SettingsTime("Reminder time", time: settings.briefTime ?? "08:30") { save(["settings.briefTime": $0]) }
             }
+            SettingsToggle("Streak reminder", detail: "One evening nudge when your week is still within reach", isOn: Binding(
+                get: { settings.streakReminder ?? true },
+                set: { save(["settings.streakReminder": $0]) }
+            ))
+            if settings.streakReminder ?? true {
+                SettingsTime("Streak reminder time", time: settings.streakTime ?? "19:00") { save(["settings.streakTime": $0]) }
+            }
             SettingsTime("Quiet from", time: settings.quietStart ?? "22:00") { save(["settings.quietStart": $0]) }
             SettingsTime("Quiet until", time: settings.quietEnd ?? "08:00") { save(["settings.quietEnd": $0]) }
         }
@@ -236,19 +245,8 @@ struct SettingsView: View {
     private var accessibility: some View {
         SettingsSection(number: "IV", title: "Accessibility") {
             SettingsToggle("Dyslexia-friendly mode", detail: "Atkinson Hyperlegible, wider spacing", isOn: $dyslexia)
-            HStack {
-                Text("Extended duel time").ratioFont(.body)
-                Spacer()
-                Picker("Extended duel time", selection: $extendedSeconds) {
-                    Text("Off").tag(0)
-                    Text("1.5×").tag(15)
-                    Text("2×").tag(20)
-                }
-                .pickerStyle(.segmented)
-                .frame(width: 180)
-            }
-            .padding(.vertical, 12)
-            Divider().overlay(Color.ratioRule)
+            SettingsToggle("Extra duel time (30 s)", detail: "Matched with other extra-time players",
+                           isOn: Binding(get: { extendedSeconds == DuelTime.extended }, set: { extendedSeconds = $0 ? DuelTime.extended : 0 }))
             SettingsToggle("Reduce motion", detail: "Changes without movement", isOn: $reduceMotion)
             SettingsToggle("Haptics", isOn: $haptics)
             Text("Accessibility features are always free.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2).padding(.top, 8)
@@ -260,13 +258,11 @@ struct SettingsView: View {
     private var content: some View {
         SettingsSection(number: "V", title: "Content") {
             SettingsRow("Report an error", value: "→") { sheet = .report }
-            SettingsRow("Replay the Today tour", value: "→") {
+            SettingsRow("Replay tutorials", detail: "The Today tour, then the duel tutorial", value: "→") {
                 tourSeen = false
+                duelTutorialSeen = false
+                navigator.replayingTutorials = true
                 navigator.backToToday()
-            }
-            SettingsRow("Replay the duel tutorial", value: "→") {
-                navigator.tab = .duel
-                navigator.showsDuelTutorial = true
             }
         }
     }
@@ -611,19 +607,12 @@ private struct ModulesSheet: View {
     let uid: String
 
     @Environment(\.dismiss) private var dismiss
-    @State private var year = 1
     @State private var modules: Set<Module> = []
     @State private var failed = false
 
     var body: some View {
         NavigationStack {
             List {
-                Section("Year") {
-                    Picker("Year", selection: $year) {
-                        ForEach(1...3, id: \.self) { Text("Year \($0)").tag($0) }
-                    }
-                    .pickerStyle(.segmented)
-                }
                 Section {
                     ForEach(Module.allCases) { module in
                         Button {
@@ -640,10 +629,10 @@ private struct ModulesSheet: View {
                 } header: {
                     Text("Modules this year")
                 } footer: {
-                    Text(failed ? "That didn't save. Try again." : "They set the order of your Pathway.")
+                    Text(failed ? "That didn't save. Try again." : "They set the order of your lessons.")
                 }
             }
-            .navigationTitle("Year and modules")
+            .navigationTitle("Modules")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
@@ -651,17 +640,52 @@ private struct ModulesSheet: View {
                     Button("Save") {
                         Task {
                             let ordered = Module.allCases.filter(modules.contains).map(\.rawValue)
-                            do { try await UserRepository().update(uid: uid, ["year": year, "modules": ordered]); dismiss() } catch { failed = true }
+                            do { try await UserRepository().update(uid: uid, ["modules": ordered]); dismiss() } catch { failed = true }
                         }
                     }
                     .disabled(modules.isEmpty)
                 }
             }
         }
-        .onAppear {
-            year = profile.year ?? 1
-            modules = Set(profile.modules ?? [])
+        .onAppear { modules = Set(profile.modules ?? []) }
+    }
+}
+
+/// Year of study — optional, set from Me or Settings.
+struct YearSheet: View {
+    let uid: String
+    let year: Int?
+
+    @Environment(\.dismiss) private var dismiss
+    @State private var failed = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Year of study").ratioFont(.h2)
+            HStack(spacing: 10) {
+                ForEach(1...3, id: \.self) { option in
+                    Button {
+                        Task {
+                            do { try await UserRepository().update(uid: uid, ["year": option]); dismiss() } catch { failed = true }
+                        }
+                    } label: {
+                        Text("Year \(option)")
+                            .ratioFont(.h3)
+                            .frame(maxWidth: .infinity, minHeight: 56)
+                            .foregroundStyle(year == option ? Color.ratioOnInk : Color.ratioInk)
+                            .background(year == option ? Color.ratioInk : Color.ratioPaper, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .overlay { RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(Color.ratioRule) }
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityAddTraits(year == option ? .isSelected : [])
+                }
+            }
+            if failed { Text("That didn't save. Try again.").ratioFont(.small).foregroundStyle(Color.ratioOxblood) }
+            Spacer()
         }
+        .padding(24)
+        .background(Color.ratioParchment.ignoresSafeArea())
+        .foregroundStyle(Color.ratioInk)
     }
 }
 

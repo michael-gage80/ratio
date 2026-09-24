@@ -2,7 +2,7 @@ import SwiftUI
 
 /// A full-screen sparring match or tutorial: versus → rounds → judgment → debrief.
 struct DuelMatchView: View {
-    let module: Module
+    let scope: DuelScope
     let level: Int
     let seconds: Int
     let isTutorial: Bool
@@ -15,12 +15,12 @@ struct DuelMatchView: View {
     @State private var showsDebrief = false
     @State private var coachStep = 0
 
-    init(module: Module, level: Int, seconds: Int, isTutorial: Bool = false) {
-        self.module = module
+    init(scope: DuelScope, level: Int, seconds: Int, isTutorial: Bool = false) {
+        self.scope = scope
         self.level = level
         self.seconds = seconds
         self.isTutorial = isTutorial
-        _model = State(initialValue: DuelMatchModel(module: module, level: level, seconds: seconds, isTutorial: isTutorial))
+        _model = State(initialValue: DuelMatchModel(scope: scope, level: level, seconds: seconds, isTutorial: isTutorial))
     }
 
     var body: some View {
@@ -62,7 +62,7 @@ struct DuelMatchView: View {
                 if isTutorial {
                     tutorialDone
                 } else if let result = model.result, let match = model.match {
-                    let record = DuelRecord(match: match, result: result, module: module)
+                    let record = DuelRecord(match: match, result: result, scope: scope)
                     if showsDebrief {
                         DuelDebriefView(record: record) {
                             dismiss()
@@ -95,7 +95,7 @@ struct DuelMatchView: View {
     private func rematch() {
         showsDebrief = false
         model.stop()
-        model = DuelMatchModel(module: module, level: level, seconds: seconds, isTutorial: false)
+        model = DuelMatchModel(scope: scope, level: level, seconds: seconds, isTutorial: false)
         Task { await model.load() }
     }
 
@@ -126,7 +126,7 @@ struct DuelMatchView: View {
 
     private static let coachMarks: [(label: String, title: String, detail: String)] = [
         ("The clock", "Ten seconds a question. The ring turns red in the last three.",
-         "You'll feel a light pulse too. Extended time (15 s or 20 s) is in Duel settings."),
+         "You'll feel a light pulse too. Extra time (30 s) is in Settings → Accessibility."),
         ("Scoring", "The first right answer takes the point.",
          "First to three wins. At 2–2 a final round, of any type, decides it."),
         ("The penalty", "A wrong answer gives the point away.",
@@ -210,7 +210,7 @@ private struct VersusView: View {
                 }
                 .ignoresSafeArea()
                 VStack(spacing: 14) {
-                    Text("\(model.module.title) · First to 3 · Sparring").ratioFont(.monoLabel).foregroundStyle(Color.ratioParchment.opacity(0.7))
+                    Text("\(model.scope.title) · First to 3 · Sparring").ratioFont(.monoLabel).foregroundStyle(Color.ratioParchment.opacity(0.7))
                     SparringMark(size: 96).colorInvert()
                     Text("Sparring partner").ratioFont(.h1).foregroundStyle(Color.ratioParchment)
                     Text("Level \(model.level) · \(SparringLevel.title(model.level))").ratioFont(.body).foregroundStyle(Color.ratioParchment.opacity(0.7))

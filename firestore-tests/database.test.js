@@ -53,3 +53,18 @@ describe('presence', () => {
     await assertFails(get(ref(db('omar'), 'presence/m1')));
   });
 });
+
+describe('who is online', () => {
+  test('a student marks only themselves online, and nobody reads the list', async () => {
+    await assertSucceeds(set(ref(db('amara'), 'online/amara'), serverTimestamp()));
+    await assertFails(set(ref(db('amara'), 'online/zara'), serverTimestamp()));
+    await assertFails(set(ref(db('amara'), 'online/amara'), 'here'));
+    await assertFails(get(ref(db('amara'), 'online')));
+  });
+
+  test('the count is readable when signed in and written by no client', async () => {
+    await assertSucceeds(get(ref(db('amara'), 'stats/online')));
+    await assertFails(get(ref(db(), 'stats/online')));
+    await assertFails(set(ref(db('amara'), 'stats/online'), { count: 999, at: 0 }));
+  });
+});

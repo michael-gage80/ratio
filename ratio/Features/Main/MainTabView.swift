@@ -15,6 +15,8 @@ final class AppNavigator {
     var mePath: [Route] = []
     /// Set from Settings to replay the duel tutorial.
     var showsDuelTutorial = false
+    /// "Replay tutorials" in Settings: the Today tour, then the duel tutorial.
+    var replayingTutorials = false
     /// A friend-lobby code from a shared link (ratio://lobby/K7MP4X).
     var lobbyCode: String?
     /// Set to open the Ratio Plus sheet, with why ("Contract is part of Ratio Plus.").
@@ -61,6 +63,9 @@ final class AppNavigator {
 enum Route: Hashable {
     case brief
     case news
+    case notifications
+    case library
+    case libraryEntry(String)
     case settings
     case module(Module)
     case overview(String)
@@ -73,6 +78,7 @@ struct MainTabView: View {
     @State private var student: StudentStore
     @State private var navigator = AppNavigator()
     @Environment(DeepLinks.self) private var links
+    @Environment(\.scenePhase) private var scenePhase
 
     init(uid: String, profile: UserProfile) {
         _student = State(initialValue: StudentStore(uid: uid, profile: profile))
@@ -91,7 +97,7 @@ struct MainTabView: View {
                     TodayView().withRoutes()
                 }
             }
-            Tab("Pathway", systemImage: "point.topleft.down.to.point.bottomright.curvepath", value: .pathway) {
+            Tab("Lessons", systemImage: "book", value: .pathway) {
                 NavigationStack(path: $navigator.pathwayPath) {
                     PathwayView().withRoutes()
                 }
@@ -137,7 +143,11 @@ struct MainTabView: View {
             _ = navigator.handle(url)
         }
         .onAppear { student.start() }
-        .onDisappear { student.stop() }
+        .onDisappear {
+            student.setPresent(false)
+            student.stop()
+        }
+        .onChange(of: scenePhase, initial: true) { _, phase in student.setPresent(phase == .active) }
     }
 }
 
@@ -154,6 +164,12 @@ private struct RouteDestination: View {
             BriefStepView()
         case .news:
             NewsCentreView()
+        case .notifications:
+            NotificationsView()
+        case .library:
+            LibraryView()
+        case .libraryEntry(let id):
+            LibraryEntryView(id: id)
         case .settings:
             SettingsView()
         case .module(let module):
