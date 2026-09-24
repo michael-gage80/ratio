@@ -112,6 +112,7 @@ struct DiagnosticStep: View {
                 }
                 .padding(RatioSpace.m)
             }
+            .holdsStillWhileReordering()
             .scrollDismissesKeyboard(.interactively)
         }
         .ratioFeedback(trigger: diagnostic.lastAnswerCorrect) { _, correct in

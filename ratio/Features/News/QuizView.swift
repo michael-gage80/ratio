@@ -50,6 +50,7 @@ struct QuizView: View {
                     }
                     .padding(RatioSpace.m)
                 }
+                .holdsStillWhileReordering()
                 footer
             }
         }

@@ -8,6 +8,18 @@ struct RootView: View {
     @State private var splashGone = false
 
     var body: some View {
+        #if DEBUG
+        if DebugHooks.screen?.hasPrefix("gallery") == true {
+            NavigationStack { InteractionGalleryView() }
+        } else {
+            app
+        }
+        #else
+        app
+        #endif
+    }
+
+    private var app: some View {
         ZStack {
             Group {
                 switch session.state {

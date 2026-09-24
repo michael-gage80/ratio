@@ -61,6 +61,7 @@ struct ExamRoomView: View {
                     .padding(.top, RatioSpace.s)
                     .padding(.bottom, RatioSpace.xl)
                 }
+                .holdsStillWhileReordering()
                 .scrollDismissesKeyboard(.interactively)
                 .transition(.push(from: .trailing))
             } else {
@@ -126,6 +127,7 @@ struct ExamRoomView: View {
             .padding(.top, RatioSpace.l)
             .padding(.bottom, RatioSpace.m)
         }
+        .holdsStillWhileReordering()
         .safeAreaInset(edge: .bottom) {
             RatioButton("Begin", isEnabled: !model.items.isEmpty) {
                 withAnimation(RatioMotion.reveal) { started = true }
