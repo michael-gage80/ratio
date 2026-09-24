@@ -16,7 +16,7 @@ const BUNDLE_ID = "com.mg.ratio";
  * App Store Connect → App Information → Apple ID. Needed to verify Production
  * (App Store) purchases; TestFlight and sandbox purchases verify without it.
  */
-const APP_APPLE_ID: number | undefined = undefined;
+const APP_APPLE_ID: number | undefined = 6815005163;
 
 export const PRODUCTS: Record<string, "monthly" | "annual"> = {
   "com.mg.ratio.plus.monthly": "monthly",
