@@ -3,19 +3,36 @@ import SwiftUI
 
 /// screens/29-module-drill-down.png — a module's topics with their three scores; tap
 /// one to see how each score and its band have moved (PRD: "Tap a module to see its
-/// topics, each with trend lines for all three scores and bands over time").
+/// topics, each with trend lines for all three scores and bands over time"). Filters
+/// narrow the list to growth edges or topics with reviews due. On iPad
+/// (screens/iPad/4-pathway-me-settings/03-module-drill-down.png) the module summary sits
+/// on the left, and the selected topic's trends beside the table.
 struct ModuleDrillDownView: View {
     let module: Module
 
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
     @State private var expanded: String?
+    @State private var filter: Filter = .all
 
     private struct Topic: Identifiable {
         let id: String
         let title: String
         let lesson: Lesson?
+    }
+
+    private enum Filter: CaseIterable {
+        case all, growth, review
+
+        var title: String {
+            switch self {
+            case .all: "All topics"
+            case .growth: "Growth edges"
+            case .review: "Review due"
+            }
+        }
     }
 
     /// The module's lesson topics in teaching order, then any other topic with scores
@@ -30,37 +47,237 @@ struct ModuleDrillDownView: View {
         return lessonTopics + others
     }
 
+    /// Topics whose weakest score is below 50 or in the module's bottom third.
+    private func growthEdges(_ topics: [Topic]) -> Set<String> {
+        let weakest: [(id: String, score: Int)] = topics.compactMap { topic in
+            guard let scores = student.topics[topic.id],
+                  let low = Skill.allCases.compactMap({ scores[$0]?.displayScore }).min() else { return nil }
+            return (topic.id, low)
+        }
+        let third = weakest.sorted { $0.score < $1.score }.prefix(weakest.count / 3).map(\.id)
+        return Set(weakest.filter { $0.score < 50 }.map(\.id) + third)
+    }
+
+    /// Topics with a review item due now.
+    private var reviewDue: Set<String> {
+        let now = Date.now
+        return Set(student.items.filter { $0.due <= now }.map(\.topicId))
+    }
+
     var body: some View {
         let topics = topics
+        let growth = growthEdges(topics)
+        let due = reviewDue
+        let shown = switch filter {
+        case .all: topics
+        case .growth: topics.filter { growth.contains($0.id) }
+        case .review: topics.filter { due.contains($0.id) }
+        }
+        let counts: [Filter: Int] = [.all: topics.count, .growth: growth.count, .review: topics.count { due.contains($0.id) }]
         ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                RatioPageHeader(eyebrow: "Me", title: module.title, subtitle: summary)
-                    .padding(.bottom, RatioSpace.m)
+            if width.isCompact {
+                VStack(alignment: .leading, spacing: 0) {
+                    RatioPageHeader(eyebrow: "Me", title: module.title, subtitle: summary)
+                        .padding(.bottom, RatioSpace.m)
 
-                if topics.isEmpty {
-                    Text("No topics assessed yet. \(module.title) lessons are in preparation.")
-                        .ratioFont(.small)
-                        .italic()
-                        .foregroundStyle(Color.ratioInk2)
-                } else {
-                    header
-                    ForEach(topics) { topic in
-                        topicRow(topic)
-                        Divider().overlay(Color.ratioRule)
+                    if topics.isEmpty {
+                        noTopics
+                    } else {
+                        filters(counts)
+                            .padding(.bottom, RatioSpace.s)
+                        header
+                        topicList(shown, inline: true)
+                        legend
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity)
+                            .padding(.top, RatioSpace.m)
                     }
-                    Text("K knowledge · U understanding · A application")
-                        .ratioFont(.monoLabel)
-                        .foregroundStyle(Color.ratioInk2)
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, RatioSpace.m)
                 }
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.vertical, RatioSpace.s)
+            } else {
+                wide(topics: topics, shown: shown, counts: counts)
             }
-            .padding(.horizontal, RatioSpace.m)
-            .padding(.vertical, RatioSpace.s)
         }
         .ratioPage()
         .toolbarTitleDisplayMode(.inline)
+    }
+
+    // MARK: iPad
+
+    private func wide(topics: [Topic], shown: [Topic], counts: [Filter: Int]) -> some View {
+        // The topic whose trends show: the chosen one, else the first with scores.
+        let selected = topics.first { $0.id == expanded } ?? topics.first { student.topics[$0.id] != nil } ?? topics.first
+        return ColumnsLayout(fraction: 0.38, spacing: RatioSpace.l) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                ModuleIllustration(module: module)
+                    .frame(height: 160)
+                    .padding(RatioSpace.m)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous))
+                    .overlay { RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous).strokeBorder(Color.ratioRule) }
+                RatioPageHeader(eyebrow: "Me", title: module.title, subtitle: summary)
+                if let mastery = student.mastery(of: content.lessons(in: module)) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                        HStack {
+                            Text("Mastery").ratioFont(.monoLabel)
+                            Spacer()
+                            Text("\(mastery)%").ratioFont(.monoData)
+                        }
+                        GeometryReader { proxy in
+                            ZStack(alignment: .leading) {
+                                Capsule().fill(Color.ratioRule)
+                                Capsule().fill(Color.ratioInk).frame(width: proxy.size.width * Double(mastery) / 100)
+                            }
+                        }
+                        .frame(height: 4)
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+                acrossTheModule(topics)
+                legend
+            }
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                if topics.isEmpty {
+                    noTopics
+                } else {
+                    filters(counts)
+                    VStack(alignment: .leading, spacing: 0) {
+                        header
+                        topicList(shown, inline: false, selected: selected?.id)
+                    }
+                    if let selected {
+                        trendPanel(selected)
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, RatioSpace.l)
+        .padding(.vertical, RatioSpace.m)
+    }
+
+    /// The module's scores averaged across its assessed topics.
+    @ViewBuilder
+    private func acrossTheModule(_ topics: [Topic]) -> some View {
+        let scored = topics.compactMap { student.topics[$0.id] }
+        if !scored.isEmpty {
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Across the module").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Spacer()
+                    RatioTag("Hypothesis")
+                }
+                ForEach(Skill.allCases) { skill in
+                    let estimates = scored.compactMap { $0[skill] }
+                    SkillRow(title: skill.title, estimate: estimates.isEmpty ? nil : Estimate(
+                        theta: estimates.map(\.theta).reduce(0, +) / Double(estimates.count),
+                        sigma: estimates.map(\.sigma).reduce(0, +) / Double(estimates.count)
+                    ))
+                }
+                Text("Bands narrow as you answer more. A wide band means we're less sure.")
+                    .ratioFont(.small)
+                    .italic()
+                    .foregroundStyle(Color.ratioInk2)
+            }
+            .ratioCard()
+        }
+    }
+
+    /// The selected topic's trends, the lessons in its group, and Practise.
+    private func trendPanel(_ topic: Topic) -> some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text(topic.title).ratioFont(.h1).italic().foregroundStyle(Color.ratioOxblood)
+            trends(topic)
+            if let lesson = topic.lesson {
+                let group = TopicGroup.groupId(of: lesson.topicId)
+                let set = content.lessons(in: module).filter { TopicGroup.groupId(of: $0.topicId) == group }
+                if set.count > 1 {
+                    VStack(alignment: .leading, spacing: 0) {
+                        HStack {
+                            Text("Drill set · \(TopicGroup.title(forGroup: group))")
+                            Spacer()
+                            Text("\(set.count) lessons")
+                        }
+                        .ratioFont(.monoLabel)
+                        .foregroundStyle(Color.ratioInk2)
+                        .padding(.bottom, RatioSpace.xs)
+                        Rectangle().fill(Color.ratioInk).frame(height: 1)
+                        ForEach(set) { item in
+                            NavigationLink(value: Route.overview(item.id)) {
+                                HStack(spacing: RatioSpace.s) {
+                                    Text(item.title).ratioFont(.body).multilineTextAlignment(.leading)
+                                    Spacer(minLength: RatioSpace.xs)
+                                    LessonStateLabel(state: student.state(of: item))
+                                }
+                                .padding(.vertical, RatioSpace.s)
+                            }
+                            .buttonStyle(.ratioPress)
+                            Divider().overlay(Color.ratioRule)
+                        }
+                    }
+                }
+            }
+        }
+        .ratioCard()
+    }
+
+    // MARK: Shared
+
+    private var noTopics: some View {
+        Text("No topics assessed yet. \(module.title) lessons are in preparation.")
+            .ratioFont(.small)
+            .italic()
+            .foregroundStyle(Color.ratioInk2)
+    }
+
+    private var legend: some View {
+        Text("K knowledge · U understanding · A application")
+            .ratioFont(.monoLabel)
+            .foregroundStyle(Color.ratioInk2)
+    }
+
+    /// All topics · Growth edges · Review due, each with its count.
+    private func filters(_ counts: [Filter: Int]) -> some View {
+        ScrollView(.horizontal) {
+            HStack(spacing: RatioSpace.xs) {
+                ForEach(Filter.allCases, id: \.self) { option in
+                    let selected = option == filter
+                    Button {
+                        withAnimation(RatioMotion.tap) { filter = option }
+                    } label: {
+                        HStack(spacing: RatioSpace.xs) {
+                            Text(option.title).ratioFont(.body)
+                            Text("\(counts[option] ?? 0)").ratioFont(.monoData).opacity(0.75)
+                        }
+                        .padding(.horizontal, RatioSpace.s)
+                        .frame(minHeight: 44)
+                        // Parchment on ink flips with the theme (ink turns light in dark mode).
+                        .foregroundStyle(selected ? Color.ratioParchment : Color.ratioInk)
+                        .background(selected ? Color.ratioInk : Color.ratioPaper, in: Capsule())
+                        .overlay(Capsule().strokeBorder(Color.ratioRule))
+                    }
+                    .buttonStyle(.ratioPress)
+                    .accessibilityAddTraits(selected ? .isSelected : [])
+                }
+            }
+        }
+        .scrollIndicators(.hidden)
+    }
+
+    private func topicList(_ shown: [Topic], inline: Bool, selected: String? = nil) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            if shown.isEmpty {
+                Text(filter == .review ? "Nothing due for review in \(module.title)." : "No growth edges in \(module.title) right now.")
+                    .ratioFont(.small)
+                    .italic()
+                    .foregroundStyle(Color.ratioInk2)
+                    .padding(.vertical, RatioSpace.s)
+            }
+            ForEach(shown) { topic in
+                topicRow(topic, inline: inline, isSelected: topic.id == selected)
+                Divider().overlay(Color.ratioRule)
+            }
+        }
     }
 
     private var summary: String {
@@ -87,21 +304,23 @@ struct ModuleDrillDownView: View {
         }
     }
 
-    private func topicRow(_ topic: Topic) -> some View {
+    /// `inline`: the trends open under the row (iPhone); otherwise the row selects the
+    /// topic for the trend panel (iPad).
+    private func topicRow(_ topic: Topic, inline: Bool, isSelected: Bool = false) -> some View {
         let scores = student.topics[topic.id]
-        let isExpanded = expanded == topic.id
+        let isExpanded = inline ? expanded == topic.id : isSelected
         let title = Text(topic.title)
             .ratioFont(.h3)
             .italic(isExpanded)
             .foregroundStyle(isExpanded ? Color.ratioOxblood : Color.ratioInk)
             .multilineTextAlignment(.leading)
-        let chevron = Image(systemName: "chevron.down")
-            .rotationEffect(.degrees(isExpanded ? 180 : 0))
-            .foregroundStyle(Color.ratioInk2)
+        let chevron = Image(systemName: inline ? "chevron.down" : "chevron.right")
+            .rotationEffect(.degrees(inline && isExpanded ? 180 : 0))
+            .foregroundStyle(isExpanded && !inline ? Color.ratioOxblood : Color.ratioInk2)
             .frame(width: 24)
         return VStack(alignment: .leading, spacing: RatioSpace.s) {
             Button {
-                withAnimation(RatioMotion.tap) { expanded = isExpanded ? nil : topic.id }
+                withAnimation(RatioMotion.tap) { expanded = inline && isExpanded ? nil : topic.id }
             } label: {
                 Group {
                     if typeSize.isAccessibilitySize {
@@ -130,41 +349,49 @@ struct ModuleDrillDownView: View {
                     }
                 }
                 .padding(.vertical, RatioSpace.s)
+                .padding(.horizontal, inline ? 0 : RatioSpace.xs)
+                .background(!inline && isSelected ? Color.ratioPaper : Color.clear, in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
             }
             .buttonStyle(.ratioPress)
             .accessibilityLabel(accessibilityLabel(topic, scores: scores))
-            .accessibilityHint(isExpanded ? "Hides the trends" : "Shows how each score has moved")
+            .accessibilityHint(inline ? (isExpanded ? "Hides the trends" : "Shows how each score has moved") : "Shows how each score has moved")
+            .accessibilityAddTraits(!inline && isSelected ? .isSelected : [])
 
-            if isExpanded {
-                VStack(alignment: .leading, spacing: RatioSpace.s) {
-                    if let scores {
-                        ForEach(Skill.allCases) { skill in
-                            TrendCard(skill: skill, scores: scores)
-                        }
-                        Text("Bands narrow as you answer more. A wide band means we're less sure.")
-                            .ratioFont(.small)
-                            .italic()
-                            .foregroundStyle(Color.ratioInk2)
-                    } else {
-                        Text("Not assessed yet. Take this lesson's tests to start the trend.").ratioFont(.small)
-                    }
-                    if let lesson = topic.lesson {
-                        NavigationLink(value: Route.overview(lesson.id)) {
-                            HStack(spacing: RatioSpace.xs) {
-                                Text("Practise \(topic.title)").multilineTextAlignment(.center)
-                                Image(systemName: "arrow.right")
-                            }
-                            .ratioFont(.h3)
-                            .padding(.horizontal, RatioSpace.s)
-                            .frame(maxWidth: .infinity, minHeight: 56)
-                            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
-                            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
-                        }
-                        .buttonStyle(.ratioPress)
-                    }
+            if inline && isExpanded {
+                trends(topic)
+                    .padding(.bottom, RatioSpace.s)
+                    .transition(.opacity)
+            }
+        }
+    }
+
+    /// Each skill's trend card, and Practise.
+    private func trends(_ topic: Topic) -> some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            if let scores = student.topics[topic.id] {
+                ForEach(Skill.allCases) { skill in
+                    TrendCard(skill: skill, scores: scores)
                 }
-                .padding(.bottom, RatioSpace.s)
-                .transition(.opacity)
+                Text("Bands narrow as you answer more. A wide band means we're less sure.")
+                    .ratioFont(.small)
+                    .italic()
+                    .foregroundStyle(Color.ratioInk2)
+            } else {
+                Text("Not assessed yet. Take this lesson's tests to start the trend.").ratioFont(.small)
+            }
+            if let lesson = topic.lesson {
+                NavigationLink(value: Route.overview(lesson.id)) {
+                    HStack(spacing: RatioSpace.xs) {
+                        Text("Practise \(topic.title)").multilineTextAlignment(.center)
+                        Image(systemName: "arrow.right")
+                    }
+                    .ratioFont(.h3)
+                    .padding(.horizontal, RatioSpace.s)
+                    .frame(maxWidth: .infinity, minHeight: 56)
+                    .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                    .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
+                }
+                .buttonStyle(.ratioPress)
             }
         }
     }

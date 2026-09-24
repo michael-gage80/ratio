@@ -106,10 +106,12 @@ enum BoardService {
 }
 
 /// screens/41-boards.png (and 42, dark) — the podium, the top 100, and the student's
-/// own row pinned at the bottom wherever they are (PRD: "Boards").
+/// own row pinned at the bottom wherever they are (PRD: "Boards"). On iPad
+/// (screens/iPad/6-boards) the podium and the student's position sit beside the table.
 struct BoardsView: View {
     @Environment(StudentStore.self) private var student
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
     @AppStorage("boards.period") private var period: BoardPeriod = .weekly
     @AppStorage("boards.scope") private var scope: BoardScope = .everyone
     @State private var entries: [BoardEntry] = []
@@ -124,35 +126,26 @@ struct BoardsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: RatioSpace.m) {
-                RatioPageHeader(title: "Boards", subtitle: "\(scope.title) · ranked by wins in human duels. Sparring partners never count.") {
-                    scopeFilter
-                }
-                picker(BoardPeriod.allCases, selection: $period) { $0.title }
-                content
-                if let shareCard {
-                    ShareLink(item: shareCard, preview: SharePreview("My place on Ratio's \(period.title.lowercased()) board", image: shareCard)) {
-                        Label("Share my result", systemImage: "square.and.arrow.up")
-                            .ratioFont(.h3)
-                            .frame(maxWidth: .infinity, minHeight: 56)
-                            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
-                            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
+            if width.isCompact {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    RatioPageHeader(title: "Boards", subtitle: "\(scope.title) · ranked by wins in human duels. Sparring partners never count.") {
+                        scopeFilter
                     }
-                    .buttonStyle(.ratioPress)
+                    picker(BoardPeriod.allCases, selection: $period) { $0.title }
+                    content
+                    shareButton
+                    resets
                 }
-                Text(period.resets)
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioInk2)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.vertical, RatioSpace.s)
+            } else {
+                wideBoard
             }
-            .padding(.horizontal, RatioSpace.m)
-            .padding(.vertical, RatioSpace.s)
         }
         .refreshable { await load() }
         .safeAreaInset(edge: .bottom) {
-            if let mine {
-                PinnedRow(entry: mine, rank: myRank)
+            if let mine, width.isCompact {
+                PinnedRow(entry: mine, rank: myRank, note: nextWinLine)
                     .padding(.horizontal, RatioSpace.s)
                     .padding(.bottom, RatioSpace.xs)
             }
@@ -160,6 +153,113 @@ struct BoardsView: View {
         .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
         .task(id: loadKey) { await load() }
+    }
+
+    // MARK: iPad
+
+    /// Podium and "your position" on the left, the table on the right; period and filter
+    /// top right (screens/iPad/6-boards/01-boards.png).
+    private var wideBoard: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.m) {
+            HStack(alignment: .top, spacing: RatioSpace.m) {
+                RatioPageHeader(eyebrow: "\(period.title) · \(scope.title) · Human duels only", title: "Boards",
+                                subtitle: "Ranked by wins in human duels. Sparring partners never count.")
+                HStack(spacing: RatioSpace.xs) {
+                    picker(BoardPeriod.allCases, selection: $period) { $0.title }
+                        .frame(maxWidth: 360)
+                    scopeFilter
+                }
+                .padding(.top, RatioSpace.s)
+            }
+            if let ranked = rankedBoard {
+                ColumnsLayout(fraction: 0.44, spacing: RatioSpace.m) {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        VStack(alignment: .leading, spacing: RatioSpace.s) {
+                            HStack {
+                                Text("Top three")
+                                Spacer()
+                                Text("\(period.title) board")
+                            }
+                            .ratioFont(.monoLabel)
+                            .foregroundStyle(Color.ratioInk2)
+                            Podium(entries: Array(ranked.prefix(3)))
+                        }
+                        .ratioCard()
+                        if let mine {
+                            PositionCard(entry: mine, rank: myRank, note: nextWinLine)
+                        }
+                        shareButton
+                        resets
+                    }
+                    VStack(spacing: 0) {
+                        rowsHeader
+                        ForEach(Array(ranked.enumerated()).dropFirst(3), id: \.element.id) { index, entry in
+                            Divider().overlay(Color.ratioRule)
+                            BoardRow(entry: entry, rank: index + 1, isMine: entry.uid == student.uid)
+                        }
+                        if ranked.count <= 3 {
+                            Text("Everyone on this board is on the podium.")
+                                .ratioFont(.small)
+                                .italic()
+                                .foregroundStyle(Color.ratioInk2)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.vertical, RatioSpace.m)
+                        }
+                    }
+                    .ratioCard()
+                }
+            } else {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    content
+                    resets
+                }
+                .ratioReadableWidth()
+            }
+        }
+        .padding(.horizontal, RatioSpace.l)
+        .padding(.vertical, RatioSpace.m)
+    }
+
+    /// The board to lay out in columns, or nil while loading, empty or failed.
+    private var rankedBoard: [BoardEntry]? {
+        if loading && entries.isEmpty { return nil }
+        if failed || (scope == .university && student.profile.universityId == nil) || (scope == .friends && student.friends.isEmpty)
+            || entries.allSatisfy({ $0.wins == 0 }) { return nil }
+        return entries.filter { $0.wins > 0 }
+    }
+
+    @ViewBuilder
+    private var shareButton: some View {
+        if let shareCard {
+            ShareLink(item: shareCard, preview: SharePreview("My place on Ratio's \(period.title.lowercased()) board", image: shareCard)) {
+                Label("Share my result", systemImage: "square.and.arrow.up")
+                    .ratioFont(.h3)
+                    .frame(maxWidth: .infinity, minHeight: 56)
+                    .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                    .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
+            }
+            .buttonStyle(.ratioPress)
+        }
+    }
+
+    private var resets: some View {
+        Text(period.resets)
+            .ratioFont(.monoLabel)
+            .foregroundStyle(Color.ratioInk2)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: .infinity)
+    }
+
+    /// "One more win draws level with Ben T. in 11th." — what the next win would do, from
+    /// the student's neighbour above on the loaded board.
+    private var nextWinLine: String? {
+        guard let mine, mine.wins > 0,
+              let index = entries.firstIndex(where: { $0.uid == mine.uid }), index > 0 else { return nil }
+        let above = entries[index - 1]
+        let place = "\(index)\(Ordinal.suffix(index))"
+        if above.wins == mine.wins { return "One more win puts you above \(above.name) in \(place)." }
+        if above.wins == mine.wins + 1 { return "One more win draws level with \(above.name) in \(place)." }
+        return nil
     }
 
     @ViewBuilder
@@ -187,23 +287,28 @@ struct BoardsView: View {
             Podium(entries: Array(ranked.prefix(3)))
         }
         VStack(spacing: 0) {
-            if !large {
-                HStack(spacing: RatioSpace.s) {
-                    Text("No.").frame(width: 32, alignment: .leading)
-                    Text("Name")
-                    Spacer()
-                    Text("Wins").frame(width: 48, alignment: .trailing)
-                    Text("Rating").frame(width: 64, alignment: .trailing)
-                }
-                .ratioFont(.monoLabel)
-                .foregroundStyle(Color.ratioInk2)
-                .padding(.vertical, RatioSpace.xs)
-                .accessibilityHidden(true)
-            }
+            rowsHeader
             ForEach(Array(ranked.enumerated()).dropFirst(large ? 0 : 3), id: \.element.id) { index, entry in
                 Divider().overlay(Color.ratioRule)
                 BoardRow(entry: entry, rank: index + 1, isMine: entry.uid == student.uid)
             }
+        }
+    }
+
+    @ViewBuilder
+    private var rowsHeader: some View {
+        if !typeSize.isAccessibilitySize {
+            HStack(spacing: RatioSpace.s) {
+                Text("No.").frame(width: 32, alignment: .leading)
+                Text("Name")
+                Spacer()
+                Text("Wins").frame(width: 48, alignment: .trailing)
+                Text("Rating").frame(width: 64, alignment: .trailing)
+            }
+            .ratioFont(.monoLabel)
+            .foregroundStyle(Color.ratioInk2)
+            .padding(.vertical, RatioSpace.xs)
+            .accessibilityHidden(true)
         }
     }
 
@@ -459,24 +564,31 @@ private struct BoardRow: View {
 private struct PinnedRow: View {
     let entry: BoardEntry
     let rank: Int?
+    /// "One more win draws level with …", under the row.
+    var note: String?
 
     @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         let large = typeSize.isAccessibilitySize
         let layout = large ? AnyLayout(VStackLayout(alignment: .leading, spacing: RatioSpace.xxs)) : AnyLayout(HStackLayout(spacing: RatioSpace.s))
-        layout {
-            HStack(spacing: RatioSpace.s) {
-                Text(rank.map { "\($0)" } ?? "–").ratioFont(.monoData).foregroundStyle(Color.ratioOxblood).frame(minWidth: 24, alignment: .leading)
-                if !large {
-                    ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: 36)
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+            layout {
+                HStack(spacing: RatioSpace.s) {
+                    Text(rank.map { "\($0)" } ?? "–").ratioFont(.monoData).foregroundStyle(Color.ratioOxblood).frame(minWidth: 24, alignment: .leading)
+                    if !large {
+                        ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: 36)
+                    }
+                    Text(entry.name).ratioFont(.h3)
                 }
-                Text(entry.name).ratioFont(.h3)
+                if !large { Spacer(minLength: RatioSpace.xs) }
+                HStack(spacing: RatioSpace.s) {
+                    Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins")").ratioFont(.monoData)
+                    Text(entry.rating.formatted()).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                }
             }
-            if !large { Spacer(minLength: RatioSpace.xs) }
-            HStack(spacing: RatioSpace.s) {
-                Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins")").ratioFont(.monoData)
-                Text(entry.rating.formatted()).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+            if let note {
+                Text(note).ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
             }
         }
         .padding(.horizontal, RatioSpace.m)
@@ -485,6 +597,53 @@ private struct PinnedRow: View {
         .ratioGlass(in: RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous))
         .overlay { RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous).strokeBorder(Color.ratioRule) }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("You: \(rank.map { "rank \($0)" } ?? "not ranked yet"), \(entry.wins) wins, rating \(entry.rating)")
+        .accessibilityLabel("You: \(rank.map { "rank \($0)" } ?? "not ranked yet"), \(entry.wins) wins, rating \(entry.rating)\(note.map { ". \($0)" } ?? "")")
+    }
+}
+
+/// iPad: the student's position as a card beside the table ("12th · Amara O. · 7 wins").
+private struct PositionCard: View {
+    let entry: BoardEntry
+    let rank: Int?
+    var note: String?
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text("Your position").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: RatioSpace.s) { place; who; Spacer(minLength: RatioSpace.xs); wins }
+                VStack(alignment: .leading, spacing: RatioSpace.xs) { place; who; wins }
+            }
+            if let note {
+                Divider().overlay(Color.ratioRule)
+                Text(note).ratioFont(.body).italic().foregroundStyle(Color.ratioInk2)
+            }
+        }
+        .ratioCard()
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Your position: \(rank.map { "\($0)\(Ordinal.suffix($0))" } ?? "not ranked yet"), \(entry.wins) wins, rating \(entry.rating)\(note.map { ". \($0)" } ?? "")")
+    }
+
+    private var place: some View {
+        Text(rank.map { "\($0)\(Ordinal.suffix($0))" } ?? "–")
+            .ratioFont(.figure)
+            .italic()
+            .foregroundStyle(Color.ratioOxblood)
+    }
+
+    private var who: some View {
+        HStack(spacing: RatioSpace.s) {
+            ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: 48)
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                Text(entry.name).ratioFont(.h3)
+                Text([university(entry), entry.rating.formatted()].filter { !$0.isEmpty }.joined(separator: " · "))
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk2)
+            }
+        }
+    }
+
+    private var wins: some View {
+        Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins")").ratioFont(.monoData)
     }
 }
