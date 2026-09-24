@@ -163,31 +163,35 @@ struct TodayView: View {
                 if streak.previousWeeks > 0 { Spacer(); Text("Week \(streak.previousWeeks + 1)") }
             }
             .ratioFont(.monoLabel)
-            .foregroundStyle(Color.ratioInk2)
+            .opacity(0.75)
             Text("\(streak.daysThisWeek) of \(student.streak.target) days").ratioFont(.h2)
             HStack(spacing: 5) {
                 ForEach(Array(streak.week.enumerated()), id: \.offset) { index, day in
                     VStack(spacing: 6) {
                         Capsule()
-                            .fill(day.active ? (index == streak.todayIndex ? Color.ratioOxblood : Color.ratioInk) : Color.ratioRule)
+                            .fill(day.active ? Color.ratioOnInk : Color.clear)
+                            .strokeBorder(Color.ratioOnInk.opacity(day.active ? 0 : 0.35))
                             .frame(height: 8)
                         Text(day.date.formatted(.dateTime.weekday(.narrow)))
                             .ratioFont(.monoLabel)
-                            .foregroundStyle(index == streak.todayIndex ? Color.ratioOxblood : Color.ratioInk2)
+                            .opacity(index == streak.todayIndex ? 1 : 0.7)
+                        // Today: a small dot under its letter.
+                        Circle().fill(index == streak.todayIndex ? Color.ratioOnInk : Color.clear).frame(width: 4, height: 4)
                     }
                 }
             }
             .accessibilityHidden(true)
-            Text(streak.message).ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
+            Text(streak.message).ratioFont(.small).italic().opacity(0.85)
         }
         .padding(18)
+        .foregroundStyle(Color.ratioOnInk)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .homeBlock(Color.ratioVWash)
+        .homeBlock(Color.ratioForest, bordered: false)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("This week: \(streak.daysThisWeek) of \(student.streak.target) days. \(streak.message)")
     }
 
-    /// Dark ink, horizontal: who's online and the challenges waiting on the student.
+    /// Dark ink (deep oxblood in dark mode), horizontal: who's online and the challenges waiting on the student.
     private var duelCard: some View {
         let yourGo = student.challenges.filter { $0.done[student.uid] != true }
         return Button { navigator.tab = .duel } label: {
@@ -211,7 +215,7 @@ struct TodayView: View {
                             ForEach(yourGo.prefix(3)) { challenge in
                                 let opponent = challenge.opponent(of: student.uid)
                                 ProfilePhoto(uid: opponent.uid, initial: String(opponent.name.prefix(1)), version: nil, size: 36)
-                                    .overlay(Circle().strokeBorder(Color.ratioInk, lineWidth: 2))
+                                    .overlay(Circle().strokeBorder(Color.ratioDuelBlock, lineWidth: 2))
                             }
                         }
                         Text("Your go").ratioFont(.monoLabel)
@@ -224,7 +228,7 @@ struct TodayView: View {
             }
             .padding(18)
             .foregroundStyle(Color.ratioOnInk)
-            .homeBlock(Color.ratioInk, bordered: false)
+            .homeBlock(Color.ratioDuelBlock, bordered: false)
         }
         .buttonStyle(.plain)
     }

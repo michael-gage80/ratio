@@ -6,12 +6,18 @@ import UIKit
 /// height, sitting on the baseline with a gap of 0.36× the dot.
 struct RatioMark: View {
     var size: CGFloat = 96
+    /// Centres the letter itself (cap height) rather than its line box, which has room
+    /// for ascenders and descenders — for the mark alone inside a ring.
+    var opticallyCentred = false
 
     private static let fontName = "NewsreaderDisplay-Italic"
 
     var body: some View {
-        let capHeight = UIFont(name: Self.fontName, size: size)?.capHeight ?? size * 0.66
+        let font = UIFont(name: Self.fontName, size: size)
+        let capHeight = font?.capHeight ?? size * 0.66
         let dot = capHeight * 0.192
+        // How far the cap's centre sits above the line box's centre.
+        let lift = font.map { capHeight / 2 - ($0.ascender + $0.descender) / 2 } ?? 0
         HStack(alignment: .lastTextBaseline, spacing: dot * 0.36) {
             Text("R")
                 .font(.custom(Self.fontName, fixedSize: size))
@@ -20,6 +26,7 @@ struct RatioMark: View {
                 .fill(Color.ratioOxblood)
                 .frame(width: dot, height: dot)
         }
+        .offset(y: opticallyCentred ? lift : 0)
         .accessibilityElement()
         .accessibilityLabel("Ratio")
     }

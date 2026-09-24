@@ -71,6 +71,39 @@ struct LibraryView: View {
     var body: some View {
         List {
             Section {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Library\(Text(".").foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
+                    Spacer()
+                    Menu {
+                        Picker("Module", selection: $module) {
+                            Text("All modules").tag(Module?.none)
+                            ForEach(Module.allCases) { Text($0.title).tag(Module?.some($0)) }
+                        }
+                    } label: {
+                        Image(systemName: module == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
+                            .font(.title2)
+                            .frame(width: 44, height: 44)
+                    }
+                    .accessibilityLabel("Filter by module")
+                }
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
+                HStack(spacing: 8) {
+                    Image(systemName: "magnifyingglass").foregroundStyle(Color.ratioInk2)
+                    TextField("Search the library", text: $query).ratioFont(.body).autocorrectionDisabled()
+                    if !query.isEmpty {
+                        Button { query = "" } label: { Image(systemName: "xmark.circle.fill") }
+                            .buttonStyle(.plain)
+                            .foregroundStyle(Color.ratioInk2)
+                            .accessibilityLabel("Clear search")
+                    }
+                }
+                .padding(12)
+                .frame(minHeight: 44)
+                .background(Color.ratioPaper, in: Capsule())
+                .overlay(Capsule().strokeBorder(Color.ratioRule))
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                 Picker("Kind", selection: $kind) {
                     ForEach(LibraryEntry.Kind.allCases) { Text($0.rawValue).tag($0) }
                 }
@@ -96,21 +129,8 @@ struct LibraryView: View {
         .scrollContentBackground(.hidden)
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .searchable(text: $query, prompt: "Search the library")
-        .navigationTitle("Library")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    Picker("Module", selection: $module) {
-                        Text("All modules").tag(Module?.none)
-                        ForEach(Module.allCases) { Text($0.title).tag(Module?.some($0)) }
-                    }
-                } label: {
-                    Image(systemName: module == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
-                }
-                .accessibilityLabel("Filter by module")
-            }
-        }
+        .scrollDismissesKeyboard(.interactively)
+        .toolbar(.hidden, for: .navigationBar)
         .task { if entries.isEmpty { entries = content.library() } }
     }
 
@@ -177,6 +197,6 @@ struct LibraryEntryView: View {
         }
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .toolbarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
     }
 }

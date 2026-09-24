@@ -28,10 +28,6 @@ struct SplashView: View {
                     Capsule().fill(Color.ratioOxblood).frame(width: 160 * (ready ? 1 : progress), height: 1.5)
                 }
                 .padding(.bottom, 44)
-            Text("Ratio · LLB")
-                .ratioFont(.monoLabel)
-                .foregroundStyle(Color.ratioInk2)
-                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(24)
         .background(Color.ratioParchment.ignoresSafeArea())

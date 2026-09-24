@@ -45,7 +45,7 @@ struct LectureView: View {
                     if loaded && partsCompleted >= lesson.parts.count {
                         RatioButton("Take the tests") { showsExamRoom = true }
                     }
-                    Text("Educational, not legal advice · Law stated as at \(lesson.lawStatedDate)")
+                    Text("Law stated as at \(lesson.lawStatedDate)")
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
                         .frame(maxWidth: .infinity)

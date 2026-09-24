@@ -127,6 +127,10 @@ struct NotificationsView: View {
         let pinned = items.filter(\.pinned)
         let history = items.filter { !$0.pinned }
         List {
+            Text("Notifications\(Text(".").foregroundStyle(Color.ratioOxblood))")
+                .ratioFont(.display)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
             if items.isEmpty {
                 Text("Nothing yet. Challenges, reviews and the week's news will show up here.")
                     .ratioFont(.body)
@@ -147,8 +151,7 @@ struct NotificationsView: View {
         .scrollContentBackground(.hidden)
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .navigationTitle("Notifications")
-        .toolbarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
         .task {
             guard readAt == nil else { return }
             readAt = student.profile.notificationsReadAt ?? .distantPast

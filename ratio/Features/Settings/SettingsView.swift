@@ -45,7 +45,7 @@ struct SettingsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Me · Index").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Text("Me").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).padding(.bottom, 12)
                 Text("Settings.").ratioFont(.display).padding(.bottom, 12)
                 account
                 appearanceSection
@@ -55,7 +55,7 @@ struct SettingsView: View {
                 subscription
                 privacy
                 danger
-                Text("Ratio \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "") · Educational, not legal advice")
+                Text("Ratio \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
                     .frame(maxWidth: .infinity)
@@ -65,7 +65,7 @@ struct SettingsView: View {
         }
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .toolbarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
         .sheet(item: $sheet) { sheet in
             switch sheet {
             case .name: NameSheet(profile: profile, uid: student.uid)

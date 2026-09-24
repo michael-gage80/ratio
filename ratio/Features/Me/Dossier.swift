@@ -157,6 +157,7 @@ struct MilestoneTimeline: View {
                     .accessibilityElement(children: .combine)
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
