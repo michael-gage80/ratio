@@ -1,9 +1,8 @@
+import "./setup.js";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { initializeApp } from "firebase-admin/app";
 import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
-import { setGlobalOptions } from "firebase-functions/v2";
 import { logger } from "firebase-functions";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { onSchedule } from "firebase-functions/v2/scheduler";
@@ -18,8 +17,6 @@ import { studyModules } from "./entitlement.js";
 import { readSide, Side, StoredRating, writeSide } from "./settle.js";
 import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, SKILLS, TopicEstimates } from "./scoring.js";
 
-initializeApp();
-setGlobalOptions({ region: "europe-west2", maxInstances: 10 });
 
 // The same bank the app bundles, copied into lib/ at build time, so answers are
 // re-graded here rather than trusted from the client.
