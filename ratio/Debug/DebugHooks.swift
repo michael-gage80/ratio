@@ -9,6 +9,7 @@ import Foundation
 /// Debug builds only, for checking screens in the simulator against the local Firebase
 /// emulators (`firebase emulators:start`) with seeded test data. Launch arguments:
 ///   -emulators          use the emulators and sign in the test student
+///   -user <email|none>  sign in someone else (e.g. newbie@ratio.test for onboarding)
 ///   -screen <name>      open a screen once signed in (see `DebugHooks.open`)
 /// Nothing here is compiled into TestFlight or App Store builds.
 enum DebugHooks {
@@ -32,8 +33,13 @@ enum DebugHooks {
         Functions.functions(region: "europe-west2").useEmulator(withHost: host, port: 5001)
         Realtime.database.useEmulator(withHost: host, port: 9000)
         Storage.storage().useEmulator(withHost: host, port: 9199)
+        // "-user none" stays signed out (Welcome).
         let email = arguments.firstIndex(of: "-user").flatMap { arguments[safe: $0 + 1] } ?? "amara@ratio.test"
-        Task { _ = try? await Auth.auth().signIn(withEmail: email, password: "password") }
+        if email == "none" {
+            try? Auth.auth().signOut()
+        } else {
+            Task { _ = try? await Auth.auth().signIn(withEmail: email, password: "password") }
+        }
     }
 
     /// Puts the app on a named screen.
