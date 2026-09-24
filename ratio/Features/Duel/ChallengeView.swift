@@ -19,6 +19,7 @@ final class ChallengeHalfModel: DuelRoundModel {
     private(set) var limitMs = 10_000
     private(set) var yourAnswer: DuelAnswer?
     private(set) var lastPlayed: DuelPlayed?
+    private(set) var history: [DuelRoundSummary] = []
     private(set) var roundStart = Date.now
     private(set) var revealing = false
     private(set) var pulse = 0
@@ -85,6 +86,7 @@ final class ChallengeHalfModel: DuelRoundModel {
             question = shown
             lastPlayed = DuelPlayed(questionIndex: index, you: answer, them: DuelAnswer(answerIndex: nil, timeMs: limitMs),
                                     winner: revealed.correct ? 0 : nil)
+            if let lastPlayed { history.append(DuelRoundSummary(id: index + 1, kind: shown.kind, isFinal: shown.isFinal, played: lastPlayed)) }
             revealing = true
         }
         clock = Task { [weak self] in
@@ -151,6 +153,7 @@ struct ChallengeView: View {
                         HStack {
                             RatioIconButton(systemImage: "xmark", label: "Pause — carry on later") { dismiss() }
                                 .foregroundStyle(Color.ratioInk2)
+                                .keyboardShortcut(.cancelAction)
                             Spacer()
                             Text("Question \(model.index + 1) of \(model.total)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                         }
@@ -190,6 +193,7 @@ struct ChallengeView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ratioPage()
+        .ratioMeasuresWidth()
         .task {
             guard model == nil else { return }
             let opponent = challenge.opponent(of: student.uid)

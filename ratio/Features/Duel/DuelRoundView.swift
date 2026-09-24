@@ -2,44 +2,37 @@ import SwiftUI
 
 /// screens/35-round-fastest-finger.png and 36-final-round-spot-the-issue.png — the
 /// scoreboard with both scores and the timer ring, then the question. A tap locks the
-/// answer; the round is revealed once the student answers or time runs out.
+/// answer; the round is revealed once the student answers or time runs out. On iPad
+/// (screens/iPad/5-duel/05): the question on the left, "Match so far" on the right.
 struct DuelRoundView: View {
     let model: any DuelRoundModel
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.ratioWidth) private var width
 
     var body: some View {
         VStack(alignment: .leading, spacing: RatioSpace.m) {
             Scoreboard(model: model)
             if let question = model.question {
-                VStack(alignment: .leading, spacing: RatioSpace.s) {
-                    Text(label(question))
-                        .ratioFont(.monoLabel)
-                        .foregroundStyle(Color.ratioInk2)
-                    Text(question.kind == .spotTheIssue && question.prompt.isEmpty ? "Tap the phrase that decides the case." : question.prompt)
-                        .ratioFont(question.kind == .nameTheCase ? .h3 : .h2)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                ScrollView {
-                    VStack(alignment: .leading, spacing: RatioSpace.s) {
-                        if question.kind == .spotTheIssue, let segments = question.segments {
-                            SpotTheIssueCard(question: question, segments: segments, model: model)
-                        } else {
-                            OptionGrid(question: question, model: model)
-                        }
-                        Text(footer)
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioInk2)
-                            .multilineTextAlignment(.center)
-                            .frame(maxWidth: .infinity)
-                        if model.roundPhase == .revealing, let played = model.lastPlayed {
-                            RevealBanner(message: model.revealMessage(played, question: question))
-                                .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
-                        }
+                if width.isCompact {
+                    prompt(question)
+                    ScrollView {
+                        answers(question).padding(.bottom, RatioSpace.m)
                     }
-                    .padding(.bottom, RatioSpace.m)
+                    .scrollIndicators(.hidden)
+                } else {
+                    ScrollView {
+                        ColumnsLayout(fraction: 0.68, spacing: RatioSpace.l) {
+                            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                                prompt(question)
+                                answers(question)
+                            }
+                            MatchSoFar(model: model)
+                        }
+                        .padding(.bottom, RatioSpace.m)
+                    }
+                    .scrollIndicators(.hidden)
                 }
-                .scrollIndicators(.hidden)
             }
         }
         .padding(.horizontal, RatioSpace.m)
@@ -52,7 +45,39 @@ struct DuelRoundView: View {
         }
     }
 
-    private static let numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+    private func prompt(_ question: DuelQuestion) -> some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text(label(question))
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+            Text(question.kind == .spotTheIssue && question.prompt.isEmpty ? "Tap the phrase that decides the case." : question.prompt)
+                .ratioFont(question.kind == .nameTheCase ? .h3 : .h2)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private func answers(_ question: DuelQuestion) -> some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            if question.kind == .spotTheIssue, let segments = question.segments {
+                SpotTheIssueCard(question: question, segments: segments, model: model)
+            } else {
+                OptionGrid(question: question, model: model)
+            }
+            Text(footer)
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+            KeyHint(keys: "1–\(max(1, question.options.count))", label: "Choose")
+                .frame(maxWidth: .infinity)
+            if model.roundPhase == .revealing, let played = model.lastPlayed {
+                RevealBanner(message: model.revealMessage(played, question: question))
+                    .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
+            }
+        }
+    }
+
+    static let numerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 
     private func label(_ question: DuelQuestion) -> String {
         let skill = Skill(rawValue: question.skill)?.title ?? question.skill
@@ -257,6 +282,7 @@ private struct OptionGrid: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(model.roundPhase != .playing || model.yourAnswer != nil)
+                .keyboardShortcut(numberKey(index), modifiers: [])
                 .accessibilityLabel("\(Self.letter(index)): \(question.options[index])\(state(index).spoken)")
             }
         }
@@ -296,6 +322,7 @@ private struct SpotTheIssueCard: View {
                     }
                     .buttonStyle(.plain)
                     .disabled(model.roundPhase != .playing || model.yourAnswer != nil)
+                    .keyboardShortcut(numberKey(option), modifiers: [])
                     .accessibilityLabel("\(segment.text)\(state.spoken)")
                 } else {
                     Text(segment.text).ratioFont(.body).foregroundStyle(Color.ratioInk2).padding(.horizontal, RatioSpace.s)
@@ -377,5 +404,95 @@ private struct RevealBanner: View {
             .multilineTextAlignment(.center)
             .frame(maxWidth: .infinity)
             .padding(.vertical, RatioSpace.xs)
+    }
+}
+
+/// Keys 1–9 choose an option with a hardware keyboard.
+private func numberKey(_ index: Int) -> KeyEquivalent {
+    KeyEquivalent(Character(String(min(index + 1, 9))))
+}
+
+/// iPad: the score and every round so far, with the one in play (screens/iPad/5-duel/05).
+private struct MatchSoFar: View {
+    let model: any DuelRoundModel
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text("Match so far").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            if model.showsScore {
+                Text("\(model.score[0]) – \(model.score[1])").ratioFont(.figure)
+                Text("You v \(model.opponent.isBot ? "sparring partner" : model.opponent.name) · first to \(DuelRules.pointsToWin)")
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk2)
+            }
+            VStack(spacing: 0) {
+                ForEach(Array(model.history.enumerated()), id: \.element.id) { index, round in
+                    Divider().overlay(Color.ratioRule)
+                    row(round, scoreAfter: scores[index])
+                }
+                if model.roundPhase == .playing, let question = model.question {
+                    Divider().overlay(Color.ratioRule)
+                    HStack(alignment: .top, spacing: RatioSpace.s) {
+                        Text(DuelRoundView.numerals[safe: model.roundNumber - 1] ?? "\(model.roundNumber)")
+                            .ratioFont(.monoData)
+                            .foregroundStyle(Color.ratioParchment)
+                            .frame(width: 36, height: 36)
+                            .background(Color.ratioInk, in: Circle())
+                        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                            Text("\(title(model.roundNumber, final: question.isFinal)) · \(question.kind.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                            Text("In play").ratioFont(.h3)
+                        }
+                        Spacer(minLength: 0)
+                    }
+                    .padding(.vertical, RatioSpace.s)
+                }
+                Divider().overlay(Color.ratioRule)
+            }
+            Text("Every round comes back in your debrief, with the reasoning.")
+                .ratioFont(.small)
+                .foregroundStyle(Color.ratioInk2)
+                .padding(.top, RatioSpace.xs)
+        }
+        .ratioCard()
+        .accessibilityElement(children: .contain)
+    }
+
+    /// The running score after each round.
+    private var scores: [[Int]] {
+        var score = [0, 0]
+        return model.history.map { round in
+            if let winner = round.played.winner { score[winner] += 1 }
+            return score
+        }
+    }
+
+    private func title(_ number: Int, final: Bool) -> String {
+        final ? "Final round" : "Round \(DuelRoundView.numerals[safe: number - 1] ?? "\(number)")"
+    }
+
+    private func row(_ round: DuelRoundSummary, scoreAfter: [Int]) -> some View {
+        let seconds = { (ms: Int) in String(format: "%.1f", Double(ms) / 1000) }
+        let won = round.played.winner == 0
+        let lost = round.played.winner == 1
+        let who = won ? "You" : lost ? (model.opponent.isBot ? "Partner" : model.opponent.name) : "No point"
+        let detail = round.played.you.answerIndex == nil
+            ? "No answer"
+            : "\(won ? "Correct" : "Not quite") · \(seconds(round.played.you.timeMs))\u{00A0}s"
+        let tint = won ? Color.ratioVerdigris : lost ? Color.ratioOxblood : Color.ratioInk2
+        return HStack(alignment: .top, spacing: RatioSpace.s) {
+            Image(systemName: won ? "checkmark" : lost ? "xmark" : "minus")
+                .font(.footnote)
+                .frame(width: 36, height: 36)
+                .overlay(Circle().strokeBorder(tint))
+                .foregroundStyle(tint)
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                Text("\(title(round.id, final: round.isFinal)) · \(round.kind.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Text(model.showsScore ? "\(who) · \(scoreAfter[0])–\(scoreAfter[1])" : who).ratioFont(.h3)
+                Text(detail).ratioFont(.monoData).foregroundStyle(tint)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, RatioSpace.s)
+        .accessibilityElement(children: .combine)
     }
 }

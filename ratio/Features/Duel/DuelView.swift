@@ -6,6 +6,7 @@ import SwiftUI
 struct DuelView: View {
     @Environment(StudentStore.self) private var student
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
     @AppStorage("duel.tutorialSeen") private var tutorialSeen = false
@@ -56,29 +57,32 @@ struct DuelView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: RatioSpace.m) {
                 RatioPageHeader(eyebrow: "Human duels · Ranked", title: "Duel") {
+                    // iPad: the free-duels line sits top right (screens/iPad/5-duel/01-duel.png).
+                    if !width.isCompact && scope != nil && !student.isPlus { freeDuels(inline: true) }
                     ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 56)
                         .accessibilityHidden(true)
                 }
                 if let scope {
-                    scopeChips(selected: scope)
-                    ratingCard(scope)
-                    waitingForYou
-                    VStack(spacing: RatioSpace.s) {
-                        row(icon: "number", title: "Friend lobby", detail: "Play with a code") { lobbyEntry = LobbyEntry(code: nil) }
-                        row(mark: true, title: "Sparring partner", detail: "Practise against a labelled bot, 5 levels") { startSparring() }
-                        row(icon: "questionmark", title: "How duels work", detail: "Replay the tutorial") { play(scope, level: 1, tutorial: true) }
-                    }
-                    recentDuels
-                    if !student.isPlus {
-                        let left = max(0, 3 - student.duelsToday)
-                        VStack(spacing: RatioSpace.xs) {
-                            Text("\(left) free \(left == 1 ? "duel" : "duels") left today").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                            Button("Go unlimited →") { navigator.paywall = "Duels are unlimited with Ratio Plus." }
-                                .ratioFont(.monoLabel)
-                                .foregroundStyle(Color.ratioOxblood)
-                                .frame(minHeight: 44)
+                    if width.isCompact {
+                        scopeChips(selected: scope)
+                        ratingCard(scope)
+                        waitingForYou
+                        actionRows(scope)
+                        recentDuels
+                        if !student.isPlus { freeDuels(inline: false) }
+                    } else {
+                        // iPad: chips and rating on the left; challenges and ways to play on the right.
+                        ColumnsLayout(fraction: 0.55, spacing: RatioSpace.m) {
+                            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                                scopeChips(selected: scope)
+                                ratingCard(scope)
+                            }
+                            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                                waitingForYou
+                                actionRows(scope)
+                            }
                         }
-                        .frame(maxWidth: .infinity)
+                        recentDuels
                     }
                 } else {
                     RatioEmptyState(art: .scales, message: "Duels draw on your modules' lessons, which are still in preparation.")
@@ -89,16 +93,9 @@ struct DuelView: View {
         }
         .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
-        .sheet(isPresented: $showsMatchmaking) {
-            if let scope {
-                MatchmakingView(scope: scope, seconds: seconds) { matchId in
-                    showsMatchmaking = false
-                    cover = .live(matchId)
-                } spar: {
-                    choosingLevel = true
-                }
-            }
-        }
+        // A sheet on iPhone; the whole screen on iPad (screens/iPad/5-duel/03-matchmaking.png).
+        .sheet(isPresented: Binding(get: { showsMatchmaking && width.isCompact }, set: { showsMatchmaking = $0 })) { matchmaking }
+        .fullScreenCover(isPresented: Binding(get: { showsMatchmaking && !width.isCompact }, set: { showsMatchmaking = $0 })) { matchmaking }
         .sheet(isPresented: $choosingLevel) {
             if let scope {
                 LevelPicker(scope: scope, rating: student.ratings[scope]?.rating) { level in
@@ -142,6 +139,41 @@ struct DuelView: View {
         } message: {
             Text(notice ?? "")
         }
+    }
+
+    @ViewBuilder
+    private var matchmaking: some View {
+        if let scope {
+            MatchmakingView(scope: scope, seconds: seconds) { matchId in
+                showsMatchmaking = false
+                cover = .live(matchId)
+            } spar: {
+                choosingLevel = true
+            }
+            .ratioMeasuresWidth()
+        }
+    }
+
+    private func actionRows(_ scope: DuelScope) -> some View {
+        VStack(spacing: RatioSpace.s) {
+            row(icon: "number", title: "Friend lobby", detail: "Play with a code") { lobbyEntry = LobbyEntry(code: nil) }
+            row(mark: true, title: "Sparring partner", detail: "Practise against a labelled bot, 5 levels") { startSparring() }
+            row(icon: "questionmark", title: "How duels work", detail: "Replay the tutorial") { play(scope, level: 1, tutorial: true) }
+        }
+    }
+
+    /// "3 free duels left today · Go unlimited →" — under the page on iPhone, top right on iPad.
+    private func freeDuels(inline: Bool) -> some View {
+        let left = max(0, 3 - student.duelsToday)
+        let layout = inline ? AnyLayout(HStackLayout(spacing: RatioSpace.xs)) : AnyLayout(VStackLayout(spacing: RatioSpace.xs))
+        return layout {
+            Text("\(left) free \(left == 1 ? "duel" : "duels") left today").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            Button("Go unlimited →") { navigator.paywall = "Duels are unlimited with Ratio Plus." }
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioOxblood)
+                .frame(minHeight: 44)
+        }
+        .frame(maxWidth: inline ? nil : .infinity)
     }
 
     // MARK: Async challenges
@@ -311,8 +343,12 @@ struct DuelView: View {
             }
             Divider().overlay(Color.ratioRule)
             Text("First to 3 · \(seconds)\u{00A0}s a question").ratioFont(.h3)
-            RatioButton("Find an opponent →") {
-                if tutorialSeen { showsMatchmaking = true } else { play(scope, level: 1, tutorial: true) }
+            HStack(spacing: RatioSpace.s) {
+                RatioButton("Find an opponent →") {
+                    if tutorialSeen { showsMatchmaking = true } else { play(scope, level: 1, tutorial: true) }
+                }
+                .keyboardShortcut(.return, modifiers: .command)
+                KeyHint(keys: "⌘↩", label: "Find")
             }
         }
         .ratioCard()
@@ -353,20 +389,35 @@ struct DuelView: View {
         if !finished.isEmpty {
             VStack(alignment: .leading, spacing: RatioSpace.s) {
                 Text("Recent duels").ratioFont(.h2).accessibilityAddTraits(.isHeader)
-                VStack(spacing: 0) {
-                    ForEach(Array(finished.prefix(5).enumerated()), id: \.element.id) { index, match in
-                        if index > 0 { Divider().overlay(Color.ratioRule) }
-                        MatchRow(match: match, uid: student.uid, inset: RatioSpace.m)
-                            .contextMenu {
-                                if match.isBot == false, let opponent = match.opponent(of: student.uid) {
-                                    Button("Challenge \(opponent.name) to a rematch", systemImage: "arrow.uturn.right") { challenge(match) }
-                                }
-                            }
+                if width.isCompact {
+                    VStack(spacing: 0) {
+                        ForEach(Array(finished.prefix(5).enumerated()), id: \.element.id) { index, match in
+                            if index > 0 { Divider().overlay(Color.ratioRule) }
+                            matchRow(match, inset: RatioSpace.m)
+                        }
+                    }
+                    .ratioCard(padding: 0)
+                } else {
+                    // iPad: a row of cards, three across.
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: RatioSpace.s, alignment: .top), count: 3), spacing: RatioSpace.s) {
+                        ForEach(finished.prefix(6)) { match in
+                            matchRow(match, inset: RatioSpace.s)
+                                .frame(maxHeight: .infinity, alignment: .top)
+                                .ratioCard(padding: 0)
+                        }
                     }
                 }
-                .ratioCard(padding: 0)
             }
         }
+    }
+
+    private func matchRow(_ match: MatchSummary, inset: CGFloat) -> some View {
+        MatchRow(match: match, uid: student.uid, inset: inset)
+            .contextMenu {
+                if match.isBot == false, let opponent = match.opponent(of: student.uid) {
+                    Button("Challenge \(opponent.name) to a rematch", systemImage: "arrow.uturn.right") { challenge(match) }
+                }
+            }
     }
 
     private func startSparring() {
@@ -449,6 +500,7 @@ private struct MatchmakingView: View {
     @State private var window = 100
     @State private var failed = false
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
 
     var body: some View {
         VStack(spacing: 0) {
@@ -460,20 +512,110 @@ private struct MatchmakingView: View {
             .padding(.horizontal, RatioSpace.s)
             .padding(.top, RatioSpace.xs)
             ScrollView {
-                content.padding(.horizontal, RatioSpace.m).padding(.vertical, RatioSpace.s)
-            }
-            RatioButton("Cancel", style: .tertiary) { cancel() }
+                Group {
+                    if width.isCompact { content } else { wideContent }
+                }
                 .padding(.horizontal, RatioSpace.m)
-                .padding(.bottom, RatioSpace.s)
+                .padding(.vertical, RatioSpace.s)
+            }
+            VStack(spacing: RatioSpace.xs) {
+                RatioButton("Cancel", style: .tertiary) { cancel() }
+                    .keyboardShortcut(.cancelAction)
+                    .frame(maxWidth: width.isCompact ? .infinity : 500)
+                KeyHint(keys: "esc", label: "Cancel")
+            }
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.bottom, RatioSpace.s)
         }
         .ratioPage()
         .interactiveDismissDisabled()
         .task { await search() }
     }
 
+    private var headline: some View {
+        Text("\(Text("Fastest finger").italic().foregroundStyle(Color.ratioOxblood)) wins the point.").ratioFont(.display)
+    }
+
+    /// iPad: you, the "v" ring and the search side by side; the facts and the sparring
+    /// offer beneath.
+    private var wideContent: some View {
+        VStack(spacing: RatioSpace.l) {
+            headline.multilineTextAlignment(.center)
+            HStack(alignment: .center, spacing: RatioSpace.m) {
+                VStack(spacing: RatioSpace.xs) {
+                    ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 96)
+                    Text("You").ratioFont(.h2)
+                    Text(student.profile.displayName ?? "").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                    Text("Rating \(Int((student.ratings[scope]?.rating ?? 1200).rounded()).formatted())").ratioFont(.monoData)
+                }
+                .frame(maxWidth: .infinity)
+                .ratioCard()
+                .accessibilityElement(children: .combine)
+                ZStack {
+                    RatioRings(diameter: 120)
+                    Text("v").ratioFont(.display).italic().foregroundStyle(Color.ratioInk2)
+                }
+                .accessibilityHidden(true)
+                TimelineView(.periodic(from: started, by: 1)) { context in
+                    let elapsed = Int(context.date.timeIntervalSince(started))
+                    VStack(spacing: RatioSpace.xs) {
+                        Image(systemName: "questionmark")
+                            .font(.title)
+                            .frame(width: 96, height: 96)
+                            .overlay(Circle().strokeBorder(Color.ratioInk2, style: StrokeStyle(lineWidth: 1, dash: [4, 4])))
+                            .foregroundStyle(Color.ratioInk2)
+                        Text(failed ? "Reconnecting…" : "Finding a fair opponent…").ratioFont(.h3).multilineTextAlignment(.center)
+                        Text("Searching within ±\(window) · \(elapsed / 60):\(String(format: "%02d", elapsed % 60))")
+                            .ratioFont(.monoLabel)
+                            .foregroundStyle(Color.ratioInk2)
+                    }
+                    .padding(RatioSpace.m)
+                    .frame(maxWidth: .infinity)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous)
+                            .strokeBorder(Color.ratioInk2, style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
+                    }
+                }
+                .frame(maxWidth: .infinity)
+            }
+            ColumnsLayout(fraction: 0.5, spacing: RatioSpace.m) {
+                facts
+                TimelineView(.periodic(from: started, by: 1)) { context in
+                    sparringOffer(elapsed: Int(context.date.timeIntervalSince(started)))
+                }
+            }
+        }
+    }
+
+    private var facts: some View {
+        HStack(spacing: 0) {
+            fact("Format", "First to 3")
+            Divider()
+            fact("Per question", "\(seconds)\u{00A0}s")
+            Divider()
+            fact("Pool", seconds == DuelTime.standard ? "Standard" : "Extra time")
+        }
+        .fixedSize(horizontal: false, vertical: true)
+        .ratioCard(padding: 0)
+    }
+
+    private func sparringOffer(elapsed: Int) -> some View {
+        HStack(alignment: .top, spacing: RatioSpace.s) {
+            SparringMark(size: 36)
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
+                Text(elapsed < 60 ? "No one yet? After 60\u{00A0}s we'll offer a sparring partner, clearly labelled." : "No one's free right now. Spar with a labelled partner instead?")
+                    .ratioFont(.body)
+                if elapsed >= 60 {
+                    RatioButton("Spar instead →", style: .secondary) { cancel(then: spar) }
+                }
+            }
+        }
+        .ratioPanel()
+    }
+
     private var content: some View {
         VStack(alignment: .leading, spacing: RatioSpace.m) {
-            Text("\(Text("Fastest finger").italic().foregroundStyle(Color.ratioOxblood)) wins the point.").ratioFont(.display)
+            headline
             HStack(spacing: RatioSpace.s) {
                 ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 64)
                 VStack(alignment: .leading) {
