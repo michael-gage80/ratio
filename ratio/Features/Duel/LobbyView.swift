@@ -2,7 +2,7 @@ import FirebaseFirestore
 import SwiftUI
 
 /// screens/40-friend-lobby.png — share a 6-character code, wait for a friend, chat
-/// (filtered before sending), and the host starts the match (PRD: "Friend lobby").
+/// (filtered before sending), and the host starts the duel (PRD: "Friend lobby").
 struct LobbyView: View {
     let code: String
 
@@ -23,50 +23,47 @@ struct LobbyView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
                 HStack {
-                    Button { leave() } label: { Image(systemName: "chevron.left").font(.title3).frame(width: 44, height: 44, alignment: .leading) }
-                        .accessibilityLabel("Leave the lobby")
+                    RatioIconButton(systemImage: "xmark", label: "Leave the lobby") { leave() }
                     Spacer()
                     Text("Friend lobby · \(lobby.map { DuelScope.title(of: $0.moduleId) } ?? "")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
+                .padding(.horizontal, -RatioSpace.xs)
                 Text("Share this \(Text("code.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
-                codeKeys
-                Text("No 0, O, 1 or I · Easy to read aloud").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity)
-                HStack(spacing: 12) {
-                    RatioButton("Copy", style: .tertiary) { UIPasteboard.general.string = code }
-                    ShareLink(item: URL(string: "ratio://lobby/\(code)")!, message: Text("Duel me on Ratio: code \(code)")) {
-                        Text("Share link")
-                            .ratioFont(.h3)
-                            .foregroundStyle(Color.ratioOnInk)
-                            .frame(maxWidth: .infinity, minHeight: 56)
-                            .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    }
+                VStack(spacing: RatioSpace.xs) {
+                    codeKeys
+                    Text("No 0, O, 1 or I · Easy to read aloud").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity)
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: RatioSpace.s) { copyButton; shareButton }
+                    VStack(spacing: RatioSpace.xs) { copyButton; shareButton }
                 }
                 if let lobby { expiry(lobby) }
                 players
                 chat
                 if isHost {
-                    RatioButton(starting ? "Starting…" : "Start match", isEnabled: lobby?.guest != nil && !starting) { start() }
-                    Text(lobby?.guest == nil ? "Start unlocks when a friend joins" : "The match starts with a 5-second countdown")
-                        .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity)
+                    RatioButton(starting ? "Starting…" : "Start the duel", isEnabled: lobby?.guest != nil && !starting) { start() }
+                    Text(lobby?.guest == nil ? "Start unlocks when a friend joins" : "The duel starts with a 5-second countdown")
+                        .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
                 } else {
                     Text("Waiting for \(lobby.map { $0.names[$0.host] ?? "the host" } ?? "the host") to start")
-                        .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity)
+                        .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
                 }
             }
-            .padding(24)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.vertical, RatioSpace.s)
         }
         .scrollDismissesKeyboard(.interactively)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .onAppear(perform: listen)
         .onDisappear { listeners.forEach { $0.remove() } }
         .fullScreenCover(item: Binding(get: { playing.map(MatchRef.init) }, set: { playing = $0?.id })) { match in
             LiveMatchView(matchId: match.id)
         }
         .onChange(of: playing) { _, matchId in
-            if matchId == nil, lobby?.matchId != nil { dismiss() } // Back from the match: the lobby is spent.
+            if matchId == nil, lobby?.matchId != nil { dismiss() } // Back from the duel: the lobby is spent.
         }
         .alert("Something went wrong", isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
             Button("OK", role: .cancel) {}
@@ -77,18 +74,36 @@ struct LobbyView: View {
 
     // MARK: Code and players
 
+    private var copyButton: some View {
+        RatioButton("Copy", style: .tertiary) { UIPasteboard.general.string = code }
+    }
+
+    private var shareButton: some View {
+        ShareLink(item: URL(string: "ratio://lobby/\(code)")!, message: Text("Duel me on Ratio: code \(code)")) {
+            // Parchment on ink, which flips correctly in dark mode.
+            Text("Share link")
+                .ratioFont(.h3)
+                .foregroundStyle(Color.ratioParchment)
+                .frame(maxWidth: .infinity, minHeight: 56)
+                .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+        }
+        .buttonStyle(.ratioPress)
+    }
+
     private var codeKeys: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: RatioSpace.xs) {
             ForEach(Array(code.enumerated()), id: \.offset) { index, character in
                 Text(String(character))
-                    .font(.custom("IBMPlexMono-Regular", size: 30, relativeTo: .title))
+                    .ratioFont(.figure)
                     .frame(maxWidth: .infinity, minHeight: 64)
-                    .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    .overlay { RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(Color.ratioRule) }
-                    .overlay(alignment: .bottom) { Capsule().fill(Color.ratioInk).frame(height: 2).padding(.horizontal, 4) }
-                    .padding(.leading, index == 3 ? 12 : 0)
+                    .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
+                    .overlay { RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous).strokeBorder(Color.ratioRule) }
+                    .overlay(alignment: .bottom) { Capsule().fill(Color.ratioInk).frame(height: 2).padding(.horizontal, RatioSpace.xxs) }
+                    .padding(.leading, index == 3 ? RatioSpace.xs : 0)
             }
         }
+        // Six keys across the screen; beyond this size the letters wouldn't fit them.
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Code \(code.map(String.init).joined(separator: " "))")
     }
@@ -107,89 +122,90 @@ struct LobbyView: View {
         VStack(spacing: 0) {
             if let lobby {
                 playerRow(uid: lobby.host, isHost: true)
-                Divider().overlay(Color.ratioRule).padding(.vertical, 12)
+                Divider().overlay(Color.ratioRule).padding(.vertical, RatioSpace.s)
                 if let guest = lobby.guest {
                     playerRow(uid: guest, isHost: false)
                 } else {
-                    HStack(spacing: 14) {
+                    HStack(spacing: RatioSpace.s) {
                         Circle().strokeBorder(Color.ratioInk2, style: StrokeStyle(lineWidth: 1, dash: [3, 3])).frame(width: 52, height: 52)
                         Text("Waiting for a friend…").ratioFont(.h3).italic().foregroundStyle(Color.ratioInk2)
                         Spacer()
                     }
                 }
             } else {
-                ProgressView()
+                playerRow(uid: student.uid, isHost: true).ratioSkeleton()
             }
         }
-        .padding(20)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 
     private func playerRow(uid: String, isHost: Bool) -> some View {
         let name = lobby?.names[uid] ?? "Student"
-        return HStack(spacing: 14) {
+        return HStack(spacing: RatioSpace.s) {
             ProfilePhoto(uid: uid, initial: String(name.prefix(1)), version: uid == student.uid ? student.profile.avatarVersion : nil, size: 52)
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                 Text(uid == student.uid ? "You" : name).ratioFont(.h3)
                 if uid == student.uid { Text(name).ratioFont(.small).foregroundStyle(Color.ratioInk2) }
             }
-            Spacer()
+            Spacer(minLength: RatioSpace.xs)
             if isHost { RatioTag("Host") }
         }
+        .accessibilityElement(children: .combine)
     }
 
     // MARK: Chat
 
     private var chat: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Chat").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             ForEach((messages + notSent).sorted { ($0.at ?? .distantFuture) < ($1.at ?? .distantFuture) }) { message in
                 bubble(message)
             }
-            HStack(spacing: 10) {
+            HStack(alignment: .bottom, spacing: RatioSpace.xs) {
                 TextField("Say something…", text: $draft, axis: .vertical)
                     .ratioFont(.body)
                     .lineLimit(1...3)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .padding(.horizontal, RatioSpace.s)
+                    .padding(.vertical, RatioSpace.xs)
+                    .frame(minHeight: 48)
+                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                     .submitLabel(.send)
                     .onSubmit(send)
                 Button(action: send) {
-                    Text("Send").ratioFont(.h3).foregroundStyle(Color.ratioOnInk).padding(.horizontal, 20).frame(minHeight: 48)
-                        .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    Text("Send").ratioFont(.h3).foregroundStyle(Color.ratioParchment).padding(.horizontal, RatioSpace.s).frame(minHeight: 48)
+                        .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.ratioPress)
                 .disabled(sending || draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             }
             Text("Messages are checked before they're sent. Report or block from any message.")
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
         }
-        .padding(20)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 
     private func bubble(_ message: Message) -> some View {
         let mine = message.uid == student.uid
-        return VStack(alignment: mine ? .trailing : .leading, spacing: 6) {
+        return VStack(alignment: mine ? .trailing : .leading, spacing: RatioSpace.xxs) {
             Text(mine ? "You" : message.name).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            HStack(spacing: 10) {
-                if mine { Spacer(minLength: 40) }
+            HStack(spacing: RatioSpace.xs) {
+                if mine { Spacer(minLength: RatioSpace.xl) }
                 Group {
                     if message.blocked {
                         Text("Message not sent: \(message.text)")
                             .italic()
                             .foregroundStyle(Color.ratioInk2)
-                            .padding(14)
-                            .overlay { RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(Color.ratioInk2, style: StrokeStyle(lineWidth: 1, dash: [4, 4])) }
+                            .padding(.horizontal, RatioSpace.s)
+                            .padding(.vertical, RatioSpace.xs)
+                            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioInk2, style: StrokeStyle(lineWidth: 1, dash: [4, 4])) }
                     } else {
+                        // Parchment on ink for your own messages, which flips correctly in dark mode.
                         Text(message.text)
-                            .foregroundStyle(mine ? Color.ratioOnInk : Color.ratioInk)
-                            .padding(14)
-                            .background(mine ? Color.ratioInk : Color.ratioSunk, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                            .foregroundStyle(mine ? Color.ratioParchment : Color.ratioInk)
+                            .padding(.horizontal, RatioSpace.s)
+                            .padding(.vertical, RatioSpace.xs)
+                            .background(mine ? Color.ratioInk : Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                     }
                 }
                 .ratioFont(.body)
@@ -203,7 +219,7 @@ struct LobbyView: View {
                     .foregroundStyle(Color.ratioInk2)
                     .accessibilityLabel("More for this message")
                 }
-                if !mine { Spacer(minLength: 40) }
+                if !mine { Spacer(minLength: RatioSpace.xl) }
             }
         }
         .frame(maxWidth: .infinity, alignment: mine ? .trailing : .leading)
@@ -334,33 +350,35 @@ struct LobbyEntryView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 24) {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Host").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    Text("Make a lobby for \(scope.title), \(seconds) s a question, and share the code.").ratioFont(.body)
-                    RatioButton("Make a lobby", isEnabled: !working) { create() }
+            ScrollView {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                        Text("Host").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        Text("Make a lobby for \(scope.title), \(seconds) s a question, and share the code.").ratioFont(.body)
+                        RatioButton("Make a lobby", isEnabled: !working) { create() }
+                    }
+                    Divider().overlay(Color.ratioRule)
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                        Text("Join").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        TextField("K7MP4X", text: $code)
+                            .ratioFont(.figure)
+                            .textInputAutocapitalization(.characters)
+                            .autocorrectionDisabled()
+                            .padding(RatioSpace.s)
+                            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                            .accessibilityLabel("Lobby code")
+                            .onChange(of: code) { _, value in
+                                let clean = String(value.uppercased().filter { $0.isLetter || $0.isNumber }.prefix(6))
+                                if clean != value { code = clean }
+                            }
+                        RatioButton("Join", style: .secondary, isEnabled: code.count == 6 && !working) { join(code) }
+                    }
+                    if let error { Text(error).ratioFont(.small).foregroundStyle(Color.ratioOxblood) }
                 }
-                Divider().overlay(Color.ratioRule)
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Join").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    TextField("K7MP4X", text: $code)
-                        .font(.custom("IBMPlexMono-Regular", size: 28, relativeTo: .title))
-                        .textInputAutocapitalization(.characters)
-                        .autocorrectionDisabled()
-                        .padding(14)
-                        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .onChange(of: code) { _, value in
-                            let clean = String(value.uppercased().filter { $0.isLetter || $0.isNumber }.prefix(6))
-                            if clean != value { code = clean }
-                        }
-                    RatioButton("Join", style: .secondary, isEnabled: code.count == 6 && !working) { join(code) }
-                }
-                if let error { Text(error).ratioFont(.small).foregroundStyle(Color.ratioOxblood) }
-                Spacer()
+                .padding(RatioSpace.m)
             }
-            .padding(24)
-            .background(Color.ratioParchment.ignoresSafeArea())
-            .foregroundStyle(Color.ratioInk)
+            .scrollBounceBehavior(.basedOnSize)
+            .ratioPage()
             .navigationTitle("Friend lobby")
             .toolbarTitleDisplayMode(.inline)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } } }

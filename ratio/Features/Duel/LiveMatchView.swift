@@ -1,7 +1,7 @@
 import FirebaseFunctions
 import SwiftUI
 
-/// A live match against another student, full screen: versus and countdown, the
+/// A live duel against another student, full screen: versus and countdown, the
 /// rounds, then judgment and the debrief (screens 34–39 with a human opponent).
 struct LiveMatchView: View {
     let matchId: String
@@ -19,12 +19,11 @@ struct LiveMatchView: View {
             if let model {
                 content(model)
             } else {
-                ProgressView()
+                waiting("Connecting to the duel…")
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .onAppear {
             guard model == nil else { return }
             let live = LiveMatchModel(matchId: matchId, uid: student.uid)
@@ -43,35 +42,32 @@ struct LiveMatchView: View {
     private func content(_ model: LiveMatchModel) -> some View {
         switch model.phase {
         case .connecting:
-            waiting("Connecting to the match…")
+            waiting("Connecting to the duel…")
         case .countdown:
             LiveVersus(model: model)
         case .round:
             VStack(spacing: 0) {
                 HStack {
-                    Button { confirmingLeave = true } label: {
-                        Image(systemName: "xmark").font(.body.weight(.semibold)).frame(width: 44, height: 44)
-                    }
-                    .foregroundStyle(Color.ratioInk2)
-                    .accessibilityLabel("Leave the match")
+                    RatioIconButton(systemImage: "xmark", label: "Leave the duel") { confirmingLeave = true }
+                        .foregroundStyle(Color.ratioInk2)
                     Spacer()
                     Text("\(DuelScope.title(of: model.moduleId ?? "")) · Live").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
-                .padding(.horizontal, 12)
+                .padding(.horizontal, RatioSpace.s)
                 if let since = model.opponentGoneSince {
                     OpponentGoneBanner(name: model.opponent.name, since: since)
-                        .padding(.horizontal, 24)
-                        .padding(.bottom, 8)
+                        .padding(.horizontal, RatioSpace.m)
+                        .padding(.bottom, RatioSpace.xs)
                 }
                 DuelRoundView(model: model)
             }
-            .confirmationDialog("Leave the match?", isPresented: $confirmingLeave, titleVisibility: .visible) {
+            .confirmationDialog("Leave the duel?", isPresented: $confirmingLeave, titleVisibility: .visible) {
                 Button("Leave — \(model.opponent.name) wins", role: .destructive) {
                     Task { await model.leave() }
                 }
                 Button("Keep playing", role: .cancel) {}
             } message: {
-                Text("Leaving forfeits the match and counts as a loss.")
+                Text("Leaving forfeits the duel and counts as a loss.")
             }
         case .settling:
             waiting("Entering judgment…")
@@ -91,19 +87,20 @@ struct LiveMatchView: View {
                 }
             }
         case .failed:
-            VStack(spacing: 20) {
-                Text("This match isn't available.").ratioFont(.h3)
+            VStack(spacing: RatioSpace.m) {
+                Text("This duel isn't available any more.").ratioFont(.h3).multilineTextAlignment(.center)
                 RatioButton("Close", style: .secondary) { dismiss() }
             }
-            .padding(32)
+            .padding(RatioSpace.l)
         }
     }
 
     private func waiting(_ text: String) -> some View {
-        VStack(spacing: 24) {
+        VStack(spacing: RatioSpace.m) {
             RatioRings(diameter: 140)
-            Text(text).ratioFont(.h3).italic()
+            Text(text).ratioFont(.h3).italic().multilineTextAlignment(.center)
         }
+        .padding(RatioSpace.m)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.ratioParchment.ignoresSafeArea())
         .environment(\.colorScheme, .dark)
@@ -132,13 +129,15 @@ private struct LiveVersus: View {
     var body: some View {
         let opponent = model.opponent
         VStack(spacing: 0) {
-            VStack(spacing: 12) {
+            VStack(spacing: RatioSpace.s) {
                 Text("\(DuelScope.title(of: model.moduleId ?? "")) · First to 3").ratioFont(.monoLabel).opacity(0.7)
                 OpponentMark(opponent: opponent, size: 96)
                 Text(opponent.name).ratioFont(.h1)
                 Text(opponent.detail).ratioFont(.monoData).opacity(0.7)
             }
             .foregroundStyle(Color.ratioParchment)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, RatioSpace.m)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.ratioInk)
             SwiftUI.TimelineView(.periodic(from: .now, by: 0.25)) { context in
@@ -146,7 +145,7 @@ private struct LiveVersus: View {
                 ZStack {
                     Circle().fill(Color.ratioPaper)
                     Circle().strokeBorder(Color.ratioInk, lineWidth: 1.5)
-                    Text(seconds > 0 ? "\(seconds)" : "v").font(.custom("NewsreaderDisplay-Italic", size: 56, relativeTo: .largeTitle))
+                    Text(seconds > 0 ? "\(seconds)" : "v").ratioFont(.displayAccent)
                         .foregroundStyle(Color.ratioOxblood)
                         .contentTransition(.numericText(countsDown: true))
                 }
@@ -156,7 +155,7 @@ private struct LiveVersus: View {
                 .accessibilityLabel(seconds > 0 ? "Starting in \(seconds)" : "Starting")
             }
             .frame(height: 0)
-            VStack(spacing: 12) {
+            VStack(spacing: RatioSpace.s) {
                 ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 96)
                 Text("You").ratioFont(.h1)
                 Text("Rating \((model.view?.players[student.uid]?.rating ?? 1200).formatted())").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
@@ -164,10 +163,12 @@ private struct LiveVersus: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .ignoresSafeArea(edges: .top)
+        // Two fixed halves; beyond this size they'd overlap.
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
     }
 }
 
-/// "Zara's connection dropped · 0:12" — the match is claimed at 45 seconds.
+/// "Zara's connection dropped · 0:12" — the duel is claimed at 45 seconds.
 private struct OpponentGoneBanner: View {
     let name: String
     let since: Date
@@ -175,12 +176,10 @@ private struct OpponentGoneBanner: View {
     var body: some View {
         SwiftUI.TimelineView(.periodic(from: .now, by: 1)) { context in
             let gone = Int(context.date.timeIntervalSince(since))
-            Label("\(name)'s connection dropped · \(gone / 60):\(String(format: "%02d", gone % 60)). The match is yours at 0:45.",
+            Label("\(name)'s connection dropped · \(gone / 60):\(String(format: "%02d", gone % 60)). The duel is yours at 0:45.",
                   systemImage: "wifi.slash")
                 .ratioFont(.small)
-                .padding(12)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .ratioPanel(padding: RatioSpace.s)
         }
     }
 }
