@@ -44,6 +44,8 @@ public enum RatioSpotArt: CaseIterable {
         case .euLaw: .pediment
         case .humanRights: .scales
         case .jurisprudence: .openBook
+        case .employmentLaw: .quill
+        case .familyLaw: .seal
         }
     }
 }

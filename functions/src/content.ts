@@ -24,7 +24,7 @@ export type TopicScores = Partial<Record<Skill, Estimate>>;
 /** Snapshots of a topic's scores kept for the Me tab's trend charts. */
 export const HISTORY_LIMIT = 100;
 
-export const MODULES = ["crime", "contract", "tort", "public", "land", "equity", "companylaw", "eulaw", "humanrights", "jurisprudence"];
+export const MODULES = ["crime", "contract", "tort", "public", "land", "equity", "companylaw", "eulaw", "humanrights", "jurisprudence", "employmentlaw", "familylaw"];
 
 export const lessons = new Map<string, Lesson>(
   readdirSync(join(__dirname, "lessons"))

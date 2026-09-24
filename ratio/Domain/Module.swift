@@ -1,5 +1,6 @@
 /// The LLB modules: the six core modules at launch (PRD: "Launch content"), then the
-/// options added since — Company law, EU law, Human rights and Jurisprudence. Raw values are the module
+/// options added since — Company law, EU law, Human rights, Jurisprudence, Employment
+/// law and Family law. Raw values are the module
 /// IDs used throughout the content — lesson `moduleId`s, topic ID prefixes
 /// ("public.judicial-review…") and the diagnostic bank — and on the student's profile.
 /// Case order is the order they're offered in and, by default, their Pathway order.
@@ -14,6 +15,8 @@ enum Module: String, CaseIterable, Identifiable, Codable {
     case euLaw = "eulaw"
     case humanRights = "humanrights"
     case jurisprudence
+    case employmentLaw = "employmentlaw"
+    case familyLaw = "familylaw"
 
     var id: String { rawValue }
 
@@ -29,6 +32,8 @@ enum Module: String, CaseIterable, Identifiable, Codable {
         case .euLaw: "EU law"
         case .humanRights: "Human rights"
         case .jurisprudence: "Jurisprudence"
+        case .employmentLaw: "Employment law"
+        case .familyLaw: "Family law"
         }
     }
 

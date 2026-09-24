@@ -1,0 +1,335 @@
+{
+  "lessonId": "familylaw-14",
+  "moduleId": "familylaw",
+  "moduleTitle": "Family Law",
+  "lessonNumber": 14,
+  "topicId": "familylaw.parenthood.assisted-reproduction-surrogacy",
+  "title": "Who counts as a parent",
+  "subtitle": "Legal parenthood in donor conception and surrogacy",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the rule in s33 HFEA 2008 governing who is a child's legal mother, and explain the statutory routes by which a second legal parent is identified",
+    "Explain the conditions under s54 (and s54A) HFEA 2008 that intended parents in a surrogacy arrangement must satisfy to obtain a parental order, including the six-month application window and the restriction on payment",
+    "Identify that the Law Commissions' 2023 recommended reform to surrogacy law is not in force, and apply the current parental order regime, not the proposed one, to a given fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Human Fertilisation and Embryology Act 2008, ss 33–48", "role": "Sets the statutory rules for legal motherhood and second parenthood in assisted reproduction" },
+    { "citation": "Human Fertilisation and Embryology Act 2008, s 54 (and s 54A)", "role": "Creates the parental order route by which intended parents in a surrogacy arrangement acquire legal parenthood" },
+    { "citation": "Surrogacy Arrangements Act 1985, ss 1A, 2", "role": "Makes surrogacy arrangements unenforceable and criminalises commercial arranging of surrogacy" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is a lesson where the popular understanding of surrogacy — 'the intended parents are the parents' — is straightforwardly wrong as a matter of law at the moment of birth. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can recite the parental order route — this lesson checks whether you know exactly who is the legal parent before that order is made.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans on fact patterns — missed deadlines, informal conception outside a clinic, payment disputes — rather than bare definitions.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — s33's rule on legal motherhood is the foundation every other rule in this lesson, including the whole parental order regime, is built on top of."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A woman gives birth to a child who is, genetically, not related to her at all — every cell of the embryo came from another couple's egg and sperm. At the moment of birth, English law is unambiguous about who that child's mother is: her. Not the intended mother waiting at home with a nursery already painted. Getting from that starting point to the family the arrangement was actually meant to create takes a specific, time-limited court order — and knowing exactly what that order requires, and what it doesn't yet include, is what this lesson is about.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The Law Commission of England and Wales and the Scottish Law Commission published a joint report in March 2023 recommending a new pathway that would confer legal parenthood on intended parents at the point of a child's birth in surrogacy arrangements meeting statutory safeguards. As at the check date, the Government has not introduced legislation to implement that report, and none of its recommendations are in force. The operative law governing legal parenthood in surrogacy remains the parental order regime under s54 (and s54A) of the Human Fertilisation and Embryology Act 2008, under which the surrogate is the child's legal mother at birth and intended parents must apply, within strict statutory conditions, to transfer parenthood after the birth. This lesson teaches that regime as the current, operative law; the 2023 reform proposals are taught only as a live, unimplemented proposal, and must not be applied as if they were in force."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Why the surrogate is always the legal mother at birth",
+        "voice": "structural — states the foundational rule before anything else",
+        "body": [
+          "Section 33 of the Human Fertilisation and Embryology Act 2008 is the single most important provision in this lesson, because everything else — the whole parental order regime for surrogacy — exists only because of what it says. The rule is deliberately blunt: the woman who carries and gives birth to a child as a result of assisted conception is, and no other woman is, the child's legal mother.",
+          "That rule applies regardless of genetics. If an embryo created from the intended mother's egg is carried by a surrogate, the surrogate is still the legal mother at the moment of birth — the intended mother's genetic connection to the child makes no difference to who the law treats as her parent. The rationale is certainty: at the point a child is born, the law needs an immediate, unambiguous answer to 'who is responsible for this child', and birth is the one fact that is never in dispute.",
+          "This is the rule that makes surrogacy legally distinctive. In a straightforward surrogacy arrangement, however clear everyone's intentions were beforehand, the intended parents are not the child's legal parents when the child is born. Something further has to happen before the law catches up with what the arrangement was for."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Human Fertilisation and Embryology Act 2008, s 33(1)",
+            "text": "The woman who is carrying or has carried a child as a result of the placing in her of an embryo or of sperm and eggs, and no other woman, is to be treated as the mother of the child.",
+            "elements": ["The birth mother is the legal mother", "This applies regardless of whose egg was used", "No other woman can be treated as the legal mother under this section"]
+          }
+        ],
+        "interaction": {
+          "itemId": "familylaw-14-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under s33 HFEA 2008, who is the child's legal mother at birth in a surrogacy arrangement, even where the intended mother provided the egg?",
+          "options": ["The surrogate (birth mother)", "Whoever provided the egg"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. s33 is a bright-line rule based on gestation, not genetics — the surrogate is the legal mother at birth regardless of the egg's source.",
+          "feedbackIncorrect": "s33 turns on who carries and gives birth to the child, not on genetics. Whoever provided the egg is legally irrelevant to motherhood under this section — the surrogate is the legal mother the moment the child is born."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The second parent: partners, spouses and donors",
+        "voice": "structural — reference-style, building the framework the rest of the module assumes",
+        "body": [
+          "If s33 answers 'who is the mother', ss35 to 47 answer 'who, if anyone, is the second parent'. The default rule for a birth mother who is married or in a civil partnership at the time of treatment is that her spouse or civil partner is treated as the child's second parent — unless that spouse or partner did not consent to the treatment.",
+          "For unmarried couples, the Act provides a route called the agreed parenthood conditions: an unmarried partner (opposite-sex under ss36–38, same-sex female under ss43–47) can be treated as the second legal parent if both parties gave the required consent, in the required form, before treatment at a licensed clinic. Crucially, these routes only apply where treatment happens through a licensed UK clinic — informal, DIY conception outside that framework falls outside the Act's parenthood rules entirely, and legal parenthood then follows the ordinary biological rule instead.",
+          "The flip side of these rules is who is protected from parental status. Where a sperm or egg donor's gametes are used under the licensed conditions in ss41 and 45, the donor is not treated as the child's parent at all — the whole point of the framework is to match legal parenthood to the intended family, not to the genetics, so that a donor who never intended to parent isn't saddled with the legal and financial consequences of doing so."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The second-parent rules at a glance",
+            "points": [
+              "Married/civil partner (ss 35, 42) — spouse or civil partner is the second parent by default, unless they did not consent to the treatment",
+              "Unmarried opposite-sex couple (ss 36–38) — the man becomes the legal father if the agreed fatherhood conditions were met before treatment at a licensed clinic",
+              "Unmarried same-sex female couple (ss 43–47) — the partner becomes a legal parent if the agreed female parenthood conditions were met before treatment at a licensed clinic",
+              "Donor (ss 41, 45) — a sperm or egg donor is not treated as a parent where the licensed-clinic conditions are satisfied",
+              "Outside a licensed clinic — none of these rules apply; parenthood then follows the ordinary rule that the biological father is the legal father"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "familylaw-14-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that establishes Daya as her child's second legal parent under the HFEA 2008.",
+          "scenarioText": "Priya and her wife Daya use donor sperm to conceive at a licensed fertility clinic. Before treatment began, Daya gave the clinic written consent, in the form the clinic required, to be treated as their child's second legal parent under the agreed female parenthood conditions. Priya later carries and gives birth to their son.",
+          "tappableSpans": ["use donor sperm", "at a licensed fertility clinic", "Daya gave the clinic written consent, in the form the clinic required, to be treated as their child's second legal parent", "Priya later carries and gives birth to their son"],
+          "correctSpan": "Daya gave the clinic written consent, in the form the clinic required, to be treated as their child's second legal parent",
+          "feedbackCorrect": "That's the operative fact. Using a licensed clinic and donor sperm are preconditions, but it is Daya's properly given pre-treatment consent that actually satisfies the agreed female parenthood conditions under ss43–47 and makes her the second legal parent.",
+          "feedbackIncorrect": "Using donor sperm and a licensed clinic set the scene, but on their own they don't make anyone a parent. Look for the fact that satisfies the agreed female parenthood conditions themselves — the properly given, pre-treatment consent."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Surrogacy and the parental order route",
+        "voice": "statute-first — works from the conditions outward",
+        "body": [
+          "Because s33 makes the surrogate the legal mother regardless of intention, and ss35/42 may also make her spouse or civil partner the second legal parent, intended parents in a surrogacy arrangement typically start out as legal strangers to the child they intended to raise — even where one or both of them is genetically related. The only route to change that is a parental order under s54 HFEA 2008 (or s54A, added in 2019, for a single applicant).",
+          "s54 sets a demanding checklist. The child must be genetically related to at least one applicant. The application must be made within six months of the birth. The child's home must be with the applicants at the time of the application and the order. At least one applicant must be domiciled in the UK, Channel Islands or Isle of Man. Both applicants (where there are two) must be over 18. And the surrogate — and any other person treated as a parent, such as her spouse — must freely and, with full understanding, consent, unless they cannot be found or lack capacity; consent given within six weeks of the birth doesn't count.",
+          "Until a parental order is made, the surrogate (and, where applicable, her spouse) remains the legal parent, whatever the parties intended and whatever the genetics say. This is why practitioners treat the six-month window and the consent conditions as the two points in the process most likely to derail an otherwise straightforward arrangement."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Human Fertilisation and Embryology Act 2008, s 54 (summarised conditions)",
+            "text": "The court must be satisfied, among other things, that the child is genetically related to at least one applicant; that the application is made within six months of the child's birth; that the child's home is with the applicants at the time of the application and of the order; that at least one applicant is domiciled in the UK, Channel Islands or Isle of Man; that both applicants (where there are two) are over 18; and that the woman who carried the child, and any other person who is a parent of the child, has freely, and with full understanding of what is involved, agreed unconditionally to the making of the order — a consent given by the woman who carried the child less than six weeks after the birth is not effective for this purpose.",
+            "elements": ["Genetic link to at least one applicant", "Application within six months of birth", "Child's home with the applicants", "UK/Channel Islands/Isle of Man domicile for at least one applicant", "Applicants over 18", "Free, fully informed, unconditional consent of the surrogate (and any other legal parent), not given within six weeks of birth"]
+          }
+        ],
+        "interaction": {
+          "itemId": "familylaw-14-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Which condition under s54 HFEA 2008 imposes a strict time limit on intended parents applying for a parental order?",
+          "options": ["The requirement that the application be made within six months of the child's birth", "The requirement that at least one applicant be domiciled in the UK", "The requirement that both applicants be over 18"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — the six-month window from birth is the strict time limit, and courts have treated it as very difficult to extend even where intended parents delayed for understandable reasons.",
+          "feedbackIncorrect": "Domicile and age conditions are eligibility requirements, not time limits on when the application itself must be brought. The strict deadline is the requirement that the application be made within six months of the child's birth."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "No commercial surrogacy, no enforceable contracts",
+        "voice": "direct — myth-busting, sets up a trap students commonly fall into",
+        "body": [
+          "Two features of English surrogacy law surprise most students who arrive expecting it to work like a commercial contract. First, under s1A of the Surrogacy Arrangements Act 1985, no surrogacy arrangement is enforceable by or against anyone who made it — a surrogate who changes her mind cannot be compelled by a court to hand over the child, and intended parents cannot be compelled to take the child either. The only thing that transfers legal parenthood is a parental order under s54; a surrogacy agreement, however detailed, has no legal force of its own.",
+          "Second, the 1985 Act makes it a criminal offence to negotiate a surrogacy arrangement on a commercial basis — advertising for a surrogate, or arranging surrogacy for profit, is prohibited. Altruistic surrogacy itself isn't a criminal offence for the surrogate or the intended parents, and reasonable expenses (medical costs, loss of earnings, and similar) can lawfully be paid. But payment beyond reasonable expenses puts a parental order at risk, because s54 requires the court to be satisfied that no unauthorised payment has been made.",
+          "In practice, courts have frequently been willing to retrospectively authorise payments that exceeded strict expenses, because refusing a parental order on that ground alone would leave a child who is already living with, and bonded to, their intended parents without a secure legal family — an outcome plainly contrary to the child's welfare. That tension, between a clear statutory prohibition and a welfare-driven reluctance to punish the child for the adults' arrangement, is the single most tested point in this area."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume a signed surrogacy agreement is a binding contract that a court will enforce if the surrogate refuses to hand over the child, or that any payment above bare expenses automatically dooms the parental order.",
+            "whyItsWrong": "Surrogacy arrangements are unenforceable as a matter of statute (s1A SAA 1985) — no court will order specific performance of one. And while unauthorised payment is a real statutory obstacle under s54, courts have consistently shown they can authorise payment retrospectively where refusing to do so would leave a child without a secure legal family; it is not an automatic bar."
+          }
+        ],
+        "interaction": {
+          "itemId": "familylaw-14-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "Which statement correctly describes the legal status of a surrogacy arrangement under the Surrogacy Arrangements Act 1985?",
+          "options": ["It is enforceable like an ordinary contract, provided it is in writing", "It is not enforceable by or against any of the parties to it, whatever it says", "It is automatically void unless registered with the court before conception"],
+          "correctIndex": 1,
+          "trapExplanation": "There is no writing requirement that makes a surrogacy arrangement enforceable, and no pre-conception registration scheme — s1A simply provides that no surrogacy arrangement is enforceable by or against anyone who made it, full stop. Legal parenthood only ever transfers through a s54 parental order."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The unimplemented reform: the Law Commissions' new pathway",
+        "voice": "reflective — closes the lesson by being explicit about currency",
+        "body": [
+          "In March 2023, the Law Commission of England and Wales and the Scottish Law Commission published a joint report, Building families through surrogacy: a new law, recommending a fundamentally different model. Instead of intended parents having to apply for a parental order after the birth, the proposed 'new pathway' would let them become legal parents from the moment of birth in arrangements that met specified safeguards — including the involvement of a regulated surrogacy organisation — subject to the surrogate retaining a right to object within a fixed period after birth. The report also proposed a surrogacy register and a clearer, though still non-commercial, framework for permitted payments.",
+          "None of this is law. As at the check date, the Government has not introduced legislation to implement the report, and every recommendation in it remains just that — a recommendation. The current, operative regime is still the one covered in this lesson: the surrogate is the legal mother at birth under s33, and intended parents must obtain a parental order under s54, subject to its full checklist of conditions, to transfer legal parenthood.",
+          "This distinction matters for exam purposes specifically because it's easy to blur. If a problem question describes a surrogacy arrangement and asks how legal parenthood is established, the answer is the parental order regime — not the Law Commissions' proposed pathway — unless the question explicitly asks you to discuss reform."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "The 'new pathway' (2023 Law Commission proposal — not in force)",
+            "definition": "A recommended, but not enacted, reform to surrogacy law that would confer legal parenthood on intended parents from birth (subject to safeguards and the surrogate's post-birth right to object), replacing the current requirement for a post-birth parental order. As at the check date, no legislation has been introduced to implement it, and it has no legal effect."
+          }
+        ],
+        "interaction": {
+          "itemId": "familylaw-14-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the Law Commissions' 2023 recommended surrogacy pathway is currently in force in England and Wales?",
+          "sliderLabels": ["Definitely in force", "Definitely not in force"],
+          "correctPosition": "not in force",
+          "explanation": "Not in force. The 2023 report is a set of recommendations to Government, not enacted legislation. As at the check date, no bill has been introduced to implement it, and the operative law remains the s54 parental order regime."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "familylaw-14-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the rule in s33 HFEA 2008 governing who is a child's legal mother.",
+      "acceptableAnswers": ["the woman who carries and gives birth to the child is the legal mother, regardless of genetics", "the birth mother is the legal mother under s33"],
+      "modelAnswer": "The woman who is carrying or has carried the child as a result of the placing in her of an embryo or of sperm and eggs, and no other woman, is treated as the child's legal mother — this applies regardless of whose egg was used."
+    },
+    {
+      "itemId": "familylaw-14-test-02",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the statutory route by which intended parents in a surrogacy arrangement can acquire legal parenthood after the child's birth.",
+      "acceptableAnswers": ["a parental order under s54 HFEA 2008", "s54 parental order (or s54A for a sole applicant)"],
+      "modelAnswer": "An application for a parental order under s54 HFEA 2008 (or s54A for a single applicant), made within the Act's conditions."
+    },
+    {
+      "itemId": "familylaw-14-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Where the conditions in ss41 and 45 HFEA 2008 are satisfied, is a sperm or egg donor treated as the child's legal parent?",
+      "options": ["No — the donor is not treated as a parent", "Yes — the donor is always a legal parent alongside the intended parents"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "familylaw-14-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following correctly describes the effect of the Surrogacy Arrangements Act 1985 on the enforceability of a surrogacy agreement?",
+      "options": ["It provides that no surrogacy arrangement is enforceable by or against anyone who made it", "It makes surrogacy agreements enforceable provided they are in writing and signed by all parties", "It requires surrogacy agreements to be registered with the Family Court before they take effect"],
+      "correctIndex": 0,
+      "trapExplanation": "There is no writing exception and no pre-registration scheme that makes a surrogacy agreement enforceable — s1A of the 1985 Act flatly rules out enforceability for any surrogacy arrangement, whatever form it takes. Only a s54 parental order can transfer legal parenthood."
+    },
+    {
+      "itemId": "familylaw-14-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s54 HFEA 2008, what is the effect of a surrogate giving her consent to the parental order less than six weeks after the child's birth?",
+      "options": ["That consent is not effective for the purposes of s54", "It is effective, but only if confirmed in writing later", "It is effective provided the intended parents can show urgency"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "familylaw-14-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that best captures why courts have been willing to authorise payments beyond reasonable expenses when deciding whether to grant a parental order.",
+      "passage": "Section 54 requires the court to be satisfied that no unauthorised payment has been made, reflecting the statutory prohibition on commercial surrogacy. But refusing a parental order on that ground alone, once the child is already living with and bonded to the intended parents, would leave the child without a secure legal family. Courts have therefore been willing, in appropriate cases, to authorise such payments retrospectively in the child's welfare interests.",
+      "ratioSentence": "But refusing a parental order on that ground alone, once the child is already living with and bonded to the intended parents, would leave the child without a secure legal family."
+    },
+    {
+      "itemId": "familylaw-14-test-07",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that puts the intended parents' parental order application at risk.",
+      "scenarioText": "A child is born to a surrogate on 3 January. The intended parents, who are genetically related to the child and with whom the child has lived from birth, are still gathering paperwork when 5 August arrives and they finally file their application for a parental order.",
+      "tappableSpans": ["genetically related to the child", "the child has lived from birth", "5 August arrives and they finally file their application"],
+      "correctSpan": "5 August arrives and they finally file their application",
+      "explanation": "Genetic relatedness and the child living with them from birth both satisfy s54 conditions. The problem is timing: filing on 5 August is more than six months after a 3 January birth, breaching the strict six-month application window."
+    },
+    {
+      "itemId": "familylaw-14-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "In which scenario does the surrogate's husband become the child's legal second parent by default, absent a parental order?",
+      "scenarioA": "The surrogate is married, and her husband gave his written consent before treatment at the licensed clinic where the embryo (created using donor sperm and the intended mother's egg) was placed in her.",
+      "scenarioB": "The surrogate is unmarried and has no partner involved in the arrangement at all; only the intended parents have any connection to the pregnancy.",
+      "correctScenario": "A",
+      "explanation": "Under s35, a birth mother's husband is treated as the child's second legal parent by default where he consented to her treatment — this applies regardless of the surrogacy arrangement's purpose, which is exactly why intended parents in scenario A still need a parental order to displace him. In scenario B there is no spouse for s35 to operate on."
+    },
+    {
+      "itemId": "familylaw-14-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Intended parents apply for a parental order seven months after the child's birth, having genuinely misunderstood the deadline. Is the court likely to be able to make the order?",
+      "options": ["No — s54's six-month application window has been treated by the courts as very difficult to extend, even for a genuine misunderstanding", "Yes — the deadline is only a guideline and courts routinely extend it", "Yes — provided the child's home has been with the applicants throughout"],
+      "correctIndex": 0,
+      "explanation": "The six-month window in s54 is a strict statutory condition, and courts have very rarely been able to make a parental order once it has passed — an honest misunderstanding about the deadline does not, by itself, give the court power to disregard it."
+    },
+    {
+      "itemId": "familylaw-14-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A man and woman conceive using his sperm through a private, informal arrangement with a friend acting as surrogate, entirely outside any licensed clinic. Does the HFEA 2008's second-parent framework (the agreed parenthood conditions) apply to determine legal fatherhood here?",
+      "options": ["No — the agreed parenthood conditions only apply to treatment carried out at a licensed clinic, so ordinary biological parenthood rules apply instead", "Yes — the Act applies to all conception involving a surrogate, licensed or not", "No — informal arrangements automatically make the intended mother the legal parent"],
+      "correctIndex": 0,
+      "explanation": "The agreed parenthood conditions in ss36–38 and 43–47 are tied to treatment at a licensed clinic. Conception outside that framework falls outside the Act's parenthood rules entirely, so ordinary biological rules determine legal fatherhood — the man whose sperm was used is the legal father unless and until a parental order changes that."
+    },
+    {
+      "itemId": "familylaw-14-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Intended parents paid their surrogate £18,000 during the pregnancy — covering loss of earnings and medical costs, but also a further sum beyond any documented expense — and now apply for a parental order within the six-month window, with the surrogate's full and freely given consent. Analyse whether the payment is likely to prevent the court making the order.",
+      "factsToOrder": [
+        "The application is made within the six-month window",
+        "The surrogate's consent is free and fully informed",
+        "£18,000 was paid, exceeding documented reasonable expenses",
+        "The child has been living with the intended parents since birth",
+        "No party disputes the arrangement or seeks to prevent the order"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model answer shown, mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes the Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, and writes the Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes the full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether a payment to the surrogate exceeding documented reasonable expenses prevents the court making a parental order under s54.",
+        "rule": "s54 requires the court to be satisfied that no unauthorised payment (beyond reasonable expenses) has been made, unless the court authorises it; courts have shown a consistent willingness to authorise excess payments retrospectively where refusing the order would leave a child without a secure legal family, applying the child's welfare as the paramount consideration to that discretion.",
+        "application": "All the other s54 conditions are met — timing, consent, and the child's settled home with the applicants. The excess payment is a real statutory obstacle, but it is not framed by the Act or the case law as an automatic bar; the court retains a discretion to authorise it, and the child's established, uncontested home with the intended parents strongly favours exercising that discretion rather than leaving the child legally parentless.",
+        "conclusion": "The payment is unlikely, on its own, to prevent the order — the court is likely to authorise it retrospectively, though it will scrutinise the payment to ensure the arrangement was not effectively a disguised commercial transaction."
+      }
+    },
+    {
+      "itemId": "familylaw-14-test-12",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the stages of establishing legal parenthood in a typical UK surrogacy arrangement.",
+      "items": ["Child is born; the surrogate is the legal mother under s33", "Intended parents apply for a parental order under s54 within six months of the birth", "The court checks the s54 conditions, including consent and any payment made", "The parental order is made, transferring legal parenthood to the intended parents"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "familylaw-14-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that s54 HFEA 2008 requires the child to be genetically related to at least one of the applicants for a parental order?",
+      "sliderLabels": ["Not confident — no genetic link is required", "Confident — a genetic link to at least one applicant is required"],
+      "correctPosition": "Confident — a genetic link to at least one applicant is required",
+      "explanation": "Correct. s54 requires the child to be genetically related to at least one applicant — a parental order cannot be used by intended parents with no genetic connection to the child at all, which distinguishes it from adoption."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is assuming intended parents are already the legal parents once a surrogate hands over the child, or that any payment beyond reasonable expenses automatically dooms a parental order. Both instincts skip past the actual mechanics of s33 and s54 — and both are exactly the kind of confident-but-wrong intuition the 2023 Law Commission reforms exist to fix, once (if) they're ever implemented.",
+    "reviewMisses": true,
+    "linkToPathway": "familylaw.parenthood.assisted-reproduction-surrogacy"
+  }
+}

@@ -1,0 +1,340 @@
+{
+  "lessonId": "employmentlaw-14",
+  "moduleId": "employmentlaw",
+  "moduleTitle": "Employment Law",
+  "lessonNumber": 14,
+  "topicId": "employmentlaw.protection.whistleblowing",
+  "title": "The disclosure that costs you your job",
+  "subtitle": "Protected disclosures under the Employment Rights Act 1996 Part IVA",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the definition of a 'qualifying disclosure' under s 43B ERA 1996 and list the six categories of relevant failure it can concern",
+    "Explain the reasonable belief in truth and reasonable belief that disclosure is in the public interest requirements, including how Chesterton narrowed what 'in the public interest' means in practice",
+    "Apply the detriment and automatically unfair dismissal protections to a fact pattern, and identify which disclosure channel (employer, prescribed person, or wider disclosure) an employee must satisfy for protection"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Employment Rights Act 1996 Part IVA (ss 43A–43L)", "role": "Defines protected disclosures, qualifying disclosures, the disclosure-channel routes, and the detriment and dismissal protections" },
+    { "citation": "Chesterton Global Ltd v Nurmohamed [2017] EWCA Civ 979", "role": "The 'in the public interest' requirement can be satisfied even where the disclosure also serves the worker's own interest, provided a section of the public is affected" },
+    { "citation": "Kilraine v London Borough of Wandsworth [2018] EWCA Civ 1436", "role": "A qualifying disclosure must convey facts ('information'), however brief — a bare, unsupported allegation is not enough" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite 'whistleblowers are protected' as a slogan. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know protection exists — this lesson is about the four or five hurdles a disclosure has to clear before it actually qualifies.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards scenario questions: expect to work out whether a specific email or conversation actually counts as a qualifying disclosure, not just define the term.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — the six categories of relevant failure and the 'information vs allegation' distinction are the foundation the rest of this lesson assumes you know cold."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A junior accountant notices the year-end figures have been quietly adjusted ahead of an audit. She emails a partner, flags the discrepancy, and asks for it to be looked into. Eight weeks later she's dismissed for 'poor performance'. Whether that email protects her — and whether the real reason for her dismissal was the email at all — turns on a chain of statutory tests most people have never heard of, each one narrower than the last.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The whistleblowing framework in ERA 1996 Part IVA is settled, in-force statute, last substantively amended in 2013 (adding the public interest test and removing the good faith requirement from the qualifying disclosure definition itself, while allowing bad faith to reduce a compensation award instead). No further legislative change is pending; case law on 'reasonable belief' and 'public interest' continues to develop incrementally at Employment Appeal Tribunal level."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "What counts as a 'qualifying disclosure'",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Whistleblowing protection does not attach to every complaint an employee makes at work. It attaches to a specific, narrowly defined thing: a 'qualifying disclosure' under s 43B(1) ERA 1996.",
+          "A qualifying disclosure is a disclosure of information which, in the reasonable belief of the worker making it, is made in the public interest and tends to show one or more of six categories of relevant failure: that a criminal offence has been, is being or is likely to be committed; that a person has failed, is failing or is likely to fail to comply with any legal obligation; that a miscarriage of justice has occurred, is occurring or is likely to occur; that the health or safety of any individual has been, is being or is likely to be endangered; that the environment has been, is being or is likely to be damaged; or that information tending to show any of the above has been, is being or is likely to be deliberately concealed.",
+          "Two words carry enormous weight in that definition. First, 'information' — Kilraine establishes that a disclosure must convey actual facts, however brief, not merely a bare assertion or opinion with nothing behind it: 'you're not complying with health and safety law' might be too vague on its own, while 'the fire exit on the third floor has been blocked by pallets for two weeks' conveys information. Second, 'reasonable belief' — the worker doesn't have to be right about the underlying failure, only reasonable in believing it exists."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Employment Rights Act 1996, s 43B(1)",
+            "text": "In this Part a 'qualifying disclosure' means any disclosure of information which, in the reasonable belief of the worker making the disclosure, is made in the public interest and tends to show one or more of the following—(a) that a criminal offence has been committed, is being committed or is likely to be committed, (b) that a person has failed, is failing or is likely to fail to comply with any legal obligation to which he is subject, (c) that a miscarriage of justice has occurred, is occurring or is likely to occur, (d) that the health or safety of any individual has been, is being or is likely to be endangered, (e) that the environment has been, is being or is likely to be damaged, or (f) that information tending to show any matter falling within any one of the preceding paragraphs has been, is being or is likely to be deliberately concealed.",
+            "elements": ["Disclosure of information (not a bare allegation)", "Reasonable belief the disclosure is in the public interest", "Reasonable belief it tends to show one of six categories of relevant failure", "The failure can be past, ongoing or likely (future)"]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-14-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the six categories of 'relevant failure' a qualifying disclosure under s 43B(1) can concern.",
+          "acceptableAnswers": ["criminal offence, breach of legal obligation, miscarriage of justice, danger to health and safety, environmental damage, concealment of any of these", "criminal offence, legal obligation, miscarriage of justice, health and safety, environmental damage, deliberate concealment"],
+          "modelAnswer": "A criminal offence; breach of a legal obligation; a miscarriage of justice; danger to health or safety; damage to the environment; and deliberate concealment of information tending to show any of the first five."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Reasonable belief: truth and public interest",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "s 43B(1) actually demands two separate reasonable beliefs, and students often collapse them into one: the worker must reasonably believe the disclosure tends to show one of the six categories (the 'truth' limb), and separately must reasonably believe the disclosure is made in the public interest (the 'public interest' limb, added in 2013 specifically to stop purely personal contractual grievances being dressed up as whistleblowing).",
+          "Mr Nurmohamed worked as a director for an estate agency, Chestertons. He complained that the company was deliberately misstating figures in a way that reduced the commission payable to around 100 senior managers, including himself. The employer argued this was really just a private pay dispute dressed up in whistleblowing language — his own interest, not the public's.",
+          "The Court of Appeal disagreed that self-interest disqualifies a disclosure. A disclosure can serve the worker's own interest and still be reasonably believed to be in the public interest, as long as it also affects a section of the public wider than just the discloser. A hundred senior managers being affected by the same alleged wrongdoing was enough to count as 'a section of the public', even though the claimant himself stood to gain from raising it.",
+          "The Court identified four factors relevant to whether a reasonable belief in the public interest exists: the numbers in the group whose interests the disclosure serves; the nature of the interests affected and the extent to which they are affected; the nature of the wrongdoing disclosed; and the identity of the alleged wrongdoer. None of these is a rigid test — they're a framework for assessing reasonableness on the facts."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Chesterton Global Ltd v Nurmohamed",
+            "citation": "[2017] EWCA Civ 979",
+            "court": "Court of Appeal",
+            "year": 2017,
+            "factsShort": "A director complained that manipulated accounting figures were reducing commission for around 100 senior managers, including himself.",
+            "ratioShort": "A disclosure can be reasonably believed to be in the public interest even where it also serves the worker's own interest, provided a section of the public wider than the discloser alone is affected.",
+            "expanded": {
+              "facts": "Mr Nurmohamed, a senior manager at Chestertons, raised concerns internally that the company was deliberately manipulating its accounts in a way that reduced commission payments to around 100 senior managers across the business, himself included. He was later dismissed and claimed the dismissal was automatically unfair because it was because of his protected disclosures.",
+              "judgmentExtract": "The Court of Appeal held that the 2013 amendment requiring reasonable belief that a disclosure is 'in the public interest' was aimed at preventing purely personal employment grievances — disputes about an individual's own contract alone — from being repackaged as whistleblowing. It was not aimed at excluding disclosures that happen to serve the discloser's interest as well as others'. Where a group of around 100 people is affected by the same conduct, that is capable of amounting to a section of the public for these purposes.",
+              "significance": "Chesterton is the leading authority on the public interest test. It confirms the bar is not especially high — disclosures affecting a defined but sizeable group of co-workers can satisfy it — while still leaving room for tribunals to find that a complaint genuinely is nothing more than a private, individual grievance."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-14-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In Chesterton, did the fact that Mr Nurmohamed's own commission was affected automatically prevent his disclosure from being 'in the public interest'?",
+          "options": ["No — a disclosure can serve the discloser's own interest and still be reasonably believed to be in the public interest, if others are affected too", "Yes — any disclosure that benefits the worker personally can never satisfy the public interest test"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The 2013 amendment targets purely personal, individual grievances — not disclosures that happen to benefit the discloser as well as a wider group.",
+          "feedbackIncorrect": "Not quite — self-interest doesn't disqualify a disclosure. The question is whether a section of the public wider than the discloser alone is also affected, which here it was, given roughly 100 managers shared the same interest."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Getting the disclosure to the right person: the channel matters",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Even a disclosure that satisfies s 43B is only protected if it is made through one of the recognised channels in ss 43C–43H, and the bar rises sharply as the audience widens.",
+          "s 43C — disclosure to the employer — is the easiest to protect: a worker simply needs a qualifying disclosure made to their employer (or, in some structures, to another responsible person). No further conditions apply beyond s 43B itself.",
+          "s 43F — disclosure to a 'prescribed person' (a regulator such as the Financial Conduct Authority, the Health and Safety Executive, or Ofsted, each prescribed for particular subject matter) — adds two extra conditions: the worker must reasonably believe the relevant failure falls within that person's remit, and reasonably believe the information disclosed, and any allegation in it, is substantially true.",
+          "ss 43G and 43H — wider disclosures, to the media, an MP, or anyone else — are deliberately the hardest to satisfy. They require the worker to act not for personal gain, to be reasonable in all the circumstances (weighing factors including the identity of the recipient, the seriousness of the failure, and whether it's continuing), and, generally, either to have already raised the matter with the employer or a prescribed person, or to reasonably believe they would be victimised or that evidence would be concealed or destroyed if they did, or — under s 43H — the failure is exceptionally serious."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The disclosure-channel ladder",
+            "points": [
+              "s 43C — to the employer — easiest: just needs to satisfy s 43B",
+              "s 43F — to a prescribed regulator — needs reasonable belief it's within their remit and substantially true",
+              "ss 43G–43H — wider disclosure (media, MP, public) — needs no personal gain, overall reasonableness, and usually a prior attempt through employer/regulator or a fear of victimisation or concealment, or exceptional seriousness"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-14-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Which disclosure channel imposes the fewest additional conditions beyond the basic s 43B qualifying disclosure test?",
+          "options": ["Disclosure to the employer under s 43C", "Disclosure to the media under s 43G/43H", "Disclosure to a prescribed regulator under s 43F"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. Disclosure to the employer under s 43C adds nothing beyond satisfying s 43B itself — it's the baseline, most accessible route to protection.",
+          "feedbackIncorrect": "Look at which route requires no extra reasonable-belief conditions on top of s 43B. Disclosure to the employer under s 43C is the simplest; regulators and wider disclosures each add further hurdles."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Two protections: detriment and automatic unfair dismissal",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Once a disclosure qualifies and is made through a protected channel, two separate statutory protections switch on, and it's important to keep them apart.",
+          "s 47B gives a worker the right not to be subjected to any detriment by their employer on the ground that they made a protected disclosure — this covers things short of dismissal: being passed over for promotion, excluded from meetings, or subjected to disciplinary action. It applies from day one of employment, with no qualifying period at all, and it protects 'workers' in the wider sense, not only employees.",
+          "s 103A makes dismissal automatically unfair where the reason, or principal reason, for the dismissal is that the employee made a protected disclosure. Like other automatically unfair reasons covered in lesson 7, this requires no minimum period of continuous employment — a worker dismissed in their first week for whistleblowing has exactly the same statutory protection as one dismissed after twenty years.",
+          "The 'no qualifying period' point is worth stating explicitly because it is the single most common gap in student knowledge on this topic: many assume, wrongly, that the general two-year qualifying period for unfair dismissal (covered in lesson 5) applies here too. It does not."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Automatically unfair dismissal for whistleblowing (s 103A)",
+            "definition": "A dismissal is automatically unfair, with no qualifying period of employment required, where the reason or principal reason for it is that the employee made a protected disclosure."
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-14-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that is legally irrelevant to whether this employee can bring an automatic unfair dismissal claim under s 103A.",
+          "scenarioText": "An employee has worked for her employer for eleven weeks. She makes a protected disclosure to her manager about a serious safety failure. Six days later she is dismissed, and she believes the disclosure is the real reason for it.",
+          "tappableSpans": ["worked for her employer for eleven weeks", "protected disclosure to her manager", "serious safety failure", "Six days later she is dismissed"],
+          "correctSpan": "worked for her employer for eleven weeks",
+          "feedbackCorrect": "Right. Length of service is irrelevant here — s 103A requires no qualifying period at all. The live issues are whether the disclosure genuinely qualifies and whether it was truly the reason for the dismissal, not how long she'd worked there.",
+          "feedbackIncorrect": "Length of service is the one fact in this scenario that doesn't matter to an s 103A claim, because whistleblowing dismissals need no qualifying period. Look for the fact that has no bearing on the legal test."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The trap: exposing wrongdoing vs airing a personal grievance",
+        "voice": "argumentative — states the strongest case for the rule, then complicates it",
+        "body": [
+          "It's tempting to read this lesson and conclude that any complaint at work is now protected, provided it's expressed with enough conviction. That would be a serious overreading, and one exam scenarios are built to punish.",
+          "A complaint solely about how the employee personally has been treated — 'my manager is bullying me', 'I haven't been paid the bonus I was promised' — is not automatically a qualifying disclosure. It becomes one only if it also tends to show one of the six categories of relevant failure (for example, a bullying complaint that also alleges a breach of the employer's legal health-and-safety obligations) and satisfies the public interest limb.",
+          "Before 2013, the Act required disclosures to be made 'in good faith' rather than 'in the public interest' — a test aimed at motive rather than scope. Parliament swapped that for the public interest requirement specifically because good faith proved too easy to satisfy and too hard to police, letting purely personal disputes slip through under a whistleblowing label whenever the worker's motives looked sincere enough. The 2013 reform narrows the gate by looking at who else is affected, not at how the worker felt when they raised it.",
+          "The upshot: reading a fact pattern for this topic means asking two questions in sequence, not one. First, does the complaint tend to show one of the six categories at all, or is it purely 'you treated me unfairly'? Only if the answer is yes does the public interest question — is anyone beyond the discloser genuinely affected — even arise."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often treat any strongly worded workplace complaint as a protected disclosure, reasoning that the employee clearly believed something was wrong.",
+            "whyItsWrong": "Sincerity of belief is not the test. A complaint has to convey information tending to show one of the six statutory categories, and it has to be reasonably believed to be in the public interest. A complaint confined entirely to the employee's own treatment, with nothing wider at stake, fails the public interest limb even if the employee genuinely and reasonably believes they've been wronged."
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-14-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which of these is more likely to be a protected qualifying disclosure?",
+          "scenarioA": "An employee emails HR to say she personally feels her workload is unfairly heavier than her colleagues' and asks for it to be redistributed.",
+          "scenarioB": "An employee emails HR to say the fire escape on her floor has been blocked by stock for three weeks, which she believes breaches the employer's health and safety obligations and puts everyone on that floor at risk.",
+          "correctScenario": "B",
+          "explanation": "B conveys specific information tending to show a breach of a legal obligation and danger to health and safety — categories (b) and (d) under s 43B — affecting everyone on the floor, satisfying the public interest limb. A is a personal grievance about the employee's own workload, with no wider category of relevant failure engaged."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "employmentlaw-14-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which section of the ERA 1996 defines a 'qualifying disclosure'?",
+      "acceptableAnswers": ["s 43B", "section 43B", "s 43B(1)"],
+      "modelAnswer": "s 43B(1) ERA 1996, inserted by the Public Interest Disclosure Act 1998."
+    },
+    {
+      "itemId": "employmentlaw-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under s 103A, does a whistleblowing dismissal claim require any minimum period of continuous employment?",
+      "options": ["No — no qualifying period applies", "Yes — the standard two-year qualifying period applies"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "employmentlaw-14-test-03",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 43F, which additional reasonable beliefs must a worker hold when disclosing to a prescribed regulator, beyond the basic s 43B test?",
+      "options": ["That the matter falls within the regulator's remit, and that the information disclosed is substantially true", "That the regulator will keep the disclosure entirely confidential", "That the regulator has previously investigated the same employer"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "employmentlaw-14-test-04",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a worker's own personal interest in the outcome automatically defeats the 'public interest' requirement in s 43B?",
+      "sliderLabels": ["Definitely defeats it", "Does not automatically defeat it"],
+      "correctPosition": "does not automatically defeat it",
+      "explanation": "Chesterton confirms self-interest doesn't disqualify a disclosure, provided a section of the public wider than the discloser is also affected. The 2013 reform targets purely personal, individual grievances specifically, not disclosures that happen to also benefit the discloser."
+    },
+    {
+      "itemId": "employmentlaw-14-test-05",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that a vague statement like 'you're not complying with health and safety law', with no supporting facts at all, satisfies the 'information' requirement in Kilraine?",
+      "sliderLabels": ["Definitely satisfies it", "Likely too vague to satisfy it"],
+      "correctPosition": "likely too vague to satisfy it",
+      "explanation": "Kilraine requires a disclosure to convey actual facts, however brief. A bare, unsupported assertion with no factual content behind it risks being treated as an allegation rather than 'information', and may fail s 43B on that ground alone."
+    },
+    {
+      "itemId": "employmentlaw-14-test-06",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 3,
+      "prompt": "A junior doctor emails her clinical lead: 'Ward 6 has been short-staffed for two weeks and I believe this is putting patients at risk of harm, in breach of the Trust's own safe-staffing policy.' She is dismissed six weeks later, and the Trust says it was for an unrelated performance issue. Analyse whether her email is capable of being a protected disclosure.",
+      "factsToOrder": [
+        "The email states a specific, ongoing fact (two weeks of understaffing on a named ward)",
+        "It links that fact to a risk of patient harm and a breach of the Trust's own policy",
+        "It is sent to her clinical lead, a person within the employing organisation",
+        "She is dismissed six weeks later, and the Trust disputes the disclosure was the reason"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model answer shown, mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule given; student applies it to the facts and writes the conclusion" },
+        { "level": 3, "support": "No scaffold; student writes the full analysis unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the email is a qualifying disclosure under s 43B made through a protected channel, and whether a s 103A claim is available if it was the real reason for dismissal.",
+        "rule": "A qualifying disclosure requires information (not a bare allegation) reasonably believed to be in the public interest and to tend to show one of six categories, including danger to health and safety (s 43B(1)(d)); disclosure to the employer under s 43C needs nothing further; s 103A makes dismissal automatically unfair, with no qualifying period, if the disclosure was the reason or principal reason.",
+        "application": "The email conveys specific information (two weeks of understaffing on a named ward), not a bare assertion, satisfying Kilraine. It tends to show danger to health and safety, and likely a breach of a legal or policy-based obligation. Patients across the ward are affected, supporting a reasonable belief the disclosure is in the public interest. Sent to her clinical lead, it falls within the low-bar s 43C employer-disclosure route. Whether the Trust's stated 'performance issue' is the real reason, or a pretext for the disclosure, is a question of fact for the tribunal.",
+        "conclusion": "The email is capable of being a protected qualifying disclosure; if the tribunal finds it was the real reason for dismissal rather than the stated performance issue, the dismissal is automatically unfair under s 103A, regardless of her length of service."
+      }
+    },
+    {
+      "itemId": "employmentlaw-14-test-07",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these steps in the order a tribunal works through them when assessing a whistleblowing dismissal claim.",
+      "items": ["Identify whether the disclosure conveys information tending to show one of the six categories in s 43B(1)", "Assess whether the worker reasonably believed the disclosure was in the public interest", "Check the disclosure was made through a protected channel (e.g. s 43C to the employer)", "Determine whether the disclosure was the reason or principal reason for the dismissal"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "employmentlaw-14-test-08",
+      "type": "sequence",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Order these events as they would need to happen for a wider disclosure under s 43G to be protected, assuming the worker has not already raised the matter with the employer.",
+      "items": ["The worker reasonably believes the information disclosed is substantially true", "The worker reasonably believes they would be subjected to a detriment if they raised it with the employer first", "The worker makes the disclosure to a person outside the employer/regulator route (e.g. the media)", "The disclosure is assessed for overall reasonableness, including the seriousness of the failure and the identity of the recipient"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "employmentlaw-14-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of these correctly states the effect of the 2013 amendment to s 43B?",
+      "options": ["It replaced the 'good faith' requirement with a requirement of reasonable belief that the disclosure is in the public interest", "It abolished the requirement that a disclosure show one of the six categories of relevant failure", "It extended whistleblowing protection to cover any complaint about the employee's own treatment"],
+      "correctIndex": 0,
+      "trapExplanation": "The 2013 reform did not abolish the six-category requirement, and it did not extend protection to purely personal grievances — quite the opposite, the public interest test was added specifically to exclude those. It swapped 'good faith' (a motive test) for 'public interest' (a scope test)."
+    },
+    {
+      "itemId": "employmentlaw-14-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "An employee tells her manager, with no further detail, 'I think something dodgy is going on with the accounts.' Which best describes her position under s 43B?",
+      "options": ["This is likely too vague to be 'information' under Kilraine, and would need more factual content to qualify", "This is automatically a qualifying disclosure because she genuinely believes it", "This can never qualify, because financial irregularities are outside the six categories"],
+      "correctIndex": 0,
+      "trapExplanation": "Financial irregularity can fall within the 'breach of a legal obligation' or 'criminal offence' categories, so the third option is wrong on that ground. Genuine belief alone (the second option) isn't the test either — Kilraine requires the disclosure to convey actual facts, and 'something dodgy' conveys none."
+    },
+    {
+      "itemId": "employmentlaw-14-test-11",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Chesterton, highlight the sentence that most precisely states why the public interest test was not defeated by the claimant's own self-interest.",
+      "passage": "The 2013 amendment requiring a reasonable belief that disclosure is in the public interest was directed at preventing purely personal workplace grievances from being dressed up as matters of public concern. Where the disclosure concerns wrongdoing affecting a defined group of around 100 senior managers, and not merely the claimant's own position, that group is capable of amounting to a section of the public, even though the claimant himself is also affected. The tribunal was entitled to find the public interest test satisfied on that basis.",
+      "ratioSentence": "Where the disclosure concerns wrongdoing affecting a defined group of around 100 senior managers, and not merely the claimant's own position, that group is capable of amounting to a section of the public, even though the claimant himself is also affected."
+    },
+    {
+      "itemId": "employmentlaw-14-test-12",
+      "type": "highlightTheRatio",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "In the extract below from Kilraine, highlight the sentence that explains why a disclosure must convey more than a bare allegation.",
+      "passage": "The concept of 'information' is to be distinguished from a bare allegation which conveys no factual content. A statement to the effect that an employer is not complying with a legal obligation may fall short of a qualifying disclosure if it does no more than assert that a state of affairs exists, without conveying any information as to what that state of affairs actually is. Some content specifying the relevant failure will usually be necessary, even if the detail required will vary from case to case.",
+      "ratioSentence": "A statement to the effect that an employer is not complying with a legal obligation may fall short of a qualifying disclosure if it does no more than assert that a state of affairs exists, without conveying any information as to what that state of affairs actually is."
+    },
+    {
+      "itemId": "employmentlaw-14-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A worker with three months' service emails her line manager to complain that a colleague has been falsifying safety inspection records for the building's fire doors, which she reasonably believes endangers everyone in the building. She is dismissed the following week; her employer says it is because her probation review was poor. Which statutory protection is most directly in play if she believes the real reason was her email?",
+      "options": ["s 103A automatically unfair dismissal, because the email is capable of being a protected disclosure made to her employer under s 43C", "No protection is available because she has less than six months' service", "Only s 47B detriment protection applies, because dismissal itself is never covered by whistleblowing law"],
+      "correctIndex": 0,
+      "explanation": "The email conveys specific information tending to show danger to health and safety, affecting everyone in the building — a qualifying disclosure made through the low-bar employer route under s 43C. s 103A requires no qualifying period at all, so her three months' service is irrelevant, and dismissal is squarely within s 103A's scope (s 47B covers detriments short of dismissal, not dismissal itself)."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating any sincerely-held workplace complaint as automatically protected. Check first whether the disclosure conveys real information tending to show one of the six categories, and only then ask whether it's reasonably believed to be in the public interest — a personal grievance dressed in urgent language still fails at the first hurdle.",
+    "reviewMisses": true,
+    "linkToPathway": "employmentlaw.protection.whistleblowing"
+  }
+}
