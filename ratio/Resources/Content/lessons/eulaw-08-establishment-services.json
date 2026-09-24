@@ -1,0 +1,372 @@
+{
+  "lessonId": "eulaw-08",
+  "moduleId": "eulaw",
+  "moduleTitle": "EU Law",
+  "lessonNumber": 8,
+  "topicId": "eulaw.internal-market.establishment-services",
+  "title": "Freedom of establishment and services",
+  "subtitle": "Articles 49 and 56 TFEU, the Gebhard test, and 'company shopping' after Centros",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish freedom of establishment (Article 49 TFEU) from freedom to provide services (Article 56 TFEU) and identify which applies on a given set of facts",
+    "State the Gebhard test for assessing a restriction on establishment or services and explain how justification by the general good operates",
+    "Apply the doctrine to new fact patterns, including the controversial 'company shopping' logic of Centros, while correctly identifying that these rights no longer apply to UK-established businesses as a matter of current law"
+  ],
+  "leadingAuthorities": [
+    { "citation": "TFEU art 49", "role": "Guarantees freedom of establishment — the right to set up and pursue self-employed activity on a stable and continuous basis in another member state" },
+    { "citation": "TFEU art 56", "role": "Guarantees freedom to provide services — temporary, cross-border activity without permanent establishment in the host state" },
+    { "citation": "Gebhard v Consiglio dell'Ordine degli Avvocati e Procuratori di Milano [1995] ECR I-4165", "role": "Sets the unified four-condition test for restrictions on establishment and services, and the durability/stability criterion distinguishing the two freedoms" },
+    { "citation": "Centros Ltd v Erhvervs- og Selskabsstyrelsen [1999] ECR I-1459", "role": "A company may be formed in one member state purely to take advantage of its company law, then operate wholly through a branch elsewhere — this is not, without more, abuse of the right of establishment" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students conflate establishment and services constantly, because the facts often look identical on the surface — a person or firm doing business in a country other than where they're based. The two freedoms carry different tests and different tolerances for state justification, and examiners build questions specifically around the boundary between them.",
+    "profileHooks": {
+      "weakApplication": "You can probably recite the Gebhard test from memory. The harder skill this lesson tests is classification — deciding whether a fact pattern is establishment or services in the first place, before you even reach justification.",
+      "weakKnowledge": "Start with Parts 1 and 2. Get the establishment/services distinction and the Gebhard conditions solid before the justification and Centros material, which both assume you already have the basic map."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two businesses cross the same border. One rents an office, hires staff, and puts down roots for years — that's establishment. The other flies in a consultant for a three-week project, then leaves — that's a service. The Treaty gives each its own article, its own test, and its own tolerance for a host state trying to regulate it. This lesson is about learning to tell them apart, and about the case — Centros — that pushed the establishment freedom somewhere its own drafters may never have expected: letting a company incorporate wherever its law is most convenient, and trade everywhere else through nothing but a branch.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. Everything in this lesson describes EU internal-market law as interpreted by the Court of Justice before the UK's exit, taught for its doctrinal and comparative value, not as law currently conferring rights on UK nationals or UK-incorporated companies. Since the end of the transition period on 31 December 2020, UK businesses and professionals no longer enjoy Article 49 or Article 56 rights to establish or provide services across the EU, subject only to rights genuinely acquired before that date and protected under the Withdrawal Agreement. Cross-border establishment and services between the UK and the EU are now governed by ordinary company and immigration law in each state and by the considerably narrower market-access provisions of the UK–EU Trade and Cooperation Agreement. Nothing in this lesson should be read as describing a right any current UK-established business or professional holds by virtue of EU law."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two roads across the same border",
+        "voice": "comparative — sets the two freedoms side by side from the outset",
+        "body": [
+          "Article 49 TFEU guarantees freedom of establishment: the right of a national of one member state to take up and pursue self-employed activity, and to set up and manage undertakings, in another member state, on the same conditions as that state's own nationals. Article 56 TFEU guarantees freedom to provide services: the right to offer services across a border, temporarily, without setting up permanent operations in the host state.",
+          "The distinction is not about what activity is carried out — the same lawyer, accountant or builder could fall under either article depending on how they operate. It is about durability. A German architect who opens a permanent office in Lyon and takes on French clients indefinitely is exercising establishment. The same architect flying to Lyon for a single three-week commission, then returning home, is providing a service.",
+          "Why does the label matter? Because the two freedoms attract different regulatory tolerances. A host state generally has more latitude to apply its own professional and regulatory rules to someone permanently established within its territory — they are, after all, operating inside the local market on a continuing basis — than to someone providing a one-off or occasional service from outside. Getting the classification right is usually the first move in any exam answer on this topic, because it determines which article, and which intensity of scrutiny, applies."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Establishment vs services",
+            "definition": "Establishment (Article 49) is the stable and continuous pursuit of economic activity in another member state via a fixed place of business. Services (Article 56) is the temporary, typically occasional, cross-border provision of activity without permanent establishment in the state where it is received."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-08-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A Dutch engineering firm opens a permanent branch office in Warsaw, staffed year-round, and takes on ongoing Polish clients. Is this establishment or services?",
+          "options": ["Establishment — Article 49", "Services — Article 56"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. A permanent branch, staffed continuously and taking on ongoing local work, is the textbook case of establishment.",
+          "feedbackIncorrect": "Look at the durability of the arrangement — a permanent office taking on continuing work is establishment, not a temporary cross-border service."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Gebhard: one test, applied to both freedoms",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Reinhard Gebhard was a German lawyer practising in Milan under the title 'avvocato' without having gone through the Italian bar's own qualification and registration procedures. The Milan Bar Council disciplined him. His case reached the Court of Justice, and it did two things that make it the anchor authority for this entire lesson.",
+          "First, the Court articulated a single, unified four-condition test for assessing whether a national measure restricting either establishment or services is compatible with EU law. A restriction is lawful only if it is: applied in a non-discriminatory manner; justified by imperative requirements in the general interest; suitable for securing the objective it pursues; and does not go beyond what is necessary to attain it. This is the internal-market cousin of the proportionality analysis you will recognise from free movement of goods and persons elsewhere in this module.",
+          "Second, Gebhard confirmed that the establishment/services boundary turns on the notion of stable and continuous participation in the economic life of the host state, as opposed to activity of a temporary character — durability, not the nature of the professional activity itself, is what moves a case from one Treaty article to the other. On his own facts, practising continuously from Milan chambers over an extended period pointed towards establishment, not services, which is precisely why the host state's own professional registration requirements could, in principle, legitimately apply to him — provided they satisfied the four Gebhard conditions."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The Gebhard four-condition test",
+            "points": [
+              "Applied in a non-discriminatory manner",
+              "Justified by imperative requirements in the general interest",
+              "Suitable for securing the objective pursued",
+              "Does not go beyond what is necessary to attain that objective",
+              "Applies to restrictions on BOTH establishment and services — one unified proportionality framework"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Gebhard v Consiglio dell'Ordine degli Avvocati e Procuratori di Milano",
+            "citation": "[1995] ECR I-4165",
+            "court": "Court of Justice",
+            "year": 1995,
+            "factsShort": "A German lawyer practised continuously from chambers in Milan using the title 'avvocato' without completing Italian bar registration; he was disciplined by the local Bar Council.",
+            "ratioShort": "A national measure restricting establishment or services is lawful only if non-discriminatory, justified by an imperative requirement in the general interest, suitable, and proportionate; establishment is marked by stable and continuous participation in the host state's economic life.",
+            "expanded": {
+              "facts": "Gebhard set up chambers in Milan and practised there over a period of years, describing himself as an 'avvocato' without undergoing the registration and qualification procedures the Italian bar required of those wishing to practise permanently in Italy.",
+              "judgmentExtract": "The Court held that the criterion for distinguishing establishment from services is the stable and continuous nature of the activity, assessed by reference to its duration, regularity, periodicity and continuity — not by reference to the professional field involved. It then set out the four-condition proportionality test governing any restriction, whichever freedom is in play.",
+              "significance": "Gebhard is the unifying authority for this entire area: it supplies both the classification test (establishment vs services) and the justification test (the four conditions) used across the Court's subsequent case law on the internal market in services and professions."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-08-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence stating the Gebhard proportionality test.",
+          "passage": "The freedom to establish oneself and the freedom to provide services are both liable to be restricted by measures which, even if applied without discrimination on grounds of nationality, are capable of hindering their exercise. National measures liable to hinder or make less attractive the exercise of these fundamental freedoms must fulfil four conditions: they must be applied in a non-discriminatory manner, they must be justified by imperative requirements in the general interest, they must be suitable for securing the attainment of the objective which they pursue, and they must not go beyond what is necessary in order to attain it. The classification of an activity as establishment rather than services depends on its stable and continuous character.",
+          "ratioSentence": "National measures liable to hinder or make less attractive the exercise of these fundamental freedoms must fulfil four conditions: they must be applied in a non-discriminatory manner, they must be justified by imperative requirements in the general interest, they must be suitable for securing the attainment of the objective which they pursue, and they must not go beyond what is necessary in order to attain it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Justification and the 'general good': how far can a state push back?",
+        "voice": "argumentative — tests the limits of state justification",
+        "body": [
+          "A host state is not powerless simply because someone is exercising Article 49 or Article 56 rights. Genuine, non-discriminatory professional and consumer-protection rules can survive Gebhard scrutiny — the 'imperative requirements in the general interest' language is deliberately broad, and the Court has accepted justifications including consumer protection, the proper administration of justice, protection of recipients of services, and maintaining the good reputation of a regulated profession.",
+          "What a state cannot do is dress up simple protectionism — shielding domestic professionals or businesses from competition — as a general-interest justification. Nor can it impose requirements that duplicate protections the person's home state already provides and has already verified, since that fails the necessity limb: if the objective is already secured by home-state regulation, a host-state rule requiring the same thing again goes beyond what is necessary.",
+          "This is where the establishment/services distinction bites hardest in practice. Because someone providing a temporary service is, by definition, not embedded in the host state's economic life in the way an established person is, host states generally have to accept a lighter regulatory footprint for services than for establishment — duplicating a home-state qualification check on a visiting service-provider is far more likely to fail the necessity test than applying the same check to someone permanently setting up shop."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "TFEU art 52(1) (establishment) / art 62 (applying art 52 to services)",
+            "text": "The provisions of this Chapter and measures taken in pursuance thereof shall not prejudice the applicability of provisions laid down by law, regulation or administrative action providing for special treatment for foreign nationals on grounds of public policy, public security or public health.",
+            "elements": ["Public policy", "Public security", "Public health", "Applies to both establishment (art 52) and, via art 62, to services"]
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-08-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "difficultyNote": "part-of-lecture",
+          "prompt": "A member state requires every visiting engineer providing a short, one-off consultancy service to sit a full local licensing exam identical to the one required of engineers permanently established there, even though the engineer already holds an equivalent, verified qualification from her home state. Applying Gebhard, is this requirement likely to survive scrutiny?",
+          "options": ["Probably not — duplicating a check the home state has already carried out is likely to fail the necessity limb of the test, especially for a temporary service-provider", "Yes — any professional licensing requirement automatically satisfies the general-interest justification", "Yes — because the requirement applies equally to domestic and foreign engineers, it cannot be challenged at all"],
+          "correctIndex": 0,
+          "explanation": "Non-discriminatory application only clears the first Gebhard condition — the measure still has to be suitable and, critically, necessary. Duplicating an equivalent home-state check on a temporary service-provider is a classic example of a measure going beyond what is necessary."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Centros: incorporating where it suits you, trading where you like",
+        "voice": "case-narrative — builds the controversy from the facts outward",
+        "body": [
+          "Two Danish nationals wanted to run a business in Denmark. Rather than incorporate a Danish company — which required a minimum paid-up share capital they didn't want to raise — they instead registered a private limited company, Centros Ltd, in England and Wales, where the minimum capital requirement at the time was, in effect, nothing. Centros never traded in the UK at all. It existed on paper only, in a solicitor's office. They then applied to register a Danish branch of their English company, to conduct their actual business entirely from Denmark.",
+          "The Danish registry refused. Its reasoning was straightforward: this was a company that existed purely to sidestep Danish company law, using the UK's more permissive incorporation rules as a device, and Danish authorities were entitled to refuse to register what was, in substance if not in form, a Danish company avoiding Danish minimum-capital rules designed to protect creditors.",
+          "The Court of Justice disagreed, and this is the part of the case that still unsettles company lawyers. It held that a national of one member state who forms a company in a second member state, where the rules of company law are least restrictive, and sets up branches in other member states, is exercising Article 49 rights — even where the company conducts no business at all in the state of incorporation, and even where the underlying motive is openly to take advantage of more favourable legislation. That motive, by itself, is not abuse. The Court did leave a narrower door open: a state can still take measures against conduct that is genuinely fraudulent or that circumvents obligations owed specifically to creditors within its own territory — but simply choosing a favourable jurisdiction to incorporate in is not, without more, an abuse of the right of establishment.",
+          "Centros is controversial precisely because it legitimises a form of regulatory arbitrage — 'company shopping' — that looks, to many company lawyers, uncomfortably close to what the Danish registry called it: using the establishment freedom to defeat the very creditor-protection rules a host state's company law was designed to secure. It remains one of the most-cited and most-debated establishment cases in the whole of EU internal-market law."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Centros: from refusal to Article 49 right",
+            "description": "The sequence of reasoning the Court used to reject the Danish registry's refusal.",
+            "nodes": [
+              { "id": "incorporate", "label": "Company incorporated in UK, purely for favourable capital rules, no UK trading activity" },
+              { "id": "branch", "label": "Application to register a Danish branch, to trade wholly in Denmark" },
+              { "id": "refusal", "label": "Danish registry refuses: sees this as evasion of Danish minimum-capital creditor protection" },
+              { "id": "cjeu", "label": "CJEU: forming a company where rules are least restrictive, then branching elsewhere, is itself an exercise of Article 49" },
+              { "id": "narrow-door", "label": "Narrow exception preserved: genuine fraud or circumvention of obligations to creditors within the state may still be tackled" }
+            ],
+            "edges": [
+              { "from": "incorporate", "to": "branch" },
+              { "from": "branch", "to": "refusal" },
+              { "from": "refusal", "to": "cjeu" },
+              { "from": "cjeu", "to": "narrow-door" }
+            ],
+            "textAlternative": "A company was incorporated in the UK purely to take advantage of low capital requirements, with no UK trading activity, then sought to register a branch in Denmark to trade wholly there. Denmark refused, treating this as evasion of its own creditor-protection rules. The Court of Justice held that incorporating where company law is least restrictive, then operating through a branch elsewhere, is itself a lawful exercise of Article 49 — motive alone is not abuse — while preserving a narrow exception for genuinely fraudulent conduct or circumvention of obligations owed to creditors within the host state."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-08-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events in the order they occurred in Centros.",
+          "items": ["Centros Ltd incorporated in England and Wales with no UK trading activity", "Application made to register a Danish branch to conduct all trading from Denmark", "Danish registry refuses, citing evasion of minimum-capital creditor protections", "CJEU holds the refusal contrary to Article 49"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the full sequence — and notice that the controversial step is not the incorporation itself, but the Court's refusal to treat the openly stated motive for it as abusive.",
+          "feedbackIncorrect": "Check the order again: incorporation in the UK came first, the Danish branch application second, the Danish refusal third, and the CJEU's ruling against that refusal last."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Rights that no longer travel: establishment and services after Brexit",
+        "voice": "direct — closes the doctrinal arc with the current legal reality",
+        "body": [
+          "As with free movement of persons elsewhere in this module, none of the doctrine in this lesson currently confers rights on UK nationals or UK-incorporated companies. Article 49 and Article 56 stopped applying to the UK at the end of the transition period on 31 December 2020, subject only to the Withdrawal Agreement's protection of rights genuinely acquired by that date.",
+          "The practical consequences are sharp. A UK-incorporated company can no longer rely on Centros-style reasoning to set up a branch anywhere in the EU as of right — EU member states are free to treat a UK company wanting to establish there under their own third-country rules on foreign company recognition, which are considerably less generous than the internal-market regime Centros describes. Equally, a UK-qualified professional providing a short-term service in an EU member state cannot invoke Article 56 or the Gebhard necessity test to resist a host state's own licensing or recognition requirements — those requirements now apply to UK professionals exactly as they would to any other third-country national's, unless a specific mutual-recognition arrangement says otherwise.",
+          "The UK–EU Trade and Cooperation Agreement does contain limited market-access and short-term business-visitor provisions, and some professional qualifications retain narrow mutual-recognition arrangements agreed since exit — but none of this reproduces the sweeping, directly effective Treaty rights this lesson has described. An exam answer that reasons from Centros or Gebhard to a present-day right for a UK company or professional is making the same category error flagged in the previous lesson: correct doctrine, wrong tense."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes conclude that because Centros is 'good law' in the sense of still being a leading CJEU authority, a UK company today could still incorporate in an EU member state purely to access favourable rules, then branch elsewhere in the EU as of right.",
+            "whyItsWrong": "Centros remains authoritative doctrine describing how Article 49 operates between EU member states. It says nothing about a UK company's position, because Article 49 has not applied to UK companies since the end of the transition period; any UK company establishing in the EU today is doing so under each state's ordinary third-country company-recognition rules, not under the internal-market freedom Centros interpreted."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-08-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "Which statement correctly describes the current legal position of a UK-incorporated company seeking to establish a branch in an EU member state today?",
+          "options": ["It establishes there under that state's own rules on recognising foreign (third-country) companies, and under any relevant TCA provisions — not under Article 49 TFEU", "It retains a full Article 49 right of establishment identical to that of an EU-incorporated company, because Centros remains good law", "It is now entirely barred from establishing any presence in EU member states"],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answer treats Centros's continuing authority as a doctrine as if it still conferred rights on UK companies. It doesn't — Article 49 no longer applies to the UK, so a UK company's position is governed by ordinary third-country rules and the TCA, not by the internal-market freedom itself."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "eulaw-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which Treaty articles guarantee, respectively, freedom of establishment and freedom to provide services?",
+      "acceptableAnswers": ["Article 49 and Article 56 TFEU", "Art 49 TFEU (establishment) and Art 56 TFEU (services)", "49 and 56"],
+      "modelAnswer": "Article 49 TFEU guarantees freedom of establishment; Article 56 TFEU guarantees freedom to provide services."
+    },
+    {
+      "itemId": "eulaw-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does the establishment/services distinction turn on the type of professional activity carried out, or on how durable the arrangement is?",
+      "options": ["How durable and continuous the arrangement is — establishment is stable and continuous, services are temporary", "The type of professional activity — certain professions are always establishment, others always services"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-08-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following is NOT one of the four Gebhard conditions for a lawful restriction on establishment or services?",
+      "options": ["Applied in a non-discriminatory manner", "Justified by imperative requirements in the general interest", "Suitable for securing the objective pursued", "Approved in advance by the European Commission"],
+      "correctIndex": 3,
+      "trapExplanation": "There is no requirement of prior Commission approval anywhere in the Gebhard test. The four genuine conditions are non-discrimination, general-interest justification, suitability and necessity/proportionality."
+    },
+    {
+      "itemId": "eulaw-08-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the steps of the Gebhard proportionality analysis as a court would apply them to a challenged national measure.",
+      "items": ["Check whether the measure is applied in a non-discriminatory manner", "Identify whether it is justified by an imperative requirement in the general interest", "Assess whether it is suitable for securing that objective", "Assess whether it goes no further than necessary to attain the objective"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "eulaw-08-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A host state justifies a restriction on services by pointing to 'protection of the good reputation of a regulated profession'. Under Gebhard, is that type of justification capable of amounting to an imperative requirement in the general interest?",
+      "options": ["Yes — the Court has accepted justifications of this kind, though the measure must still be suitable and necessary", "No — only public health justifications are ever accepted", "No — the general-interest category is closed to a fixed list set out in the Treaty itself"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-08-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Centros, highlight the sentence stating the core holding on motive and abuse.",
+      "passage": "The fact that a national of a member state who wishes to set up a company chooses to form it in the member state whose rules of company law seem to him the least restrictive, and to set up branches in other member states, cannot, in itself, constitute an abuse of the right of establishment, even where that company conducts no business in the state of incorporation and its capital is not intended to be used there. This does not, however, prevent the authorities of a member state from adopting measures to prevent or penalise fraud, whether in relation to the company itself or to third parties, or to protect creditors within its territory.",
+      "ratioSentence": "The fact that a national of a member state who wishes to set up a company chooses to form it in the member state whose rules of company law seem to him the least restrictive, and to set up branches in other member states, cannot, in itself, constitute an abuse of the right of establishment, even where that company conducts no business in the state of incorporation and its capital is not intended to be used there."
+    },
+    {
+      "itemId": "eulaw-08-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A Portuguese plumber travels to Belgium for a single ten-day job fitting out a new restaurant kitchen, then returns home; he has no office, staff or ongoing clients in Belgium. Which Treaty freedom governs his position?",
+      "options": ["Article 56 (services) — the activity is temporary and one-off, without stable establishment in Belgium", "Article 49 (establishment) — any cross-border work by a self-employed tradesperson is establishment"],
+      "correctIndex": 0,
+      "explanation": "A single, short, defined job with no ongoing presence is the paradigm case of a temporary service under Article 56, not establishment."
+    },
+    {
+      "itemId": "eulaw-08-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A member state requires every foreign-qualified accountant providing even a single short consultancy service to complete a full multi-year local retraining programme before being permitted to work, with no credit given for equivalent home-state qualifications already verified. Is this measure likely to satisfy the Gebhard necessity condition?",
+      "options": ["Probably not — a multi-year retraining requirement for a single short engagement, ignoring an already-verified equivalent qualification, is likely to go well beyond what is necessary", "Yes — states have unlimited discretion to set professional qualification requirements for any activity on their territory", "Yes — because the requirement applies to all foreign accountants equally regardless of nationality"],
+      "correctIndex": 0,
+      "explanation": "Non-discriminatory application (equal treatment of all foreign accountants) only satisfies the first Gebhard limb. A multi-year requirement disproportionate to a single short engagement, and ignoring an already-verified equivalent qualification, is a strong candidate to fail necessity."
+    },
+    {
+      "itemId": "eulaw-08-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that is closest to the reasoning the CJEU relied on in Centros to reject the argument that the arrangement was abusive.",
+      "scenarioText": "A pair of entrepreneurs incorporate a company in a member state with minimal capital requirements, conduct no business there at all, and openly state their sole motive was to avoid the higher minimum-capital rules of the state where they actually intend to trade through a branch.",
+      "tappableSpans": ["minimal capital requirements", "conduct no business there at all", "openly state their sole motive", "avoid the higher minimum-capital rules"],
+      "correctSpan": "openly state their sole motive",
+      "explanation": "Centros holds that an openly stated motive to take advantage of more favourable company law is not, by itself, abuse of the right of establishment — this is the specific point the Court addressed and rejected as a basis for refusal."
+    },
+    {
+      "itemId": "eulaw-08-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is more likely to fall within the narrow exception Centros preserved for genuinely fraudulent conduct, rather than the protected 'company shopping' logic of Centros itself?",
+      "scenarioA": "A company is incorporated in a low-capital-requirement state purely to benefit from that law, then operates transparently through a properly registered branch elsewhere, disclosing its foreign incorporation to all who deal with it.",
+      "scenarioB": "A company is incorporated in a low-capital-requirement state and deliberately misrepresents itself to creditors in the host state as a locally incorporated entity with the host state's own creditor protections, to induce credit it could not otherwise obtain.",
+      "correctScenario": "B",
+      "explanation": "B involves active misrepresentation to induce credit — genuine fraud on creditors — which Centros expressly preserved as something host states may still act against. A is the ordinary, protected Centros fact pattern: transparent incorporation-shopping is not itself abuse."
+    },
+    {
+      "itemId": "eulaw-08-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A UK-incorporated company wants to open a branch in France today and trade there without meeting French rules on recognising foreign companies. Can it rely on Centros to insist on the same treatment as an EU-incorporated company?",
+      "options": ["No — Article 49 no longer applies to UK companies; it must satisfy France's ordinary third-country company-recognition rules and any relevant TCA provisions", "Yes — Centros continues to give any UK company an automatic Article 49 right to branch into any EU member state"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-08-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A Dutch consultancy firm sends a single employee to Spain for a four-week advisory project for one client, with no office, ongoing staff or further planned work in Spain. The Spanish regulator insists the firm must go through the full permanent-establishment licensing process used for firms permanently operating in Spain. Analyse whether this requirement is compatible with EU law as it stood before UK withdrawal (i.e. purely as a doctrinal exercise using this lesson's authorities).",
+      "factsToOrder": [
+        "The firm sends one employee for a single, time-limited four-week project",
+        "There is no office, ongoing staff or further planned work in Spain",
+        "Spain requires the same licensing process used for permanently established firms",
+        "The activity looks, on Gebhard's durability criterion, like services rather than establishment",
+        "The requirement duplicates full establishment-level regulation onto a temporary service"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Spain's requirement that the firm complete full permanent-establishment licensing is compatible with Article 56 TFEU (services).",
+        "rule": "Under Gebhard, the activity's temporary, non-continuous character classifies it as a service under Article 56 rather than establishment under Article 49; any restriction must then satisfy the four-condition test — non-discrimination, general-interest justification, suitability and necessity.",
+        "application": "A single four-week project with no ongoing presence is classic temporary service activity, not establishment. Requiring the full permanent-establishment licensing process — designed for firms with stable, continuous presence — is likely to fail the necessity limb: it goes well beyond what is required to address any genuine regulatory concern about a short, defined engagement.",
+        "conclusion": "The requirement is likely incompatible with Article 56 as interpreted in Gebhard, because it disproportionately applies establishment-level regulation to what is properly classified as a temporary service."
+      }
+    },
+    {
+      "itemId": "eulaw-08-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best explains why Centros is described as controversial among company lawyers?",
+      "options": ["Because it permits a company to incorporate in whichever member state's company law is most favourable, then operate wholly elsewhere through a branch, which some see as undermining host-state creditor-protection regimes", "Because it held that companies could never be prosecuted for fraud in any member state", "Because it abolished the freedom of establishment for companies entirely"],
+      "correctIndex": 0,
+      "trapExplanation": "Centros preserved, rather than abolished, a narrow fraud exception, and it did not touch criminal liability for fraud generally. The controversy is specifically about regulatory arbitrage around creditor protection, not a wholesale removal of any freedom."
+    },
+    {
+      "itemId": "eulaw-08-test-14",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that a UK-qualified professional providing a short-term service in an EU member state today can still invoke the Gebhard necessity test to resist a host-state licensing requirement, exactly as an EU national could?",
+      "sliderLabels": ["Fully can invoke it", "Cannot invoke it as an EU-law right"],
+      "correctPosition": "cannot",
+      "explanation": "Cannot, as a matter of current EU-law entitlement. Article 56 and the Gebhard test no longer apply to UK professionals; host states may apply their own third-country recognition rules, moderated only by whatever the TCA or a specific mutual-recognition arrangement provides."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two most common mistakes in this lesson's test items are: (1) misclassifying a temporary engagement as establishment, or a permanent branch as services, without checking durability first; and (2) reasoning from Gebhard or Centros as if they still generate current rights for UK nationals or UK companies. Both errors come from skipping a step the doctrine requires before applying it.",
+    "reviewMisses": true,
+    "linkToPathway": "eulaw.internal-market.establishment-services"
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "lessonId": "eulaw-05",
+  "moduleId": "eulaw",
+  "moduleTitle": "EU Law",
+  "lessonNumber": 5,
+  "topicId": "eulaw.institutions.preliminary-references",
+  "title": "Preliminary references and the CJEU",
+  "subtitle": "How a question used to cross from a national court to Luxembourg — and why it can't anymore",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the Article 267 TFEU mechanism, distinguishing courts with a discretion to refer from courts of last resort under an obligation to refer",
+    "State the acte clair doctrine from CILFIT and explain why it operates as an exception to, not an abolition of, the obligation to refer",
+    "Explain precisely why and when UK courts lost the ability to make Article 267 references, and how EUWA 2018 s 6 treats pre-exit and post-exit CJEU case law differently"
+  ],
+  "leadingAuthorities": [
+    { "citation": "TFEU art 267", "role": "The treaty mechanism for a preliminary reference from a national court to the CJEU" },
+    { "citation": "CILFIT v Ministero della Sanità [1982] ECR 3415", "role": "Sets the acte clair conditions under which a court of last resort may decline to refer" },
+    { "citation": "European Union (Withdrawal) Act 2018 s 6", "role": "Governs how UK courts treat retained/assimilated CJEU case law after the UK lost the ability to refer" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson is pure mechanism, and mechanism questions punish guessing. Where the profile shows knowledge ahead of application, this note appears: 'You can probably define acte clair — this lesson is about knowing exactly which court, at exactly which moment, had to do what.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool below leans on fact patterns — which court is which, and what a UK court does with a piece of case law now.",
+      "weakKnowledge": "Start with Part 1 and get the Article 267 mechanism solid before moving on — Parts 4 and 5 assume you already know who could refer and why, before explaining why that stopped."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "For nearly five decades, a district judge in Cardiff or a tribunal in Belfast could, on a single case, send a question all the way to Luxembourg and get an answer that bound every court in the country. That conduit closed at 11pm on 31 December 2020. This lesson is about how it worked while it existed, and exactly what happens to the questions it already answered.",
+    "lawStatedNotice": "This lesson teaches Article 267 TFEU and its case law as a historical mechanism that no longer applies to UK courts, and as the framework that explains how the body of retained CJEU case law reached the UK statute book. It is not a description of current UK procedure — no UK court has had the power to make an Article 267 reference since the end of the transition period on 31 December 2020. The current UK-law position on how that inherited case law is treated is governed by the European Union (Withdrawal) Act 2018 s 6, as amended, which is examined directly in Part 5."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The mechanism: how a question used to cross to Luxembourg",
+        "voice": "mechanism-focused — walks through the moving parts before naming the doctrine",
+        "body": [
+          "Strip away the Latin and the treaty numbering, and Article 267 TFEU does one simple thing: it lets a national court that isn't sure how to interpret EU law stop the case in front of it, send the precise legal question to the Court of Justice of the European Union, wait for an answer, and then apply that answer to resolve the case.",
+          "Crucially, a reference is not an appeal. The CJEU doesn't decide who wins. It answers the question of EU law it's been asked — often reformulated into cleaner terms than the referring court used — and sends the case straight back to the national court to finish the job. The national court remains the trial court and the fact-finder throughout; the CJEU never sees a witness or a document of primary evidence.",
+          "This is worth fixing precisely because exam answers routinely blur it: a preliminary reference is a request for an interpretation, made mid-case, by the court hearing the case itself — not a separate claim brought by a losing party, and not a mechanism any of the parties can force on the court."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Preliminary reference",
+            "definition": "A procedure under (former) Article 267 TFEU by which a national court, seized of a live case, refers a question on the interpretation or validity of EU law to the CJEU, receives a ruling, and then applies that ruling to resolve the case itself."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-05-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Article 267 TFEU gave the CJEU jurisdiction to give preliminary rulings on 'the interpretation of the Treaties' and 'the validity and interpretation of acts of the institutions'. What does a preliminary reference NOT do?",
+          "options": ["It does not decide the outcome of the underlying national case — that remains for the referring court", "It does not require the referring court to be a court of last resort", "It does not apply to questions about the validity of EU legislation"],
+          "correctIndex": 0,
+          "explanation": "The CJEU answers the question of EU law referred to it; it has no jurisdiction to decide the facts or the final outcome of the national proceedings, which return to the referring court to be resolved in light of the ruling."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Discretion or obligation: which courts had to refer",
+        "voice": "structural — a reference-style walkthrough of the two tracks",
+        "body": [
+          "Not every court faced the same rule. Article 267 split national courts into two categories, and mixing them up is the single most common error in exam answers on this topic.",
+          "Any court or tribunal, at any level, had a discretion to refer — it could send a question to Luxembourg if it thought a CJEU ruling was necessary to give judgment, but it didn't have to. A first-instance judge could simply apply EU law as best they understood it and let an appeal correct any error.",
+          "A court against whose decision there was no judicial remedy under national law — in practice, the UK's final courts of appeal, principally the Supreme Court — was under an obligation to refer, subject only to the narrow acte clair exception covered in Part 3. The logic is structural: if a point of EU law is wrong at the top of the system, there's no further national appeal to fix it, so the treaty forced the question upward instead."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The two tracks under Article 267",
+            "points": [
+              "Any national court or tribunal — discretion to refer, exercised if a ruling is 'necessary to enable it to give judgment'",
+              "A court of last resort (no further national appeal available) — obliged to refer, unless acte clair or acte éclairé applies",
+              "The obligation attaches to the position of the court in that particular case, not to the court's general status — a first-instance court can become a 'court of last resort' if, on the facts, no appeal lies"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-05-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the stages of a preliminary reference in order.",
+          "items": [
+            "A national court hearing a live case identifies an unclear point of EU law",
+            "The national court stays the domestic proceedings and refers the question to the CJEU",
+            "The CJEU delivers a ruling interpreting the point of EU law referred to it",
+            "The national court applies that interpretation to resolve the case before it"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the whole cycle: the case never leaves the national court's docket, it's just paused while the interpretive question is answered elsewhere.",
+          "feedbackIncorrect": "The key is that the national proceedings are stayed, not transferred — the case leaves and returns to the same court, which alone applies the ruling to the facts."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "CILFIT and the acte clair escape hatch",
+        "voice": "case-narrative — builds the doctrine from the problem it solves",
+        "body": [
+          "The obligation to refer created an obvious pressure point: if every final court had to send every genuinely debatable EU-law question to Luxembourg, the CJEU would drown, and litigation would slow to a crawl. CILFIT v Ministero della Sanità gave courts of last resort a way out — but a narrow one, deliberately.",
+          "CILFIT was an Italian case about wool imports and a health inspection levy, but the ruling that matters is procedural, not substantive. The CJEU held that a court of last resort need not refer if the correct application of EU law is 'so obvious as to leave no scope for any reasonable doubt' — the doctrine of acte clair.",
+          "The Court then hedged that generosity heavily. Before relying on acte clair, a national court must be convinced the matter is equally obvious to the courts of other Member States and to the CJEU itself; it must compare the different language versions of the text (EU legislation being equally authentic in every official language); it must interpret the provision in its full context and in light of the state of EU law at the time; and it must remember that EU legal concepts do not necessarily carry the same meaning as similarly worded domestic concepts.",
+          "In practice this made acte clair much harder to invoke honestly than its name suggests. A confident court and a court entitled to rely on acte clair are not the same thing — CILFIT demands a specific, demanding checklist, not mere certainty."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "CILFIT v Ministero della Sanità",
+            "citation": "[1982] ECR 3415",
+            "court": "Court of Justice of the European Communities",
+            "year": 1982,
+            "factsShort": "Italian wool importers challenged a health inspection levy; Italy's Court of Cassation, a court of last resort, questioned whether it was obliged to refer every point of EU law it encountered.",
+            "ratioShort": "A court of last resort need not refer where the correct interpretation is so obvious as to leave no scope for reasonable doubt — but only after comparing language versions, context and the risk of divergent understanding across the EU.",
+            "expanded": {
+              "facts": "A group of Italian textile companies importing wool from outside the (then) EEC challenged a compulsory veterinary health inspection and the levy charged for it, arguing EU law precluded it. Italy's Corte di Cassazione, as the court of last instance, referred a prior question to the CJEU: did the obligation to refer under (then) Article 177 EEC apply automatically to any relevant point, however clear the answer seemed?",
+              "judgmentExtract": "The Court held that the obligation to refer is not absolute. It does not arise where the CJEU has already ruled on the point (acte éclairé) or where the correct application of EU law is so obvious as to leave no scope for reasonable doubt (acte clair) — but the national court must first be convinced the matter would be equally obvious to courts in other Member States and to the CJEU, mindful that EU legislation is drafted in several equally authentic languages and uses autonomous concepts that may not map onto domestic legal terminology.",
+              "significance": "CILFIT is the leading authority on when the obligation to refer can be avoided. It is frequently taught, and frequently criticised, as setting a standard so exacting that a court applying it with genuine rigour would struggle ever to conclude a non-trivial EU-law point was truly acte clair — meaning the exception has, in practice, been invoked more liberally than the judgment's own logic would support."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-05-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the core acte clair test from CILFIT.",
+          "passage": "A court of last resort is not automatically required to refer every question of EU law that arises before it. The correct application of EU law may be so obvious as to leave no scope for any reasonable doubt, in which case the court need not refer — but before reaching that conclusion, the court must be satisfied the matter is equally obvious to the courts of other Member States and to the Court of Justice itself.",
+          "ratioSentence": "The correct application of EU law may be so obvious as to leave no scope for any reasonable doubt, in which case the court need not refer — but before reaching that conclusion, the court must be satisfied the matter is equally obvious to the courts of other Member States and to the Court of Justice itself."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "31 December 2020: the day the conduit closed",
+        "voice": "direct — states the constitutional fact plainly before qualifying it",
+        "body": [
+          "None of Parts 1–3 describe current UK procedure. Article 267 TFEU applies only to courts of Member States, and the United Kingdom stopped being a Member State when it withdrew from the EU on 31 January 2020. What kept the reference mechanism alive for almost another year was the transition period agreed under the Withdrawal Agreement, during which EU law — including the right to refer — continued to apply to the UK as though it were still a member.",
+          "That transition period ended at 11pm UK time on 31 December 2020. From that moment, no UK court or tribunal — not the Supreme Court, not any tribunal at first instance — has had jurisdiction to make a fresh Article 267 reference to the CJEU. There is no procedural workaround, no residual discretion, no exception preserved for cases that happen to raise pure EU-law questions: the jurisdictional gateway is simply gone.",
+          "This single fact resolves a surprising number of exam traps. A scenario built around a UK tribunal today 'referring a question to the CJEU' is testing whether you notice the error, not testing your grasp of acte clair."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes assume the UK retained a limited or discretionary right to refer for cases arising from pre-exit facts, or for cases under the Withdrawal Agreement generally.",
+            "whyItsWrong": "The end of the transition period removed Article 267 jurisdiction over UK courts entirely and prospectively. A narrow, separate carve-out exists only for specific categories under the Withdrawal Agreement itself (broadly, certain citizens' rights proceedings begun before the end of the transition period) — it is not a general survival of the reference power, and it is not what most exam scenarios are testing."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-05-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "knowledge",
+          "prompt": "How confident are you that a UK Supreme Court panel today could lawfully make a fresh Article 267 reference to the CJEU in an ordinary domestic case?",
+          "sliderLabels": ["Definitely could", "Definitely could not"],
+          "correctPosition": "could not",
+          "explanation": "Article 267 jurisdiction over UK courts ended with the transition period on 31 December 2020. No UK court — including the Supreme Court — can make a fresh reference in an ordinary case today; the jurisdictional gateway no longer exists."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "What happens to the case law that's already there: EUWA 2018 s 6",
+        "voice": "mechanism-focused — closes the walkthrough by explaining the current UK rule directly",
+        "body": [
+          "Losing the ability to refer new questions didn't erase the decades of CJEU rulings the UK courts had already absorbed while a member. The European Union (Withdrawal) Act 2018 addresses exactly this: it converted the body of EU law and CJEU case law that existed at the end of the transition period into a snapshot of domestic law — now generally referred to as 'assimilated law' after later amendment by the Retained EU Law (Revocation and Reform) Act 2023 — rather than simply switching it off.",
+          "Section 6 of the 2018 Act, as amended, sets the rules UK courts now apply to that snapshot. Retained (assimilated) case law of the CJEU decided before the end of the transition period continues to bind courts in the ordinary way according to the normal UK rules of precedent — a lower court is bound by it, just as it would be bound by a domestic Court of Appeal decision — but specified higher courts (broadly, the Supreme Court, the Court of Appeal and equivalent senior courts, and certain other courts by later regulation) are given a power to depart from it, applying a test similar to the flexibility the Supreme Court uses to depart from its own past decisions.",
+          "CJEU case law decided after the end of the transition period sits in an entirely different category: it has no binding status in UK courts at all. A UK court is not required to follow it, and is not required to ignore it either — s 6 permits a court to 'have regard to' post-exit CJEU decisions if it considers it appropriate, purely as persuasive material, in the same loose way a court might consider a decision of a foreign or international court.",
+          "Put the two rules side by side and the shape of the current law becomes clear: pre-exit CJEU case law is domestic law, departable under specific conditions by specified senior courts; post-exit CJEU case law is foreign persuasive authority with no special status whatsoever. Confusing these two categories — treating a 2024 CJEU judgment as though it binds a UK court the way a 2018 one might — is the most consequential mistake a student can make in this lesson."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "European Union (Withdrawal) Act 2018, s 6 (as amended)",
+            "text": "A court or tribunal is not bound by any principles laid down, or any decisions made, on or after IP completion day by the European Court, but may have regard to anything done on or after IP completion day by the European Court, another EU entity or the EU so far as it is relevant to any matter before the court or tribunal.",
+            "elements": ["Post-exit CJEU decisions do not bind UK courts", "A UK court may nonetheless have regard to a post-exit CJEU decision where relevant", "This is a discretionary, persuasive-only status — distinct from the binding treatment of pre-exit retained case law under other provisions of s 6"]
+          },
+          {
+            "type": "doctrineMap",
+            "title": "Which rule applies: pre-exit or post-exit CJEU case law?",
+            "description": "A flowchart for classifying a piece of CJEU case law and identifying the correct UK-law treatment.",
+            "nodes": [
+              { "id": "start", "label": "Was the CJEU decision made before the end of the transition period (31 December 2020)?" },
+              { "id": "yes-pre", "label": "Yes → retained/assimilated case law: binds UK courts under ordinary precedent rules, departable only by specified senior courts under s 6" },
+              { "id": "no-post", "label": "No → decided after the transition period ended" },
+              { "id": "post-status", "label": "Not binding on any UK court; a court may 'have regard to' it as persuasive material only, if it considers that appropriate" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-pre", "label": "Before 31 Dec 2020" },
+              { "from": "start", "to": "no-post", "label": "After 31 Dec 2020" },
+              { "from": "no-post", "to": "post-status", "label": "" }
+            ],
+            "textAlternative": "First ask whether the CJEU decision was made before the end of the transition period on 31 December 2020. If yes, it is retained (assimilated) case law: it binds UK courts under the ordinary rules of precedent, though specified senior courts have a power to depart from it. If no — the decision was made after the transition period ended — it has no binding status in UK courts at all; a court may have regard to it as persuasive material only, entirely at its discretion."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-05-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A UK Court of Appeal is deciding a case that turns on a point the CJEU addressed twice: once in a 2016 ruling, and again — reaching a different emphasis — in a 2023 ruling delivered after the UK's transition period ended. How should the Court of Appeal treat the two rulings?",
+          "options": ["Both bind the Court of Appeal equally, since both come from the same court", "The 2016 ruling is retained case law and binds the Court of Appeal (subject to any power to depart from it); the 2023 ruling has no binding status and may only be considered as persuasive material", "Neither ruling has any status in UK law, because the UK has left the EU entirely"],
+          "correctIndex": 1,
+          "explanation": "The 2016 ruling predates the end of the transition period, so it is retained/assimilated case law binding under s 6 (subject to a specified court's power to depart from it). The 2023 ruling postdates the transition period and therefore has no binding status at all — it is, at most, material the court may have regard to if it thinks that appropriate."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "eulaw-05-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What does a preliminary reference under (former) Article 267 TFEU allow a national court to do?",
+      "acceptableAnswers": ["refer a question on the interpretation or validity of EU law to the CJEU", "ask the CJEU to interpret EU law mid-case", "stay proceedings and send a question of EU law to the Court of Justice"],
+      "modelAnswer": "It allows a national court, in the course of a live case, to refer a question on the interpretation or validity of EU law to the CJEU, stay the domestic proceedings, and then apply the CJEU's ruling to resolve the case itself."
+    },
+    {
+      "itemId": "eulaw-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under Article 267, did every national court and tribunal have the same relationship to the reference procedure?",
+      "options": ["No — any court had a discretion to refer, but a court of last resort was under an obligation to refer, subject to exceptions", "Yes — every court and tribunal was equally obliged to refer any EU-law point it encountered"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following best describes acte clair?",
+      "options": ["A rule that abolishes the obligation to refer for courts of last resort entirely", "A narrow exception allowing a court of last resort to decline to refer where the correct interpretation is beyond reasonable doubt, subject to the CILFIT conditions", "A rule that only applies to courts with a discretion, not an obligation, to refer"],
+      "correctIndex": 1,
+      "trapExplanation": "Acte clair is an exception to the obligation, not its abolition — CILFIT imposes specific conditions (comparing language versions, context, and whether the point would be equally obvious elsewhere) before a court of last resort may rely on it."
+    },
+    {
+      "itemId": "eulaw-05-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Article 267 TFEU distinguishes questions about the 'interpretation' of the Treaties from questions about the 'validity and interpretation' of acts of the EU institutions. What does this second limb allow the CJEU to review?",
+      "options": ["Whether a piece of EU secondary legislation (such as a regulation or directive) is itself lawful under the Treaties, as well as how it should be interpreted", "Only how UK statutes should be interpreted", "Whether a national court's own procedural rules are valid"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-05-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the reasoning steps a court of last resort should follow before relying on acte clair per CILFIT.",
+      "items": ["Identify that the point of EU law is, on its face, clear to the court itself", "Compare the different equally authentic language versions of the relevant provision", "Interpret the provision in its full context and in light of the state of EU law at the time", "Consider whether the point would be equally obvious to courts of other Member States and to the CJEU"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "eulaw-05-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below, highlight the sentence identifying acte éclairé as distinct from acte clair.",
+      "passage": "The obligation to refer does not arise in every case. Where the Court of Justice has already ruled on the identical question, whether or not in an identical set of proceedings, the national court need not refer again. Separately, where the correct application of EU law is so obvious as to leave no scope for reasonable doubt, the obligation likewise falls away.",
+      "ratioSentence": "Where the Court of Justice has already ruled on the identical question, whether or not in an identical set of proceedings, the national court need not refer again."
+    },
+    {
+      "itemId": "eulaw-05-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "How confident are you that CILFIT's conditions make acte clair easy for a court of last resort to invoke in practice?",
+      "sliderLabels": ["Very easy to invoke", "Very demanding, rarely satisfied"],
+      "correctPosition": "Very demanding, rarely satisfied",
+      "explanation": "CILFIT's conditions — comparing language versions, checking context, and being satisfied the point is equally obvious across the EU — set a genuinely demanding standard, even though courts have sometimes applied it more loosely than the judgment's own logic supports."
+    },
+    {
+      "itemId": "eulaw-05-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "Tap the fact that would have made this hypothetical (pre-2021) UK court a 'court of last resort' for Article 267 purposes.",
+      "scenarioText": "A claimant loses at first instance and appeals to the Court of Appeal. The Court of Appeal dismisses the appeal. Under the relevant procedural rules, no further appeal to the Supreme Court is available in this category of case, and the claimant has exhausted every route of challenge.",
+      "tappableSpans": ["loses at first instance", "appeals to the Court of Appeal", "dismisses the appeal", "no further appeal to the Supreme Court is available"],
+      "correctSpan": "no further appeal to the Supreme Court is available",
+      "feedbackCorrect": "Correct. The obligation to refer attaches to a court against whose decision there is no further judicial remedy in the national system — here, the Court of Appeal, not because of its general status but because no appeal lies further in this case.",
+      "feedbackIncorrect": "Look for the fact establishing no further appeal exists, not the fact of losing or appealing — the obligation to refer turns on whether any national remedy remains available in this case."
+    },
+    {
+      "itemId": "eulaw-05-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario, if it arose in 2019, would most clearly have triggered an obligation (not merely a discretion) to refer under Article 267?",
+      "scenarioA": "A County Court judge, hearing a small claim with a right of appeal available, encounters an unclear point of EU consumer law.",
+      "scenarioB": "The Supreme Court, in a case where no further appeal exists, encounters a genuinely unclear point of EU law central to the outcome.",
+      "correctScenario": "B",
+      "explanation": "Scenario A describes a court with a discretion to refer, not an obligation, because an appeal route remains open. Scenario B describes a court of last resort facing a genuinely unclear point — precisely the situation Article 267's obligation, and the CILFIT exception to it, was designed to address."
+    },
+    {
+      "itemId": "eulaw-05-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A UK employment tribunal in 2026 is deciding a case and finds a highly persuasive CJEU judgment from 2022 directly on point. What is the correct legal status of that judgment before the tribunal?",
+      "options": ["It automatically binds the tribunal, just like any pre-2021 CJEU ruling would", "It has no binding status at all, but the tribunal may have regard to it as persuasive material if it considers that appropriate", "It is irrelevant and the tribunal must disregard it entirely"],
+      "correctIndex": 1,
+      "explanation": "A 2022 CJEU judgment postdates the end of the transition period, so it falls outside the retained/assimilated case law regime and has no binding status under EUWA 2018 s 6. The tribunal may still have regard to it as persuasive material, entirely at its discretion."
+    },
+    {
+      "itemId": "eulaw-05-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "The Court of Appeal is hearing an appeal that turns on a point of retained EU law settled by a 2017 CJEU ruling. Counsel argues the Court of Appeal should depart from that ruling because a later, non-binding 2024 CJEU judgment reaches a more persuasive conclusion. Analyse how the Court of Appeal should approach this argument.",
+      "factsToOrder": [
+        "The governing ruling was decided by the CJEU in 2017, before the end of the transition period",
+        "The 2017 ruling is retained/assimilated case law under EUWA 2018 s 6",
+        "The Court of Appeal is one of the courts given a power to depart from retained case law",
+        "The 2024 CJEU ruling postdates the transition period and has no binding status",
+        "Counsel is inviting the Court of Appeal to use the 2024 ruling as a reason to exercise its departure power"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the Court of Appeal may depart from the binding 2017 retained CJEU ruling by relying on the later, non-binding 2024 CJEU judgment.",
+        "rule": "Under EUWA 2018 s 6 (as amended), pre-transition CJEU case law is retained/assimilated law and binds UK courts under ordinary precedent rules, though specified senior courts (including the Court of Appeal) have a power to depart from it. Post-transition CJEU case law has no binding status and may only be treated as persuasive material a court may have regard to if it considers it appropriate.",
+        "application": "The 2017 ruling binds the Court of Appeal as retained case law, but the Court of Appeal is one of the courts empowered to depart from retained case law where appropriate. The 2024 ruling cannot itself compel departure — it has no binding force — but nothing in s 6 prevents the Court of Appeal from having regard to its reasoning as persuasive material when deciding, on its own departure test, whether departing from the 2017 ruling is justified.",
+        "conclusion": "The Court of Appeal may consider the 2024 ruling as persuasive input to its own departure analysis, but it is exercising its own departure power under s 6 — it is not treating the 2024 ruling as binding, and could equally decline to depart despite finding the later reasoning attractive."
+      }
+    },
+    {
+      "itemId": "eulaw-05-test-12",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "When did UK courts lose the jurisdiction to make a fresh Article 267 reference to the CJEU?",
+      "options": ["At the end of the transition period, 31 December 2020", "On the date of the Brexit referendum, 23 June 2016", "On the date Article 50 TEU was triggered, 29 March 2017"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-05-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "A student writes: 'Because the UK has left the EU, CJEU case law is now entirely irrelevant to English courts.' What is the clearest problem with this statement?",
+      "options": ["It correctly reflects the current position under EUWA 2018 s 6", "It ignores that pre-transition CJEU case law was retained as binding domestic law, and that post-transition CJEU case law may still be considered as persuasive material", "CJEU case law was never relevant to English courts even before Brexit"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting error is to treat 'the UK left the EU' as meaning all CJEU case law simply stopped mattering. In fact pre-exit CJEU rulings were converted into binding retained law, and post-exit rulings, while not binding, remain something a court may have regard to."
+    },
+    {
+      "itemId": "eulaw-05-test-14",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What is the general effect of European Union (Withdrawal) Act 2018 s 6 on CJEU case law decided after the transition period ended?",
+      "acceptableAnswers": ["it does not bind UK courts", "no binding status, only persuasive if the court has regard to it", "courts are not bound but may have regard to it"],
+      "modelAnswer": "Post-transition CJEU case law does not bind any UK court. A UK court may nonetheless have regard to it, so far as it is relevant, purely as persuasive material — it carries no special status."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error across this lesson's test items is collapsing the two-category rule in EUWA 2018 s 6 into one. Pre-exit CJEU case law is retained domestic law, binding subject to a specified court's power to depart from it; post-exit CJEU case law is not binding at all and is, at most, persuasive material a court may choose to consider. Keep asking which side of 31 December 2020 the case law falls on before saying anything about its status.",
+    "reviewMisses": true,
+    "linkToPathway": "eulaw.institutions.preliminary-references"
+  }
+}

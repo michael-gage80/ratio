@@ -1,0 +1,478 @@
+{
+  "lessonId": "land-02",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 2,
+  "topicId": "land.foundations.formalities",
+  "title": "Formalities",
+  "subtitle": "Creating and transferring interests in land",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the formality requirements for a valid contract for the sale or disposition of land under s 2 LP(MP)A 1989, and explain why non-compliance renders the contract void rather than merely unenforceable",
+    "State the deed requirement for creating or transferring a legal estate under s 52 LPA 1925, and identify when the short lease exception under s 54(2) LPA 1925 removes that requirement",
+    "Apply Walsh v Lonsdale to recognise when a failed legal transaction nonetheless takes effect as an equitable interest, and identify when it does not"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Law of Property (Miscellaneous Provisions) Act 1989, s 2",
+      "role": "Requires all the express terms of a land contract in one signed document; non-compliance makes the contract void"
+    },
+    {
+      "citation": "Law of Property Act 1925, s 52",
+      "role": "Requires a deed to convey or create a legal estate in land"
+    },
+    {
+      "citation": "Law of Property Act 1925, s 54(2)",
+      "role": "Exempts short leases — three years or less, in possession, at the best rent without a premium — from the deed requirement"
+    },
+    {
+      "citation": "Walsh v Lonsdale (1882) 21 Ch D 9",
+      "role": "Establishes that a specifically enforceable contract to grant a legal estate takes effect as an equitable interest even without the formal grant"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Formalities questions are where marks get lost on autopilot. Students who know exactly what an easement or a lease is skip straight past the prior question of whether it was ever validly created at all — and that prior question is usually where the marks are.",
+    "profileHooks": {
+      "weakApplication": "Your recall of ss 2, 52 and 54 is solid. The test pool below is weighted towards scenarios where a formality either was or wasn't satisfied — read for exactly what document was signed, by whom, and when.",
+      "weakKnowledge": "Slow down through Parts 1 to 3 and get the three formality rules fixed first. Walsh v Lonsdale in Part 4 only makes sense once you can say precisely which rule has failed on the facts."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A landlord and tenant shake hands on a seven-year lease, exchange a few emails setting out the rent and the term, and the tenant moves in and starts trading. No deed is ever signed. Is there a lease? The honest answer is: sort of — and 'sort of' turns out to be worth an entire doctrine, and a disproportionate number of exam marks. This lesson is about the formalities that stand between an agreement and a legal right, and what happens to a transaction that trips over one of them."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The contract stage: get it wrong and there is no contract at all",
+        "voice": "procedural — treats s 2 as a compliance checklist, because that is exactly what it is",
+        "body": [
+          "Before any land changes hands, there is almost always a contract. Section 2 of the Law of Property (Miscellaneous Provisions) Act 1989 governs it, and it is unforgiving: the contract must be in writing, and it must incorporate all the terms the parties have expressly agreed, either in one document or, where contracts are exchanged, across the two matching documents. The document must be signed by or on behalf of each party.",
+          "The consequence of getting this wrong is the trap the whole lesson is built around. Under the old law — s 40 LPA 1925 — a land contract that wasn't properly recorded in writing was merely unenforceable by action; the doctrine of part performance could still let a party enforce an informal agreement if they had acted on it. The 1989 Act deliberately abolished that safety net for contracts: a contract that fails s 2 is void. Not unenforceable, not defective — it does not exist as a contract at all, and there is nothing left to part-perform.",
+          "This has a narrow scope worth flagging precisely: s 2 governs the contract stage — the agreement to create or transfer an interest in land. It does not, by itself, tell you whether a legal estate has actually passed. That is a separate question, and the subject of the next two parts."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property (Miscellaneous Provisions) Act 1989, s 2(1)",
+            "text": "A contract for the sale or other disposition of an interest in land can only be made in writing and only by incorporating all the terms which the parties have expressly agreed in one document or, where contracts are exchanged, in each.",
+            "elements": [
+              "In writing",
+              "All expressly agreed terms in one document (or matching exchanged documents)",
+              "Signed by or on behalf of each party"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Void vs unenforceable",
+            "definition": "A void contract never came into existence and confers no rights on either party, however much either has relied on it. An unenforceable contract exists and may still ground defences or restitutionary claims, but a court will not order a party to perform it. Section 2 non-compliance produces the former, not the latter."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-02-check-01",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "Two parties orally agree the price and completion date for a house sale, and one side later refuses to complete. What is the legal effect of the missing written, signed document under s 2 LP(MP)A 1989?",
+          "options": [
+            "The agreement can still be enforced if the buyer has acted in reliance on it, under the doctrine of part performance",
+            "There is no contract at all — the agreement is void, and part performance no longer rescues a land contract",
+            "The agreement is merely unenforceable, but still exists and can ground a claim for damages"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "Part performance and 'merely unenforceable' both describe the old law under s 40 LPA 1925, which the 1989 Act deliberately replaced. Under s 2, non-compliance is fatal to the contract's existence, not just to its enforceability — there is nothing to part-perform because there was never a contract."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The deed stage: from contract to legal transfer",
+        "voice": "procedural — walks the gap between agreeing and actually transferring",
+        "body": [
+          "Exchanging s 2-compliant contracts is not the moment a legal estate changes hands. It creates a binding, specifically enforceable obligation to complete the transfer — and, as the next part of this lesson explores, an equitable interest can arise at that point. But the legal estate itself only passes at a later, separate step.",
+          "Section 52 LPA 1925 supplies that step: a conveyance of a legal estate in land is void for the purpose of conveying or creating that legal estate unless made by deed. 'Conveyance' here covers transfers of freeholds, grants of most leases, and creation of most legal interests such as easements or legal mortgages.",
+          "A deed itself has its own formality, set by s 1 of the same 1989 Act that governs contracts: the document must make clear on its face that it is intended to be a deed, it must be validly signed and the signature witnessed and attested, and it must be delivered. Completion, in a typical purchase, is the point at which the deed is executed and delivered — and, for registered land, legal title formally passes only once the transfer is registered at HM Land Registry."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "From agreement to legal title — the sequence",
+            "points": [
+              "Contract exchanged, compliant with s 2 LP(MP)A 1989 — creates a binding obligation and a specifically enforceable right, but no legal estate yet",
+              "Deed executed at completion, meeting the s 1 LP(MP)A 1989 formalities (states it is a deed, signed, witnessed, delivered)",
+              "For registered land, the transfer is registered at HM Land Registry",
+              "Only at that final point does the legal estate itself pass under s 52 LPA 1925"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-02-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order they occur in a standard purchase of a registered freehold.",
+          "items": [
+            "Parties exchange a contract compliant with s 2 LP(MP)A 1989",
+            "A deed of transfer is executed and delivered at completion",
+            "The transfer is registered at HM Land Registry",
+            "The buyer holds the legal estate"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the whole chain: a compliant contract binds the parties, a deed is the mechanism s 52 requires to convey the legal estate, and for registered land the legal estate does not actually pass until registration completes the process.",
+          "feedbackIncorrect": "Check the order again — a contract alone never transfers a legal estate (s 52 requires a deed), and even a properly executed deed for registered land does not finish the job until the transfer is registered."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The exception that swallows a lot of student assumptions: short leases",
+        "voice": "cautionary — flags exactly where the exception does and doesn't reach",
+        "body": [
+          "Section 52's deed requirement is not absolute. Section 54(2) LPA 1925 carves out an exception for short leases, and it is drafted narrowly — every element of it has to be satisfied, not just the headline 'it's a short lease' intuition.",
+          "The exception applies to a lease taking effect in possession for a term not exceeding three years, at the best rent reasonably obtainable without taking a fine (a premium). Meeting all three limbs means the lease can be created without a deed — even orally, or simply by the tenant moving in and paying rent.",
+          "Each limb is a place students lose marks. 'In possession' excludes a lease agreed now but due to start in the future — a reversionary lease for six months starting in a year's time still needs a deed, however short the term itself is. 'Not exceeding three years' is a hard ceiling — a lease for three years and one day fails entirely, it doesn't get a partial exemption. And 'without a fine' excludes any arrangement where the tenant pays an up-front premium rather than (or as well as) rent."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, s 54(2)",
+            "text": "Nothing in the foregoing provisions of this Part of this Act shall affect the creation by parol of leases taking effect in possession for a term not exceeding three years... at the best rent which can reasonably be obtained without taking a fine.",
+            "elements": [
+              "Term not exceeding three years",
+              "Takes effect in possession (starts immediately, not in the future)",
+              "At the best rent reasonably obtainable",
+              "No premium or fine taken"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-02-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A landlord orally agrees a two-year lease with a tenant at the market rent, no premium payable, and the tenant moves in the same week. A month later the landlord tries to deny the lease exists because there is no deed. Is the landlord right?",
+          "options": [
+            "No — this meets every limb of s 54(2): three years or under, in possession, at the best rent, no fine, so it can be validly created without a deed",
+            "Yes — s 52 requires a deed for every lease regardless of length",
+            "It depends on whether the agreement was also recorded in writing under s 2 LP(MP)A 1989"
+          ],
+          "correctIndex": 0,
+          "explanation": "Every limb of s 54(2) is satisfied on these facts: the term is under three years, it takes effect immediately in possession, it is at market rent, and no premium changes hands. That combination is enough on its own to create a valid legal lease without a deed — no separate written contract is needed for this kind of short, immediate letting."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When formality fails, equity sometimes rescues — but only sometimes",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Walsh v Lonsdale is the case every land lawyer reaches for when a legal transaction has gone wrong. A landlord agreed in writing to grant a seven-year lease of a mill, with rent payable a year in advance if the landlord demanded it. The tenant took possession and began paying rent, but no deed was ever executed — so no legal lease under s 52 had actually been created. By taking possession and paying rent, the tenant had instead become a periodic tenant at law, on the ordinary implied terms of that relationship, which did not include paying rent in advance.",
+          "The landlord tried to enforce the advance-rent term from the original written agreement. The Court of Appeal held he could. Because the written agreement was one of which a court would order specific performance, equity treated the parties as already standing in the position that agreement contemplated — 'equity looks on that as done which ought to be done.' The tenant was held to hold under an equitable lease on the full agreed terms, including the advance rent, even though no legal lease had ever been granted.",
+          "The doctrine this generates is powerful: a specifically enforceable contract to grant a legal estate takes effect in equity as if the legal estate had already been granted, without waiting for the deed. But notice what the doctrine needs to get started — a contract equity would actually order performed. That requirement is exactly where the next part of this lesson turns the doctrine back into a trap."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Walsh v Lonsdale",
+            "citation": "(1882) 21 Ch D 9",
+            "court": "Court of Appeal",
+            "year": 1882,
+            "factsShort": "A written agreement for a seven-year mill lease, with rent payable in advance, was never completed by deed; the tenant took possession and paid rent as it fell due.",
+            "ratioShort": "A contract to grant a lease, being one of which specific performance would be ordered, is treated in equity as if the lease had already been granted on its agreed terms, notwithstanding the absence of a deed.",
+            "expanded": {
+              "facts": "Lonsdale agreed in writing to grant Walsh a seven-year lease of a mill, with a term requiring a year's rent to be paid in advance if demanded. No deed was ever executed. Walsh went into possession and paid rent quarterly in arrears, as an ordinary periodic tenant would. Lonsdale later demanded a year's rent in advance under the written agreement's term, and distrained on Walsh's goods when he refused to pay.",
+              "judgmentExtract": "Sir George Jessel MR held that since the Judicature Acts fused the administration of law and equity, and since the written agreement was specifically enforceable, the tenant held under the same terms as if a lease had actually been granted. The relationship between the parties was to be governed by the equitable lease, not by the more limited implied terms of the legal periodic tenancy that had arisen from mere possession and payment of rent.",
+              "significance": "Walsh v Lonsdale is the foundation of the modern doctrine of the equitable lease, and more broadly of the principle that a specifically enforceable contract to create any legal interest can itself take effect in equity. It shows that the gap left by a missing deed is not always fatal — but only where the underlying agreement is one equity would specifically enforce."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-02-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the ratio of Walsh v Lonsdale.",
+          "passage": "The tenant argued that, absent a deed, he held only a legal periodic tenancy arising from possession and payment of rent, on its ordinary implied terms. The court disagreed. Since the written agreement was one of which specific performance would be ordered, the tenant was to be treated in equity as if the lease agreed in writing had already been granted, on all its terms, notwithstanding that no deed had ever been executed. The landlord was therefore entitled to enforce the advance rent term.",
+          "ratioSentence": "Since the written agreement was one of which specific performance would be ordered, the tenant was to be treated in equity as if the lease agreed in writing had already been granted, on all its terms, notwithstanding that no deed had ever been executed."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Stacking the doctrines: contract, deed, and equity together",
+        "voice": "procedural, cautionary — the synthesis part, built to catch the exam trap",
+        "body": [
+          "Here is the trap the rest of this lesson has been building towards. Students often treat Walsh v Lonsdale as a general rescue doctrine — as if any informal arrangement to grant a lease will simply take effect in equity regardless of how it was made. That is wrong, and it is wrong for a reason that reaches straight back to Part 1.",
+          "Walsh v Lonsdale only helps a claimant who has a contract equity would specifically enforce. Since 1989, that means a contract that itself satisfies s 2 LP(MP)A 1989 — in writing, all agreed terms in one document, signed by both parties. An entirely oral 'agreement' to grant a lease is void as a contract under s 2. Void means there is nothing for equity to specifically perform, and therefore nothing for Walsh v Lonsdale to convert into an equitable lease either. The doctrine does not fill the gap left by a missing s 2 contract; it only fills the gap left by a missing s 52 deed, once a valid contract already exists.",
+          "Run every formalities problem through this order, in this sequence, and the trap stops working: first, is there a contract that satisfies s 2 — if not, stop, there is nothing at all (subject to the narrow s 54(2) short-lease exception, which does not need a s 2 contract in the first place). Second, if there is a s 2-compliant contract, was a deed executed under s 52 — if yes, there is a legal estate. Third, if there is a valid contract but no deed, does Walsh v Lonsdale give an equitable interest on the contract's terms."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students facing a scenario with no written contract and no deed often still reach for Walsh v Lonsdale and conclude 'there's an equitable lease anyway.'",
+            "whyItsWrong": "Walsh v Lonsdale rescues a defective legal transaction, not a defective contract. It presupposes a contract equity would specifically enforce — which since 1989 means one that satisfies s 2 LP(MP)A 1989. An informal, unwritten arrangement is void as a contract under s 2 before the question of a deed is even reached, so there is nothing for the equitable doctrine to operate on. The correct conclusion on those facts is usually that no interest in the land was created at all, though a claim in proprietary estoppel may sometimes be available on different facts — a separate doctrine, not Walsh v Lonsdale."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-02-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A landlord and a prospective tenant exchange a series of emails agreeing all the terms of a five-year lease — premises, rent, term, break clause — and both emails are signed off with the parties' typed names. The tenant moves into possession and starts paying the agreed rent, but no deed is ever executed. Analyse what interest, if any, the tenant holds.",
+          "factsToOrder": [
+            "The terms of the five-year lease were agreed by exchanged, signed emails covering rent, term and a break clause",
+            "The term exceeds three years, so s 54(2) cannot apply",
+            "The tenant took possession and paid the agreed rent",
+            "No deed was ever executed"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 4,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the tenant holds a legal lease, an equitable lease, or no proprietary interest at all in the absence of a deed.",
+            "rule": "A lease exceeding three years requires a deed to take effect as a legal estate (s 52 LPA 1925); the s 54(2) short lease exception does not apply to a term over three years. Where no deed is executed, an equitable lease can nonetheless arise under Walsh v Lonsdale, but only where there is an underlying contract that satisfies s 2 LP(MP)A 1989 and would be specifically enforceable.",
+            "application": "No deed was executed, so no legal lease arose under s 52, and the five-year term takes it outside the s 54(2) exception. The question is therefore whether Walsh v Lonsdale can supply an equitable lease instead. That turns on the exchanged emails: because they set out all the express terms in matching, signed documents, they satisfy s 2 LP(MP)A 1989 and form a valid, specifically enforceable contract for the lease. Since a valid contract exists, Walsh v Lonsdale applies: the tenant is treated in equity as holding the lease on the agreed terms, even without a deed.",
+            "conclusion": "The tenant holds an equitable lease for five years on the terms agreed in the emails, not a legal lease, because the underlying contract satisfies s 2 and is therefore one equity would specifically enforce."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-02-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What must a contract for the sale or disposition of an interest in land contain to satisfy s 2 LP(MP)A 1989?",
+      "acceptableAnswers": [
+        "all express terms in writing in one document, signed by both parties",
+        "writing incorporating all agreed terms and signed by each party"
+      ],
+      "modelAnswer": "The contract must be in writing, incorporate all the terms the parties have expressly agreed in one document (or matching exchanged documents), and be signed by or on behalf of each party."
+    },
+    {
+      "itemId": "land-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Does a signed contract for the sale of a house, on its own, transfer the legal estate to the buyer?",
+      "options": [
+        "No — the legal estate only passes when a deed is executed under s 52 LPA 1925 (and, for registered land, on registration)",
+        "Yes — signing a compliant contract is itself sufficient to transfer legal title"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-02-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What is the legal consequence of a land contract failing to satisfy s 2 LP(MP)A 1989?",
+      "options": [
+        "The contract is merely unenforceable, and part performance may still rescue it",
+        "The contract is void — it does not exist, and there is nothing to part-perform",
+        "The contract remains valid but the deed requirement is waived"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The first option describes the old s 40 LPA 1925 regime, which the 1989 Act deliberately replaced. Since 1989, a defective land contract is void from the outset, not merely unenforceable."
+    },
+    {
+      "itemId": "land-02-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 52 LPA 1925, what is required to convey or create a legal estate in land (subject to statutory exceptions)?",
+      "options": [
+        "A deed",
+        "A written and signed contract only",
+        "Registration at HM Land Registry only, without any prior document"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-02-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does a lease that satisfies every limb of s 54(2) LPA 1925 need to be made by deed?",
+      "options": [
+        "No — such short leases can be created without a deed, even orally",
+        "Yes — s 54(2) only shortens the deed requirement, it does not remove it"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-02-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these stages of a standard land transaction in the correct order.",
+      "items": [
+        "A contract compliant with s 2 LP(MP)A 1989 is exchanged",
+        "A deed is executed and delivered at completion under s 52 LPA 1925",
+        "The transfer is registered at HM Land Registry",
+        "The buyer becomes the legal owner"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "land-02-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that states the ratio of Walsh v Lonsdale.",
+      "passage": "The absence of a deed meant no legal lease had been created. Nonetheless, because the written agreement to grant the lease was specifically enforceable, equity treated the tenant as if the lease had already been granted on its full agreed terms. This equitable lease bound the parties even though no legal estate had passed.",
+      "ratioSentence": "Because the written agreement to grant the lease was specifically enforceable, equity treated the tenant as if the lease had already been granted on its full agreed terms."
+    },
+    {
+      "itemId": "land-02-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A landlord and tenant orally agree a one-year lease at the market rent with no premium, taking effect the same day the tenant moves in. Is a deed required?",
+      "options": [
+        "No — the term is under three years, it is in possession, at the best rent, and no premium is taken, so s 54(2) applies",
+        "Yes — all leases over six months require a deed",
+        "Yes — s 54(2) only applies to leases created in writing"
+      ],
+      "correctIndex": 0,
+      "explanation": "Every limb of s 54(2) is satisfied, so this short lease is validly created without a deed, and without needing a s 2-compliant written contract either."
+    },
+    {
+      "itemId": "land-02-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A tenant orally agrees a two-year lease and pays the landlord a lump-sum premium of £5,000 up front, in addition to a low monthly rent. Does s 54(2) allow this lease to be created without a deed?",
+      "options": [
+        "No — taking a premium takes the arrangement outside s 54(2), regardless of how short the term is",
+        "Yes — the term is under three years, which is all that matters",
+        "Yes — provided the rent itself is at least the market rate"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 54(2) requires the best rent obtainable without taking a fine. A premium disqualifies the arrangement from the exception entirely, however short the term — a deed is required despite the two-year length."
+    },
+    {
+      "itemId": "land-02-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario requires a deed under s 52, despite the short length of the lease term?",
+      "scenarioA": "A two-year lease, agreed today, taking effect in possession immediately, at market rent with no premium.",
+      "scenarioB": "A two-year lease, agreed today, but not due to start until eighteen months from now, at market rent with no premium.",
+      "correctScenario": "B",
+      "explanation": "B fails the 'in possession' limb of s 54(2) because it is a reversionary lease that does not take effect immediately — a deed is required despite the short term. A satisfies every limb of s 54(2) and needs no deed."
+    },
+    {
+      "itemId": "land-02-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A landlord and tenant have a purely oral understanding about a four-year lease; no writing of any kind exists. The tenant argues Walsh v Lonsdale gives them an equitable lease. Are they right?",
+      "options": [
+        "Yes — Walsh v Lonsdale rescues any lease arrangement the parties have acted on, written or not",
+        "No — there is no s 2-compliant contract for the equitable doctrine to operate on, so Walsh v Lonsdale gives no equitable lease here",
+        "Yes, but only if the tenant has been in possession for at least six months"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Walsh v Lonsdale only converts a defective legal transaction into an equitable one where a specifically enforceable contract already exists. A wholly oral arrangement is void as a contract under s 2 LP(MP)A 1989 before the equitable doctrine is even reached — there is nothing for equity to treat as already done."
+    },
+    {
+      "itemId": "land-02-test-12",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that means this lease needs a deed despite being for a short term.",
+      "scenarioText": "A tenant and landlord agree, by exchanged signed letters, a lease of eighteen months. The lease is expressed to begin in ten months' time, once the current occupier vacates. The rent is set at the market rate and no premium is payable.",
+      "tappableSpans": [
+        "exchanged signed letters",
+        "lease of eighteen months",
+        "expressed to begin in ten months' time",
+        "no premium is payable"
+      ],
+      "correctSpan": "expressed to begin in ten months' time",
+      "explanation": "The lease fails to take effect 'in possession' because it starts ten months after being agreed. That single limb takes it outside s 54(2) regardless of the short term, the absence of a premium, or the market rent — a deed is required."
+    },
+    {
+      "itemId": "land-02-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A tenant takes possession of commercial premises after nothing more than a verbal handshake agreement on rent and a four-year term, no writing exchanged at all. The landlord later tries to evict the tenant, denying any lease was ever created. Analyse the tenant's position.",
+      "factsToOrder": [
+        "The term agreed was four years",
+        "No written document of any kind was exchanged",
+        "The tenant took possession and (assume) began paying rent",
+        "The landlord now denies any lease exists"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the tenant holds any proprietary interest — legal lease, equitable lease, or none — in the absence of any written agreement.",
+        "rule": "A lease of more than three years requires a deed to take effect at law (s 52 LPA 1925); the s 54(2) short lease exception cannot apply to a four-year term. An equitable lease can arise under Walsh v Lonsdale only where there is an underlying contract satisfying s 2 LP(MP)A 1989.",
+        "application": "No deed was executed, so no legal lease arose, and the four-year term is too long for the s 54(2) exception in any event. The Walsh v Lonsdale route also fails: there was no writing at all, so no contract capable of satisfying s 2 was ever formed — the agreement is void as a contract. With no valid contract, there is nothing for equity to treat as specifically performed, so no equitable lease arises either. Taking possession and paying rent will typically instead generate an implied periodic tenancy at law (for example, a yearly or monthly tenancy depending on how rent is calculated), on its own limited implied terms — not the four-year term the parties actually discussed.",
+        "conclusion": "The tenant holds no four-year lease, legal or equitable. At most, an implied periodic tenancy arises from possession and payment of rent, on ordinary implied terms unrelated to the four-year agreement the parties intended."
+      }
+    },
+    {
+      "itemId": "land-02-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under s 2 LP(MP)A 1989, must both parties' signatures appear on the same single document?",
+      "options": [
+        "Not necessarily — the terms can instead appear across two documents exchanged between the parties, each signed by one side",
+        "Yes — one single document signed by both parties is the only compliant method"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's test items is reaching for Walsh v Lonsdale as a general rescue for any informal arrangement. It only rescues a missing deed where a valid, s 2-compliant contract already exists — check the contract stage first, every time, before asking whether equity can help with the rest.",
+    "reviewMisses": true,
+    "linkToPathway": "land.foundations.formalities"
+  }
+}

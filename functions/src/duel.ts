@@ -61,6 +61,8 @@ export const REGULAR_ROUNDS = 8;
 export const MIN_ANSWER_MS = 250;
 const ORDER: RoundKind[] = ["nameTheCase", "spotTheIssue", "fastestFinger"];
 export const TUTORIAL_ORDER: RoundKind[] = ["fastestFinger", "nameTheCase", "spotTheIssue"];
+/** What to play instead when a module has no questions of the scheduled type. */
+const FALLBACK: RoundKind[] = ["fastestFinger", "spotTheIssue", "nameTheCase"];
 
 // MARK: - Rounds
 
@@ -301,7 +303,8 @@ export function matchQuestions(pool: Record<RoundKind, DuelQuestion[]>, random: 
   const order = tutorial ? TUTORIAL_ORDER : Array.from({ length: REGULAR_ROUNDS }, (_, i) => ORDER[i % ORDER.length]);
   const questions: DuelQuestion[] = [];
   for (const kind of order) {
-    const question = decks[kind].shift();
+    // A module short of one round type (Jurisprudence has no case cards) plays another.
+    const question = decks[kind].shift() ?? FALLBACK.map((k) => decks[k].shift()).find(Boolean);
     if (!question) return null;
     questions.push(question);
   }

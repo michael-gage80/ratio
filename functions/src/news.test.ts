@@ -47,6 +47,9 @@ test("headlines are tagged with the modules they touch", () => {
   assert.deepEqual(modulesFor("Lawyers say secret commissions fight will continue"), []);
   assert.equal(modulesFor("R (on the application of Quaye) v Secretary of State for Justice")[0], "public");
   assert.equal(modulesFor("Court rules on trustee's duty under the will of her father")[0], "equity");
+  assert.ok(modulesFor("Directors disqualified after company's insolvency").includes("companylaw"));
+  assert.ok(modulesFor("Windsor Framework challenge reaches the Supreme Court").includes("eulaw"));
+  assert.ok(modulesFor("Strasbourg court finds breach of Article 8").includes("humanrights"));
 });
 
 test("the same story from two sources is kept once", () => {

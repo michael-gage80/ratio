@@ -1,0 +1,507 @@
+{
+  "lessonId": "eulaw-04",
+  "moduleId": "eulaw",
+  "moduleTitle": "EU Law",
+  "lessonNumber": 4,
+  "topicId": "eulaw.effect.indirect-effect-state-liability",
+  "title": "Indirect effect and state liability",
+  "subtitle": "The CJEU's two rescue missions after horizontal direct effect's gap",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the duty of consistent interpretation established in Von Colson and extended in Marleasing, including its contra legem limit",
+    "State the conditions for state liability in damages under Francovich and their refinement in Brasserie du Pêcheur",
+    "Apply both doctrines to a fact pattern where a claimant has no horizontal direct effect remedy, and correctly identify that free-standing Francovich-style damages claims no longer exist in UK law after the REUL Act 2023"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Von Colson v Land Nordrhein-Westfalen [1984] ECR 1891",
+      "role": "Establishes the duty on national courts to interpret domestic law, so far as possible, consistently with an unimplemented directive"
+    },
+    {
+      "citation": "Marleasing SA v La Comercial Internacional de Alimentación SA [1990] ECR I-4135",
+      "role": "Extends the Von Colson duty to all national law, whether enacted before or after the directive, and regardless of the directive's horizontal subject matter"
+    },
+    {
+      "citation": "Francovich v Italy [1991] ECR I-5357",
+      "role": "Establishes that a member state can be liable in damages to individuals for its failure to implement a directive"
+    },
+    {
+      "citation": "Brasserie du Pêcheur and Factortame (No 3) [1996] ECR I-1029",
+      "role": "Sets the three-part conditions for state liability across all breaches of EU law, not just non-implementation"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson picks up exactly where the last one left a claimant stranded: no horizontal direct effect against a private defendant. Two doctrines exist to stop that stranding being fatal — and this lesson is also where you learn that one of them, in UK law, has since been switched off by statute.",
+    "profileHooks": {
+      "weakApplication": "Definitions aren't the challenge here — spotting which doctrine (interpretation or damages) actually rescues a given claimant, and where each one runs out of road, is where this lesson tests hardest.",
+      "weakKnowledge": "Take Parts 1 and 2 slowly. The Brasserie du Pêcheur conditions in particular are easy to blur together — make sure you can list all three before moving to the application-heavy parts."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Faccini Dori walked away from her own case with no remedy against the company that sold her a language course she couldn't cancel — horizontal direct effect simply wasn't available to her. But the CJEU had already spent a decade building two separate escape routes around exactly that dead end, developed in other cases before hers was even decided. This lesson follows both: one that quietly rewrites how national courts read their own law, and one that lets an individual sue their own government for money when nothing else works.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. This lesson covers CJEU doctrine developed before the UK's withdrawal from the EU — taught here for its historical and analytical importance, not as current binding UK law. On indirect effect, the interpretive techniques described continue to have some echo in how UK courts read legislation generally, but the specific EU-law duty no longer applies as such. On state liability, the position is sharper: the Retained EU Law (Revocation and Reform) Act 2023 abolished the general principle of EU law supremacy and, from 1 January 2024, removed the basis for free-standing Francovich-style damages claims in UK law. A claimant in the UK today cannot bring a stand-alone Francovich claim for a state's failure to implement EU-derived law — this lesson teaches the doctrine as the CJEU built it, and flags precisely where UK law has since diverged."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Rescue mission one: making national law say what the directive says",
+        "voice": "case-narrative — tells the story, then extracts the doctrine",
+        "body": [
+          "Sabine von Colson applied for a job at a German prison and was rejected, she argued, because she was a woman — a breach of an EU equal treatment directive. German law at the time gave her only a token remedy: reimbursement of her travel expenses for the failed interview, nothing close to the effective remedy the directive envisaged. The directive wasn't correctly implemented, and because her opponent was, in substance, a public employer, one might expect this to be a straightforward vertical direct effect case — but the directive's wording on remedies wasn't precise enough to satisfy the direct effect test on its own.",
+          "The CJEU found another route. It held that national courts are under a duty, arising from the member state's obligation to achieve the result required by a directive, to interpret domestic law, so far as possible, in light of the wording and purpose of the directive. This is **indirect effect** — sometimes called the duty of consistent (or 'harmonious') interpretation: not a rule that the directive itself creates rights against anyone, but a rule that instructs the *national judge* how to read the *national statute*.",
+          "The elegance of this move is that it sidesteps the vertical/horizontal problem entirely. Indirect effect doesn't ask who the defendant is, because it isn't the directive being enforced — it's national law, reinterpreted. That is exactly why it can, in principle, reach private defendants that a directive itself never could."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Indirect effect (consistent interpretation)",
+            "definition": "The duty on national courts to interpret domestic legislation, so far as possible, in conformity with the wording and purpose of a relevant EU directive — even one that is unimplemented or defectively implemented — so as to achieve the result the directive requires."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-04-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "What does the Von Colson duty of consistent interpretation actually require a national court to do?",
+          "options": [
+            "Interpret domestic legislation, so far as possible, in a way that achieves the result the directive requires",
+            "Strike down any domestic statute that conflicts with an EU directive"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — it's an interpretive duty aimed at the national judge, not a power to disapply legislation.",
+          "feedbackIncorrect": "Indirect effect is about how a court reads existing domestic law, not about striking anything down. Keep that distinction in mind — it matters for the contra legem limit later in this lesson."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Marleasing widens the duty — to almost everything",
+        "voice": "structural — expands the doctrine methodically, flags the scale of the shift",
+        "body": [
+          "Von Colson could be read narrowly: perhaps the duty only bites on legislation specifically passed to implement the directive in question. Marleasing removed that limitation entirely.",
+          "A Spanish company, La Comercial, was being sued by Marleasing, which wanted a founding contract declared void on grounds recognised by pre-existing Spanish civil law — grounds that were broader than those permitted under an EU company law directive, which listed a closed set of grounds for nullity and had not yet been transposed into Spanish law at all. If the Spanish court applied its own civil code as written, it would reach a result the directive was specifically designed to prevent.",
+          "The CJEU held that the duty of consistent interpretation applies to *all* national law, whether adopted before or after the directive, and regardless of whether the national legislature had the directive in mind at all when it legislated. The Spanish court was required to interpret its pre-existing civil code, so far as possible, to conform to the directive's closed list of nullity grounds — even though that civil code long predated the directive and was never written with it in mind.",
+          "This is a considerably more radical duty than Von Colson alone suggests. It means every piece of relevant national legislation, however old, however unrelated in origin, is potentially reshaped by a directive the national legislature may never have been thinking about."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "What Marleasing added to Von Colson",
+            "points": [
+              "The duty applies to national law enacted before the directive, not only implementing legislation passed after it",
+              "The duty applies regardless of the directive's horizontal or vertical subject matter — it can shape the interpretation of law that then affects a private party",
+              "The duty is not conditional on the national legislature having intended to implement the directive at all",
+              "The result: consistent interpretation can achieve, indirectly, something close to the practical effect that horizontal direct effect was refused in Faccini Dori and Marshall"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-04-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these facts of Marleasing in the order they occurred.",
+          "items": [
+            "Spain's pre-existing civil code allows broader grounds for nullity of a contract than an EU directive permits",
+            "The relevant EU directive, listing a closed set of nullity grounds, is not yet transposed into Spanish law",
+            "A Spanish court must decide a nullity claim under the civil code",
+            "The CJEU holds the court must interpret the civil code, so far as possible, consistently with the directive's closed list"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the sequence — and notice the code long predates the directive, which is exactly what makes Marleasing's extension of Von Colson so significant.",
+          "feedbackIncorrect": "Check the order again — the civil code and the directive both exist before the dispute arises; the CJEU's ruling comes last, once the Spanish court is faced with the conflict."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Where the duty stops: contra legem",
+        "voice": "direct — sets the limit before the interactions test it",
+        "body": [
+          "Consistent interpretation is powerful, but it is not unlimited, and the limit matters as much as the duty itself. A national court is required to interpret domestic law consistently with a directive only 'so far as possible' — and the CJEU and national courts alike have consistently held that this duty stops short of interpreting a statute **contra legem**: against the clear, express wording of the provision, in a way that would in substance rewrite it rather than interpret it.",
+          "The line between a bold, purposive interpretation and an impermissible rewriting is genuinely difficult to draw, and it's the single most examined limit on indirect effect. A court can read words in, read words out, and depart from a literal or historical meaning where the statute's language leaves room for it — but it cannot use consistent interpretation as a back door to displace an unambiguous statutory provision that says the opposite of what the directive requires.",
+          "This is also indirect effect's structural weakness as a rescue mission: it depends entirely on there being *some* domestic legislation capable of being stretched. Where no relevant domestic provision exists at all, or where the only domestic provision says the opposite in terms too plain to bend, indirect effect has nothing to work with — and the claimant needs a different route entirely."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often treat the contra legem limit as a technicality that rarely matters, assuming courts will always find some way to interpret domestic law consistently with a directive if they try hard enough.",
+            "whyItsWrong": "The contra legem limit is not a rare edge case — it is the doctrine's central constraint, and it is precisely what makes indirect effect an unreliable rescue mission rather than a guaranteed one. A directive-conforming interpretation that is available in one case may simply not be available in the next, if the domestic wording is unambiguous in the wrong direction. That unreliability is exactly why the CJEU went on to develop a second, independent doctrine — state liability — for the cases indirect effect cannot reach."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-04-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A national statute states in unambiguous terms that a particular remedy 'shall not exceed £500 in any circumstances'. An EU directive requires an effective, uncapped remedy. Can a national court use consistent interpretation to disapply the cap?",
+          "options": [
+            "Yes — consistent interpretation always yields to the directive's purpose regardless of the statute's wording",
+            "No — reading out an express, unambiguous numerical cap would go beyond interpretation and amount to a contra legem rewriting of the statute",
+            "No — consistent interpretation never applies to remedies provisions"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The first answer overstates the duty; the third invents a category limit that doesn't exist. The real limit is textual: an unambiguous cap expressed in those terms is very difficult, if not impossible, to 'interpret' away without crossing into rewriting the statute — which is exactly what contra legem forbids."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Rescue mission two: suing the state for money",
+        "voice": "case-narrative — builds the doctrine from the facts up",
+        "body": [
+          "Andrea Francovich was owed unpaid wages when his employer went insolvent. An EU directive required member states to set up a guarantee fund to compensate employees in exactly his position — but Italy had not implemented the directive at all. There was no domestic legislation to interpret consistently, because none existed; indirect effect had nothing to work with. And Francovich's claim was, in substance, for money the state itself should have arranged to provide, so a direct-effect claim against the state was also unavailable, because the directive's provisions on the fund's operational detail weren't precise enough to be directly effective in their own right.",
+          "The CJEU created a third doctrine to close this gap: **state liability in damages**. It held that a member state can be liable to compensate individuals for loss caused by its failure to implement a directive, as an inherent consequence of the Treaty's system and the requirement that EU law be fully effective. The Francovich conditions, in their original, directive-non-implementation form, were: the directive must confer rights on individuals identifiable from its terms; the content of those rights must be identifiable from the directive; and there must be a causal link between the state's failure to implement and the loss suffered.",
+          "This is a genuinely different kind of remedy from anything seen so far in this module. Direct effect and indirect effect are both about which rule a court applies to decide a dispute. State liability is about compensation — suing the state itself, in effect, for the consequences of its own legislative failure."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Francovich conditions (as originally formulated)",
+            "text": "For state liability to arise from a member state's failure to implement a directive: (1) the directive must confer rights on individuals; (2) the content of those rights must be identifiable from the provisions of the directive; and (3) there must be a causal link between the state's breach and the damage suffered by the individual.",
+            "elements": [
+              "Directive confers rights on individuals",
+              "Content of the rights identifiable from the directive",
+              "Causal link between breach and loss"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-04-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which claimant is in the position Francovich actually addressed?",
+          "scenarioA": "An employee wants a domestic statute reinterpreted consistently with a directive, and the statute's wording is flexible enough to allow it.",
+          "scenarioB": "An employee has no domestic legislation implementing a directive at all, cannot bring a direct effect claim because the relevant provisions aren't precise enough to identify without a state-created fund, and has suffered a quantifiable financial loss as a result.",
+          "correctScenario": "B",
+          "explanation": "Scenario A is a straightforward indirect effect case, needing nothing beyond Von Colson and Marleasing. Scenario B is precisely Francovich's situation: no domestic law to interpret, no directly effective right to enforce, but a clear breach and a clear loss — which is what state liability in damages exists to remedy."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Brasserie du Pêcheur: generalising the remedy, and where UK law now stands",
+        "voice": "argumentative — builds the doctrine's expansion, then confronts the current UK position head-on",
+        "body": [
+          "Francovich was decided on facts limited to a state's total failure to implement a directive. Brasserie du Pêcheur — a French brewer prevented from exporting beer into Germany by a German purity law later found to breach free movement rules, heard together with a further stage of the UK's own Factortame litigation — asked whether state liability extended more broadly, to *any* breach of EU law by a member state, not just non-implementation of a directive.",
+          "The CJEU said yes, and reformulated the test into three conditions that apply generally: the rule of EU law breached must be intended to confer rights on individuals; the breach must be **sufficiently serious**; and there must be a direct causal link between the breach and the damage sustained by the individual. 'Sufficiently serious' introduced real texture — it asks whether the state manifestly and gravely disregarded the limits on its discretion, considering factors like the clarity of the rule breached, the degree of discretion the state had, and whether the infringement was intentional.",
+          "Here is where this lesson has to be unusually direct about the present day, because this doctrine is not simply of historical interest in the way most of this module is. Francovich-style state liability operated in UK law for decades as a consequence of EU membership. But the Retained EU Law (Revocation and Reform) Act 2023 abolished the general principle of the supremacy of EU law in the UK and removed the domestic legal basis that had allowed such claims, with effect from 1 January 2024. A free-standing Francovich claim — a claim by an individual against the UK state, grounded purely in this EU-law doctrine, for damages caused by a breach of EU-derived law — is not available in UK law today. Where a remedy exists for comparable harms now, it has to be found in ordinary domestic causes of action (such as breach of statutory duty, where the statute permits it), not in this doctrine. Understanding Brasserie du Pêcheur is essential to understanding how this branch of EU law worked and why the UK courts once had to grapple with it in cases like Factortame — but a student who writes in an exam that 'Francovich damages are available in the UK' today is describing law that no longer exists."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "State liability: the Brasserie du Pêcheur conditions, and the UK's current position",
+            "description": "How the generalised test for state liability works, and where UK law now diverges from it.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Has the state breached a rule of EU law (any rule, not only a directive)?"
+              },
+              {
+                "id": "rights",
+                "label": "Was the rule intended to confer rights on individuals?"
+              },
+              {
+                "id": "serious",
+                "label": "Was the breach sufficiently serious (manifest and grave disregard of the limits on discretion)?"
+              },
+              {
+                "id": "causal",
+                "label": "Is there a direct causal link between the breach and the claimant's loss?"
+              },
+              {
+                "id": "cjeu-yes",
+                "label": "Under CJEU doctrine (pre-Brexit): all three met → state liable in damages"
+              },
+              {
+                "id": "uk-today",
+                "label": "In UK law today: the REUL Act 2023 removed the basis for this claim from 1 January 2024 — no free-standing Francovich-style claim is available, whatever the facts show"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "rights",
+                "label": "Breach shown"
+              },
+              {
+                "from": "rights",
+                "to": "serious",
+                "label": "Yes"
+              },
+              {
+                "from": "serious",
+                "to": "causal",
+                "label": "Yes"
+              },
+              {
+                "from": "causal",
+                "to": "cjeu-yes",
+                "label": "Yes — as CJEU doctrine"
+              },
+              {
+                "from": "cjeu-yes",
+                "to": "uk-today",
+                "label": "Applied to a UK claim today"
+              }
+            ],
+            "textAlternative": "Under the CJEU's Brasserie du Pêcheur test, state liability requires: a breach of a rule of EU law intended to confer rights on individuals; that the breach be sufficiently serious, meaning a manifest and grave disregard of the limits on the state's discretion; and a direct causal link between the breach and the claimant's loss. If all three are met, the doctrine as the CJEU developed it holds the state liable in damages. In UK law today, however, this route is closed: the Retained EU Law (Revocation and Reform) Act 2023 removed the domestic basis for a free-standing Francovich-style claim from 1 January 2024, so no such claim is available regardless of how the facts would have satisfied the three conditions."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-04-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "application",
+          "prompt": "How confident are you that a claimant could bring a free-standing Francovich-style damages claim against the UK government today, for a breach of EU-derived law occurring in 2026?",
+          "sliderLabels": [
+            "Fully available",
+            "Not available at all"
+          ],
+          "correctPosition": "not available",
+          "explanation": "Not available. The REUL Act 2023 abolished the general principle of EU law supremacy in UK law and removed the basis for this specific remedy from 1 January 2024. Whatever the facts, a claimant today cannot bring this claim as such — they would need to identify an ordinary domestic cause of action instead, if one exists on the facts."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "eulaw-04-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the doctrine established in Von Colson, under which national courts must interpret domestic law consistently with an unimplemented directive so far as possible.",
+      "acceptableAnswers": [
+        "indirect effect",
+        "the duty of consistent interpretation",
+        "harmonious interpretation"
+      ],
+      "modelAnswer": "Indirect effect (also called the duty of consistent interpretation): national courts must interpret domestic law, so far as possible, in light of the wording and purpose of the relevant directive."
+    },
+    {
+      "itemId": "eulaw-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which case extended the Von Colson duty to national legislation enacted before the relevant directive existed, and regardless of whether the legislature intended to implement it?",
+      "options": [
+        "Marleasing",
+        "Francovich"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-04-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What is the effect of the 'contra legem' limit on indirect effect?",
+      "options": [
+        "A national court cannot interpret domestic legislation against its clear, unambiguous wording, even to achieve a directive's purpose",
+        "A national court can never use indirect effect against a private party",
+        "A national court must always follow the directive over domestic law regardless of wording"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The second option confuses indirect effect with direct effect — indirect effect can in practice reach private parties, since it operates on domestic law rather than the directive itself. The third overstates the duty: consistent interpretation is bounded by the statute's actual wording, not a licence to prefer the directive automatically."
+    },
+    {
+      "itemId": "eulaw-04-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case first established that a member state could be liable in damages to an individual for failing to implement a directive?",
+      "options": [
+        "Francovich v Italy",
+        "Von Colson v Land Nordrhein-Westfalen"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-04-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under Brasserie du Pêcheur, which of the following is NOT one of the three conditions for state liability?",
+      "options": [
+        "The rule breached was intended to confer rights on individuals",
+        "The breach was sufficiently serious",
+        "The defendant state must have acted in bad faith throughout"
+      ],
+      "correctIndex": 2,
+      "explanation": "Bad faith is not a requirement. 'Sufficiently serious' asks about manifest and grave disregard of the limits on discretion — a broader, more objective inquiry that can be satisfied without any finding of bad faith."
+    },
+    {
+      "itemId": "eulaw-04-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Von Colson, highlight the sentence that states the ratio.",
+      "passage": "The applicant's domestic remedy, limited to reimbursement of travel expenses, fell well short of the effective sanction the directive envisaged. The Court held that in applying national law, whether adopted before or after the directive, national courts called upon to interpret it are required to do so, so far as possible, in the light of the wording and purpose of the directive in order to achieve the result it pursues. The precise means of achieving that result remained a matter for national procedural law.",
+      "ratioSentence": "The Court held that in applying national law, whether adopted before or after the directive, national courts called upon to interpret it are required to do so, so far as possible, in the light of the wording and purpose of the directive in order to achieve the result it pursues."
+    },
+    {
+      "itemId": "eulaw-04-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario shows the contra legem limit actually being reached, rather than merely tested?",
+      "scenarioA": "A statute's wording is ambiguous between two readings, one of which matches the directive's purpose; the court adopts that reading.",
+      "scenarioB": "A statute expressly and unambiguously excludes the very remedy the directive requires, in terms leaving no room for another reading; the court is asked to award that remedy anyway by 'interpretation'.",
+      "correctScenario": "B",
+      "explanation": "A is ordinary, permissible consistent interpretation — choosing between genuinely available readings. B is where interpretation runs out: an unambiguous exclusion cannot be read away without rewriting the statute, which is exactly what contra legem forbids."
+    },
+    {
+      "itemId": "eulaw-04-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A member state's legislature knowingly and deliberately refuses, over several years, to introduce a straightforward, precisely worded directive despite repeated warnings from the Commission, causing quantifiable loss to a class of individuals the directive was designed to protect. Applying Brasserie du Pêcheur, is the 'sufficiently serious' condition likely met?",
+      "options": [
+        "Yes — deliberate, prolonged non-compliance with a clear obligation, despite warnings, is a strong indicator of a manifest and grave disregard of the limits on the state's discretion",
+        "No — 'sufficiently serious' requires proof of bad faith beyond mere delay",
+        "No — a legislature's own choices can never be 'sufficiently serious' because legislating is a matter of pure discretion"
+      ],
+      "correctIndex": 0,
+      "explanation": "Deliberateness, clarity of the obligation, and persistence despite warning are exactly the factors the sufficiently-serious test weighs. This is close to a paradigm case of the condition being satisfied, even without formal proof of bad faith."
+    },
+    {
+      "itemId": "eulaw-04-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A UK claimant in 2026 wants to bring a claim against the UK government, modelled directly on Francovich, for loss caused by a pre-2020 failure to implement an EU directive correctly. What is the correct current position?",
+      "options": [
+        "A free-standing Francovich-style claim of this kind is not available in UK law, because the REUL Act 2023 removed its basis from 1 January 2024; the claimant would need to identify an ordinary domestic cause of action instead",
+        "The claim proceeds exactly as it would have before the CJEU under Brasserie du Pêcheur, since UK courts remain bound by that case law",
+        "The claim is automatically successful because the failure to implement occurred before Brexit"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is the point this lesson is built to test directly. Whatever the underlying facts would have satisfied under Brasserie du Pêcheur, the REUL Act 2023 has removed the domestic basis for this specific claim from 1 January 2024 — the doctrine is taught here as history, not as a live UK remedy."
+    },
+    {
+      "itemId": "eulaw-04-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that would most clearly prevent an indirect effect argument from succeeding on these facts.",
+      "scenarioText": "A claimant seeks to rely on a directive to secure a remedy. No domestic legislation touching the subject matter exists at all — the relevant field has never been legislated on domestically, so there is no statute for a court to interpret one way or the other.",
+      "tappableSpans": [
+        "seeks to rely on a directive",
+        "No domestic legislation touching the subject matter exists at all",
+        "the relevant field",
+        "for a court to interpret"
+      ],
+      "correctSpan": "No domestic legislation touching the subject matter exists at all",
+      "feedbackCorrect": "Exactly right — indirect effect needs some domestic provision to work on. With nothing to interpret, the doctrine has no purchase at all, which is precisely the gap Francovich-style state liability was designed to fill.",
+      "feedbackIncorrect": "Think about what indirect effect actually operates on: it reinterprets existing domestic law. Look for the fact that removes the raw material the doctrine needs."
+    },
+    {
+      "itemId": "eulaw-04-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which claimant should reach for indirect effect first, rather than state liability?",
+      "scenarioA": "A claimant whose loss stems from a private employer's conduct, where an existing but ambiguous domestic statute could plausibly be read to match the directive's requirements.",
+      "scenarioB": "A claimant whose loss stems from the state's total failure to legislate at all in the relevant area, with no domestic provision of any kind to interpret.",
+      "correctScenario": "A",
+      "explanation": "Scenario A has raw material for interpretation — an ambiguous statute a court can stretch towards the directive, and crucially it reaches a private defendant that direct effect never could. Scenario B has nothing to interpret, so it needs the alternative route (state liability, historically) instead."
+    },
+    {
+      "itemId": "eulaw-04-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "In 1997, a member state failed entirely to transpose a clear, precise EU directive requiring compensation funds for a defined class of consumers, despite years of warnings from the Commission that its conduct was unlawful. A consumer in that class suffered a quantifiable loss as a direct result. Applying CJEU doctrine as it stood at the time (not the current UK position), analyse whether the state would have been liable in damages.",
+      "factsToOrder": [
+        "The directive was clear and precise as to the class it protected",
+        "The state failed entirely to transpose the directive",
+        "The state ignored repeated Commission warnings over several years",
+        "The consumer suffered a quantifiable, direct loss as a result"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether, applying CJEU doctrine as it stood, the member state would have been liable in damages to the consumer for its failure to implement the directive.",
+        "rule": "Under Brasserie du Pêcheur, state liability requires: the rule breached was intended to confer rights on individuals; the breach was sufficiently serious (a manifest and grave disregard of the limits on discretion); and a direct causal link between the breach and the loss.",
+        "application": "The directive was clear and precise as to the protected class, satisfying the rights-conferring limb. Total non-transposition despite years of Commission warnings is a strong indicator of a manifest and grave disregard of the state's discretion, satisfying the seriousness limb. The consumer's quantifiable loss flowing directly from the absence of the compensation fund satisfies causation.",
+        "conclusion": "On these facts, applying the CJEU's doctrine as it stood, all three Brasserie du Pêcheur conditions would likely be satisfied and the state would have been liable in damages. Note, however, that this analysis describes the historical CJEU position; a claimant bringing an equivalent claim against the UK government today could not rely on this doctrine, since the REUL Act 2023 removed its domestic basis from 1 January 2024."
+      }
+    },
+    {
+      "itemId": "eulaw-04-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement correctly describes the relationship between indirect effect and state liability as two doctrines?",
+      "options": [
+        "They are mutually exclusive — a claimant can only ever use one or the other, never both in the same legal system",
+        "They developed as separate CJEU responses to the same underlying gap — that directives cannot have horizontal direct effect — and a claimant who cannot succeed under one may still be able to use the other, depending on whether relevant domestic legislation exists to interpret",
+        "State liability replaced indirect effect entirely once it was established in Francovich"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers assume the doctrines compete rather than complement each other. In fact both survived side by side: indirect effect works only where there is domestic legislation to reinterpret, and state liability works even where there is none, by shifting the remedy from 'apply the right rule' to 'compensate for the state's failure'."
+    },
+    {
+      "itemId": "eulaw-04-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "True or false: as at 1 September 2026, a claimant can bring a free-standing Francovich-style damages claim against the UK government for a breach of EU-derived law.",
+      "options": [
+        "False — the REUL Act 2023 removed the domestic basis for this claim from 1 January 2024",
+        "True — this remedy survived the UK's withdrawal from the EU unchanged"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-04-test-15",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Put these developments in the order they occurred.",
+      "items": [
+        "Von Colson establishes the duty of consistent interpretation for implementing legislation",
+        "Marleasing extends that duty to national law generally, whatever its date or origin",
+        "Francovich establishes state liability in damages for non-implementation of a directive",
+        "Brasserie du Pêcheur generalises state liability to any sufficiently serious breach of EU law, using a three-part test",
+        "The REUL Act 2023 removes the domestic basis for a free-standing Francovich-style claim in UK law from 1 January 2024"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's items is treating state liability as still available in UK law simply because the underlying facts would satisfy the Brasserie du Pêcheur conditions. The doctrinal test and the current UK legal position are two different questions — the REUL Act 2023 answers the second one, and answering it correctly is worth as much as reciting the conditions correctly.",
+    "reviewMisses": true,
+    "linkToPathway": "eulaw.effect.indirect-effect-state-liability"
+  }
+}

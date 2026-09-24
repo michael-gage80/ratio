@@ -4,6 +4,7 @@ import {
   BankItem,
   difficultyToLogit,
   isCorrect,
+  sliderCorrectSide,
   prior,
   priorHeadline,
   scoreResponses,
@@ -142,4 +143,13 @@ test("sort into buckets is right only when every statement is in its bucket", ()
   assert.equal(isCorrect(item, { itemId: "s1", order: [1, 1] }), false);
   assert.equal(isCorrect(item, { itemId: "s1", order: [0] }), false);
   assert.equal(isCorrect(item, { itemId: "s1" }), false);
+});
+
+test("a slider's answer is the label it equals, or the one label containing it", () => {
+  const slider = (labels: [string, string], correctPosition: string) =>
+    ({ itemId: "s", topicId: "t", skillTag: "understanding" as const, difficultyStart: 0.5, type: "thresholdSlider", sliderLabels: labels, correctPosition });
+  assert.equal(sliderCorrectSide(slider(["Not capable of amounting to affirmation", "Capable of amounting to affirmation"], "Capable of amounting to affirmation")), 1);
+  assert.equal(sliderCorrectSide(slider(["Never brought into force", "Fully in force"], "never brought into force")), 0);
+  assert.equal(sliderCorrectSide(slider(["Definitely non-natural", "Definitely natural"], "Definitely natural")), 1);
+  assert.equal(sliderCorrectSide(slider(["Dominance alone is unlawful", "Dominance alone is lawful — only its abuse is caught"], "only its abuse")), 1);
 });

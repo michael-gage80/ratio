@@ -88,3 +88,15 @@ test("the Crime lessons give a full match of every round type", () => {
   for (const question of questions) assert.ok(question.options[question.correctIndex] !== undefined);
   assert.equal(matchQuestions(pool, Math.random, true)!.length, 3);
 });
+
+test("a module with no case cards still makes a full match from the other round types", () => {
+  const dir = join(__dirname, "lessons");
+  const jurisprudence = readdirSync(dir).filter((f) => f.startsWith("jurisprudence-")).map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")) as DuelLesson);
+  const pool = questionPool(jurisprudence, Math.random);
+  assert.equal(pool.nameTheCase.length, 0);
+  const questions = matchQuestions(pool, Math.random)!;
+  assert.equal(questions.length, 9);
+  assert.equal(new Set(questions.map((x) => x.id)).size, 9);
+  assert.ok(questions.every((q) => q.kind !== "nameTheCase"));
+  assert.equal(matchQuestions(pool, Math.random, true)!.length, 3);
+});

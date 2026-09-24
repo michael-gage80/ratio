@@ -1,0 +1,357 @@
+{
+  "lessonId": "companylaw-07",
+  "moduleId": "companylaw",
+  "moduleTitle": "Company Law",
+  "lessonNumber": 7,
+  "topicId": "companylaw.directors.duties-ii-skill-conflicts",
+  "title": "Judgment, skill and the problem of self-interest",
+  "subtitle": "Sections 173-177: independent judgment, skill and care, and conflicts of interest",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the content of the ss 173-177 duties and distinguish them from the s 171/s 172 duties covered in Lesson 6",
+    "Apply the objective-and-subjective blend under s 174 to a director's actual conduct and personal skillset",
+    "Apply ss 175-177 to a fact pattern to identify whether a conflict exists, whether it has been properly authorised or disclosed, and what follows if it has not"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006 ss 173-177", "role": "The remaining statutory duties: independent judgment, skill and care, conflicts, third-party benefits, disclosure of interest in proposed transactions" },
+    { "citation": "Re City Equitable Fire Insurance Co [1925] Ch 407", "role": "Pre-Act authority for a purely subjective standard of skill and care, now superseded by s 174's objective floor" },
+    { "citation": "Re D'Jan of London Ltd [1994] 1 BCLC 561", "role": "Illustrates the objective 'reasonably diligent person' standard applied to an unread insurance form" },
+    { "citation": "Boardman v Phipps [1967] 2 AC 46", "role": "The strict, no-conflict rule underlying s 175: liability for an unauthorised profit even where the principal suffered no loss and the fiduciary acted in good faith" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Lesson 6 gave you the two headline duties — act within powers, promote success. This lesson is where exam scripts actually fall down, because ss 173-177 are five separate, narrower duties that are easy to blur into one vague idea of 'directors mustn't do bad things'. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can list the five duties — this lesson checks whether you can tell which one a given fact pattern is actually testing.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans hard on scenario questions: expect a fact pattern that could plausibly engage two or three of ss 173-177, and a requirement to pick the right one.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — get the five duties fixed as five separate boxes before the lesson starts mixing them into scenarios. Confusing s 175 (conflicts) with s 177 (disclosure of interest in a proposed transaction) is the single most common slip."
+    }
+  },
+  "lawStatedAt": "2026-09-23",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A director sits on the board of Company A and is offered a lucrative consultancy by Company B, a supplier. He never mentions it to his board. He doesn't harm Company A. He doesn't even use any of its confidential information. Company A never loses a penny. And yet, under English company law, he is liable to account for every pound he earned from Company B. That result looks harsh until you understand what it's protecting: not the company's bank balance, but its ability to trust that its own directors are working only for it. This lesson is about the five duties built to enforce that trust — and about a much more forgiving companion duty that asks only whether a director tried.",
+    "lawStatedNotice": "Law stated as at 23 September 2026. Sections 173-177 are settled, unamended provisions of the Companies Act 2006 with a well-developed body of case law; no legislative change is pending in this area."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Five duties, one statute, two different jobs",
+        "voice": "structural — orients students before the detail arrives",
+        "body": [
+          "Lesson 6 covered ss 171 and 172: act within your powers, and promote the success of the company for the benefit of its members as a whole. Those two duties ask a director to aim at the right target. Sections 173 to 177 ask a different question entirely: once a director is aiming at the right target, are they exercising proper judgment in getting there, and are they keeping their own interests out of the way?",
+          "It helps to split the five remaining duties into two families. Section 173 (independent judgment) and s 174 (skill, care and diligence) are competence duties — they ask whether the director did the job properly. Sections 175, 176 and 177 are loyalty duties — they ask whether the director let a conflicting interest into the room, whether they took an unauthorised benefit, or whether they disclosed an interest they already had in a deal the company was about to do. Confusing these two families is the fastest way to lose marks: a scenario about a director who didn't read the accounts is a s 174 problem, not a s 175 problem, however careless it looks.",
+          "One structural point applies across all five: s 170(3) confirms these are duties owed to the company, not to individual shareholders or creditors, and s 178 confirms the remedies for breach are the same as those that applied under the pre-2006 equitable and common-law rules the statute replaced — a point Lesson 9 develops in full."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Competence duties vs loyalty duties",
+            "definition": "A working split of ss 173-177: s 173 (independent judgment) and s 174 (skill and care) test whether a director did the job properly (competence); ss 175-177 (conflicts, third-party benefits, disclosure of interest) test whether a director kept their own interests separate from the company's (loyalty)."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A director signs off on a contract without reading the key financial terms, and the company loses money as a result. Which family of duty does this most obviously engage?",
+          "options": ["A competence duty (s 174, skill and care)", "A loyalty duty (s 175, conflicts of interest)"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Carelessness in the exercise of the role, with no suggestion the director stood to personally gain, is a s 174 problem — how well the job was done, not whether the director's interests conflicted with the company's.",
+          "feedbackIncorrect": "Look again at what actually went wrong here: nothing suggests the director had a personal stake in the contract. This is about the standard of care applied to the job, which is s 174 territory, not a conflict under s 175."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Section 173: independent judgment, and its own built-in exception",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Section 173(1) requires a director to exercise independent judgment. On its face this sounds absolute — never be told what to do — but the section is narrower and more realistic than that. It exists to stop a director becoming a rubber stamp: voting however a dominant shareholder, a parent company or a fellow director instructs, without ever applying their own mind to whether the decision is right for the company.",
+          "Section 173(2) then supplies two important carve-outs. A director does not breach the duty by acting in accordance with an agreement duly entered into by the company that restricts the future exercise of discretion by its directors, or by acting in a way authorised by the company's constitution. This matters because commercial reality is full of situations where a director's discretion is legitimately constrained — a joint venture agreement, a shareholders' agreement, a nominee director appointed by an investor who expects that director to vote a particular way on defined matters.",
+          "The exam-relevant distinction is between a director who exercises judgment and then reaches an outcome that happens to align with what a controlling shareholder wanted, and a director who never exercises judgment at all because they were simply instructed. The first is lawful; the second breaches s 173, whatever the constitution says, unless it falls within the s 173(2) exceptions."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 173",
+            "text": "(1) A director of a company must exercise independent judgment. (2) This duty is not infringed by his acting — (a) in accordance with an agreement duly entered into by the company that restricts the future exercise of discretion by its directors, or (b) in a way authorised by the company's constitution.",
+            "elements": ["Duty to exercise independent judgment", "Exception: acting under a duly entered restrictive agreement", "Exception: acting in a way authorised by the constitution"]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-07-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact that means this director has NOT breached s 173, despite voting exactly as instructed.",
+          "scenarioText": "Nadia is a nominee director appointed to the board by a venture capital investor. The company's shareholders' agreement, which Nadia's appointing investor and the other shareholders duly signed, requires the investor's nominee to vote against any new share issue without the investor's consent. Nadia votes against a proposed share issue after checking the agreement, without independently weighing whether the issue was good for the company.",
+          "tappableSpans": ["nominee director appointed to the board", "shareholders' agreement", "duly signed", "votes against a proposed share issue"],
+          "correctSpan": "duly signed",
+          "feedbackCorrect": "That's the operative fact. A duly entered agreement restricting a director's future discretion falls squarely within s 173(2)(a) — Nadia's vote is protected by the exception, not by the fact she is a nominee, which carries no special status on its own.",
+          "feedbackIncorrect": "Being a 'nominee director' has no formal exemption under s 173 by itself — plenty of nominee directors are found in breach when they blindly follow instructions outside any properly constituted agreement. The protection here comes from the agreement being duly entered into, which is what s 173(2)(a) actually requires."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Section 174: from City Equitable's low bar to a genuine objective floor",
+        "voice": "case-narrative — tells the doctrinal history before the modern rule",
+        "body": [
+          "Before the 2006 Act, the leading authority on a director's standard of care was Re City Equitable Fire Insurance Co, where Romer J held that a director need only show the degree of skill that could reasonably be expected from a person of his own knowledge and experience — a wholly subjective test. An incompetent, inattentive director judged against his own low standard was very hard to catch: he simply had to be as careless as he always was.",
+          "Section 174 replaced that with a dual standard that keeps a subjective element but adds an objective floor beneath it. Section 174(2) defines the required care, skill and diligence as that of a reasonably diligent person with both (a) the general knowledge, skill and experience that may reasonably be expected of a person carrying out the functions of that director, and (b) the general knowledge, skill and experience that that director actually has. A highly qualified director cannot claim the protection of a lower, generic standard; every director, however inexperienced, must clear the objective floor regardless.",
+          "Re D'Jan of London Ltd shows the objective floor in action, decided (on facts predating the Act but applying materially the same reasoning the Act later codified). Mr D'Jan, the company's managing director, signed an insurance proposal form without reading it; a fellow director's incorrect answer on the form went unnoticed. The insurer avoided the policy after a fire, and the company lost its claim. Hoffmann LJ held that signing a document of this importance without checking its contents fell below the standard of a reasonably diligent director — not a demanding standard, but one every director, however experienced or not, is expected to meet."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re D'Jan of London Ltd",
+            "citation": "[1994] 1 BCLC 561",
+            "court": "High Court (Chancery Division)",
+            "year": 1994,
+            "factsShort": "A managing director signed a fire insurance proposal form without reading it; an inaccurate answer on the form let the insurer avoid the policy after a fire caused a large loss.",
+            "ratioShort": "Failing to read and check an important document before signing it on the company's behalf falls below the objective standard of a reasonably diligent director, whatever the director's own experience.",
+            "expanded": {
+              "facts": "D'Jan was the managing director of a small clothing company. He signed a proposal form for fire insurance on the company's stock and premises, which had been filled in by an employee. One answer on the form — understating the value of stock held elsewhere — was inaccurate. D'Jan did not check the form before signing it. A fire at the company's premises caused a loss of around £174,000, and the insurer successfully avoided the policy for non-disclosure, leaving the company badly out of pocket.",
+              "judgmentExtract": "Hoffmann LJ held that a director signing a document of this importance without taking the elementary step of reading it through was a plain failure to exercise reasonable skill and care, applying what later became the s 174 objective/subjective blend. The court did, however, apply s 727 of the Companies Act 1985 (the predecessor to today's relief provision) to relieve D'Jan of some of his liability, given that his failure, though a breach, was an isolated and comparatively minor lapse rather than serious or repeated misconduct.",
+              "significance": "The case is the standard illustration of the objective floor under s 174(2)(a): however busy or informally run a small company is, a director cannot escape liability for a careless failure to check an important document simply by pointing to how the company always operated. It's also a useful reminder that a breach of s 174 does not automatically mean the director pays the full loss — relief from liability remains possible, and is developed further in Lesson 9."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-07-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two directors, two outcomes. In which does the s 174(2)(a) objective floor most clearly catch the director, despite personal inexperience?",
+          "scenarioA": "A newly appointed, first-time director with no finance background approves a routine monthly expense claim that turns out, after careful review by two more experienced colleagues, to contain a well-hidden fraud that a reasonably diligent director in that role would not have spotted.",
+          "scenarioB": "A newly appointed, first-time director signs a major loan guarantee on the company's behalf without reading its terms at all, despite having a full week to review it and no reason not to.",
+          "correctScenario": "B",
+          "explanation": "In B, the objective floor bites: a reasonably diligent person carrying out that director's functions would be expected to read a major guarantee before signing it, whatever this particular director's inexperience. In A, the objective standard for someone in that role would not have caught a well-hidden fraud either — the outcome tracks what a reasonably diligent person in the role would in fact have detected, not a counsel-of-perfection standard."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Section 175: the strict no-conflict rule, and how authorisation defuses it",
+        "voice": "Socratic — poses the hard question before resolving it",
+        "body": [
+          "Here is the question that makes s 175 hard: why should a director be liable for a profit they made entirely honestly, using no information or opportunity that belonged to the company, where the company suffered no loss at all? Boardman v Phipps answers it. Boardman, a solicitor acting for a trust, used information gained while helping the trust and bought shares in a company the trust itself held shares in, turning a substantial profit for himself and for a trust beneficiary who joined him. The trust could not itself have bought the shares. Boardman acted honestly throughout and the trust actually benefited from his intervention. He was still held liable to account for his profit.",
+          "The House of Lords' reasoning is the foundation of s 175: a fiduciary who is in a position where duty and interest might conflict must not exploit that position for personal profit, regardless of good faith and regardless of whether the principal was harmed. The rule is strict because it is prophylactic — it removes the temptation to favour yourself, rather than waiting to see whether temptation was in fact acted on badly.",
+          "Section 175(1)-(2) codifies this: a director must avoid a situation in which they have, or can have, a direct or indirect interest that conflicts, or possibly may conflict, with the company's interests — and this applies in particular to the exploitation of any property, information or opportunity, whether or not the company could itself take advantage of it. But s 175 also supplies an escape route that Boardman-era equity did not offer as cleanly: under s 175(4)-(6), the duty is not infringed if the matter has been authorised by the directors — provided the company is private and nothing in its constitution invalidates such authorisation, or the company is public and its constitution expressly permits it — and, critically, the authorising directors must themselves be independent of the conflict (an interested director's vote does not count towards the necessary quorum or majority)."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 175",
+            "text": "(1) A director of a company must avoid a situation in which he has, or can have, a direct or indirect interest that conflicts, or possibly may conflict, with the interests of the company. (2) This applies in particular to the exploitation of any property, information or opportunity (and it is immaterial whether the company could take advantage of the property, information or opportunity). ... (4) This duty is not infringed — (a) if the situation cannot reasonably be regarded as likely to give rise to a conflict of interest; or (b) if the matter has been authorised by the directors. (5) Authorisation may be given by the directors where the company is a private company ... or where the company is a public company and its constitution includes provision enabling the directors to authorise the matter.",
+            "elements": ["Duty to avoid a situation of actual or possible conflict", "Applies to property, information or opportunity even if the company could not itself have exploited it", "No breach if the conflict is not reasonably likely, or the matter is properly authorised by independent directors"]
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often argue that because the company suffered no loss (or even benefited, as in Boardman), there can be no liability under s 175.",
+            "whyItsWrong": "Section 175, like the equitable rule it codifies, is not a loss-based duty. It is breached the moment an unauthorised conflict of interest exists and is exploited — the company's loss, or lack of it, goes to the size of the account of profits owed, not to whether a breach occurred at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-07-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a director who exploits a corporate opportunity honestly, and without causing the company any loss, still breaches s 175 if the opportunity was never authorised?",
+          "sliderLabels": ["Not confident — no loss, no breach", "Confident — breach regardless of loss or good faith"],
+          "correctPosition": "breach regardless of loss or good faith",
+          "explanation": "Confident is right. Boardman v Phipps is the clearest illustration: good faith and an absence of loss to the principal did not prevent liability. Section 175 is a strict, prophylactic rule — the breach lies in the unauthorised conflict itself."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Sections 176 and 177: the two narrower duties that examiners like to test together",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Two more duties round out this group, and they're easy to muddle because both involve a director's separate financial interest touching the company's affairs. Section 176 prohibits a director from accepting a benefit from a third party conferred by reason of their being a director, or their doing (or not doing) anything as a director — think of a supplier quietly paying a 'introduction fee' to the director who steered a contract their way. Like s 175, it does not matter whether the company itself suffered any loss; unlike s 175, there is no board-authorisation route out of it under the Act itself (authorisation can only come from the members, or the situation must simply not be one that can reasonably be regarded as likely to give rise to a conflict).",
+          "Section 177 is different in kind, not just in scale: it applies only to a director's interest in a transaction or arrangement the company is proposing to enter into (not one already made — that falls under the related but distinct s 182). Where such a personal interest exists, direct or indirect, s 177(1) requires the director to declare its nature and extent to the other directors before the company enters the transaction. This is a disclosure duty, not a prohibition — a director can have a personal interest in a proposed deal and still act lawfully, provided the interest is properly declared before the company commits.",
+          "The trap examiners set is asking students to spot which of the two applies. A benefit paid by an outsider, for being (or acting as) a director, engages s 176. A director's own pre-existing interest in a deal the company is about to strike engages s 177. Getting this the wrong way round — treating a s 177 disclosure scenario as if board authorisation under s 175/s 176 principles were required — is the single most common error in this part of the syllabus."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "s 176 vs s 177 at a glance",
+            "points": [
+              "s 176 — a third party (not the company) confers a benefit on the director because of their directorship; prohibited outright unless not reasonably likely to give rise to a conflict, with no board-level authorisation route in the Act itself",
+              "s 177 — the director already has a personal interest in a transaction the company is about to enter into; not prohibited, but must be declared to the other directors before the company enters it",
+              "Confusing the two usually means treating a disclosure problem (s 177) as if it needed prior authorisation (s 175/176-style), or vice versa"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-07-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A director of a construction company is personally the landlord of a warehouse the company is about to lease. He mentions this to the rest of the board before the lease is signed. Which duty governs, and has he complied with it?",
+          "options": ["Section 177 — he must declare the interest before the transaction is entered into, and disclosure before signing satisfies the duty", "Section 176 — accepting rent from the company is itself a prohibited third-party benefit regardless of disclosure", "Section 175 — this is a conflict requiring formal board authorisation by resolution, not mere disclosure"],
+          "correctIndex": 0,
+          "explanation": "This is a proposed transaction in which the director has a pre-existing personal interest — squarely s 177. The statutory obligation is to declare the nature and extent of the interest before the company enters the transaction, which he has done. Section 176 doesn't fit because the company itself, not a third party, is the counterparty; s 175 doesn't fit because s 177 is the specific provision governing interests in the company's own proposed transactions."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "companylaw-07-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the five statutory duties covered in this lesson, ss 173-177.",
+      "acceptableAnswers": ["independent judgment, skill and care, conflicts, third party benefits, disclosure of interest", "s173 independent judgment, s174 skill and care, s175 conflicts, s176 third party benefits, s177 disclosure of interest in proposed transactions"],
+      "modelAnswer": "Section 173 (independent judgment), s 174 (reasonable care, skill and diligence), s 175 (avoiding conflicts of interest), s 176 (not accepting benefits from third parties), and s 177 (declaring interest in a proposed transaction)."
+    },
+    {
+      "itemId": "companylaw-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under s 174(2), is the standard of care purely objective, purely subjective, or a blend of both?",
+      "options": ["A blend: an objective floor based on the functions of the role, raised by the director's own actual knowledge and experience", "Purely objective — every director is judged identically regardless of experience"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-07-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following statements about Re City Equitable Fire Insurance Co is correct?",
+      "options": ["It set the purely subjective, low-bar standard of care that s 174 has since replaced with an objective floor", "It is the current leading authority defining the s 174 standard", "It concerned a director's conflict of interest under what is now s 175, not the standard of care"],
+      "correctIndex": 0,
+      "trapExplanation": "City Equitable is historically important precisely because it no longer states the law — its purely subjective test (judge the director only by their own personal standard) is what s 174(2)(a)'s objective floor was designed to displace."
+    },
+    {
+      "itemId": "companylaw-07-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court works through when assessing an alleged s 175 breach where the director claims authorisation.",
+      "items": ["Identify whether the director had, or could have had, a conflicting interest", "Check whether the situation could reasonably be regarded as not likely to give rise to a conflict", "If a real conflict exists, check whether it was properly authorised by independent directors", "If unauthorised, assess the remedy (typically an account of profits)"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "companylaw-07-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 175(5), when can the directors themselves (rather than the members) authorise a conflict for a private company?",
+      "options": ["Whenever the board unanimously agrees, regardless of the company's constitution", "Provided nothing in the company's constitution invalidates such authorisation, and the interested director's vote does not count towards the necessary quorum or majority", "Only where the Companies Act expressly names the type of conflict in advance"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "companylaw-07-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage adapted from Boardman v Phipps, highlight the sentence that states the ratio.",
+      "passage": "The appellant argued that, because he had acted honestly and the trust itself could not have purchased the shares, no liability should follow. The House of Lords rejected this. A person in a fiduciary position is liable to account for a profit made by reason of and in the course of that fiduciary relationship, once he has knowingly placed himself in a position where his own interest may conflict with his duty, regardless of good faith and regardless of whether the principal suffered any loss.",
+      "ratioSentence": "A person in a fiduciary position is liable to account for a profit made by reason of and in the course of that fiduciary relationship, once he has knowingly placed himself in a position where his own interest may conflict with his duty, regardless of good faith and regardless of whether the principal suffered any loss."
+    },
+    {
+      "itemId": "companylaw-07-test-07",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly engages s 176 (third-party benefits), rather than s 177.",
+      "scenarioText": "A director recommends a particular IT contractor to her board. The contractor is later awarded the contract on its merits. Six months afterwards, the contractor quietly transfers a cash 'thank you' payment to the director's personal account, unconnected to any prior arrangement she disclosed. She never mentions the payment to the board.",
+      "tappableSpans": ["recommends a particular IT contractor", "awarded the contract on its merits", "quietly transfers a cash 'thank you' payment", "never mentions the payment to the board"],
+      "correctSpan": "quietly transfers a cash 'thank you' payment",
+      "explanation": "A benefit conferred by a third party (the contractor) because of the director's role, rather than a pre-existing personal interest in a transaction the company was about to enter, is the hallmark of s 176 — the fact that triggers it is the third party's payment itself."
+    },
+    {
+      "itemId": "companylaw-07-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is governed by s 177 rather than s 176?",
+      "scenarioA": "A director's brother-in-law, who owns the freehold of premises, is the counterparty to a lease the company is about to sign; the director discloses the family connection to the board before the lease is completed.",
+      "scenarioB": "A logistics company gives a director free use of a holiday apartment purely because he sits on their client's board, without any proposed transaction between the two companies being on the table.",
+      "correctScenario": "A",
+      "explanation": "A is a s 177 case: a pre-existing personal interest (via a family connection) in a transaction the company is about to enter, requiring disclosure before completion. B is a s 176 case: a benefit from a third party conferred purely by reason of the directorship, with no proposed company transaction in play at all."
+    },
+    {
+      "itemId": "companylaw-07-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A director with no accountancy background approves annual accounts without querying an unusually large, unexplained round-sum entry that any reasonably diligent director in that role would have questioned. Which duty is most clearly breached?",
+      "options": ["Section 174 — the objective floor expected of anyone performing that function was not met", "Section 173 — a failure of independent judgment", "Section 176 — an unauthorised third-party benefit"],
+      "correctIndex": 0,
+      "explanation": "This is a competence failure with no suggestion of external instruction or personal financial benefit — squarely s 174, where the objective limb (what a reasonably diligent person in that role would have queried) catches the director even though they lack accountancy training."
+    },
+    {
+      "itemId": "companylaw-07-test-10",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A director votes on a board resolution to award a contract to a company in which she holds a controlling shareholding, without declaring the interest first. Best characterisation?",
+      "options": ["A s 177 breach — failure to declare a personal interest in a proposed transaction", "No breach — shareholdings in other companies are never relevant to director duties"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-07-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Farida is a director of Orchard Retail Ltd. While negotiating a supply contract on the company's behalf, she is offered — and accepts — a personal 'loyalty bonus' from the supplier, paid directly to her, conditional on the contract being signed. She never mentions this to her board. The contract itself is on entirely normal commercial terms and Orchard Retail suffers no measurable loss. Analyse Farida's position under the Companies Act 2006.",
+      "factsToOrder": [
+        "Farida is negotiating a contract as a director of Orchard Retail",
+        "The supplier pays her a personal bonus conditional on the contract being signed",
+        "She does not disclose the payment to her board",
+        "The contract terms are normal and the company suffers no loss"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Farida has breached s 176 by accepting a benefit from a third party conferred by reason of her directorship, and whether the absence of loss to Orchard Retail or a link to a proposed transaction changes the answer.",
+        "rule": "Section 176 prohibits a director from accepting a benefit from a third party conferred by reason of being a director or doing anything as a director, unless the situation cannot reasonably be regarded as likely to give rise to a conflict, or it is properly authorised by the members. Loss to the company is irrelevant to whether the duty is breached.",
+        "application": "The bonus is paid by a third party (the supplier), conditional on Farida's conduct as a negotiating director, and is plainly capable of influencing her judgment on the company's behalf — this is exactly the kind of situation s 176 targets. Her failure to disclose it, and the absence of measurable loss to Orchard Retail, do not assist her: s 176 has no loss requirement and no board-authorisation route (unlike s 175), only a narrow 'no realistic conflict' exception that plainly does not apply to an undisclosed cash payment tied to the deal's success.",
+        "conclusion": "Farida has breached s 176. She is liable to account to Orchard Retail for the bonus, regardless of the fact the company itself suffered no loss on the underlying contract."
+      }
+    },
+    {
+      "itemId": "companylaw-07-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which statement correctly distinguishes s 175 from s 177?",
+      "options": ["Section 175 is a general duty to avoid conflicting situations that can be cured by board or member authorisation before or after they arise; s 177 is a narrower duty to disclose an existing interest specifically in a transaction the company is proposing to enter into", "Section 175 only applies to public companies; s 177 only applies to private companies", "Section 177 replaced s 175 for all conflicts arising after 2006"],
+      "correctIndex": 0,
+      "trapExplanation": "There is no public/private company divide between the two sections, and s 177 did not replace s 175 — they operate side by side, covering different situations (general conflicts versus a specific proposed transaction), which is exactly why examiners test them together."
+    },
+    {
+      "itemId": "companylaw-07-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a director can lawfully have a personal financial interest in a transaction the company is about to enter into, provided it is properly declared under s 177?",
+      "sliderLabels": ["Not confident — any personal interest is automatically unlawful", "Confident — disclosure, not prohibition, is what s 177 requires"],
+      "correctPosition": "Confident — disclosure, not prohibition, is what s 177 requires",
+      "explanation": "Correct. Unlike ss 175 and 176, s 177 does not prohibit the underlying interest — it requires timely disclosure to the board before the transaction is entered into. A properly declared interest does not, of itself, breach the duty."
+    },
+    {
+      "itemId": "companylaw-07-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A director with twenty years' experience as a qualified accountant fails to notice a basic, obvious accounting error in board papers that a first-year trainee would have caught. Under s 174(2), how does her own expertise affect the analysis?",
+      "options": ["It raises the standard she is judged against, under the subjective limb (s 174(2)(b)), on top of the objective floor everyone must meet", "It is irrelevant — every director is judged only against the objective floor regardless of personal expertise", "It lowers the standard, since experienced directors are given more latitude for informal oversight"],
+      "correctIndex": 0,
+      "explanation": "Section 174(2)(b) adds the director's own actual knowledge, skill and experience on top of the objective floor in s 174(2)(a). Her accountancy expertise raises, rather than lowers, the standard she is judged against — missing an error a trainee would have caught is even harder to excuse given what she actually knew how to spot."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is picking the wrong one of the five duties for a given fact pattern — especially confusing s 175's general conflict rule (which board authorisation can cure) with s 177's narrower disclosure duty for a specific proposed transaction, or confusing a s 174 competence failure with a s 175/176 loyalty failure. Identify what actually went wrong — carelessness, or a competing interest — before reaching for a section number.",
+    "reviewMisses": true,
+    "linkToPathway": "companylaw.directors.duties-ii-skill-conflicts"
+  }
+}

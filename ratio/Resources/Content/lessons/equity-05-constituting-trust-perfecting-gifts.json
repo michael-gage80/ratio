@@ -1,0 +1,536 @@
+{
+  "lessonId": "equity-05",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 5,
+  "topicId": "equity.constitution.constituting-perfecting-gifts",
+  "title": "Constituting a Trust, Perfecting a Gift",
+  "subtitle": "Equity will not assist a volunteer — until, sometimes, it does",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the maxim 'equity will not assist a volunteer' and explain why a trust or gift must be completely constituted before it binds anyone",
+    "Apply the 'every effort' formalities test from Milroy v Lord to decide whether an attempted transfer has been perfected",
+    "Trace how Re Rose, Pennington v Waine and T Choithram v Pagarani have progressively loosened the strict rule, and identify unconscionability as the modern gateway to that loosening",
+    "Distinguish the narrow exceptions — Strong v Bird and donationes mortis causa — from the general rule, and identify on new facts which, if any, applies"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Milroy v Lord (1862) 4 De GF & J 264",
+      "role": "States the three self-help methods of giving and the strict 'every effort' formalities requirement"
+    },
+    {
+      "citation": "Re Rose [1952] Ch 499",
+      "role": "A transfer is complete in equity once the donor has done everything within their own power, even before legal title formally passes"
+    },
+    {
+      "citation": "Pennington v Waine [2002] EWCA Civ 227",
+      "role": "Introduces unconscionability as an independent, and controversial, basis for treating an imperfect gift as constituted"
+    },
+    {
+      "citation": "T Choithram v Pagarani [2001] 1 WLR 1",
+      "role": "A gift to oneself as one of several trustees is treated as immediately constituting the trust over the whole fund"
+    },
+    {
+      "citation": "Strong v Bird (1874) LR 18 Eq 315",
+      "role": "The intended donee's later appointment as executor can perfect an otherwise imperfect lifetime gift"
+    },
+    {
+      "citation": "King v Dubrey [2015] EWCA Civ 581",
+      "role": "Modern Court of Appeal restatement and tightening of the requirements for a donatio mortis causa"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is one of the most heavily examined corners of equity, precisely because the law is visibly unsettled — three Court of Appeal-level cases pulling in different directions inside sixty years. Where the profile shows knowledge is ahead of application, this note appears: 'You can state Milroy v Lord in your sleep — this lesson is about knowing which of the later cases actually rescues a given set of facts, and which examiners include as a trap.'",
+    "profileHooks": {
+      "weakApplication": "You know the maxim and the cases by name already. The test pool below leans hard on fact patterns — you'll be asked to place a scenario on the Re Rose / Pennington / Choithram spectrum, not to recite it.",
+      "weakKnowledge": "Slow down through Parts 1–3 before the fact patterns start compounding — you need the three self-help methods and the every-effort test solid before the exceptions will make sense."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A woman tells her banker, in front of witnesses, that she wants her only niece to have her shares in the family company. She signs a form. She dies three weeks later, before the company registers the transfer. Is the gift hers, or does it fall back into an estate that now goes to someone else entirely? Twice in the last seventy years the Court of Appeal has answered that question differently on almost identical facts — and this lesson is about learning to tell which answer a given set of facts now gets."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Equity will not assist a volunteer",
+        "voice": "argumentative — states the harsh rule plainly, then explains the policy underneath it",
+        "body": [
+          "Start with the maxim, because everything in this lesson is an argument about its edges: **equity will not assist a volunteer**. A volunteer, in this technical sense, is simply someone who has given no consideration for what they're receiving — a donee, a beneficiary under a gift, anyone on the receiving end of someone else's generosity rather than a bargain.",
+          "The consequence is blunt. If your uncle promises to give you his car, signs nothing, and dies before handing over the keys, equity will not step in to force his estate to complete the gift — however clear his intention, however much he meant it, however unfair it feels. An incompletely constituted gift, or an incompletely constituted trust, simply fails. The intended recipient has no claim; the property stays where it started.",
+          "Why does equity hold this line so hard, when it bends rules everywhere else in favour of conscience? Because the alternative is worse: if courts enforced every sincere but unformalised intention to give, no one could ever be certain what they owned, and every death would trigger arguments about what the deceased 'really meant' to hand over. Constitution — actually transferring the property, or actually declaring a valid trust of it — is the line equity draws between a wish and a right. This whole lesson lives on that line, and on how far the courts have since let it move."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Constitution (of a trust or gift)",
+            "definition": "The point at which legal title to property has actually passed to the trustee (for a trust) or the donee (for a gift), converting a mere intention into a binding, irrevocable disposition. An unconstituted trust or gift binds no one and can simply be abandoned by the person who was going to make it."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Aunt Ruth tells her nephew, sincerely and in front of two witnesses, that she is giving him her painting. She writes nothing down and never hands it over before she dies. On the general rule alone, can the nephew compel her estate to hand over the painting?",
+          "options": [
+            "No — equity will not assist a volunteer; an unconstituted gift simply fails",
+            "Yes — a clearly stated intention, witnessed, is enough on its own"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct, and this is the baseline the rest of the lesson complicates. However sincere and witnessed the intention, nothing has actually been transferred — the nephew is a volunteer with no claim, unless one of the exceptions covered later applies.",
+          "feedbackIncorrect": "Not on the general rule. Sincerity and witnesses go to intention, not to constitution — and equity does not enforce intentions on behalf of volunteers. Keep this baseline in mind: everything that follows is about the narrow situations where the courts have found a way around it."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Milroy v Lord: three ways to give, and the one thing equity still won't do",
+        "voice": "structural — a reference part students will return to before exams",
+        "body": [
+          "Milroy v Lord is the foundation case, and it earns that status for a single, durable proposition: there are exactly three ways to make a valid gift of property, and if you attempt one method but fail to complete it, equity will not rescue you by treating it as if you had used a different one.",
+          "The three methods are: (1) an outright transfer of legal title to the donee, using whatever formality that type of property requires; (2) a transfer of the property to trustees, to hold on trust for the intended beneficiary; and (3) the owner declaring themselves trustee of the property for the beneficiary, without any transfer at all. Each is a distinct route to the same destination — someone else acquiring a beneficial interest.",
+          "The case itself involved a settlor who purported to transfer shares in a bank to a trustee for his niece, but never completed the formalities the bank's rules required to register the transfer. He had, in substance, tried to use method (2) and failed. The court refused to reinterpret the failed transfer as if he had instead 'declared himself trustee' under method (3) — that would let equity manufacture a trust the settlor never actually intended, simply to rescue a botched gift. If you choose a method, you must complete that method properly, or the gift fails outright.",
+          "This is the 'every effort' principle in its original, strict form: the donor must have done everything which, according to the nature of the property, was necessary to transfer it and render the transfer binding on him. Fall short of that, on any method, and there is no gift — not a lesser one, not a substitute trust, nothing."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Milroy v Lord",
+            "citation": "(1862) 4 De GF & J 264",
+            "court": "Court of Appeal in Chancery",
+            "year": 1862,
+            "factsShort": "A settlor executed a deed purporting to transfer shares to a trustee for his niece, but never completed the transfer on the company's own share register.",
+            "ratioShort": "There are three distinct methods of making a gift; equity will not convert a failed attempt at one method into a successful use of another, however clear the donor's intention.",
+            "expanded": {
+              "facts": "Thomas Medley executed a voluntary deed purporting to assign shares in the Louisiana Bank to Samuel Lord, to be held on trust for his niece Eleanor Milroy. Medley also gave Lord a power of attorney to receive dividends on his behalf, which Lord in fact exercised for several years, paying the dividends to Eleanor. But the transfer of the shares themselves was never registered in the bank's books, as the bank's own regulations required for legal title to pass. Medley died still the registered legal owner.",
+              "judgmentExtract": "Turner LJ held that in order to render a voluntary settlement valid, the settlor must have done everything necessary to be done to transfer the property and render the settlement binding on him — and that where a settlor intends a transfer to a trustee, the court will not give effect to it as a self-declaration of trust, because these are distinct modes of disposition and equity will not substitute one for the other to save an imperfect gift.",
+              "significance": "This is the origin of the 'every effort' formalities requirement and the rule against equity remedying failed gifts by re-characterising them. Every later case in this lesson is, in one way or another, an argument about how strictly that requirement should still be read."
+            }
+          },
+          {
+            "type": "ratioPanel",
+            "label": "The three self-help methods",
+            "points": [
+              "Outright transfer of legal title to the donee, completing whatever formality the property requires",
+              "Transfer of the property to trustees, to hold on trust for the beneficiary",
+              "The owner's own declaration that they now hold the property on trust for the beneficiary (no transfer needed)",
+              "Choose one method and complete it fully — an incomplete attempt at method 1 or 2 will not be rescued by treating it as method 3"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-05-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events from Milroy v Lord in the order they happened.",
+          "items": [
+            "Medley executes a deed purporting to transfer his shares to Lord as trustee for Eleanor",
+            "Lord receives dividends under a power of attorney and pays them to Eleanor for several years",
+            "The transfer of legal title is never completed on the bank's share register",
+            "Medley dies, still the registered legal owner of the shares"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the sequence — and notice that years of dividends being paid across (step 2) did nothing to cure the missing registration (step 3). Conduct consistent with a gift is not the same as completing one.",
+          "feedbackIncorrect": "Check the order again. The deed and the dividend payments happened while the underlying transfer of legal title was never actually completed — that gap is what sinks the gift, however much time passed and however consistent everyone's conduct was with treating Eleanor as owner."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Re Rose to Pennington: the crack in the wall",
+        "voice": "case-narrative — traces the doctrine loosening, one case at a time, and is honest about the controversy",
+        "body": [
+          "Milroy v Lord's strict rule survived for ninety years largely unchallenged. Re Rose is where the first real crack appears — and it's a narrower crack than students often assume. Eric Rose executed share transfer forms and handed them, with the share certificates, to his transferee. Everything he personally could do had been done; only the company's directors, exercising their own discretion, stood between the attempt and legal title actually passing. The Court of Appeal held that once a donor has done everything in their own power to transfer the property, equity will treat the gift as complete — the donor becomes a trustee of the legal title for the donee in the interim, pending the formal step that is now genuinely outside the donor's control.",
+          "Notice what Re Rose does and doesn't do. It doesn't abandon the every-effort test from Milroy v Lord — it applies it, but locates the finish line at the donor's own actions rather than at the very last administrative step, which by definition someone else must perform. That is a real loosening, but a modest, principled one.",
+          "Pennington v Waine, decided fifty years later, goes much further, and lawyers still argue about whether it goes too far. Ada Crampton instructed her accountant to prepare share transfer forms in favour of her nephew Harold, signed them, and told Harold about the gift — but the forms were never actually delivered to Harold or to the company before she died. On a strict Milroy v Lord analysis, this should fail: unlike Rose, Ada had not done everything within her own power — the forms were sitting with her own agent, not sent onward. The Court of Appeal upheld the gift anyway, reasoning that it would now be **unconscionable** for Ada's estate to resile from a gift she had so clearly communicated and taken active steps towards.",
+          "This is the controversial move: unconscionability, as a freestanding basis for treating a gift as constituted, is not really the every-effort test at all — it's a different, more open-ended enquiry into fairness on the facts. Critics say Pennington quietly abandons the certainty Milroy v Lord was designed to protect. Whatever your view, know both readings: examiners set fact patterns precisely to test whether you can tell a genuine Re Rose case (donor has done everything possible) from a genuine Pennington case (donor has not, but something else makes it unconscionable to deny the gift) from a case that is neither."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Pennington v Waine",
+            "citation": "[2002] EWCA Civ 227",
+            "court": "Court of Appeal",
+            "year": 2002,
+            "factsShort": "Ada signed share transfer forms for her nephew and told him of the gift, but the forms were never delivered to him or the company before she died.",
+            "ratioShort": "Where it would be unconscionable for the donor (or their estate) to resile from a gift, the gift may be treated as constituted even though the donor had not done everything within their own power to complete it.",
+            "expanded": {
+              "facts": "Ada Crampton wished to give 400 shares in a family company to her nephew Harold Crampton and to appoint him a director. She instructed the company auditor to prepare a share transfer form, signed it, and the auditor wrote to Harold telling him of the gift and that he need take no further action — but the transfer form itself was never delivered to Harold or lodged with the company. Ada died before completion, and her executors argued the gift was imperfect and the shares fell into her estate.",
+              "judgmentExtract": "Arden LJ held that Ada's clear communication of the gift to Harold, and the fact she had gone as far as instructing her agent and signing the transfer, made it unconscionable for her (or her personal representatives) to change her mind. The court found the gift effective in equity notwithstanding that Ada had not completed every step within her own power — the missing delivery of the form was not fatal once unconscionability was established on these facts.",
+              "significance": "Pennington is the case that most divides commentators in this whole topic. It is regularly cited, regularly examined, and regularly criticised for introducing a discretionary, fact-sensitive test into an area Milroy v Lord had tried to make mechanical. Treat 'unconscionability' as a genuinely separate gateway from the every-effort test, not a relabelling of it."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-05-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that most strongly supports finding the gift constituted on Pennington-style unconscionability reasoning.",
+          "scenarioText": "Harriet decides to give her holiday cottage to her godson. She mentions the idea to a friend over dinner, thinks about instructing a solicitor, but does nothing further and dies six months later without telling the godson anything.",
+          "tappableSpans": [
+            "mentions the idea to a friend over dinner",
+            "thinks about instructing a solicitor",
+            "does nothing further",
+            "without telling the godson anything"
+          ],
+          "correctSpan": "does nothing further",
+          "feedbackCorrect": "Right instinct to look for what's missing here, not what's present — this scenario is deliberately built to fail. Unlike Ada in Pennington, Harriet never communicated the gift to the intended recipient, never instructed anyone to act, and took no step an unconscionability argument could hang on. This is a plain failed gift, not a Pennington case.",
+          "feedbackIncorrect": "Look for what Harriet actually did towards the gift, not just what she thought about. Pennington needed communication to the donee and active steps towards completion — dinner-table musings and an unrealised intention to see a solicitor don't reach that bar."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Choithram: giving to yourself, as one of several trustees",
+        "voice": "explanatory — resolves a genuine puzzle by naming the doctrinal move precisely",
+        "body": [
+          "T Choithram v Pagarani solves a different problem, and it's worth keeping separate from Re Rose and Pennington in your head, because the mechanism is different again. Mr Pagarani, dying, orally declared that he was giving substantially all his wealth to a charitable foundation he had just established, of which he himself was one of several named trustees. He never formally transferred the specific assets into the names of all the trustees before he died.",
+          "The problem: a gift to trustees plural, where the donor is only one of them, looks on its face like an incomplete transfer — the other trustees never received the property either. But the Privy Council held that because Mr Pagarani was himself one of the trustees, his declaration operated immediately: the moment he said the words, he held the property on trust for the foundation as one of its trustees, and it would be unconscionable for him (or his estate) to then deny that the other trustees were bound to complete the formal vesting. Equity treated the trust as constituted from the moment of the declaration, notwithstanding that legal title had not yet been formally vested in every trustee.",
+          "The doctrinal move here is narrower than Pennington's open-ended unconscionability: it works specifically because the donor named themselves as one of several trustees, which gives equity something concrete to hold onto — the donor already held the property in the relevant capacity the moment they spoke. Change the facts so the donor is not one of the trustees at all, and Choithram gives you nothing; you're back to Milroy v Lord."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Which route rescues an imperfect gift — if any?",
+            "description": "A flowchart for classifying an incomplete lifetime gift against the three loosening cases.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Has the donor done everything within their own power to transfer the property?"
+              },
+              {
+                "id": "yes-power",
+                "label": "Yes → Re Rose: gift complete in equity once the last step is outside the donor's control"
+              },
+              {
+                "id": "no-power",
+                "label": "No → is the donor named as one of several trustees of the intended trust?"
+              },
+              {
+                "id": "yes-trustee",
+                "label": "Yes → Choithram: the donor's own declaration binds them as trustee immediately"
+              },
+              {
+                "id": "no-trustee",
+                "label": "No → has the gift been clearly communicated, with real steps taken, such that resiling would be unconscionable?"
+              },
+              {
+                "id": "yes-unconscionable",
+                "label": "Yes → Pennington: gift may be treated as constituted on unconscionability grounds"
+              },
+              {
+                "id": "no-unconscionable",
+                "label": "No → Milroy v Lord applies in full force: the gift fails"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "yes-power",
+                "label": "Yes"
+              },
+              {
+                "from": "start",
+                "to": "no-power",
+                "label": "No"
+              },
+              {
+                "from": "no-power",
+                "to": "yes-trustee",
+                "label": "Yes"
+              },
+              {
+                "from": "no-power",
+                "to": "no-trustee",
+                "label": "No"
+              },
+              {
+                "from": "no-trustee",
+                "to": "yes-unconscionable",
+                "label": "Yes"
+              },
+              {
+                "from": "no-trustee",
+                "to": "no-unconscionable",
+                "label": "No"
+              }
+            ],
+            "textAlternative": "First ask whether the donor has done everything within their own power to transfer the property — if so, Re Rose completes the gift in equity. If not, ask whether the donor is one of several named trustees of the intended trust — if so, Choithram treats the donor's own declaration as immediately binding. If neither applies, ask whether the gift was clearly communicated with real steps taken towards completion, such that it would be unconscionable to resile — if so, Pennington v Waine may rescue it. If none of these apply, Milroy v Lord's strict rule governs and the gift fails."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-05-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is properly analysed under Choithram, rather than as a plain failed gift under Milroy v Lord?",
+          "scenarioA": "Priya orally declares she is giving her jewellery collection to a trust for her grandchildren, naming herself and two friends as trustees, intending to formally re-title the jewellery later.",
+          "scenarioB": "Priya orally declares she is giving her jewellery collection to her two friends, to hold on trust for her grandchildren, but never actually hands the jewellery over or does anything further.",
+          "correctScenario": "A",
+          "explanation": "In A, Priya names herself as one of several trustees — her own declaration is enough to bind her immediately under Choithram, because she already occupies the relevant capacity the instant she speaks. In B she is not a trustee at all; nothing has been transferred to the friends, and no exception rescues it — this is a plain Milroy v Lord failure."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Death changes everything: Strong v Bird and gifts made in contemplation of death",
+        "voice": "narrative — treats the two death-related exceptions as genuinely separate doctrines with their own logic",
+        "body": [
+          "Two further, narrower exceptions apply specifically where the donor has died before completing a gift — and they work on entirely different logic from Re Rose, Pennington or Choithram, so don't blend them together. The first is the rule in Strong v Bird. A debtor forgave a debt to his stepmother, intending to release her from a loan, but never executed the formal release. She then died, and he — by coincidence, not design — was appointed one of her executors. The court held that his appointment as executor, vesting the debt's legal title in him in that capacity, perfected the imperfect release: equity would not require him, as executor, to sue himself for a debt he had already resolved to forgive.",
+          "The rule in Strong v Bird has since been extended from release of debts to outright gifts of property generally, but it is genuinely narrow: it requires (1) a clear and continuing intention to make the immediate gift, maintained right up to death, and (2) the intended donee's appointment as executor (or, later cases confirm, administrator) of the donor's estate — which must happen by the ordinary operation of the probate process, not by any manoeuvre of the donee. Coincidence does the work; if the intention wavered at any point before death, or the donee did not end up holding the relevant office, the exception does not apply.",
+          "The second exception, donatio mortis causa (a gift made in contemplation of death), is conceptually different again — it is not really about constitution being retrospectively cured, but about a distinct, self-contained category of gift equity has always recognised as effective on death without full lifetime formalities. Three conditions must be met: the gift must be made in contemplation of death (not necessarily impending death, but a specific looming risk); it must be conditional on death actually occurring, so it's revocable if the donor recovers; and the donor must part with dominion over the property — handing over the item itself, or the means of controlling it, such as keys or a building society passbook.",
+          "King v Dubrey shows the modern Court of Appeal tightening this doctrine rather than expanding it. An elderly man told a relative who had moved in to care for him that his house would be hers when he died, and gave her some paperwork; the court held this did not amount to a valid donatio mortis causa, both because a house is a poor fit for the 'parting with dominion' requirement (you cannot hand someone a house the way you hand someone a locket) and because the circumstances did not show death was sufficiently in contemplation as opposed to being a general, background fact of old age. The case is a useful corrective against treating donatio mortis causa as a general escape hatch for informal deathbed gifts — the courts are, if anything, narrowing it."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Strong v Bird and donatio mortis causa are 'basically the same exception' because both involve a gift that only becomes effective because the donor died.",
+            "whyItsWrong": "They rest on entirely different logic. Strong v Bird cures an imperfect lifetime gift through the coincidence of the donee later becoming executor — it requires a continuing intention plus that specific office. Donatio mortis causa is a free-standing category of gift, effective from the moment of death without needing an executorship at all, but it requires contemplation of death, conditionality on death occurring, and an actual parting with dominion over the property during the donor's lifetime. Confusing the two on an exam script — applying the wrong three- or two-part test — is one of the most common errors in this topic."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-05-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Grandpa Leo, told by his doctor he has weeks to live, hands his granddaughter the key to his locked writing desk and says: 'If I don't pull through, everything in there is yours.' He dies six weeks later without having changed his mind. Which route, if any, perfects the gift of the desk's contents?",
+          "options": [
+            "Donatio mortis causa — made in contemplation of death, conditional on death, with dominion parted with via the key",
+            "Strong v Bird — because the granddaughter later becomes his executor",
+            "No route applies — an oral gift of this kind can never be perfected"
+          ],
+          "correctIndex": 0,
+          "explanation": "All three donatio mortis causa conditions are met on these facts: contemplation of a specific, known risk of death (the doctor's prognosis), express conditionality ('if I don't pull through'), and dominion parted with by handing over the key that controls access to the property. Nothing here turns on Leo's granddaughter becoming an executor, so Strong v Bird is not the relevant analysis."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-05-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the maxim that governs whether an incompletely constituted gift can be enforced by its intended recipient.",
+      "acceptableAnswers": [
+        "equity will not assist a volunteer",
+        "equity does not assist a volunteer"
+      ],
+      "modelAnswer": "Equity will not assist a volunteer — someone who has given no consideration cannot compel completion of an imperfect gift or trust, however clear the donor's intention."
+    },
+    {
+      "itemId": "equity-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "According to Milroy v Lord, how many distinct self-help methods are there for making a valid gift?",
+      "options": [
+        "Three",
+        "Two",
+        "As many as the donor's intention makes clear"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT one of Milroy v Lord's three self-help methods?",
+      "options": [
+        "Outright transfer of legal title to the donee",
+        "Transfer of the property to trustees for the beneficiary",
+        "The owner declaring themselves trustee for the beneficiary",
+        "A court order deeming the transfer to have taken place on proof of clear intention"
+      ],
+      "correctIndex": 3,
+      "trapExplanation": "There is no fourth, court-supplied method — that's precisely what Milroy v Lord refuses to allow. The court will not manufacture a transfer or a trust out of clear intention alone; the donor must have actually used one of the three genuine methods and completed it."
+    },
+    {
+      "itemId": "equity-05-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "The 'every effort' test asks whether the donor has done everything necessary, according to the nature of the property, to transfer it and render the transfer binding. What is the key limiting idea in that formulation?",
+      "options": [
+        "The test is measured against what is within the donor's own power, not against whether every administrative step by third parties has in fact been completed",
+        "The test requires the donee to have taken possession of the property personally",
+        "The test is satisfied only once legal title has fully and formally passed"
+      ],
+      "correctIndex": 0,
+      "explanation": "Re Rose reads Milroy v Lord's formula this way: the finish line is the donor's own actions, not the last administrative step performed by someone else (such as a company registering a transfer). This is what allows Re Rose to find a gift complete even before formal legal title passes."
+    },
+    {
+      "itemId": "equity-05-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below, adapted from Re Rose, highlight the sentence stating the ratio.",
+      "passage": "The donor had executed the transfer forms and delivered them, with the certificates, to the transferee. Nothing further remained for the donor himself to do. Once a donor has done everything which it was necessary for him to do to transfer the property, equity will treat the transfer as complete, notwithstanding that some further step, outside the donor's own control, remains to be taken by a third party before legal title formally passes.",
+      "ratioSentence": "Once a donor has done everything which it was necessary for him to do to transfer the property, equity will treat the transfer as complete, notwithstanding that some further step, outside the donor's own control, remains to be taken by a third party before legal title formally passes."
+    },
+    {
+      "itemId": "equity-05-test-06",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario is a clean Re Rose case, rather than requiring a Pennington-style unconscionability argument?",
+      "scenarioA": "Owen signs and hands over a completed share transfer form and the certificates to the company registrar; only the directors' routine approval, a step entirely outside Owen's control, remains.",
+      "scenarioB": "Owen signs a share transfer form, tells his niece about it, but leaves the form in his own desk drawer and never sends it anywhere.",
+      "correctScenario": "A",
+      "explanation": "A is textbook Re Rose: Owen has done literally everything within his own power, and what's left is a third party's administrative step. B is the harder case — the form never left Owen's own hands, so it needs a Pennington-style unconscionability argument (and a weaker one than Ada's, since there is no evidence here of a clear communication plus active steps by an agent)."
+    },
+    {
+      "itemId": "equity-05-test-07",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that would most strengthen a Pennington-style unconscionability argument on these facts.",
+      "scenarioText": "Beatrice signs share transfer forms for her son and instructs her solicitor to send them to the company. The solicitor writes to the son confirming the gift and telling him no further action is needed on his part. Beatrice dies before the forms are actually lodged with the company.",
+      "tappableSpans": [
+        "signs share transfer forms",
+        "instructs her solicitor to send them",
+        "writes to the son confirming the gift",
+        "dies before the forms are actually lodged"
+      ],
+      "correctSpan": "writes to the son confirming the gift",
+      "explanation": "Clear communication to the donee, telling him the gift is done and he need do nothing further, is exactly the feature that made resiling unconscionable in Pennington itself. It's this combination of active steps plus communicated reliance that distinguishes an unconscionability case from a simple failed attempt."
+    },
+    {
+      "itemId": "equity-05-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Nadia orally declares she is giving her art collection to a charitable trust, naming herself and her two business partners as the trustees. She dies before formally re-titling any of the paintings. Which route most directly addresses whether the trust is constituted?",
+      "options": [
+        "T Choithram v Pagarani — Nadia's own declaration, as one of the named trustees, binds her immediately",
+        "Strong v Bird — because one of the business partners might later become her executor",
+        "Re Rose — because Nadia has done everything within her own power to transfer legal title"
+      ],
+      "correctIndex": 0,
+      "explanation": "Naming herself as one of several trustees is the specific fact pattern Choithram addresses: Nadia's declaration operates immediately in her capacity as a trustee, without needing formal re-titling first. Strong v Bird is irrelevant absent an executorship, and Re Rose does not fit because no transfer of legal title has been attempted at all — this is a pure self-declaration case."
+    },
+    {
+      "itemId": "equity-05-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Why does Choithram not apply where the donor purports to give property to trustees who do not include themselves?",
+      "options": [
+        "Because equity requires at least three trustees for any charitable trust",
+        "Because the reasoning depends on the donor already holding the property in the relevant trustee capacity the moment they speak — which is absent if the donor is not a trustee at all",
+        "Because oral declarations of trust are never valid for personal property"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The trap answers gesture at unrelated formality rules. The actual reasoning is narrower and more specific: Choithram works because the donor's declaration binds them in a capacity (trustee) they already hold the instant they speak. Remove the donor from the list of trustees, and there is nothing left for that reasoning to attach to — you are back to an ordinary, and here incomplete, Milroy v Lord transfer."
+    },
+    {
+      "itemId": "equity-05-test-10",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put the required elements of the rule in Strong v Bird in the order a court would check them.",
+      "items": [
+        "A clear and continuing intention by the donor to make an immediate gift",
+        "The intention is maintained, unchanged, right up until the donor's death",
+        "The intended donee is appointed executor (or administrator) of the donor's estate through the ordinary probate process",
+        "Legal title to the property vests in the donee in that capacity, curing the earlier imperfect gift"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "equity-05-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario better satisfies the rule in Strong v Bird?",
+      "scenarioA": "A father tells his son he forgives a private loan between them and repeats this intention consistently until his death; the son is, by the ordinary rules of intestacy, later appointed administrator of the estate.",
+      "scenarioB": "A father tells his son he forgives the loan once, in a moment of anger, then never mentions it again over the following decade before dying; the son happens to also be executor.",
+      "correctScenario": "A",
+      "explanation": "A shows the continuing, unwavering intention Strong v Bird requires, combined with the donee acquiring the relevant office through the ordinary operation of the probate process. B fails on the continuity requirement — a single remark, unrepeated for a decade, does not show the intention was maintained up to death, whatever office the son later happens to hold."
+    },
+    {
+      "itemId": "equity-05-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Colin, diagnosed with a terminal illness and told he has only days left, hands his sister a small box containing the deeds to his lock-up garage and says: 'Keep these — the garage and everything in it is yours if I don't make it.' He dies eight days later, never having changed his mind, and never having appointed his sister to any role in his estate. Analyse whether the gift of the garage is effective.",
+      "factsToOrder": [
+        "Colin has been told he has only days left to live",
+        "Colin hands over the deeds themselves, physically, to his sister",
+        "The gift is expressly conditional ('if I don't make it')",
+        "Colin dies shortly afterwards without changing his mind",
+        "The sister is never appointed executor or administrator"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the gift of the garage and deeds is effective as a donatio mortis causa, given that Colin never completed any formal lifetime transfer and never appointed his sister to his estate.",
+        "rule": "A donatio mortis causa requires: (1) the gift is made in contemplation of death; (2) it is conditional on death occurring, and revocable if the donor recovers; (3) the donor parts with dominion over the property during their lifetime. Strong v Bird is a separate route requiring a continuing intention plus the donee's appointment as executor or administrator, which is not available here.",
+        "application": "Colin's terminal diagnosis and days-to-live prognosis satisfy contemplation of death; his words 'if I don't make it' satisfy conditionality; and physically handing over the deeds — the means of controlling the garage — satisfies parting with dominion, consistent with how King v Dubrey treats deeds and title documents (unlike a house itself) as capable of supporting dominion. Strong v Bird does not apply, since the sister was never appointed to any role in Colin's estate.",
+        "conclusion": "The gift is effective as a donatio mortis causa; the garage and deeds pass to the sister on Colin's death without need for further formality."
+      }
+    },
+    {
+      "itemId": "equity-05-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "How confident are you that King v Dubrey narrows, rather than expands, the availability of donatio mortis causa?",
+      "sliderLabels": [
+        "It expands the doctrine",
+        "It narrows the doctrine"
+      ],
+      "correctPosition": "narrows",
+      "explanation": "King v Dubrey is best read as a corrective against loose deathbed-gift claims. The Court of Appeal held that a house is a poor fit for 'parting with dominion', and that a general, background awareness of mortality in old age is not the same as contemplation of a specific looming risk of death — both readings make the doctrine harder to satisfy, not easier."
+    },
+    {
+      "itemId": "equity-05-test-14",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "An elderly woman, in ordinary good health with no specific medical warning, tells her carer over several years that 'the house will be yours when I go,' and gives her a set of house keys she already had for other reasons. On King v Dubrey, is this likely to succeed as a donatio mortis causa?",
+      "options": [
+        "No — there is no specific contemplation of death, and a house does not sit easily with the dominion requirement",
+        "Yes — any clearly repeated statement about property passing on death is sufficient"
+      ],
+      "correctIndex": 0,
+      "feedbackCorrect": "Right. This is essentially the King v Dubrey fact pattern, and it failed for exactly these reasons: general awareness that one will eventually die is not contemplation of death in the required sense, and a house does not transfer dominion the way a handed-over object does.",
+      "feedbackIncorrect": "Compare this closely with King v Dubrey, which these facts closely track. General statements over years, made in ordinary good health, do not show contemplation of a specific looming risk of death — and a house is a poor fit for the dominion requirement in any event."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating Re Rose, Pennington v Waine and Choithram as interchangeable 'exceptions equity found to rescue a gift' rather than three distinct doctrinal routes, each with its own trigger fact. Before answering, identify which trigger fact (donor's own power exhausted / donor named as co-trustee / unconscionability from communication and active steps) is actually present — the wrong route, applied to the right instinct, still scores as a wrong answer.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.constitution.constituting-perfecting-gifts"
+  }
+}

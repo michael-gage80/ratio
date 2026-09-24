@@ -1,0 +1,354 @@
+{
+  "lessonId": "companylaw-12",
+  "moduleId": "companylaw",
+  "moduleTitle": "Company Law",
+  "lessonNumber": 12,
+  "topicId": "companylaw.governance.meetings-resolutions",
+  "title": "How shareholders actually make decisions",
+  "subtitle": "Resolutions, meetings and the constitutional limits on shareholder power",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish ordinary and special resolutions, including their majority thresholds and typical uses",
+    "State the written resolution procedure available to private companies and identify its limits",
+    "Apply the requisition provisions and the Automatic Self-Cleansing principle to identify the constitutional limits on shareholders directing the board"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006 ss 168, 282-284, 303, 314", "role": "The statutory scheme for ordinary and special resolutions, removing a director, and members' rights to requisition meetings and circulate statements" },
+    { "citation": "Automatic Self-Cleansing Filter Syndicate Co Ltd v Cuninghame [1906] 2 Ch 34", "role": "Leading authority that management powers vested in the board by the articles cannot be overridden by an ordinary resolution of the general meeting" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Lessons 10 and 11 dealt with shareholder remedies for things that have already gone wrong. This lesson steps back to the ordinary machinery shareholders use every day: how decisions actually get made, and where their power to make them stops. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can name the resolution types — this lesson checks whether you know when shareholders can and can't use them to control the board.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below includes scenario questions testing whether shareholders can actually force a particular outcome through a resolution, not just whether they can propose one.",
+      "weakKnowledge": "Start with Part 1 and get the ordinary/special resolution split and their majority thresholds completely fixed — every later part in this lesson assumes you can identify which type of resolution a given decision requires without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-23",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company's articles give the board exclusive power to manage the business. The shareholders, who own the company and appoint its directors, are unhappy with a business decision and pass a resolution instructing the board to reverse it. Surely the owners' wishes must prevail? Not necessarily — and the case that settled this, over a century old, still shapes how every modern shareholder-versus-board dispute is analysed."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Ordinary and special resolutions: the two currencies of shareholder decision-making",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Almost everything a company's members formally decide is decided by one of two kinds of resolution, and the difference between them is entirely about the size of majority required, not the importance of the topic in the abstract — though in practice, the more significant a decision, the more likely the Act requires the higher threshold.",
+          "An ordinary resolution, defined in s 282, is passed by a simple majority of members voting — more than 50% of the votes cast. It is the default: unless the Act or the articles specifically require something else, an ordinary resolution suffices, and it covers routine business such as appointing directors, approving accounts, or declaring a dividend recommended by the board.",
+          "A special resolution, defined in s 283, requires a majority of not less than 75% of the votes cast. The Act reserves special resolutions for decisions Parliament considered significant enough to require broader consensus: amending the articles (s 21), changing the company's name, reducing share capital, and winding up voluntarily, among others. Section 283(6) also requires that a special resolution be notified as such — the notice calling the meeting, or accompanying a written resolution, must specify that the resolution is proposed as a special resolution, so members know in advance the higher threshold applies and what is actually at stake."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Ordinary vs special resolutions",
+            "points": [
+              "Ordinary resolution (s 282) — simple majority (more than 50%) of votes cast; the statutory default",
+              "Special resolution (s 283) — not less than 75% of votes cast; reserved for significant constitutional decisions",
+              "Examples requiring a special resolution — amending the articles, changing the company's name, reducing share capital, voluntary winding up",
+              "The notice of meeting (or written resolution) must specify that a resolution is proposed as special, under s 283(6)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-12-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "What majority of votes cast is required to pass a special resolution under s 283?",
+          "options": ["Not less than 75%", "A simple majority of more than 50%"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Special resolutions require at least 75% of the votes cast — the statutory default of a simple majority under s 282 only applies to ordinary resolutions.",
+          "feedbackIncorrect": "A special resolution needs at least 75% of the votes cast under s 283. A simple majority of more than 50% is the threshold for an ordinary resolution instead."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Written resolutions: deciding without holding a meeting",
+        "voice": "structural — walks through a procedure step by step",
+        "body": [
+          "Private companies do not have to hold a physical or virtual meeting to pass every resolution. Chapter 2 of Part 13 of the Act allows a private company to pass a resolution in writing instead, circulated to eligible members, who signify their agreement without ever convening — a route that suits small companies where gathering everyone in one place is unnecessary friction.",
+          "The mechanics matter for exam purposes. The proposed resolution, together with a statement of how to signify agreement and the deadline for doing so, is circulated to every eligible member (broadly, every member entitled to vote at the date of circulation). Members signify their agreement in writing, and the resolution is passed once the requisite majority — a simple majority for an ordinary written resolution, 75% for a special written resolution — has signified agreement within the specified period for agreeing, which lapses automatically after 28 days unless the articles specify a longer period.",
+          "The written resolution route has one significant structural limit worth flagging early, because it recurs in Part 3: it cannot be used to remove a director under s 168 or an auditor before the end of their term, because those particular removal rights are deliberately built around a meeting at which the director or auditor concerned has a statutory right to be heard — a safeguard a purely written process cannot replicate."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The written resolution procedure",
+            "description": "How a private company passes a resolution without holding a meeting.",
+            "nodes": [
+              { "id": "propose", "label": "Resolution proposed and circulated in writing to every eligible member" },
+              { "id": "signify", "label": "Members signify agreement in writing within the specified period" },
+              { "id": "count", "label": "Requisite majority reached — simple majority (ordinary) or 75% (special)" },
+              { "id": "lapse", "label": "If the period for agreeing (28 days by default) expires first, the resolution lapses" },
+              { "id": "pass", "label": "Resolution is passed on the date the requisite majority is reached" }
+            ],
+            "edges": [
+              { "from": "propose", "to": "signify" },
+              { "from": "signify", "to": "count" },
+              { "from": "count", "to": "pass", "label": "Majority reached in time" },
+              { "from": "signify", "to": "lapse", "label": "Period expires first" }
+            ],
+            "textAlternative": "A written resolution is circulated to every eligible member, who signify their agreement in writing. If the requisite majority (simple majority for an ordinary resolution, 75% for a special resolution) is reached within the period for agreeing, the resolution passes on that date. If the default 28-day period (or a longer period set by the articles) expires first, the resolution lapses instead."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-12-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of the written resolution procedure in order.",
+          "items": ["The proposed resolution is circulated in writing to every eligible member", "Members signify their agreement in writing", "The requisite majority is reached within the period for agreeing", "The resolution is treated as passed, on the date the requisite majority was reached"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the mechanics: circulation, signification, reaching the majority, and the resolution taking effect from the date the threshold was actually met — not from the date it was first proposed.",
+          "feedbackIncorrect": "Check the order again — members can only start signifying agreement after circulation, and the resolution isn't treated as passed until the requisite majority is actually reached within the permitted period."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Requisitioning meetings and resolutions: forcing the board's hand",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Directors normally decide when to call a general meeting and what business goes on its agenda. Sections 303 and 314 give members a way to override that control in defined circumstances, without needing the board's cooperation at all.",
+          "Section 303 gives members holding at least 5% of the paid-up voting share capital (or, for a company without share capital, at least 5% of the voting rights) the right to require the directors to call a general meeting. The directors must then call the meeting within 21 days of becoming subject to the requirement, to be held on a date not more than 28 days after the notice convening it — a firm timetable that prevents the board from simply sitting on an inconvenient request indefinitely.",
+          "Section 314 works alongside this: members meeting a threshold (broadly, 5% of voting rights, or 100 members holding on average at least £100 paid up per member) can require the company to circulate, at the requisitioning members' expense unless the company resolves otherwise, a statement of reasonable length relating to a resolution to be moved, or other business to be dealt with, at a forthcoming general meeting. Together, ss 303 and 314 give a sufficiently organised minority a genuine route to force both a meeting and a specific item of business onto its agenda, even against a reluctant board."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 303",
+            "text": "(1) The members of a company may require the directors to call a general meeting of the company. (2) The directors are required to call a general meeting once the company has received requests to do so from members representing at least 5% of such of the paid-up capital of the company as carries the right of voting at general meetings. (4) The directors must call a meeting within 21 days from the date on which they become subject to the requirement, to be held on a date not more than 28 days after the date of the notice convening the meeting.",
+            "elements": ["Threshold — at least 5% of the paid-up voting share capital", "Directors must call the meeting within 21 days of the requirement arising", "The meeting itself must be held within 28 days of the notice convening it", "A tight, statutory timetable that removes the board's discretion to delay indefinitely"]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-12-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 303, what minimum shareholding threshold triggers the directors' obligation to call a general meeting on members' request?",
+          "options": ["At least 5% of the paid-up voting share capital", "At least 50% of the paid-up voting share capital", "Any single shareholder, regardless of shareholding size"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. A 5% threshold is deliberately low, giving even a modest, organised minority a genuine route to force a meeting rather than requiring majority support before the mechanism can even be used.",
+          "feedbackIncorrect": "The threshold under s 303 is 5% of the paid-up voting share capital — set deliberately low so that a minority well short of majority control can still trigger the obligation to call a meeting."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Automatic Self-Cleansing: management powers belong to the board, not the general meeting",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Automatic Self-Cleansing Filter Syndicate Co Ltd v Cuninghame answers the question this lesson's hook opened with. The company's articles vested the general management of the business in the directors, subject to such regulations as might from time to time be made by the company in general meeting — standard wording of the era. The shareholders, unhappy with a proposed sale of the company's business, passed an ordinary resolution instructing the directors not to proceed with it. The directors, who believed the sale was in the company's interests, refused to comply.",
+          "The Court of Appeal held the shareholders could not simply override the board this way. Once the articles had vested management powers in the directors, an ordinary resolution of the general meeting could not dictate how those powers should be exercised in a particular instance — the general meeting's residual power to make regulations for the directors' conduct of the business operated only prospectively, by validly altering the articles (which, even then, generally required the higher special resolution threshold), not by issuing a one-off instruction overriding a decision already vested in the board.",
+          "The doctrine reflects a division of constitutional power that is easy to state and consistently tested: the articles allocate day-to-day management to the board, and the general meeting's ordinary-resolution powers over that allocation are limited unless the articles themselves say otherwise. Shareholders who genuinely want to redirect management decisions have to go through the mechanisms the Act and the articles actually give them — altering the articles by special resolution, or removing the directors under s 168 — rather than simply outvoting the board on a single business decision."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Automatic Self-Cleansing Filter Syndicate Co Ltd v Cuninghame",
+            "citation": "[1906] 2 Ch 34",
+            "court": "Court of Appeal",
+            "year": 1906,
+            "factsShort": "Shareholders passed an ordinary resolution instructing the directors not to complete a proposed sale of the company's business, which the articles had left to the directors' management.",
+            "ratioShort": "Once management powers are vested in the directors by the articles, an ordinary resolution of the general meeting cannot override how the directors choose to exercise them.",
+            "expanded": {
+              "facts": "The company's articles vested general management of the business in the directors, subject to regulations the company might make in general meeting. The directors negotiated a sale of the company's business that a majority of shareholders disagreed with. The shareholders passed an ordinary resolution purporting to instruct the directors not to proceed, and when the directors refused to comply, the shareholders sought to enforce the instruction.",
+              "judgmentExtract": "The Court of Appeal held that the directors' management powers, once vested by the articles, could not be overridden by a simple ordinary resolution telling them how to exercise those powers in a specific instance. The general meeting retained the power to alter the articles themselves (subject to the statutory procedure for doing so) and thereby change the allocation of power prospectively, but it could not simply instruct the board on individual management decisions while the existing articles remained in force.",
+              "significance": "This case is the foundational authority for the proposition, still good law today, that management power vested in the board by the articles is not subject to shareholder override by ordinary resolution alone. It remains the standard citation whenever an exam question tests whether shareholders can force the board's hand on an operational decision, as opposed to using the constitutional mechanisms — altering the articles, or removing a director — actually available to them."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-12-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In this passage adapted from Automatic Self-Cleansing, highlight the sentence stating the ratio.",
+          "passage": "It was argued for the shareholders that the general meeting, as the ultimate authority in the company, must be entitled to direct the directors on any matter it chose. The Court of Appeal did not accept this. Where the articles vest the management of the company's business in the directors, an ordinary resolution of the general meeting cannot control how the directors exercise the powers so vested in them; the general meeting's remedy, if dissatisfied, lies in altering the articles themselves, not in issuing instructions the existing articles do not permit it to give.",
+          "ratioSentence": "Where the articles vest the management of the company's business in the directors, an ordinary resolution of the general meeting cannot control how the directors exercise the powers so vested in them; the general meeting's remedy, if dissatisfied, lies in altering the articles themselves, not in issuing instructions the existing articles do not permit it to give."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The lever that does work: removing a director under s 168",
+        "voice": "reflective — closes the lesson by identifying the mechanism that actually functions",
+        "body": [
+          "If shareholders cannot simply instruct the board, what can they actually do when they've lost confidence in the directors' management? Section 168 supplies the answer, and it is deliberately powerful: a company may, by ordinary resolution, remove a director before the expiration of their period of office, notwithstanding anything in any agreement between the company and the director — this is one of the few significant company-law powers that operates by ordinary resolution alone, precisely because Parliament wanted shareholders to have a genuinely effective check on the people they entrust with management, even if not on individual management decisions themselves.",
+          "The power is hedged with procedural safeguards rather than a higher voting threshold: special notice of the resolution (28 days) must be given to the company, the company must send a copy to the director concerned, and the director has a right to have written representations circulated to members and to speak at the meeting where the resolution is considered — the same right to be heard that Part 2 of this lesson noted a written resolution cannot accommodate, which is exactly why s 168 removals must go through a meeting.",
+          "Put alongside Automatic Self-Cleansing, s 168 completes the picture examiners test: shareholders cannot dictate a single management decision by ordinary resolution while the existing directors remain in office, but they can, by the same ordinary-resolution majority, replace the directors who made a decision they disapprove of. The constitutional limit is on instructing the board mid-tenure, not on the shareholders' ultimate power to choose who sits on it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Section 168 removal",
+            "definition": "The statutory power for a company to remove a director before the end of their term by ordinary resolution, regardless of any contrary agreement — the shareholders' effective check on the board, operating through personnel rather than through direct instructions on management decisions."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-12-check-05",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that shows these shareholders are using the lever the law actually gives them, rather than repeating the mistake in Automatic Self-Cleansing.",
+          "scenarioText": "Shareholders disagree with the board's decision to reject a takeover offer. Rather than passing an ordinary resolution instructing the directors to accept the offer, they give special notice of a resolution to remove the two directors who voted against it, intending to replace them with directors who support the deal.",
+          "tappableSpans": ["disagree with the board's decision to reject a takeover offer", "Rather than passing an ordinary resolution instructing the directors to accept the offer", "give special notice of a resolution to remove the two directors", "intending to replace them with directors who support the deal"],
+          "correctSpan": "give special notice of a resolution to remove the two directors",
+          "feedbackCorrect": "Right. Using s 168 to remove and replace the directors is exactly the constitutionally effective route — it works through personnel, not through a direct instruction overriding a management decision that Automatic Self-Cleansing confirms an ordinary resolution cannot give.",
+          "feedbackIncorrect": "The disagreement itself and the eventual goal aren't the deciding facts — look for the mechanism the shareholders actually chose. Giving special notice to remove the directors, rather than instructing them, is what makes this a lawful use of shareholder power rather than an Automatic Self-Cleansing-style overreach."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "companylaw-12-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Name the two types of resolution under the Companies Act 2006 and the majority each requires.",
+      "acceptableAnswers": ["ordinary resolution (simple majority) and special resolution (75%)"],
+      "modelAnswer": "An ordinary resolution, requiring a simple majority of more than 50% of votes cast, and a special resolution, requiring not less than 75% of votes cast."
+    },
+    {
+      "itemId": "companylaw-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under the default position in s 168, is the removal of a director by ordinary resolution or special resolution?",
+      "options": ["Ordinary resolution", "Special resolution"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-12-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following can NOT be achieved by a private company's written resolution procedure?",
+      "options": ["Approving the company's annual accounts", "Removing a director under s 168 before the end of their term", "Passing a special resolution amending the articles"],
+      "correctIndex": 1,
+      "trapExplanation": "Removing a director under s 168 is deliberately excluded from the written resolution route, because the director has a statutory right to have representations circulated and to be heard at a meeting — a right the purely written process cannot accommodate."
+    },
+    {
+      "itemId": "companylaw-12-test-04",
+      "type": "sequence",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Put these steps of the s 303 requisitioned meeting procedure in order.",
+      "items": ["Members holding at least 5% of the paid-up voting share capital request a meeting", "The directors become subject to the requirement to call a meeting", "The directors call the meeting within 21 days of that requirement", "The meeting is held within 28 days of the notice convening it"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "companylaw-12-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 314, what may a sufficiently large group of requisitioning members require the company to do?",
+      "options": ["Circulate a statement of reasonable length relating to a resolution or other business at a forthcoming general meeting", "Automatically remove the entire board without a resolution", "Compel the company to pay a dividend regardless of distributable profits"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-12-test-06",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that shareholders can, by ordinary resolution alone, instruct the board on how to exercise a management power the articles have vested in the directors?",
+      "sliderLabels": ["Confident — an ordinary resolution can instruct the board directly", "Not confident — Automatic Self-Cleansing prevents an ordinary resolution overriding vested management powers"],
+      "correctPosition": "Not confident — Automatic Self-Cleansing prevents an ordinary resolution overriding vested management powers",
+      "explanation": "Not confident is correct. Automatic Self-Cleansing Filter Syndicate v Cuninghame holds that management powers vested in the directors by the articles cannot be overridden by an ordinary resolution instructing a specific course of action — shareholders must alter the articles or remove the directors instead."
+    },
+    {
+      "itemId": "companylaw-12-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, adapted from Automatic Self-Cleansing, highlight the sentence identifying the shareholders' actual remedy if dissatisfied with the board.",
+      "passage": "Shareholders who disagree with a decision within the directors' vested management powers are not without recourse. Their proper course, where the articles vest management in the directors, is to alter the articles by the procedure the law provides, thereby changing the allocation of power for the future, rather than to instruct the directors on a particular decision the existing articles do not entitle the general meeting to control.",
+      "ratioSentence": "Their proper course, where the articles vest management in the directors, is to alter the articles by the procedure the law provides, thereby changing the allocation of power for the future, rather than to instruct the directors on a particular decision the existing articles do not entitle the general meeting to control."
+    },
+    {
+      "itemId": "companylaw-12-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows this resolution is likely to be ineffective under the Automatic Self-Cleansing principle.",
+      "scenarioText": "The articles vest general management of the business in the directors. Shareholders, unhappy that the board has rejected a proposed merger, pass an ordinary resolution purporting to instruct the directors to proceed with the merger regardless of the board's own view.",
+      "tappableSpans": ["articles vest general management of the business in the directors", "unhappy that the board has rejected a proposed merger", "pass an ordinary resolution purporting to instruct the directors to proceed", "regardless of the board's own view"],
+      "correctSpan": "pass an ordinary resolution purporting to instruct the directors to proceed",
+      "explanation": "Once management is vested in the board by the articles, it's precisely an ordinary resolution instructing the directors on a specific decision that Automatic Self-Cleansing holds is ineffective — the shareholders would need to alter the articles or remove the directors instead."
+    },
+    {
+      "itemId": "companylaw-12-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario reflects a constitutionally effective use of shareholder power, applying Automatic Self-Cleansing and s 168 together?",
+      "scenarioA": "Shareholders pass an ordinary resolution directly instructing the board to enter into a specific contract the board has already declined to sign.",
+      "scenarioB": "Shareholders, dissatisfied with the board's rejection of a proposed contract, give special notice of a resolution to remove the directors responsible and replace them with directors who support the deal.",
+      "correctScenario": "B",
+      "explanation": "B uses the mechanism the Act actually gives shareholders — replacing the directors under s 168 — rather than instructing the existing board on a specific decision, which A attempts and which Automatic Self-Cleansing confirms an ordinary resolution cannot achieve."
+    },
+    {
+      "itemId": "companylaw-12-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A private company's members want to pass a special resolution amending the articles without holding a meeting. What majority of eligible members must signify agreement to a written special resolution, and within what default period?",
+      "options": ["At least 75% of eligible members, within 28 days unless the articles set a longer period", "A simple majority, within 28 days", "100% of eligible members, within 14 days"],
+      "correctIndex": 0,
+      "explanation": "A written special resolution requires the same 75% threshold as a special resolution passed at a meeting, and lapses if the requisite majority is not reached within the default 28-day period for agreeing, unless the articles extend it."
+    },
+    {
+      "itemId": "companylaw-12-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Members holding 6% of a private company's paid-up voting share capital serve a valid requisition under s 303. The directors take no action for 25 days. What is the position?",
+      "options": ["The directors are in breach of their statutory obligation, since s 303 required them to call the meeting within 21 days of the requirement arising", "There is no breach, since directors have unlimited discretion over the timing of a requisitioned meeting", "The requisition automatically lapses after 21 days if the directors do nothing"],
+      "correctIndex": 0,
+      "explanation": "Section 303(4) requires the directors to call the meeting within 21 days of becoming subject to the requirement. Taking no action for 25 days breaches that statutory obligation — it does not cause the members' requisition to lapse, and the members retain further statutory remedies where directors fail to comply."
+    },
+    {
+      "itemId": "companylaw-12-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best captures why s 168 removals cannot use the written resolution procedure?",
+      "options": ["Because the director subject to removal has a statutory right to have representations circulated to members and to be heard at a meeting, which a purely written process cannot accommodate", "Because removing a director always requires a 75% special resolution majority", "Because s 168 removals are not resolutions of the members at all"],
+      "correctIndex": 0,
+      "trapExplanation": "Removal under s 168 is by ordinary resolution, not special resolution, so the majority-threshold explanation is wrong. The real reason is procedural: the director's right to be heard and to circulate representations requires a meeting, which the written resolution route by definition does not hold."
+    },
+    {
+      "itemId": "companylaw-12-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Nova Foods Ltd's articles vest general management of the business in its three directors. A group of shareholders, dissatisfied that the board has decided against expanding into a new market, passes an ordinary resolution instructing the directors to proceed with the expansion regardless. When the directors refuse, the shareholders ask whether they have any other lawful route to achieve the same outcome. Analyse the position.",
+      "factsToOrder": [
+        "The articles vest general management of the business in the directors",
+        "Shareholders pass an ordinary resolution instructing the directors to expand into a new market",
+        "The directors refuse to comply, believing expansion is not in the company's interests",
+        "The shareholders ask about other lawful routes to the same outcome"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the shareholders' ordinary resolution can validly instruct the directors on the expansion decision, and what alternative lawful route is available to them.",
+        "rule": "Automatic Self-Cleansing Filter Syndicate v Cuninghame holds that where the articles vest management powers in the directors, an ordinary resolution of the general meeting cannot override how those powers are exercised in a specific instance; the members' proper course is to alter the articles (typically by special resolution) or to remove the directors under s 168 by ordinary resolution.",
+        "application": "Because Nova Foods' articles vest general management in the directors, the shareholders' ordinary resolution instructing a specific expansion decision falls squarely within the Automatic Self-Cleansing principle and is not binding on the board. The shareholders' effective alternative is not to instruct the existing directors but to replace them: giving special notice of a resolution under s 168 to remove the directors opposed to expansion and appoint replacement directors who support it, or, more fundamentally, to alter the articles to reallocate this kind of decision to the general meeting for the future.",
+        "conclusion": "The instructing resolution is not binding on the directors. The shareholders' genuinely effective lawful route is to remove and replace the directors under s 168, or to amend the articles by special resolution, rather than to instruct the board directly."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is assuming shareholder ownership translates directly into a power to instruct the board on individual management decisions. Automatic Self-Cleansing draws a sharp line: an ordinary resolution cannot override powers the articles have vested in the directors, however unhappy the majority is with a particular decision. The lawful levers are altering the articles or removing the directors under s 168 — instructing the existing board directly is not one of them.",
+    "reviewMisses": true,
+    "linkToPathway": "companylaw.governance.meetings-resolutions"
+  }
+}

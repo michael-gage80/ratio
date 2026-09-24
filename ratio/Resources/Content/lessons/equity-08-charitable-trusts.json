@@ -1,0 +1,525 @@
+{
+  "lessonId": "equity-08",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 8,
+  "topicId": "equity.charities.charitable-trusts",
+  "title": "Charitable trusts",
+  "subtitle": "The statutory heads, public benefit, and cy-près",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Set out the statutory definition of charitable purpose under the Charities Act 2011 and identify the thirteen descriptions of purpose in s 3",
+    "State and apply the public benefit requirement, including the personal nexus test and its poverty-trust exception",
+    "Evaluate how the public benefit requirement has been tested against fee-paying independent schools",
+    "Explain why purely political purposes are not charitable, and apply the cy-près doctrine to a failed charitable gift"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Charities Act 2011, ss 1-4",
+      "role": "Statutory definition of charity, charitable purpose, and the public benefit requirement"
+    },
+    {
+      "citation": "Charities Act 2011, s 62",
+      "role": "Codifies the cy-près doctrine for applying failed charitable gifts to analogous purposes"
+    },
+    {
+      "citation": "IRC v Pemsel [1891] AC 531",
+      "role": "Source of the classical four heads of charity later expanded by statute"
+    },
+    {
+      "citation": "Oppenheim v Tobacco Securities Trust Co Ltd [1951] AC 297",
+      "role": "Establishes the personal nexus test: a class defined by relationship to an individual fails public benefit"
+    },
+    {
+      "citation": "Dingle v Turner [1972] AC 601",
+      "role": "Confirms a distinct, more relaxed public benefit standard for poverty trusts"
+    },
+    {
+      "citation": "R (Independent Schools Council) v Charity Commission [2011] UKUT 421 (TCC)",
+      "role": "Applies public benefit to fee-charging schools; rejects rigid Charity Commission guidance in favour of trustee judgement"
+    },
+    {
+      "citation": "McGovern v Attorney-General [1982] Ch 321",
+      "role": "Confirms that purposes aimed at changing the law, here or abroad, are not charitable"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson is built as a classification exercise first and a contested-doctrine exercise second. Where the profile shows the statutory heads are solid but the public benefit case law is shaky, this note appears: 'You can name the heads — the harder marks are in Oppenheim versus Dingle, and in knowing why the fee-paying schools case unsettled things.'",
+    "profileHooks": {
+      "weakApplication": "The test pool here is weighted towards fact patterns testing public benefit, not towards listing the statutory heads. Expect to be asked whether a given class of beneficiaries passes or fails, not to recite s 3.",
+      "weakKnowledge": "Work through Part 1 carefully before the rest of the lesson — everything downstream assumes you can place a purpose within the Charities Act 2011 heads without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two trusts, both for the education of children connected to a single large employer. One serves roughly 110,000 employees' children. The other serves a far smaller group. The larger one failed the public benefit test; the smaller one succeeded. The difference wasn't size — it was the single word that connected the beneficiaries to each other, and that word is the whole reason this lesson exists."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "From Pemsel's four heads to the statutory thirteen",
+        "voice": "statutory/classificatory — works through the legislation methodically before any case law",
+        "body": [
+          "Before 2006, charitable status was built almost entirely on case law radiating out from Lord Macnaghten's speech in IRC v Pemsel, which grouped charitable purposes into four heads: the relief of poverty, the advancement of education, the advancement of religion, and other purposes beneficial to the community. Everything charitable had to fit somewhere in that fourfold scheme.",
+          "The Charities Act 2006, now consolidated into the Charities Act 2011, restated and expanded this. Section 1 defines a charity as an institution established for charitable purposes only, which falls to be subject to the control of the High Court in the exercise of its jurisdiction over charities. Section 2 defines a charitable purpose as one falling within s 3(1) and satisfying the public benefit requirement in s 4.",
+          "Section 3(1) lists thirteen descriptions of purpose — Pemsel's four heads are still recognisable inside it (poverty, education, religion), but the list now also names, among others, the advancement of health, citizenship, the arts, amateur sport, human rights, environmental protection, and the relief of those in need by reason of age, ill-health, disability or other disadvantage. A final, catch-all description preserves purposes recognised as charitable under the old case law but not separately listed. The structure is worth internalising precisely: a purpose must land inside s 3(1), and it must independently satisfy public benefit under s 4 — the two requirements are cumulative, not alternatives."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Charities Act 2011, s 1(1)",
+            "text": "For the purposes of the law of England and Wales, 'charity' means an institution which is established for charitable purposes only, and falls to be subject to the control of the High Court in the exercise of its jurisdiction with respect to charities.",
+            "elements": [
+              "Established for charitable purposes only",
+              "Subject to the High Court's charities jurisdiction"
+            ]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Selected descriptions of purpose, s 3(1)",
+            "points": [
+              "(a) the prevention or relief of poverty",
+              "(b) the advancement of education",
+              "(c) the advancement of religion",
+              "(d) the advancement of health or the saving of lives",
+              "(e) the advancement of citizenship or community development",
+              "(f) the advancement of the arts, culture, heritage or science",
+              "(g) the advancement of amateur sport",
+              "(h) the advancement of human rights, conflict resolution or reconciliation",
+              "(i) the advancement of environmental protection or improvement",
+              "(j) the relief of those in need by reason of youth, age, ill-health, disability, financial hardship or other disadvantage",
+              "(m) any other purposes recognised as charitable under existing charity law or reasonably analogous to a listed purpose"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-08-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Under s 2 of the Charities Act 2011, what must be shown, cumulatively, for a purpose to be charitable?",
+          "options": [
+            "The purpose must fall within one of the s 3(1) descriptions AND satisfy the public benefit requirement in s 4",
+            "The purpose only needs to fall within one of the s 3(1) descriptions",
+            "The purpose only needs to satisfy public benefit, regardless of what kind of purpose it is"
+          ],
+          "correctIndex": 0,
+          "explanation": "The two limbs are cumulative under s 2(1). A purpose that fits neatly within s 3(1) but fails public benefit is not charitable, and a purpose that plainly benefits the public but does not fall within any s 3(1) description (or its analogous extensions) is not charitable either."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Public benefit and the personal nexus test",
+        "voice": "case-narrative — tells the Oppenheim facts before extracting the rule",
+        "body": [
+          "Fitting inside s 3(1) is only half the job. Every charitable purpose must also satisfy public benefit — and for most of the heads, that means benefiting the public, or a sufficiently important section of it, rather than a private class defined by personal connection.",
+          "Oppenheim v Tobacco Securities Trust Co Ltd supplies the leading test for what counts as a sufficient section of the public. A trust provided for the education of children of employees, or former employees, of the British American Tobacco Company and its subsidiaries — a genuinely enormous class, numbering well over 100,000 people. The House of Lords struck it down for want of public benefit.",
+          "The reasoning is the part worth memorising precisely: the class was defined by a personal relationship to a single individual employer — the fact of being that company's employee. Lord Simonds held that where the nexus connecting potential beneficiaries is their personal relationship to a particular individual (here, an employer), the group is a private class, however numerous, and not a section of the public. Numbers alone cannot cure a personal nexus; what matters is the quality of the connecting link, not its size."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Oppenheim v Tobacco Securities Trust Co Ltd",
+            "citation": "[1951] AC 297",
+            "court": "House of Lords",
+            "year": 1951,
+            "factsShort": "A trust for the education of children of employees of British American Tobacco Co and its subsidiaries — a class of over 100,000 people.",
+            "ratioShort": "A class defined by personal relationship to a single individual (here, a common employer) is a private class, not a section of the public, however numerous.",
+            "expanded": {
+              "facts": "Trust income was to be applied in providing for the education of children of employees or former employees of the British American Tobacco Company Ltd or any of its subsidiary or allied companies. At the time of the case the number of employees was estimated at over 110,000.",
+              "judgmentExtract": "Lord Simonds held that a group of persons defined by their relationship to a particular individual cannot, for this purpose, constitute a section of the public — the numbers involved are not decisive, because it is the nature of the qualifying relationship, not its scale, that determines whether the class is private or public in character.",
+              "significance": "Oppenheim is the leading authority for the 'personal nexus test': a class linked by a relationship to a person (typically an employer) fails public benefit regardless of how many people fall within it. It stands in deliberate tension with the poverty-trust cases considered next."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-08-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this trust that triggers the Oppenheim personal nexus problem.",
+          "scenarioText": "A trust is established to fund scholarships 'for the further education of the children of employees of Correll Manufacturing Ltd,' a company employing around 40,000 people nationally.",
+          "tappableSpans": [
+            "fund scholarships",
+            "further education",
+            "children of employees of Correll Manufacturing Ltd",
+            "40,000 people nationally"
+          ],
+          "correctSpan": "children of employees of Correll Manufacturing Ltd",
+          "feedbackCorrect": "That phrase is the personal nexus: the class is defined entirely by its relationship to one employer. Under Oppenheim, that fails public benefit regardless of how large the employer's workforce is.",
+          "feedbackIncorrect": "The problem isn't the size of the class (40,000) or the subject matter (education) — it's the qualifying relationship the class shares. Look for the phrase that ties every beneficiary to one single individual or company."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Dingle v Turner: poverty plays by different rules",
+        "voice": "Socratic — poses the apparent contradiction before resolving it",
+        "body": [
+          "If Oppenheim is right that a personal nexus always defeats public benefit, how does a trust 'for poor employees of X Ltd' ever survive? It should fail on identical reasoning — the class is defined by relationship to a single employer. And yet such trusts have been upheld for well over a century, both before and after Oppenheim.",
+          "Dingle v Turner confronted this directly. A trust provided pensions for poor employees of E Dingle & Co Ltd who were incapacitated by age or ill-health. The House of Lords upheld it, and in doing so confirmed that poverty trusts occupy a genuinely separate category: the personal nexus test from Oppenheim does not apply to trusts for the relief of poverty in the same strict way.",
+          "The historical justification is that trusts to relieve poverty among a defined group — poor relations, poor employees, the poor of a particular parish — were treated as charitable long before the modern public benefit doctrine hardened, and that anomalous line of authority survived rather than being swept away. Lord Cross in Dingle went further, suggesting the distinction between 'poverty' trusts and other trusts is best explained historically rather than by any principled difference in what public benefit ought to mean — an admission, from the bench, that this corner of the law is not fully coherent."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Dingle v Turner",
+            "citation": "[1972] AC 601",
+            "court": "House of Lords",
+            "year": 1972,
+            "factsShort": "A trust for pensions for poor employees of a named company, incapacitated by age or ill-health.",
+            "ratioShort": "Poverty trusts are exempt from the strict personal nexus test applied in Oppenheim — a class defined by relationship to an employer can still satisfy public benefit where the trust's object is the relief of poverty.",
+            "expanded": {
+              "facts": "The trust in question provided pensions to poor, elderly or incapacitated former employees of E Dingle & Co Ltd. The class, like the one in Oppenheim, was defined by a personal relationship to a single employer.",
+              "judgmentExtract": "The House of Lords held the trust valid, treating poverty trusts as a distinct, long-recognised category not governed by the Oppenheim personal nexus rule. Lord Cross observed that the distinction rested more on historical accident than on any coherent principle distinguishing poverty trusts from other trusts defined by personal relationship.",
+              "significance": "Dingle establishes that public benefit is not a single, uniform test across all charitable purposes — poverty trusts sit in a specially tolerated category, and examiners use the Oppenheim/Dingle pairing precisely to test whether students can spot which rule a given class of beneficiaries should be tested against."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-08-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which trust is more likely to satisfy public benefit, applying Oppenheim and Dingle correctly?",
+          "scenarioA": "A trust for the further education of the children of employees of Marchmont Airlines plc.",
+          "scenarioB": "A trust providing hardship grants to poor, elderly former employees of Marchmont Airlines plc.",
+          "correctScenario": "B",
+          "explanation": "B is a poverty trust and falls within the Dingle exception — the personal nexus (relationship to a single employer) does not defeat it. A is not a poverty trust; it is squarely an Oppenheim-style education trust defined by personal nexus, and fails public benefit regardless of the employer's size."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Fee-paying schools: public benefit under real pressure",
+        "voice": "argumentative — presents the tension directly and lets the tribunal's answer complicate it",
+        "body": [
+          "Advancement of education is one of the oldest recognised charitable heads, but it produces a genuinely uncomfortable modern question: can a school that charges substantial fees, effectively excluding families who cannot pay, still be providing a public benefit? The Charity Commission's 2008 guidance tried to answer this with fairly rigid requirements about the level of free or subsidised provision a fee-charging school needed to offer.",
+          "R (Independent Schools Council) v Charity Commission took that guidance to the Upper Tribunal. The tribunal accepted that fee-charging schools must provide more than a token benefit to those who cannot afford the fees — a purely nominal gesture, offered to satisfy the letter of the requirement, would not do. But it rejected the Commission's attempt to prescribe a fixed, quantified level of provision as a matter of law.",
+          "The tribunal's answer instead put the judgement back onto trustees: what counts as 'more than token' will vary from school to school, and it is for trustees, exercising their own honest judgement of the school's circumstances, to decide how to provide it — whether through bursaries, shared facilities, subsidised places, or other means — rather than following a Commission-imposed formula. The case doesn't answer, once and for all, whether any given school passes; it establishes that the test is qualitative and fact-sensitive, not a box-ticking exercise, and that the Commission cannot convert public benefit into a rigid checklist."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say the ISC case held that fee-charging schools are automatically charitable so long as they charge fees for a legitimate educational service.",
+            "whyItsWrong": "That gets the public benefit requirement backwards. The tribunal was clear that charging fees which exclude the poor is a real problem for public benefit unless the school does something more than token to benefit those who cannot pay. The case is significant precisely because it refused to let fee-charging schools treat 'we provide education' as automatically satisfying s 4 — it insisted on a genuine, non-trivial benefit reaching beyond fee-paying families, while leaving the exact mechanism to trustees' judgement rather than a rigid Commission formula."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-08-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "What did the Upper Tribunal decide in R (Independent Schools Council) v Charity Commission about the Commission's guidance on fee-charging schools?",
+          "options": [
+            "The guidance's substantive requirement of more-than-token benefit for the poor was broadly right, but its attempt to impose a fixed, quantified standard went too far — that judgement belongs to trustees",
+            "The guidance was entirely correct and schools must follow its specified quotas exactly",
+            "Public benefit does not apply to educational charities at all, so the guidance was irrelevant"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answers push to one extreme or the other — either endorsing the Commission's rigid formula wholesale, or wrongly assuming education charities are exempt from public benefit scrutiny. The tribunal's actual position is more nuanced: real, non-token benefit to the poor is required, but the method and level are for trustees to judge on their own school's facts, not for the Commission to fix in advance."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Political purposes, and what happens when a charitable gift can't be carried out",
+        "voice": "direct — states the rules, then works a mechanical example",
+        "body": [
+          "A purpose aimed principally at changing the law, or government policy, here or abroad, is not charitable — however admirable its underlying goal. McGovern v Attorney-General is the leading authority: Amnesty International's charitable trust sought, among other aims, the release of prisoners of conscience and the abolition of torture, but part of its objects included procuring changes in the law of foreign states. Slade J held that a trust with a main or substantial political purpose of that kind cannot be charitable, even where its other aims (relief of suffering, human rights) would independently qualify.",
+          "The reasoning is institutional, not moral: the court has no satisfactory means of judging whether a change in the law would itself be a benefit to the public, and it is not the judiciary's role to determine that political questions of this kind are automatically in the public interest. This is why campaigning charities today must take care that political activity remains ancillary to an independently charitable purpose, rather than a purpose in its own right.",
+          "Separately, charitable gifts sometimes fail on their own terms — the named institution has closed, or the specific purpose can no longer be carried out. Rather than the gift simply lapsing back into the donor's estate, s 62 of the Charities Act 2011 codifies the cy-près doctrine: where the original charitable purpose has failed but the donor showed a general charitable intention, the court or the Charity Commission can direct the property to be applied to purposes as close as possible ('cy-près,' from the French for 'so near') to the original purpose, rather than letting the gift fail altogether."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Applying cy-près under s 62",
+            "description": "The steps a court works through when a charitable gift's original purpose cannot be carried out.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "The stated charitable purpose has failed or cannot be carried out (e.g. named charity has ceased to exist)"
+              },
+              {
+                "id": "general",
+                "label": "Did the donor show a general charitable intention, rather than an intention limited to that one institution or purpose?"
+              },
+              {
+                "id": "yes-general",
+                "label": "Yes → property is applied cy-près, to purposes as close as possible to the original"
+              },
+              {
+                "id": "no-general",
+                "label": "No → the gift fails and results back to the donor or their estate"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "general"
+              },
+              {
+                "from": "general",
+                "to": "yes-general",
+                "label": "General charitable intention found"
+              },
+              {
+                "from": "general",
+                "to": "no-general",
+                "label": "No general charitable intention"
+              }
+            ],
+            "textAlternative": "When a stated charitable purpose has failed or become impossible to carry out, the first question is whether the donor showed a general charitable intention rather than an intention confined to that one institution or purpose. If yes, s 62 allows the property to be applied cy-près — to purposes as close as possible to the original. If no such general intention can be found, the gift instead fails and results back to the donor or their estate."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-08-check-05",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that would allow a court to apply this failed gift cy-près.",
+          "scenarioText": "A will leaves £100,000 'to the Riverside Dogs' Home, and if it no longer exists at my death, to be applied for the general welfare of homeless animals in the region.' The Riverside Dogs' Home had in fact closed down two years before the testator died.",
+          "tappableSpans": [
+            "£100,000",
+            "the Riverside Dogs' Home",
+            "to be applied for the general welfare of homeless animals in the region",
+            "closed down two years before the testator died"
+          ],
+          "correctSpan": "to be applied for the general welfare of homeless animals in the region",
+          "feedbackCorrect": "That clause is an express statement of general charitable intention — the testator was not fixated on that one institution but on the broader purpose. It is exactly the kind of language that lets a court apply the gift cy-près once the named home turns out not to exist.",
+          "feedbackIncorrect": "The closure of the home is why the gift needs rescuing, but it isn't what makes cy-près available — that requires evidence of general charitable intention, which here is the express fallback clause about animal welfare generally."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under s 2 of the Charities Act 2011, what two things must a purpose satisfy, cumulatively, to be a charitable purpose?",
+      "acceptableAnswers": [
+        "falls within s 3(1) and satisfies public benefit under s 4",
+        "one of the thirteen descriptions of purpose plus public benefit"
+      ],
+      "modelAnswer": "It must fall within one of the descriptions of purpose in s 3(1), and it must satisfy the public benefit requirement in s 4 — the two requirements are cumulative."
+    },
+    {
+      "itemId": "equity-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case is the classical source of the fourfold division of charitable purposes (poverty, education, religion, other purposes beneficial to the community)?",
+      "options": [
+        "IRC v Pemsel",
+        "Oppenheim v Tobacco Securities Trust Co Ltd"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-08-test-03",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which provision codifies the cy-près doctrine for applying a failed charitable gift to an analogous purpose?",
+      "options": [
+        "Charities Act 2011, s 62",
+        "Charities Act 2011, s 4",
+        "Charities Act 2011, s 1"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-08-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "According to Oppenheim v Tobacco Securities Trust, why did a trust for the education of over 100,000 employees' children fail public benefit?",
+      "options": [
+        "Because the class shared a personal relationship to a single employer, and a personal nexus defeats public benefit regardless of the class's size",
+        "Because 100,000 people is not a large enough number to count as a section of the public",
+        "Because education is not a recognised charitable purpose"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answer treats this as a numbers problem. Oppenheim explicitly rejects that: the class was enormous, and still failed, because the disqualifying feature is the quality of the connecting relationship (a shared employer), not the headcount."
+    },
+    {
+      "itemId": "equity-08-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage adapted from Oppenheim, highlight the sentence stating the personal nexus test.",
+      "passage": "The class of persons said to benefit numbered well over 100,000. Nevertheless, a group of persons defined by their relationship to a particular individual, such as a common employer, cannot constitute a section of the public for this purpose. The mere size of the class does not alter the private character of the connecting link.",
+      "ratioSentence": "Nevertheless, a group of persons defined by their relationship to a particular individual, such as a common employer, cannot constitute a section of the public for this purpose."
+    },
+    {
+      "itemId": "equity-08-test-06",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which of these two trusts is more likely to satisfy public benefit?",
+      "scenarioA": "A trust granting hardship payments to poor former employees of a named regional bus company.",
+      "scenarioB": "A trust funding annual sports equipment for the children of a named regional bus company's current employees.",
+      "correctScenario": "A",
+      "explanation": "A is a poverty trust and falls within the Dingle v Turner exception to the personal nexus rule. B is not a poverty trust — it is defined purely by employment relationship, so it falls squarely within the Oppenheim rule and fails public benefit."
+    },
+    {
+      "itemId": "equity-08-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A trust provides bursaries for the poor and elderly relatives of a named, still-living individual philanthropist. Is this likely to satisfy public benefit?",
+      "options": [
+        "Yes — it is a poverty trust, and Dingle v Turner exempts poverty trusts from the strict personal nexus test",
+        "No — 'poor relations' trusts were abolished by the Charities Act 2011",
+        "No — relatives can never form a section of the public under any circumstances"
+      ],
+      "correctIndex": 0,
+      "explanation": "Poor relations trusts are the original example of the anomalous poverty-trust category Dingle v Turner confirmed survives the Oppenheim personal nexus rule. The relationship (family, like employment) would defeat an ordinary trust, but not a poverty trust."
+    },
+    {
+      "itemId": "equity-08-test-08",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A wealthy independent school charges high fees and offers no bursaries, discounts, or shared facilities to anyone unable to pay. Under R (ISC) v Charity Commission, is it likely to satisfy public benefit?",
+      "options": [
+        "No — providing no more than a token or no benefit at all to those who cannot pay is inconsistent with the public benefit requirement",
+        "Yes — any school providing a genuine education automatically satisfies public benefit"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-08-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "What did the Upper Tribunal in R (ISC) v Charity Commission decide about how much benefit a fee-charging school must provide to those who cannot afford its fees?",
+      "options": [
+        "It must be more than token, but the precise level and method is a matter for trustees' honest judgement on the school's own facts, not a fixed Commission-imposed formula",
+        "Every school must offer free places to exactly 25% of pupils",
+        "No benefit at all is required so long as the school is genuinely educational"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The tribunal deliberately avoided prescribing a numerical formula, which is what the second option assumes. It also rejected the 'education is automatically enough' position in the third option. The actual holding sits between the two: a real, non-token benefit is required, with the specifics left to trustees."
+    },
+    {
+      "itemId": "equity-08-test-10",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court works through when applying cy-près under s 62.",
+      "items": [
+        "The originally stated charitable purpose fails or cannot be carried out",
+        "The court asks whether the donor showed a general charitable intention",
+        "If general charitable intention is found, the property is applied to a purpose as close as possible to the original",
+        "If no general charitable intention is found, the gift fails and results back to the donor or estate"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "equity-08-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that would most likely defeat a claim of general charitable intention here.",
+      "scenarioText": "A donor's will leaves £50,000 'to the Ashworth Street Youth Club, and to no other body or purpose whatsoever, this gift being intended solely for that specific club and nowhere else.' The Ashworth Street Youth Club had closed before the donor's death.",
+      "tappableSpans": [
+        "£50,000",
+        "to no other body or purpose whatsoever",
+        "closed before the donor's death",
+        "Ashworth Street Youth Club"
+      ],
+      "correctSpan": "to no other body or purpose whatsoever",
+      "explanation": "This is the opposite of a general charitable intention clause — it is an express statement confining the gift to one specific institution and excluding any substitute. Without a general charitable intention, s 62 cy-près is unavailable and the gift is likely to fail, resulting back to the estate."
+    },
+    {
+      "itemId": "equity-08-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A trust's stated purpose is 'to campaign for the reform of the law on prison sentencing in the United Kingdom,' with no other charitable object stated. Applying McGovern v Attorney-General, is this purpose charitable?",
+      "options": [
+        "No — a purpose whose main object is changing the law is not charitable, even where the underlying subject matter (criminal justice) is serious and legitimate",
+        "Yes — campaigning is always charitable if it concerns an important social issue",
+        "Yes, provided the campaign only targets UK law and not foreign law"
+      ],
+      "correctIndex": 0,
+      "explanation": "McGovern's principle applies to political purposes generally, whether directed at domestic or foreign law. A purpose whose principal object is law reform is not charitable in its own right — it would need to be genuinely ancillary to an independently charitable object to survive."
+    },
+    {
+      "itemId": "equity-08-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A trust deed establishes a fund 'for the relief of poverty among former employees of Castlebridge Textiles Ltd, and, as its principal further object, for lobbying Parliament to change employment protection legislation for former textile workers generally.' Analyse whether this trust is charitable.",
+      "factsToOrder": [
+        "The relief-of-poverty limb is confined to former employees of one named employer",
+        "Poverty trusts are exempt from the strict Oppenheim personal nexus rule (Dingle v Turner)",
+        "The second limb has, as its principal object, lobbying Parliament to change legislation",
+        "McGovern establishes that a purpose whose main object is changing the law is not charitable"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the trust, taken as a whole, is established for charitable purposes only, given it combines a poverty limb with a law-reform limb.",
+        "rule": "A charitable purpose must fall within s 3(1) and satisfy public benefit (s 2, Charities Act 2011). Poverty trusts are exempt from the Oppenheim personal nexus test even where the class is defined by relationship to a single employer (Dingle v Turner). A purpose whose principal object is changing the law is not charitable (McGovern v Attorney-General), and an institution must be established for charitable purposes only (s 1) to qualify as a charity.",
+        "application": "The relief-of-poverty limb, standing alone, would likely be valid: it is confined to former employees of one employer, but Dingle exempts poverty trusts from the personal nexus problem that would otherwise apply. The second limb, however, has as its principal object lobbying for legislative change — precisely the kind of political purpose McGovern excludes from charitable status. Because the trust deed makes this a principal object rather than an ancillary activity in support of an otherwise charitable purpose, it is not saved by being paired with the (valid) poverty limb.",
+        "conclusion": "The poverty limb alone would likely be charitable, but the trust deed's inclusion of law reform as a principal object taints the trust as a whole, since s 1 requires an institution to be established for charitable purposes only — the trust as drafted is unlikely to qualify as charitable in its entirety."
+      }
+    },
+    {
+      "itemId": "equity-08-test-14",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a fee-charging school offering no free or subsidised provision whatsoever to those unable to pay would satisfy public benefit today?",
+      "sliderLabels": [
+        "Definitely would not satisfy public benefit",
+        "Definitely would satisfy public benefit"
+      ],
+      "correctPosition": "Definitely would not satisfy public benefit",
+      "explanation": "R (ISC) v Charity Commission is clear that more-than-token benefit to those unable to pay is required. A school offering nothing at all to that group would be on the wrong side of that line, even though the tribunal left the precise level of provision to trustees' judgement rather than a fixed rule."
+    },
+    {
+      "itemId": "equity-08-test-15",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which s 3(1) description would most naturally capture a trust for amateur football clubs promoting participation in sport?",
+      "options": [
+        "The advancement of amateur sport",
+        "The advancement of citizenship or community development"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake across this lesson's test items is applying the Oppenheim personal nexus rule uniformly to every trust defined by a shared relationship. Check for poverty first — Dingle v Turner carves out a genuinely different standard, and missing that distinction is the single most exploitable trap in this area.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.charities.charitable-trusts"
+  }
+}

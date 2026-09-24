@@ -1,0 +1,348 @@
+{
+  "lessonId": "land-14",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 14,
+  "topicId": "land.estoppel.proprietary-estoppel",
+  "title": "Proprietary estoppel",
+  "subtitle": "Assurance, reliance and detriment — and a remedy the courts are still calibrating",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the three elements of proprietary estoppel — assurance, reliance and detriment — and explain the role unconscionability plays in tying them together",
+    "Distinguish a case where estoppel can assist from one where a party has knowingly taken a commercial risk that no binding contract exists (Cobbe)",
+    "Apply the current, contested approach to remedy calibration following Guest v Guest, including the live tension between expectation-based and detriment-based relief"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Thorner v Major [2009] UKHL 18", "role": "Confirms an assurance can be given by conduct or implication, not only express words, judged objectively by how a reasonable person in the claimant's position would understand it" },
+    { "citation": "Cobbe v Yeoman's Row Management Ltd [2008] UKHL 55", "role": "Estoppel will not rescue a commercially sophisticated party who knowingly proceeds without a binding contract, taking the risk that terms might change" },
+    { "citation": "Gillett v Holt [2001] Ch 210", "role": "Reliance and detriment are assessed globally, looking at the whole course of dealing rather than isolating each promise; detriment need not be quantifiable expenditure" },
+    { "citation": "Jennings v Rice [2002] EWCA Civ 159", "role": "Where expectation and detriment are markedly out of proportion, the remedy should be proportionate to the detriment rather than a slavish enforcement of the expectation" },
+    { "citation": "Guest v Guest [2022] UKSC 27", "role": "Supreme Court authority on remedy calibration — the majority treats the claimant's expectation as the starting point subject to adjustment; a dissenting judgment favours a detriment-based approach. A live, unsettled doctrinal split." },
+    { "citation": "Land Registration Act 2002, s 116", "role": "Confirms an equity by estoppel is capable, from the moment it arises, of binding successors in title as an interest affecting the land" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Proprietary estoppel is one of the few doctrines where the honest answer to 'what remedy will the claimant get' is genuinely 'it depends, and reasonable judges disagree'. Where the profile shows application is weaker than knowledge, this note appears: 'You can state the three elements — the harder skill is arguing, on specific facts, what a court should actually award.'",
+    "profileHooks": {
+      "weakApplication": "You know assurance, reliance and detriment cold. This lesson pushes further, into the genuinely unsettled question of remedy — expect facts that require you to argue a position, not just identify one.",
+      "weakKnowledge": "Slow down through Parts 1 and 2 before the remedy debate in Parts 4 and 5. You need assurance, reliance and detriment solid before the Jennings v Rice and Guest v Guest material will make sense."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two siblings are promised, over decades, that 'all this will be yours one day.' One believes it and reorganises a life around it — turns down other work, moves home, cares for an ailing parent. The promise is then broken. Contract law has nothing to say here; there was never a bargain, only a promise and a life built on it. Equity's answer is proprietary estoppel — and its most honest feature is that even the Supreme Court is still arguing about how generous that answer should be.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The framework for establishing an estoppel (assurance, reliance, detriment, unconscionability) is settled. The approach to calibrating the remedy is not: Guest v Guest [2022] UKSC 27 was decided by a divided Supreme Court, and the disagreement between the majority and the dissent remains a live feature of the law, not a historical footnote."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Assurance: how clear does a promise have to be?",
+        "voice": "equitable, exploratory — sits with the uncertainty rather than rushing past it",
+        "body": [
+          "Proprietary estoppel rests on an assurance — some indication from the landowner that the claimant has, or will have, an interest in the land. The difficulty is that real families rarely speak in the precise language of a will or a deed. Assurances are dropped into conversation, implied by conduct, repeated over years in slightly different words each time.",
+          "Thorner v Major is the clearest illustration. Peter worked, unpaid, on his cousin David's farm for decades. David never said in terms 'the farm will be yours' — but over the years he made oblique, indirect remarks (once handing Peter a bonus notice on two life insurance policies 'to prove that the farm would be his') that, taken together and in context, amounted to a sufficiently clear assurance. The House of Lords held the test is objective: would a reasonable person in the claimant's position, given everything they knew of the relationship, have understood an assurance was being given?",
+          "This matters because it rules out two extreme approaches. The court does not require a contract-like formula of words, but nor does it accept vague hope or a claimant's own wishful interpretation. Context — the closeness of the relationship, the pattern of conduct over time, what a reasonable person in that specific relationship would take from it — does the work."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Assurance",
+            "definition": "A representation, by words or conduct, that the claimant has or will acquire some interest in identified land — judged objectively, in context, by how a reasonable person in the claimant's position would understand it, not by strict contractual certainty."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-14-check-01",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "An uncle repeatedly tells his niece, over fifteen years of her working unpaid on his farm, 'you know this will all come to you' — never in identical words, always in the context of planning the farm's future together. How confident are you this is a sufficiently clear assurance under Thorner v Major?",
+          "sliderLabels": ["Too vague to count", "Clear enough, judged objectively in context"],
+          "correctPosition": "Clear enough, judged objectively in context",
+          "explanation": "Thorner confirms that indirect, repeated remarks understood in the context of an ongoing relationship can amount to a sufficiently clear assurance — the words needn't be identical each time, and there is no requirement of contractual precision."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Reliance and detriment: assessed in the round",
+        "voice": "equitable — insists on looking at a whole life, not isolated promises",
+        "body": [
+          "An assurance alone does nothing. The claimant must show they relied on it, and that the reliance caused them detriment — some change of position that makes it unfair for the assurance to be gone back on. Detriment is often assumed to mean money spent, but the case law is far broader than that.",
+          "Gillett v Holt involved a farm manager who worked for a family friend for nearly forty years on repeated assurances he would inherit the farm, turning down other opportunities and building his whole working life around the promise. The assurances were withdrawn late in life. The Court of Appeal held detriment doesn't need to be quantifiable financial outlay — a lost career, a life reorganised around an expectation that never materialises, can be enough, provided it is substantial.",
+          "Gillett also makes a structural point worth holding onto: courts don't dissect a decades-long relationship into individual promises and individual acts of reliance, testing each pairing separately. Assurance, reliance and detriment are assessed globally, looking at the whole course of dealing — because that is how real relationships of this kind actually work."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Gillett v Holt",
+            "citation": "[2001] Ch 210",
+            "court": "Court of Appeal",
+            "year": 2001,
+            "factsShort": "A farm manager worked for a family friend for nearly forty years, repeatedly assured he would inherit the farm; the assurances were later withdrawn.",
+            "ratioShort": "Detriment need not be financial expenditure that can be neatly quantified, and the whole course of dealing is assessed together rather than promise-by-promise.",
+            "expanded": {
+              "facts": "Geoffrey Gillett worked for Kenneth Holt from the age of 16, eventually managing Holt's farming business. Over nearly forty years Holt repeatedly assured Gillett that he would inherit the farm. Gillett turned down other career and business opportunities, worked long hours for modest pay, and built his life around the expectation. Late in Holt's life, following a falling-out, Holt changed his will to exclude Gillett entirely.",
+              "judgmentExtract": "The Court of Appeal held that detriment for proprietary estoppel purposes is not confined to expenditure of money and is to be judged as at the date the assurance is sought to be repudiated, looking at the cumulative effect of the whole relationship rather than isolating individual promises against individual acts.",
+              "significance": "Gillett confirms detriment is a flexible, holistic concept — lost career opportunities, a life reorganised around an expectation, count. It also confirms once detriment of this scale is established and the assurance is repudiated, equity will act — the claim succeeded and Gillett was awarded the farmhouse and a substantial sum."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-14-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below adapted from Gillett v Holt, highlight the sentence stating the ratio on detriment.",
+          "passage": "Counsel for the appellant argued that detriment must be capable of precise financial quantification, akin to expenditure recoverable in a claim for money had and received. The court rejected that submission. Detriment for the purposes of proprietary estoppel need not consist of the expenditure of money, and is to be assessed by looking at the cumulative effect of the whole course of dealing between the parties, not by isolating each promise and testing it against a single corresponding act.",
+          "ratioSentence": "Detriment for the purposes of proprietary estoppel need not consist of the expenditure of money, and is to be assessed by looking at the cumulative effect of the whole course of dealing between the parties, not by isolating each promise and testing it against a single corresponding act."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "When estoppel fails: Cobbe and the sophisticated risk-taker",
+        "voice": "cautionary, equitable — shows the doctrine's limit rather than its reach",
+        "body": [
+          "Estoppel is generous, but it is not a backstop for every failed negotiation. Cobbe v Yeoman's Row is the leading case on its limits. Mr Cobbe, an experienced property developer, reached an oral 'agreement in principle' with a landowner to develop a site, on the understanding that formal contracts would follow once he obtained planning permission at his own expense. He did the work, got the permission — and the landowner then tried to renegotiate the price, knowing Cobbe had no written contract to hold them to.",
+          "The House of Lords held Cobbe's claim in proprietary estoppel failed. He knew, as a sophisticated commercial party, that no binding contract existed and that the other side remained free to walk away or renegotiate terms until formal contracts were exchanged. He was taking a calculated commercial risk, not relying on a settled assurance of a specific proprietary interest — what he was really seeking was a discretionary reward for expenditure incurred while a hoped-for contract failed to materialise, not enforcement of a promise about identified land.",
+          "The lesson isn't that commercial estoppel claims always fail — they don't. It's that where a party knows a deal remains subject to contract and knowingly takes the risk that the other side might resile, that knowledge undermines the claim that any assurance was ever given, or that reliance on one was reasonable."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Cobbe failed because he spent money before planning permission was granted, so his detriment came 'too early'.",
+            "whyItsWrong": "The timing of expenditure wasn't the problem. Cobbe failed because, as an experienced developer, he knew no binding contract existed and knowingly took the risk of proceeding without one — meaning there was no sufficiently certain assurance about an identified proprietary interest to found an estoppel at all, not merely premature reliance on one."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-14-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A property company spends heavily preparing a site for development after an oral 'agreement in principle' with a landowner, both parties knowing formal contracts remain to be negotiated and exchanged. The landowner later pulls out. Applying Cobbe, is a proprietary estoppel claim likely to succeed?",
+          "options": ["Unlikely — a sophisticated party who knowingly proceeds without a binding contract, accepting the risk terms might not be finalised, has not relied on a sufficiently certain assurance", "Likely — any expenditure incurred in anticipation of a deal automatically grounds an estoppel", "Likely — oral agreements in principle are always treated as binding assurances in commercial contexts"],
+          "correctIndex": 0,
+          "explanation": "This mirrors Cobbe closely: sophisticated commercial parties who knowingly leave a deal subject to contract are taken to have accepted the risk it may fall through, which is fatal to a claim that a sufficiently certain assurance was given and reasonably relied upon."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Satisfying the equity: proportionality since Jennings v Rice",
+        "voice": "equitable, discretionary — honest that this is a judgment call, not a formula",
+        "body": [
+          "Once assurance, reliance and detriment are all made out, the court must decide how to 'satisfy the equity' — what remedy actually corrects the unconscionability. For a long time the assumption was that the claimant simply gets what they were promised. Jennings v Rice complicated that.",
+          "Mrs Jennings employed Mr Jennings (no relation) as a part-time gardener and, later, effectively an unpaid carer, on vague and repeated assurances that he would 'be alright' and that the house would be his. He never received the full expectation — the will left him nothing. His detriment, though real and substantial (years of underpaid, then unpaid, care), was modest compared to the value of the whole estate he believed he'd been promised.",
+          "The Court of Appeal held that where expectation and detriment are markedly out of proportion, the remedy should be the minimum equity to do justice — proportionate to the detriment suffered, not a mechanical delivery of the full expectation. Mr Jennings was awarded a sum reflecting the value of the care he'd provided, not the house itself. Jennings v Rice is the source of the now-standard idea that proportionality, not literal promise-enforcement, governs remedy — but 'proportionate to what, exactly' is precisely the question Guest v Guest returns to."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Jennings v Rice: shaping the remedy",
+            "points": [
+              "The starting search is for the 'minimum equity to do justice' between the parties",
+              "Where expectation and detriment are proportionate to each other, enforcing the expectation is usually appropriate",
+              "Where they are markedly disproportionate, the remedy should reflect the detriment rather than the full expectation",
+              "The remedy is a matter of judicial discretion exercised on the whole of the facts, not a fixed formula"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-14-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the Jennings v Rice reasoning steps in the order a court applies them.",
+          "items": ["Establish assurance, reliance and detriment are all made out", "Identify the value of the claimant's expectation and the value of their detriment", "Compare whether expectation and detriment are broadly proportionate or markedly disproportionate", "Award the remedy that is the minimum equity to do justice on the facts"],
+          "correctOrder": [0, 1, 2, 3],
+          "explanation": "Jennings v Rice doesn't change what establishes the estoppel — it governs the separate, later question of how generously to satisfy it once established, by comparing expectation and detriment before fixing the remedy."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Guest v Guest: expectation versus detriment — a genuinely live split",
+        "voice": "equitable, candid about disagreement at the highest level",
+        "body": [
+          "Guest v Guest took the remedy question to the Supreme Court, and it did not produce a unanimous, tidy rule. David Guest worked on his parents' farm for decades for low wages, on repeated assurances he would inherit a substantial share. After a family rift, his parents cut him out entirely. The trial judge awarded him a sum reflecting close to his full expectation; the case reached the Supreme Court on the question of how that award should be calculated and structured.",
+          "The majority, led by Lord Briggs, held that the claimant's expectation is the natural starting point for satisfying the equity — because it is the expectation, not the bare detriment, that the claimant's whole conduct was organised around, and it is the assurance-giver's resiling from that expectation that created the unconscionability in the first place. The court can and should adjust the award downward where a full expectation-based remedy would be disproportionate, uncertain, or would force an unwanted result (such as splitting a farm the parents needed to keep running) — but expectation remains the anchor.",
+          "Lord Leggatt, dissenting, argued the remedy should instead be calibrated by reference to the detriment suffered, not the expectation induced — the function of the doctrine, on this view, is to prevent unconscionable exploitation of the claimant's reliance, which is properly measured by what the claimant gave up or invested, not by holding the defendant to a promise as if it were a binding contract that was never intended to be legally enforceable in the first place.",
+          "This split matters practically, not just theoretically: an expectation-based starting point and a detriment-based starting point can produce very different awards on the same facts, particularly where — as in the Guest family's case — the promised asset (a working farm) is hard to divide without destroying its value. Treat this as an open, contested area of the law: the majority approach currently governs, but the reasoning behind the alternative is not a fringe view, and exam and practice questions in this area increasingly expect you to engage with both."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often write that Guest v Guest 'settled' the remedy question with a clear formula for calculating awards in proprietary estoppel cases.",
+            "whyItsWrong": "It settled which approach currently governs — expectation as the starting point, subject to downward adjustment — but it did so by a divided court, with a substantial dissent favouring a different, detriment-based methodology. Presenting this as settled doctrine, rather than a majority position with a live minority view, understates how contested remedy calibration still is."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-14-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Which statement best captures the current state of the law after Guest v Guest?",
+          "options": ["The Supreme Court majority treats the claimant's expectation as the starting point for the remedy, subject to downward adjustment; a dissenting judgment favours a detriment-based approach instead — the two methodologies remain a live doctrinal tension", "Guest v Guest unanimously confirmed that only the claimant's detriment, never their expectation, can ever be awarded", "Guest v Guest abolished proprietary estoppel as a cause of action in family farming disputes"],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answers overstate certainty in one direction or the other. The accurate position is a majority starting point (expectation, adjustable) alongside a serious, reasoned dissent (detriment-based) — not a unanimous rule, and certainly not the doctrine's abolition."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-14-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the three core elements a claimant must establish for a proprietary estoppel.",
+      "acceptableAnswers": ["assurance, reliance, detriment", "assurance reliance and detriment"],
+      "modelAnswer": "Assurance, reliance and detriment — with the overarching requirement that it would be unconscionable for the assurance-giver to resile from the assurance."
+    },
+    {
+      "itemId": "land-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under Thorner v Major, must an assurance be given in express, unambiguous words?",
+      "options": ["No — an assurance can be given by conduct or implication and is judged objectively in context", "Yes — only an explicit, verbatim promise can ever found an estoppel"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-14-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Why did Mr Cobbe's proprietary estoppel claim fail in Cobbe v Yeoman's Row?",
+      "options": ["As an experienced developer, he knowingly proceeded without a binding contract and accepted the risk the landowner might resile, undermining any claim to a sufficiently certain assurance", "He had not spent any money on the site before the landowner withdrew", "Commercial parties can never bring proprietary estoppel claims"],
+      "correctIndex": 0,
+      "trapExplanation": "Cobbe had in fact spent substantial sums; that wasn't the problem. The claim failed because his own knowledge that no binding deal existed meant there was no sufficiently certain assurance reasonably relied upon."
+    },
+    {
+      "itemId": "land-14-test-04",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence stating the ratio on proportionality.",
+      "passage": "The court accepted that the claimant had established assurance, reliance and detriment. However, the value of the detriment suffered was modest when set against the scale of the expectation the claimant had been encouraged to hold. Where expectation and detriment are markedly out of proportion, the court should not slavishly enforce the expectation, but should award the minimum equity necessary to do justice, proportionate to the detriment suffered.",
+      "ratioSentence": "Where expectation and detriment are markedly out of proportion, the court should not slavishly enforce the expectation, but should award the minimum equity necessary to do justice, proportionate to the detriment suffered."
+    },
+    {
+      "itemId": "land-14-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A niece is assured, over ten years of unpaid weekend labour on her uncle's smallholding, that 'the cottage will be yours'. Her actual detriment (lost weekend earnings, some travel costs) is modest compared to the cottage's substantial value. Applying Jennings v Rice, what is the likely approach to remedy?",
+      "options": ["A remedy proportionate to her detriment, rather than automatic transfer of the cottage itself", "Automatic transfer of the cottage regardless of the scale of her detriment", "No remedy at all, since detriment and expectation are disproportionate"],
+      "correctIndex": 0,
+      "explanation": "Jennings v Rice directs the court to the minimum equity to do justice where expectation and detriment are markedly disproportionate — not full expectation, and not nothing, but a proportionate remedy reflecting the detriment actually suffered."
+    },
+    {
+      "itemId": "land-14-test-06",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact most likely to defeat a proprietary estoppel claim on Cobbe grounds.",
+      "scenarioText": "An experienced hotel developer reaches an oral understanding with a landowner to buy and redevelop a site, both parties knowing that formal contracts are yet to be drawn up and exchanged, and that either side remains free to walk away until then. The developer spends heavily on plans before the landowner withdraws.",
+      "tappableSpans": ["experienced hotel developer", "oral understanding", "both parties knowing that formal contracts are yet to be drawn up", "spends heavily on plans before the landowner withdraws"],
+      "correctSpan": "both parties knowing that formal contracts are yet to be drawn up",
+      "feedbackCorrect": "That shared knowledge that a binding deal was still to come is exactly what defeated Cobbe's claim — it undermines the certainty of any assurance and shows the developer knowingly accepted the risk.",
+      "feedbackIncorrect": "Being an experienced developer or spending money isn't fatal on its own — plenty of successful estoppel claimants are sophisticated and spend heavily. Look for the fact showing both sides knew no binding contract yet existed."
+    },
+    {
+      "itemId": "land-14-test-07",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "In Gillett v Holt, must detriment consist of quantifiable financial expenditure?",
+      "options": ["No — lost career opportunities and a life reorganised around the assurance can amount to detriment", "Yes — only money spent can ever count as detriment"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-14-test-08",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the analytical steps a court takes in a proprietary estoppel claim, from establishing the estoppel to fixing the remedy.",
+      "items": ["Identify a sufficiently clear assurance", "Establish the claimant relied on it", "Establish the claimant suffered detriment as a result", "Decide how to satisfy the equity, applying Jennings v Rice proportionality and, post-2022, the Guest v Guest approach to expectation and detriment"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "land-14-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which claimant is more likely to succeed in a proprietary estoppel claim?",
+      "scenarioA": "A daughter who moved back to the family home, gave up her job, and cared for her elderly parent for a decade on repeated assurances the house would be hers, after which the parent tried to sell the house to a third party.",
+      "scenarioB": "A prospective buyer who made an offer 'subject to contract' on an ordinary residential sale, started making plans for renovations, and lost the deal when the seller accepted a higher offer before exchange.",
+      "correctScenario": "A",
+      "explanation": "A shows a clear assurance, substantial reliance and detriment in a relationship of trust — the Gillett/Thorner pattern. B is an ordinary 'subject to contract' residential sale where both sides know no binding deal exists until exchange — squarely the Cobbe problem, even outside a commercial context."
+    },
+    {
+      "itemId": "land-14-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.6,
+      "prompt": "What did the majority in Guest v Guest hold about the starting point for calibrating the remedy?",
+      "options": ["The claimant's expectation is the natural starting point, subject to downward adjustment where a full award would be disproportionate or impractical", "The claimant's expectation is irrelevant and only detriment can ever be awarded", "The remedy must always be the literal promise, with no discretion to adjust it"],
+      "correctIndex": 0,
+      "trapExplanation": "The majority did not adopt a rigid detriment-only approach (that was the dissent), nor did it remove all discretion to adjust the award — it anchored the remedy in expectation while allowing for calibrated reduction."
+    },
+    {
+      "itemId": "land-14-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A dissenting Supreme Court justice in Guest v Guest argued for calibrating the remedy by reference to what, rather than the claimant's expectation?",
+      "options": ["The claimant's detriment", "The defendant's total wealth", "The market value of the whole estate regardless of what was promised"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-14-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 3,
+      "prompt": "Aisha worked unpaid in her aunt's guesthouse business for fifteen years after repeated assurances she would inherit it. Her aunt has now died, leaving the guesthouse to a charity instead. Aisha's actual financial detriment (lost wages elsewhere) is significant but well below the guesthouse's current market value. Analyse her proprietary estoppel claim, including the remedy.",
+      "factsToOrder": [
+        "Repeated assurances over fifteen years that the guesthouse would be Aisha's",
+        "Aisha worked unpaid in reliance on those assurances",
+        "Aisha's quantifiable detriment is significant but below the guesthouse's market value",
+        "The aunt's will leaves the guesthouse to a charity instead"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC shown, mapping each fact to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule given; student identifies the Issue, drags facts into Application, writes the Conclusion" },
+        { "level": 3, "support": "No scaffold; student writes the full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Aisha has established a proprietary estoppel, and if so, what remedy should satisfy the equity given the gap between her detriment and the value of the guesthouse.",
+        "rule": "A proprietary estoppel requires a sufficiently clear assurance (Thorner), reliance, and detriment assessed globally (Gillett). Where expectation and detriment are disproportionate, the remedy should reflect the minimum equity to do justice (Jennings v Rice); following Guest v Guest, the majority approach treats expectation as the starting point, subject to downward adjustment, while the dissent would calibrate strictly to detriment.",
+        "application": "The repeated assurances over fifteen years satisfy the assurance requirement, and Aisha's unpaid work is clear reliance causing substantial detriment, assessed holistically rather than promise-by-promise. Because her financial detriment, while real, is below the guesthouse's value, a court applying Jennings v Rice and the Guest majority would likely start from her expectation but consider adjusting the award downward to something proportionate rather than transferring the guesthouse outright; a court persuaded by the Guest dissent would instead measure the award more directly against her lost earnings and opportunities.",
+        "conclusion": "Aisha is very likely to establish the estoppel; the size of the award is genuinely contestable, illustrating the live tension the Guest v Guest split leaves unresolved."
+      }
+    },
+    {
+      "itemId": "land-14-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under LRA 2002, s 116, when does an equity by estoppel become capable of binding a successor in title?",
+      "options": ["From the moment the equity arises, not only once a court has awarded a remedy", "Only once a court order confirms the estoppel", "Never — an equity by estoppel cannot bind successors in title"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-14-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A landowner assures a long-term tenant farmer, in clear and repeated terms over many years, that he will inherit the farm; the farmer reorganises his whole working life around this. The farm's value has since risen sharply, and awarding the full expectation would force a sale that leaves no viable farm for anyone. Applying the Guest v Guest majority approach, what is the likely outcome?",
+      "options": ["The court starts from the farmer's expectation but may adjust the award downward — for example to a cash sum rather than the farm itself — to avoid a disproportionate or impractical result", "The farmer automatically receives the farm exactly as promised, with no room for adjustment", "The farmer receives nothing, because expectation-based remedies were rejected in Guest v Guest"],
+      "correctIndex": 0,
+      "explanation": "This mirrors the actual Guest v Guest facts: the majority starts from expectation but retains discretion to shape the award — including substituting a cash sum for a literal transfer — where full expectation-based relief would be impractical or disproportionate."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's items is treating Guest v Guest as having settled remedy calibration with a fixed formula. It settled which approach currently leads — expectation, subject to adjustment — but a substantial dissent favouring detriment-based relief means this remains a genuinely contested area, not a closed one.",
+    "reviewMisses": true,
+    "linkToPathway": "land.estoppel.proprietary-estoppel"
+  }
+}

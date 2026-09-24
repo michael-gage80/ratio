@@ -1,0 +1,517 @@
+{
+  "lessonId": "equity-07",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 7,
+  "topicId": "equity.purpose-trusts.purpose-trusts-quistclose",
+  "title": "Purpose trusts and Quistclose",
+  "subtitle": "The beneficiary principle, its exceptions, and equity's most inventive workaround",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the beneficiary principle and explain why English trusts law generally refuses to enforce a trust for a purpose rather than a person",
+    "Identify the narrow anomalous exceptions to the principle and explain why they are tolerated but not extended",
+    "Explain how Re Denley's Trust Deed and gifts to unincorporated associations sidestep the beneficiary principle without abolishing it",
+    "Analyse a Quistclose arrangement, identify the primary and secondary trusts, and explain why the structure protects a lender on the borrower's insolvency"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Re Endacott [1960] Ch 232",
+      "role": "Confirms the beneficiary principle and confines the anomalous exceptions to their existing categories"
+    },
+    {
+      "citation": "Re Denley's Trust Deed [1969] 1 Ch 373",
+      "role": "Upholds a purpose trust where an ascertainable class has standing to enforce it"
+    },
+    {
+      "citation": "Re Recher's WT [1972] Ch 526",
+      "role": "Settles the modern contract-holding analysis of gifts to unincorporated associations"
+    },
+    {
+      "citation": "Barclays Bank Ltd v Quistclose Investments Ltd [1970] AC 567",
+      "role": "Establishes that a loan for a specific purpose can carry a resulting trust protecting the lender if the purpose fails"
+    },
+    {
+      "citation": "Twinsectra Ltd v Yardley [2002] UKHL 12",
+      "role": "Reanalyses the Quistclose trust as a resulting trust for the lender, with the borrower's use of the money confined by the purpose"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the part of the trusts syllabus that rewards precision over instinct. Where the profile shows strong recall but shakier application, this note appears: 'You know the beneficiary principle by name — the marks here are in spotting which workaround, if any, actually saves a given trust.'",
+    "profileHooks": {
+      "weakApplication": "You've handled the definitions here before. The test pool leans hard on fact patterns — expect to be asked which fix (Denley, contract-holding, or Quistclose) applies to a given arrangement, not to recite any of them.",
+      "weakKnowledge": "Slow down through Parts 1 to 3 before you get to Quistclose. The whole point of Quistclose only lands once you're solid on why the beneficiary principle exists and why purpose trusts normally fail."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A settlor leaves money 'for the maintenance of my dog' and, separately, £2 million 'for a good cause I won't name.' One of these trusts might work. The other almost certainly fails — not because a dog is a worthier object than an anonymous good cause, but because English equity has a structural objection to trusts with no person able to march into court and enforce them. This lesson is about that objection, the narrow cracks equity has tolerated in it, and one arrangement — Quistclose — so cleverly built around it that judges are still arguing, forty years later, about what kind of trust it actually is."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The beneficiary principle: no person, no trust",
+        "voice": "structural — states the rule as a rule, then shows how strictly it is policed",
+        "body": [
+          "A trust needs someone who can enforce it. That is the whole of the beneficiary principle, and it is more consequential than it sounds: it means a trust simply 'for a purpose' — however worthy, however precisely defined — generally fails, because there is no beneficiary standing behind it who could go to court and make the trustee account.",
+          "This isn't squeamishness about generosity. Charitable purposes are the one large-scale exception, because the Attorney-General enforces them on the public's behalf — a substitute beneficiary, in effect. Strip away charity, and equity is left refusing to recognise 'trusts of imperfect obligation': arrangements that look like trusts, bind property like trusts, but have no one who can hold the trustee to account if the money is spent on something else entirely.",
+          "Re Endacott is the case that draws the line hardest. A testator left his residuary estate 'for the purpose of providing some useful memorial to myself.' The Court of Appeal struck it down. A small set of older cases — trusts for the upkeep of specific graves or monuments, trusts for the care of particular animals — had already been allowed to stand as tolerated anomalies. Endacott refused to add to that list, and made clear that these survivors are exactly that: survivors, not a general principle available for the next ingenious testator."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Beneficiary principle",
+            "definition": "A trust must have an ascertainable person or persons capable of enforcing it. A trust for a pure abstract purpose, with no one able to compel performance, is void for want of a beneficiary — subject to the recognised charitable and anomalous exceptions."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "The tolerated anomalies (not to be extended — Re Endacott)",
+            "points": [
+              "Trusts for the erection or maintenance of specific graves or monuments",
+              "Trusts for the care of particular, named animals",
+              "A small residue of other 'trusts of imperfect obligation' fixed by older authority",
+              "Every one of these is enforced, if at all, only by the trustee's own conscience or a long-stop rule against perpetual duration — there is no beneficiary who can sue"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A testator leaves £50,000 'for the general improvement of my home town' with no charity or body named to receive it. On the beneficiary principle alone, is this trust likely to be valid?",
+          "options": [
+            "No — there is no ascertainable person who could enforce it",
+            "Yes — a sufficiently worthy purpose is enough on its own"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Worthiness of purpose has never been the test — enforceability by a person is. Without a beneficiary or a charitable status, this fails exactly as Re Endacott's memorial did.",
+          "feedbackIncorrect": "Worthiness isn't the test. Ask who could go to court to make the trustee spend the money as directed — if the answer is 'no one,' the beneficiary principle strikes the trust down regardless of how good the cause sounds."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Denley's gloss: a purpose trust that is really a people trust",
+        "voice": "case-narrative — tells the facts before naming the doctrine",
+        "body": [
+          "Land was conveyed to trustees to be maintained as a sports ground, 'primarily' for the benefit of the employees of a particular company, with the public allowed secondary use. On its face this reads exactly like Endacott: money tied to a purpose, not a person. But Goff J upheld it.",
+          "The reasoning matters more than the result. Goff J held that where a purpose trust directly and indirectly benefits ascertainable individuals — here, the employees, who could identify themselves and use the ground — those individuals have sufficient standing to enforce the trust, even though the trust is framed as being for a purpose rather than framed as being for them by name.",
+          "Denley doesn't abolish the beneficiary principle; it reveals that some 'purpose' trusts were never truly people-less at all. If you can point to a defined class of people with a real, practical interest in the purpose being carried out — people who could sensibly ask a court to enforce it — the trust survives on ordinary principle, dressed in purpose language. The skill this doctrine demands is spotting when a 'purpose' clause is secretly a people clause."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re Denley's Trust Deed",
+            "citation": "[1969] 1 Ch 373",
+            "court": "Chancery Division",
+            "year": 1969,
+            "factsShort": "Land held on trust to be used as a sports ground, primarily for a company's employees.",
+            "ratioShort": "A purpose trust is valid if it directly benefits ascertainable individuals who have standing to enforce it, even though it is framed as a trust for a purpose.",
+            "expanded": {
+              "facts": "A company transferred land to trustees on trust to maintain it as a recreation or sports ground, primarily for the benefit of its employees, with other persons permitted to use it at the trustees' discretion. The arrangement was challenged as an invalid non-charitable purpose trust.",
+              "judgmentExtract": "Goff J held that a trust which, although expressed as a purpose, is directly or indirectly for the benefit of an individual or individuals, is outside the mischief of the beneficiary principle, provided those individuals are ascertainable and have sufficient standing to apply to the court to enforce the trust.",
+              "significance": "Denley created a durable route around Endacott for a specific category of case: purposes that exist to benefit a defined, ascertainable group. It is not a general licence for purpose trusts — the class of beneficiaries must still be identifiable and must still have a real interest capable of being enforced."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-07-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that lets this trust survive on Denley reasoning.",
+          "scenarioText": "A settlor transfers a plot of land to trustees to be kept as a garden for quiet reflection, for the benefit of the residents of a particular named care home, who may use it whenever they wish.",
+          "tappableSpans": [
+            "transfers a plot of land",
+            "kept as a garden for quiet reflection",
+            "benefit of the residents of a particular named care home",
+            "use it whenever they wish"
+          ],
+          "correctSpan": "benefit of the residents of a particular named care home",
+          "feedbackCorrect": "That's the Denley move. The purpose is dressed as abstract ('a garden for quiet reflection'), but it directly benefits an ascertainable class — the named home's residents — who have standing to enforce it.",
+          "feedbackIncorrect": "Look for the ascertainable class of people, not the description of the purpose itself. Denley turns on who benefits and could enforce, not on how pleasant the stated purpose sounds."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Unincorporated associations: solving the problem by not having a trust at all",
+        "voice": "structural — a reference-style part working through the modern analysis step by step",
+        "body": [
+          "An unincorporated association — a members' club, a campaign group, a local society — has no legal personality. It cannot own property or hold rights as 'itself.' So when someone leaves it a legacy, or a member pays a subscription, what happens to that money in trusts terms? Early cases tried to force the gift into a purpose-trust analysis, and ran straight into the beneficiary principle: a trust 'for the purposes of the association' looked exactly like Endacott's memorial.",
+          "Re Recher's Will Trust supplied the fix equity now uses, and the fix is elegant precisely because it avoids the beneficiary principle rather than trying to satisfy it. A gift to an unincorporated association, Brightman J held, is ordinarily to be construed not as a trust for a purpose at all, but as an accretion to the association's funds, held by its members on the contractual terms of the club rules — the members' mutual contract governs what happens to the money, and no purpose trust needs to be found valid because none is being created.",
+          "This matters because it changes the entire question an examiner is testing. Once you see that the 'contract-holding' analysis is the default, the live issue in an unincorporated-association problem question is almost never 'is this a valid purpose trust' — it's whether the gift can sensibly be read as an accretion to the current members' funds under the rules, and what happens to any surplus if the association later winds up."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re Recher's Will Trusts",
+            "citation": "[1972] Ch 526",
+            "court": "Chancery Division",
+            "year": 1972,
+            "factsShort": "A testatrix left a share of her estate to an anti-vivisection society that had, by the time of her death, merged with another body.",
+            "ratioShort": "A gift to an unincorporated association is prima facie construed as an accretion to its funds, held by the members under the contract formed by the club's rules — not as a purpose trust.",
+            "expanded": {
+              "facts": "The testatrix's gift was to a society which no longer existed in its original form by the date of her death, having amalgamated with another organisation. The immediate point of decision was that the gift lapsed because the named society had ceased to exist — but Brightman J's reasoning on how such gifts work generally became the leading modern statement.",
+              "judgmentExtract": "Brightman J explained that where a gift to an unincorporated non-charitable association can be construed as a gift to the members beneficially, as an accretion to the association's funds and subject to the contract they have made inter se by the rules of the association, it is a valid gift and does not depend on the validity of a purpose trust.",
+              "significance": "Recher is the standard route by which gifts to clubs, societies and campaign bodies are upheld without ever engaging the beneficiary principle. It reframes the problem as one of contract law between members, not trusts law about purposes."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-07-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Why does the Re Recher analysis avoid the beneficiary principle altogether, rather than satisfying it?",
+          "options": [
+            "Because it finds a large enough class of ascertainable beneficiaries to satisfy Denley",
+            "Because it treats the gift as never creating a trust for a purpose in the first place — it is an accretion to funds held under the members' contract",
+            "Because unincorporated associations are automatically treated as charities"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answer imports Denley's logic — finding beneficiaries to satisfy the principle. Recher does something different and, in a sense, more radical: it denies a purpose trust is being created at all, so there is no beneficiary principle to satisfy in the first place. The governing law is the members' own contract, not trusts law."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Quistclose: a trust built to survive someone else's bankruptcy",
+        "voice": "Socratic — poses the commercial problem before revealing the doctrinal answer",
+        "body": [
+          "Here is the problem Quistclose solves. A lender lends money to a borrower for one specific stated purpose — say, to pay a dividend to the borrower's shareholders. Before the money is used for that purpose, the borrower becomes insolvent. Ordinarily, a lender in that position is just an unsecured creditor: the loan money has become the borrower's property, mixed into a general pool that the borrower's other creditors share in on a pro-rata basis. The lender's careful stipulation about what the money was for buys them nothing once insolvency hits — unless equity intervenes.",
+          "In Barclays Bank Ltd v Quistclose Investments Ltd, the House of Lords held that it can. Quistclose lent Rolls Razor money specifically to pay a dividend already declared to shareholders, paid into a separate account at Barclays for that purpose. Rolls Razor went into liquidation before the dividend was paid. The House of Lords held that the money was never at the free disposal of Rolls Razor: it was held on trust to apply it for the stated purpose, and if that purpose failed, a resulting trust arose in favour of Quistclose — meaning the money never became part of the general pool of assets available to Rolls Razor's other creditors.",
+          "The structure is often described as a dual trust: a 'primary' trust to apply the money for the stated purpose (here, paying the dividend), and a 'secondary' trust — arising automatically if the primary purpose becomes impossible — under which the money results back to the lender. It is that secondary trust that does the real commercial work: it insolvency-proofs the loan, lifting the lender clear of the general creditors."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The Quistclose mechanism",
+            "description": "How a purpose-specific loan converts into a resulting trust on failure of the purpose.",
+            "nodes": [
+              {
+                "id": "loan",
+                "label": "Lender advances money to borrower for a specific, stated purpose"
+              },
+              {
+                "id": "primary",
+                "label": "Primary trust: borrower must apply the money only to that purpose — it is not at the borrower's free disposal"
+              },
+              {
+                "id": "check",
+                "label": "Is the stated purpose carried out?"
+              },
+              {
+                "id": "success",
+                "label": "Yes → money is applied as intended; the arrangement is spent, no resulting trust arises"
+              },
+              {
+                "id": "failure",
+                "label": "No (purpose fails, e.g. borrower's insolvency intervenes) → secondary trust"
+              },
+              {
+                "id": "resulting",
+                "label": "Secondary trust: the money results back to the lender, outside the pool available to general creditors"
+              }
+            ],
+            "edges": [
+              {
+                "from": "loan",
+                "to": "primary"
+              },
+              {
+                "from": "primary",
+                "to": "check"
+              },
+              {
+                "from": "check",
+                "to": "success",
+                "label": "Purpose achieved"
+              },
+              {
+                "from": "check",
+                "to": "failure",
+                "label": "Purpose fails"
+              },
+              {
+                "from": "failure",
+                "to": "resulting"
+              }
+            ],
+            "textAlternative": "Money is lent for a specific stated purpose. While that purpose remains achievable, it is held on a primary trust to apply it only for that purpose — the borrower cannot treat it as general funds. If the purpose is carried out, the arrangement is simply performed. If the purpose fails — commonly because the borrower becomes insolvent first — a secondary trust arises automatically, and the money results back to the lender rather than falling into the pool available to the borrower's general creditors."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-07-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the Quistclose mechanism in the order it actually operates.",
+          "items": [
+            "Lender advances money earmarked for one specific stated purpose",
+            "Money is held on primary trust to be applied only for that purpose",
+            "The stated purpose becomes impossible (e.g. the borrower goes into liquidation first)",
+            "A secondary, resulting trust arises and the money reverts to the lender, outside the general creditors' pool"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the full mechanism. Notice the secondary trust only ever activates on failure of the stated purpose — while the purpose is still achievable, the money simply sits under the primary trust.",
+          "feedbackIncorrect": "Re-order with the primary trust first (money earmarked and restricted) and the resulting trust last (only once the purpose has actually failed) — the resulting trust is a consequence of failure, not a starting position."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Twinsectra and the unfinished argument about what kind of trust this is",
+        "voice": "direct — sets up the doctrinal disagreement the tests will probe",
+        "body": [
+          "Quistclose answered the commercial question — the lender is protected — but left academics and judges arguing about the theoretical one: what kind of trust is this, exactly, and when precisely does it arise? Twinsectra Ltd v Yardley is the case that reopened that argument at House of Lords level, in a dispute about a solicitor who released loan money in breach of an undertaking that it would only be used to buy property.",
+          "Lord Millett's leading speech in Twinsectra reasserted an orthodox resulting-trust analysis: the beneficial interest in the money never leaves the lender at all. From the moment of advance, the lender retains a beneficial interest (a resulting trust in their favour), subject only to the borrower's power — really closer to a mandate — to apply the money for the stated purpose. On this view there is no true 'primary trust' for the borrower's purpose at all; the resulting trust exists throughout, and simply becomes enforceable once the purpose fails.",
+          "The competing, older view — associated with Lord Wilberforce's own speech in Quistclose — treats the primary trust as a genuine trust for the purpose, under which the borrower could in principle be compelled by the lender to apply the money correctly, with the resulting trust only springing up as a distinct, later event on failure. The difference sounds abstract, but it matters for exactly the kind of question this lesson tests: on Lord Millett's analysis the lender's proprietary interest is continuous and never at risk; on Lord Wilberforce's, there is at least a conceptual gap during which the money's status is less certain. Both analyses reach the same result on the facts of Quistclose itself — that is precisely why the disagreement has never needed to be resolved to decide a case, and precisely why it remains live."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say a Quistclose trust is simply 'a normal express trust for the borrower's purpose,' full stop — treating Denley-style purpose-trust reasoning as if it were the whole answer.",
+            "whyItsWrong": "That misses what makes Quistclose distinctive: the mechanism exists specifically to protect the lender on the borrower's insolvency, through a resulting trust back to the lender. An ordinary express trust for a purpose says nothing about what happens to the money if that purpose fails — Quistclose's entire commercial value is the automatic reversion built into the structure."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-07-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which of these is most likely to be treated as a genuine Quistclose arrangement?",
+          "scenarioA": "A finance company lends a retailer £500,000 as general working capital, with no restriction in the loan agreement on how it is spent.",
+          "scenarioB": "An investor advances £500,000 to a company specifically and exclusively to discharge a named debt to a third party, paid into a segregated account, with the loan agreement stating the money is not to be used for any other purpose.",
+          "correctScenario": "B",
+          "explanation": "B has the hallmarks Quistclose requires: money advanced for a specific stated purpose, kept separate, and not at the borrower's free disposal for other uses. A is an ordinary unrestricted loan — the money becomes the borrower's property outright, and the lender is a plain unsecured creditor with no proprietary claim if things go wrong."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-07-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the beneficiary principle.",
+      "acceptableAnswers": [
+        "a trust must have an ascertainable beneficiary who can enforce it",
+        "no person, no trust",
+        "trusts for pure purposes are void without an enforcer"
+      ],
+      "modelAnswer": "A trust requires an ascertainable person or persons capable of enforcing it; a trust for a purpose alone, with no one able to compel its performance, is generally void."
+    },
+    {
+      "itemId": "equity-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case confirmed that the anomalous exceptions to the beneficiary principle (graves, monuments, specific animals) are closed and not to be extended?",
+      "options": [
+        "Re Endacott",
+        "Re Denley's Trust Deed"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-07-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the traditionally tolerated anomalous purpose-trust exceptions?",
+      "options": [
+        "A trust for the maintenance of a specific grave",
+        "A trust for the care of a named, particular animal",
+        "A trust for the general promotion of good citizenship in a town"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "A trust for a broad, undefined social good is exactly the kind of purpose trust Re Endacott refused to uphold — worthiness of the cause has never widened the narrow, fixed list of anomalous exceptions."
+    },
+    {
+      "itemId": "equity-07-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A trust is created to maintain a private library 'for the benefit of the employees of Greenfield Ltd and their families.' Applying Denley, is this trust likely to be valid?",
+      "options": [
+        "Yes — it benefits an ascertainable class with standing to enforce it, despite being framed as a purpose",
+        "No — any trust framed around a purpose automatically fails under Endacott",
+        "Yes, but only if the employees are also made trustees"
+      ],
+      "correctIndex": 0,
+      "explanation": "This mirrors Denley closely: a facility maintained for a defined, ascertainable group who can identify themselves and use it. That class has sufficient standing to enforce the trust, so it escapes the beneficiary principle despite its purpose framing."
+    },
+    {
+      "itemId": "equity-07-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In this passage adapted from Re Denley's Trust Deed, highlight the sentence stating the ratio.",
+      "passage": "The gift was framed as being for the purpose of maintaining a sports ground. However, a trust which, though expressed as a purpose, is directly or indirectly for the benefit of ascertainable individuals with standing to enforce it falls outside the mischief the beneficiary principle exists to prevent. The employees here could identify themselves and had a real interest in the ground's maintenance.",
+      "ratioSentence": "However, a trust which, though expressed as a purpose, is directly or indirectly for the benefit of ascertainable individuals with standing to enforce it falls outside the mischief the beneficiary principle exists to prevent."
+    },
+    {
+      "itemId": "equity-07-test-06",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which arrangement is better analysed under Re Recher's contract-holding approach rather than as an attempted purpose trust?",
+      "scenarioA": "A legacy 'to the Elmswood Chess Club, for its members and their use of the club's funds under the club's own rules.'",
+      "scenarioB": "A legacy 'to trustees, to be spent solely on promoting chess as a pastime across the country generally.'",
+      "correctScenario": "A",
+      "explanation": "A is a paradigm Recher case: a gift to an existing association's members, governed by the association's own rules — an accretion to club funds under contract, not a trust. B is framed as an abstract purpose with no defined association or membership contract to attach to, and risks failing exactly as Endacott's memorial did."
+    },
+    {
+      "itemId": "equity-07-test-07",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under Re Recher, what governs what happens to a gift made to an unincorporated association's members?",
+      "options": [
+        "The contract formed by the association's own rules",
+        "The general law of charitable trusts",
+        "The doctrine of cy-près"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-07-test-08",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a Quistclose resulting trust protects the lender's money from a borrower's general creditors on the borrower's insolvency?",
+      "sliderLabels": [
+        "Not protected — treated like any unsecured loan",
+        "Fully protected — the money never becomes part of the pool of general assets"
+      ],
+      "correctPosition": "Fully protected — the money never becomes part of the pool of general assets",
+      "explanation": "That is the entire commercial point of Quistclose: because the money is held on trust for the stated purpose, and results back to the lender if that purpose fails, it never becomes the borrower's free property — so it sits outside the pool available to unsecured creditors on insolvency."
+    },
+    {
+      "itemId": "equity-07-test-09",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Order the events in Barclays Bank v Quistclose Investments as they actually happened.",
+      "items": [
+        "Quistclose lends Rolls Razor money specifically to pay a declared shareholder dividend",
+        "The money is paid into a separate account at Barclays for that purpose",
+        "Rolls Razor goes into liquidation before the dividend is paid",
+        "The House of Lords holds the money is held on resulting trust for Quistclose, outside the general assets"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "equity-07-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that is essential to finding a Quistclose trust on these facts.",
+      "scenarioText": "A charity lends a partner organisation £20,000. The loan agreement states the funds are provided exclusively to cover the costs of a specific outreach event next month, and must be held separately until spent on that event. The partner organisation instead pays the money into its general account and later becomes insolvent.",
+      "tappableSpans": [
+        "A charity lends a partner organisation £20,000",
+        "provided exclusively to cover the costs of a specific outreach event",
+        "must be held separately until spent on that event",
+        "later becomes insolvent"
+      ],
+      "correctSpan": "provided exclusively to cover the costs of a specific outreach event",
+      "explanation": "The essential Quistclose ingredient is the restriction to a specific, stated purpose — that is what stops the money becoming the borrower's free property and keeps it capable of being held on trust rather than simply lent outright."
+    },
+    {
+      "itemId": "equity-07-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.6,
+      "prompt": "According to Lord Millett's analysis in Twinsectra Ltd v Yardley, when does the lender's beneficial interest under a Quistclose arrangement actually arise?",
+      "options": [
+        "Only once the stated purpose has definitively failed",
+        "From the moment the money is advanced — the lender retains a beneficial interest throughout, subject to the borrower's power to apply it for the stated purpose",
+        "Only if the loan agreement expressly uses the word 'trust'"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats the resulting trust as springing into existence only on failure, as if nothing existed before that point. Lord Millett's orthodox analysis is that the resulting trust is continuous from the outset — the borrower only ever has a power (akin to a mandate) to apply the money for the purpose, never full beneficial ownership."
+    },
+    {
+      "itemId": "equity-07-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A property developer receives £1 million from an investor under an agreement stating only that it is 'an investment in the developer's business.' The developer becomes insolvent before completing any project. Can the investor claim a Quistclose trust over the money?",
+      "options": [
+        "No — there is no sufficiently specific, stated purpose restricting how the money could be used",
+        "Yes — any commercial loan automatically carries a resulting trust on insolvency",
+        "Yes, because the investor described the payment as an 'investment'"
+      ],
+      "correctIndex": 0,
+      "explanation": "Quistclose requires a specific, identifiable purpose restricting the money's use, not a vague commercial description. 'An investment in the business' leaves the developer free to spend the money however it wishes — that freedom is fatal to a Quistclose claim, and the investor is left as an unsecured creditor."
+    },
+    {
+      "itemId": "equity-07-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Halcyon Ltd lends Meridian Events Ltd £300,000, with the loan agreement specifying the funds are solely to pay a named supplier for festival equipment, to be held in a ring-fenced account until paid over. Meridian instead leaves the money in its general trading account. Before paying the supplier, Meridian enters administration. Analyse whether Halcyon can claim the money in priority to Meridian's general creditors.",
+      "factsToOrder": [
+        "The loan is restricted to a specific, stated purpose (paying the named supplier)",
+        "The agreement requires the funds to be ring-fenced pending payment",
+        "Meridian fails to segregate the funds as required",
+        "Meridian enters administration before the purpose is carried out"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Halcyon holds a Quistclose interest in the £300,000 that takes priority over Meridian's general creditors in the administration.",
+        "rule": "Where money is advanced for a specific, stated purpose and is not at the borrower's free disposal, it is held on a primary trust to apply it for that purpose; if the purpose fails, a secondary resulting trust arises in favour of the lender, keeping the money outside the pool of general assets (Quistclose; Twinsectra).",
+        "application": "The loan agreement specifies a single, identifiable purpose — payment of the named supplier — and requires the funds to be ring-fenced, both hallmarks of a genuine Quistclose restriction. Meridian's failure to actually segregate the money does not itself defeat the trust: the obligation to keep it separate is evidence of the parties' intention, but the trust attaches to the identifiable fund regardless of the borrower's own breach of that administrative step. The purpose failed once administration intervened before payment to the supplier, triggering the secondary resulting trust in Halcyon's favour.",
+        "conclusion": "Halcyon is likely to establish a Quistclose trust and can claim the £300,000 in priority to Meridian's general creditors, rather than proving in the administration as an unsecured creditor."
+      }
+    },
+    {
+      "itemId": "equity-07-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "What is the core practical effect of a valid Quistclose trust on the borrower's insolvency?",
+      "options": [
+        "The lender's money is excluded from the pool of assets available to the borrower's general creditors",
+        "The lender automatically becomes a secured creditor with a fixed charge over all the borrower's assets",
+        "The loan is simply written off"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answer reaches for 'secured creditor' language, but Quistclose does not create a charge over the borrower's assets generally — it operates through a trust over the specific earmarked fund, keeping that fund (and only that fund) outside the general pool."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is treating 'purpose trust' as a single failing category. It isn't — Denley, Recher, and Quistclose are three separate, non-overlapping routes around the beneficiary principle, and the test items are built to check you can tell which route (if any) a given fact pattern actually uses.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.purpose-trusts.purpose-trusts-quistclose"
+  }
+}

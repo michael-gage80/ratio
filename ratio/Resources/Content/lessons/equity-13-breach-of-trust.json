@@ -1,0 +1,378 @@
+{
+  "lessonId": "equity-13",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 13,
+  "topicId": "equity.breach.breach-of-trust",
+  "title": "Breach of Trust: Compensation, Excuses, and Time",
+  "subtitle": "Equitable compensation, exemption clauses, and the narrowing of trustee liability",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how equitable compensation for breach of trust is calculated, and how Target Holdings v Redferns and AIB Group v Mark Redler treat causation",
+    "State the scope of a trustee exemption clause after Armitage v Nurse, including what it can never exclude",
+    "Apply s 61 Trustee Act 1925 relief, the s 21 Limitation Act 1980 time bar, and the rules on contribution between co-trustees to a fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Target Holdings Ltd v Redferns [1996] AC 421", "role": "Equitable compensation is measured against the trust's actual loss caused by the breach, not by mechanically restoring the fund to its pre-breach state" },
+    { "citation": "AIB Group (UK) plc v Mark Redler & Co Solicitors [2014] UKSC 58", "role": "Confirms and applies Target Holdings at Supreme Court level: causation is assessed with the benefit of hindsight, sharply reducing recovery even for breach of the core duty to obey trust instructions" },
+    { "citation": "Armitage v Nurse [1998] Ch 241", "role": "A trustee exemption clause can validly exclude liability for ordinary negligence and even gross negligence, but never for actual dishonesty or fraud" },
+    { "citation": "Trustee Act 1925, s 61", "role": "Gives the court discretion to relieve a trustee, wholly or partly, from personal liability for breach of trust where the trustee acted honestly, reasonably, and ought fairly to be excused" },
+    { "citation": "Limitation Act 1980, s 21", "role": "Sets a six-year limitation period for most breach of trust claims, but disapplies any time limit for fraudulent breaches or for recovering trust property still held by the trustee" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often assume that any breach of trust means the trustee restores the fund in full, no questions asked. That was closer to the pre-1996 position. This lesson tracks how the House of Lords and Supreme Court have quietly rewritten the remedy around causation — and why that shift is one of the most examinable developments in modern trusts law.",
+    "profileHooks": {
+      "weakApplication": "You know the cases here. The test pool leans hard on applying the causation test and s 61 to new facts — expect problem scenarios, not case names.",
+      "weakKnowledge": "Start with Part 1 before the case law gets dense. You need a firm grip on what equitable compensation is actually compensating for before Target Holdings and AIB Group will make sense."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A solicitor releases mortgage funds a day early, in clear breach of trust. The client bank later loses money — but not because of the early release; the borrower would have defaulted regardless, and the security was inadequate for reasons that had nothing to do with the timing. Is the solicitor liable for the full loss, or none of it? Two top courts, twenty years apart, gave answers that pulled trustee liability in the same direction: away from automatic restoration, and toward proof of loss.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. AIB Group v Mark Redler (2014) remains the leading modern authority on causation in equitable compensation, but the precise relationship between Target Holdings and older 'substitutive performance' reasoning is still debated in academic commentary — treat the causation test below as settled at Supreme Court level, but not free from scholarly criticism."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Equitable compensation is not a fine",
+        "voice": "comparative — sets equitable compensation against common law damages before complicating it",
+        "body": [
+          "When a trustee breaches trust and the fund loses value, the starting remedy is equitable compensation: an order that the trustee restore the trust fund to the position it would have been in but for the breach. That sounds identical to common law damages, and for a long time textbooks treated it as a distinct, stricter animal — no need to prove causation in the tort sense, because equity simply asked what the fund would look like had the trustee done their job properly.",
+          "That older, more demanding account survives in one context: a trustee who misapplies trust property outright (paying it to the wrong person, or investing outside the trust's powers) can be required to simply replace what was lost, because the trust's right to have its property dealt with correctly is treated as close to specific performance, not a claim for consequential loss.",
+          "Target Holdings v Redferns and AIB Group v Mark Redler are the two cases that reopened this settled-looking area, by asking a question equity had mostly avoided: what if the trustee's breach didn't actually cause the loss the beneficiary is complaining about?"
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Equitable compensation",
+            "definition": "The remedy restoring the trust fund to the position it would have occupied but for the trustee's breach — traditionally assessed without the common law's remoteness rules, but now filtered through a causation requirement after Target Holdings and AIB Group."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Before Target Holdings, what did most equitable compensation claims require the beneficiary to prove about causation, compared with a common law damages claim?",
+          "options": ["Significantly less — the fund was simply restored to its pre-breach state", "Exactly the same as tort — full 'but for' causation and remoteness"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — the older orthodoxy treated restoration of the fund as close to automatic once a breach was shown, without the tort-style causation inquiry Target Holdings later imported.",
+          "feedbackIncorrect": "The pre-Target position was more generous to beneficiaries than tort law — restoration followed from the breach itself, largely independent of what a tort lawyer would call causation. That is exactly what Target Holdings unsettled."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Target Holdings: causation arrives",
+        "voice": "case-narrative — walks through the facts before naming the shift",
+        "body": [
+          "Redferns, a firm of solicitors, held mortgage funds on trust for Target Holdings, a commercial lender, pending completion of a property purchase. In breach of trust, Redferns released the funds before completion actually occurred. Completion did happen a few days later, using a fraudulently inflated valuation Target had relied on regardless — and Target's loss came from that overvaluation, not from the early release.",
+          "Target argued for the traditional approach: the trust fund had been depleted in breach of trust, so Redferns should simply restore it — full stop, regardless of what caused the ultimate loss. The House of Lords disagreed. Lord Browne-Wilkinson held that where a trustee's breach relates to a running commercial trust of this kind, the beneficiary must show the breach caused the loss actually suffered, assessed with hindsight at the date of trial.",
+          "This was a genuine departure. It meant a trustee could commit a clear, technical breach of trust and still owe nothing, if the beneficiary would have lost the same money anyway. Critics said this let trustees off too easily for a duty — obeying trust instructions — that equity had always treated as near-absolute; defenders said restoring money nobody actually lost was a windfall, not a remedy."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Target Holdings Ltd v Redferns",
+            "citation": "[1996] AC 421",
+            "court": "House of Lords",
+            "year": 1996,
+            "factsShort": "Solicitors released mortgage funds early, in breach of trust; the lender's actual loss stemmed from an unrelated fraudulent overvaluation, not the early release.",
+            "ratioShort": "A beneficiary must show that the trustee's breach caused the loss actually suffered, assessed with hindsight at trial — breach alone does not entitle the beneficiary to automatic restoration.",
+            "expanded": {
+              "facts": "Target Holdings agreed to lend money secured on a property, with Redferns holding the advance on trust pending simultaneous completion of the purchase and the mortgage. Redferns paid out the funds before completion was in fact simultaneous, in clear breach of the trust instructions. Completion occurred regardless a few days later. The property, however, had been fraudulently overvalued by a third party, and on the borrower's later default Target recovered far less than the loan through the security than it expected.",
+              "judgmentExtract": "Lord Browne-Wilkinson held that equitable compensation for breach of a trust of this kind — a commercial, transactional trust rather than a traditional family trust — requires the beneficiary to establish that the loss claimed would not have occurred but for the breach. Because Target's loss flowed from the overvaluation and would have occurred even with strict compliance, Redferns was not liable to make it good, notwithstanding the clear breach.",
+              "significance": "Target Holdings is the point at which equitable compensation stopped being treated as automatic restoration and started requiring proof that the breach, specifically, caused the loss claimed — a genuine narrowing of trustee liability that later cases, especially AIB Group, would confirm and extend."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-13-check-02",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that after Target Holdings, a trustee's technical breach of trust is, on its own, enough to require full restoration of the fund with no inquiry into what actually caused the loss?",
+          "sliderLabels": ["Breach alone is enough", "Loss must be shown to have been caused by the breach"],
+          "correctPosition": "caused",
+          "explanation": "Target Holdings held that, at least for this kind of commercial trust, the beneficiary must show the breach caused the loss claimed, assessed at the date of trial — breach alone no longer guarantees full restoration."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "AIB Group: the Supreme Court tightens the screw",
+        "voice": "argumentative — presents the criticism, then shows the Court's rejection of it",
+        "body": [
+          "AIB Group involved a strikingly similar breach: solicitors acting for a lender released mortgage advance funds without obtaining the first-ranking security the client had instructed, in clear breach of trust. When the borrower later defaulted, AIB claimed the full shortfall on the loan.",
+          "AIB argued Target Holdings should be confined to its own facts, or that a breach of the core duty to follow trust instructions to the letter should still trigger the older substitutive-performance remedy — replace the money, full stop. The Supreme Court rejected this. Causation, assessed with hindsight, was held to apply generally to equitable compensation claims of this type, even where the trustee breached the most basic instruction-following duty.",
+          "The practical effect was severe for AIB: even though the solicitors had plainly breached trust, AIB recovered only the loss actually caused by the missing security — not the full shortfall, because a large part of that shortfall would have occurred even with the correct security in place. AIB Group is now read as confirming, at the highest level, that trustee liability for this kind of breach has genuinely narrowed since the pre-Target era."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "AIB Group (UK) plc v Mark Redler & Co Solicitors",
+            "citation": "[2014] UKSC 58",
+            "court": "Supreme Court",
+            "year": 2014,
+            "factsShort": "Solicitors released a mortgage advance without obtaining the first-ranking charge instructed; the borrower defaulted and the lender claimed the full shortfall.",
+            "ratioShort": "Target Holdings' causation approach applies generally to equitable compensation, even for breach of the core duty to follow trust instructions; recovery is limited to loss actually caused by the breach.",
+            "expanded": {
+              "facts": "Mark Redler acted for AIB in a remortgage. The firm was instructed to obtain a first-ranking legal charge over the property before releasing the advance, but in fact released the funds while an existing charge in favour of another lender remained partly undischarged, so AIB obtained only a second-ranking security. The borrower later defaulted, and the security proved insufficient to cover the loan.",
+              "judgmentExtract": "The Supreme Court held that even though the solicitors had breached the core duty to obey trust instructions precisely, AIB's recoverable loss was limited by causation: since a first-ranking charge, properly obtained, would still not have covered the full shortfall (the security's value had itself fallen), AIB could not recover for that portion of the loss. The Court declined to revive the older, causation-free approach for this category of breach.",
+              "significance": "AIB Group settles, at Supreme Court level, that Target Holdings was not a one-off: causation is now a general requirement of equitable compensation, sharply narrowing the practical exposure of professional trustees such as conveyancing solicitors."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-13-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in AIB Group's reasoning that ultimately limited what AIB could recover, despite Mark Redler's clear breach of trust.",
+          "scenarioText": "Mark Redler released the advance without obtaining the first-ranking charge the trust instructions required. The borrower later defaulted. Crucially, even a properly obtained first-ranking charge would not have covered the full shortfall on default, because the security's value had itself declined.",
+          "tappableSpans": ["released the advance", "without obtaining the first-ranking charge", "the borrower later defaulted", "a properly obtained first-ranking charge would not have covered the full shortfall"],
+          "correctSpan": "a properly obtained first-ranking charge would not have covered the full shortfall",
+          "feedbackCorrect": "That's the causation point: because part of the loss would have happened even without the breach, AIB could not recover for that part — the clear breach did not translate into full recovery.",
+          "feedbackIncorrect": "The breach itself (releasing funds without the right security) is common ground and not what limits recovery. What actually caps AIB's claim is the fact that even correct performance would not have avoided all the loss — that's the causation filter AIB Group applies."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Exemption clauses: how far can a trust deed protect a trustee?",
+        "voice": "structural — sets out the boundary precisely",
+        "body": [
+          "Many trust deeds contain a clause excluding trustee liability for loss unless caused by the trustee's own 'wilful fraud or dishonesty'. On its face this looks like it might let a trustee off for even extreme carelessness — and in Armitage v Nurse, the Court of Appeal confronted exactly that question.",
+          "Millett LJ held that a trustee exemption clause can validly exclude liability for ordinary negligence, and even for gross negligence — however surprising that seems, English law, unlike some other jurisdictions, does not treat 'gross negligence' as a distinct, non-excludable category. What it cannot do, as a matter of the irreducible core of trusteeship, is exclude liability for the trustee's own actual fraud or dishonesty.",
+          "This means the drafting question in practice is not 'does this clause protect the trustee', but 'does the trustee's conduct cross the line into dishonesty'. A trustee who is spectacularly incompetent but honest can shelter behind a well-drafted clause; a trustee who is merely careless but knowingly acts contrary to the beneficiaries' interests cannot."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "What an exemption clause can and cannot exclude (Armitage v Nurse)",
+            "points": [
+              "Can exclude: liability for ordinary negligence",
+              "Can exclude: liability for gross negligence — English law recognises no separate, non-excludable category of 'gross' negligence",
+              "Cannot exclude: liability for the trustee's own actual fraud or dishonesty",
+              "The 'irreducible core' of trusteeship requires at least honesty on the part of the trustee"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-13-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A trust deed excludes trustee liability 'for any loss to the trust fund unless caused by the trustee's own actual fraud'. Applying Armitage v Nurse, which loss would NOT be excluded by this clause?",
+          "options": ["Loss caused by the trustee's careless failure to diversify investments", "Loss caused by the trustee's honest but badly mistaken investment judgment", "Loss caused by the trustee secretly diverting trust funds to their own use"],
+          "correctIndex": 2,
+          "trapExplanation": "Careless or even grossly negligent conduct can be excluded, so the first two options are exactly what this kind of clause is designed to cover. Deliberately diverting trust property for the trustee's own benefit is dishonest, and Armitage v Nurse holds that no clause can exclude liability for that."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Relief, time limits, and sharing the blame",
+        "voice": "direct — sets out three practical escape routes for a trustee",
+        "body": [
+          "Even a trustee who is liable in principle has three further things to check. First, s 61 Trustee Act 1925 gives the court a discretion to relieve a trustee, wholly or partly, from personal liability where the trustee acted honestly, reasonably, and ought fairly to be excused — a genuine safety valve for well-meaning trustees who made a defensible error, not a rubber stamp for carelessness.",
+          "Second, s 21 Limitation Act 1980 imposes a six-year limitation period on most breach of trust claims — but that time limit disappears entirely where the breach was fraudulent, or where the claim is to recover trust property (or its proceeds) still in the trustee's possession. A dishonest trustee, in other words, cannot simply wait out the clock.",
+          "Third, where more than one trustee is liable for the same breach, the Civil Liability (Contribution) Act 1978 allows a trustee who has paid compensation to claim contribution from co-trustees in proportion to their responsibility for the loss — liability between trustees is not automatically equal, and a trustee who personally benefited from the breach can be required to fully indemnify the others."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Trustee Act 1925, s 61",
+            "text": "If it appears to the court that a trustee is or may be personally liable for any breach of trust... but has acted honestly and reasonably, and ought fairly to be excused for the breach of trust... the court may relieve the trustee, either wholly or partly, from personal liability for the same.",
+            "elements": ["The trustee is or may be personally liable for a breach of trust", "The trustee acted honestly", "The trustee acted reasonably", "The trustee ought fairly to be excused, having regard to all the circumstances"]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-13-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "Priti, a trustee, took informal investment advice from a friend who was not a qualified adviser, and made an investment that lost the trust money. She genuinely believed she was acting in the beneficiaries' interests, and disclosed the loss to her co-trustee immediately. The beneficiaries sue five years after the loss. Analyse whether Priti can rely on s 61 Trustee Act 1925, and whether the claim is time-barred under s 21 Limitation Act 1980.",
+          "factsToOrder": [
+            "Priti took informal, unqualified advice",
+            "Priti genuinely believed she was acting in the beneficiaries' interests",
+            "Priti disclosed the loss immediately",
+            "The claim is brought five years after the loss",
+            "There is no allegation of fraud"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether Priti can be relieved of personal liability under s 61 Trustee Act 1925, and whether the beneficiaries' claim is time-barred under s 21 Limitation Act 1980.",
+            "rule": "Section 61 allows the court to relieve a trustee who acted honestly, reasonably, and ought fairly to be excused. Section 21 sets a six-year limitation period for most breach of trust claims, disapplied only for fraud or for recovering trust property still held by the trustee.",
+            "application": "Priti's honesty is not in doubt — she believed she was acting properly and disclosed the loss at once. Whether she acted reasonably is more doubtful: relying on informal, unqualified advice for an investment decision falls below what a reasonably prudent trustee would do, which may weigh against relief being granted, or in favour of only partial relief. On limitation, there is no allegation of fraud, so the ordinary six-year period under s 21 applies, and a claim brought five years after the loss is within time.",
+            "conclusion": "The claim is not time-barred. Priti has a reasonable prospect of at least partial relief under s 61 given her honesty and disclosure, but her reliance on unqualified advice is a real obstacle to full relief, since s 61 requires reasonableness as well as honesty."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-13-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the remedy that orders a trustee to restore the trust fund to the position it would have been in but for the breach of trust.",
+      "acceptableAnswers": ["equitable compensation", "equitable compensation for breach of trust"],
+      "modelAnswer": "Equitable compensation — the remedy restoring the trust fund to the position it would have occupied but for the trustee's breach."
+    },
+    {
+      "itemId": "equity-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case first held that a beneficiary must show the trustee's breach caused the loss claimed, assessed with hindsight at trial?",
+      "options": ["Target Holdings v Redferns", "Armitage v Nurse"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-13-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Under Armitage v Nurse, which of the following can a trustee exemption clause NEVER validly exclude?",
+      "options": ["Liability for ordinary negligence", "Liability for gross negligence", "Liability for the trustee's own actual fraud or dishonesty"],
+      "correctIndex": 2,
+      "trapExplanation": "Students often assume 'gross negligence' is the line English law protects, because other legal systems draw it there. Armitage v Nurse rejected that: the only conduct a clause can never exclude is the trustee's own dishonesty."
+    },
+    {
+      "itemId": "equity-13-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under s 21 Limitation Act 1980, what is the standard limitation period for a breach of trust claim?",
+      "options": ["Six years", "Three years"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-13-test-05",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Is the six-year limitation period under s 21 Limitation Act 1980 available to a trustee whose breach was fraudulent?",
+      "options": ["No — there is no limitation period for fraudulent breaches", "Yes — the same six-year period applies regardless of fraud"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-13-test-06",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario reflects the AIB Group v Mark Redler reasoning on causation, rather than the older pre-Target Holdings approach?",
+      "scenarioA": "A trustee misapplies funds in breach of an express prohibition, and the court orders the trustee to restore the exact sum, without asking what would otherwise have happened to it.",
+      "scenarioB": "A trustee breaches an instruction to obtain specific security, but the court asks what loss the beneficiary would still have suffered even with the correct security in place, and limits recovery accordingly.",
+      "correctScenario": "B",
+      "explanation": "B is the modern, causation-based approach confirmed in AIB Group: recovery is limited to loss the breach actually caused, tested against what would have happened absent the breach. A reflects the older, causation-free substitutive approach that Target Holdings and AIB Group have confined to a narrower category of case."
+    },
+    {
+      "itemId": "equity-13-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A trustee sells trust land at a proper market valuation but in breach of a term requiring three independent valuations first. The price obtained turns out to have been the best price achievable regardless. What is the trustee's likely equitable compensation liability, applying Target Holdings and AIB Group?",
+      "options": ["Full restoration of any shortfall from the theoretical maximum price, regardless of what three valuations would have achieved", "Little or nothing, because the breach did not cause any loss — the same price would have been achieved even with three valuations", "Automatic liability equal to the trustee's personal assets, as a deterrent"],
+      "correctIndex": 1,
+      "explanation": "Causation is the filter: if the same outcome would have resulted from compliant conduct, the breach has not caused a recoverable loss, however clear the breach of procedure was."
+    },
+    {
+      "itemId": "equity-13-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A trust deed states trustees are not liable 'save for their own fraud'. A trustee makes a catastrophic but entirely honest investment decision, ignoring professional advice out of overconfidence. Is the trustee protected by the clause under Armitage v Nurse?",
+      "options": ["Yes — the clause protects even gross negligence provided there is no dishonesty", "No — overconfidence amounting to gross negligence is treated the same as fraud", "No — any loss above a certain size automatically counts as dishonest"],
+      "correctIndex": 0,
+      "explanation": "Armitage v Nurse permits exemption clauses to reach even gross negligence. Without dishonesty, however reckless the decision looks in hindsight, the clause can validly protect the trustee."
+    },
+    {
+      "itemId": "equity-13-test-09",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 4,
+      "prompt": "Two trustees, Farid and Nadia, jointly authorise an unauthorised investment. Farid personally receives a commission from the investment provider that Nadia knew nothing about. The investment fails, causing loss. Analyse how liability and contribution between Farid and Nadia should be apportioned.",
+      "factsToOrder": [
+        "Both trustees authorised the unauthorised investment",
+        "Farid personally received an undisclosed commission",
+        "Nadia had no knowledge of the commission",
+        "The investment failed, causing loss"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether liability for the loss should be shared equally between Farid and Nadia, or whether contribution should favour Nadia given Farid's personal benefit.",
+        "rule": "Both trustees are jointly and severally liable to the beneficiaries for the breach, but as between themselves, contribution under the Civil Liability (Contribution) Act 1978 is apportioned according to responsibility, and a trustee who personally profited from the breach can be required to bear a disproportionate, even total, share.",
+        "application": "Both authorised the investment, so both are liable to the trust. But Farid's undisclosed personal commission is a distinct aggravating factor that Nadia did not share in or know about — on ordinary contribution principles this points toward Farid bearing a greater, potentially full, share of the ultimate loss as between the two trustees.",
+        "conclusion": "Farid and Nadia are both liable to the beneficiaries, but on contribution Farid should bear a disproportionately high, likely full, share, because he personally profited from the breach while Nadia did not."
+      }
+    },
+    {
+      "itemId": "equity-13-test-10",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court works through them when a trustee pleads s 61 Trustee Act 1925.",
+      "items": ["Establish the trustee is or may be personally liable for a breach of trust", "Assess whether the trustee acted honestly", "Assess whether the trustee acted reasonably", "Decide, in all the circumstances, whether the trustee ought fairly to be excused"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "equity-13-test-11",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from AIB Group v Mark Redler, highlight the sentence that states the ratio on causation.",
+      "passage": "The solicitors breached their instructions by releasing the advance without the agreed security. However, the beneficiary's loss must be assessed by comparing its actual position with the position it would have been in had the breach not occurred. Since part of the loss would have arisen even with the correct security in place, the beneficiary cannot recover for that part.",
+      "ratioSentence": "The beneficiary's loss must be assessed by comparing its actual position with the position it would have been in had the breach not occurred."
+    },
+    {
+      "itemId": "equity-13-test-12",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that would most likely defeat a beneficiary's claim to full equitable compensation, applying Target Holdings.",
+      "scenarioText": "A trustee sells trust shares without the co-trustee's consent, in breach of trust. The share price then collapses for reasons entirely unconnected to the sale, such that holding the shares would have produced an even larger loss than the sale did.",
+      "tappableSpans": ["sells trust shares without the co-trustee's consent", "in breach of trust", "the share price then collapses", "holding the shares would have produced an even larger loss"],
+      "correctSpan": "holding the shares would have produced an even larger loss",
+      "explanation": "Causation is fatal to the claim here: if the beneficiary would have been worse off without the breach, the breach caused no recoverable loss at all — it may even have reduced the loss."
+    },
+    {
+      "itemId": "equity-13-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which Act governs the right of one trustee, who has paid compensation for a breach, to recover a contribution from a co-trustee?",
+      "options": ["Civil Liability (Contribution) Act 1978", "Trustee Act 2000"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-13-test-14",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is more likely to succeed under s 61 Trustee Act 1925?",
+      "scenarioA": "A trustee takes and follows detailed advice from a qualified solicitor, makes a defensible but ultimately unsuccessful decision, and discloses the outcome promptly.",
+      "scenarioB": "A trustee ignores repeated professional advice, makes an unresearched decision to save time, and only discloses the loss when directly asked by the beneficiaries a year later.",
+      "correctScenario": "A",
+      "explanation": "Section 61 requires both honesty and reasonableness. Scenario A shows a trustee taking proper advice and acting transparently — a strong candidate for relief. Scenario B shows a trustee ignoring advice and delaying disclosure, which undermines the reasonableness limb even if honesty is not in doubt."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating any clear breach of trust as automatically triggering full restoration of the fund. Since Target Holdings and AIB Group, the real battleground is causation: what would have happened to the trust fund anyway, absent the breach.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.breach.breach-of-trust"
+  }
+}

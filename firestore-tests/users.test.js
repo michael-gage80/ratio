@@ -142,6 +142,7 @@ describe('university, year and modules', () => {
     await assertFails(updateDoc(amara(), { year: '2' }));
     await assertFails(updateDoc(amara(), { modules: [] }));
     await assertFails(updateDoc(amara(), { modules: ['crime', 'family'] }));
+    await assertSucceeds(updateDoc(amara(), { modules: ['companylaw', 'eulaw', 'humanrights', 'jurisprudence'] }));
   });
 
   test("can't be saved before the age gate", async () => {

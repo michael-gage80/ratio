@@ -144,9 +144,13 @@ export function sentenceStatesRatio(sentence: string, ratio: string): boolean {
 
 /** The end of the slider whose label contains the correct position (default: right). */
 export function sliderCorrectSide(item: BankItem): 0 | 1 {
-  const target = (item.correctPosition ?? "").toLowerCase();
-  const left = (item.sliderLabels?.[0] ?? "").toLowerCase();
-  return target && left.includes(target) ? 0 : 1;
+  const target = (item.correctPosition ?? "").trim().toLowerCase();
+  const labels = (item.sliderLabels ?? []).map((l) => l.trim().toLowerCase());
+  // A label equal to the answer wins ("Capable of…" v "Not capable of…"); otherwise the
+  // one label containing it. The content lint rejects anything ambiguous.
+  const exact = labels.indexOf(target);
+  if (exact === 0 || exact === 1) return exact;
+  return target && labels[0]?.includes(target) && !labels[1]?.includes(target) ? 0 : 1;
 }
 
 /**

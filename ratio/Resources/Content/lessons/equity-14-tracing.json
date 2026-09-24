@@ -1,0 +1,388 @@
+{
+  "lessonId": "equity-14",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 14,
+  "topicId": "equity.remedies.tracing",
+  "title": "Tracing: Following the Money Through a Maze",
+  "subtitle": "Following, tracing, and claiming value through mixed funds",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish following an asset from tracing value, and state why common law tracing fails once funds are mixed",
+    "Apply the Hallett's Estate presumption, the lowest intermediate balance rule, and the Clayton's Case/Barlow Clowes approaches to mixed-fund problems",
+    "Explain how Foskett v McKeown establishes a genuine proprietary claim through tracing, and the current, unsettled status of backwards tracing after Federal Republic of Brazil v Durant"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Re Hallett's Estate (1880) 13 Ch D 696", "role": "A trustee who mixes trust money with their own is presumed, as against the trustee, to have spent their own money first, preserving the trust claim over what remains" },
+    { "citation": "Re Oatway [1903] 2 Ch 356", "role": "Where a trustee uses part of a mixed fund to buy an asset and dissipates the rest, the trust can claim the asset purchased, not just what is left in the account" },
+    { "citation": "Roscoe v Winder [1915] 1 Ch 62", "role": "The trust's claim against a mixed account is capped at the lowest intermediate balance the account ever reached, even if later money is paid in" },
+    { "citation": "Barlow Clowes International Ltd v Vaughan [1992] 4 All ER 22", "role": "Rejects the strict first-in-first-out rule from Clayton's Case as arbitrary between multiple innocent claimants, applying pari passu sharing instead" },
+    { "citation": "Foskett v McKeown [2001] 1 AC 102", "role": "Confirms tracing produces a genuine proprietary claim to a proportionate share of a mixed asset, not merely a personal remedy" },
+    { "citation": "Federal Republic of Brazil v Durant [2015] UKPC 35", "role": "Privy Council recognises backwards tracing in principle, where there is a sufficient link between the misapplied funds and an earlier payment, though the point remains unsettled in English law" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Tracing looks like pure mechanics — a set of rules for following numbers through bank statements. It is, but the mechanics decide who gets paid when a fraudster's account runs dry. This lesson works through the tracing rules the way a forensic accountant would: step by step, balance by balance, because that is exactly the skill the exam is testing.",
+    "profileHooks": {
+      "weakApplication": "You can probably recite the case names already. This lesson is deliberately built as a sequence of worked mini-problems — treat every interaction as practice moving money through an account, not as a memory test.",
+      "weakKnowledge": "Slow down on Parts 1 and 2 before the arithmetic starts. If 'following' and 'tracing' are not crisply distinct in your head yet, the rest of this lesson will blur together."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A trustee steals £10,000 from a trust account, pays it into a personal bank account already holding £5,000, spends £8,000 on a holiday, then uses the remaining £7,000 to buy shares that double in value. Who owns the shares? The answer is not obvious, and it is not decided by asking who is more sympathetic — it is decided by a set of surprisingly mechanical rules for tracking value through a mixed fund, built up case by case since 1880. This lesson is that toolkit.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The tracing rules for mixed funds are well established, but backwards tracing remains genuinely unsettled in English law — Federal Republic of Brazil v Durant is a persuasive Privy Council authority, not a binding domestic decision, and the point has not been definitively resolved by the Supreme Court."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two different skills: following and tracing",
+        "voice": "forensic — treats the distinction as a technical toolkit, not a definition to memorise",
+        "body": [
+          "Start with a distinction the exam will punish you for blurring. Following is locating the very same asset as it moves from hand to hand — the same £50 note, the same painting, the same shares, even if they change owners. Tracing is different: it is the process of identifying a new asset as the substitute for, or product of, an original asset, when the original itself has been exchanged, spent, or mixed away.",
+          "You follow a stolen car. You trace stolen money once it has been spent on a car. The claim that eventually attaches to the car — 'that is my property, or its traceable proceeds' — comes from tracing rules, and it is these rules, not the underlying property law, that do the real work in most fraud and breach of trust cases.",
+          "Common law tracing exists, but it has a hard limit: it cannot follow value through a mixed fund. If stolen money is paid into a bank account that already holds other money, the common law simply cannot say which pound is which — the claim collapses. This is precisely why equity's tracing rules matter: equity developed techniques for tracing through mixtures that the common law could never manage."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Following v tracing",
+            "definition": "Following locates the same physical asset as it changes hands. Tracing identifies a different asset as the traceable substitute for an original asset that has been exchanged, spent, or mixed — and it is equity's tracing rules, not the common law's, that survive mixing."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-14-check-01",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "Stolen trust money is paid into a bank account that already holds the thief's own savings. Why can the beneficiary not rely on common law tracing at this point?",
+          "options": ["Because common law tracing cannot follow value once money has been mixed with other money in an account", "Because common law tracing only applies to land, never to money", "Because the beneficiary must first obtain a criminal conviction before any tracing claim can begin"],
+          "correctIndex": 0,
+          "trapExplanation": "The mixing, not the type of asset or any criminal process, is what defeats common law tracing. Once trust money is mixed with other money, the common law cannot identify which part of the resulting balance represents the trust's contribution — that gap is exactly what equity's tracing rules were built to fill."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Hallett's presumption: the trustee is deemed to spend their own money first",
+        "voice": "step-by-step — narrates the account balance like a worked example",
+        "body": [
+          "The foundational rule for mixed funds comes from Re Hallett's Estate. A solicitor mixed trust money with his own money in a single bank account, then made withdrawals and payments out of it for his own purposes. When he died insolvent, the question was: did his withdrawals spend the trust's money or his own?",
+          "Sir George Jessel MR held that where a trustee mixes trust money with their own, and then withdraws money from the mixed fund, the trustee is presumed — against their own interest — to have spent their own money first and preserved the trust money. The presumption exists precisely because a trustee cannot be heard to say they behaved dishonestly by dissipating the beneficiary's money rather than their own; equity resolves the ambiguity against the wrongdoer.",
+          "Work through a simple account to see why this matters. A trustee pays £4,000 of trust money into a personal account already holding £2,000. The trustee then withdraws £3,000 and spends it on a car for personal use. Under Hallett, that £3,000 is presumed to be the trustee's own money (of which there was £2,000, plus the first £1,000 of any further personal earnings if traceable) — the trust's £4,000 is presumed to remain untouched by that withdrawal, so far as the account balance allows."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re Hallett's Estate",
+            "citation": "(1880) 13 Ch D 696",
+            "court": "Court of Appeal",
+            "year": 1880,
+            "factsShort": "A solicitor-trustee mixed trust money with his own in a bank account and made withdrawals for personal purposes before dying insolvent.",
+            "ratioShort": "A trustee who mixes trust money with their own is presumed to spend their own money first when making withdrawals, preserving the trust's claim over what is left.",
+            "expanded": {
+              "facts": "Hallett, a solicitor, held bonds on trust which he sold without authority, paying the proceeds into his personal bank account alongside his own money. He made various withdrawals and payments from the account before his death, leaving insufficient funds to satisfy both the trust and his general creditors.",
+              "judgmentExtract": "Sir George Jessel MR held that where a person holding money as a trustee mixes it with their own and then draws money out of the mixed fund, they must be taken, as far as possible, to have drawn out their own money and not the trust money, because a trustee is not to be presumed to have acted in breach of their duty when an honest interpretation of their conduct is available.",
+              "significance": "This presumption is the starting point for every mixed-fund tracing problem. It is deliberately generous to the beneficiary — resolving any ambiguity in the trustee's favour would reward the trustee for mixing the funds in the first place."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-14-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "A trustee mixes £6,000 of trust money with £3,000 of his own money in one account, then withdraws £3,000 to pay for a personal holiday. Tap the fact that determines how the Hallett presumption applies to this withdrawal.",
+          "scenarioText": "The trustee mixes £6,000 of trust money with £3,000 of his own savings in a single account, bringing the balance to £9,000. He then withdraws £3,000 and spends it entirely on a personal holiday, leaving £6,000 in the account.",
+          "tappableSpans": ["mixes £6,000 of trust money with £3,000 of his own savings", "bringing the balance to £9,000", "withdraws £3,000 and spends it entirely on a personal holiday", "leaving £6,000 in the account"],
+          "correctSpan": "withdraws £3,000 and spends it entirely on a personal holiday",
+          "feedbackCorrect": "Correct — this is the withdrawal the Hallett presumption applies to. The trustee is presumed to have spent his own £3,000 on the holiday first, leaving the trust's £6,000 intact in the account.",
+          "feedbackIncorrect": "The presumption operates at the point of withdrawal, not at the point of mixing or at the final balance. Look for the moment money actually leaves the account for the trustee's personal use."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "When the presumption runs out: Oatway and the lowest intermediate balance",
+        "voice": "step-by-step — continues the worked-example approach into harder territory",
+        "body": [
+          "Hallett's presumption gets harder to apply once the trustee uses part of the mixed fund to buy an asset that survives, rather than simply spending money that disappears. Re Oatway addressed this: a trustee mixed trust money with his own, used part of the mixed fund to buy shares (which retained their value), and then dissipated the rest of the account on personal spending until nothing was left.",
+          "If Hallett's presumption were applied mechanically — 'the trustee spent their own money first' — the trust would be left with nothing, because the dissipated spending happened after the share purchase, and the trustee's own money would be presumed spent first on the shares, leaving trust money to be dissipated later. The court refused this result. Where the account has been run down to nothing, the trust is entitled to claim the asset that was bought out of the mixed fund, ahead of the trustee's general creditors — the beneficiary is not left worse off merely because the trustee spent in a particular order.",
+          "Roscoe v Winder adds the final piece: the trust's claim against a mixed account is capped at the lowest intermediate balance the account ever reached after the mixing. If the balance drops to £500 at some point before being topped up again with unconnected money, the trust cannot claim more than £500 from that account — later deposits are not presumed to be substitutes for money the trustee has already dissipated, because there is nothing left at that point for the presumption to attach to."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Tracing through a running account: the sequence of questions",
+            "description": "The order in which the tracing presumptions are applied to a mixed and depleted account.",
+            "nodes": [
+              { "id": "start", "label": "Has trust money been mixed with the trustee's own money in one account?" },
+              { "id": "hallett", "label": "Apply Hallett: withdrawals for the trustee's own purposes are presumed to be the trustee's own money first" },
+              { "id": "asset-bought", "label": "Did the trustee use part of the mixed fund to buy a surviving asset?" },
+              { "id": "oatway", "label": "Apply Oatway: if the account is later run to nothing, the trust can claim the asset purchased" },
+              { "id": "lowest-balance", "label": "Apply Roscoe v Winder: the trust's maximum claim is capped at the lowest intermediate balance the account ever reached" }
+            ],
+            "edges": [
+              { "from": "start", "to": "hallett", "label": "Yes" },
+              { "from": "hallett", "to": "asset-bought", "label": "Then check" },
+              { "from": "asset-bought", "to": "oatway", "label": "Yes" },
+              { "from": "asset-bought", "to": "lowest-balance", "label": "No — check the balance history instead" }
+            ],
+            "textAlternative": "Once trust money is mixed with the trustee's own money in an account, Hallett presumes withdrawals for the trustee's personal purposes come out of the trustee's own share first. If the trustee used part of the fund to buy a surviving asset and later ran the rest of the account to nothing, Oatway allows the trust to claim that asset rather than being left with nothing. Whether or not an asset was bought, the trust's overall claim against the account is capped at the lowest intermediate balance the account ever reached, per Roscoe v Winder — later deposits of unconnected money do not revive a bigger claim."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-14-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "A trustee mixes £5,000 of trust money with £1,000 of his own. Put these events in the order they occur in a typical Roscoe v Winder-style problem.",
+          "items": ["Trust money and the trustee's own money are mixed in one account", "The trustee withdraws money for personal spending, and the balance falls to £800", "The trustee later pays in a further £4,000 of unconnected personal earnings", "The trust's maximum claim against the account is fixed at £800, the lowest intermediate balance"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That is the Roscoe v Winder sequence exactly — the trust's claim is locked in at the account's lowest point, and money paid in afterwards, with no connection to the trust, does not increase it.",
+          "feedbackIncorrect": "Check the order again — the key move is that the account falls to a low balance before the later deposit. The lowest intermediate balance is measured at the account's low point, not after unrelated money is later added back in."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Whose money came out first? Clayton's Case and its rejection",
+        "voice": "argumentative — presents the old rule, then the case that dismantled it",
+        "body": [
+          "A separate problem arises when a mixed account holds contributions from more than one innocent claimant — for example, an investment fraudster who pours money from many different victims into one account and pays it out in a continuous stream of withdrawals. Which victim's money was paid out first, and which survives?",
+          "The old answer, from Clayton's Case, is a banking rule with nothing to do with trusts at all: in a running account, the first sum paid in is presumed to be the first sum paid out — 'first in, first out'. Applied to a fraud victims' fund, this produces a harsh and essentially arbitrary result: the earliest investors are treated as having been paid out (and therefore as having lost everything) first, regardless of the actual chances of any individual investor's money surviving.",
+          "In Barlow Clowes International Ltd v Vaughan, the Court of Appeal refused to apply Clayton's Case mechanically to a mixed fund of investors' money, calling the rule impractical and contrary to the investors' presumed common intention. The court instead favoured pari passu sharing: each investor is treated as contributing to, and sharing rateably in, the same common fund, with losses shared proportionately rather than allocated by the accident of deposit order. Clayton's Case survives only as a fallback where a pari passu approach would itself be impractical, or where the parties' actual intentions clearly point to a chronological rule."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Barlow Clowes International Ltd v Vaughan",
+            "citation": "[1992] 4 All ER 22",
+            "court": "Court of Appeal",
+            "year": 1992,
+            "factsShort": "Thousands of investors' money was pooled in a fraudulent investment scheme's mixed accounts; on the scheme's collapse, the court had to decide how remaining funds should be shared between them.",
+            "ratioShort": "The mechanical first-in-first-out rule from Clayton's Case should not be applied to a mixed fund of multiple innocent contributors where it produces an arbitrary result; pari passu, rateable sharing better reflects their presumed common intention.",
+            "expanded": {
+              "facts": "Barlow Clowes operated an investment scheme that pooled thousands of investors' money into common bank accounts, from which the fraudsters running the scheme also withdrew large sums for their own use. When the scheme collapsed, far less money remained than had been invested, and the court had to determine how the shortfall should be distributed between investors whose money had all been mixed together.",
+              "judgmentExtract": "The Court of Appeal held that applying Clayton's Case strictly — treating the earliest investors as the first to have their money paid out and lost — would be capricious in the context of a fraud on many investors who had no dealings with one another and no reason to expect a chronological allocation of losses. The court applied a pari passu approach: the remaining fund was to be shared between investors in proportion to their contributions.",
+              "significance": "Barlow Clowes confirms that the 'first in, first out' rule is not a fixed rule of equity but a rule of convenience that yields where it produces unfairness between multiple innocent claimants — this is now the standard approach for pooled investor fraud cases."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-14-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below adapted from Barlow Clowes, highlight the sentence stating why the Clayton's Case rule was rejected.",
+          "passage": "The Clayton's Case rule allocates losses according to the date each sum was paid into the account. Applying it strictly here would be capricious in the context of a fraud on many investors who had no dealings with one another and no reason to expect a chronological allocation of losses. The court therefore applied a pari passu approach, sharing the remaining fund between investors in proportion to their contributions.",
+          "ratioSentence": "Applying it strictly here would be capricious in the context of a fraud on many investors who had no dealings with one another and no reason to expect a chronological allocation of losses."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The proprietary payoff: Foskett v McKeown and the unsettled edge of backwards tracing",
+        "voice": "culminating — treats Foskett as the destination the whole lesson has been building toward",
+        "body": [
+          "All of this machinery exists to answer one final question: once value has been traced into a substitute asset, what does the beneficiary actually get? Foskett v McKeown gives the answer, and it is more powerful than many students expect. A fraudster used a mix of his own money and misappropriated trust money to pay premiums on a life insurance policy; on his death, the policy paid out a substantial sum, and the beneficiaries of the misappropriated trust claimed a share of the proceeds.",
+          "The House of Lords held that tracing gives rise to a genuine proprietary claim, not merely a personal one — the beneficiaries were entitled to a proportionate share of the insurance proceeds, reflecting the proportion of the premiums paid with trust money, even though the policy's payout bore no direct causal relationship to the size of those premiums. Lord Millett was clear that this is a matter of property, not compensation: the beneficiaries own a share of the asset the traceable value went into, full stop, and can choose the more valuable of a proportionate share or a lien for the amount misapplied.",
+          "One frontier remains genuinely open: backwards tracing, where trust money is used to discharge a debt (say, paying off a loan that was itself used to buy an asset) before the trust money is actually received into the wrongdoer's hands. Federal Republic of Brazil v Durant, a Privy Council decision, accepted that backwards tracing is possible in principle where there is a sufficient link between the debt and the later receipt of the trust money, rejecting a rigid, purely chronological requirement. This is persuasive rather than binding in England and Wales, and the point has not been definitively settled by the Supreme Court — treat it as the live edge of the doctrine, not a closed question."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Foskett v McKeown",
+            "citation": "[2001] 1 AC 102",
+            "court": "House of Lords",
+            "year": 2001,
+            "factsShort": "A fraudster paid life insurance premiums using a mix of his own money and misappropriated trust money; on his death the policy paid out, and the trust beneficiaries claimed a share of the proceeds.",
+            "ratioShort": "Tracing produces a genuine proprietary claim: beneficiaries are entitled to a proportionate share of a mixed asset reflecting their traceable contribution, and may elect between a proportionate share and a lien.",
+            "expanded": {
+              "facts": "A trustee misappropriated trust money and used it, together with his own funds, to pay premiums on a life insurance policy taken out for the benefit of his children. On his suicide, the policy paid out roughly £1 million. The trust beneficiaries claimed a proportionate share of the payout, reflecting the proportion of premiums paid with their money.",
+              "judgmentExtract": "The House of Lords (Lord Millett giving the leading speech) held that once trust money can be traced into an asset, the beneficiaries acquire a proprietary interest in that asset proportionate to their contribution, regardless of whether the value of the asset bears any causal relationship to the size of the contribution. The beneficiaries could elect a proportionate share of the policy proceeds, which was more valuable than a mere lien for the premiums paid.",
+              "significance": "Foskett is the clearest modern statement that tracing claims are proprietary, not restitutionary or compensatory — a beneficiary who successfully traces owns a share of the resulting asset, with all the advantages (including priority on the wrongdoer's insolvency) that ownership brings."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-14-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A trustee misappropriates £20,000 of trust money and uses it, together with £30,000 of his own money, to buy a painting for £50,000 that later doubles in value to £100,000. Applying Foskett v McKeown, what can the beneficiaries claim?",
+          "options": ["Only £20,000, since that is all that was taken from the trust", "A proportionate share of the painting's current value — 40%, or £40,000 — reflecting their traceable contribution to the purchase", "Nothing, because the painting was bought with mostly the trustee's own money"],
+          "correctIndex": 1,
+          "explanation": "Foskett confirms tracing gives a genuine proprietary stake proportionate to the contribution, not a fixed sum capped at the amount originally taken. The beneficiaries share in the painting's appreciation in the same 40:60 proportion as their original contribution to its purchase."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-14-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the process of identifying a substitute asset for an original asset that has been exchanged, spent, or mixed away.",
+      "acceptableAnswers": ["tracing", "equitable tracing"],
+      "modelAnswer": "Tracing — the process of identifying a new asset as the traceable substitute for, or product of, an original asset."
+    },
+    {
+      "itemId": "equity-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Can common law tracing follow value once trust money has been mixed with other money in a bank account?",
+      "options": ["No — mixing defeats common law tracing entirely", "Yes — common law tracing works identically to equitable tracing"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-14-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under Re Hallett's Estate, when a trustee mixes trust money with their own and later withdraws money from the account for personal use, what is presumed?",
+      "options": ["The trustee spent trust money first, since it arrived in the account first", "The trustee spent their own money first, preserving the trust's claim over what remains", "The withdrawal is split equally between the trustee's own money and the trust money regardless of amounts"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to think of this as a 'first in, first out' problem like Clayton's Case, but Hallett's presumption works the opposite way for a single trustee's own mixed account: it resolves ambiguity against the trustee by presuming their own money went first."
+    },
+    {
+      "itemId": "equity-14-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under Re Oatway, if a trustee uses part of a mixed fund to buy a surviving asset and then dissipates the rest of the account, what can the trust claim?",
+      "options": ["The asset purchased, not merely whatever is left in the account", "Nothing, because the account has been run to zero"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-14-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A trustee mixes £8,000 of trust money with his own funds in an account. Later withdrawals reduce the account balance to £1,200 at its lowest point, before the trustee pays in a further £6,000 of unrelated personal bonus money. Applying Roscoe v Winder, what is the maximum the trust can claim from this account?",
+      "options": ["£8,000, the full amount originally paid in", "£1,200, the lowest intermediate balance the account ever reached", "£7,200, the balance immediately after the bonus was paid in"],
+      "correctIndex": 1,
+      "explanation": "The trust's claim is capped at the lowest intermediate balance. Money paid in afterwards, with no connection to the trust, is the trustee's own and does not revive or enlarge the trust's claim."
+    },
+    {
+      "itemId": "equity-14-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court works through when tracing into a mixed and partly depleted trustee's account.",
+      "items": ["Confirm trust money has been mixed with the trustee's own money", "Apply Hallett's presumption to withdrawals for the trustee's personal spending", "Check whether any surviving asset was bought from the mixed fund (Oatway)", "Cap any remaining claim against the account at its lowest intermediate balance (Roscoe v Winder)"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "equity-14-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario calls for the pari passu approach from Barlow Clowes rather than the Clayton's Case first-in-first-out rule?",
+      "scenarioA": "A single trustee mixes trust money with their own personal savings in one account and spends from it for personal purposes.",
+      "scenarioB": "A fraudster pools money from hundreds of unconnected investors into one running account and pays it out to investors and to himself over several years.",
+      "correctScenario": "B",
+      "explanation": "Barlow Clowes addresses the problem of multiple innocent contributors to a pooled fund, where chronological allocation is arbitrary. Scenario A is a single-trustee mixed-fund problem governed by Hallett, Oatway, and Roscoe v Winder instead."
+    },
+    {
+      "itemId": "equity-14-test-08",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence stating the ratio on proprietary claims from Foskett v McKeown.",
+      "passage": "The premiums on the policy were paid partly from misappropriated trust money and partly from the wrongdoer's own funds. Once trust money can be traced into an asset, the beneficiaries acquire a proprietary interest in that asset proportionate to their contribution. This is so regardless of whether the size of the eventual payout bears any causal relationship to the size of the original contribution.",
+      "ratioSentence": "Once trust money can be traced into an asset, the beneficiaries acquire a proprietary interest in that asset proportionate to their contribution."
+    },
+    {
+      "itemId": "equity-14-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A trustee misappropriates £15,000 of trust money and combines it with £45,000 of his own to buy shares for £60,000. The shares fall in value to £40,000. Applying Foskett v McKeown, what is the beneficiaries' best available remedy?",
+      "options": ["A proportionate 25% share of the shares' current value (£10,000), or a lien for £15,000, whichever the beneficiaries elect is more valuable", "Automatically £15,000 regardless of the shares' current value, with no election available", "Nothing, because the shares have fallen in value"],
+      "correctIndex": 0,
+      "explanation": "Foskett allows the beneficiaries to elect between a proportionate share of the asset and a lien for the amount contributed. Here the shares have fallen, so a lien for the full £15,000 — assuming the trustee has other assets to satisfy it, or the asset itself as security — is more valuable than the diminished 25% share, and the beneficiaries would elect accordingly."
+    },
+    {
+      "itemId": "equity-14-test-10",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which case recognised backwards tracing in principle — tracing into an asset acquired before the traceable trust money was actually received?",
+      "options": ["Federal Republic of Brazil v Durant", "Re Hallett's Estate"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-14-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.6,
+      "prompt": "What is the current status of backwards tracing in English law after Federal Republic of Brazil v Durant?",
+      "options": ["Fully settled and binding at Supreme Court level, applied without qualification", "Accepted in principle by a persuasive Privy Council authority, but not definitively resolved by the Supreme Court", "Rejected outright — English law has never permitted backwards tracing"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to treat a clearly reasoned Privy Council decision as settling English law, but Durant is persuasive, not binding, in England and Wales. Backwards tracing remains a live, unsettled question, not a closed one."
+    },
+    {
+      "itemId": "equity-14-test-12",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that would most support treating an investors' fund as governed by Barlow Clowes rather than Clayton's Case.",
+      "scenarioText": "A scheme operator pools money from two hundred unconnected retail investors into a single account, from which withdrawals are made continuously to pay both investors and the operator's own expenses over several years.",
+      "tappableSpans": ["pools money from two hundred unconnected retail investors", "into a single account", "withdrawals are made continuously", "over several years"],
+      "correctSpan": "pools money from two hundred unconnected retail investors",
+      "explanation": "It is the presence of many unconnected contributors, with no reason to expect a chronological allocation of losses between themselves, that makes a strict first-in-first-out rule arbitrary and points toward the pari passu approach in Barlow Clowes."
+    },
+    {
+      "itemId": "equity-14-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A trustee mixes £10,000 of trust money with £2,000 of his own in an account. He withdraws £9,000 to buy a car (now worthless after an accident) and later withdraws the remaining £3,000, spending it entirely, running the account to zero. Analyse what, if anything, the trust can recover, applying Hallett, Oatway, and Roscoe v Winder.",
+      "factsToOrder": [
+        "£10,000 trust money mixed with £2,000 of the trustee's own money",
+        "£9,000 withdrawn to buy a car, now worthless",
+        "The remaining £3,000 is withdrawn and spent, running the account to zero",
+        "No surviving asset of any value remains"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the beneficiaries can recover any value by tracing into the mixed account or the car bought from it.",
+        "rule": "Hallett presumes the trustee's own money is spent first from a mixed account; Oatway allows a claim against a surviving asset bought from the mixed fund where the rest of the account is later dissipated; but a tracing claim requires some surviving value to attach to.",
+        "application": "The car, bought partly or wholly using trust money under the mixed-fund analysis, is now worthless, so an Oatway-style proprietary claim against it recovers nothing of practical value. The remaining £3,000 was also spent, running the account to zero, leaving no asset and no account balance for a tracing claim to attach to.",
+        "conclusion": "Tracing has technically identified where the value went, but because both the car and the remaining balance have no surviving value, the beneficiaries are left with only a personal claim against the trustee, not a recoverable proprietary one — tracing rules cannot manufacture value that no longer exists anywhere."
+      }
+    },
+    {
+      "itemId": "equity-14-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "In Foskett v McKeown, was the beneficiaries' claim to the insurance proceeds treated as proprietary or purely personal?",
+      "options": ["Proprietary — a genuine share in the traced asset", "Purely personal — a debt owed by the wrongdoer's estate"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-14-test-15",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario better illustrates the Oatway principle, as opposed to the plain Hallett presumption?",
+      "scenarioA": "A trustee mixes funds and withdraws money purely to pay personal bills, which is spent and gone, with the rest of the account still intact.",
+      "scenarioB": "A trustee mixes funds, uses part of them to buy an investment property that still exists, then spends the remainder of the account down to nothing.",
+      "correctScenario": "B",
+      "explanation": "Oatway is specifically about a surviving asset bought from a mixed fund, combined with total dissipation of the rest of the account — exactly scenario B. Scenario A is resolved by the plain Hallett presumption, since the untouched remainder of the account is enough to satisfy the trust's claim without needing Oatway at all."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is stopping the analysis once a mixed fund is identified, without working through the sequence properly: Hallett's presumption first, then Oatway if an asset was bought, then Roscoe v Winder to cap the claim at the lowest intermediate balance — and Barlow Clowes instead of Clayton's Case wherever multiple innocent contributors are involved.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.remedies.tracing"
+  }
+}

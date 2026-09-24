@@ -86,6 +86,9 @@ const MODULE_KEYWORDS: Record<string, RegExp> = {
   tort: /\b(negligen\w*|personal injury|clinical negligence|defamation|libel|slander|nuisance|compensation claim|duty of care|occupiers|vicarious|privacy claim|misuse of private information)\b/i,
   public: /\b(judicial review|on the application of|secretary of state|government|minister\w*|home office|home secretary|parliament\w*|human rights|echr|article \d+|immigration|asylum|deport\w*|public inquiry|devolution|prerogative|constitution\w*|unlawful policy|protest\w*|public order)\b/i,
   land: /\b(landlord\w*|tenan\w*|lease\w*|leasehold|freehold|property|planning|housing|eviction\w*|mortgage\w*|land registry|renters?)\b/i,
+  companylaw: /\b(compan(y|ies)|directors?|shareholders?|insolven\w*|liquidat\w*|administrators?|companies house|corporate|takeover\w*)\b/i,
+  eulaw: /\b(eu|european union|brexit|windsor framework|cjeu|european court of justice|retained eu law|assimilated law|trade and cooperation agreement)\b/i,
+  humanrights: /\b(human rights|echr|european court of human rights|strasbourg|article (2|3|5|6|8|9|10|11|14)\b|convention rights|freedom of expression|right to (life|privacy|a fair trial))\b/i,
   equity: /\b(trust|trusts|trustee\w*|charit\w*|fiduciar\w*|probate|inheritance|wills|testator\w*|estate of|beneficiar\w*)\b/i,
 };
 

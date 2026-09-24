@@ -1,0 +1,359 @@
+{
+  "lessonId": "companylaw-04",
+  "moduleId": "companylaw",
+  "moduleTitle": "Company Law",
+  "lessonNumber": 4,
+  "topicId": "companylaw.formation.promoters-pre-incorporation",
+  "title": "Contracting before the company exists",
+  "subtitle": "Promoters' duties and liability on pre-incorporation contracts",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the fiduciary duties a promoter owes to the company being formed, including the duty to disclose any profit made from dealing with it",
+    "Explain why a pre-incorporation contract cannot bind the company and cannot later be ratified by it, and state the effect of s 51 Companies Act 2006",
+    "Apply s 51 and Kelner v Baxter to a new fact pattern to identify who is personally liable on a pre-incorporation contract, and explain how novation can shift that liability to the company"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006, s 51", "role": "Statutory rule: the person who purports to contract for an unformed company is personally liable, absent an express agreement to the contrary" },
+    { "citation": "Kelner v Baxter (1866) LR 2 CP 174", "role": "Common-law origin of the personal-liability rule; a company cannot ratify a contract made before it existed" },
+    { "citation": "Phonogram Ltd v Lane [1982] QB 938", "role": "Confirms personal liability applies even where both parties know the company is unformed; only clear, express words displace it" },
+    { "citation": "Erlanger v New Sombrero Phosphate Co (1878) 3 App Cas 1218", "role": "Leading authority on a promoter's fiduciary duty to disclose profit to an independent board or the shareholders" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Exam scripts on this topic lose most of their marks on the same move: spotting that a contract was signed before incorporation, and correctly working out who is bound by it. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know s 51 — this lesson is about spotting the moment it bites.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards fact patterns: expect messy dates and signatures, not bare definitions.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state the fiduciary duty and the s 51 rule from memory before moving into the fact patterns — the rest of the lesson assumes both."
+    }
+  },
+  "lawStatedAt": "2026-09-23",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company doesn't yet exist. Someone signs a contract 'on its behalf' anyway. Eighteen months later the company is trading happily — and then a supplier isn't paid. Who gets sued? Not an abstract question: a company cannot be a party to a contract made before its own legal birth, and the law's answer to who is bound instead catches most students out twice over."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Who is a promoter, and what do they owe?",
+        "voice": "doctrinal — establishes a status before attaching duties to it",
+        "body": [
+          "Before a company exists, someone has to do the work of bringing it into being: raising capital, negotiating early contracts, instructing solicitors, lining up directors. The person who does this is a promoter — not a defined office under the Companies Act 2006, but a status the courts impose on anyone who undertakes to form a company and takes the practical steps needed to get it registered and trading.",
+          "The status matters because equity refuses to let a promoter treat the company-to-be as a stranger they can deal with at arm's length. From the moment someone starts promoting a company, they stand in a fiduciary relationship to it — even though, at that moment, the company has no separate legal personality and cannot itself enforce anything against them. The duty crystallises and becomes enforceable once the company is incorporated.",
+          "The clearest expression of the duty is the rule against secret profit: a promoter who sells property to the company they are forming, or who otherwise profits from dealing with it, must disclose that profit — to an independent board, or, where there is none, to the existing and prospective shareholders as a whole. Non-disclosure doesn't make the transaction automatically void, but it makes it voidable at the company's instance, and the promoter can be made to account for the profit."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Promoter",
+            "definition": "A person who undertakes to form a company and takes the practical steps needed to get it registered and trading — not a Companies Act term of art, but a status equity recognises because of the fiduciary opportunities it creates."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-04-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does the Companies Act 2006 define 'promoter' as a formal office someone holds?",
+          "options": ["No — it is a status the courts recognise from what a person does, not a role created by the Act", "Yes — the Act formally appoints the first promoter of every company on registration"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Nobody is 'appointed' promoter — you become one by doing the work of bringing a company into being, and equity attaches fiduciary consequences to that on its own initiative.",
+          "feedbackIncorrect": "There's no statutory appointment here. 'Promoter' describes conduct — undertaking to form the company and taking the steps to do it — and it's that conduct, not any formal title, that triggers the fiduciary duties this lesson covers."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Erlanger: the duty to disclose a promoter's profit",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Baron Erlanger led a syndicate that bought the lease of a phosphate-rich island, Sombrero, for £55,000. Within days, the syndicate formed the New Sombrero Phosphate Company and sold the very same lease to it for £110,000 — almost double what they had just paid. The new company's board was nominally independent, but in substance it was hand-picked by the syndicate and never given the full facts about the mark-up.",
+          "When the truth emerged, the company sought to rescind the sale. The House of Lords held that promoters stand in a fiduciary relationship to the company they are forming, and cannot simply pocket a profit made from dealing with it. Disclosure has to go to a genuinely independent board, or, failing that, to the body of shareholders as a whole — not to a board the promoters themselves selected and briefed.",
+          "Erlanger is worth knowing for its reasoning as much as its outcome: the House of Lords didn't treat the profit itself as wrongful — promoters are entitled to profit from their work — but the concealment of it from anyone capable of scrutinising the deal on the company's behalf was what made the transaction impeachable."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Erlanger v New Sombrero Phosphate Co",
+            "citation": "(1878) 3 App Cas 1218",
+            "court": "House of Lords",
+            "year": 1878,
+            "factsShort": "A syndicate bought a phosphate-mining lease for £55,000 and resold it to a company it had just formed for £110,000, without full disclosure to an independent board.",
+            "ratioShort": "A promoter owes a fiduciary duty to disclose any profit made from dealing with the company to an independent board, or to the shareholders as a whole; failure to do so makes the transaction voidable.",
+            "expanded": {
+              "facts": "Erlanger and his associates purchased the lease of Sombrero Island, valuable for its guano and phosphate deposits, for £55,000. They then set up the New Sombrero Phosphate Company and, within days of its formation, sold the lease to it for £110,000. The company's first board of directors had been selected by the syndicate and was not given a full and independent account of the original purchase price or the scale of the mark-up.",
+              "judgmentExtract": "The House of Lords held that those who form a company and control its early direction occupy a position of trust towards it, analogous to that of an agent, and must not derive a secret profit from dealings with it. Disclosure to a board that is not truly independent of the promoters is not disclosure that satisfies the duty.",
+              "significance": "Erlanger established the modern shape of promoters' fiduciary duties: not a bar on promoters profiting at all, but a strict disclosure requirement that only genuine independence — of the board, or of the shareholder body — can satisfy."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-04-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these Erlanger events in the order they happened.",
+          "items": [
+            "The syndicate buys the lease of Sombrero Island for £55,000",
+            "The syndicate forms the New Sombrero Phosphate Company",
+            "The syndicate sells the same lease to the new company for £110,000",
+            "The company discovers the mark-up and seeks to rescind the sale"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence the whole case turns on: the profit was made possible by the syndicate controlling both sides of the transaction, before the company itself was in any position to scrutinise it.",
+          "feedbackIncorrect": "Check the order again — the promoters buy first, then form the company, then sell to their own creation at a mark-up, and only afterwards does the company find out. The duty to disclose exists precisely because the company had no independent voice at the moment the deal was struck."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Why a company cannot be bound by — or ratify — a contract made before it existed",
+        "voice": "doctrinal — works through the logical problem before the statutory fix",
+        "body": [
+          "A company only becomes a legal person capable of holding rights and owing obligations from the moment the registrar issues its certificate of incorporation. Before that moment, there is no legal person who could have been a party to any contract — which causes a genuine problem for ordinary agency reasoning: you cannot act as 'agent' for a principal who does not yet exist, and a non-existent principal cannot later ratify what was purportedly done in its name, because ratification requires the principal to have existed and had capacity at the time of the original act.",
+          "This is not a technicality the courts have softened over time — it has hardened into a bright-line rule precisely because the alternative would be worse: if a company could simply 'adopt' pre-incorporation contracts at will once it existed, third parties would be left in limbo, unable to know who they could sue if the promoters walked away and the company was never in fact formed, or formed but unwilling to honour the deal.",
+          "Parliament's answer is s 51 Companies Act 2006, which does not let the company escape scrutiny by pointing to its own non-existence at the relevant time — instead it fixes personal liability squarely on whoever signed."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 51(1)",
+            "text": "A contract that purports to be made by or on behalf of a company at a time when the company has not been formed has effect, subject to any agreement to the contrary, as one made with the person purporting to act for the company or as agent for it, and he is personally liable on the contract accordingly.",
+            "elements": ["A contract purports to be made by or on behalf of a company", "The company had not been formed (incorporated) at that time", "The person purporting to act for it is personally liable on the contract", "Unless there is an agreement to the contrary"]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-04-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 51(1), what happens to a pre-incorporation contract by default — before any agreement to the contrary is considered?",
+          "options": ["It takes effect as a contract with the person who purported to act for the company, who is personally liable on it", "It is automatically void and unenforceable against anyone", "It automatically becomes binding on the company once the company is later incorporated"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The default position under s 51 is personal liability for the signatory — not voidness, and not automatic transfer to the company once it exists.",
+          "feedbackIncorrect": "Re-read the statutory text: s 51 doesn't void the contract, and it doesn't transfer it to the company on incorporation. It deems the contract to be one made personally with the signatory, who is bound by it."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Kelner v Baxter: the common-law starting point",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Long before s 51 existed, the courts had already reached the same result at common law. The promoters of the Gravesend Royal Alexandra Hotel Company signed a contract to buy a stock of wine from Mr Kelner, describing themselves as acting 'on behalf of' the proposed company — which had not yet been registered. The wine was delivered and used. The company was later incorporated, but it went into liquidation before paying for the wine, and Kelner sued the promoters personally.",
+          "The Court of Common Pleas held the promoters personally liable. Because the company did not exist at the time the contract was signed, it could not have been a party to it — and, crucially, it could not ratify the contract after incorporation either, since ratification can only be done by a principal who existed and had capacity at the time of the original act. The people who signed 'for' the company had, in law, contracted as principals in their own right.",
+          "Kelner v Baxter is worth reading closely because the result feels counter-intuitive at first: the promoters plainly intended the company, not themselves, to be bound. The case is the clearest illustration in this whole lesson of a recurring theme — intention alone cannot conjure a contracting party into existence where none exists yet."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Kelner v Baxter",
+            "citation": "(1866) LR 2 CP 174",
+            "court": "Court of Common Pleas",
+            "year": 1866,
+            "factsShort": "Promoters of an unregistered hotel company signed a contract to buy wine 'on behalf of' the company; the company was later incorporated but never paid before going into liquidation.",
+            "ratioShort": "A company cannot be bound by, or ratify, a contract made before it existed; the promoters who purported to contract for it are personally liable as principals.",
+            "expanded": {
+              "facts": "The promoters of the Gravesend Royal Alexandra Hotel Company agreed to buy a stock of wine from Kelner for use in the hotel, signing the contract as acting 'on behalf of' the proposed company before it had been registered. The wine was supplied and consumed. The company was incorporated shortly afterwards, but went into liquidation without having paid for the wine.",
+              "judgmentExtract": "The court held that, as the company had no legal existence at the date of the contract, it could not have been a contracting party, and a non-existent party cannot subsequently ratify a contract made in its purported name. Those who signed had therefore contracted personally, and were personally liable.",
+              "significance": "Kelner v Baxter is the common-law foundation that s 51 Companies Act 2006 now codifies. It establishes two propositions this lesson keeps returning to: no capacity to contract before incorporation, and no ratification afterwards, however much all parties intended the company to be bound."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-04-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario does the Kelner v Baxter / s 51 problem actually arise?",
+          "scenarioA": "A solicitor signs a lease 'on behalf of' Riverside Print Ltd, a company that was incorporated the previous week, using its correct registered name.",
+          "scenarioB": "A solicitor signs a lease 'on behalf of' Riverside Print Ltd three weeks before any application to incorporate that company has even been filed.",
+          "correctScenario": "B",
+          "explanation": "In A, the company already exists at the moment of signing, so this is an ordinary case of a solicitor acting as agent for an existing principal — s 51 has nothing to bite on. In B, there is no company yet at all, which is exactly the Kelner v Baxter problem: the signatory becomes personally bound."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Phonogram v Lane, and the escape route of novation",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Brian Lane negotiated, on behalf of a proposed company that would manage a pop group, a loan agreement with Phonogram Ltd, signing it 'for and on behalf of' the proposed company — which was never in fact incorporated under that name. When the loan wasn't repaid, Lane argued that describing himself as signing 'on behalf of' the company showed the parties had agreed only the company, not he personally, would be bound.",
+          "The Court of Appeal rejected that argument. Personal liability under the statutory predecessor to s 51 applies whether or not the parties actually believed the company existed — the whole point of the provision is to protect third parties regardless of what everyone privately understood. And the words 'subject to any agreement to the contrary' require clear, express words excluding personal liability; merely writing 'on behalf of' a company is not enough, because that phrase is exactly what you'd expect to see in every pre-incorporation contract, ratified or not.",
+          "So what actually gets a promoter off the hook once the company exists? Not silent 'adoption' by the company, and not the company simply carrying on performing the contract. The clean fix is novation: the company and the third party enter an entirely new contract, on the same or renegotiated terms, with the third party's express agreement to release the original signatory and accept the company instead. Novation is a fresh bargain, not a formality — and examiners routinely test whether students notice the difference."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say that because the contract was signed 'for and on behalf of' the company, this shows an agreement that only the company would be bound, so the promoter escapes s 51 liability.",
+            "whyItsWrong": "Phonogram v Lane holds the opposite: those exact words are what you'd expect in any pre-incorporation contract and do not, on their own, amount to the express 'agreement to the contrary' s 51 requires. Only clear words excluding personal liability will do — and even then, the promoter is not released from an existing liability without something more, such as a later novation to which the third party agrees."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-04-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Six months after DriftCo Ltd is incorporated, its director (who was also its original promoter) tells the original supplier, 'the company will honour the old contract now that we're incorporated.' Is that statement, on its own, enough to release the promoter from personal liability under s 51?",
+          "options": ["Yes — once the company confirms it will honour the contract, the promoter is automatically released", "No — releasing the promoter requires a fresh contract (a novation) to which the third party agrees; a unilateral statement of intent by the company is not enough", "No — s 51 liability can never be displaced once it has attached, even by novation"],
+          "correctIndex": 1,
+          "explanation": "A statement of intent to honour the contract is not a novation. Releasing the promoter needs the third party's agreement to a genuinely new contract substituting the company for the original signatory — nothing less will do, and nothing automatic happens simply because the company now exists."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "companylaw-04-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the effect of s 51 Companies Act 2006 on a person who signs a contract 'on behalf of' a company before it is incorporated.",
+      "acceptableAnswers": ["the signatory is personally liable", "personal liability on the contract", "treated as a contract with the person who signed it"],
+      "modelAnswer": "The contract has effect, subject to any agreement to the contrary, as one made personally with the person who purported to act for the company, who is personally liable on it."
+    },
+    {
+      "itemId": "companylaw-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under Kelner v Baxter, can a company that is later incorporated ratify a contract its promoters signed on its behalf before incorporation?",
+      "options": ["No — the company did not exist at the time and cannot ratify retrospectively", "Yes — ratification is automatic once the company is incorporated"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-04-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following correctly states the effect of the words 'subject to any agreement to the contrary' in s 51?",
+      "options": ["Describing the signatory as acting 'for and on behalf of' the company excludes personal liability", "Personal liability is excluded only where the parties expressly and clearly agree that the signatory will not be personally bound", "Section 51 has no exceptions at all"],
+      "correctIndex": 1,
+      "trapExplanation": "Phonogram v Lane rejected exactly the first option: signing 'for and on behalf of' a company is the ordinary form of words in any pre-incorporation contract, and does not on its own show the clear, express agreement s 51 requires to displace personal liability."
+    },
+    {
+      "itemId": "companylaw-04-test-04",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "In the passage below, adapted from Erlanger v New Sombrero Phosphate Co, highlight the sentence that states the ratio.",
+      "passage": "The syndicate sold the lease to the company it had itself formed at a substantial profit, without disclosing the original purchase price to an independent board. Promoters who form a company and control its early direction owe it a fiduciary duty to disclose any profit made from dealing with it, to an independent board or to the shareholders as a whole, and a failure to do so renders the transaction voidable at the company's instance.",
+      "ratioSentence": "Promoters who form a company and control its early direction owe it a fiduciary duty to disclose any profit made from dealing with it, to an independent board or to the shareholders as a whole, and a failure to do so renders the transaction voidable at the company's instance."
+    },
+    {
+      "itemId": "companylaw-04-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court works through when deciding whether s 51 makes a signatory personally liable on a contract.",
+      "items": [
+        "Identify whether the named company had been incorporated at the time of signing",
+        "If not yet incorporated, ask whether the contract purports to be made by or on behalf of that company",
+        "Apply s 51: the signatory is personally liable, unless there is an express agreement to the contrary",
+        "Check whether the parties later entered a fresh agreement (novation) after incorporation"
+      ],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "companylaw-04-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A promoter signs a contract 'for and on behalf of' a company not yet incorporated, and the written agreement says nothing at all about personal liability. Applying s 51, is the promoter personally bound?",
+      "options": ["Yes — silence is not an 'agreement to the contrary', so personal liability applies by default", "No — the words 'on behalf of' show an intention that only the company should be bound", "It depends on whether the third party later discovers the company did not yet exist"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-04-test-07",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that triggers s 51 in this scenario.",
+      "scenarioText": "Priya, acting as promoter for Everwood Consulting Ltd, signs a two-year office lease for and on behalf of the company on 3 March. The company is incorporated on 20 March. The landlord later seeks unpaid rent for April.",
+      "tappableSpans": ["acting as promoter for Everwood Consulting Ltd", "signs a two-year office lease", "for and on behalf of the company on 3 March", "The company is incorporated on 20 March"],
+      "correctSpan": "for and on behalf of the company on 3 March",
+      "feedbackCorrect": "That's the moment that matters — the lease was signed before incorporation, so s 51 fixes personal liability on Priya unless there is a later novation.",
+      "feedbackIncorrect": "Look for the date on which the contract was actually signed, relative to incorporation. Section 51 turns on the company's status at the moment of signing, not on when it later comes into existence."
+    },
+    {
+      "itemId": "companylaw-04-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "In which scenario does the s 51 / Kelner v Baxter problem actually arise?",
+      "scenarioA": "A director signs a supply contract 'on behalf of' Marlowe Fabrications Ltd, a company incorporated eighteen months earlier and still trading under that name.",
+      "scenarioB": "A director signs a supply contract 'on behalf of' Marlowe Fabrications Ltd two weeks before any application to register that company has been submitted.",
+      "correctScenario": "B",
+      "explanation": "A involves an existing company and an ordinary agent signing for it — no pre-incorporation issue at all. B is the Kelner v Baxter scenario: no company exists yet, so the signatory is personally bound under s 51."
+    },
+    {
+      "itemId": "companylaw-04-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Kwame purports to sign a van-hire agreement 'on behalf of' Bolt Deliveries Ltd, a company that is never in fact incorporated at all. The hire company wants to recover unpaid fees. Who is liable?",
+      "options": ["No one — the agreement is void because the named company never existed", "Kwame — he is personally bound under s 51 whether or not the company is ever incorporated", "The hire company itself, because it accepted the risk of dealing with an unformed company"],
+      "correctIndex": 1,
+      "explanation": "Section 51 does not require the company ever to come into existence at all — it fixes personal liability on the signatory the moment the contract purports to bind an unformed company, and that liability does not depend on incorporation happening later."
+    },
+    {
+      "itemId": "companylaw-04-test-10",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Tom is promoting a specialist bakery supply company, Crumb & Co. Before incorporation, he signs a contract with a flour wholesaler 'on behalf of Crumb & Co Ltd (in formation)' for a 12-month supply deal. Crumb & Co Ltd is incorporated six weeks later and goes on taking flour deliveries under the same terms for a further four months, without ever signing anything new with the wholesaler. The wholesaler is left unpaid and wants to know whom to sue. Analyse the position.",
+      "factsToOrder": [
+        "Tom signs the contract before incorporation, describing himself as acting 'on behalf of' the company",
+        "Crumb & Co Ltd is incorporated six weeks later",
+        "The company goes on taking deliveries under the same terms without signing anything new",
+        "The wholesaler is left unpaid"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Crumb & Co Ltd or Tom is liable to the wholesaler for the unpaid flour.",
+        "rule": "Under s 51 Companies Act 2006 and Kelner v Baxter, a contract signed before a company is incorporated binds the signatory personally, not the company, and the company cannot ratify it after incorporation. Releasing the signatory requires a genuine novation — a fresh agreement to which the third party consents — not mere continued performance on the old terms.",
+        "application": "Tom signed the contract before Crumb & Co Ltd existed, so s 51 fixes personal liability on him. The company's later conduct — simply continuing to take deliveries under the original terms — is not a novation: there is no evidence of any fresh agreement between the company and the wholesaler releasing Tom and substituting the company as the contracting party.",
+        "conclusion": "Tom remains personally liable to the wholesaler under s 51. Crumb & Co Ltd is not bound on the original contract, since no novation has taken place."
+      }
+    },
+    {
+      "itemId": "companylaw-04-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a promoter is automatically released from s 51 liability as soon as the company they were promoting is incorporated?",
+      "sliderLabels": ["Definitely automatic release", "Definitely not automatic"],
+      "correctPosition": "not automatic",
+      "explanation": "Not automatic. Incorporation alone does nothing to the promoter's existing personal liability under s 51 — release requires a novation, a fresh agreement to which the third party consents, substituting the company for the promoter."
+    },
+    {
+      "itemId": "companylaw-04-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Six months after DriftCo Ltd is incorporated, its director (also its original promoter) tells the supplier 'the company will honour the old contract now that we're incorporated.' Is this enough to release the promoter from personal liability under s 51?",
+      "options": ["Yes — once the company confirms it will honour the contract, the promoter is automatically released", "No — releasing the promoter requires a fresh contract (a novation) to which the third party agrees; a unilateral statement of intent is not enough", "No — s 51 liability can never be displaced once it has attached, even by agreement"],
+      "correctIndex": 1,
+      "trapExplanation": "A statement of intent to honour the contract is not a novation, so the first option is wrong. But the rule isn't absolute either — a genuine novation, to which the third party agrees, can and does release the promoter, so the third option overstates the position."
+    },
+    {
+      "itemId": "companylaw-04-test-13",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Tap the fact that shows a proper novation has taken place, releasing the original promoter.",
+      "scenarioText": "After DriftCo Ltd is incorporated, its sole director — the same person who had signed a supply contract as promoter before incorporation — arranges for DriftCo and the supplier to sign an entirely new supply agreement on the same terms, replacing the earlier one. The supplier agrees and countersigns the new agreement.",
+      "tappableSpans": ["the same person who had signed a supply contract as promoter", "arranges for DriftCo and the supplier to sign an entirely new supply agreement", "replacing the earlier one", "The supplier agrees and countersigns the new agreement"],
+      "correctSpan": "The supplier agrees and countersigns the new agreement",
+      "feedbackCorrect": "That's the fact that makes it a novation, not just paperwork: the third party's consent to the new agreement is what actually substitutes the company for the promoter and releases the promoter's s 51 liability.",
+      "feedbackIncorrect": "A new document alone isn't enough — look for the fact that shows the third party (the supplier) has actually consented to treat the company as the new contracting party in place of the promoter."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is treating words like 'for and on behalf of' as if they excuse the signatory from liability. They don't — s 51 binds the signatory personally unless the parties expressly agree otherwise, and 'on behalf of' is exactly the phrase Phonogram v Lane held was not enough.",
+    "reviewMisses": true,
+    "linkToPathway": "companylaw.formation.promoters-pre-incorporation"
+  }
+}
