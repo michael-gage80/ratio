@@ -37,7 +37,7 @@ struct ReportErrorSheet: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
                     if sent {
                         Text("Thank you.").ratioFont(.h1)
                         Text("A reviewer will look at this within 72 hours. If it's wrong, it's fixed for everyone.")
@@ -45,7 +45,7 @@ struct ReportErrorSheet: View {
                         RatioButton("Done", style: .secondary) { dismiss() }
                     } else {
                         Text("What's wrong?").ratioFont(.h2)
-                        VStack(spacing: 10) {
+                        VStack(spacing: RatioSpace.xs) {
                             ForEach(Reason.allCases) { option in
                                 RatioOptionRow(text: option.title, state: reason == option ? .selected : .default) { reason = option }
                             }
@@ -57,10 +57,9 @@ struct ReportErrorSheet: View {
                         RatioButton("Send report", isEnabled: reason != nil) { send() }
                     }
                 }
-                .padding(24)
+                .padding(RatioSpace.m)
             }
-            .background(Color.ratioParchment.ignoresSafeArea())
-            .foregroundStyle(Color.ratioInk)
+            .ratioPage()
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
@@ -85,6 +84,6 @@ struct ReportErrorSheet: View {
         if !trimmed.isEmpty { report["note"] = trimmed }
         if let lessonId { report["lessonId"] = lessonId }
         Firestore.firestore().collection("reports").addDocument(data: report)
-        withAnimation { sent = true }
+        withAnimation(RatioMotion.reveal) { sent = true }
     }
 }

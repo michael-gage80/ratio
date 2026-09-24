@@ -17,7 +17,7 @@ struct ItemInteractionView: View {
     @State private var reporting = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
+        VStack(alignment: .leading, spacing: RatioSpace.m) {
             Text(item.prompt)
                 .ratioFont(.h2)
                 .fixedSize(horizontal: false, vertical: true)
@@ -99,7 +99,7 @@ private struct ChoiceInteraction: View {
     @State private var selection: Int?
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: RatioSpace.xs) {
             ForEach(Array(options.enumerated()), id: \.offset) { index, option in
                 RatioOptionRow(
                     letter: String(UnicodeScalar(UInt8(65 + index))),
@@ -112,7 +112,7 @@ private struct ChoiceInteraction: View {
                 RatioButton("Lock it in", isEnabled: selection != nil) {
                     onLock(ItemResponse(itemId: itemId, choiceIndex: selection))
                 }
-                .padding(.top, 8)
+                .padding(.top, RatioSpace.xs)
             }
         }
     }
@@ -139,8 +139,8 @@ private struct TapTheFactInteraction: View {
     @State private var selection: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 ForEach(Array(segments.enumerated()), id: \.offset) { _, segment in
                     if let span = segment.span {
                         spanButton(span, shown: segment.text)
@@ -149,9 +149,7 @@ private struct TapTheFactInteraction: View {
                     }
                 }
             }
-            .padding(18)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .ratioPanel()
 
             if locked == nil {
                 RatioButton("Lock it in", isEnabled: selection != nil) {
@@ -168,17 +166,18 @@ private struct TapTheFactInteraction: View {
         return Button {
             selection = span
         } label: {
-            HStack(spacing: 8) {
+            HStack(spacing: RatioSpace.xs) {
                 if isCorrect { Image(systemName: "checkmark.circle.fill").foregroundStyle(Color.ratioVerdigris) }
                 if isWrongPick { Image(systemName: "xmark.circle.fill").foregroundStyle(Color.ratioOxblood) }
                 Text(shown).ratioFont(.body).multilineTextAlignment(.leading)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
+            .padding(.horizontal, RatioSpace.xs)
+            .padding(.vertical, RatioSpace.xxs)
+            .frame(minHeight: 44)
             .background(isCorrect ? Color.ratioVWash : isWrongPick ? Color.ratioOxWash : Color.ratioPaper,
-                        in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
             .overlay {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous)
                     .strokeBorder(isSelected ? Color.ratioInk : Color.ratioRule, lineWidth: isSelected ? 2 : 1)
             }
         }
@@ -222,16 +221,27 @@ private struct SliderInteraction: View {
     let onLock: (ItemResponse) -> Void
 
     @State private var value = 0.5
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Slider(value: $value, in: 0...1, step: 0.25)
                 .tint(Color.ratioInk)
                 .disabled(locked != nil)
                 .accessibilityValue(position)
-            HStack(alignment: .top) {
-                Text(labels.first ?? "").frame(maxWidth: .infinity, alignment: .leading)
-                Text(labels.last ?? "").frame(maxWidth: .infinity, alignment: .trailing).multilineTextAlignment(.trailing)
+            Group {
+                if typeSize.isAccessibilitySize {
+                    // Large text: the two ends, labelled, one under the other.
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        Text("Left: \(labels.first ?? "")")
+                        Text("Right: \(labels.last ?? "")")
+                    }
+                } else {
+                    HStack(alignment: .top, spacing: RatioSpace.s) {
+                        Text(labels.first ?? "").frame(maxWidth: .infinity, alignment: .leading)
+                        Text(labels.last ?? "").frame(maxWidth: .infinity, alignment: .trailing).multilineTextAlignment(.trailing)
+                    }
+                }
             }
             .ratioFont(.small)
             .foregroundStyle(Color.ratioInk2)
@@ -284,15 +294,16 @@ private struct SequenceInteraction: View {
     }
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: RatioSpace.xs) {
             ForEach(Array(order.enumerated()), id: \.element) { position, index in
                 row(position: position, index: index)
             }
             if locked == nil {
-                HStack(spacing: 10) {
-                    RatioButton("Move up", style: .tertiary, isEnabled: canMove(by: -1)) { move(by: -1) }
-                    RatioButton("Move down", style: .tertiary, isEnabled: canMove(by: 1)) { move(by: 1) }
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: RatioSpace.xs) { moveButtons }
+                    VStack(spacing: RatioSpace.xs) { moveButtons }
                 }
+                .padding(.top, RatioSpace.xs)
                 RatioButton("Lock it in") {
                     onLock(ItemResponse(itemId: itemId, order: order))
                 }
@@ -300,6 +311,11 @@ private struct SequenceInteraction: View {
                 RatioWhyCard("The right order: " + correctOrder.enumerated().map { "\($0.offset + 1). \(items[$0.element])" }.joined(separator: "  "))
             }
         }
+    }
+
+    @ViewBuilder private var moveButtons: some View {
+        RatioButton("Move up", style: .tertiary, isEnabled: canMove(by: -1)) { move(by: -1) }
+        RatioButton("Move down", style: .tertiary, isEnabled: canMove(by: 1)) { move(by: 1) }
     }
 
     private func row(position: Int, index: Int) -> some View {
@@ -310,10 +326,10 @@ private struct SequenceInteraction: View {
         }
         return RatioOptionRow(letter: "\(position + 1)", text: items[index], state: state,
                               action: locked == nil ? { selected = index } : nil)
-            .draggable(String(index)) { Text(items[index]).ratioFont(.body).padding(12) }
+            .draggable(String(index)) { Text(items[index]).ratioFont(.body).padding(RatioSpace.s) }
             .dropDestination(for: String.self) { dropped, _ in
                 guard locked == nil, let from = dropped.first.flatMap(Int.init), let source = order.firstIndex(of: from), source != position else { return false }
-                withAnimation(.easeInOut(duration: 0.2)) {
+                withAnimation(RatioMotion.tap) {
                     order.move(fromOffsets: IndexSet(integer: source), toOffset: position > source ? position + 1 : position)
                 }
                 return true
@@ -329,7 +345,7 @@ private struct SequenceInteraction: View {
 
     private func move(by offset: Int) {
         guard let selected, let position = order.firstIndex(of: selected), order.indices.contains(position + offset) else { return }
-        withAnimation(.easeInOut(duration: 0.2)) { order.swapAt(position, position + offset) }
+        withAnimation(RatioMotion.tap) { order.swapAt(position, position + offset) }
     }
 }
 
@@ -358,7 +374,7 @@ private struct SortInteraction: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             ForEach(statements.indices, id: \.self) { index in
                 row(index)
             }
@@ -366,7 +382,7 @@ private struct SortInteraction: View {
                 RatioButton("Lock it in", isEnabled: chosen.allSatisfy { $0 != nil }) {
                     onLock(ItemResponse(itemId: itemId, order: chosen.map { $0 ?? -1 }))
                 }
-                .padding(.top, 4)
+                .padding(.top, RatioSpace.xs)
             }
         }
     }
@@ -374,8 +390,8 @@ private struct SortInteraction: View {
     private func row(_ index: Int) -> some View {
         let answer = locked?.order?[safe: index] ?? chosen[index]
         let isRight = answer == correct[index]
-        return VStack(alignment: .leading, spacing: 10) {
-            HStack(alignment: .firstTextBaseline, spacing: 10) {
+        return VStack(alignment: .leading, spacing: RatioSpace.xs) {
+            HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
                 Text(statements[index]).ratioFont(.body)
                 Spacer(minLength: 0)
                 if locked != nil {
@@ -385,16 +401,16 @@ private struct SortInteraction: View {
                 }
             }
             ViewThatFits(in: .horizontal) {
-                HStack(spacing: 8) { bucketButtons(index, answer: answer) }
-                VStack(alignment: .leading, spacing: 8) { bucketButtons(index, answer: answer) }
+                HStack(spacing: RatioSpace.xs) { bucketButtons(index, answer: answer) }
+                VStack(alignment: .leading, spacing: RatioSpace.xs) { bucketButtons(index, answer: answer) }
             }
             if locked != nil, !isRight, let right = buckets[safe: correct[index]] {
                 Text("Belongs in: \(right)").ratioFont(.small).foregroundStyle(Color.ratioInk2)
             }
         }
-        .padding(14)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(Color.ratioRule) }
+        .padding(RatioSpace.s)
+        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+        .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
     }
 
     @ViewBuilder
@@ -405,8 +421,8 @@ private struct SortInteraction: View {
                 Text(buckets[bucket])
                     .ratioFont(.small)
                     .multilineTextAlignment(.leading)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
+                    .padding(.horizontal, RatioSpace.s)
+                    .padding(.vertical, RatioSpace.xs)
                     .frame(minHeight: 44)
                     .foregroundStyle(selected ? Color.ratioOnInk : Color.ratioInk)
                     .background(selected ? Color.ratioInk : Color.ratioSunk, in: Capsule())
@@ -433,12 +449,12 @@ private struct RecallInteraction: View {
     @State private var submitted = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             RatioTextField("Your answer", placeholder: "Type what you remember…", text: $answer, axis: .vertical)
                 .disabled(submitted || locked != nil)
 
             if let locked {
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     Text("Model answer").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     Text(modelAnswer).ratioFont(.body)
                     Label(locked.selfMarkedCorrect == true ? "Recalled" : "One to revisit",
@@ -446,9 +462,7 @@ private struct RecallInteraction: View {
                         .ratioFont(.small)
                         .foregroundStyle(locked.selfMarkedCorrect == true ? Color.ratioVerdigris : Color.ratioOxblood)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(16)
-                .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .ratioPanel()
             } else if submitted {
                 FreeTextVerdictView(studentAnswer: answer, modelAnswer: modelAnswer, keyPoints: keyPoints) { covered in
                     onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: covered))
@@ -456,7 +470,7 @@ private struct RecallInteraction: View {
             } else {
                 RatioButton(AnswerMarker.isAvailable ? "Check" : "Reveal",
                             isEnabled: !answer.trimmingCharacters(in: .whitespaces).isEmpty) {
-                    withAnimation { submitted = true }
+                    withAnimation(RatioMotion.reveal) { submitted = true }
                 }
                 Button("I can't recall — show me") {
                     onLock(ItemResponse(itemId: itemId, selfMarkedCorrect: false))
@@ -464,7 +478,7 @@ private struct RecallInteraction: View {
                 .ratioFont(.small)
                 .italic()
                 .underline()
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, minHeight: 44)
             }
         }
     }
@@ -484,18 +498,17 @@ private struct HighlightInteraction: View {
     @State private var selection: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                 Text("Paraphrased · not the judgment text")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
+                    .padding(.bottom, RatioSpace.xxs)
                 ForEach(sentences, id: \.self) { sentence in
                     sentenceButton(sentence)
                 }
             }
-            .padding(18)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .ratioPanel()
 
             if locked == nil {
                 RatioButton("Lock it in", isEnabled: selection != nil) {
@@ -513,18 +526,18 @@ private struct HighlightInteraction: View {
         return Button {
             selection = sentence
         } label: {
-            HStack(alignment: .firstTextBaseline, spacing: 8) {
+            HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
                 if isCorrect { Image(systemName: "checkmark.circle.fill").foregroundStyle(Color.ratioVerdigris) }
                 if isWrongPick { Image(systemName: "xmark.circle.fill").foregroundStyle(Color.ratioOxblood) }
                 Text(sentence).ratioFont(.body).multilineTextAlignment(.leading)
             }
-            .padding(10)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(RatioSpace.xs)
+            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
             .background(isCorrect ? Color.ratioVWash : isWrongPick ? Color.ratioOxWash : isSelected ? Color.ratioPaper : .clear,
-                        in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
             .overlay {
                 if isSelected {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color.ratioInk, lineWidth: 2)
+                    RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous).strokeBorder(Color.ratioInk, lineWidth: 2)
                 }
             }
             .contentShape(Rectangle())

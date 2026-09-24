@@ -59,84 +59,100 @@ struct LibraryView: View {
     @State private var kind: LibraryEntry.Kind = .cases
     @State private var module: Module?
     @State private var query = ""
-    @State private var entries: [LibraryEntry] = []
+    /// Nil until built (once, on first appearance).
+    @State private var entries: [LibraryEntry]?
 
     private var shown: [LibraryEntry] {
-        entries.filter { entry in
+        (entries ?? []).filter { entry in
             entry.kind == kind && (module == nil || entry.module == module)
                 && (query.isEmpty || entry.title.localizedStandardContains(query) || entry.subtitle.localizedStandardContains(query))
         }
     }
 
     var body: some View {
-        List {
-            Section {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Library\(Text(".").foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
-                    Spacer()
-                    Menu {
-                        Picker("Module", selection: $module) {
-                            Text("All modules").tag(Module?.none)
-                            ForEach(Module.allCases) { Text($0.title).tag(Module?.some($0)) }
-                        }
-                    } label: {
-                        Image(systemName: module == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
-                            .font(.title2)
-                            .frame(width: 44, height: 44)
+        let shown = shown
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    RatioPageHeader(eyebrow: "Lessons", title: "Library") { moduleFilter }
+                    searchField
+                    RatioSegmentedControl(options: LibraryEntry.Kind.allCases.map { ($0, $0.rawValue) }, selection: $kind)
+                }
+                .padding(.bottom, RatioSpace.m)
+
+                if entries == nil {
+                    ForEach(0..<6, id: \.self) { _ in
+                        Divider().overlay(Color.ratioRule)
+                        row(LibraryEntry.placeholder)
                     }
-                    .accessibilityLabel("Filter by module")
-                }
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
-                HStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass").foregroundStyle(Color.ratioInk2)
-                    TextField("Search the library", text: $query).ratioFont(.body).autocorrectionDisabled()
-                    if !query.isEmpty {
-                        Button { query = "" } label: { Image(systemName: "xmark.circle.fill") }
-                            .buttonStyle(.plain)
-                            .foregroundStyle(Color.ratioInk2)
-                            .accessibilityLabel("Clear search")
-                    }
-                }
-                .padding(12)
-                .frame(minHeight: 44)
-                .background(Color.ratioPaper, in: Capsule())
-                .overlay(Capsule().strokeBorder(Color.ratioRule))
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                Picker("Kind", selection: $kind) {
-                    ForEach(LibraryEntry.Kind.allCases) { Text($0.rawValue).tag($0) }
-                }
-                .pickerStyle(.segmented)
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
-            }
-            Section {
-                if shown.isEmpty {
-                    Text(query.isEmpty ? "Nothing here yet for this module." : "No matches for “\(query)”.")
-                        .ratioFont(.body)
+                    .ratioSkeleton()
+                } else if shown.isEmpty {
+                    RatioEmptyState(art: .openBook,
+                                    message: query.isEmpty ? "Nothing here yet for \(module?.title ?? "this module")." : "No matches for “\(query)”.",
+                                    actionTitle: query.isEmpty && module != nil ? "Show all modules" : (query.isEmpty ? nil : "Clear the search"),
+                                    action: { query.isEmpty ? (module = nil) : (query = "") })
+                } else {
+                    Text("\(module.map { "\($0.title) · " } ?? "")\(shown.count) \(shown.count == 1 ? "entry" : "entries")")
+                        .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
+                        .padding(.bottom, RatioSpace.xs)
+                    ForEach(shown) { entry in
+                        Divider().overlay(Color.ratioRule)
+                        Button { open(entry) } label: { row(entry) }
+                            .buttonStyle(.ratioPress)
+                    }
+                    Divider().overlay(Color.ratioRule)
                 }
-                ForEach(shown) { entry in
-                    Button { open(entry) } label: { row(entry) }
-                        .buttonStyle(.plain)
-                }
-            } footer: {
-                Text("\(shown.count) \(shown.count == 1 ? "entry" : "entries")").ratioFont(.monoLabel)
             }
-            .listRowBackground(Color.ratioPaper)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.top, RatioSpace.s)
+            .padding(.bottom, RatioSpace.xl)
         }
-        .scrollContentBackground(.hidden)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .scrollDismissesKeyboard(.interactively)
         .toolbar(.hidden, for: .navigationBar)
-        .task { if entries.isEmpty { entries = content.library() } }
+        .task { if entries == nil { entries = content.library() } }
+    }
+
+    private var moduleFilter: some View {
+        Menu {
+            Picker("Module", selection: $module) {
+                Text("All modules").tag(Module?.none)
+                ForEach(Module.allCases) { Text($0.title).tag(Module?.some($0)) }
+            }
+        } label: {
+            Image(systemName: module == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
+                .font(.title3)
+                .frame(width: 44, height: 44)
+                .contentShape(Rectangle())
+        }
+        .accessibilityLabel("Filter by module")
+        .accessibilityValue(module?.title ?? "All modules")
+    }
+
+    private var searchField: some View {
+        HStack(spacing: RatioSpace.xs) {
+            Image(systemName: "magnifyingglass").foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
+            TextField("Search the library", text: $query).ratioFont(.body).autocorrectionDisabled()
+            if !query.isEmpty {
+                Button { query = "" } label: {
+                    Image(systemName: "xmark.circle.fill").frame(width: 44, height: 44).contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(Color.ratioInk2)
+                .accessibilityLabel("Clear search")
+            }
+        }
+        .padding(.leading, RatioSpace.s)
+        .padding(.trailing, query.isEmpty ? RatioSpace.s : 0)
+        .frame(minHeight: 48)
+        .background(Color.ratioPaper, in: Capsule())
+        .overlay(Capsule().strokeBorder(Color.ratioRule))
     }
 
     private func row(_ entry: LibraryEntry) -> some View {
-        HStack(spacing: 12) {
-            VStack(alignment: .leading, spacing: 4) {
+        HStack(spacing: RatioSpace.s) {
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                 Group {
                     if entry.kind == .cases { CaseName.text(entry.title) } else { Text(entry.title) }
                 }
@@ -144,13 +160,16 @@ struct LibraryView: View {
                 .multilineTextAlignment(.leading)
                 Text(entry.subtitle).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
-            Spacer(minLength: 8)
-            if !student.canStudy(entry.module) {
-                Image(systemName: "lock").imageScale(.small).foregroundStyle(Color.ratioInk2).accessibilityLabel("Ratio Plus")
+            Spacer(minLength: RatioSpace.xs)
+            if student.canStudy(entry.module) {
+                Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
+            } else {
+                Image(systemName: "lock").foregroundStyle(Color.ratioInk2).accessibilityLabel("Ratio Plus")
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, RatioSpace.s)
         .contentShape(Rectangle())
+        .accessibilityElement(children: .combine)
     }
 
     private func open(_ entry: LibraryEntry) {
@@ -162,41 +181,69 @@ struct LibraryView: View {
     }
 }
 
+private extension LibraryEntry {
+    /// Shaped like a real row, for the loading skeleton.
+    static let placeholder = LibraryEntry(id: "placeholder", kind: .cases, title: "R v Placeholder Case",
+                                          subtitle: "[1999] 1 AC 000 · House of Lords", module: .crime,
+                                          component: .keyConcept(term: "", definition: ""), lessons: [])
+}
+
 /// One library entry in full, with links to the lessons it's taught in.
 struct LibraryEntryView: View {
     let id: String
 
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
+    /// Found once, rather than rebuilding the whole library on every render.
+    @State private var entry: LibraryEntry?
+    @State private var missing = false
 
     var body: some View {
         ScrollView {
-            if let entry = content.library().first(where: { $0.id == id }) {
-                VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                if let entry {
                     Text("\(entry.kind.rawValue) · \(entry.module.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     LessonComponentView(component: entry.component, moduleTitle: entry.module.title)
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("In \(entry.lessons.count == 1 ? "this lesson" : "these lessons")").ratioFont(.h3).padding(.bottom, 8)
-                        ForEach(entry.lessons) { lesson in
-                            Divider().overlay(Color.ratioRule)
-                            Button { navigator.pathwayPath.append(.overview(lesson.id)) } label: {
-                                HStack {
-                                    Text("\(lesson.moduleId.title) \(lesson.lessonNumber) · \(lesson.title)").ratioFont(.body).multilineTextAlignment(.leading)
-                                    Spacer()
-                                    Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2)
-                                }
-                                .frame(minHeight: 44)
-                                .contentShape(Rectangle())
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }
+                    lessons(entry)
+                } else if missing {
+                    RatioEmptyState(message: "This entry isn't in the library any more.")
+                } else {
+                    ProgressView().frame(maxWidth: .infinity, minHeight: 200)
                 }
-                .padding(24)
             }
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.top, RatioSpace.s)
+            .padding(.bottom, RatioSpace.xl)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
+        .task(id: id) {
+            entry = content.library().first { $0.id == id }
+            missing = entry == nil
+        }
+    }
+
+    private func lessons(_ entry: LibraryEntry) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Taught in").ratioFont(.h3).padding(.bottom, RatioSpace.xs)
+            ForEach(entry.lessons) { lesson in
+                Divider().overlay(Color.ratioRule)
+                Button { navigator.pathwayPath.append(.overview(lesson.id)) } label: {
+                    HStack(spacing: RatioSpace.s) {
+                        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                            Text("\(lesson.moduleId.title) · Lesson \(lesson.lessonNumber)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                            Text(lesson.title).ratioFont(.body).multilineTextAlignment(.leading)
+                        }
+                        Spacer(minLength: RatioSpace.xs)
+                        Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
+                    }
+                    .padding(.vertical, RatioSpace.s)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.ratioPress)
+                .accessibilityElement(children: .combine)
+            }
+            Divider().overlay(Color.ratioRule)
+        }
     }
 }

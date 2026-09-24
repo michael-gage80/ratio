@@ -9,20 +9,26 @@ struct LawReportSheet: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.ratioDyslexiaFriendly) private var dyslexiaFriendly
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 22) {
-                HStack {
-                    Rectangle().fill(Color.ratioRule).frame(height: 1)
-                    Text("Law reports · \(moduleTitle)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).fixedSize()
-                    Rectangle().fill(Color.ratioRule).frame(height: 1)
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: RatioSpace.xs) {
+                        Rectangle().fill(Color.ratioRule).frame(height: 1)
+                        Text("Law reports · \(moduleTitle)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).fixedSize()
+                        Rectangle().fill(Color.ratioRule).frame(height: 1)
+                    }
+                    Text("Law reports · \(moduleTitle)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        .frame(maxWidth: .infinity)
                 }
-                VStack(spacing: 8) {
+                VStack(spacing: RatioSpace.xs) {
                     CaseName.text(reportTitle)
                         .ratioFont(.displayAccent)
                         .multilineTextAlignment(.center)
                     Text("\(card.citation) · \(card.court)").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                        .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
                 Rectangle().fill(Color.ratioInk).frame(height: 1)
@@ -36,22 +42,33 @@ struct LawReportSheet: View {
                     Text(card.factsShort).ratioFont(.body)
                 }
 
-                HStack(alignment: .top, spacing: 14) {
-                    Text("Ratio decidendi")
-                        .ratioFont(.monoLabel)
-                        .foregroundStyle(Color.ratioInk2)
-                        .fixedSize()
-                        .rotationEffect(.degrees(-90))
-                        .frame(width: 18, height: 130)
-                    Rectangle().fill(Color.ratioRule).frame(width: 1)
-                    Text(card.ratioShort).ratioFont(.body)
+                Group {
+                    if typeSize.isAccessibilitySize {
+                        // Large text: the sideways label wouldn't fit beside the ratio.
+                        VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                            Text("Ratio decidendi").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                            Text(card.ratioShort).ratioFont(.body)
+                        }
+                    } else {
+                        HStack(alignment: .top, spacing: RatioSpace.s) {
+                            Text("Ratio decidendi")
+                                .ratioFont(.monoLabel)
+                                .foregroundStyle(Color.ratioInk2)
+                                .fixedSize()
+                                .rotationEffect(.degrees(-90))
+                                .frame(width: 16, height: 128)
+                            Rectangle().fill(Color.ratioRule).frame(width: 1)
+                            Text(card.ratioShort).ratioFont(.body)
+                        }
+                    }
                 }
-                .padding(18)
-                .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .ratioPanel(padding: RatioSpace.m)
 
                 if let significance = card.expanded?.significance {
-                    Text("Significance").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    Text(significance).ratioFont(.body)
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                        Text("Significance").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        Text(significance).ratioFont(.body)
+                    }
                 }
 
                 Rectangle().fill(Color.ratioRule).frame(height: 1)
@@ -60,7 +77,7 @@ struct LawReportSheet: View {
                     .foregroundStyle(Color.ratioInk2)
                 RatioButton("Close", style: .tertiary) { dismiss() }
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
         .background(Color.ratioPaper.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)

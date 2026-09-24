@@ -10,16 +10,18 @@ struct DebriefView: View {
     let onFinish: () -> Void
 
     @State private var reviewingMisses = false
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     private var misses: [Item] { model.items.filter { !result.correct($0.id) } }
     private var secureCount: Int { model.items.count - misses.count }
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
                 HStack {
-                    Button(action: onFinish) { Image(systemName: "xmark").font(.title3).frame(width: 44, height: 44, alignment: .leading) }
-                        .accessibilityLabel("Close")
+                    // Nudged so the glyph, not its 44pt target, sits on the margin.
+                    RatioIconButton(systemImage: "xmark", label: "Close", action: onFinish)
+                        .padding(.leading, -12)
                     Spacer()
                     Text("Judgment entered").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
@@ -27,45 +29,56 @@ struct DebriefView: View {
                 itemResults
                 profileChanges
                 reviewSchedule
-                VStack(alignment: .leading, spacing: 6) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     Text("Profile").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     let archetype = Archetype(result.headline)
                     Text("\(Text("The \(archetype.name)").italic()) — \(archetype.summary)").ratioFont(.body)
                 }
-                .padding(20)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .ratioCard(.ratioSunk, bordered: false)
             }
-            .padding(24)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.top, RatioSpace.s)
+            .padding(.bottom, RatioSpace.m)
         }
         .safeAreaInset(edge: .bottom) {
-            VStack(spacing: 10) {
-                HStack(spacing: 12) {
-                    if !misses.isEmpty {
-                        RatioButton(misses.count == 1 ? "Review my miss" : "Review my misses", style: .tertiary) { reviewingMisses = true }
-                    }
-                    RatioButton("Back to Today", style: .secondary, action: onFinish)
-                }
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: RatioSpace.xs) { finishButtons }
+                VStack(spacing: RatioSpace.xs) { finishButtons }
             }
-            .padding(24)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.vertical, RatioSpace.s)
             .background(Color.ratioParchment)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .sheet(isPresented: $reviewingMisses) { missesSheet }
     }
 
+    @ViewBuilder private var finishButtons: some View {
+        if !misses.isEmpty {
+            RatioButton(misses.count == 1 ? "Review my miss" : "Review my misses", style: .tertiary) { reviewingMisses = true }
+        }
+        RatioButton("Back to Today", style: .secondary, action: onFinish)
+    }
+
     private var header: some View {
-        HStack(alignment: .top) {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Lesson complete · \(lesson.moduleId.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                Text("Secure on\n\(Text("\(secureCount) of \(model.items.count).").italic().foregroundStyle(Color.ratioOxblood))")
-                    .ratioFont(.h1)
-                Text(misses.isEmpty ? "Every item is holding." : "\(misses.count == 1 ? "One line" : "\(misses.count) lines") to revisit; the rest is holding.")
-                    .ratioFont(.body)
+        let ring = SecureRing(fraction: model.items.isEmpty ? 0 : Double(secureCount) / Double(model.items.count))
+        let text = VStack(alignment: .leading, spacing: RatioSpace.xs) {
+            Text("Lesson complete · \(lesson.moduleId.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            Text("Secure on\n\(Text("\(secureCount) of \(model.items.count).").italic().foregroundStyle(Color.ratioOxblood))")
+                .ratioFont(.h1)
+            Text(misses.isEmpty ? "Every item is holding." : "\(misses.count == 1 ? "One line" : "\(misses.count) lines") to revisit; the rest is holding.")
+                .ratioFont(.body)
+        }
+        return Group {
+            if typeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: RatioSpace.s) { text; ring }
+            } else {
+                HStack(alignment: .top, spacing: RatioSpace.s) {
+                    text
+                    Spacer(minLength: 0)
+                    ring
+                }
             }
-            Spacer()
-            SecureRing(fraction: model.items.isEmpty ? 0 : Double(secureCount) / Double(model.items.count))
         }
     }
 
@@ -73,32 +86,39 @@ struct DebriefView: View {
         VStack(spacing: 0) {
             ForEach(Array(model.items.enumerated()), id: \.element.id) { index, item in
                 let correct = result.correct(item.id)
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack(alignment: .firstTextBaseline, spacing: 12) {
-                        Text(String(format: "%02d", index + 1)).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
-                        Text(item.prompt).ratioFont(.body).lineLimit(2)
-                        Spacer(minLength: 8)
-                        Label(correct ? "Secure" : "Revisit", systemImage: correct ? "checkmark.circle.fill" : "xmark.circle.fill")
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(correct ? Color.ratioVerdigris : Color.ratioOxblood)
-                            .fixedSize()
+                let number = Text(String(format: "%02d", index + 1)).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                let verdict = Label(correct ? "Secure" : "Revisit", systemImage: correct ? "checkmark.circle.fill" : "xmark.circle.fill")
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(correct ? Color.ratioVerdigris : Color.ratioOxblood)
+                    .fixedSize()
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    if typeSize.isAccessibilitySize {
+                        number
+                        Text(item.prompt).ratioFont(.body)
+                        verdict
+                    } else {
+                        HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                            number
+                            Text(item.prompt).ratioFont(.body)
+                            Spacer(minLength: RatioSpace.xs)
+                            verdict
+                        }
                     }
                     if !correct, let why = item.trapExplanation ?? item.feedback(correct: false) {
                         Text(why)
                             .ratioFont(.small)
-                            .padding(14)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Color.ratioOxWash, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            .ratioPanel(.ratioOxWash)
                             .overlay(alignment: .leading) { Rectangle().fill(Color.ratioOxblood).frame(width: 3) }
+                            .clipShape(RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                     }
                 }
-                .padding(.vertical, 14)
+                .padding(.vertical, RatioSpace.s)
+                .accessibilityElement(children: .combine)
                 if index < model.items.count - 1 { Divider().overlay(Color.ratioRule) }
             }
         }
-        .padding(.horizontal, 20)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule) }
+        .padding(.horizontal, RatioSpace.m)
+        .ratioCard(padding: 0)
     }
 
     /// The skills this attempt moved, for this lesson's topic, with the band before and after.
@@ -107,54 +127,57 @@ struct DebriefView: View {
             guard let after = result.topicAfter[skill.rawValue] else { return nil }
             return (skill, result.topicBefore[skill.rawValue] ?? .prior, after)
         }
-        return VStack(alignment: .leading, spacing: 18) {
+        return VStack(alignment: .leading, spacing: RatioSpace.m) {
             Text("What changed in your profile").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             ForEach(changed, id: \.0) { skill, before, after in
                 BandChange(skill: skill, before: before, after: after)
             }
         }
-        .padding(20)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 
     private var reviewSchedule: some View {
         let dated = model.items.compactMap { item in result.dueDate(item.id).map { (item, $0) } }.sorted { $0.1 < $1.1 }
-        return VStack(alignment: .leading, spacing: 12) {
+        return VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Reviews scheduled").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text("They'll come back in your daily brief, spaced so they stick.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
             ForEach(dated, id: \.0.id) { item, due in
-                HStack(alignment: .firstTextBaseline) {
-                    Text(item.prompt).ratioFont(.small).lineLimit(1)
-                    Spacer(minLength: 12)
-                    Text(due.formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated)).uppercased())
-                        .ratioFont(.monoData)
-                        .foregroundStyle(Color.ratioInk2)
-                        .fixedSize()
+                let date = Text(due.formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated)).uppercased())
+                    .ratioFont(.monoData)
+                    .foregroundStyle(Color.ratioInk2)
+                ViewThatFits(in: .horizontal) {
+                    HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                        Text(item.prompt).ratioFont(.small)
+                        Spacer(minLength: RatioSpace.xs)
+                        date.fixedSize()
+                    }
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        Text(item.prompt).ratioFont(.small)
+                        date
+                    }
                 }
+                .padding(.vertical, RatioSpace.xs)
+                .accessibilityElement(children: .combine)
                 Divider().overlay(Color.ratioRule)
             }
         }
-        .padding(20)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 
     /// Each missed item again, with the student's answer and the correct one revealed.
     private var missesSheet: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 32) {
+                VStack(alignment: .leading, spacing: RatioSpace.l) {
                     ForEach(misses) { item in
                         ItemInteractionView(item: item, lockedResponse: model.responses.first { $0.itemId == item.id },
                                             context: InteractionContext(lessonId: lesson.id)) { _ in }
                         Divider().overlay(Color.ratioRule)
                     }
                 }
-                .padding(24)
+                .padding(RatioSpace.m)
             }
-            .background(Color.ratioParchment.ignoresSafeArea())
-            .foregroundStyle(Color.ratioInk)
+            .ratioPage()
             .navigationTitle(misses.count == 1 ? "Your miss" : "Your misses")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
@@ -167,6 +190,8 @@ struct DebriefView: View {
 /// The percentage-secure ring in the debrief header.
 private struct SecureRing: View {
     let fraction: Double
+    /// Grows with Dynamic Type so the percentage always fits inside.
+    @ScaledMetric(relativeTo: .title2) private var size: CGFloat = 104
 
     var body: some View {
         ZStack {
@@ -180,7 +205,7 @@ private struct SecureRing: View {
                 Text("Secure").ratioFont(.monoLabel).foregroundStyle(Color.ratioVerdigris)
             }
         }
-        .frame(width: 104, height: 104)
+        .frame(width: size, height: size)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(Int((fraction * 100).rounded())) percent secure")
     }
@@ -194,10 +219,10 @@ struct BandChange: View {
     let after: Estimate
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             HStack(alignment: .firstTextBaseline) {
                 Text(skill.title).ratioFont(.h3)
-                Spacer()
+                Spacer(minLength: RatioSpace.xs)
                 Text("\(before.displayScore) → \(after.displayScore)").ratioFont(.h3)
             }
             GeometryReader { proxy in

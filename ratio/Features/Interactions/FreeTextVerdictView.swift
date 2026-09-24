@@ -14,23 +14,21 @@ struct FreeTextVerdictView: View {
     @State private var isMarking = AnswerMarker.isAvailable
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 Text("Model answer").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 Text(modelAnswer).ratioFont(.body)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(16)
-            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .ratioPanel()
 
             if isMarking {
-                HStack(spacing: 10) {
+                HStack(spacing: RatioSpace.xs) {
                     ProgressView().controlSize(.small)
                     Text("Checking your answer on this phone…").ratioFont(.small).foregroundStyle(Color.ratioInk2)
                 }
             } else if let marking {
                 Label {
-                    VStack(alignment: .leading, spacing: 2) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                         Text(marking.coversKeyPoint ? "Ratio's check: covers the key point" : "Ratio's check: misses the key point")
                             .ratioFont(.monoLabel)
                         Text(marking.comment).ratioFont(.small)
@@ -46,19 +44,24 @@ struct FreeTextVerdictView: View {
                 }
                 .ratioFont(.small)
                 .underline()
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, minHeight: 44)
             } else {
                 Text("Did your answer cover the key point?").ratioFont(.small).foregroundStyle(Color.ratioInk2)
-                HStack(spacing: 10) {
-                    RatioButton("I missed it", style: .tertiary) { onDecision(false) }
-                    RatioButton("I got it", style: .secondary) { onDecision(true) }
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: RatioSpace.xs) { selfMark }
+                    VStack(spacing: RatioSpace.xs) { selfMark }
                 }
             }
         }
         .task {
             guard isMarking else { return }
+            defer { isMarking = false }
             marking = await AnswerMarker.mark(answer: studentAnswer, modelAnswer: modelAnswer, keyPoints: keyPoints)
-            isMarking = false
         }
+    }
+
+    @ViewBuilder private var selfMark: some View {
+        RatioButton("I missed it", style: .tertiary) { onDecision(false) }
+        RatioButton("I got it", style: .secondary) { onDecision(true) }
     }
 }
