@@ -7,10 +7,10 @@ import SwiftUI
 struct MeView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
+    @Environment(AppNavigator.self) private var navigator
     @State private var photo: PhotosPickerItem?
     @State private var uploading = false
     @State private var uploadError: String?
-    @State private var showsSettings = false
 
     private var profile: UserProfile { student.profile }
 
@@ -29,11 +29,10 @@ struct MeView: View {
         .foregroundStyle(Color.ratioInk)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button { showsSettings = true } label: { Image(systemName: "gearshape") }
+                Button { navigator.mePath.append(.settings) } label: { Image(systemName: "gearshape") }
                     .accessibilityLabel("Settings")
             }
         }
-        .sheet(isPresented: $showsSettings) { SettingsSheet() }
         .onChange(of: photo) { _, item in
             guard let item else { return }
             Task { await upload(item) }
@@ -148,7 +147,9 @@ struct MeView: View {
             Rectangle().fill(Color.ratioInk).frame(height: 1)
             ForEach(profile.modules ?? Module.allCases) { module in
                 let mastery = student.mastery(of: content.lessons(in: module))
-                NavigationLink(value: Route.module(module)) {
+                Button {
+                    if student.isPlus { navigator.mePath.append(.module(module)) } else { navigator.paywall = "Topic drill-down and trends are part of Ratio Plus." }
+                } label: {
                     VStack(alignment: .leading, spacing: 12) {
                         HStack {
                             Text(module.title).ratioFont(.h3)
@@ -260,46 +261,5 @@ private struct RetentionCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
         .overlay { RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.ratioRule) }
-    }
-}
-
-/// Until the full Settings screen (Phase 15): the account, logging out, and debug tools.
-private struct SettingsSheet: View {
-    @Environment(SessionStore.self) private var session
-    @Environment(AppNavigator.self) private var navigator
-    @Environment(\.dismiss) private var dismiss
-    @AppStorage("tour.today.seen") private var tourSeen = false
-
-    var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    Text("Full settings arrive in a later build.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
-                    Button("Replay the Today tour") {
-                        tourSeen = false
-                        navigator.backToToday()
-                        dismiss()
-                    }
-                    Button("Replay the duel tutorial") {
-                        navigator.tab = .duel
-                        navigator.showsDuelTutorial = true
-                        dismiss()
-                    }
-                    Button("Log out", role: .destructive) { session.signOut() }
-                }
-                #if DEBUG
-                Section("Debug") {
-                    RatioGlassDebugToggle()
-                    NavigationLink("Interaction gallery") { InteractionGalleryView() }
-                    NavigationLink("Design system catalog") { DesignSystemCatalogView() }
-                }
-                #endif
-            }
-            .navigationTitle("Settings")
-            .toolbarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } }
-            }
-        }
     }
 }

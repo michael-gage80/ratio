@@ -313,6 +313,40 @@ describe('news and the Sunday quiz', () => {
   });
 });
 
+describe('settings, plans and devices', () => {
+  beforeEach(() => seed({ birthYear: thisYear - 20, ageConfirmedAt: new Date(), modules: ['crime'] }));
+
+  test('a student can save their study settings and consents, within limits', async () => {
+    await assertSucceeds(updateDoc(amara(), { settings: { weeklyTarget: 5, briefTime: '08:30', briefReminder: true, quietStart: '22:00', quietEnd: '08:00' } }));
+    await assertSucceeds(updateDoc(amara(), { consents: { analytics: true, universitySharing: false } }));
+    await assertFails(updateDoc(amara(), { settings: { weeklyTarget: 9 } }));
+    await assertFails(updateDoc(amara(), { settings: { briefTime: '25:00' } }));
+    await assertFails(updateDoc(amara(), { settings: { plan: 'plus' } }));
+    await assertFails(updateDoc(amara(), { consents: { marketing: true } }));
+  });
+
+  test("a student can't give themselves Plus, a licence or a different free module", async () => {
+    const future = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
+    await assertFails(updateDoc(amara(), { subscription: { expiresAt: future } }));
+    await assertFails(updateDoc(amara(), { licence: { expiresAt: future } }));
+    await assertFails(updateDoc(amara(), { freeModule: 'tort' }));
+  });
+
+  test('a student registers their own push tokens only', async () => {
+    const device = (uid) => doc(db(uid), 'users/amara/devices/token123');
+    await assertSucceeds(setDoc(device('amara'), { platform: 'ios', updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(device('zara'), { platform: 'ios', updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(device('amara'), { platform: 'ios', updatedAt: serverTimestamp(), extra: 1 }));
+    await assertSucceeds(deleteDoc(device('amara')));
+  });
+
+  test('usage counts and licences are closed to clients', async () => {
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/usage/2026-09-24'), { duels: 0 }));
+    await assertFails(getDoc(doc(db('amara'), 'licences/KCL-2026')));
+    await assertFails(getDoc(doc(db('amara'), 'subscriptions/2000000123')));
+  });
+});
+
 describe('lesson progress', () => {
   const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
 

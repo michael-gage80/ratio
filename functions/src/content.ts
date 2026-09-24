@@ -28,7 +28,8 @@ export const MODULES = ["crime", "contract", "tort", "public", "land", "equity",
 
 export const lessons = new Map<string, Lesson>(
   readdirSync(join(__dirname, "lessons"))
-    .filter((f) => f.endsWith(".json"))
+    // Only real lesson files: iCloud leaves "name 2.json" copies behind in synced folders.
+    .filter((f) => /^[a-z]+-\d{2}-[a-z0-9-]+\.json$/.test(f))
     .map((f) => JSON.parse(readFileSync(join(__dirname, "lessons", f), "utf8")) as Lesson)
     .sort((a, b) => a.lessonId.localeCompare(b.lessonId))
     .map((lesson) => [lesson.lessonId, lesson]),

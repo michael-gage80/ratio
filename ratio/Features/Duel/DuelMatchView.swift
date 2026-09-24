@@ -29,7 +29,21 @@ struct DuelMatchView: View {
             case .loading:
                 status("Finding your sparring partner…", dark: true)
             case .failed:
-                failure("We couldn't start the match. Check your connection and try again.") { Task { await model.load() } }
+                if model.hitFreeLimit {
+                    VStack(spacing: 20) {
+                        Text("That's today's three free duels.").ratioFont(.h2)
+                        Text("They reset at midnight. Ratio Plus makes duels unlimited.").ratioFont(.body).multilineTextAlignment(.center)
+                        RatioButton("See Ratio Plus") {
+                            dismiss()
+                            navigator.paywall = "Duels are unlimited with Ratio Plus."
+                        }
+                        Button("Close") { dismiss() }.ratioFont(.monoLabel)
+                    }
+                    .padding(32)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    failure("We couldn't start the match. Check your connection and try again.") { Task { await model.load() } }
+                }
             case .versus:
                 VersusView(model: model) { model.begin() }
             case .coaching, .playing, .revealing:

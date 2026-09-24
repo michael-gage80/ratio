@@ -61,7 +61,7 @@ struct PracticeSessionView: View {
         .animation(.easeInOut(duration: 0.25), value: responses.count)
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .sensoryFeedback(trigger: locked) { _, response in
+        .ratioFeedback(trigger: locked) { _, response in
             guard let response, let item = current?.item else { return nil }
             return item.isCorrect(response) ? .success : .error
         }

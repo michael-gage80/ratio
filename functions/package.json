@@ -6,11 +6,12 @@
     "node": "22"
   },
   "scripts": {
-    "build": "tsc && cp ../ratio/Resources/Content/diagnostic-bank.json lib/ && rm -rf lib/lessons && cp -R ../ratio/Resources/Content/lessons lib/lessons",
+    "build": "tsc && cp ../ratio/Resources/Content/diagnostic-bank.json lib/ && rm -rf lib/lessons && cp -R ../ratio/Resources/Content/lessons lib/lessons && rm -rf lib/certs && cp -R certs lib/certs",
     "lint": "tsc --noEmit",
     "test": "npm run build && node --test 'lib/**/*.test.js'"
   },
   "dependencies": {
+    "@apple/app-store-server-library": "^3.1.0",
     "@google-cloud/vision": "^6.1.0",
     "fast-xml-parser": "^5.11.1",
     "firebase-admin": "^14.4.0",

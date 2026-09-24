@@ -103,6 +103,20 @@ service cloud.firestore {
         allow read: if isOwner(uid);
       }
 
+      // Push tokens for this student's phones (FCM), so challenges can reach them.
+      match /devices/{token} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['platform', 'updatedAt'])
+          && request.resource.data.platform == 'ios'
+          && request.resource.data.updatedAt == request.time;
+      }
+
+      // Today's duel and push counts — kept by Functions for the free tier's allowance.
+      match /usage/{date} {
+        allow read: if isOwner(uid);
+      }
+
       // Students this student has blocked — written by the blockUser Function.
       match /blocked/{otherUid} {
         allow read: if isOwner(uid);
@@ -144,12 +158,28 @@ service cloud.firestore {
       return request.time > day - duration.value(1, 'd') && request.time < day + duration.value(2, 'd');
     }
 
+    // Study and notification preferences from Settings. Plans, licences and the free
+    // module are never client-written: Functions set them.
+    function isValidSettings(s) {
+      let time = '^([01][0-9]|2[0-3]):[0-5][0-9]$';
+      return s is map
+        && s.keys().hasOnly(['weeklyTarget', 'pausedWeeks', 'briefTime', 'briefReminder', 'quietStart', 'quietEnd', 'studyStart', 'studyEnd'])
+        && (!('weeklyTarget' in s) || (s.weeklyTarget is int && s.weeklyTarget >= 1 && s.weeklyTarget <= 7))
+        && (!('pausedWeeks' in s) || (s.pausedWeeks is list && s.pausedWeeks.size() <= 12))
+        && (!('briefReminder' in s) || s.briefReminder is bool)
+        && (!('briefTime' in s) || (s.briefTime is string && s.briefTime.matches(time)))
+        && (!('quietStart' in s) || (s.quietStart is string && s.quietStart.matches(time)))
+        && (!('quietEnd' in s) || (s.quietEnd is string && s.quietEnd.matches(time)))
+        && (!('studyStart' in s) || (s.studyStart is string && s.studyStart.matches(time)))
+        && (!('studyEnd' in s) || (s.studyEnd is string && s.studyEnd.matches(time)));
+    }
+
     function isValidProfileUpdate() {
       let before = resource.data;
       let after = request.resource.data;
       let changed = after.diff(before).affectedKeys();
       return changed.hasOnly(['birthYear', 'ageConfirmedAt', 'displayName', 'initial', 'programme', 'waitlist',
-                              'universityId', 'universityOther', 'year', 'modules'])
+                              'universityId', 'universityOther', 'year', 'modules', 'settings', 'consents'])
         // The age gate comes first and is final: nothing else is accepted until it's
         // passed, and the birth year can't be changed afterwards.
         && ((!('birthYear' in before) && passesAgeGate(after, changed))
@@ -172,6 +202,10 @@ service cloud.firestore {
             || !('universityOther' in after)
             || (after.universityOther is string && after.universityOther.size() >= 2 && after.universityOther.size() <= 80))
         && (!changed.hasAny(['year']) || after.year in [1, 2, 3])
+        && (!changed.hasAny(['settings']) || isValidSettings(after.settings))
+        && (!changed.hasAny(['consents'])
+            || (after.consents is map && after.consents.keys().hasOnly(['analytics', 'universitySharing'])
+                && after.consents.values().hasOnly([true, false])))
         && (!changed.hasAny(['modules'])
             || (after.modules is list && after.modules.size() >= 1
                 && after.modules.hasOnly(['crime', 'contract', 'tort', 'public', 'land', 'equity', 'companylaw', 'eulaw', 'humanrights', 'jurisprudence', 'employmentlaw', 'familylaw'])));

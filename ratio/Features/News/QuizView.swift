@@ -55,7 +55,7 @@ struct QuizView: View {
         }
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .sensoryFeedback(trigger: locked) { _, isLocked in
+        .ratioFeedback(trigger: locked) { _, isLocked in
             guard isLocked else { return nil }
             return selection == question.correctIndex ? .success : .error
         }

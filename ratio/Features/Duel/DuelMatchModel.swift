@@ -22,6 +22,8 @@ final class DuelMatchModel: DuelRoundModel {
     private(set) var roundStart = Date.now
     private(set) var yourAnswer: DuelAnswer?
     private(set) var result: SparringResult?
+    /// The free plan's duels are used up for today.
+    private(set) var hitFreeLimit = false
     /// Bumped once a second in the last three seconds, for the haptic pulse.
     private(set) var pulse = 0
 
@@ -66,6 +68,7 @@ final class DuelMatchModel: DuelRoundModel {
                 phase = .versus
             }
         } catch {
+            hitFreeLimit = PlanService.isFreeLimit(error)
             phase = .failed
         }
     }

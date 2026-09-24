@@ -13,6 +13,8 @@ import { duelLessons, HISTORY_LIMIT, lessonInfo, lessons, MODULES, testItems, To
 import { Answer, DuelQuestion, matchQuestions, playMatch, questionPool, SPARRING_LEVELS, SPARRING_RD, sparringPlan } from "./duel.js";
 import { dueDate, review } from "./fsrs.js";
 import { INITIAL } from "./glicko.js";
+import { countDuel } from "./account.js";
+import { studyModules } from "./entitlement.js";
 import { readSide, Side, StoredRating, writeSide } from "./settle.js";
 import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, SKILLS, TopicEstimates } from "./scoring.js";
 
@@ -332,7 +334,8 @@ async function ensureBrief(uid: string, now: Date): Promise<Brief | null> {
   const brief = buildBrief({
     date,
     now,
-    modules: modules.map((m) => LEGACY_MODULE_IDS[m] ?? m),
+    // Free students' briefs stay within their free module (PRD: "Daily brief and spaced review: within the free module").
+    modules: studyModules({ ...user.data(), modules: modules.map((m) => LEGACY_MODULE_IDS[m] ?? m) }),
     headline,
     topics: Object.fromEntries(skills.docs.map((d) => [d.id, d.data() as TopicScores])),
     lessons: lessonInfo,
@@ -401,6 +404,7 @@ export const startSparring = onCall<StartSparringRequest>(async (request) => {
   const limitMs = (seconds === 15 || seconds === 20 ? seconds : 10) * 1000;
 
   const pool = questionPool(duelLessons.filter((l) => l.moduleId === moduleId), Math.random);
+  if (tutorial !== true) await countDuel(uid);
   const questions = matchQuestions(pool, Math.random, tutorial === true);
   if (!questions) throw new HttpsError("failed-precondition", "This module doesn't have enough questions for a duel yet.");
   const plan = sparringPlan(questions, level!, limitMs, Math.random);
@@ -518,3 +522,5 @@ export const moderateAvatar = onCall(async (request): Promise<{ approved: boolea
 
 export * from "./multiplayer.js";
 export * from "./newsIngest.js";
+export * from "./account.js";
+export * from "./purchases.js";

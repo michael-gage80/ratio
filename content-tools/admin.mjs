@@ -1,21 +1,29 @@
-// Hand-authoring for the news centre (PRD: "Up to 5 items a day get a short 'Why it
-// matters' note ... linking the story to a syllabus topic and a Ratio lesson"; "Every
-// Sunday: 7 questions based on the week's stories").
+// Admin for Ratio: hand-authoring for the news centre (PRD: "Up to 5 items a day get a
+// short 'Why it matters' note"; "Every Sunday: 7 questions based on the week's stories"),
+// and university licences (PRD: "B2B ... licences are activated with a university code
+// plus a university email check").
 //
 // Needs GOOGLE_APPLICATION_CREDENTIALS pointing at a service-account key for ratio-91a04
 // (Project settings → Service accounts → Generate new private key). Keep the key outside
 // the repo — it's public.
 //
-//   node content-tools/news-admin.mjs list [days]
+//   node content-tools/admin.mjs list [days]
 //       Recent headlines with their IDs, newest first (default: 7 days).
-//   node content-tools/news-admin.mjs why <newsId> <lessonId> "Note text"
+//   node content-tools/admin.mjs why <newsId> <lessonId> "Note text"
 //       Adds or replaces the story's "Why it matters" note, linked to a lesson.
-//   node content-tools/news-admin.mjs why <newsId> --remove
-//   node content-tools/news-admin.mjs quiz <file.json>
+//   node content-tools/admin.mjs why <newsId> --remove
+//   node content-tools/admin.mjs quiz <file.json>
 //       Publishes a Sunday quiz. See content-tools/quiz-template.json for the shape.
+//   node content-tools/admin.mjs licence <CODE> "University name" <domain[,domain]> <seats> <yyyy-mm-dd>
+//       Creates or updates a university licence code, e.g.
+//       licence KCL-2026 "King's College London" kcl.ac.uk 200 2027-09-30
+//   node content-tools/admin.mjs grant <email> <yyyy-mm-dd>
+//       Gives one account Plus until a date, without a purchase — for testers.
+//   node content-tools/admin.mjs revoke <email>
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { initializeApp } from 'firebase-admin/app';
+import { getAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore, Timestamp } from 'firebase-admin/firestore';
 
 initializeApp({ projectId: process.env.GCLOUD_PROJECT ?? 'ratio-91a04' });
@@ -109,10 +117,45 @@ async function quiz(file) {
   console.log(`Published the Sunday quiz for ${quiz.sunday}.`);
 }
 
+async function licence(code, universityName, domains, seats, expires) {
+  if (!/^[A-Z0-9-]{4,40}$/.test(code ?? '')) fail('Codes are 4–40 capital letters, digits and hyphens.');
+  if (!universityName || !domains || !(Number(seats) > 0) || !/^\d{4}-\d{2}-\d{2}$/.test(expires ?? '')) {
+    fail('Usage: licence <CODE> "University name" <domain[,domain]> <seats> <yyyy-mm-dd>');
+  }
+  const ref = db.doc(`licences/${code}`);
+  const existing = await ref.get();
+  await ref.set({
+    universityName,
+    emailDomains: domains.split(',').map((d) => d.trim().toLowerCase().replace(/^@/, '')),
+    seats: Number(seats),
+    used: existing.get('used') ?? 0,
+    expiresAt: Timestamp.fromDate(new Date(`${expires}T23:59:59Z`)),
+  });
+  console.log(`${existing.exists ? 'Updated' : 'Created'} ${code}: ${universityName}, ${seats} seats until ${expires}.`);
+}
+
+async function grant(email, until) {
+  if (!email || !/^\d{4}-\d{2}-\d{2}$/.test(until ?? '')) fail('Usage: grant <email> <yyyy-mm-dd>');
+  const user = await getAuth().getUserByEmail(email);
+  await db.doc(`users/${user.uid}`).set({
+    licence: { code: 'GRANT', universityName: 'Ratio team', expiresAt: Timestamp.fromDate(new Date(`${until}T23:59:59Z`)), revoked: false },
+  }, { merge: true });
+  console.log(`${email} has Plus until ${until}.`);
+}
+
+async function revoke(email) {
+  const user = await getAuth().getUserByEmail(email);
+  await db.doc(`users/${user.uid}`).update({ 'licence.revoked': true });
+  console.log(`Revoked ${email}'s granted Plus.`);
+}
+
 const [command, ...args] = process.argv.slice(2);
 switch (command) {
   case 'list': await list(Number(args[0]) || 7); break;
   case 'why': await why(args[0], args[1], args[2]); break;
   case 'quiz': await quiz(args[0]); break;
-  default: fail('Commands: list [days] | why <newsId> <lessonId> "text" | why <newsId> --remove | quiz <file.json>');
+  case 'licence': await licence(...args); break;
+  case 'grant': await grant(args[0], args[1]); break;
+  case 'revoke': await revoke(args[0]); break;
+  default: fail('Commands: list [days] | why <newsId> <lessonId> "text" | quiz <file.json> | licence … | grant <email> <date> | revoke <email>');
 }

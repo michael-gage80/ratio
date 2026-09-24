@@ -62,7 +62,7 @@ struct LectureView: View {
             applicationEstimate = await SkillRepository().estimate(topicId: lesson.topicId, skill: .application) ?? headline?.application
             loaded = true
         }
-        .sensoryFeedback(trigger: lockedResponse) { _, response in
+        .ratioFeedback(trigger: lockedResponse) { _, response in
             guard let response, let item = lesson.parts[safe: partsCompleted]?.interaction else { return nil }
             return item.isCorrect(response) ? .success : .error
         }
