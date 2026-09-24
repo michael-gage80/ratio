@@ -2,8 +2,9 @@ import Charts
 import PhotosUI
 import SwiftUI
 
-/// screens/27-me.png — the student's profile with honest bands, retention, and a way
-/// into each module's topics (PRD: "Me tab"). Duel ratings join when duels do.
+/// screens/27-me.png — "Dossier + story": four numbers, the archetype (its K/U/A bands
+/// behind an arrow), retention, twelve weeks of activity, dated milestones, then the
+/// modules the student has started and their duels (PRD: "Me tab").
 struct MeView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
@@ -11,6 +12,7 @@ struct MeView: View {
     @State private var photo: PhotosPickerItem?
     @State private var uploading = false
     @State private var uploadError: String?
+    @State private var choosingYear = false
 
     private var profile: UserProfile { student.profile }
 
@@ -18,8 +20,11 @@ struct MeView: View {
         ScrollView {
             VStack(spacing: 24) {
                 identity
+                StatTiles()
                 ProfileCard(headline: student.headline, updatedAt: profile.headlineUpdatedAt)
                 RetentionCard(retention: student.retention)
+                ActivityHeatmap(activeDays: student.activeDays)
+                MilestoneTimeline()
                 modules
                 duels
             }
@@ -32,6 +37,9 @@ struct MeView: View {
                 Button { navigator.mePath.append(.settings) } label: { Image(systemName: "gearshape") }
                     .accessibilityLabel("Settings")
             }
+        }
+        .sheet(isPresented: $choosingYear) {
+            YearSheet(uid: student.uid, year: profile.year).presentationDetents([.medium])
         }
         .onChange(of: photo) { _, item in
             guard let item else { return }
@@ -69,6 +77,12 @@ struct MeView: View {
             }
             Text(name).ratioFont(.h1)
             Text(details).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            if profile.year == nil {
+                Button("Add your year") { choosingYear = true }
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioOxblood)
+                    .frame(minHeight: 44)
+            }
             if uploading {
                 Text("Checking your photo…").ratioFont(.small).foregroundStyle(Color.ratioInk2)
             }
@@ -141,11 +155,22 @@ struct MeView: View {
 
     // MARK: Modules
 
+    /// Only modules with a lesson begun.
+    private var started: [Module] {
+        Module.allCases.filter { module in content.lessons(in: module).contains { student.state(of: $0) != .notStarted } }
+    }
+
     private var modules: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Modules").ratioFont(.h2).padding(.bottom, 12)
             Rectangle().fill(Color.ratioInk).frame(height: 1)
-            ForEach(profile.modules ?? Module.allCases) { module in
+            if started.isEmpty {
+                Text("Modules appear here once you've started one of their lessons.")
+                    .ratioFont(.body)
+                    .foregroundStyle(Color.ratioInk2)
+                    .padding(.vertical, 16)
+            }
+            ForEach(started) { module in
                 let mastery = student.mastery(of: content.lessons(in: module))
                 Button {
                     if student.isPlus { navigator.mePath.append(.module(module)) } else { navigator.paywall = "Topic drill-down and trends are part of Ratio Plus." }
@@ -187,6 +212,7 @@ struct MeView: View {
 private struct ProfileCard: View {
     let headline: Headline
     let updatedAt: Date?
+    @State private var expanded = false
 
     var body: some View {
         let archetype = Archetype(headline)
@@ -201,13 +227,28 @@ private struct ProfileCard: View {
             ProfileTriangle(headline: headline, highlight: Archetype.growthEdge(headline))
                 .padding(.horizontal, 8)
             Divider().overlay(Color.ratioRule)
-            ForEach(Skill.allCases) { skill in
-                SkillRow(title: skill.title, estimate: headline[skill])
+            Button {
+                withAnimation(.easeInOut(duration: 0.2)) { expanded.toggle() }
+            } label: {
+                HStack {
+                    Text("Knowledge, understanding, application").ratioFont(.h3)
+                    Spacer()
+                    Image(systemName: "chevron.down").rotationEffect(.degrees(expanded ? 180 : 0))
+                }
+                .frame(minHeight: 44)
+                .contentShape(Rectangle())
             }
-            Text("The shaded band is our uncertainty. It narrows as you answer more.")
-                .ratioFont(.small)
-                .italic()
-                .foregroundStyle(Color.ratioInk2)
+            .buttonStyle(.plain)
+            .accessibilityValue(expanded ? "Expanded" : "Collapsed")
+            if expanded {
+                ForEach(Skill.allCases) { skill in
+                    SkillRow(title: skill.title, estimate: headline[skill])
+                }
+                Text("The shaded band is our uncertainty. It narrows as you answer more.")
+                    .ratioFont(.small)
+                    .italic()
+                    .foregroundStyle(Color.ratioInk2)
+            }
         }
         .padding(20)
         .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))

@@ -116,6 +116,8 @@ struct BoardsView: View {
     @State private var myRank: Int?
     @State private var loading = true
     @State private var failed = false
+    /// "Share my result": the student's place as an image card.
+    @State private var shareCard: Image?
 
     private var loadKey: String { "\(period.rawValue)-\(scope.rawValue)-\(student.friends.count)-\(student.matches.count)" }
 
@@ -123,12 +125,24 @@ struct BoardsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Boards.").ratioFont(.display)
-                    Text("Ranked by wins in human duels. Sparring partners never count.").ratioFont(.body).foregroundStyle(Color.ratioInk2)
+                    HStack(alignment: .firstTextBaseline) {
+                        Text("Boards\(Text(".").foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
+                        Spacer()
+                        scopeFilter
+                    }
+                    Text("\(scope.title) · ranked by wins in human duels. Sparring partners never count.").ratioFont(.body).foregroundStyle(Color.ratioInk2)
                 }
                 picker(BoardPeriod.allCases, selection: $period) { $0.title }
-                picker(BoardScope.allCases, selection: $scope) { $0.title }
                 content
+                if let shareCard {
+                    ShareLink(item: shareCard, preview: SharePreview("My place on Ratio's \(period.title.lowercased()) board", image: shareCard)) {
+                        Label("Share my result", systemImage: "square.and.arrow.up")
+                            .ratioFont(.h3)
+                            .frame(maxWidth: .infinity, minHeight: 48)
+                            .overlay { Capsule().strokeBorder(Color.ratioRule) }
+                    }
+                    .buttonStyle(.plain)
+                }
                 Text(period.resets).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity)
             }
             .padding(24)
@@ -182,6 +196,20 @@ struct BoardsView: View {
         }
     }
 
+    /// Everyone, my university or friends, behind a small filter icon.
+    private var scopeFilter: some View {
+        Menu {
+            Picker("Show", selection: $scope) {
+                ForEach(BoardScope.allCases) { Text($0.title).tag($0) }
+            }
+        } label: {
+            Image(systemName: scope == .everyone ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
+                .font(.title2)
+                .frame(width: 44, height: 44)
+        }
+        .accessibilityLabel("Filter: \(scope.title)")
+    }
+
     private func picker<Option: Identifiable & Hashable>(_ options: [Option], selection: Binding<Option>, title: @escaping (Option) -> String) -> some View {
         HStack(spacing: 4) {
             ForEach(options) { option in
@@ -233,6 +261,62 @@ struct BoardsView: View {
             }
         } else {
             myRank = nil
+        }
+        shareCard = mine.flatMap { $0.wins > 0 ? renderShareCard($0) : nil }
+    }
+
+    private func renderShareCard(_ entry: BoardEntry) -> Image? {
+        let renderer = ImageRenderer(content: BoardShareCard(entry: entry, rank: myRank, period: period, scope: scope))
+        renderer.scale = 3
+        return renderer.uiImage.map { Image(uiImage: $0) }
+    }
+}
+
+/// The image shared from "Share my result" — always in light colours, like a printed card.
+private struct BoardShareCard: View {
+    let entry: BoardEntry
+    let rank: Int?
+    let period: BoardPeriod
+    let scope: BoardScope
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            HStack {
+                Text("R\(Text(".").foregroundStyle(Color.ratioOxblood))").font(.custom("NewsreaderDisplay-Regular", size: 34))
+                Spacer()
+                Text("\(period.title) board · \(scope.title)".uppercased()).font(.custom("IBMPlexMono-Regular", size: 11)).foregroundStyle(Color.ratioInk2)
+            }
+            Rectangle().fill(Color.ratioInk).frame(height: 1)
+            Spacer(minLength: 0)
+            if let rank {
+                Text("\(rank)\(Text(Ordinal.suffix(rank)).font(.custom("NewsreaderDisplay-Italic", size: 44)))")
+                    .font(.custom("NewsreaderDisplay-Regular", size: 120))
+            }
+            Text(entry.name).font(.custom("NewsreaderDisplay-Regular", size: 30))
+            Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins") in human duels · rating \(entry.rating)")
+                .font(.custom("NewsreaderText-Italic", size: 18))
+                .foregroundStyle(Color.ratioInk2)
+            Spacer(minLength: 0)
+            Rectangle().fill(Color.ratioRule).frame(height: 1)
+            Text("RATIO · LAW, LEARNT AND DUELLED").font(.custom("IBMPlexMono-Regular", size: 11)).foregroundStyle(Color.ratioInk2)
+        }
+        .padding(32)
+        .frame(width: 360, height: 450)
+        .background(Color.ratioParchment)
+        .foregroundStyle(Color.ratioInk)
+        .environment(\.colorScheme, .light)
+    }
+}
+
+enum Ordinal {
+    /// 1st, 2nd, 3rd, 4th … 11th, 12th, 13th … 21st.
+    static func suffix(_ n: Int) -> String {
+        if (11...13).contains(n % 100) { return "th" }
+        switch n % 10 {
+        case 1: return "st"
+        case 2: return "nd"
+        case 3: return "rd"
+        default: return "th"
         }
     }
 }

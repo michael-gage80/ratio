@@ -313,7 +313,7 @@ private struct WeeklyBoardSummary: View {
             VStack(alignment: .leading, spacing: 6) {
                 Text("This week's board · Everyone").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 if let entry, entry.wins > 0 {
-                    Text("\(rank.map { "\($0.formatted(.number))\(Self.suffix($0)) · " } ?? "")\(Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins") in human duels").italic())")
+                    Text("\(rank.map { "\($0.formatted(.number))\(Ordinal.suffix($0)) · " } ?? "")\(Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins") in human duels").italic())")
                         .ratioFont(.h3)
                 } else {
                     Text("Win a human duel to get on this week's board.").ratioFont(.body).italic()
@@ -325,17 +325,6 @@ private struct WeeklyBoardSummary: View {
         .task(id: student.matches.count) {
             entry = await BoardService.entry(.weekly, uid: student.uid)
             if let entry, entry.wins > 0 { rank = await BoardService.rank(of: entry, period: .weekly, scope: .everyone) }
-        }
-    }
-
-    /// 1st, 2nd, 3rd, 4th … 11th, 12th, 13th … 21st.
-    static func suffix(_ n: Int) -> String {
-        if (11...13).contains(n % 100) { return "th" }
-        switch n % 10 {
-        case 1: return "st"
-        case 2: return "nd"
-        case 3: return "rd"
-        default: return "th"
         }
     }
 }
