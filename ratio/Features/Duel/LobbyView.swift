@@ -28,7 +28,7 @@ struct LobbyView: View {
                     Button { leave() } label: { Image(systemName: "chevron.left").font(.title3).frame(width: 44, height: 44, alignment: .leading) }
                         .accessibilityLabel("Leave the lobby")
                     Spacer()
-                    Text("Friend lobby · \(lobby.flatMap { Module(rawValue: $0.moduleId)?.title } ?? "")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Text("Friend lobby · \(lobby.map { DuelScope.title(of: $0.moduleId) } ?? "")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
                 Text("Share this \(Text("code.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
                 codeKeys
@@ -322,7 +322,7 @@ struct LobbyView: View {
 
 /// Make a lobby or join one with a code (or from a shared link).
 struct LobbyEntryView: View {
-    let module: Module
+    let scope: DuelScope
     let seconds: Int
     var initialCode: String?
     let open: (String) -> Void
@@ -337,7 +337,7 @@ struct LobbyEntryView: View {
             VStack(alignment: .leading, spacing: 24) {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Host").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    Text("Make a lobby for \(module.title), \(seconds) s a question, and share the code.").ratioFont(.body)
+                    Text("Make a lobby for \(scope.title), \(seconds) s a question, and share the code.").ratioFont(.body)
                     RatioButton("Make a lobby", isEnabled: !working) { create() }
                 }
                 Divider().overlay(Color.ratioRule)
@@ -378,7 +378,7 @@ struct LobbyEntryView: View {
         error = nil
         Task {
             defer { working = false }
-            do { open(try await DuelService.createLobby(module: module, seconds: seconds)) } catch { self.error = (error as NSError).localizedDescription }
+            do { open(try await DuelService.createLobby(scope: scope, seconds: seconds)) } catch { self.error = (error as NSError).localizedDescription }
         }
     }
 

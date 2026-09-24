@@ -100,7 +100,7 @@ struct MeView: View {
 
     @ViewBuilder
     private var duels: some View {
-        let rated = Module.allCases.compactMap { module in student.ratings[module].map { (module, $0) } }
+        let rated = ([DuelScope.mixed] + Module.allCases.map { .module($0) }).compactMap { scope in student.ratings[scope].map { (scope, $0) } }
         let finished = student.matches.filter { $0.status == "complete" && $0.result(for: student.uid) != nil }
         if !rated.isEmpty {
             VStack(alignment: .leading, spacing: 0) {
@@ -115,10 +115,10 @@ struct MeView: View {
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
                 .padding(.bottom, 8)
-                ForEach(rated, id: \.0) { module, rating in
+                ForEach(rated, id: \.0) { scope, rating in
                     Divider().overlay(Color.ratioRule)
                     HStack {
-                        Text(module.title).ratioFont(.h3)
+                        Text(scope.title).ratioFont(.h3)
                         Spacer()
                         Text(Int(rating.rating.rounded()).formatted()).frame(width: 70, alignment: .trailing)
                         Text("\(rating.duels)").frame(width: 56, alignment: .trailing)

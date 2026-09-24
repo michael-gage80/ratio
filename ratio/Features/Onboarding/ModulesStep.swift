@@ -1,37 +1,26 @@
 import SwiftUI
 
-/// screens/06-year-and-modules.png — year of study and the modules taken this year,
-/// which set the order of the Pathway (PRD: "Year + modules").
-struct YearAndModulesStep: View {
+/// screens/06-year-and-modules.png, without the year: the modules taken this year, which
+/// set the order of Lessons. Year of study is optional and added later on Me.
+struct ModulesStep: View {
     let model: OnboardingModel
 
-    @State private var year: Int?
     @State private var modules: Set<Module>
 
     init(model: OnboardingModel) {
         self.model = model
-        _year = State(initialValue: model.profile.year)
         _modules = State(initialValue: Set(model.profile.modules ?? []))
     }
 
     var body: some View {
         OnboardingStepLayout(
-            title: "Your year and modules",
-            canContinue: year != nil && !modules.isEmpty && !model.isSaving,
+            title: "Your modules",
+            canContinue: !modules.isEmpty && !model.isSaving,
             onContinue: {
-                guard let year else { return }
-                Task { await model.saveYearAndModules(year: year, modules: modules) }
+                Task { await model.saveModules(modules) }
             }
         ) {
             VStack(alignment: .leading, spacing: 28) {
-                VStack(alignment: .leading, spacing: 10) {
-                    Text("Year of study").ratioFont(.monoLabel)
-                    RatioSegmentedControl(
-                        options: [(Optional(1), "Year 1"), (Optional(2), "Year 2"), (Optional(3), "Year 3")],
-                        selection: $year
-                    )
-                }
-
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         Text("Modules this year").ratioFont(.monoLabel)
@@ -41,7 +30,7 @@ struct YearAndModulesStep: View {
                             .foregroundStyle(Color.ratioInk2)
                     }
                     moduleList
-                    Text("These set the order of your Pathway. Change them any time in Settings.")
+                    Text("These set the order of your lessons. Change them any time in Settings.")
                         .ratioFont(.monoData)
                         .foregroundStyle(Color.ratioInk2)
                 }

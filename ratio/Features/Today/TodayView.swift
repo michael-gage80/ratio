@@ -238,6 +238,12 @@ struct TodayView: View {
     /// off unless the student opts in (PRD: "Analytics: opt-in").
     private func finishTour() {
         tourSeen = true
+        if navigator.replayingTutorials {
+            navigator.replayingTutorials = false
+            navigator.tab = .duel
+            navigator.showsDuelTutorial = true
+            return
+        }
         guard !consentAsked else { return }
         Task {
             await RatioNotifications.requestPermission()

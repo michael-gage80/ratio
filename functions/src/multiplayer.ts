@@ -9,8 +9,8 @@ import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { checkDuel, countDuel, notify } from "./account.js";
 import { periodKeys } from "./boards.js";
 import { blockReason, MAX_MESSAGE_LENGTH } from "./chat.js";
-import { duelLessons, MODULES } from "./content.js";
-import { Answer, DuelQuestion, marked, matchQuestions, MIN_ANSWER_MS, playMatchWith, questionPool } from "./duel.js";
+import { Answer, DuelQuestion, marked, MIN_ANSWER_MS, playMatchWith } from "./duel.js";
+import { duelModules, limitFor, MIXED, questionsFor, ratingWindow, requireDuelModule, studentModules } from "./duelScope.js";
 import { INITIAL } from "./glicko.js";
 import * as live from "./live.js";
 import { readSide, Settlement, Side, SideState, writeSide } from "./settle.js";
@@ -27,15 +27,6 @@ const MATCH_ID = /^[A-Za-z0-9_-]{10,40}$/;
 function requireAuth(uid: string | undefined): string {
   if (!uid) throw new HttpsError("unauthenticated", "Sign in first.");
   return uid;
-}
-
-function limitFor(seconds: unknown): number {
-  return (seconds === 15 || seconds === 20 ? seconds : 10) * 1000;
-}
-
-function requireModule(moduleId: unknown): string {
-  if (typeof moduleId !== "string" || !MODULES.includes(moduleId)) throw new HttpsError("invalid-argument", "Unknown module.");
-  return moduleId;
 }
 
 /** "Amara O.", the initial, avatar and module rating, as other players see them. */
@@ -60,19 +51,14 @@ async function isBlocked(a: string, b: string): Promise<boolean> {
   return ab.exists || ba.exists;
 }
 
-function questionsFor(moduleId: string): DuelQuestion[] {
-  const questions = matchQuestions(questionPool(duelLessons.filter((l) => l.moduleId === moduleId), Math.random), Math.random);
-  if (!questions) throw new HttpsError("failed-precondition", "This module doesn't have enough questions for a duel yet.");
-  return questions;
-}
-
 // MARK: - Live matches
 
 /** Starts a live match between two students; returns its ID. */
 async function createLiveMatch(mode: live.Mode, moduleId: string, limitMs: number, uids: [string, string]): Promise<string> {
   const [a, b] = await Promise.all(uids.map((uid) => player(uid, moduleId)));
   const players = { [uids[0]]: strip(a), [uids[1]]: strip(b) };
-  const state = live.newMatch({ mode, moduleId, limitMs, order: uids, players, questions: questionsFor(moduleId) }, Date.now());
+  const questions = questionsFor(await duelModules(moduleId, uids));
+  const state = live.newMatch({ mode, moduleId, limitMs, order: uids, players, questions }, Date.now());
   const ref = getDatabase().ref("live").push();
   await ref.set({ state, public: live.publicView(state), createdAt: Date.now() });
   return ref.key!;
@@ -302,7 +288,7 @@ function lobbyCode(): string {
 /** A friend lobby (PRD): a 6-character code, 15 minutes to fill it, the host starts. */
 export const createLobby = onCall<{ moduleId?: string; seconds?: number }>(async (request) => {
   const uid = requireAuth(request.auth?.uid);
-  const moduleId = requireModule(request.data?.moduleId);
+  const moduleId = requireDuelModule(request.data?.moduleId);
   const host = await player(uid, moduleId);
   const db = getFirestore();
   for (let attempt = 0; attempt < 5; attempt++) {
@@ -434,10 +420,6 @@ export const blockUser = onCall<{ uid?: string }>(async (request) => {
 
 // MARK: - Ranked matchmaking
 
-/** The rating gap accepted after waiting `ms` (PRD: "within ±100 ... widening every 10 s"). */
-export function ratingWindow(ms: number): number {
-  return 100 + 50 * Math.floor(ms / 10_000);
-}
 
 const QUEUE_STALE_MS = 10_000;
 
@@ -448,9 +430,10 @@ const QUEUE_STALE_MS = 10_000;
  */
 export const findMatch = onCall<{ moduleId?: string; seconds?: number }>(async (request) => {
   const uid = requireAuth(request.auth?.uid);
-  const moduleId = requireModule(request.data?.moduleId);
+  const moduleId = requireDuelModule(request.data?.moduleId);
   const limitMs = limitFor(request.data?.seconds);
-  const pool = limitMs === 10_000 ? "standard" : `extended-${limitMs / 1000}`;
+  const pool = limitMs === 15_000 ? "standard" : `extended-${limitMs / 1000}`;
+  const myModules = moduleId === MIXED ? await studentModules(uid) : [];
   const db = getFirestore();
   const mine = db.doc(`matchQueue/${uid}`);
   await checkDuel(uid);
@@ -464,14 +447,17 @@ export const findMatch = onCall<{ moduleId?: string; seconds?: number }>(async (
       return { matchId: entry.get("matchId") as string, opponent: null };
     }
     const joinedAt = entry.exists && entry.get("moduleId") === moduleId && entry.get("pool") === pool ? (entry.get("joinedAt") as number) : now;
+    // Mixed: prefer opponents who share at least two modules, then the closest rating.
+    const overlap = (d: FirebaseFirestore.QueryDocumentSnapshot) =>
+      moduleId === MIXED ? ((d.get("modules") as string[] | undefined) ?? []).filter((m) => myModules.includes(m)).length : 0;
     const candidates = await tx.get(db.collection("matchQueue").where("moduleId", "==", moduleId).where("pool", "==", pool).where("matchId", "==", null));
     const fits = candidates.docs
       .filter((d) => d.id !== uid && now - (d.get("lastPoll") as number) < QUEUE_STALE_MS)
       .filter((d) => Math.abs((d.get("rating") as number) - me.rating) <= Math.max(ratingWindow(now - joinedAt), ratingWindow(now - (d.get("joinedAt") as number))))
-      .sort((a, b) => Math.abs(a.get("rating") - me.rating) - Math.abs(b.get("rating") - me.rating));
+      .sort((a, b) => Number(overlap(b) >= 2) - Number(overlap(a) >= 2) || Math.abs(a.get("rating") - me.rating) - Math.abs(b.get("rating") - me.rating));
     const opponent = fits[0];
     if (!opponent) {
-      tx.set(mine, { moduleId, pool, rating: me.rating, joinedAt, lastPoll: now, matchId: null });
+      tx.set(mine, { moduleId, pool, rating: me.rating, joinedAt, lastPoll: now, matchId: null, ...(moduleId === MIXED ? { modules: myModules } : {}) });
       return { matchId: null, opponent: null, joinedAt };
     }
     // Reserve the pair now; the match is created straight after the transaction.
@@ -491,7 +477,8 @@ export const findMatch = onCall<{ moduleId?: string; seconds?: number }>(async (
     const them = await player(paired.opponent, moduleId);
     const order: [string, string] = [uid, paired.opponent];
     const players = { [uid]: strip(me), [paired.opponent]: strip(them) };
-    const state = live.newMatch({ mode: "ranked", moduleId, limitMs, order, players, questions: questionsFor(moduleId) }, Date.now());
+    const questions = questionsFor(await duelModules(moduleId, order));
+    const state = live.newMatch({ mode: "ranked", moduleId, limitMs, order, players, questions }, Date.now());
     await getDatabase().ref(`live/${paired.matchId}`).set({ state, public: live.publicView(state), createdAt: Date.now() });
     return { matchId: paired.matchId };
   }
@@ -524,7 +511,7 @@ export const cancelMatchmaking = onCall(async (request) => {
 export const createChallenge = onCall<{ opponent?: string; moduleId?: string; seconds?: number }>(async (request) => {
   const uid = requireAuth(request.auth?.uid);
   const opponent = String(request.data?.opponent ?? "");
-  const moduleId = requireModule(request.data?.moduleId);
+  const moduleId = requireDuelModule(request.data?.moduleId);
   if (!opponent || opponent === uid) throw new HttpsError("invalid-argument", "Choose an opponent.");
   const db = getFirestore();
   const past = await db.collection("matches").where("players", "array-contains", uid).orderBy("createdAt", "desc").limit(100).get();
@@ -551,11 +538,37 @@ export const createChallenge = onCall<{ opponent?: string; moduleId?: string; se
     createdAt: FieldValue.serverTimestamp(),
     expiresAt: Timestamp.fromMillis(Date.now() + CHALLENGE_HOURS * 60 * 60 * 1000),
   });
-  batch.set(db.doc(`challengeSecrets/${ref.id}`), { questions: questionsFor(moduleId), answers: {}, servedAt: {} });
+  batch.set(db.doc(`challengeSecrets/${ref.id}`), { questions: questionsFor(await duelModules(moduleId, [uid, opponent])), answers: {}, servedAt: {} });
   await countDuel(uid);
   await batch.commit();
   await notify(opponent, "You've been challenged", `${me.name} has challenged you to a duel. You have 24 hours to play your half.`, { challengeId: ref.id });
   return { challengeId: ref.id };
+});
+
+/**
+ * The challenged student turns a challenge down before playing their half. No rating
+ * changes; the challenger sees it as declined.
+ */
+export const declineChallenge = onCall<{ challengeId?: string }>(async (request) => {
+  const uid = requireAuth(request.auth?.uid);
+  const challengeId = request.data?.challengeId;
+  if (typeof challengeId !== "string" || !MATCH_ID.test(challengeId)) throw new HttpsError("invalid-argument", "Unknown challenge.");
+  const db = getFirestore();
+  const ref = db.doc(`challenges/${challengeId}`);
+  const secretRef = db.doc(`challengeSecrets/${challengeId}`);
+  const challenger = await db.runTransaction(async (tx) => {
+    const [challenge, secret] = await tx.getAll(ref, secretRef);
+    const players = challenge.get("players") as [string, string] | undefined;
+    if (!challenge.exists || players?.[1] !== uid) throw new HttpsError("not-found", "Unknown challenge.");
+    if (challenge.get("status") !== "open") throw new HttpsError("failed-precondition", "This challenge has finished.");
+    if (((secret.get("servedAt") as Record<string, unknown[]> | undefined)?.[uid] ?? []).length > 0) {
+      throw new HttpsError("failed-precondition", "You've already started this challenge.");
+    }
+    tx.update(ref, { status: "declined", declinedAt: FieldValue.serverTimestamp() });
+    return { uid: players[0], name: (challenge.get("names") as Record<string, string>)[uid] };
+  });
+  await notify(challenger.uid, "Challenge declined", `${challenger.name} declined your challenge.`, { challengeId });
+  return { ok: true };
 });
 
 type Stored = Record<string, Answer[]>;

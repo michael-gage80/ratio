@@ -11,8 +11,6 @@ import UserNotifications
 enum RatioNotifications {
     private static let briefPrefix = "brief-"
     private static let rescue = "streak-rescue"
-    /// Evening nudge time, before a typical quiet period starts.
-    private static let rescueTime = "19:00"
 
     /// Asks once, at a moment the student can see why (after the Today tour).
     @discardableResult
@@ -55,7 +53,8 @@ enum RatioNotifications {
         let remaining = streak.target - streak.daysThisWeek
         let daysLeft = 7 - streak.todayIndex
         let activeToday = streak.week[safe: streak.todayIndex]?.active ?? false
-        if !streak.isPaused, !activeToday, remaining > 0, remaining <= daysLeft,
+        let rescueTime = settings.streakTime ?? "19:00"
+        if settings.streakReminder ?? true, !streak.isPaused, !activeToday, remaining > 0, remaining <= daysLeft,
            let fire = date(.now, at: rescueTime), fire > .now, !isQuiet(rescueTime, quiet) {
             let content = UNMutableNotificationContent()
             content.title = "One short session keeps your week on track"

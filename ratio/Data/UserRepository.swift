@@ -57,6 +57,12 @@ nonisolated struct StudySettings: Codable, Equatable {
     var briefReminder: Bool?
     /// "08:30".
     var briefTime: String?
+    var streakReminder: Bool?
+    /// "19:00".
+    var streakTime: String?
+    /// Today's cards in the student's order, and the ones they've hidden.
+    var homeOrder: [String]?
+    var homeHidden: [String]?
     var quietStart: String?
     var quietEnd: String?
 }

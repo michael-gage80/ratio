@@ -21,12 +21,16 @@ final class StudentStore {
     private(set) var briefUnavailable = false
     /// UK dates the student was active on, over the last few weeks.
     private(set) var activeDays: Set<String> = []
-    /// Duel ratings, keyed by module.
-    private(set) var ratings: [Module: DuelRating] = [:]
+    /// Duel ratings, keyed by module or mixed.
+    private(set) var ratings: [DuelScope: DuelRating] = [:]
     /// The last 20 duels, newest first.
     private(set) var matches: [MatchSummary] = []
+    /// The last 30 days of async challenges, newest first, whatever became of them.
+    private(set) var challengeHistory: [ChallengeSummary] = []
     /// Async challenges still open (PRD: "They have 24 h to play their half").
-    private(set) var challenges: [ChallengeSummary] = []
+    var challenges: [ChallengeSummary] {
+        challengeHistory.filter { $0.status == "open" && $0.expiresAt > .now }.sorted { $0.expiresAt < $1.expiresAt }
+    }
     /// Students this student has duelled, for the Friends board.
     private(set) var friends: [String] = []
     /// UK legal news from the last 7 days, newest first.
@@ -112,7 +116,7 @@ final class StudentStore {
                 .addSnapshotListener { [weak self] snapshot, _ in
                     guard let snapshot else { return }
                     self?.ratings = Dictionary(snapshot.documents.compactMap { document in
-                        (try? document.data(as: DuelRating.self)).flatMap { rating in Module(rawValue: rating.moduleId).map { ($0, rating) } }
+                        (try? document.data(as: DuelRating.self)).flatMap { rating in DuelScope(id: rating.moduleId).map { ($0, rating) } }
                     }, uniquingKeysWith: { first, _ in first })
                 },
             Firestore.firestore().collection("matches").whereField("players", arrayContains: uid)
@@ -151,13 +155,13 @@ final class StudentStore {
                 guard let snapshot else { return }
                 self?.friends = snapshot.documents.map(\.documentID)
             },
-            Firestore.firestore().collection("challenges").whereField("players", arrayContains: uid).whereField("status", isEqualTo: "open")
+            Firestore.firestore().collection("challenges").whereField("players", arrayContains: uid)
+                .whereField("createdAt", isGreaterThan: Date.now.addingTimeInterval(-30 * 86_400))
+                .order(by: "createdAt", descending: true).limit(to: 50)
                 .addSnapshotListener { [weak self] snapshot, _ in
                     guard let snapshot else { return }
-                    self?.challenges = snapshot.documents
+                    self?.challengeHistory = snapshot.documents
                         .compactMap { document in (try? document.data(as: ChallengeSummary.self)).map { var c = $0; c.id = document.documentID; return c } }
-                        .filter { $0.expiresAt > .now }
-                        .sorted { $0.expiresAt < $1.expiresAt }
                 },
         ]
         listenToTodaysBrief()
@@ -322,6 +326,9 @@ nonisolated struct ChallengeSummary: Decodable, Identifiable {
     var done: [String: Bool]
     var expiresAt: Date
     var createdAt: Date?
+    /// "open", "complete", "expired" or "declined".
+    var status: String
+    var declinedAt: Date?
 
     func opponent(of uid: String) -> (uid: String, name: String) {
         let other = players.first { $0 != uid } ?? ""
@@ -332,7 +339,7 @@ nonisolated struct ChallengeSummary: Decodable, Identifiable {
     func isFrom(_ uid: String) -> Bool { players.first == uid }
 
     private enum CodingKeys: String, CodingKey {
-        case players, names, moduleId, limitMs, done, expiresAt, createdAt
+        case players, names, moduleId, limitMs, done, expiresAt, createdAt, status, declinedAt
     }
 }
 

@@ -55,7 +55,7 @@ struct LiveMatchView: View {
                     .foregroundStyle(Color.ratioInk2)
                     .accessibilityLabel("Leave the match")
                     Spacer()
-                    Text("\(Module(rawValue: model.moduleId ?? "")?.title ?? "") · Live").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Text("\(DuelScope.title(of: model.moduleId ?? "")) · Live").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
                 .padding(.horizontal, 12)
                 if let since = model.opponentGoneSince {
@@ -111,10 +111,10 @@ struct LiveMatchView: View {
 
     /// Rematch against a student is an async challenge: they get 24 hours to play.
     private func challenge(_ record: DuelRecord) {
-        guard let opponent = record.opponent.uid, let module = Module(rawValue: record.moduleId) else { return }
+        guard let opponent = record.opponent.uid, let scope = DuelScope(id: record.moduleId) else { return }
         Task {
             do {
-                try await DuelService.createChallenge(opponent: opponent, module: module, seconds: record.limitMs / 1000)
+                try await DuelService.createChallenge(opponent: opponent, scope: scope, seconds: record.limitMs / 1000)
                 challengeSent = "\(record.opponent.name) has 24 hours to play their half. You'll find it under Waiting for you."
             } catch {
                 challengeSent = (error as NSError).localizedDescription
@@ -133,7 +133,7 @@ private struct LiveVersus: View {
         let opponent = model.opponent
         VStack(spacing: 0) {
             VStack(spacing: 12) {
-                Text("\(Module(rawValue: model.moduleId ?? "")?.title ?? "") · First to 3").ratioFont(.monoLabel).opacity(0.7)
+                Text("\(DuelScope.title(of: model.moduleId ?? "")) · First to 3").ratioFont(.monoLabel).opacity(0.7)
                 OpponentMark(opponent: opponent, size: 96)
                 Text(opponent.name).ratioFont(.h1)
                 Text(opponent.detail).ratioFont(.monoData).opacity(0.7)

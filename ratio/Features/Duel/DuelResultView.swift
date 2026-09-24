@@ -10,7 +10,6 @@ struct DuelResultView: View {
 
     @Environment(ContentStore.self) private var content
 
-    private var module: Module { Module(rawValue: record.moduleId) ?? .crime }
 
     var body: some View {
         VStack(spacing: 24) {
@@ -32,7 +31,7 @@ struct DuelResultView: View {
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
             VStack(spacing: 0) {
-                row("Rating · \(module.title)") {
+                row("Rating · \(DuelScope.title(of: record.moduleId))") {
                     let delta = record.ratingAfter - record.ratingBefore
                     Text("\(record.ratingBefore.formatted()) → \(record.ratingAfter.formatted()) \(Text(delta >= 0 ? "+\(delta)" : "\(delta)").foregroundStyle(delta >= 0 ? Color.ratioVerdigris : Color.ratioOxblood))")
                         .ratioFont(.monoData)
@@ -82,7 +81,7 @@ struct DuelResultView: View {
     }
 
     private func topicTitle(_ topicId: String) -> String {
-        content.lessons(in: module).first { $0.topicId == topicId }?.title ?? TopicGroup.title(forTopic: topicId)
+        Module(topicId: topicId).flatMap { content.lessons(in: $0).first { $0.topicId == topicId }?.title } ?? TopicGroup.title(forTopic: topicId)
     }
 
     private func row(_ label: String, @ViewBuilder value: () -> some View) -> some View {

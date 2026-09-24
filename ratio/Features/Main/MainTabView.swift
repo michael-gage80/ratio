@@ -15,6 +15,8 @@ final class AppNavigator {
     var mePath: [Route] = []
     /// Set from Settings to replay the duel tutorial.
     var showsDuelTutorial = false
+    /// "Replay tutorials" in Settings: the Today tour, then the duel tutorial.
+    var replayingTutorials = false
     /// A friend-lobby code from a shared link (ratio://lobby/K7MP4X).
     var lobbyCode: String?
     /// Set to open the Ratio Plus sheet, with why ("Contract is part of Ratio Plus.").

@@ -206,7 +206,7 @@ struct ChallengeView: View {
         let opponent = challenge.opponent(of: student.uid)
         return VStack(alignment: .leading, spacing: 20) {
             Spacer()
-            Text("Challenge · \(Module(rawValue: challenge.moduleId)?.title ?? "")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            Text("Challenge · \(DuelScope.title(of: challenge.moduleId))").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text("Your half is \(Text("in.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
             Text("\(opponent.name) has until \(challenge.expiresAt.formatted(.dateTime.weekday(.wide).hour().minute())) to play theirs. The rounds are decided then, and you'll see the result under Recent matches.")
                 .ratioFont(.h3)
@@ -217,10 +217,10 @@ struct ChallengeView: View {
     }
 
     private func rematch(_ record: DuelRecord) {
-        guard let opponent = record.opponent.uid, let module = Module(rawValue: record.moduleId) else { return }
+        guard let opponent = record.opponent.uid, let scope = DuelScope(id: record.moduleId) else { return }
         Task {
             do {
-                try await DuelService.createChallenge(opponent: opponent, module: module, seconds: record.limitMs / 1000)
+                try await DuelService.createChallenge(opponent: opponent, scope: scope, seconds: record.limitMs / 1000)
                 sent = "\(record.opponent.name) has 24 hours to play their half."
             } catch {
                 sent = (error as NSError).localizedDescription

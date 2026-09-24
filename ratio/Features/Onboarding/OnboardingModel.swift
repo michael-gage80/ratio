@@ -7,7 +7,7 @@ import Foundation
 @Observable
 final class OnboardingModel {
     enum Step: Int, CaseIterable {
-        case dateOfBirth = 1, name, programme, university, yearAndModules, diagnostic
+        case dateOfBirth = 1, name, programme, university, modules, diagnostic
     }
 
     /// Shown in the step counter ("02 / 06").
@@ -86,11 +86,10 @@ final class OnboardingModel {
         }
     }
 
-    /// Modules are stored in canonical order, which is also their Pathway order.
-    func saveYearAndModules(year: Int, modules: Set<Module>) async {
+    /// Modules are stored in canonical order, which is also their order in Lessons.
+    func saveModules(_ modules: Set<Module>) async {
         let ordered = Module.allCases.filter(modules.contains)
-        await save(["year": year, "modules": ordered.map(\.rawValue)]) {
-            $0.year = year
+        await save(["modules": ordered.map(\.rawValue)]) {
             $0.modules = ordered
         }
     }
@@ -120,7 +119,7 @@ final class OnboardingModel {
         if profile.displayName == nil { return .name }
         if profile.programme == nil { return .programme }
         if profile.universityId == nil && profile.universityOther == nil { return .university }
-        if profile.year == nil || (profile.modules ?? []).isEmpty { return .yearAndModules }
+        if (profile.modules ?? []).isEmpty { return .modules }
         if profile.headline == nil { return .diagnostic }
         return nil
     }
