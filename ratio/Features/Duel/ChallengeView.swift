@@ -139,7 +139,9 @@ struct ChallengeView: View {
     @State private var sent: String?
 
     var body: some View {
-        Group {
+        // Not a Group: with no model yet it would be empty, and the `.task` that loads
+        // the challenge would never run.
+        ZStack {
             if let model {
                 switch model.phase {
                 case .loading:
@@ -180,6 +182,8 @@ struct ChallengeView: View {
                     }
                     .padding(32)
                 }
+            } else {
+                ProgressView()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

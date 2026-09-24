@@ -33,7 +33,7 @@ struct DiagnosticResultsFlow: View {
             Spacer()
             ZStack {
                 RatioRings(diameter: 170)
-                RatioMark(size: 96)
+                RatioMark(size: 64, opticallyCentred: true)
             }
             Text("Reading your answers.")
                 .ratioFont(.h2)
@@ -66,9 +66,6 @@ struct DiagnosticResultsFlow: View {
                     RatioButton("See your profile →", style: .secondary, isEnabled: headline != nil && completedSteps == steps.count) {
                         withAnimation { showsProfile = true }
                     }
-                    Text("A first hypothesis, not a grade")
-                        .ratioFont(.monoLabel)
-                        .foregroundStyle(Color.ratioInk2)
                 }
             }
         }
@@ -149,9 +146,6 @@ struct FirstProfileView: View {
         .safeAreaInset(edge: .bottom) {
             VStack(spacing: 12) {
                 RatioButton("Enter chambers", action: onContinue)
-                Text("Educational, not legal advice")
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioInk2)
             }
             .padding(24)
             .background(Color.ratioParchment)

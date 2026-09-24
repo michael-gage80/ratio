@@ -125,7 +125,6 @@ struct ExamRoomView: View {
             RatioButton("Begin", isEnabled: !model.items.isEmpty) {
                 withAnimation { started = true }
             }
-            Text("Educational, not legal advice").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity)
         }
         .padding(24)
     }

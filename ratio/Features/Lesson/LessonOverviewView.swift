@@ -70,7 +70,6 @@ struct LessonOverviewView: View {
         .safeAreaInset(edge: .bottom) {
             VStack(spacing: 10) {
                 RatioButton("Begin", action: onBegin)
-                Text("Educational, not legal advice").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
             .padding(24)
             .background(Color.ratioParchment)

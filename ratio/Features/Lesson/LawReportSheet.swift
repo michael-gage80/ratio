@@ -55,7 +55,7 @@ struct LawReportSheet: View {
                 }
 
                 Rectangle().fill(Color.ratioRule).frame(height: 1)
-                Text("Paraphrased for study. Not a reproduction of the judgment or headnote. Educational, not legal advice.")
+                Text("Paraphrased for study. Not a reproduction of the judgment or headnote.")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
                 RatioButton("Close", style: .tertiary) { dismiss() }

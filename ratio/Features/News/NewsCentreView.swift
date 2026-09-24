@@ -46,14 +46,15 @@ struct NewsCentreView: View {
                 if let quiz = student.quiz {
                     QuizCard(quiz: quiz) { takingQuiz = true }
                 }
-                Text("Headlines link to the publisher. Educational, not legal advice.")
+                Text("Headlines link to the publisher.")
                     .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
             }
             .padding(24)
         }
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .toolbarTitleDisplayMode(.inline)
+        // No back button: swipe from the left edge to go back.
+        .toolbar(.hidden, for: .navigationBar)
         .fullScreenCover(isPresented: $takingQuiz) {
             if let quiz = student.quiz { QuizView(quiz: quiz) }
         }

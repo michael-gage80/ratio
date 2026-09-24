@@ -39,6 +39,10 @@ public extension Color {
     static let ratioVWash = Color("VWash", bundle: .main)
     /// Avatar fill only (#946518 · dark #D9A24A).
     static let ratioOchre = Color("Ochre", bundle: .main)
+    /// The streak block on Today, with `ratioOnInk` text (#1F4D36 both appearances).
+    static let ratioForest = Color("Forest", bundle: .main)
+    /// The Duel block on Today, with `ratioOnInk` text: ink, deep oxblood in dark (#1D1B18 · dark #9B2A24).
+    static let ratioDuelBlock = Color("DuelBlock", bundle: .main)
 
     /// Text field / input boundary (#8C857A both appearances — meets the 3:1 WCAG
     /// 1.4.11 non-text contrast requirement against both paper surfaces).

@@ -46,7 +46,6 @@ struct DebriefView: View {
                     }
                     RatioButton("Back to Today", style: .secondary, action: onFinish)
                 }
-                Text("Educational, not legal advice").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
             .padding(24)
             .background(Color.ratioParchment)

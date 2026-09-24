@@ -44,7 +44,7 @@ struct PathwayView: View {
                             groupSection(group, index: index)
                         }
                         if let date = lessons.first?.lawStatedDate {
-                            Text("Law stated as at \(date) · Educational, not legal advice")
+                            Text("Law stated as at \(date)")
                                 .ratioFont(.monoLabel)
                                 .foregroundStyle(Color.ratioInk2)
                                 .multilineTextAlignment(.center)
