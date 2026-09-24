@@ -9,10 +9,10 @@ struct DuelRoundView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: RatioSpace.m) {
             Scoreboard(model: model)
             if let question = model.question {
-                VStack(alignment: .leading, spacing: 14) {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
                     Text(label(question))
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
@@ -21,7 +21,7 @@ struct DuelRoundView: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 16) {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
                         if question.kind == .spotTheIssue, let segments = question.segments {
                             SpotTheIssueCard(question: question, segments: segments, model: model)
                         } else {
@@ -37,13 +37,14 @@ struct DuelRoundView: View {
                                 .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
                         }
                     }
+                    .padding(.bottom, RatioSpace.m)
                 }
                 .scrollIndicators(.hidden)
             }
         }
-        .padding(.horizontal, 24)
-        .padding(.top, 8)
-        .animation(.easeInOut(duration: 0.25), value: model.roundPhase)
+        .padding(.horizontal, RatioSpace.m)
+        .padding(.top, RatioSpace.xs)
+        .animation(RatioMotion.reveal, value: model.roundPhase)
         .ratioFeedback(.impact(weight: .medium), trigger: model.pulse)
         .ratioFeedback(trigger: model.lastPlayed) { _, played in
             guard let played else { return nil }
@@ -72,50 +73,74 @@ private struct Scoreboard: View {
     let model: any DuelRoundModel
 
     @Environment(StudentStore.self) private var student
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 0.1)) { context in
-            HStack(spacing: 12) {
-                HStack(spacing: 10) {
-                    ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 44)
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("You").ratioFont(.h3)
-                        if model.showsScore { Points(score: model.score[0]) }
+            Group {
+                // At accessibility sizes: both players on their own lines, the timer beneath.
+                if typeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        you
+                        opponent(at: context.date)
+                        timer(at: context.date).frame(maxWidth: .infinity)
                     }
-                }
-                Spacer(minLength: 4)
-                TimerRing(remaining: remaining(at: context.date), limit: Double(model.limitMs) / 1000)
-                Spacer(minLength: 4)
-                HStack(spacing: 10) {
-                    VStack(alignment: .trailing, spacing: 6) {
-                        Text(model.opponent.name).ratioFont(.small).multilineTextAlignment(.trailing).lineLimit(2)
-                        Text(model.opponent.detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                        if model.showsScore { Points(score: model.score[1]) }
+                } else {
+                    HStack(spacing: RatioSpace.xs) {
+                        you
+                        Spacer(minLength: RatioSpace.xxs)
+                        timer(at: context.date)
+                        Spacer(minLength: RatioSpace.xxs)
+                        opponent(at: context.date)
                     }
-                    OpponentMark(opponent: model.opponent, size: 44)
-                        .overlay(alignment: .bottomTrailing) {
-                            if model.roundPhase == .playing && model.opponentLocked(at: context.date) {
-                                Text("Locked in")
-                                    .ratioFont(.monoLabel)
-                                    .foregroundStyle(Color.ratioOxblood)
-                                    .padding(.horizontal, 6)
-                                    .padding(.vertical, 2)
-                                    .background(Color.ratioPaper, in: Capsule())
-                                    .overlay(Capsule().strokeBorder(Color.ratioOxblood))
-                                    .rotationEffect(.degrees(-8))
-                                    .fixedSize()
-                                    .offset(x: 10, y: 14)
-                                    .transition(.scale.combined(with: .opacity))
-                            }
-                        }
                 }
             }
-            .padding(16)
-            .ratioGlassCard(cornerRadius: 28)
-            .overlay { RoundedRectangle(cornerRadius: 28, style: .continuous).strokeBorder(Color.ratioRule) }
+            .padding(RatioSpace.s)
+            .ratioGlassCard(cornerRadius: RatioRadius.card)
+            .overlay { RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous).strokeBorder(Color.ratioRule) }
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(model.showsScore ? "You \(model.score[0]), \(model.opponent.name) \(model.score[1])" : "You against \(model.opponent.name)")
+    }
+
+    private var you: some View {
+        HStack(spacing: RatioSpace.xs) {
+            ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 44)
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                Text("You").ratioFont(.h3)
+                if model.showsScore { Points(score: model.score[0]) }
+            }
+        }
+    }
+
+    private func timer(at date: Date) -> some View {
+        TimerRing(remaining: remaining(at: date), limit: Double(model.limitMs) / 1000)
+    }
+
+    private func opponent(at date: Date) -> some View {
+        HStack(spacing: RatioSpace.xs) {
+            VStack(alignment: typeSize.isAccessibilitySize ? .leading : .trailing, spacing: RatioSpace.xxs) {
+                Text(model.opponent.name).ratioFont(.small).multilineTextAlignment(typeSize.isAccessibilitySize ? .leading : .trailing)
+                Text(model.opponent.detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                if model.showsScore { Points(score: model.score[1]) }
+            }
+            OpponentMark(opponent: model.opponent, size: 44)
+                .overlay(alignment: .bottomTrailing) {
+                    if model.roundPhase == .playing && model.opponentLocked(at: date) {
+                        Text("Locked in")
+                            .ratioFont(.monoLabel)
+                            .foregroundStyle(Color.ratioOxblood)
+                            .padding(.horizontal, RatioSpace.xs)
+                            .padding(.vertical, 2)
+                            .background(Color.ratioPaper, in: Capsule())
+                            .overlay(Capsule().strokeBorder(Color.ratioOxblood))
+                            .rotationEffect(.degrees(-8))
+                            .fixedSize()
+                            .offset(x: 10, y: 14)
+                            .transition(.scale.combined(with: .opacity))
+                    }
+                }
+        }
     }
 
     private func remaining(at date: Date) -> Double {
@@ -133,12 +158,12 @@ struct Points: View {
     let score: Int
 
     var body: some View {
-        HStack(spacing: 5) {
+        HStack(spacing: RatioSpace.xxs) {
             ForEach(0..<DuelRules.pointsToWin, id: \.self) { index in
                 Circle()
                     .fill(index < score ? Color.ratioInk : Color.clear)
                     .overlay(Circle().strokeBorder(Color.ratioInk, lineWidth: 1.2))
-                    .frame(width: 11, height: 11)
+                    .frame(width: 12, height: 12)
             }
         }
         .accessibilityHidden(true)
@@ -160,7 +185,7 @@ private struct TimerRing: View {
                 .rotationEffect(.degrees(-90))
             Text("\(Int(remaining.rounded(.up)))")
                 .ratioFont(.h2)
-                .monospacedDigit()
+                .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                 .foregroundStyle(urgent ? Color.ratioOxblood : Color.ratioInk)
         }
         .frame(width: 64, height: 64)
@@ -201,12 +226,18 @@ struct OpponentMark: View {
 private struct OptionGrid: View {
     let question: DuelQuestion
     let model: any DuelRoundModel
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    /// Two columns, or one at accessibility sizes so options never cramp.
+    private var columns: [GridItem] {
+        Array(repeating: GridItem(.flexible(), spacing: RatioSpace.s), count: typeSize.isAccessibilitySize ? 1 : 2)
+    }
 
     var body: some View {
-        LazyVGrid(columns: [GridItem(.flexible(), spacing: 14), GridItem(.flexible(), spacing: 14)], spacing: 14) {
+        LazyVGrid(columns: columns, spacing: RatioSpace.s) {
             ForEach(question.options.indices, id: \.self) { index in
                 Button { model.answer(index) } label: {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
                         HStack {
                             Text(Self.letter(index)).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                             Spacer()
@@ -219,13 +250,13 @@ private struct OptionGrid: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         Spacer(minLength: 0)
                     }
-                    .padding(16)
-                    .frame(maxWidth: .infinity, minHeight: 120, alignment: .topLeading)
-                    .background(state(index).fill, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-                    .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(state(index).border, lineWidth: state(index) == .plain ? 1 : 2) }
+                    .padding(RatioSpace.s)
+                    .frame(maxWidth: .infinity, minHeight: typeSize.isAccessibilitySize ? 44 : 120, alignment: .topLeading)
+                    .background(state(index).fill, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                    .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(state(index).border, lineWidth: state(index) == .plain ? 1 : 2) }
                 }
                 .buttonStyle(.plain)
-.disabled(model.roundPhase != .playing || model.yourAnswer != nil)
+                .disabled(model.roundPhase != .playing || model.yourAnswer != nil)
                 .accessibilityLabel("\(Self.letter(index)): \(question.options[index])\(state(index).spoken)")
             }
         }
@@ -247,32 +278,31 @@ private struct SpotTheIssueCard: View {
     let model: any DuelRoundModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             ForEach(Array(segments.enumerated()), id: \.offset) { _, segment in
                 if let option = segment.option {
                     let state = OptionState(index: option, question: question, model: model)
                     Button { model.answer(option) } label: {
                         HStack(alignment: .firstTextBaseline) {
                             Text(segment.text).ratioFont(.body).multilineTextAlignment(.leading)
-                            Spacer(minLength: 8)
+                            Spacer(minLength: RatioSpace.xs)
                             OptionMarker(state: state)
                         }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                        .background(state.fill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        .overlay { RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(state == .plain ? Color.ratioRule : state.border) }
+                        .padding(.horizontal, RatioSpace.s)
+                        .padding(.vertical, RatioSpace.xs)
+                        .frame(minHeight: 44)
+                        .background(state.fill, in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
+                        .overlay { RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous).strokeBorder(state == .plain ? Color.ratioRule : state.border) }
                     }
                     .buttonStyle(.plain)
                     .disabled(model.roundPhase != .playing || model.yourAnswer != nil)
                     .accessibilityLabel("\(segment.text)\(state.spoken)")
                 } else {
-                    Text(segment.text).ratioFont(.body).foregroundStyle(Color.ratioInk2).padding(.horizontal, 12)
+                    Text(segment.text).ratioFont(.body).foregroundStyle(Color.ratioInk2).padding(.horizontal, RatioSpace.s)
                 }
             }
         }
-        .padding(16)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard(padding: RatioSpace.s)
     }
 }
 
@@ -344,7 +374,8 @@ private struct RevealBanner: View {
         Label(message.text, systemImage: message.good == true ? "checkmark" : message.good == false ? "xmark" : "clock")
             .ratioFont(.h3)
             .foregroundStyle(message.good == true ? Color.ratioVerdigris : message.good == false ? Color.ratioOxblood : Color.ratioInk2)
+            .multilineTextAlignment(.center)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 8)
+            .padding(.vertical, RatioSpace.xs)
     }
 }

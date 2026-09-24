@@ -145,17 +145,16 @@ struct ChallengeView: View {
             if let model {
                 switch model.phase {
                 case .loading:
-                    ProgressView()
+                    loading
                 case .round:
                     VStack(spacing: 0) {
                         HStack {
-                            Button { dismiss() } label: { Image(systemName: "xmark").font(.body.weight(.semibold)).frame(width: 44, height: 44) }
+                            RatioIconButton(systemImage: "xmark", label: "Pause — carry on later") { dismiss() }
                                 .foregroundStyle(Color.ratioInk2)
-                                .accessibilityLabel("Pause — carry on later")
                             Spacer()
                             Text("Question \(model.index + 1) of \(model.total)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                         }
-                        .padding(.horizontal, 12)
+                        .padding(.horizontal, RatioSpace.s)
                         DuelRoundView(model: model)
                     }
                 case .halfDone:
@@ -176,19 +175,21 @@ struct ChallengeView: View {
                         }
                     }
                 case .failed(let message):
-                    VStack(spacing: 20) {
-                        Text(message).ratioFont(.body).multilineTextAlignment(.center)
-                        RatioButton("Close", style: .secondary) { dismiss() }
+                    VStack(spacing: RatioSpace.xs) {
+                        RatioErrorState(message: message) { Task { await model.load() } }
+                        Button("Close") { dismiss() }
+                            .ratioFont(.monoLabel)
+                            .foregroundStyle(Color.ratioInk2)
+                            .frame(minWidth: 44, minHeight: 44)
                     }
-                    .padding(32)
+                    .padding(RatioSpace.l)
                 }
             } else {
-                ProgressView()
+                loading
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .task {
             guard model == nil else { return }
             let opponent = challenge.opponent(of: student.uid)
@@ -206,18 +207,26 @@ struct ChallengeView: View {
         }
     }
 
+    private var loading: some View {
+        VStack(spacing: RatioSpace.s) {
+            ProgressView()
+            Text("Loading the challenge…").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
     private var halfDone: some View {
         let opponent = challenge.opponent(of: student.uid)
-        return VStack(alignment: .leading, spacing: 20) {
+        return VStack(alignment: .leading, spacing: RatioSpace.m) {
             Spacer()
             Text("Challenge · \(DuelScope.title(of: challenge.moduleId))").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text("Your half is \(Text("in.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
-            Text("\(opponent.name) has until \(challenge.expiresAt.formatted(.dateTime.weekday(.wide).hour().minute())) to play theirs. The rounds are decided then, and you'll see the result under Recent matches.")
+            Text("\(opponent.name) has until \(challenge.expiresAt.formatted(.dateTime.weekday(.wide).hour().minute())) to play theirs. The rounds are decided then, and you'll see the result under Recent duels.")
                 .ratioFont(.h3)
             Spacer()
             RatioButton("Done", style: .secondary) { dismiss() }
         }
-        .padding(24)
+        .padding(RatioSpace.m)
     }
 
     private func rematch(_ record: DuelRecord) {
