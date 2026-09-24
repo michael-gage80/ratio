@@ -15,13 +15,17 @@ struct DuelDebriefView: View {
 
     private var misses: Int { record.rounds.count { !$0.answers[0].correct } }
 
+    @Environment(\.dynamicTypeSize) private var typeSize
+
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
                 Text("Duel debrief · v \(record.opponent.name) · \(record.score[0])–\(record.score[1])")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
                 Text("\(roundsText), \(Text(missesText).italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.h1)
+                    .accessibilityAddTraits(.isHeader)
+                    .padding(.bottom, RatioSpace.xs)
                 ForEach(Array(record.rounds.enumerated()), id: \.offset) { index, round in
                     if let question = record.questions[safe: round.questionIndex] {
                         roundCard(round, question: question, number: index, running: runningScore(through: index))
@@ -35,10 +39,9 @@ struct DuelDebriefView: View {
                     .frame(maxWidth: .infinity)
                 RatioButton("Back to Today", style: .secondary, action: backToToday)
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
     }
 
     private var roundsText: String {
@@ -64,18 +67,26 @@ struct DuelDebriefView: View {
         let yours = round.answers[0]
         let skill = Skill(rawValue: question.skill)?.title ?? question.skill
         let who = round.winner == 0 ? "You" : round.winner == 1 ? them : "No point"
-        return VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .top) {
-                Text("\(question.isFinal ? "Final round" : "Round \(Self.numerals[safe: number] ?? "")") · \(question.kind.title) · \(skill)")
-                Spacer(minLength: 12)
-                Text("\(who) · \(running.0)–\(running.1)")
+        let round = Text("\(question.isFinal ? "Final round" : "Round \(Self.numerals[safe: number] ?? "")") · \(question.kind.title) · \(skill)")
+        let point = Text("\(who) · \(running.0)–\(running.1)")
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .top) {
+                    round
+                    Spacer(minLength: RatioSpace.s)
+                    point
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    round
+                    point
+                }
             }
             .ratioFont(.monoLabel)
             .foregroundStyle(Color.ratioInk2)
 
             if let chosen = yours.answerIndex {
                 answerRow(correct: yours.correct,
-                          label: yours.correct ? "Correct · you \(seconds(yours.timeMs)) s" : "Not quite · you \(seconds(yours.timeMs)) s",
+                          label: yours.correct ? "Correct · you \(seconds(yours.timeMs))\u{00A0}s" : "Not quite · you \(seconds(yours.timeMs))\u{00A0}s",
                           text: question.options[safe: chosen] ?? "")
             } else {
                 answerRow(correct: false, label: "No answer", text: "Time ran out")
@@ -88,28 +99,25 @@ struct DuelDebriefView: View {
             if !yours.correct {
                 Button { revisit(question.lessonId) } label: {
                     Text("Revisit the lesson →").ratioFont(.monoLabel).foregroundStyle(Color.ratioOxblood)
+                        .frame(minHeight: 44)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.ratioPress)
             }
         }
-        .padding(18)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 
     private func answerRow(correct: Bool, label: String, text: String) -> some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .top, spacing: RatioSpace.xs) {
             Image(systemName: correct ? "checkmark.circle.fill" : "xmark.circle.fill")
                 .foregroundStyle(correct ? Color.ratioVerdigris : Color.ratioOxblood)
                 .font(.title3)
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                 Text(label).ratioFont(.monoLabel).foregroundStyle(correct ? Color.ratioVerdigris : Color.ratioOxblood)
                 Text(text).ratioFont(.body).italic()
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(correct ? Color.ratioVWash : Color.ratioOxWash, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .ratioPanel(correct ? Color.ratioVWash : Color.ratioOxWash)
         .accessibilityElement(children: .combine)
     }
 
@@ -124,12 +132,22 @@ struct DuelDebriefView: View {
         let accuracy = { (player: Int) in record.rounds.count { $0.answers[player].correct } }
         let total = record.rounds.count
         let limit = Double(record.limitMs) / 1000
-        return VStack(alignment: .leading, spacing: 16) {
-            HStack {
-                Text("Head to head").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                Spacer()
-                Label("You", systemImage: "square.fill").foregroundStyle(Color.ratioInk)
-                Label(them, systemImage: "square.fill").foregroundStyle(Color.ratioInk2)
+        let legend = HStack(spacing: RatioSpace.s) {
+            Label("You", systemImage: "square.fill").foregroundStyle(Color.ratioInk)
+            Label(them, systemImage: "square.fill").foregroundStyle(Color.ratioInk2)
+        }
+        .accessibilityHidden(true)
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
+            ViewThatFits(in: .horizontal) {
+                HStack {
+                    Text("Head to head").foregroundStyle(Color.ratioInk2)
+                    Spacer()
+                    legend
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    Text("Head to head").foregroundStyle(Color.ratioInk2)
+                    legend
+                }
             }
             .ratioFont(.monoLabel)
             comparison("Average speed", note: "Shorter is quicker",
@@ -139,34 +157,50 @@ struct DuelDebriefView: View {
                        you: (Double(accuracy(0)) / Double(max(total, 1)), "\(accuracy(0))/\(total)"),
                        them: (Double(accuracy(1)) / Double(max(total, 1)), "\(accuracy(1))/\(total)"))
         }
-        .padding(18)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
     }
 
     private func comparison(_ title: String, note: String, you: (Double, String)?, them: (Double, String)?) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(title).ratioFont(.h3)
-                Spacer()
-                Text(note).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(title).ratioFont(.h3)
+                    Spacer()
+                    Text(note).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    Text(title).ratioFont(.h3)
+                    Text(note).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                }
             }
             bar("You", value: you, color: .ratioInk)
             bar(self.them, value: them, color: .ratioInk2)
         }
     }
 
+    /// Who, the bar and the figure on one line; at accessibility sizes the label sits above.
     private func bar(_ who: String, value: (Double, String)?, color: Color) -> some View {
-        HStack(spacing: 12) {
-            Text(who).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(width: 60, alignment: .leading)
-            GeometryReader { proxy in
-                ZStack(alignment: .leading) {
-                    Capsule().fill(Color.ratioSunk)
-                    Capsule().fill(color).frame(width: proxy.size.width * min(1, value?.0 ?? 0))
+        let track = GeometryReader { proxy in
+            ZStack(alignment: .leading) {
+                Capsule().fill(Color.ratioSunk)
+                Capsule().fill(color).frame(width: proxy.size.width * min(1, value?.0 ?? 0))
+            }
+        }
+        .frame(height: 8)
+        let figure = Text(value?.1 ?? "—").ratioFont(.monoData).fixedSize()
+        return Group {
+            if typeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    Text(who).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    HStack(spacing: RatioSpace.xs) { track; figure }
+                }
+            } else {
+                HStack(spacing: RatioSpace.s) {
+                    Text(who).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(width: 64, alignment: .leading)
+                    track
+                    figure.frame(minWidth: 56, alignment: .trailing)
                 }
             }
-            .frame(height: 8)
-            Text(value?.1 ?? "—").ratioFont(.monoData).frame(width: 56, alignment: .trailing)
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(who): \(value?.1 ?? "no answers")")

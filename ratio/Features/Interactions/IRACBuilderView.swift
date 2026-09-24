@@ -48,7 +48,7 @@ private struct IRACWorkedExample: View {
     let onLock: (ItemResponse) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Worked example · scaffold 1 of 4")
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
@@ -104,7 +104,7 @@ private struct IRACBuilder: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Scaffold \(level) of 4").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
 
             Group {
@@ -140,17 +140,15 @@ private struct IRACBuilder: View {
     // MARK: Parts
 
     private func slot(_ title: String, @ViewBuilder content: () -> some View) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             content()
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .ratioPanel()
     }
 
     private var ruleChoice: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Rule · choose the test that applies").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             ForEach(Array(ruleOptions.enumerated()), id: \.offset) { index, option in
                 RatioOptionRow(text: option, state: ruleState(index), action: locked == nil && !isChecking ? { chosenRule = index } : nil)
@@ -166,7 +164,7 @@ private struct IRACBuilder: View {
     }
 
     private var applicationSlot: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             slot("Application · the facts that decide it") {
                 if placed.isEmpty {
                     Text("Drag or tap facts below to place them here.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
@@ -177,7 +175,7 @@ private struct IRACBuilder: View {
             }
             .dropDestination(for: String.self) { dropped, _ in place(dropped, in: true) }
             if locked == nil && !isChecking {
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     Text("Tray · \(tray.count) chips, \(tray.count - facts.count) decoys").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     ForEach(trayOrder.filter { !placed.contains($0) }, id: \.self) { index in
                         chip(index, isPlaced: false)
@@ -201,7 +199,7 @@ private struct IRACBuilder: View {
         return Button {
             if isPlaced { placed.removeAll { $0 == index } } else { placed.append(index) }
         } label: {
-            HStack(alignment: .firstTextBaseline, spacing: 8) {
+            HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
                 if showsOutcome {
                     Image(systemName: isDecoy ? "xmark.circle.fill" : "checkmark.circle.fill")
                         .foregroundStyle(isDecoy ? Color.ratioOxblood : Color.ratioVerdigris)
@@ -209,14 +207,15 @@ private struct IRACBuilder: View {
                 Text(tray[index]).ratioFont(.small).multilineTextAlignment(.leading)
                 Spacer(minLength: 0)
             }
-            .padding(12)
-            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-            .overlay { RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(Color.ratioRule) }
+            .padding(RatioSpace.s)
+            .frame(minHeight: 44)
+            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
+            .overlay { RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous).strokeBorder(Color.ratioRule) }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .disabled(locked != nil || isChecking)
-        .draggable(String(index)) { Text(tray[index]).ratioFont(.small).padding(10) }
+        .draggable(String(index)) { Text(tray[index]).ratioFont(.small).padding(RatioSpace.xs) }
         .accessibilityHint(isPlaced ? "Removes this fact from your application" : "Adds this fact to your application")
         .accessibilityValue(showsOutcome ? (isDecoy ? "Doesn't belong" : "Belongs") : "")
     }
@@ -276,11 +275,11 @@ struct IRACFactsList: View {
     let facts: [String]
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text("Key facts").ratioFont(.monoLabel)
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
+            Text("Key facts").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             ForEach(facts, id: \.self) { fact in
-                HStack(alignment: .firstTextBaseline, spacing: 8) {
-                    Text("·").foregroundStyle(Color.ratioOxblood)
+                HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
+                    Text("·").foregroundStyle(Color.ratioOxblood).accessibilityHidden(true)
                     Text(fact).ratioFont(.small)
                 }
             }
@@ -292,7 +291,7 @@ struct IRACModelAnswer: View {
     let answer: Item.IRACAnswer
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             section("Issue", answer.issue)
             section("Rule", answer.rule)
             section("Application", answer.application)
@@ -301,13 +300,11 @@ struct IRACModelAnswer: View {
     }
 
     private func section(_ title: String, _ text: String) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
             Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text(text).ratioFont(.body)
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .ratioPanel()
     }
 }
 

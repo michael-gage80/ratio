@@ -36,17 +36,20 @@ struct SkillRow: View {
     let estimate: Estimate?
     var compact = false
 
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
     var body: some View {
-        if compact {
-            HStack(spacing: 12) {
-                Text(title).ratioFont(.monoLabel).frame(width: 16, alignment: .leading)
+        // At accessibility sizes the one-line layout can't fit its score, so use the full one.
+        if compact && !dynamicTypeSize.isAccessibilitySize {
+            HStack(spacing: RatioSpace.s) {
+                Text(title).ratioFont(.monoLabel).frame(minWidth: 16, alignment: .leading)
                 track
-                Text(score).ratioFont(.monoData).frame(width: 56, alignment: .trailing)
+                Text(score).ratioFont(.monoData).fixedSize().frame(minWidth: 56, alignment: .trailing)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(accessibilityText)
         } else {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 HStack(alignment: .firstTextBaseline) {
                     Text(title).ratioFont(.h3)
                     Spacer()

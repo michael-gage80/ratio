@@ -47,7 +47,7 @@ struct ExamRoomView: View {
                 intro
             } else if let item = model.current {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: RatioSpace.m) {
                         Text("Test \(model.responses.count + 1) of \(model.items.count) · \(item.typeTitle)")
                             .ratioFont(.monoLabel)
                             .foregroundStyle(Color.ratioInk2)
@@ -57,7 +57,9 @@ struct ExamRoomView: View {
                         }
                         .id(item.id)
                     }
-                    .padding(24)
+                    .padding(.horizontal, RatioSpace.m)
+                    .padding(.top, RatioSpace.s)
+                    .padding(.bottom, RatioSpace.xl)
                 }
                 .scrollDismissesKeyboard(.interactively)
                 .transition(.push(from: .trailing))
@@ -65,9 +67,8 @@ struct ExamRoomView: View {
                 submitting
             }
         }
-        .animation(.easeInOut(duration: 0.25), value: model.responses.count)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .animation(RatioMotion.reveal, value: model.responses.count)
+        .ratioPage()
         .ratioFeedback(.impact(weight: .light), trigger: model.responses.count)
         .confirmationDialog("Leave the exam room?", isPresented: $confirmingLeave, titleVisibility: .visible) {
             Button("Leave — nothing is saved", role: .destructive) { dismiss() }
@@ -76,15 +77,12 @@ struct ExamRoomView: View {
     }
 
     private var topBar: some View {
-        HStack(spacing: 16) {
-            Button {
+        HStack(spacing: RatioSpace.s) {
+            RatioIconButton(systemImage: started ? "xmark" : "chevron.left", label: "Leave the exam room") {
                 if started && !model.responses.isEmpty && result == nil { confirmingLeave = true } else { dismiss() }
-            } label: {
-                Image(systemName: started ? "xmark" : "chevron.left").font(.title3).frame(width: 44, height: 44)
             }
-            .accessibilityLabel("Leave the exam room")
             if started {
-                HStack(spacing: 4) {
+                HStack(spacing: RatioSpace.xxs) {
                     ForEach(model.items.indices, id: \.self) { index in
                         Capsule()
                             .fill(index < model.responses.count ? Color.ratioInk : index == model.responses.count ? Color.ratioOxblood : Color.ratioRule)
@@ -97,54 +95,88 @@ struct ExamRoomView: View {
                 Text("Exam room").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, RatioSpace.s)
     }
 
     private var intro: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            Spacer()
-            Text("Tests · \(model.items.count) items · drawn for you").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            Text("Without the \(Text("notes.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
-            Text("\(model.items.count) items weighted to \(model.weakestSkill.phrase). A retake draws new ones.")
-                .ratioFont(.h3)
-            VStack(spacing: 0) {
-                ForEach(Array(model.items.enumerated()), id: \.element.id) { index, item in
-                    HStack {
-                        Text(String(format: "%02d", index + 1)).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
-                        Text(item.typeTitle).ratioFont(.monoLabel).padding(.leading, 12)
-                        Spacer()
-                        Text(item.skill.title)
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(item.skill == model.weakestSkill ? Color.ratioOxblood : Color.ratioInk2)
+        ScrollView {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                Text(model.items.isEmpty ? "Tests · drawing them for you" : "Tests · \(model.items.count) items · drawn for you")
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk2)
+                Text("Without the \(Text("notes.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
+                if !model.items.isEmpty {
+                    Text("\(model.items.count) items weighted to \(model.weakestSkill.phrase). A retake draws new ones.")
+                        .ratioFont(.h3)
+                }
+                VStack(spacing: 0) {
+                    if model.items.isEmpty {
+                        ForEach(0..<4, id: \.self) { index in
+                            testRow(index: index, title: "Quick check", skill: "Knowledge", weakest: false)
+                        }
+                        .ratioSkeleton()
+                    } else {
+                        ForEach(Array(model.items.enumerated()), id: \.element.id) { index, item in
+                            testRow(index: index, title: item.typeTitle, skill: item.skill.title, weakest: item.skill == model.weakestSkill)
+                        }
                     }
-                    .padding(.vertical, 14)
-                    Divider().overlay(Color.ratioRule)
                 }
             }
-            Spacer()
-            RatioButton("Begin", isEnabled: !model.items.isEmpty) {
-                withAnimation { started = true }
-            }
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.top, RatioSpace.l)
+            .padding(.bottom, RatioSpace.m)
         }
-        .padding(24)
+        .safeAreaInset(edge: .bottom) {
+            RatioButton("Begin", isEnabled: !model.items.isEmpty) {
+                withAnimation(RatioMotion.reveal) { started = true }
+            }
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.vertical, RatioSpace.s)
+            .background(Color.ratioParchment)
+        }
+    }
+
+    private func testRow(index: Int, title: String, skill: String, weakest: Bool) -> some View {
+        let number = Text(String(format: "%02d", index + 1)).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+        let skillLabel = Text(skill).ratioFont(.monoLabel).foregroundStyle(weakest ? Color.ratioOxblood : Color.ratioInk2)
+        return VStack(spacing: 0) {
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: RatioSpace.s) {
+                    number
+                    Text(title).ratioFont(.monoLabel)
+                    Spacer(minLength: RatioSpace.xs)
+                    skillLabel
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    number
+                    Text(title).ratioFont(.monoLabel)
+                    skillLabel
+                }
+            }
+            .padding(.vertical, RatioSpace.s)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityElement(children: .combine)
+            Divider().overlay(Color.ratioRule)
+        }
     }
 
     private var submitting: some View {
-        VStack(spacing: 24) {
+        VStack(spacing: RatioSpace.m) {
             Spacer()
             ZStack {
                 RatioRings(diameter: 140)
-                RatioMark(size: 72)
+                RatioMark(size: 56, opticallyCentred: true)
             }
             if submitFailed {
-                Text("We couldn't reach the server. Your answers are still here.").ratioFont(.small).multilineTextAlignment(.center)
-                RatioButton("Try again", style: .secondary) { Task { await submit() } }
+                RatioErrorState(message: "We couldn't reach the server to mark these. Your answers are still here.") {
+                    Task { await submit() }
+                }
             } else {
                 Text("Marking your answers.").ratioFont(.h2).italic()
             }
             Spacer()
         }
-        .padding(24)
+        .padding(RatioSpace.m)
     }
 
     private func context(for item: Item) -> InteractionContext {
@@ -157,7 +189,7 @@ struct ExamRoomView: View {
         submitFailed = false
         do {
             let submitted = try await model.submit()
-            withAnimation { result = submitted }
+            withAnimation(RatioMotion.reveal) { result = submitted }
         } catch {
             submitFailed = true
         }

@@ -11,10 +11,11 @@ struct VerifyEmailView: View {
     @State private var note: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Spacer()
-            Text("Check your inbox.")
+            Text("Check your inbox\(Text(".").foregroundStyle(Color.ratioOxblood))")
                 .ratioFont(.h1)
+                .accessibilityAddTraits(.isHeader)
             Text("We've sent a link to \(Text(email).italic()). Tap it, then come back here.")
                 .ratioFont(.body)
                 .foregroundStyle(Color.ratioInk2)
@@ -24,7 +25,7 @@ struct VerifyEmailView: View {
                     .foregroundStyle(Color.ratioInk2)
             }
             Spacer()
-            VStack(spacing: 12) {
+            VStack(spacing: RatioSpace.s) {
                 RatioButton("I've verified my email", isEnabled: !session.isWorking) {
                     Task {
                         await session.refreshEmailVerification()
@@ -43,10 +44,9 @@ struct VerifyEmailView: View {
                 }
             }
         }
-        .padding(24)
+        .padding(RatioSpace.m)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .onChange(of: scenePhase) { _, phase in
             if phase == .active {
                 Task { await session.refreshEmailVerification() }

@@ -22,7 +22,7 @@ public struct RatioTag: View {
     }
 
     public var body: some View {
-        HStack(spacing: 4) {
+        HStack(spacing: RatioSpace.xxs) {
             if let icon {
                 Image(systemName: icon)
                     .imageScale(.small)
@@ -31,8 +31,8 @@ public struct RatioTag: View {
         }
         .ratioFont(.monoLabel)
         .foregroundStyle(foreground)
-        .padding(.horizontal, 10)
-        .padding(.vertical, 5)
+        .padding(.horizontal, RatioSpace.xs)
+        .padding(.vertical, RatioSpace.xxs)
         .background(background, in: Capsule())
         .overlay {
             if case .outline = style {

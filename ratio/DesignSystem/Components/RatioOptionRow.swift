@@ -34,7 +34,7 @@ public struct RatioOptionRow: View {
         Button {
             action?()
         } label: {
-            HStack(spacing: 14) {
+            HStack(spacing: RatioSpace.s) {
                 marker
                 Text(text)
                     .ratioFont(.body)
@@ -48,12 +48,11 @@ public struct RatioOptionRow: View {
                         .foregroundStyle(resultColor)
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 14)
+            .padding(RatioSpace.s)
             .frame(minHeight: 44)
-            .background(background, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(background, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
             .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
                     .strokeBorder(borderColor, lineWidth: state == .selected ? 2 : 1)
             }
         }

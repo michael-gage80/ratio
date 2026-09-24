@@ -4,41 +4,60 @@ import SwiftUI
 /// against students, and the best board place this week or month.
 struct StatTiles: View {
     @Environment(StudentStore.self) private var student
-    @Environment(ContentStore.self) private var content
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var bestPlace: Int?
 
+    /// Lessons whose tested items are all right and none due — `StudentStore.state(of:)`'s
+    /// "secure", counted in one pass over the items rather than once per lesson.
+    private var secureLessons: Int {
+        let now = Date.now
+        return Dictionary(grouping: student.items, by: \.lessonId).values.count { items in
+            !items.contains { !$0.lastCorrect || $0.due <= now }
+        }
+    }
+
     var body: some View {
-        let lessons = Module.allCases.flatMap { content.lessons(in: $0) }
-        let secure = lessons.count { student.state(of: $0) == .secure }
+        let secure = secureLessons
         let streak = student.streak
         let weeks = streak.previousWeeks + (streak.daysThisWeek >= streak.target ? 1 : 0)
         let human = student.matches.filter { $0.isBot == false && $0.status == "complete" }.compactMap { $0.result(for: student.uid) }
         let wins = human.count { $0.winner == 0 }
-        Grid(horizontalSpacing: 12, verticalSpacing: 12) {
-            GridRow {
-                tile("Lessons secure", "\(secure)")
-                tile("Week streak", "\(weeks)", unit: weeks == 1 ? "week" : "weeks")
-            }
-            GridRow {
-                tile("Duel win rate", human.isEmpty ? "—" : "\(Int((100 * Double(wins) / Double(human.count)).rounded()))%",
-                     unit: human.isEmpty ? nil : "of \(human.count)")
-                tile("Best board place", bestPlace.map { "\($0)\(Ordinal.suffix($0))" } ?? "—", unit: bestPlace == nil ? nil : "this week or month")
+        let tiles = [
+            tile("Lessons secure", "\(secure)"),
+            tile("Week streak", "\(weeks)", unit: weeks == 1 ? "week" : "weeks"),
+            tile("Duel win rate", human.isEmpty ? "—" : "\(Int((100 * Double(wins) / Double(human.count)).rounded()))%",
+                 unit: human.isEmpty ? nil : "of \(human.count) against students"),
+            tile("Best board place", bestPlace.map { "\($0)\(Ordinal.suffix($0))" } ?? "—", unit: bestPlace == nil ? nil : "this week or month"),
+        ]
+        Group {
+            if typeSize.isAccessibilitySize {
+                // One tile per row at the largest text sizes.
+                VStack(spacing: RatioSpace.s) {
+                    ForEach(tiles.indices, id: \.self) { tiles[$0] }
+                }
+            } else {
+                Grid(horizontalSpacing: RatioSpace.s, verticalSpacing: RatioSpace.s) {
+                    GridRow { tiles[0]; tiles[1] }
+                    GridRow { tiles[2]; tiles[3] }
+                }
             }
         }
         .task(id: student.matches.count) { bestPlace = await Self.bestPlace(uid: student.uid) }
     }
 
-    private func tile(_ label: String, _ value: String, unit: String? = nil) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(label).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            Text(value).font(.custom("NewsreaderDisplay-Regular", size: 34, relativeTo: .largeTitle))
-            if let unit { Text(unit).ratioFont(.small).foregroundStyle(Color.ratioInk2) }
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule) }
-        .accessibilityElement(children: .combine)
+    private func tile(_ label: String, _ value: String, unit: String? = nil) -> AnyView {
+        AnyView(
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                Text(label).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Text(value).ratioFont(.figure)
+                if let unit { Text(unit).ratioFont(.small).foregroundStyle(Color.ratioInk2) }
+            }
+            .padding(RatioSpace.s)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
+            .accessibilityElement(children: .combine)
+        )
     }
 
     private static func bestPlace(uid: String) async -> Int? {
@@ -64,15 +83,21 @@ struct ActivityHeatmap: View {
         let start = calendar.date(byAdding: .weekOfYear, value: -(Self.weeks - 1), to: monday) ?? monday
         let days = (0..<(Self.weeks * 7)).compactMap { calendar.date(byAdding: .day, value: $0, to: start) }
         let active = days.count { activeDays.contains(UKDate.key(for: $0)) && $0 <= .now }
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("Activity").ratioFont(.h2)
-                Spacer()
-                Text("\(active) \(active == 1 ? "day" : "days") in 12 weeks").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Activity").ratioFont(.h2)
+                    Spacer()
+                    Text("\(active) \(active == 1 ? "day" : "days") in 12 weeks").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    Text("Activity").ratioFont(.h2)
+                    Text("\(active) \(active == 1 ? "day" : "days") in 12 weeks").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                }
             }
-            HStack(spacing: 4) {
+            HStack(spacing: RatioSpace.xxs) {
                 ForEach(0..<Self.weeks, id: \.self) { week in
-                    VStack(spacing: 4) {
+                    VStack(spacing: RatioSpace.xxs) {
                         ForEach(0..<7, id: \.self) { weekday in
                             let day = days[week * 7 + weekday]
                             RoundedRectangle(cornerRadius: 3, style: .continuous)
@@ -138,21 +163,21 @@ struct MilestoneTimeline: View {
         let milestones = milestones
         if !milestones.isEmpty {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Your story so far").ratioFont(.h2).padding(.bottom, 12)
+                Text("Your story so far").ratioFont(.h2).padding(.bottom, RatioSpace.s)
                 ForEach(milestones) { milestone in
-                    HStack(alignment: .top, spacing: 14) {
+                    HStack(alignment: .top, spacing: RatioSpace.s) {
                         VStack(spacing: 0) {
-                            Circle().strokeBorder(Color.ratioInk, lineWidth: 1).frame(width: 9, height: 9).padding(.top, 6)
+                            Circle().strokeBorder(Color.ratioInk, lineWidth: 1).frame(width: 8, height: 8).padding(.top, RatioSpace.xxs)
                             if milestone.id != milestones.last?.id {
                                 Rectangle().fill(Color.ratioRule).frame(width: 1).frame(maxHeight: .infinity)
                             }
                         }
-                        .frame(width: 9)
-                        VStack(alignment: .leading, spacing: 2) {
+                        .frame(width: 8)
+                        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                             Text(milestone.date.formatted(.dateTime.day().month(.abbreviated).year())).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                             Text(milestone.text).ratioFont(.body)
                         }
-                        .padding(.bottom, 16)
+                        .padding(.bottom, RatioSpace.s)
                     }
                     .accessibilityElement(children: .combine)
                 }

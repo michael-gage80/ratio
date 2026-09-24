@@ -7,6 +7,7 @@ import SwiftUI
 public struct RatioSegmentedControl<T: Hashable>: View {
     private let options: [(value: T, label: String)]
     @Binding private var selection: T
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     public init(options: [(value: T, label: String)], selection: Binding<T>) {
         self.options = options
@@ -14,20 +15,22 @@ public struct RatioSegmentedControl<T: Hashable>: View {
     }
 
     public var body: some View {
-        HStack(spacing: 2) {
+        // Stacked at accessibility sizes, so labels never break mid-word.
+        (typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: RatioSpace.xxs)) : AnyLayout(HStackLayout(spacing: RatioSpace.xxs))) {
             ForEach(options, id: \.value) { option in
                 let isSelected = option.value == selection
                 Button {
-                    withAnimation(.easeInOut(duration: 0.18)) { selection = option.value }
+                    withAnimation(RatioMotion.tap) { selection = option.value }
                 } label: {
                     Text(option.label)
-                        .ratioFont(.h3)
+                        .ratioFont(.body)
                         .foregroundStyle(isSelected ? Color.ratioInk : Color.ratioInk2)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 8)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .padding(.horizontal, RatioSpace.xxs)
                         .background {
                             if isSelected {
-                                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous)
                                     .fill(Color.ratioPaper)
                                     .shadow(color: .black.opacity(0.08), radius: 2, y: 1)
                             }
@@ -37,7 +40,7 @@ public struct RatioSegmentedControl<T: Hashable>: View {
                 .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
             }
         }
-        .padding(3)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 17, style: .continuous))
+        .padding(RatioSpace.xxs)
+        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
     }
 }

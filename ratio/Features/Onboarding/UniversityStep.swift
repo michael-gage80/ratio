@@ -35,7 +35,7 @@ struct UniversityStep: View {
             canContinue: canContinue,
             onContinue: continueTapped
         ) {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
                 searchField
                 list
                 otherRow
@@ -44,9 +44,9 @@ struct UniversityStep: View {
     }
 
     private var searchField: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Search universities").ratioFont(.monoLabel)
-            HStack(spacing: 10) {
+            HStack(spacing: RatioSpace.xs) {
                 Image(systemName: "magnifyingglass")
                     .foregroundStyle(Color.ratioInk2)
                 TextField("University or city", text: $query)
@@ -55,11 +55,10 @@ struct UniversityStep: View {
                     .autocorrectionDisabled()
                     .submitLabel(.search)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 14)
-            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .padding(RatioSpace.s)
+            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
             .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
                     .strokeBorder(Color.ratioInputBorder, lineWidth: 1)
             }
         }
@@ -82,9 +81,9 @@ struct UniversityStep: View {
                 }
             }
             .background(Color.ratioPaper)
-            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
             .overlay {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
                     .strokeBorder(Color.ratioRule, lineWidth: 1)
             }
         }
@@ -96,26 +95,24 @@ struct UniversityStep: View {
             choice = .listed(university.id)
             otherFieldFocused = false
         } label: {
-            HStack(spacing: 12) {
-                VStack(alignment: .leading, spacing: 4) {
+            HStack(spacing: RatioSpace.s) {
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                     Text(university.name).ratioFont(.body)
                     Text(university.city)
                         .ratioFont(.monoData)
                         .foregroundStyle(Color.ratioInk2)
                 }
-                Spacer(minLength: 8)
+                Spacer(minLength: RatioSpace.xs)
                 if isSelected {
                     Image(systemName: "checkmark")
-                        .fontWeight(.semibold)
                 }
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 14)
+            .padding(RatioSpace.s)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(isSelected ? Color.ratioSunk : .clear)
             .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
         .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 
@@ -136,15 +133,15 @@ struct UniversityStep: View {
                 Text("My university isn't listed")
                     .ratioFont(.body)
                     .italic()
-                    .padding(20)
+                    .padding(RatioSpace.s)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
                             .strokeBorder(Color.ratioRule, style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
                     }
                     .contentShape(Rectangle())
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.ratioPress)
         }
     }
 

@@ -19,6 +19,9 @@ struct ratioApp: App {
 
     init() {
         FirebaseApp.configure()
+        #if DEBUG
+        DebugHooks.configure()
+        #endif
         UniversityDirectory.configure()
         if let clientID = FirebaseApp.app()?.options.clientID {
             GIDSignIn.sharedInstance.configuration = GIDConfiguration(clientID: clientID)

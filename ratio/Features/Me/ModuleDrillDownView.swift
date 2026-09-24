@@ -9,6 +9,7 @@ struct ModuleDrillDownView: View {
 
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var expanded: String?
 
     private struct Topic: Identifiable {
@@ -30,11 +31,11 @@ struct ModuleDrillDownView: View {
     }
 
     var body: some View {
+        let topics = topics
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Me · \(module.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                Text(module.title + ".").ratioFont(.display).padding(.top, 6)
-                Text(summary).ratioFont(.body).foregroundStyle(Color.ratioInk2).padding(.top, 10).padding(.bottom, 24)
+                RatioPageHeader(eyebrow: "Me", title: module.title, subtitle: summary)
+                    .padding(.bottom, RatioSpace.m)
 
                 if topics.isEmpty {
                     Text("No topics assessed yet. \(module.title) lessons are in preparation.")
@@ -50,14 +51,15 @@ struct ModuleDrillDownView: View {
                     Text("K knowledge · U understanding · A application")
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
+                        .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
-                        .padding(.top, 20)
+                        .padding(.top, RatioSpace.m)
                 }
             }
-            .padding(24)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.vertical, RatioSpace.s)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbarTitleDisplayMode(.inline)
     }
 
@@ -69,16 +71,18 @@ struct ModuleDrillDownView: View {
     }
 
     private var header: some View {
-        VStack(spacing: 10) {
-            HStack {
-                Text("Topic")
-                Spacer()
-                ForEach(Skill.allCases) { Text(String($0.title.prefix(1))).frame(width: 36) }
-                Color.clear.frame(width: 20)
+        VStack(spacing: RatioSpace.xs) {
+            if !typeSize.isAccessibilitySize {
+                HStack(spacing: RatioSpace.xs) {
+                    Text("Topic")
+                    Spacer()
+                    ForEach(Skill.allCases) { Text(String($0.title.prefix(1))).frame(width: 40) }
+                    Color.clear.frame(width: 24)
+                }
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+                .accessibilityHidden(true)
             }
-            .ratioFont(.monoLabel)
-            .foregroundStyle(Color.ratioInk2)
-            .accessibilityHidden(true)
             Rectangle().fill(Color.ratioInk).frame(height: 1)
         }
     }
@@ -86,36 +90,53 @@ struct ModuleDrillDownView: View {
     private func topicRow(_ topic: Topic) -> some View {
         let scores = student.topics[topic.id]
         let isExpanded = expanded == topic.id
-        return VStack(alignment: .leading, spacing: 16) {
+        let title = Text(topic.title)
+            .ratioFont(.h3)
+            .italic(isExpanded)
+            .foregroundStyle(isExpanded ? Color.ratioOxblood : Color.ratioInk)
+            .multilineTextAlignment(.leading)
+        let chevron = Image(systemName: "chevron.down")
+            .rotationEffect(.degrees(isExpanded ? 180 : 0))
+            .foregroundStyle(Color.ratioInk2)
+            .frame(width: 24)
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
             Button {
-                withAnimation(.easeInOut(duration: 0.2)) { expanded = isExpanded ? nil : topic.id }
+                withAnimation(RatioMotion.tap) { expanded = isExpanded ? nil : topic.id }
             } label: {
-                HStack {
-                    Text(topic.title)
-                        .ratioFont(.h3)
-                        .italic(isExpanded)
-                        .foregroundStyle(isExpanded ? Color.ratioOxblood : Color.ratioInk)
-                        .multilineTextAlignment(.leading)
-                    Spacer(minLength: 8)
-                    ForEach(Skill.allCases) { skill in
-                        Text(scores?[skill].map { "\($0.displayScore)" } ?? "–")
-                            .ratioFont(.monoData)
-                            .frame(width: 36)
+                Group {
+                    if typeSize.isAccessibilitySize {
+                        // Title on its own line, then the scores spelt out.
+                        VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                            HStack(alignment: .firstTextBaseline) {
+                                title
+                                Spacer(minLength: RatioSpace.xs)
+                                chevron
+                            }
+                            Text(Skill.allCases.map { skill in "\(skill.title.prefix(1)) \(scores?[skill].map { "\($0.displayScore)" } ?? "–")" }.joined(separator: " · "))
+                                .ratioFont(.monoData)
+                                .foregroundStyle(Color.ratioInk2)
+                        }
+                    } else {
+                        HStack(spacing: RatioSpace.xs) {
+                            title
+                            Spacer(minLength: RatioSpace.xs)
+                            ForEach(Skill.allCases) { skill in
+                                Text(scores?[skill].map { "\($0.displayScore)" } ?? "–")
+                                    .ratioFont(.monoData)
+                                    .frame(width: 40)
+                            }
+                            chevron
+                        }
                     }
-                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                        .imageScale(.small)
-                        .foregroundStyle(Color.ratioInk2)
-                        .frame(width: 20)
                 }
-                .padding(.vertical, 16)
-                .contentShape(Rectangle())
+                .padding(.vertical, RatioSpace.s)
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.ratioPress)
             .accessibilityLabel(accessibilityLabel(topic, scores: scores))
             .accessibilityHint(isExpanded ? "Hides the trends" : "Shows how each score has moved")
 
             if isExpanded {
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
                     if let scores {
                         ForEach(Skill.allCases) { skill in
                             TrendCard(skill: skill, scores: scores)
@@ -129,15 +150,20 @@ struct ModuleDrillDownView: View {
                     }
                     if let lesson = topic.lesson {
                         NavigationLink(value: Route.overview(lesson.id)) {
-                            Text("Practise: \(topic.title) →")
-                                .ratioFont(.h3)
-                                .frame(maxWidth: .infinity, minHeight: 56)
-                                .overlay { RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(Color.ratioRule) }
+                            HStack(spacing: RatioSpace.xs) {
+                                Text("Practise \(topic.title)").multilineTextAlignment(.center)
+                                Image(systemName: "arrow.right")
+                            }
+                            .ratioFont(.h3)
+                            .padding(.horizontal, RatioSpace.s)
+                            .frame(maxWidth: .infinity, minHeight: 56)
+                            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
                         }
-                        .buttonStyle(.plain)
+                        .buttonStyle(.ratioPress)
                     }
                 }
-                .padding(.bottom, 16)
+                .padding(.bottom, RatioSpace.s)
                 .transition(.opacity)
             }
         }
@@ -171,7 +197,8 @@ private struct TrendCard: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        let points = points
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack {
                 Text(skill.title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 Spacer()
@@ -179,27 +206,25 @@ private struct TrendCard: View {
                     Text("\(current.displayScore) ±\(current.band)").ratioFont(.monoData)
                 }
             }
-            if points.isEmpty {
-                Text("Not assessed yet.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
-            } else {
-                chart
+            if let first = points.first {
+                chart(points)
                 HStack {
-                    Text(points.first!.date.formatted(.dateTime.day().month(.abbreviated)))
+                    Text(first.date.formatted(.dateTime.day().month(.abbreviated)))
                     Spacer()
                     Text("Now")
                 }
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
+            } else {
+                Text("Not assessed yet.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
             }
         }
-        .padding(18)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(accessibilityText)
     }
 
-    private var chart: some View {
+    private func chart(_ points: [Point]) -> some View {
         Chart {
             ForEach(points) { point in
                 AreaMark(

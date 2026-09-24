@@ -14,28 +14,34 @@ struct ModulesStep: View {
 
     var body: some View {
         OnboardingStepLayout(
-            title: "Your modules",
+            title: "Which modules are you taking?",
+            subtitle: "They set the order of your lessons. You can change them any time in Settings.",
             canContinue: !modules.isEmpty && !model.isSaving,
             onContinue: {
                 Task { await model.saveModules(modules) }
             }
         ) {
-            VStack(alignment: .leading, spacing: 28) {
-                VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                ViewThatFits(in: .horizontal) {
                     HStack {
                         Text("Modules this year").ratioFont(.monoLabel)
                         Spacer()
-                        Text("\(modules.count) of \(Module.allCases.count) selected")
-                            .ratioFont(.monoData)
-                            .foregroundStyle(Color.ratioInk2)
+                        selectedCount
                     }
-                    moduleList
-                    Text("These set the order of your lessons. Change them any time in Settings.")
-                        .ratioFont(.monoData)
-                        .foregroundStyle(Color.ratioInk2)
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        Text("Modules this year").ratioFont(.monoLabel)
+                        selectedCount
+                    }
                 }
+                moduleList
             }
         }
+    }
+
+    private var selectedCount: some View {
+        Text("\(modules.count) of \(Module.allCases.count) selected")
+            .ratioFont(.monoData)
+            .foregroundStyle(Color.ratioInk2)
     }
 
     private var moduleList: some View {
@@ -45,16 +51,15 @@ struct ModulesStep: View {
                 Button {
                     if isSelected { modules.remove(module) } else { modules.insert(module) }
                 } label: {
-                    HStack {
-                        Text(module.title).ratioFont(.h3)
-                        Spacer()
+                    HStack(spacing: RatioSpace.s) {
+                        Text(module.title).ratioFont(.h3).multilineTextAlignment(.leading)
+                        Spacer(minLength: 0)
                         checkbox(isSelected)
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 16)
+                    .padding(RatioSpace.s)
                     .contentShape(Rectangle())
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.ratioPress)
                 .accessibilityAddTraits(isSelected ? .isSelected : [])
                 if module != Module.allCases.last {
                     Divider().overlay(Color.ratioRule)
@@ -62,22 +67,22 @@ struct ModulesStep: View {
             }
         }
         .background(Color.ratioPaper)
-        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
         .overlay {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
+            RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
                 .strokeBorder(Color.ratioRule, lineWidth: 1)
         }
     }
 
     private func checkbox(_ isOn: Bool) -> some View {
-        RoundedRectangle(cornerRadius: 7, style: .continuous)
+        RoundedRectangle(cornerRadius: 6, style: .continuous)
             .fill(isOn ? Color.ratioInk : Color.clear)
             .strokeBorder(isOn ? Color.ratioInk : Color.ratioInputBorder, lineWidth: 1)
-            .frame(width: 26, height: 26)
+            .frame(width: 24, height: 24)
             .overlay {
                 if isOn {
                     Image(systemName: "checkmark")
-                        .font(.footnote.weight(.bold))
+                        .font(.footnote)
                         .foregroundStyle(Color.ratioParchment)
                 }
             }

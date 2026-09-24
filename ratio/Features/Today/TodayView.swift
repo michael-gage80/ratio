@@ -24,8 +24,8 @@ struct TodayView: View {
     var body: some View {
         ScrollViewReader { scroll in
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    header.padding(.bottom, 12)
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    header.padding(.bottom, RatioSpace.xs)
                     briefCard.tourAnchor(.brief)
                     ForEach(cards) { card in
                         switch card {
@@ -35,20 +35,22 @@ struct TodayView: View {
                         case .news: newsCard
                         }
                     }
-                    Button("Edit home") { editingHome = true }
-                        .ratioFont(.monoLabel)
-                        .foregroundStyle(Color.ratioInk2)
-                        .frame(maxWidth: .infinity, minHeight: 44)
+                    Button { editingHome = true } label: {
+                        Text("Edit home")
+                            .ratioFont(.monoLabel)
+                            .foregroundStyle(Color.ratioInk2)
+                            .frame(maxWidth: .infinity, minHeight: 44)
+                    }
+                    .buttonStyle(.ratioPress)
                 }
-                .padding(24)
+                .padding(RatioSpace.m)
             }
             .onChange(of: tourStop) { _, stop in
                 guard let stop else { return }
-                withAnimation(.easeInOut(duration: 0.3)) { scroll.scrollTo(stop, anchor: .center) }
+                withAnimation(RatioMotion.reveal) { scroll.scrollTo(stop, anchor: .center) }
             }
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $editingHome) {
             EditHomeSheet(order: HomeCard.arranged(order: student.settings.homeOrder, hidden: nil),
@@ -92,31 +94,39 @@ struct TodayView: View {
 
     // MARK: Header
 
+    /// The greeting stands in for the page title; the bell and the student's photo sit
+    /// on the eyebrow line, like the icons on every other page header.
     private var header: some View {
-        HStack(alignment: .top) {
-            VStack(alignment: .leading, spacing: 10) {
+        // Once per render: the feed walks every challenge, item and story.
+        let unread = student.hasUnreadNotifications(content: content)
+        return VStack(alignment: .leading, spacing: RatioSpace.xs) {
+            HStack(alignment: .center, spacing: RatioSpace.xxs) {
                 Text(Date.now.formatted(.dateTime.weekday(.abbreviated).day().month(.abbreviated)).uppercased())
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
-                Text("\(greeting),\n\(student.profile.displayName ?? "there").").ratioFont(.display)
-            }
-            Spacer()
-            Button { navigator.todayPath.append(.notifications) } label: {
-                Image(systemName: "bell")
-                    .font(.title3)
-                    .frame(width: 44, height: 44)
-                    .overlay(alignment: .topTrailing) {
-                        if student.hasUnreadNotifications(content: content) {
-                            Circle().fill(Color.ratioOxblood).frame(width: 9, height: 9).offset(x: -8, y: 9)
+                Spacer(minLength: 0)
+                Button { navigator.todayPath.append(.notifications) } label: {
+                    Image(systemName: "bell")
+                        .font(.title3)
+                        .frame(width: 44, height: 44)
+                        .overlay(alignment: .topTrailing) {
+                            if unread {
+                                Circle().fill(Color.ratioOxblood).frame(width: 8, height: 8).offset(x: -8, y: 8)
+                            }
                         }
-                    }
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.ratioPress)
+                .accessibilityLabel(unread ? "Notifications, unread" : "Notifications")
+                Button { navigator.tab = .me } label: {
+                    ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 48)
+                }
+                .buttonStyle(.ratioPress)
+                .accessibilityLabel("Your profile")
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel(student.hasUnreadNotifications(content: content) ? "Notifications, unread" : "Notifications")
-            Button { navigator.tab = .me } label: {
-                ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 56)
-            }
-            .accessibilityLabel("Your profile")
+            Text("\(greeting),\n\(student.profile.displayName ?? "there")\(Text(".").foregroundStyle(Color.ratioOxblood))")
+                .ratioFont(.display)
+                .accessibilityAddTraits(.isHeader)
         }
     }
 
@@ -134,22 +144,25 @@ struct TodayView: View {
     private var briefCard: some View {
         if let brief = student.brief {
             BriefCard(brief: brief) { navigator.todayPath.append(.brief) }
-        } else {
-            VStack(alignment: .leading, spacing: 12) {
+        } else if student.briefUnavailable {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 Text("Brief").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                if student.briefUnavailable {
-                    Text("Your modules' lessons are still in preparation. Your brief starts as soon as the first one is ready.")
-                        .ratioFont(.body)
-                } else {
-                    HStack(spacing: 12) {
-                        ProgressView()
-                        Text("Building today's brief…").ratioFont(.body)
-                    }
-                }
+                Text("Your modules' lessons are still being written. Your brief starts as soon as the first one is ready.")
+                    .ratioFont(.body)
             }
-            .padding(24)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .homeBlock(Color.ratioPaper)
+            .ratioCard()
+        } else {
+            // Shaped like the brief card, so nothing jumps when it arrives.
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
+                Text("Brief · 15\u{00A0}min").ratioFont(.monoLabel)
+                Text("Today's brief is on its way").ratioFont(.h1)
+                Text("Chosen from yesterday's answers and the reviews that have come due.").ratioFont(.body)
+                RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).fill(Color.ratioSunk).frame(height: 56)
+            }
+            .ratioSkeleton()
+            .ratioCard()
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Building today's brief")
         }
     }
 
@@ -157,24 +170,26 @@ struct TodayView: View {
 
     private var streakCard: some View {
         let streak = student.streak
-        return VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text("This week")
-                if streak.previousWeeks > 0 { Spacer(); Text("Week \(streak.previousWeeks + 1)") }
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                HStack {
+                    Text("This week")
+                    if streak.previousWeeks > 0 { Spacer(); Text("Week \(streak.previousWeeks + 1)") }
+                }
+                .ratioFont(.monoLabel)
+                .opacity(0.8)
+                Text("\(streak.daysThisWeek) of \(student.streak.target) days").ratioFont(.h2)
             }
-            .ratioFont(.monoLabel)
-            .opacity(0.75)
-            Text("\(streak.daysThisWeek) of \(student.streak.target) days").ratioFont(.h2)
-            HStack(spacing: 5) {
+            HStack(spacing: RatioSpace.xxs) {
                 ForEach(Array(streak.week.enumerated()), id: \.offset) { index, day in
-                    VStack(spacing: 6) {
+                    VStack(spacing: RatioSpace.xs) {
                         Capsule()
                             .fill(day.active ? Color.ratioOnInk : Color.clear)
                             .strokeBorder(Color.ratioOnInk.opacity(day.active ? 0 : 0.35))
                             .frame(height: 8)
                         Text(day.date.formatted(.dateTime.weekday(.narrow)))
                             .ratioFont(.monoLabel)
-                            .opacity(index == streak.todayIndex ? 1 : 0.7)
+                            .opacity(index == streak.todayIndex ? 1 : 0.8)
                         // Today: a small dot under its letter.
                         Circle().fill(index == streak.todayIndex ? Color.ratioOnInk : Color.clear).frame(width: 4, height: 4)
                     }
@@ -183,10 +198,8 @@ struct TodayView: View {
             .accessibilityHidden(true)
             Text(streak.message).ratioFont(.small).italic().opacity(0.85)
         }
-        .padding(18)
         .foregroundStyle(Color.ratioOnInk)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .homeBlock(Color.ratioForest, bordered: false)
+        .ratioCard(.ratioForest, bordered: false)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("This week: \(streak.daysThisWeek) of \(student.streak.target) days. \(streak.message)")
     }
@@ -195,22 +208,23 @@ struct TodayView: View {
     private var duelCard: some View {
         let yourGo = student.challenges.filter { $0.done[student.uid] != true }
         return Button { navigator.tab = .duel } label: {
-            HStack(spacing: 16) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Duel").ratioFont(.monoLabel).opacity(0.7)
-                    Text("Find an opponent").ratioFont(.h2)
+            HStack(spacing: RatioSpace.s) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    Text("Duel").ratioFont(.monoLabel).opacity(0.8)
+                    Text("Find an opponent").ratioFont(.h2).multilineTextAlignment(.leading)
                     if let online = student.online, online > 0 {
+                        // A live marker in the block's own colour: green is kept for "correct".
                         Label {
                             Text("\(online.formatted()) online")
                         } icon: {
-                            Circle().fill(Color.ratioVerdigris).frame(width: 8, height: 8)
+                            Circle().fill(Color.ratioOnInk).frame(width: 8, height: 8)
                         }
                         .ratioFont(.monoLabel)
                     }
                 }
-                Spacer(minLength: 8)
+                Spacer(minLength: RatioSpace.xs)
                 if !yourGo.isEmpty {
-                    VStack(alignment: .trailing, spacing: 6) {
+                    VStack(alignment: .trailing, spacing: RatioSpace.xs) {
                         HStack(spacing: -12) {
                             ForEach(yourGo.prefix(3)) { challenge in
                                 let opponent = challenge.opponent(of: student.uid)
@@ -223,30 +237,28 @@ struct TodayView: View {
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel("\(yourGo.count) \(yourGo.count == 1 ? "challenge" : "challenges"), your go")
                 } else {
-                    Image(systemName: "arrow.right").opacity(0.7)
+                    Image(systemName: "arrow.right").opacity(0.8)
                 }
             }
-            .padding(18)
             .foregroundStyle(Color.ratioOnInk)
-            .homeBlock(Color.ratioDuelBlock, bordered: false)
+            .ratioCard(.ratioDuelBlock, bordered: false)
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
     }
 
     private var boardsCard: some View {
         Button { navigator.tab = .boards } label: {
             WeeklyBoardSummary()
-                .padding(18)
-                .homeBlock(Color.ratioOchre.opacity(0.16))
+                .ratioCard(Color.ratioOchre.opacity(0.16))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
     }
 
     /// The top story — or, on Sundays, the weekly quiz (PRD: "On Sundays it shows the weekly quiz instead").
     private var newsCard: some View {
         Button { navigator.todayPath.append(.news) } label: {
-            VStack(alignment: .leading, spacing: 10) {
-                Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.bottom, 4)
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.bottom, RatioSpace.xs)
                 let isSunday = UKDate.calendar.component(.weekday, from: .now) == 1
                 if isSunday, let quiz = student.quiz {
                     Text("Sunday quiz · The week in law").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
@@ -255,8 +267,8 @@ struct TodayView: View {
                     HStack(alignment: .top) {
                         Text("The week in law · \(story.source) · \(story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow)))")
                             .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                        Spacer()
-                        Image(systemName: "arrow.up.right").foregroundStyle(Color.ratioInk2)
+                        Spacer(minLength: RatioSpace.xs)
+                        Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2)
                     }
                     Text(story.title).ratioFont(.h3).multilineTextAlignment(.leading)
                     if let why = story.whyItMatters, let module = Module(rawValue: why.moduleId) {
@@ -267,24 +279,22 @@ struct TodayView: View {
                     Text("Headlines from the courts, with why they matter for your modules.").ratioFont(.h3)
                 }
             }
-            .padding(18)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .homeBlock(Color.ratioParchment)
+            .ratioCard(.ratioParchment)
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
     }
 
     // MARK: Tour
 
     private func advanceTour() {
-        withAnimation(.easeInOut(duration: 0.25)) {
+        withAnimation(RatioMotion.tap) {
             tourStop = tourStop.flatMap { TourStop(rawValue: $0.rawValue + 1) }
         }
         if tourStop == nil { finishTour() }
     }
 
     private func endTour() {
-        withAnimation(.easeInOut(duration: 0.25)) { tourStop = nil }
+        withAnimation(RatioMotion.tap) { tourStop = nil }
         finishTour()
     }
 
@@ -313,9 +323,10 @@ private struct WeeklyBoardSummary: View {
     @State private var rank: Int?
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 6) {
-                Text("This week's board · Everyone").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+        HStack(spacing: RatioSpace.s) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                // Full ink at 80%: the muted grey falls below 4.5:1 on the ochre wash.
+                Text("This week's board · Everyone").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk.opacity(0.8))
                 if let entry, entry.wins > 0 {
                     Text("\(rank.map { "\($0.formatted(.number))\(Ordinal.suffix($0)) · " } ?? "")\(Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins") in human duels").italic())")
                         .ratioFont(.h3)
@@ -323,8 +334,8 @@ private struct WeeklyBoardSummary: View {
                     Text("Win a human duel to get on this week's board.").ratioFont(.body).italic()
                 }
             }
-            Spacer()
-            Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2)
+            Spacer(minLength: RatioSpace.xs)
+            Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk.opacity(0.8))
         }
         .task(id: student.matches.count) {
             entry = await BoardService.entry(.weekly, uid: student.uid)
@@ -343,15 +354,17 @@ private struct BriefCard: View {
 
     var body: some View {
         let current = student.currentStep(of: brief, content: content)
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack(alignment: .firstTextBaseline) {
-                Text("Brief · \(brief.minutes) min").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                Spacer(minLength: 8)
+                Text("Brief · \(brief.minutes)\u{00A0}min").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Spacer(minLength: RatioSpace.xs)
                 RatioTag(topicChip)
             }
-            Text(brief.title).ratioFont(.h1)
-            Text(brief.reason).ratioFont(.body)
-            VStack(alignment: .trailing, spacing: 6) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                Text(brief.title).ratioFont(.h1)
+                Text(brief.reason).ratioFont(.body)
+            }
+            VStack(alignment: .trailing, spacing: RatioSpace.xs) {
                 tracker(current: current)
                 Text("\(current.map { $0 + 1 } ?? brief.steps.count) / \(brief.steps.count)")
                     .ratioFont(.monoData)
@@ -369,21 +382,20 @@ private struct BriefCard: View {
                 Rectangle()
                     .stroke(Color.ratioRule, style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
                     .frame(height: 1)
-                HStack(alignment: .top, spacing: 14) {
+                HStack(alignment: .top, spacing: RatioSpace.s) {
                     Text("R\(Text(".").foregroundStyle(Color.ratioOxblood))")
                         .ratioFont(.h3)
-                        .frame(width: 36, height: 36)
+                        .frame(width: 40, height: 40)
                         .overlay(Circle().strokeBorder(Color.ratioRule))
                         .accessibilityHidden(true)
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                         Text("From your tutor").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                         Text(note).ratioFont(.body)
                     }
                 }
             }
         }
-        .padding(24)
-        .homeBlock(Color.ratioPaper, cornerRadius: 28)
+        .ratioCard()
     }
 
     private var anyDone: Bool { brief.steps.indices.contains { student.isDone(step: $0, of: brief, content: content) } }
@@ -391,40 +403,26 @@ private struct BriefCard: View {
     /// The area of law: "Crime".
     private var topicChip: String { Module(rawValue: brief.moduleId)?.title ?? brief.moduleId }
 
-    /// "Read ✓ · Drill · Build · Review", done steps struck through, the current one underlined.
+    /// "Read ✓ · Drill · Build · Review", done steps struck through, the current one
+    /// underlined. One run of text, so it wraps at large sizes rather than shrinking.
     private func tracker(current: Int?) -> some View {
-        HStack(spacing: 10) {
-            ForEach(brief.steps.indices, id: \.self) { index in
-                if index > 0 { Text("·").foregroundStyle(Color.ratioRule) }
-                let done = student.isDone(step: index, of: brief, content: content)
-                HStack(spacing: 4) {
-                    Text(brief.steps[index].kind.title)
-                        .strikethrough(done, color: .ratioVerdigris)
-                        .underline(index == current, color: .ratioOxblood)
-                        .italic(index == current)
-                        .foregroundStyle(done ? Color.ratioInk2 : index == current ? Color.ratioOxblood : Color.ratioInk)
-                    if done { Image(systemName: "checkmark").imageScale(.small).foregroundStyle(Color.ratioVerdigris) }
-                }
-            }
+        let parts = brief.steps.indices.map { index -> Text in
+            let done = student.isDone(step: index, of: brief, content: content)
+            var step = Text(brief.steps[index].kind.title)
+                .strikethrough(done, color: .ratioVerdigris)
+                .underline(index == current, color: .ratioOxblood)
+                .italic(index == current)
+                .foregroundStyle(done ? Color.ratioInk2 : index == current ? Color.ratioOxblood : Color.ratioInk)
+            if done { step = Text("\(step) \(Text(Image(systemName: "checkmark")).foregroundStyle(Color.ratioVerdigris))") }
+            return index > 0 ? Text("\(Text("  ·  ").foregroundStyle(Color.ratioRule))\(step)") : step
         }
+        return parts.reduce(Text("")) { Text("\($0)\($1)") }
         .ratioFont(.h3)
-        .lineLimit(1)
-        .minimumScaleFactor(0.7)
         .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(brief.steps.enumerated().map { index, step in
             "\(step.kind.title)\(student.isDone(step: index, of: brief, content: content) ? ", done" : index == current ? ", next" : "")"
         }.joined(separator: "; "))
-    }
-}
-
-private extension View {
-    /// A solid colour-coded block.
-    func homeBlock(_ fill: Color, cornerRadius: CGFloat = 24, bordered: Bool = true) -> some View {
-        background(fill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-            .overlay {
-                if bordered { RoundedRectangle(cornerRadius: cornerRadius, style: .continuous).strokeBorder(Color.ratioRule) }
-            }
     }
 }
 
@@ -488,19 +486,19 @@ private struct TourOverlay: View {
                 .position(x: highlight.midX, y: highlight.midY)
                 .allowsHitTesting(false)
             card
-                .padding(.horizontal, 24)
-                .padding(below ? .top : .bottom, below ? min(highlight.maxY + 16, size.height - 240) : max(size.height - highlight.minY + 16, 16))
+                .padding(.horizontal, RatioSpace.m)
+                .padding(below ? .top : .bottom, below ? min(highlight.maxY + RatioSpace.s, size.height - 240) : max(size.height - highlight.minY + RatioSpace.s, RatioSpace.s))
         }
         .frame(width: size.width, height: size.height, alignment: below ? .top : .bottom)
         .transition(.opacity)
     }
 
     private var card: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack {
                 Text("\(stop.rawValue + 1) / \(TourStop.allCases.count) · Your \(stop == .brief ? "brief" : stop == .streak ? "week" : "day")")
                 Spacer()
-                Button("Skip", action: skip)
+                Button("Skip", action: skip).frame(minHeight: 44)
             }
             .ratioFont(.monoLabel)
             .foregroundStyle(Color.ratioInk2)
@@ -511,17 +509,15 @@ private struct TourOverlay: View {
                 Button(action: next) {
                     Text(stop == .more ? "Done" : "Next →")
                         .ratioFont(.h3)
-                        .foregroundStyle(Color.ratioOnInk)
-                        .padding(.horizontal, 24)
+                        .foregroundStyle(Color.ratioParchment)
+                        .padding(.horizontal, RatioSpace.m)
                         .frame(minHeight: 48)
-                        .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.ratioPress)
             }
         }
-        .padding(22)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 24, style: .continuous).strokeBorder(Color.ratioRule) }
+        .ratioCard()
         .foregroundStyle(Color.ratioInk)
         .accessibilityElement(children: .contain)
         .accessibilityAddTraits(.isModal)
@@ -534,7 +530,7 @@ private struct AnalyticsConsentSheet: View {
     let decide: (Bool) -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Help improve Ratio?").ratioFont(.h1)
             Text("Share anonymous usage data — which screens and features you use, never your answers or scores — so we can see what's working. Crash reports are always on so we can fix problems.")
                 .ratioFont(.body)
@@ -543,8 +539,7 @@ private struct AnalyticsConsentSheet: View {
             RatioButton("Share usage data", style: .secondary) { decide(true) }
             RatioButton("No thanks", style: .tertiary) { decide(false) }
         }
-        .padding(24)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .padding(RatioSpace.m)
+        .ratioPage()
     }
 }

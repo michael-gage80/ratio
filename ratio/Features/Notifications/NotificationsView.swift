@@ -48,7 +48,7 @@ extension StudentStore {
                 }
             } else if open, myTurn {
                 items.append(FeedItem(id: "c-\(challenge.id)", category: .duels, title: "\(opponent) challenged you",
-                                      detail: "\(DuelScope.title(of: challenge.moduleId)) · \(max(1, Int(challenge.expiresAt.timeIntervalSince(now) / 3600))) h left",
+                                      detail: "\(DuelScope.title(of: challenge.moduleId)) · \(max(1, Int(challenge.expiresAt.timeIntervalSince(now) / 3600)))\u{00A0}h left",
                                       date: created, pinned: true, action: .duel))
             } else if !challenge.isFrom(uid), challenge.status != "declined", challenge.status != "complete" {
                 items.append(FeedItem(id: "c-\(challenge.id)", category: .duels, title: "\(opponent) challenged you", date: created, action: .duel))
@@ -64,7 +64,7 @@ extension StudentStore {
         if let brief, let current = currentStep(of: brief, content: content) {
             let kind = brief.steps[current].kind.rawValue
             items.append(FeedItem(id: "brief-\(brief.date)", category: .streak, title: "Today's brief: \(brief.title)",
-                                  detail: "\(brief.minutes) min · next, the \(kind)", date: UKDate.calendar.startOfDay(for: now), pinned: true, action: .brief))
+                                  detail: "\(brief.minutes)\u{00A0}min · next, the \(kind)", date: UKDate.calendar.startOfDay(for: now), pinned: true, action: .brief))
         }
         let week = streak
         let activeToday = week.week[safe: week.todayIndex]?.active ?? false
@@ -126,31 +126,22 @@ struct NotificationsView: View {
         let items = student.feed(content: content)
         let pinned = items.filter(\.pinned)
         let history = items.filter { !$0.pinned }
-        List {
-            Text("Notifications\(Text(".").foregroundStyle(Color.ratioOxblood))")
-                .ratioFont(.display)
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
-            if items.isEmpty {
-                Text("Nothing yet. Challenges, reviews and the week's news will show up here.")
-                    .ratioFont(.body)
-                    .foregroundStyle(Color.ratioInk2)
-                    .listRowBackground(Color.clear)
-            }
-            if !pinned.isEmpty {
-                Section("To do") {
-                    ForEach(pinned) { row($0) }
+        ScrollView {
+            VStack(alignment: .leading, spacing: RatioSpace.l) {
+                RatioPageHeader(title: "Notifications")
+                if items.isEmpty {
+                    RatioEmptyState(art: .quill, message: "Nothing yet. Challenges, reviews and the week's news will show up here.")
+                }
+                if !pinned.isEmpty {
+                    section("To do", pinned)
+                }
+                if !history.isEmpty {
+                    section("Last 30 days", history)
                 }
             }
-            if !history.isEmpty {
-                Section("Last 30 days") {
-                    ForEach(history) { row($0) }
-                }
-            }
+            .padding(RatioSpace.m)
         }
-        .scrollContentBackground(.hidden)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
         .task {
             guard readAt == nil else { return }
@@ -159,28 +150,43 @@ struct NotificationsView: View {
         }
     }
 
+    /// A mono eyebrow over hairline-ruled rows, like the other lists in Ratio.
+    private func section(_ title: String, _ items: [FeedItem]) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).padding(.bottom, RatioSpace.xs)
+            ForEach(items) { item in
+                Divider().overlay(Color.ratioRule)
+                row(item)
+            }
+            Divider().overlay(Color.ratioRule)
+        }
+    }
+
     private func row(_ item: FeedItem) -> some View {
         let unread = item.date > (readAt ?? .distantPast)
         return Button { perform(item.action) } label: {
-            HStack(alignment: .top, spacing: 14) {
+            HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
                 Image(systemName: icon(item.category))
-                    .frame(width: 32, height: 32)
+                    .frame(width: 24)
                     .foregroundStyle(Color.ratioInk2)
-                VStack(alignment: .leading, spacing: 4) {
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                     Text(item.title).ratioFont(.h3).multilineTextAlignment(.leading)
                     Text([item.category.rawValue, item.detail, item.date.formatted(.relative(presentation: .named))].compactMap { $0 }.joined(separator: " · "))
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
+                        .multilineTextAlignment(.leading)
                 }
                 Spacer(minLength: 0)
                 if unread {
-                    Circle().fill(Color.ratioOxblood).frame(width: 8, height: 8).padding(.top, 8).accessibilityLabel("New")
+                    Circle().fill(Color.ratioOxblood).frame(width: 8, height: 8).accessibilityLabel("New")
                 }
             }
-            .padding(.vertical, 6)
+            .padding(.vertical, RatioSpace.s)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
-        .listRowBackground(Color.ratioPaper)
+        .buttonStyle(.ratioPress)
         .disabled(item.action.map { _ in false } ?? true)
         .accessibilityElement(children: .combine)
     }

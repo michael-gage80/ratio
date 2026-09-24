@@ -12,13 +12,13 @@ public struct RatioWhyCard: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Why").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text(explanation).ratioFont(.body).foregroundStyle(Color.ratioInk)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .padding(RatioSpace.s)
+        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
     }
 }
 
@@ -34,7 +34,7 @@ public struct RatioTrapCard: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("The trap").ratioFont(.monoLabel).foregroundStyle(Color.ratioOxblood)
             if let commonWrongAnswer {
                 Text(commonWrongAnswer).ratioFont(.bodyEmphasis).foregroundStyle(Color.ratioOxblood)
@@ -42,8 +42,8 @@ public struct RatioTrapCard: View {
             Text(whyItsWrong).ratioFont(.body).foregroundStyle(Color.ratioInk)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(16)
-        .background(Color.ratioOxWash, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .padding(RatioSpace.s)
+        .background(Color.ratioOxWash, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
     }
 }
 

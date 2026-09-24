@@ -10,22 +10,21 @@ struct LessonOverviewView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
+            VStack(alignment: .leading, spacing: RatioSpace.l) {
                 ModuleIllustration(module: lesson.moduleId)
                     .foregroundStyle(Color.ratioInk)
-                    .frame(height: 130)
+                    .frame(height: 128)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 24)
-                    .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-                    .overlay { RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Color.ratioRule) }
+                    .ratioCard()
+                    .accessibilityHidden(true)
 
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     Text("\(lesson.moduleId.title) · Lesson \(lesson.lessonNumber)")
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
                     Text(lesson.title).ratioFont(.h1)
                     Text(lesson.subtitle).ratioFont(.h3).foregroundStyle(Color.ratioInk2)
-                    Text("Lecture · \(lesson.parts.count) parts · \(lesson.estimatedMinutes) min / Tests · \(lesson.itemCounts.testServedPerAttempt) items / Law stated as at \(lesson.lawStatedDate)")
+                    Text("Lecture · \(lesson.parts.count) parts · \(lesson.estimatedMinutes)\u{00A0}min / Tests · \(lesson.itemCounts.testServedPerAttempt) items / Law stated as at \(lesson.lawStatedDate)")
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
                     if !lesson.isReviewed {
@@ -37,50 +36,52 @@ struct LessonOverviewView: View {
 
                 section("Objectives") {
                     ForEach(Array(lesson.objectives.enumerated()), id: \.offset) { index, objective in
-                        HStack(alignment: .firstTextBaseline, spacing: 14) {
+                        HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
                             Text(Self.numerals.indices.contains(index) ? Self.numerals[index] : "\(index + 1).")
                                 .ratioFont(.bodyEmphasis)
                                 .foregroundStyle(Color.ratioOxblood)
-                                .frame(width: 28, alignment: .leading)
+                                .frame(minWidth: 32, alignment: .leading)
                             Text(objective).ratioFont(.body)
                         }
                     }
                 }
 
                 section("Table of cases") {
-                    ForEach(lesson.leadingAuthorities, id: \.self) { authority in
-                        AuthorityRow(authority: authority)
+                    VStack(alignment: .leading, spacing: 0) {
+                        ForEach(Array(lesson.leadingAuthorities.enumerated()), id: \.offset) { index, authority in
+                            if index > 0 { Divider().overlay(Color.ratioRule) }
+                            AuthorityRow(authority: authority)
+                        }
+                        Divider().overlay(Color.ratioRule)
                     }
                 }
 
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     Text("Why this matters to you").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     Text(lesson.whyThisMatters(for: headline)).ratioFont(.body)
                 }
-                .padding(20)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .ratioCard(.ratioSunk, bordered: false)
 
                 Text(lesson.overview.lawStatedNotice ?? "Law stated as at \(lesson.lawStatedDate).")
                     .ratioFont(.small)
                     .foregroundStyle(Color.ratioInk2)
             }
-            .padding(24)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.top, RatioSpace.s)
+            .padding(.bottom, RatioSpace.m)
         }
         .safeAreaInset(edge: .bottom) {
-            VStack(spacing: 10) {
-                RatioButton("Begin", action: onBegin)
-            }
-            .padding(24)
-            .background(Color.ratioParchment)
+            RatioButton("Begin", action: onBegin)
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.vertical, RatioSpace.s)
+                .background(Color.ratioParchment)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbarTitleDisplayMode(.inline)
     }
 
     private func section(_ title: String, @ViewBuilder content: () -> some View) -> some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Rectangle().fill(Color.ratioInk).frame(height: 1)
             Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             content()
@@ -95,14 +96,14 @@ private struct AuthorityRow: View {
 
     var body: some View {
         let parsed = Self.parse(authority.citation)
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
             HStack(alignment: .firstTextBaseline) {
                 if parsed.report == nil {
                     Text(parsed.name).ratioFont(.h3)
                 } else {
                     CaseName.text(parsed.name).ratioFont(.h3)
                 }
-                Spacer()
+                Spacer(minLength: RatioSpace.xs)
                 if let year = parsed.year {
                     Text(year).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
                 }
@@ -112,7 +113,8 @@ private struct AuthorityRow: View {
                 Text(report).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
             }
         }
-        .padding(.vertical, 6)
+        .padding(.vertical, RatioSpace.s)
+        .accessibilityElement(children: .combine)
     }
 
     /// "R v Woollin [1999] 1 AC 82" → name "R v Woollin", report "[1999] 1 AC 82", year "1999".

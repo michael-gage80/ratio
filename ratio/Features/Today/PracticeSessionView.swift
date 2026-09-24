@@ -17,6 +17,7 @@ struct PracticeSessionView: View {
     @State private var submitted = false
     @State private var submitFailed = false
     @State private var confirmingLeave = false
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     private var step: DailyBrief.Step { brief.steps[stepIndex] }
     /// Items no longer in the content (after an update) are skipped.
@@ -31,12 +32,13 @@ struct PracticeSessionView: View {
             topBar
             if let current {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
-                        HStack {
-                            Text("\(step.kind.title) · \(responses.count + 1) of \(items.count)")
-                            Spacer()
-                            Text("\(current.lesson.moduleId.title) · \(TopicGroup.title(forGroup: TopicGroup.groupId(of: current.lesson.topicId)))")
-                                .lineLimit(1)
+                    VStack(alignment: .leading, spacing: RatioSpace.m) {
+                        let position = Text("\(step.kind.title) · \(responses.count + 1) of \(items.count)")
+                        let topic = Text("\(current.lesson.moduleId.title) · \(TopicGroup.title(forGroup: TopicGroup.groupId(of: current.lesson.topicId)))")
+                        // One line when it fits; stacked when the topic is long or the text is large.
+                        ViewThatFits(in: .horizontal) {
+                            HStack { position; Spacer(minLength: RatioSpace.s); topic }
+                            VStack(alignment: .leading, spacing: RatioSpace.xxs) { position; topic }
                         }
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
@@ -50,7 +52,7 @@ struct PracticeSessionView: View {
                             }
                         }
                     }
-                    .padding(24)
+                    .padding(RatioSpace.m)
                 }
                 .scrollDismissesKeyboard(.interactively)
                 .transition(.push(from: .trailing))
@@ -58,9 +60,8 @@ struct PracticeSessionView: View {
                 summary
             }
         }
-        .animation(.easeInOut(duration: 0.25), value: responses.count)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .animation(RatioMotion.reveal, value: responses.count)
+        .ratioPage()
         .ratioFeedback(trigger: locked) { _, response in
             guard let response, let item = current?.item else { return nil }
             return item.isCorrect(response) ? .success : .error
@@ -72,14 +73,11 @@ struct PracticeSessionView: View {
     }
 
     private var topBar: some View {
-        HStack(spacing: 16) {
-            Button {
+        HStack(spacing: RatioSpace.s) {
+            RatioIconButton(systemImage: "xmark", label: "Close") {
                 if !responses.isEmpty && !submitted { confirmingLeave = true } else { dismiss() }
-            } label: {
-                Image(systemName: "xmark").font(.title3).frame(width: 44, height: 44)
             }
-            .accessibilityLabel("Close")
-            HStack(spacing: 4) {
+            HStack(spacing: RatioSpace.xxs) {
                 ForEach(items.indices, id: \.self) { index in
                     Capsule()
                         .fill(index < responses.count ? Color.ratioInk : index == responses.count ? Color.ratioOxblood : Color.ratioRule)
@@ -88,11 +86,11 @@ struct PracticeSessionView: View {
             }
             .accessibilityHidden(true)
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, RatioSpace.s)
     }
 
     private var summary: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Spacer()
             Text("\(step.kind.title) · Done").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text("\(rightCount) of \(items.count) \(Text("right.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
@@ -104,14 +102,14 @@ struct PracticeSessionView: View {
             } else if submitted {
                 RatioButton("Back to your brief", style: .secondary) { dismiss() }
             } else {
-                HStack(spacing: 12) {
+                HStack(spacing: RatioSpace.s) {
                     ProgressView()
                     Text("Scheduling your reviews…").ratioFont(.small)
                 }
                 .frame(maxWidth: .infinity, minHeight: 56)
             }
         }
-        .padding(24)
+        .padding(RatioSpace.m)
     }
 
     private func context(for entry: (item: Item, lesson: Lesson)) -> InteractionContext {

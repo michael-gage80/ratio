@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Buttons — screens/00-design-system/02-components.png, cell 01.
-/// 56pt tall, 18pt corner radius. One commit per screen (the plan never shows two
+/// At least 56pt tall (it grows with Dynamic Type), 16pt corner radius. One commit per screen (the plan never shows two
 /// primary buttons at once). Secondary flips from ink-on-light to paper-fill on dark.
 public enum RatioButtonStyle {
     case primary     // Oxblood fill, paper text — the one commit action ("Begin — R v Woollin")
@@ -32,22 +32,25 @@ public struct RatioButton: View {
                 }
             }
             .ratioFont(.h3)
+            .multilineTextAlignment(.center)
             .frame(maxWidth: style == .link ? nil : .infinity)
-            .frame(height: style == .link ? nil : 56)
+            .frame(minHeight: style == .link ? 44 : 56)
+            .padding(.horizontal, style == .link ? 0 : RatioSpace.s)
             .foregroundStyle(foreground)
-        }
-        .background {
-            if style != .link {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .fill(background)
-                    .overlay {
-                        if style == .tertiary {
-                            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                                .strokeBorder(Color.ratioRule, lineWidth: 1)
+            .background {
+                if style != .link {
+                    RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
+                        .fill(background)
+                        .overlay {
+                            if style == .tertiary {
+                                RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
+                                    .strokeBorder(Color.ratioRule, lineWidth: 1)
+                            }
                         }
-                    }
+                }
             }
         }
+        .buttonStyle(.ratioPress)
         .opacity(isEnabled ? 1 : 0.4)
         .disabled(!isEnabled)
         .accessibilityAddTraits(.isButton)

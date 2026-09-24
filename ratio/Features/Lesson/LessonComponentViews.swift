@@ -47,30 +47,35 @@ struct CaseCardView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                RatioTag("Case")
-                Spacer()
-                Text("\(card.citation) · \(courtAbbreviation)")
-                    .ratioFont(.monoData)
-                    .foregroundStyle(Color.ratioInk2)
+        let citation = Text("\(card.citation) · \(courtAbbreviation)")
+            .ratioFont(.monoData)
+            .foregroundStyle(Color.ratioInk2)
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            ViewThatFits(in: .horizontal) {
+                HStack {
+                    RatioTag("Case")
+                    Spacer(minLength: RatioSpace.xs)
+                    citation
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    RatioTag("Case")
+                    citation
+                }
             }
             CaseName.text(card.caseName).ratioFont(.h2)
             Text("\(card.court) · \(String(card.year))")
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
             Text(card.factsShort).ratioFont(.body)
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                 Text("Ratio").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 Text(card.ratioShort).ratioFont(.body)
             }
-            .padding(14)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .ratioPanel()
 
             if let expanded = card.expanded {
                 if isExpanded {
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
                         Text(expanded.facts).ratioFont(.body)
                         Text("Significance").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                         Text(expanded.significance).ratioFont(.body)
@@ -79,19 +84,18 @@ struct CaseCardView: View {
                     .transition(.opacity)
                 }
                 Button {
-                    withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) { isExpanded.toggle() }
+                    withAnimation(reduceMotion ? nil : RatioMotion.reveal) { isExpanded.toggle() }
                 } label: {
-                    Label(isExpanded ? "Collapse" : "Expand", systemImage: isExpanded ? "chevron.up" : "chevron.down")
+                    Label(isExpanded ? "Show less" : "Show more", systemImage: isExpanded ? "chevron.up" : "chevron.down")
                         .labelStyle(TrailingIconLabelStyle())
                         .ratioFont(.monoLabel)
                         .frame(minHeight: 44)
+                        .contentShape(Rectangle())
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.ratioPress)
             }
         }
-        .padding(20)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule, lineWidth: 1) }
+        .ratioCard()
         .sheet(isPresented: $showsReport) {
             LawReportSheet(card: card, moduleTitle: moduleTitle)
         }
@@ -110,7 +114,7 @@ struct CaseCardView: View {
 
 private struct TrailingIconLabelStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: 6) {
+        HStack(spacing: RatioSpace.xs) {
             configuration.title
             configuration.icon
         }
@@ -130,14 +134,14 @@ struct StatuteBlockView: View {
                 .ratioFont(.h3)
                 .italic()
                 .foregroundStyle(Color.ratioOnInk)
-                .padding(16)
+                .padding(RatioSpace.s)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(Color.ratioInk)
                 .environment(\.colorScheme, .light)
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
                 Text(text).ratioFont(.body)
                 ForEach(Array(elements.enumerated()), id: \.offset) { index, element in
-                    HStack(alignment: .firstTextBaseline, spacing: 10) {
+                    HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
                         Text("(\(index + 1))").ratioFont(.monoData).foregroundStyle(Color.ratioOxblood)
                         Text(element).ratioFont(.body)
                     }
@@ -146,11 +150,11 @@ struct StatuteBlockView: View {
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
             }
-            .padding(16)
+            .padding(RatioSpace.s)
         }
         .background(Color.ratioPaper)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .overlay { RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(Color.ratioRule, lineWidth: 1) }
+        .clipShape(RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+        .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule, lineWidth: 1) }
     }
 }
 
@@ -163,13 +167,13 @@ struct KeyConceptView: View {
     @Environment(\.ratioDyslexiaFriendly) private var dyslexiaFriendly
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Key concept · \(term)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             // The oxblood initial stands in for a drop cap.
             Text("\(Text(String(definition.prefix(1))).font(RatioTypography.font(for: .h1, dyslexiaFriendly: dyslexiaFriendly)).foregroundStyle(Color.ratioOxblood))\(Text(String(definition.dropFirst())))")
                 .ratioFont(.body)
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, RatioSpace.xxs)
     }
 }
 
@@ -182,21 +186,19 @@ struct RatioPanelView: View {
     private static let numerals = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii"]
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text(label).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             ForEach(Array(points.enumerated()), id: \.offset) { index, point in
-                HStack(alignment: .firstTextBaseline, spacing: 12) {
+                HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
                     Text(Self.numerals.indices.contains(index) ? Self.numerals[index] + "." : "\(index + 1).")
                         .ratioFont(.bodyEmphasis)
                         .foregroundStyle(Color.ratioOxblood)
-                        .frame(width: 30, alignment: .leading)
+                        .frame(minWidth: 32, alignment: .leading)
                     Text(point).ratioFont(.body)
                 }
             }
         }
-        .padding(18)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .ratioPanel(padding: RatioSpace.m)
     }
 }
 
@@ -211,7 +213,7 @@ struct DoctrineMapView: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Doctrine map · \(map.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             // Usually one root; a map of separate propositions has no edges, so every node is one.
             let targets = Set(map.edges.map(\.to))
@@ -229,22 +231,22 @@ struct DoctrineMapView: View {
         let children = map.edges.filter { $0.from == nodeId && !visited.contains($0.to) }
         let isOutcome = children.isEmpty
         return AnyView(
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 Text(node?.label ?? nodeId)
                     .ratioFont(.small)
                     .foregroundStyle(isOutcome ? Color.ratioInk : Color.ratioOnInk)
-                    .padding(12)
+                    .padding(RatioSpace.s)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(isOutcome ? Color.ratioOxWash : Color.ratioInk,
-                                in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
                     // Steps are always ink boxes with paper text, even in dark mode.
                     .environment(\.colorScheme, isOutcome ? colorScheme : .light)
                 ForEach(children, id: \.to) { edge in
-                    VStack(alignment: .leading, spacing: 6) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
                         Text(edge.label.map { "\($0) ↓" } ?? "↓").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                         branch(from: edge.to, visited: visited.union([nodeId]))
                     }
-                    .padding(.leading, 14)
+                    .padding(.leading, RatioSpace.s)
                     .overlay(alignment: .leading) { Rectangle().fill(Color.ratioRule).frame(width: 1) }
                 }
             }
@@ -258,25 +260,42 @@ struct LessonTimelineView: View {
     let title: String
     let events: [LessonComponent.TimelineEvent]
 
+    @Environment(\.dynamicTypeSize) private var typeSize
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Timeline · \(title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             ForEach(events, id: \.self) { event in
-                HStack(alignment: .top, spacing: 14) {
-                    Text(event.date ?? event.label)
-                        .ratioFont(.monoData)
-                        .foregroundStyle(Color.ratioInk2)
-                        .frame(width: 76, alignment: .leading)
-                    Circle().fill(Color.ratioInk).frame(width: 9, height: 9).padding(.top, 5)
-                    VStack(alignment: .leading, spacing: 2) {
-                        if event.date != nil {
-                            Text(event.label).ratioFont(.body).italic().foregroundStyle(Color.ratioOxblood)
-                        }
-                        if let description = event.description {
-                            Text(description).ratioFont(.small)
-                        }
+                if typeSize.isAccessibilitySize {
+                    // Large text: the date sits above the event instead of in a column.
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        date(event)
+                        details(event)
+                    }
+                } else {
+                    HStack(alignment: .top, spacing: RatioSpace.s) {
+                        date(event).frame(width: 80, alignment: .leading)
+                        Circle().fill(Color.ratioInk).frame(width: 8, height: 8).padding(.top, 6).accessibilityHidden(true)
+                        details(event)
                     }
                 }
+            }
+        }
+    }
+
+    private func date(_ event: LessonComponent.TimelineEvent) -> some View {
+        Text(event.date ?? event.label)
+            .ratioFont(.monoData)
+            .foregroundStyle(Color.ratioInk2)
+    }
+
+    private func details(_ event: LessonComponent.TimelineEvent) -> some View {
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+            if event.date != nil {
+                Text(event.label).ratioFont(.body).italic().foregroundStyle(Color.ratioOxblood)
+            }
+            if let description = event.description {
+                Text(description).ratioFont(.small)
             }
         }
     }

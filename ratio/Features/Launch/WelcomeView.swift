@@ -21,10 +21,10 @@ struct WelcomeView: View {
 
     private var content: some View {
         VStack(spacing: 0) {
-            Spacer(minLength: 24)
+            Spacer(minLength: RatioSpace.m)
             hero
-            Spacer(minLength: 24)
-            VStack(spacing: 12) {
+            Spacer(minLength: RatioSpace.m)
+            VStack(spacing: RatioSpace.s) {
                 Text("Ratio · for LLB students")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
@@ -32,14 +32,13 @@ struct WelcomeView: View {
                     .ratioFont(.h1)
                     .multilineTextAlignment(.center)
             }
-            Spacer(minLength: 32)
+            Spacer(minLength: RatioSpace.l)
             buttons
             footer
         }
-        .padding(.horizontal, 24)
+        .padding(.horizontal, RatioSpace.m)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .disabled(session.isWorking)
         .overlay {
             if session.isWorking { ProgressView().controlSize(.large) }
@@ -62,7 +61,7 @@ struct WelcomeView: View {
     }
 
     private var buttons: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: RatioSpace.s) {
             SignInWithAppleButton(.continue) { request in
                 session.prepareAppleRequest(request)
             } onCompletion: { result in
@@ -70,7 +69,7 @@ struct WelcomeView: View {
             }
             .signInWithAppleButtonStyle(.white)
             .frame(height: 56)
-            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
 
             RatioButton("Continue with Google", style: .tertiary) {
                 Task { await session.signInWithGoogle() }
@@ -79,17 +78,27 @@ struct WelcomeView: View {
                 emailMode = .createAccount
             }
 
-            HStack(spacing: 6) {
-                Text("I already have an account ·")
-                    .foregroundStyle(Color.ratioInk2)
-                Button("Log in") { emailMode = .logIn }
-                    .italic()
-                    .underline()
-                    .foregroundStyle(Color.ratioInk)
+            // One line when it fits, stacked at large text sizes.
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: RatioSpace.xs) { alreadyHaveAccount; logIn }
+                VStack(spacing: 0) { alreadyHaveAccount; logIn }
             }
             .ratioFont(.body)
-            .padding(.top, 8)
+            .multilineTextAlignment(.center)
+            .padding(.top, RatioSpace.xs)
         }
+    }
+
+    private var alreadyHaveAccount: some View {
+        Text("I already have an account ·").foregroundStyle(Color.ratioInk2)
+    }
+
+    private var logIn: some View {
+        Button("Log in") { emailMode = .logIn }
+            .italic()
+            .underline()
+            .foregroundStyle(Color.ratioInk)
+            .frame(minHeight: 44)
     }
 
     private var footer: some View {
@@ -97,6 +106,6 @@ struct WelcomeView: View {
             .ratioFont(.monoData)
             .foregroundStyle(Color.ratioInk2)
             .multilineTextAlignment(.center)
-            .padding(.vertical, 20)
+            .padding(.vertical, RatioSpace.m)
     }
 }

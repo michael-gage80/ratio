@@ -109,6 +109,7 @@ enum BoardService {
 /// own row pinned at the bottom wherever they are (PRD: "Boards").
 struct BoardsView: View {
     @Environment(StudentStore.self) private var student
+    @Environment(\.dynamicTypeSize) private var typeSize
     @AppStorage("boards.period") private var period: BoardPeriod = .weekly
     @AppStorage("boards.scope") private var scope: BoardScope = .everyone
     @State private var entries: [BoardEntry] = []
@@ -123,14 +124,9 @@ struct BoardsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack(alignment: .firstTextBaseline) {
-                        Text("Boards\(Text(".").foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
-                        Spacer()
-                        scopeFilter
-                    }
-                    Text("\(scope.title) · ranked by wins in human duels. Sparring partners never count.").ratioFont(.body).foregroundStyle(Color.ratioInk2)
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                RatioPageHeader(title: "Boards", subtitle: "\(scope.title) · ranked by wins in human duels. Sparring partners never count.") {
+                    scopeFilter
                 }
                 picker(BoardPeriod.allCases, selection: $period) { $0.title }
                 content
@@ -138,25 +134,30 @@ struct BoardsView: View {
                     ShareLink(item: shareCard, preview: SharePreview("My place on Ratio's \(period.title.lowercased()) board", image: shareCard)) {
                         Label("Share my result", systemImage: "square.and.arrow.up")
                             .ratioFont(.h3)
-                            .frame(maxWidth: .infinity, minHeight: 48)
-                            .overlay { Capsule().strokeBorder(Color.ratioRule) }
+                            .frame(maxWidth: .infinity, minHeight: 56)
+                            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.ratioPress)
                 }
-                Text(period.resets).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity)
+                Text(period.resets)
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk2)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
             }
-            .padding(24)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.vertical, RatioSpace.s)
         }
         .refreshable { await load() }
         .safeAreaInset(edge: .bottom) {
             if let mine {
                 PinnedRow(entry: mine, rank: myRank)
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 8)
+                    .padding(.horizontal, RatioSpace.s)
+                    .padding(.bottom, RatioSpace.xs)
             }
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
         .task(id: loadKey) { await load() }
     }
@@ -164,9 +165,9 @@ struct BoardsView: View {
     @ViewBuilder
     private var content: some View {
         if loading && entries.isEmpty {
-            ProgressView().frame(maxWidth: .infinity, minHeight: 200)
+            table(Self.placeholders).ratioSkeleton()
         } else if failed {
-            empty("The boards didn't load. Pull to try again.")
+            RatioErrorState(message: "The boards didn't load. Check your connection and try again.") { Task { await load() } }
         } else if scope == .university && student.profile.universityId == nil {
             empty("Boards by university need a listed university on your profile.")
         } else if scope == .friends && student.friends.isEmpty {
@@ -174,26 +175,41 @@ struct BoardsView: View {
         } else if entries.allSatisfy({ $0.wins == 0 }) {
             empty(period == .daily ? "No wins yet today. Win a human duel to get on the board." : "No wins yet this \(period == .weekly ? "week" : "month"). Win a human duel to get on the board.")
         } else {
-            let ranked = entries.filter { $0.wins > 0 }
+            table(entries.filter { $0.wins > 0 })
+        }
+    }
+
+    /// The podium and the rows below it; at accessibility text sizes, one list from 1st.
+    @ViewBuilder
+    private func table(_ ranked: [BoardEntry]) -> some View {
+        let large = typeSize.isAccessibilitySize
+        if !large {
             Podium(entries: Array(ranked.prefix(3)))
-            VStack(spacing: 0) {
-                HStack {
-                    Text("No.").frame(width: 36, alignment: .leading)
+        }
+        VStack(spacing: 0) {
+            if !large {
+                HStack(spacing: RatioSpace.s) {
+                    Text("No.").frame(width: 32, alignment: .leading)
                     Text("Name")
                     Spacer()
-                    Text("Wins").frame(width: 44, alignment: .trailing)
+                    Text("Wins").frame(width: 48, alignment: .trailing)
                     Text("Rating").frame(width: 64, alignment: .trailing)
                 }
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
-                .padding(.vertical, 10)
+                .padding(.vertical, RatioSpace.xs)
                 .accessibilityHidden(true)
-                ForEach(Array(ranked.enumerated()).dropFirst(3), id: \.element.id) { index, entry in
-                    Divider().overlay(Color.ratioRule)
-                    BoardRow(entry: entry, rank: index + 1, isMine: entry.uid == student.uid)
-                }
+            }
+            ForEach(Array(ranked.enumerated()).dropFirst(large ? 0 : 3), id: \.element.id) { index, entry in
+                Divider().overlay(Color.ratioRule)
+                BoardRow(entry: entry, rank: index + 1, isMine: entry.uid == student.uid)
             }
         }
+    }
+
+    /// Shaped like a board while it loads.
+    private static let placeholders = (1...8).map { n in
+        BoardEntry(uid: "placeholder-\(n)", name: "Student name", initial: "R", universityName: "University", rating: 1200, wins: 10 - n)
     }
 
     /// Everyone, my university or friends, behind a small filter icon.
@@ -204,40 +220,45 @@ struct BoardsView: View {
             }
         } label: {
             Image(systemName: scope == .everyone ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
-                .font(.title2)
+                .font(.title3)
                 .frame(width: 44, height: 44)
+                .contentShape(Rectangle())
         }
         .accessibilityLabel("Filter: \(scope.title)")
     }
 
+    /// Daily, weekly, monthly: a solid paper track with the chosen period in ink
+    /// (screens/41-boards.png).
     private func picker<Option: Identifiable & Hashable>(_ options: [Option], selection: Binding<Option>, title: @escaping (Option) -> String) -> some View {
-        HStack(spacing: 4) {
+        // Stacked at accessibility sizes, so words never break mid-way.
+        let stacked = typeSize.isAccessibilitySize
+        let shape = RoundedRectangle(cornerRadius: stacked ? RatioRadius.panel : 100, style: .continuous)
+        return (stacked ? AnyLayout(VStackLayout(spacing: RatioSpace.xxs)) : AnyLayout(HStackLayout(spacing: RatioSpace.xxs))) {
             ForEach(options) { option in
-                Button { selection.wrappedValue = option } label: {
+                let selected = selection.wrappedValue == option
+                Button {
+                    withAnimation(RatioMotion.tap) { selection.wrappedValue = option }
+                } label: {
                     Text(title(option))
                         .ratioFont(.body)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.8)
+                        .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity, minHeight: 44)
-                        .foregroundStyle(selection.wrappedValue == option ? Color.ratioOnInk : Color.ratioInk)
-                        .background(selection.wrappedValue == option ? Color.ratioInk : Color.clear, in: Capsule())
+                        // Parchment on ink flips with the theme (ink turns light in dark mode).
+                        .foregroundStyle(selected ? Color.ratioParchment : Color.ratioInk)
+                        .background(selected ? Color.ratioInk : Color.clear, in: shape)
+                        .contentShape(shape)
                 }
                 .buttonStyle(.plain)
-                .accessibilityAddTraits(selection.wrappedValue == option ? .isSelected : [])
+                .accessibilityAddTraits(selected ? .isSelected : [])
             }
         }
-        .padding(4)
-        .ratioGlassCapsule()
-        .overlay(Capsule().strokeBorder(Color.ratioRule))
+        .padding(RatioSpace.xxs)
+        .background(Color.ratioPaper, in: shape)
+        .overlay(shape.strokeBorder(Color.ratioRule))
     }
 
     private func empty(_ text: String) -> some View {
-        VStack(spacing: 16) {
-            RatioSpotArt.pediment.view.frame(width: 110).foregroundStyle(Color.ratioInk2)
-            Text(text).ratioFont(.body).multilineTextAlignment(.center).foregroundStyle(Color.ratioInk2)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 32)
+        RatioEmptyState(art: .pediment, message: text)
     }
 
     private func load() async {
@@ -280,7 +301,7 @@ private struct BoardShareCard: View {
     let scope: BoardScope
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack {
                 Text("R\(Text(".").foregroundStyle(Color.ratioOxblood))").font(.custom("NewsreaderDisplay-Regular", size: 34))
                 Spacer()
@@ -325,7 +346,7 @@ private struct Podium: View {
     let entries: [BoardEntry]
 
     var body: some View {
-        HStack(alignment: .bottom, spacing: 10) {
+        HStack(alignment: .bottom, spacing: RatioSpace.xs) {
             ForEach([1, 0, 2], id: \.self) { index in
                 if let entry = entries[safe: index] {
                     column(entry, place: index + 1)
@@ -339,25 +360,51 @@ private struct Podium: View {
     }
 
     private func column(_ entry: BoardEntry, place: Int) -> some View {
-        VStack(spacing: 6) {
+        VStack(spacing: RatioSpace.xs) {
             if place == 1 {
                 Image(systemName: "laurel.leading").font(.title3).foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
             }
             ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: place == 1 ? 72 : 56)
-            Text(entry.name).ratioFont(.h3).lineLimit(1).minimumScaleFactor(0.8)
-            Text(university(entry)).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).lineLimit(1)
-            Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins")").ratioFont(.monoData)
-            ZStack(alignment: .top) {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(Color.ratioPaper)
-                    .overlay { RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(Color.ratioRule) }
-                Text("\(place)").ratioFont(.h1).italic().foregroundStyle(place == 1 ? Color.ratioOxblood : Color.ratioInk2).padding(.top, 8)
+            VStack(spacing: RatioSpace.xxs) {
+                Text(entry.name).ratioFont(.h3).multilineTextAlignment(.center)
+                Text(university(entry)).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center)
+                Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins")").ratioFont(.monoData)
             }
-            .frame(height: place == 1 ? 110 : place == 2 ? 80 : 60)
+            // A plinth: a paper cap with the place, hatched below (screens/41-boards.png).
+            VStack(spacing: 0) {
+                Text("\(place)")
+                    .ratioFont(.h1)
+                    .italic()
+                    .foregroundStyle(place == 1 ? Color.ratioOxblood : Color.ratioInk2)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, RatioSpace.xxs)
+                Rectangle().fill(Color.ratioRule).frame(height: 1)
+                PlinthHatching()
+                    .stroke(Color.ratioRule, lineWidth: 1)
+                    .frame(maxHeight: .infinity)
+                    .clipped()
+            }
+            .frame(height: place == 1 ? 112 : place == 2 ? 80 : 56)
+            .background(Color.ratioPaper, in: UnevenRoundedRectangle(topLeadingRadius: RatioRadius.panel, topTrailingRadius: RatioRadius.panel, style: .continuous))
+            .overlay { UnevenRoundedRectangle(topLeadingRadius: RatioRadius.panel, topTrailingRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
         }
         .frame(maxWidth: .infinity)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(place == 1 ? "First" : place == 2 ? "Second" : "Third"): \(entry.name), \(entry.wins) wins")
+    }
+}
+
+/// Fine diagonal hatching for the podium plinths.
+private struct PlinthHatching: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        var x = -rect.height
+        while x < rect.width {
+            path.move(to: CGPoint(x: x, y: rect.maxY))
+            path.addLine(to: CGPoint(x: x + rect.height, y: rect.minY))
+            x += 8
+        }
+        return path
     }
 }
 
@@ -370,21 +417,39 @@ private struct BoardRow: View {
     let rank: Int
     let isMine: Bool
 
+    @Environment(\.dynamicTypeSize) private var typeSize
+
     var body: some View {
-        HStack(spacing: 12) {
-            Text("\(rank)").ratioFont(.monoData).foregroundStyle(Color.ratioInk2).frame(width: 30, alignment: .leading)
-            ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: 40)
-            VStack(alignment: .leading, spacing: 2) {
-                Text(entry.name).ratioFont(.h3).lineLimit(1)
-                Text(university(entry)).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).lineLimit(1)
+        Group {
+            if typeSize.isAccessibilitySize {
+                // Two lines: who, then the numbers.
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                        Text("\(rank)").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                        Text(entry.name).ratioFont(.h3)
+                    }
+                    Text([university(entry), "\(entry.wins) \(entry.wins == 1 ? "win" : "wins")", entry.rating.formatted()].filter { !$0.isEmpty }.joined(separator: " · "))
+                        .ratioFont(.monoData)
+                        .foregroundStyle(Color.ratioInk2)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            } else {
+                HStack(spacing: RatioSpace.s) {
+                    Text("\(rank)").ratioFont(.monoData).foregroundStyle(Color.ratioInk2).frame(width: 32, alignment: .leading)
+                    ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: 40)
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        Text(entry.name).ratioFont(.h3)
+                        Text(university(entry)).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    }
+                    Spacer(minLength: RatioSpace.xs)
+                    Text("\(entry.wins)").ratioFont(.monoData).frame(width: 48, alignment: .trailing)
+                    Text(entry.rating.formatted()).ratioFont(.monoData).foregroundStyle(Color.ratioInk2).frame(width: 64, alignment: .trailing)
+                }
             }
-            Spacer()
-            Text("\(entry.wins)").ratioFont(.monoData).frame(width: 44, alignment: .trailing)
-            Text(entry.rating.formatted()).ratioFont(.monoData).foregroundStyle(Color.ratioInk2).frame(width: 64, alignment: .trailing)
         }
-        .padding(.vertical, 12)
-        .padding(.horizontal, isMine ? 8 : 0)
-        .background(isMine ? Color.ratioSunk : Color.clear, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .padding(.vertical, RatioSpace.s)
+        .padding(.horizontal, isMine ? RatioSpace.xs : 0)
+        .background(isMine ? Color.ratioSunk : Color.clear, in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(rank). \(entry.name)\(isMine ? ", you" : ""), \(university(entry)), \(entry.wins) wins, rating \(entry.rating)")
     }
@@ -395,20 +460,30 @@ private struct PinnedRow: View {
     let entry: BoardEntry
     let rank: Int?
 
+    @Environment(\.dynamicTypeSize) private var typeSize
+
     var body: some View {
-        HStack(spacing: 12) {
-            Text(rank.map { "\($0)" } ?? "–").ratioFont(.monoData).foregroundStyle(Color.ratioOxblood).frame(minWidth: 28, alignment: .leading)
-            ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: 36)
-            Text(entry.name).ratioFont(.h3).lineLimit(1)
-            Text(university(entry)).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).lineLimit(1)
-            Spacer()
-            Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins")").ratioFont(.monoData)
-            Text(entry.rating.formatted()).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+        let large = typeSize.isAccessibilitySize
+        let layout = large ? AnyLayout(VStackLayout(alignment: .leading, spacing: RatioSpace.xxs)) : AnyLayout(HStackLayout(spacing: RatioSpace.s))
+        layout {
+            HStack(spacing: RatioSpace.s) {
+                Text(rank.map { "\($0)" } ?? "–").ratioFont(.monoData).foregroundStyle(Color.ratioOxblood).frame(minWidth: 24, alignment: .leading)
+                if !large {
+                    ProfilePhoto(uid: entry.uid, initial: entry.initial, version: entry.avatarVersion, size: 36)
+                }
+                Text(entry.name).ratioFont(.h3)
+            }
+            if !large { Spacer(minLength: RatioSpace.xs) }
+            HStack(spacing: RatioSpace.s) {
+                Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins")").ratioFont(.monoData)
+                Text(entry.rating.formatted()).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+            }
         }
-        .padding(.horizontal, 18)
-        .padding(.vertical, 14)
-        .ratioGlassCapsule()
-        .overlay(Capsule().strokeBorder(Color.ratioRule))
+        .padding(.horizontal, RatioSpace.m)
+        .padding(.vertical, RatioSpace.s)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .ratioGlass(in: RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous))
+        .overlay { RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous).strokeBorder(Color.ratioRule) }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("You: \(rank.map { "rank \($0)" } ?? "not ranked yet"), \(entry.wins) wins, rating \(entry.rating)")
     }

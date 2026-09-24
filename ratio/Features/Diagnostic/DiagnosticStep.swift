@@ -22,22 +22,15 @@ struct DiagnosticStep: View {
             if let diagnostic {
                 questions(diagnostic)
             } else if loadFailed {
-                Text("The diagnostic couldn't be loaded.").ratioFont(.body).padding(24)
+                RatioErrorState(message: "The diagnostic didn't load.") { load() }
+                    .padding(RatioSpace.m)
             } else {
                 ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .task {
             guard diagnostic == nil else { return }
-            do {
-                let model = DiagnosticModel(modules: onboarding.profile.modules ?? [], seed: onboarding.uid, bank: try DiagnosticBank.load())
-                diagnostic = model
-                // Modules added after the diagnostic bank have no questions yet: start
-                // those students on the default profile, as if they'd skipped.
-                if model.total == 0 { finish = .skipped }
-            } catch {
-                loadFailed = true
-            }
+            load()
         }
         .confirmationDialog("Skip the diagnostic?", isPresented: $confirmingSkip, titleVisibility: .visible) {
             Button("Skip — start with wide bands") { finish = .skipped }
@@ -52,17 +45,31 @@ struct DiagnosticStep: View {
         }
     }
 
+    private func load() {
+        loadFailed = false
+        do {
+            let model = DiagnosticModel(modules: onboarding.profile.modules ?? [], seed: onboarding.uid, bank: try DiagnosticBank.load())
+            diagnostic = model
+            // Modules added after the diagnostic bank have no questions yet: start
+            // those students on the default profile, as if they'd skipped.
+            if model.total == 0 { finish = .skipped }
+        } catch {
+            loadFailed = true
+        }
+    }
+
     private func questions(_ diagnostic: DiagnosticModel) -> some View {
         ScrollViewReader { scroll in
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    HStack {
-                        Text("\(diagnostic.total) questions · about 2 minutes · no penalties")
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioInk2)
-                        Spacer()
-                        Text("Q \(diagnostic.number) of \(diagnostic.total)")
-                            .ratioFont(.monoData)
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    let about = Text("\(diagnostic.total) questions · about 2 minutes · no penalties")
+                        .ratioFont(.monoLabel)
+                        .foregroundStyle(Color.ratioInk2)
+                    let count = Text("Q \(diagnostic.number) of \(diagnostic.total)")
+                        .ratioFont(.monoData)
+                    ViewThatFits(in: .horizontal) {
+                        HStack { about; Spacer(minLength: RatioSpace.xs); count }
+                        VStack(alignment: .leading, spacing: RatioSpace.xxs) { count; about }
                     }
                     .id("top")
 
@@ -76,7 +83,7 @@ struct DiagnosticStep: View {
                         .id(item.id)
 
                         if diagnostic.lastAnswerCorrect != nil {
-                            RatioButton(diagnostic.isFinished ? "See my profile" : "Next", style: .secondary) {
+                            RatioButton(diagnostic.isFinished ? "See your profile →" : "Next →", style: .secondary) {
                                 if diagnostic.isFinished {
                                     finish = .answered(diagnostic.responses)
                                 } else {
@@ -88,20 +95,22 @@ struct DiagnosticStep: View {
                     }
 
                     if diagnostic.lastAnswerCorrect == nil {
-                        VStack(spacing: 6) {
+                        VStack(spacing: RatioSpace.xxs) {
                             Button("Skip the diagnostic") { confirmingSkip = true }
                                 .ratioFont(.monoLabel)
                                 .underline()
+                                .frame(minHeight: 44)
                             Text("You'll start with a default profile and wide bands.")
                                 .ratioFont(.small)
                                 .italic()
                                 .foregroundStyle(Color.ratioInk2)
                         }
                         .frame(maxWidth: .infinity)
-                        .padding(.top, 12)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, RatioSpace.xs)
                     }
                 }
-                .padding(24)
+                .padding(RatioSpace.m)
             }
             .scrollDismissesKeyboard(.interactively)
         }

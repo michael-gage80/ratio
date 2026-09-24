@@ -39,25 +39,30 @@ struct EditHomeSheet: View {
                     Label("Today's brief", systemImage: "lock")
                         .foregroundStyle(Color.ratioInk2)
                         .moveDisabled(true)
+                    .listRowBackground(Color.ratioPaper)
                     ForEach(order) { card in
-                        HStack {
+                        HStack(spacing: RatioSpace.s) {
                             Text(card.title).foregroundStyle(hidden.contains(card) ? Color.ratioInk2 : Color.ratioInk)
-                            Spacer()
+                            Spacer(minLength: 0)
                             Button {
                                 if hidden.contains(card) { hidden.remove(card) } else { hidden.insert(card) }
                             } label: {
                                 Image(systemName: hidden.contains(card) ? "eye.slash" : "eye").frame(width: 44, height: 44)
                             }
-                            .buttonStyle(.plain)
+                            .buttonStyle(.ratioPress)
                             .accessibilityLabel(hidden.contains(card) ? "Show \(card.title)" : "Hide \(card.title)")
                         }
                     }
                     .onMove { order.move(fromOffsets: $0, toOffset: $1) }
+                    .listRowBackground(Color.ratioPaper)
                 } footer: {
                     Text("The brief stays at the top.").ratioFont(.small)
                 }
             }
             .ratioFont(.body)
+            .foregroundStyle(Color.ratioInk)
+            .scrollContentBackground(.hidden)
+            .background(Color.ratioParchment.ignoresSafeArea())
             .environment(\.editMode, .constant(.active))
             .navigationTitle("Edit home")
             .toolbarTitleDisplayMode(.inline)

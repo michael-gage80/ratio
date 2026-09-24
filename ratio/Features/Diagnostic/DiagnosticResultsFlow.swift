@@ -29,7 +29,7 @@ struct DiagnosticResultsFlow: View {
     }
 
     private var analysing: some View {
-        VStack(spacing: 40) {
+        VStack(spacing: RatioSpace.l) {
             Spacer()
             ZStack {
                 RatioRings(diameter: 170)
@@ -38,9 +38,10 @@ struct DiagnosticResultsFlow: View {
             Text("Reading your answers.")
                 .ratioFont(.h2)
                 .italic()
-            VStack(alignment: .leading, spacing: 16) {
+                .multilineTextAlignment(.center)
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
                 ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
-                    HStack(spacing: 14) {
+                    HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
                         Group {
                             if index < completedSteps {
                                 Image(systemName: "checkmark").foregroundStyle(Color.ratioVerdigris)
@@ -50,13 +51,13 @@ struct DiagnosticResultsFlow: View {
                                 Circle().fill(Color.ratioRule).frame(width: 8, height: 8)
                             }
                         }
-                        .frame(width: 20)
+                        .frame(width: 24)
                         Text(step).ratioFont(.monoData)
                     }
                 }
             }
             Spacer()
-            VStack(spacing: 12) {
+            VStack(spacing: RatioSpace.s) {
                 if failed {
                     Text("We couldn't reach the server. Your answers are safe on this phone.")
                         .ratioFont(.small)
@@ -64,15 +65,15 @@ struct DiagnosticResultsFlow: View {
                     RatioButton("Try again", style: .secondary) { Task { await submit() } }
                 } else {
                     RatioButton("See your profile →", style: .secondary, isEnabled: headline != nil && completedSteps == steps.count) {
-                        withAnimation { showsProfile = true }
+                        withAnimation(RatioMotion.reveal) { showsProfile = true }
                     }
                 }
             }
         }
-        .padding(24)
+        .padding(RatioSpace.m)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
+        // A dark full-screen moment whatever the phone's appearance.
         .environment(\.colorScheme, .dark)
         .task { await submit() }
     }
@@ -90,7 +91,7 @@ struct DiagnosticResultsFlow: View {
             // Everything is done at this point; tick the remaining steps in turn so each
             // one can be read.
             for step in 1...steps.count {
-                withAnimation { completedSteps = step }
+                withAnimation(RatioMotion.tap) { completedSteps = step }
                 if step < steps.count { try? await Task.sleep(for: .milliseconds(350)) }
             }
         } catch {
@@ -108,7 +109,7 @@ struct FirstProfileView: View {
     var body: some View {
         let archetype = Archetype(headline)
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
                 HStack(alignment: .top) {
                     RatioTag("Hypothesis · First profile", style: .tint(.ratioOxblood))
                     Spacer()
@@ -122,16 +123,18 @@ struct FirstProfileView: View {
                     .ratioFont(.h3)
 
                 ProfileTriangle(headline: headline, highlight: Archetype.growthEdge(headline))
-                    .padding(.horizontal, 12)
+                    .padding(.horizontal, RatioSpace.s)
 
-                VStack(spacing: 10) {
-                    HStack(spacing: 20) {
-                        Label { Text("Likely range") } icon: {
-                            RoundedRectangle(cornerRadius: 2).fill(Color.ratioOxblood.opacity(0.16)).frame(width: 22, height: 12)
-                        }
-                        Label { Text("Best estimate") } icon: {
-                            Rectangle().fill(Color.ratioOxblood).frame(width: 22, height: 1.5)
-                        }
+                VStack(spacing: RatioSpace.xs) {
+                    let range = Label { Text("Likely range") } icon: {
+                        RoundedRectangle(cornerRadius: 2).fill(Color.ratioOxblood.opacity(0.16)).frame(width: 24, height: 12)
+                    }
+                    let estimate = Label { Text("Best estimate") } icon: {
+                        Rectangle().fill(Color.ratioOxblood).frame(width: 24, height: 1.5)
+                    }
+                    ViewThatFits(in: .horizontal) {
+                        HStack(spacing: RatioSpace.m) { range; estimate }
+                        VStack(alignment: .leading, spacing: RatioSpace.xs) { range; estimate }
                     }
                     .ratioFont(.monoData)
                     Text("The shaded area shows how sure we are. It narrows as you answer more.")
@@ -141,16 +144,13 @@ struct FirstProfileView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
         .safeAreaInset(edge: .bottom) {
-            VStack(spacing: 12) {
-                RatioButton("Enter chambers", action: onContinue)
-            }
-            .padding(24)
-            .background(Color.ratioParchment)
+            RatioButton("Enter chambers", action: onContinue)
+                .padding(RatioSpace.m)
+                .background(Color.ratioParchment)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
     }
 }
