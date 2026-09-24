@@ -68,7 +68,8 @@ private struct IRACWorkedExample: View {
 /// Board cell 05 ("IRAC builder · structuring an answer, with fading support"): slots for
 /// Issue, Rule, Application and Conclusion; a tray of fact chips including decoys. Tap a
 /// chip to place it and tap it again to take it back — the non-drag route that works
-/// with VoiceOver (PRD: Accessibility).
+/// with VoiceOver (PRD: Accessibility). On iPad (screens/iPad/3-lesson/05) the tray of
+/// material sits on the left and the four slots on the right.
 private struct IRACBuilder: View {
     let itemId: String
     let facts: [String]
@@ -89,6 +90,7 @@ private struct IRACBuilder: View {
     @State private var application = ""
     @State private var conclusion = ""
     @State private var isChecking = false
+    @Environment(\.ratioWidth) private var width
 
     init(itemId: String, facts: [String], answer: Item.IRACAnswer, level: Int, decoyFacts: [String], decoyRules: [String],
          locked: ItemResponse?, onLock: @escaping (ItemResponse) -> Void) {
@@ -106,9 +108,25 @@ private struct IRACBuilder: View {
     var body: some View {
         VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Scaffold \(level) of 4").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                .frame(maxWidth: .infinity, alignment: width.isCompact ? .leading : .trailing)
 
             Group {
-            if level == 4 {
+            if level < 4 && !width.isCompact {
+                // iPad: material on the left, the four slots on the right.
+                ColumnsLayout(fraction: 0.45, spacing: RatioSpace.l) {
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) { trayChips }
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        slot("Issue") { Text(answer.issue).ratioFont(.small) }
+                        if level == 2 {
+                            slot("Rule") { Text(answer.rule).ratioFont(.small) }
+                        } else {
+                            ruleChoice
+                        }
+                        placedSlot
+                        RatioTextField("Conclusion", placeholder: "What a court would likely decide…", text: $conclusion, axis: .vertical)
+                    }
+                }
+            } else if level == 4 {
                 RatioTextField("Issue", placeholder: "The question the facts raise…", text: $issue, axis: .vertical)
                 RatioTextField("Rule", placeholder: "The test that applies…", text: $rule, axis: .vertical)
                 RatioTextField("Application", placeholder: "Apply the rule to these facts…", text: $application, axis: .vertical)
@@ -133,6 +151,8 @@ private struct IRACBuilder: View {
                 FreeTextVerdictView(studentAnswer: writtenAnswer, modelAnswer: modelForWrittenPart) { lock(writtenPartCovered: $0) }
             } else {
                 RatioButton("Check", isEnabled: canCheck) { isChecking = true }
+                    .keyboardShortcut(.return, modifiers: .command)
+                if KeyboardMonitor.shared.isConnected { KeyHint(keys: "⌘↩", label: "Check") }
             }
         }
     }
@@ -165,24 +185,39 @@ private struct IRACBuilder: View {
 
     private var applicationSlot: some View {
         VStack(alignment: .leading, spacing: RatioSpace.s) {
-            slot("Application · the facts that decide it") {
-                if placed.isEmpty {
-                    Text("Drag or tap facts below to place them here.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
-                }
-                ForEach(placed, id: \.self) { index in
-                    chip(index, isPlaced: true)
-                }
-            }
-            .dropDestination(for: String.self) { dropped, _ in place(dropped, in: true) }
+            placedSlot
             if locked == nil && !isChecking {
-                VStack(alignment: .leading, spacing: RatioSpace.xs) {
-                    Text("Tray · \(tray.count) chips, \(tray.count - facts.count) decoys").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    ForEach(trayOrder.filter { !placed.contains($0) }, id: \.self) { index in
-                        chip(index, isPlaced: false)
-                    }
-                }
-                .dropDestination(for: String.self) { dropped, _ in place(dropped, in: false) }
+                VStack(alignment: .leading, spacing: RatioSpace.xs) { trayChips }
             }
+        }
+    }
+
+    /// The Application slot, holding the placed facts.
+    private var placedSlot: some View {
+        slot("Application · the facts that decide it") {
+            if placed.isEmpty {
+                Text(width.isCompact ? "Drag or tap facts below to place them here." : "Tap or drag a card on the left to place it here.")
+                    .ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
+            }
+            ForEach(placed, id: \.self) { index in
+                chip(index, isPlaced: true)
+            }
+        }
+        .dropDestination(for: String.self) { dropped, _ in place(dropped, in: true) }
+    }
+
+    /// The tray: the facts not yet placed, decoys among them.
+    @ViewBuilder
+    private var trayChips: some View {
+        Text(width.isCompact ? "Tray · \(tray.count) chips, \(tray.count - facts.count) decoys" : "Material · \(tray.count) cards, \(tray.count - facts.count) decoys")
+            .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+        if locked == nil && !isChecking {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                ForEach(trayOrder.filter { !placed.contains($0) }, id: \.self) { index in
+                    chip(index, isPlaced: false)
+                }
+            }
+            .dropDestination(for: String.self) { dropped, _ in place(dropped, in: false) }
         }
     }
 

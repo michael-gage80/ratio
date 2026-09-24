@@ -2,7 +2,8 @@ import SwiftUI
 
 /// screens/23-debrief.png — secure or revisit for each item, what moved in the
 /// profile (with the band narrowing), and when each item comes back for review
-/// (PRD: lesson stage 4, "Debrief").
+/// (PRD: lesson stage 4, "Debrief"). On iPad (screens/iPad/3-lesson/08) the items sit on
+/// the left and the profile change and reviews on the right.
 struct DebriefView: View {
     let lesson: Lesson
     let model: TestModel
@@ -11,6 +12,7 @@ struct DebriefView: View {
 
     @State private var reviewingMisses = false
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
 
     private var misses: [Item] { model.items.filter { !result.correct($0.id) } }
     private var secureCount: Int { model.items.count - misses.count }
@@ -25,18 +27,27 @@ struct DebriefView: View {
                     Spacer()
                     Text("Judgment entered").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
-                header
-                itemResults
-                profileChanges
-                reviewSchedule
-                VStack(alignment: .leading, spacing: RatioSpace.xs) {
-                    Text("Profile").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    let archetype = Archetype(result.headline)
-                    Text("\(Text("The \(archetype.name)").italic()) — \(archetype.summary)").ratioFont(.body)
+                if width.isCompact {
+                    header
+                    itemResults
+                    profileChanges
+                    reviewSchedule
+                    profileNote
+                } else {
+                    ColumnsLayout(fraction: 0.54, spacing: RatioSpace.l) {
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            header
+                            itemResults
+                        }
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            profileChanges
+                            reviewSchedule
+                            profileNote
+                        }
+                    }
                 }
-                .ratioCard(.ratioSunk, bordered: false)
             }
-            .padding(.horizontal, RatioSpace.m)
+            .padding(.horizontal, width.isCompact ? RatioSpace.m : RatioSpace.xl)
             .padding(.top, RatioSpace.s)
             .padding(.bottom, RatioSpace.m)
         }
@@ -45,12 +56,15 @@ struct DebriefView: View {
                 HStack(spacing: RatioSpace.xs) { finishButtons }
                 VStack(spacing: RatioSpace.xs) { finishButtons }
             }
-            .padding(.horizontal, RatioSpace.m)
+            // iPad: the buttons sit bottom right, under the right-hand column.
+            .frame(maxWidth: width.isCompact ? .infinity : 520)
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .padding(.horizontal, width.isCompact ? RatioSpace.m : RatioSpace.xl)
             .padding(.vertical, RatioSpace.s)
             .background(Color.ratioParchment)
         }
         .ratioPage()
-        .sheet(isPresented: $reviewingMisses) { missesSheet }
+        .sheet(isPresented: $reviewingMisses) { missesSheet.ratioMeasuresWidth() }
     }
 
     @ViewBuilder private var finishButtons: some View {
@@ -58,6 +72,16 @@ struct DebriefView: View {
             RatioButton(misses.count == 1 ? "Review my miss" : "Review my misses", style: .tertiary) { reviewingMisses = true }
         }
         RatioButton("Back to Today", style: .secondary, action: onFinish)
+            .keyboardShortcut(.return, modifiers: .command)
+    }
+
+    private var profileNote: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
+            Text("Profile").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            let archetype = Archetype(result.headline)
+            Text("\(Text("The \(archetype.name)").italic()) — \(archetype.summary)").ratioFont(.body)
+        }
+        .ratioCard(.ratioSunk, bordered: false)
     }
 
     private var header: some View {
