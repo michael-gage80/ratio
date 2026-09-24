@@ -31,7 +31,7 @@ struct LectureView: View {
     var body: some View {
         ScrollViewReader { scroll in
             ScrollView {
-                LazyVStack(alignment: .leading, spacing: 32) {
+                LazyVStack(alignment: .leading, spacing: RatioSpace.l) {
                     header
                     ForEach(Array(lesson.parts.enumerated()), id: \.element.id) { index, part in
                         if index <= partsCompleted {
@@ -50,12 +50,13 @@ struct LectureView: View {
                         .foregroundStyle(Color.ratioInk2)
                         .frame(maxWidth: .infinity)
                 }
-                .padding(24)
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.top, RatioSpace.s)
+                .padding(.bottom, RatioSpace.xl)
             }
             .scrollDismissesKeyboard(.interactively)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbar {
             ToolbarItem(placement: .principal) {
                 progressBar
@@ -81,7 +82,7 @@ struct LectureView: View {
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Lecture · \(lesson.moduleId.title) · Lesson \(lesson.lessonNumber)")
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
@@ -89,13 +90,13 @@ struct LectureView: View {
             Text("\(lesson.parts.count) parts, about \(lesson.estimatedMinutes) minutes. Each part opens when you answer the one before.")
                 .ratioFont(.small)
                 .foregroundStyle(Color.ratioInk2)
-            Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, 8)
+            Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, RatioSpace.xs)
         }
     }
 
     private var progressBar: some View {
-        HStack(spacing: 10) {
-            HStack(spacing: 4) {
+        HStack(spacing: RatioSpace.xs) {
+            HStack(spacing: RatioSpace.xxs) {
                 ForEach(lesson.parts.indices, id: \.self) { index in
                     Capsule()
                         .fill(index < partsCompleted ? Color.ratioInk : index == partsCompleted ? Color.ratioOxblood : Color.ratioRule)
@@ -113,7 +114,7 @@ struct LectureView: View {
     private func partView(_ part: Lesson.Part, index: Int, scroll: ScrollViewProxy) -> some View {
         let isCurrent = index == partsCompleted
         let response = responses[index]
-        return VStack(alignment: .leading, spacing: 18) {
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Part \(Self.numerals[safe: index] ?? "\(index + 1)")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text(part.heading).ratioFont(.h2)
             ForEach(Array(part.body.enumerated()), id: \.offset) { _, paragraph in
@@ -124,7 +125,7 @@ struct LectureView: View {
             }
 
             if isCurrent || response != nil {
-                VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
                     Label(part.interaction.typeTitle, systemImage: "circle.fill")
                         .labelStyle(DotLabelStyle())
                         .ratioFont(.monoLabel)
@@ -132,13 +133,13 @@ struct LectureView: View {
                         lock(response, part: index, scroll: scroll)
                     }
                 }
-                .padding(20)
-                .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-                .overlay { RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(Color.ratioRule) }
+                .ratioCard()
             } else {
-                Label("Checked", systemImage: "checkmark.circle.fill")
+                // Answered on an earlier visit. Ink, not verdigris: it says nothing about
+                // whether the answer was right.
+                Label("Answered", systemImage: "checkmark")
                     .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioVerdigris)
+                    .foregroundStyle(Color.ratioInk2)
             }
         }
     }
@@ -148,18 +149,26 @@ struct LectureView: View {
     @ViewBuilder
     private func lockedRow(_ part: Lesson.Part?, index: Int) -> some View {
         if index > partsCompleted || (part == nil && partsCompleted < lesson.parts.count) {
-            HStack(spacing: 10) {
-                Image(systemName: "lock.fill").imageScale(.small)
-                Text(part.map { "Part \(Self.numerals[safe: index] ?? "\(index + 1)") · \($0.heading)" } ?? "To the tests")
-                    .lineLimit(2)
-                Spacer()
-                Text("Answer to continue")
+            let title = Text(part.map { "Part \(Self.numerals[safe: index] ?? "\(index + 1)") · \($0.heading)" } ?? "The tests")
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
+                    Image(systemName: "lock").imageScale(.small)
+                    title
+                    Spacer(minLength: RatioSpace.xs)
+                    Text("Opens when you answer")
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    Label { title } icon: { Image(systemName: "lock").imageScale(.small) }
+                    Text("Opens when you answer")
+                }
             }
             .ratioFont(.monoLabel)
             .foregroundStyle(Color.ratioInk2)
-            .padding(16)
-            .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .overlay { RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(Color.ratioRule, style: StrokeStyle(lineWidth: 1, dash: [4, 4])) }
+            .ratioPanel()
+            .overlay {
+                RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
+                    .strokeBorder(Color.ratioRule, style: StrokeStyle(lineWidth: 1, dash: [4, 4]))
+            }
             .accessibilityElement(children: .combine)
         }
     }
@@ -188,7 +197,7 @@ struct LectureView: View {
             if next == nil {
                 showsExamRoom = true
             } else if let next, !(reduceMotion || systemReduceMotion) {
-                withAnimation(.easeInOut(duration: 0.6)) { scroll.scrollTo(next.id, anchor: .top) }
+                withAnimation(RatioMotion.reveal) { scroll.scrollTo(next.id, anchor: .top) }
             }
         }
     }
@@ -196,8 +205,8 @@ struct LectureView: View {
 
 private struct DotLabelStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: 8) {
-            configuration.icon.font(.system(size: 6)).foregroundStyle(Color.ratioOxblood)
+        HStack(spacing: RatioSpace.xs) {
+            configuration.icon.font(.system(size: 6)).foregroundStyle(Color.ratioOxblood).accessibilityHidden(true)
             configuration.title
         }
     }

@@ -8,6 +8,7 @@ struct PathwayView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var selected: Module?
     @State private var peeking: String?
 
@@ -17,30 +18,27 @@ struct PathwayView: View {
     private var module: Module { selected ?? modules.first ?? .crime }
 
     var body: some View {
+        let lessons = content.lessons(in: module)
+        let groups = TopicGroup.groups(of: lessons)
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Lessons\(Text(".").foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
-                    Text([student.profile.year.map { "Year \($0)" }, "Your modules first"].compactMap { $0 }.joined(separator: " · "))
-                        .ratioFont(.monoLabel)
-                        .foregroundStyle(Color.ratioInk2)
-                }
-                .padding(.horizontal, 24)
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                RatioPageHeader(eyebrow: [student.profile.year.map { "Year \($0)" }, "Your modules first"].compactMap { $0 }.joined(separator: " · "),
+                                title: "Lessons")
+                    .padding(.horizontal, RatioSpace.m)
 
-                libraryLink.padding(.horizontal, 24)
+                libraryLink.padding(.horizontal, RatioSpace.m)
 
                 moduleCards
 
-                VStack(alignment: .leading, spacing: 20) {
-                    contentsHeader
-                    let lessons = content.lessons(in: module)
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    contentsHeader(lessons: lessons, topics: groups.count)
                     if lessons.isEmpty {
                         planned
                     } else {
                         Text("Press and hold a lesson to see its topic scores")
                             .ratioFont(.monoLabel)
                             .foregroundStyle(Color.ratioInk2)
-                        ForEach(Array(TopicGroup.groups(of: lessons).enumerated()), id: \.element.id) { index, group in
+                        ForEach(Array(groups.enumerated()), id: \.element.id) { index, group in
                             groupSection(group, index: index)
                         }
                         if let date = lessons.first?.lawStatedDate {
@@ -52,12 +50,12 @@ struct PathwayView: View {
                         }
                     }
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, RatioSpace.m)
             }
-            .padding(.vertical, 24)
+            .padding(.top, RatioSpace.s)
+            .padding(.bottom, RatioSpace.xl)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .ratioFeedback(.impact(weight: .light), trigger: peeking) { _, new in new != nil }
         .toolbar(.hidden, for: .navigationBar)
     }
@@ -66,52 +64,70 @@ struct PathwayView: View {
 
     private var moduleCards: some View {
         ScrollView(.horizontal) {
-            HStack(spacing: 12) {
+            HStack(alignment: .top, spacing: RatioSpace.s) {
                 ForEach(modules) { module in
+                    let isMine = mine.contains(module)
                     Button {
-                        withAnimation(.easeInOut(duration: 0.2)) {
+                        withAnimation(RatioMotion.tap) {
                             selected = module
                             peeking = nil
                         }
                     } label: {
                         ModuleCard(module: module, mastery: student.mastery(of: content.lessons(in: module)), isSelected: module == self.module,
-                                   plan: student.isPlus || !mine.contains(module) ? nil : (student.canStudy(module) ? "Free" : "Ratio Plus"),
-                                   isMine: mine.contains(module))
+                                   plan: student.isPlus || !isMine ? nil : (student.canStudy(module) ? "Free" : "Ratio Plus"),
+                                   isMine: isMine)
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.ratioPress)
                 }
             }
             .scrollTargetLayout()
         }
-        .contentMargins(.horizontal, 24, for: .scrollContent)
+        .contentMargins(.horizontal, RatioSpace.m, for: .scrollContent)
         .scrollIndicators(.hidden)
         .scrollTargetBehavior(.viewAligned)
     }
 
-    private var contentsHeader: some View {
-        let lessons = content.lessons(in: module)
+    private func contentsHeader(lessons: [Lesson], topics: Int) -> some View {
         let count = lessons.isEmpty ? Spine.lessons(in: module).count : lessons.count
-        let topics = TopicGroup.groups(of: lessons).count
-        return VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("\(module.title) \(Text("contents").italic().foregroundStyle(Color.ratioInk2))").ratioFont(.h2)
-                Spacer()
-                Text(lessons.isEmpty ? "\(count) lessons planned" : "\(topics) topics · \(count) lessons")
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioInk2)
+        let title = Text("\(module.title) \(Text("contents").italic().foregroundStyle(Color.ratioInk2))").ratioFont(.h2)
+        let summary = Text(lessons.isEmpty ? "\(count) lessons planned" : "\(topics) topics · \(count) lessons")
+            .ratioFont(.monoLabel)
+            .foregroundStyle(Color.ratioInk2)
+        return VStack(alignment: .leading, spacing: RatioSpace.xs) {
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .firstTextBaseline) {
+                    title
+                    Spacer(minLength: RatioSpace.xs)
+                    summary
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    title
+                    summary
+                }
             }
             Rectangle().fill(Color.ratioInk).frame(height: 1)
             if !mine.contains(module) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("Not one of your modules.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
-                    Spacer()
-                    Button("Add to my modules") { add(module) }
-                        .ratioFont(.h3)
-                        .foregroundStyle(Color.ratioOxblood)
-                        .frame(minHeight: 44)
+                ViewThatFits(in: .horizontal) {
+                    HStack(alignment: .firstTextBaseline) {
+                        notMine
+                        Spacer(minLength: RatioSpace.xs)
+                        addButton
+                    }
+                    VStack(alignment: .leading, spacing: 0) {
+                        notMine
+                        addButton
+                    }
                 }
             }
         }
+    }
+
+    private var notMine: some View {
+        Text("Not one of your modules.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+    }
+
+    private var addButton: some View {
+        RatioButton("Add to my modules", style: .link) { add(module) }
     }
 
     private func add(_ module: Module) {
@@ -120,38 +136,41 @@ struct PathwayView: View {
 
     private var libraryLink: some View {
         Button { navigator.pathwayPath.append(.library) } label: {
-            HStack(spacing: 14) {
+            HStack(spacing: RatioSpace.s) {
                 Image(systemName: "books.vertical")
                     .font(.title3)
                     .frame(width: 44, height: 44)
-                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                VStack(alignment: .leading, spacing: 2) {
+                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                     Text("Library").ratioFont(.h3)
                     Text("Cases, legislation and doctrine maps").ratioFont(.small).foregroundStyle(Color.ratioInk2)
                 }
-                Spacer()
-                Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2)
+                Spacer(minLength: RatioSpace.xs)
+                Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
             }
-            .padding(14)
-            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .overlay { RoundedRectangle(cornerRadius: 20, style: .continuous).strokeBorder(Color.ratioRule) }
+            .ratioCard(padding: RatioSpace.s)
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
+        .accessibilityElement(children: .combine)
     }
 
     // MARK: Lessons
 
     private func groupSection(_ group: TopicGroup, index: Int) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack(alignment: .firstTextBaseline, spacing: 16) {
-                Text(Self.numeral(index + 1)).ratioFont(.h2).italic().foregroundStyle(Color.ratioOxblood).frame(width: 36, alignment: .leading)
+            HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                Text(Self.numeral(index + 1)).ratioFont(.h2).italic().foregroundStyle(Color.ratioOxblood).frame(minWidth: 40, alignment: .leading)
                 Text(group.title).ratioFont(.h2).italic()
-                Spacer()
-                Text(group.lessons.count == 1 ? "1 lesson" : "\(group.lessons.count) lessons")
-                    .ratioFont(.monoData)
-                    .foregroundStyle(Color.ratioInk2)
+                Spacer(minLength: RatioSpace.xs)
+                if !typeSize.isAccessibilitySize {
+                    Text(group.lessons.count == 1 ? "1 lesson" : "\(group.lessons.count) lessons")
+                        .ratioFont(.monoData)
+                        .foregroundStyle(Color.ratioInk2)
+                }
             }
-            .padding(.vertical, 14)
+            .padding(.vertical, RatioSpace.s)
+            .accessibilityElement(children: .combine)
             .accessibilityAddTraits(.isHeader)
             ForEach(Array(group.lessons.enumerated()), id: \.element.id) { lessonIndex, lesson in
                 Divider().overlay(Color.ratioRule)
@@ -162,16 +181,22 @@ struct PathwayView: View {
     }
 
     private func lessonRow(_ lesson: Lesson, number: String, group: TopicGroup) -> some View {
+        let canStudy = student.canStudy(lesson.moduleId)
         let state = student.state(of: lesson)
-        return VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .firstTextBaseline, spacing: 12) {
-                Text(number).ratioFont(.monoData).foregroundStyle(Color.ratioInk2).frame(width: 32, alignment: .leading)
-                Text(lesson.title).ratioFont(.body).layoutPriority(1)
-                DottedLeader()
-                if student.canStudy(lesson.moduleId) {
-                    LessonStateLabel(state: state)
-                } else {
-                    Label("Plus", systemImage: "lock").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).fixedSize()
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
+            if typeSize.isAccessibilitySize {
+                // Large text: the title gets the full width, the status goes under it.
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    Text(number).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                    Text(lesson.title).ratioFont(.body)
+                    status(canStudy: canStudy, state: state)
+                }
+            } else {
+                HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                    Text(number).ratioFont(.monoData).foregroundStyle(Color.ratioInk2).frame(minWidth: 32, alignment: .leading)
+                    Text(lesson.title).ratioFont(.body).layoutPriority(1)
+                    DottedLeader()
+                    status(canStudy: canStudy, state: state)
                 }
             }
             if peeking == lesson.id {
@@ -179,10 +204,10 @@ struct PathwayView: View {
                     .transition(.opacity.combined(with: .move(edge: .top)))
             }
         }
-        .padding(.vertical, 16)
+        .padding(.vertical, RatioSpace.s)
         .contentShape(Rectangle())
         .onTapGesture {
-            if student.canStudy(lesson.moduleId) {
+            if canStudy {
                 navigator.pathwayPath.append(.overview(lesson.id))
             } else {
                 navigator.showPaywall(for: lesson.moduleId, freeModule: student.freeModule)
@@ -194,8 +219,17 @@ struct PathwayView: View {
         .accessibilityAction(named: peeking == lesson.id ? "Hide topic scores" : "Show topic scores") { togglePeek(lesson) }
     }
 
+    @ViewBuilder
+    private func status(canStudy: Bool, state: LessonState) -> some View {
+        if canStudy {
+            LessonStateLabel(state: state)
+        } else {
+            Label("Plus", systemImage: "lock").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).fixedSize()
+        }
+    }
+
     private func togglePeek(_ lesson: Lesson) {
-        withAnimation(.easeInOut(duration: 0.2)) {
+        withAnimation(RatioMotion.tap) {
             peeking = peeking == lesson.id ? nil : lesson.id
         }
     }
@@ -203,21 +237,21 @@ struct PathwayView: View {
     /// Lessons for a module still being written, from the spine: visible, locked, no scores.
     private var planned: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("In preparation. These are the lessons planned for \(module.title); they open as each one is reviewed.")
+            Text("In preparation. These are the lessons planned for \(module.title); each opens once it's been reviewed.")
                 .ratioFont(.small)
                 .italic()
                 .foregroundStyle(Color.ratioInk2)
-                .padding(.bottom, 12)
+                .padding(.bottom, RatioSpace.s)
             ForEach(Spine.lessons(in: module)) { lesson in
                 Divider().overlay(Color.ratioRule)
-                HStack(alignment: .firstTextBaseline, spacing: 12) {
-                    Text("\(lesson.number)").ratioFont(.monoData).frame(width: 32, alignment: .leading)
+                HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                    Text("\(lesson.number)").ratioFont(.monoData).frame(minWidth: 32, alignment: .leading)
                     Text(lesson.title).ratioFont(.body)
-                    Spacer(minLength: 8)
+                    Spacer(minLength: RatioSpace.xs)
                     Image(systemName: "lock").imageScale(.small).accessibilityLabel("Locked")
                 }
                 .foregroundStyle(Color.ratioInk2)
-                .padding(.vertical, 14)
+                .padding(.vertical, RatioSpace.s)
             }
         }
     }
@@ -237,29 +271,40 @@ private struct ModuleCard: View {
     /// Modules the student hasn't chosen are dimmed.
     var isMine = true
 
+    @Environment(\.dynamicTypeSize) private var typeSize
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             ModuleIllustration(module: module)
                 .frame(height: 96)
                 .frame(maxWidth: .infinity)
-                .padding(.top, 8)
+                .padding(.vertical, RatioSpace.xs)
             Spacer(minLength: 0)
-            Text(module.title).ratioFont(.h3)
+            Text(module.title).ratioFont(.h3).fixedSize(horizontal: false, vertical: true)
             if let mastery {
-                HStack {
-                    Text("\(mastery)%").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
-                    Spacer(minLength: 4)
-                    if let plan { RatioTag(plan, icon: plan == "Free" ? nil : "lock") }
+                // The plan tag drops under the percentage rather than squeezing it.
+                ViewThatFits(in: .horizontal) {
+                    HStack {
+                        percent(mastery)
+                        Spacer(minLength: RatioSpace.xxs)
+                        planTag
+                    }
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        percent(mastery)
+                        planTag
+                    }
                 }
             } else {
                 Text("In preparation").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
         }
-        .padding(16)
-        .frame(width: 150, height: 200, alignment: .leading)
-        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .padding(RatioSpace.s)
+        // Grows with the text instead of clipping it.
+        .frame(width: typeSize.isAccessibilitySize ? 240 : 160, alignment: .leading)
+        .frame(minHeight: 208, alignment: .top)
+        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous))
         .overlay {
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
+            RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous)
                 .strokeBorder(isSelected ? Color.ratioInk : Color.ratioRule, lineWidth: isSelected ? 2 : 1)
         }
         .foregroundStyle(Color.ratioInk)
@@ -267,6 +312,14 @@ private struct ModuleCard: View {
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(module.title), \(isMine ? mastery.map { "\($0)% secure" } ?? "in preparation" : "not one of your modules")")
         .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
+    }
+
+    private func percent(_ mastery: Int) -> some View {
+        Text("\(mastery)%").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+    }
+
+    @ViewBuilder private var planTag: some View {
+        if let plan { RatioTag(plan, icon: plan == "Free" ? nil : "lock") }
     }
 }
 
@@ -331,7 +384,7 @@ private struct TopicPeek: View {
     let scores: TopicScores?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Peek · Topic scores · \(title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             if let scores, Skill.allCases.contains(where: { scores[$0] != nil }) {
                 ForEach(Skill.allCases) { skill in
@@ -341,7 +394,6 @@ private struct TopicPeek: View {
                 Text("Not assessed yet. Take this lesson's tests to see scores here.").ratioFont(.small)
             }
         }
-        .padding(16)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .ratioPanel()
     }
 }
