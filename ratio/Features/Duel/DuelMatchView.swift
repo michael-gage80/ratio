@@ -129,7 +129,7 @@ struct DuelMatchView: View {
 
     private static let coachMarks: [(label: String, title: String, detail: String)] = [
         ("The clock", "Fifteen seconds a question. The ring turns red in the last three.",
-         "You'll feel a light pulse too. Extra time (30 s) is in Settings → Accessibility."),
+         "You'll feel a light pulse too. Extra time (30\u{00A0}s) is in Settings → Accessibility."),
         ("Scoring", "The first right answer takes the point.",
          "First to three wins. At 2–2 a final round, of any type, decides it."),
         ("The penalty", "A wrong answer gives the point away.",

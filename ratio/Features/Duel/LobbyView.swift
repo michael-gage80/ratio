@@ -354,7 +354,7 @@ struct LobbyEntryView: View {
                 VStack(alignment: .leading, spacing: RatioSpace.m) {
                     VStack(alignment: .leading, spacing: RatioSpace.xs) {
                         Text("Host").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                        Text("Make a lobby for \(scope.title), \(seconds) s a question, and share the code.").ratioFont(.body)
+                        Text("Make a lobby for \(scope.title), \(seconds)\u{00A0}s a question, and share the code.").ratioFont(.body)
                         RatioButton("Make a lobby", isEnabled: !working) { create() }
                     }
                     Divider().overlay(Color.ratioRule)

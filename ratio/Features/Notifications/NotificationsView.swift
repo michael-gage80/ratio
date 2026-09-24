@@ -48,7 +48,7 @@ extension StudentStore {
                 }
             } else if open, myTurn {
                 items.append(FeedItem(id: "c-\(challenge.id)", category: .duels, title: "\(opponent) challenged you",
-                                      detail: "\(DuelScope.title(of: challenge.moduleId)) · \(max(1, Int(challenge.expiresAt.timeIntervalSince(now) / 3600))) h left",
+                                      detail: "\(DuelScope.title(of: challenge.moduleId)) · \(max(1, Int(challenge.expiresAt.timeIntervalSince(now) / 3600)))\u{00A0}h left",
                                       date: created, pinned: true, action: .duel))
             } else if !challenge.isFrom(uid), challenge.status != "declined", challenge.status != "complete" {
                 items.append(FeedItem(id: "c-\(challenge.id)", category: .duels, title: "\(opponent) challenged you", date: created, action: .duel))
@@ -64,7 +64,7 @@ extension StudentStore {
         if let brief, let current = currentStep(of: brief, content: content) {
             let kind = brief.steps[current].kind.rawValue
             items.append(FeedItem(id: "brief-\(brief.date)", category: .streak, title: "Today's brief: \(brief.title)",
-                                  detail: "\(brief.minutes) min · next, the \(kind)", date: UKDate.calendar.startOfDay(for: now), pinned: true, action: .brief))
+                                  detail: "\(brief.minutes)\u{00A0}min · next, the \(kind)", date: UKDate.calendar.startOfDay(for: now), pinned: true, action: .brief))
         }
         let week = streak
         let activeToday = week.week[safe: week.todayIndex]?.active ?? false

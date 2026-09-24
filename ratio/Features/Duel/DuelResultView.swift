@@ -62,7 +62,7 @@ struct DuelResultView: View {
             }
             if let fastest {
                 row("Fastest point") {
-                    Text("\(String(format: "%.1f", Double(fastest.time) / 1000)) s · \(Text(fastest.answer).italic())").ratioFont(.small)
+                    Text("\(String(format: "%.1f", Double(fastest.time) / 1000))\u{00A0}s · \(Text(fastest.answer).italic())").ratioFont(.small)
                 }
             }
             if let moved = record.skillMoved, let skill = Skill(rawValue: moved.skill) {

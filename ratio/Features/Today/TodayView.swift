@@ -154,7 +154,7 @@ struct TodayView: View {
         } else {
             // Shaped like the brief card, so nothing jumps when it arrives.
             VStack(alignment: .leading, spacing: RatioSpace.s) {
-                Text("Brief · 15 min").ratioFont(.monoLabel)
+                Text("Brief · 15\u{00A0}min").ratioFont(.monoLabel)
                 Text("Today's brief is on its way").ratioFont(.h1)
                 Text("Chosen from yesterday's answers and the reviews that have come due.").ratioFont(.body)
                 RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).fill(Color.ratioSunk).frame(height: 56)
@@ -356,7 +356,7 @@ private struct BriefCard: View {
         let current = student.currentStep(of: brief, content: content)
         VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack(alignment: .firstTextBaseline) {
-                Text("Brief · \(brief.minutes) min").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Text("Brief · \(brief.minutes)\u{00A0}min").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 Spacer(minLength: RatioSpace.xs)
                 RatioTag(topicChip)
             }

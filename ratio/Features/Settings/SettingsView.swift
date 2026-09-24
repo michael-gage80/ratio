@@ -268,7 +268,7 @@ struct SettingsView: View {
     private var accessibility: some View {
         SettingsSection(number: "IV", title: "Accessibility") {
             SettingsToggle("Dyslexia-friendly mode", detail: "Atkinson Hyperlegible, wider spacing", isOn: $dyslexia)
-            SettingsToggle("Extra duel time (30 s)", detail: "Matched with other extra-time players",
+            SettingsToggle("Extra duel time (30\u{00A0}s)", detail: "Matched with other extra-time players",
                            isOn: Binding(get: { extendedSeconds == DuelTime.extended }, set: { extendedSeconds = $0 ? DuelTime.extended : 0 }))
             SettingsToggle("Reduce motion", detail: "Changes without movement", isOn: $reduceMotion)
             SettingsToggle("Haptics", isOn: $haptics)

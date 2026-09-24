@@ -246,7 +246,7 @@ struct DuelView: View {
                     .ratioFont(.small)
                     .foregroundStyle(Color.ratioInk2)
                 if !declined {
-                    Text("\(hours) h left").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Text("\(hours)\u{00A0}h left").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
             }
             .layoutPriority(1)
@@ -310,7 +310,7 @@ struct DuelView: View {
                     .foregroundStyle(Color.ratioInk2)
             }
             Divider().overlay(Color.ratioRule)
-            Text("First to 3 · \(seconds) s a question").ratioFont(.h3)
+            Text("First to 3 · \(seconds)\u{00A0}s a question").ratioFont(.h3)
             RatioButton("Find an opponent →") {
                 if tutorialSeen { showsMatchmaking = true } else { play(scope, level: 1, tutorial: true) }
             }
@@ -508,7 +508,7 @@ private struct MatchmakingView: View {
                     HStack(alignment: .top, spacing: RatioSpace.s) {
                         SparringMark(size: 36)
                         VStack(alignment: .leading, spacing: RatioSpace.s) {
-                            Text(elapsed < 60 ? "No one yet? After 60 s we'll offer a sparring partner, clearly labelled." : "No one's free right now. Spar with a labelled partner instead?")
+                            Text(elapsed < 60 ? "No one yet? After 60\u{00A0}s we'll offer a sparring partner, clearly labelled." : "No one's free right now. Spar with a labelled partner instead?")
                                 .ratioFont(.body)
                             if elapsed >= 60 {
                                 RatioButton("Spar instead →", style: .secondary) { cancel(then: spar) }
@@ -523,7 +523,7 @@ private struct MatchmakingView: View {
             layout {
                 fact("Format", "First to 3")
                 Divider()
-                fact("Per question", "\(seconds) s")
+                fact("Per question", "\(seconds)\u{00A0}s")
                 Divider()
                 fact("Pool", seconds == DuelTime.standard ? "Standard" : "Extra time")
             }

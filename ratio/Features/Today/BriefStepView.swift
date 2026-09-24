@@ -127,9 +127,9 @@ struct BriefStepView: View {
             if done {
                 Label("Done", systemImage: "checkmark").foregroundStyle(Color.ratioVerdigris)
             } else if isCurrent {
-                Text(step.kind == .read ? "Now · \(step.minutes) min" : "Now · \(step.itemIds.count) questions").foregroundStyle(Color.ratioOxblood)
+                Text(step.kind == .read ? "Now · \(step.minutes)\u{00A0}min" : "Now · \(step.itemIds.count) questions").foregroundStyle(Color.ratioOxblood)
             } else {
-                Text("\(step.minutes) min").foregroundStyle(Color.ratioInk2)
+                Text("\(step.minutes)\u{00A0}min").foregroundStyle(Color.ratioInk2)
             }
         }
         .ratioFont(.monoLabel)

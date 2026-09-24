@@ -24,7 +24,7 @@ struct LessonOverviewView: View {
                         .foregroundStyle(Color.ratioInk2)
                     Text(lesson.title).ratioFont(.h1)
                     Text(lesson.subtitle).ratioFont(.h3).foregroundStyle(Color.ratioInk2)
-                    Text("Lecture · \(lesson.parts.count) parts · \(lesson.estimatedMinutes) min / Tests · \(lesson.itemCounts.testServedPerAttempt) items / Law stated as at \(lesson.lawStatedDate)")
+                    Text("Lecture · \(lesson.parts.count) parts · \(lesson.estimatedMinutes)\u{00A0}min / Tests · \(lesson.itemCounts.testServedPerAttempt) items / Law stated as at \(lesson.lawStatedDate)")
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
                     if !lesson.isReviewed {

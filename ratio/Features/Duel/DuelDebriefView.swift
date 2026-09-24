@@ -86,7 +86,7 @@ struct DuelDebriefView: View {
 
             if let chosen = yours.answerIndex {
                 answerRow(correct: yours.correct,
-                          label: yours.correct ? "Correct · you \(seconds(yours.timeMs)) s" : "Not quite · you \(seconds(yours.timeMs)) s",
+                          label: yours.correct ? "Correct · you \(seconds(yours.timeMs))\u{00A0}s" : "Not quite · you \(seconds(yours.timeMs))\u{00A0}s",
                           text: question.options[safe: chosen] ?? "")
             } else {
                 answerRow(correct: false, label: "No answer", text: "Time ran out")

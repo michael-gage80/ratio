@@ -340,10 +340,10 @@ extension DuelRoundModel {
         let youRight = played.you.answerIndex == question.correctIndex
         switch played.winner {
         case 0:
-            return (youRight ? "Your point — \(seconds(played.you.timeMs)) s." : "Your point — \(opponent.isBot ? "your partner" : opponent.name) answered wrong.", true)
+            return (youRight ? "Your point — \(seconds(played.you.timeMs))\u{00A0}s." : "Your point — \(opponent.isBot ? "your partner" : opponent.name) answered wrong.", true)
         case 1:
             let gaveItAway = played.you.answerIndex != nil && !youRight && played.you.timeMs <= played.them.timeMs
-            return (gaveItAway ? "Their point — a wrong answer gives it away." : "Their point — right in \(seconds(played.them.timeMs)) s.", false)
+            return (gaveItAway ? "Their point — a wrong answer gives it away." : "Their point — right in \(seconds(played.them.timeMs))\u{00A0}s.", false)
         default:
             return ("No point — nobody got it in time.", nil)
         }

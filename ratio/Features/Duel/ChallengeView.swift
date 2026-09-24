@@ -46,7 +46,7 @@ final class ChallengeHalfModel: DuelRoundModel {
     func revealMessage(_ played: DuelPlayed, question: DuelQuestion) -> (text: String, good: Bool?) {
         if played.you.answerIndex == nil { return ("Time ran out.", nil) }
         return played.you.answerIndex == question.correctIndex
-            ? ("Right — \(String(format: "%.1f", Double(played.you.timeMs) / 1000)) s.", true)
+            ? ("Right — \(String(format: "%.1f", Double(played.you.timeMs) / 1000))\u{00A0}s.", true)
             : ("Not quite.", false)
     }
 
