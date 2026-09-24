@@ -169,19 +169,30 @@ private struct IRACBuilder: View {
         VStack(alignment: .leading, spacing: 10) {
             slot("Application · the facts that decide it") {
                 if placed.isEmpty {
-                    Text("Tap facts below to place them here.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
+                    Text("Drag or tap facts below to place them here.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
                 }
                 ForEach(placed, id: \.self) { index in
                     chip(index, isPlaced: true)
                 }
             }
+            .dropDestination(for: String.self) { dropped, _ in place(dropped, in: true) }
             if locked == nil && !isChecking {
-                Text("Tray · \(tray.count) chips, \(tray.count - facts.count) decoys").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                ForEach(trayOrder.filter { !placed.contains($0) }, id: \.self) { index in
-                    chip(index, isPlaced: false)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Tray · \(tray.count) chips, \(tray.count - facts.count) decoys").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    ForEach(trayOrder.filter { !placed.contains($0) }, id: \.self) { index in
+                        chip(index, isPlaced: false)
+                    }
                 }
+                .dropDestination(for: String.self) { dropped, _ in place(dropped, in: false) }
             }
         }
+    }
+
+    /// A chip dragged into the application (or back to the tray).
+    private func place(_ dropped: [String], in application: Bool) {
+        guard locked == nil, !isChecking, let index = dropped.first.flatMap(Int.init), tray.indices.contains(index) else { return }
+        if application, !placed.contains(index) { placed.append(index) }
+        if !application { placed.removeAll { $0 == index } }
     }
 
     private func chip(_ index: Int, isPlaced: Bool) -> some View {
@@ -205,6 +216,7 @@ private struct IRACBuilder: View {
         }
         .buttonStyle(.plain)
         .disabled(locked != nil || isChecking)
+        .draggable(String(index)) { Text(tray[index]).ratioFont(.small).padding(10) }
         .accessibilityHint(isPlaced ? "Removes this fact from your application" : "Adds this fact to your application")
         .accessibilityValue(showsOutcome ? (isDecoy ? "Doesn't belong" : "Belongs") : "")
     }
