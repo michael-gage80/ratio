@@ -424,7 +424,7 @@ private struct SortInteraction: View {
                     .padding(.horizontal, RatioSpace.s)
                     .padding(.vertical, RatioSpace.xs)
                     .frame(minHeight: 44)
-                    .foregroundStyle(selected ? Color.ratioOnInk : Color.ratioInk)
+                    .foregroundStyle(selected ? Color.ratioParchment : Color.ratioInk)
                     .background(selected ? Color.ratioInk : Color.ratioSunk, in: Capsule())
             }
             .buttonStyle(.plain)

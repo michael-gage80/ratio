@@ -241,16 +241,20 @@ struct DuelView: View {
         return layout {
             ProfilePhoto(uid: opponent.uid, initial: String(opponent.name.prefix(1)), version: nil, size: 48)
             VStack(alignment: .leading, spacing: RatioSpace.xxs) {
-                Text("\(opponent.name) · \(DuelScope.title(of: challenge.moduleId))").ratioFont(.h3)
-                Text(declined ? status : "\(status) · \(hours) h left")
-                    .ratioFont(.monoLabel)
+                Text(opponent.name).ratioFont(.h3)
+                Text("\(DuelScope.title(of: challenge.moduleId)) · \(status)")
+                    .ratioFont(.small)
                     .foregroundStyle(Color.ratioInk2)
+                if !declined {
+                    Text("\(hours) h left").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                }
             }
+            .layoutPriority(1)
             if !typeSize.isAccessibilitySize { Spacer(minLength: RatioSpace.xs) }
             if myTurn {
                 // Ink with parchment text: flips correctly in dark mode.
                 Button { cover = .challenge(challenge) } label: {
-                    Text("Play").ratioFont(.h3).foregroundStyle(Color.ratioParchment).padding(.horizontal, RatioSpace.m).frame(minHeight: 44)
+                    Text("Play").ratioFont(.h3).fixedSize().foregroundStyle(Color.ratioParchment).padding(.horizontal, RatioSpace.s).frame(minHeight: 44)
                         .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                 }
                 .buttonStyle(.ratioPress)
@@ -258,7 +262,7 @@ struct DuelView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, RatioSpace.s)
-        .padding(.horizontal, RatioSpace.m)
+        .padding(.horizontal, RatioSpace.s)
         .background(Color.ratioPaper)
     }
 

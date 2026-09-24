@@ -19,7 +19,7 @@ public struct RatioToggle: View {
             Toggle(isOn: $isOn) {
                 Text(title).ratioFont(.body)
             }
-            .tint(.ratioInk)
+            .tint(.ratioControl)
             if let caption {
                 Text(caption)
                     .ratioFont(.caption)

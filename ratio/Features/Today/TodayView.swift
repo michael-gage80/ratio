@@ -325,7 +325,8 @@ private struct WeeklyBoardSummary: View {
     var body: some View {
         HStack(spacing: RatioSpace.s) {
             VStack(alignment: .leading, spacing: RatioSpace.xs) {
-                Text("This week's board · Everyone").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                // Full ink at 80%: the muted grey falls below 4.5:1 on the ochre wash.
+                Text("This week's board · Everyone").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk.opacity(0.8))
                 if let entry, entry.wins > 0 {
                     Text("\(rank.map { "\($0.formatted(.number))\(Ordinal.suffix($0)) · " } ?? "")\(Text("\(entry.wins) \(entry.wins == 1 ? "win" : "wins") in human duels").italic())")
                         .ratioFont(.h3)
@@ -334,7 +335,7 @@ private struct WeeklyBoardSummary: View {
                 }
             }
             Spacer(minLength: RatioSpace.xs)
-            Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2)
+            Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk.opacity(0.8))
         }
         .task(id: student.matches.count) {
             entry = await BoardService.entry(.weekly, uid: student.uid)
@@ -508,7 +509,7 @@ private struct TourOverlay: View {
                 Button(action: next) {
                     Text(stop == .more ? "Done" : "Next →")
                         .ratioFont(.h3)
-                        .foregroundStyle(Color.ratioOnInk)
+                        .foregroundStyle(Color.ratioParchment)
                         .padding(.horizontal, RatioSpace.m)
                         .frame(minHeight: 48)
                         .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))

@@ -549,7 +549,7 @@ private struct SettingsToggle: View {
                     if let detail { Text(detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2) }
                 }
             }
-            .tint(Color.ratioInk)
+            .tint(Color.ratioControl)
             .padding(.vertical, RatioSpace.s)
             Divider().overlay(Color.ratioRule)
         }

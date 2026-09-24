@@ -118,8 +118,11 @@ struct RatioPageHeader<Trailing: View>: View {
                 Text(eyebrow).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }
             HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
+                // A one-word display title shrinks to fit rather than break mid-word.
                 Text("\(title)\(Text(".").foregroundStyle(Color.ratioOxblood))")
                     .ratioFont(.display)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
                     .accessibilityAddTraits(.isHeader)
                     .accessibilityLabel(title)
                 Spacer(minLength: 0)

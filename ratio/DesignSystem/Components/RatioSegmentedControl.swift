@@ -7,6 +7,7 @@ import SwiftUI
 public struct RatioSegmentedControl<T: Hashable>: View {
     private let options: [(value: T, label: String)]
     @Binding private var selection: T
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     public init(options: [(value: T, label: String)], selection: Binding<T>) {
         self.options = options
@@ -14,14 +15,15 @@ public struct RatioSegmentedControl<T: Hashable>: View {
     }
 
     public var body: some View {
-        HStack(spacing: RatioSpace.xxs) {
+        // Stacked at accessibility sizes, so labels never break mid-word.
+        (typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: RatioSpace.xxs)) : AnyLayout(HStackLayout(spacing: RatioSpace.xxs))) {
             ForEach(options, id: \.value) { option in
                 let isSelected = option.value == selection
                 Button {
                     withAnimation(RatioMotion.tap) { selection = option.value }
                 } label: {
                     Text(option.label)
-                        .ratioFont(.h3)
+                        .ratioFont(.body)
                         .foregroundStyle(isSelected ? Color.ratioInk : Color.ratioInk2)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity, minHeight: 44)

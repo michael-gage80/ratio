@@ -230,7 +230,10 @@ struct BoardsView: View {
     /// Daily, weekly, monthly: a solid paper track with the chosen period in ink
     /// (screens/41-boards.png).
     private func picker<Option: Identifiable & Hashable>(_ options: [Option], selection: Binding<Option>, title: @escaping (Option) -> String) -> some View {
-        HStack(spacing: RatioSpace.xxs) {
+        // Stacked at accessibility sizes, so words never break mid-way.
+        let stacked = typeSize.isAccessibilitySize
+        let shape = RoundedRectangle(cornerRadius: stacked ? RatioRadius.panel : 100, style: .continuous)
+        return (stacked ? AnyLayout(VStackLayout(spacing: RatioSpace.xxs)) : AnyLayout(HStackLayout(spacing: RatioSpace.xxs))) {
             ForEach(options) { option in
                 let selected = selection.wrappedValue == option
                 Button {
@@ -242,16 +245,16 @@ struct BoardsView: View {
                         .frame(maxWidth: .infinity, minHeight: 44)
                         // Parchment on ink flips with the theme (ink turns light in dark mode).
                         .foregroundStyle(selected ? Color.ratioParchment : Color.ratioInk)
-                        .background(selected ? Color.ratioInk : Color.clear, in: Capsule())
-                        .contentShape(Capsule())
+                        .background(selected ? Color.ratioInk : Color.clear, in: shape)
+                        .contentShape(shape)
                 }
                 .buttonStyle(.plain)
                 .accessibilityAddTraits(selected ? .isSelected : [])
             }
         }
         .padding(RatioSpace.xxs)
-        .background(Color.ratioPaper, in: Capsule())
-        .overlay(Capsule().strokeBorder(Color.ratioRule))
+        .background(Color.ratioPaper, in: shape)
+        .overlay(shape.strokeBorder(Color.ratioRule))
     }
 
     private func empty(_ text: String) -> some View {
@@ -425,7 +428,7 @@ private struct BoardRow: View {
                         Text("\(rank)").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
                         Text(entry.name).ratioFont(.h3)
                     }
-                    Text("\(university(entry)) · \(entry.wins) \(entry.wins == 1 ? "win" : "wins") · \(entry.rating.formatted())")
+                    Text([university(entry), "\(entry.wins) \(entry.wins == 1 ? "win" : "wins")", entry.rating.formatted()].filter { !$0.isEmpty }.joined(separator: " · "))
                         .ratioFont(.monoData)
                         .foregroundStyle(Color.ratioInk2)
                 }

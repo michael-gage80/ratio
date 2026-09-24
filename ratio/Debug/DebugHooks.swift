@@ -46,7 +46,7 @@ enum DebugHooks {
     @MainActor
     static func open(_ navigator: AppNavigator) {
         guard let screen else { return }
-        let lesson = "crime-03-intention"
+        let lesson = "crime-03"
         switch screen {
         case "lessons": navigator.tab = .pathway
         case "overview": navigator.tab = .pathway; navigator.pathwayPath = [.overview(lesson)]

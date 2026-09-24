@@ -39,6 +39,9 @@ public extension Color {
     static let ratioVWash = Color("VWash", bundle: .main)
     /// Avatar fill only (#946518 · dark #D9A24A).
     static let ratioOchre = Color("Ochre", bundle: .main)
+    /// Switches and other "on" controls: ink, deep oxblood in dark mode so the track
+    /// stays distinct from the white thumb (#1D1B18 · dark #9B2A24).
+    static let ratioControl = Color("Control", bundle: .main)
     /// The streak block on Today, with `ratioOnInk` text (#1F4D36 both appearances).
     static let ratioForest = Color("Forest", bundle: .main)
     /// The Duel block on Today, with `ratioOnInk` text: ink, deep oxblood in dark (#1D1B18 · dark #9B2A24).
