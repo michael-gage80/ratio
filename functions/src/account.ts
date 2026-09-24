@@ -10,7 +10,7 @@ import { logger } from "firebase-functions";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
 import { londonDate } from "./brief.js";
 import { MODULES } from "./content.js";
-import { FREE_DUELS_PER_DAY, isPlus } from "./entitlement.js";
+import { everyoneHasPlus, FREE_DUELS_PER_DAY, isPlus } from "./entitlement.js";
 
 /** What reset clears and delete removes, under users/{uid}. */
 const PROGRESS = ["skills", "items", "lessons", "testAttempts", "briefs", "activity"];
@@ -138,6 +138,7 @@ export const redeemLicence = onCall<{ code?: string }>(async (request) => {
 
 /** Whether the student can start another duel today (without counting one). */
 export async function checkDuel(uid: string): Promise<void> {
+  if (await everyoneHasPlus()) return;
   const db = getFirestore();
   const [user, usage] = await db.getAll(db.doc(`users/${uid}`), db.doc(`users/${uid}/usage/${londonDate(new Date())}`));
   if (!isPlus(user.data()) && ((usage.get("duels") as number | undefined) ?? 0) >= FREE_DUELS_PER_DAY) {
@@ -150,13 +151,14 @@ export async function checkDuel(uid: string): Promise<void> {
  * free, unlimited with Plus). Tutorials never call this.
  */
 export async function countDuel(uid: string): Promise<void> {
+  const everyone = await everyoneHasPlus();
   const db = getFirestore();
   const userRef = db.doc(`users/${uid}`);
   const usageRef = userRef.collection("usage").doc(londonDate(new Date()));
   await db.runTransaction(async (tx) => {
     const [user, usage] = await tx.getAll(userRef, usageRef);
     const duels = (usage.get("duels") as number | undefined) ?? 0;
-    if (!isPlus(user.data()) && duels >= FREE_DUELS_PER_DAY) {
+    if (!everyone && !isPlus(user.data()) && duels >= FREE_DUELS_PER_DAY) {
       throw new HttpsError("resource-exhausted", `Free plans include ${FREE_DUELS_PER_DAY} duels a day. Ratio Plus makes them unlimited.`, { reason: "free-limit" });
     }
     tx.set(usageRef, { duels: duels + 1 }, { merge: true });

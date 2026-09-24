@@ -297,6 +297,7 @@ struct SettingsView: View {
 
     private var planTitle: String {
         if !student.isPlus { return "Free" }
+        if student.plusForEveryone && profile.subscription == nil && profile.licence == nil { return "Ratio Plus · Beta" }
         if let subscription = profile.subscription, subscription.expiresAt > .now {
             return "Ratio Plus · \(subscription.plan == "annual" ? "Annual" : "Monthly")"
         }
