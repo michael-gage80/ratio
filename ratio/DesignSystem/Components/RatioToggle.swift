@@ -15,7 +15,7 @@ public struct RatioToggle: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 2) {
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
             Toggle(isOn: $isOn) {
                 Text(title).ratioFont(.body)
             }
@@ -47,7 +47,7 @@ public struct RatioStepper: View {
         HStack {
             Text(title).ratioFont(.body)
             Spacer()
-            HStack(spacing: 14) {
+            HStack(spacing: RatioSpace.s) {
                 Button {
                     if value > range.lowerBound { value -= 1 }
                 } label: {

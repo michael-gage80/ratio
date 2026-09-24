@@ -14,17 +14,18 @@ public struct RatioSegmentedControl<T: Hashable>: View {
     }
 
     public var body: some View {
-        HStack(spacing: 2) {
+        HStack(spacing: RatioSpace.xxs) {
             ForEach(options, id: \.value) { option in
                 let isSelected = option.value == selection
                 Button {
-                    withAnimation(.easeInOut(duration: 0.18)) { selection = option.value }
+                    withAnimation(RatioMotion.tap) { selection = option.value }
                 } label: {
                     Text(option.label)
                         .ratioFont(.h3)
                         .foregroundStyle(isSelected ? Color.ratioInk : Color.ratioInk2)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 8)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .padding(.horizontal, RatioSpace.xxs)
                         .background {
                             if isSelected {
                                 RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous)
@@ -37,7 +38,7 @@ public struct RatioSegmentedControl<T: Hashable>: View {
                 .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
             }
         }
-        .padding(3)
+        .padding(RatioSpace.xxs)
         .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
     }
 }

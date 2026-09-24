@@ -20,7 +20,7 @@ public struct RatioTextField: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text(label).ratioFont(.monoLabel)
             Group {
                 if isSecure {
@@ -32,8 +32,7 @@ public struct RatioTextField: View {
                 }
             }
             .ratioFont(.body)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 14)
+            .padding(RatioSpace.s)
             .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
