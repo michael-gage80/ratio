@@ -11,7 +11,7 @@ struct LessonOverviewView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 28) {
-                RatioSpotArt.for(lesson.moduleId).view
+                ModuleIllustration(module: lesson.moduleId)
                     .foregroundStyle(Color.ratioInk)
                     .frame(height: 130)
                     .frame(maxWidth: .infinity)

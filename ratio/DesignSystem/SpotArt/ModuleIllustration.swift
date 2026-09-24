@@ -54,13 +54,13 @@ private struct HandcuffsGavelShape: Shape {
             g.arc(pt(x, 0), 0.02, 0.075, from: -90, to: 90)
         }
         // Shade along the underside of the head
-        g.hatch([pt(-0.17, 0.03), pt(0.21, 0.03), pt(0.21, 0.075), pt(-0.17, 0.075)], spacing: 0.032, angle: .degrees(90))
+        g.hatch([pt(-0.17, 0.025), pt(0.2, 0.025), pt(0.2, 0.075), pt(-0.17, 0.075)], spacing: 0.022, inset: 0.012)
         // Handle, with a shade line and a rounded end
         g.polyline([pt(-0.022, 0.075), pt(-0.022, 0.44)])
         g.polyline([pt(0.022, 0.075), pt(0.022, 0.44)])
         g.polyline([pt(0.008, 0.11), pt(0.008, 0.42)])
         g.arc(pt(0, 0.44), 0.022, 0.02, from: 0, to: 180)
-        p.addPath(g, transform: CGAffineTransform(translationX: 0.38, y: 0.24).rotated(by: -.pi / 4))
+        p.addPath(g, transform: CGAffineTransform(translationX: 0.38, y: 0.26).rotated(by: -.pi / 4))
         // Handcuffs: two cuffs, each a band with radial shade on its lower right
         for c in [pt(0.24, 0.74), pt(0.72, 0.74)] {
             p.circle(c, 0.13)
@@ -134,8 +134,7 @@ private struct SnailBottleShape: Shape {
         // Liquid level
         p.polyline([pt(0.27, 0.5), pt(0.73, 0.5)])
         // Shade down the left of the body
-        p.hatch([pt(0.27, 0.52), pt(0.33, 0.52), pt(0.33, 0.7), pt(0.27, 0.7)], spacing: 0.032, inset: 0.01)
-        p.hatch([pt(0.3, 0.37), pt(0.36, 0.33), pt(0.36, 0.48), pt(0.27, 0.48), pt(0.27, 0.42)], spacing: 0.032, inset: 0.01)
+        p.hatch([pt(0.27, 0.4), pt(0.33, 0.35), pt(0.33, 0.87), pt(0.27, 0.87)], spacing: 0.022, angle: .degrees(90), inset: 0.02)
         // Snail: spiral shell over a foot, head and eye stalks to the left
         let shell = pt(0.57, 0.73)
         p.polyline((0...90).map { i -> CGPoint in
@@ -187,13 +186,13 @@ private struct PortcullisShape: Shape {
         for side in [-1.0, 1.0] as [CGFloat] {
             let x = { (u: CGFloat) in 0.5 + side * (u - 0.5) }
             p.circle(pt(x(0.25), 0.27), 0.02)
-            let start = pt(x(0.235), 0.29), c1 = pt(x(0.1), 0.34), c2 = pt(x(0.08), 0.62), end = pt(x(0.2), 0.9)
-            let n = 15
+            let start = pt(x(0.235), 0.29), c1 = pt(x(0.12), 0.34), c2 = pt(x(0.1), 0.62), end = pt(x(0.22), 0.86)
+            let n = 14
             for i in 0...n {
                 let t = CGFloat(i) / CGFloat(n)
                 let (q, tangent) = cubic(start, c1, c2, end, t)
-                let link = i.isMultiple(of: 2) ? Path(ellipseIn: CGRect(x: -0.02, y: -0.011, width: 0.04, height: 0.022))
-                                                : Path(CGRect(x: -0.018, y: -0.003, width: 0.036, height: 0.006))
+                let link = i.isMultiple(of: 2) ? Path(ellipseIn: CGRect(x: -0.02, y: -0.012, width: 0.04, height: 0.024))
+                                                : Path(ellipseIn: CGRect(x: -0.02, y: -0.005, width: 0.04, height: 0.01))
                 p.addPath(link, transform: CGAffineTransform(translationX: q.x, y: q.y).rotated(by: atan2(tangent.y, tangent.x)))
             }
         }
@@ -217,9 +216,9 @@ private struct BoundaryMapKeyShape: Shape {
         // Compass: ring and a north needle, one half shaded
         let c = pt(0.61, 0.2)
         p.circle(c, 0.045)
-        p.closedPolygon([pt(0.61, 0.11), pt(0.625, 0.2), pt(0.61, 0.29), pt(0.595, 0.2)])
-        p.polyline([pt(0.61, 0.13), pt(0.61, 0.2)])
-        p.polyline([pt(0.598, 0.1), pt(0.598, 0.07), pt(0.622, 0.1), pt(0.622, 0.07)])
+        p.closedPolygon([pt(0.61, 0.13), pt(0.625, 0.2), pt(0.61, 0.27), pt(0.595, 0.2)])
+        p.polyline([pt(0.61, 0.145), pt(0.61, 0.2)])
+        p.polyline([pt(0.598, 0.115), pt(0.598, 0.085), pt(0.622, 0.115), pt(0.622, 0.085)])
         // Key, drawn level from its bow leftwards, then tilted
         var k = Path()
         k.circle(.zero, 0.1)
@@ -414,8 +413,7 @@ private struct ColumnScrollShape: Shape {
         // Shaft: slight taper, fluting, heavier shade on the right
         p.polyline([pt(0.2, 0.24), pt(0.21, 0.78)])
         p.polyline([pt(0.4, 0.24), pt(0.39, 0.78)])
-        for x in [0.26, 0.3, 0.34] as [CGFloat] { p.polyline([pt(x, 0.26), pt(x, 0.76)]) }
-        p.hatch([pt(0.355, 0.26), pt(0.39, 0.26), pt(0.382, 0.76), pt(0.355, 0.76)], spacing: 0.034, inset: 0.008)
+        for x in [0.25, 0.29, 0.33, 0.355, 0.375] as [CGFloat] { p.polyline([pt(x, 0.26), pt(x, 0.76)]) }
         // Base: torus and plinth
         p.rect(0.18, 0.78, 0.24, 0.04)
         p.rect(0.13, 0.82, 0.34, 0.06)

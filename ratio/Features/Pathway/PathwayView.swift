@@ -239,7 +239,7 @@ private struct ModuleCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            RatioSpotArt.for(module).view
+            ModuleIllustration(module: module)
                 .frame(height: 96)
                 .frame(maxWidth: .infinity)
                 .padding(.top, 8)

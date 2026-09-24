@@ -29,25 +29,6 @@ public enum RatioSpotArt: CaseIterable {
     }
 
     static let strokeStyle = StrokeStyle(lineWidth: 1.4, lineCap: .round, lineJoin: .round)
-
-    /// The icon for a module on the Pathway module rail.
-    static func `for`(_ module: Module) -> RatioSpotArt {
-        switch module {
-        case .crime: .scales
-        case .publicLaw: .pediment
-        case .contract: .quill
-        case .tort: .bottle
-        case .landLaw: .openBook
-        case .equityTrusts: .seal
-        // Placeholders until the illustrator draws their own.
-        case .companyLaw: .quill
-        case .euLaw: .pediment
-        case .humanRights: .scales
-        case .jurisprudence: .openBook
-        case .employmentLaw: .quill
-        case .familyLaw: .seal
-        }
-    }
 }
 
 // MARK: - Shapes
