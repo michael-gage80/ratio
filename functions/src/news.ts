@@ -89,6 +89,8 @@ const MODULE_KEYWORDS: Record<string, RegExp> = {
   companylaw: /\b(compan(y|ies)|directors?|shareholders?|insolven\w*|liquidat\w*|administrators?|companies house|corporate|takeover\w*)\b/i,
   eulaw: /\b(eu|european union|brexit|windsor framework|cjeu|european court of justice|retained eu law|assimilated law|trade and cooperation agreement)\b/i,
   humanrights: /\b(human rights|echr|european court of human rights|strasbourg|article (2|3|5|6|8|9|10|11|14)\b|convention rights|freedom of expression|right to (life|privacy|a fair trial))\b/i,
+  employmentlaw: /\b(employment tribunal|unfair dismissal|dismiss\w*|redundanc\w*|whistleblow\w*|minimum wage|equal pay|workers?' rights|employment rights|gig economy|zero-hours|trade unions?|strike action)\b/i,
+  familylaw: /\b(divorce|family court|custody|child arrangements|care proceedings|adoption|domestic abuse|cohabit\w*|marriage|civil partnership|financial remedies|prenup\w*)\b/i,
   equity: /\b(trust|trusts|trustee\w*|charit\w*|fiduciar\w*|probate|inheritance|wills|testator\w*|estate of|beneficiar\w*)\b/i,
 };
 
