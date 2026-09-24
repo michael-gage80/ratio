@@ -22,6 +22,15 @@ service cloud.firestore {
       allow read: if request.auth != null;
     }
 
+    // The news centre and the Sunday quiz — written by the ingest Function and the admin
+    // script; readable by any signed-in student.
+    match /news/{storyId} {
+      allow read: if request.auth != null;
+    }
+    match /quizzes/{sunday} {
+      allow read: if request.auth != null;
+    }
+
     // Boards — written only when Functions settle a human match; any signed-in student
     // can read them (PRD: "Boards ... written only by Functions").
     match /boards/{period}/entries/{uid} {

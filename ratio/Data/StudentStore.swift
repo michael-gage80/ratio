@@ -29,6 +29,10 @@ final class StudentStore {
     private(set) var challenges: [ChallengeSummary] = []
     /// Students this student has duelled, for the Friends board.
     private(set) var friends: [String] = []
+    /// UK legal news from the last 7 days, newest first.
+    private(set) var news: [NewsStory] = []
+    /// This week's Sunday quiz, from its Sunday for seven days.
+    private(set) var quiz: SundayQuiz?
 
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
     @ObservationIgnored private var briefListener: ListenerRegistration?
@@ -88,6 +92,23 @@ final class StudentStore {
                     self?.matches = snapshot.documents.compactMap { document in
                         (try? document.data(as: MatchSummary.self)).map { var match = $0; match.id = document.documentID; return match }
                     }
+                },
+            Firestore.firestore().collection("news")
+                .whereField("publishedAt", isGreaterThan: Timestamp(date: .now.addingTimeInterval(-7 * 86_400)))
+                .order(by: "publishedAt", descending: true)
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    guard let snapshot else { return }
+                    self?.news = snapshot.documents.compactMap { document in
+                        (try? document.data(as: NewsStory.self)).map { var story = $0; story.id = document.documentID; return story }
+                    }
+                },
+            Firestore.firestore().collection("quizzes")
+                .whereField("sunday", isLessThanOrEqualTo: UKDate.key())
+                .order(by: "sunday", descending: true).limit(to: 1)
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    let latest = snapshot?.documents.first.flatMap { try? $0.data(as: SundayQuiz.self) }
+                    let weekAgo = UKDate.key(for: .now.addingTimeInterval(-6 * 86_400))
+                    self?.quiz = latest.flatMap { $0.sunday >= weekAgo ? $0 : nil }
                 },
             user.collection("friends").addSnapshotListener { [weak self] snapshot, _ in
                 guard let snapshot else { return }
@@ -275,6 +296,55 @@ nonisolated struct ChallengeSummary: Decodable, Identifiable {
 
     private enum CodingKeys: String, CodingKey {
         case players, names, moduleId, limitMs, done, expiresAt, createdAt
+    }
+}
+
+/// `news/{id}`: a headline and link (never article text), with an optional hand-written note.
+nonisolated struct NewsStory: Decodable, Identifiable, Equatable {
+    var id = ""
+    var sourceId: String
+    var source: String
+    var title: String
+    var url: String
+    var publishedAt: Date
+    var modules: [String]
+    var whyItMatters: WhyItMatters?
+
+    var link: URL? { URL(string: url) }
+
+    nonisolated struct WhyItMatters: Decodable, Equatable {
+        var text: String
+        var lessonId: String
+        var lessonTitle: String
+        var moduleId: String
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case sourceId, source, title, url, publishedAt, modules, whyItMatters
+    }
+}
+
+/// `quizzes/{sunday}`: the weekly current-affairs quiz (PRD: "7 questions based on the week's stories").
+nonisolated struct SundayQuiz: Decodable, Equatable {
+    var sunday: String
+    var questions: [Question]
+
+    nonisolated struct Question: Decodable, Equatable {
+        var prompt: String
+        var options: [String]
+        var correctIndex: Int
+        var explanation: String
+        var story: Story
+    }
+
+    nonisolated struct Story: Decodable, Equatable {
+        var id: String
+        var title: String
+        var source: String
+        var url: String
+        var whyItMatters: NewsStory.WhyItMatters?
+
+        var link: URL? { URL(string: url) }
     }
 }
 

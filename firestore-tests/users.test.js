@@ -298,6 +298,20 @@ describe('boards', () => {
   });
 });
 
+describe('news and the Sunday quiz', () => {
+  test('are readable when signed in and written by no client', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'news/s1'), { title: 'Headline' });
+      await setDoc(doc(ctx.firestore(), 'quizzes/2026-09-27'), { sunday: '2026-09-27' });
+    });
+    await assertSucceeds(getDoc(doc(db('amara'), 'news/s1')));
+    await assertSucceeds(getDoc(doc(db('amara'), 'quizzes/2026-09-27')));
+    await assertFails(getDoc(doc(db(null), 'news/s1')));
+    await assertFails(setDoc(doc(db('amara'), 'news/s2'), { title: 'Fake news' }));
+    await assertFails(setDoc(doc(db('amara'), 'quizzes/2026-10-04'), { sunday: '2026-10-04' }));
+  });
+});
+
 describe('lesson progress', () => {
   const progress = (uid, lessonId = 'crime-03') => doc(db(uid), `users/${uid}/lessons/${lessonId}`);
 

@@ -178,14 +178,35 @@ struct TodayView: View {
         .buttonStyle(.plain)
     }
 
+    /// The top story — or, on Sundays, the weekly quiz (PRD: "On Sundays it shows the weekly quiz instead").
     private var newsCard: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("The week in law · Soon").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            Text("Headlines from the courts, with why they matter for your modules.").ratioFont(.h3)
+        Button { navigator.todayPath.append(.news) } label: {
+            VStack(alignment: .leading, spacing: 10) {
+                let isSunday = UKDate.calendar.component(.weekday, from: .now) == 1
+                if isSunday, let quiz = student.quiz {
+                    Text("Sunday quiz · The week in law").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Text("\(quiz.questions.count) questions on this week's stories.").ratioFont(.h3)
+                } else if let story = student.news.first(where: { $0.whyItMatters != nil }) ?? student.news.first {
+                    HStack(alignment: .top) {
+                        Text("The week in law · \(story.source) · \(story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow)))")
+                            .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        Spacer()
+                        Image(systemName: "arrow.up.right").foregroundStyle(Color.ratioInk2)
+                    }
+                    Text(story.title).ratioFont(.h3).multilineTextAlignment(.leading)
+                    if let why = story.whyItMatters, let module = Module(rawValue: why.moduleId) {
+                        RatioTag("Why it matters · \(module.title)", style: .tint(.ratioOxblood))
+                    }
+                } else {
+                    Text("The week in law").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Text("Headlines from the courts, with why they matter for your modules.").ratioFont(.h3)
+                }
+            }
+            .padding(18)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .todayCard()
         }
-        .padding(18)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .todayCard()
+        .buttonStyle(.plain)
     }
 
     // MARK: Tour
@@ -384,7 +405,7 @@ enum TourStop: Int, CaseIterable {
         switch self {
         case .brief: "12 to 20 minutes. Rebuilt each night from yesterday's answers and the reviews that have come due."
         case .streak: "The target is \(Streak.target) active days a week. A missed day costs nothing; only the week counts."
-        case .more: "Duel other students, see where you stand on this week's board, and catch up on the law. The news centre arrives in a later build."
+        case .more: "Duel other students, see where you stand on this week's board, and catch up on the week in law — with a quiz on Sundays."
         }
     }
 }
