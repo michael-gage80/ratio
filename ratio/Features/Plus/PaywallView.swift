@@ -30,6 +30,7 @@ struct PaywallView: View {
                             .background(Color.ratioSunk, in: Circle())
                     }
                     .buttonStyle(.ratioPress)
+                    .keyboardShortcut(.cancelAction)
                     .accessibilityLabel("Close")
                 }
                 VStack(alignment: .leading, spacing: RatioSpace.xs) {
@@ -82,6 +83,9 @@ struct PaywallView: View {
             .padding(RatioSpace.m)
         }
         .ratioPage()
+        .ratioMeasuresWidth()
+        // iPad: a centred form sheet over the app (screens/iPad/2-today-and-brief/07).
+        .presentationSizing(.form)
         .task { if purchases.products.isEmpty { await purchases.loadProducts() } }
         .onChange(of: student.isPlus) { _, isPlus in if isPlus { dismiss() } }
         .sheet(isPresented: $enteringCode) { LicenceCodeSheet().presentationDetents([.medium]) }

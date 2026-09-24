@@ -37,6 +37,8 @@ struct WelcomeView: View {
             footer
         }
         .padding(.horizontal, RatioSpace.m)
+        // iPad: a centred column, the size of a phone's (screens/iPad/1-onboarding/02).
+        .frame(maxWidth: 520)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ratioPage()
         .disabled(session.isWorking)

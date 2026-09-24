@@ -46,6 +46,7 @@ struct VerifyEmailView: View {
         }
         .padding(RatioSpace.m)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .ratioReadableWidth(560)
         .ratioPage()
         .onChange(of: scenePhase) { _, phase in
             if phase == .active {

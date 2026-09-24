@@ -7,6 +7,8 @@ import SwiftUI
 struct UniversityStep: View {
     let model: OnboardingModel
 
+    @Environment(\.ratioWidth) private var width
+
     private enum Choice: Equatable {
         case listed(String)
         case other
@@ -79,11 +81,23 @@ struct UniversityStep: View {
                 .ratioFont(.small)
                 .foregroundStyle(Color.ratioInk2)
         } else {
-            LazyVStack(spacing: 0) {
-                ForEach(matches) { university in
-                    universityRow(university)
-                    if university.id != matches.last?.id {
-                        Divider().overlay(Color.ratioRule)
+            Group {
+                if width.isCompact {
+                    LazyVStack(spacing: 0) {
+                        ForEach(matches) { university in
+                            universityRow(university)
+                            if university.id != matches.last?.id {
+                                Divider().overlay(Color.ratioRule)
+                            }
+                        }
+                    }
+                } else {
+                    // iPad: two columns of universities (screens/iPad/1-onboarding/05).
+                    LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 0) {
+                        ForEach(matches) { university in
+                            universityRow(university)
+                                .overlay(alignment: .bottom) { Divider().overlay(Color.ratioRule) }
+                        }
                     }
                 }
             }

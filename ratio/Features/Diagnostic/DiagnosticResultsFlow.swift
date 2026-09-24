@@ -67,10 +67,12 @@ struct DiagnosticResultsFlow: View {
                     RatioButton("See your profile →", style: .secondary, isEnabled: headline != nil && completedSteps == steps.count) {
                         withAnimation(RatioMotion.reveal) { showsProfile = true }
                     }
+                    .keyboardShortcut(.return, modifiers: .command)
                 }
             }
         }
         .padding(RatioSpace.m)
+        .frame(maxWidth: 560)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ratioPage()
         // A dark full-screen moment whatever the phone's appearance.
@@ -106,10 +108,40 @@ struct FirstProfileView: View {
     let headline: Headline
     let onContinue: () -> Void
 
+    @Environment(\.ratioWidth) private var width
+
     var body: some View {
-        let archetype = Archetype(headline)
         ScrollView {
-            VStack(alignment: .leading, spacing: RatioSpace.m) {
+            Group {
+                if width.isCompact {
+                    VStack(alignment: .leading, spacing: RatioSpace.m) {
+                        summary
+                        chart
+                    }
+                } else {
+                    // iPad: the archetype on the left, the chart beside it.
+                    ColumnsLayout(fraction: 0.5, spacing: RatioSpace.xl) {
+                        summary
+                        chart
+                    }
+                }
+            }
+            .padding(RatioSpace.m)
+            .ratioReadableWidth(1000)
+        }
+        .safeAreaInset(edge: .bottom) {
+            RatioButton("Enter chambers", action: onContinue)
+                .keyboardShortcut(.return, modifiers: .command)
+                .padding(RatioSpace.m)
+                .ratioReadableWidth(560)
+                .background(Color.ratioParchment)
+        }
+        .ratioPage()
+    }
+
+    private var summary: some View {
+        let archetype = Archetype(headline)
+        return VStack(alignment: .leading, spacing: RatioSpace.m) {
                 HStack(alignment: .top) {
                     RatioTag("Hypothesis · First profile", style: .tint(.ratioOxblood))
                     Spacer()
@@ -121,7 +153,11 @@ struct FirstProfileView: View {
                     .ratioFont(.display)
                 Text(archetype.summary)
                     .ratioFont(.h3)
+        }
+    }
 
+    private var chart: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.m) {
                 ProfileTriangle(headline: headline, highlight: Archetype.growthEdge(headline))
                     .padding(.horizontal, RatioSpace.s)
 
@@ -143,14 +179,6 @@ struct FirstProfileView: View {
                         .multilineTextAlignment(.center)
                 }
                 .frame(maxWidth: .infinity)
-            }
-            .padding(RatioSpace.m)
         }
-        .safeAreaInset(edge: .bottom) {
-            RatioButton("Enter chambers", action: onContinue)
-                .padding(RatioSpace.m)
-                .background(Color.ratioParchment)
-        }
-        .ratioPage()
     }
 }

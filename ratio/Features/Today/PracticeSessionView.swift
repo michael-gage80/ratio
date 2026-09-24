@@ -45,14 +45,20 @@ struct PracticeSessionView: View {
                         ItemInteractionView(item: current.item, lockedResponse: locked, context: context(for: current)) { locked = $0 }
                             .id(current.item.id)
                         if let locked {
-                            RatioButton(responses.count + 1 == items.count ? "Finish" : "Continue", style: .secondary) {
-                                responses.append(locked)
-                                self.locked = nil
-                                if responses.count == items.count { Task { await submit() } }
+                            HStack(spacing: RatioSpace.s) {
+                                RatioButton(responses.count + 1 == items.count ? "Finish" : "Continue", style: .secondary) {
+                                    responses.append(locked)
+                                    self.locked = nil
+                                    if responses.count == items.count { Task { await submit() } }
+                                }
+                                .keyboardShortcut(.return, modifiers: .command)
+                                KeyHint(keys: "⌘↩", label: "Continue")
                             }
                         }
                     }
                     .padding(RatioSpace.m)
+                    // iPad: one readable column.
+                    .ratioReadableWidth(760)
                 }
                 .holdsStillWhileReordering()
                 .scrollDismissesKeyboard(.interactively)
@@ -63,6 +69,7 @@ struct PracticeSessionView: View {
         }
         .animation(RatioMotion.reveal, value: responses.count)
         .ratioPage()
+        .ratioMeasuresWidth()
         .ratioFeedback(trigger: locked) { _, response in
             guard let response, let item = current?.item else { return nil }
             return item.isCorrect(response) ? .success : .error
@@ -78,6 +85,7 @@ struct PracticeSessionView: View {
             RatioIconButton(systemImage: "xmark", label: "Close") {
                 if !responses.isEmpty && !submitted { confirmingLeave = true } else { dismiss() }
             }
+            .keyboardShortcut(.cancelAction)
             HStack(spacing: RatioSpace.xxs) {
                 ForEach(items.indices, id: \.self) { index in
                     Capsule()

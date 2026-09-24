@@ -6,6 +6,7 @@ import SwiftUI
 struct NewsCentreView: View {
     @Environment(StudentStore.self) private var student
     @Environment(AppNavigator.self) private var navigator
+    @Environment(\.ratioWidth) private var width
     @State private var module: Module?
     @State private var takingQuiz = false
 
@@ -34,14 +35,13 @@ struct NewsCentreView: View {
                         actionTitle: module == nil ? nil : "Show all modules") { module = nil }
                 } else {
                     Text("From the week · Headline and link only").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    ForEach(days, id: \.title) { day in
-                        VStack(alignment: .leading, spacing: 0) {
-                            Text(day.title).ratioFont(.h2).italic()
-                            Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, RatioSpace.xs)
-                            ForEach(day.stories) { story in
-                                StoryRow(story: story) { open(lesson: $0) }
-                                Divider().overlay(Color.ratioRule)
-                            }
+                    if width.isCompact {
+                        ForEach(days, id: \.title) { day in dayGroup(day) }
+                    } else {
+                        // iPad: the days side by side, like a newspaper's columns.
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: RatioSpace.m, alignment: .top), count: 3),
+                                  alignment: .leading, spacing: RatioSpace.m) {
+                            ForEach(days, id: \.title) { day in dayGroup(day) }
                         }
                     }
                 }
@@ -57,7 +57,18 @@ struct NewsCentreView: View {
         // No back button: swipe from the left edge to go back.
         .toolbar(.hidden, for: .navigationBar)
         .fullScreenCover(isPresented: $takingQuiz) {
-            if let quiz = student.quiz { QuizView(quiz: quiz) }
+            if let quiz = student.quiz { QuizView(quiz: quiz).ratioMeasuresWidth() }
+        }
+    }
+
+    private func dayGroup(_ day: (title: String, stories: [NewsStory])) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(day.title).ratioFont(.h2).italic()
+            Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, RatioSpace.xs)
+            ForEach(day.stories) { story in
+                StoryRow(story: story) { open(lesson: $0) }
+                Divider().overlay(Color.ratioRule)
+            }
         }
     }
 
@@ -125,7 +136,37 @@ private struct LeadStory: View {
     let story: NewsStory
     let openLesson: (String) -> Void
 
+    @Environment(\.ratioWidth) private var width
+
     var body: some View {
+        Group {
+            if width.isCompact {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    headline
+                    if let why = story.whyItMatters {
+                        WhyItMattersBox(why: why, openLesson: openLesson)
+                    }
+                    source
+                }
+            } else {
+                // iPad: the headline on the left, why it matters beside it.
+                ColumnsLayout(fraction: 0.58, spacing: RatioSpace.m) {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        headline
+                        source
+                    }
+                    if let why = story.whyItMatters {
+                        WhyItMattersBox(why: why, openLesson: openLesson)
+                    } else {
+                        Color.clear.frame(height: 0)
+                    }
+                }
+            }
+        }
+        .ratioCard()
+    }
+
+    private var headline: some View {
         VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack(alignment: .top) {
                 Text("Lead · \(story.source) · \(story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow)))")
@@ -134,19 +175,19 @@ private struct LeadStory: View {
                 if let module = story.modules.first.flatMap(Module.init(rawValue:)) { RatioTag(module.title) }
             }
             Text(story.title).ratioFont(.h1)
-            if let why = story.whyItMatters {
-                WhyItMattersBox(why: why, openLesson: openLesson)
-            }
-            if let link = story.link {
-                Link(destination: link) {
-                    Label("Read at source", systemImage: "arrow.up.right").labelStyle(TrailingIconLabel())
-                        .ratioFont(.monoLabel)
-                }
-                .foregroundStyle(Color.ratioInk)
-                .frame(minHeight: 44)
-            }
         }
-        .ratioCard()
+    }
+
+    @ViewBuilder
+    private var source: some View {
+        if let link = story.link {
+            Link(destination: link) {
+                Label("Read at source", systemImage: "arrow.up.right").labelStyle(TrailingIconLabel())
+                    .ratioFont(.monoLabel)
+            }
+            .foregroundStyle(Color.ratioInk)
+            .frame(minHeight: 44)
+        }
     }
 }
 
@@ -205,6 +246,7 @@ private struct QuizCard: View {
     let start: () -> Void
 
     @AppStorage private var score: Int
+    @Environment(\.ratioWidth) private var width
 
     init(quiz: SundayQuiz, start: @escaping () -> Void) {
         self.quiz = quiz
@@ -213,18 +255,39 @@ private struct QuizCard: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: RatioSpace.s) {
-            Text(sundayTitle).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            Text("Sunday quiz · \(Text("\(quiz.questions.count) questions").italic().foregroundStyle(Color.ratioOxblood)) on the week").ratioFont(.h2)
-            if score >= 0 {
-                Text("You scored \(score) of \(quiz.questions.count). Counts as practice.").ratioFont(.body).foregroundStyle(Color.ratioInk2)
-                RatioButton("Take it again", style: .tertiary, action: start)
+        Group {
+            if width.isCompact {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    text
+                    button
+                }
             } else {
-                Text("Each question ties a story to the law you already know. Counts as practice.").ratioFont(.body).foregroundStyle(Color.ratioInk2)
-                RatioButton("Take the quiz →", style: .secondary, action: start)
+                // iPad: the button to the right of the text.
+                HStack(alignment: .center, spacing: RatioSpace.m) {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) { text }
+                    Spacer(minLength: 0)
+                    button.frame(maxWidth: 320)
+                }
             }
         }
         .ratioCard()
+    }
+
+    @ViewBuilder
+    private var text: some View {
+        Text(sundayTitle).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+        Text("Sunday quiz · \(Text("\(quiz.questions.count) questions").italic().foregroundStyle(Color.ratioOxblood)) on the week").ratioFont(.h2)
+        Text(score >= 0 ? "You scored \(score) of \(quiz.questions.count). Counts as practice." : "Each question ties a story to the law you already know. Counts as practice.")
+            .ratioFont(.body).foregroundStyle(Color.ratioInk2)
+    }
+
+    @ViewBuilder
+    private var button: some View {
+        if score >= 0 {
+            RatioButton("Take it again", style: .tertiary, action: start)
+        } else {
+            RatioButton("Take the quiz →", style: .secondary, action: start)
+        }
     }
 
     private var sundayTitle: String {
