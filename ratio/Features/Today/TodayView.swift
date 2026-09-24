@@ -3,17 +3,22 @@ import SwiftUI
 /// screens/11-today.png — the greeting, today's brief, then colour-coded blocks for
 /// duels, the week's streak, boards and the news (PRD: "Today screen and daily brief").
 /// The student can reorder or hide the blocks after the brief. A three-stop tour runs
-/// the first time.
+/// the first time. On iPad the brief takes a wide left column and the blocks stack on
+/// the right (screens/iPad/2-today-and-brief/02-today.png); the brief step opens as a
+/// form sheet.
 struct TodayView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.ratioWidth) private var width
     @AppStorage("tour.today.seen") private var tourSeen = false
     @AppStorage("consent.asked") private var consentAsked = false
     @State private var tourStop: TourStop?
     @State private var askingConsent = false
     @State private var editingHome = false
+    /// iPad: the brief step as a form sheet rather than a pushed page.
+    @State private var showingBrief = false
 
     /// The blocks after the brief — the default layout while the tour runs, so every stop
     /// has something to point at.
@@ -24,24 +29,22 @@ struct TodayView: View {
     var body: some View {
         ScrollViewReader { scroll in
             ScrollView {
-                VStack(alignment: .leading, spacing: RatioSpace.s) {
-                    header.padding(.bottom, RatioSpace.xs)
-                    briefCard.tourAnchor(.brief)
-                    ForEach(cards) { card in
-                        switch card {
-                        case .duel: duelCard.tourAnchor(.more)
-                        case .streak: streakCard.tourAnchor(.streak)
-                        case .boards: boardsCard
-                        case .news: newsCard
+                Group {
+                    if width.isCompact {
+                        VStack(alignment: .leading, spacing: RatioSpace.s) {
+                            header.padding(.bottom, RatioSpace.xs)
+                            briefCard.tourAnchor(.brief)
+                            blocks
+                        }
+                    } else {
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            header
+                            ColumnsLayout(fraction: 0.62, spacing: RatioSpace.m) {
+                                briefCard.tourAnchor(.brief)
+                                VStack(alignment: .leading, spacing: RatioSpace.s) { blocks }
+                            }
                         }
                     }
-                    Button { editingHome = true } label: {
-                        Text("Edit home")
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioInk2)
-                            .frame(maxWidth: .infinity, minHeight: 44)
-                    }
-                    .buttonStyle(.ratioPress)
                 }
                 .padding(RatioSpace.m)
             }
@@ -52,6 +55,13 @@ struct TodayView: View {
         }
         .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
+        .sheet(isPresented: $showingBrief) {
+            NavigationStack {
+                BriefStepView(inSheet: true)
+            }
+            .ratioMeasuresWidth()
+            .presentationSizing(.form)
+        }
         .sheet(isPresented: $editingHome) {
             EditHomeSheet(order: HomeCard.arranged(order: student.settings.homeOrder, hidden: nil),
                           hidden: Set((student.settings.homeHidden ?? []).compactMap(HomeCard.init(rawValue:)))) { order, hidden in
@@ -124,9 +134,23 @@ struct TodayView: View {
                 .buttonStyle(.ratioPress)
                 .accessibilityLabel("Your profile")
             }
-            Text("\(greeting),\n\(student.profile.displayName ?? "there")\(Text(".").foregroundStyle(Color.ratioOxblood))")
-                .ratioFont(.display)
-                .accessibilityAddTraits(.isHeader)
+            if width.isCompact {
+                Text("\(greeting),\n\(student.profile.displayName ?? "there")\(Text(".").foregroundStyle(Color.ratioOxblood))")
+                    .ratioFont(.display)
+                    .accessibilityAddTraits(.isHeader)
+            } else {
+                // iPad: the greeting on one line, the student's modules to its right.
+                HStack(alignment: .lastTextBaseline, spacing: RatioSpace.m) {
+                    Text("\(greeting), \(student.profile.displayName ?? "there")\(Text(".").foregroundStyle(Color.ratioOxblood))")
+                        .ratioFont(.display)
+                        .accessibilityAddTraits(.isHeader)
+                    Spacer(minLength: RatioSpace.s)
+                    Text(student.modules.map(\.title).joined(separator: " · "))
+                        .ratioFont(.monoLabel)
+                        .foregroundStyle(Color.ratioInk2)
+                        .multilineTextAlignment(.trailing)
+                }
+            }
         }
     }
 
@@ -143,7 +167,7 @@ struct TodayView: View {
     @ViewBuilder
     private var briefCard: some View {
         if let brief = student.brief {
-            BriefCard(brief: brief) { navigator.todayPath.append(.brief) }
+            BriefCard(brief: brief) { openBrief() }
         } else if student.briefUnavailable {
             VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 Text("Brief").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
@@ -166,7 +190,31 @@ struct TodayView: View {
         }
     }
 
+    private func openBrief() {
+        if width.isCompact { navigator.todayPath.append(.brief) } else { showingBrief = true }
+    }
+
     // MARK: Blocks
+
+    /// The blocks after the brief, in the student's order, then "Edit home".
+    @ViewBuilder
+    private var blocks: some View {
+        ForEach(cards) { card in
+            switch card {
+            case .duel: duelCard.tourAnchor(.more)
+            case .streak: streakCard.tourAnchor(.streak)
+            case .boards: boardsCard
+            case .news: newsCard
+            }
+        }
+        Button { editingHome = true } label: {
+            Text("Edit home")
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+                .frame(maxWidth: .infinity, minHeight: 44)
+        }
+        .buttonStyle(.ratioPress)
+    }
 
     private var streakCard: some View {
         let streak = student.streak
@@ -372,7 +420,11 @@ private struct BriefCard: View {
             }
             if let current {
                 let kind = brief.steps[current].kind.rawValue
-                RatioButton(current == 0 && !anyDone ? "Begin — the \(kind) →" : "Resume — the \(kind) →", action: open)
+                HStack(spacing: RatioSpace.s) {
+                    RatioButton(current == 0 && !anyDone ? "Begin — the \(kind) →" : "Resume — the \(kind) →", action: open)
+                        .keyboardShortcut(.return, modifiers: .command)
+                    KeyHint(keys: "⌘↩", label: current == 0 && !anyDone ? "Begin" : "Resume")
+                }
             } else {
                 Text("\(Text("Brief complete \(Image(systemName: "checkmark"))").foregroundStyle(Color.ratioVerdigris)) · a new one tomorrow")
                     .ratioFont(.h3)
@@ -486,6 +538,9 @@ private struct TourOverlay: View {
                 .position(x: highlight.midX, y: highlight.midY)
                 .allowsHitTesting(false)
             card
+                // On iPad the card stays card-sized, on the side of its target.
+                .frame(maxWidth: 440)
+                .frame(maxWidth: .infinity, alignment: highlight.midX > size.width * 0.6 ? .trailing : .leading)
                 .padding(.horizontal, RatioSpace.m)
                 .padding(below ? .top : .bottom, below ? min(highlight.maxY + RatioSpace.s, size.height - 240) : max(size.height - highlight.minY + RatioSpace.s, RatioSpace.s))
         }
@@ -505,6 +560,7 @@ private struct TourOverlay: View {
             Text(stop.title).ratioFont(.h2)
             Text(stop.detail).ratioFont(.body)
             HStack {
+                KeyHint(keys: "→", label: "Next")
                 Spacer()
                 Button(action: next) {
                     Text(stop == .more ? "Done" : "Next →")
@@ -515,6 +571,7 @@ private struct TourOverlay: View {
                         .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                 }
                 .buttonStyle(.ratioPress)
+                .keyboardShortcut(.rightArrow, modifiers: [])
             }
         }
         .ratioCard()

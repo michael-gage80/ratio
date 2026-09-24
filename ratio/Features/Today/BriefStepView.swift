@@ -4,6 +4,9 @@ import SwiftUI
 /// the next step. A Read step opens the lesson's lecture; the others open a practice
 /// session over the items the brief chose.
 struct BriefStepView: View {
+    /// iPad: shown as a form sheet over Today, so leaving closes the sheet.
+    var inSheet = false
+
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
@@ -28,7 +31,8 @@ struct BriefStepView: View {
         // No completion screen: once the last step is done, back to Today, where the
         // brief card says so.
         .onChange(of: isComplete) { _, complete in
-            if complete { navigator.todayPath.removeAll() }
+            guard complete else { return }
+            if inSheet { dismiss() } else { navigator.todayPath.removeAll() }
         }
     }
 
@@ -78,7 +82,11 @@ struct BriefStepView: View {
             }
             Group {
                 if let current {
-                    RatioButton("Continue →", style: .secondary) { begin(current, of: brief) }
+                    HStack(spacing: RatioSpace.s) {
+                        RatioButton("Continue →", style: .secondary) { begin(current, of: brief) }
+                            .keyboardShortcut(.return, modifiers: .command)
+                        KeyHint(keys: "⌘↩", label: "Continue")
+                    }
                 } else {
                     RatioButton("Back to Today", style: .secondary) { dismiss() }
                 }
@@ -87,6 +95,13 @@ struct BriefStepView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) { progress(done: brief.steps.indices.count { student.isDone(step: $0, of: brief, content: content) }, of: brief.steps.count) }
+            if inSheet {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button { dismiss() } label: { Image(systemName: "xmark") }
+                        .keyboardShortcut(.cancelAction)
+                        .accessibilityLabel("Close")
+                }
+            }
         }
         .toolbarTitleDisplayMode(.inline)
     }
@@ -168,6 +183,8 @@ struct BriefStepView: View {
     private func begin(_ index: Int, of brief: DailyBrief) {
         let step = brief.steps[index]
         if step.kind == .read, let lessonId = step.lessonId {
+            // From the iPad sheet, close it and open the lecture on Today's stack.
+            if inSheet { dismiss() }
             navigator.todayPath.append(.lecture(lessonId))
         } else {
             practising = PracticeStep(index: index)

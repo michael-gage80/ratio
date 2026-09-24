@@ -140,6 +140,8 @@ struct NotificationsView: View {
                 }
             }
             .padding(RatioSpace.m)
+            // iPad: one readable column, centred.
+            .ratioReadableWidth(760)
         }
         .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
