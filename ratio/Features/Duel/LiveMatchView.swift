@@ -24,6 +24,7 @@ struct LiveMatchView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ratioPage()
+        .ratioMeasuresWidth()
         .onAppear {
             guard model == nil else { return }
             let live = LiveMatchModel(matchId: matchId, uid: student.uid)
@@ -50,6 +51,7 @@ struct LiveMatchView: View {
                 HStack {
                     RatioIconButton(systemImage: "xmark", label: "Leave the duel") { confirmingLeave = true }
                         .foregroundStyle(Color.ratioInk2)
+                        .keyboardShortcut(.cancelAction)
                     Spacer()
                     Text("\(DuelScope.title(of: model.moduleId ?? "")) · Live").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
@@ -120,15 +122,66 @@ struct LiveMatchView: View {
     }
 }
 
-/// Screen 34 for a live match: both players and a countdown to the first question.
+/// Screen 34 for a live match: both players and a countdown to the first question. On
+/// iPad the two halves sit side by side (screens/iPad/5-duel/04-versus.png).
 private struct LiveVersus: View {
     let model: LiveMatchModel
 
     @Environment(StudentStore.self) private var student
+    @Environment(\.ratioWidth) private var width
 
     var body: some View {
+        if width.isCompact { stacked } else { sideBySide }
+    }
+
+    private var countdown: some View {
+        SwiftUI.TimelineView(.periodic(from: .now, by: 0.25)) { context in
+            let seconds = max(0, Int(((model.firstRoundAt ?? context.date).timeIntervalSince(context.date)).rounded(.up)))
+            ZStack {
+                Circle().fill(Color.ratioPaper)
+                Circle().strokeBorder(Color.ratioInk, lineWidth: 1.5)
+                Text(seconds > 0 ? "\(seconds)" : "v").ratioFont(.displayAccent)
+                    .foregroundStyle(Color.ratioOxblood)
+                    .contentTransition(.numericText(countsDown: true))
+            }
+            .accessibilityLabel(seconds > 0 ? "Starting in \(seconds)" : "Starting")
+        }
+    }
+
+    private var sideBySide: some View {
         let opponent = model.opponent
-        VStack(spacing: 0) {
+        return ZStack {
+            HStack(spacing: 0) {
+                VStack(spacing: RatioSpace.s) {
+                    Text("You · \(DuelScope.title(of: model.moduleId ?? ""))").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 128)
+                    Text("You").ratioFont(.display)
+                    Text("Rating \((model.view?.players[student.uid]?.rating ?? 1200).formatted())").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                }
+                .foregroundStyle(Color.ratioInk)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.ratioParchment)
+                Rectangle().fill(Color.ratioOxblood).frame(width: 1)
+                VStack(spacing: RatioSpace.s) {
+                    Text("Opponent · First to 3").ratioFont(.monoLabel).opacity(0.75)
+                    OpponentMark(opponent: opponent, size: 128)
+                    Text(opponent.name).ratioFont(.display)
+                    Text(opponent.detail).ratioFont(.monoData).opacity(0.75)
+                }
+                .foregroundStyle(Color.ratioParchment)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.ratioInk)
+            }
+            .multilineTextAlignment(.center)
+            .ignoresSafeArea()
+            countdown.frame(width: 160, height: 160)
+        }
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
+    }
+
+    private var stacked: some View {
+        let opponent = model.opponent
+        return VStack(spacing: 0) {
             VStack(spacing: RatioSpace.s) {
                 Text("\(DuelScope.title(of: model.moduleId ?? "")) · First to 3").ratioFont(.monoLabel).opacity(0.7)
                 OpponentMark(opponent: opponent, size: 96)

@@ -16,32 +16,96 @@ struct DuelDebriefView: View {
     private var misses: Int { record.rounds.count { !$0.answers[0].correct } }
 
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: RatioSpace.s) {
-                Text("Duel debrief · v \(record.opponent.name) · \(record.score[0])–\(record.score[1])")
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioInk2)
-                Text("\(roundsText), \(Text(missesText).italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.h1)
-                    .accessibilityAddTraits(.isHeader)
-                    .padding(.bottom, RatioSpace.xs)
-                ForEach(Array(record.rounds.enumerated()), id: \.offset) { index, round in
-                    if let question = record.questions[safe: round.questionIndex] {
-                        roundCard(round, question: question, number: index, running: runningScore(through: index))
+            Group {
+                if width.isCompact {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        header
+                        rounds
+                        headToHead
+                        footer
+                    }
+                } else {
+                    // iPad (screens/iPad/5-duel/09-duel-debrief.png): the rounds on the left;
+                    // the summary, head to head and the way back on the right.
+                    ColumnsLayout(fraction: 0.6, spacing: RatioSpace.l) {
+                        VStack(alignment: .leading, spacing: RatioSpace.s) {
+                            header
+                            rounds
+                        }
+                        VStack(alignment: .leading, spacing: RatioSpace.s) {
+                            summary
+                            headToHead
+                            footer
+                        }
                     }
                 }
-                headToHead
-                Text("Duel answers update your profile, not your review queue.")
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioInk2)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
-                RatioButton("Back to Today", style: .secondary, action: backToToday)
             }
             .padding(RatioSpace.m)
         }
         .ratioPage()
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text("Duel debrief · v \(record.opponent.name) · \(record.score[0])–\(record.score[1])")
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+            Text("\(roundsText), \(Text(missesText).italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.h1)
+                .accessibilityAddTraits(.isHeader)
+                .padding(.bottom, RatioSpace.xs)
+        }
+    }
+
+    private var rounds: some View {
+        ForEach(Array(record.rounds.enumerated()), id: \.offset) { index, round in
+            if let question = record.questions[safe: round.questionIndex] {
+                roundCard(round, question: question, number: index, running: runningScore(through: index))
+            }
+        }
+    }
+
+    private var footer: some View {
+        VStack(spacing: RatioSpace.s) {
+            Text("Duel answers update your profile, not your review queue.")
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioInk2)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+            RatioButton("Back to Today", style: .secondary, action: backToToday)
+                .keyboardShortcut(.return, modifiers: .command)
+        }
+    }
+
+    /// iPad: the score, the rating change and the skill that moved.
+    private var summary: some View {
+        let delta = record.ratingAfter - record.ratingBefore
+        let verdict = record.winner == 0 ? "Won" : record.winner == nil ? "Drew" : "Lost"
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text("Match summary").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            Text("\(record.score[0]) – \(record.score[1])").ratioFont(.figure)
+            Text("\(verdict) v \(record.opponentTitle)").ratioFont(.h3)
+            Divider().overlay(Color.ratioRule)
+            HStack(alignment: .firstTextBaseline) {
+                Text("Rating · \(DuelScope.title(of: record.moduleId))").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Spacer(minLength: RatioSpace.xs)
+                Text("\(record.ratingBefore.formatted()) → \(record.ratingAfter.formatted()) \(Text(delta >= 0 ? "+\(delta)" : "\(delta)").foregroundStyle(delta >= 0 ? Color.ratioVerdigris : Color.ratioOxblood))")
+                    .ratioFont(.monoData)
+            }
+            if let moved = record.skillMoved, let skill = Skill(rawValue: moved.skill) {
+                Divider().overlay(Color.ratioRule)
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Skill moved").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Spacer(minLength: RatioSpace.xs)
+                    Text("\(skill.title) \(moved.before.displayScore) → \(moved.after.displayScore)").ratioFont(.small)
+                }
+            }
+        }
+        .ratioCard()
+        .accessibilityElement(children: .combine)
     }
 
     private var roundsText: String {

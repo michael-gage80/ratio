@@ -79,6 +79,7 @@ struct DuelMatchView: View {
             }
         }
         .ratioPage()
+        .ratioMeasuresWidth()
         .task { await model.load() }
         .onDisappear { model.stop() }
     }
@@ -86,6 +87,7 @@ struct DuelMatchView: View {
     private var closeButton: some View {
         RatioIconButton(systemImage: "xmark", label: isTutorial ? "Leave the tutorial" : "Leave the duel") { dismiss() }
             .foregroundStyle(Color.ratioInk2)
+            .keyboardShortcut(.cancelAction)
     }
 
     private var closeLink: some View {
@@ -137,12 +139,17 @@ struct DuelMatchView: View {
     ]
 
     private var coachMarks: some View {
-        let mark = Self.coachMarks[coachStep]
+        CoachMarks(marks: Self.coachMarks, step: $coachStep, skip: finishTutorial) { model.begin() }
+    }
+
+    fileprivate static func compactCoachMark(_ marks: [(label: String, title: String, detail: String)], step: Binding<Int>, skip: @escaping () -> Void, play: @escaping () -> Void) -> some View {
+        let coachStep = step.wrappedValue
+        let mark = marks[coachStep]
         return ZStack {
             Color.black.opacity(0.45).ignoresSafeArea()
             VStack(alignment: .leading, spacing: RatioSpace.s) {
                 HStack {
-                    Text("\(coachStep + 1) / \(Self.coachMarks.count)")
+                    Text("\(coachStep + 1) / \(marks.count)")
                     Spacer()
                     Text(mark.label)
                 }
@@ -151,16 +158,16 @@ struct DuelMatchView: View {
                 Text(mark.title).ratioFont(.h2)
                 Text(mark.detail).ratioFont(.body).foregroundStyle(Color.ratioInk2)
                 HStack {
-                    Button("Skip") { finishTutorial() }
+                    Button("Skip") { skip() }
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
                         .frame(minWidth: 44, minHeight: 44)
                     Spacer()
                     Button {
-                        if coachStep + 1 < Self.coachMarks.count { coachStep += 1 } else { model.begin() }
+                        if coachStep + 1 < marks.count { step.wrappedValue += 1 } else { play() }
                     } label: {
                         // Parchment on ink, which flips correctly in dark mode.
-                        Text(coachStep + 1 < Self.coachMarks.count ? "Next" : "Play")
+                        Text(coachStep + 1 < marks.count ? "Next" : "Play")
                             .ratioFont(.h3)
                             .foregroundStyle(Color.ratioParchment)
                             .padding(.horizontal, RatioSpace.l)
@@ -196,14 +203,152 @@ struct DuelMatchView: View {
     }
 }
 
+/// The tutorial's three rules: one card at a time on iPhone; on iPad all three side by
+/// side, the current one outlined (screens/iPad/5-duel/02-duel-tutorial.png).
+private struct CoachMarks: View {
+    let marks: [(label: String, title: String, detail: String)]
+    @Binding var step: Int
+    let skip: () -> Void
+    let play: () -> Void
+
+    @Environment(\.ratioWidth) private var width
+
+    var body: some View {
+        if width.isCompact {
+            DuelMatchView.compactCoachMark(marks, step: $step, skip: skip, play: play)
+        } else {
+            ZStack {
+                Color.black.opacity(0.45).ignoresSafeArea()
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    HStack {
+                        Text("How duels work · \(step + 1) / \(marks.count)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        Spacer()
+                        Button("Skip", action: skip)
+                            .ratioFont(.monoLabel)
+                            .foregroundStyle(Color.ratioInk2)
+                            .frame(minWidth: 44, minHeight: 44)
+                    }
+                    HStack(alignment: .top, spacing: RatioSpace.s) {
+                        ForEach(marks.indices, id: \.self) { index in
+                            let mark = marks[index]
+                            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                                HStack {
+                                    Text("\(DuelRoundView.numerals[index]) · \(mark.label)")
+                                    Spacer()
+                                    Text(index == step ? "Now" : index < step ? "Done" : "Next")
+                                        .foregroundStyle(index == step ? Color.ratioOxblood : Color.ratioInk2)
+                                }
+                                .ratioFont(.monoLabel)
+                                .foregroundStyle(Color.ratioInk2)
+                                Text(mark.title).ratioFont(.h3)
+                                Text(mark.detail).ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .topLeading)
+                            .ratioPanel(Color.ratioPaper)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
+                                    .strokeBorder(index == step ? Color.ratioInk : Color.ratioRule, lineWidth: index == step ? 2 : 1)
+                            }
+                            .opacity(index == step ? 1 : 0.6)
+                        }
+                    }
+                    HStack(spacing: RatioSpace.s) {
+                        Spacer()
+                        KeyHint(keys: "→", label: "Next")
+                        Button {
+                            if step + 1 < marks.count { step += 1 } else { play() }
+                        } label: {
+                            // Parchment on ink, which flips correctly in dark mode.
+                            Text(step + 1 < marks.count ? "Next →" : "Play →")
+                                .ratioFont(.h3)
+                                .foregroundStyle(Color.ratioParchment)
+                                .padding(.horizontal, RatioSpace.l)
+                                .frame(minHeight: 56)
+                                .background(Color.ratioInk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                        }
+                        .buttonStyle(.ratioPress)
+                        .keyboardShortcut(.rightArrow, modifiers: [])
+                    }
+                }
+                .ratioCard()
+                .frame(maxWidth: 960)
+                .padding(RatioSpace.l)
+                .accessibilityAddTraits(.isModal)
+            }
+            .foregroundStyle(Color.ratioInk)
+        }
+    }
+}
+
 /// screens/34-versus.png — the partner on the dark half, the student on the light half.
+/// On iPad the halves sit side by side (screens/iPad/5-duel/04-versus.png).
 private struct VersusView: View {
     let model: DuelMatchModel
     let begin: () -> Void
 
     @Environment(StudentStore.self) private var student
+    @Environment(\.ratioWidth) private var width
 
     var body: some View {
+        if width.isCompact { stacked } else { sideBySide }
+    }
+
+    private var sideBySide: some View {
+        ZStack {
+            HStack(spacing: 0) {
+                Color.ratioParchment
+                Rectangle().fill(Color.ratioOxblood).frame(width: 1)
+                Color.ratioInk
+            }
+            .ignoresSafeArea()
+            HStack(spacing: 0) {
+                VStack(spacing: RatioSpace.s) {
+                    Text("You · \(model.scope.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 128)
+                    Text(name).ratioFont(.display).foregroundStyle(Color.ratioInk)
+                    rating(model.match?.rating.rating ?? 1200).foregroundStyle(Color.ratioInk)
+                }
+                .frame(maxWidth: .infinity)
+                VStack(spacing: RatioSpace.s) {
+                    Text("Opponent · \(model.scope.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioParchment.opacity(0.75))
+                    SparringMark(size: 128).colorInvert()
+                    Text("Sparring partner").ratioFont(.display).foregroundStyle(Color.ratioParchment)
+                    Text("Level \(model.level) · \(SparringLevel.title(model.level))").ratioFont(.body).foregroundStyle(Color.ratioParchment.opacity(0.75))
+                    rating(model.match?.partner.rating ?? 0).foregroundStyle(Color.ratioParchment)
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .multilineTextAlignment(.center)
+            .padding(.bottom, 200)
+            seal.frame(width: 200, height: 200).padding(.bottom, 200)
+            VStack(spacing: RatioSpace.s) {
+                Text("Round I · First to 3 · \(model.limitMs / 1000)\u{00A0}s").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                RatioButton("Round I →", action: begin)
+                    .keyboardShortcut(.return, modifiers: .command)
+                KeyHint(keys: "⌘↩", label: "Begin")
+            }
+            .ratioCard()
+            .frame(maxWidth: 560)
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .padding(RatioSpace.l)
+        }
+        .accessibilityElement(children: .contain)
+    }
+
+    private var seal: some View {
+        ZStack {
+            Circle().fill(Color.ratioPaper)
+            Circle().strokeBorder(Color.ratioInk, lineWidth: 1.5)
+            Circle().strokeBorder(Color.ratioInk2, style: StrokeStyle(lineWidth: 1, dash: [2, 3])).padding(RatioSpace.xs)
+            VStack(spacing: 2) {
+                RatioSpotArt.scales.view.frame(width: 100).foregroundStyle(Color.ratioInk)
+                Text("v").ratioFont(.h2).italic().foregroundStyle(Color.ratioOxblood)
+            }
+        }
+        .accessibilityHidden(true)
+    }
+
+    private var stacked: some View {
         GeometryReader { proxy in
             ZStack {
                 VStack(spacing: 0) {
