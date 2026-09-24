@@ -30,6 +30,9 @@ struct SplashView: View {
                 .padding(.bottom, 44)
         }
         .padding(24)
+        // Fill the screen: nothing inside is full width, and the page-curl host would
+        // otherwise size the page to its content.
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.ratioParchment.ignoresSafeArea())
         .environment(\.colorScheme, .dark)
         .accessibilityElement(children: .combine)
@@ -81,6 +84,7 @@ private struct PageCurl<Page: View>: UIViewControllerRepresentable {
         controller.isDoubleSided = false
         controller.gestureRecognizers.forEach { $0.isEnabled = false }
         let hosting = UIHostingController(rootView: page)
+        hosting.view.backgroundColor = .clear
         context.coordinator.hosting = hosting
         controller.setViewControllers([hosting], direction: .forward, animated: false)
         return controller
