@@ -1,3 +1,5 @@
+import FirebaseAnalytics
+import UserNotifications
 import SwiftUI
 
 /// Where the student is in the app: the selected tab and each tab's navigation stack.
@@ -15,6 +17,13 @@ final class AppNavigator {
     var showsDuelTutorial = false
     /// A friend-lobby code from a shared link (ratio://lobby/K7MP4X).
     var lobbyCode: String?
+    /// Set to open the Ratio Plus sheet, with why ("Contract is part of Ratio Plus.").
+    var paywall: String?
+
+    /// Opens the paywall for a module the student can't study on the free plan.
+    func showPaywall(for module: Module, freeModule: Module?) {
+        paywall = "\(module.title) is part of Ratio Plus." + (freeModule.map { " Your free module is \($0.title)." } ?? "")
+    }
 
     /// Handles ratio:// links; returns whether it was one.
     func handle(_ url: URL) -> Bool {
@@ -52,6 +61,7 @@ final class AppNavigator {
 enum Route: Hashable {
     case brief
     case news
+    case settings
     case module(Module)
     case overview(String)
     case lecture(String)
@@ -66,6 +76,11 @@ struct MainTabView: View {
 
     init(uid: String, profile: UserProfile) {
         _student = State(initialValue: StudentStore(uid: uid, profile: profile))
+    }
+
+    /// Reminders are re-planned when anything they depend on changes.
+    private var notificationKey: String {
+        "\(student.activeDays.count)-\(student.items.count)-\(String(describing: student.settings))-\(UKDate.key())"
     }
 
     var body: some View {
@@ -98,8 +113,24 @@ struct MainTabView: View {
             }
         }
         .tint(Color.ratioInk)
+        .sheet(isPresented: Binding(get: { navigator.paywall != nil }, set: { if !$0 { navigator.paywall = nil } })) {
+            PaywallView(reason: navigator.paywall?.isEmpty == false ? navigator.paywall : nil)
+        }
         .environment(student)
         .environment(navigator)
+        .task(id: notificationKey) { await RatioNotifications.reschedule(for: student) }
+        .onChange(of: student.profile.consents?.analytics, initial: true) { _, consent in
+            Analytics.setAnalyticsCollectionEnabled(consent == true)
+        }
+        .onAppear {
+            AppDelegate.openChallenge = { [navigator] _ in navigator.tab = .duel }
+            // Keep this phone's push token current once permission has been given.
+            Task {
+                if await UNUserNotificationCenter.current().notificationSettings().authorizationStatus == .authorized {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
         .onChange(of: links.pending, initial: true) { _, url in
             guard let url else { return }
             links.pending = nil
@@ -123,12 +154,18 @@ private struct RouteDestination: View {
             BriefStepView()
         case .news:
             NewsCentreView()
+        case .settings:
+            SettingsView()
         case .module(let module):
             ModuleDrillDownView(module: module)
         case .overview(let id):
             if let lesson = content.lesson(id: id) {
                 LessonOverviewView(lesson: lesson, headline: student.profile.headline) {
-                    navigator.push(.lecture(id))
+                    if student.canStudy(lesson.moduleId) {
+                        navigator.push(.lecture(id))
+                    } else {
+                        navigator.showPaywall(for: lesson.moduleId, freeModule: student.freeModule)
+                    }
                 }
             }
         case .lecture(let id):

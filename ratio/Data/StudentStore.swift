@@ -33,6 +33,8 @@ final class StudentStore {
     private(set) var news: [NewsStory] = []
     /// This week's Sunday quiz, from its Sunday for seven days.
     private(set) var quiz: SundayQuiz?
+    /// Duels started today, for the free plan's allowance (kept by Functions).
+    private(set) var duelsToday = 0
 
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
     @ObservationIgnored private var briefListener: ListenerRegistration?
@@ -44,6 +46,30 @@ final class StudentStore {
     }
 
     var headline: Headline { profile.headline ?? .prior }
+
+    // MARK: Plan (functions/src/entitlement.ts)
+
+    /// Ratio Plus: an active App Store subscription or a valid university licence.
+    var isPlus: Bool {
+        if let subscription = profile.subscription, subscription.revoked != true, subscription.expiresAt > .now { return true }
+        if let licence = profile.licence, licence.revoked != true, licence.expiresAt > .now { return true }
+        #if DEBUG
+        if UserDefaults.standard.bool(forKey: "debug.plus") { return true }
+        #endif
+        return false
+    }
+
+    /// The module a free student studies in full: their choice, else their first.
+    var freeModule: Module? {
+        let modules = profile.modules ?? []
+        if let chosen = profile.freeModule, modules.contains(chosen) { return chosen }
+        return modules.first
+    }
+
+    /// Whether the student can study this module in full.
+    func canStudy(_ module: Module) -> Bool { isPlus || module == freeModule }
+
+    var settings: StudySettings { profile.settings ?? StudySettings() }
 
     func start() {
         guard listeners.isEmpty else { return }
@@ -110,6 +136,9 @@ final class StudentStore {
                     let weekAgo = UKDate.key(for: .now.addingTimeInterval(-6 * 86_400))
                     self?.quiz = latest.flatMap { $0.sunday >= weekAgo ? $0 : nil }
                 },
+            user.collection("usage").document(UKDate.key()).addSnapshotListener { [weak self] snapshot, _ in
+                self?.duelsToday = snapshot?.data()?["duels"] as? Int ?? 0
+            },
             user.collection("friends").addSnapshotListener { [weak self] snapshot, _ in
                 guard let snapshot else { return }
                 self?.friends = snapshot.documents.map(\.documentID)
@@ -379,7 +408,7 @@ extension StudentStore {
 
     /// Where to carry on: a lecture already started, otherwise the first lesson not yet begun.
     func nextLesson(in modules: [Module], content: ContentStore) -> Lesson? {
-        let lessons = modules.flatMap { content.lessons(in: $0) }
+        let lessons = modules.filter(canStudy).flatMap { content.lessons(in: $0) }
         return lessons.first { state(of: $0) == .inProgress } ?? lessons.first { state(of: $0) == .notStarted }
     }
 
@@ -439,15 +468,22 @@ extension StudentStore {
         brief.steps.indices.first { !isDone(step: $0, of: brief, content: content) }
     }
 
-    var streak: Streak { Streak(activeDays: activeDays, today: .now) }
+    var streak: Streak {
+        Streak(activeDays: activeDays, today: .now, target: settings.weeklyTarget ?? Streak.defaultTarget, pausedWeeks: Set(settings.pausedWeeks ?? []))
+    }
 }
 
 /// The weekly target (PRD: "active on 4 days of 7 ... The count is in weeks, not days").
 /// Never punishes a missed day: the copy only ever says what keeps the week.
 struct Streak {
     static let lookbackWeeks: Double = 26
-    /// Until the student can set it in Settings (Phase 15).
-    static let target = 4
+    static let defaultTarget = 4
+    /// PRD: "Exam pause: up to 3 weeks a year".
+    static let pausesPerYear = 3
+
+    let target: Int
+    /// This week is paused for exams: nothing is asked of it.
+    let isPaused: Bool
 
     /// Monday to Sunday of this week, and whether each was active.
     let week: [(date: Date, active: Bool)]
@@ -455,9 +491,11 @@ struct Streak {
     /// Weeks in a row that met the target, before this one.
     let previousWeeks: Int
 
-    init(activeDays: Set<String>, today: Date) {
+    init(activeDays: Set<String>, today: Date, target: Int = Streak.defaultTarget, pausedWeeks: Set<String> = []) {
+        self.target = target
         let calendar = UKDate.calendar
         let monday = calendar.dateInterval(of: .weekOfYear, for: today)?.start ?? today
+        isPaused = pausedWeeks.contains(UKDate.key(for: monday))
         week = (0..<7).map { offset in
             let date = calendar.date(byAdding: .day, value: offset, to: monday) ?? monday
             return (date, activeDays.contains(UKDate.key(for: date)))
@@ -470,7 +508,8 @@ struct Streak {
             let active = (0..<7).count { offset in
                 calendar.date(byAdding: .day, value: offset, to: start).map { activeDays.contains(UKDate.key(for: $0)) } ?? false
             }
-            guard active >= Self.target else { break }
+            // A paused week keeps the run going without asking anything of it.
+            guard active >= target || pausedWeeks.contains(UKDate.key(for: start)) else { break }
             weeks += 1
             start = calendar.date(byAdding: .weekOfYear, value: -1, to: start) ?? start
         }
@@ -480,7 +519,8 @@ struct Streak {
     var daysThisWeek: Int { week.count { $0.active } }
 
     var message: String {
-        let remaining = Self.target - daysThisWeek
+        if isPaused { return "Paused for exams. Good luck." }
+        let remaining = target - daysThisWeek
         let daysLeft = 7 - todayIndex - (week[todayIndex].active ? 1 : 0)
         if remaining <= 0 { return "Week done. Anything more is a bonus." }
         if remaining > daysLeft { return "A fresh week starts on Monday." }

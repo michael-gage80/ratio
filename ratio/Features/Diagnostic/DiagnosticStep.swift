@@ -105,7 +105,7 @@ struct DiagnosticStep: View {
             }
             .scrollDismissesKeyboard(.interactively)
         }
-        .sensoryFeedback(trigger: diagnostic.lastAnswerCorrect) { _, correct in
+        .ratioFeedback(trigger: diagnostic.lastAnswerCorrect) { _, correct in
             switch correct {
             case true: .success
             case false: .error

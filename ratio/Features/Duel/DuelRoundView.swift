@@ -44,8 +44,8 @@ struct DuelRoundView: View {
         .padding(.horizontal, 24)
         .padding(.top, 8)
         .animation(.easeInOut(duration: 0.25), value: model.roundPhase)
-        .sensoryFeedback(.impact(weight: .medium), trigger: model.pulse)
-        .sensoryFeedback(trigger: model.lastPlayed) { _, played in
+        .ratioFeedback(.impact(weight: .medium), trigger: model.pulse)
+        .ratioFeedback(trigger: model.lastPlayed) { _, played in
             guard let played else { return nil }
             return played.winner == 0 ? .success : played.winner == 1 ? .error : .warning
         }

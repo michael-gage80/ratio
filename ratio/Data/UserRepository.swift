@@ -21,6 +21,44 @@ struct UserProfile: Decodable, Equatable {
     var headlineUpdatedAt: Date?
     /// Set by the moderateAvatar Function when an approved photo goes live.
     var avatarVersion: Int?
+    /// Written only by Functions: the App Store subscription, a university licence, and
+    /// the module a free student studies in full.
+    var subscription: Subscription?
+    var licence: Licence?
+    var freeModule: Module?
+    var freeModuleChanges: Int?
+    var settings: StudySettings?
+    var consents: Consents?
+
+    nonisolated struct Subscription: Decodable, Equatable {
+        var plan: String
+        var expiresAt: Date
+        var revoked: Bool?
+    }
+
+    nonisolated struct Licence: Decodable, Equatable {
+        var universityName: String
+        var expiresAt: Date
+        var revoked: Bool?
+    }
+
+    nonisolated struct Consents: Codable, Equatable {
+        var analytics: Bool?
+        var universitySharing: Bool?
+    }
+}
+
+/// Study and notification preferences (Settings → Study), on users/{uid}.settings.
+nonisolated struct StudySettings: Codable, Equatable {
+    /// Days a week (PRD: "e.g. active on 4 days of 7, with the goal set by the student").
+    var weeklyTarget: Int?
+    /// Mondays (UK date keys) of weeks paused for exams — up to 3 a year (PRD).
+    var pausedWeeks: [String]?
+    var briefReminder: Bool?
+    /// "08:30".
+    var briefTime: String?
+    var quietStart: String?
+    var quietEnd: String?
 }
 
 /// Reads and writes `users/{uid}`.

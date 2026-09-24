@@ -132,7 +132,7 @@ function lintDiagnosticBank() {
   }
 }
 
-const files = readdirSync(LESSONS).filter((f) => f.endsWith('.json')).sort();
+const files = readdirSync(LESSONS).filter((f) => /^[a-z]+-\d{2}-[a-z0-9-]+\.json$/.test(f)).sort();
 files.forEach(lintLesson);
 lintDiagnosticBank();
 

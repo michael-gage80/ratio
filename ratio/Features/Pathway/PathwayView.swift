@@ -53,7 +53,7 @@ struct PathwayView: View {
         }
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .sensoryFeedback(.impact(weight: .light), trigger: peeking) { _, new in new != nil }
+        .ratioFeedback(.impact(weight: .light), trigger: peeking) { _, new in new != nil }
         .toolbar(.hidden, for: .navigationBar)
     }
 
@@ -69,7 +69,8 @@ struct PathwayView: View {
                             peeking = nil
                         }
                     } label: {
-                        ModuleCard(module: module, mastery: student.mastery(of: content.lessons(in: module)), isSelected: module == self.module)
+                        ModuleCard(module: module, mastery: student.mastery(of: content.lessons(in: module)), isSelected: module == self.module,
+                                   plan: student.isPlus ? nil : (student.canStudy(module) ? "Free" : "Ratio Plus"))
                     }
                     .buttonStyle(.plain)
                 }
@@ -126,7 +127,11 @@ struct PathwayView: View {
                 Text(number).ratioFont(.monoData).foregroundStyle(Color.ratioInk2).frame(width: 32, alignment: .leading)
                 Text(lesson.title).ratioFont(.body).layoutPriority(1)
                 DottedLeader()
-                LessonStateLabel(state: state)
+                if student.canStudy(lesson.moduleId) {
+                    LessonStateLabel(state: state)
+                } else {
+                    Label("Plus", systemImage: "lock").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).fixedSize()
+                }
             }
             if peeking == lesson.id {
                 TopicPeek(title: group.title, scores: student.topics[lesson.topicId])
@@ -135,7 +140,13 @@ struct PathwayView: View {
         }
         .padding(.vertical, 16)
         .contentShape(Rectangle())
-        .onTapGesture { navigator.pathwayPath.append(.overview(lesson.id)) }
+        .onTapGesture {
+            if student.canStudy(lesson.moduleId) {
+                navigator.pathwayPath.append(.overview(lesson.id))
+            } else {
+                navigator.showPaywall(for: lesson.moduleId, freeModule: student.freeModule)
+            }
+        }
         .onLongPressGesture(minimumDuration: 0.35) { togglePeek(lesson) }
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(.isButton)
@@ -180,6 +191,8 @@ private struct ModuleCard: View {
     let module: Module
     let mastery: Int?
     let isSelected: Bool
+    /// "Free" or "Ratio Plus" on the free plan (screen 25).
+    var plan: String?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -190,7 +203,11 @@ private struct ModuleCard: View {
             Spacer(minLength: 0)
             Text(module.title).ratioFont(.h3)
             if let mastery {
-                Text("\(mastery)%").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                HStack {
+                    Text("\(mastery)%").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                    Spacer(minLength: 4)
+                    if let plan { RatioTag(plan, icon: plan == "Free" ? nil : "lock") }
+                }
             } else {
                 Text("In preparation").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             }

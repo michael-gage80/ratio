@@ -68,7 +68,7 @@ struct ExamRoomView: View {
         .animation(.easeInOut(duration: 0.25), value: model.responses.count)
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
-        .sensoryFeedback(.impact(weight: .light), trigger: model.responses.count)
+        .ratioFeedback(.impact(weight: .light), trigger: model.responses.count)
         .confirmationDialog("Leave the exam room?", isPresented: $confirmingLeave, titleVisibility: .visible) {
             Button("Leave — nothing is saved", role: .destructive) { dismiss() }
             Button("Keep going", role: .cancel) {}

@@ -62,6 +62,17 @@ struct DuelView: View {
                         row(icon: "questionmark", title: "How duels work", detail: "Replay the tutorial") { play(module, level: 1, tutorial: true) }
                     }
                     recentMatches
+                    if !student.isPlus {
+                        let left = max(0, 3 - student.duelsToday)
+                        VStack(spacing: 8) {
+                            Text("\(left) free \(left == 1 ? "duel" : "duels") left today").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                            Button("Go unlimited →") { navigator.paywall = "Duels are unlimited with Ratio Plus." }
+                                .ratioFont(.monoLabel)
+                                .foregroundStyle(Color.ratioOxblood)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 8)
+                    }
                 } else {
                     Text("Duels draw on your modules' lessons, which are still in preparation.")
                         .ratioFont(.body)
@@ -394,6 +405,7 @@ private struct MatchmakingView: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(StudentStore.self) private var student
+    @Environment(AppNavigator.self) private var navigator
     @State private var started = Date.now
     @State private var window = 100
     @State private var failed = false
@@ -482,6 +494,11 @@ private struct MatchmakingView: View {
                 }
                 window = result.window ?? window
             } catch {
+                if PlanService.isFreeLimit(error) {
+                    dismiss()
+                    navigator.paywall = "That's today's three free duels. Ratio Plus makes them unlimited."
+                    return
+                }
                 failed = true
             }
             try? await Task.sleep(for: .seconds(3))

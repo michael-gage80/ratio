@@ -11,9 +11,11 @@ import SwiftUI
 
 @main
 struct ratioApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var session: SessionStore
     @State private var content = ContentStore()
     @State private var links = DeepLinks()
+    @State private var purchases = Purchases()
 
     init() {
         FirebaseApp.configure()
@@ -27,9 +29,12 @@ struct ratioApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .ratioPreferences()
                 .environment(session)
                 .environment(content)
                 .environment(links)
+                .environment(purchases)
+                .task { purchases.start() }
                 .onOpenURL { url in
                     if !GIDSignIn.sharedInstance.handle(url) { links.pending = url }
                 }

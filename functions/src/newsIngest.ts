@@ -1,6 +1,6 @@
 // Hourly news ingestion (PRD: "Pulled from RSS every hour by a Cloud Function") into
 // news/{id}: headline, source, date, link and module tags. "Why it matters" notes and
-// the Sunday quiz are added by hand (content-tools/news-admin.mjs).
+// the Sunday quiz are added by hand (content-tools/admin.mjs).
 
 import { createHash } from "node:crypto";
 import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";

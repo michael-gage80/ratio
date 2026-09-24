@@ -6,6 +6,7 @@
 import { getDatabaseWithUrl } from "firebase-admin/database";
 import { FieldValue, getFirestore, Timestamp, Transaction } from "firebase-admin/firestore";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
+import { checkDuel, countDuel, notify } from "./account.js";
 import { periodKeys } from "./boards.js";
 import { blockReason, MAX_MESSAGE_LENGTH } from "./chat.js";
 import { duelLessons, MODULES } from "./content.js";
@@ -372,6 +373,11 @@ export const startLobby = onCall<{ code?: string }>(async (request) => {
   const guest = lobby.get("guest") as string | null;
   if (lobby.get("status") !== "open" || !guest) throw new HttpsError("failed-precondition", "Wait for your opponent to join.");
   if ((lobby.get("expiresAt") as Timestamp).toMillis() < Date.now()) throw new HttpsError("failed-precondition", "That lobby has expired. Make a new one.");
+  await checkDuel(guest).catch(() => {
+    throw new HttpsError("resource-exhausted", "Your opponent has used today's free duels.", { reason: "opponent-limit" });
+  });
+  await countDuel(uid);
+  await countDuel(guest);
   const matchId = await createLiveMatch("lobby", lobby.get("moduleId"), lobby.get("limitMs"), [uid, guest]);
   await ref.update({ status: "started", matchId });
   return { matchId };
@@ -447,6 +453,7 @@ export const findMatch = onCall<{ moduleId?: string; seconds?: number }>(async (
   const pool = limitMs === 10_000 ? "standard" : `extended-${limitMs / 1000}`;
   const db = getFirestore();
   const mine = db.doc(`matchQueue/${uid}`);
+  await checkDuel(uid);
   const me = await player(uid, moduleId);
   const now = Date.now();
 
@@ -479,6 +486,8 @@ export const findMatch = onCall<{ moduleId?: string; seconds?: number }>(async (
       await db.doc(`matchQueue/${paired.opponent}`).update({ matchId: null }).catch(() => undefined);
       return { matchId: null, window: ratingWindow(0) };
     }
+    await countDuel(uid);
+    await countDuel(paired.opponent).catch(() => undefined); // They were within their allowance when they queued.
     const them = await player(paired.opponent, moduleId);
     const order: [string, string] = [uid, paired.opponent];
     const players = { [uid]: strip(me), [paired.opponent]: strip(them) };
@@ -543,7 +552,9 @@ export const createChallenge = onCall<{ opponent?: string; moduleId?: string; se
     expiresAt: Timestamp.fromMillis(Date.now() + CHALLENGE_HOURS * 60 * 60 * 1000),
   });
   batch.set(db.doc(`challengeSecrets/${ref.id}`), { questions: questionsFor(moduleId), answers: {}, servedAt: {} });
+  await countDuel(uid);
   await batch.commit();
+  await notify(opponent, "You've been challenged", `${me.name} has challenged you to a duel. You have 24 hours to play your half.`, { challengeId: ref.id });
   return { challengeId: ref.id };
 });
 
@@ -560,6 +571,12 @@ export const playChallenge = onCall<{ challengeId?: string; index?: number; answ
   const db = getFirestore();
   const ref = db.doc(`challenges/${challengeId}`);
   const secretRef = db.doc(`challengeSecrets/${challengeId}`);
+  // The challenged student's half counts as a duel when they start it.
+  if (index === undefined) {
+    const [challenge, secret] = await db.getAll(ref, secretRef);
+    const started = ((secret.get("servedAt") as Record<string, unknown[]> | undefined)?.[uid] ?? []).length > 0;
+    if (challenge.exists && (challenge.get("players") as string[])[1] === uid && !started) await countDuel(uid);
+  }
 
   return db.runTransaction(async (tx) => {
     const [challenge, secret] = await tx.getAll(ref, secretRef);

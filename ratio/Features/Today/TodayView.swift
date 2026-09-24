@@ -9,7 +9,9 @@ struct TodayView: View {
     @Environment(AppNavigator.self) private var navigator
     @Environment(\.scenePhase) private var scenePhase
     @AppStorage("tour.today.seen") private var tourSeen = false
+    @AppStorage("consent.asked") private var consentAsked = false
     @State private var tourStop: TourStop?
+    @State private var askingConsent = false
 
     var body: some View {
         ScrollViewReader { scroll in
@@ -44,6 +46,15 @@ struct TodayView: View {
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
         .toolbar(.hidden, for: .navigationBar)
+        .sheet(isPresented: $askingConsent, onDismiss: { consentAsked = true }) {
+            AnalyticsConsentSheet { share in
+                consentAsked = true
+                askingConsent = false
+                Task { try? await UserRepository().update(uid: student.uid, ["consents.analytics": share]) }
+            }
+            .presentationDetents([.medium])
+            .interactiveDismissDisabled()
+        }
         .overlayPreferenceValue(TourAnchorKey.self) { anchors in
             if let tourStop, let anchor = anchors[tourStop] {
                 GeometryReader { proxy in
@@ -125,7 +136,7 @@ struct TodayView: View {
             }
             .ratioFont(.monoLabel)
             .foregroundStyle(Color.ratioInk2)
-            Text("\(streak.daysThisWeek) of \(Streak.target) days").ratioFont(.h2)
+            Text("\(streak.daysThisWeek) of \(student.streak.target) days").ratioFont(.h2)
             HStack(spacing: 5) {
                 ForEach(Array(streak.week.enumerated()), id: \.offset) { index, day in
                     VStack(spacing: 6) {
@@ -146,7 +157,7 @@ struct TodayView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         .todayCard()
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("This week: \(streak.daysThisWeek) of \(Streak.target) days. \(streak.message)")
+        .accessibilityLabel("This week: \(streak.daysThisWeek) of \(student.streak.target) days. \(streak.message)")
     }
 
     private var duelCard: some View {
@@ -215,12 +226,23 @@ struct TodayView: View {
         withAnimation(.easeInOut(duration: 0.25)) {
             tourStop = tourStop.flatMap { TourStop(rawValue: $0.rawValue + 1) }
         }
-        if tourStop == nil { tourSeen = true }
+        if tourStop == nil { finishTour() }
     }
 
     private func endTour() {
         withAnimation(.easeInOut(duration: 0.25)) { tourStop = nil }
+        finishTour()
+    }
+
+    /// After the tour, once: notifications (the system asks), then usage analytics —
+    /// off unless the student opts in (PRD: "Analytics: opt-in").
+    private func finishTour() {
         tourSeen = true
+        guard !consentAsked else { return }
+        Task {
+            await RatioNotifications.requestPermission()
+            askingConsent = true
+        }
     }
 }
 
@@ -404,7 +426,7 @@ enum TourStop: Int, CaseIterable {
     var detail: String {
         switch self {
         case .brief: "12 to 20 minutes. Rebuilt each night from yesterday's answers and the reviews that have come due."
-        case .streak: "The target is \(Streak.target) active days a week. A missed day costs nothing; only the week counts."
+        case .streak: "Aim for a few active days each week — four to start, or your own target in Settings. A missed day costs nothing; only the week counts."
         case .more: "Duel other students, see where you stand on this week's board, and catch up on the week in law — with a quiz on Sundays."
         }
     }
@@ -484,5 +506,26 @@ private struct TourOverlay: View {
         .foregroundStyle(Color.ratioInk)
         .accessibilityElement(children: .contain)
         .accessibilityAddTraits(.isModal)
+    }
+}
+
+/// The one-time analytics choice. Crash reports are always on (legitimate interest);
+/// usage analytics only with consent, and can be changed in Settings.
+private struct AnalyticsConsentSheet: View {
+    let decide: (Bool) -> Void
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            Text("Help improve Ratio?").ratioFont(.h1)
+            Text("Share anonymous usage data — which screens and features you use, never your answers or scores — so we can see what's working. Crash reports are always on so we can fix problems.")
+                .ratioFont(.body)
+            Text("You can change this any time in Settings → Privacy.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+            Spacer()
+            RatioButton("Share usage data", style: .secondary) { decide(true) }
+            RatioButton("No thanks", style: .tertiary) { decide(false) }
+        }
+        .padding(24)
+        .background(Color.ratioParchment.ignoresSafeArea())
+        .foregroundStyle(Color.ratioInk)
     }
 }

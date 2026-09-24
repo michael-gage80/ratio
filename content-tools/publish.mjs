@@ -24,7 +24,7 @@ initializeApp({ storageBucket: BUCKET });
 const bucket = getStorage().bucket();
 
 const lessons = readdirSync(LESSONS)
-  .filter((f) => f.endsWith('.json'))
+  .filter((f) => /^[a-z]+-\d{2}-[a-z0-9-]+\.json$/.test(f))
   .map((f) => JSON.parse(readFileSync(join(LESSONS, f), 'utf8')))
   .filter((l) => includeUnreviewed || l.reviewedBy)
   .sort((a, b) => a.lessonNumber - b.lessonNumber);
