@@ -15,56 +15,84 @@ struct PaywallView: View {
     @State private var working = false
     @State private var message: String?
     @State private var enteringCode = false
+    @Environment(\.dynamicTypeSize) private var typeSize
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
-                HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                HStack(alignment: .firstTextBaseline) {
                     Text("Ratio \(Text("Plus").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
                     Spacer()
                     Button { dismiss() } label: {
-                        Image(systemName: "xmark").font(.body.weight(.semibold)).frame(width: 44, height: 44)
+                        Image(systemName: "xmark")
+                            .font(.body)
+                            .frame(width: 44, height: 44)
                             .background(Color.ratioSunk, in: Circle())
                     }
+                    .buttonStyle(.ratioPress)
                     .accessibilityLabel("Close")
                 }
-                if let reason { Text(reason).ratioFont(.body).foregroundStyle(Color.ratioOxblood) }
-                Text("All \(Module.allCases.count) modules, unlimited duels, and your full profile.").ratioFont(.h3)
-                comparison
-                Text("Accessibility features and extended time are always free.").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    if let reason { Text(reason).ratioFont(.body).foregroundStyle(Color.ratioOxblood) }
+                    Text("All \(Module.allCases.count) modules, unlimited duels, and your full profile.").ratioFont(.h3)
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    comparison
+                    Text("Accessibility features and extra duel time are always free.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                }
                 if student.isPlus {
-                    Label("You have Ratio Plus.", systemImage: "checkmark.seal").ratioFont(.h3).foregroundStyle(Color.ratioVerdigris)
+                    Label("You have Ratio Plus.", systemImage: "checkmark.seal").ratioFont(.h3)
                 } else if purchases.products.isEmpty {
-                    Text(purchases.loadFailed ? "Plans couldn't load. Check your connection and try again." : "Loading plans…")
-                        .ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                    if purchases.loadFailed {
+                        RatioErrorState(message: "Plans couldn't load. Check your connection and try again.") { Task { await purchases.loadProducts() } }
+                    } else {
+                        plans.ratioSkeleton()
+                    }
                 } else {
-                    plans
-                    RatioButton(working ? "One moment…" : buttonTitle, isEnabled: !working) { Task { await buy() } }
-                    Text(terms).ratioFont(.small).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+                    VStack(spacing: RatioSpace.s) {
+                        plans
+                        RatioButton(working ? "One moment…" : buttonTitle, isEnabled: !working) { Task { await buy() } }
+                        Text(terms).ratioFont(.small).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+                    }
                 }
                 if let message { Text(message).ratioFont(.small).foregroundStyle(Color.ratioOxblood) }
-                HStack {
-                    Button("Restore purchases") { Task { await restore() } }
-                    Spacer()
-                    Button("Have a university code?") { enteringCode = true }
+                VStack(spacing: RatioSpace.xs) {
+                    ViewThatFits(in: .horizontal) {
+                        HStack {
+                            restoreButton
+                            Spacer()
+                            codeButton
+                        }
+                        VStack(alignment: .leading, spacing: 0) {
+                            restoreButton
+                            codeButton
+                        }
+                    }
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk)
+                    HStack(spacing: RatioSpace.m) {
+                        Link("Terms", destination: RatioLinks.terms).frame(minHeight: 44)
+                        Link("Privacy", destination: RatioLinks.privacy).frame(minHeight: 44)
+                    }
+                    .ratioFont(.monoLabel)
+                    .foregroundStyle(Color.ratioInk2)
+                    .frame(maxWidth: .infinity)
                 }
-                .ratioFont(.monoLabel)
-                .foregroundStyle(Color.ratioInk)
-                HStack(spacing: 16) {
-                    Link("Terms", destination: RatioLinks.terms)
-                    Link("Privacy", destination: RatioLinks.privacy)
-                }
-                .ratioFont(.monoLabel)
-                .foregroundStyle(Color.ratioInk2)
-                .frame(maxWidth: .infinity)
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .task { if purchases.products.isEmpty { await purchases.loadProducts() } }
         .onChange(of: student.isPlus) { _, isPlus in if isPlus { dismiss() } }
         .sheet(isPresented: $enteringCode) { LicenceCodeSheet().presentationDetents([.medium]) }
+    }
+
+    private var restoreButton: some View {
+        Button("Restore purchases") { Task { await restore() } }.frame(minHeight: 44)
+    }
+
+    private var codeButton: some View {
+        Button("Have a university code?") { enteringCode = true }.frame(minHeight: 44)
     }
 
     private var comparison: some View {
@@ -78,47 +106,68 @@ struct PaywallView: View {
         }
     }
 
+    @ViewBuilder
     private func row(_ label: String, free: String, plus: String, header: Bool = false) -> some View {
-        VStack(spacing: 0) {
-            HStack(alignment: .firstTextBaseline, spacing: 12) {
-                Text(label).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(width: 92, alignment: .leading)
-                Text(free).ratioFont(header ? .monoLabel : .body).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity, alignment: .leading)
-                Text(plus).ratioFont(header ? .monoLabel : .body).foregroundStyle(header ? Color.ratioOxblood : Color.ratioInk).frame(maxWidth: .infinity, alignment: .leading)
+        if typeSize.isAccessibilitySize {
+            // Stacked: the feature, then free and Plus spelt out. No header row needed.
+            if !header {
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                    Text(label).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Text("Free: \(free)").ratioFont(.body).foregroundStyle(Color.ratioInk2)
+                    Text("Plus: \(plus)").ratioFont(.body)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.vertical, RatioSpace.s)
+                .accessibilityElement(children: .combine)
+                Divider().overlay(Color.ratioRule)
             }
-            .padding(.vertical, 12)
-            Divider().overlay(Color.ratioRule)
+        } else {
+            VStack(spacing: 0) {
+                HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                    Text(label).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).frame(width: 96, alignment: .leading)
+                    Text(free).ratioFont(header ? .monoLabel : .body).foregroundStyle(Color.ratioInk2).frame(maxWidth: .infinity, alignment: .leading)
+                    Text(plus).ratioFont(header ? .monoLabel : .body).foregroundStyle(header ? Color.ratioOxblood : Color.ratioInk).frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.vertical, RatioSpace.s)
+                Divider().overlay(Color.ratioRule)
+            }
+            .accessibilityElement(children: .combine)
         }
-        .accessibilityElement(children: .combine)
     }
 
     private var plans: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: RatioSpace.s) {
             if let annual = purchases.annualProduct {
-                plan(annual, title: "Annual", detail: annualDetail(annual))
+                plan(annual.id, title: "Annual", detail: annualDetail(annual), price: annual.displayPrice)
             }
             if let monthly = purchases.monthlyProduct {
-                plan(monthly, title: "Monthly", detail: "Billed monthly")
+                plan(monthly.id, title: "Monthly", detail: "Billed monthly", price: monthly.displayPrice)
+            }
+            if purchases.products.isEmpty {
+                // Placeholders while the App Store answers.
+                plan(Purchases.annual, title: "Annual", detail: "A month · free trial", price: "£00.00")
+                plan(Purchases.monthly, title: "Monthly", detail: "Billed monthly", price: "£0.00")
             }
         }
     }
 
-    private func plan(_ product: Product, title: String, detail: String) -> some View {
-        let selected = choice == product.id
-        return Button { choice = product.id } label: {
-            HStack(spacing: 16) {
-                Image(systemName: selected ? "largecircle.fill.circle" : "circle").font(.title2)
-                VStack(alignment: .leading, spacing: 4) {
+    private func plan(_ id: String, title: String, detail: String, price: String) -> some View {
+        let selected = choice == id
+        return Button { choice = id } label: {
+            HStack(spacing: RatioSpace.s) {
+                Image(systemName: selected ? "largecircle.fill.circle" : "circle").font(.title3)
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                     Text(title).ratioFont(.h3)
                     Text(detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
-                Spacer()
-                Text(product.displayPrice).ratioFont(.monoData)
+                Spacer(minLength: RatioSpace.xs)
+                Text(price).ratioFont(.monoData)
             }
-            .padding(18)
-            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .overlay { RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(selected ? Color.ratioInk : Color.ratioRule, lineWidth: selected ? 2 : 1) }
+            .padding(RatioSpace.s)
+            .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(selected ? Color.ratioInk : Color.ratioRule, lineWidth: selected ? 2 : 1) }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
         .accessibilityAddTraits(selected ? .isSelected : [])
     }
 
@@ -186,10 +235,10 @@ struct LicenceCodeSheet: View {
     @State private var done: String?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("University licence").ratioFont(.h2)
             if let done {
-                Label("Ratio Plus is on, through \(done).", systemImage: "checkmark.seal").ratioFont(.h3).foregroundStyle(Color.ratioVerdigris)
+                Label("Ratio Plus is on, through \(done).", systemImage: "checkmark.seal").ratioFont(.h3)
                 RatioButton("Done", style: .secondary) { dismiss() }
             } else {
                 Text("Enter the code from your university. You'll need to be signed in with your university email.").ratioFont(.body)
@@ -197,8 +246,8 @@ struct LicenceCodeSheet: View {
                     .font(.custom("IBMPlexMono-Regular", size: 22, relativeTo: .title3))
                     .textInputAutocapitalization(.characters)
                     .autocorrectionDisabled()
-                    .padding(14)
-                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .padding(RatioSpace.s)
+                    .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                 if let message { Text(message).ratioFont(.small).foregroundStyle(Color.ratioOxblood) }
                 RatioButton(working ? "Checking…" : "Redeem", isEnabled: code.count >= 4 && !working) {
                     Task {
@@ -210,9 +259,8 @@ struct LicenceCodeSheet: View {
             }
             Spacer()
         }
-        .padding(24)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .padding(RatioSpace.m)
+        .ratioPage()
     }
 }
 
