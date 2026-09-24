@@ -3,78 +3,162 @@ import SwiftUI
 /// screens/25-pathway.png — the Lessons tab: every module as a map of its lessons,
 /// grouped by topic, with the student's state on every lesson. The student's own modules
 /// come first; the rest follow, dimmed, to add. Tap a lesson to open it; press and hold
-/// to peek at its topic scores. The Library sits at the top.
+/// to peek at its topic scores. The Library sits at the top. On iPad (regular width) the
+/// modules are a list beside the contents, and selecting a lesson shows its scores in an
+/// inspector at the top of the contents (screens/iPad/4-pathway-me-settings/01).
 struct PathwayView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
     private var selected: Module? { navigator.lessonsModule }
     @State private var peeking: String?
+    /// iPad: the lesson shown in the inspector.
+    @State private var inspected: String?
 
     private var mine: [Module] { student.modules }
     /// The student's modules, then the rest of their programme's.
     private var modules: [Module] { mine + student.programme.modules.filter { !mine.contains($0) } }
     private var module: Module { selected ?? modules.first ?? .crime }
 
+    private var header: some View {
+        RatioPageHeader(eyebrow: [student.programme == .sqe1 ? "SQE1" : student.profile.year.map { "Year \($0)" }, "Your modules first"].compactMap { $0 }.joined(separator: " · "),
+                        title: "Lessons")
+    }
+
     var body: some View {
         let lessons = content.lessons(in: module)
         let groups = TopicGroup.groups(of: lessons)
         ScrollView {
-            VStack(alignment: .leading, spacing: RatioSpace.m) {
-                RatioPageHeader(eyebrow: [student.programme == .sqe1 ? "SQE1" : student.profile.year.map { "Year \($0)" }, "Your modules first"].compactMap { $0 }.joined(separator: " · "),
-                                title: "Lessons")
-                    .padding(.horizontal, RatioSpace.m)
-
-                libraryLink.padding(.horizontal, RatioSpace.m)
-
-                moduleCards
-
+            if width.isCompact {
                 VStack(alignment: .leading, spacing: RatioSpace.m) {
-                    contentsHeader(lessons: lessons, topics: groups.count)
-                    if lessons.isEmpty {
-                        planned
-                    } else {
-                        Text("Press and hold a lesson to see its topic scores")
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioInk2)
-                        ForEach(Array(groups.enumerated()), id: \.element.id) { index, group in
-                            groupSection(group, index: index)
-                        }
-                        if let date = lessons.first?.lawStatedDate {
-                            Text("Law stated as at \(date)")
-                                .ratioFont(.monoLabel)
+                    header.padding(.horizontal, RatioSpace.m)
+
+                    libraryLink.padding(.horizontal, RatioSpace.m)
+
+                    moduleCards
+
+                    contents(lessons: lessons, groups: groups)
+                        .padding(.horizontal, RatioSpace.m)
+                }
+                .padding(.top, RatioSpace.s)
+                .padding(.bottom, RatioSpace.xl)
+            } else {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    header
+                    ColumnsLayout(fraction: 0.36, spacing: RatioSpace.l) {
+                        VStack(alignment: .leading, spacing: RatioSpace.s) {
+                            libraryLink
+                            moduleList
+                            Text("Select a module to open its contents. Select a lesson to see its topic scores.")
+                                .ratioFont(.small)
+                                .italic()
                                 .foregroundStyle(Color.ratioInk2)
-                                .multilineTextAlignment(.center)
-                                .frame(maxWidth: .infinity)
+                        }
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            if let lesson = inspectedLesson(in: lessons) {
+                                LessonInspector(lesson: lesson, number: number(of: lesson, in: groups),
+                                                groupTitle: TopicGroup.title(forGroup: TopicGroup.groupId(of: lesson.topicId))) {
+                                    open(lesson)
+                                }
+                            }
+                            contents(lessons: lessons, groups: groups)
                         }
                     }
                 }
-                .padding(.horizontal, RatioSpace.m)
+                .padding(.horizontal, RatioSpace.l)
+                .padding(.top, RatioSpace.s)
+                .padding(.bottom, RatioSpace.xl)
             }
-            .padding(.top, RatioSpace.s)
-            .padding(.bottom, RatioSpace.xl)
         }
         .ratioPage()
         .ratioFeedback(.impact(weight: .light), trigger: peeking) { _, new in new != nil }
         .toolbar(.hidden, for: .navigationBar)
     }
 
+    private func contents(lessons: [Lesson], groups: [TopicGroup]) -> some View {
+        VStack(alignment: .leading, spacing: RatioSpace.m) {
+            contentsHeader(lessons: lessons, topics: groups.count)
+            if lessons.isEmpty {
+                planned
+            } else {
+                if width.isCompact {
+                    Text("Press and hold a lesson to see its topic scores")
+                        .ratioFont(.monoLabel)
+                        .foregroundStyle(Color.ratioInk2)
+                }
+                ForEach(Array(groups.enumerated()), id: \.element.id) { index, group in
+                    groupSection(group, index: index)
+                }
+                if let date = lessons.first?.lawStatedDate {
+                    Text("Law stated as at \(date)")
+                        .ratioFont(.monoLabel)
+                        .foregroundStyle(Color.ratioInk2)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
+                }
+            }
+        }
+    }
+
+    /// The inspected lesson if it's in this module; otherwise the one to carry on with.
+    private func inspectedLesson(in lessons: [Lesson]) -> Lesson? {
+        lessons.first { $0.id == inspected }
+            ?? lessons.first { student.state(of: $0) == .inProgress }
+            ?? lessons.first { student.state(of: $0) == .notStarted }
+            ?? lessons.first
+    }
+
+    /// "2.2" — its topic group and place in it.
+    private func number(of lesson: Lesson, in groups: [TopicGroup]) -> String {
+        for (index, group) in groups.enumerated() {
+            if let position = group.lessons.firstIndex(where: { $0.id == lesson.id }) { return "\(index + 1).\(position + 1)" }
+        }
+        return ""
+    }
+
+    private func open(_ lesson: Lesson) {
+        if student.canStudy(lesson.moduleId) {
+            navigator.pathwayPath.append(.overview(lesson.id))
+        } else {
+            navigator.showPaywall(for: lesson.moduleId, freeModule: student.freeModule)
+        }
+    }
+
     // MARK: Modules
+
+    private func select(_ module: Module) {
+        withAnimation(RatioMotion.tap) {
+            navigator.lessonsModule = module
+            // Keep the iPad sidebar's highlighted module in step.
+            if case .module = navigator.tab { navigator.tab = .module(module) }
+            peeking = nil
+            inspected = nil
+        }
+    }
+
+    /// iPad: the modules as a vertical list beside the contents.
+    private var moduleList: some View {
+        VStack(spacing: RatioSpace.s) {
+            ForEach(modules) { module in
+                let isMine = mine.contains(module)
+                Button { select(module) } label: {
+                    ModuleRow(module: module, mastery: student.mastery(of: content.lessons(in: module)), isSelected: module == self.module,
+                              plan: student.isPlus || !isMine ? nil : (student.canStudy(module) ? "Free" : "Ratio Plus"),
+                              isMine: isMine)
+                }
+                .buttonStyle(.ratioPress)
+            }
+        }
+    }
 
     private var moduleCards: some View {
         ScrollView(.horizontal) {
             HStack(alignment: .top, spacing: RatioSpace.s) {
                 ForEach(modules) { module in
                     let isMine = mine.contains(module)
-                    Button {
-                        withAnimation(RatioMotion.tap) {
-                            navigator.lessonsModule = module
-                            // Keep the iPad sidebar's highlighted module in step.
-                            if case .module = navigator.tab { navigator.tab = .module(module) }
-                            peeking = nil
-                        }
-                    } label: {
+                    Button { select(module) } label: {
                         ModuleCard(module: module, mastery: student.mastery(of: content.lessons(in: module)), isSelected: module == self.module,
                                    plan: student.isPlus || !isMine ? nil : (student.canStudy(module) ? "Free" : "Ratio Plus"),
                                    isMine: isMine)
@@ -199,6 +283,16 @@ struct PathwayView: View {
                     Text(lesson.title).ratioFont(.body).layoutPriority(1)
                     DottedLeader()
                     status(canStudy: canStudy, state: state)
+                    if !width.isCompact {
+                        Button { open(lesson) } label: {
+                            Image(systemName: "arrow.right")
+                                .foregroundStyle(inspected == lesson.id ? Color.ratioOxblood : Color.ratioInk2)
+                                .frame(width: 44, height: 32)
+                                .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.ratioPress)
+                        .accessibilityLabel("Open \(lesson.title)")
+                    }
                 }
             }
             if peeking == lesson.id {
@@ -207,18 +301,28 @@ struct PathwayView: View {
             }
         }
         .padding(.vertical, RatioSpace.s)
-        .contentShape(Rectangle())
-        .onTapGesture {
-            if canStudy {
-                navigator.pathwayPath.append(.overview(lesson.id))
-            } else {
-                navigator.showPaywall(for: lesson.moduleId, freeModule: student.freeModule)
+        .padding(.horizontal, width.isCompact ? 0 : RatioSpace.xs)
+        .background {
+            if !width.isCompact && inspected == lesson.id {
+                RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous).fill(Color.ratioSunk)
             }
         }
-        .onLongPressGesture(minimumDuration: 0.35) { togglePeek(lesson) }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            // iPad: a tap shows it in the inspector; the arrow (or a second tap) opens it.
+            if width.isCompact || inspected == lesson.id {
+                open(lesson)
+            } else {
+                withAnimation(RatioMotion.tap) { inspected = lesson.id }
+            }
+        }
+        .onLongPressGesture(minimumDuration: 0.35) { if width.isCompact { togglePeek(lesson) } }
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(.isButton)
-        .accessibilityAction(named: peeking == lesson.id ? "Hide topic scores" : "Show topic scores") { togglePeek(lesson) }
+        .accessibilityAction(named: "Open") { open(lesson) }
+        .accessibilityAction(named: peeking == lesson.id ? "Hide topic scores" : "Show topic scores") {
+            if width.isCompact { togglePeek(lesson) } else { inspected = lesson.id }
+        }
     }
 
     @ViewBuilder
@@ -399,5 +503,115 @@ private struct TopicPeek: View {
             }
         }
         .ratioPanel()
+    }
+}
+
+/// iPad: a module in the vertical list — art, title, mastery and plan.
+private struct ModuleRow: View {
+    let module: Module
+    let mastery: Int?
+    let isSelected: Bool
+    var plan: String?
+    var isMine = true
+
+    var body: some View {
+        HStack(alignment: .top, spacing: RatioSpace.s) {
+            ModuleIllustration(module: module)
+                .frame(width: 48, height: 48)
+                .padding(RatioSpace.xs)
+                .background(Color.ratioParchment, in: RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous))
+                .overlay { RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous).strokeBorder(Color.ratioRule) }
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(module.title).ratioFont(.h3).multilineTextAlignment(.leading)
+                    Spacer(minLength: RatioSpace.xs)
+                    Text(mastery.map { "\($0)%" } ?? "").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                }
+                if let mastery {
+                    GeometryReader { proxy in
+                        ZStack(alignment: .leading) {
+                            Capsule().fill(Color.ratioRule)
+                            Capsule().fill(Color.ratioInk).frame(width: proxy.size.width * Double(mastery) / 100)
+                        }
+                    }
+                    .frame(height: 4)
+                } else {
+                    Text("In preparation").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                }
+                if let plan { RatioTag(plan, icon: plan == "Free" ? nil : "lock") }
+            }
+        }
+        .padding(RatioSpace.s)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous)
+                .strokeBorder(isSelected ? Color.ratioInk : Color.ratioRule, lineWidth: isSelected ? 2 : 1)
+        }
+        .foregroundStyle(Color.ratioInk)
+        .opacity(isMine ? 1 : 0.55)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(module.title), \(isMine ? mastery.map { "\($0)% secure" } ?? "in preparation" : "not one of your modules")")
+        .accessibilityAddTraits(isSelected ? [.isButton, .isSelected] : .isButton)
+    }
+}
+
+/// iPad: the selected lesson's state, its topic scores with bands, and a way in.
+private struct LessonInspector: View {
+    let lesson: Lesson
+    let number: String
+    let groupTitle: String
+    let open: () -> Void
+
+    @Environment(StudentStore.self) private var student
+
+    var body: some View {
+        let state = student.state(of: lesson)
+        let scores = student.topics[lesson.topicId]
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("Inspector · \(groupTitle)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                Spacer(minLength: RatioSpace.xs)
+                LessonStateLabel(state: state)
+            }
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .center, spacing: RatioSpace.s) {
+                    title
+                    Spacer(minLength: RatioSpace.xs)
+                    button(state: state).frame(width: 180)
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    title
+                    button(state: state)
+                }
+            }
+            Divider().overlay(Color.ratioRule)
+            if let scores, Skill.allCases.contains(where: { scores[$0] != nil }) {
+                ForEach(Skill.allCases) { skill in
+                    SkillRow(title: skill.title, estimate: scores[skill], compact: true)
+                }
+                Text("The shaded band is our uncertainty. It narrows as you answer more.")
+                    .ratioFont(.small)
+                    .italic()
+                    .foregroundStyle(Color.ratioInk2)
+            } else {
+                Text("Not assessed yet. Take this lesson's tests to see scores here.")
+                    .ratioFont(.small)
+                    .foregroundStyle(Color.ratioInk2)
+            }
+            KeyHint(keys: "⌘↩", label: "Open")
+        }
+        .ratioCard()
+    }
+
+    private var title: some View {
+        Text("\(Text(number).foregroundStyle(Color.ratioInk2))  \(lesson.title)")
+            .ratioFont(.h2)
+    }
+
+    private func button(state: LessonState) -> some View {
+        let label = !student.canStudy(lesson.moduleId) ? "Ratio Plus" : state == .inProgress ? "Resume →" : state == .notStarted ? "Start →" : "Open →"
+        return RatioButton(label, style: .secondary, action: open)
+            .keyboardShortcut(.return, modifiers: .command)
     }
 }

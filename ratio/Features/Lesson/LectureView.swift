@@ -4,7 +4,9 @@ import SwiftUI
 /// opening once the student answers the one before (PRD: lesson stage 2, "Lecture").
 /// Progress is saved after every part, so the lecture resumes where it stopped. There's
 /// no Continue button: once an answer locks, its feedback stays, the next part opens
-/// beneath, and the page scrolls to it after a moment (not with Reduce Motion).
+/// beneath, and the page scrolls to it after a moment (not with Reduce Motion). On iPad
+/// (screens/iPad/3-lesson/02) each part's case cards, statutes and maps sit in a margin
+/// beside its text; the margin is also where Pencil notes will go.
 struct LectureView: View {
     let lesson: Lesson
     /// Fallback for the IRAC scaffold level when this topic hasn't been assessed yet.
@@ -13,6 +15,7 @@ struct LectureView: View {
     let onExit: () -> Void
 
     @Environment(ContentStore.self) private var content
+    @Environment(\.ratioWidth) private var width
     @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
     @AppStorage(RatioPreferences.reduceMotion) private var reduceMotion = false
     @State private var applicationEstimate: Estimate?
@@ -50,7 +53,7 @@ struct LectureView: View {
                         .foregroundStyle(Color.ratioInk2)
                         .frame(maxWidth: .infinity)
                 }
-                .padding(.horizontal, RatioSpace.m)
+                .padding(.horizontal, width.isCompact ? RatioSpace.m : RatioSpace.xl)
                 .padding(.top, RatioSpace.s)
                 .padding(.bottom, RatioSpace.xl)
             }
@@ -79,11 +82,12 @@ struct LectureView: View {
                 showsExamRoom = false
                 onExit()
             }
+            .ratioMeasuresWidth()
         }
     }
 
     private var header: some View {
-        VStack(alignment: .leading, spacing: RatioSpace.xs) {
+        let title = VStack(alignment: .leading, spacing: RatioSpace.xs) {
             Text("Lecture · \(lesson.moduleId.title) · Lesson \(lesson.lessonNumber)")
                 .ratioFont(.monoLabel)
                 .foregroundStyle(Color.ratioInk2)
@@ -93,7 +97,27 @@ struct LectureView: View {
                 .foregroundStyle(Color.ratioInk2)
             Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, RatioSpace.xs)
         }
+        return Group {
+            if width.isCompact {
+                title
+            } else {
+                ColumnsLayout(fraction: Self.textFraction, spacing: RatioSpace.l) {
+                    title
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                        Rectangle().fill(Color.ratioRule).frame(height: 1)
+                        Text("The margin").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        Text("Case cards, statutes and the doctrine map sit here, beside the part they belong to.")
+                            .ratioFont(.small)
+                            .foregroundStyle(Color.ratioInk2)
+                    }
+                    .padding(.top, RatioSpace.xl)
+                }
+            }
+        }
     }
+
+    /// iPad: the share of a part's width given to its text; the margin gets the rest.
+    private static let textFraction: CGFloat = 0.63
 
     private var progressBar: some View {
         HStack(spacing: RatioSpace.xs) {
@@ -112,19 +136,51 @@ struct LectureView: View {
         .accessibilityLabel("Part \(min(partsCompleted + 1, lesson.parts.count)) of \(lesson.parts.count)")
     }
 
+    @ViewBuilder
     private func partView(_ part: Lesson.Part, index: Int, scroll: ScrollViewProxy) -> some View {
+        if width.isCompact {
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
+                partText(part, index: index)
+                components(part)
+                interaction(part, index: index, scroll: scroll)
+            }
+        } else {
+            // The part's text and interaction on the left; its components in the margin,
+            // level with the top of the part.
+            ColumnsLayout(fraction: Self.textFraction, spacing: RatioSpace.l) {
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    Rectangle().fill(Color.ratioInk).frame(height: 1)
+                    partText(part, index: index)
+                    interaction(part, index: index, scroll: scroll)
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.s) {
+                    components(part)
+                }
+                .padding(.top, RatioSpace.l)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func partText(_ part: Lesson.Part, index: Int) -> some View {
+        Text("Part \(Self.numerals[safe: index] ?? "\(index + 1)")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+        Text(part.heading).ratioFont(.h2)
+        ForEach(Array(part.body.enumerated()), id: \.offset) { _, paragraph in
+            Text(paragraph).ratioFont(.body)
+        }
+    }
+
+    @ViewBuilder
+    private func components(_ part: Lesson.Part) -> some View {
+        ForEach(Array(part.components.enumerated()), id: \.offset) { _, component in
+            LessonComponentView(component: component, moduleTitle: lesson.moduleId.title)
+        }
+    }
+
+    @ViewBuilder
+    private func interaction(_ part: Lesson.Part, index: Int, scroll: ScrollViewProxy) -> some View {
         let isCurrent = index == partsCompleted
         let response = responses[index]
-        return VStack(alignment: .leading, spacing: RatioSpace.s) {
-            Text("Part \(Self.numerals[safe: index] ?? "\(index + 1)")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            Text(part.heading).ratioFont(.h2)
-            ForEach(Array(part.body.enumerated()), id: \.offset) { _, paragraph in
-                Text(paragraph).ratioFont(.body)
-            }
-            ForEach(Array(part.components.enumerated()), id: \.offset) { _, component in
-                LessonComponentView(component: component, moduleTitle: lesson.moduleId.title)
-            }
-
             if isCurrent || response != nil {
                 VStack(alignment: .leading, spacing: RatioSpace.s) {
                     Label(part.interaction.typeTitle, systemImage: "circle.fill")
@@ -142,7 +198,6 @@ struct LectureView: View {
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
             }
-        }
     }
 
     /// A part not yet opened ("PART II · THE TEST · ANSWER TO CONTINUE"), or the tests

@@ -51,7 +51,8 @@ extension ContentStore {
 
 /// The Library in Lessons: every case, piece of legislation and doctrine map, searchable
 /// and filtered by module, each linking back to its lessons. Everything is listed for
-/// everyone; opening one outside a free student's module needs Plus.
+/// everyone; opening one outside a free student's module needs Plus. On iPad the list
+/// sits on the left and the selected entry on the right.
 struct LibraryView: View {
     @Environment(ContentStore.self) private var content
     @Environment(StudentStore.self) private var student
@@ -61,6 +62,10 @@ struct LibraryView: View {
     @State private var query = ""
     /// Nil until built (once, on first appearance).
     @State private var entries: [LibraryEntry]?
+    /// iPad: the entry shown beside the list.
+    @State private var selectedID: String?
+    @FocusState private var searchFocused: Bool
+    @Environment(\.ratioWidth) private var width
 
     private var shown: [LibraryEntry] {
         (entries ?? []).filter { entry in
@@ -70,8 +75,41 @@ struct LibraryView: View {
     }
 
     var body: some View {
-        let shown = shown
-        ScrollView {
+        Group {
+            if width.isCompact {
+                ScrollView { list(shown) }
+            } else {
+                HStack(alignment: .top, spacing: 0) {
+                    ScrollView { list(shown) }
+                        .frame(maxWidth: 440)
+                    Rectangle().fill(Color.ratioRule).frame(width: 1).ignoresSafeArea(edges: .bottom)
+                    ScrollView {
+                        if let entry = (entries ?? []).first(where: { $0.id == selectedID }) {
+                            LibraryEntryDetail(entry: entry)
+                                .ratioReadableWidth()
+                                .padding(RatioSpace.l)
+                        } else {
+                            RatioEmptyState(art: .openBook, message: "Choose a case, statute or doctrine map to read it here.")
+                                .padding(.top, RatioSpace.xl)
+                        }
+                    }
+                }
+            }
+        }
+        .ratioPage()
+        .scrollDismissesKeyboard(.interactively)
+        .toolbar(.hidden, for: .navigationBar)
+        .task { if entries == nil { entries = content.library() } }
+        // ⌘F: search, on a hardware keyboard.
+        .background {
+            Button("Search") { searchFocused = true }
+                .keyboardShortcut("f", modifiers: .command)
+                .opacity(0)
+                .accessibilityHidden(true)
+        }
+    }
+
+    private func list(_ shown: [LibraryEntry]) -> some View {
             LazyVStack(alignment: .leading, spacing: 0) {
                 VStack(alignment: .leading, spacing: RatioSpace.s) {
                     RatioPageHeader(eyebrow: "Lessons", title: "Library") { moduleFilter }
@@ -98,8 +136,16 @@ struct LibraryView: View {
                         .padding(.bottom, RatioSpace.xs)
                     ForEach(shown) { entry in
                         Divider().overlay(Color.ratioRule)
-                        Button { open(entry) } label: { row(entry) }
-                            .buttonStyle(.ratioPress)
+                        Button { open(entry) } label: {
+                            row(entry)
+                                .padding(.horizontal, width.isCompact ? 0 : RatioSpace.xs)
+                                .background {
+                                    if !width.isCompact && selectedID == entry.id {
+                                        RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous).fill(Color.ratioSunk)
+                                    }
+                                }
+                        }
+                        .buttonStyle(.ratioPress)
                     }
                     Divider().overlay(Color.ratioRule)
                 }
@@ -107,11 +153,6 @@ struct LibraryView: View {
             .padding(.horizontal, RatioSpace.m)
             .padding(.top, RatioSpace.s)
             .padding(.bottom, RatioSpace.xl)
-        }
-        .ratioPage()
-        .scrollDismissesKeyboard(.interactively)
-        .toolbar(.hidden, for: .navigationBar)
-        .task { if entries == nil { entries = content.library() } }
     }
 
     private var moduleFilter: some View {
@@ -134,6 +175,7 @@ struct LibraryView: View {
         HStack(spacing: RatioSpace.xs) {
             Image(systemName: "magnifyingglass").foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
             TextField("Search the library", text: $query).ratioFont(.body).autocorrectionDisabled()
+                .focused($searchFocused)
             if !query.isEmpty {
                 Button { query = "" } label: {
                     Image(systemName: "xmark.circle.fill").frame(width: 44, height: 44).contentShape(Rectangle())
@@ -174,7 +216,11 @@ struct LibraryView: View {
 
     private func open(_ entry: LibraryEntry) {
         if student.canStudy(entry.module) {
-            navigator.pathwayPath.append(.libraryEntry(entry.id))
+            if width.isCompact {
+                navigator.pathwayPath.append(.libraryEntry(entry.id))
+            } else {
+                withAnimation(RatioMotion.tap) { selectedID = entry.id }
+            }
         } else {
             navigator.showPaywall(for: entry.module, freeModule: student.freeModule)
         }
@@ -193,7 +239,6 @@ struct LibraryEntryView: View {
     let id: String
 
     @Environment(ContentStore.self) private var content
-    @Environment(AppNavigator.self) private var navigator
     /// Found once, rather than rebuilding the whole library on every render.
     @State private var entry: LibraryEntry?
     @State private var missing = false
@@ -202,9 +247,7 @@ struct LibraryEntryView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: RatioSpace.m) {
                 if let entry {
-                    Text("\(entry.kind.rawValue) · \(entry.module.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                    LessonComponentView(component: entry.component, moduleTitle: entry.module.title)
-                    lessons(entry)
+                    LibraryEntryDetail(entry: entry)
                 } else if missing {
                     RatioEmptyState(message: "This entry isn't in the library any more.")
                 } else {
@@ -220,6 +263,22 @@ struct LibraryEntryView: View {
         .task(id: id) {
             entry = content.library().first { $0.id == id }
             missing = entry == nil
+        }
+    }
+}
+
+/// An entry's component and the lessons it's taught in: a page on iPhone, the right-hand
+/// side of the Library on iPad.
+struct LibraryEntryDetail: View {
+    let entry: LibraryEntry
+
+    @Environment(AppNavigator.self) private var navigator
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.m) {
+            Text("\(entry.kind.rawValue) · \(entry.module.title)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            LessonComponentView(component: entry.component, moduleTitle: entry.module.title)
+            lessons(entry)
         }
     }
 
