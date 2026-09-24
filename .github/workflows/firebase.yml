@@ -79,4 +79,4 @@ jobs:
             npm ci --prefix functions && npm run build --prefix functions
             targets="$targets,functions"
           fi
-          firebase deploy --project ratio-91a04 --only "$targets" --non-interactive
+          firebase deploy --project ratio-91a04 --only "$targets" --non-interactive --force
