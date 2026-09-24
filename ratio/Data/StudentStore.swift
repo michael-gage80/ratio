@@ -1,3 +1,4 @@
+import FirebaseDatabase
 import FirebaseFirestore
 import FirebaseFunctions
 import Foundation
@@ -43,7 +44,10 @@ final class StudentStore {
     /// (same default as functions/src/entitlement.ts).
     private(set) var plusForEveryone = true
 
+    /// Students with the app open, counted every five minutes (functions/src/online.ts).
+    private(set) var online: Int?
     @ObservationIgnored private var listeners: [ListenerRegistration] = []
+    @ObservationIgnored private var onlineHandle: DatabaseHandle?
     @ObservationIgnored private var briefListener: ListenerRegistration?
     @ObservationIgnored private var briefDate: String?
 
@@ -164,12 +168,29 @@ final class StudentStore {
                         .compactMap { document in (try? document.data(as: ChallengeSummary.self)).map { var c = $0; c.id = document.documentID; return c } }
                 },
         ]
+        onlineHandle = Realtime.database.reference(withPath: "stats/online/count").observe(.value) { [weak self] snapshot in
+            self?.online = snapshot.value as? Int
+        }
         listenToTodaysBrief()
+    }
+
+    /// Marks the student online while the app is in the foreground; the entry is removed
+    /// if the connection drops.
+    func setPresent(_ present: Bool) {
+        let ref = Realtime.database.reference(withPath: "online/\(uid)")
+        if present {
+            ref.onDisconnectRemoveValue()
+            ref.setValue(ServerValue.timestamp())
+        } else {
+            ref.removeValue()
+        }
     }
 
     func stop() {
         listeners.forEach { $0.remove() }
         listeners = []
+        if let onlineHandle { Realtime.database.reference(withPath: "stats/online/count").removeObserver(withHandle: onlineHandle) }
+        onlineHandle = nil
         briefListener?.remove()
         briefListener = nil
         briefDate = nil
@@ -329,6 +350,14 @@ nonisolated struct ChallengeSummary: Decodable, Identifiable {
     /// "open", "complete", "expired" or "declined".
     var status: String
     var declinedAt: Date?
+    var completedAt: Date?
+    /// Each player's result once both halves are in; their `winner` 0 is them.
+    var results: [String: Outcome]?
+
+    nonisolated struct Outcome: Decodable {
+        var winner: Int?
+        var score: [Int]
+    }
 
     func opponent(of uid: String) -> (uid: String, name: String) {
         let other = players.first { $0 != uid } ?? ""
@@ -339,7 +368,7 @@ nonisolated struct ChallengeSummary: Decodable, Identifiable {
     func isFrom(_ uid: String) -> Bool { players.first == uid }
 
     private enum CodingKeys: String, CodingKey {
-        case players, names, moduleId, limitMs, done, expiresAt, createdAt, status, declinedAt
+        case players, names, moduleId, limitMs, done, expiresAt, createdAt, status, declinedAt, completedAt, results
     }
 }
 

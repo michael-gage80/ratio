@@ -25,6 +25,15 @@ struct BriefStepView: View {
                 PracticeSessionView(brief: brief, stepIndex: practice.index)
             }
         }
+        // No completion screen: once the last step is done, back to Today, where the
+        // brief card says so.
+        .onChange(of: isComplete) { _, complete in
+            if complete { navigator.todayPath.removeAll() }
+        }
+    }
+
+    private var isComplete: Bool {
+        student.brief.map { student.currentStep(of: $0, content: content) == nil } ?? false
     }
 
     private func steps(_ brief: DailyBrief) -> some View {

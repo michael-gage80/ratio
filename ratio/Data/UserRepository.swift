@@ -29,6 +29,8 @@ struct UserProfile: Decodable, Equatable {
     var freeModuleChanges: Int?
     var settings: StudySettings?
     var consents: Consents?
+    /// When the notifications page was last opened.
+    var notificationsReadAt: Date?
 
     nonisolated struct Subscription: Decodable, Equatable {
         var plan: String

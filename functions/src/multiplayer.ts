@@ -652,7 +652,7 @@ export const playChallenge = onCall<{ challengeId?: string; index?: number; answ
     }
 
     tx.update(secretRef, { [`answers.${uid}`]: answers, [`servedAt.${uid}`]: servedAt });
-    tx.update(ref, { done, ...(records ? { status: "complete", results: records } : {}) });
+    tx.update(ref, { done, ...(records ? { status: "complete", results: records, completedAt: FieldValue.serverTimestamp() } : {}) });
     return {
       revealed,
       question,

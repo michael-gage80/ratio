@@ -1,8 +1,9 @@
 import SwiftUI
 
-/// screens/11-today.png (and 12–14, glass and dark) — the greeting, today's brief, the
-/// weekly streak, and cards for duels, boards and the news (PRD: "Today screen and
-/// daily brief"). The layout is fixed. A three-stop tour runs the first time.
+/// screens/11-today.png — the greeting, today's brief, then colour-coded blocks for
+/// duels, the week's streak, boards and the news (PRD: "Today screen and daily brief").
+/// The student can reorder or hide the blocks after the brief. A three-stop tour runs
+/// the first time.
 struct TodayView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
@@ -12,6 +13,13 @@ struct TodayView: View {
     @AppStorage("consent.asked") private var consentAsked = false
     @State private var tourStop: TourStop?
     @State private var askingConsent = false
+    @State private var editingHome = false
+
+    /// The blocks after the brief — the default layout while the tour runs, so every stop
+    /// has something to point at.
+    private var cards: [HomeCard] {
+        tourStop == nil ? HomeCard.arranged(order: student.settings.homeOrder, hidden: student.settings.homeHidden) : HomeCard.allCases
+    }
 
     var body: some View {
         ScrollViewReader { scroll in
@@ -19,25 +27,21 @@ struct TodayView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     header.padding(.bottom, 12)
                     briefCard.tourAnchor(.brief)
-                    HStack(alignment: .top, spacing: 16) {
-                        streakCard.tourAnchor(.streak)
-                        duelCard
+                    ForEach(cards) { card in
+                        switch card {
+                        case .duel: duelCard.tourAnchor(.more)
+                        case .streak: streakCard.tourAnchor(.streak)
+                        case .boards: boardsCard
+                        case .news: newsCard
+                        }
                     }
-                    .fixedSize(horizontal: false, vertical: true)
-                    VStack(spacing: 16) {
-                        boardsCard
-                        newsCard
-                    }
-                    .tourAnchor(.more)
-                    Text("Educational, not legal advice")
+                    Button("Edit home") { editingHome = true }
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 8)
+                        .frame(maxWidth: .infinity, minHeight: 44)
                 }
                 .padding(24)
             }
-            .background { TodayBackdrop() }
             .onChange(of: tourStop) { _, stop in
                 guard let stop else { return }
                 withAnimation(.easeInOut(duration: 0.3)) { scroll.scrollTo(stop, anchor: .center) }
@@ -46,6 +50,18 @@ struct TodayView: View {
         .background(Color.ratioParchment.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)
         .toolbar(.hidden, for: .navigationBar)
+        .sheet(isPresented: $editingHome) {
+            EditHomeSheet(order: HomeCard.arranged(order: student.settings.homeOrder, hidden: nil),
+                          hidden: Set((student.settings.homeHidden ?? []).compactMap(HomeCard.init(rawValue:)))) { order, hidden in
+                Task {
+                    try? await UserRepository().update(uid: student.uid, [
+                        "settings.homeOrder": order.map(\.rawValue),
+                        "settings.homeHidden": HomeCard.allCases.filter(hidden.contains).map(\.rawValue),
+                    ])
+                }
+            }
+            .presentationDetents([.medium, .large])
+        }
         .sheet(isPresented: $askingConsent, onDismiss: { consentAsked = true }) {
             AnalyticsConsentSheet { share in
                 consentAsked = true
@@ -85,6 +101,18 @@ struct TodayView: View {
                 Text("\(greeting),\n\(student.profile.displayName ?? "there").").ratioFont(.display)
             }
             Spacer()
+            Button { navigator.todayPath.append(.notifications) } label: {
+                Image(systemName: "bell")
+                    .font(.title3)
+                    .frame(width: 44, height: 44)
+                    .overlay(alignment: .topTrailing) {
+                        if student.hasUnreadNotifications(content: content) {
+                            Circle().fill(Color.ratioOxblood).frame(width: 9, height: 9).offset(x: -8, y: 9)
+                        }
+                    }
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(student.hasUnreadNotifications(content: content) ? "Notifications, unread" : "Notifications")
             Button { navigator.tab = .me } label: {
                 ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 56)
             }
@@ -121,11 +149,11 @@ struct TodayView: View {
             }
             .padding(24)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .todayCard()
+            .homeBlock(Color.ratioPaper)
         }
     }
 
-    // MARK: Smaller cards
+    // MARK: Blocks
 
     private var streakCard: some View {
         let streak = student.streak
@@ -151,31 +179,52 @@ struct TodayView: View {
             }
             .accessibilityHidden(true)
             Text(streak.message).ratioFont(.small).italic().foregroundStyle(Color.ratioInk2)
-            Spacer(minLength: 0)
         }
         .padding(18)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .todayCard()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .homeBlock(Color.ratioVWash)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("This week: \(streak.daysThisWeek) of \(student.streak.target) days. \(streak.message)")
     }
 
+    /// Dark ink, horizontal: who's online and the challenges waiting on the student.
     private var duelCard: some View {
-        Button { navigator.tab = .duel } label: {
-            VStack(alignment: .leading, spacing: 12) {
-                let waiting = student.challenges.count { $0.done[student.uid] != true }
-                Text("Duel").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                Text("Find an opponent").ratioFont(.h2)
-                if waiting > 0 {
-                    Text("\(waiting) waiting").ratioFont(.monoData).foregroundStyle(Color.ratioOxblood)
-                } else {
-                    Text("Ranked, a friend lobby, or a sparring partner.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+        let yourGo = student.challenges.filter { $0.done[student.uid] != true }
+        return Button { navigator.tab = .duel } label: {
+            HStack(spacing: 16) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Duel").ratioFont(.monoLabel).opacity(0.7)
+                    Text("Find an opponent").ratioFont(.h2)
+                    if let online = student.online, online > 0 {
+                        Label {
+                            Text("\(online.formatted()) online")
+                        } icon: {
+                            Circle().fill(Color.ratioVerdigris).frame(width: 8, height: 8)
+                        }
+                        .ratioFont(.monoLabel)
+                    }
                 }
-                Spacer(minLength: 0)
+                Spacer(minLength: 8)
+                if !yourGo.isEmpty {
+                    VStack(alignment: .trailing, spacing: 6) {
+                        HStack(spacing: -12) {
+                            ForEach(yourGo.prefix(3)) { challenge in
+                                let opponent = challenge.opponent(of: student.uid)
+                                ProfilePhoto(uid: opponent.uid, initial: String(opponent.name.prefix(1)), version: nil, size: 36)
+                                    .overlay(Circle().strokeBorder(Color.ratioInk, lineWidth: 2))
+                            }
+                        }
+                        Text("Your go").ratioFont(.monoLabel)
+                    }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("\(yourGo.count) \(yourGo.count == 1 ? "challenge" : "challenges"), your go")
+                } else {
+                    Image(systemName: "arrow.right").opacity(0.7)
+                }
             }
             .padding(18)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .todayCard()
+            .foregroundStyle(Color.ratioOnInk)
+            .homeBlock(Color.ratioInk, bordered: false)
         }
         .buttonStyle(.plain)
     }
@@ -184,7 +233,7 @@ struct TodayView: View {
         Button { navigator.tab = .boards } label: {
             WeeklyBoardSummary()
                 .padding(18)
-                .todayCard()
+                .homeBlock(Color.ratioOchre.opacity(0.16))
         }
         .buttonStyle(.plain)
     }
@@ -193,6 +242,7 @@ struct TodayView: View {
     private var newsCard: some View {
         Button { navigator.todayPath.append(.news) } label: {
             VStack(alignment: .leading, spacing: 10) {
+                Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.bottom, 4)
                 let isSunday = UKDate.calendar.component(.weekday, from: .now) == 1
                 if isSunday, let quiz = student.quiz {
                     Text("Sunday quiz · The week in law").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
@@ -215,7 +265,7 @@ struct TodayView: View {
             }
             .padding(18)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .todayCard()
+            .homeBlock(Color.ratioParchment)
         }
         .buttonStyle(.plain)
     }
@@ -318,14 +368,9 @@ private struct BriefCard: View {
                 let kind = brief.steps[current].kind.rawValue
                 RatioButton(current == 0 && !anyDone ? "Begin — the \(kind) →" : "Resume — the \(kind) →", action: open)
             } else {
-                Button(action: open) {
-                    Label("Brief complete", systemImage: "checkmark")
-                        .ratioFont(.h3)
-                        .foregroundStyle(Color.ratioVerdigris)
-                        .frame(maxWidth: .infinity, minHeight: 56)
-                        .overlay { RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(Color.ratioRule) }
-                }
-                .buttonStyle(.plain)
+                Text("\(Text("Brief complete \(Image(systemName: "checkmark"))").foregroundStyle(Color.ratioVerdigris)) · a new one tomorrow")
+                    .ratioFont(.h3)
+                    .frame(maxWidth: .infinity, minHeight: 56)
             }
             if let note = brief.tutorNote {
                 Rectangle()
@@ -345,16 +390,13 @@ private struct BriefCard: View {
             }
         }
         .padding(24)
-        .todayCard(cornerRadius: 28)
+        .homeBlock(Color.ratioPaper, cornerRadius: 28)
     }
 
     private var anyDone: Bool { brief.steps.indices.contains { student.isDone(step: $0, of: brief, content: content) } }
 
-    /// "Crime · Mens rea"
-    private var topicChip: String {
-        let module = Module(rawValue: brief.moduleId)?.title ?? brief.moduleId
-        return "\(module) · \(TopicGroup.title(forGroup: TopicGroup.groupId(of: brief.topicId)))"
-    }
+    /// The area of law: "Crime".
+    private var topicChip: String { Module(rawValue: brief.moduleId)?.title ?? brief.moduleId }
 
     /// "Read ✓ · Drill · Build · Review", done steps struck through, the current one underlined.
     private func tracker(current: Int?) -> some View {
@@ -384,34 +426,12 @@ private struct BriefCard: View {
 }
 
 private extension View {
-    /// Today's cards are Liquid Glass (screens 12 and 14), solid with Reduce Transparency.
-    func todayCard(cornerRadius: CGFloat = 24) -> some View {
-        ratioGlassCard(cornerRadius: cornerRadius)
-            .overlay { RoundedRectangle(cornerRadius: cornerRadius, style: .continuous).strokeBorder(Color.ratioRule) }
-    }
-}
-
-/// Faint engraved rings behind the cards, so the glass has something to refract (screen 12).
-private struct TodayBackdrop: View {
-    var body: some View {
-        GeometryReader { proxy in
-            ZStack {
-                Circle()
-                    .stroke(Color.ratioOxblood.opacity(0.25), lineWidth: 1)
-                    .frame(width: proxy.size.width * 0.9)
-                    .position(x: proxy.size.width * 0.95, y: 180)
-                Circle()
-                    .fill(Color.ratioOxblood.opacity(0.08))
-                    .frame(width: proxy.size.width * 0.8)
-                    .position(x: proxy.size.width * 0.05, y: 700)
-                Circle()
-                    .fill(Color.ratioInk.opacity(0.05))
-                    .frame(width: proxy.size.width * 0.7)
-                    .position(x: proxy.size.width, y: 480)
+    /// A solid colour-coded block.
+    func homeBlock(_ fill: Color, cornerRadius: CGFloat = 24, bordered: Bool = true) -> some View {
+        background(fill, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            .overlay {
+                if bordered { RoundedRectangle(cornerRadius: cornerRadius, style: .continuous).strokeBorder(Color.ratioRule) }
             }
-        }
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
     }
 }
 
