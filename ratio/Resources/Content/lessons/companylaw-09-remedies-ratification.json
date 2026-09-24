@@ -1,0 +1,453 @@
+{
+  "lessonId": "companylaw-09",
+  "moduleId": "companylaw",
+  "moduleTitle": "Company Law",
+  "lessonNumber": 9,
+  "topicId": "companylaw.directors.remedies-ratification",
+  "title": "Undoing a breach, and who gets to forgive it",
+  "subtitle": "Remedies for breach of directors' duties and shareholder ratification under s 239",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify the range of remedies available for breach of a director's duty and match each to the type of breach it fits",
+    "State the s 239 ratification procedure, including the mandatory exclusion of interested votes",
+    "Apply the Cook v Deeks limit on ratification to a fact pattern, and distinguish a ratifiable breach from one that ratification cannot cure"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Companies Act 2006 s 239",
+      "role": "Statutory procedure for shareholder ratification of a director's conduct, requiring the votes of the director and connected members to be disregarded"
+    },
+    {
+      "citation": "Cook v Deeks [1916] 1 AC 554",
+      "role": "A majority cannot ratify a diversion of a corporate opportunity that amounts to a fraud on the minority"
+    },
+    {
+      "citation": "Regal (Hastings) Ltd v Gulliver [1967] 2 AC 134n",
+      "role": "Strict liability to account for an unauthorised profit from a directorship, regardless of good faith, subject to the possibility of ratification by an independent, informed general meeting"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Lessons 6 to 8 built up the content of directors' duties. This lesson asks the question every problem question eventually asks: so what? What actually happens once a breach is established, and can the company's own shareholders simply wave it away afterwards? Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the remedy names — this lesson checks whether you can match the right remedy, and the right ratification limit, to the right breach.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans towards scenario questions that require matching a specific breach to its specific remedy, and testing whether a purported ratification actually works.",
+      "weakKnowledge": "Start with Part 1 and get the remedies fixed as a menu tied to specific kinds of breach, not a single generic 'compensation' idea — the rest of the lesson assumes you can tell an account of profits from equitable compensation on sight."
+    }
+  },
+  "lawStatedAt": "2026-09-23",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A director secretly profits from a deal that belonged to the company. The company later finds out. Two questions follow, and students routinely answer only the first: what remedy does the company get, and can its own shareholders simply vote to forgive him and make the whole problem disappear? The second question turns out to have real limits — some breaches a company can forgive itself into living with, and some it legally cannot, however unanimous the shareholders who try."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Section 178: the statute borrows its remedies from equity",
+        "voice": "structural — orients students before the detail arrives",
+        "body": [
+          "The Companies Act 2006 does not create its own bespoke remedies for breach of a director's duty. Section 178(1) provides that the consequences of breach of the general duties (ss 171-177) are the same as would apply if the corresponding common law rule or equitable principle applied. This matters more than it might look: it means the remedies for breach are inherited wholesale from the pre-2006 case law, so cases decided decades before the Act — Regal (Hastings), Cook v Deeks — remain directly authoritative on remedy even though the duties themselves are now codified.",
+          "Section 178(2) also confirms the general duties (other than s 174, skill and care) are, accordingly, enforceable in the same way as any other fiduciary duty owed to a company by its directors. Section 174 is treated differently precisely because it is a competence duty, not a loyalty duty (recall the Lesson 7 split): its consequences sound in damages/compensation for loss caused, in the way a common-law negligence claim does, rather than in the equitable remedies (account of profits, rescission) reserved for loyalty breaches.",
+          "That split is the organising idea for this whole lesson: match the remedy to the character of the breach. A competence failure (s 174) typically calls for compensation measured by loss caused. A loyalty failure (ss 175-177, and breaches of s 172's fiduciary character) typically calls for the equitable toolkit — account of profits, equitable compensation, rescission, and restoration of property — because the wrong is the breach of trust itself, not merely the loss it happened to cause."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 178",
+            "text": "(1) The consequences of breach (or threatened breach) of sections 171 to 177 are the same as would apply if the corresponding common law rule or equitable principle applied. (2) The duties in those sections (with the exception of section 174 (duty to exercise reasonable care, skill and diligence)) are, accordingly, enforceable in the same way as any other fiduciary duty owed to a company by its directors.",
+            "elements": [
+              "Remedies are inherited from the pre-existing common law/equitable principles, not newly created by the Act",
+              "Sections 171-173 and 175-177 are enforced as fiduciary duties",
+              "Section 174 is expressly excluded from fiduciary-style enforcement — it sounds in loss-based compensation instead"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under s 178(2), which duty is expressly excluded from being enforced as a fiduciary duty in the same way as the others?",
+          "options": [
+            "Section 174 (reasonable care, skill and diligence)",
+            "Section 175 (avoiding conflicts of interest)"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 174 is a competence, not a loyalty, duty — its breach sounds in loss-based compensation, closer to an ordinary negligence claim, rather than the account-of-profits style remedies fiduciary breaches attract.",
+          "feedbackIncorrect": "Section 174 (skill and care) is the one carved out — it's a competence duty rather than a loyalty duty, so it doesn't attract the fiduciary-style equitable remedies (account of profits, rescission) that ss 171, 172, 173, 175, 176 and 177 do."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The remedy menu",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Four remedies recur across breach-of-duty problem questions, and each answers a different practical question about what the company should get back.",
+          "An account of profits strips the director of any profit made from the breach, regardless of whether the company itself suffered a corresponding loss — this is the remedy Regal (Hastings) and Boardman v Phipps (Lesson 7) both illustrate, and it exists precisely because the wrong being punished is the unauthorised profit itself, not damage to the company. Equitable compensation, by contrast, is loss-based: it puts the company back in the position it would have been in had the breach not occurred, and is the natural remedy where the company has suffered a loss the director's profit doesn't capture (or where there was no profit at all, only loss).",
+          "Rescission allows the company to unwind a transaction tainted by the director's breach — typically a self-dealing contract entered into without proper disclosure or authorisation — putting the parties back in their pre-contract positions, though it is subject to the usual equitable bars (affirmation, delay, an innocent third party's intervening rights, or an inability to restore the parties to their original positions). Restoration of property requires a director who has misappropriated or misapplied company property to return it, or its traceable proceeds, directly — the company's preferred remedy where a specific asset can still be identified and recovered, rather than accepting a monetary substitute."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The remedy menu",
+            "points": [
+              "Account of profits — strips the director's unauthorised gain, regardless of company loss (Regal (Hastings), Boardman v Phipps)",
+              "Equitable compensation — restores the company's loss caused by the breach; the natural fit where s 174 (skill and care) is engaged, or where loss exceeds profit",
+              "Rescission — unwinds a tainted transaction, subject to bars (affirmation, delay, third-party rights, inability to restore the status quo)",
+              "Restoration of property — recovery of a specific misapplied asset or its traceable proceeds, rather than a monetary substitute"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-09-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact that points most clearly towards an account of profits, rather than equitable compensation, as the appropriate remedy here.",
+          "scenarioText": "A director diverts a lucrative supply contract to a company he secretly owns. The company he serves as a director suffers no measurable loss, because it was not in a position to win the contract itself, but the director's own company earns a substantial profit from it.",
+          "tappableSpans": [
+            "diverts a lucrative supply contract",
+            "secretly owns",
+            "suffers no measurable loss",
+            "earns a substantial profit"
+          ],
+          "correctSpan": "earns a substantial profit",
+          "feedbackCorrect": "Right. Where there is a clear unauthorised profit but no corresponding loss to the company, an account of profits is the natural remedy — it strips the gain itself, exactly as in Regal (Hastings), rather than trying to compensate a loss that (on these facts) never materialised.",
+          "feedbackIncorrect": "Look for where the money actually is. There is no measurable loss to compensate here — the company was never going to win the contract itself — but there is a clear unauthorised profit sitting with the director's own company, which is what an account of profits is designed to strip out."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Regal (Hastings): strict liability, and the ratification escape route it flags",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Regal (Hastings) Ltd v Gulliver is the classic illustration of an account of profits, and it sets up the ratification question this lesson is built around. Regal owned a cinema and wanted to acquire two more through a subsidiary, but the subsidiary could not raise enough capital on its own unless the parent company's directors personally subscribed for some of the shares — which they did, alongside the company itself. The whole venture (both cinemas, including the subsidiary) was then sold at a profit, and the directors profited personally on the shares they had subscribed for.",
+          "The House of Lords held the directors liable to account for their personal profit to Regal, even though they had acted honestly, the company could not itself have funded the full subscription, and the company arguably benefited from the deal going ahead at all. The reasoning tracks Boardman v Phipps from Lesson 7: a fiduciary who profits from an opportunity that came to them by reason of their office must account for it, regardless of good faith, unless the shareholders, properly informed and independent of the profiting director, choose to let them keep it.",
+          "That last clause is the important one for this lesson. Regal itself notes, almost in passing, that the outcome might have been different had the shareholders in general meeting been asked, and had agreed, to let the directors keep their profit. The case does not resolve exactly how far a general meeting can go in forgiving a director's self-dealing — that is precisely the question Cook v Deeks answers, and answers with a sharp limit."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Regal (Hastings) Ltd v Gulliver",
+            "citation": "[1967] 2 AC 134n",
+            "court": "House of Lords",
+            "year": 1942,
+            "factsShort": "Directors personally subscribed for shares in a subsidiary the company itself could not fully fund; the whole venture was sold at a profit, and the directors profited on their personal shareholding.",
+            "ratioShort": "A director who profits from an opportunity arising by reason of their office must account for that profit, regardless of good faith or benefit to the company, unless an independent, fully informed general meeting authorises them to keep it.",
+            "expanded": {
+              "facts": "Regal (Hastings) Ltd operated a cinema and negotiated to acquire two further cinemas through a new subsidiary company. The subsidiary needed more share capital than Regal itself could afford to subscribe for in full. To make the deal work, several of Regal's own directors personally subscribed for the shortfall of shares, alongside the company. Shortly afterwards, rather than operating the cinemas, the shareholders of Regal sold their shares (and, via that route, the whole venture including the subsidiary) at a substantial profit. The directors who had personally subscribed for shares profited handsomely on their own holdings as part of that sale.",
+              "judgmentExtract": "The House of Lords held the directors were liable to account for the profit made on their personal shareholding, applying the strict rule against a fiduciary profiting from their position: it was irrelevant that the directors had acted honestly, that subscribing personally was arguably the only practical way to get the deal done, or that Regal itself benefited from the transaction proceeding. The profit arose 'by reason of' the fiduciary position and knowledge the directors held as directors, and that was sufficient.",
+              "significance": "Regal remains the leading illustration of an account of profits for breach of the no-profit rule, and its reasoning underpins Boardman v Phipps (Lesson 7) and the modern s 175 conflicts duty. It is also the case most often cited for the proposition — developed properly in Cook v Deeks — that an independent, informed general meeting can, in principle, ratify this kind of self-dealing and let the directors keep the profit, though the limits of that power turned out to be narrower than the case's own facts might suggest."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-09-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In this passage adapted from Regal (Hastings), highlight the sentence stating the ratio.",
+          "passage": "Counsel for the directors argued that, since they had acted honestly throughout and the company itself could not have subscribed for the full allotment, no liability to account should follow. The House of Lords rejected this submission. The rule that a person occupying a fiduciary position is not entitled to make a profit is not confined to cases of actual fraud, and applies whenever a profit is made by reason of the fiduciary position and of the knowledge acquired as a result of it, irrespective of good faith.",
+          "ratioSentence": "The rule that a person occupying a fiduciary position is not entitled to make a profit is not confined to cases of actual fraud, and applies whenever a profit is made by reason of the fiduciary position and of the knowledge acquired as a result of it, irrespective of good faith."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Section 239: the ratification procedure, and its built-in safeguard",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Section 239 supplies the modern statutory procedure for ratification, codifying and clarifying a power that previously existed only at common law. Section 239(1)-(2) allows a company, by ordinary resolution, to ratify conduct by a director amounting to negligence, default, breach of duty or breach of trust in relation to the company. On its face this looks like a broad power for the shareholders to forgive almost anything.",
+          "But s 239(3)-(4) builds in the safeguard that does most of the real work: if the resolution is proposed as a written resolution, the director (if a member) and any member connected with them are not eligible to vote on it; and if the resolution is proposed at a meeting, it is passed only if the necessary majority is obtained disregarding votes in favour of the resolution by the director and any connected member (though they may still attend, speak, and count towards the quorum). In short, a director cannot ratify their own breach by voting their own shares, or by using a connected shareholder's votes, to push the resolution through — only genuinely independent shareholders' votes count.",
+          "This is the mechanism that makes ratification a real check rather than a rubber stamp: it forces the question of forgiveness to an independent constituency, exactly the kind of 'independent, informed general meeting' Regal (Hastings) gestured towards. But even a resolution passed by a genuinely independent, fully informed majority does not automatically cure every kind of breach — which is exactly what Cook v Deeks establishes."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 239",
+            "text": "(1) This section applies to the ratification by a company of conduct by a director amounting to negligence, default, breach of duty or breach of trust in relation to the company. (2) The decision of the company to ratify such conduct must be made by resolution of the members of the company. (3) Where the resolution is proposed as a written resolution, neither the director (if a member of the company) nor any member connected with him is an eligible member. (4) Where the resolution is proposed at a meeting, it is passed only if the necessary majority is obtained disregarding votes in favour of the resolution by the director (if a member of the company) and any member connected with him.",
+            "elements": [
+              "Applies to negligence, default, breach of duty or breach of trust by a director",
+              "Ratification must be by resolution of the members",
+              "The director and any connected member cannot vote (written resolution) or have their favourable votes disregarded (meeting)",
+              "The director/connected member may still attend, speak and count towards quorum at a meeting"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-09-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A company has two shareholders: the breaching director (60% of shares) and an independent shareholder (40%). A resolution to ratify the director's breach is proposed at a general meeting. Applying s 239(4), can it pass?",
+          "options": [
+            "No — the director's votes in favour must be disregarded, leaving only the independent shareholder's 40%, which is not a majority of the votes actually counted unless that shareholder alone constitutes the necessary majority on the resolution as framed",
+            "Yes — 60% is a comfortable majority under ordinary company law voting rules",
+            "Yes, provided the director discloses the breach fully before voting"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 239(4) disregards the director's favourable votes entirely when counting whether the necessary majority is reached — a director holding a majority of the shares cannot simply vote their own breach into forgiveness.",
+          "feedbackIncorrect": "The trap here is applying ordinary voting arithmetic. Section 239(4) requires the director's favourable votes to be disregarded when assessing whether the resolution passes — so a director's own majority shareholding cannot be used to ratify their own breach, however fully they disclose it."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Cook v Deeks: the limit ratification cannot cross",
+        "voice": "Socratic — poses the hard question before resolving it",
+        "body": [
+          "Here is the question Regal (Hastings) leaves open and Cook v Deeks answers: if a genuinely independent majority of shareholders votes to forgive a director's self-dealing, is that always the end of the matter? Cook v Deeks says no. Directors of a railway construction company, who together also controlled the majority of its shares, negotiated a lucrative construction contract in their own names rather than the company's, then used their majority shareholding to pass a resolution declaring that the company had no interest in the contract.",
+          "The Privy Council held the resolution was ineffective. Diverting a contract that properly belonged to the company was not conduct capable of ratification by the wrongdoers' own majority vote, because doing so would amount to the majority using its voting power to expropriate the minority shareholders' interest in company property for the wrongdoers' own benefit — what the court described as a fraud on the minority. The contract, and its profits, were held to belong to the company in equity.",
+          "The distinction that emerges, and that examiners test relentlessly, is this: an honest but unauthorised act within the director's general powers (of the Regal (Hastings) type) can, in principle, be ratified by a genuinely independent, informed majority under s 239. But a director cannot use their own voting control to ratify what is, in substance, a misappropriation of the company's own property or opportunity at the minority's expense — that crosses from 'forgivable breach' into 'fraud on the minority', which the ratification procedure cannot reach, however the votes are counted."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Cook v Deeks",
+            "citation": "[1916] 1 AC 554",
+            "court": "Privy Council",
+            "year": 1916,
+            "factsShort": "Majority-shareholder directors diverted a contract that belonged to their company into their own names, then used their majority vote to declare the company had no interest in it.",
+            "ratioShort": "A majority cannot ratify the diversion of a corporate opportunity where doing so amounts to the majority using its votes to expropriate company property for its own benefit at the minority's expense.",
+            "expanded": {
+              "facts": "Four directors of the Toronto Construction Company, who together held the great majority of its shares, negotiated a construction contract with the Canadian Pacific Railway. Rather than taking the contract in the company's name, three of the four directors took it in their own personal names, cutting the fourth (a minority shareholder) out entirely. They then used their majority voting power at a general meeting to pass a resolution declaring that the company had no interest in the contract.",
+              "judgmentExtract": "The Privy Council held that the contract, in substance, belonged to the company — it had been negotiated using the company's position and connections — and that the directors could not use their own votes to ratify their own diversion of it. To allow this would let a majority appropriate for itself, at the minority's expense, property that in equity belonged to the company as a whole; that is a fraud on the minority that the ratification power does not extend to curing, regardless of how the resolution was passed.",
+              "significance": "Cook v Deeks is the standard limit cited against any claim that ratification cures every breach. It draws the crucial line between conduct a genuinely independent majority may forgive (ordinary breaches within the director's powers, exercised honestly) and conduct that amounts to expropriating company property or opportunity for the wrongdoer's own benefit, which no majority vote — however procedurally correct — can ratify."
+            }
+          },
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because s 239 excludes the breaching director's votes, any resulting resolution passed by the remaining, genuinely independent shareholders must be effective.",
+            "whyItsWrong": "Excluding the director's votes under s 239 addresses who may vote, not what may be ratified. Cook v Deeks establishes that some conduct — the outright expropriation of company property or opportunity amounting to a fraud on the minority — falls outside the ratification power altogether, and no majority, however independent and however the votes were counted, can cure it by resolution."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-09-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is capable of valid ratification under s 239, applying the Cook v Deeks limit?",
+          "scenarioA": "A director, acting honestly but carelessly, fails to obtain three competing quotes before approving a supplier contract on ordinary terms, as internal policy (not law) recommended, causing the company a modest loss.",
+          "scenarioB": "A director takes for himself, in his own name, a contract that the company had been actively negotiating and was on the point of signing, then persuades independent shareholders to vote that the company release any claim to it.",
+          "correctScenario": "A",
+          "explanation": "A is an ordinary, honest breach within the director's general authority (a s 174-style carelessness issue) — the kind of conduct a genuinely independent, informed majority can ratify under s 239. B mirrors Cook v Deeks: diverting a corporate opportunity the company was actively pursuing is an expropriation of company property, which falls outside the ratification power regardless of how independent the ratifying shareholders are."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "companylaw-09-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the four remedies covered in this lesson for breach of a director's duty.",
+      "acceptableAnswers": [
+        "account of profits, equitable compensation, rescission, restoration of property"
+      ],
+      "modelAnswer": "An account of profits, equitable compensation, rescission of a tainted transaction, and restoration of misapplied company property."
+    },
+    {
+      "itemId": "companylaw-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under s 239, must ratification be by ordinary resolution or special resolution?",
+      "options": [
+        "Ordinary resolution",
+        "Special resolution"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-09-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT a feature of the s 239 ratification procedure?",
+      "options": [
+        "A director and any connected member's votes in favour must be disregarded when a resolution is passed at a meeting",
+        "A director cannot attend or speak at the meeting where their own conduct is being ratified",
+        "A written resolution route exists, but the director and connected members are not eligible to vote on it"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The director's votes are disregarded for counting purposes, but s 239(4) expressly preserves their right to attend, speak, and count towards quorum at the meeting — they are simply excluded from swinging the vote itself."
+    },
+    {
+      "itemId": "companylaw-09-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these events in the order they occurred in Cook v Deeks.",
+      "items": [
+        "Majority-shareholder directors negotiate a contract using the company's position",
+        "They take the contract in their own personal names rather than the company's",
+        "They use their majority vote to declare the company has no interest in the contract",
+        "The Privy Council holds the resolution ineffective and the contract belongs to the company in equity"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "companylaw-09-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 178(1)-(2), why does a breach of s 174 (skill and care) typically attract compensation for loss rather than an account of profits?",
+      "options": [
+        "Because s 174 is expressly excluded from being enforced in the same way as the other fiduciary duties, reflecting that it is a competence duty rather than a loyalty duty",
+        "Because s 174 breaches never cause the company any measurable harm",
+        "Because Parliament abolished account-of-profits remedies entirely in 2006"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-09-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage adapted from Cook v Deeks, highlight the sentence stating the ratio.",
+      "passage": "It was argued that the resolution, passed by a majority of the shareholders, was sufficient to release any claim the company might have had against the directors. Their Lordships cannot accede to this argument. Directors holding a majority of votes cannot, by using that voting power, appropriate for themselves property or an opportunity that in equity belongs to the company, at the expense of the minority shareholders whose interest is thereby expropriated.",
+      "ratioSentence": "Directors holding a majority of votes cannot, by using that voting power, appropriate for themselves property or an opportunity that in equity belongs to the company, at the expense of the minority shareholders whose interest is thereby expropriated."
+    },
+    {
+      "itemId": "companylaw-09-test-07",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows this transaction is a good candidate for rescission rather than an account of profits.",
+      "scenarioText": "A director sells a warehouse he personally owns to the company at an inflated price, without disclosing his ownership interest under s 177. The company has not yet paid the full price, the warehouse remains identifiable and undamaged, and no third party has since acquired any interest in it.",
+      "tappableSpans": [
+        "sells a warehouse he personally owns",
+        "without disclosing his ownership interest",
+        "warehouse remains identifiable and undamaged",
+        "no third party has since acquired any interest"
+      ],
+      "correctSpan": "no third party has since acquired any interest",
+      "explanation": "Rescission unwinds the transaction and restores both parties to their pre-contract position — it depends on being able to do that cleanly. The absence of any intervening third-party interest (one of the equitable bars to rescission) is what makes unwinding the sale realistic here, rather than falling back on a monetary remedy."
+    },
+    {
+      "itemId": "companylaw-09-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely mirrors Regal (Hastings) than Cook v Deeks?",
+      "scenarioA": "Directors personally fund a shortfall in a joint venture the company itself could not fully finance, and profit personally when the venture is later sold, without ever excluding the company from any part of the underlying opportunity.",
+      "scenarioB": "A director takes, in his own name, a contract the company was already negotiating and about to conclude, cutting the company out of it entirely.",
+      "correctScenario": "A",
+      "explanation": "A mirrors Regal (Hastings): an honest but unauthorised personal profit made in connection with an opportunity the company itself could not fully take up, without outright exclusion of the company from the underlying deal. B mirrors Cook v Deeks: an outright diversion of an opportunity the company was actively pursuing, cutting it out entirely — the kind of expropriation ratification cannot cure."
+    },
+    {
+      "itemId": "companylaw-09-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company's independent shareholders (holding 55% of the votes, entirely unconnected to the breaching director) vote, fully informed, to ratify a director's honest but unauthorised decision to enter a supply contract slightly outside his delegated authority, from which he made no personal profit. Is this a valid ratification?",
+      "options": [
+        "Yes — this is an ordinary, honest breach within the general run of directorial conduct, capable of ratification by a genuinely independent, informed majority under s 239",
+        "No — Cook v Deeks means no breach of duty can ever be ratified",
+        "No — only unanimous shareholder consent, not a mere majority, can ever ratify a breach"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is precisely the kind of honest, unauthorised-but-not-expropriating conduct s 239 is designed to allow an independent, informed majority to forgive. Cook v Deeks bars ratification only where the conduct amounts to expropriating company property or opportunity at the minority's expense — nothing like that is present here."
+    },
+    {
+      "itemId": "companylaw-09-test-10",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A director misappropriates company funds and uses them to buy a car, which he still owns. Which remedy lets the company recover the car itself, or its traceable proceeds, rather than just a sum of money?",
+      "options": [
+        "Restoration of property",
+        "Rescission"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-09-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Two of Bell Instruments Ltd's three directors, who together hold 70% of its shares, learn during board discussions that a long-standing customer wants to place a large, highly profitable order. Instead of bringing the opportunity to the company, they set up a separate company and take the order themselves. When the third director objects, the two directors use their 70% shareholding to pass an ordinary resolution declaring that Bell Instruments has no interest in the order. Analyse whether the resolution is effective, and what remedy the company (via the minority director) might otherwise pursue.",
+      "factsToOrder": [
+        "The two directors learn of the opportunity through their position on the board",
+        "They divert the opportunity to a separate company they control, rather than to Bell Instruments",
+        "They use their 70% shareholding to pass a resolution declaring Bell Instruments has no interest in it",
+        "The minority director objects"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the two directors' resolution, passed using their own majority shareholding, effectively ratifies their diversion of a corporate opportunity, and what remedy is otherwise available to the company.",
+        "rule": "Section 175 requires directors to avoid unauthorised conflicts, including exploiting an opportunity arising through their position; breach attracts an account of profits (Regal (Hastings) [1967] 2 AC 134n). Section 239 allows ratification by ordinary resolution but requires the breaching director's (and connected members') votes to be disregarded. Even independent ratification cannot cure conduct amounting to a fraud on the minority — the outright expropriation of company property or opportunity (Cook v Deeks [1916] 1 AC 554).",
+        "application": "The order was an opportunity that came to the two directors by reason of their board position, engaging s 175; diverting it to their own separate company is an unauthorised profit. Their resolution is invalid on two independent grounds: first, under s 239(4) their own votes should have been disregarded, leaving no valid majority at all; second, even had genuinely independent shareholders voted the same way, Cook v Deeks bars ratification of an outright diversion of company opportunity that amounts to a fraud on the minority — this is not an ordinary honest-but-unauthorised breach of the Regal (Hastings) type but a direct expropriation at the minority director's expense.",
+        "conclusion": "The resolution is ineffective. Bell Instruments (via a claim the minority director could pursue, including potentially a derivative claim) can seek an account of the profits made on the diverted order, following Regal (Hastings) and Cook v Deeks."
+      }
+    },
+    {
+      "itemId": "companylaw-09-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best captures the relationship between Regal (Hastings) and Cook v Deeks on the scope of ratification?",
+      "options": [
+        "Regal (Hastings) shows an honest, unauthorised profit can in principle be ratified by an independent, informed majority; Cook v Deeks shows that outright expropriation of company property or opportunity, amounting to a fraud on the minority, falls outside the ratification power regardless of the vote",
+        "Cook v Deeks overruled Regal (Hastings), so no breach of duty can now ever be ratified",
+        "Regal (Hastings) and Cook v Deeks are simply two names for the identical rule, with no meaningful distinction between them"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Neither wrong option reflects the actual relationship between the cases: Cook v Deeks did not overrule Regal (Hastings), and the two cases are not interchangeable — they mark opposite ends of what ratification can and cannot reach, which is exactly why they are taught together."
+    },
+    {
+      "itemId": "companylaw-09-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a breaching director's own votes can, under s 239, be used to help pass a resolution ratifying their own breach?",
+      "sliderLabels": [
+        "Confident — their votes count like anyone else's",
+        "Not confident — s 239 requires their votes (and connected members') to be disregarded"
+      ],
+      "correctPosition": "Not confident — s 239 requires their votes (and connected members') to be disregarded",
+      "explanation": "Not confident is correct. Section 239(3)-(4) excludes the breaching director, and any connected member, from voting (written resolution) or from having favourable votes counted (meeting) — the whole point of the safeguard is to prevent self-ratification."
+    },
+    {
+      "itemId": "companylaw-09-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A director breaches s 174 through simple carelessness, causing the company a quantifiable financial loss, but makes no personal profit at all. Which remedy best fits, and why?",
+      "options": [
+        "Equitable compensation measured by the company's loss, since there is no profit to strip and s 174 is excluded from the fiduciary-style enforcement route under s 178(2)",
+        "An account of profits, since this is always the default remedy for any breach of a director's duty",
+        "Rescission, since any transaction involving director carelessness should automatically be unwound"
+      ],
+      "correctIndex": 0,
+      "explanation": "With no profit made and s 174 expressly carved out of fiduciary-style enforcement by s 178(2), the fitting remedy is loss-based compensation restoring the company to the position it would have been in absent the carelessness — an account of profits has nothing to strip, and rescission is not engaged absent a tainted transaction to unwind."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating ratification as an all-or-nothing power. Section 239's vote-exclusion rule governs who may ratify; Cook v Deeks governs what may be ratified at all. A resolution can satisfy s 239 perfectly and still be ineffective, if the underlying conduct is an outright expropriation of company property or opportunity rather than an honest, unauthorised act within the director's general powers.",
+    "reviewMisses": true,
+    "linkToPathway": "companylaw.directors.remedies-ratification"
+  }
+}

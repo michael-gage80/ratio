@@ -1,0 +1,436 @@
+{
+  "lessonId": "equity-15",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 15,
+  "topicId": "equity.third-party-liability.knowing-receipt-dishonest-assistance",
+  "title": "Third-Party Liability: Knowing Receipt and Dishonest Assistance",
+  "subtitle": "Two routes to holding strangers to a trust liable — and how far each one now reaches",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish knowing receipt from dishonest assistance as separate bases of third-party liability — one proprietary and unconscionability-based, the other personal and dishonesty-based",
+    "State and apply the elements and tests for each: the unconscionability test in BCCI v Akindele, and the objective dishonesty test in Royal Brunei Airlines v Tan",
+    "Explain the continuing proprietary interest requirement for knowing receipt after Byers v Saudi National Bank, and evaluate the Supreme Court's 2025 decision in Stevens v Hotel Portfolio II on an assistant's liability for a fiduciary's dissipated profits, including the 4-1 division on the Court"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "BCCI (Overseas) Ltd v Akindele [2001] Ch 437",
+      "role": "Sets the modern single test for knowing receipt: whether the recipient's state of knowledge makes it unconscionable for them to retain the benefit received"
+    },
+    {
+      "citation": "Royal Brunei Airlines Sdn Bhd v Tan [1995] 2 AC 378",
+      "role": "Establishes that dishonest assistance requires dishonesty assessed objectively, against ordinary standards of honest conduct, not the assistant's own subjective conscience"
+    },
+    {
+      "citation": "Twinsectra Ltd v Yardley [2002] UKHL 12",
+      "role": "Introduced a combined test read by some as requiring subjective awareness of dishonesty; later case law confirmed the correct test remains objective in substance"
+    },
+    {
+      "citation": "Byers v Saudi National Bank [2023] UKSC 51",
+      "role": "Confirms that a knowing receipt claim requires the claimant to show a continuing equitable proprietary interest in the property received, which a defence such as bona fide purchase for value can defeat"
+    },
+    {
+      "citation": "Stevens v Hotel Portfolio II Ltd [2025] UKSC 28",
+      "role": "A 4-1 Supreme Court majority holds that a dishonest assistant's liability does not extend to disgorging profits the fiduciary made and has since dissipated, confining assistant liability to compensation for loss actually caused; a powerful dissent argued for broader accessory liability"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students routinely conflate knowing receipt and dishonest assistance because both involve a 'stranger to the trust' being sued. They are built on entirely different foundations — one is a proprietary claim resting on unconscionable retention, the other a personal claim resting on dishonesty — and the Supreme Court has been actively reshaping the edges of both within the last three years. This lesson keeps the two firmly apart, then brings you to the very newest word on the subject.",
+    "profileHooks": {
+      "weakApplication": "You can likely already state both tests. The test pool is weighted toward telling receipt and assistance apart on new facts, and applying the 2025 Stevens decision — expect scenario-based questions, not definitions.",
+      "weakKnowledge": "Start with Part 1 and hold the receipt/assistance distinction firmly before the case law arrives — every later part assumes you already know which of the two claims is proprietary and which is personal."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A fiduciary betrays their principal and gets help doing it — a bank that processes the transfer without asking questions, a friend who quietly moves the money offshore. Neither the bank nor the friend was ever a trustee. Can either be sued? Equity says yes, through two entirely different doors: one for the stranger who ends up holding the property, one for the stranger who merely helped it go astray. In 2025 the Supreme Court, by a bare 4-1 majority, drew a sharp new line around how far the second of those doors reaches.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. Stevens v Hotel Portfolio II Ltd [2025] UKSC 28 is a very recent Supreme Court decision, decided by a 4-1 majority with a substantial dissent. Treat the majority's reasoning as the current, binding law, but be aware that the dissent exists, that the decision has already attracted significant academic comment, and that this is genuinely live law rather than a long-settled position."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two doors, not one: receipt and assistance",
+        "voice": "taxonomic — insists on the classification before any case law appears",
+        "body": [
+          "When a trustee or other fiduciary misapplies trust property, a claimant often wants to sue someone other than the fiduciary — usually because the fiduciary has no money left. Equity offers two distinct routes against a third party who was never themselves a trustee, and the single most important thing to get right in this area is that they are not two versions of the same claim.",
+          "Knowing receipt is a proprietary claim: it is available against someone who has actually received trust property, or its traceable proceeds, into their own hands, and asks whether it is unconscionable for them to keep it. It is, at bottom, a claim about property that has landed somewhere it should not have.",
+          "Dishonest assistance is a personal claim: it is available against someone who never received a penny of trust property themselves, but who helped a fiduciary breach their duty — a solicitor who processed a suspicious transfer, an accountant who dressed up fraudulent accounts. It asks not what the defendant has, but how the defendant behaved, and the touchstone is dishonesty, not possession."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Receipt v assistance at a glance",
+            "points": [
+              "Knowing receipt: proprietary claim — defendant received trust property or its traceable proceeds",
+              "Knowing receipt: liability turns on unconscionability of retention (BCCI v Akindele)",
+              "Dishonest assistance: personal claim — defendant need never have received any trust property",
+              "Dishonest assistance: liability turns on dishonesty, assessed objectively (Royal Brunei Airlines v Tan)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-15-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the two distinct bases of third-party liability for involvement in a breach of trust or fiduciary duty.",
+          "acceptableAnswers": [
+            "knowing receipt and dishonest assistance",
+            "receipt and assistance"
+          ],
+          "modelAnswer": "Knowing receipt (a proprietary claim against someone who received trust property) and dishonest assistance (a personal claim against someone who dishonestly helped a breach, whether or not they ever received anything)."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Knowing receipt: when does keeping the money become unconscionable?",
+        "voice": "taxonomic — builds the test element by element",
+        "body": [
+          "For decades, courts experimented with different formulations of how much the recipient needed to know before liability attached — ranging from actual knowledge of the breach to a looser 'ought to have known' constructive knowledge standard, borrowed unevenly from commercial law. BCCI (Overseas) Ltd v Akindele finally settled English law on a single, unifying question.",
+          "Nourse LJ held that the recipient will be liable if their state of knowledge is such as to make it unconscionable for them to retain the benefit of the receipt. This is deliberately a single, flexible standard rather than a rigid checklist of knowledge categories — the court looks at everything the recipient knew or ought to have appreciated, and asks whether conscience should require them to give the property back.",
+          "This is not strict liability: an innocent recipient who has no reason to suspect anything wrong, and who has, for example, given full value for what they received, is not caught. The claim requires the recipient's own state of knowledge to make retention unconscionable — it is not enough that the property simply originated in a breach of trust somewhere upstream."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "BCCI (Overseas) Ltd v Akindele",
+            "citation": "[2001] Ch 437",
+            "court": "Court of Appeal",
+            "year": 2001,
+            "factsShort": "A businessman received a substantial payment connected to a fraudulent scheme run by the collapsed bank BCCI, and the liquidators sought to recover it from him as a knowing recipient.",
+            "ratioShort": "A recipient of trust property is liable for knowing receipt where their state of knowledge makes it unconscionable for them to retain the benefit — a single unifying test, replacing the older, fragmented categories of knowledge.",
+            "expanded": {
+              "facts": "Akindele had entered into what appeared to be a legitimate investment agreement with BCCI, later discovered to be part of a fraudulent scheme designed to prop up the bank's share price. He received a substantial return on his investment before the fraud came to light, and the bank's liquidators sued to recover the payment on the basis of knowing receipt.",
+              "judgmentExtract": "Nourse LJ rejected the older approach of classifying a recipient's knowledge into fixed categories, holding instead that the single test is whether the recipient's state of knowledge makes it unconscionable for them to retain the benefit received. On the facts, Akindele had acted in good faith, given good consideration, and had no reason to suspect impropriety, so retention was not unconscionable.",
+              "significance": "Akindele is now the standard test cited in every knowing receipt case — a flexible, unconscionability-based inquiry rather than a mechanical knowledge checklist, which gives courts room to weigh the whole of the recipient's conduct and circumstances."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-15-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under BCCI v Akindele, what is the single test for liability in knowing receipt?",
+          "options": [
+            "Whether the recipient's state of knowledge makes it unconscionable for them to retain the benefit received",
+            "Whether the recipient had actual, subjective knowledge of the specific breach of trust"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — Akindele replaced the older, rigid categories of knowledge with a single unconscionability-based test that looks at the whole picture.",
+          "feedbackIncorrect": "Akindele deliberately moved away from requiring proof of actual, specific knowledge of a breach. The test is broader and more flexible: whether what the recipient knew or ought to have appreciated makes retention unconscionable."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Dishonest assistance: judged by everyone's standards, not the defendant's own",
+        "voice": "taxonomic — separates assistance sharply from the receipt test just covered",
+        "body": [
+          "Dishonest assistance does not require the defendant to have received anything at all. A solicitor who processes a client's instructions knowing them to be part of a fraud, without ever personally handling the stolen funds, can still be liable — because the claim is about their conduct in helping the breach happen, not about property in their hands.",
+          "Royal Brunei Airlines Sdn Bhd v Tan is the foundational case. Lord Nicholls held that the touchstone of liability is dishonesty, and that dishonesty is to be assessed objectively — judged against what an honest person would have done in the defendant's position, given what the defendant actually knew, rather than by reference to the defendant's own, possibly skewed, sense of right and wrong.",
+          "Twinsectra Ltd v Yardley later muddied this, with language some read as importing a subjective element — requiring the defendant to have realised, by their own lights, that what they were doing was dishonest by ordinary standards. Subsequent case law clarified that this was not a genuine departure: the test remains objective in substance. What the defendant actually knew about the facts is relevant to applying the standard, but the standard itself is an ordinary, objective one of honest conduct — not the defendant's personal moral code."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Royal Brunei Airlines Sdn Bhd v Tan",
+            "citation": "[1995] 2 AC 378",
+            "court": "Privy Council",
+            "year": 1995,
+            "factsShort": "A travel agency's managing director diverted money that the agency held on trust for an airline; the airline sought to hold the director personally liable for assisting the agency's breach.",
+            "ratioShort": "Liability for assisting a breach of trust requires dishonesty on the part of the assistant, assessed objectively against ordinary standards of honest conduct rather than the assistant's own subjective conscience.",
+            "expanded": {
+              "facts": "A travel agency held money on trust for Royal Brunei Airlines, to be kept separate from the agency's own funds pending payment over. Tan, the agency's managing director, caused the agency to use the money for its own business purposes instead, and the agency later became insolvent, leaving the airline to pursue Tan personally on the basis that he had dishonestly assisted the agency's breach of trust.",
+              "judgmentExtract": "Lord Nicholls held that the label previously used — 'knowing assistance' — was misleading, because the touchstone is dishonesty, not knowledge as such. Dishonesty was to be assessed objectively: what would an honest person have done, given the facts as the defendant actually knew or suspected them to be? A defendant cannot escape liability merely by asserting that, by their own standards, they did not consider their conduct dishonest.",
+              "significance": "Royal Brunei Airlines reframed the entire basis of accessory liability around dishonesty rather than knowledge, and fixed the objective standard that later cases, despite some drift in Twinsectra, have confirmed remains the law."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-15-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is properly analysed as dishonest assistance rather than knowing receipt?",
+          "scenarioA": "A bank employee, suspecting a client's instructions are fraudulent, nonetheless processes a transfer of trust funds to a third party, receiving no personal benefit themselves.",
+          "scenarioB": "A jeweller sells trust funds' worth of jewellery to a customer who pays with money they know, or ought to know, was stolen from a trust, and the jeweller keeps the sale proceeds.",
+          "correctScenario": "A",
+          "explanation": "A is dishonest assistance: the bank employee never received any trust property personally, but helped the breach occur through their own conduct — the question is whether that conduct was dishonest by objective standards. B, where the jeweller actually receives and retains value connected to the breach, is a knowing receipt scenario, tested by unconscionability rather than dishonesty."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Knowing receipt needs a live proprietary interest — Byers v Saudi National Bank",
+        "voice": "taxonomic — sharpens the proprietary character of receipt with a recent limiting case",
+        "body": [
+          "Because knowing receipt is a proprietary claim, it is not enough to show that a defendant received something ultimately connected to a breach of trust somewhere in its history — the claimant must show a continuing equitable proprietary interest in the specific property received, surviving up to the point of receipt.",
+          "Byers v Saudi National Bank confronted this directly. The Supreme Court confirmed that a knowing receipt claim can be defeated where the defendant establishes a defence, such as being a bona fide purchaser for value without notice, that extinguishes the claimant's continuing equitable interest before the defendant ever received the property — at which point there is simply no proprietary interest left for a knowing receipt claim to protect.",
+          "The practical significance is that knowing receipt is not a free-standing wrong that attaches wherever a defendant's knowledge is bad enough; it remains tethered to genuine equitable property rights, and a defence that would defeat an ordinary proprietary claim will equally defeat a knowing receipt claim, regardless of how much the defendant knew."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Continuing proprietary interest",
+            "definition": "The requirement, confirmed in Byers v Saudi National Bank, that a knowing receipt claimant must show their equitable interest in the property survived up to the moment the defendant received it — a defence extinguishing that interest beforehand, such as bona fide purchase for value without notice, defeats the claim regardless of the recipient's later knowledge."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-15-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a knowing receipt claim can succeed even where the claimant's equitable proprietary interest in the property was already extinguished before the defendant received it?",
+          "sliderLabels": [
+            "Yes, knowledge alone is enough regardless of any surviving interest",
+            "No, a continuing proprietary interest at the point of receipt is required"
+          ],
+          "correctPosition": "continuing proprietary interest",
+          "explanation": "Byers v Saudi National Bank confirms knowing receipt remains a proprietary claim: without a continuing equitable interest surviving to the point of receipt, there is nothing for the claim to protect, however suspicious the recipient's knowledge might otherwise look."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Stevens v Hotel Portfolio II: how far does an assistant's liability reach?",
+        "voice": "taxonomic, turning live — treats this as unresolved law the profession is still absorbing",
+        "body": [
+          "This is the newest and most consequential development in this whole area, and it belongs squarely in a 2026 lesson: Stevens v Hotel Portfolio II Ltd, decided by the Supreme Court in 2025. The question was how far a dishonest assistant's liability reaches when the fiduciary they assisted made a personal profit from the breach — specifically, profit the fiduciary has since dissipated and cannot pay over.",
+          "By a 4-1 majority, the Supreme Court held that a dishonest assistant's own liability is compensatory, measured by the loss their assistance caused — it does not extend to disgorging profits the fiduciary personally made and has since spent or lost, even though the assistant helped make that profit possible. The majority reasoned that accessory liability tracks what the assistant actually caused, not a share of the fiduciary's own separate, personal gain, and that stretching assistance liability into a gains-based remedy for the fiduciary's profits would blur the settled distinction between compensatory and profit-based equitable remedies.",
+          "This was not a unanimous decision. A substantial dissent argued that confining assistant liability this way can leave a wronged claimant with no effective remedy at all whenever the fiduciary has dissipated their gains — precisely the situation in which accessory liability against the assistant matters most — and that the majority's approach under-protects claimants in exactly the cases dishonest assistance exists to address. Treat Stevens as the current law, because the majority's reasoning binds lower courts, but do not present it as settled or uncontroversial: it is a 4-1 split on a genuinely contested question, decided within the last year, and it is very likely to be tested, discussed, and possibly revisited in the years ahead."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Stevens v Hotel Portfolio II was a unanimous Supreme Court decision confirming that dishonest assistants are never liable for a fiduciary's profits under any circumstances.",
+            "whyItsWrong": "Two things are wrong with that. First, the decision was 4-1, not unanimous — there is a substantial dissent that must be acknowledged in any answer discussing the case. Second, the majority's holding is narrower and more specific: an assistant is not liable to disgorge profits the fiduciary made and has since dissipated; the case does not hold that assistants can never be liable in connection with a fiduciary's gains in any circumstances, only that liability here remains compensatory rather than gains-based on these facts."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-15-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A fiduciary breaches their duty and, with a friend's dishonest assistance, secretly profits £200,000 from a side deal. The fiduciary later spends the entire £200,000 and has no assets left. Applying the majority in Stevens v Hotel Portfolio II, can the claimant recover the £200,000 from the dishonest assistant?",
+          "options": [
+            "Yes — the assistant is automatically liable to disgorge the full profit the fiduciary made, regardless of what happened to it",
+            "No, not as a gains-based claim for the dissipated profit — the assistant's liability is confined to compensation for loss their assistance actually caused",
+            "No — dishonest assistants can never be sued once the fiduciary has become insolvent"
+          ],
+          "correctIndex": 1,
+          "explanation": "The majority in Stevens held that an assistant's liability is compensatory, not a route to disgorging a fiduciary's own dissipated profit. The claimant may still have a compensatory claim against the assistant for loss actually caused by the assistance, but not simply a claim for the fiduciary's lost gain — and note the dissent thought this leaves claimants under-protected in exactly this situation."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-15-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the two distinct claims available against a third party involved in a breach of trust or fiduciary duty.",
+      "acceptableAnswers": [
+        "knowing receipt and dishonest assistance",
+        "receipt and assistance"
+      ],
+      "modelAnswer": "Knowing receipt and dishonest assistance."
+    },
+    {
+      "itemId": "equity-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Is knowing receipt a proprietary claim or a personal claim?",
+      "options": [
+        "Proprietary — it requires the defendant to have received trust property or its traceable proceeds",
+        "Personal — it requires no receipt of property at all"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-15-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Is dishonest assistance a proprietary claim or a personal claim?",
+      "options": [
+        "Personal — the defendant need never have received any trust property",
+        "Proprietary — the defendant must be shown to hold trust property"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-15-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Under BCCI v Akindele, what is the test for knowing receipt liability?",
+      "options": [
+        "Whether the recipient had actual, specific knowledge that the property came from a breach of trust",
+        "Whether the recipient's state of knowledge makes it unconscionable for them to retain the benefit received",
+        "Whether the recipient paid full market value for the property"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Paying full value is relevant evidence bearing on unconscionability, and specific actual knowledge is one route to liability, but neither is itself the test. Akindele's test is the single, flexible unconscionability standard."
+    },
+    {
+      "itemId": "equity-15-test-05",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under Royal Brunei Airlines v Tan, is dishonesty for dishonest assistance judged subjectively (by the defendant's own moral standards) or objectively?",
+      "options": [
+        "Objectively — against what an honest person would have done given the facts as the defendant knew them",
+        "Subjectively — the defendant escapes liability if they genuinely believed their own conduct was honest"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-15-test-06",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario is properly analysed as knowing receipt rather than dishonest assistance?",
+      "scenarioA": "An accountant helps a company director falsify accounts to conceal a breach of fiduciary duty, without ever personally handling any of the misapplied funds.",
+      "scenarioB": "A property developer buys a flat using money they know, or ought reasonably to know, was stolen from a family trust, and keeps the flat.",
+      "correctScenario": "B",
+      "explanation": "B involves the defendant actually receiving and retaining property connected to the breach — a knowing receipt scenario tested by unconscionability. A involves no receipt at all, only assistance in the breach, so it falls under dishonest assistance and the objective dishonesty test."
+    },
+    {
+      "itemId": "equity-15-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A charity shop unknowingly sells a donated item that turns out to have been stolen from a trust, for its ordinary market value, with no reason at all to suspect anything was wrong. Applying BCCI v Akindele, is the shop liable for knowing receipt?",
+      "options": [
+        "No — with no relevant knowledge and no unconscionability in retaining ordinary sale proceeds, the test is not met",
+        "Yes — any receipt of trust property, however innocent, is automatically unconscionable"
+      ],
+      "correctIndex": 0,
+      "explanation": "Akindele requires the recipient's own state of knowledge to make retention unconscionable. An entirely innocent recipient with no reason to suspect anything wrong falls outside the test, however the property is ultimately traced back to a breach of trust."
+    },
+    {
+      "itemId": "equity-15-test-08",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What did Byers v Saudi National Bank confirm is required for a successful knowing receipt claim?",
+      "options": [
+        "A continuing equitable proprietary interest in the property, surviving up to the point of receipt",
+        "Proof that the recipient personally profited from keeping the property"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-15-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A defendant establishes that they were a bona fide purchaser for value without notice, and that this defence extinguished the claimant's equitable interest before the defendant ever received the disputed funds. Applying Byers v Saudi National Bank, what is the effect on a knowing receipt claim against them?",
+      "options": [
+        "The knowing receipt claim fails, because there is no continuing proprietary interest left to protect",
+        "The knowing receipt claim still succeeds automatically, because the funds are traceable to the original breach",
+        "The defence is irrelevant to knowing receipt and only applies to dishonest assistance claims"
+      ],
+      "correctIndex": 0,
+      "explanation": "Byers confirms knowing receipt remains tethered to a genuine, surviving equitable proprietary interest. A defence that extinguishes that interest before receipt leaves nothing for the claim to attach to, regardless of the defendant's later knowledge."
+    },
+    {
+      "itemId": "equity-15-test-10",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "By what margin did the Supreme Court decide Stevens v Hotel Portfolio II Ltd [2025] UKSC 28?",
+      "options": [
+        "4-1, with a substantial dissent",
+        "Unanimously, 5-0"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-15-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.6,
+      "prompt": "What did the majority in Stevens v Hotel Portfolio II Ltd hold about a dishonest assistant's liability for a fiduciary's dissipated profits?",
+      "options": [
+        "The assistant is automatically liable to disgorge the full profit the fiduciary made, however it was spent",
+        "The assistant's liability remains compensatory, measured by loss actually caused, and does not extend to disgorging the fiduciary's own dissipated profit",
+        "Dishonest assistants can never be held liable once the fiduciary becomes insolvent"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Students often overstate this holding in either direction — treating it as blanket disgorgement liability, or as a blanket immunity for assistants whenever the fiduciary is insolvent. The actual holding is narrower: liability stays compensatory rather than becoming gains-based, on these facts."
+    },
+    {
+      "itemId": "equity-15-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "According to the dissent in Stevens v Hotel Portfolio II, what is the practical risk of the majority's approach?",
+      "options": [
+        "That claimants can be left with no effective remedy whenever the fiduciary has dissipated their profits",
+        "That dishonest assistants will now be sued too often, even for entirely innocent conduct"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-15-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A trustee dishonestly assisted by a business partner makes £500,000 in secret profit from misusing trust assets, then gambles the entire sum away. The trust suffered a separate, quantifiable £80,000 loss directly caused by the partner's assistance. Applying the majority in Stevens v Hotel Portfolio II, what can the trust recover from the assisting partner?",
+      "options": [
+        "£500,000, matching the full dissipated profit made by the trustee",
+        "£80,000, being the compensatable loss the partner's assistance actually caused, not the trustee's separate dissipated gain",
+        "Nothing at all, because the trustee is now insolvent"
+      ],
+      "correctIndex": 1,
+      "explanation": "Stevens confines assistant liability to compensation for loss the assistance actually caused. The trust's compensatable loss here is the £80,000, not the trustee's own £500,000 profit, which the majority held is not recoverable from the assistant as a gains-based claim once dissipated."
+    },
+    {
+      "itemId": "equity-15-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A company director breaches her fiduciary duty by diverting a corporate opportunity to a side company, assisted throughout by her accountant, who knew the diversion was a breach but received no personal payment. The director profits £300,000 from the diversion and later spends it all on personal debts. Analyse the accountant's potential liability for dishonest assistance, including the effect of Stevens v Hotel Portfolio II on any claim for the £300,000.",
+      "factsToOrder": [
+        "The accountant knowingly helped divert the corporate opportunity",
+        "The accountant received no personal payment or benefit",
+        "The director profited £300,000 from the diversion",
+        "The director has since dissipated the entire £300,000"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the accountant is liable for dishonest assistance, and whether that liability can extend to the director's dissipated £300,000 profit.",
+        "rule": "Dishonest assistance requires dishonesty assessed objectively (Royal Brunei Airlines v Tan). Under the majority in Stevens v Hotel Portfolio II, an assistant's liability is compensatory, measured by loss the assistance caused, and does not extend to disgorging the fiduciary's own dissipated profit.",
+        "application": "Knowing the diversion was a breach and helping it happen satisfies the objective dishonesty standard, regardless of receiving no personal benefit — assistance liability does not require the assistant to profit. However, applying Stevens, the accountant cannot be made to pay over the director's dissipated £300,000 profit as such; any recoverable sum from the accountant would need to reflect loss the company actually suffered and that the accountant's assistance caused, not simply a share of the director's own gain.",
+        "conclusion": "The accountant is likely liable for dishonest assistance in principle, but following Stevens, the company cannot recover the full £300,000 dissipated profit from the accountant on a gains-based analysis — only compensation for loss the assistance actually caused, which may be considerably less."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is collapsing knowing receipt and dishonest assistance into one claim, or treating Stevens v Hotel Portfolio II as either a unanimous decision or a blanket rule barring all assistant liability. Keep receipt (proprietary, unconscionability) and assistance (personal, dishonesty) separate, and remember Stevens was 4-1 on a narrower point about dissipated profits.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.third-party-liability.knowing-receipt-dishonest-assistance"
+  }
+}

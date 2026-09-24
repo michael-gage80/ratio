@@ -1,0 +1,438 @@
+{
+  "lessonId": "humanrights-05",
+  "moduleId": "humanrights",
+  "moduleTitle": "Human Rights Law",
+  "lessonNumber": 5,
+  "topicId": "humanrights.substantive-rights.article-6-fair-trial-criminal",
+  "title": "Article 6: fair trial — the criminal dimension",
+  "subtitle": "The presumption of innocence, the privilege against self-incrimination, and the station-house rights that decide cases before they reach court",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the core criminal-trial guarantees in Article 6(1)–(3) ECHR and identify which bite at the investigation stage rather than only at trial",
+    "Explain the privilege against self-incrimination and how Saunders v UK distinguishes compelled testimony from real evidence obtained independently of the defendant's will",
+    "Apply the Salduz right to legal assistance at the police station and the Brown v Stott / R v A (No 2) framework for assessing whether a statutory departure from a fair-trial guarantee is compatible with Article 6"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Saunders v UK (1996) 23 EHRR 313",
+      "role": "Privilege against self-incrimination; distinguishes compelled statements from real evidence obtained independently of the defendant's will"
+    },
+    {
+      "citation": "Salduz v Turkey (2008) 49 EHRR 19",
+      "role": "Right of access to a lawyer from the first police interview, absent compelling reasons to restrict it"
+    },
+    {
+      "citation": "Brown v Stott [2003] 1 AC 681",
+      "role": "A proportionate, narrowly targeted statutory compulsion to answer can be compatible with Article 6"
+    },
+    {
+      "citation": "R v A (No 2) [2001] UKHL 25",
+      "role": "Using s 3 HRA 1998 to read down a statutory restriction so it does not violate the right to a fair trial"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often treat Article 6 as an abstract fair-trial slogan. Where the profile shows weak application, this note appears: 'You can define these rights — this lesson is about knowing which police-station decision they actually control.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool is weighted towards fact patterns: expect to be given a custody suite scenario and asked what should happen next, not asked to recite Article 6(1).",
+      "weakKnowledge": "Start with Parts 1 and 2 and hold the terms steady — 'privilege against self-incrimination' and 'presumption of innocence' get used loosely in casual speech but mean something narrower and more precise here."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Picture the file as a defence solicitor would read it: a client arrested at 11pm, a custody clock already running, and a decision that has to be made in the next twenty minutes about whether to let the interview start before a lawyer arrives. Nothing that happens at trial can undo a bad answer given in that room. Article 6 is usually taught as a trial-stage guarantee — but most of what decides a criminal case in practice happens long before anyone puts on a wig."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The presumption of innocence — what it actually stops the state doing",
+        "voice": "procedural/advisory — read as a briefing note to a trainee about what the right controls in practice, not as abstract doctrine",
+        "body": [
+          "Article 6(2) says a person charged with a criminal offence 'shall be presumed innocent until proved guilty according to law'. Advise a client on what that means and you'd say three things, not one. First, the burden of proving every element of the offence sits on the prosecution — the defendant proves nothing to be acquitted. Second, that burden must be discharged to the criminal standard, beyond reasonable doubt. Third — the part students most often miss — the presumption reaches outside the courtroom: public officials, including police and prosecutors, must not treat a suspect as guilty before conviction, whether in press statements, bail decisions, or how an interview is conducted.",
+          "The presumption is not absolute in one narrow sense: Strasbourg has long accepted that some statutory presumptions and reverse burdens can coexist with Article 6(2), provided they are confined within reasonable limits which take into account the importance of what is at stake and maintain the rights of the defence. That qualification is doing a huge amount of work, and it's the subject of Part 4 — hold onto it, because 'the presumption of innocence is absolute' is the single most common wrong answer in this area.",
+          "For now, the operative advice is simpler: if a rule of law or a piece of official conduct treats the suspect as guilty before the trial has tested the evidence — an unbalanced reverse burden, a police statement calling the accused 'the culprit', a judge directing a jury to assume guilt on a disputed fact — that is where Article 6(2) is engaged, and where you build the argument."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Presumption of innocence (Art 6(2))",
+            "definition": "The rule that the burden of proving guilt to the criminal standard rests on the prosecution, and that public authorities must not treat a person as guilty before a court has convicted them — subject only to reasonable, proportionate statutory exceptions."
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A minister publicly describes a person who has just been charged as 'clearly guilty' before any trial has taken place. Is this capable of engaging Article 6(2)?",
+          "options": [
+            "Yes — the presumption of innocence binds public officials, not only the trial process itself",
+            "No — Article 6(2) only governs what happens inside the courtroom"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The presumption is a constraint on the conduct of public authorities generally, not a rule confined to how the judge sums up at trial.",
+          "feedbackIncorrect": "Re-read the definition — Article 6(2) isn't only a trial-management rule. It restrains how officials speak about and treat an accused person before conviction, anywhere that conduct could prejudice the fairness of the eventual trial."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Privilege against self-incrimination: Saunders and the compelled-answer problem",
+        "voice": "procedural/advisory — the file-note register continues, now on the hardest distinction in this area",
+        "body": [
+          "Article 6 doesn't say 'privilege against self-incrimination' anywhere in its text. Strasbourg read it in as a necessary implication of the right to a fair trial in Saunders v UK — the case of Ernest Saunders, a Guinness executive compelled under companies legislation to answer questions from DTI inspectors on pain of criminal sanction for refusal, whose answers were later used against him at his fraud trial.",
+          "The Court held that using compelled answers as evidence of guilt at a subsequent criminal trial breached Article 6. But the reasoning contains the distinction every defence advisor needs to hold onto: the privilege protects the accused's *will* not to incriminate themselves through their own statements — it does not extend to material that has an existence independent of the will of the suspect. Blood samples, breath specimens, documents that already existed before the compulsion, and objects seized under a warrant all fall outside the privilege, however compulsorily they were obtained.",
+          "This is the line examiners test most often, because it's counter-intuitive: 'compelled' does not automatically mean 'privilege violated'. What matters is whether what was compelled was a statement of the suspect's own making, later used to convict them of the thing they were forced to talk about."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Saunders v UK",
+            "citation": "(1996) 23 EHRR 313",
+            "court": "European Court of Human Rights",
+            "year": 1996,
+            "factsShort": "Saunders was compelled by statute to answer DTI inspectors' questions about the Guinness share-support operation, under threat of criminal penalty for refusal. Transcripts of those compelled answers were read to the jury at his later fraud trial.",
+            "ratioShort": "Using compelled self-incriminating statements as evidence of guilt at trial breaches Article 6 — but the privilege does not cover material with an existence independent of the suspect's will.",
+            "expanded": {
+              "facts": "Under the Companies Act 1985, DTI inspectors could compel individuals to answer questions, with refusal itself a criminal offence. Saunders answered extensively. Parts of the interview transcripts were later read to the jury at his criminal trial for offences connected to the same conduct he had been questioned about.",
+              "judgmentExtract": "The Court held that the right not to incriminate oneself is primarily concerned with respecting the will of an accused to remain silent, and does not extend to the use in criminal proceedings of material which may be obtained from the accused through the use of compulsory powers but which has an existence independent of the will of the suspect, such as documents, breath, blood and urine samples and bodily tissue for DNA testing.",
+              "significance": "Saunders is the foundation of the modern privilege against self-incrimination under Article 6 and supplies the test that still governs the line between real evidence (admissible even if compelled) and compelled testimony (inadmissible if used to prove guilt)."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-05-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under the Saunders test, which of these is most likely to fall OUTSIDE the privilege against self-incrimination, even though it was obtained under statutory compulsion?",
+          "options": [
+            "A breath specimen provided under compulsion and used to prove the defendant was over the limit",
+            "A verbal confession given under compulsion and used to prove the defendant's state of mind",
+            "A compelled written account of the defendant's own version of events, read to the jury as evidence of guilt"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — a breath specimen exists independently of the suspect's will to speak or stay silent, so Saunders places it outside the privilege, however compulsory the process of extracting it was.",
+          "feedbackIncorrect": "Look for the option that isn't a statement of the suspect's own making. The privilege protects the will not to speak — physical samples that exist independently of that will sit outside it, even when compulsorily obtained."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The station-house minute that decides the case: Salduz and legal advice",
+        "voice": "procedural/advisory — a scenario worked through as a duty solicitor would work it",
+        "body": [
+          "Return to the custody suite at 11pm. The client wants to 'just get it over with' and answer questions before the duty solicitor arrives. This is precisely the moment Salduz v Turkey exists to protect against.",
+          "In Salduz, a minor was denied access to a lawyer during police custody and made incriminating statements that were used to convict him, despite later retracting them at trial. The Grand Chamber held that, as a rule, access to a lawyer should be provided from the first police interrogation, unless it is demonstrated in the light of the particular circumstances of the case that there are compelling reasons to restrict that right. Even then, whatever the justification, the restriction must not unduly prejudice the rights of the defence — which will generally be the case where a conviction is based solely or mainly on statements made without access to a lawyer.",
+          "Advise your client accordingly: the right to legal assistance is not a courtesy that improves the fairness of an interview — on this authority, its absence can be fatal to the safety of anything the interview produces. That is precisely why PACE Code C and s 58 PACE 1984 build in an entitlement to free and independent legal advice before and during interview, and why 'no comment' pending advice is very rarely bad tactics."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Salduz right",
+            "definition": "The Article 6-derived rule that a suspect should generally have access to a lawyer from the first police interrogation onward, with any restriction requiring compelling case-specific justification and not undermining the overall fairness of the proceedings."
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-05-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario most likely to breach the Salduz right to legal assistance.",
+          "scenarioText": "Ade is arrested at 9pm on suspicion of burglary. He asks for a solicitor. The custody sergeant records the request, but officers begin questioning him at 9.40pm, before any solicitor has arrived or been consulted by phone, and his answers form the sole basis of the later charge.",
+          "tappableSpans": [
+            "arrested at 9pm",
+            "asks for a solicitor",
+            "begin questioning him at 9.40pm, before any solicitor has arrived",
+            "answers form the sole basis of the later charge"
+          ],
+          "correctSpan": "begin questioning him at 9.40pm, before any solicitor has arrived",
+          "feedbackCorrect": "That's the breach point. Once Ade requested a lawyer, proceeding to substantive questioning before he had access to one — absent any compelling case-specific reason — is exactly what Salduz forbids.",
+          "feedbackIncorrect": "The arrest and the request themselves are unremarkable. Look for the moment the interview goes ahead despite the request for a solicitor not yet being satisfied — that's where the Salduz right is breached."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Reverse burdens: when is 'guilty until you prove otherwise' compatible with Article 6(2)?",
+        "voice": "procedural/advisory — weighing a compatibility argument the way counsel would before a hearing",
+        "body": [
+          "Some offences place a burden on the defendant — to prove they had a reasonable excuse, or that a substance wasn't a controlled drug they knew about. On its face this looks like exactly what Article 6(2) forbids. It usually isn't, and the case that supplies the compatibility test is Brown v Stott.",
+          "Margaret Brown, suspected of drink-driving, was required under s 172 of the Road Traffic Act 1988 to state who had been driving her car, on pain of a fixed penalty for refusal — with no exception for self-incrimination. She argued this compelled admission breached her privilege against self-incrimination. The Privy Council (as it then sat on the point) held it did not: the privilege is not an absolute right, and a limited, carefully targeted question — confined to the single fact of who was driving, in a regulatory context addressing a serious public safety problem — was a proportionate response that did not destroy the essence of the right.",
+          "R v A (No 2) shows the same compatibility exercise from a different angle: rather than upholding a restriction as proportionate, the House of Lords used s 3 of the Human Rights Act to read down the near-blanket restriction on cross-examining a complainant about prior sexual history in s 41 of the Youth Justice and Criminal Evidence Act 1999, so that evidence essential to a fair trial could still be admitted in rare cases. Together, the two cases give you the working test: is the interference with the fair-trial guarantee narrowly targeted at a legitimate and pressing objective, and does it leave the essence of the right — and the overall fairness of the trial — intact?"
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Assessing a reverse burden or compelled-answer provision",
+            "points": [
+              "Identify precisely what is compelled or presumed, and how narrowly it is targeted",
+              "Ask whether it pursues a legitimate, pressing regulatory or public-interest aim (Brown v Stott: road safety)",
+              "Ask whether the measure is proportionate — does it go further than necessary?",
+              "Ask whether the essence of the fair-trial right survives — can the defendant still, overall, test the case against them?",
+              "If a statute cannot be read compatibly on ordinary interpretation, consider whether s 3 HRA allows a compatible reading (R v A (No 2)), before resorting to a s 4 declaration of incompatibility"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-05-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the presumption of innocence in Article 6(2) is treated as an absolute rule admitting no statutory exceptions at all?",
+          "sliderLabels": [
+            "Fully absolute, no exceptions",
+            "Qualified — proportionate, narrow exceptions can be compatible"
+          ],
+          "correctPosition": "Qualified — proportionate, narrow exceptions can be compatible",
+          "explanation": "Brown v Stott confirms the presumption of innocence and privilege against self-incrimination are not absolute: narrowly targeted, proportionate statutory measures pursuing a legitimate aim can coexist with Article 6, provided the essence of the right survives."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Disclosure and the fair-trial floor",
+        "voice": "procedural/advisory — closing the file note with the point that ties the lesson together",
+        "body": [
+          "One more piece completes the picture: a defendant cannot test the case against them without seeing it. Disclosure of material that might undermine the prosecution case or assist the defence is not a procedural courtesy — Strasbourg treats it as part of the 'equality of arms' that Article 6(1)'s guarantee of a fair hearing requires. Domestically this is implemented through the Criminal Procedure and Investigations Act 1996, but the constitutional floor beneath the statute is Article 6 itself: a scheme that let the prosecution withhold clearly relevant undermining material, with no judicial mechanism to correct it, would not survive scrutiny.",
+          "Put the whole lesson together and a pattern emerges that's worth naming explicitly: Article 6(2) and (3) don't only regulate what happens in front of a jury. The presumption of innocence constrains how officials talk about a suspect; the privilege against self-incrimination constrains what can be extracted and used from them; Salduz constrains when that extraction can lawfully happen without a lawyer present; disclosure constrains what the defence gets to see before they have to answer any of it. A defence advisor reads Article 6 as a map of decision points spread across the whole life of a case — not a single day in court.",
+          "This is also why R v A (No 2) belongs here rather than purely in an evidence module: it shows the House of Lords treating trial fairness as something a court must actively protect by interpretation, not merely something Parliament is trusted to have got right by default."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often treat Article 6 as engaged only once a trial date is fixed, and analyse police-station and disclosure facts under different, unrelated headings.",
+            "whyItsWrong": "Article 6's guarantee of a fair hearing is assessed by looking at the fairness of the proceedings as a whole, including the pre-trial stage. Denial of legal advice at interview, compelled self-incriminating statements, and inadequate disclosure can each independently render the eventual trial unfair, even if the courtroom stage itself was conducted impeccably."
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-05-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two scenarios. In which is an Article 6 problem most clearly rooted in the pre-trial stage rather than the trial itself?",
+          "scenarioA": "A judge repeatedly interrupts defence counsel's closing speech and appears visibly hostile to the defendant in front of the jury.",
+          "scenarioB": "Police fail to disclose CCTV footage that would have supported the defendant's alibi, and the defendant is convicted without ever seeing it.",
+          "correctScenario": "B",
+          "explanation": "B is a pre-trial disclosure failure that undermines equality of arms before the courtroom stage even begins — the fair-trial guarantee is breached by what didn't reach the defence, not by anything that happened in front of the jury. A is a live, in-courtroom fairness problem (judicial conduct), not a pre-trial one."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "humanrights-05-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the ECHR article that guarantees a fair trial, and state which paragraph specifically protects the presumption of innocence.",
+      "acceptableAnswers": [
+        "Article 6, paragraph 2",
+        "Art 6(2)",
+        "Article 6(2) ECHR"
+      ],
+      "modelAnswer": "Article 6 guarantees the right to a fair trial; the presumption of innocence is specifically protected by Article 6(2)."
+    },
+    {
+      "itemId": "humanrights-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case established the privilege against self-incrimination as an implied component of Article 6, even though the words do not appear in the text?",
+      "options": [
+        "Saunders v UK",
+        "Golder v UK"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "humanrights-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT protected by the privilege against self-incrimination as defined in Saunders v UK?",
+      "options": [
+        "A compelled verbal admission used as evidence of guilt",
+        "A blood sample taken under statutory compulsion",
+        "A compelled written statement read to the jury as evidence of guilt"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Students often assume 'compelled' automatically means 'privilege violated'. Saunders draws the line at material with an existence independent of the suspect's will — a blood sample falls outside the privilege however compulsorily it was taken."
+    },
+    {
+      "itemId": "humanrights-05-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these events from Saunders v UK in the order they happened.",
+      "items": [
+        "Saunders is compelled to answer DTI inspectors under threat of penalty for refusal",
+        "Saunders answers extensively",
+        "Transcripts of the compelled answers are read to the jury at his fraud trial",
+        "The European Court holds the use of the compelled answers breached Article 6"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "humanrights-05-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under Salduz v Turkey, when can a suspect's right of access to a lawyer during police custody lawfully be restricted?",
+      "options": [
+        "Never — the right is absolute regardless of circumstances",
+        "Only where compelling case-specific reasons justify it, and the restriction must not unduly prejudice the overall fairness of the proceedings",
+        "Whenever the police consider the offence sufficiently serious"
+      ],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "humanrights-05-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Brown v Stott, highlight the sentence that states the ratio on proportionality.",
+      "passage": "The privilege against self-incrimination is not an absolute right. Section 172 pursues the legitimate aim of road safety by compelling disclosure of a single, narrow fact. A limited and proportionate interference with the privilege, directed at a pressing public safety problem, is compatible with Article 6 provided it does not destroy the essence of the right. On the facts, the essence of the right survived and no incompatibility arose.",
+      "ratioSentence": "A limited and proportionate interference with the privilege, directed at a pressing public safety problem, is compatible with Article 6 provided it does not destroy the essence of the right."
+    },
+    {
+      "itemId": "humanrights-05-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Nadia is detained and, under a statutory duty, is required to disclose only the make and model of her car's tyres following a road accident, on pain of a small fixed penalty for refusal — nothing else is compelled. She argues this breaches her privilege against self-incrimination. Applying Brown v Stott, is she likely to succeed?",
+      "options": [
+        "No — a narrow, proportionate compulsion targeted at a legitimate regulatory aim, which leaves the essence of the right intact, is compatible with Article 6",
+        "Yes — any statutory compulsion to answer automatically breaches the privilege",
+        "Yes — because a criminal penalty attaches to refusal"
+      ],
+      "correctIndex": 0,
+      "explanation": "This mirrors Brown v Stott closely: a narrowly targeted question, a legitimate regulatory purpose, and a penalty for refusal that does not itself criminalise the substantive answer given, all point to compatibility."
+    },
+    {
+      "itemId": "humanrights-05-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A suspect is questioned at the police station for two hours despite repeatedly asking for a solicitor, with no compelling justification recorded for the delay. His answers become the central evidence at trial. Which authority is most directly engaged?",
+      "options": [
+        "Salduz v Turkey",
+        "Golder v UK",
+        "Al-Khawaja and Tahery v UK"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is squarely the Salduz problem: denial of access to a lawyer at the investigative stage, with no compelling justification, where the resulting statements form the core of the prosecution case."
+    },
+    {
+      "itemId": "humanrights-05-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly falls outside the privilege against self-incrimination under the Saunders test.",
+      "scenarioText": "Officers compel a suspect to provide a breath specimen, and separately compel him to give a detailed verbal account of his evening, which is later read to the jury as an admission of guilt.",
+      "tappableSpans": [
+        "compel a suspect to provide a breath specimen",
+        "compel him to give a detailed verbal account",
+        "read to the jury as an admission of guilt"
+      ],
+      "correctSpan": "compel a suspect to provide a breath specimen",
+      "explanation": "A breath specimen has an existence independent of the suspect's will — it falls outside the privilege under Saunders, unlike the compelled verbal account, which is exactly the kind of self-made statement the privilege protects."
+    },
+    {
+      "itemId": "humanrights-05-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario most closely mirrors the reasoning in R v A (No 2) rather than Brown v Stott?",
+      "scenarioA": "A court reads down a near-blanket statutory restriction on cross-examination so that evidence essential to a fair trial can still be admitted in an exceptional case.",
+      "scenarioB": "A court upholds a narrow statutory compulsion to answer a single factual question, finding it proportionate and consistent with Article 6.",
+      "correctScenario": "A",
+      "explanation": "A is R v A (No 2): using s 3 HRA to interpret a statute compatibly so the trial remains fair, rather than upholding the restriction as already proportionate on its own terms, which is the Brown v Stott approach in B."
+    },
+    {
+      "itemId": "humanrights-05-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A prosecutor withholds CCTV footage that undermines the prosecution's timeline, and the defence never learns of its existence before conviction. Is this capable of breaching Article 6, even though the trial hearing itself was conducted fairly?",
+      "options": [
+        "Yes — the fairness of proceedings is assessed as a whole, including pre-trial disclosure",
+        "No — Article 6 only concerns the conduct of the trial hearing itself"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "humanrights-05-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Femi is arrested on suspicion of fraud. He asks for a solicitor; officers begin interviewing him twenty minutes later, before any solicitor has arrived, telling him it will 'go better for him' if he explains himself now. His explanation is later the only evidence linking him to the offence. Analyse whether Femi's Article 6 rights were breached.",
+      "factsToOrder": [
+        "Femi requests a solicitor on arrest",
+        "Officers begin interviewing him before a solicitor arrives",
+        "Officers tell him it will 'go better' if he explains himself now",
+        "His explanation becomes the sole evidence linking him to the offence"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether interviewing Femi before his requested solicitor arrived, and relying on his resulting statement as the sole evidence against him, breaches his Article 6 right to a fair trial.",
+        "rule": "Salduz v Turkey requires access to a lawyer from the first police interrogation absent compelling case-specific reasons to restrict it; a restriction will generally render proceedings unfair where the conviction is based solely or mainly on statements made without that access.",
+        "application": "Femi requested a solicitor and none had arrived when questioning began; no compelling reason for proceeding is identified on the facts. The officers' comment that it would 'go better' compounds the pressure on him to speak. His explanation is the sole evidence against him, which is precisely the situation Salduz treats as fatal to overall fairness.",
+        "conclusion": "On these facts, Femi's Article 6 rights were breached: the interview should not have proceeded without his solicitor, and relying on the resulting statement as the sole evidence undermines the fairness of any conviction."
+      }
+    },
+    {
+      "itemId": "humanrights-05-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best explains why the presumption of innocence in Article 6(2) is not violated by every statutory reverse burden?",
+      "options": [
+        "Because reverse burdens are a matter of domestic criminal procedure, outside the reach of the Convention entirely",
+        "Because a narrowly targeted, proportionate reverse burden pursuing a legitimate aim, which leaves the essence of the right intact, can be compatible with Article 6",
+        "Because the presumption of innocence only applies to summary offences"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers either exaggerate the Convention's reach (claiming it never applies to domestic procedure) or invent a distinction the case law doesn't draw (summary vs indictable offences). The real test is the Brown v Stott proportionality analysis."
+    },
+    {
+      "itemId": "humanrights-05-test-14",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that disclosure obligations in criminal proceedings are properly understood as flowing from Article 6's 'equality of arms' guarantee, rather than being a purely domestic statutory courtesy unconnected to fair-trial rights?",
+      "sliderLabels": [
+        "Purely domestic, unconnected to Article 6",
+        "Rooted in Article 6's equality of arms guarantee"
+      ],
+      "correctPosition": "Rooted in Article 6's equality of arms guarantee",
+      "explanation": "Disclosure sits beneath the Criminal Procedure and Investigations Act 1996 as a matter of domestic implementation, but the constitutional floor is Article 6 itself: a defendant cannot achieve equality of arms without access to material that might undermine the prosecution or assist the defence."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is assuming Article 6 only governs what happens in the courtroom on the day of trial. Most of its practical force operates earlier — at the point of compulsion, at the police station, and in what gets disclosed before either side opens their case.",
+    "reviewMisses": true,
+    "linkToPathway": "humanrights.substantive-rights.article-6-fair-trial-criminal"
+  }
+}

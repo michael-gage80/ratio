@@ -1,0 +1,351 @@
+{
+  "lessonId": "land-09",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 9,
+  "topicId": "land.leases.covenants-forfeiture",
+  "title": "Leasehold covenants and forfeiture",
+  "subtitle": "The landlord's toolkit — running covenants, forfeiture, and relief",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how leasehold covenants run to bind successors under old leases (privity of contract/estate) and new leases governed by the Landlord and Tenant (Covenants) Act 1995",
+    "State the landlord's remedies for breach of covenant, including the forfeiture procedure and the section 146 notice requirement",
+    "Apply the principles governing relief from forfeiture, including Billson, to a fact pattern involving a landlord's re-entry"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Landlord and Tenant (Covenants) Act 1995", "role": "Abolishes continuing privity-of-contract liability for tenants under leases granted on or after 1 January 1996; introduces authorised guarantee agreements (AGAs)" },
+    { "citation": "Law of Property Act 1925, s 146", "role": "Requires a landlord to serve a notice specifying the breach, requiring it to be remedied (if capable of remedy) and demanding compensation, before forfeiting for breach of covenant other than non-payment of rent" },
+    { "citation": "Billson v Residential Apartments Ltd [1992] 1 AC 494", "role": "Confirms relief from forfeiture remains available to a tenant after peaceable re-entry, up until the landlord's re-entry is perfected by court order or the tenant's rights are finally extinguished" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Landlords don't sue for breach of covenant nearly as often as they threaten forfeiture — and examiners know it. This lesson is the toolkit: what a landlord can actually do when a tenant breaches, what the law forces them to do first, and how a tenant claws the lease back afterwards.",
+    "profileHooks": {
+      "weakApplication": "You know the remedies list. The test pool below leans hard on fact patterns — a landlord who's jumped a step, a tenant who's waited too long. Read every scenario for what's missing, not just what's present.",
+      "weakKnowledge": "Slow down on Parts 2 and 3 before the case-heavy material — you need the remedies menu and the section 146 sequence solid before Billson will make sense."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A tenant falls three months behind on the shop rent. On Friday evening, while the tenant is away, the landlord changes the locks. By Monday morning the tenant is standing on the pavement outside their own business, and the entire dispute is about to turn on whether the landlord did the paperwork in the right order.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. Two housing-policy developments sit adjacent to this lesson's core doctrine and are flagged here for currency, not tested: (1) the Renters' Rights Act 2025 abolished 'no-fault' section 21 evictions of assured shorthold tenants, a change taking effect from 1 May 2026 — it reforms residential tenancy termination procedure, not the leasehold covenant and forfeiture doctrine taught in this lesson; (2) the Commonhold and Leasehold Reform Bill, which proposes ground rent caps and a route towards ending new residential leasehold flats, remained a Bill before Parliament — not yet enacted — as at the date this lesson was last checked. Track both for currency. Neither is treated as settled, testable law in this lesson's test pool."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Old leases, new leases: who stays on the hook",
+        "voice": "structural — comparative, sets up the divide the rest of the lesson assumes",
+        "body": [
+          "Before 1 January 1996, a tenant who assigned their lease didn't walk away from it. Under the old privity-of-contract rule, the original tenant remained liable on every covenant in the lease for its entire term — even years after they'd sold up and left, even for breaches committed by a stranger who bought the lease from them three owners down the line. Assignees, meanwhile, were bound by privity of estate: liable only for covenants that 'touched and concerned' the land, and only while they actually held the lease.",
+          "The Landlord and Tenant (Covenants) Act 1995 tore this up for leases granted on or after 1 January 1996. Original tenants are now automatically released from the tenant covenants on a lawful assignment — no more indefinite contractual liability trailing behind them. In its place, a landlord can require an outgoing tenant to enter an authorised guarantee agreement (AGA): a guarantee of their immediate assignee's performance, but not of assignees further down the chain.",
+          "Get the date right before anything else. Every question in this area starts with 'is this an old lease or a new lease?' — and answering it wrong flips who the examiner expects you to sue."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Authorised guarantee agreement (AGA)",
+            "definition": "Under the LTCA 1995, a guarantee a landlord can require an assigning tenant to give of their immediate assignee's performance of the covenants — it does not extend to any later assignee further down the chain."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A lease was granted in 2019 and the original tenant has since assigned it twice. Under the LTCA 1995, is the original tenant automatically liable for a breach committed by the current tenant?",
+          "options": ["No — the original tenant is released from the tenant covenants on lawful assignment, absent an AGA that extends that far", "Yes — original tenants remain liable for the whole term regardless of assignment"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Post-1996 leases release the original tenant on assignment — that's the whole point of the 1995 Act. An AGA only ever guarantees the immediate assignee, never a later one.",
+          "feedbackIncorrect": "That was the old, pre-1996 rule. For a 2019 lease, the LTCA 1995 applies: the original tenant is released on lawful assignment, subject only to any AGA guaranteeing their immediate assignee."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The remedies menu before anyone talks about forfeiture",
+        "voice": "practical — a toolkit a trainee solicitor would actually use",
+        "body": [
+          "Forfeiture gets all the attention because it's dramatic, but it's the last resort on a menu of remedies, not the first response to every breach. A landlord facing a breach of covenant has options short of ending the lease entirely.",
+          "For unpaid rent, a commercial landlord can use CRAR — Commercial Rent Arrears Recovery under the Tribunals, Courts and Enforcement Act 2007 — to instruct enforcement agents to seize goods, without going to court first. It's only available for rent (not service charge or other sums) and only against commercial premises. For breach of any covenant, the landlord can simply sue for damages, or, in the right circumstances, seek an injunction or specific performance to compel compliance.",
+          "Forfeiture is different in kind from all of these: it doesn't just penalise the breach, it ends the lease. That's exactly why the law surrounds it with more procedural protection than any other remedy — and why an exam question that mentions forfeiture is really asking whether the landlord followed the rules, not whether the tenant breached."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The landlord's remedies for breach of covenant",
+            "points": [
+              "CRAR — recovery of rent arrears only, commercial premises only, no court order needed",
+              "Action for damages — the ordinary contractual remedy, available for any breach",
+              "Injunction / specific performance — to restrain a breach or compel compliance with a positive covenant",
+              "Forfeiture — re-entry and termination of the lease itself, subject to strict procedural conditions"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-09-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Rank these landlord responses to breach from least drastic to most drastic in their effect on the tenant's position.",
+          "items": ["Action for damages for the breach", "Injunction requiring the breach to stop", "CRAR seizure of goods for unpaid rent", "Forfeiture — re-entry and termination of the lease"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the escalation. Damages and injunctions leave the lease standing. CRAR is more forceful but still leaves the tenancy intact. Only forfeiture ends the lease itself — which is exactly why it comes with the heaviest procedural conditions.",
+          "feedbackIncorrect": "Think about which remedies leave the lease itself untouched, and which one terminates it outright. Forfeiture is the only remedy on this list that ends the tenancy — everything else is compatible with the tenant staying put."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The section 146 dance",
+        "voice": "statute-first — walks the notice requirement line by line before applying it",
+        "body": [
+          "For non-payment of rent, forfeiture is comparatively simple: a formal demand for the rent (unless the lease waives this, as most modern leases do) is enough before a landlord can act. For breach of any other covenant, section 146 of the Law of Property Act 1925 imposes a mandatory sequence, and skipping a step makes the forfeiture void.",
+          "The landlord must serve a notice that (1) specifies the particular breach complained of, (2) if the breach is capable of remedy, requires the tenant to remedy it within a reasonable time, and (3) requires the tenant to pay compensation for the breach, if the landlord wants money as well as compliance. Only once the tenant has failed to comply within a reasonable time can the landlord forfeit.",
+          "'Capable of remedy' does real work here. Courts have treated most covenant breaches — including many breaches once thought irremediable, like some breaches of user covenants — as remediable in practice (see Expert Clothing Service & Sales v Hillgate House Ltd [1986] Ch 340), because the object of the notice is to give the tenant a fair chance to put things right, not to trap them."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, s 146(1)",
+            "text": "A right of re-entry or forfeiture under any proviso or stipulation in a lease for a breach of any covenant or condition in the lease shall not be enforceable, by action or otherwise, unless and until the lessor serves on the lessee a notice specifying the particular breach complained of, and, if the breach is capable of remedy, requiring the lessee to remedy the breach, and, in any case, requiring the lessee to make compensation in money for the breach, and the lessee fails, within a reasonable time thereafter, to remedy the breach, if it is capable of remedy, and to make reasonable compensation in money, to the satisfaction of the lessor, for the breach.",
+            "elements": ["Notice specifying the particular breach", "Requirement to remedy the breach, if capable of remedy", "Requirement to pay compensation", "Tenant's failure to comply within a reasonable time"]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-09-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A landlord wants to forfeit a commercial lease because the tenant has breached a user covenant by running a takeaway from premises let for retail use only. What must the landlord do before forfeiting, on the text of s 146(1)?",
+          "options": ["Serve a s 146 notice specifying the breach, requiring it to be remedied if capable of remedy, and requiring compensation — then wait a reasonable time for compliance", "Nothing — user covenant breaches can be forfeited on sight since they are never capable of remedy", "Simply change the locks; s 146 applies only to non-payment of rent"],
+          "correctIndex": 0,
+          "explanation": "Section 146 applies to breach of covenant generally, not just non-payment of rent (which has its own separate demand rule). A user covenant breach is generally treated as capable of remedy — the tenant must be given the chance to stop the offending use before forfeiture can proceed."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Billson: re-entry isn't the last word",
+        "voice": "case-narrative — tells the story before drawing the principle",
+        "body": [
+          "Residential Apartments Ltd let commercial premises to Billson, who breached covenants relating to works and use. The landlord, having served the required notice, peaceably re-entered the premises — turning up and retaking physical possession without a court order, which is lawful for commercial premises (though never for residential premises in occupation, where peaceable re-entry can be a criminal offence under the Protection from Eviction Act 1977).",
+          "Billson applied to the court for relief from forfeiture — essentially, to have the lease reinstated. The landlord argued it was too late: re-entry had already happened, the lease was gone, and relief could only be sought beforehand. The House of Lords disagreed. Relief from forfeiture remains available even after peaceable re-entry, right up until the landlord's title is confirmed — by the tenant's time to apply finally expiring, or by the court's order perfecting the forfeiture.",
+          "The practical lesson for a landlord's adviser: physically retaking a property is never the end of the story. A tenant who moves quickly can still ask the court to put them back in, generally on terms that they remedy the breach and pay the landlord's costs."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Billson v Residential Apartments Ltd",
+            "citation": "[1992] 1 AC 494",
+            "court": "House of Lords",
+            "year": 1992,
+            "factsShort": "A landlord peaceably re-entered commercial premises after the tenant breached covenants and failed to comply with a s 146 notice. The tenant sought relief from forfeiture after re-entry had already occurred.",
+            "ratioShort": "Relief from forfeiture is not cut off merely because the landlord has physically re-entered; it remains available until the landlord's re-entry is finally perfected.",
+            "expanded": {
+              "facts": "Residential Apartments Ltd, the landlord of commercial premises, served a s 146 notice on its tenant, Billson, alleging breaches of repairing and alteration covenants. When Billson failed to comply, the landlord peaceably re-entered — retaking possession without a court order, a step lawful for commercial premises not in residential occupation. Billson then applied to court for relief from forfeiture, seeking to have the lease restored.",
+              "judgmentExtract": "The House of Lords held that a tenant's right to apply for relief from forfeiture under s 146(2) survives a landlord's peaceable re-entry. The re-entry does not itself extinguish the lease for all purposes; it remains liable to be set aside by the court's grant of relief, and the tenant's opportunity to apply does not close simply because the landlord has already changed the locks.",
+              "significance": "Billson confirms that peaceable re-entry, while a lawful and often-used step for a commercial landlord, is not a way of putting the dispute beyond the court's reach. It shifts the practical question from 'has the landlord re-entered?' to 'has the tenant applied for relief promptly, before the landlord's title is finally confirmed?'"
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-09-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is a tenant most clearly still able to apply for relief from forfeiture?",
+          "scenarioA": "The landlord peaceably re-entered commercial premises six days ago; the tenant applies to court for relief this week, before any further order has been made.",
+          "scenarioB": "The landlord peaceably re-entered two years ago; the tenant did nothing, the landlord re-let the premises to a new tenant long since, and the court has since confirmed the original lease is at an end.",
+          "correctScenario": "A",
+          "explanation": "A mirrors Billson directly: re-entry alone doesn't close the door, and an application made promptly afterwards is exactly the situation Billson protects. In B, the passage of time and the court's confirmation of the forfeiture mean relief is no longer realistically available — the tenant's rights have been finally extinguished."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Two traps that undo a landlord's forfeiture before it starts",
+        "voice": "direct — sets up the two pitfalls the test pool probes hardest",
+        "body": [
+          "Two things can sink a landlord's forfeiture regardless of how clear the underlying breach was. The first is waiver: if a landlord who knows of a breach does anything that unequivocally treats the lease as continuing — most commonly, demanding or accepting rent that falls due after the breach — they lose the right to forfeit for that particular breach. Waiver is assessed on knowledge plus an unequivocal act; the landlord doesn't need to intend to waive anything, the law imputes it from the conduct.",
+          "The second is the choice between peaceable re-entry and court proceedings. Peaceable re-entry is faster and cheaper, but it's only lawful where the premises are not let as a dwelling and are not in fact occupied residentially — the Protection from Eviction Act 1977 makes it a criminal offence to enforce a right of re-entry otherwise than by court proceedings while anyone is lawfully residing in the premises. A landlord who peaceably re-enters a residential tenant's home has committed an offence and exposed themselves to damages, entirely independent of whether the underlying breach was real.",
+          "Put together with Billson, the picture for an exam answer is this: identify the breach, check the s 146 notice was properly served (or that rent arrears procedure was followed), check the landlord hasn't waived the breach by accepting rent since, check the re-entry method was lawful for this type of premises, and only then ask whether relief from forfeiture might still restore the tenant."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say a landlord who accepts a late rent payment after discovering a breach hasn't waived anything, because they didn't intend to give up the right to forfeit.",
+            "whyItsWrong": "Waiver doesn't depend on the landlord's intention at all. It's assessed objectively: knowledge of the breach, plus an unequivocal act recognising the lease as continuing (accepting or demanding rent is the classic example), is enough — regardless of what the landlord subjectively meant by it."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-09-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A landlord discovers a tenant has sublet in breach of covenant. Two weeks later, unaware anyone would call this a waiver, the landlord's agent accepts the quarter's rent as usual. Has the landlord likely waived the right to forfeit for that breach?",
+          "options": ["Yes — knowledge of the breach plus accepting rent due afterwards is an unequivocal act treating the lease as continuing, regardless of the landlord's intention", "No — waiver requires the landlord to have deliberately intended to give up the right to forfeit", "No — waiver only applies to breaches of the rent covenant itself"],
+          "correctIndex": 0,
+          "explanation": "This is the classic waiver trap. Intention is irrelevant; the law looks at knowledge of the breach plus an unequivocal act. Accepting rent that falls due after the landlord knew of the subletting is exactly that act, however innocently the agent meant it."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-09-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What does the Landlord and Tenant (Covenants) Act 1995 do to an original tenant's liability on assignment of a post-1995 lease?",
+      "acceptableAnswers": ["releases the original tenant on lawful assignment", "automatic release of the assigning tenant", "ends privity of contract liability going forward"],
+      "modelAnswer": "For leases granted on or after 1 January 1996, the LTCA 1995 automatically releases the original tenant from the tenant covenants on a lawful assignment, subject only to any authorised guarantee agreement covering the immediate assignee."
+    },
+    {
+      "itemId": "land-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under an old lease (pre-1996), does an original tenant remain liable for breaches committed by a later assignee, after they themselves have assigned away?",
+      "options": ["Yes — privity of contract binds the original tenant for the whole term regardless of assignment", "No — assignment ends all liability for the original tenant"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-09-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT required by section 146(1) of the Law of Property Act 1925 before a landlord forfeits for breach of covenant?",
+      "options": ["A notice specifying the particular breach", "A requirement to remedy the breach, if capable of remedy", "A requirement that the tenant vacate the premises within 7 days of the notice", "A requirement to pay compensation for the breach"],
+      "correctIndex": 2,
+      "trapExplanation": "There is no fixed 7-day vacate requirement in s 146 — the statute requires a reasonable time to remedy the breach and pay compensation, with the reasonable period varying by breach. Manufacturing a specific deadline is the trap."
+    },
+    {
+      "itemId": "land-09-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does section 146 LPA 1925 apply to forfeiture for non-payment of rent in the same way as for other covenant breaches?",
+      "options": ["No — non-payment of rent has its own separate demand procedure, distinct from the s 146 notice regime", "Yes — s 146 notice is required in exactly the same form for rent arrears as for any other breach"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-09-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put the correct forfeiture procedure for breach of a repairing covenant (not rent arrears) in order.",
+      "items": ["Landlord identifies the breach of covenant", "Landlord serves a s 146 notice specifying the breach and requiring remedy", "Tenant fails to remedy within a reasonable time", "Landlord forfeits by re-entry or court proceedings"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "land-09-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "On the text of s 146(1), what happens if a breach is not capable of remedy at all?",
+      "options": ["The notice must still specify the breach and require compensation, but need not require the impossible act of remedying it", "The landlord can never forfeit for an unremediable breach", "Section 146 does not apply at all to unremediable breaches"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-09-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Billson, highlight the sentence that states the ratio on relief from forfeiture.",
+      "passage": "The landlord had peaceably re-entered the demised premises following the tenant's failure to comply with a s 146 notice. The tenant then sought relief. The right to apply for relief from forfeiture is not extinguished by the landlord's peaceable re-entry alone; it survives until the landlord's re-entry is finally perfected, whether by the expiry of the tenant's opportunity to apply or by court order. The landlord's submission that re-entry itself closed the door to relief was rejected.",
+      "ratioSentence": "The right to apply for relief from forfeiture is not extinguished by the landlord's peaceable re-entry alone; it survives until the landlord's re-entry is finally perfected, whether by the expiry of the tenant's opportunity to apply or by court order."
+    },
+    {
+      "itemId": "land-09-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A landlord serves a valid s 146 notice on a commercial tenant for breach of an alterations covenant. The tenant does nothing. Three weeks later, still unaware of any breach beyond what the notice described, the landlord's managing agent sends the usual quarterly rent demand and the tenant pays it. Can the landlord still forfeit for the alterations breach?",
+      "options": ["Probably not — demanding and accepting rent that falls due after knowledge of the breach is a classic unequivocal act of waiver, regardless of intention", "Yes — a s 146 notice already served can never be waived by later conduct", "Yes — waiver only applies to breaches discovered after the rent demand is sent"],
+      "correctIndex": 0,
+      "explanation": "Serving the notice doesn't inoculate the landlord against waiver. Knowledge of the breach plus accepting rent that falls due afterwards is exactly the unequivocal act the doctrine targets."
+    },
+    {
+      "itemId": "land-09-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A landlord wants to forfeit a residential tenancy where the tenant is still living in the property, for breach of a covenant against keeping pets. Can the landlord lawfully use peaceable re-entry?",
+      "options": ["No — enforcing a right of re-entry against premises let as a dwelling and occupied residentially otherwise than by court proceedings is a criminal offence under the Protection from Eviction Act 1977", "Yes — peaceable re-entry is always available once a valid s 146 notice has expired", "Yes — pet covenants are treated as an exception permitting peaceable re-entry"],
+      "correctIndex": 0,
+      "explanation": "Peaceable re-entry against an occupied residential tenancy is unlawful — the landlord must go through the court. This is a distinct rule from the s 146 notice requirement, and both traps can appear in the same fact pattern."
+    },
+    {
+      "itemId": "land-09-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly amounts to waiver of the landlord's right to forfeit.",
+      "scenarioText": "The landlord discovers on 1 March that the tenant has been running an unauthorised business from the premises. On 5 March the landlord instructs solicitors to prepare a s 146 notice. On 25 March, before the notice is served, the landlord's agent accepts the tenant's rent payment for the quarter beginning 25 March.",
+      "tappableSpans": ["discovers on 1 March", "instructs solicitors to prepare a s 146 notice", "accepts the tenant's rent payment"],
+      "correctSpan": "accepts the tenant's rent payment",
+      "feedbackCorrect": "Correct. Accepting rent that falls due after the landlord knew of the breach is the unequivocal act — it doesn't matter that a notice was already being prepared.",
+      "feedbackIncorrect": "Preparing a notice doesn't waive anything, and discovery alone is just knowledge. Look for the moment the landlord does something that treats the lease as continuing — accepting rent is that moment."
+    },
+    {
+      "itemId": "land-09-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely reflects the Billson principle that relief from forfeiture survives re-entry?",
+      "scenarioA": "A commercial tenant, forfeited by peaceable re-entry ten days ago, issues an application for relief this week.",
+      "scenarioB": "A commercial tenant, forfeited by peaceable re-entry three years ago, having taken no steps at all, now objects for the first time after the landlord has long since re-let and the court has confirmed the forfeiture.",
+      "correctScenario": "A",
+      "explanation": "A is the live Billson situation: re-entry has happened but the tenant moves promptly, while the door to relief is still open. B illustrates the outer limit — once the landlord's title is finally perfected and confirmed, relief is no longer realistically available."
+    },
+    {
+      "itemId": "land-09-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A commercial landlord serves a s 146 notice on a tenant for breach of a repairing covenant. The tenant fails to comply. The landlord peaceably re-enters. Two weeks later the tenant applies to court for relief from forfeiture, offering to carry out the repairs and pay the landlord's costs. Analyse whether the tenant is likely to obtain relief.",
+      "factsToOrder": [
+        "A valid s 146 notice was served specifying the repairing breach",
+        "The tenant failed to remedy the breach within a reasonable time",
+        "The landlord peaceably re-entered (lawful, as the premises are commercial)",
+        "The tenant applied for relief only two weeks after re-entry",
+        "The tenant offers to remedy the breach and pay the landlord's costs"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the tenant can obtain relief from forfeiture despite the landlord's peaceable re-entry.",
+        "rule": "Billson v Residential Apartments Ltd holds that relief from forfeiture survives peaceable re-entry and remains available until the landlord's title is finally perfected; relief is typically granted on terms that the tenant remedy the breach and pay the landlord's reasonable costs.",
+        "application": "The s 146 procedure was correctly followed and the landlord's re-entry was lawful, but Billson establishes that re-entry alone does not close the door to relief. The tenant has applied promptly — within two weeks — well before any further step has perfected the landlord's title, and offers exactly the terms courts typically require: remedying the breach and covering costs.",
+        "conclusion": "The tenant is likely to obtain relief from forfeiture on the terms offered, since the application is prompt and follows the pattern Billson protects."
+      }
+    },
+    {
+      "itemId": "land-09-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which statement best captures why the LTCA 1995 introduced the authorised guarantee agreement (AGA)?",
+      "options": ["To give landlords of new leases some continuing security from an outgoing tenant, since the Act otherwise releases that tenant entirely on lawful assignment", "To make the original tenant permanently liable for the whole remaining term, replacing privity of contract with an identical rule", "To prevent tenants from ever assigning a lease without the landlord's consent"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answer treats the AGA as just a renamed version of the old privity-of-contract rule. It isn't — an AGA only guarantees the immediate assignee, a narrower and time-limited form of security, precisely because full automatic release is now the default."
+    },
+    {
+      "itemId": "land-09-test-14",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Is CRAR (Commercial Rent Arrears Recovery) available to recover an unpaid service charge from a commercial tenant?",
+      "options": ["No — CRAR is limited to recovering rent, not service charge or other sums due under the lease", "Yes — CRAR covers any sum due under a commercial lease"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring failure in this lesson's items is treating forfeiture as a single event rather than a sequence with several independent failure points: no notice, a waived breach, an unlawful re-entry method, or a relief application made too late (or, per Billson, wrongly assumed to be too late). Check each link in the chain separately.",
+    "reviewMisses": true,
+    "linkToPathway": "land.leases.covenants-forfeiture"
+  }
+}

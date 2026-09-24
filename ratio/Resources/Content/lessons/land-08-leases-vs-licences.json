@@ -1,0 +1,487 @@
+{
+  "lessonId": "land-08",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 8,
+  "topicId": "land.leases.leases-vs-licences",
+  "title": "Leases vs licences",
+  "subtitle": "Exclusive possession, sham clauses, and the lease that isn't quite property",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the test from Street v Mountford for distinguishing a lease from a licence, and explain why the label a document gives itself is not decisive",
+    "Identify sham or pretence terms inserted to avoid creating a lease, and explain how courts treat genuine multiple-occupation agreements differently",
+    "Explain Bruton v London & Quadrant Housing Trust's non-proprietary lease as an exception to the usual rule that a lease is a proprietary estate, and apply the exclusive possession/term/rent test to new fact patterns"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Street v Mountford [1985] AC 809",
+      "role": "Establishes exclusive possession, for a term, generally at a rent, as a lease regardless of the label the parties give it; introduces the sham/pretence doctrine"
+    },
+    {
+      "citation": "AG Securities v Vaughan [1990] 1 AC 417",
+      "role": "Confirms genuine, independent multiple-occupation agreements can be licences where no one ever holds exclusive possession"
+    },
+    {
+      "citation": "Bruton v London & Quadrant Housing Trust [2000] 1 AC 406",
+      "role": "A lease can arise as a contractual, non-proprietary relationship even where the grantor holds no estate capable of supporting a proprietary lease"
+    },
+    {
+      "citation": "Prudential Assurance Co v London Residuary Body [1992] 2 AC 386",
+      "role": "Reaffirms the strict requirement that a fixed term's maximum duration be ascertainable from the outset"
+    },
+    {
+      "citation": "Mexfield Housing Co-operative v Berrisford [2011] UKSC 52",
+      "role": "Rescues an uncertain-term periodic tenancy granted to an individual by converting it into a 90-year term under LPA 1925, s 149(6)"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students who can recite 'exclusive possession + certain term (+ rent) = lease' often still get caught by the exam's actual trick, which is spotting when a clause calling itself something else is a pretence. Where the profile shows knowledge ahead of application, this note appears: 'You know the test — this lesson is about applying it to documents designed to defeat it.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the Street v Mountford test before. The test pool below leans on spotting shams in fact patterns, not reciting the rule.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state the three hallmarks of a lease without hesitation before moving on — the rest of the lesson assumes you have them cold."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A landlord's agreement says, in bold capitals, 'THIS IS A LICENCE, NOT A TENANCY.' The occupier has her own key, nobody else ever sets foot in the room, and she's paid the same amount every Friday for two years. The document says one thing. The facts say another. Guess which one the law believes."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Street v Mountford: substance over label",
+        "voice": "witty, skeptical — enjoys catching a landlord's drafting trick, but takes the doctrine seriously",
+        "body": [
+          "Mrs Mountford occupied a room under an agreement carefully drafted to call itself a 'licence': it stated she would not be granted a tenancy, and that the owner reserved a right of access. She paid a weekly sum. In every practical respect, she lived there exactly as a tenant would — she had her own room, her own key, and nobody disturbed her.",
+          "The House of Lords was unimpressed by the label. Lord Templeman's reasoning has become the standard test: if an occupier has exclusive possession of premises for a term (a period, however defined) — and normally, though not always, in exchange for rent — the arrangement is a lease as a matter of law, whatever the parties choose to call it. His famous illustration was that calling a spade a shovel doesn't change what you're holding.",
+          "Why does this matter so much that landlords keep trying to draft around it? Because a lease, unlike a licence, gives the occupier a proprietary interest in land — with all the statutory protection that comes with tenant status, from security of tenure to repairing obligations. A licence gives none of that. The incentive to disguise a lease as a licence is, unsurprisingly, almost entirely one-sided."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Exclusive possession",
+            "definition": "The right to control access to premises, including the ability to exclude the legal owner themselves — the central hallmark that separates a lease from a mere licence to use land."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Street v Mountford",
+            "citation": "[1985] AC 809",
+            "court": "House of Lords",
+            "year": 1985,
+            "factsShort": "An agreement labelled itself a 'licence' and denied the occupier a tenancy, but gave her sole use of a room, her own key, and required a weekly payment.",
+            "ratioShort": "Exclusive possession for a term, generally at a rent, is a lease regardless of the label the document gives itself.",
+            "expanded": {
+              "facts": "Mrs Mountford signed an agreement described as a licence to occupy two rooms, which stated in terms that no tenancy was created and that the owner, Mr Street, retained a right of entry. In practice, Mrs Mountford had sole use of the rooms, held her own key, and paid a weekly sum described as a licence fee.",
+              "judgmentExtract": "The House of Lords held that where an occupier has exclusive possession of residential accommodation for a term at a rent, the legal consequence is a tenancy, and that consequence cannot be avoided by the parties' choice of label. The court looks at what was actually granted — control of the premises for a defined period, in exchange for payment — not what the document calls it.",
+              "significance": "Street v Mountford is the foundation of the modern lease/licence distinction. It establishes both the positive test (exclusive possession, term, generally rent) and the principle that a document's self-description is evidence of intention, not conclusive of legal effect."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-08-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the elements Street v Mountford identifies as marking out a lease, rather than a licence.",
+          "acceptableAnswers": [
+            "exclusive possession, term, rent",
+            "exclusive possession, a certain term, and rent",
+            "exclusive possession for a term, generally at a rent"
+          ],
+          "modelAnswer": "Exclusive possession, for a term (a period, whether fixed or periodic), generally in exchange for rent or other periodical payment — if those are present, the arrangement is a lease regardless of what the document calls itself."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Spotting the pretence",
+        "voice": "witty, skeptical — reading the clause the way a suspicious examiner would",
+        "body": [
+          "If exclusive possession is the test, the obvious drafting move is to insert a clause that says the occupier doesn't have it — a right for the landlord (or 'such other person as the landlord may nominate') to share occupation, to move other people in, or to retain a key 'for inspection purposes'. Courts have not fallen for this.",
+          "A clause is a pretence — and will be disregarded — where it was never intended to reflect the true bargain between the parties: where, in practice, it is never invoked, is inconsistent with how the parties actually behave, and exists solely to avoid the legal consequences of exclusive possession. The document's wording is evidence of the parties' intentions, not conclusive of them; the court asks what was actually agreed and acted upon.",
+          "This is genuinely a judgment call on the facts, not a mechanical test — which is exactly why exam scenarios love it. A right of access that is realistically exercised (a live-in landlord who does, in fact, use the shared kitchen) is not a pretence. A right of access that exists only on paper, never exercised, and is inconsistent with the occupier's actual sole use of the room, is."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because a document expressly says 'licence' and includes a sharing clause, that settles the question.",
+            "whyItsWrong": "A clause purporting to negate exclusive possession is only effective if it reflects a genuine term of the bargain. If it is never exercised and contradicts the parties' actual conduct, the court treats it as a sham and looks past it to the reality: exclusive possession, a term, and rent."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-08-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that shows the 'sharing' clause in this agreement is a pretence.",
+          "scenarioText": "Nadia's agreement states the landlord may use her room 'in common with the licensee' at any time. She has lived there for three years, has never once seen the landlord enter, keeps her own key, and pays the same amount every Friday.",
+          "tappableSpans": [
+            "may use her room 'in common with the licensee'",
+            "lived there for three years",
+            "never once seen the landlord enter",
+            "pays the same amount every Friday"
+          ],
+          "correctSpan": "never once seen the landlord enter",
+          "feedbackCorrect": "Right — a sharing clause that is never in fact exercised, over three years, is strong evidence it was never intended to reflect a genuine bargain. Courts disregard clauses that exist only on paper.",
+          "feedbackIncorrect": "Look for the fact about how the clause has actually operated in practice, not the clause's wording itself or Nadia's payment pattern. A pretence is exposed by what never happens, not by what the document says."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "When the sharing is real: AG Securities v Vaughan",
+        "voice": "witty but fair — gives the landlord credit when the drafting is genuine",
+        "body": [
+          "Not every multiple-occupation agreement is a trick. In AG Securities v Vaughan, four strangers each signed separate agreements, at different times and for different (staggered) periods, to share a four-bedroom flat, each paying their own individual sum and each liable to be replaced by a new occupier nominated by the landlord without the others' consent.",
+          "The House of Lords held these were genuine licences. No single occupier, and no combination of them as a group, ever had exclusive possession of the flat — nobody could exclude the others, the landlord genuinely could and did introduce new occupiers, and the agreements were independent rather than a single joint arrangement dressed up as separate documents. Compare that with Antoniades v Villiers, decided alongside Street v Mountford, where a couple in a one-bedroom flat signed identical agreements on the same occasion, each purporting to let the landlord introduce other people — a clause neither party nor the landlord ever intended to use, given there was, self-evidently, only room for the two of them.",
+          "The line between AG Securities and a sham is genuinely about what the parties actually intended and how the arrangement in fact operated: independent agreements with real turnover of occupiers and no group ever holding exclusive possession point one way; identical paperwork imposed on a couple who plainly intended, and were always going to, occupy together exclusively points the other."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "AG Securities v Vaughan",
+            "citation": "[1990] 1 AC 417",
+            "court": "House of Lords",
+            "year": 1990,
+            "factsShort": "Four strangers signed separate agreements, at different times and for different terms, to occupy a shared flat, each individually liable and each replaceable without the others' consent.",
+            "ratioShort": "Genuinely independent multiple-occupation agreements, under which no one ever holds exclusive possession as an individual or as a group, create licences, not a joint lease.",
+            "expanded": {
+              "facts": "Four occupiers of a four-bedroom flat each signed their own agreement, entered into on different dates and for different periods, each paying an individual sum for the right to use the flat 'in common with' whoever else the landlord introduced. There was no single moment at which all four (or any stable combination of them) signed together, and occupiers did in fact change over time.",
+              "judgmentExtract": "The House of Lords held that because the agreements were genuinely independent and were operated as such — with real changes of occupier over time and no combination of occupiers ever excluding the landlord's right to introduce others — no one held exclusive possession, either alone or collectively, so no tenancy arose.",
+              "significance": "AG Securities is the counterweight to Street v Mountford's scepticism: it shows the sham doctrine only bites where the document misrepresents the true bargain. Where a multiple-occupation scheme is real and actually operates as described, it remains a licence."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-08-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "Why did the agreements in AG Securities v Vaughan create licences rather than a lease?",
+          "options": [
+            "Because the document was labelled a licence, which is always decisive",
+            "Because no occupier, alone or as part of a group, ever had exclusive possession of the flat — the agreements were genuinely independent, with real turnover of occupiers",
+            "Because none of the occupiers paid any rent"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The label is never decisive on its own — that's Street v Mountford's whole point. The real reason AG Securities succeeded where Antoniades failed is that the sharing arrangement was genuine and operated in practice, so exclusive possession never arose for anyone."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Bruton's wrinkle: a lease without an estate",
+        "voice": "still skeptical of drafting tricks, but treats this doctrine as a genuine puzzle rather than a trap to catch out landlords",
+        "body": [
+          "Here's a case that isn't about anyone trying to dodge tenant status — it's a genuine conceptual puzzle. Lambeth Council owned housing it could not lawfully let as leases (short-life housing pending redevelopment), so it licensed the properties to a housing trust, which in turn granted Mr Bruton an agreement to occupy a flat, calling it a licence.",
+          "The snag: because the council's own arrangement with the trust was only a licence, the trust had no legal estate in the land capable of supporting a proprietary lease — you cannot grant an interest in land greater than the one you hold. And yet Bruton's agreement had every hallmark Street v Mountford requires: exclusive possession, for a term, at a rent.",
+          "The House of Lords held that, as between Bruton and the Trust, the arrangement took effect as a lease — a contractual relationship carrying tenant-like obligations (crucially, the Trust's repairing covenants under the Landlord and Tenant Act 1985) — even though it could not bind third parties as a proprietary interest, because the Trust had no estate to carve one out of. This is sometimes called a 'non-proprietary' or 'Bruton' lease: a lease as a label for a relationship between two specific parties, detached from the usual requirement that a lease be an estate in land.",
+          "Treat Bruton carefully: it does not mean 'lease' and 'proprietary interest' have become the same thing generally — it means that, in this unusual situation, the presence of exclusive possession, term and rent created a landlord-tenant relationship good between the parties to the agreement, without creating an estate that could bind anyone else."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Bruton v London & Quadrant Housing Trust",
+            "citation": "[2000] 1 AC 406",
+            "court": "House of Lords",
+            "year": 2000,
+            "factsShort": "A housing trust, itself holding only a licence from the council, granted an occupier an agreement it called a licence but which had every hallmark of a lease.",
+            "ratioShort": "As between the parties, exclusive possession for a term at a rent creates a lease even where the grantor holds no estate capable of supporting a proprietary interest.",
+            "expanded": {
+              "facts": "Lambeth Council licensed short-life properties to London & Quadrant Housing Trust for temporary housing use, since the council could not grant leases of this stock. The Trust granted Mr Bruton an agreement described as a licence to occupy a flat, in return for a weekly payment, giving him sole use of the flat with no meaningful right of entry retained by the Trust.",
+              "judgmentExtract": "The House of Lords held that the Trust's own lack of an estate did not prevent a tenancy arising as between the Trust and Mr Bruton, because the presence of exclusive possession, a term and rent is what creates a tenancy as a matter of the relationship between the parties. The Trust could not, however, grant Bruton anything capable of binding the council or any other third party, since it had no estate of its own to carve one from.",
+              "significance": "Bruton confirms that a 'lease' can operate as a purely relative, contractual concept between the immediate parties, detached from the traditional requirement that a lease be a proprietary estate — a genuine exception, not a general rule, and one that matters chiefly for triggering statutory landlord obligations."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-08-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below (paraphrasing the House of Lords' reasoning in Bruton), highlight the sentence stating the ratio.",
+          "passage": "The Trust had no legal estate in the land and so could not grant Mr Bruton a proprietary lease capable of binding third parties. But the agreement between Bruton and the Trust nonetheless had all the features Street v Mountford requires — exclusive possession, for a term, at a rent — and as between those two parties, that was enough to create a tenancy carrying the ordinary contractual and statutory obligations of a landlord, whatever the Trust's own lack of an estate.",
+          "ratioSentence": "As between those two parties, that was enough to create a tenancy carrying the ordinary contractual and statutory obligations of a landlord, whatever the Trust's own lack of an estate."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Certainty of term: the other hurdle",
+        "voice": "witty, skeptical, but appreciative of Mexfield's rescue",
+        "body": [
+          "Exclusive possession and rent get most of the attention, but a lease also needs a certain term — the maximum duration must be ascertainable from the outset, even if the lease can end earlier. Prudential Assurance Co v London Residuary Body confirms this strictly: an agreement to let a strip of land until it was required for road-widening, with no fixed maximum, was too uncertain to be a lease at all, however sensible the arrangement seemed.",
+          "Mexfield Housing Co-operative v Berrisford looked like it should fail on exactly that ground: Ms Berrisford's agreement was a monthly tenancy terminable by her at any time, but by the landlord only on limited grounds — no ascertainable maximum duration, and so, on Prudential's own logic, void for uncertainty.",
+          "The Supreme Court's rescue is worth knowing precisely, because it's a genuinely elegant piece of doctrine rather than a loophole: an uncertain-term periodic tenancy granted to an individual (as opposed to a company) has long been treated at common law as taking effect as a tenancy for life. Section 149(6) of the Law of Property Act 1925 then automatically converts any lease for life at a rent into a lease for a fixed term of 90 years, determinable (by notice) on the death of the original tenant, or on the earlier event that would have ended the life interest. Ms Berrisford's agreement was rescued from uncertainty not by ignoring the rule, but by an entirely separate statutory conversion mechanism designed for exactly this situation.",
+          "The takeaway for problem questions: certainty of term is a live, independent hurdle from exclusive possession — an arrangement can have exclusive possession and rent beyond doubt and still fail as a lease if the maximum duration can't be pinned down at the outset, unless section 149(6) has a role to play because the grant was made to an individual."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, s 149(6)",
+            "text": "Any lease at a rent, granted for life, or for a term determinable on the life of the grantee or another person (or determinable on marriage), takes effect as a lease for a term of 90 years, determinable, after the death (or other relevant event), by at least one month's notice on the part of either the landlord or the tenant.",
+            "elements": [
+              "Applies to a lease for life (or determinable on a life or marriage) at a rent",
+              "Converts it automatically into a fixed term of 90 years",
+              "Determinable by notice on the relevant death or event"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Prudential Assurance Co v London Residuary Body",
+            "citation": "[1992] 2 AC 386",
+            "court": "House of Lords",
+            "year": 1992,
+            "factsShort": "Land was let until it was required for road-widening, an event with no fixed maximum date.",
+            "ratioShort": "A term whose maximum duration cannot be ascertained from the outset is not a term of years, and no lease arises, however sensible the arrangement.",
+            "expanded": {
+              "facts": "A strip of land was let on terms that the tenancy would continue until the land was required by the council for road-widening works — an event that might happen at any time, or never.",
+              "judgmentExtract": "The House of Lords held that a term of years must have an ascertainable maximum duration from the outset, even where the term can be brought to an end earlier. An arrangement tied to an uncertain future event, with no fixed outer limit, cannot be a lease, whatever its practical convenience.",
+              "significance": "Prudential is the leading modern authority for the strict certainty-of-term requirement, and it is the rule Mexfield later had to work around rather than abandon."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-08-check-05",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order the Supreme Court's reasoning in Mexfield Housing Co-operative v Berrisford follows.",
+          "items": [
+            "Ms Berrisford's periodic tenancy has no ascertainable maximum duration, so it is, on ordinary principles, void for uncertainty",
+            "At common law, an uncertain-term periodic tenancy granted to an individual is treated as taking effect as a tenancy for life",
+            "Section 149(6) LPA 1925 automatically converts a lease for life at a rent into a fixed term of 90 years, determinable on death",
+            "Ms Berrisford's tenancy is rescued and takes effect as a 90-year term determinable on her death"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the rescue in order: the uncertainty problem is identified first, then the common-law life-tenancy characterisation, then the statutory conversion, and only then the final 90-year outcome.",
+          "feedbackIncorrect": "Check the order — the uncertainty problem has to be identified before the common-law life-tenancy fix can apply, and the statutory conversion under section 149(6) is what turns that life tenancy into the final 90-year term."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "State the general rule from Street v Mountford for distinguishing a lease from a licence.",
+      "acceptableAnswers": [
+        "exclusive possession for a term (usually at a rent) is a lease regardless of the label",
+        "exclusive possession, term, rent = lease whatever it's called"
+      ],
+      "modelAnswer": "Where an occupier has exclusive possession of premises for a term, generally in exchange for rent, the arrangement is a lease as a matter of law, whatever label the parties give it."
+    },
+    {
+      "itemId": "land-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "If a document is expressly labelled a 'licence', does that settle whether the arrangement is legally a lease?",
+      "options": [
+        "No — the label is evidence of intention but not decisive if the facts show exclusive possession, a term and rent",
+        "Yes — the parties' chosen label always controls"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-08-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is required for an arrangement to be a lease under Street v Mountford?",
+      "options": [
+        "A written agreement",
+        "Exclusive possession for a term",
+        "The landlord's continued right to enter at will",
+        "Agreement that the arrangement is 'permanent'"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "A lease can arise informally, needs no permanence (periodic tenancies are leases), and a genuinely retained right of entry, if anything, points away from exclusive possession rather than towards a lease."
+    },
+    {
+      "itemId": "land-08-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "What does section 149(6) LPA 1925 do to a lease for life granted at a rent?",
+      "options": [
+        "Converts it automatically into a fixed term of 90 years, determinable on death (or the earlier event ending the life interest)",
+        "Voids it entirely for uncertainty",
+        "Extends it automatically to a term of 999 years"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-08-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below (paraphrasing Prudential Assurance Co v London Residuary Body), highlight the sentence stating the ratio.",
+      "passage": "An agreement to grant a term of years must specify, or provide a means of ascertaining, the maximum duration of the term from the outset. A term that cannot end until an uncertain future event occurs, with no fixed outer limit, is not a term of years at all, however practical the arrangement may otherwise appear.",
+      "ratioSentence": "A term that cannot end until an uncertain future event occurs, with no fixed outer limit, is not a term of years at all, however practical the arrangement may otherwise appear."
+    },
+    {
+      "itemId": "land-08-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Order the reasoning steps for whether a 'sharing' clause in an occupation agreement is a genuine term or a pretence.",
+      "items": [
+        "Identify what the clause purports to permit (e.g. the landlord sharing or nominating occupiers)",
+        "Examine whether the clause has actually been exercised in practice",
+        "Compare the clause against how the parties have actually behaved",
+        "Decide whether the clause reflects the true bargain or was inserted solely to avoid exclusive possession"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "land-08-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is analogous to Antoniades v Villiers (a sham defeating licence status) rather than AG Securities v Vaughan (a genuine licence)?",
+      "scenarioA": "Four students sign separate agreements at different start dates to share a house, each individually liable only for their own room, each replaceable by a new nominee without the others' consent.",
+      "scenarioB": "A couple sign identical agreements on the same day for a one-bedroom flat, each containing a clause letting the landlord introduce further occupiers — a clause that is never once invoked.",
+      "correctScenario": "B",
+      "explanation": "Scenario B mirrors Antoniades: identical paperwork, imposed on a couple who plainly intended sole joint occupation, with a sharing clause that was never genuinely intended to operate. Scenario A mirrors AG Securities: genuinely independent agreements with real turnover of occupiers."
+    },
+    {
+      "itemId": "land-08-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the single strongest fact showing the occupier, not the owner, controls access — the hallmark of exclusive possession.",
+      "scenarioText": "An agreement for a room states the owner may enter 'to provide services' at any time. The occupier has lived there four years, has her own lock the owner does not hold a key to, and the owner has never once entered without her express invitation.",
+      "tappableSpans": [
+        "enter 'to provide services'",
+        "lived there four years",
+        "her own lock the owner does not hold a key to",
+        "never once entered without her express invitation"
+      ],
+      "correctSpan": "her own lock the owner does not hold a key to",
+      "explanation": "Holding the only key, so the owner cannot physically enter without permission, is the clearest single indicator of exclusive possession — it makes the owner's paper right of entry practically unenforceable and exposes the clause as unlikely to reflect the real bargain."
+    },
+    {
+      "itemId": "land-08-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A live-in landlord shares the kitchen and bathroom daily with a lodger, retains her own key to the lodger's room, and cleans it weekly. Is the lodger likely to have a lease or a licence?",
+      "options": [
+        "A licence — the landlord's genuinely exercised rights of access and shared use of common areas mean the lodger lacks exclusive possession",
+        "A lease — any weekly payment for a room automatically creates a tenancy",
+        "A lease — because the lodger has their own room"
+      ],
+      "correctIndex": 0,
+      "explanation": "Where a resident landlord genuinely retains and exercises access, and common areas are truly shared, the occupier does not have exclusive possession — this is the classic 'lodger' licence, distinct from Street v Mountford's facts."
+    },
+    {
+      "itemId": "land-08-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "An occupier has sole use of a flat, her own key, pays a fixed weekly sum, and the owner — who calls the document a 'licence' — has never once entered the flat in two years. Is this a lease or a licence?",
+      "options": [
+        "A lease — the facts show exclusive possession, a term and rent; the label does not change the legal analysis",
+        "A licence, because the document says so",
+        "Neither — informal arrangements between individuals cannot create leases"
+      ],
+      "correctIndex": 0,
+      "explanation": "This tracks Street v Mountford almost exactly: exclusive possession, a periodic term, and rent, with no genuinely exercised right of entry. The label is not decisive."
+    },
+    {
+      "itemId": "land-08-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A homeless charity, which itself holds only a licence from the local council, grants an occupier exclusive possession of a flat in exchange for a weekly payment, calling the agreement a 'temporary licence'. Applying Bruton, how is the arrangement between the charity and the occupier best characterised?",
+      "options": [
+        "As between the charity and the occupier, it takes effect as a lease (a non-proprietary lease), even though it cannot bind the council as a proprietary interest",
+        "It must be a licence, because the charity has no estate capable of granting a lease at all",
+        "It is automatically void because the charity lacked authority to grant anything"
+      ],
+      "correctIndex": 0,
+      "explanation": "Bruton establishes that exclusive possession, a term and rent create a lease as between the immediate parties even where the grantor has no estate to support a proprietary interest — the arrangement just cannot bind third parties like the council."
+    },
+    {
+      "itemId": "land-08-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Yusuf occupies a room under an agreement stating: (i) the owner may share occupation of the room with 'any other person' at will; (ii) rent is payable weekly; (iii) the agreement continues 'until the owner requires the room back', with no other end date specified. In practice, Yusuf has lived there alone for two years and the owner has never shared or shown the room to anyone else. Analyse whether Yusuf holds a lease.",
+      "factsToOrder": [
+        "The agreement allows the owner to share occupation with 'any other person' at will",
+        "Rent is payable weekly",
+        "The agreement continues until the owner requires the room back, with no other stated end date",
+        "In practice, Yusuf has lived there alone for two years and the sharing clause has never been used"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Yusuf holds a lease despite the sharing clause and the agreement's open-ended wording as to its end date.",
+        "rule": "A sham or pretence clause is disregarded where it is never exercised and contradicts how the parties actually behave (Street v Mountford, AG Securities v Vaughan, Antoniades v Villiers). Separately, a lease requires a certain term with an ascertainable maximum duration (Prudential Assurance); however, a periodic tenancy is treated as certain because each period is of fixed length and it continues only by tacit renewal, terminable by notice from either side.",
+        "application": "The sharing clause has never been exercised over two years of sole occupation, so it is a pretence and is disregarded — Yusuf has exclusive possession. As for the term, the 'until the owner requires it back' wording looks open-ended, but weekly rent has been paid and accepted throughout, which is consistent with an implied weekly periodic tenancy arising by conduct. A periodic tenancy does not fall foul of Prudential's certainty rule, because each week is a certain period and either party can bring the arrangement to an end by notice — the uncertainty problem only bites a fixed term with no ascertainable maximum, not a periodic one.",
+        "conclusion": "Yusuf holds a lease, properly analysed as a periodic (weekly) tenancy arising from possession and the regular payment and acceptance of rent, rather than a licence or a void, uncertain fixed term."
+      }
+    },
+    {
+      "itemId": "land-08-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a genuinely exercised right for a live-in landlord to share the kitchen and bathroom with a lodger prevents the lodger from having exclusive possession of the accommodation as a whole?",
+      "sliderLabels": [
+        "Definitely doesn't prevent it",
+        "Definitely prevents exclusive possession"
+      ],
+      "correctPosition": "prevents exclusive possession",
+      "explanation": "Genuinely shared, actually-used common areas under a resident landlord are strong evidence against exclusive possession of the premises as a whole — this is what keeps ordinary lodger arrangements as licences, distinct from a sole tenant with their own self-contained space."
+    },
+    {
+      "itemId": "land-08-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best explains why Bruton is not authority for the idea that a licence and a lease are now the same thing in every context?",
+      "options": [
+        "Because Bruton only concerned criminal law, not land law",
+        "Because Bruton's 'lease' bound only the two parties to the agreement, as a matter of contract, and could not bind third parties as a proprietary interest since the Trust had no estate to grant one from",
+        "Because Bruton was expressly overruled by Mexfield"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Bruton is a genuine but narrow exception: it lets a lease arise as a contractual relationship between two specific parties where the usual proprietary requirement cannot be met, not a general merger of the lease/licence categories."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is treating the document's label, or an unexercised sharing clause, as the end of the analysis. Always check what the parties actually did — exclusive possession is proved by conduct, not by paperwork.",
+    "reviewMisses": true,
+    "linkToPathway": "land.leases.leases-vs-licences"
+  }
+}

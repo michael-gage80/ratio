@@ -1,0 +1,538 @@
+{
+  "lessonId": "humanrights-03",
+  "moduleId": "humanrights",
+  "moduleTitle": "Human Rights Law",
+  "lessonNumber": 3,
+  "topicId": "humanrights.substantive-rights.article-3-torture-inhuman-treatment",
+  "title": "Article 3: torture and inhuman/degrading treatment",
+  "subtitle": "The absolute right, the minimum severity threshold, and the state's positive obligations",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the absolute and non-derogable character of Article 3, and explain why no balancing exercise against any countervailing state interest is ever permitted",
+    "Apply the minimum severity threshold to distinguish treatment capable of engaging Article 3 from treatment that falls below it",
+    "Explain the state's positive obligations under Article 3, including for state-created destitution and known failures in care or detention conditions",
+    "Apply the Article 3 real-risk test to deportation and removal cases, including the elevated threshold that applies to medical-treatment claims"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Ireland v UK (1978)",
+      "role": "Establishes the classic definitions of torture, inhuman and degrading treatment as points on a single severity scale, and the 'minimum level of severity' test"
+    },
+    {
+      "citation": "Soering v UK (1989)",
+      "role": "Extends Article 3 extraterritorially: a decision to extradite or remove can itself breach Article 3 where there are substantial grounds for believing a real risk of proscribed treatment abroad"
+    },
+    {
+      "citation": "Chahal v UK (1996)",
+      "role": "Confirms Article 3's absolute character bars deportation regardless of the threat the individual poses, including on national security grounds — there is no balancing exercise"
+    },
+    {
+      "citation": "N v UK (2008)",
+      "role": "Sets a very high, near-exceptional threshold for Article 3 claims based on the withdrawal of medical treatment on removal"
+    },
+    {
+      "citation": "R (Limbuela) v SSHD [2005] UKHL 66",
+      "role": "Confirms a positive obligation: state-created or state-tolerated destitution can cross the Article 3 threshold once sufficiently severe"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite 'Article 3 is absolute' as a slogan. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the rule — this lesson is about where the line actually sits, case by case, and that's the harder skill.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool below is weighted towards application: expect fact patterns that ask you to place conduct on the severity scale, not to recite it.",
+      "weakKnowledge": "Start with Part 1 and be precise about what 'absolute' and 'non-derogable' actually mean — the rest of the lesson assumes you can state both without hesitation before you start applying them."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Every other right in this module can be weighed against something — public safety, the rights of others, the cost of accommodating it. Article 3 cannot. There is no version of the balancing exercise in which a state may torture, or subject someone to inhuman or degrading treatment, because the alternative was expensive, inconvenient, or genuinely dangerous to refuse. This lesson treats that absoluteness as a starting axiom, then spends most of its time on the much harder question underneath it: where, exactly, does 'severe enough to engage Article 3' begin.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. The core doctrine here — the absolute character of Article 3, the minimum severity threshold, and the positive-obligations case law — is long settled and not subject to imminent change. Article 3's application to immigration and deportation decisions remains a live area of domestic political controversy, but the legal test itself, set out in this lesson, has not changed."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The line that admits no exceptions",
+        "voice": "doctrinal — states the absolute rule before any qualification can creep in",
+        "body": [
+          "Article 3 says: 'No one shall be subjected to torture or to inhuman or degrading treatment or punishment.' Nothing in that sentence says 'except where necessary in a democratic society', or 'subject to proportionate limitation' — because nothing does. Article 3 is one of a small number of Convention rights that are absolute: once treatment crosses its threshold, no justification offered by the state — however serious, however pressing — can make that treatment lawful.",
+          "It is also non-derogable. Article 15 allows states to suspend most Convention rights 'in time of war or other public emergency threatening the life of the nation', but expressly excludes Article 3 from that power. A state fighting terrorism, insurgency, or a genuine national emergency gets no extra latitude here. This matters because most students' instinct, when a fact pattern involves a dangerous individual or a national security threat, is to look for the balancing exercise. With Article 3, that instinct is the trap: there is no balancing exercise to find.",
+          "This absoluteness explains why Article 3 recurs constantly in deportation and extradition cases later in this lesson. A state cannot say 'this person is too dangerous to keep, so we will accept some risk of torture in sending them elsewhere' — Chahal held exactly that this reasoning is unavailable, however serious the danger the individual poses."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Absolute right",
+            "definition": "A Convention right admitting no justification, exception or proportionality balancing once its threshold is crossed — contrasted with limited rights (subject to defined exceptions) and qualified rights (subject to a proportionality test), which most other Convention rights are."
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-03-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A state argues that its treatment of a suspected terrorist, though it would ordinarily breach Article 3, was justified by the exceptional threat he posed to public safety. Can this argument succeed?",
+          "options": [
+            "No — Article 3 permits no justification for treatment that crosses its threshold, however serious the threat posed",
+            "Yes — an exceptional threat to public safety can justify treatment that would otherwise breach Article 3"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. This is what 'absolute' means in practice: the seriousness of the threat is simply irrelevant to whether the treatment is lawful.",
+          "feedbackIncorrect": "Not so — this is the instinct this lesson exists to correct. With qualified rights like Article 8, the threat posed would matter to a proportionality exercise. Article 3 has no such exercise to run."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Where the threshold sits: Ireland v UK and the minimum severity test",
+        "voice": "threshold-focused — treats the line-drawing as the genuinely hard task it is",
+        "body": [
+          "Absoluteness only bites once treatment is severe enough to engage Article 3 at all. Not every unpleasant, humiliating or frightening experience at the hands of the state qualifies — and the case that supplies the test for deciding what does is Ireland v UK, arising from interrogation techniques used on detainees held without trial in Northern Ireland: prolonged wall-standing, hooding, exposure to continuous noise, and deprivation of sleep, food and water, used in combination over extended periods.",
+          "The European Court held that ill-treatment must attain a 'minimum level of severity' to fall within Article 3 at all, and that assessing severity is 'relative': it depends on all the circumstances of the case — the duration of the treatment, its physical and mental effects, and, in some cases, the sex, age and state of health of the victim. There is no fixed numerical or descriptive line; the same conduct can cross the threshold for one person and fall short for another.",
+          "Above that minimum threshold, Article 3 recognises three graded categories, from least to most severe: degrading treatment (arousing feelings of fear, anguish or inferiority capable of humiliating or debasing the victim), inhuman treatment (causing intense physical or mental suffering), and torture (deliberate inhuman treatment causing very serious and cruel suffering, reserved for the most extreme cases). Getting the category right matters for legal labelling, but the first and hardest question in almost every problem question is simpler: does this reach the minimum severity threshold at all?"
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Ireland v UK: factors in the minimum severity assessment",
+            "points": [
+              "Duration of the treatment",
+              "Physical and/or mental effects on the victim",
+              "The sex, age and state of health of the victim",
+              "Whether the treatment was deliberate or systematic, and its purpose",
+              "The overall context in which it occurred"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-03-check-02",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A person lawfully arrested is handcuffed briefly and firmly while being placed in a police vehicle, with no injury and no allegation of excessive force. How confident are you that this alone crosses the Article 3 minimum severity threshold?",
+          "sliderLabels": [
+            "Clearly below the threshold",
+            "Clearly crosses the threshold"
+          ],
+          "correctPosition": "below",
+          "explanation": "Routine, proportionate restraint used in the ordinary course of a lawful arrest, causing no injury or lasting effect, does not begin to approach the severity Ireland v UK requires. Article 3 is reserved for treatment that is genuinely severe on the facts, not for the ordinary discomforts of lawful state action."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "When the state does nothing: positive obligations and destitution",
+        "voice": "clinical — describes a systemic failure without dwelling on individual suffering for effect",
+        "body": [
+          "Article 3 is usually taught as a shield against what the state does to someone. It also imposes positive obligations: duties to prevent treatment reaching the severity threshold, including treatment the state did not directly inflict but knowingly allowed to continue.",
+          "R (Limbuela) v SSHD concerned asylum seekers refused state support under section 55 of the Nationality, Immigration and Asylum Act 2002, on the basis that they had not claimed asylum 'as soon as reasonably practicable' on arrival. Refused support, barred from lawful work, and with no other means of subsistence, they faced sleeping rough with no access to food, sanitation or shelter — a situation of destitution the state was aware of and had the power to prevent by restoring support.",
+          "The House of Lords held that such state-created or state-tolerated destitution is capable of crossing the Article 3 threshold once it reaches a sufficient degree of severity — assessed, as in any Article 3 case, by reference to duration and effect on the individual. The principle generalises: prison conditions, standards of care for those dependent on the state, and other situations where the state knows of and controls a person's access to the basics of survival can all engage a positive Article 3 obligation, independent of any deliberate intention to cause suffering."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R (Limbuela) v Secretary of State for the Home Department",
+            "citation": "[2005] UKHL 66",
+            "court": "House of Lords",
+            "year": 2005,
+            "factsShort": "Asylum seekers were denied state support under s 55 NIAA 2002 and left without lawful means of shelter, food or income.",
+            "ratioShort": "Once destitution reaches a sufficient degree of severity, and the state is aware of it and has the power to prevent it, the state's continued failure to act can itself breach Article 3.",
+            "expanded": {
+              "facts": "Several asylum seekers were refused support because officials found they had not claimed asylum as soon as reasonably practicable after arrival, a condition attached to eligibility under s 55. With no lawful right to work and no other income, they faced homelessness, hunger and exposure, with deteriorating physical condition as the period of destitution continued.",
+              "judgmentExtract": "The House of Lords held that the state's positive obligation under Article 3 could be engaged not because the state actively inflicted harm, but because it knowingly withheld support that would have prevented suffering from reaching the required degree of severity. The threshold is still Ireland v UK's severity test — the source of the deprivation (active infliction versus withheld support) does not lower it.",
+              "significance": "Limbuela is the leading domestic authority for a positive Article 3 obligation arising from destitution, and it is the template for other 'state knew, state could have prevented, state didn't act' fact patterns — including prison and care conditions."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-03-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that most clearly converts this into a claim capable of engaging the state's positive Article 3 obligation.",
+          "scenarioText": "A destitute asylum seeker has his support withdrawn over a paperwork dispute. He has no income and no lawful right to work. A support charity formally notifies the Home Office of his situation and asks for support to be reinstated; three weeks later, still notified and still unresponded to, nothing has changed.",
+          "tappableSpans": [
+            "support withdrawn over a paperwork dispute",
+            "no lawful right to work",
+            "a support charity formally notifies the Home Office",
+            "three weeks later, still notified and still unresponded to, nothing has changed"
+          ],
+          "correctSpan": "three weeks later, still notified and still unresponded to, nothing has changed",
+          "feedbackCorrect": "That's the Limbuela structure: the state is on notice of a deteriorating situation it has the power to fix, and its continued inaction — not the original withdrawal decision alone — is what a positive-obligation claim is built on, once the resulting severity is made out.",
+          "feedbackIncorrect": "Look for the point where inaction continues after the state is on notice. The withdrawal decision starts the story; it's the state's continued failure to respond, once aware, that a positive-obligation claim turns on."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Deportation, torture risk, and the Chahal principle",
+        "voice": "case-narrative, then rule-stating",
+        "body": [
+          "Soering v UK established that Article 3 reaches beyond the UK's own borders: extraditing or deporting someone can itself breach Article 3 where there are substantial grounds for believing they face a real risk of torture or inhuman or degrading treatment in the receiving state. The UK does not need to inflict the treatment itself to be responsible — sending someone into its path is enough.",
+          "Chahal v UK pushed this principle to its firmest point. Karamjit Singh Chahal, assessed by the Home Secretary as a threat to national security, faced deportation to India, where there were substantial grounds for believing he risked torture because of his political activities. The UK government argued that his danger to national security should be weighed against the risk he faced on return. The European Court rejected this outright: Article 3's absolute character means the individual's own conduct — however serious — is irrelevant to whether removal is lawful. If the real-risk threshold is met, removal cannot proceed, full stop.",
+          "N v UK draws a different, much higher line for a specific type of claim: removal that would deprive someone of medical treatment currently keeping them alive or well. There, the Court held the threshold is exceptionally high — ordinary differences in the availability or quality of healthcare between states are not enough, and only a truly exceptional case, close to death with no prospect of care on return, will engage Article 3. The contrast matters: a real risk of deliberate ill-treatment (Chahal, Soering) is judged on the ordinary threshold; withdrawal of medical care on removal (N) is judged on a far higher one."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often answer a Chahal-style problem by weighing the individual's dangerousness against the risk of torture, as if Article 3 worked like a qualified right.",
+            "whyItsWrong": "There is nothing to weigh. Chahal is authority for precisely the opposite: once a real risk of Article 3 treatment on return is established, the individual's conduct or the threat they pose is legally irrelevant to whether removal can proceed."
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-03-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario does the applicant face the harder legal test to succeed under Article 3?",
+          "scenarioA": "An applicant facing removal argues there are substantial grounds for believing state security forces in the receiving country will torture him because of his known political opposition activity.",
+          "scenarioB": "An applicant facing removal argues that the specialist cancer treatment currently prolonging her life in the UK is unavailable in her country of origin, and that removal will shorten her life expectancy.",
+          "correctScenario": "B",
+          "explanation": "Scenario A is a classic Soering/Chahal real-risk-of-ill-treatment claim, assessed on the ordinary substantial-grounds threshold. Scenario B is an N v UK medical-treatment claim, which faces a deliberately much higher, near-exceptional threshold — mere disparities in healthcare availability between states are not, by themselves, enough."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Synthesis: applying the threshold under pressure",
+        "voice": "exam-craft — walks through a full structured analysis rather than isolated rules",
+        "body": [
+          "Every Article 3 problem question, whatever its setting, asks the same sequence of questions: is this an absolute-right situation with no balancing to run; does the treatment (or the state's failure to prevent it) reach the Ireland v UK minimum severity threshold on these specific facts; and, if the context is removal, which threshold applies — the ordinary real-risk test, or N v UK's higher medical-treatment test.",
+          "The examiners' favourite trap is treating 'the state didn't mean any harm' as a defence. It isn't one. Positive-obligation cases like Limbuela and prison-conditions cases succeed or fail on severity and state awareness, not on intention. Keep that sequence in view and most Article 3 problem questions become an exercise in careful, disciplined fact-sorting rather than a search for a hidden trick."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Article 3: the analysis sequence",
+            "description": "The order in which an Article 3 problem question should be worked through.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Is a state justification being offered (national security, cost, danger posed)?"
+              },
+              {
+                "id": "ignore",
+                "label": "Irrelevant — Article 3 is absolute; no balancing exercise applies"
+              },
+              {
+                "id": "severity",
+                "label": "Does the treatment (or state failure to prevent it) reach Ireland v UK's minimum severity threshold on these facts?"
+              },
+              {
+                "id": "below",
+                "label": "Below threshold → Article 3 not engaged (though another right might be)"
+              },
+              {
+                "id": "removal",
+                "label": "Is this a removal/deportation case?"
+              },
+              {
+                "id": "medical",
+                "label": "Medical-treatment claim → N v UK's very high, near-exceptional threshold applies"
+              },
+              {
+                "id": "realrisk",
+                "label": "Ill-treatment risk claim → ordinary Soering/Chahal real-risk threshold applies"
+              },
+              {
+                "id": "domestic",
+                "label": "Not a removal case → assess severity and, if relevant, state awareness/positive obligation directly"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "ignore",
+                "label": "Any justification offered"
+              },
+              {
+                "from": "ignore",
+                "to": "severity"
+              },
+              {
+                "from": "severity",
+                "to": "below",
+                "label": "No"
+              },
+              {
+                "from": "severity",
+                "to": "removal",
+                "label": "Yes"
+              },
+              {
+                "from": "removal",
+                "to": "medical",
+                "label": "Medical claim"
+              },
+              {
+                "from": "removal",
+                "to": "realrisk",
+                "label": "Ill-treatment claim"
+              },
+              {
+                "from": "removal",
+                "to": "domestic",
+                "label": "Not removal"
+              }
+            ],
+            "textAlternative": "First, disregard any state justification offered — Article 3 permits none. Then ask whether the treatment, or the state's failure to prevent it, reaches Ireland v UK's minimum severity threshold on the specific facts; if not, Article 3 is not engaged. If it is a removal or deportation case, identify which threshold applies: N v UK's very high, near-exceptional threshold for medical-treatment claims, or the ordinary Soering/Chahal real-risk threshold for ill-treatment claims. If it is not a removal case, assess severity and any positive obligation (state awareness plus power to prevent) directly on the facts."
+          }
+        ],
+        "interaction": {
+          "itemId": "humanrights-03-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A remand prisoner, held on suspicion of a minor offence, spends eleven weeks in a cell built for one but holding three, with restricted access to sanitation and no outdoor exercise. Prison management is aware of the severe overcrowding, having received repeated inspection reports flagging it, but no remedial steps are taken during his detention. Analyse whether Article 3 is engaged.",
+          "factsToOrder": [
+            "The prisoner is held for eleven weeks in severely overcrowded conditions",
+            "Access to sanitation is restricted and there is no outdoor exercise",
+            "Prison management has received repeated inspection reports about the overcrowding",
+            "No remedial steps are taken during the period of the prisoner's detention"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 4,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the conditions of the prisoner's detention are capable of engaging Article 3, notwithstanding that no individual official intended to cause him harm.",
+            "rule": "Article 3 is absolute; no state justification is available. Treatment engages Article 3 once it reaches Ireland v UK's minimum severity threshold, assessed by duration, physical and mental effect, and context. A positive obligation can be breached where the state is aware of conditions capable of reaching that severity and has the power to remedy them but fails to do so (Limbuela).",
+            "application": "Eleven weeks is a substantial duration; severe overcrowding, restricted sanitation and no outdoor exercise are cumulative, not isolated, deprivations capable of causing significant physical and psychological strain. Prison management's awareness, via repeated inspection reports, together with its continued failure to act, mirrors the state-knowledge-plus-inaction structure in Limbuela — the absence of any intention to humiliate or punish him specifically does not prevent Article 3 from being engaged.",
+            "conclusion": "On these facts there is a strong argument that the cumulative, prolonged and known conditions of detention cross the Article 3 minimum severity threshold, engaging the state's positive obligation independently of any deliberate intention to cause suffering."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "humanrights-03-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the three categories of prohibited treatment recognised under Article 3, in ascending order of severity.",
+      "acceptableAnswers": [
+        "degrading treatment, inhuman treatment, torture",
+        "degrading, inhuman, torture"
+      ],
+      "modelAnswer": "Article 3 prohibits degrading treatment, inhuman treatment and torture — three points on a single severity scale, with torture reserved for the most extreme, deliberate cases."
+    },
+    {
+      "itemId": "humanrights-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Can a state derogate from Article 3 during a declared public emergency threatening the life of the nation?",
+      "options": [
+        "No — Article 3 is one of a small number of non-derogable rights, wartime and emergencies included",
+        "Yes — Article 15 permits derogation from any Convention right during a genuine emergency"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "humanrights-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following can justify a departure from the Article 3 prohibition?",
+      "options": [
+        "A serious threat to national security",
+        "The seriousness of the offence the individual is suspected of",
+        "Nothing — Article 3 permits no balancing against any countervailing state interest",
+        "The financial cost to the state of the available alternative"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "Each wrong option describes exactly the kind of state interest Chahal v UK held to be legally irrelevant. Article 3 is not a qualified right: there is no proportionality exercise weighing the treatment against any public interest, however serious."
+    },
+    {
+      "itemId": "humanrights-03-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "Article 3 reads: 'No one shall be subjected to torture or to inhuman or degrading treatment or punishment.' How should this wording be read?",
+      "options": [
+        "As three related prohibitions on a single severity scale, not three unconnected tests with unrelated thresholds",
+        "As prohibiting only torture; 'inhuman or degrading treatment' is aspirational language with no binding force",
+        "As requiring proof of a specific intention to cause suffering before any of the three categories can apply"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "humanrights-03-test-05",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A person is strip-searched on entry to prison, following an established, non-discriminatory procedure applied to all new arrivals, conducted privately and without comment by staff. How confident are you this alone crosses the Article 3 minimum severity threshold?",
+      "sliderLabels": [
+        "Clearly below the threshold",
+        "Clearly crosses the threshold"
+      ],
+      "correctPosition": "below",
+      "explanation": "A routine, non-discriminatory, professionally conducted procedure, without humiliation or excessive intrusion, is unlikely on its own to reach Ireland v UK's minimum severity threshold — though the same procedure conducted abusively, publicly or with deliberate humiliation could well cross it."
+    },
+    {
+      "itemId": "humanrights-03-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, drawn from the reasoning in Soering v UK, highlight the sentence that states the ratio on extraterritorial responsibility.",
+      "passage": "The Contracting State is not directly responsible for what may happen after extradition in a country outside its jurisdiction. However, a decision by a Contracting State to extradite a fugitive may give rise to an issue under Article 3, and hence engage the responsibility of that State, where substantial grounds have been shown for believing that the person concerned faces a real risk of torture or inhuman or degrading treatment in the requesting country. This is what distinguishes an extradition case from ordinary questions of a state's territorial responsibility.",
+      "ratioSentence": "However, a decision by a Contracting State to extradite a fugitive may give rise to an issue under Article 3, and hence engage the responsibility of that State, where substantial grounds have been shown for believing that the person concerned faces a real risk of torture or inhuman or degrading treatment in the requesting country."
+    },
+    {
+      "itemId": "humanrights-03-test-07",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps of the reasoning in R (Limbuela) v SSHD in order.",
+      "items": [
+        "Asylum seekers are refused support under s 55 NIAA 2002 for not claiming asylum 'as soon as reasonably practicable'",
+        "They are left without accommodation, income or a lawful right to work",
+        "The state is made aware of the resulting destitution but does not restore support",
+        "The House of Lords holds that sufficiently severe, state-tolerated destitution can breach Article 3"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "humanrights-03-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly converts this scenario into a claim capable of engaging the state's positive Article 3 obligation.",
+      "scenarioText": "A care home resident with limited mobility develops pressure sores after being left in the same position for extended periods. Family members raise the deteriorating condition with management repeatedly over several weeks; management assures them it will be addressed and then takes no action.",
+      "tappableSpans": [
+        "develops pressure sores",
+        "left in the same position for extended periods",
+        "Family members raise the deteriorating condition with management repeatedly",
+        "assures them it will be addressed and then takes no action"
+      ],
+      "correctSpan": "assures them it will be addressed and then takes no action",
+      "explanation": "As in Limbuela, the decisive fact is not the original harm but the state (or state-responsible body)'s continued inaction after being put on notice and given the opportunity to prevent further severity."
+    },
+    {
+      "itemId": "humanrights-03-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A remand prisoner is held for six weeks in a cell designed for one but holding three, with limited access to sanitation and no outdoor exercise, while prison staff are aware of the severe overcrowding. Is this treatment capable of engaging Article 3?",
+      "options": [
+        "Yes — sufficiently severe and prolonged conditions of detention, known to the authorities, can cross the Article 3 threshold even without any intention to cause suffering",
+        "No — Article 3 only applies to conduct specifically intended to punish or humiliate the individual",
+        "No — conditions of detention are governed exclusively by domestic prison rules, not the Convention"
+      ],
+      "correctIndex": 0,
+      "explanation": "Severity, not intention, is the test. Cumulative, prolonged conditions of which the authorities are aware can engage Article 3 independently of any deliberate purpose to cause suffering."
+    },
+    {
+      "itemId": "humanrights-03-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "The Home Secretary wishes to deport a foreign national assessed as posing a serious threat to national security, to a country where there are substantial grounds for believing he faces a real risk of torture. Can the deportation lawfully proceed?",
+      "options": [
+        "No — the real risk of torture is decisive; the threat the individual poses cannot be weighed against it",
+        "Yes, provided the threat to national security is judged sufficiently serious to outweigh the risk of torture",
+        "Yes, if the receiving state offers diplomatic assurances of humane treatment, regardless of how credible those assurances are"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is Chahal v UK directly: Article 3's absolute character means the individual's dangerousness is legally irrelevant once a real risk of proscribed treatment is established."
+    },
+    {
+      "itemId": "humanrights-03-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "prompt": "Which applicant faces the harder legal threshold to succeed under Article 3?",
+      "scenarioA": "A terminally ill applicant facing removal argues that withdrawal of the specialist palliative care she currently receives will shorten her life, because equivalent care is unavailable in her country of origin.",
+      "scenarioB": "An applicant facing removal argues there are substantial grounds for believing state agents in the receiving country will torture him because of his political activities.",
+      "correctScenario": "A",
+      "explanation": "Scenario A is an N v UK medical-treatment claim, subject to a deliberately very high, near-exceptional threshold. Scenario B is a Soering/Chahal-type real-risk-of-ill-treatment claim, assessed on the ordinary substantial-grounds threshold."
+    },
+    {
+      "itemId": "humanrights-03-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.7,
+      "scaffoldLevels": 4,
+      "prompt": "An asylum seeker has her support withdrawn after officials dispute the date of her claim. She has no income and no lawful right to work, and sleeps outdoors for several weeks, during which her physical health visibly deteriorates. A local charity formally notifies the Home Office of her situation in writing; ten days pass with no response or change. Analyse whether Article 3 is engaged.",
+      "factsToOrder": [
+        "Support is withdrawn over a disputed claim date",
+        "She has no income and no lawful right to work",
+        "She sleeps outdoors for several weeks with visibly deteriorating health",
+        "The Home Office is formally notified in writing and does not respond for ten days"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the state's continued withholding of support, after notice of resulting destitution, engages a positive obligation under Article 3.",
+        "rule": "Article 3 is absolute and subject to no balancing exercise. A positive obligation can be breached by state-tolerated destitution once it reaches Ireland v UK's minimum severity threshold, particularly once the state is aware of the situation and has the power to prevent it from continuing (Limbuela).",
+        "application": "Several weeks of outdoor sleeping with no income, no lawful right to work and visibly deteriorating health is a serious, sustained deprivation. The Home Office's formal written notification followed by ten days of inaction mirrors the state-knowledge-plus-continued-inaction structure central to Limbuela.",
+        "conclusion": "On these facts there is a strong argument that the destitution has reached a sufficient degree of severity, and that the state's continued failure to act after notice engages its positive obligation under Article 3."
+      }
+    },
+    {
+      "itemId": "humanrights-03-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A state removes an individual to a country with a generally poor human rights record, without any evidence specific to that individual's own personal risk. Does this alone breach Article 3?",
+      "options": [
+        "Yes — removal to any state with a generally poor human rights record automatically breaches Article 3",
+        "No — the applicant must show substantial grounds for believing they personally face a real risk of proscribed treatment, not merely that the general situation in the receiving state is poor",
+        "No — Article 3 has no application whatsoever to removal or deportation decisions"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "A poor general human rights record is relevant background, but Soering and Chahal require substantial grounds for believing this individual personally faces a real risk — a general risk to the population at large is not, by itself, sufficient."
+    },
+    {
+      "itemId": "humanrights-03-test-14",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A claim that prison conditions breach Article 3 requires proof that prison officers specifically intended to humiliate the prisoner. True or false?",
+      "options": [
+        "False — the test is objective severity, not intention, though evidence of intention to humiliate can strengthen a claim",
+        "True — Article 3 requires proof of subjective intent to cause suffering in every context"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is reaching for a balancing exercise — weighing the state's interest against the treatment — the moment a fact pattern involves danger, cost or a difficult individual. Article 3 has no such exercise. The real skill being tested is severity: does this specific, concrete situation reach the minimum threshold, and, in removal cases, which threshold applies.",
+    "reviewMisses": true,
+    "linkToPathway": "humanrights.substantive-rights.article-3-torture-inhuman-treatment"
+  }
+}

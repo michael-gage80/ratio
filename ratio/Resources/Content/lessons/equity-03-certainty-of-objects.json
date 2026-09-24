@@ -1,0 +1,453 @@
+{
+  "lessonId": "equity-03",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 3,
+  "topicId": "equity.certainties.objects",
+  "title": "Certainty of objects",
+  "subtitle": "Two tests, two machines: fixed trusts, discretionary trusts, and where a class of beneficiaries breaks down",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the three certainties and isolate certainty of objects as the question of who counts as a beneficiary",
+    "Distinguish the complete list test for fixed trusts from the is-or-is-not test for discretionary trusts and powers, and explain why the tests differ",
+    "Apply Re Baden's three-way split — conceptual uncertainty, evidential uncertainty, and administrative unworkability — to a new class of beneficiaries"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "IRC v Broadway Cottages Trust [1955] Ch 20",
+      "role": "Applied the fixed-trust complete list test to a discretionary trust, producing a result the House of Lords later rejected"
+    },
+    {
+      "citation": "McPhail v Doulton [1971] AC 424",
+      "role": "Replaced the complete list test with the is-or-is-not test for discretionary trusts"
+    },
+    {
+      "citation": "Re Baden's Deed Trusts (No 2) [1973] Ch 9",
+      "role": "Applies the is-or-is-not test on remand; splits conceptual from evidential uncertainty"
+    },
+    {
+      "citation": "Re Barlow's Will Trusts [1979] 1 WLR 278",
+      "role": "Treats a gift to 'friends' as individual gifts subject to a condition precedent, sidestepping the class test entirely"
+    },
+    {
+      "citation": "R v District Auditor, ex p West Yorkshire MCC (1986) 26 RVR 24",
+      "role": "Establishes administrative unworkability as a distinct ground of failure, separate from conceptual uncertainty"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite 'the trust must have certain objects' without being able to say which test decides that, for which kind of trust. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know there are two tests — this lesson is about knowing instantly which one a given fact pattern needs.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards application: expect a class of beneficiaries you have to sort into conceptual uncertainty, evidential uncertainty, or administrative unworkability — not a definition to recite.",
+      "weakKnowledge": "Start with Part 1 and get the two tests straight before anything else — fixed trust vs discretionary trust — because every later part in this lesson assumes you know which machine you're using before you ask whether it breaks."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A will leaves money to be split among 'my good friends.' Sounds generous. It's also, on its own, almost certainly void — unless the will happens to phrase it as individual gifts rather than a class trust, in which case the exact same words survive. Certainty of objects is the part of trusts law where phrasing, not generosity, decides who gets paid."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two machines for two kinds of trust",
+        "voice": "taxonomic — sets out the classification system before touching a single case",
+        "body": [
+          "Every valid trust needs three certainties: certainty of intention (did the settlor mean to create a trust at all?), certainty of subject matter (what property, and what shares?), and certainty of objects — who counts as a beneficiary? This lesson is entirely about the third one.",
+          "Certainty of objects isn't tested by one rule. It's tested by one of two different machines, and picking the wrong machine is the single most common error students make here. A fixed trust — 'to A, B and C in equal shares' — must satisfy the complete list test: the trustees must be able to draw up an exhaustive list of every single beneficiary, because they need to know exactly how many ways to divide the fund. A discretionary trust or a mere power — 'to such of my employees as the trustees see fit' — only needs to satisfy the is-or-is-not test: can it be said with certainty, of any given individual who turns up, whether they are or are not a member of the class?",
+          "The logic behind the split is mechanical, not moral. A fixed trust literally cannot be administered without a full list — you can't divide a fund into equal shares among an unknown number of people. A discretionary trust never needs a full list at all: trustees exercising discretion just need to be able to test each applicant against the class definition, one at a time, as they come up."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Complete list test",
+            "definition": "The certainty-of-objects test for fixed trusts: the trust is valid only if it is conceptually possible to compile an exhaustive list of every beneficiary entitled to share in the fund."
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Which test applies to which trust",
+            "points": [
+              "Fixed trust (fixed shares, e.g. 'in equal shares among') → complete list test — every beneficiary must be identifiable in advance",
+              "Discretionary trust (trustees must distribute, but choose who and how much) → is-or-is-not test — need only be able to test membership of any given applicant",
+              "Mere power (trustees may distribute, but are not obliged to) → is-or-is-not test — same test as a discretionary trust, on the authority of McPhail v Doulton"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-03-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A will leaves a fund 'to my three nieces, Anna, Beth and Clare, in equal shares.' Which certainty-of-objects test applies?",
+          "options": [
+            "The complete list test, because this is a fixed trust",
+            "The is-or-is-not test, because any gift to named people uses the same test as a discretionary trust"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Naming the beneficiaries makes the list trivial to satisfy here, but it's still the complete list test that's operating — fixed shares always require it.",
+          "feedbackIncorrect": "Look at the structure of the gift, not just the wording. Fixed shares among identified people is a fixed trust, and fixed trusts are always tested by the complete list test — the is-or-is-not test is reserved for discretionary trusts and powers."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "How the courts got it wrong, then fixed it: Broadway Cottages to McPhail",
+        "voice": "case-narrative — charts the doctrinal correction as a story with a clear before-and-after",
+        "body": [
+          "For years, courts applied the complete list test to discretionary trusts too — treating any trust with a class of potential beneficiaries as if it needed the same exhaustive list a fixed trust needs. In IRC v Broadway Cottages Trust, a discretionary trust for the benefit of employees and their relatives failed on exactly this basis: with a class that broad, no one could ever compile a full list, so the trust was held void.",
+          "The problem is that this borrowed the wrong test. A discretionary trust doesn't divide a fund among everyone on a list — the trustees choose who benefits and by how much, from among those who qualify. There was never a practical reason to demand a list nobody would ever need.",
+          "The correction came in McPhail v Doulton. Bertram Baden had set up a trust directing trustees to apply income 'at their absolute discretion' for the benefit of staff, ex-staff, and their relatives and dependants — the same kind of sprawling class that sank Broadway Cottages. The House of Lords held that discretionary trusts should be tested the same way as powers: not 'can you list everyone,' but 'can you say with certainty whether any given individual is or is not within the class.' Broadway Cottages was overruled.",
+          "The case didn't end there. The House of Lords sent the specific question — did 'relatives' and 'dependants' actually satisfy this new test? — back down to the Court of Appeal, which decided it as Re Baden's Deed Trusts (No 2). Same underlying trust deed, same family of litigation, two different reported cases at two different stages."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "McPhail v Doulton",
+            "citation": "[1971] AC 424",
+            "court": "House of Lords",
+            "year": 1971,
+            "factsShort": "A discretionary trust for staff, ex-staff, relatives and dependants was challenged as too wide a class to satisfy the complete list test.",
+            "ratioShort": "Discretionary trusts are tested by the is-or-is-not test, the same test used for powers — not by the complete list test reserved for fixed trusts.",
+            "expanded": {
+              "facts": "Bertram Baden executed a deed setting up a fund for the officers and employees of a company, ex-employees, and their relatives and dependants, to be applied 'at their absolute discretion' by the trustees. Applying the existing law (Broadway Cottages), the lower courts held the trust void: the class of 'relatives and dependants' was far too large to permit a complete list to ever be drawn up.",
+              "judgmentExtract": "The House of Lords held that the reasoning applying a fixed-trust test to a discretionary trust was wrong in principle. A discretionary trust does not require trustees to identify every possible beneficiary; it requires them to be able to decide, of any person who claims to qualify, whether that person is or is not within the class. That is the same test already used for the validity of powers, and there is no good reason for a discretionary trust to be held to a stricter standard.",
+              "significance": "This is the pivotal case in the whole topic: it is the reason discretionary trusts and powers share a single certainty-of-objects test today. It did not, however, decide whether 'relatives' and 'dependants' actually satisfied that test on the facts — that question went back to the Court of Appeal as Re Baden's Deed Trusts (No 2)."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-03-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these stages of the Baden litigation in order.",
+          "items": [
+            "Bertram Baden's deed creates a discretionary trust for staff, relatives and dependants",
+            "Lower courts apply the complete list test (following Broadway Cottages) and hold the trust void",
+            "The House of Lords, in McPhail v Doulton, replaces the complete list test with the is-or-is-not test for discretionary trusts",
+            "The case is remitted; the Court of Appeal applies the new test in Re Baden's Deed Trusts (No 2)"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the sequence — and it's worth holding onto, because 'McPhail v Doulton' and 'Re Baden's Deed Trusts (No 2)' are the same underlying dispute at two different stages, not two unrelated cases.",
+          "feedbackIncorrect": "Check the order again: the deed comes first, then the (wrong) complete list test is applied and fails, then the House of Lords corrects the test in McPhail v Doulton, and only then does the Court of Appeal apply the corrected test to the actual facts in Re Baden's Deed Trusts (No 2)."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Conceptual uncertainty vs evidential uncertainty",
+        "voice": "taxonomic — draws a sharp line between two things students habitually collapse into one",
+        "body": [
+          "Applying the is-or-is-not test on remand, the Court of Appeal in Re Baden's Deed Trusts (No 2) had to decide whether 'relatives' and 'dependants' were certain enough. All three judges agreed the class was valid, but for the purposes of this lesson the useful move is the distinction their reasoning draws — one that separates two very different problems that both get loosely called 'uncertainty.'",
+          "Conceptual uncertainty is a problem with the words themselves: the class definition has no fixed, ascertainable meaning at all. A trust for 'my good friends' is conceptually uncertain — there is no objective legal content to 'good friend' that a court could apply. Conceptual uncertainty is fatal. If the concept itself is too vague, the trust fails outright, however easy it might be to find some people who obviously qualify.",
+          "Evidential uncertainty is a completely different problem: the concept is perfectly clear, but proving whether a particular person satisfies it in fact might be difficult or impossible on the available evidence. 'Relative' has a clear legal meaning (descended from a common ancestor); whether a specific claimant can prove that descent might be hard. Evidential uncertainty is not fatal to the trust — if a claimant cannot prove membership, the court simply treats them as falling outside the class. The class survives; individual claims may fail.",
+          "This is the distinction examiners lean on hardest, because 'uncertain' sounds like one problem when it's actually two, with two entirely different consequences."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Conceptual vs evidential — the consequence is what differs",
+            "points": [
+              "Conceptual uncertainty — the definition itself is too vague to apply → the trust is void",
+              "Evidential uncertainty — the definition is clear, but proof is hard for some claimants → the trust survives; unproven claimants are simply treated as non-members",
+              "A class can be conceptually certain even when it is very large — size alone is not conceptual uncertainty (that is a separate problem: administrative unworkability, covered in Part 5)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-03-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the class definition below that fails for conceptual uncertainty, rather than merely raising an evidential difficulty.",
+          "scenarioText": "A trust directs the trustees to distribute income among 'persons who worked for the company for at least five years' and, in a separate clause, among 'people I have always felt truly close to.'",
+          "tappableSpans": [
+            "persons who worked for the company for at least five years",
+            "people I have always felt truly close to"
+          ],
+          "correctSpan": "people I have always felt truly close to",
+          "feedbackCorrect": "Right. 'Worked for the company for at least five years' is a clear, objective test — proving it might be awkward in a given case, but the concept itself is certain. 'Felt truly close to' has no ascertainable legal content at all: that's conceptual uncertainty, and it's fatal on its own.",
+          "feedbackIncorrect": "Ask which phrase a court could actually apply as a legal test, and which one has no fixed meaning at all. Length of service is objectively provable even if evidence is sometimes thin; 'felt truly close to' can't be tested by anyone, which is what makes it conceptually — not just evidentially — uncertain."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When uncertainty doesn't matter: Re Barlow's Will Trusts",
+        "voice": "puzzle-driven — poses the apparent contradiction, then resolves it by showing the gift was never a class trust at all",
+        "body": [
+          "Here's the puzzle: a trust for 'my friends' should fail for conceptual uncertainty, on everything said so far. 'Friend' is exactly the kind of word with no fixed legal meaning. And yet in Re Barlow's Will Trusts, a direction letting the testatrix's 'friends' buy paintings from her collection at a favourable price was upheld. What changed?",
+          "The answer is that the court reclassified what kind of gift this was. It wasn't a discretionary trust distributing a fund among a class — it was, on analysis, a series of individual gifts to individual people, each conditional on that person satisfying a condition precedent ('being a friend, on some workable definition'). And a condition precedent to an individual gift is tested by a much lower bar than the is-or-is-not test for a class: the court only needs to be able to say, of at least one person, that they clearly satisfy the description. It does not matter that the boundary of the class as a whole is blurry, because there is no class to define — only individuals who either clearly qualify for their own gift, or don't.",
+          "This is a trap precisely because the vocabulary looks identical. 'To my friends' can be a discretionary trust (fails: conceptual uncertainty) or a bundle of individual conditional gifts (survives: condition precedent test), and the difference turns on structure — whether the gift creates a fund to be divided among a class, or a set of standalone gifts each depending on the recipient meeting a description. Barlow succeeded because the court read it as the latter."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Re Barlow's Will Trusts contradicts the conceptual uncertainty rule, because 'friends' was upheld despite being just as vague as any other conceptually uncertain word.",
+            "whyItsWrong": "It doesn't contradict the rule — it avoids the rule applying at all. Barlow was never treated as a discretionary trust with a class of objects; it was read as individual gifts, each subject to a condition precedent. The condition-precedent test only needs some people to clearly qualify, not a workable boundary for the whole class — so the conceptual uncertainty of 'friend' at the margins simply never gets tested."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-03-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Both scenarios use the word 'friends.' In which does the gift survive on Re Barlow's Will Trusts reasoning?",
+          "scenarioA": "A trust fund of £50,000 to be divided by the trustees, at their discretion, among 'my friends' in whatever shares they think fit.",
+          "scenarioB": "A will provides that any of the testator's friends who ask, within a year of death, may each have £1,000 from the estate.",
+          "correctScenario": "B",
+          "explanation": "B mirrors Barlow: individual gifts to individuals who satisfy a condition precedent, not a fund to be divided among a class. A is a genuine discretionary trust with 'friends' as the class of objects — exactly the structure that fails for conceptual uncertainty, because there the whole class has to be capable of definition, not just some individuals within it."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Administrative unworkability: when the class is certain but too big to run",
+        "voice": "pragmatic — treats this as the third, easily forgotten failure ground",
+        "body": [
+          "There is a third way a discretionary trust for objects can fail, and it has nothing to do with conceptual or evidential uncertainty at all. In R v District Auditor, ex parte West Yorkshire Metropolitan County Council, a local authority attempted to set up a discretionary trust for the benefit of 'any or all of the inhabitants of West Yorkshire' — a class of roughly two and a half million people.",
+          "Nobody disputed that the class was conceptually certain: 'inhabitant of West Yorkshire' has a perfectly clear, objective meaning, and there was no serious evidential difficulty in telling who counted. The trust still failed. The court held that a class so large and unstructured that no trustee could sensibly survey it or exercise a rational discretion over it is administratively unworkable, and a trust that no trustee could ever properly administer cannot stand — whatever the state of the class definition.",
+          "This matters because it is genuinely a separate ground of failure from anything in Parts 3 and 4. A trust can pass the is-or-is-not test with flying colours — the concept perfectly clear, the evidence perfectly available — and still fail because the sheer scale of the class makes meaningful discretion impossible. Students who only check 'is the wording vague?' miss this entirely; the question here is never about wording, it's about whether a human trustee could actually do the job."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Three ways a discretionary trust can fail for objects",
+            "points": [
+              "Conceptual uncertainty — the class definition itself has no ascertainable meaning (fatal)",
+              "Evidential uncertainty — the definition is clear but proof fails for some claimants (not fatal to the trust as a whole)",
+              "Administrative unworkability — the class is conceptually certain but so large or unstructured that no trustee could rationally exercise discretion over it (fatal — West Yorkshire MCC)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-03-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a discretionary trust 'for the benefit of any resident of Greater London' would fail for administrative unworkability, even though 'resident of Greater London' is a conceptually certain description?",
+          "sliderLabels": [
+            "Very unlikely to fail",
+            "Very likely to fail"
+          ],
+          "correctPosition": "Very likely to fail",
+          "explanation": "This is squarely West Yorkshire MCC territory: a population in the millions, conceptually certain but impossible for any trustee to survey or exercise discretion over meaningfully. The class definition being clear does not save it — administrative unworkability is a separate, independent failure ground."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-03-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Name the two tests used for certainty of objects, and say which kind of trust each applies to.",
+      "acceptableAnswers": [
+        "complete list test for fixed trusts, is-or-is-not test for discretionary trusts and powers",
+        "complete list test and is or is not test"
+      ],
+      "modelAnswer": "Fixed trusts are tested by the complete list test — every beneficiary must be identifiable in advance. Discretionary trusts and powers are tested by the is-or-is-not test — it must be possible to say with certainty whether any given individual is or is not within the class."
+    },
+    {
+      "itemId": "equity-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which case replaced the complete list test with the is-or-is-not test for discretionary trusts?",
+      "options": [
+        "McPhail v Doulton",
+        "IRC v Broadway Cottages Trust"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-03-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "IRC v Broadway Cottages Trust held a discretionary trust void because the trustees could not...",
+      "options": [
+        "compile an exhaustive list of every beneficiary",
+        "prove the settlor intended to create a trust at all"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-03-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of these best describes administrative unworkability?",
+      "options": [
+        "A class so large or unstructured that no trustee could sensibly exercise discretion over it, even though it is conceptually certain",
+        "Another name for conceptual uncertainty applied to very large classes",
+        "A defect that can only affect fixed trusts, never discretionary trusts"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Students frequently treat administrative unworkability as just a bigger version of conceptual uncertainty. They are legally distinct: West Yorkshire MCC accepted the class was conceptually certain and still held the trust void, purely because of its scale and unmanageability."
+    },
+    {
+      "itemId": "equity-03-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the stages of the Baden litigation.",
+      "items": [
+        "Bertram Baden's deed creates a discretionary trust for staff, relatives and dependants",
+        "Lower courts apply the complete list test and hold the trust void",
+        "The House of Lords replaces the complete list test with the is-or-is-not test in McPhail v Doulton",
+        "The Court of Appeal applies the corrected test in Re Baden's Deed Trusts (No 2)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "equity-03-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that captures the evidential uncertainty principle from Re Baden's Deed Trusts (No 2).",
+      "passage": "The class of 'relatives' was said to be uncertain because it might be impossible for the trustees to say of every conceivable person whether they qualified. That is not the test. Where the concept is clear, a claimant who cannot establish membership on the evidence is simply treated as falling outside the class; the trust itself does not fail merely because some individual claims cannot be proved.",
+      "ratioSentence": "Where the concept is clear, a claimant who cannot establish membership on the evidence is simply treated as falling outside the class; the trust itself does not fail merely because some individual claims cannot be proved."
+    },
+    {
+      "itemId": "equity-03-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which of these gifts is most likely to survive on Re Barlow's Will Trusts reasoning?",
+      "scenarioA": "A discretionary trust of the residuary estate 'for such of my acquaintances as the trustees think fit.'",
+      "scenarioB": "A clause allowing any of the testator's former students who apply within six months to receive a signed set of the testator's books.",
+      "correctScenario": "B",
+      "explanation": "B reads as individual gifts to individuals meeting a condition precedent — the Barlow structure. A is framed as a fund to be divided among a class by trustee discretion, which puts it back under the is-or-is-not test, where a vague class word like 'acquaintances' is far more exposed to conceptual uncertainty."
+    },
+    {
+      "itemId": "equity-03-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the phrase that would most likely fail for conceptual, rather than evidential, uncertainty.",
+      "scenarioText": "A discretionary trust benefits 'employees who have completed continuous service of at least two years' and, in a separate clause, 'people who were genuinely important to me in my final years.'",
+      "tappableSpans": [
+        "employees who have completed continuous service of at least two years",
+        "people who were genuinely important to me in my final years"
+      ],
+      "correctSpan": "people who were genuinely important to me in my final years",
+      "explanation": "Continuous service of a defined length is an objective, provable test — evidential difficulty at worst. 'Genuinely important to me' has no fixed legal content a court could apply to anyone — that is conceptual uncertainty, and it is fatal on its own."
+    },
+    {
+      "itemId": "equity-03-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A discretionary trust benefits 'my employees and their relatives.' A claimant says she is a relative but the trustees cannot verify her family tree with confidence. What is the effect on the trust?",
+      "options": [
+        "The trust survives; 'relative' is conceptually certain, so this claimant is simply treated as failing to prove membership",
+        "The whole trust fails for conceptual uncertainty",
+        "The whole trust fails for administrative unworkability"
+      ],
+      "correctIndex": 0,
+      "explanation": "'Relative' has an ascertainable meaning (descent from a common ancestor), so this is, at most, an evidential problem confined to this claimant. The class as a whole, and the trust itself, are unaffected."
+    },
+    {
+      "itemId": "equity-03-test-10",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "How confident are you that a discretionary trust 'for such of the population of the United Kingdom as the trustees select' would be held administratively unworkable?",
+      "sliderLabels": [
+        "Very unlikely to fail",
+        "Very likely to fail"
+      ],
+      "correctPosition": "Very likely to fail",
+      "explanation": "A class in the tens of millions, however conceptually certain, is the paradigm case for administrative unworkability under West Yorkshire MCC — no trustee could rationally survey or exercise discretion over a class that size."
+    },
+    {
+      "itemId": "equity-03-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A will says: 'Any former colleague of mine who asks my executors within a year of my death shall receive £500.' Is this best analysed as a discretionary trust with a class of objects, or as individual gifts subject to a condition precedent?",
+      "options": [
+        "Individual gifts subject to a condition precedent — Barlow-style",
+        "A discretionary trust requiring the is-or-is-not test to be applied to the whole class"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-03-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A trust deed directs trustees to distribute income 'at their discretion, among my business associates.' No further definition is given. Analyse whether the trust satisfies certainty of objects.",
+      "factsToOrder": [
+        "The gift is a discretionary trust, not individual conditional gifts",
+        "'Business associates' has no settled, objective legal meaning",
+        "The class is not merely large — the word itself resists definition",
+        "No claimant's membership could be tested against a fixed standard"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the class 'my business associates' satisfies the is-or-is-not test for certainty of objects in a discretionary trust.",
+        "rule": "A discretionary trust is valid only if it can be said with certainty, of any given individual, whether they are or are not within the class (McPhail v Doulton). This fails where the class definition is conceptually uncertain — where the words themselves have no fixed, ascertainable legal meaning (Re Baden's Deed Trusts (No 2)).",
+        "application": "Because this is framed as a fund to be distributed by trustee discretion, not individual conditional gifts, the is-or-is-not test applies to the whole class. 'Business associates' has no settled legal content — it could mean anyone from a formal business partner to a casual contact — so no claimant's membership could be tested against a fixed standard. This is a problem with the concept itself, not with proving facts about any individual claimant.",
+        "conclusion": "The trust is void for conceptual uncertainty: 'business associates' cannot be given the fixed meaning the is-or-is-not test requires."
+      }
+    },
+    {
+      "itemId": "equity-03-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A trust for 'the residents of a small named village' (population 400) is challenged as administratively unworkable. Which statement is correct?",
+      "options": [
+        "Size alone is not the test; a class this small is unlikely to be administratively unworkable even though a much larger identically-worded class might be",
+        "Any class defined by geography automatically fails, regardless of size",
+        "The trust is void because 'residents' is conceptually uncertain"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming geographic classes are inherently risky. West Yorkshire MCC failed because of scale (roughly 2.5 million people), not because the class was defined geographically. A village of 400 is a world away from that, and 'resident' remains conceptually certain throughout."
+    },
+    {
+      "itemId": "equity-03-test-14",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the three distinct grounds on which a discretionary trust can fail for want of certain objects.",
+      "acceptableAnswers": [
+        "conceptual uncertainty, evidential uncertainty, administrative unworkability"
+      ],
+      "modelAnswer": "Conceptual uncertainty (the class definition itself is too vague — fatal), evidential uncertainty (the concept is clear but proof fails for particular claimants — not fatal to the trust), and administrative unworkability (the class is conceptually certain but too large or unstructured for any trustee to administer — fatal)."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two mistakes that recur most: treating administrative unworkability as just 'conceptual uncertainty but bigger' (they are separate grounds — West Yorkshire MCC had a perfectly certain class), and missing that Re Barlow's Will Trusts survives not by relaxing the certainty test but by avoiding it altogether — reading the gift as individual conditional gifts rather than a class trust.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.certainties.objects"
+  }
+}

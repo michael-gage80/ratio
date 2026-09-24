@@ -1,0 +1,497 @@
+{
+  "lessonId": "equity-12",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 12,
+  "topicId": "equity.trustees.powers-varying-trusts",
+  "title": "Trustees' powers and varying trusts",
+  "subtitle": "Maintenance and advancement, rescuing flawed decisions, and ending or changing a trust",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish the statutory powers of maintenance and advancement and identify when each is available",
+    "Explain the modern test for setting aside a flawed trustee decision following Pitt v Holt, and why it is narrower than the old Hastings-Bass approach",
+    "State the rule in Saunders v Vautier and identify when beneficiaries can collectively bring a trust to an end without the trustees' or the court's agreement",
+    "Explain the court's jurisdiction to approve a variation of trust under the Variation of Trusts Act 1958 on behalf of those who cannot consent for themselves"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Trustee Act 1925, ss 31-32 (as amended 2014)",
+      "role": "Statutory powers of maintenance (income) and advancement (capital) available to trustees in the absence of contrary provision"
+    },
+    {
+      "citation": "Pilkington v IRC [1964] AC 612",
+      "role": "The power of advancement extends to resettling capital on new trusts for the beneficiary's benefit, not merely paying it to them outright"
+    },
+    {
+      "citation": "Pitt v Holt [2013] UKSC 26",
+      "role": "Narrows the old Hastings-Bass jurisdiction: a flawed trustee decision is set aside only where there is a breach of fiduciary duty, not merely a failure to take a relevant consideration into account"
+    },
+    {
+      "citation": "Saunders v Vautier (1841) 4 Beav 115",
+      "role": "Beneficiaries who are all of full age, capacity and collectively absolutely entitled can direct the trustees to end the trust and transfer the property, regardless of any contrary direction from the settlor"
+    },
+    {
+      "citation": "Variation of Trusts Act 1958",
+      "role": "Gives the court jurisdiction to approve a variation on behalf of beneficiaries who cannot consent for themselves — minors, the unborn, and those under other incapacity — provided the variation is for their benefit"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson is a route-map. Trustees, beneficiaries and courts each have a different tool for changing or ending how a trust operates — advancing capital early, undoing a decision that went wrong, calling time on the trust altogether, or asking the court to rewrite its terms. Where the profile shows understanding is behind, this note appears: 'Before you get to application questions, be sure you can say which of these four routes applies on a given set of facts — that's the skill this lesson tests hardest.'",
+    "profileHooks": {
+      "weakApplication": "You know the four routes by name. The harder skill is picking the right one fast when a fact pattern doesn't label itself — that's what several of the test items below are built to check.",
+      "weakKnowledge": "Slow down through Parts 1 to 5 and make sure you can state, without looking back, which route belongs to the trustees, which belongs to the beneficiaries, and which belongs to the court — the whole lesson is organised around that distinction."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A trust is not a fixed machine once it's set up. There are at least four separate ways its terms can be changed or brought to an end after the settlor has walked away: trustees can advance money early, a court can unwind a decision the trustees got wrong, the beneficiaries themselves can simply call it off, or the court can rewrite the terms on behalf of people who can't consent for themselves. This lesson is the map of those four routes — who can use each one, and what has to be true before it opens."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Four routes, one map",
+        "voice": "route-map — orients before any doctrine is explained",
+        "body": [
+          "Before the detail, the shape of the whole lesson. A trust that looks static on paper is rarely static in practice, and English law gives four distinct actors a distinct tool for changing what happens to the trust property before the settlor's original timetable would otherwise run its course.",
+          "Trustees hold statutory powers to release money early — maintenance for income, advancement for capital — without needing anyone's permission beyond what the Trustee Act 1925 itself requires. Separately, where a trustee's own decision turns out to have been made on a flawed basis, the modern law (post-Pitt v Holt) allows that specific decision to be undone, but only on a narrower footing than lawyers once assumed. Separately again, beneficiaries who are collectively entitled to the whole trust fund can simply end it themselves under the rule in Saunders v Vautier — no permission needed from trustees or settlor. And finally, where some of the people interested in the trust cannot consent for themselves, the court can approve a variation of the trust's terms on their behalf under the Variation of Trusts Act 1958.",
+          "Keep this shape in mind through the rest of the lesson: two of these routes belong to the trustees (maintenance/advancement, and the Pitt v Holt rescue), and two belong to people outside the trustees entirely (Saunders v Vautier to the beneficiaries, the 1958 Act to the court). Exam fact patterns often signal which route is live simply by telling you who is trying to act."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Which route applies?",
+            "description": "A route-map for identifying which mechanism is in play on a given set of facts.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Who is trying to change what happens to the trust property?"
+              },
+              {
+                "id": "trustees-routine",
+                "label": "Trustees, exercising an ordinary statutory power → maintenance (s 31) or advancement (s 32)"
+              },
+              {
+                "id": "trustees-flawed",
+                "label": "Someone challenging a trustee decision already made, as flawed → Pitt v Holt: was there a breach of fiduciary duty?"
+              },
+              {
+                "id": "beneficiaries",
+                "label": "All the beneficiaries, together, of full age and capacity, absolutely entitled → Saunders v Vautier: they can end the trust themselves"
+              },
+              {
+                "id": "court",
+                "label": "Someone who cannot consent (minor, unborn, unascertained) needs representing → Variation of Trusts Act 1958: court approval on their behalf"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "trustees-routine",
+                "label": "Trustees, routine exercise of power"
+              },
+              {
+                "from": "start",
+                "to": "trustees-flawed",
+                "label": "Challenging a past decision"
+              },
+              {
+                "from": "start",
+                "to": "beneficiaries",
+                "label": "Beneficiaries acting collectively"
+              },
+              {
+                "from": "start",
+                "to": "court",
+                "label": "Some beneficiaries can't consent"
+              }
+            ],
+            "textAlternative": "Four routes, sorted by who is acting: trustees exercising an ordinary statutory power use maintenance (s 31) or advancement (s 32). Someone challenging a trustee decision already made uses the Pitt v Holt test, asking whether there was a breach of fiduciary duty. Beneficiaries acting together, all of full age and capacity and collectively absolutely entitled, can end the trust themselves under Saunders v Vautier. Where some beneficiaries cannot consent for themselves, the court can approve a variation on their behalf under the Variation of Trusts Act 1958."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-12-check-01",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Match the order in which you would typically consider these four routes when advising on changing a trust's operation: start with the mechanism trustees use routinely, end with the mechanism used when a court must step in for people who can't consent.",
+          "items": [
+            "Statutory maintenance or advancement (trustees' ordinary powers)",
+            "Setting aside a flawed trustee decision (Pitt v Holt)",
+            "Beneficiaries ending the trust themselves (Saunders v Vautier)",
+            "Court-approved variation on behalf of those unable to consent (Variation of Trusts Act 1958)"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the shape of the lesson: from the routine and trustee-led, through the corrective, to the beneficiary-led, and finally to the route that exists specifically because someone in the picture cannot speak for themselves.",
+          "feedbackIncorrect": "Think about who is acting in each mechanism, and how routine or exceptional the situation is — that ordering is what the rest of this lesson follows."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Maintenance and advancement: releasing income and capital early",
+        "voice": "mechanism-focused — explains the tool before the case law around it",
+        "body": [
+          "Section 31 of the Trustee Act 1925 (as amended) gives trustees a power of maintenance: where income is being accumulated for a beneficiary who is not yet entitled to it outright, trustees may apply that income for the beneficiary's maintenance, education or benefit — most obviously relevant to minors whose interest hasn't yet vested. Section 32 gives a separate power of advancement: trustees may pay or apply capital, before the beneficiary's interest would otherwise fall due, again for their advancement or benefit.",
+          "The 2014 amendments loosened the old cap. Before 2014, s 32 limited advancement to one-half of the beneficiary's presumptive share; the amendment removed that fractional cap for trusts created after the amendment took effect, so trustees may now advance the whole of a beneficiary's share, subject to any contrary provision in the trust instrument and subject always to the interests of anyone with a prior claim on the same fund not being prejudiced.",
+          "Pilkington v IRC is the case that stops 'advancement' being read too narrowly. The House of Lords held that 'advancement or benefit' is not limited to direct cash payments to the beneficiary — it extends to resettling the advanced capital on new trusts, for example a more tax-efficient settlement for the beneficiary's own family, provided the arrangement genuinely benefits that beneficiary and the trustees have properly turned their minds to whether it does. The power is broad, but it is still fiduciary: it must be exercised for the beneficiary's benefit, not the trustees' convenience or someone else's advantage."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Trustee Act 1925, s 32(1) (as amended)",
+            "text": "Trustees may at any time or times pay or apply any capital money subject to a trust for the advancement or benefit, in such manner as they may in their absolute discretion think fit, of any person entitled to the capital of the trust property or of any share thereof, whether absolutely or contingently on their attaining any specified age or on the occurrence of any other event.",
+            "elements": [
+              "A beneficiary entitled to capital, absolutely or contingently",
+              "Payment or application 'for advancement or benefit'",
+              "Exercised in the trustees' discretion, but still subject to fiduciary limits",
+              "No prejudice to the interests of any person with a prior claim on the same fund"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-12-check-02",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A beneficiary, aged 24 and entitled to capital at 30, wants their trustees to advance a sum not directly to her but into a new, more tax-efficient trust for her own children, of which she will also be a beneficiary. Can the trustees use the power of advancement for this?",
+          "options": [
+            "No — advancement can only ever mean paying money directly to the beneficiary in cash",
+            "Yes, in principle — Pilkington v IRC confirms advancement extends to resettling capital on new trusts, provided the trustees are satisfied it genuinely benefits this beneficiary",
+            "No — the power of advancement cannot be used before the beneficiary's interest has vested at 30"
+          ],
+          "correctIndex": 1,
+          "explanation": "Pilkington v IRC established that 'advancement or benefit' is broad enough to cover resettlement arrangements, including tax-efficient family settlements, so long as the trustees genuinely address their minds to whether the arrangement benefits this beneficiary rather than treating it as a formality."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Undoing a flawed decision: Pitt v Holt narrows the door",
+        "voice": "case-narrative — tells the story of the doctrine's contraction before stating the current test",
+        "body": [
+          "For decades, trustees who made a decision on a mistaken understanding of its tax consequences, or without considering something they should have, could sometimes have that decision declared void under what became known as the rule in Re Hastings-Bass — a rule that, on the broadest reading, allowed a decision to be unwound whenever the trustees had failed to take into account a consideration they ought to have taken into account, or took into account one they shouldn't have, and would have decided differently had they got it right.",
+          "That broad version proved far too generous, in practice functioning as a way to reverse decisions purely because they turned out to have unwelcome tax consequences — trustees would simply argue they hadn't properly considered the tax position, and ask the court to treat the decision as never having happened. Pitt v Holt reached the Supreme Court partly to close this down.",
+          "The Supreme Court held that a trustee's flawed exercise of a discretion is only voidable where the flaw amounts to a breach of fiduciary duty — for example, a breach of the duty to take relevant matters into account so serious that it is itself an actionable wrong, not merely a decision that, with hindsight, a well-advised trustee would not have made. Where trustees have taken proper advice and it simply turns out to be wrong (including wrong about tax), that is not ordinarily a breach of duty at all — it's an unfortunate but lawful decision, and the tax consequences must be lived with. A separate route — equitable rescission for mistake — remains available on its own, more demanding, terms, but the two are not the same doctrine and should not be conflated."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Pitt v Holt",
+            "citation": "[2013] UKSC 26",
+            "court": "Supreme Court",
+            "year": 2013,
+            "factsShort": "Trustees made decisions (in one conjoined case, about a settlement for a brain-injured claimant) without full appreciation of the adverse tax consequences, and sought to have the decisions set aside under the Hastings-Bass principle.",
+            "ratioShort": "A trustee's decision is only voidable for a failure to take relevant matters into account where that failure itself amounts to a breach of fiduciary duty — an unfortunate but non-negligent decision, including one with adverse tax consequences the trustees did not foresee, is not automatically voidable.",
+            "expanded": {
+              "facts": "The case concerned two conjoined appeals, both involving trust arrangements that produced unexpectedly severe tax liabilities. In one, trustees had established a settlement to receive a substantial personal injury award without taking specific advice on its inheritance tax treatment, and the arrangement triggered a large and unforeseen tax charge.",
+              "judgmentExtract": "The Supreme Court held that the old, broad Hastings-Bass formulation had gone too far. Properly understood, a decision is voidable for breach of the duty to consider relevant matters only where the breach is one of fiduciary duty in the accepted sense — meaning, in practice, that trustees who took advice, even advice that later proved incomplete or wrong, will very rarely be treated as in breach, because taking reasonable steps to inform themselves is exactly what the duty requires of them.",
+              "significance": "This is the leading modern authority narrowing what had become an overused escape route from unwelcome trust decisions. It restores the ordinary principle that trustees who act on proper advice, in good faith, bear the consequences of decisions that later turn out badly — hindsight and unfortunate outcomes are not, on their own, a ground to unwind what was done."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-12-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, adapted from Pitt v Holt, highlight the sentence that states the modern test for setting aside a flawed trustee decision.",
+          "passage": "The old, broad formulation of the Hastings-Bass principle allowed too many decisions to be treated as void merely because, with hindsight, a different course would have been wiser. That cannot be right. A flawed exercise of a discretionary power by trustees is voidable only where the flaw is of a kind that amounts to a breach of fiduciary duty on the part of the trustees. Trustees who take and act on apparently competent professional advice will only rarely be found to have breached their duty, even if that advice later proves to be wrong.",
+          "ratioSentence": "A flawed exercise of a discretionary power by trustees is voidable only where the flaw is of a kind that amounts to a breach of fiduciary duty on the part of the trustees."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Beneficiaries' own exit: Saunders v Vautier",
+        "voice": "direct — states the rule as a lever the beneficiaries hold, independent of the trustees",
+        "body": [
+          "Where the first three routes all involve someone else acting — trustees exercising a power, or a court correcting or approving something — Saunders v Vautier hands the exit to the beneficiaries themselves. The rule is old but remains completely current: where beneficiaries are collectively absolutely entitled to the whole beneficial interest in the trust property, are all of full age and capacity, and are all in agreement, they can require the trustees to transfer the trust property to them (or as they jointly direct) and bring the trust to an end — regardless of any postponement or accumulation the settlor tried to impose.",
+          "The logic is that a settlor cannot indefinitely control property they have given away outright; once the entire beneficial interest sits with people who are legally capable of dealing with it, equity will not let the settlor's original timetable override the collective will of the true owners. This applies whether there's one beneficiary absolutely entitled, or several who together hold the whole interest and act unanimously — a single dissenting beneficiary, or one who is a minor or otherwise lacks capacity, blocks the rule from operating for the whole class.",
+          "It's easy to over-state the rule, so be precise about its limits. It does not let beneficiaries redesign the trust or extract only part of the fund while leaving the rest running on the settlor's terms — it is a blunt, all-or-nothing power to end the trust and take the property, not a tool for altering its terms while keeping it alive. That distinction is exactly what separates it from the next route, which does allow the terms themselves to be rewritten."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Saunders v Vautier — what has to be true",
+            "points": [
+              "The beneficiaries, between them, hold the entire beneficial interest in the trust property",
+              "Every beneficiary is of full age and has full capacity to deal with their interest",
+              "All of them are in unanimous agreement to end the trust",
+              "The effect is to end the trust and transfer the property — not to vary its terms while keeping it running",
+              "A single beneficiary who is a minor, lacks capacity, or simply dissents defeats the rule for the whole group"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-12-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "A trust has three adult beneficiaries who together hold the entire beneficial interest. Two agree to end the trust and take the property; the third, also an adult with full capacity, refuses. Can Saunders v Vautier be used to end the trust?",
+          "options": [
+            "Yes — a majority of beneficiaries by number is sufficient",
+            "No — the rule requires unanimous agreement among all beneficiaries collectively entitled to the whole interest; one dissenting adult beneficiary defeats it for the group",
+            "Yes — the two agreeing beneficiaries can simply take their proportionate share and leave the rest of the trust running as before"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answers import ideas from company-law-style majority decision-making, or assume a partial, share-by-share exit is available. Saunders v Vautier requires everyone entitled to the whole fund to agree, and operates as an all-or-nothing termination, not a partial or majoritarian one."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "When beneficiaries can't consent: the court steps in",
+        "voice": "Socratic — poses the gap Saunders v Vautier leaves, then shows how the 1958 Act fills it",
+        "body": [
+          "So what happens when a trust's beneficiaries would like to vary its terms, but the class includes people who cannot give the unanimous consent Saunders v Vautier demands — minors, people not yet born, or beneficiaries who are simply unascertainable because the class hasn't closed? Without something more, those trusts would be permanently frozen on the settlor's original terms, however much sense a change might make for everyone involved.",
+          "The Variation of Trusts Act 1958 answers this by giving the court jurisdiction to approve a variation on behalf of specified categories of person who cannot consent for themselves — including minors, unborn beneficiaries, and those with a merely contingent or discretionary interest who cannot practically be consulted. The court stands in for these people and asks whether the arrangement is for their benefit.",
+          "That benefit requirement is the whole ballgame in this jurisdiction. The court is not simply rubber-stamping whatever the adult, capable beneficiaries have already agreed among themselves — it must independently satisfy itself that the proposed variation genuinely benefits the person on whose behalf it is consenting, which the courts have interpreted broadly to include financial benefit (most commonly, tax efficiency) but also, in appropriate cases, wider family, educational or welfare benefit. Where the court cannot see a real benefit to the represented class, or where the arrangement simply favours the adult beneficiaries at their expense, approval will be refused — the jurisdiction exists to protect those who cannot protect themselves, not to make variation easy for everyone else."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Benefit, under the Variation of Trusts Act 1958",
+            "definition": "The touchstone the court applies before approving a variation on behalf of a person who cannot consent for themselves. Most commonly financial (for example, tax saving), but the courts have also recognised family, educational and welfare benefit; approval will be refused where the arrangement does not genuinely serve the interests of the person being represented."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-12-check-05",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the single test the court must be satisfied of before approving a variation of trust under the Variation of Trusts Act 1958 on behalf of someone who cannot consent for themselves.",
+          "acceptableAnswers": [
+            "benefit",
+            "that the variation is for their benefit",
+            "the arrangement must be for the benefit of the person represented"
+          ],
+          "modelAnswer": "The court must be satisfied the arrangement is for the benefit of the person it is approving the variation on behalf of — most often financial benefit, but family, educational or welfare benefit can also qualify."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-12-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the two statutory powers under the Trustee Act 1925 that allow trustees to release trust funds to a beneficiary before their interest would otherwise fall due.",
+      "acceptableAnswers": [
+        "maintenance and advancement",
+        "power of maintenance (s 31) and power of advancement (s 32)"
+      ],
+      "modelAnswer": "The power of maintenance (s 31), covering income, and the power of advancement (s 32), covering capital."
+    },
+    {
+      "itemId": "equity-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Following the 2014 amendments, is a trustee's power of advancement under s 32 still capped at one-half of a beneficiary's presumptive share for trusts within the amendment's scope?",
+      "options": [
+        "No — the 2014 amendment removed the fractional cap, subject to the trust instrument and the interests of prior claimants",
+        "Yes — the one-half cap remains unchanged for all trusts"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-12-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the categories of person on whose behalf the court can approve a variation under the Variation of Trusts Act 1958?",
+      "options": [
+        "A minor beneficiary",
+        "An unborn beneficiary",
+        "A person not yet ascertained because the relevant class has not closed",
+        "An adult beneficiary of full capacity who simply disagrees with the proposed variation"
+      ],
+      "correctIndex": 3,
+      "trapExplanation": "The 1958 Act exists to represent people who genuinely cannot consent — minors, the unborn, the unascertained. An adult of full capacity who disagrees is not in that category at all; their consent (or refusal) stands on its own and cannot be overridden by the court approving 'on their behalf'."
+    },
+    {
+      "itemId": "equity-12-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court follows when asked to approve a variation of trust under the Variation of Trusts Act 1958 on behalf of a minor beneficiary.",
+      "items": [
+        "Identify the categories of person the court has jurisdiction to represent",
+        "Confirm the minor falls within one of those categories",
+        "Consider the proposed arrangement",
+        "Assess whether the arrangement is for the minor's benefit",
+        "Approve or refuse the variation accordingly"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "itemId": "equity-12-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 32 Trustee Act 1925 (as amended), what happens to the power of advancement where exercising it would prejudice the interests of another person with a prior claim on the same fund?",
+      "options": [
+        "The power cannot be exercised in a way that prejudices that person's prior interest",
+        "The power overrides any prior interest automatically",
+        "Prior interests are irrelevant to the exercise of the power"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-12-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, adapted from Pilkington v IRC, highlight the sentence that states the ratio on the scope of 'advancement or benefit'.",
+      "passage": "It was argued that advancement means only a direct payment of money into the beneficiary's own hands. That is too narrow a reading of the power. The words 'advancement or benefit' are of the widest import and are apt to include the application of capital in setting up new trusts for the beneficiary, including arrangements designed to secure a more advantageous tax position, provided the trustees are satisfied the arrangement is for that beneficiary's real benefit.",
+      "ratioSentence": "The words 'advancement or benefit' are of the widest import and are apt to include the application of capital in setting up new trusts for the beneficiary, including arrangements designed to secure a more advantageous tax position, provided the trustees are satisfied the arrangement is for that beneficiary's real benefit."
+    },
+    {
+      "itemId": "equity-12-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely reflects the Pitt v Holt principle that a decision made on competent advice is not voidable merely because it later proves unwise?",
+      "scenarioA": "Trustees take specialist tax advice before restructuring a settlement, act on it in good faith, and the arrangement later attracts a large tax charge that neither the trustees nor their adviser foresaw.",
+      "scenarioB": "Trustees restructure a settlement without seeking any advice at all, without considering the tax consequences, and without turning their minds to the purpose of the arrangement in any way.",
+      "correctScenario": "A",
+      "explanation": "A is the paradigm Pitt v Holt scenario: proper advice taken and acted on in good faith, with an unfortunate but non-negligent outcome — not voidable simply because of hindsight. B looks closer to an actual breach of fiduciary duty (a genuine failure to turn their minds to relevant matters at all), which is the narrower category the modern test still catches."
+    },
+    {
+      "itemId": "equity-12-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A sole adult beneficiary, of full capacity, is absolutely entitled to the whole of a trust fund but the settlor's trust deed states the fund is not to be paid out until the beneficiary turns 35; the beneficiary is currently 27. Can the beneficiary force early termination?",
+      "options": [
+        "No — the settlor's stated age condition is binding regardless of the beneficiary's own wishes",
+        "Yes — under Saunders v Vautier, a sole beneficiary absolutely entitled and of full age and capacity can call for the trust property and end the trust, notwithstanding a postponement provision in the deed",
+        "Only if the trustees agree to release the fund early"
+      ],
+      "correctIndex": 1,
+      "explanation": "Saunders v Vautier applies equally to a sole beneficiary as to a unanimous group: once someone is absolutely entitled to the whole beneficial interest and of full age and capacity, the settlor's attempt to postpone payment cannot bind them."
+    },
+    {
+      "itemId": "equity-12-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A trust has four beneficiaries collectively absolutely entitled: three adults of full capacity who want to end the trust, and one who is 17. Can Saunders v Vautier be used now?",
+      "options": [
+        "Yes — three out of four is a sufficient majority",
+        "No — the 17-year-old lacks the capacity Saunders v Vautier requires from every beneficiary entitled to the whole interest, so the rule cannot operate until she is of full age (or a court steps in, e.g. under the Variation of Trusts Act 1958)",
+        "Yes — minors' interests are automatically excluded from the calculation"
+      ],
+      "correctIndex": 1,
+      "explanation": "Saunders v Vautier requires unanimous consent from everyone holding the whole beneficial interest, and a minor cannot give that consent. The trust cannot be ended this way until she reaches majority, though the family might instead seek the court's approval of a variation under the 1958 Act on her behalf."
+    },
+    {
+      "itemId": "equity-12-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that determines whether the court will approve this proposed variation under the Variation of Trusts Act 1958.",
+      "scenarioText": "The adult beneficiaries have agreed a variation restructuring the trust to reduce inheritance tax exposure. The arrangement is put to the court on behalf of the settlor's unborn great-grandchildren. Expert evidence shows the restructuring would materially increase the eventual share likely to reach those unborn beneficiaries, once the tax saving is accounted for.",
+      "tappableSpans": [
+        "adult beneficiaries have agreed",
+        "reduce inheritance tax exposure",
+        "unborn great-grandchildren",
+        "materially increase the eventual share likely to reach those unborn beneficiaries"
+      ],
+      "correctSpan": "materially increase the eventual share likely to reach those unborn beneficiaries",
+      "explanation": "The court's approval on behalf of the unborn turns on whether the arrangement benefits them specifically — here, the evidence that their eventual share increases is what satisfies the benefit requirement, not simply that the adult beneficiaries have agreed or that tax is reduced in the abstract."
+    },
+    {
+      "itemId": "equity-12-test-11",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does the Variation of Trusts Act 1958 allow the court to approve any variation the adult, capable beneficiaries have agreed, without independently considering the interests of those it represents?",
+      "options": [
+        "No — the court must independently satisfy itself the arrangement is for the benefit of the person it is approving it on behalf of",
+        "Yes — the court simply ratifies whatever the capable adult beneficiaries have already agreed"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-12-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best captures the difference between Saunders v Vautier and a court-approved variation under the Variation of Trusts Act 1958?",
+      "options": [
+        "They are the same mechanism under two different names",
+        "Saunders v Vautier lets beneficiaries who are all capable and unanimous end the trust entirely; the 1958 Act lets the court approve a change to the trust's terms on behalf of those who cannot consent, while the trust continues",
+        "The 1958 Act can only be used once every beneficiary has already died"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The two are easy to blur because both concern changing what a trust does, but they operate on different subjects (ending vs varying) and by different actors (beneficiaries themselves vs the court representing people who cannot consent) — conflating them is one of the most common mistakes on this topic."
+    },
+    {
+      "itemId": "equity-12-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Trustees, acting on the written advice of a specialist tax adviser, advance capital to a beneficiary by resettling it into a new trust structure. The advice later turns out to have overlooked a change in tax legislation that came into force shortly before the advice was given, resulting in an unexpected tax charge. The beneficiary seeks to have the advancement set aside. Analyse whether she is likely to succeed.",
+      "factsToOrder": [
+        "The trustees took written advice from a specialist tax adviser before acting",
+        "The advice overlooked a recent legislative change",
+        "The trustees acted in good faith on the advice given",
+        "An unexpected tax charge resulted",
+        "The beneficiary now seeks to have the advancement set aside"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the advancement can be set aside because the advice underlying it turned out to be incomplete, resulting in an unforeseen tax charge.",
+        "rule": "Pitt v Holt holds that a flawed trustee decision is voidable only where the flaw amounts to a breach of fiduciary duty; trustees who take and act in good faith on apparently competent professional advice will only rarely be found in breach, even where that advice later proves wrong.",
+        "application": "The trustees sought specialist advice, obtained it in writing, and acted on it in good faith — exactly the conduct Pitt v Holt treats as discharging the duty to inform themselves properly. That the adviser overlooked a recent legislative change is a shortcoming in the advice, not evidence that the trustees themselves failed to take reasonable steps. Absent something more — for example, a failure to disclose material facts to the adviser, or a decision to ignore advice given — this looks like the paradigm 'unfortunate but lawful' outcome Pitt v Holt was designed to leave undisturbed.",
+        "conclusion": "The beneficiary is unlikely to succeed in having the advancement set aside under the modern test; her better route, if any, may lie in a professional negligence claim against the adviser rather than against the trustees."
+      }
+    },
+    {
+      "itemId": "equity-12-test-14",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Name the case that established that beneficiaries collectively absolutely entitled to a trust fund, of full age and capacity, can call for the trust property and end the trust.",
+      "acceptableAnswers": [
+        "Saunders v Vautier"
+      ],
+      "modelAnswer": "Saunders v Vautier (1841) 4 Beav 115."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is picking the wrong route for the facts given — reaching for Saunders v Vautier when a beneficiary can't consent, or for the Variation of Trusts Act when the real beneficiaries could simply agree among themselves. Identify who is acting, and whether everyone involved can actually consent, before choosing the mechanism.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.trustees.powers-varying-trusts"
+  }
+}

@@ -1,0 +1,495 @@
+{
+  "lessonId": "eulaw-03",
+  "moduleId": "eulaw",
+  "moduleTitle": "EU Law",
+  "lessonNumber": 3,
+  "topicId": "eulaw.effect.direct-effect",
+  "title": "Direct effect",
+  "subtitle": "Two machines, two different reaches — and why one of them stops at the state's front door",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the Van Gend en Loos criteria for direct effect (clear, precise and unconditional) and explain why they exist",
+    "Distinguish vertical direct effect from horizontal direct effect and identify which sources of EU law can produce each",
+    "Explain, using Marshall and Faccini Dori, why an unimplemented directive can be enforced against the state but never against a private party — and apply the 'emanation of the state' test from Foster v British Gas to a new fact pattern"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Van Gend en Loos [1963] ECR 1",
+      "role": "Founding case: Treaty articles can create rights individuals enforce directly in national courts, given the right criteria"
+    },
+    {
+      "citation": "Marshall v Southampton and SW Hampshire AHA (No 1) [1986] ECR 723",
+      "role": "Confirms directives have only vertical direct effect — enforceable against the state, here as employer"
+    },
+    {
+      "citation": "Faccini Dori v Recreb [1994] ECR I-3325",
+      "role": "Confirms, against sustained pressure to change the rule, that directives have no horizontal direct effect between private parties"
+    },
+    {
+      "citation": "Foster v British Gas [1990] ECR I-3313",
+      "role": "Sets the test for which bodies count as 'the state' for vertical direct effect"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the doctrine that makes 'is it a directive or a regulation?' the single most consequential question in an EU law problem question. Miss the type of instrument and you'll confidently give a claimant a remedy the CJEU would have refused them.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions. This lesson is weighted towards spotting which of vertical, horizontal, or no direct effect applies on a given set of facts — that's where marks are actually lost.",
+      "weakKnowledge": "Slow down on Part 1 and Part 2 before the interactions get harder. The whole lesson rests on the three-word test — clear, precise, unconditional — so make sure you can recite it without hesitation."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "In 1962, a Dutch haulage company sued its own government for overcharging it on an import duty — and won, in a court that had no domestic power to strike down the charge, relying on nothing but a sentence in a treaty nobody had thought gave individuals anything to sue with. The CJEU had just invented a legal weapon out of a document that looked, to everyone who signed it, like an agreement between states. This lesson is about that weapon, and about the one target it was never allowed to fire at.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. This lesson covers CJEU direct-effect doctrine developed before the UK's withdrawal from the EU. It is taught here for its historical and analytical value — it shaped how UK courts read EU-derived law for nearly five decades — but it is not current UK law and no longer binds UK courts. Since the end of the transition period, and following the Retained EU Law (Revocation and Reform) Act 2023, direct effect in this CJEU sense has no continuing application in the UK legal system."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A treaty that individuals could sue with",
+        "voice": "narrative — opens with the surprise, then names the doctrine",
+        "body": [
+          "Van Gend en Loos was a haulage company in the Netherlands. The Dutch government reclassified a chemical it imported and, in doing so, quietly increased the import duty it had to pay — a duty increase that arguably breached Article 12 of the founding EEC Treaty, which told member states not to introduce new customs duties between themselves.",
+          "The obvious problem: Article 12 was addressed to *states*, not to companies. It read like a promise between governments, the kind ordinary international law leaves to be enforced government-to-government, or not at all. Van Gend en Loos had no treaty of its own with anyone — it was simply a company that thought its own government had broken a promise made to other governments.",
+          "The European Court of Justice disagreed with the premise. It held that the EEC Treaty was not ordinary international law — it created 'a new legal order', and where a Treaty provision was clear, precise and unconditional, it created rights that individuals could enforce directly in their own national courts, with no need for the state to pass implementing legislation first. This is **direct effect**: the capacity of a provision of EU law to be relied on directly by an individual in national court, without any domestic legislative act standing between the EU rule and the citizen who invokes it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Direct effect",
+            "definition": "The capacity of a provision of EU law to create rights or obligations that an individual can enforce directly before a national court, without the need for implementing national legislation, provided the provision meets the required criteria."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-03-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Before Van Gend en Loos, what was the obvious objection to letting a private company enforce Article 12 of the EEC Treaty?",
+          "options": [
+            "Article 12 was addressed to member states, not individuals, so it looked like a promise only states could enforce against each other",
+            "Article 12 had already been repealed by the time the case was heard"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Exactly the objection the Court had to overcome — and its answer (the 'new legal order') is the foundation the rest of this lesson is built on.",
+          "feedbackIncorrect": "Look again at who Article 12 was addressed to. The objection was structural: a promise between states doesn't obviously hand a right to a private company caught in the middle."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The three-word gate",
+        "voice": "structural — a test students will apply repeatedly",
+        "body": [
+          "Not every EU provision gets direct effect automatically. Van Gend en Loos set a test, refined in later cases, that a provision must pass before a national court will let an individual rely on it directly: it must be **clear**, **precise**, and **unconditional**.",
+          "'Clear and precise' rules out provisions that are aspirational or vague — a Treaty article stating a general aim of the Union, with no specific obligation attached, gives a court nothing concrete to enforce. 'Unconditional' is the trickiest limb: it means the provision must not leave the state discretion over how or whether to comply, and must not depend on some further implementing measure that hasn't yet been taken. A provision that requires member states to achieve a result by a method of their own choosing is conditional in this sense — until the method is chosen, there's nothing precise enough for a court to apply.",
+          "Get this test right and the rest of the lesson is mechanical. Get it wrong and you'll either grant direct effect to something that's still just a policy aspiration, or deny it to something the CJEU would clearly have enforced."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The direct effect criteria",
+            "points": [
+              "Clear — the obligation is expressed in specific, ascertainable terms, not a general statement of aim",
+              "Precise — the content of the right or obligation is identifiable without further elaboration",
+              "Unconditional — compliance does not depend on further action or discretion by the member state or an EU institution",
+              "If all three are met, the provision has direct effect and an individual can rely on it in national court without waiting for implementing legislation"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-03-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the word in this Treaty-style provision that would most likely defeat a claim to direct effect.",
+          "scenarioText": "Member states shall take appropriate measures, at a time and by means of their own choosing, to reduce cross-border administrative burdens on small businesses.",
+          "tappableSpans": [
+            "Member states shall",
+            "appropriate measures",
+            "at a time and by means of their own choosing",
+            "small businesses"
+          ],
+          "correctSpan": "at a time and by means of their own choosing",
+          "feedbackCorrect": "That's the conditionality problem: the provision expressly hands the state discretion over timing and method, so there is nothing fixed enough for a national court to apply until the state acts.",
+          "feedbackIncorrect": "Look for the words that leave the state a choice about how or when to comply — that discretion is exactly what 'unconditional' rules out."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Vertical direct effect: the machine that only points one way",
+        "voice": "expository — builds the vertical/horizontal taxonomy carefully before the twist",
+        "body": [
+          "Direct effect comes in two directions, and it's essential to keep them separate. **Vertical direct effect** is a claim by an individual against the state — the individual is at the bottom, the state is above them, and the claim runs upward. **Horizontal direct effect** is a claim by one individual against another individual or private body — both parties sit on the same level.",
+          "Treaty articles and regulations, once they satisfy the three-part test, have direct effect in both directions. A regulation is, by its nature under the Treaties, 'directly applicable' in every member state — it becomes part of national law automatically, with no transposition needed at all, and if it also meets the clarity/precision/unconditionality test it binds states and private parties alike.",
+          "Directives are different in kind, not just in degree. A directive is addressed to member states and requires them to achieve a specified result, leaving the choice of form and method to national implementing legislation — that is its whole legal design. Because of that design, the CJEU held in Marshall (No 1) that a directive can only ever have **vertical** direct effect."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Marshall v Southampton and South West Hampshire Area Health Authority (No 1)",
+            "citation": "[1986] ECR 723",
+            "court": "European Court of Justice",
+            "year": 1986,
+            "factsShort": "Ms Marshall was compulsorily retired by her employer, a health authority, at age 62 while her male colleagues could work to 65 — a policy that appeared to breach an EU equal treatment directive not yet fully implemented in UK law.",
+            "ratioShort": "An unimplemented but sufficiently precise directive can be relied on against the state, but only because the defendant here was, in substance, the state itself.",
+            "expanded": {
+              "facts": "Ms Marshall's employer, the Area Health Authority, was a public body. The relevant Equal Treatment Directive had not been correctly transposed into UK law at the time of her dismissal, but its terms on retirement age were argued to be clear, precise and unconditional.",
+              "judgmentExtract": "The Court held that a directive may be relied upon against the state, regardless of the capacity in which the state is acting — here, as an employer. But it went further: it would be 'incompatible with the legal nature of a directive' to allow individuals to rely on it against another individual, because Article 189 (now 288 TFEU) makes directives binding only on 'each Member State to which it is addressed'.",
+              "significance": "Marshall is the case that fixes the vertical-only rule for directives as settled doctrine — and it does so by reasoning from the text of the Treaty itself, not from any policy preference. The health authority won the case for the applicant, but only because it happened to be an organ of the state."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-03-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these reasoning steps in the order the Court took them in Marshall (No 1).",
+          "items": [
+            "The relevant directive is not yet correctly transposed into UK law",
+            "The Court asks whether the directive's terms are clear, precise and unconditional",
+            "The Court asks against whom the directive is being enforced",
+            "Because the defendant is an organ of the state, the directive can be relied on directly despite non-transposition"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the structure of every vertical direct effect problem: transposition failure, then the three-part test, then — critically — who the defendant actually is.",
+          "feedbackIncorrect": "Reorder around one key move: the Court checks the content of the directive before it checks who is being sued, but the claim only succeeds once both questions are answered favourably."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The gap the CJEU refused to close",
+        "voice": "Socratic — poses the puzzle, then commits to the answer under pressure",
+        "body": [
+          "Here is the question this lesson has been building toward: if a directive's terms are perfectly clear, precise and unconditional, why should it matter whether the defendant happens to be a public authority or a private company? The individual's need for the right is identical either way — only the identity of the wrongdoer differs, and that looks like an accident of bad luck rather than a principled distinction.",
+          "Paola Faccini Dori bought a language course from a doorstep salesman and later wanted to cancel, relying on an EU directive giving consumers a cooling-off period for doorstep sales — a directive Italy had not yet implemented. Her seller was a private company, not the state. She asked the CJEU to extend Marshall and allow horizontal direct effect.",
+          "The Court refused, and did so in the face of an Advocate General's opinion urging exactly that extension. Its reasoning returns to the same textual point as Marshall: Article 189 EEC (now 288 TFEU) makes a directive binding on the member state to which it is addressed. Extending that obligation onto private parties who were never its addressees would blur the distinction between directives and regulations that the Treaty itself draws — and it would mean punishing a private party for the state's own failure to legislate, when that private party had no power to fix the transposition failure at all.",
+          "This is the twist worth sitting with: horizontal direct effect for directives isn't a gap the CJEU overlooked. It's a gap the CJEU built deliberately, and defended, because closing it would have meant rewriting what a directive *is*."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say Faccini Dori couldn't enforce the directive because Italy hadn't implemented it yet — as if the problem is simply that the directive wasn't 'law' at the relevant time.",
+            "whyItsWrong": "Non-implementation is exactly the situation in which vertical direct effect operates — an unimplemented directive can absolutely be relied on against the state. The reason Faccini Dori failed is not that the directive lacked force altogether, but that her opponent was a private company, and directives are addressed only to states. Change the defendant to a public authority on identical facts and the claim succeeds."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-03-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the CJEU's refusal to allow horizontal direct effect in Faccini Dori rests on the wording of the Treaty's definition of a directive, rather than on a general policy against holding private parties liable?",
+          "sliderLabels": [
+            "Purely a policy choice",
+            "Rooted in the Treaty's own text"
+          ],
+          "correctPosition": "rooted in the treaty",
+          "explanation": "The Court's reasoning in both Marshall and Faccini Dori traces back to Article 189 EEC (now 288 TFEU): a directive is binding on 'each Member State to which it is addressed'. The refusal to extend liability to private parties is presented as following from what a directive legally is, not as a freestanding policy preference — though the practical effect is, of course, to protect private parties from liability for a state's own failure to legislate."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Who counts as 'the state'? The Foster test",
+        "voice": "direct — sets up the applied trap the test pool will probe hardest",
+        "body": [
+          "If vertical direct effect turns entirely on whether the defendant is 'the state', that question becomes the single most exam-relevant fact in any direct-effect problem. British Gas was, at the relevant time, a nationalised corporation — plainly not a government department, but not an obviously private company either. Ms Foster and her colleagues, again facing an unequal retirement age, needed to know whether British Gas counted as the state for the purposes of relying directly on the same directive at issue in Marshall.",
+          "The CJEU answered with a test rather than a label. A body counts as an emanation of the state — and so is a proper vertical-direct-effect defendant — where it is, whatever its formal legal status, a body made responsible, pursuant to a measure adopted by the state, for providing a public service under the control of the state and has for that purpose special powers beyond those which result from the normal rules applicable between individuals.",
+          "Notice what the test does not ask: it does not ask whether the body is owned by the state, or funded by the state, or called a public authority in its constituting statute. It asks about function, control and special powers. That is precisely why this test rewards careful application to facts rather than memorised labels — a privatised utility with statutory monopoly powers can fall inside it; a wholly state-owned trading company with no special powers and no public-service function might fall outside it."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Vertical direct effect: the two-stage check",
+            "description": "How a national court decides whether an unimplemented directive can be relied on against a given defendant.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Is the provision relied on clear, precise and unconditional?"
+              },
+              {
+                "id": "no-clear",
+                "label": "No → no direct effect at all, against anyone"
+              },
+              {
+                "id": "yes-clear",
+                "label": "Yes → who is the defendant?"
+              },
+              {
+                "id": "state-body",
+                "label": "The state, or a body meeting the Foster test (public service, state control, special powers) → vertical direct effect succeeds"
+              },
+              {
+                "id": "private-body",
+                "label": "A private individual or ordinary private company → no direct effect (Faccini Dori); claimant must look to indirect effect or state liability instead"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "no-clear",
+                "label": "No"
+              },
+              {
+                "from": "start",
+                "to": "yes-clear",
+                "label": "Yes"
+              },
+              {
+                "from": "yes-clear",
+                "to": "state-body",
+                "label": "Emanation of the state"
+              },
+              {
+                "from": "yes-clear",
+                "to": "private-body",
+                "label": "Private party"
+              }
+            ],
+            "textAlternative": "First ask whether the provision is clear, precise and unconditional. If not, there is no direct effect against anyone. If it is, ask who the defendant is: if it is the state or a body meeting the Foster test (responsible for a public service, under state control, with special powers), vertical direct effect succeeds. If it is a private individual or an ordinary private company, direct effect fails and the claimant must fall back on indirect effect or a state-liability claim instead."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-03-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A regional water company was privatised decades ago but still holds a statutory monopoly to supply water in its area, imposed and regulated by government, with statutory powers to enter land to lay pipes that no ordinary company has. An employee wants to enforce an unimplemented directive against it. Applying Foster, is the water company a proper defendant for vertical direct effect?",
+          "options": [
+            "Yes — it provides a public service under state control and holds special statutory powers beyond those of an ordinary company, so it meets the Foster test despite being privately owned",
+            "No — because it was privatised, it can never count as an emanation of the state regardless of its powers or functions",
+            "The question is irrelevant — vertical direct effect only applies to central government departments"
+          ],
+          "correctIndex": 0,
+          "explanation": "Foster looks past ownership and formal label to function, state control and special powers. A privatised utility with a state-imposed monopoly and statutory powers beyond the ordinary law is a textbook emanation of the state, even though no government minister sits on its board."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "eulaw-03-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the three criteria a provision of EU law must satisfy to have direct effect.",
+      "acceptableAnswers": [
+        "clear, precise and unconditional",
+        "clear, precise, unconditional"
+      ],
+      "modelAnswer": "The provision must be clear, precise and unconditional — set out in ascertainable terms, identifiable in content, and not dependent on further discretionary action by the state or an EU institution."
+    },
+    {
+      "itemId": "eulaw-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which case first held that a Treaty provision could be relied on directly by an individual in national court?",
+      "options": [
+        "Van Gend en Loos",
+        "Faccini Dori"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following can have horizontal direct effect (enforceable between private parties)?",
+      "options": [
+        "A directive that has not yet been implemented",
+        "A Treaty article that is clear, precise and unconditional",
+        "A directive that has been implemented late but still hasn't taken domestic effect"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Directives never have horizontal direct effect, however clear their terms and however late implementation is — that is the whole point of Marshall and Faccini Dori. Treaty articles, by contrast, can bind private parties directly once they meet the three-part test."
+    },
+    {
+      "itemId": "eulaw-03-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "A regulation, once in force, needs implementing legislation from member states before individuals can rely on it. True or false?",
+      "options": [
+        "False — a regulation is directly applicable and takes effect in national law automatically, without any transposition step",
+        "True — regulations work exactly like directives and need national implementing measures"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-03-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A Treaty article reads: 'Member states shall, over time and using methods of national choice, work towards harmonising professional qualifications.' Which element most clearly prevents this provision from being unconditional?",
+      "options": [
+        "The reference to member states as the addressee",
+        "The discretion left to states over timing and method of compliance",
+        "The subject matter being professional qualifications"
+      ],
+      "correctIndex": 1,
+      "explanation": "Unconditionality is defeated by discretion over how or when to comply. The addressee being 'member states' is normal for Treaty provisions and doesn't itself prevent direct effect; the subject matter is irrelevant to the test."
+    },
+    {
+      "itemId": "eulaw-03-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Faccini Dori, highlight the sentence that states the ratio.",
+      "passage": "The applicant sought to rely on an unimplemented directive against a private trading company. The Court reaffirmed its settled case law that the binding nature of a directive exists only in relation to the member state to which it is addressed, and consequently a directive cannot of itself impose obligations on a private individual and cannot therefore be relied upon against such a person. The applicant's remedies, if any, lay instead in national law interpreted consistently with the directive, or in a claim against the state itself.",
+      "ratioSentence": "The Court reaffirmed its settled case law that the binding nature of a directive exists only in relation to the member state to which it is addressed, and consequently a directive cannot of itself impose obligations on a private individual and cannot therefore be relied upon against such a person."
+    },
+    {
+      "itemId": "eulaw-03-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario is governed by the reasoning in Marshall rather than Faccini Dori?",
+      "scenarioA": "An employee of a public hospital trust relies on an unimplemented equal-treatment directive against the trust as her employer.",
+      "scenarioB": "A customer relies on the same unimplemented directive against a privately owned retail chain that employed her under identical facts.",
+      "correctScenario": "A",
+      "explanation": "Marshall governs claims against the state or an emanation of it — a public hospital trust as employer. Scenario B, against a purely private employer, is the Faccini Dori situation: no horizontal direct effect, whatever the directive says."
+    },
+    {
+      "itemId": "eulaw-03-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A national broadcaster is wholly state-funded, has no statutory monopoly, no special powers of entry or compulsion, and competes for advertising revenue on the same terms as private broadcasters. An employee wants to invoke an unimplemented directive against it. Applying Foster, is it an emanation of the state?",
+      "options": [
+        "Not necessarily — state funding alone is not decisive; the Foster test asks about a public-service function under state control together with special powers beyond the ordinary law, which are not clearly present here",
+        "Yes automatically — any state-funded body is always an emanation of the state",
+        "No — private-sector competition automatically excludes a body from the Foster test regardless of any other feature"
+      ],
+      "correctIndex": 0,
+      "explanation": "Foster is a multi-factor functional test, not a funding test. State money alone doesn't answer the question, and the absence of special powers is a real point against treating this broadcaster as an emanation of the state — but the facts would need to be argued, not assumed either way."
+    },
+    {
+      "itemId": "eulaw-03-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A wholly privately owned haulage firm, with no state contract, no public function and no special legal powers, is sued by a customer relying on an unimplemented consumer-protection directive that is clear, precise and unconditional. Can the customer succeed on a direct effect claim?",
+      "options": [
+        "No — the firm is a purely private party and directives have no horizontal direct effect, however well the directive's terms satisfy the three-part test",
+        "Yes — because the directive's terms meet the three-part test, that alone is sufficient regardless of the defendant",
+        "Yes, but only if the firm has more than 250 employees"
+      ],
+      "correctIndex": 0,
+      "explanation": "Meeting the clear/precise/unconditional test is necessary but never sufficient for a directive claim — the identity of the defendant is a second, independent gate, and a purely private defendant fails it however strong the directive's wording."
+    },
+    {
+      "itemId": "eulaw-03-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that would most strengthen an argument that this body is an emanation of the state for Foster purposes.",
+      "scenarioText": "A former state monopoly rail operator was sold to private shareholders. It still operates under a statutory licence granting it powers to compulsorily purchase land for track expansion that no ordinary private company holds, and it is required by statute to run a minimum service in the public interest.",
+      "tappableSpans": [
+        "sold to private shareholders",
+        "statutory licence",
+        "compulsorily purchase land",
+        "no ordinary private company holds"
+      ],
+      "correctSpan": "compulsorily purchase land",
+      "feedbackCorrect": "That's the special-powers limb of Foster in action: a power beyond what the ordinary rules between individuals would ever confer is exactly the kind of fact that tips a privatised body into 'emanation of the state'.",
+      "feedbackIncorrect": "Ownership by private shareholders points away from state status on its own. Look instead for a power the company holds that an ordinary private company never could."
+    },
+    {
+      "itemId": "eulaw-03-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Aisha works for a privatised airport operator that took over the airport from a government agency, still operates under a statutory duty to provide airport services to the public, and holds statutory powers to detain vehicles obstructing the runway that no private landowner has. An unimplemented directive on equal treatment at work, which is clear, precise and unconditional, would entitle Aisha to a remedy her employer has not given her. Analyse whether Aisha can rely on the directive directly against her employer.",
+      "factsToOrder": [
+        "The directive is clear, precise and unconditional",
+        "The employer is privately structured but was formerly a government agency",
+        "The employer has a statutory duty to provide a public service (airport services)",
+        "The employer holds special statutory powers (detaining vehicles) beyond ordinary private rights",
+        "Aisha's claim is against her employer, not against the state in a narrow sense"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Aisha can rely directly on an unimplemented directive against her employer, a privatised airport operator.",
+        "rule": "A directive with direct effect can only be enforced vertically, against the state or a body that meets the Foster test: responsible for a public service, under state control (in the relevant regulatory sense), and holding special powers beyond those of an ordinary private party.",
+        "application": "The directive itself passes the threshold test (clear, precise, unconditional), so the only live question is the identity of the defendant. The airport operator provides a public service under a statutory duty, and holds a special power — detaining obstructing vehicles — that goes well beyond ordinary property or contract rights. Its formal private ownership does not defeat this, since Foster looks to function and powers rather than the share register.",
+        "conclusion": "The employer is likely an emanation of the state under Foster, so Aisha can rely on the directive directly against it despite its non-implementation."
+      }
+    },
+    {
+      "itemId": "eulaw-03-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Why, according to the CJEU's own reasoning, does a directive bind only the state and not private parties?",
+      "options": [
+        "Because private parties are generally less able to afford litigation than the state",
+        "Because the Treaty defines a directive as binding on the member state to which it is addressed, and extending that binding force to private parties would blur the distinction between a directive and a regulation",
+        "Because national parliaments object to any EU law binding their citizens directly"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers reach for practical or political explanations. The Court's actual reasoning, in both Marshall and Faccini Dori, is textual: it follows from what the Treaty says a directive legally is and who it is addressed to."
+    },
+    {
+      "itemId": "eulaw-03-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A central government ministry fails to implement a directive on time. A citizen wants to enforce a clear, precise, unconditional provision of it directly against the ministry. Can she?",
+      "options": [
+        "Yes — a government ministry is the paradigm case of the state for vertical direct effect purposes",
+        "No — direct effect never applies to a government's own failure to implement a directive"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-03-test-14",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the steps a national court takes when a claimant relies on an unimplemented directive against a body of uncertain status.",
+      "items": [
+        "Identify the relevant directive provision and ask whether it is clear, precise and unconditional",
+        "If it fails that test, dismiss the direct effect claim regardless of the defendant",
+        "If it passes, examine whether the defendant is the state or meets the Foster criteria",
+        "Grant vertical direct effect only if the defendant qualifies as an emanation of the state"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's items is stopping the analysis once a directive is shown to be clear, precise and unconditional. That only answers half the question — the identity of the defendant is a second, independent gate, and it is the one that decides whether a Marshall-style claim succeeds or a Faccini Dori-style claim fails on otherwise identical facts.",
+    "reviewMisses": true,
+    "linkToPathway": "eulaw.effect.direct-effect"
+  }
+}

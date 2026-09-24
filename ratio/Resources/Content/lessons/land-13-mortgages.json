@@ -1,0 +1,353 @@
+{
+  "lessonId": "land-13",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 13,
+  "topicId": "land.mortgages.mortgages",
+  "title": "Mortgages",
+  "subtitle": "Equity of redemption, possession, power of sale, and undue influence",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the equity of redemption and identify when a term in a mortgage amounts to an unlawful clog on it",
+    "State the court's discretion to adjourn or suspend possession proceedings under s 36 Administration of Justice Act 1970 and apply it to a repayment schedule",
+    "Apply the lender's statutory power of sale, the Cuckmere Brick duty to obtain a proper price, and the current test for fixing a lender with notice of a surety's undue influence"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Kreglinger v New Patagonia Meat and Cold Storage Co [1914] AC 25", "role": "A collateral commercial advantage in a mortgage is not automatically an unlawful clog on the equity of redemption" },
+    { "citation": "Administration of Justice Act 1970, s 36", "role": "Gives the court discretion to adjourn, suspend or postpone possession where the mortgagor is likely to pay sums due within a reasonable period" },
+    { "citation": "Cheltenham & Gloucester Building Society v Norgan [1996] 1 WLR 343", "role": "The 'reasonable period' under s 36 ordinarily means the remaining term of the mortgage, not a short catch-up window" },
+    { "citation": "Law of Property Act 1925, ss 101, 103", "role": "Source of the mortgagee's statutory power of sale and the preconditions before that power becomes exercisable" },
+    { "citation": "Cuckmere Brick Co Ltd v Mutual Finance Ltd [1971] Ch 949", "role": "A mortgagee exercising the power of sale owes a duty to take reasonable care to obtain the true market value" },
+    { "citation": "Royal Bank of Scotland plc v Etridge (No 2) [2001] UKHL 44", "role": "Sets the framework for when a lender is put on inquiry as to a surety's undue influence and what steps protect it" },
+    { "citation": "Waller-Edwards v One Savings Bank plc [2025] UKSC 22", "role": "Very recent Supreme Court authority refining when a lender is fixed with notice of undue influence in a non-commercial surety transaction — the current law, and materials predating it may misstate the test" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Mortgages questions reward the student who can trace a single default through to its remedy — possession, then sale, then (sometimes) a challenge from a surety. Where the profile shows application is weaker than knowledge, this note appears: 'You know the stages — this lesson is about which door a lender actually walks through, and when a court stops them.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool below leans hard on fact patterns — a missed payment, a rushed sale, a spouse who signed without reading — so expect to apply the rules, not just name them.",
+      "weakKnowledge": "Take Parts 1 and 2 slowly before you get to the remedies. The rest of the lesson assumes you can state the equity of redemption and the s 36 discretion without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A borrower misses three payments. From the lender's side of the desk, this is a file to be closed efficiently and lawfully. From the borrower's side, it's a countdown with a court somewhere in the middle that might — or might not — buy more time. Mortgage law is built almost entirely out of that tension: statutory powers that look absolute on the page, and equitable and judicial controls that quietly are not.",
+    "lawStatedNotice": "Law stated as at 1 September 2026. This lesson reflects Waller-Edwards v One Savings Bank plc [2025] UKSC 22, decided by the Supreme Court in 2025 — a genuinely recent case refining the Etridge test for when a lender is fixed with notice of a surety's undue influence. Textbooks, notes or past papers predating mid-2025 will not discuss it, and some may state the pre-Waller-Edwards position as if it were still current. Treat Part 5 of this lesson as the up-to-date position."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The equity of redemption — and how not to clog it",
+        "voice": "practical, risk-focused — framed around what a lender can and cannot lock in",
+        "body": [
+          "A mortgage is, formally, security for a debt — not a sale of the property dressed up in different clothes. However the transaction is drafted, equity has always insisted on one thing: 'once a mortgage, always a mortgage'. The borrower's right to redeem — to pay off the debt and get the property back free of the lender's interest — cannot be permanently taken away, whatever the paperwork says.",
+          "That underlying right is the equity of redemption, and it's more than just the right to redeem on the contractual date. It's the whole bundle of value the borrower retains in the property throughout the life of the mortgage — which is why a term that tries to prevent redemption altogether, or that survives redemption and keeps burdening the property afterwards, can be struck down as a 'clog' on the equity.",
+          "But not every unattractive term is a clog. In Kreglinger, a mortgage of a meat business included a five-year option for the lender to buy the borrower's sheepskins at a preferential rate — a collateral commercial advantage that had nothing to do with delaying repayment. The House of Lords upheld it: a freely negotiated commercial advantage, separate from the mortgage terms themselves and not designed to prevent or postpone redemption, is not automatically unlawful. The question is always whether the term genuinely obstructs redemption, not whether it happens to favour the lender."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Equity of redemption",
+            "definition": "The borrower's underlying equitable interest in mortgaged property, protected by the principle that the right to redeem cannot be excluded, postponed unreasonably, or rendered illusory by the terms of the mortgage itself."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-13-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the equitable maxim that summarises why a mortgage can never permanently exclude the borrower's right to redeem.",
+          "acceptableAnswers": ["once a mortgage always a mortgage", "once a mortgage, always a mortgage"],
+          "modelAnswer": "'Once a mortgage, always a mortgage' — equity treats the substance of the transaction as security for a debt, and will not allow the borrower's right to redeem to be excluded or effectively defeated by the drafting."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Default: the borrower's clock starts",
+        "voice": "practical, borrower-facing — what actually happens after a missed payment",
+        "body": [
+          "Once a borrower defaults, a lender typically has several cumulative remedies available: suing on the personal covenant to repay, appointing a receiver, taking possession, and exercising the power of sale. Possession is usually the practical gateway to sale — a lender holding a residential mortgage will almost always seek a possession order first, because selling with vacant possession is far more straightforward.",
+          "This is where Parliament intervened on the borrower's behalf. Section 36 of the Administration of Justice Act 1970 gives the court discretion, in possession proceedings brought by a mortgagee of a dwelling-house, to adjourn the proceedings or to suspend, postpone or stay execution of any possession order — but only if it appears the borrower is likely to be able to pay any sums due under the mortgage within a reasonable period.",
+          "'Reasonable period' sounds vague, and for years courts applied it narrowly — effectively asking whether the borrower could clear the arrears in a short window. Cheltenham & Gloucester Building Society v Norgan changed that. The Court of Appeal held that the reasonable period should ordinarily be calculated by reference to the remaining term of the mortgage, not some artificially compressed catch-up period — giving borrowers realistic room to repay arrears gradually rather than all at once."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Administration of Justice Act 1970, s 36(1)",
+            "text": "Where the mortgagee under a mortgage of land which consists of or includes a dwelling-house brings an action in which he claims possession of the mortgaged property... the court may exercise any of the powers conferred by subsection (2) below if it appears to the court that in the event of its exercising the power the mortgagor is likely to be able within a reasonable period to pay any sums due under the mortgage or to remedy a default consisting of a breach of any other obligation arising under or by virtue of the mortgage.",
+            "elements": ["Mortgage of a dwelling-house", "Mortgagee brings a possession action", "Court considers whether the mortgagor is likely to pay sums due, or remedy the breach, within a reasonable period", "If so, the court may adjourn, or suspend/postpone/stay execution of any possession order"]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-13-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 36 AJA 1970, what must the court find before it can exercise its discretion to adjourn or suspend a possession order?",
+          "options": ["That the mortgagor is likely to be able to pay the sums due, or remedy the breach, within a reasonable period", "That the mortgagee has acted in bad faith", "That the property has increased in value since the mortgage was granted"],
+          "correctIndex": 0,
+          "explanation": "The trigger for the court's discretion is a likelihood finding about future payment or remedy — not fault on the lender's side and not the property's value. Norgan then tells the court how generously to read 'a reasonable period'."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Power of sale: the lender's move, and its limits",
+        "voice": "practical, risk-focused — from the lender's side of the transaction",
+        "body": [
+          "Assuming possession is obtained, most residential lenders move to sale rather than holding property indefinitely. The power of sale is a creature of statute: LPA 1925, s 101 confers it automatically on any mortgage made by deed, unless excluded. But having the power and being entitled to use it are different things — s 103 sets out preconditions (broadly, that notice requiring payment has been served and default has continued for a period, or interest is in arrears, or there has been a breach of some other provision) before the power becomes exercisable.",
+          "Crucially, a defect in the s 103 preconditions doesn't necessarily undo a sale to an innocent third-party purchaser — it exposes the lender to a claim in damages from the borrower instead. This is a deliberate design choice: the statute protects the market (a purchaser can rely on a sale by a mortgagee) while still giving the borrower a remedy against the lender who jumped the gun.",
+          "Even once the power is properly exercisable, the lender is not free to sell however it likes. Cuckmere Brick establishes that a mortgagee exercising the power of sale owes the borrower a duty to take reasonable care to obtain the true market value at the date of sale — not a fiduciary duty to get the best possible price at all costs, but a genuine duty of reasonable care in the conduct of the sale (proper marketing, adequate valuation, not selling in undue haste to a connected party). A lender who breaches it is liable to account to the borrower for the shortfall."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Cuckmere Brick Co Ltd v Mutual Finance Ltd",
+            "citation": "[1971] Ch 949",
+            "court": "Court of Appeal",
+            "year": 1971,
+            "factsShort": "A lender sold mortgaged land at auction without advertising that it had planning permission for flats, achieving a much lower price than the land was really worth.",
+            "ratioShort": "A mortgagee exercising the power of sale must take reasonable care to obtain the true market value — this is a duty of care, not merely a duty of good faith, and not a fiduciary duty to maximise the price.",
+            "expanded": {
+              "facts": "Mutual Finance held a mortgage over land which had valuable planning permission for residential flats. When the borrower defaulted, Mutual Finance sold the land at auction but failed to advertise the planning permission, and the land sold for substantially less than it was worth with that permission properly marketed.",
+              "judgmentExtract": "The Court of Appeal held that a mortgagee is not a trustee of the power of sale for the mortgagor, and is entitled to act in its own interest in deciding when and how to sell — but once it decides to sell, it owes a duty to take reasonable precautions to obtain the true market value at that time, which includes proper marketing of material facts affecting value.",
+              "significance": "This is the leading case on the standard owed during a mortgagee sale. It sits between two extremes: the lender need not delay sale to chase the best possible price, but cannot be careless about achieving a fair one — a distinction examiners frequently test with facts involving rushed or under-marketed sales."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-13-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact most likely to breach the Cuckmere Brick duty of reasonable care.",
+          "scenarioText": "A lender takes possession after default, instructs an estate agent, and sells the property within three weeks to the first buyer who offers close to the agent's valuation, without advertising the property's newly granted planning permission for an extension.",
+          "tappableSpans": ["takes possession after default", "instructs an estate agent", "sells the property within three weeks", "without advertising the property's newly granted planning permission"],
+          "correctSpan": "without advertising the property's newly granted planning permission",
+          "feedbackCorrect": "Right — a quick sale through a proper agent is not itself careless, but failing to market a fact that materially affects value (as in Cuckmere Brick itself) is exactly the kind of omission that breaches the duty.",
+          "feedbackIncorrect": "Speed alone isn't the problem — a lender is entitled to sell promptly and isn't obliged to hold out for a better offer. Look for the fact that mirrors Cuckmere Brick: something affecting value that was not properly marketed."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Sureties, undue influence, and the bank's exposure",
+        "voice": "risk-focused — the lender's compliance perspective",
+        "body": [
+          "A different risk sits alongside default and sale: a mortgage is sometimes signed not by the person who benefits from the loan, but by a spouse, partner or family member acting as surety — charging their share of the home to secure someone else's borrowing. If that surety's consent was procured by undue influence or misrepresentation, they may be able to have the charge set aside against the wrongdoer. The harder question is whether the lender can also be affected.",
+          "Etridge sets the framework. A lender is 'put on inquiry' — meaning it must take reasonable steps to satisfy itself the surety's agreement is properly informed and free — whenever a transaction is, on its face, not to the surety's financial advantage and there is a substantial risk that the principal debtor has committed a wrong that entitles the surety to set the transaction aside. The classic case is a wife guaranteeing her husband's business debts, but Etridge made clear the trigger is the character of the relationship and transaction, not marital status specifically.",
+          "Once on inquiry, a lender protects itself by insisting the surety receives confirmation of independent legal advice from a solicitor who has been given the relevant financial information and who confirms, separately and directly to the lender, that the surety understands the transaction's practical implications. Skip that step, and the lender risks being fixed with constructive notice of any undue influence — meaning the charge can be set aside against the lender too, not just the wrongdoing debtor."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Etridge: protecting the lender",
+            "points": [
+              "A lender is put on inquiry whenever the transaction is not, on its face, to the surety's advantage and there is a substantial risk of a relevant wrong by the principal debtor",
+              "This is not confined to spouses — it extends to any relationship of trust and confidence the lender is or ought to be aware of",
+              "The lender's protective step is confirmation of independent legal advice, given by a solicitor briefed on the transaction, communicated directly to the lender",
+              "Failure to take reasonable steps risks fixing the lender with constructive notice of the surety's vitiating factor"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-13-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is a lender most clearly 'put on inquiry' under Etridge?",
+          "scenarioA": "A couple jointly apply for a mortgage to buy a home they will both live in and both benefit from equally.",
+          "scenarioB": "A wife charges her share of the family home to secure a loan made solely to her husband's sole-trader business, from which she draws no salary or benefit.",
+          "correctScenario": "B",
+          "feedbackCorrect": "Correct. B is the paradigm Etridge scenario — a transaction that is not, on its face, to the surety's advantage, arising out of a relationship of trust and confidence. A is an ordinary joint borrowing for shared benefit, which raises no inquiry at all.",
+          "feedbackIncorrect": "Look for the transaction that is not, on its face, to the surety's own financial advantage. A joint purchase for shared benefit doesn't trigger Etridge; a one-sided guarantee for someone else's business debt does."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Waller-Edwards: the test refined — and why older notes may be wrong",
+        "voice": "risk-focused, urgent — flags a genuine, very recent shift in the law",
+        "body": [
+          "Etridge has stood for over twenty years as the framework, but in 2025 the Supreme Court revisited how it applies where a couple take out a mortgage together, and one party later argues they were pressured into it by the other — a fact pattern Etridge itself addressed mainly through the lens of a surety guaranteeing someone else's separate debt.",
+          "In Waller-Edwards v One Savings Bank plc, the borrower was a joint mortgagor — not a surety for someone else's separate liability, but a co-borrower on a remortgage of the family home who received no direct benefit from the sums released, which were used to pay off her partner's debts. She argued the lender should have been put on inquiry as to undue influence in the same way as in a classic surety case, because in substance her position was the same: she gained nothing personally from a transaction procured, she said, by her partner's influence.",
+          "The Supreme Court held that the Etridge inquiry can apply to a joint-loan case of this kind — the label 'surety' versus 'co-borrower' is not decisive; what matters is whether the transaction is not, on its face, to that party's advantage, considered realistically. This closes a gap that earlier lenders and some earlier case law had treated as taking joint mortgages outside Etridge altogether, purely because both parties were named as borrowers on the deed.",
+          "This is the current test. Any material that predates Waller-Edwards, or that treats 'joint borrower, not a surety' as automatically outside Etridge's scope, is stating outdated law — the Supreme Court has now confirmed that substance over form governs whether a lender is put on inquiry."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "A joint mortgagor named on the deed as a co-borrower can never argue the lender was put on inquiry as to undue influence — Etridge only applies to sureties guaranteeing someone else's separate debt.",
+            "whyItsWrong": "This was arguably the assumption before Waller-Edwards, and it is no longer safe. The Supreme Court in 2025 confirmed that the Etridge inquiry looks at the real character and effect of the transaction for that individual, not the formal label on the mortgage deed — a joint borrower who receives no real benefit from the advance can be in substantially the same position as a classic surety."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-13-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "Priya and Sam remortgage their jointly owned home. The funds are used entirely to pay off Sam's personal gambling debts; Priya receives no direct benefit. Priya later says she only signed because Sam pressured her and she felt she had no real choice. Analyse whether the lender is put on inquiry.",
+          "factsToOrder": [
+            "Priya and Sam are joint mortgagors, both named on the deed",
+            "The advance is used entirely to clear Sam's personal debts",
+            "Priya receives no direct financial benefit from the transaction",
+            "Priya alleges she was pressured into signing"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC shown, mapping each fact to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Issue and Rule given; student drags facts into Application and writes the Conclusion" },
+            { "level": 3, "support": "No scaffold; student writes the full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the lender is put on inquiry as to Sam's alleged undue influence over Priya, despite Priya being a named joint mortgagor rather than a surety for a separate debt.",
+            "rule": "Following Etridge as applied in Waller-Edwards, a lender is put on inquiry where the transaction is not, on its face, to that party's advantage and arises from a relationship of trust and confidence — the formal label of 'co-borrower' does not remove the inquiry where, in substance, that party gains nothing from the advance.",
+            "application": "Although Priya is a named joint mortgagor, the advance is used entirely for Sam's personal debts and she receives no direct benefit — in substance her position mirrors a classic surety. Waller-Edwards confirms this substance-over-form approach means the lender cannot rely on her being named on the deed to avoid the inquiry.",
+            "conclusion": "The lender is put on inquiry and should have insisted on confirmation of independent legal advice for Priya; failing to do so risks the charge being set aside against the lender to the extent it relies on her interest."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-13-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the equitable principle that prevents a mortgage term from permanently excluding the borrower's right to redeem.",
+      "acceptableAnswers": ["once a mortgage always a mortgage", "equity of redemption", "no clogs on the equity of redemption"],
+      "modelAnswer": "Equity insists that 'once a mortgage, always a mortgage' — a term that clogs or excludes the equity of redemption will not be enforced according to its literal terms."
+    },
+    {
+      "itemId": "land-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In Kreglinger, why did the House of Lords uphold the lender's option to buy sheepskins at a preferential rate?",
+      "options": ["It was a separate commercial advantage that did not obstruct or postpone redemption", "The borrower had waived their right to redeem entirely", "Collateral advantages are never scrutinised by equity"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-13-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement about the statutory power of sale under LPA 1925 is correct?",
+      "options": ["The power of sale is automatically conferred by s 101 on any mortgage by deed unless excluded, but s 103 preconditions must be met before it becomes exercisable", "The power of sale only arises once a court order for sale has been obtained", "A defect in the s 103 preconditions automatically voids any sale, even to an innocent purchaser"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting wrong answers confuse 'arising' with 'becoming exercisable', or assume purchaser protection doesn't exist. A defective sale doesn't undo the purchaser's title — it exposes the lender to a damages claim from the borrower instead."
+    },
+    {
+      "itemId": "land-13-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 36 AJA 1970, the court's discretion to adjourn or suspend possession applies to which mortgages?",
+      "options": ["Mortgages of land which consist of or include a dwelling-house", "Any mortgage of any type of property, including purely commercial premises", "Only mortgages granted by building societies"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-13-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A borrower has 22 years left on a 25-year mortgage term and falls into arrears. Following Norgan, how should the court typically approach the 'reasonable period' under s 36?",
+      "options": ["By reference to the remaining 22-year term, allowing arrears to be spread gradually rather than repaid in a short window", "By allowing only the next 3 months to clear the arrears in full", "Norgan is irrelevant once any arrears have accrued, however small"],
+      "correctIndex": 0,
+      "explanation": "Norgan directs courts to look at the whole remaining term as the natural reference point for 'reasonable period', not to compress repayment into an artificially short catch-up window."
+    },
+    {
+      "itemId": "land-13-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Cuckmere Brick, highlight the sentence stating the ratio.",
+      "passage": "The mortgagee is not a trustee of the power of sale for the mortgagor and may consult its own interests in deciding whether and when to exercise the power. However, once it decides to sell, the mortgagee owes a duty to take reasonable precautions to obtain the true market value of the property at the date of sale. A mortgagee who fails to advertise a material factor affecting value may be in breach of that duty.",
+      "ratioSentence": "However, once it decides to sell, the mortgagee owes a duty to take reasonable precautions to obtain the true market value of the property at the date of sale."
+    },
+    {
+      "itemId": "land-13-test-07",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that would most strongly support a claim the lender breached the Cuckmere Brick duty.",
+      "scenarioText": "After obtaining possession, the lender's agent values the property, markets it for six weeks with local estate agents, and accepts an offer close to the valuation from an unconnected buyer, ten percent below the highest bid made after completion had already been agreed.",
+      "tappableSpans": ["markets it for six weeks", "accepts an offer close to the valuation", "from an unconnected buyer", "ten percent below the highest bid made after completion had already been agreed"],
+      "correctSpan": "ten percent below the highest bid made after completion had already been agreed",
+      "explanation": "A higher bid arriving after completion is already agreed doesn't itself prove a breach — the duty is judged at the point of sale, and a properly marketed, arm's-length sale close to valuation is exactly what Cuckmere Brick requires, not a guarantee of the top possible price later."
+    },
+    {
+      "itemId": "land-13-test-08",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Is the Cuckmere Brick duty a fiduciary duty to obtain the best possible price?",
+      "options": ["No — it is a duty of reasonable care to obtain the true market value, not a fiduciary duty to maximise price", "Yes — the mortgagee must hold out for the highest achievable offer regardless of delay"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-13-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario puts the lender on inquiry under Etridge?",
+      "scenarioA": "A father charges his own investment property to secure a business loan made to a company he wholly owns and benefits from personally.",
+      "scenarioB": "An elderly mother charges her home to guarantee a loan to her adult son's separate business, from which she draws no income or benefit.",
+      "correctScenario": "B",
+      "explanation": "B is the classic Etridge scenario: a transaction not on its face to the surety's advantage, arising from a relationship of trust and confidence. A is the debtor charging their own property for their own benefit, which raises no third-party inquiry at all."
+    },
+    {
+      "itemId": "land-13-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A lender is put on inquiry under Etridge. What step most reliably protects it from being fixed with constructive notice of undue influence?",
+      "options": ["Obtaining confirmation of independent legal advice from a solicitor briefed on the transaction, communicated directly to the lender", "Simply asking the surety to sign a form declaring they understand the transaction", "Relying on the principal debtor's assurance that the surety understands the risks"],
+      "correctIndex": 0,
+      "explanation": "Etridge requires the lender to insist on independent legal advice from a properly briefed solicitor, with confirmation sent directly to the lender — a bare signed form or the debtor's own assurance does not satisfy this."
+    },
+    {
+      "itemId": "land-13-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.6,
+      "prompt": "Before Waller-Edwards, what assumption did some lenders and older materials make about joint mortgagors?",
+      "options": ["That a party named as a joint co-borrower on the deed automatically fell outside the Etridge inquiry, since Etridge was framed around sureties for a separate debt", "That joint mortgagors could never be liable on the personal covenant to repay", "That Etridge had been overruled entirely before 2025"],
+      "correctIndex": 0,
+      "trapExplanation": "The old assumption treated the formal label on the deed as decisive. Waller-Edwards corrects this: substance, not form, determines whether the transaction is not on its face to that party's advantage."
+    },
+    {
+      "itemId": "land-13-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "prompt": "Following Waller-Edwards v One Savings Bank plc [2025] UKSC 22, a lender processes a remortgage naming both partners as joint borrowers, where the funds pay off only one partner's personal debts and the other receives no benefit. Is the lender at risk of being put on inquiry?",
+      "options": ["Yes — the label 'joint borrower' does not exclude the Etridge inquiry where, in substance, one party gains no advantage from the transaction", "No — Etridge can never apply where both parties are named as borrowers on the mortgage deed", "No — the inquiry only applies to unmarried cohabiting couples"],
+      "correctIndex": 0,
+      "explanation": "Waller-Edwards confirms that substance governs: a joint mortgagor who receives no real benefit can be in the same position as a classic surety, so the lender should be alert to the inquiry despite the formal joint-borrower label."
+    },
+    {
+      "itemId": "land-13-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which case is the most recent Supreme Court authority on when a lender is fixed with notice of a surety's or joint borrower's undue influence?",
+      "options": ["Waller-Edwards v One Savings Bank plc [2025] UKSC 22", "Royal Bank of Scotland v Etridge (No 2) [2001] UKHL 44", "Barclays Bank v O'Brien [1994] 1 AC 180"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-13-test-14",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put the typical stages of a residential mortgage default in order.",
+      "items": ["Borrower falls into arrears", "Lender brings possession proceedings; court considers s 36 discretion", "Lender obtains possession and exercises the power of sale (subject to Cuckmere Brick duty)", "Any surety alleging undue influence may seek to have their interest set aside against the lender if it was put on inquiry and failed to protect itself"],
+      "correctOrder": [0, 1, 2, 3]
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's items is collapsing separate stages into one another — treating a defect in the s 103 sale preconditions as if it voids a purchaser's title, or assuming a named joint borrower can never raise Etridge. Keep each remedy and each protection distinct.",
+    "reviewMisses": true,
+    "linkToPathway": "land.mortgages.mortgages"
+  }
+}

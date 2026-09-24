@@ -1,0 +1,369 @@
+{
+  "lessonId": "companylaw-05",
+  "moduleId": "companylaw",
+  "moduleTitle": "Company Law",
+  "lessonNumber": 5,
+  "topicId": "companylaw.capital.share-capital-maintenance",
+  "title": "The capital that has to stay put",
+  "subtitle": "Share capital and the doctrine of capital maintenance",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish nominal (par) share capital from allotted share capital, and state the rule against allotting shares at a discount under s 580",
+    "State the rule that dividends may only be paid out of profits available for the purpose under ss 830–853, and identify the two lawful routes to reducing share capital under ss 641–653",
+    "Explain the doctrine of capital maintenance established in Trevor v Whitworth and why financial assistance for the purchase of a company's own shares is restricted by the same logic"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006, s 580", "role": "Prohibits allotting a share for consideration worth less than its nominal value" },
+    { "citation": "Companies Act 2006, s 617", "role": "Governs how a limited company may alter its share capital" },
+    { "citation": "Companies Act 2006, ss 641–653", "role": "The two statutory routes to a lawful reduction of share capital: the solvency-statement route and the court-confirmed route" },
+    { "citation": "Companies Act 2006, ss 830–853", "role": "Distributions may only be made out of profits available for the purpose — realised profits less realised losses" },
+    { "citation": "Trevor v Whitworth (1887) 12 App Cas 409", "role": "Foundational authority for the doctrine of capital maintenance: a company cannot buy back its own shares outside a statutory procedure" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson rewards precision over instinct — 'the company has plenty of cash' is not the test for whether a dividend is lawful, and knowing that surprises most students. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can state the rules — this lesson checks whether you reach for the right one under pressure.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans towards scenario questions: expect a set of accounts or a proposed transaction, not a bare definition.",
+      "weakKnowledge": "Start with Part 1 and be precise about the numbers — nominal value, share premium, distributable profits are easy to blur together, and the rest of this lesson depends on keeping them separate."
+    }
+  },
+  "lawStatedAt": "2026-09-23",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company with £1 million in the bank wants to hand £200,000 of it back to its shareholders. Whether it's allowed to do that turns out to have almost nothing to do with whether it can afford it, and almost everything to do with a rule from 1887 that still governs every dividend cheque, every share buyback and every capital reduction a UK company makes today: capital, once raised, belongs to the company's creditors first."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two numbers every company has: nominal and allotted capital",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Every company limited by shares has a nominal (or 'par') value attached to each share — a fixed figure stated in the company's records, commonly £1, that has almost nothing to do with what the share is actually worth on the market. A company's nominal share capital is simply that figure multiplied by the number of shares it has in issue.",
+          "Allotted share capital is the capital the company has actually issued to shareholders in exchange for money or other consideration. A company can be authorised to issue far more shares than it has allotted at any given time — nominal capital describes the accounting figure attached to shares once they exist; allotted capital describes how many of them actually do.",
+          "Section 580 CA 2006 puts a hard floor under this system: a share must never be allotted for consideration worth less than its nominal value. If an investor pays more than nominal value — as is normal, since nominal value is usually a nominal figure rather than a real price — the excess is credited to the share premium account, which is itself treated broadly like capital and is not simply available to hand back to shareholders as profit."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Nominal (par) value",
+            "definition": "A fixed accounting figure attached to each share, set out in the company's records, which sets the statutory floor for what the share may be issued for under s 580 — distinct from the share's market value or the price actually paid for it."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under s 580 CA 2006, can a company allot a share for consideration worth less than its nominal value?",
+          "options": ["No — shares cannot be allotted at a discount to their nominal value", "Yes — provided the shareholder agrees to pay the difference at some point in the future"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Nominal value is a statutory floor, not a starting point for negotiation — there's no lawful way to issue a share below it, even with the shareholder's agreement to make it up later.",
+          "feedbackIncorrect": "Section 580 sets a hard minimum, not a negotiable one. A share allotted below its nominal value is unlawful regardless of any promise to pay the shortfall later — the shareholder becomes liable for the shortfall plus interest instead."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Trevor v Whitworth: capital as a fund for creditors",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "A Manchester engineering company agreed, as part of winding up its affairs, to buy back shares from one of its own shareholders on instalment terms. The shareholder died before the final instalments were paid, and his executor sued the company to recover the balance still owed under the buyback contract.",
+          "The House of Lords refused to enforce it. A company, the Lords held, has no power to purchase its own shares — doing so is simply a way of returning capital to a shareholder that Parliament had not authorised, and capital, once subscribed, forms a fund that the company's creditors are entitled to rely on. Allowing companies to quietly buy their own shares back would let them shrink that fund at will, exactly the kind of erosion the statutory capital regime exists to prevent.",
+          "Trevor v Whitworth is the foundation of everything else in this lesson. Dividend rules, financial assistance restrictions and the reduction-of-capital procedure are not three unrelated topics — they are three different statutory answers to the same question Trevor v Whitworth first posed: when, if ever, can capital lawfully leave the company and reach a shareholder's hands?"
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Trevor v Whitworth",
+            "citation": "(1887) 12 App Cas 409",
+            "court": "House of Lords",
+            "year": 1887,
+            "factsShort": "A company agreed to buy back shares from a shareholder on instalment terms; his executor sued to recover the unpaid balance after his death.",
+            "ratioShort": "A company has no power to purchase its own shares outside a procedure Parliament has authorised — capital forms a fund creditors are entitled to look to, and cannot simply be returned to shareholders.",
+            "expanded": {
+              "facts": "The company had agreed to repurchase a shareholder's shares in instalments as part of arrangements connected to its winding up. The shareholder died before all instalments were paid, and his executor sought to enforce payment of the outstanding balance against the company.",
+              "judgmentExtract": "The House of Lords held that a company cannot traffic in its own shares by purchasing them back from shareholders, because to do so is to reduce its capital by a route Parliament has not sanctioned. Capital paid in by subscribers forms a fund to which creditors of the company are entitled to look for payment of their debts, and it is not open to a company to whittle that fund away by returning it to members.",
+              "significance": "This is the founding case of the doctrine of capital maintenance. It supplies the reasoning behind every later statutory rule that restricts how capital can leave a company — dividends only from distributable profits, financial assistance restrictions, and a formal procedure for any genuine reduction of capital."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-05-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these Trevor v Whitworth events in the order they happened.",
+          "items": [
+            "The company agrees to buy back a shareholder's shares in instalments",
+            "The shareholder dies before all instalments are paid",
+            "His executor sues the company for the unpaid balance",
+            "The House of Lords refuses to enforce the buyback, holding the company had no power to purchase its own shares"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: an unauthorised buyback, a claim to enforce it, and a House of Lords ruling that shuts the whole route down as an unlawful return of capital.",
+          "feedbackIncorrect": "Check the order again — the buyback agreement comes first, the death and the executor's claim to enforce it come next, and it's only at that point that the House of Lords rules the agreement was never enforceable in the first place."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Dividends: only out of profits available for the purpose",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Sections 830 to 853 CA 2006 apply the Trevor v Whitworth logic to the most routine way capital could otherwise leak out of a company: the dividend. The core rule in s 830 is precise, and precision is the whole point — a company may only make a distribution out of profits available for the purpose, defined as its accumulated, realised profits, so far as not previously distributed or capitalised, less its accumulated, realised losses, so far as not previously written off in a lawful reduction or reorganisation of capital.",
+          "Notice what that test does not mention: cash. A company can be sitting on a healthy bank balance and still have no distributable profits at all, if its accumulated realised losses exceed its accumulated realised profits — and a dividend paid in that position is unlawful, however solvent the company feels day to day. The test is accounting, not liquidity.",
+          "This matters at exam pressure because the trap is always the same shape: a fact pattern makes the company sound comfortably solvent, and the unwary answer treats 'can afford it' as the legal question. It isn't. The only question is what the relevant accounts show under s 830."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 830",
+            "text": "A company may only make a distribution out of profits available for the purpose. A company's profits available for distribution are its accumulated, realised profits, so far as not previously utilised by distribution or capitalisation, less its accumulated, realised losses, so far as not previously written off in a reduction or reorganisation of capital duly made.",
+            "elements": ["A distribution requires profits available for the purpose", "Profits available = accumulated realised profits, less accumulated realised losses", "Cash or general solvency is not the test", "A distribution made otherwise than in accordance with this Part is unlawful"]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-05-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A private company's accounts show accumulated realised profits of £50,000 and accumulated realised losses of £20,000. Applying s 830, what is the maximum amount it can lawfully distribute?",
+          "options": ["£30,000 — accumulated realised profits less accumulated realised losses", "£50,000 — the full profit figure, since the losses are irrelevant to distributions", "£70,000 — the profit and loss figures are added together"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 830 nets the two figures against each other — realised profits less realised losses — leaving £30,000 as the maximum lawfully distributable amount.",
+          "feedbackIncorrect": "Re-read the definition in s 830: it is accumulated realised profits less accumulated realised losses, not the profit figure alone and not the two added together. Here that leaves £30,000."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Financial assistance: stopping a company funding the purchase of its own shares",
+        "voice": "doctrinal — extends the same logic to a less obvious route",
+        "body": [
+          "There's a subtler way capital can leak out of a company than a straightforward dividend or a share buyback: the company itself can fund someone else's purchase of its shares — lending the buyer the purchase price, guaranteeing their borrowing, or securing their loan against company assets. On the face of it no capital has been 'returned' to anyone, but the effect on the company's balance sheet, and therefore on what its creditors can ultimately recover, can be just as severe.",
+          "This is why UK company law has long restricted 'financial assistance' for the acquisition of a company's own shares. The Companies Act 2006 abolished the general prohibition for private companies, reflecting a policy view that private-company shareholders and creditors are generally better placed to negotiate their own protection. A version of the restriction survives for public companies, where the risk to a wider pool of creditors and to public confidence in the capital markets was judged to justify keeping the rule.",
+          "The doctrinal link back to Trevor v Whitworth is direct: financial assistance restrictions exist because letting a company bankroll the purchase of its own shares is functionally equivalent to letting it return capital to a departing shareholder off the books — precisely the manoeuvre the capital maintenance doctrine exists to prevent."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Financial assistance, at a glance",
+            "points": [
+              "The general prohibition on financial assistance for the acquisition of a company's own shares was abolished for private companies by the Companies Act 2006",
+              "A restricted version of the prohibition continues to apply to public companies",
+              "The concern is the same as Trevor v Whitworth's: capital effectively leaving the company to facilitate a change in who owns it, outside any authorised procedure",
+              "Breach can expose the company, and those responsible for authorising the assistance, to civil and (for public companies) criminal consequences"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-05-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that raises a financial assistance concern in this scenario.",
+          "scenarioText": "To help a buyer purchase all the shares in Anchorpoint plc, the company itself provides a £2 million loan to the buyer, secured against the company's own premises, to fund the purchase price.",
+          "tappableSpans": ["To help a buyer purchase all the shares in Anchorpoint plc", "the company itself provides a £2 million loan to the buyer", "secured against the company's own premises", "to fund the purchase price"],
+          "correctSpan": "the company itself provides a £2 million loan to the buyer",
+          "feedbackCorrect": "That's the fact that matters — it's the company's own assets funding the purchase of its own shares, which is exactly the transaction the financial assistance rules for public companies are aimed at.",
+          "feedbackIncorrect": "Look for the fact that shows the company itself putting up money to help someone buy its shares, rather than just describing the purpose of the transaction or the security arrangements around it."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Reducing capital properly: the two lawful routes",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Trevor v Whitworth doesn't say capital can never be reduced — only that it cannot be returned to shareholders outside a route Parliament has sanctioned. Sections 641 to 653 CA 2006 supply exactly that route, in two versions.",
+          "The first is available only to private companies: the directors make a solvency statement — a formal statement, made not more than fifteen days before the resolution, that the company can pay its debts as they fall due — and the members pass a special resolution to reduce capital. Both are delivered to the registrar, and the reduction takes effect on registration, with no court involvement at all.",
+          "The second route is available to any company, and is the only route open to a public company: a special resolution is passed, and the company applies to the court for an order confirming the reduction. The court can require the company to protect its creditors — for instance by requiring security for debts that might be affected — before confirming the reduction. Public companies cannot use the solvency-statement shortcut at all; for them, the court route is compulsory."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Reducing share capital: which route applies?",
+            "description": "A flowchart for choosing between the two statutory routes to a lawful capital reduction.",
+            "nodes": [
+              { "id": "start", "label": "Does the company wish to reduce its share capital?" },
+              { "id": "type", "label": "Is the company private or public?" },
+              { "id": "private", "label": "Private: directors may make a solvency statement and members pass a special resolution — no court needed" },
+              { "id": "public", "label": "Public: must pass a special resolution and apply to the court for an order confirming the reduction" },
+              { "id": "end", "label": "Reduction takes effect once registered (private route) or once the court order and statement of capital are registered (court route)" }
+            ],
+            "edges": [
+              { "from": "start", "to": "type" },
+              { "from": "type", "to": "private", "label": "Private" },
+              { "from": "type", "to": "public", "label": "Public" },
+              { "from": "private", "to": "end" },
+              { "from": "public", "to": "end" }
+            ],
+            "textAlternative": "To reduce share capital: first check whether the company is private or public. A private company may use the solvency-statement route — directors make a solvency statement, members pass a special resolution, both delivered to the registrar, no court involvement. A public company must instead pass a special resolution and apply to the court for an order confirming the reduction, which may impose creditor-protection conditions. Either way, the reduction only takes effect once the relevant documents are registered."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-05-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a public company can use the directors' solvency-statement route to reduce its capital, in the same way a private company can?",
+          "sliderLabels": ["Confident — the same route is open to public companies", "Confident — public companies must use the court route"],
+          "correctPosition": "Confident — public companies must use the court route",
+          "explanation": "Public companies must use the court-confirmed route. The solvency-statement shortcut in ss 642–644 is only available to private companies; a public company reducing its capital must pass a special resolution and obtain a court order confirming it."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "companylaw-05-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State, in a sentence, the core principle behind the doctrine of capital maintenance established in Trevor v Whitworth.",
+      "acceptableAnswers": ["a company must not return its capital to shareholders outside an authorised procedure", "capital is maintained as a fund for the protection of creditors", "no return of capital to members except as authorised by statute"],
+      "modelAnswer": "A company must not return its capital to shareholders, whether by buying back its own shares or otherwise, except through a route Parliament has expressly sanctioned — capital is maintained as a fund the company's creditors are entitled to rely on."
+    },
+    {
+      "itemId": "companylaw-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "What does a share's nominal (par) value represent?",
+      "options": ["A fixed accounting figure setting the statutory floor for what the share may be issued for, not its market value", "The current market price at which the share is trading"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "A company's shares have a nominal value of £1 but are sold to investors for £3 each. Which of the following correctly describes the extra £2 per share?",
+      "options": ["It must be credited to the share premium account, which is itself treated broadly like capital rather than as distributable profit", "It is simply extra distributable profit, available for dividends like any other profit", "It must be paid to the company's promoters as their arranging fee"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting error is to treat any money received above nominal value as ordinary profit. It isn't — the share premium account is subject to its own restrictions under the Act and, like nominal capital, is not simply available to be paid out as a dividend."
+    },
+    {
+      "itemId": "companylaw-05-test-04",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "In the passage below, adapted from Trevor v Whitworth, highlight the sentence that states the ratio.",
+      "passage": "The company had agreed to repurchase a shareholder's shares in instalments. Capital, when paid in, forms a fund to which creditors of the company are entitled to look for payment of their debts, and a company has no power to return that capital to its shareholders by purchasing its own shares outside a procedure Parliament has authorised.",
+      "ratioSentence": "Capital, when paid in, forms a fund to which creditors of the company are entitled to look for payment of their debts, and a company has no power to return that capital to its shareholders by purchasing its own shares outside a procedure Parliament has authorised."
+    },
+    {
+      "itemId": "companylaw-05-test-05",
+      "type": "sequence",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Put these steps in the order a private company follows to reduce its share capital using the solvency-statement route.",
+      "items": [
+        "The directors make a solvency statement that the company can pay its debts as they fall due",
+        "The members pass a special resolution to reduce capital",
+        "The solvency statement and resolution are delivered to the registrar",
+        "The reduction takes effect on registration"
+      ],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "companylaw-05-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A private company's accounts show accumulated realised profits of £50,000 and accumulated realised losses of £20,000, none previously written off in a lawful reduction of capital. Applying s 830, what is the maximum amount it can lawfully distribute?",
+      "options": ["£30,000 — accumulated realised profits less accumulated realised losses", "£50,000 — the losses are irrelevant to whether a dividend can be paid", "£70,000 — the two figures are added together"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-05-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario describes a legally valid procedure for reducing share capital?",
+      "scenarioA": "A private company's directors make a solvency statement, the members pass a special resolution, and both are delivered to the registrar within 15 days.",
+      "scenarioB": "A public company's directors make a solvency statement and treat that alone as sufficient to reduce the company's capital, without any court order.",
+      "correctScenario": "A",
+      "explanation": "A follows the private-company route correctly. B is invalid — public companies cannot use the solvency-statement shortcut at all; they must pass a special resolution and obtain a court order confirming the reduction."
+    },
+    {
+      "itemId": "companylaw-05-test-08",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 3,
+      "prompt": "Silverline Ltd's latest accounts show accumulated realised losses of £40,000 against accumulated realised profits of £25,000. Despite this, the board declares and pays a dividend of £15,000, believing the company's healthy cash position means it can afford it. A creditor later challenges the payment as unlawful. Analyse whether the challenge succeeds.",
+      "factsToOrder": [
+        "The accounts show accumulated realised losses of £40,000 against realised profits of £25,000",
+        "The company therefore has no profits available for distribution under s 830",
+        "The board nonetheless declares and pays a £15,000 dividend",
+        "A creditor challenges the payment as unlawful"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model answer shown, mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule given; student applies it to the facts and writes the conclusion" },
+        { "level": 3, "support": "No scaffold; student writes the full analysis unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the £15,000 dividend paid by Silverline Ltd was a lawful distribution under s 830 CA 2006.",
+        "rule": "Section 830 permits a distribution only out of profits available for the purpose — accumulated realised profits less accumulated realised losses. The company's cash position or general solvency is not the test.",
+        "application": "Silverline's accumulated realised losses of £40,000 exceed its accumulated realised profits of £25,000, leaving no profits available for distribution at all. The board's belief that the company could afford the dividend because of its healthy cash position is legally irrelevant to the s 830 test.",
+        "conclusion": "The £15,000 dividend was unlawful under s 830. The creditor's challenge succeeds, and shareholders who knew, or had reasonable grounds to believe, the distribution was unlawful may be liable to repay it."
+      }
+    },
+    {
+      "itemId": "companylaw-05-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A public company's directors want to help a prospective buyer purchase a controlling stake in the company by having the company itself lend the buyer the purchase price. Is this generally permitted?",
+      "options": ["No — this is the kind of financial assistance for the acquisition of a public company's own shares that capital maintenance rules generally restrict", "Yes — public companies may always assist purchasers of their own shares, provided the loan carries a commercial rate of interest", "Yes — financial assistance restrictions were abolished for all companies by the Companies Act 2006"],
+      "correctIndex": 0,
+      "explanation": "Financial assistance restrictions survive for public companies precisely to stop a company funding the purchase of its own shares — an interest-bearing loan does not cure the underlying capital maintenance concern, and the general abolition under the 2006 Act applies to private companies, not public ones."
+    },
+    {
+      "itemId": "companylaw-05-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that shows an unlawful distribution has occurred.",
+      "scenarioText": "Harrow Textiles Ltd's accounts show accumulated realised losses of £60,000 against accumulated realised profits of £35,000. The board, pointing to a strong cash balance from a recent asset sale, declares a £20,000 dividend to shareholders.",
+      "tappableSpans": ["accumulated realised losses of £60,000", "accumulated realised profits of £35,000", "a strong cash balance from a recent asset sale", "declares a £20,000 dividend"],
+      "correctSpan": "declares a £20,000 dividend",
+      "feedbackCorrect": "That's the unlawful act itself — the company has no profits available for distribution under s 830 (losses of £60,000 exceed profits of £35,000), so any dividend declared here is unlawful, whatever the cash balance shows.",
+      "feedbackIncorrect": "The cash balance is a distraction under s 830 — look instead for the act that actually breaches the rule, which is the board going ahead and declaring a dividend despite having no distributable profits."
+    },
+    {
+      "itemId": "companylaw-05-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a private company today can still be caught by a general prohibition on giving financial assistance for the purchase of its own shares, in the same way a public company can?",
+      "sliderLabels": ["Confident — the same general prohibition still applies", "Confident — the general prohibition for private companies was removed"],
+      "correctPosition": "Confident — the general prohibition for private companies was removed",
+      "explanation": "The Companies Act 2006 abolished the general prohibition on financial assistance for private companies. A restricted version of the rule survives mainly for public companies, reflecting the wider pool of creditors and public shareholders their transactions can affect."
+    },
+    {
+      "itemId": "companylaw-05-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following is NOT one of the two statutory routes to reducing a company's share capital under ss 641–653 CA 2006?",
+      "options": ["A private company special resolution supported by a directors' solvency statement", "A special resolution confirmed by the court", "A simple board resolution, requiring no approval from the members at all"],
+      "correctIndex": 2,
+      "trapExplanation": "Both statutory routes require a special resolution of the members — the board cannot reduce capital unilaterally under either procedure. Member approval is the one requirement common to both routes."
+    },
+    {
+      "itemId": "companylaw-05-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Oakfield Ltd, a private company, wants to reduce its capital to cancel accumulated losses on its balance sheet. Its directors are confident the company can pay its debts as they fall due for the next 12 months. Which is the quickest lawful route available to it?",
+      "options": ["A special resolution supported by a directors' solvency statement, delivered to the registrar", "An application to the court for an order confirming the reduction, the only route available to any company", "No route is available — once contributed, capital can never be reduced"],
+      "correctIndex": 0,
+      "explanation": "As a private company able to satisfy the solvency-statement requirement, Oakfield has direct access to the quicker route under ss 642–644: a directors' solvency statement plus a special resolution, delivered to the registrar, with no court involvement needed."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is treating a company's cash position as the test for whether a dividend or capital return is lawful. It isn't — the only question under s 830 is what the accumulated realised profits and losses show; a company can be cash-rich and still have nothing lawfully available to distribute.",
+    "reviewMisses": true,
+    "linkToPathway": "companylaw.capital.share-capital-maintenance"
+  }
+}

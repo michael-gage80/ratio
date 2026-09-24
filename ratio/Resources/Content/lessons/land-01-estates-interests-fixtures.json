@@ -1,0 +1,454 @@
+{
+  "lessonId": "land-01",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 1,
+  "topicId": "land.foundations.estates-interests-fixtures",
+  "title": "What is land?",
+  "subtitle": "Estates, interests and fixtures",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the two legal estates recognised by s 1(1) LPA 1925 and explain why the list of legal estates was deliberately closed",
+    "Identify the closed list of legal interests under s 1(2) LPA 1925 and distinguish a legal interest from an equitable interest",
+    "Apply the degree and purpose of annexation tests to classify a disputed object as a fixture or a chattel, including borderline cases"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Law of Property Act 1925, s 1",
+      "role": "Confines legal estates to the fee simple absolute in possession and the term of years absolute; closes the list of legal interests"
+    },
+    {
+      "citation": "Law of Property Act 1925, s 205(1)(ix)",
+      "role": "Defines 'land' to include buildings and things attached to or forming part of the land"
+    },
+    {
+      "citation": "Holland v Hodgson (1872) LR 7 CP 328",
+      "role": "Establishes the degree of annexation and purpose of annexation tests for classifying fixtures"
+    },
+    {
+      "citation": "Elitestone v Morris [1997] 1 WLR 687",
+      "role": "Confirms a structure resting on its own weight can still be part of the land, not a chattel"
+    },
+    {
+      "citation": "Botham v TSB Bank (1996) 73 P & CR D1",
+      "role": "Applies the fixture/chattel tests to fitted kitchens, bathroom fittings and domestic white goods"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Every other lesson in this module assumes you already know what counts as 'land' and what kind of right someone holds in it. Get the closed list of estates and interests wrong here and every later doctrine — mortgages, leases, easements, co-ownership — inherits the mistake.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions cold. The interactions below push you into borderline fixture/chattel calls and edge-case interests — expect fact patterns, not lists to recite.",
+      "weakKnowledge": "Start with Part 1 and don't skip the statute text. The two legal estates and the closed list of legal interests are the foundation the rest of this module rests on — everything else assumes you can name them without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Pull a fitted kitchen out of a house the week before completion, and you might be looking at theft of the buyer's property — or you might be looking at nothing more than removing your own furniture. The entire question turns on words like 'degree' and 'purpose', tested against objects judges have never reduced to a tidy formula. Before any of that can make sense, though, there's a prior question most students never stop to ask: what does English law even mean by 'land'?"
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Only two ways to own land 'at law'",
+        "voice": "forensic — establishes the closed list before anything else can make sense",
+        "body": [
+          "Ask a first-year what 'owning land' means and most describe possession: keys, fences, the ability to exclude others. English land law asks a narrower and much more technical question first — which estate do you hold, and is it one of the only two estates capable of existing as a legal estate at all?",
+          "Section 1(1) of the Law of Property Act 1925 answers that question by closing the list. Before 1926, English law recognised a sprawling range of feudal tenures and estates. The 1925 property legislation reduced the estates capable of subsisting 'at law' to exactly two: the fee simple absolute in possession (what you'd call freehold ownership) and the term of years absolute (a lease for a fixed or ascertainable maximum period). Every other estate that used to exist — a life interest, an entailed interest, a fee simple subject to a condition — was demoted to taking effect only in equity, under s 1(3).",
+          "The point of closing the list wasn't abstract tidiness. A purchaser or mortgagee needs to be able to identify, on the face of the title, what legal rights bind the land — a fixed, short list of possible legal estates makes that investigation possible. An open-ended list would have meant investigating an unlimited range of historical interests on every purchase."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, s 1(1)",
+            "text": "The only estates in land which are capable of subsisting or of being conveyed or created at law are— (a) An estate in fee simple absolute in possession; (b) A term of years absolute.",
+            "elements": [
+              "Fee simple absolute in possession (freehold)",
+              "Term of years absolute (leasehold)",
+              "No other estate can exist 'at law' — s 1(3) sends everything else to equity"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Fee simple absolute in possession",
+            "definition": "The closest English law comes to outright ownership: an estate of potentially unlimited duration ('fee simple'), not cut short by a condition ('absolute'), and giving an immediate right to possession or its income ('in possession') rather than a future right."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-01-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Under s 1(1) LPA 1925, which of these is capable of existing as a legal estate?",
+          "statuteExtract": "The only estates in land which are capable of subsisting or of being conveyed or created at law are— (a) An estate in fee simple absolute in possession; (b) A term of years absolute.",
+          "options": [
+            "A life interest granted to a widow for as long as she lives",
+            "A ten-year lease at a market rent",
+            "A fee simple that automatically ends if the land ceases to be used as a farm"
+          ],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — a term of years absolute is one of exactly two estates s 1(1) allows to exist at law. A life interest and a conditional fee simple both fall outside the closed list and can only ever be equitable.",
+          "feedbackIncorrect": "Look again at what 'absolute' and 'in possession' are doing in s 1(1). A life interest ends on an uncertain event (death) and a conditional fee simple can be cut short — neither is 'absolute'. Only the fee simple absolute in possession and the term of years absolute make the closed list."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The closed list of legal interests",
+        "voice": "structural — a reference list students will return to",
+        "body": [
+          "Estates aren't the only thing s 1 closes down. Section 1(2) lists the interests and charges — rights over someone else's land, short of owning an estate in it — that are also capable of existing at law. Everything not on this list is, again, equitable however solid or long-standing it feels in practice.",
+          "The list is short deliberately, for the same reason as s 1(1): a purchaser needs to be able to identify legal burdens on the land without investigating every private arrangement the previous owner ever made.",
+          "Treat this as a checklist to test any interest against, not a list to recognise on sight. In practice questions the facts will describe a right — a right of way, an option to buy, a promise not to build — without telling you whether it's legal or equitable. That's the question you're expected to answer."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The closed list of legal interests — s 1(2) LPA 1925",
+            "points": [
+              "An easement, right or privilege for an interest equivalent to a fee simple absolute in possession or a term of years absolute (e.g. a right of way granted 'forever' or for a fixed term)",
+              "A rentcharge in possession, issuing out of or charged on land, perpetual or for a term of years absolute",
+              "A charge by way of legal mortgage",
+              "Land tax, tithe rentcharge and similar charges not created by an instrument (now largely obsolete)",
+              "Rights of entry annexed to a legal lease, or exercisable over a rentcharge",
+              "Everything else — restrictive covenants, beneficial interests under a trust, estate contracts, most easements not meeting the above equivalence — is equitable, whatever its practical importance"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-01-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A neighbour promises not to build above two storeys on their land, for the benefit of your land. Is this restrictive covenant capable of being a legal interest under s 1(2)?",
+          "options": [
+            "No — restrictive covenants are not on the s 1(2) list, so this can only ever be equitable",
+            "Yes — any promise affecting land is automatically legal"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. However binding it feels, a restrictive covenant simply isn't on the closed list — it's equitable by nature, not by some formality that was missed.",
+          "feedbackIncorrect": "Check the closed list again. Restrictive covenants don't appear on it at all, so no amount of correct paperwork makes one 'legal' — it's inherently an equitable interest."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Equitable interests: real rights, different consequences",
+        "voice": "forensic — treats 'equitable' as a different rulebook, not a demotion",
+        "body": [
+          "Calling an interest 'equitable' doesn't mean it's weaker in practice. A beneficiary's interest under a trust of land, a restrictive covenant, or a contract to buy land (an 'estate contract') are all equitable interests that can be worth a great deal and can bind future owners of the land.",
+          "What changes is how the interest behaves against third parties. A legal estate or interest binds the whole world automatically. An equitable interest's ability to bind a purchaser depends on a different set of rules — broadly, on registration (for most interests capable of protection by notice on the register) or, historically for unregistered land, on the doctrine of notice. That machinery is the subject of a later lesson; the point for now is narrower: you cannot get to that question at all until you can correctly label an interest as equitable in the first place.",
+          "A useful discipline: for any right you're given on a fact pattern, ask first whether it is even capable of being legal (is it on the s 1(1) or s 1(2) list?), and only then ask whether the formalities for creating it as a legal right were actually followed. Fail either question and you land in equity."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Equitable interest",
+            "definition": "A proprietary right in land that either falls outside the closed lists in s 1(1)–(2) LPA 1925 by its nature (e.g. a restrictive covenant, a beneficial interest under a trust), or would be capable of being legal but was never created with the formality the law requires for a legal right."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-01-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A beneficiary is entitled to a share of a house under a trust for herself and her partner. How confident are you that her interest is equitable rather than legal?",
+          "sliderLabels": [
+            "Definitely legal",
+            "Definitely equitable"
+          ],
+          "correctPosition": "equitable",
+          "explanation": "A beneficial interest under a trust of land is not on the s 1(2) closed list at all — it is, by its nature, always equitable, regardless of how the legal title to the house itself is held."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Fixture or chattel: the degree and purpose tests",
+        "voice": "case-narrative — tells the story, then extracts the doctrine",
+        "body": [
+          "Section 205(1)(ix) LPA 1925 defines 'land' to include not just the ground but 'buildings or parts of buildings' and other things attached to it. That single line generates one of the most fact-heavy disputes in the subject: is a given object part of the land (a fixture, which passes with a sale or mortgage of the land) or is it still a separate chattel (which the seller can take away)?",
+          "The leading case is Holland v Hodgson. A mill owner had bolted heavy spinning looms to the stone floor of his mill. When the mill was mortgaged, the question was whether the looms passed with the mortgage as part of the freehold, or remained separate chattels the mortgagor could remove. The looms could physically be unbolted and taken away — but the court held they were fixtures.",
+          "Holland v Hodgson supplies the two-part test still used today. First, the degree of annexation: how firmly is the object attached, and would removing it cause real damage to the object or the building? An object resting on its own weight points towards a chattel; one bolted, cemented or built in points towards a fixture. Second — and decisively, where the two tests conflict — the purpose of annexation: was the object brought onto the land for the better and more permanent use of the land or building, or merely for the better enjoyment of the object as a chattel while it stays there? The looms were bolted down not to enjoy them as movable machines but to let the mill function as a mill — that purpose made them fixtures despite their removability."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Holland v Hodgson",
+            "citation": "(1872) LR 7 CP 328",
+            "court": "Court of Common Pleas",
+            "year": 1872,
+            "factsShort": "Spinning looms bolted to the floor of a mortgaged mill; the question was whether they passed to the mortgagee as fixtures or remained the mortgagor's chattels.",
+            "ratioShort": "An object attached to land is a fixture if the degree and, decisively, the purpose of its annexation show it was brought onto the land for the more permanent and convenient use of the land or building, rather than for the better enjoyment of the object itself.",
+            "expanded": {
+              "facts": "The looms were fixed to the stone floor of the mill by bolts driven into holes, so that they could be detached without serious damage to the floor or the looms themselves. The mortgagor argued they remained his personal chattels; the mortgagee argued they had become part of the freehold and passed under the mortgage.",
+              "judgmentExtract": "Blackburn J held that the general rule is that an object resting on its own weight is presumed a chattel, and an object affixed to the land, however slightly, is presumed a fixture — but both presumptions yield to evidence of the purpose of the annexation. Here, the looms were fixed for the purpose of the more complete and effectual use of the mill as a mill: that purpose, not the mere fact of bolting, made them fixtures.",
+              "significance": "Holland v Hodgson is the origin of the degree/purpose framework every later fixtures case works within. Its real contribution is demoting the degree of annexation from a decisive test to a starting presumption, and elevating purpose to the question that actually decides hard cases."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-01-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that points most strongly towards this being a fixture rather than a chattel.",
+          "scenarioText": "A homeowner has custom bookshelves built into an alcove, screwed into battens fixed to the wall, designed to fit that exact space and unusable anywhere else without being cut down. She lists the house for sale and a buyer assumes the shelves are included.",
+          "tappableSpans": [
+            "custom bookshelves built into an alcove",
+            "screwed into battens fixed to the wall",
+            "designed to fit that exact space",
+            "unusable anywhere else without being cut down"
+          ],
+          "correctSpan": "designed to fit that exact space",
+          "feedbackCorrect": "That's the purpose test doing the real work. Being screwed in shows some degree of annexation, but it's the fact that the shelves were purpose-built for this one alcove — of no use elsewhere — that shows they were intended to improve this particular building permanently, which is what tips them into being a fixture.",
+          "feedbackIncorrect": "The screws matter, but on their own they only establish a moderate degree of annexation — plenty of screwed-in furniture is still a chattel. Look for the fact that shows why the object was attached: something built specifically for this space and no other is evidence of a purpose to improve the building, not just to enjoy a piece of furniture."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "When the tests get hard: Elitestone and Botham",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Two later cases earn their place here because they're where the degree/purpose framework gets stretched. In Elitestone v Morris, a bungalow rested by its own weight on concrete pillars — it was not bolted, screwed or cemented to anything. On a pure degree-of-annexation reading, that should point towards a chattel. The House of Lords disagreed: a house is not usefully analysed as a 'fixture' at all. Lord Lloyd's approach treats objects on land as falling into three categories, not two — chattel, fixture, or an object that has simply become part and parcel of the land itself, like a house or a wall. A structure that cannot be removed without being demolished is in that third category regardless of how it happens to be resting.",
+          "Botham v TSB Bank applies the ordinary fixture/chattel tests to a much more everyday dispute: the contents of a repossessed flat. The Court of Appeal held that fitted kitchen units and bathroom fittings, designed and installed to complete the building as a habitable space, were fixtures. Free-standing items — the fridge, the washing machine, curtains, carpets — remained chattels, even though some were plugged in or loosely fitted, because their purpose was to be enjoyed as the items they were, not to permanently improve the building.",
+          "Miss the distinction between these two cases and you'll misapply the law in an exam: Elitestone tells you some things don't need the fixture test at all, because they simply are the land; Botham tells you how to run the ordinary two-part test on the smaller, genuinely contestable items inside it."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often argue that because the Elitestone bungalow wasn't bolted or cemented down, it must fail the degree of annexation test and therefore be a chattel.",
+            "whyItsWrong": "Elitestone isn't decided by running the ordinary fixture test harder — it's decided by recognising that a house, once built, is not a 'fixture' being tested against a chattel at all. It is part and parcel of the land itself. The degree/purpose framework from Holland v Hodgson is for genuinely detachable objects; a structure that can only be 'removed' by demolition sits outside that framework entirely."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-01-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is decided by asking whether the item is 'part and parcel of the land' (Elitestone), rather than by running the ordinary degree/purpose fixture test (Holland v Hodgson / Botham)?",
+          "scenarioA": "A timber-framed garden shed sits unsecured on paving slabs and can be lifted away by two people without tools.",
+          "scenarioB": "A single-storey timber dwelling rests on, but is not fixed to, concrete foundation pillars, and could only be taken down by dismantling it piece by piece.",
+          "correctScenario": "B",
+          "explanation": "B mirrors Elitestone precisely: a structure that can only be removed by demolition is treated as part of the land itself, regardless of the absence of bolts or cement. A owner runs the ordinary fixture test in scenario A — a light, freestanding shed restable and liftable with no attachment at all is a textbook chattel."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-01-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the two estates capable of existing as legal estates under s 1(1) LPA 1925.",
+      "acceptableAnswers": [
+        "fee simple absolute in possession and term of years absolute",
+        "freehold and leasehold"
+      ],
+      "modelAnswer": "The fee simple absolute in possession (freehold) and the term of years absolute (leasehold) — these are the only two estates capable of subsisting at law."
+    },
+    {
+      "itemId": "land-01-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Can an estate in land be transferred as a legal estate by a signed written contract alone, without more?",
+      "options": [
+        "No — a contract creates an equitable interest at most; a legal estate requires the further step of a valid transfer",
+        "Yes — a signed contract is itself sufficient to transfer a legal estate"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-01-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT on the closed list of legal interests under s 1(2) LPA 1925?",
+      "options": [
+        "A charge by way of legal mortgage",
+        "An easement equivalent to a term of years absolute",
+        "A restrictive covenant",
+        "A rentcharge in possession"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "Restrictive covenants feel just as solid and binding as the other items in the list, which is exactly why students mis-tick this one — but they simply do not appear on s 1(2). A restrictive covenant is equitable by its nature, not because of a missed formality."
+    },
+    {
+      "itemId": "land-01-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Section 205(1)(ix) LPA 1925 defines 'land' to include which of the following?",
+      "options": [
+        "Buildings or parts of buildings, and other things attached to or forming part of the land",
+        "Only the bare soil, excluding any structure built on it",
+        "Only registered land, excluding unregistered titles"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-01-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Is a beneficiary's interest under a trust of land a legal interest or an equitable interest?",
+      "options": [
+        "Equitable — beneficial interests under a trust are not on the s 1(2) closed list",
+        "Legal — trusts of land create legal co-ownership"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-01-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Put these steps in the order a court follows when classifying a disputed object as a fixture or a chattel.",
+      "items": [
+        "Identify the object and how it is attached, if at all",
+        "Apply the presumption from the degree of annexation",
+        "Examine the purpose of annexation where the degree test is inconclusive or contradicted by other evidence",
+        "Classify the object as a fixture (passes with the land) or a chattel (remains separate)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "land-01-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Holland v Hodgson, highlight the sentence that states the ratio.",
+      "passage": "The general maxim of law is that what is annexed to the land becomes part of the land. But the mode of annexation and the extent to which it can be removed without injury are not conclusive on their own. Even where an object is fixed to the land, if it is clear that it was never intended to be part of the land but was fixed only for the better use of the object as a chattel, it will not become part of the land; conversely, an object may become part of the land even where the mode of attachment is slight, if the fixing was done for the better and more permanent use of the land or building as such.",
+      "ratioSentence": "Even where an object is fixed to the land, if it is clear that it was never intended to be part of the land but was fixed only for the better use of the object as a chattel, it will not become part of the land; conversely, an object may become part of the land even where the mode of attachment is slight, if the fixing was done for the better and more permanent use of the land or building as such."
+    },
+    {
+      "itemId": "land-01-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most strongly indicates this item is a chattel, not a fixture.",
+      "scenarioText": "A large ornamental mirror hangs on a wall, held in place by two picture hooks screwed into the plaster. It is a valuable antique the owner bought at auction and intends to take with her whenever she moves.",
+      "tappableSpans": [
+        "hangs on a wall",
+        "two picture hooks screwed into the plaster",
+        "valuable antique",
+        "intends to take with her whenever she moves"
+      ],
+      "correctSpan": "intends to take with her whenever she moves",
+      "explanation": "The picture hooks show only a trivial degree of annexation, which already leans towards a chattel — but the clearest evidence is the purpose: the owner's stated intention to enjoy the mirror as a portable object and take it with her wherever she goes, not to permanently improve the building."
+    },
+    {
+      "itemId": "land-01-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario most closely mirrors the fitted-kitchen reasoning in Botham v TSB Bank, rather than the free-standing white-goods reasoning in the same case?",
+      "scenarioA": "Bespoke kitchen units, built to the exact dimensions of the room and plumbed into the wall, installed as part of a full kitchen refit before the house was marketed for sale.",
+      "scenarioB": "A dishwasher, plugged into a standard socket and connected to the mains water supply with flexible hoses, that can be unplugged and wheeled out in minutes.",
+      "correctScenario": "A",
+      "explanation": "A mirrors the fixtures side of Botham: units built for the specific room and plumbed in were installed to complete the building as a functioning kitchen, so they are fixtures. B mirrors the free-standing white goods in the case — easily disconnected and removed without damage, and kept for its own use as an appliance rather than to improve the building."
+    },
+    {
+      "itemId": "land-01-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A greenhouse rests on a low brick wall built specifically to support it, with no bolts or mortar fixing the greenhouse frame to the wall — it stays in place purely by its own weight and could be lifted off by a small crane in one piece. Is it more likely a fixture or a chattel?",
+      "options": [
+        "Fixture — it was purpose-built as part of the garden's permanent layout, even though it rests only on its own weight",
+        "Chattel — anything not bolted or cemented down automatically fails the degree of annexation test",
+        "It is automatically part of the land under Elitestone, because it is a structure"
+      ],
+      "correctIndex": 0,
+      "explanation": "Degree of annexation is only a starting presumption, not a rule — Holland v Hodgson itself shows objects resting on their own weight can still be fixtures where the purpose of annexation points that way. A greenhouse built onto a purpose-made supporting wall, as part of the garden's permanent design, is best classified as a fixture despite the absence of bolts."
+    },
+    {
+      "itemId": "land-01-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A seller removes fitted wardrobes, built into an alcove and matching the room's exact dimensions, before completion, arguing they are her personal chattels. The buyer says they are fixtures included in the sale. Who is more likely correct?",
+      "options": [
+        "The buyer — purpose-built fitted wardrobes, installed to fit and complete a specific room, are treated as fixtures under the Holland v Hodgson purpose test",
+        "The seller — furniture is always a chattel regardless of how it is fitted",
+        "Neither — fitted wardrobes fall outside the fixtures/chattels distinction entirely"
+      ],
+      "correctIndex": 0,
+      "explanation": "This mirrors the bookshelf and Botham-style kitchen reasoning directly: an item purpose-built for one specific space, intended to complete the room as part of the building, is a fixture whatever term the parties privately use for it."
+    },
+    {
+      "itemId": "land-01-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Why did the House of Lords in Elitestone v Morris hold the bungalow was part of the land, despite it not being bolted or cemented to the foundation pillars?",
+      "options": [
+        "Because all buildings are automatically fixtures regardless of how they are constructed",
+        "Because a structure that cannot be removed without being demolished is treated as part and parcel of the land itself, outside the ordinary fixture test",
+        "Because the degree of annexation test was satisfied by the weight of the building alone"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Option 3 sounds tempting because it still uses the language of the degree test, but Elitestone's real reasoning bypasses that test altogether: a structure only removable by demolition is simply part of the land, which is a different and more fundamental question than degree or purpose of annexation."
+    },
+    {
+      "itemId": "land-01-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A homeowner installs a wood-burning stove, connected to a purpose-built flue set into the chimney breast, and a matching hearth built into the floor to meet building regulations. She later sells the house and tries to take the stove with her, arguing it is a free-standing appliance she paid for herself. The buyer says it is included in the sale. Analyse whether the stove is a fixture.",
+      "factsToOrder": [
+        "The stove is connected to a purpose-built flue set into the chimney breast",
+        "A matching hearth was built into the floor to meet building regulations",
+        "The stove could physically be disconnected and removed",
+        "The homeowner argues it is a free-standing appliance she personally paid for"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the wood-burning stove is a fixture (passing with the sale) or a chattel the seller may remove.",
+        "rule": "An object is classified as a fixture or a chattel by the degree of annexation (Holland v Hodgson), which supplies only a presumption, and decisively by the purpose of annexation — whether it was installed for the more permanent and effectual use of the building, or for the better enjoyment of the object itself as a chattel.",
+        "application": "The degree of annexation is significant: the stove is tied into a purpose-built flue and a hearth constructed into the floor structure, not merely resting loose. More importantly, the purpose of installing the flue and hearth was to make the building itself capable of safely housing a wood-burning stove, integrating it into the fabric and services of the house to meet building regulations — this points strongly towards a fixture. That the seller personally paid for the stove, or that it could physically be disconnected, does not outweigh that purpose; ownership and mere physical removability were exactly the arguments rejected in Holland v Hodgson.",
+        "conclusion": "The stove is very likely a fixture and passes with the sale, because it was installed for the permanent improvement of the building's fabric, not merely for the seller's personal use of a portable appliance."
+      }
+    },
+    {
+      "itemId": "land-01-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does a term of years absolute have to be for a fixed number of years already known at the outset to qualify as a legal estate under s 1(1)?",
+      "options": [
+        "It must at least have a maximum duration that is ascertainable, even if it can end earlier",
+        "It can be for a wholly uncertain and open-ended period and still qualify"
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's test items is treating 'is it on the s 1(1)/s 1(2) closed list' and 'is it a fixture or chattel' as the same kind of question. They aren't — one asks what kind of right exists at all, the other asks whether a physical object has become part of the land. Keep them separate and most of the traps above stop working.",
+    "reviewMisses": true,
+    "linkToPathway": "land.foundations.estates-interests-fixtures"
+  }
+}

@@ -1,0 +1,523 @@
+{
+  "lessonId": "land-04",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 4,
+  "topicId": "land.registration.actual-occupation",
+  "title": "Actual occupation and overreaching",
+  "subtitle": "The bank, the family home, and the occupier nobody asked about",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain when an unregistered interest can override a registered disposition under Sch 3 para 2, and state its main exclusions",
+    "Identify what counts as actual occupation on a given set of facts, including its required timing and the limits set by Cann and Bustard",
+    "Apply overreaching under ss 2 and 27 LPA 1925 to determine when it defeats an occupier who would otherwise have an overriding interest"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Land Registration Act 2002, Sch 3, para 2",
+      "role": "Defines the overriding interest of a person in actual occupation, and its exclusions"
+    },
+    {
+      "citation": "Williams & Glyn's Bank Ltd v Boland [1981] AC 487",
+      "role": "A beneficiary's occupation can override a lender's interest; occupation need not be visible from outside"
+    },
+    {
+      "citation": "Abbey National Building Society v Cann [1991] 1 AC 56",
+      "role": "Occupation is assessed at completion, not at a later, more convenient moment; preparatory acts are not occupation"
+    },
+    {
+      "citation": "Link Lending Ltd v Bustard [2010] EWCA Civ 424",
+      "role": "Occupation can be maintained despite physical absence, where the absence is involuntary and an intention to return persists"
+    },
+    {
+      "citation": "Law of Property Act 1925, ss 2 and 27",
+      "role": "Sets the machinery of overreaching: payment to two trustees or a trust corporation detaches beneficial interests from the land"
+    },
+    {
+      "citation": "City of London Building Society v Flegg [1988] AC 54",
+      "role": "Overreaching defeats even a beneficiary in actual occupation, provided the statutory payment conditions are met"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the single most exam-tested collision in land law: an occupier the bank never checked on, against a bank that thought it had a clean charge. Where the profile shows knowledge is solid but application lags, this note appears: 'You know Boland and Flegg by name — this lesson is about telling, from the facts alone, which one a court will actually reach for.'",
+    "profileHooks": {
+      "weakApplication": "You can define actual occupation and state the overreaching rule. What trips people up is sequencing a fact pattern correctly — this lesson is built around exactly that, so expect scenario after scenario.",
+      "weakKnowledge": "Before the scenarios, make sure Sch 3 para 2 and the two-trustee overreaching machinery in ss 2 and 27 LPA 1925 are solid. Everything that follows assumes you can state both without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A bank lends money against a house it has never actually looked inside. Somewhere in that house is a person whose name is on no document the bank has seen — a spouse, a partner, a parent who paid a third of the purchase price years ago and was never asked about it. When the borrower defaults, the bank tries to repossess. The occupier says: you knew I was here, or you should have. Three cases — Boland, Cann, Flegg — fight this exact scenario to three different conclusions, and the difference between them is where the real exam marks live."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The case file: what actually overrides",
+        "voice": "detective — opens the file on the doctrine before naming any suspects",
+        "body": [
+          "Start with the provision itself. Schedule 3, paragraph 2 of the LRA 2002 makes an interest belonging to a person in actual occupation of the land an overriding interest — meaning it binds a buyer or lender even though it was never entered on the register at all. This is the one deliberate crack in the mirror principle: the system accepts that some interests are so obviously discoverable by a site visit that a buyer ought to be bound by them regardless of what the register says.",
+          "But the crack has edges. Three exclusions matter most. First, the interest itself must be capable of binding successors in the first place — actual occupation upgrades an existing proprietary interest, it doesn't invent one out of thin air. Second, occupation that wouldn't have been obvious on a reasonably careful inspection, and of which the buyer had no actual knowledge, doesn't count against a purchaser who asked and wasn't told. Third — and this is the one students forget — if the occupier was asked about their interest before the disposition and failed to disclose it when they reasonably could have, they lose the protection.",
+          "Hold this provision steady in your head. Everything from here — Boland's expansion of what counts as occupation, Cann's timing trap, Bustard's tolerance for absence — is a dispute about the edges of this one paragraph, not a different rule."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Land Registration Act 2002, Sch 3, para 2",
+            "text": "An interest belonging to a person in actual occupation, so far as relating to land of which he is in actual occupation, except for an interest under a settlement, an interest of which the person's occupation would not have been obvious on a reasonably careful inspection and of which the purchaser does not have actual knowledge, and an interest as to which enquiry was made and the person failed to disclose it when they could reasonably have been expected to do so.",
+            "elements": [
+              "A proprietary interest capable of binding successors",
+              "Belonging to a person in actual occupation of the land",
+              "Not excluded as undisclosed, non-obvious, or a settlement interest"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-04-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "For Sch 3 para 2 to protect someone, what must be true of their underlying interest before occupation can do anything at all?",
+          "options": [
+            "It must already be a proprietary interest capable of binding successors",
+            "It only needs to be a moral or family expectation, not a legal or equitable interest"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. Actual occupation is an upgrade mechanism, not a source of rights — it takes an interest that would otherwise need protecting by notice and lets it bind through occupation instead.",
+          "feedbackIncorrect": "Not quite. Occupation on its own creates nothing — the person still needs an underlying proprietary interest (a beneficial share under a trust, an estate contract, and so on) before Sch 3 para 2 has anything to protect."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Suspect one: Boland, and occupation nobody thought to check",
+        "voice": "detective — reconstructs the case as an investigation the bank failed to run",
+        "body": [
+          "Mrs Boland had paid a substantial share of the purchase price of her matrimonial home, giving her a beneficial interest under a resulting trust, but the legal title was in her husband's sole name. Mr Boland later charged the house to the bank to secure a business loan, without her knowledge. When he defaulted, the bank sought possession — and argued that a wife pottering about a house her husband legally owned wasn't the kind of occupation a bank should have to notice.",
+          "The House of Lords disagreed, decisively. Mrs Boland's presence in the house was actual occupation in the ordinary sense of the word, and the bank's failure to make enquiries of her — despite easy opportunity to do so — was its own problem, not hers. The court explicitly rejected the idea that occupation had to be visible in some special legal sense from outside; living in the house, day to day, was enough.",
+          "Boland is the case that turned actual occupation from a narrow technicality into a genuine trap for lenders. Its lesson for this lesson: a bank cannot rely on the register alone when there is a person actually living in the property whose interest was never investigated."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Williams & Glyn's Bank Ltd v Boland",
+            "citation": "[1981] AC 487",
+            "court": "House of Lords",
+            "year": 1981,
+            "factsShort": "Mrs Boland had a beneficial interest in the matrimonial home under a resulting trust; her husband, sole legal owner, charged it to the bank without telling her. The bank sought possession on default.",
+            "ratioShort": "A beneficial interest under a trust, combined with actual occupation of the property by the interest-holder, overrode the bank's charge; occupation is assessed in its ordinary sense, not restricted to what is visible or formally declared.",
+            "expanded": {
+              "facts": "Mr and Mrs Boland lived together in a house registered in Mr Boland's sole name, though Mrs Boland had contributed substantially to its purchase price, giving her an equitable interest under a resulting trust. Mr Boland charged the house to the bank to secure his business overdraft. The bank made no enquiry of Mrs Boland before taking the charge. When the business failed, the bank sought possession to enforce its security.",
+              "judgmentExtract": "The House of Lords held that Mrs Boland was in actual occupation within the ordinary meaning of that phrase, and that her equitable interest, protected by that occupation, bound the bank. Lord Wilberforce rejected arguments that a wife's presence should be treated as merely an incident of her husband's occupation rather than occupation in her own right, and held that the bank's remedy lay in making enquiries, which it had failed to do.",
+              "significance": "Boland is the foundational modern authority establishing that actual occupation is a real, practical safeguard for people with informal or undocumented interests in a home — and a real, practical risk for lenders who don't ask who else is living in a property before taking security over it."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-04-check-02",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that, after Boland, actual occupation requires some special visible sign of ownership, rather than ordinary day-to-day presence in the property?",
+          "sliderLabels": [
+            "Definitely requires a visible sign of ownership",
+            "Definitely just ordinary presence, nothing more"
+          ],
+          "correctPosition": "ordinary",
+          "explanation": "Boland rejected any requirement that occupation look 'proprietary' from outside. Mrs Boland's everyday presence in the family home was enough — the House of Lords was clear that occupation is given its ordinary, factual meaning."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Suspect two: Cann, and the alibi that timing destroys",
+        "voice": "detective — the case is presented as an alibi that collapses under a strict timeline",
+        "body": [
+          "Mrs Cann's son bought a house partly with a mortgage advance, and she moved her belongings in shortly before completion — carpets laid, furniture delivered — while she herself arrived to actually live there about 35 minutes after completion took place. When the mortgage was later enforced, she argued her occupation, established that same day, should override the lender's charge.",
+          "The House of Lords drew a hard line on timing. Because the purchase and the mortgage were part of one indivisible transaction — the son could never have owned the house without the loan that funded it — occupation had to be assessed at the moment of completion, not at some later point in the same day, however close. On the facts, Mrs Cann was not in actual occupation at that moment: moving furniture in, in preparation for moving in, is not occupation itself.",
+          "Cann is the timing trap students walk into constantly. The instinct is to ask 'was this person living there by the time the dispute arose?' The correct question is narrower and much less forgiving: were they in actual occupation at the moment the disposition being challenged actually took effect?"
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "The Cann timing rule",
+            "definition": "Actual occupation for Sch 3 para 2 purposes is assessed at the date of completion of the disposition in question (or, in an acquisition mortgage, the single indivisible transaction of purchase-and-charge) — not at any later date, and preparatory acts short of occupation (moving in furniture, cleaning, minor works) do not themselves amount to occupation."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-04-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Applying Cann's timing rule, which scenario more clearly fails to establish actual occupation at the relevant moment?",
+          "scenarioA": "A buyer's partner has already been living in the property for six months under an informal arrangement when the buyer completes a purchase-money mortgage on it.",
+          "scenarioB": "A buyer's elderly parent has sent some boxes ahead and had new locks fitted the week before completion, but does not move in personally until three days after completion.",
+          "correctScenario": "B",
+          "explanation": "B mirrors Cann precisely: preparatory steps before completion are not occupation, and moving in only after completion is too late to bind a purchase-money mortgage that funded the very acquisition. A shows genuine occupation already established before the relevant disposition."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Suspect three, absent from the scene: Bustard and involuntary absence",
+        "voice": "detective — investigates whether an absent occupier can still be 'present' in law",
+        "body": [
+          "If Cann shows occupation can start too late, Link Lending v Bustard shows it doesn't always end just because someone is physically elsewhere. Mrs Bustard, who suffered from mental illness, was detained under the Mental Health Act and later lived in supported accommodation, while retaining a beneficial interest in her house. A lender argued that her prolonged absence meant she was no longer in actual occupation when a charge was later registered against the property.",
+          "The Court of Appeal disagreed. Her absence was involuntary, caused by her medical detention rather than any choice to relocate, and she had maintained a continuing intention to return, kept her furniture in the house, and visited when she could. On those facts, her occupation was treated as continuing throughout — physical presence at every moment is not the test; continuity of occupation, understood realistically, is.",
+          "Bustard matters because it stops the timing lesson from Cann being read too aggressively. Cann punishes moving in too late. Bustard protects someone who was genuinely in occupation and remains so despite an involuntary gap — the difference is whether the absence reflects an abandonment of occupation or simply an interruption of it."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Is this still actual occupation despite physical absence?",
+            "description": "A short decision path for absence scenarios, built from Cann and Bustard together.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Was the person physically present at the relevant moment (completion / registration)?"
+              },
+              {
+                "id": "yes",
+                "label": "Yes → actual occupation established (subject to the other Sch 3 para 2 exclusions)"
+              },
+              {
+                "id": "no",
+                "label": "No → was the absence voluntary or involuntary, and was there an intention to return?"
+              },
+              {
+                "id": "involuntary",
+                "label": "Involuntary absence with continuing intention to return, and some outward sign (belongings, visits) → occupation can continue (Bustard)"
+              },
+              {
+                "id": "preparatory",
+                "label": "Presence not yet begun — only preparatory acts before moving in → not occupation yet (Cann)"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "yes",
+                "label": "Yes"
+              },
+              {
+                "from": "start",
+                "to": "no",
+                "label": "No"
+              },
+              {
+                "from": "no",
+                "to": "involuntary",
+                "label": "Involuntary, intends to return"
+              },
+              {
+                "from": "no",
+                "to": "preparatory",
+                "label": "Never yet moved in"
+              }
+            ],
+            "textAlternative": "First ask whether the person was physically present at the relevant moment. If yes, actual occupation is established, subject to the other Sch 3 para 2 exclusions. If no, ask whether their absence was voluntary or involuntary and whether they intended to return. An involuntary absence with a continuing intention to return and some outward sign of continued connection, such as belongings left in the property or ongoing visits, can still count as occupation (Bustard). By contrast, someone who has simply not yet moved in, having only done preparatory acts, is not yet in occupation at all (Cann)."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-04-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Which statement best captures why Bustard did not simply overrule or contradict Cann on timing?",
+          "options": [
+            "Bustard held that physical presence is never required at all, making Cann's timing rule irrelevant",
+            "Bustard addressed a different question — whether occupation, once established, survives an involuntary absence — rather than when occupation begins",
+            "Bustard only applies to tenants, not to beneficiaries under a trust"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "It's tempting to see Bustard as softening or undoing Cann. It doesn't: Cann is about the moment occupation must exist relative to a disposition; Bustard is about whether occupation, already established, can be treated as continuing through an involuntary gap. They answer different questions."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The twist: overreaching defeats the occupier anyway",
+        "voice": "detective — the reveal, where the strongest case for the occupier still loses",
+        "body": [
+          "Here's the twist that separates a good land law answer from a great one. Even a beneficiary who is unquestionably in actual occupation, with a rock-solid equitable interest, can still lose to a lender — not because Sch 3 para 2 fails, but because the interest itself gets detached from the land before Sch 3 para 2 is ever needed. This is overreaching, and it operates upstream of the whole actual occupation analysis.",
+          "Sections 2 and 27 of the Law of Property Act 1925 provide the machinery: where capital money arising from a disposition of land held on trust is paid to at least two trustees, or a trust corporation, the beneficial interests under that trust are automatically overreached — swept off the land and converted into a corresponding interest in the money instead. The land passes to the buyer or lender free of those beneficial interests, full stop, regardless of whether the beneficiaries were in occupation, and regardless of whether anyone asked them anything.",
+          "City of London Building Society v Flegg is the case that proves this works even against occupiers who look, on the facts, exactly like Mrs Boland. The Fleggs had contributed to the purchase of a house registered in their daughter and son-in-law's names and lived there themselves. When the couple mortgaged the house to the building society, the loan was advanced to two trustees, satisfying the overreaching conditions — and the House of Lords held the Fleggs' interests were overreached and the building society took free of them, despite the Fleggs' undisputed occupation.",
+          "The rule of thumb worth memorising: Boland protects an occupying beneficiary against a sole trustee who deals with the land alone. Flegg shows that the same occupying beneficiary loses if there happen to be two trustees receiving the money instead of one. The difference that decides the whole case is often nothing the occupier did — it's simply how many people were on the legal title."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, ss 2(1)(ii) and 27(2)",
+            "text": "A conveyance or disposition of a legal estate to a purchaser overreaches beneficial interests under a trust of land where the capital money arising is paid to at least two trustees or to a trust corporation. A sole trustee, other than a trust corporation, cannot give a valid receipt for capital money for this purpose.",
+            "elements": [
+              "Disposition of a legal estate for capital money",
+              "Capital money paid to two or more trustees (or a trust corporation)",
+              "Beneficial interests overreached and shifted to the proceeds of sale"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "City of London Building Society v Flegg",
+            "citation": "[1988] AC 54",
+            "court": "House of Lords",
+            "year": 1988,
+            "factsShort": "The Fleggs contributed to a house held on trust by their daughter and son-in-law, and lived there. The couple mortgaged the house, and the loan was paid to the two of them as trustees.",
+            "ratioShort": "Payment of capital money to two trustees overreaches the beneficial interests of an occupying beneficiary, defeating what would otherwise have been a Sch 3 para 2 (then s 70(1)(g) LRA 1925) overriding interest.",
+            "expanded": {
+              "facts": "The Fleggs sold their previous home and used the proceeds to help their daughter and son-in-law buy a house, which was registered in the younger couple's joint names on express trust for all four of them. The Fleggs moved in and lived there. The daughter and son-in-law later, without telling the Fleggs, mortgaged the house to the building society, which advanced the loan to the two of them as trustees. When the couple defaulted, the building society sought possession, and the Fleggs argued their occupation gave them an overriding interest.",
+              "judgmentExtract": "The House of Lords held that because the mortgage advance had been paid to two trustees, the overreaching machinery in ss 2 and 27 LPA 1925 operated automatically, converting the Fleggs' beneficial interests in the land into an interest in the (now dissipated) proceeds. There was, after overreaching, no beneficial interest left in the land capable of being protected by Sch 3 para 2 occupation at all — occupation cannot protect an interest that overreaching has already removed from the land.",
+              "significance": "Flegg is the clearest illustration that actual occupation and overreaching operate on different planes: occupation only matters if there is still a subsisting interest in the land to protect once overreaching machinery has been checked first. It also shows why examiners so reliably test how many trustees are on the title — that single fact decides whether Boland or Flegg governs the answer."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-04-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A house is held on trust by three siblings as legal owners for themselves and their elderly mother, who lives there and holds a beneficial share. Two of the three siblings mortgage the house, and the lender pays the advance to those two only, without the third sibling's involvement. Is the mother's interest overreached?",
+          "options": [
+            "No — capital money must be paid to all the trustees, not merely two of however many there are, for a valid overreaching payment where more than two trustees hold the legal title",
+            "Yes — payment to any two trustees is always sufficient however many trustees there are",
+            "Yes, but only because the mother is not a legal owner herself"
+          ],
+          "correctIndex": 0,
+          "explanation": "Where there are more than two trustees, capital money must be paid to all of them (or to a trust corporation) for overreaching to operate validly — paying only two of three trustees does not satisfy ss 2 and 27, so the mother's interest is not overreached and, being in actual occupation, is likely to bind the lender instead."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-04-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the statutory provision that makes an interest belonging to a person in actual occupation an overriding interest.",
+      "acceptableAnswers": [
+        "Sch 3 para 2 LRA 2002",
+        "Schedule 3, paragraph 2, Land Registration Act 2002"
+      ],
+      "modelAnswer": "Land Registration Act 2002, Schedule 3, paragraph 2."
+    },
+    {
+      "itemId": "land-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which case first established that a beneficiary's ordinary day-to-day presence in a house, without more, can amount to actual occupation?",
+      "options": [
+        "Williams & Glyn's Bank v Boland",
+        "Abbey National Building Society v Cann"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-04-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following, standing alone, is NOT an exclusion recognised under Sch 3 para 2?",
+      "options": [
+        "Occupation not obvious on reasonable inspection and unknown to the purchaser",
+        "Failure to disclose the interest when reasonably asked",
+        "An interest under a settlement",
+        "The occupier being a minor"
+      ],
+      "correctIndex": 3,
+      "trapExplanation": "Being a minor isn't one of the Sch 3 para 2 exclusions at all — a minor's occupation, and any underlying proprietary interest they hold, can in principle still override. The three genuine exclusions are non-obvious undisclosed occupation, settlement interests, and non-disclosure on reasonable enquiry."
+    },
+    {
+      "itemId": "land-04-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under ss 2 and 27 LPA 1925, to whom must capital money be paid for a disposition of trust land to overreach the beneficial interests?",
+      "options": [
+        "At least two trustees, or a trust corporation",
+        "Any one trustee, provided they are the registered proprietor",
+        "The beneficiaries themselves, directly"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-04-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the analytical steps a court takes when an occupying beneficiary's interest is challenged by a lender.",
+      "items": [
+        "Identify whether the occupier holds a proprietary interest under a trust of land",
+        "Check whether the trust land was mortgaged with capital money paid to two trustees (overreaching)",
+        "If overreached, the beneficial interest is removed from the land before Sch 3 para 2 is even reached",
+        "If not overreached, assess whether the occupier was in actual occupation at the relevant moment"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "land-04-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence stating the ratio on timing from Abbey National v Cann.",
+      "passage": "The purchase of the property and the grant of the mortgage were part of a single, indivisible transaction, since the purchase could not have gone ahead without the loan. Actual occupation for the purpose of an overriding interest must therefore be assessed as at the date of completion of that transaction, not at some later point on the same day. Preparatory steps taken before completion, such as moving in furniture, do not themselves constitute occupation.",
+      "ratioSentence": "Actual occupation for the purpose of an overriding interest must therefore be assessed as at the date of completion of that transaction, not at some later point on the same day."
+    },
+    {
+      "itemId": "land-04-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that a person who is only temporarily and involuntarily absent from a property, but intends to return, can still be treated as in actual occupation?",
+      "sliderLabels": [
+        "Definitely cannot be in occupation while absent",
+        "Definitely can still be in occupation (Bustard)"
+      ],
+      "correctPosition": "can still be",
+      "explanation": "Link Lending v Bustard confirms that involuntary absence with a continuing intention to return, supported by some outward sign of connection to the property, does not automatically end actual occupation."
+    },
+    {
+      "itemId": "land-04-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A sole legal owner grants a mortgage over a house to a lender. His partner, who has an equitable interest under a resulting trust, is living in the house at the date of completion, and the lender never asked about anyone else's presence. Is the partner's interest likely to override the mortgage?",
+      "options": [
+        "Yes — actual occupation at completion, combined with an unprotected but proprietary interest, is likely to override under Sch 3 para 2, following Boland",
+        "No — only a spouse's occupation can ever override, not an unmarried partner's",
+        "No — because there was only one legal owner, overreaching automatically applies"
+      ],
+      "correctIndex": 0,
+      "explanation": "Marital status is irrelevant to Sch 3 para 2 — what matters is a proprietary interest plus actual occupation at the relevant time. And with only a sole trustee receiving no capital money to two people, overreaching cannot operate at all here — that machinery needs at least two trustees."
+    },
+    {
+      "itemId": "land-04-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that is fatal to this occupier's claim to actual occupation at the relevant date.",
+      "scenarioText": "Yusuf's parents help him buy a flat, taking a beneficial share under a resulting trust. On completion day, his mother has a key cut and drops off a box of books in the morning, but does not move any furniture in or stay overnight until two weeks later, once decorating is finished.",
+      "tappableSpans": [
+        "beneficial share under a resulting trust",
+        "has a key cut",
+        "drops off a box of books",
+        "does not move any furniture in or stay overnight until two weeks later"
+      ],
+      "correctSpan": "does not move any furniture in or stay overnight until two weeks later",
+      "feedbackCorrect": "Right. Under Cann, occupation must exist at completion for a purchase-money mortgage. A key and a box of books are preparatory acts, not occupation — the mother was not actually occupying the flat at the moment that matters.",
+      "feedbackIncorrect": "Look for the fact that tells you when actual, lived-in presence began, not the preparatory steps beforehand. Cann treats preparatory acts as insufficient."
+    },
+    {
+      "itemId": "land-04-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely mirrors Flegg rather than Boland?",
+      "scenarioA": "A house is registered in the sole name of one spouse, who alone signs a mortgage; the other spouse, an equitable co-owner, lives there and was never consulted.",
+      "scenarioB": "A house is registered in the joint names of two adult children, who together mortgage the property, with the loan advanced to both of them; their parent, an equitable co-owner, lives there and was never consulted.",
+      "correctScenario": "B",
+      "explanation": "B has two trustees receiving the capital money, which is exactly the overreaching trigger in Flegg — the occupying parent's interest is overreached regardless of occupation. A has only a sole trustee, which cannot overreach, leaving Boland's protection for the occupying spouse intact."
+    },
+    {
+      "itemId": "land-04-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Four siblings hold a house on trust for themselves and their aunt, who lives there with a beneficial share. Three of the four siblings, but not the fourth, receive the capital money when the house is mortgaged. Has the aunt's interest been overreached?",
+      "options": [
+        "No — where there are more than two trustees, capital money must be paid to all of them, not merely a majority",
+        "Yes — payment to a majority of trustees is sufficient for overreaching",
+        "Yes, automatically, because there are more than two trustees on the title"
+      ],
+      "correctIndex": 0,
+      "explanation": "The overreaching machinery requires payment to all the trustees where there are more than two (or a trust corporation) — paying three out of four does not satisfy ss 2 and 27, so overreaching fails and the aunt's occupation-based interest is likely to survive instead."
+    },
+    {
+      "itemId": "land-04-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Grace contributed a third of the purchase price of a house registered in the joint names of her son and daughter-in-law, who hold it on trust for all three of them. Grace has lived there since completion. Her son and daughter-in-law later remortgage the house, and the new lender advances the funds to the two of them jointly. The couple later default. Analyse whether Grace's interest binds the lender.",
+      "factsToOrder": [
+        "Grace has a beneficial interest under an express trust",
+        "Grace has been in actual occupation since completion",
+        "The legal title is held by two trustees (the son and daughter-in-law)",
+        "The remortgage advance was paid to both trustees jointly",
+        "No exception to the standard overreaching machinery applies on these facts"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Grace's beneficial interest, protected by actual occupation, binds the lender under the remortgage, or is instead overreached.",
+        "rule": "Under ss 2 and 27 LPA 1925, payment of capital money to at least two trustees overreaches beneficial interests under a trust of land, converting them into an interest in the proceeds; this operates regardless of the beneficiary's occupation, and takes priority over the Sch 3 para 2 analysis (Flegg).",
+        "application": "Grace has a genuine beneficial interest and is unquestionably in actual occupation, which would ordinarily satisfy Sch 3 para 2 (as in Boland). However, the remortgage advance was paid to two trustees — her son and daughter-in-law jointly — satisfying the overreaching conditions in full, just as in Flegg.",
+        "conclusion": "Grace's interest is overreached and shifted to the proceeds of the remortgage; despite her occupation, it does not bind the lender, and her remedy lies against the proceeds and against her son and daughter-in-law, not the house."
+      }
+    },
+    {
+      "itemId": "land-04-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement best explains the relationship between actual occupation and overreaching?",
+      "options": [
+        "Overreaching and actual occupation are two names for the same protective mechanism",
+        "Overreaching operates upstream of Sch 3 para 2: if beneficial interests are validly overreached, there is nothing left in the land for actual occupation to protect",
+        "Actual occupation always defeats overreaching, because occupation is the stronger legal concept"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Students often assume occupation is a trump card once established. Flegg shows the opposite sequencing: overreaching is checked first, and if it operates validly, it removes the beneficial interest from the land before actual occupation is ever reached as a live question."
+    },
+    {
+      "itemId": "land-04-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "In Cann, why did the House of Lords treat the purchase and the mortgage as a single, indivisible transaction rather than two separate events?",
+      "options": [
+        "Because the purchase could not have completed without the mortgage funds",
+        "Because they happened to be signed using the same solicitor"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-04-test-15",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A bank lends to a sole registered proprietor whose adult daughter has an equitable interest under a resulting trust and is in actual occupation. The bank made basic enquiries of the borrower but never inspected the property or asked who else lived there. On repossession, the daughter raises her interest. What is the strongest basis for the bank's defeat?",
+      "options": [
+        "The daughter's interest, combined with her actual occupation at the relevant time and the bank's failure to inspect or enquire, is likely to override under Sch 3 para 2 — there being only one trustee, overreaching cannot apply",
+        "The bank automatically wins because it is a commercial lender rather than an individual",
+        "The daughter cannot rely on Sch 3 para 2 because she is not married to the borrower"
+      ],
+      "correctIndex": 0,
+      "explanation": "With only a sole legal owner, overreaching is structurally impossible — there is no second trustee to receive capital money. That leaves Sch 3 para 2 as the live question, and on these facts (occupation at the relevant time, no disclosure enquiry actually made) the daughter's interest is likely to override, exactly as in Boland."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson is stopping the analysis the moment actual occupation is established, as if that settles the case. It doesn't — always check the number of trustees and where the capital money went first; overreaching can remove the interest from the land before Sch 3 para 2 is ever reached.",
+    "reviewMisses": true,
+    "linkToPathway": "land.registration.actual-occupation"
+  }
+}

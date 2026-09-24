@@ -18,10 +18,22 @@
     "Identify what must actually 'escape' for the rule to apply, using Stannard v Gore's treatment of fire"
   ],
   "leadingAuthorities": [
-    { "citation": "Rylands v Fletcher (1868) LR 3 HL 330", "role": "Origin of the rule: liability for the escape of a dangerous thing accumulated on land" },
-    { "citation": "Cambridge Water Co v Eastern Counties Leather plc [1994] 2 AC 264", "role": "Adds a requirement that the type of damage caused by the escape be reasonably foreseeable" },
-    { "citation": "Transco plc v Stockport MBC [2003] UKHL 61", "role": "Narrows 'non-natural use' and recasts the rule as an extension of nuisance, not a distinct strict liability tort" },
-    { "citation": "Stannard (t/a Wyvern Tyres) v Gore [2012] EWCA Civ 1248", "role": "Clarifies what must 'escape': the dangerous thing itself, not fire that happens to start in it" }
+    {
+      "citation": "Rylands v Fletcher (1868) LR 3 HL 330",
+      "role": "Origin of the rule: liability for the escape of a dangerous thing accumulated on land"
+    },
+    {
+      "citation": "Cambridge Water Co v Eastern Counties Leather plc [1994] 2 AC 264",
+      "role": "Adds a requirement that the type of damage caused by the escape be reasonably foreseeable"
+    },
+    {
+      "citation": "Transco plc v Stockport MBC [2003] UKHL 61",
+      "role": "Narrows 'non-natural use' and recasts the rule as an extension of nuisance, not a distinct strict liability tort"
+    },
+    {
+      "citation": "Stannard (t/a Wyvern Tyres) v Gore [2012] EWCA Civ 1248",
+      "role": "Clarifies what must 'escape': the dangerous thing itself, not fire that happens to start in it"
+    }
   ],
   "whyThisMattersTemplate": {
     "default": "Rylands v Fletcher looks, on the surface, like a strict liability tort with a fixed checklist — which is exactly how students lose marks on it. Since Transco, the real skill is knowing how narrowly 'non-natural use' now bites, and that the whole tort is best understood as a specialised branch of nuisance.",
@@ -80,7 +92,12 @@
             "The reservoir is filled with water",
             "Water bursts through the shafts and floods Fletcher's mine"
           ],
-          "correctOrder": [0, 1, 2, 3],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
           "feedbackCorrect": "That's the sequence — and notice the fault, if any, sits with the contractors' failure to seal the shafts, not with any deliberate act by Rylands, which is exactly why the courts needed a new principle rather than relying on ordinary negligence or trespass.",
           "feedbackIncorrect": "Check the order again — the shafts are discovered during construction, before the reservoir is filled; the flood only happens once the reservoir holds water and finds its way through the unsealed shafts."
         }
@@ -150,7 +167,12 @@
           "skillTag": "understanding",
           "prompt": "Tap the fact that ultimately defeats the claim in Cambridge Water.",
           "scenarioText": "The tannery used a solvent as part of its ordinary manufacturing process. Small amounts spilled onto the factory floor repeatedly over the years. The solvent seeped through the ground and eventually contaminated a borehole over a mile away. At the time the spillages occurred, this type of long-distance contamination could not reasonably have been foreseen.",
-          "tappableSpans": ["ordinary manufacturing process", "spilled onto the factory floor repeatedly", "contaminated a borehole over a mile away", "could not reasonably have been foreseen"],
+          "tappableSpans": [
+            "ordinary manufacturing process",
+            "spilled onto the factory floor repeatedly",
+            "contaminated a borehole over a mile away",
+            "could not reasonably have been foreseen"
+          ],
           "correctSpan": "could not reasonably have been foreseen",
           "feedbackCorrect": "Correct. The claim doesn't fail for lack of an escape or lack of damage — both are present. It fails because the type of damage was not reasonably foreseeable at the relevant time, which Cambridge Water made an essential element of the tort.",
           "feedbackIncorrect": "Look again at what actually defeats the claim. The escape happened, and the damage was real — what's missing is foreseeability of that type of damage at the time of the spillages, which Cambridge Water requires."
@@ -171,17 +193,48 @@
             "title": "Assessing 'non-natural use' after Transco",
             "description": "A decision path for whether a use of land is non-natural for Rylands v Fletcher purposes.",
             "nodes": [
-              { "id": "start", "label": "Is the use of the land an ordinary one for its time and place (e.g. domestic water supply, ordinary storage)?" },
-              { "id": "yes-ordinary", "label": "Yes → natural use; Rylands v Fletcher does not apply, whatever mischief resulted" },
-              { "id": "no-ordinary", "label": "No → does the use create an increased risk to others beyond what is ordinary for the locality?" },
-              { "id": "yes-risk", "label": "Yes → capable of being a non-natural use" },
-              { "id": "no-risk", "label": "No → still likely natural use" }
+              {
+                "id": "start",
+                "label": "Is the use of the land an ordinary one for its time and place (e.g. domestic water supply, ordinary storage)?"
+              },
+              {
+                "id": "yes-ordinary",
+                "label": "Yes → natural use; Rylands v Fletcher does not apply, whatever mischief resulted"
+              },
+              {
+                "id": "no-ordinary",
+                "label": "No → does the use create an increased risk to others beyond what is ordinary for the locality?"
+              },
+              {
+                "id": "yes-risk",
+                "label": "Yes → capable of being a non-natural use"
+              },
+              {
+                "id": "no-risk",
+                "label": "No → still likely natural use"
+              }
             ],
             "edges": [
-              { "from": "start", "to": "yes-ordinary", "label": "Yes" },
-              { "from": "start", "to": "no-ordinary", "label": "No" },
-              { "from": "no-ordinary", "to": "yes-risk", "label": "Yes" },
-              { "from": "no-ordinary", "to": "no-risk", "label": "No" }
+              {
+                "from": "start",
+                "to": "yes-ordinary",
+                "label": "Yes"
+              },
+              {
+                "from": "start",
+                "to": "no-ordinary",
+                "label": "No"
+              },
+              {
+                "from": "no-ordinary",
+                "to": "yes-risk",
+                "label": "Yes"
+              },
+              {
+                "from": "no-ordinary",
+                "to": "no-risk",
+                "label": "No"
+              }
             ],
             "textAlternative": "First ask whether the use of the land is ordinary for its time and place, such as domestic water supply or ordinary storage — if so, it is a natural use and Rylands v Fletcher does not apply, regardless of the mischief that resulted. If the use is not ordinary, ask whether it creates an increased risk to others beyond what is normal for the locality; only then is it capable of being treated as a non-natural use."
           },
@@ -199,8 +252,11 @@
           "type": "thresholdSlider",
           "skillTag": "understanding",
           "prompt": "How confident are you that, after Transco, an ordinary domestic water supply pipe serving a block of flats counts as a 'non-natural use' of land?",
-          "sliderLabels": ["Definitely non-natural", "Definitely natural"],
-          "correctPosition": "natural",
+          "sliderLabels": [
+            "Definitely non-natural",
+            "Definitely natural"
+          ],
+          "correctPosition": "Definitely natural",
           "explanation": "Transco held that laying and maintaining an ordinary domestic water supply is a natural use of land, however serious the consequences when it fails — non-natural use requires something extraordinary for the time and place, not simply something that happens to escape and cause damage."
         }
       },
@@ -247,9 +303,18 @@
             "Fire spreads to a neighbouring property"
           ],
           "scaffolds": [
-            { "level": 1, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
-            { "level": 2, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
-            { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+            {
+              "level": 1,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
           ],
           "modelAnswer": {
             "issue": "Whether the garden centre is strictly liable under Rylands v Fletcher for fire damage caused by spontaneously combusting fertiliser.",
@@ -280,7 +345,10 @@
       "skillTag": "knowledge",
       "difficultyStart": 0.2,
       "prompt": "Which case added a requirement that the type of damage caused by an escape be reasonably foreseeable?",
-      "options": ["Cambridge Water v Eastern Counties Leather", "Rylands v Fletcher"],
+      "options": [
+        "Cambridge Water v Eastern Counties Leather",
+        "Rylands v Fletcher"
+      ],
       "correctIndex": 0
     },
     {
@@ -303,7 +371,10 @@
       "skillTag": "knowledge",
       "difficultyStart": 0.3,
       "prompt": "In Rylands v Fletcher itself, what physically escaped from the defendant's land?",
-      "options": ["Water from the reservoir", "Gas from a pipeline"],
+      "options": [
+        "Water from the reservoir",
+        "Gas from a pipeline"
+      ],
       "correctIndex": 0
     },
     {
@@ -327,7 +398,12 @@
         "Transco narrows non-natural use and recasts the tort as a sub-species of nuisance",
         "Stannard v Gore clarifies that the thing accumulated, not merely fire, must escape"
       ],
-      "correctOrder": [0, 1, 2, 3]
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
     },
     {
       "itemId": "tort-14-test-07",
@@ -335,7 +411,10 @@
       "skillTag": "understanding",
       "difficultyStart": 0.4,
       "prompt": "How confident are you that Rylands v Fletcher, as currently understood, imposes liability regardless of whether the type of damage caused was foreseeable?",
-      "sliderLabels": ["Fully strict — foreseeability irrelevant", "Foreseeability of the type of damage is required"],
+      "sliderLabels": [
+        "Fully strict — foreseeability irrelevant",
+        "Foreseeability of the type of damage is required"
+      ],
       "correctPosition": "Foreseeability of the type of damage is required",
       "explanation": "Cambridge Water inserted a foreseeability requirement for the type of damage. The tort remains strict as to fault in causing the escape, but not as to whether that kind of harm could have been anticipated."
     },
@@ -357,7 +436,12 @@
       "difficultyStart": 0.5,
       "prompt": "Tap the fact that would most likely prevent this claim succeeding under Rylands v Fletcher.",
       "scenarioText": "A homeowner keeps an ordinary domestic swimming pool in the garden. During an unusually heavy storm, the pool overflows and floods a neighbour's basement.",
-      "tappableSpans": ["ordinary domestic swimming pool", "unusually heavy storm", "pool overflows", "floods a neighbour's basement"],
+      "tappableSpans": [
+        "ordinary domestic swimming pool",
+        "unusually heavy storm",
+        "pool overflows",
+        "floods a neighbour's basement"
+      ],
       "correctSpan": "ordinary domestic swimming pool",
       "feedbackCorrect": "Right — an ordinary domestic swimming pool is squarely the kind of everyday use Transco treats as natural, much like domestic water supply. Without a non-natural use, the claim cannot get off the ground regardless of the flooding that followed.",
       "feedbackIncorrect": "Focus on the use of the land, not the flood itself. An ordinary domestic swimming pool is the kind of everyday use Transco treats as natural — the claim is likely to fail at the non-natural use element."
@@ -404,10 +488,22 @@
         "The contents cause significant water damage to the adjoining flat"
       ],
       "scaffolds": [
-        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
-        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
-        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
-        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
       ],
       "modelAnswer": {
         "issue": "Whether the flat owner can establish liability under Rylands v Fletcher for damage caused when the fermentation tank's contents burst into the adjoining flat.",

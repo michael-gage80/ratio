@@ -145,10 +145,17 @@ struct Item: Decodable, Identifiable {
                                correctSpan: try c.decode(String.self, forKey: .correctSpan))
         case "thresholdSlider":
             let labels = try c.decode([String].self, forKey: .sliderLabels)
-            let target = try c.decode(String.self, forKey: .correctPosition).lowercased()
-            // Same rule as the server: the end whose label contains the answer.
-            let leftMatches = labels.first.map { $0.lowercased().contains(target) } ?? false
-            kind = .slider(labels: labels, correctSide: leftMatches ? 0 : 1)
+            let target = try c.decode(String.self, forKey: .correctPosition).trimmingCharacters(in: .whitespaces).lowercased()
+            let lowered = labels.map { $0.trimmingCharacters(in: .whitespaces).lowercased() }
+            // Same rule as the server (sliderCorrectSide): a label equal to the answer,
+            // otherwise the one label containing it.
+            let side: Int
+            if let exact = lowered.firstIndex(of: target), exact < 2 {
+                side = exact
+            } else {
+                side = lowered.first?.contains(target) == true && lowered.dropFirst().first?.contains(target) != true ? 0 : 1
+            }
+            kind = .slider(labels: labels, correctSide: side)
         case "sequence":
             kind = .sequence(items: try c.decode([String].self, forKey: .items),
                              correctOrder: try c.decode([Int].self, forKey: .correctOrder))

@@ -1,0 +1,366 @@
+{
+  "lessonId": "companylaw-08",
+  "moduleId": "companylaw",
+  "moduleTitle": "Company Law",
+  "lessonNumber": 8,
+  "topicId": "companylaw.directors.creditor-duty",
+  "title": "When the beneficiary of a duty changes",
+  "subtitle": "The common-law creditor duty and BTI 2014 LLC v Sequana SA",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the creditor duty as a modification of s 172, engaged through s 172(3), rather than a freestanding duty owed directly to creditors",
+    "State the Sequana test for when the creditor duty is engaged, and explain why the Supreme Court rejected 'mere risk of insolvency' as the trigger",
+    "Apply the 'zone of insolvency' framework to a fact pattern to assess whether, and to what extent, directors must weight creditor interests"
+  ],
+  "leadingAuthorities": [
+    { "citation": "BTI 2014 LLC v Sequana SA [2022] UKSC 25", "role": "Supreme Court confirms the existence of the creditor duty, its trigger (probability, not mere risk, of insolvency) and its content" },
+    { "citation": "Companies Act 2006 s 172(3)", "role": "The statutory hook: s 172(1) is expressly subject to any rule of law requiring directors, in certain circumstances, to consider or act in the interests of creditors" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the most conceptually slippery lesson in the module, because the creditor duty looks like a new, separate duty and isn't one. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can name Sequana — this lesson checks whether you understand what the case actually changed, and what it deliberately left unsettled.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans towards scenario and threshold questions: expect fact patterns that ask exactly how close to insolvency a company needs to be, not just whether the duty exists.",
+      "weakKnowledge": "Start with Part 1 and don't rush past the s 172(3) mechanism — nearly every mistake in this lesson comes from treating the creditor duty as a standalone rule instead of a modification of the duty you already learned in Lesson 6."
+    }
+  },
+  "lawStatedAt": "2026-09-23",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "For most of a company's life, directors owe their duties to a company whose interests point in one clear direction: the shareholders' collective wealth. But a company approaching insolvency is different — every pound the directors gamble and lose is, in substance, the creditors' money, not the shareholders', because the shareholders have nothing left to lose while creditors have everything still to lose. English law has long sensed this shift is real. It took until 2022, and a nine-Justice Supreme Court panel, to settle when it happens — and even then, only most of the way.",
+    "lawStatedNotice": "Law stated as at 23 September 2026. BTI 2014 LLC v Sequana SA [2022] UKSC 25 is settled Supreme Court authority and is not under legislative or appellate challenge. However, the precise point at which the creditor duty is triggered remains genuinely debated in academic and practitioner commentary even after Sequana, because the Justices did not converge on a single formulation of 'probability of insolvency'. Treat the existence and general shape of the duty as settled law, and the exact triggering threshold as a live, contested question this lesson presents honestly as unresolved. This creditor duty is a common-law, equitable-flavoured duty engaged through s 172(3) — it must not be confused with the statutory wrongful trading regime under Insolvency Act 1986 s 214, which is a separate cause of action with its own trigger and remedy, covered in Lesson 13."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Not a new duty — a modification of one you already know",
+        "voice": "structural — corrects a common misconception before building on it",
+        "body": [
+          "The single most important thing to understand about the 'creditor duty' is what it is not: it is not a freestanding duty that directors owe directly to creditors, in the way they owe s 172 to the company. Creditors cannot sue a director personally for breach of the creditor duty, any more than a shareholder can sue a director personally for an ordinary breach of s 172 — the duty remains owed to the company, and the claim (if any) belongs to the company, brought by its liquidator or administrator once insolvent.",
+          "What changes, as a company moves towards insolvency, is the content of the s 172 duty the director already owes. Recall from Lesson 6 that s 172(1) requires a director to act in the way they consider, in good faith, would be most likely to promote the success of the company for the benefit of its members as a whole. Section 172(3) is the hinge this whole lesson turns on: it provides that the duty imposed by s 172 has effect subject to any enactment or rule of law requiring directors, in certain circumstances, to consider or act in the interests of creditors of the company.",
+          "In other words, Parliament deliberately left space in the statute for a pre-existing common-law principle to continue operating, without codifying its content. Sequana is the case that finally worked out, at the highest level, what that common-law principle actually requires."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 172(3)",
+            "text": "The duty imposed by this section has effect subject to any enactment or rule of law requiring directors, in certain circumstances, to consider or act in the interests of creditors of the company.",
+            "elements": ["Section 172(1)'s member-focused duty is expressly subject to this provision", "Preserves a pre-existing rule of law (the common-law creditor duty), not created by the section itself", "Applies only 'in certain circumstances' — the trigger question this lesson exists to answer"]
+          },
+          {
+            "type": "keyConcept",
+            "term": "Creditor duty",
+            "definition": "Not a separate duty owed to creditors directly, but a modification of the content of s 172: once triggered, directors must have regard to, and in the clearest cases give paramountcy to, creditors' interests when exercising the existing duty to promote the success of the company. The duty is still owed to the company and enforced through it."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-08-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Can an individual creditor personally sue a director for breach of the creditor duty?",
+          "options": ["No — the duty remains owed to the company, and any claim belongs to the company (brought via a liquidator once insolvent)", "Yes — s 172(3) creates a direct cause of action for creditors against directors"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. This is the point students most often get backwards. The creditor duty modifies what a director must consider in discharging the s 172 duty owed to the company — it does not hand creditors a personal right of action.",
+          "feedbackIncorrect": "Look again at s 172(3)'s wording: it modifies the s 172 duty, which remains owed to the company. Creditors gain no direct, personal cause of action against a director from this provision alone."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The road to Sequana: a duty everyone assumed existed, but no one had defined",
+        "voice": "case-narrative — sets the scene before the Supreme Court's reasoning",
+        "body": [
+          "For decades before Sequana, lower courts had recognised something like a creditor duty in scattered, sometimes inconsistent language — some judgments spoke of creditor interests becoming 'paramount', others of directors needing to 'have regard to' creditors once insolvency loomed, without much agreement on exactly when, or how strongly, that shift occurred. Company law needed a case that forced the Supreme Court to work through the whole structure from first principles.",
+          "Sequana supplied it. AWA, a subsidiary of Sequana SA, faced a long-tail liability for historic industrial pollution that might, or might not, ultimately exceed its assets — the company was solvent on the facts at the time, but the future liability was real and substantial. AWA's directors paid a large dividend to its parent shareholder. Years later, once AWA did become insolvent, its liquidator (through an assignee, BTI 2014 LLC) argued the directors had breached the creditor duty by paying the dividend at a time when they ought to have had creditors' interests in mind.",
+          "The claim ultimately failed on the facts — the Supreme Court held the duty was not engaged at the time of the dividend, because AWA's insolvency, while a real future possibility, was not sufficiently probable. But in reaching that conclusion, the Court did something more important than decide the case: for the first time, a full panel worked through whether the creditor duty exists at all, what triggers it, and what it requires once triggered — settling the first question definitively and leaving genuine room for debate on the second."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "BTI 2014 LLC v Sequana SA",
+            "citation": "[2022] UKSC 25",
+            "court": "Supreme Court",
+            "year": 2022,
+            "factsShort": "AWA, facing a substantial but uncertain future liability for historic pollution, paid a large dividend to its parent shareholder while still solvent; it later became insolvent, and its liquidator's assignee argued the dividend breached a duty to consider creditors.",
+            "ratioShort": "A creditor duty exists as a modification of s 172, but is only engaged once directors know, or ought to know, the company is insolvent or bordering on insolvency, or that an insolvent liquidation or administration is probable — not merely possible or foreseeable.",
+            "expanded": {
+              "facts": "AWA (a subsidiary of Sequana SA) manufactured chemicals and faced potential liability for historic environmental pollution that could, depending on how litigation and regulatory action developed, eventually exceed its assets. At the time a dividend of around €135 million was paid to Sequana SA in 2009, AWA was cash-flow and balance-sheet solvent applying ordinary tests, though the pollution liability was a known, serious contingent risk. AWA became insolvent several years later. BTI, as assignee of AWA's claims, sued the directors, arguing the dividend breached a duty owed to creditors given the known contingent liability.",
+              "judgmentExtract": "All nine Justices agreed the creditor duty exists as a rule of the common law preserved by s 172(3), engaged when directors know, or ought to know, that the company is insolvent, bordering on insolvency, or that insolvent liquidation or administration is probable. They agreed a mere risk of future insolvency, without more, is not enough to trigger it — companies take risk as a matter of ordinary business, and treating any foreseeable risk of insolvency as sufficient would chill ordinary commercial decision-making across the vast majority of trading companies. On the facts, the risk to AWA at the time of the dividend, though real, fell short of the required probability, so the duty was not engaged and the claim failed. The Justices did not, however, agree on a single precise formulation of how close to a 'probability' the risk must be, nor definitively resolve whether the duty becomes paramount (creditors' interests override members') once a company is in actual insolvent liquidation or administration.",
+              "significance": "Sequana is now the leading and most authoritative statement of the creditor duty in English law. It confirms the duty's existence, its statutory anchor in s 172(3), and rejects 'mere risk' as the trigger in favour of something closer to probability of insolvency. It deliberately leaves the exact triggering threshold, and some detail of the duty's content once engaged, open — which is precisely why commentary since 2022 continues to debate where 'probable' sits on the spectrum between 'possible' and 'certain'."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-08-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events in the order they occurred in the Sequana litigation.",
+          "items": ["AWA faces a known, serious but uncertain contingent liability for historic pollution", "AWA, while solvent on ordinary tests, pays a large dividend to its parent, Sequana SA", "AWA later becomes insolvent", "The Supreme Court holds the creditor duty was not engaged at the time of the dividend, because insolvency was not yet probable"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the arc of the case: a known risk, a dividend paid while still solvent, insolvency arriving only later, and the Supreme Court concluding — after the fact — that the risk at the relevant time hadn't crossed the probability threshold the duty requires.",
+          "feedbackIncorrect": "Check the order again — the dividend was paid while AWA was still solvent, with the pollution liability a known risk rather than a probability; insolvency followed years afterwards, and the Supreme Court assessed the duty's engagement as at the time of the dividend, not with the benefit of hindsight from the later insolvency."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The trigger: why 'probability', and why not 'mere risk'",
+        "voice": "Socratic — poses the line-drawing problem before explaining the Court's answer",
+        "body": [
+          "Why not simply say the creditor duty is engaged the moment there is any risk of insolvency, however small? Because, as the Supreme Court recognised, almost every trading company carries some risk of insolvency at almost every point in its life — that is what it means to take commercial risk. If 'any risk' triggered a duty to prioritise creditors, directors of ordinary, healthy companies would be pulled towards excessive caution on every significant decision, for fear that hindsight might later characterise some background risk as having been 'foreseeable' at the time.",
+          "The Court's answer draws the line much closer to actual crisis: the duty is engaged when directors know, or ought to know, that the company is insolvent or bordering on insolvency, or that an insolvent liquidation or administration is probable. 'Probable' is doing real work here — it signals something meaningfully more likely than not merely possible, without requiring directors to wait until insolvency is a certainty or has already happened.",
+          "This is where the lesson's central currency point matters. The Justices in Sequana did not all converge on one crisp form of words for exactly how probable is probable enough, and the judgment leaves genuine room for a case with different facts to test the boundary further. Treat 'probability, not mere risk' as the settled headline, and treat any attempt to pin the trigger down to an exact percentage or bright-line moment as commentary, not settled law."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Locating a company on the insolvency spectrum",
+            "description": "A simplified spectrum for classifying where a company sits, and what a director must do at each stage, following Sequana.",
+            "nodes": [
+              { "id": "healthy", "label": "Clearly solvent, no real insolvency risk on the horizon — ordinary s 172(1) duty, members' interests" },
+              { "id": "risk", "label": "Some foreseeable risk of insolvency exists, as in most trading companies — creditor duty NOT yet engaged (Sequana)" },
+              { "id": "zone", "label": "Directors know, or ought to know, insolvency or insolvent liquidation/administration is probable — the 'zone of insolvency': creditor duty engaged, content contested" },
+              { "id": "actual", "label": "Company is actually insolvent, in liquidation or administration — creditor duty engaged at its strongest; precise weight given to creditors vs members left open by Sequana" }
+            ],
+            "edges": [
+              { "from": "healthy", "to": "risk", "label": "risk increases" },
+              { "from": "risk", "to": "zone", "label": "risk becomes probability" },
+              { "from": "zone", "to": "actual", "label": "insolvency occurs" }
+            ],
+            "textAlternative": "A company moves along a spectrum: clearly solvent (ordinary s 172(1) duty applies); foreseeable but non-probable risk of insolvency (creditor duty not yet engaged, per Sequana); the 'zone of insolvency' where insolvency or an insolvent liquidation/administration is probable (creditor duty engaged, though its precise content is contested); and actual insolvency, liquidation or administration (creditor duty engaged at its strongest, though the exact weight given to creditors versus members here was also left open by Sequana)."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-08-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a company carrying an ordinary, foreseeable commercial risk of future insolvency — without more — is enough, on its own, to engage the Sequana creditor duty?",
+          "sliderLabels": ["Confident — any foreseeable risk is enough", "Not confident — mere risk is not enough; something closer to probability is required"],
+          "correctPosition": "Not confident — mere risk is not enough; something closer to probability is required",
+          "explanation": "Correct to sit here. Sequana explicitly rejected mere foreseeable risk as the trigger, precisely because almost all trading companies carry some risk of that kind — the duty needs something closer to probability of insolvency, or actual/bordering insolvency, before it bites."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What the duty actually requires once triggered — and what remains open",
+        "voice": "structural — separates settled content from unsettled content",
+        "body": [
+          "Once the duty is engaged, what must a director actually do? The settled core is that directors must take creditors' interests into account when exercising the s 172 duty — they can no longer treat maximising member value as the only consideration, because losses at this stage of a company's life fall economically on creditors rather than (or as well as) shareholders.",
+          "How much weight creditors' interests must be given, and whether that weight becomes total (creditors' interests treated as effectively paramount, displacing members' interests) once a company is in actual insolvent liquidation or administration, is one of the genuinely open questions Sequana leaves for a future case. The judgment's discussion suggests the weighting likely increases along the spectrum described in Part 3 — heavier as insolvency shifts from probable to actual — but the Justices did not lay down a single formula a director (or a court) can mechanically apply.",
+          "For exam purposes, the safest and most defensible structure is: (1) identify where on the Sequana spectrum the company sits on the facts given; (2) state that the duty, if engaged, requires directors to take creditors' interests into account, with the weight given increasing the closer the company is to actual insolvency; and (3) flag, rather than resolve, the fact that the precise degree of weight — and whether it ever becomes fully paramount over members' interests short of actual insolvency — remains debated. A script that pretends this is fully settled is less accurate than one that identifies the live question honestly."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Settled vs contested after Sequana",
+            "points": [
+              "Settled: the creditor duty exists, is preserved by s 172(3), and modifies (rather than replaces) the existing s 172 duty owed to the company",
+              "Settled: mere foreseeable risk of insolvency is not enough to trigger the duty",
+              "Settled: the duty is engaged once directors know, or ought to know, insolvency, bordering insolvency, or probable insolvent liquidation/administration",
+              "Contested/left open: the exact precision of 'probable', and precisely how much weight creditors' interests carry once the duty is engaged — including whether it ever becomes fully paramount short of actual insolvency"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-08-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Which statement about the content of the creditor duty once engaged is the most accurate, post-Sequana?",
+          "options": ["Directors must take creditors' interests into account, with weight likely increasing as insolvency becomes more certain, but the Supreme Court did not lay down a single precise formula for how much weight is required at each stage", "The Supreme Court definitively ruled that creditors' interests become fully paramount the instant the duty is triggered, with no room for member interests at all", "The duty requires directors to stop trading immediately once it is engaged"],
+          "correctIndex": 0,
+          "trapExplanation": "Both wrong options overstate what Sequana actually decided. The Court did not hold that creditor interests become instantly and fully paramount the moment the duty is triggered (that question was left open, particularly short of actual insolvency), and nothing in the creditor duty itself requires directors to cease trading — that confuses this equitable duty with the quite different wrongful trading regime covered in Lesson 13."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Keeping the creditor duty and wrongful trading apart",
+        "voice": "direct — pre-empts the confusion the spine flags as the biggest risk in this module",
+        "body": [
+          "This lesson closes on the distinction that examiners, and the module's own currency notes, flag as the most commonly blurred point in this whole area: the Sequana creditor duty is not the same thing as wrongful trading under s 214 of the Insolvency Act 1986 (now also s 246ZB for administrations), which Lesson 13 covers in full.",
+          "The creditor duty is an equitable modification of s 172, engaged on a probability-of-insolvency test, enforceable (like any breach of a director's duty to the company) through the company itself once insolvent, with the account-of-profits and compensation-style remedies covered in Lesson 9. Wrongful trading is an entirely separate, purely statutory cause of action, with its own trigger — the point at which a director knew or ought to have concluded there was no reasonable prospect of avoiding insolvent liquidation — and its own remedy: a court order that the director contribute to the company's assets.",
+          "The two doctrines overlap in the sense that both respond to a company's slide towards insolvency, and the same set of facts can sometimes support arguments under both. But they are legally distinct causes of action with different triggers, different sources (common law/equity vs statute) and different remedies. Do not present them, in an exam or here, as two names for the same rule — that is precisely the conflation this lesson, and the wider module, is built to prevent."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Wrongful trading (preview)",
+            "definition": "A distinct statutory cause of action under Insolvency Act 1986 s 214/s 246ZB, triggered once a director knew or ought to have concluded there was no reasonable prospect of avoiding insolvent liquidation or administration — not the same test, source, or remedy as the Sequana creditor duty. Covered in full in Lesson 13."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-08-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is best analysed under the Sequana creditor duty, rather than wrongful trading?",
+          "scenarioA": "A company is already in insolvent liquidation. Its liquidator seeks a court order requiring a former director to contribute to the company's assets, on the basis he continued trading after there was no reasonable prospect of avoiding insolvent liquidation.",
+          "scenarioB": "A company, while still solvent but with insolvency now probable, pays an unusually large dividend to its shareholders instead of retaining funds, and its liquidator later argues the directors failed to have regard to creditors' interests in approving that dividend.",
+          "correctScenario": "B",
+          "explanation": "B is a creditor duty scenario: it turns on whether, at the time of the dividend, insolvency was probable enough to engage the equitable modification of s 172, and whether creditors' interests were properly weighed. A is a classic wrongful trading fact pattern: it turns on the 'no reasonable prospect' statutory test and seeks a contribution order, which is the s 214/s 246ZB remedy, not an account of profits or compensation for breach of the s 172-based creditor duty."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "companylaw-08-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which provision of the Companies Act 2006 preserves the common-law creditor duty as a modification of the s 172(1) duty?",
+      "acceptableAnswers": ["s 172(3)", "section 172(3)", "Companies Act 2006 s172(3)"],
+      "modelAnswer": "Section 172(3), which provides that the s 172(1) duty has effect subject to any rule of law requiring directors, in certain circumstances, to consider or act in the interests of creditors."
+    },
+    {
+      "itemId": "companylaw-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "In which case did the Supreme Court most authoritatively confirm the existence and trigger of the creditor duty?",
+      "options": ["BTI 2014 LLC v Sequana SA [2022] UKSC 25", "Re D'Jan of London Ltd [1994] 1 BCLC 561"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-08-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT what the Sequana Supreme Court held?",
+      "options": ["The creditor duty is engaged the instant any foreseeable risk of insolvency exists", "The creditor duty is preserved by s 172(3) as a modification of s 172, not a freestanding duty", "Mere risk of insolvency, without more, does not trigger the duty"],
+      "correctIndex": 0,
+      "trapExplanation": "This is precisely what Sequana rejected. Foreseeable risk alone — present in almost every trading company at almost every point — is not enough; the trigger requires something closer to probability of insolvency, or actual/bordering insolvency."
+    },
+    {
+      "itemId": "companylaw-08-test-04",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order these points along the Sequana insolvency spectrum, from healthiest to most severe.",
+      "items": ["Clearly solvent, no meaningful insolvency risk on the horizon", "Ordinary foreseeable commercial risk of insolvency, as in most trading companies", "Insolvency, or insolvent liquidation/administration, is probable", "Company is actually insolvent, in liquidation or administration"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "companylaw-08-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Section 172(3) refers to a duty modified 'in certain circumstances'. According to Sequana, what best describes those circumstances?",
+      "options": ["When directors know, or ought to know, the company is insolvent, bordering on insolvency, or that insolvent liquidation/administration is probable", "Whenever a company has any debt outstanding to any creditor at all", "Only once a formal insolvency process (liquidation or administration) has already begun"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-08-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In this passage summarising the Sequana majority reasoning, highlight the sentence stating the trigger for the duty.",
+      "passage": "The appellants argued that any foreseeable risk of insolvency, however remote, should be sufficient to engage the duty. The Supreme Court disagreed. Treating mere risk as sufficient would place an unrealistic burden on directors of ordinary trading companies, which routinely operate with some background risk of future insolvency. The duty is instead engaged when the directors know, or ought to know, that the company is insolvent or bordering on insolvency, or that an insolvent liquidation or administration is probable.",
+      "ratioSentence": "The duty is instead engaged when the directors know, or ought to know, that the company is insolvent or bordering on insolvency, or that an insolvent liquidation or administration is probable."
+    },
+    {
+      "itemId": "companylaw-08-test-07",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that would most strongly suggest the creditor duty has been triggered on these facts.",
+      "scenarioText": "A trading company has modest, ordinary levels of debt typical for its sector. Its finance director produces cash-flow forecasts showing the company will run out of funds to meet its liabilities as they fall due within the next eight weeks, unless urgent new funding is secured, and no such funding is currently in place.",
+      "tappableSpans": ["ordinary levels of debt typical for its sector", "cash-flow forecasts showing the company will run out of funds", "within the next eight weeks", "no such funding is currently in place"],
+      "correctSpan": "cash-flow forecasts showing the company will run out of funds",
+      "explanation": "Ordinary sector-typical debt is background risk, not probability. A concrete, dated forecast showing the company will actually run out of funds to meet liabilities, absent urgent action, is the kind of fact that moves a company from mere risk towards probable insolvency under the Sequana test."
+    },
+    {
+      "itemId": "companylaw-08-test-08",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more closely mirrors the actual facts and outcome in Sequana itself?",
+      "scenarioA": "A company pays a dividend while facing a known, serious but not yet probable contingent liability; years later it becomes insolvent, and a claim is brought retrospectively arguing the duty applied at the time of payment.",
+      "scenarioB": "A company's directors continue trading for six months after concluding, correctly, that insolvent liquidation cannot realistically be avoided, racking up further debts in the process.",
+      "correctScenario": "A",
+      "explanation": "A mirrors Sequana's own facts: a dividend paid while a serious risk existed but had not yet crystallised into probability, with a later, retrospective claim assessed against the position as it stood at the time of payment. B describes a wrongful trading fact pattern (Lesson 13), not a creditor duty one."
+    },
+    {
+      "itemId": "companylaw-08-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company is clearly and comfortably solvent, with strong cash reserves and no indication of financial difficulty. Its directors approve a large dividend. Applying Sequana, is the creditor duty engaged?",
+      "options": ["No — with no probability of insolvency on these facts, the ordinary s 172(1) duty (focused on members) governs the decision", "Yes — any dividend payment automatically engages the creditor duty as a precaution", "Yes — because dividends always reduce the assets available to creditors"],
+      "correctIndex": 0,
+      "explanation": "Sequana's trigger requires probability of insolvency (or actual/bordering insolvency), not the mere fact that a payment reduces company assets. A comfortably solvent company with no indication of financial difficulty sits at the healthy end of the spectrum, where the ordinary s 172(1) duty applies without modification."
+    },
+    {
+      "itemId": "companylaw-08-test-10",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A liquidator wants to bring a claim against a former director personally for breach of the creditor duty. Who has standing to bring that claim?",
+      "options": ["The company, through its liquidator — the duty remains owed to the company, not to individual creditors", "Any individual creditor, suing in their own name"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-08-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Camden Fabrications Ltd is under real commercial strain: a major customer has gone into administration owing it a large sum, and its finance director's most recent forecast concludes the company will probably be unable to pay its debts as they fall due within three months without a rescue refinancing that has not yet been secured. Despite this, the board approves a dividend to its two shareholder-directors. Analyse whether the creditor duty is engaged and, if so, what it requires.",
+      "factsToOrder": [
+        "A major customer's administration leaves Camden Fabrications owing a large uncollectable sum",
+        "The finance director's forecast concludes insolvency is probable within three months absent a refinancing",
+        "No refinancing has yet been secured",
+        "The board nonetheless approves a dividend to the shareholder-directors"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the creditor duty, as a modification of s 172 preserved by s 172(3), was engaged at the time the dividend was approved, and if so, what it required of the board.",
+        "rule": "Following BTI 2014 LLC v Sequana SA [2022] UKSC 25, the creditor duty is engaged once directors know, or ought to know, the company is insolvent, bordering on insolvency, or that insolvent liquidation or administration is probable; mere foreseeable risk is not enough. Once engaged, directors must take creditors' interests into account in exercising the s 172 duty, with the exact weight required a matter the Supreme Court left open.",
+        "application": "The finance director's own forecast — insolvency probable within three months absent a secured refinancing that does not yet exist — goes beyond ordinary background risk and into the probability the Sequana test requires; the directors knew, or plainly ought to have known, this. On these facts the creditor duty is engaged, and the board was required to give real weight to creditors' interests before approving a further outflow of the company's assets to its shareholder-directors.",
+        "conclusion": "The creditor duty was engaged, and approving the dividend without regard to creditors' interests is likely to constitute a breach of the (modified) s 172 duty, exposing the directors to a claim by a subsequent liquidator; the precise remedy is addressed in Lesson 9."
+      }
+    },
+    {
+      "itemId": "companylaw-08-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "A student writes: 'The Sequana creditor duty and wrongful trading under s 214 Insolvency Act 1986 are simply two names for the same legal test.' Why is this wrong?",
+      "options": ["They are distinct causes of action with different sources, triggers and remedies — the creditor duty is an equitable modification of s 172 triggered by probability of insolvency, while wrongful trading is a separate statutory cause of action triggered by no reasonable prospect of avoiding insolvent liquidation, with its own contribution-order remedy", "They are the same test, but wrongful trading simply has a higher standard of proof", "Wrongful trading has now replaced the creditor duty entirely following Sequana"],
+      "correctIndex": 0,
+      "trapExplanation": "This is exactly the conflation the module's currency notes flag as the most common error in this area. The two doctrines can arise on overlapping facts but are legally separate: different source (common law/equity vs statute), different trigger (probability of insolvency vs no reasonable prospect of avoiding insolvent liquidation), and different remedy (account of profits/compensation vs a contribution order). Lesson 13 develops wrongful trading in full."
+    },
+    {
+      "itemId": "companylaw-08-test-13",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that the Supreme Court in Sequana settled a single, precise definition of exactly how probable insolvency must be before the duty is triggered?",
+      "sliderLabels": ["Confident — a precise, bright-line formula was settled", "Not confident — the general 'probability, not mere risk' principle is settled, but the exact threshold remains debated"],
+      "correctPosition": "Not confident — the general 'probability, not mere risk' principle is settled, but the exact threshold remains debated",
+      "explanation": "Not confident is the accurate position. Sequana settled that mere risk is insufficient and something closer to probability is required, and confirmed the duty's existence and statutory anchor — but the Justices did not converge on one crisp formula for exactly how probable is probable enough, which is why commentary continues to debate the precise trigger."
+    },
+    {
+      "itemId": "companylaw-08-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A company is already in formal insolvent administration. Its administrator investigates a decision the directors made two years earlier, at a time when the company was solvent and had no known financial difficulty of any kind. Is the creditor duty likely to be engaged in respect of that earlier decision?",
+      "options": ["No — the duty is assessed as at the time of the relevant decision, and on these facts the company was solvent with no known difficulty at that time", "Yes — because the company is now in administration, every past decision is automatically reassessed under the creditor duty", "Yes — administrators can retrospectively apply the creditor duty to any decision made in the company's history"],
+      "correctIndex": 0,
+      "explanation": "Sequana assesses the duty's engagement at the time of the relevant decision, not with hindsight from a later insolvency. A decision made while the company was genuinely solvent, with no known difficulty, sits outside the creditor duty even if the company later becomes insolvent for unrelated or later-arising reasons."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two mistakes this lesson's test items catch most often: treating the creditor duty as a freestanding right creditors can sue on directly (it is a modification of s 172, enforced through the company), and conflating the creditor duty's probability-of-insolvency trigger with wrongful trading's separate 'no reasonable prospect' trigger, which Lesson 13 covers as its own statutory cause of action.",
+    "reviewMisses": true,
+    "linkToPathway": "companylaw.directors.creditor-duty"
+  }
+}

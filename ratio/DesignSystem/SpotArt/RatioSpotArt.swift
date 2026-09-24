@@ -39,6 +39,11 @@ public enum RatioSpotArt: CaseIterable {
         case .tort: .bottle
         case .landLaw: .openBook
         case .equityTrusts: .seal
+        // Placeholders until the illustrator draws their own.
+        case .companyLaw: .quill
+        case .euLaw: .pediment
+        case .humanRights: .scales
+        case .jurisprudence: .openBook
         }
     }
 }

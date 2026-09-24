@@ -1,0 +1,522 @@
+{
+  "lessonId": "equity-04",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 4,
+  "topicId": "equity.formalities.formalities",
+  "title": "Formalities",
+  "subtitle": "Writing requirements for land trusts and equitable interests — and why the taxman kept winning",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the s53(1)(b) requirement for declarations of trusts of land and the s53(1)(c) requirement for dispositions of a subsisting equitable interest, and explain how they differ",
+    "Distinguish a 'disposition' of a subsisting equitable interest from an outright transfer of the whole legal and equitable title, and explain why that distinction decided Vandervell v IRC",
+    "Apply the constructive trust exception in s53(2) to an oral, specifically enforceable contract to assign an equitable interest, using Neville v Wilson to resolve the tension Oughtred v IRC and Grey v IRC left open"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Law of Property Act 1925, s 53(1)(b)",
+      "role": "Requires a declaration of trust respecting land to be evidenced in signed writing"
+    },
+    {
+      "citation": "Law of Property Act 1925, s 53(1)(c)",
+      "role": "Requires a disposition of a subsisting equitable interest or trust to be in signed writing"
+    },
+    {
+      "citation": "Law of Property Act 1925, s 53(2)",
+      "role": "Exempts the creation or operation of resulting, implied and constructive trusts from the s53(1) writing requirements"
+    },
+    {
+      "citation": "Grey v IRC [1960] AC 1",
+      "role": "An oral direction by a beneficiary to trustees to hold on trust for someone else is a 'disposition' requiring s53(1)(c) writing"
+    },
+    {
+      "citation": "Vandervell v IRC [1967] 2 AC 291",
+      "role": "A direction transferring both legal and equitable title outright is not a 'disposition' of a subsisting equitable interest requiring writing"
+    },
+    {
+      "citation": "Oughtred v IRC [1960] AC 206",
+      "role": "Majority held that a specifically enforceable oral contract to transfer an equitable interest did not, by itself, dispense with s53(1)(c) writing for the subsequent transfer"
+    },
+    {
+      "citation": "Neville v Wilson [1997] Ch 144",
+      "role": "Held a specifically enforceable oral contract to assign shares creates an immediate constructive trust exempt under s53(2), adopting Lord Radcliffe's Oughtred dissent"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students tend to file formalities under 'boring technicality' — a rule to recite, not a rule that decides anything. This is the one area of trusts law that was litigated, repeatedly, over genuinely large sums of stamp duty. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can quote s53(1)(c) — this lesson is about spotting the exact moment in a fact pattern where it either bites or doesn't.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool is weighted towards fact patterns that turn on one small structural difference — an oral direction that keeps legal title with the trustee, versus one that transfers everything outright. Read for that difference, not for the general topic.",
+      "weakKnowledge": "Start with Part 1 and pin down exactly what s53(1)(b), (1)(c) and (2) each say before moving on — every case in this lesson is a dispute about which one of the three applies, and the lecture assumes you can tell them apart on sight."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Vandervell v IRC is often taught as the case that shows an outright transfer needs no writing. What's less often said: Mr Vandervell won that point outright, and lost the case anyway — over an option nobody had bothered to write down who it was for. This is a lesson about how a missing signature, or a missing sentence, moved genuinely large sums of tax."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two different writing rules, two different jobs",
+        "voice": "puzzle-driven — opens with the stakes before the statute, because the statute only makes sense once you know what was being fought over",
+        "body": [
+          "Section 53 of the Law of Property Act 1925 looks like a single rule about writing. It's actually two rules doing two different jobs, plus one exception that swallows a surprising amount of the first two — and almost every case in this lesson is a fight about which of the three provisions actually applies to a given set of facts.",
+          "Section 53(1)(b): a declaration of trust respecting land must be manifested and proved by some writing signed by the person able to declare the trust. Notice the wording — 'manifested and proved,' not 'made.' The trust can be created orally; it just cannot be enforced until evidenced in signed writing, which can come later. Land only.",
+          "Section 53(1)(c): a disposition of an equitable interest or trust subsisting at the time of the disposition must itself be in writing signed by the person disposing of it, or their agent. This one applies to any kind of property, not just land — shares, cash, anything — and unlike (1)(b) it isn't just evidence: the disposition itself is void without writing.",
+          "Section 53(2): none of this applies to the creation or operation of resulting, implied or constructive trusts. These arise by operation of law, not by anyone's deliberate act of disposing of anything — so the formality that exists to create a paper trail for deliberate dispositions has nothing to bite on.",
+          "Why did anyone care enough to litigate this repeatedly? Because for decades, written instruments transferring property attracted stamp duty, and oral steps did not. Every case below is, underneath the trusts doctrine, a dispute about whether a taxpayer's informal step counted as the kind of thing s53(1)(c) requires to be written down."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, s 53(1)(b), (1)(c), (2)",
+            "text": "(1)(b) a declaration of trust respecting any land or any interest therein must be manifested and proved by some writing signed by some person who is able to declare such trust or by his will; (1)(c) a disposition of an equitable interest or trust subsisting at the time of the disposition, must be in writing signed by the person disposing of the same, or by his agent thereunto lawfully authorised in writing or by will. (2) This section does not affect the creation or operation of resulting, implied or constructive trusts.",
+            "elements": [
+              "(1)(b): trusts of land — must be evidenced, not necessarily created, in signed writing",
+              "(1)(c): dispositions of a subsisting equitable interest, any property — must be made in signed writing",
+              "(2): resulting, implied and constructive trusts are exempt from both"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-04-check-01",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Which of these correctly distinguishes s53(1)(b) from s53(1)(c)?",
+          "options": [
+            "(1)(b) allows the trust to be created orally and merely requires later written evidence; (1)(c) requires the disposition itself to be made in writing to be valid",
+            "(1)(b) and (1)(c) both require the underlying transaction to be created in writing, with no exceptions",
+            "(1)(c) applies only to land, while (1)(b) applies to all property"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. (1)(b) is an evidential requirement that can be satisfied after the fact; (1)(c) is a validity requirement — no signed writing, no valid disposition, full stop.",
+          "feedbackIncorrect": "Re-read the two provisions. (1)(b) uses 'manifested and proved' — evidence, satisfiable later, land only. (1)(c) requires the disposition itself to be in writing — a stricter, immediate requirement, and it applies to any property, not just land."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Grey v IRC: the beneficiary who talked instead of wrote",
+        "voice": "puzzle-driven — 'why did the taxman win' framing, told as a scheme that almost worked",
+        "body": [
+          "Mr Hunter held shares on trust, with his six grandchildren as the ultimate objects of his planning. He wanted to set up new trusts for them, using shares he was already beneficially entitled to under an existing trust — and he wanted to avoid the ad valorem stamp duty that a written transfer of that value would normally attract.",
+          "The plan: Hunter, as the person absolutely entitled in equity, orally directed his trustees to hold the shares on trust for the grandchildren instead of for him. Nothing written changed hands at that moment. Only some months later did the trustees execute documents formally confirming what had already been orally directed — documents drafted, deliberately, to describe themselves as merely recording a fait accompli rather than themselves creating anything.",
+          "The House of Lords was not persuaded. An oral direction by a beneficiary, telling trustees who already hold property to now hold it for someone else, redirects the equitable interest — and redirecting a subsisting equitable interest is exactly what s53(1)(c) calls a 'disposition.' It did not matter that the property happened to be shares rather than land: (1)(c) is not limited to land. It did not matter that the direction was oral and only 'confirmed' in writing later — the disposition itself had to be in writing, and the oral instruction was the disposition. The later document didn't rescue anything; if anything, it was the first document that counted, and duty was assessed on it. The scheme failed; the Revenue collected."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Grey v IRC",
+            "citation": "[1960] AC 1",
+            "court": "House of Lords",
+            "year": 1960,
+            "factsShort": "A beneficiary orally directed trustees who held shares for him to hold them instead on trust for his grandchildren, with written confirmation only following later.",
+            "ratioShort": "An oral direction by a beneficial owner redirecting trustees to hold the same property for someone else is a 'disposition' of a subsisting equitable interest, and is void without s53(1)(c) writing.",
+            "expanded": {
+              "facts": "Mr Hunter was absolutely entitled in equity to shares held by trustees. Wishing to settle the shares on new trusts for his six grandchildren without attracting stamp duty on a written transfer, he gave the trustees oral instructions to hold the shares thereafter on the terms of the new settlements. Several months later, the trustees executed deeds that purported merely to record what had already occurred orally.",
+              "judgmentExtract": "The House of Lords held that a direction by a person entitled to an equitable interest, telling the trustee to hold that same property on trust for someone else, is a disposition of that equitable interest within s53(1)(c) — whatever form the direction takes. An oral direction is therefore ineffective to achieve the redirection; only the later, written deeds were capable of operating as the disposition, and duty was assessed accordingly.",
+              "significance": "Grey establishes that s53(1)(c) is not confined to land and is not satisfied by a two-stage process of 'oral direction now, written confirmation later.' The key structural fact is that the trustee retained legal title throughout, while only the destination of the equitable interest changed — that is precisely what a 'disposition of a subsisting equitable interest' means, and it is the fact that distinguishes Grey from Vandervell in Part 3."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-04-check-02",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "Does s53(1)(c) apply only to interests in land?",
+          "options": [
+            "No — it applies to a disposition of any subsisting equitable interest, including shares, as Grey v IRC confirms",
+            "Yes — like s53(1)(b), it is limited to land",
+            "It applies only where stamp duty is in issue"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "Students often assume s53 is a single 'land formalities' section because (1)(b) is land-only. (1)(c) is a separate provision with separate scope: Grey v IRC concerned shares, not land, and the disposition still needed writing."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Vandervell v IRC: outright transfer isn't a 'disposition' — but that's not the whole story",
+        "voice": "puzzle-driven — sets up an apparent win, then reveals the sting that actually decided the tax bill",
+        "body": [
+          "Tony Vandervell wanted to fund a chair at the Royal College of Surgeons. A bank held shares in his company on a bare trust for him absolutely — Vandervell held the entire equitable interest, the bank held bare legal title. Vandervell instructed the bank to transfer the shares outright to the College: both legal title and whatever equitable interest existed, in one single step, to one single recipient who would then own the whole thing free of any trust.",
+          "The Revenue argued this still needed s53(1)(c) writing, on the theory that Vandervell's equitable interest had to be separately 'disposed of' just as in Grey. The House of Lords disagreed. In Grey, the trustee retained legal title throughout and only the equitable interest moved to a new destination — that is a disposition of a subsisting equitable interest requiring writing. In Vandervell, nothing was left subsisting to dispose of separately: the whole bundle of rights, legal and equitable together, passed to the College in one transaction. Where legal and equitable title merge into a single recipient in a single step, there is no distinct equitable interest left over that needs its own paper trail. No s53(1)(c) writing was required, and the oral instruction to the bank was effective.",
+          "That sounds like Vandervell won. He didn't — not the case as a whole. The transfer to the College carried an option: the College granted Vandervell's own charitable trust company an option to repurchase the shares later, at a fixed low price, intended to benefit Vandervell's children. Nobody specified, in writing or otherwise, who was to benefit from that option once the trust company held it. With no beneficiary specified, equity's default rule filled the gap: a resulting trust arose, holding the option back on trust for Vandervell himself. That meant Vandervell was still, in the eyes of the law, beneficially entitled to income flowing through the option — and he was taxed on it, for years, on exactly the income he had structured the whole transaction to give away.",
+          "The lesson inside the lesson: winning the formalities point on the main transfer did not win the case, because a completely separate defect — an unallocated beneficial interest in the option — generated a resulting trust that dragged the tax liability straight back to him."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Grey v IRC vs Vandervell v IRC — the structural difference",
+            "points": [
+              "Grey: trustee keeps legal title; only the equitable interest is redirected to someone new → a 'disposition' of a subsisting equitable interest → s53(1)(c) writing required",
+              "Vandervell: legal and equitable title transferred together, in one step, to one recipient → nothing subsisting is left to 'dispose of' separately → no s53(1)(c) writing required",
+              "But: Vandervell still lost overall, because the option retained for his children's benefit had no specified beneficiary, and a resulting trust brought the beneficial interest straight back to him"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-04-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states why no s53(1)(c) writing was needed for the transfer to the College.",
+          "passage": "The Revenue contended that Vandervell's equitable interest had to be separately disposed of in writing, just as in Grey v IRC. But where the direction transfers both the legal and the equitable title together, in a single transaction, to a single recipient, there is no subsisting equitable interest left over capable of being separately disposed of. Section 53(1)(c) has no application to a transaction that leaves nothing behind to dispose of.",
+          "ratioSentence": "But where the direction transfers both the legal and the equitable title together, in a single transaction, to a single recipient, there is no subsisting equitable interest left over capable of being separately disposed of."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Oughtred v IRC and the contract exception's near-miss",
+        "voice": "puzzle-driven — shows a divided court, and treats the dissent as the real protagonist of the story",
+        "body": [
+          "Mrs Oughtred held a reversionary equitable interest in shares. She orally agreed with her son to exchange it for shares he held outright — a contract, for consideration, that equity would specifically enforce. Some time later, the parties executed a formal transfer to complete the exchange.",
+          "The Revenue argued that the formal transfer document was what actually operated to move the equitable interest, and so attracted ad valorem stamp duty on its full value. Mrs Oughtred's side argued the oral contract had already done the real work: equity treats a specifically enforceable contract to sell as immediately generating a constructive trust in favour of the purchaser — 'equity looks on as done that which ought to be done.' If that constructive trust already existed the moment the oral contract was made, then it fell within the s53(2) exemption and needed no separate s53(1)(c) writing at all; the later transfer document would just be tidying up legal title that had already, in substance, changed hands in equity.",
+          "The majority of the House of Lords sided with the Revenue. They treated the formal transfer as the operative disposition for stamp duty purposes, without fully engaging the constructive trust argument as a complete answer — leaving Mrs Oughtred's side, and taxpayers generally, with the impression that an oral contract alone could not dispense with s53(1)(c) formality for the transfer that followed it.",
+          "Lord Radcliffe dissented, and his reasoning is the one that matters most for where the law ended up: a specifically enforceable oral contract, made for value, generates an immediate constructive trust in the purchaser's favour by operation of equity — not by any deliberate 'disposition' the vendor makes — and the creation of a constructive trust is exactly what s53(2) exempts from the s53(1)(c) writing requirement. On his view, no further writing should ever have been needed. At the time, this was simply the losing argument. It did not stay that way."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Specifically enforceable contract as constructive trust",
+            "definition": "Where a contract for the sale of property (including an equitable interest) is one equity would specifically enforce, equity treats the vendor as an immediate constructive trustee for the purchaser from the moment of the contract, even before completion — the maxim being that equity treats as done that which ought to be done."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-04-check-04",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "Mrs Oughtred orally, and for consideration, agreed a specifically enforceable contract to exchange her equitable interest for her son's shares; a formal transfer followed later. Applying the majority reasoning in Oughtred v IRC, analyse whether the oral contract alone was sufficient to dispose of her equitable interest without further writing.",
+          "factsToOrder": [
+            "Mrs Oughtred and her son made an oral, specifically enforceable contract for value",
+            "The contract concerned Mrs Oughtred's subsisting equitable interest",
+            "A formal written transfer was executed afterwards to complete the exchange",
+            "The majority treated the later written transfer, not the oral contract, as the operative disposition"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 4,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether an oral, specifically enforceable contract to dispose of a subsisting equitable interest satisfies s53(1)(c) without further written formality.",
+            "rule": "Section 53(1)(c) requires a disposition of a subsisting equitable interest to be in signed writing. Section 53(2) exempts the creation of a constructive trust. The minority view (Lord Radcliffe) held that a specifically enforceable oral contract for value creates an immediate constructive trust for the purchaser, exempt under s53(2); the majority in Oughtred v IRC instead treated the subsequent written transfer as the operative disposition.",
+            "application": "On the majority's approach applicable at the time, Mrs Oughtred's oral contract, however specifically enforceable, did not by itself dispose of her equitable interest for s53(1)(c) purposes — the later written transfer was treated as the document that actually moved the interest, and was assessed to duty accordingly.",
+            "conclusion": "Under the majority reasoning in Oughtred, the oral contract alone was not sufficient; the formal written transfer was needed, and was itself treated as the disposition. (Lord Radcliffe's dissenting reasoning — that the oral contract alone sufficed via a s53(2) constructive trust — is developed further in Part 5.)"
+          }
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Neville v Wilson: the dissent finally wins",
+        "voice": "puzzle-driven — resolution, framed as equity's own exception catching up with its own logic",
+        "body": [
+          "Decades later, Neville v Wilson gave the Court of Appeal a chance to revisit exactly the question Oughtred left open. Shareholders of a company had informally agreed, orally, to wind the company up and divide its assets between themselves — which included each shareholder orally agreeing, for consideration, to assign to the others their equitable interests in shares of a separate company. No written assignment was ever made. Years afterwards, it mattered a great deal whether those interests had actually passed.",
+          "The Court of Appeal held that they had. Applying Lord Radcliffe's dissenting reasoning in Oughtred rather than the majority's, the court held that a specifically enforceable oral contract for value to assign an equitable interest gives rise, immediately, to a constructive trust in favour of the assignee — arising by operation of equity's own rules, not by any formal act of disposition the assignor performs. Because s53(2) exempts the creation of constructive trusts from the s53(1) writing requirements altogether, no separate written disposition was ever needed. The equitable interests had passed the moment the specifically enforceable oral contract was made.",
+          "Neville v Wilson effectively confirms that the constructive trust exception is real and operative — not a dissenting curiosity confined to one judge in one case — and that it applies to personalty (shares) just as it applied on the facts of Oughtred. The upshot for the whole topic: an oral, specifically enforceable contract for value to assign a subsisting equitable interest can validly do so, without any writing at all, because the contract itself generates a constructive trust exempt under s53(2). Grey v IRC still stands for its own facts — a bare gratuitous direction to redirect an interest, with no contract for value behind it, is not rescued this way. The contract is what does the work."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "From Oughtred's dissent to Neville v Wilson's holding",
+            "description": "Tracing how Lord Radcliffe's minority reasoning in Oughtred v IRC became the accepted law in Neville v Wilson.",
+            "nodes": [
+              {
+                "id": "contract",
+                "label": "Specifically enforceable oral contract for value to assign a subsisting equitable interest is made"
+              },
+              {
+                "id": "majority",
+                "label": "Oughtred majority: the later written transfer is the operative disposition; s53(1)(c) still bites on it"
+              },
+              {
+                "id": "dissent",
+                "label": "Lord Radcliffe, dissenting: the contract itself creates an immediate constructive trust, exempt under s53(2)"
+              },
+              {
+                "id": "neville",
+                "label": "Neville v Wilson (Court of Appeal): adopts Radcliffe's reasoning as the law"
+              },
+              {
+                "id": "result",
+                "label": "Result: the equitable interest passes at the moment of the contract, no writing required"
+              }
+            ],
+            "edges": [
+              {
+                "from": "contract",
+                "to": "majority",
+                "label": "Oughtred's outcome at the time"
+              },
+              {
+                "from": "contract",
+                "to": "dissent",
+                "label": "The road not taken — until later"
+              },
+              {
+                "from": "dissent",
+                "to": "neville",
+                "label": "Adopted"
+              },
+              {
+                "from": "neville",
+                "to": "result",
+                "label": "Confirms"
+              }
+            ],
+            "textAlternative": "A specifically enforceable oral contract for value to assign an equitable interest was, in Oughtred, held by the majority not to dispense with s53(1)(c) writing for the later transfer — but Lord Radcliffe dissented, reasoning that the contract itself creates an immediate constructive trust exempt under s53(2). Decades later, Neville v Wilson adopted Radcliffe's dissenting reasoning as the law, confirming that the equitable interest passes at the moment of such a contract, without any writing being required."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-04-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Two friends orally agree, for consideration, that one will assign her equitable interest in a family trust's shares to the other. The agreement is specifically enforceable. No document is ever signed. Applying Neville v Wilson, has the equitable interest validly passed?",
+          "options": [
+            "Yes — the specifically enforceable oral contract for value creates an immediate constructive trust, exempt from s53(1)(c) under s53(2)",
+            "No — s53(1)(c) requires signed writing for any disposition of an equitable interest, with no exception for contracts",
+            "No — this only applies to land, not shares"
+          ],
+          "correctIndex": 0,
+          "explanation": "This is Neville v Wilson on its own facts: a specifically enforceable oral contract for value to assign an equitable interest generates an immediate constructive trust, which s53(2) exempts from the s53(1)(c) writing requirement. Contrast a bare oral direction with no contract for value behind it — that stays governed by Grey v IRC and needs writing."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-04-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Name the two subsections of s53(1) of the Law of Property Act 1925 covered in this lesson, and what each governs.",
+      "acceptableAnswers": [
+        "s53(1)(b) declarations of trusts of land, s53(1)(c) dispositions of subsisting equitable interests",
+        "53(1)(b) and 53(1)(c)"
+      ],
+      "modelAnswer": "Section 53(1)(b) requires a declaration of a trust of land to be evidenced in signed writing. Section 53(1)(c) requires a disposition of a subsisting equitable interest, in any kind of property, to be made in signed writing to be valid."
+    },
+    {
+      "itemId": "equity-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which kinds of trust does s53(2) exempt from the s53(1) writing requirements?",
+      "options": [
+        "Resulting, implied and constructive trusts",
+        "Only express trusts of land"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-04-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What formality does s53(1)(b) impose on a declaration of a trust of land?",
+      "options": [
+        "It must be evidenced in signed writing, though the trust itself can be declared orally",
+        "It must be made by deed",
+        "It must be witnessed by two independent witnesses"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Students often import the deed requirement from s52 (conveyances of legal estates) into s53(1)(b), which imposes a lighter, evidential requirement only — 'manifested and proved' by writing, not created by it."
+    },
+    {
+      "itemId": "equity-04-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "In Grey v IRC, what did the House of Lords treat as the 'disposition' requiring s53(1)(c) writing?",
+      "options": [
+        "An oral direction by the beneficial owner to trustees to hold the property on trust for someone else",
+        "A written deed drafted purely to record something that had already legally happened"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-04-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that gives the ratio of Vandervell v IRC on why no s53(1)(c) writing was needed.",
+      "passage": "The Revenue's argument assumed every transfer touching an equitable interest needs separate writing. That assumption fails where legal and equitable title pass together, in one step, to one recipient. In that situation there is no subsisting equitable interest left over for section 53(1)(c) to operate on, because nothing distinct from the transfer itself remains to be disposed of.",
+      "ratioSentence": "In that situation there is no subsisting equitable interest left over for section 53(1)(c) to operate on, because nothing distinct from the transfer itself remains to be disposed of."
+    },
+    {
+      "itemId": "equity-04-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the events of the Vandervell saga.",
+      "items": [
+        "A bank holds shares as bare trustee for Vandervell absolutely",
+        "Vandervell directs the bank to transfer both legal and equitable title outright to the Royal College of Surgeons",
+        "An option to repurchase the shares is granted to Vandervell's trust company, with no beneficiary specified for the option",
+        "A resulting trust in the option arises in Vandervell's favour",
+        "Vandervell is taxed on the income, having structured the transaction to give it away"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "itemId": "equity-04-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which reasoning did the Court of Appeal adopt in Neville v Wilson?",
+      "options": [
+        "Lord Radcliffe's dissenting reasoning in Oughtred v IRC",
+        "The majority reasoning in Oughtred v IRC",
+        "An entirely new test with no connection to Oughtred v IRC"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to assume the majority view in a House of Lords case is simply 'the law' going forward. Neville v Wilson is the case where a later court expressly preferred the dissent, so citing Oughtred without checking which side of the split a proposition comes from is a trap in itself."
+    },
+    {
+      "itemId": "equity-04-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A trust arises automatically because a specifically enforceable oral contract for value has been made to assign an equitable interest. Which provision exempts this from the s53(1)(c) writing requirement?",
+      "options": [
+        "Section 53(2), because this is the creation of a constructive trust",
+        "Section 53(1)(b), because it is treated as land",
+        "No provision exempts it; writing is always required"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-04-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A orally agrees, for consideration, to sell his equitable interest in a shareholding to B. The contract is specifically enforceable. No written document is ever signed by either party. Applying Neville v Wilson, is the equitable interest validly transferred to B?",
+      "options": [
+        "Yes — the specifically enforceable contract for value creates an immediate constructive trust exempt under s53(2)",
+        "No — s53(1)(c) requires writing for every disposition of an equitable interest, with no exceptions",
+        "No — this rule is confined to shares in companies being wound up, as in Neville v Wilson itself"
+      ],
+      "correctIndex": 0,
+      "explanation": "Neville v Wilson is not confined to its own liquidation-scenario facts; its holding is general — a specifically enforceable oral contract for value assigning an equitable interest creates an immediate constructive trust under s53(2), regardless of the type of underlying transaction that prompted it."
+    },
+    {
+      "itemId": "equity-04-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A beneficiary, entitled absolutely in equity to land held on trust for her by a trustee, orally tells the trustee to hold it instead for her nephew. No writing follows for several years. Applying Grey v IRC, has the equitable interest passed to the nephew?",
+      "options": [
+        "No — this is a disposition of a subsisting equitable interest, and s53(1)(c) requires it to be made in signed writing",
+        "Yes — oral directions are always effective between family members",
+        "Yes — because this concerns land, only s53(1)(b) applies and that can be satisfied later"
+      ],
+      "correctIndex": 0,
+      "explanation": "The trustee retains legal title throughout while only the equitable interest is redirected — exactly the Grey v IRC structure. That the underlying property is land does not import the lighter s53(1)(b) standard; redirecting a subsisting equitable interest is governed by s53(1)(c), which required the disposition itself, not later evidence of it, to be in writing."
+    },
+    {
+      "itemId": "equity-04-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A father holds a valuable family heirloom on bare trust for his daughter, who is absolutely entitled to it in equity. The daughter orally instructs her father to transfer the heirloom outright — both legal and beneficial ownership — to her own son. Analyse whether s53(1)(c) writing was required for this instruction to be effective.",
+      "factsToOrder": [
+        "The father holds only bare legal title; the daughter holds the whole equitable interest",
+        "The daughter's instruction transfers both legal and equitable title together, to one recipient, in one step",
+        "No separate equitable interest is left subsisting after the transfer",
+        "The transaction structurally mirrors Vandervell v IRC rather than Grey v IRC"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether s53(1)(c) required the daughter's instruction to be in writing.",
+        "rule": "Section 53(1)(c) requires writing for a disposition of a subsisting equitable interest. Vandervell v IRC establishes that where legal and equitable title are transferred together, in one step, to one recipient, there is no subsisting equitable interest left over to dispose of separately, and s53(1)(c) does not apply. This is distinct from Grey v IRC, where the trustee retains legal title and only the equitable interest is redirected.",
+        "application": "Here the father held only bare legal title, and the daughter's instruction moved both legal and equitable title to her son together, in a single transaction. Nothing is left subsisting afterwards that would need a separate written disposition — the facts mirror Vandervell, not Grey.",
+        "conclusion": "No s53(1)(c) writing was required; the oral instruction was effective to transfer the heirloom outright."
+      }
+    },
+    {
+      "itemId": "equity-04-test-12",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario requires s53(1)(c) writing to be effective?",
+      "scenarioA": "A beneficiary orally directs a trustee, who continues to hold legal title, to now hold the same property on trust for a third party.",
+      "scenarioB": "A beneficiary directs a trustee to transfer both legal and equitable title outright to a single named recipient, ending the trust entirely.",
+      "correctScenario": "A",
+      "explanation": "A is the Grey v IRC structure: legal title stays with the trustee, only the equitable interest is redirected — a disposition of a subsisting equitable interest requiring s53(1)(c) writing. B is the Vandervell v IRC structure: everything transfers together in one step, leaving nothing subsisting to dispose of separately, so no such writing is required."
+    },
+    {
+      "itemId": "equity-04-test-13",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows this is a s53(1)(c) disposition requiring writing, rather than an outright Vandervell-style transfer.",
+      "scenarioText": "A trustee holds shares for a beneficiary absolutely. The beneficiary orally tells the trustee to continue holding the shares, but now for the beneficiary's sister instead, while the trustee's legal title is completely unaffected.",
+      "tappableSpans": [
+        "A trustee holds shares for a beneficiary absolutely",
+        "orally tells the trustee to continue holding the shares",
+        "now for the beneficiary's sister instead",
+        "the trustee's legal title is completely unaffected"
+      ],
+      "correctSpan": "the trustee's legal title is completely unaffected",
+      "explanation": "The trustee keeping legal title while only the equitable destination changes is exactly what marks this out as a disposition of a subsisting equitable interest under Grey v IRC, rather than an outright transfer under Vandervell v IRC — where legal and equitable title would move together."
+    },
+    {
+      "itemId": "equity-04-test-14",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the case that resolved the tension left open by Oughtred v IRC, by adopting Lord Radcliffe's dissenting reasoning as the law.",
+      "acceptableAnswers": [
+        "Neville v Wilson"
+      ],
+      "modelAnswer": "Neville v Wilson [1997] Ch 144, which held that a specifically enforceable oral contract for value to assign an equitable interest creates an immediate constructive trust exempt under s53(2), adopting the reasoning of Lord Radcliffe's dissent in Oughtred v IRC."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two mistakes that recur most here: assuming s53(1)(c) is land-only (it isn't — that's s53(1)(b)'s limit, not (1)(c)'s), and forgetting that the constructive trust exception under s53(2) is real, general law after Neville v Wilson, not a dissenting footnote confined to Oughtred v IRC.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.formalities.formalities"
+  }
+}

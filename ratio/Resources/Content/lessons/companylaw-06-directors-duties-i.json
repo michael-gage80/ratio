@@ -1,0 +1,358 @@
+{
+  "lessonId": "companylaw-06",
+  "moduleId": "companylaw",
+  "moduleTitle": "Company Law",
+  "lessonNumber": 6,
+  "topicId": "companylaw.directors.acting-within-powers-success",
+  "title": "What a director is actually for",
+  "subtitle": "Acting within powers and promoting the success of the company",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how Part 10 CA 2006 codifies directors' general duties without discarding the equitable and common-law rules that continue to inform them",
+    "State the two limbs of the duty to act within powers under s 171, and the subjective-with-objective-check structure of the duty to promote the success of the company under s 172, including the s 172(1)(a)–(f) factors",
+    "Apply ss 171–172 and the reasoning in Re Smith and Fawcett Ltd and Item Software (UK) Ltd v Fassihi to a new scenario to assess whether a director has acted within their duties"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006, ss 170–172", "role": "Codifies directors' general duties, while preserving the relevance of prior common-law and equitable authority to interpreting them" },
+    { "citation": "Re Smith and Fawcett Ltd [1942] Ch 304", "role": "Establishes the subjective good-faith standard for what a director 'considers' to be in the company's interests" },
+    { "citation": "Item Software (UK) Ltd v Fassihi [2004] EWCA Civ 1244", "role": "A director's duty to promote the company's success can require disclosure of the director's own wrongdoing" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson is the one most students think they already understand and most consistently misstate under pressure — usually by making the s 172 test either too subjective or too objective. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can name the sections — this lesson tests whether you can apply the actual standard the courts use.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans towards scenarios where a board has made a defensible but harsh decision: expect to be tested on whether that decision survives s 172, not on whether you can recite it.",
+      "weakKnowledge": "Start with Part 1 and be precise about what s 170(3)–(4) actually says about the relationship between the statutory duties and the old case law — the rest of this lesson assumes you have that relationship straight."
+    }
+  },
+  "lawStatedAt": "2026-09-23",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A board closes a loss-making factory, costs two hundred people their jobs, and a shareholder cries breach of duty. A different board pads out a supplier contract to protect its own directors' salaries, dresses the decision up in the language of 'long-term strategy', and no shareholder notices for years. Only one of these boards has actually breached s 172 of the Companies Act 2006 — and telling them apart is the whole of what this lesson teaches."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Codifying, not discarding: what Part 10 actually changed",
+        "voice": "doctrinal — clears up a common misconception before building on it",
+        "body": [
+          "Before the Companies Act 2006, directors' duties lived almost entirely in equity and the common law — duties of loyalty, care and good faith developed by the courts case by case, in the same broad family as the duties owed by trustees and agents. Part 10 of the 2006 Act, in force since October 2007, restates the core of that law as a set of statutory general duties, owed by every director to the company.",
+          "It's tempting to treat this as a clean break — statute in, common law out. Section 170(3) and (4) say otherwise. The codified duties are expressly stated to be based on certain common-law rules and equitable principles, and they must be interpreted and applied in the same way as those rules and principles, with regard had to the corresponding common law rules and equitable principles in developing an understanding of the new statutory wording. Practically, this means the pre-2006 case law hasn't been switched off — it's the interpretive key to reading the statute correctly.",
+          "This matters for exam technique specifically: a well-built answer on directors' duties still cites the leading pre-2006 cases, not as historical colour, but because the statute itself tells you to keep using them."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Codification (s 170(3)–(4))",
+            "definition": "The technique Part 10 CA 2006 uses to restate directors' duties in statutory form: the duties are based on, and must be interpreted consistently with, the pre-existing common-law rules and equitable principles, which remain relevant to understanding what the statutory wording means."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-06-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does Part 10 CA 2006 replace directors' pre-existing equitable and common-law duties with something entirely new and self-contained?",
+          "options": ["No — s 170(3)–(4) codifies the general duties based on the existing common-law rules and equitable principles, which remain relevant to interpreting them", "Yes — the codified statutory duties are wholly independent of the earlier case law, which no longer has any relevance"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Codification here means restatement, not replacement — the statute tells you directly to keep reading it alongside the case law it's built on.",
+          "feedbackIncorrect": "Look again at s 170(3)–(4). The statutory duties are expressly based on the common-law rules and equitable principles that came before them, and must be interpreted and applied the same way — the case law didn't stop mattering in 2006."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Section 171: acting within powers",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Section 171 is the narrowest of the general duties, and the easiest to state precisely: a director must (a) act in accordance with the company's constitution, and (b) only exercise powers for the purposes for which they are conferred.",
+          "Limb (a) is largely mechanical — has the director followed the rules the company's articles actually set out for exercising this power? Limb (b) is where the real doctrinal content sits, and it's usually called the 'proper purpose' rule: a power can be exercised entirely within the letter of the constitution and still breach s 171, if the director's real purpose in using it was not the purpose for which it was given.",
+          "The classic trap scenario is a share allotment made to dilute a hostile shareholder's stake ahead of a takeover vote. Issuing shares is plainly within the directors' constitutional powers — but if the dominant purpose was to entrench control or frustrate a takeover rather than to raise capital, the proper-purpose limb of s 171 is breached, even though nothing in the company's articles was technically broken."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 171",
+            "text": "A director of a company must (a) act in accordance with the company's constitution, and (b) only exercise powers for the purposes for which they are conferred.",
+            "elements": ["Act in accordance with the company's constitution", "Only exercise powers for the purposes for which they were conferred", "A power used for an improper purpose breaches limb (b), even if it is constitutionally permitted"]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-06-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A board issues new shares to a friendly investor, using a power the articles clearly give it, primarily to dilute a hostile bidder's voting stake ahead of a takeover vote. Which limb of s 171, if any, is most clearly in issue?",
+          "options": ["Limb (b) — the power may have been used for a purpose other than the one for which it was conferred, even though it was constitutionally available", "Limb (a) — the directors have breached the company's constitution by issuing the shares", "Neither — s 171 only applies to powers the constitution does not authorise at all"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. This is the proper-purpose problem: the power to allot shares is being used within its constitutional limits, but arguably for a purpose — entrenching control — different from the one it was conferred for.",
+          "feedbackIncorrect": "The constitution isn't the issue here — the board plainly had the power to allot shares. The live question is what the power was actually used for, which is exactly what limb (b) of s 171 tests."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Section 172: the core duty, and where Smith and Fawcett sets the standard",
+        "voice": "case-narrative — establishes the pre-2006 standard before mapping it onto the statute",
+        "body": [
+          "Section 172(1) is the duty examiners return to most often: a director must act in the way they consider, in good faith, would be most likely to promote the success of the company for the benefit of its members as a whole. Read that sentence carefully — the test is what the director considers, not what the court independently decides would have been best.",
+          "That subjective framing comes straight from Re Smith and Fawcett Ltd, decided decades before the 2006 Act. The company's articles gave its directors an 'absolute discretion' to refuse to register a transfer of shares. When the directors refused to register a transfer to the executors of a deceased shareholder, the executors argued the refusal was unreasonable. The Court of Appeal disagreed with the premise: the question was not whether the court thought the refusal was the right call, but whether the directors had exercised their discretion bona fide in what they honestly considered — not what a court might consider — was in the company's interests.",
+          "But the test isn't a blank cheque. 'What the director considers' still has to be a genuine, honestly held view, reached in good faith and not for a collateral purpose — a conclusion no rational, properly informed director could actually have reached in good faith won't survive scrutiny just because the director says they believed it. That's the outer, objective-check boundary around an otherwise subjective test, and it's the exact line most exam answers blur."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re Smith and Fawcett Ltd",
+            "citation": "[1942] Ch 304",
+            "court": "Court of Appeal",
+            "year": 1942,
+            "factsShort": "Directors, given an 'absolute discretion' by the articles, refused to register a transfer of shares to a deceased shareholder's executor.",
+            "ratioShort": "The test is not whether the court thinks the directors' decision was right, but whether they exercised their discretion bona fide in what they honestly considered — not what the court considers — to be in the company's interests.",
+            "expanded": {
+              "facts": "The company's articles gave its directors an absolute discretion to refuse to register any transfer of shares. On the death of a shareholder, his executor sought to have the shares transferred into his own name, and the directors refused, without giving reasons they were obliged to disclose.",
+              "judgmentExtract": "Lord Greene MR held that where directors are given a discretion of this kind, the court's role is not to substitute its own view of what was reasonable, but to ask whether the directors acted bona fide in what they themselves considered — not what the court considers — to be in the interests of the company, and not for any collateral purpose.",
+              "significance": "Smith and Fawcett is the origin of the subjective good-faith standard that s 172(1) now codifies: 'the way he considers, in good faith, would be most likely to promote the success of the company' is a direct statutory descendant of this test."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-06-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these Re Smith and Fawcett Ltd events in the order they happened.",
+          "items": [
+            "The company's articles give the directors an absolute discretion to refuse share transfers",
+            "A shareholder dies and his executor seeks to register the shares in his own name",
+            "The directors refuse to register the transfer",
+            "The Court of Appeal upholds the refusal, applying the bona fide subjective test"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: a broad discretionary power, a request the directors decline, and a Court of Appeal ruling that asks only whether the directors genuinely and honestly believed their refusal served the company — not whether the court itself agreed with it.",
+          "feedbackIncorrect": "Check the order again — the discretion exists before any dispute arises, the executor's request and the directors' refusal come next, and the Court of Appeal's ruling on the correct legal test comes last, after the refusal was already challenged."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The s 172(1)(a)–(f) factors: what 'success' has to weigh",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Section 172(1) doesn't just say 'act in good faith to promote success' and leave it there. It lists six matters a director must, among other things, have regard to in forming that judgment — factors introduced in the 2006 Act partly to make explicit that a well-run company should think about more than next quarter's numbers.",
+          "These factors don't create separate, freestanding duties owed to employees, customers or the environment — a supplier can't sue a director directly for ignoring s 172(1)(c). They are matters a director must weigh in reaching their own judgment about what will promote the company's success for the benefit of its members as a whole, which remains the ultimate touchstone.",
+          "Knowing the list precisely is worth the effort, because scenario questions are frequently built to test exactly one of these six factors against a decision that looks harsh on its face but is properly reasoned once you check it against the list."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Section 172(1)(a)–(f): matters a director must have regard to",
+            "points": [
+              "(a) The likely consequences of any decision in the long term",
+              "(b) The interests of the company's employees",
+              "(c) The need to foster the company's business relationships with suppliers, customers and others",
+              "(d) The impact of the company's operations on the community and the environment",
+              "(e) The desirability of the company maintaining a reputation for high standards of business conduct",
+              "(f) The need to act fairly as between members of the company"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-06-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that shows the board has had proper regard to the s 172(1) factors, rather than ignoring them.",
+          "scenarioText": "A board is deciding whether to switch to a cheaper but lower-welfare raw-materials supplier. It weighs the cost savings against the risk to the company's reputation for high standards of business conduct and the likely reaction of its long-standing customers, then decides against the switch.",
+          "tappableSpans": ["deciding whether to switch to a cheaper but lower-welfare raw-materials supplier", "weighs the cost savings", "against the risk to the company's reputation for high standards of business conduct and the likely reaction of its long-standing customers", "decides against the switch"],
+          "correctSpan": "against the risk to the company's reputation for high standards of business conduct and the likely reaction of its long-standing customers",
+          "feedbackCorrect": "That's the fact that shows s 172(1) in action — reputation for high standards of business conduct (factor (e)) and relationships with customers (factor (c)) are both matters the board is expressly weighing, not an afterthought.",
+          "feedbackIncorrect": "Look for the fact that shows the board actively weighing reputation and customer relationships against cost, rather than the bare decision itself or the cost-saving side of the calculation alone."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Fassihi: when the duty to promote success requires disclosing your own wrongdoing",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Mr Fassihi was sales and marketing director of Item Software, which was locked in negotiations with a key supplier over a renewed distribution agreement. While those negotiations were live, Fassihi secretly negotiated his own, competing arrangement with the same supplier — one that would benefit him personally at the company's expense — and said nothing to the board about it. The company's negotiating position collapsed, and Item Software sued him.",
+          "The Court of Appeal held that Fassihi's silence was itself a breach of duty, independent of the underlying self-dealing. A director who realises that disclosing information — even information that incriminates the director personally — would serve the company's interests is under a duty to disclose it, because that is what genuinely acting to promote the company's success requires. Arden LJ's reasoning was blunt: a director cannot claim to be acting in the company's interests while deliberately withholding exactly the information the company most needs.",
+          "Fassihi is the case that stops students treating s 172 as a duty that's only about affirmative decisions — board votes, share allotments, big strategic calls. It applies just as forcefully to silence, and the fact pattern examiners build around it usually hides the breach inside what a director didn't say, not what they did."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say a director only has to disclose information to the board if directly asked, or that disclosing your own misconduct is covered by a separate duty (like s 177) rather than s 172 itself.",
+            "whyItsWrong": "Fassihi holds that the duty to promote the company's success can itself require proactive disclosure, without being asked, precisely because withholding relevant — even self-incriminating — information is inconsistent with genuinely acting in the company's interests. It doesn't depend on the board happening to ask the right question."
+          }
+        ],
+        "interaction": {
+          "itemId": "companylaw-06-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario shows a director properly discharging the s 172 duty, rather than breaching it?",
+          "scenarioA": "Directors, having genuinely weighed the company's finances and long-term prospects, honestly conclude that rejecting a takeover bid serves the company's interests, even though some shareholders would have preferred to accept.",
+          "scenarioB": "Directors reject a takeover bid solely to protect their own well-paid positions, without considering any genuine business justification at all.",
+          "correctScenario": "A",
+          "explanation": "A is a properly reasoned exercise of the s 172 judgment — an honest, considered view, even if some shareholders disagree with the outcome. B has no genuine business justification behind it at all; it's the director's own interests dressed up as a decision about the company's success, which is exactly what the duty exists to prevent."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "companylaw-06-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the two things s 171 CA 2006 requires a director to do when exercising their powers.",
+      "acceptableAnswers": ["act in accordance with the company's constitution and only exercise powers for the purposes for which they were conferred", "act within the constitution and for a proper purpose"],
+      "modelAnswer": "A director must act in accordance with the company's constitution, and must only exercise powers for the purposes for which they were conferred."
+    },
+    {
+      "itemId": "companylaw-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "According to s 170(3)–(4), what role does pre-2006 common-law and equitable case law play in interpreting the codified general duties?",
+      "options": ["It remains relevant — the statutory duties are based on it and must be interpreted and applied consistently with it", "It has no continuing relevance at all once the duties were codified in statute"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "companylaw-06-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.5,
+      "prompt": "Which best describes the nature of the duty in s 172 to promote the success of the company?",
+      "options": ["A subjective test of what the director honestly and in good faith believes, subject to an outer check that no rational, properly informed director could have reached that belief in good faith", "A wholly subjective test — whatever the director genuinely believed is conclusive, however irrational the belief", "A wholly objective test — what a reasonable director in the position would have decided, regardless of the director's own view"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting errors run in opposite directions: treating the test as purely subjective ignores the outer rationality check from Smith and Fawcett, while treating it as purely objective ignores that the statute asks what the director genuinely considers, in good faith — not what a court would independently decide."
+    },
+    {
+      "itemId": "companylaw-06-test-04",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "In the passage below, adapted from Re Smith and Fawcett Ltd, highlight the sentence that states the ratio.",
+      "passage": "The directors, under an absolute discretion given by the articles, refused to register the transfer. The question is not whether, in the opinion of the court, the exercise of the discretion was proper, but whether the directors have exercised it bona fide in what they consider — not what the court may consider — is in the interests of the company, and not for any collateral purpose.",
+      "ratioSentence": "The question is not whether, in the opinion of the court, the exercise of the discretion was proper, but whether the directors have exercised it bona fide in what they consider — not what the court may consider — is in the interests of the company, and not for any collateral purpose."
+    },
+    {
+      "itemId": "companylaw-06-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the factors listed in s 172(1)(a)–(f)?",
+      "options": ["The likely consequences of any decision in the long term", "The desirability of maximising short-term share price above every other consideration", "The need to foster the company's business relationships with suppliers, customers and others"],
+      "correctIndex": 1,
+      "feedbackCorrect": "Right — short-term share price maximisation, to the exclusion of everything else, isn't on the list at all; s 172(1) is built precisely to require directors to look beyond that single metric.",
+      "feedbackIncorrect": "Check the list again — s 172(1) requires regard to long-term consequences, employees' interests, business relationships, community and environmental impact, reputation for high standards, and fairness between members. Maximising short-term share price above all else isn't one of the listed factors."
+    },
+    {
+      "itemId": "companylaw-06-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Put these steps in the order a court follows when assessing whether a director has breached the s 172 duty.",
+      "items": [
+        "Identify the decision or action under challenge",
+        "Ask whether the director honestly believed it would promote the company's success for the benefit of the members as a whole",
+        "Consider whether that belief could have been reached by a rational, properly informed director acting in good faith",
+        "If no rational director could have honestly held that belief, the duty is breached"
+      ],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "companylaw-06-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that s 172(1)(a)–(f) creates freestanding duties that employees, customers or the local community can enforce directly against a director?",
+      "sliderLabels": ["Confident — those groups can enforce the factors directly", "Confident — the factors only inform the duty owed to the company"],
+      "correctPosition": "Confident — the factors only inform the duty owed to the company",
+      "explanation": "The s 172(1)(a)–(f) factors are matters a director must weigh in deciding what will promote the company's success for its members' benefit — they don't create separate duties that employees, customers or the community can enforce directly."
+    },
+    {
+      "itemId": "companylaw-06-test-08",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A board decides to close a loss-making factory. It considers the long-term consequences of keeping the factory open against closing it, weighs the impact on employees and the local community, and honestly and in good faith concludes that closure is most likely to promote the company's long-term success. A disgruntled shareholder alleges the decision breaches s 172. Analyse whether the allegation succeeds.",
+      "factsToOrder": [
+        "The board considers the likely long-term consequences of keeping the factory open versus closing it",
+        "The board considers the impact of closure on employees and the local community",
+        "The board honestly concludes, in good faith, that closure is most likely to promote the company's long-term success",
+        "A shareholder alleges the closure breaches s 172"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the board's decision to close the factory breaches the duty under s 172 to promote the success of the company.",
+        "rule": "Section 172 requires a director to act in the way they honestly consider, in good faith, would be most likely to promote the company's success for the benefit of the members as a whole, having regard among other things to the s 172(1)(a)–(f) factors, including long-term consequences and employees' interests. The test is subjective, subject to a rationality check (Re Smith and Fawcett Ltd).",
+        "application": "The board expressly weighed the s 172(1) factors — long-term consequences and the interests of employees and the community — and reached an honest, good-faith conclusion that closure served the company's long-term success. A genuinely considered, rational decision of this kind is not displaced merely because a shareholder disagrees with the outcome.",
+        "conclusion": "Absent evidence of dishonesty or a conclusion no rational director could have reached in good faith, the board has not breached s 172, notwithstanding the harm to employees and the local community."
+      }
+    },
+    {
+      "itemId": "companylaw-06-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A board issues a large tranche of new shares to a friendly investor shortly before a hostile takeover bid, explicitly to dilute the bidder's stake and block the takeover — even though the company could genuinely use the extra capital. Have the directors acted within their powers under s 171?",
+      "options": ["No — even a power exercised for a purpose the company could benefit from breaches s 171 if its primary purpose was improper, such as frustrating a takeover", "Yes — because the company could genuinely use the extra capital, the share issue is automatically valid", "Yes — s 171 is only concerned with whether the constitution technically permits the act, not why it was done"],
+      "correctIndex": 0,
+      "explanation": "The proper-purpose limb of s 171 looks past a constitutionally valid power to ask what it was actually used for. Where the dominant purpose is to entrench control or frustrate a takeover, the fact that the company could also use the capital does not cure the breach."
+    },
+    {
+      "itemId": "companylaw-06-test-10",
+      "type": "distinguishTheCase",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario reflects a proper exercise of the s 172 duty, rather than a breach of it?",
+      "scenarioA": "Directors, having genuinely weighed the company's finances and long-term prospects, honestly conclude that rejecting a takeover bid serves the company's interests, even though some shareholders would have preferred to accept.",
+      "scenarioB": "Directors reject a takeover bid solely because accepting it would cost them their own well-paid positions, with no genuine business justification considered at all.",
+      "correctScenario": "A",
+      "explanation": "A is a properly reasoned, honest exercise of the s 172 judgment, even though not every shareholder agrees with the outcome. B has no genuine business justification behind it — it's the directors' own interests, not the company's success, driving the decision."
+    },
+    {
+      "itemId": "companylaw-06-test-11",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Tap the fact that is the actual breach of duty in this scenario.",
+      "scenarioText": "A sales director secretly negotiates better personal terms for himself with the company's key supplier while the company's own negotiations with that supplier are still ongoing, and says nothing to the board about it before those negotiations collapse.",
+      "tappableSpans": ["secretly negotiates better personal terms for himself", "with the company's key supplier", "while the company's own negotiations with that supplier are still ongoing", "says nothing to the board about it"],
+      "correctSpan": "says nothing to the board about it",
+      "feedbackCorrect": "That's the Fassihi point precisely — the silence itself is the breach of the duty to promote the company's success, independent of the underlying self-dealing.",
+      "feedbackIncorrect": "The self-dealing is troubling, but Fassihi's real significance is about what happens next — look for the fact showing the director failing to disclose it to the board, which is the specific breach this case establishes."
+    },
+    {
+      "itemId": "companylaw-06-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Which statement best captures the significance of Item Software (UK) Ltd v Fassihi?",
+      "options": ["A director's duty to promote the company's success can require disclosing the director's own misconduct to the board, even though this is self-incriminating", "A director never has to disclose anything to the board unless directly asked", "The duty to promote the company's success is owed personally to individual shareholders, not to the company"],
+      "correctIndex": 0,
+      "trapExplanation": "The case does not create a duty owed personally to shareholders — that confuses it with minority-shareholder remedies — and it plainly rejects the idea that silence is safe unless the board happens to ask the right question."
+    },
+    {
+      "itemId": "companylaw-06-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A board is deciding whether to switch to a cheaper but lower-welfare raw-materials supplier. It weighs the cost savings against the risk to the company's reputation for high standards of business conduct and the likely reaction of its long-standing customers, before deciding against the switch. Has the board had proper regard to the s 172(1) factors?",
+      "options": ["Yes — reputation for high standards of business conduct and relationships with customers are both factors s 172(1) directs a director to consider", "No — s 172(1) only requires consideration of financial cost, not reputation or customer relationships", "No — s 172(1) factors are irrelevant unless a shareholder specifically raises them first"],
+      "correctIndex": 0,
+      "explanation": "Weighing reputation for high standards of business conduct (factor (e)) and relationships with customers (factor (c)) against cost is exactly what s 172(1) directs a director to do — it does not need to be prompted by a shareholder."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is collapsing s 172 into either a pure subjective test ('the director says they believed it, so that's the end of it') or a pure objective one ('what would a reasonable director have done'). The real test sits between the two: an honest, good-faith belief, checked against whether any rational, properly informed director could actually have held it.",
+    "reviewMisses": true,
+    "linkToPathway": "companylaw.directors.acting-within-powers-success"
+  }
+}

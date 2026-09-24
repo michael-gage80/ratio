@@ -61,9 +61,13 @@ function checkItem(where, item) {
       break;
     }
     case 'thresholdSlider': {
-      const target = item.correctPosition.toLowerCase();
-      if (!item.sliderLabels.some((l) => l.toLowerCase().includes(target))) {
-        warnings.push(`${where}: neither slider label contains correctPosition "${item.correctPosition}" — the app assumes the right-hand end`);
+      // Same rule as the app and the server: a label equal to correctPosition, otherwise
+      // the one label containing it. Anything else would mark the wrong end.
+      const target = item.correctPosition.trim().toLowerCase();
+      const labels = item.sliderLabels.map((l) => l.trim().toLowerCase());
+      const containing = labels.filter((l) => l.includes(target)).length;
+      if (!labels.includes(target) && containing !== 1) {
+        errors.push(`${where}: correctPosition "${item.correctPosition}" must equal one slider label or appear in exactly one (it's in ${containing})`);
       }
       break;
     }

@@ -1,0 +1,399 @@
+{
+  "lessonId": "eulaw-06",
+  "moduleId": "eulaw",
+  "moduleTitle": "EU Law",
+  "lessonNumber": 6,
+  "topicId": "eulaw.internal-market.free-movement-goods",
+  "title": "Free movement of goods",
+  "subtitle": "Dassonville, Cassis de Dijon and Keck: the internal market's central doctrine",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the prohibition in Articles 34–36 TFEU on quantitative restrictions and measures of equivalent effect, and its express derogations",
+    "Explain the Dassonville formula, its deliberate breadth, and how Cassis de Dijon's mutual recognition principle and mandatory requirements justification narrowed its practical impact",
+    "Apply the Keck 'selling arrangements' limitation to distinguish measures regulating the goods themselves from measures regulating how goods are sold, and identify which fact pattern falls inside or outside Article 34"
+  ],
+  "leadingAuthorities": [
+    { "citation": "TFEU arts 34–36", "role": "The core prohibition on quantitative restrictions and MEQRs, and the express derogations in art 36" },
+    { "citation": "Procureur du Roi v Dassonville [1974] ECR 837", "role": "The formula defining a measure of equivalent effect in deliberately broad terms" },
+    { "citation": "Rewe-Zentral AG v Bundesmonopolverwaltung für Branntwein (Cassis de Dijon) [1979] ECR 649", "role": "Establishes mutual recognition and the mandatory requirements justification, narrowing Dassonville's practical reach" },
+    { "citation": "Keck and Mithouard [1993] ECR I-6097", "role": "Removes non-discriminatory 'selling arrangements' from Article 34 altogether" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is one of the best-told doctrinal stories in EU law: a formula written deliberately broad, a fix that broadened it further by accident, and a course-correction that had to draw a new line entirely. Where the profile shows application is the weak spot, this note appears: 'You know the three cases — this lesson is about knowing which one a new fact pattern actually falls under.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the case names and dates here. The test pool below is weighted towards fact patterns: you'll need to sort a measure into Dassonville-caught, Cassis-justified, or Keck-excluded, not just recall which case said what.",
+      "weakKnowledge": "Start with Part 1 and make sure Articles 34–36 themselves are solid before the case law — the whole story only makes sense once you can state what the baseline prohibition actually says."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A Belgian whisky importer buys Scotch that has already cleared customs in France, without the paperwork Belgian law demands for a 'direct' import from the country of origin. He's prosecuted. The case should be a footnote. Instead, the answer the Court of Justice gives — that any measure even capable of hindering trade, directly or indirectly, actually or potentially, is caught — becomes the formula every internal-market lawyer still reasons from, for better and for worse.",
+    "lawStatedNotice": "This lesson teaches the CJEU's free-movement-of-goods case law as the EU's own internal-market doctrine — an intellectual framework for understanding how a single market polices restrictions on trade, and background for reading trade law generally. It is not a statement of current UK law: the UK is no longer a Member State, Articles 34–36 TFEU no longer apply to UK-EU trade, and UK courts have no jurisdiction to apply or develop this doctrine going forward. It remains useful for two reasons beyond its historical interest: it is the framework retained-law provisions were built to house, and it is the intellectual ancestor of the more limited market-access commitments in the UK–EU Trade and Cooperation Agreement, covered later in this module."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Articles 34–36: the prohibition and its escape valves",
+        "voice": "mechanism-focused — lays out the treaty architecture before the case law fills it in",
+        "body": [
+          "The internal market's goods rules start from a blunt prohibition. Article 34 TFEU prohibits quantitative restrictions on imports between Member States, 'and all measures having equivalent effect' — a phrase deliberately left undefined by the Treaty itself. Article 35 mirrors this for exports. Between them, they ban not just quotas and outright bans, but anything functioning like one.",
+          "Article 36 then carves out express derogations: a Member State can justify an otherwise-prohibited measure on grounds including public morality, public policy, public security, protection of health and life of humans, animals or plants, and protection of national treasures or industrial and commercial property — but only if the measure is genuinely necessary for that purpose and not 'a means of arbitrary discrimination or a disguised restriction on trade between Member States'.",
+          "Notice the shape of the whole doctrine before a single case is mentioned: a wide prohibition, a narrow list of express justifications, and a proportionality-style check on any justification relied on. Everything that follows in this lesson is the CJEU filling in what 'measures having equivalent effect' actually means in practice — and it turned out to mean a great deal more than anyone expected."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Measure having equivalent effect (MEQR)",
+            "definition": "Any national measure, short of an outright quantitative restriction, that is capable of hindering trade between Member States in a comparable way — a category the CJEU, not the Treaty text, has had to define through case law."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-06-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Article 36 TFEU permits Member States to justify an otherwise-prohibited restriction on listed grounds, 'provided that' a further condition is met. What is that condition?",
+          "options": ["The measure must not amount to arbitrary discrimination or a disguised restriction on trade between Member States", "The measure must have been approved in advance by the European Commission", "The measure must apply only to imports, never to domestically produced goods"],
+          "correctIndex": 0,
+          "explanation": "Article 36's listed grounds are not a free pass — the closing proviso requires that reliance on them not function as arbitrary discrimination or a disguised trade restriction, which is what gives the derogation its own internal proportionality check."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Dassonville: a formula almost too broad to use",
+        "voice": "case-narrative — tells the story, then shows why the formula it produced was a problem",
+        "body": [
+          "Belgian law required anyone selling goods bearing a designation of origin — Scotch whisky, in this case — to hold a certificate of authenticity from the exporting country's government, issued when the goods were imported directly from that country. Gustave Dassonville had bought genuine Scotch that had already been lawfully imported into France and cleared customs there; he couldn't produce the direct-import certificate Belgian law demanded, and was prosecuted.",
+          "The measure wasn't a quota. It didn't ban Scotch. It was a labelling and certification rule, applied without distinction to domestic and imported goods alike on its face. And yet the Court of Justice held it was still caught by what is now Article 34, in a passage that became the single most quoted sentence in the whole doctrine: 'all trading rules enacted by Member States which are capable of hindering, directly or indirectly, actually or potentially, intra-Community trade are to be considered as measures having equivalent effect to quantitative restrictions.'",
+          "Read that formula slowly, because its breadth is the whole point of this lesson's next act. 'Capable of hindering' — not actually hindering. 'Directly or indirectly' — not just measures that target imports by name. 'Actually or potentially' — a measure need not have hindered a single sale yet. On its own terms, almost any national rule that makes selling goods marginally harder is caught, whether or not it discriminates against imports at all."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Procureur du Roi v Dassonville",
+            "citation": "[1974] ECR 837",
+            "court": "Court of Justice of the European Communities",
+            "year": 1974,
+            "factsShort": "Belgian law required a certificate of origin, obtainable only on direct import, for goods sold under a designation of origin; a trader who had bought already-imported Scotch whisky via France could not produce one.",
+            "ratioShort": "Any trading rule capable of hindering intra-Community trade, directly or indirectly, actually or potentially, is a measure of equivalent effect — regardless of whether it discriminates against imports on its face.",
+            "expanded": {
+              "facts": "Gustave Dassonville imported Scotch whisky into Belgium that had already been lawfully imported into, and released for free circulation in, France. Belgian legislation required goods bearing a designation of origin to be accompanied by a certificate from the government of the exporting country, issued only in respect of direct imports. Dassonville, unable to obtain such a certificate for whisky that had passed through France, was prosecuted under Belgian law.",
+              "judgmentExtract": "The Court held that all trading rules enacted by Member States which are capable of hindering, directly or indirectly, actually or potentially, intra-Community trade are to be considered as measures having equivalent effect to quantitative restrictions. It found the Belgian certification requirement, though non-discriminatory on its face, fell within this formula because it made it harder to market goods that had been legitimately imported via an intermediate Member State.",
+              "significance": "The Dassonville formula became the starting definition of an MEQR for the rest of the doctrine's development. Its breadth was deliberate — the Court wanted to catch indirect and disguised barriers to trade, not just quotas dressed up in different language — but that same breadth is what forced the Court, five years later in Cassis de Dijon, to develop a justification framework flexible enough to stop the formula catching almost every national regulatory rule in existence."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-06-check-02",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Which statement best captures what makes the Dassonville formula distinctive?",
+          "options": ["It catches only measures that expressly discriminate against imported goods by name", "It catches any measure capable of hindering trade, directly or indirectly, actually or potentially — discrimination against imports is not required", "It applies only to certification and labelling requirements, not to other types of trading rule"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answer treats Dassonville as a discrimination test, because that's the more intuitive shape for a trade-barrier rule to take. Dassonville is deliberately broader than that: a facially neutral, non-discriminatory rule can still be caught if it is merely capable of hindering trade — which is exactly what made the formula almost unworkably wide."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Cassis de Dijon: mutual recognition rescues the formula from itself",
+        "voice": "case-narrative — the sequel that had to fix what the first case created",
+        "body": [
+          "Five years after Dassonville, the Court faced the predictable consequence of a formula that broad: German law set a minimum alcohol content for fruit liqueurs sold as such, which the French blackcurrant liqueur Cassis de Dijon — lower in alcohol — didn't meet. Germany wasn't discriminating against French liqueur by name; it applied the same minimum to domestic products. But under Dassonville, a rule that kept a lawfully produced import off the shelves was still capable of hindering trade, and so was caught.",
+          "If every Member State's ordinary product-standard rules could be an MEQR the moment they excluded a lawfully made import, the prohibition would swallow almost the whole of national product regulation. The Court's answer became the second pillar of the doctrine: the principle of mutual recognition. A product lawfully manufactured and marketed in one Member State should, in principle, be admitted into every other Member State, even if it doesn't meet the importing state's own technical rules — because the exporting state's rules have already done the regulating.",
+          "But the Court didn't leave Member States with no defence at all. It recognised that a non-discriminatory measure could still be justified by 'mandatory requirements' — an open-ended, judicially developed list going beyond Article 36's fixed grounds, including the effectiveness of fiscal supervision, the protection of public health, the fairness of commercial transactions, and the defence of the consumer. Crucially, mandatory requirements are only available for measures that apply without distinction to domestic and imported goods alike; genuinely discriminatory measures can only ever be justified under Article 36 itself.",
+          "Put the two pieces of Cassis together and you get the shape of the modern test: the Dassonville formula still decides what counts as an MEQR, but mutual recognition sets a strong presumption in the importer's favour, rebuttable only by a mandatory requirement that is both necessary and proportionate to its aim."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Rewe-Zentral AG v Bundesmonopolverwaltung für Branntwein (Cassis de Dijon)",
+            "citation": "[1979] ECR 649",
+            "court": "Court of Justice of the European Communities",
+            "year": 1979,
+            "factsShort": "German law set a minimum alcohol content for liqueurs, which the lawfully produced French liqueur Cassis de Dijon did not meet; the importer was refused authorisation to market it in Germany.",
+            "ratioShort": "A product lawfully made and marketed in one Member State should, in principle, be admitted in others (mutual recognition); a non-discriminatory measure may nonetheless be justified by a judicially developed 'mandatory requirement', applied proportionately.",
+            "expanded": {
+              "facts": "Rewe-Zentral, a German importer, sought authorisation to market the French blackcurrant liqueur Cassis de Dijon in Germany. German rules fixed a minimum alcohol content for fruit liqueurs; Cassis de Dijon, at around 15–20%, fell below it, and the German monopoly administration refused authorisation, applying the rule equally to domestic and imported products.",
+              "judgmentExtract": "The Court held there was no valid reason why, provided a product had been lawfully produced and marketed in one Member State, it should not be introduced into any other Member State — establishing the mutual recognition principle. It accepted that obstacles to trade resulting from disparities between national rules could be justified where necessary to satisfy 'mandatory requirements' relating in particular to the effectiveness of fiscal supervision, the protection of public health, the fairness of commercial transactions and the defence of the consumer, but found the German minimum-alcohol rule could not be justified on these grounds, since adequate consumer protection could be achieved by labelling alone.",
+              "significance": "Cassis de Dijon supplies the second pillar of the free movement of goods doctrine alongside Dassonville: mutual recognition as the default position, and mandatory requirements as an open, judicially developed (rather than treaty-fixed) justification route available only for non-discriminatory measures. It also illustrates a recurring proportionality theme: where a less trade-restrictive alternative (here, labelling) would achieve the same regulatory aim, the more restrictive measure cannot be justified."
+            }
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Mandatory requirements vs Article 36 grounds",
+            "points": [
+              "Article 36 grounds are treaty-fixed and closed: public morality, public policy, public security, health and life of humans/animals/plants, national treasures, industrial/commercial property",
+              "Mandatory requirements are judicially developed and open-ended: effectiveness of fiscal supervision, public health, fairness of commercial transactions, consumer protection, and others recognised since",
+              "Mandatory requirements are available only for measures applying without distinction to domestic and imported goods; genuinely discriminatory measures can only be justified, if at all, under Article 36",
+              "Both routes require the measure to be necessary and proportionate to its stated aim"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-06-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence stating the mutual recognition principle from Cassis de Dijon.",
+          "passage": "The German government argued that a minimum alcohol content protected consumers from being misled and preserved fair competition between products of differing strength. The Court accepted that mandatory requirements relating to consumer protection could in principle justify a measure applying without distinction to domestic and imported products. There is, however, no valid reason why, provided a product has been lawfully produced and marketed in one Member State, it should not be introduced into any other Member State — and, on the facts, adequate consumer information could be secured by appropriate labelling alone, without a minimum alcohol requirement.",
+          "ratioSentence": "There is, however, no valid reason why, provided a product has been lawfully produced and marketed in one Member State, it should not be introduced into any other Member State."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Keck: pulling back from 'selling arrangements'",
+        "voice": "case-narrative — the correction that finally drew a new line",
+        "body": [
+          "By the early 1990s, the Dassonville-plus-mutual-recognition combination had swung the doctrine towards a genuine problem: traders were using Article 34 to challenge almost any national rule that made selling something less profitable or convenient, even rules with nothing to do with the product itself. Two French supermarket managers, Keck and Mithouard, were prosecuted for reselling goods below their purchase price, contrary to French law — and argued that the resale-at-a-loss ban was an MEQR, because it reduced their profit margins and, in a chain of reasoning, might reduce their sales volumes, including of imported goods.",
+          "The Court of Justice used the case to draw a new distinction, expressly reconsidering how far Dassonville should reach. It split national trading rules into two categories. Rules relating to the characteristics of the goods themselves — composition, labelling, shape, size, packaging, and the like — remained governed by the full Dassonville-plus-Cassis framework, because such rules necessarily impose a cost on an importer who must reformulate or repackage goods to comply. But rules concerning 'certain selling arrangements' — restrictions on when, where or how goods may be sold, such as shop-opening hours, advertising restrictions, or (as in Keck itself) a ban on resale at a loss — fall outside Article 34 altogether, provided two conditions are met: the rule applies to all relevant traders operating in the national territory, and it affects the marketing of domestic and imported products in the same manner, in law and in fact.",
+          "Keck didn't reverse Dassonville or Cassis; it confined them. The underlying insight is that a selling-arrangement rule, applied evenly, doesn't disadvantage imports as imports — it simply regulates the market conditions everyone trades under, and the internal market doctrine was never meant to strike down ordinary domestic commercial regulation of that kind."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Keck and Mithouard",
+            "citation": "[1993] ECR I-6097",
+            "court": "Court of Justice of the European Communities",
+            "year": 1993,
+            "factsShort": "Two French supermarket managers were prosecuted under French law for reselling goods below purchase price and argued the ban was an MEQR because it reduced their sales.",
+            "ratioShort": "Non-discriminatory rules on 'selling arrangements' (as opposed to the characteristics of goods themselves) fall outside Article 34 altogether, provided they apply to all relevant traders and affect domestic and imported goods equally in law and in fact.",
+            "expanded": {
+              "facts": "Bernard Keck and Daniel Mithouard, managers of Écomarché supermarkets in France, were prosecuted for reselling products at prices lower than their actual purchase price, contrary to a French statute prohibiting resale at a loss. They argued the prohibition restricted their ability to compete on price and, applying Dassonville, amounted to a measure of equivalent effect to a quantitative restriction on imports.",
+              "judgmentExtract": "The Court, reconsidering its case law, held that the application to imported products of national provisions restricting or prohibiting certain selling arrangements is not such as to hinder trade between Member States within the meaning of Dassonville, so long as those provisions apply to all relevant traders operating within the national territory and affect in the same manner, in law and in fact, the marketing of domestic products and of those from other Member States. Such rules were held to fall outside Article 34 (then Article 30) entirely, rather than being caught and then requiring justification.",
+              "significance": "Keck introduced the product rules / selling arrangements distinction that structures the whole modern doctrine. It is not a justification (the measure isn't 'saved' after being caught) — a genuine, non-discriminatory selling arrangement is outside Article 34's scope from the outset. The hardest examination and real-world skill in this area is classifying an unfamiliar national rule correctly: a rule about what a product must be, or how it must be packaged or labelled, stays inside Dassonville/Cassis; a rule about the circumstances of sale, applied evenly, is outside Article 34 altogether under Keck."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-06-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which of these two non-discriminatory national rules is a 'selling arrangement' excluded from Article 34 by Keck, rather than a product rule caught by Dassonville?",
+          "scenarioA": "A national law requires all bottled sparkling wine, however produced, to be sold in bottles of a specific approved shape.",
+          "scenarioB": "A national law prohibits all shops, of any kind, from advertising alcoholic drinks on billboards within 500 metres of a school.",
+          "correctScenario": "B",
+          "explanation": "Scenario A regulates the characteristics of the goods themselves (bottle shape) — an importer must repackage to comply, so it stays inside Dassonville/Cassis. Scenario B regulates the circumstances of sale (where advertising may occur), applied evenly to all traders and all products — a classic selling arrangement, outside Article 34 under Keck provided it affects domestic and imported products equally in law and in fact."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting the whole doctrine to work",
+        "voice": "direct — a worked walk-through that forces the three-stage test together",
+        "body": [
+          "The three cases in this lesson aren't independent rules to memorise in isolation — they're stages of a single analytical sequence, and exam and problem questions are built to test whether you can run the sequence in order rather than jumping straight to whichever case feels most relevant.",
+          "Stage one: does the measure fall within the Dassonville formula at all — is it capable of hindering trade, directly or indirectly, actually or potentially? Stage two: if it's a rule about the characteristics of the goods themselves (rather than a selling arrangement excluded by Keck), does it discriminate against imports, and can it be justified — under Article 36's closed list if discriminatory, or under Cassis's open mandatory requirements if it applies without distinction — and is that justification proportionate? Stage three, run in parallel to stage one when the rule looks like it concerns marketing conditions rather than the product: is this actually a non-discriminatory selling arrangement that falls outside Article 34 altogether under Keck, in which case the analysis stops there and no justification is even needed.",
+          "Getting the order wrong is the most common way marks are lost: arguing Cassis justifications for a measure that's actually a Keck-excluded selling arrangement wastes an answer's structure on a question that was never live, and skipping straight to Article 36 without first asking whether Dassonville is even satisfied treats every trading rule as automatically an MEQR, which is exactly the error Cassis and Keck were developed to correct."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The free movement of goods analytical sequence",
+            "description": "The order in which Dassonville, Cassis de Dijon and Keck should be applied to a new fact pattern.",
+            "nodes": [
+              { "id": "start", "label": "Is the national measure capable of hindering trade, directly or indirectly, actually or potentially? (Dassonville)" },
+              { "id": "selling", "label": "Is it a non-discriminatory rule about selling arrangements (not the goods themselves), applying to all traders and affecting domestic/imported goods equally in law and fact?" },
+              { "id": "outside", "label": "Yes → outside Article 34 entirely (Keck) — no justification needed" },
+              { "id": "inside", "label": "No (it's a product rule, or discriminatory) → caught by Article 34, justification required" },
+              { "id": "discriminatory", "label": "Does the measure discriminate against imports?" },
+              { "id": "art36", "label": "Yes → justify only under Article 36's closed list, proportionately" },
+              { "id": "cassis", "label": "No (applies without distinction) → may justify under Cassis mandatory requirements, proportionately" }
+            ],
+            "edges": [
+              { "from": "start", "to": "selling", "label": "Potentially caught" },
+              { "from": "selling", "to": "outside", "label": "Yes" },
+              { "from": "selling", "to": "inside", "label": "No" },
+              { "from": "inside", "to": "discriminatory", "label": "" },
+              { "from": "discriminatory", "to": "art36", "label": "Yes" },
+              { "from": "discriminatory", "to": "cassis", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the measure is capable of hindering trade under the Dassonville formula. If it looks like a rule about selling arrangements rather than the goods themselves, and applies to all traders while affecting domestic and imported goods equally in law and fact, it falls outside Article 34 entirely under Keck and needs no justification. Otherwise, it is a product rule (or discriminatory) and is caught: if it discriminates against imports, it can only be justified under Article 36's closed list; if it applies without distinction, it may be justified under Cassis de Dijon's open mandatory requirements. Either justification route requires the measure to be necessary and proportionate."
+          }
+        ],
+        "interaction": {
+          "itemId": "eulaw-06-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A Member State bans the sale of any confectionery containing more than a set amount of a particular food colouring, applying the ban equally to domestic and imported sweets, on stated public health grounds. Which route should this measure be analysed under?",
+          "options": ["It is a Keck selling arrangement, so it falls outside Article 34 and needs no justification", "It is a product-characteristics rule caught by Dassonville; since it applies without distinction, it may be justified under Cassis mandatory requirements (here, public health), subject to proportionality", "It is automatically unlawful, because Article 34 permits no exceptions for public health"],
+          "correctIndex": 1,
+          "explanation": "A rule about what the product may contain is a product-characteristics rule, not a selling arrangement, so Keck does not exclude it. Because it applies without distinction to domestic and imported goods, it falls to be justified (if at all) under Cassis de Dijon's mandatory requirements — public health protection is a recognised ground — provided the measure is necessary and proportionate to that aim."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "eulaw-06-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "What does Article 34 TFEU prohibit?",
+      "acceptableAnswers": ["quantitative restrictions on imports and measures having equivalent effect", "quotas and MEQRs on imports between Member States"],
+      "modelAnswer": "Article 34 TFEU prohibits quantitative restrictions on imports between Member States, and all measures having equivalent effect to a quantitative restriction."
+    },
+    {
+      "itemId": "eulaw-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Is the list of derogations in Article 36 TFEU a closed list, or can Member States rely on any public-interest ground they can articulate?",
+      "options": ["It is a closed, treaty-fixed list of specific grounds", "Member States can rely on any public-interest ground they choose"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-06-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT an express derogation listed in Article 36 TFEU?",
+      "options": ["Public morality", "Protection of health and life of humans, animals or plants", "Protection of the environment", "Protection of national treasures possessing artistic, historic or archaeological value"],
+      "correctIndex": 2,
+      "trapExplanation": "Environmental protection is a real and important justification in EU internal-market law, but it developed as a judicially recognised mandatory requirement under the Cassis line of case law, not as an express ground listed in Article 36 itself."
+    },
+    {
+      "itemId": "eulaw-06-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "The Dassonville formula catches measures 'capable of hindering, directly or indirectly, actually or potentially' intra-Community trade. What does the phrase 'actually or potentially' add to the test?",
+      "options": ["A measure can be caught even if it has not yet caused any actual reduction in trade, so long as it is capable of doing so", "Only measures that have already caused a measurable drop in trade volume are caught", "The measure must be shown to have been designed with the intention of hindering trade"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-06-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these developments in the doctrine's chronological and logical order.",
+      "items": ["Dassonville defines an MEQR in deliberately broad terms", "Cassis de Dijon establishes mutual recognition and the mandatory requirements justification", "Traders begin using Article 34 to challenge ordinary rules about selling conditions, not just product standards", "Keck excludes non-discriminatory selling arrangements from Article 34 altogether"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "eulaw-06-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "In the passage below, highlight the sentence that states the Keck test for excluding selling arrangements from Article 34.",
+      "passage": "The Court reconsidered its earlier case law in light of the increasing tendency of traders to invoke Article 30 (now 34) to challenge any rule whose effect was to limit their commercial freedom, even where such rules were not aimed at products from other Member States. It held that the application to products from other Member States of national provisions restricting or prohibiting certain selling arrangements is not such as to hinder trade between Member States, so long as those provisions apply to all relevant traders operating within the national territory and affect in the same manner, in law and in fact, the marketing of domestic products and of those from other Member States.",
+      "ratioSentence": "It held that the application to products from other Member States of national provisions restricting or prohibiting certain selling arrangements is not such as to hinder trade between Member States, so long as those provisions apply to all relevant traders operating within the national territory and affect in the same manner, in law and in fact, the marketing of domestic products and of those from other Member States."
+    },
+    {
+      "itemId": "eulaw-06-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "How confident are you that Keck operates as a justification for measures already caught by Article 34, rather than removing them from Article 34's scope entirely?",
+      "sliderLabels": ["It is a justification, applied after the measure is caught", "It removes the measure from Article 34's scope from the outset"],
+      "correctPosition": "It removes the measure from Article 34's scope from the outset",
+      "explanation": "A genuine, non-discriminatory selling arrangement under Keck falls outside Article 34 altogether — it is never 'caught' in the first place, so no justification analysis under Article 36 or Cassis is needed at all."
+    },
+    {
+      "itemId": "eulaw-06-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "Tap the fact in this scenario that would move the measure from 'Keck-excluded selling arrangement' towards 'Dassonville-caught product rule'.",
+      "scenarioText": "A Member State passes a law that (i) restricts the hours during which any shop may sell dairy products, applying equally to all shops and all brands, and (ii) separately requires all imported cheese, but not domestically produced cheese, to carry an additional health warning label not required of domestic cheese.",
+      "tappableSpans": ["restricts the hours during which any shop may sell dairy products", "applying equally to all shops and all brands", "requires all imported cheese", "but not domestically produced cheese, to carry an additional health warning label"],
+      "correctSpan": "but not domestically produced cheese, to carry an additional health warning label",
+      "feedbackCorrect": "Correct. A labelling requirement is a product-characteristics rule to begin with, and here it also discriminates against imports specifically — taking it well outside Keck's protection for even-handed selling arrangements and squarely into Dassonville, justifiable (if at all) only under Article 36.",
+      "feedbackIncorrect": "Look for the fact that both concerns a product characteristic (labelling) and discriminates against imports specifically, rather than the evenly applied opening-hours rule."
+    },
+    {
+      "itemId": "eulaw-06-test-09",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Which scenario most closely mirrors Cassis de Dijon, rather than Keck?",
+      "scenarioA": "A Member State requires all jam, wherever produced, to contain a minimum fruit content higher than the level required in the exporting state, meaning a lawfully produced import cannot be sold without reformulation.",
+      "scenarioB": "A Member State bans all in-store price-discount promotions on any product category, applied identically to every retailer regardless of a product's origin.",
+      "correctScenario": "A",
+      "explanation": "Scenario A is a product-characteristics rule (minimum fruit content) that excludes a lawfully made import — precisely the Cassis de Dijon pattern, analysed via mutual recognition and mandatory requirements. Scenario B is an evenly applied rule about the conditions of sale (discount promotions), which is the Keck selling-arrangements pattern, excluded from Article 34 altogether."
+    },
+    {
+      "itemId": "eulaw-06-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A Member State requires all electrical goods sold within its territory to carry a specific national safety certification mark, in addition to any certification already obtained in the goods' state of manufacture. Applying Cassis de Dijon, what is the strongest initial argument available to an importer challenging this rule?",
+      "options": ["That mutual recognition means goods lawfully certified and marketed in another Member State should, in principle, be admitted without a further national certification requirement", "That the rule is automatically void because Article 34 permits no product-safety regulation of any kind", "That the rule cannot be an MEQR because it applies to domestic and imported goods alike"],
+      "correctIndex": 0,
+      "explanation": "Cassis de Dijon's mutual recognition principle is precisely engaged here: a product already lawfully certified and marketed in its home Member State should, in principle, be admitted elsewhere without duplicative certification, unless the importing state can justify the extra requirement as a necessary and proportionate mandatory requirement."
+    },
+    {
+      "itemId": "eulaw-06-test-11",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A Member State passes a law banning television advertising of sugary drinks between 6am and 9pm, applied identically to every broadcaster and every brand regardless of where the drink is produced. A soft-drinks importer argues this breaches Article 34 TFEU because it reduces its ability to build brand awareness for imported products. Analyse whether the measure is caught by Article 34.",
+      "factsToOrder": [
+        "The rule restricts when advertising may occur, not what the product must contain or how it must be packaged",
+        "The rule applies to every broadcaster and every brand without exception",
+        "The rule affects marketing of domestic and imported soft drinks in the same manner, in law and in fact",
+        "The importer's complaint is about reduced brand-building opportunity, not about the product itself being excluded from the market"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether a non-discriminatory restriction on the timing of television advertising for a product category is caught by Article 34 TFEU.",
+        "rule": "Under Keck and Mithouard, a national rule concerning a selling arrangement (rather than the characteristics of the goods themselves) falls outside Article 34 altogether, provided it applies to all relevant traders operating in the national territory and affects the marketing of domestic and imported products in the same manner, in law and in fact.",
+        "application": "The advertising-timing restriction does not touch the composition, labelling or packaging of the drinks themselves — it regulates the circumstances in which they may be marketed, which is a selling arrangement. It applies to every broadcaster and every brand without distinction, and there is nothing on these facts suggesting it disadvantages imported soft drinks in law or in fact more than domestic ones — the importer's complaint (reduced brand-building opportunity) applies equally to domestic competitors.",
+        "conclusion": "The measure is a non-discriminatory selling arrangement and falls outside Article 34 entirely under Keck; no justification under Article 36 or Cassis de Dijon is required or relevant."
+      }
+    },
+    {
+      "itemId": "eulaw-06-test-12",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Can a genuinely discriminatory national measure (one that treats imports worse than domestic goods) be justified using Cassis de Dijon's mandatory requirements?",
+      "options": ["No — mandatory requirements are available only for measures that apply without distinction; a discriminatory measure can only be justified, if at all, under Article 36", "Yes — mandatory requirements can justify any measure regardless of discrimination"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "eulaw-06-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A student writes: 'Keck overruled Dassonville, so the broad formula no longer applies to any national trading rule.' What is wrong with this statement?",
+      "options": ["It correctly describes the current law", "Keck confined rather than overruled Dassonville — the broad formula still governs product-characteristics rules and discriminatory measures; only non-discriminatory selling arrangements were removed from its scope", "Dassonville was overruled by Cassis de Dijon, not Keck"],
+      "correctIndex": 1,
+      "trapExplanation": "Keck is a limitation on Dassonville's reach for one specific category of rule (selling arrangements), not a wholesale overruling. Product-characteristics rules, and any discriminatory measure, are still analysed under the full Dassonville-plus-justification framework."
+    },
+    {
+      "itemId": "eulaw-06-test-14",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What two conditions must a national rule satisfy to be treated as a Keck-excluded 'selling arrangement'?",
+      "acceptableAnswers": ["applies to all relevant traders and affects domestic and imported goods equally in law and fact", "applies to all traders in the territory and does not discriminate against imports in law or in fact"],
+      "modelAnswer": "It must apply to all relevant traders operating within the national territory, and it must affect the marketing of domestic and imported products in the same manner, both in law and in fact."
+    },
+    {
+      "itemId": "eulaw-06-test-15",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A Member State bans the sale of a specific type of children's toy on the ground that independent safety testing shows a choking risk, applying the ban equally to domestic and imported toys, with no less restrictive alternative available to address the risk. How is this measure best analysed?",
+      "options": ["As a Keck selling arrangement, excluded from Article 34 without more", "As a product rule caught by Dassonville, but justifiable under Cassis mandatory requirements (or, given the safety/health character of the concern, potentially Article 36) provided it is necessary and no less restrictive measure would achieve the same protection", "As automatically unlawful, since any ban on a specific product is inherently disproportionate"],
+      "correctIndex": 1,
+      "explanation": "A ban tied to the safety characteristics of the product itself is a product rule, not a selling arrangement, so Keck does not apply. Because it applies without distinction, it can be analysed under Cassis mandatory requirements (consumer/product safety) or under Article 36's health and safety ground; either way, the absence of a less restrictive alternative supports a finding that the measure is necessary and proportionate."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson's test items is skipping the classification step. Before reaching for a justification, always ask first whether the rule is a Keck-excluded selling arrangement at all — if it is, the analysis stops there, and reasoning through Cassis or Article 36 for a rule that was never caught wastes the answer's structure on a question that isn't live.",
+    "reviewMisses": true,
+    "linkToPathway": "eulaw.internal-market.free-movement-goods"
+  }
+}

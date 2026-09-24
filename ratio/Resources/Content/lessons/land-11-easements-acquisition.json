@@ -1,0 +1,528 @@
+{
+  "lessonId": "land-11",
+  "moduleId": "land",
+  "moduleTitle": "Land Law",
+  "lessonNumber": 11,
+  "topicId": "land.easements.acquisition",
+  "title": "Easements: how they are acquired",
+  "subtitle": "Five routes to the same destination",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify the five routes by which a legal or equitable easement can be acquired: express grant/reservation, implied grant (necessity and common intention), Wheeldon v Burrows, s 62 LPA 1925, and prescription",
+    "State the specific conditions each route requires, and explain why a fact pattern satisfying one route may fail on another",
+    "Apply the correct acquisition route to an unfamiliar fact pattern, including spotting where two routes compete for the same right"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Wheeldon v Burrows (1879) 12 Ch D 31",
+      "role": "Implies a grant of quasi-easements that are continuous and apparent, necessary for reasonable enjoyment, and in use at the time of the grant"
+    },
+    {
+      "citation": "Law of Property Act 1925, s 62",
+      "role": "Converts existing privileges, liberties and advantages enjoyed with land into full legal easements on a conveyance"
+    },
+    {
+      "citation": "Wood v Waddington [2015] EWCA Civ 538",
+      "role": "Clarifies the 'continuous and apparent' requirement under Wheeldon and its relationship with prescription"
+    },
+    {
+      "citation": "Platt v Crouch [2003] EWCA Civ 1110",
+      "role": "Confirms mooring and river-access rights can pass as easements under both Wheeldon and s 62 on a sale"
+    },
+    {
+      "citation": "Prescription Act 1832",
+      "role": "Statutory route to easement by long use, sitting alongside common law prescription and lost modern grant"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students who know the five routes as a list often still pick the wrong one under exam pressure, because two or three routes usually fit the same facts. Where the profile shows knowledge ahead of application, this note appears: 'You can name the routes — this lesson is about choosing between them.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well recalling the routes before. The test pool below leans hard on application: expect fact patterns that could plausibly go two ways, and marks for picking the one that actually fits.",
+      "weakKnowledge": "Start with Part 1 and don't rush the map — the rest of this lesson assumes you can already name all five routes before you try to choose between them."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A buyer completes on a house. The driveway she's used for years to reach the garage isn't mentioned anywhere in her deed. Is it hers to keep using — or was it only ever a favour from the previous owner, now gone with the sale? The answer depends entirely on which of five roads got her there, and each road has its own toll gate."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The map: five roads to a valid easement",
+        "voice": "route-map — lays out the whole journey before taking any single road",
+        "body": [
+          "Every easement question in an exam is secretly the same question asked five different ways: which route got this right to exist, and does that route's toll actually get paid on these facts? Get the route wrong and the rest of your analysis — however elegant — answers a question nobody asked.",
+          "The simplest road is Route 1: express creation. The seller writes the easement into the transfer deed in so many words — either granting a right over land they're keeping (an express grant) or reserving a right over land they're selling (an express reservation). Because land is involved, s 52 Law of Property Act 1925 demands a deed; get that formality right and the easement is legal from day one, full stop.",
+          "The other four roads exist precisely because sellers are often careless, forgetful, or trying to keep the price of the transfer document down. Implied grant (Route 2) fills gaps the parties clearly meant to fill but didn't write down. Wheeldon v Burrows (Route 3) and s 62 LPA 1925 (Route 4) both convert informal, pre-existing arrangements into full easements at the moment of sale — but they run on different engines and can produce different results from identical facts. Prescription (Route 5) is the odd one out: it doesn't look at what anyone intended at all, only at what actually happened, uninterrupted, for twenty years.",
+          "Keep this map in view for the rest of the lesson. Every case that follows is a detour into one road's specific conditions — but the skill being tested, always, is picking the right road first."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The five routes at a glance",
+            "points": [
+              "Route 1 — Express grant or reservation: written into the deed, s 52 LPA 1925 formality required",
+              "Route 2 — Implied grant: necessity (the land is landlocked without it) or common intention (both parties clearly intended a specific use)",
+              "Route 3 — Wheeldon v Burrows: quasi-easements continuous, apparent, and necessary for reasonable enjoyment, in use at the time of the grant",
+              "Route 4 — s 62 LPA 1925: existing privileges enjoyed with the land are upgraded to full easements on a conveyance",
+              "Route 5 — Prescription: twenty years' continuous use as of right (nec vi, nec clam, nec precario) under the Prescription Act 1832, common law, or lost modern grant"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-11-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A seller writes a right of way into the transfer deed, in a document properly executed as a deed. Which route has created the easement?",
+          "options": [
+            "Route 1 — express grant",
+            "Route 5 — prescription"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Nothing implied, nothing converted, nothing built on years of use — it's simply written down, in a deed. That's the whole of Route 1.",
+          "feedbackIncorrect": "Look again — the right is stated in the deed itself. That's the most direct of the five routes, not one built on years of unspoken use."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Route 2: the roads the law builds for you — necessity and common intention",
+        "voice": "structural — treats the two implied-grant doctrines as parallel tracks with different fuel",
+        "body": [
+          "Implied grant covers the gap between 'the parties never wrote this down' and 'the parties plainly meant it to exist.' It has two distinct sub-routes, and mixing them up costs marks even when the conclusion is the same.",
+          "Easement of necessity is the narrower of the two. It requires more than inconvenience — the dominant land must be genuinely landlocked, incapable of being used at all without the right. A seller who sells the only plot with road access, leaving the retained plot with no way out, will be taken to have impliedly granted (or reserved) a right of way of necessity, because otherwise the land is useless. Prove there's any other way out, however awkward, and necessity fails.",
+          "Common intention is broader but harder to evidence. It doesn't ask whether the land is unusable without the right — it asks whether both parties, at the time of the transaction, shared a specific common purpose for the land that the easement is required to achieve. The classic illustration is a lease of a basement expressly let 'for use as a restaurant,' where ventilation ducts through the landlord's retained building turn out to be essential — the parties' common intention that the premises be usable as a restaurant implies the right, even though the land isn't landlocked and nothing forced that specific use.",
+          "The trap: necessity asks 'can this land be used for anything at all without the right?' Common intention asks 'did both sides specifically intend this particular use, such that the right is needed to carry it out?' A fact pattern can satisfy one and fail the other."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Easement of necessity",
+            "definition": "An easement implied where, without it, the dominant land could not be used at all — not merely inconvenienced. Any alternative access, however poor, defeats the claim."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Easement of common intention",
+            "definition": "An easement implied where both parties shared a specific, provable common purpose for the land at the time of the grant, and the easement is necessary to give effect to that shared purpose."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-11-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is better argued as necessity rather than common intention?",
+          "scenarioA": "A landlord lets a basement unit with no lease clause about its use; the tenant later argues a right to run ventilation ducting through the landlord's building because both sides discussed, before signing, that the unit would be used as a restaurant.",
+          "scenarioB": "A seller divides a large plot, sells the rear portion which has no boundary touching any road, and keeps the front portion, which does.",
+          "correctScenario": "B",
+          "explanation": "B is a pure landlocked-land case — the rear plot cannot be used for anything without a way out, which is exactly what necessity requires. A depends on a shared, specific purpose (the restaurant use) rather than the land being unusable as such — that's common intention."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Route 3: Wheeldon v Burrows — when quasi-easements crystallise on sale",
+        "voice": "case-narrative — builds the doctrine outward from the facts of the founding case",
+        "body": [
+          "Before Wheeldon v Burrows, a seller who owned two adjoining plots and used one to benefit the other — say, a workshop lit by windows overlooking the other plot — held no 'easement' at all over their own land. You cannot have an easement against yourself; the arrangement was just a 'quasi-easement,' a de facto convenience with no legal status. The question the case answers is: what happens to that convenience when the seller sells off the benefited plot?",
+          "The Court of Appeal's answer became a three-part test. On a sale (or lease) of the dominant land, a quasi-easement automatically becomes a full legal easement in the buyer's favour if it was (1) continuous and apparent — meaning discoverable on a careful inspection, not necessarily in constant use, (2) necessary for the reasonable enjoyment of the land granted, not merely convenient, and (3) in use by the seller for the benefit of that land at the time of the grant.",
+          "Two modern cases sharpen this test rather than replace it. Wood v Waddington confirmed that 'continuous and apparent' does not require permanent physical apparatus like a worn path or visible pipework — what matters is whether a careful inspection would reveal the feature, and the Court of Appeal there also clarified how the Wheeldon test interacts with a prescription-based claim on the same facts. Platt v Crouch went further on the facts, holding that rights of mooring and access to a river, enjoyed by a hotel over its own riverside land before sale, passed to the buyer as easements under Wheeldon (and, separately, under s 62) — showing the doctrine isn't limited to obvious rights of way.",
+          "The doctrine only assists a buyer, never a seller: a seller who wants to keep a right over land they're selling must reserve it expressly (Route 1). Wheeldon fills gaps in favour of buyers, on the presumption that a seller shouldn't derogate from their own grant by silently withholding conveniences the land was already enjoying."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Wheeldon v Burrows",
+            "citation": "(1879) 12 Ch D 31",
+            "court": "Court of Appeal",
+            "year": 1879,
+            "factsShort": "A seller owned a workshop and an adjoining plot; the workshop had windows drawing light across the adjoining plot. The seller sold the workshop, then sold the adjoining plot to a different buyer, who began building in a way that blocked the light.",
+            "ratioShort": "On a sale of land, quasi-easements that are continuous and apparent, necessary for reasonable enjoyment, and in use at the time of the grant pass automatically to the buyer as full easements.",
+            "expanded": {
+              "facts": "Before any sale, the seller (Burrows) owned both the workshop and the adjoining plot, and the workshop's windows had long enjoyed light passing over the adjoining land. The workshop was sold first; the adjoining plot was sold later to Wheeldon, who began erecting hoardings that would block the workshop's light.",
+              "judgmentExtract": "The Court of Appeal held that general words are not necessary: on the grant of part of land, all quasi-easements over the land retained which are continuous and apparent, and necessary for the reasonable enjoyment of the land granted, pass to the grantee — because the grantor cannot derogate from their own grant.",
+              "significance": "This is the leading authority for implied grant on a sale based on pre-existing use, distinct from necessity (which needs no pre-existing use at all, only land that is unusable without the right) and from common intention (which needs no continuous and apparent use, only a shared specific purpose)."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "land-11-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the Wheeldon v Burrows ratio.",
+          "passage": "The dispute arose after the seller had already sold the benefited plot and then sold the adjoining plot separately. On the grant of part of land, all quasi-easements over the land retained which are continuous and apparent, and necessary for the reasonable enjoyment of the land granted, pass to the grantee. The buyer of the adjoining plot could not therefore act so as to derogate from the earlier grant.",
+          "ratioSentence": "On the grant of part of land, all quasi-easements over the land retained which are continuous and apparent, and necessary for the reasonable enjoyment of the land granted, pass to the grantee."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Route 4: s 62 LPA 1925 — the word that upgrades a favour into a right",
+        "voice": "statute-first — reads the provision closely before showing what it does in practice",
+        "body": [
+          "Section 62 was drafted as a word-saving provision: instead of a conveyance having to list every minor right, easement, and privilege enjoyed with a property, s 62 implies them all in automatically. That drafting convenience turned out to have an enormous side effect. If a right was merely a permission or a precarious favour before the sale — not yet an easement at all, because it depended on the seller's goodwill and could be withdrawn — a conveyance to a new owner can convert that favour into a full, permanent legal easement, whether or not either party intended that result.",
+          "This is what makes s 62 dangerous for sellers: a licence granted informally — 'you can park on my strip of land while we're neighbours' — can harden into a permanent easement the moment the land is sold to someone new, purely because the statute operates on conveyance. The seller's intention is irrelevant; what matters is whether the right was being enjoyed at the date of the conveyance.",
+          "The route has one significant historical limitation worth knowing: courts have required prior diversity of occupation before s 62 will convert an informal arrangement into an easement — that is, the dominant and servient parts must, before the conveyance, have been occupied by different people (so that the right was genuinely being 'enjoyed' by one party over land occupied by another), not merely used by a single owner over their own undivided land. Where that diversity is missing, Wheeldon v Burrows — which has no such requirement — may still assist instead. Platt v Crouch confirmed that where the facts satisfy both s 62 and Wheeldon, either route can be pleaded, and a buyer is not put to an election."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, s 62(1)",
+            "text": "A conveyance of land shall be deemed to include and shall by virtue of this Act operate to convey, with the land, all ... liberties, privileges, easements, rights, and advantages whatsoever, appertaining or reputed to appertain to the land, or any part thereof, or, at the time of conveyance, demised, occupied, or enjoyed with ... the land or any part thereof.",
+            "elements": [
+              "A conveyance of land (not a mere contract or first registration)",
+              "A right, liberty, privilege or advantage enjoyed with the land at the time of conveyance",
+              "No express contrary intention excluding s 62"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "land-11-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 62(1) LPA 1925 as set out above, which of these is closest to what the section actually requires to operate?",
+          "options": [
+            "A deliberate, express grant of the right, using the word 'easement'",
+            "A conveyance of land, plus a right or privilege actually enjoyed with that land at the time of the conveyance",
+            "Twenty years of continuous use before the conveyance takes place"
+          ],
+          "correctIndex": 1,
+          "explanation": "Section 62 asks only whether the right was being enjoyed with the land at the moment of conveyance — it needs no deliberate grant of an easement as such (that's Route 1) and no minimum period of use (that's prescription, Route 5)."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Route 5: prescription — the road built entirely out of time",
+        "voice": "direct — sets out the conditions plainly, then flags where they trip students up",
+        "body": [
+          "The last route ignores intention almost entirely. Prescription asks only: has this right been exercised, openly and without permission, for long enough that the law will now protect it regardless of how it began? Twenty years is the benchmark figure, whichever of the three legal mechanisms you rely on to get there.",
+          "Whichever mechanism is pleaded, the use itself must satisfy the same three negative conditions, usually given their Latin tags: nec vi (not by force — no fences broken, no confrontations needed to continue the use), nec clam (not secretly — open enough that the servient owner could have found out and objected), and nec precario (not by permission — the moment the servient owner's consent is what's keeping the use going, it stops counting, because a permitted use can be withdrawn at will and was never 'as of right').",
+          "The three mechanisms differ in mechanics rather than in these core conditions. The Prescription Act 1832 sets fixed periods (20 years for an ordinary claim, 40 for one 'absolute and indefeasible') but is notoriously technical to plead correctly. Common law prescription fictionally assumes the right has existed since 1189 — easily defeated by showing it couldn't have (for example, if the servient building wasn't constructed until later). Lost modern grant is the pragmatic fallback: the court presumes a grant was once made and later lost, provided 20 years' qualifying use is shown, without needing to defeat an 1189 fiction. In practice, claimants plead all three together and let whichever survives do the work."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Checking a prescription claim",
+            "description": "The sequence for testing whether long use has ripened into an easement.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Has the use continued for at least 20 years?"
+              },
+              {
+                "id": "force",
+                "label": "Was the use exercised without force (nec vi)?"
+              },
+              {
+                "id": "secret",
+                "label": "Was the use open, not secret (nec clam)?"
+              },
+              {
+                "id": "permission",
+                "label": "Was the use without the servient owner's permission (nec precario)?"
+              },
+              {
+                "id": "mechanism",
+                "label": "Plead under whichever of the Prescription Act 1832, common law prescription, or lost modern grant best fits the facts"
+              },
+              {
+                "id": "fail",
+                "label": "Any negative condition fails → no prescriptive easement"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "force",
+                "label": "Yes"
+              },
+              {
+                "from": "force",
+                "to": "secret",
+                "label": "Yes"
+              },
+              {
+                "from": "secret",
+                "to": "permission",
+                "label": "Yes"
+              },
+              {
+                "from": "permission",
+                "to": "mechanism",
+                "label": "Yes"
+              },
+              {
+                "from": "force",
+                "to": "fail",
+                "label": "No"
+              },
+              {
+                "from": "secret",
+                "to": "fail",
+                "label": "No"
+              },
+              {
+                "from": "permission",
+                "to": "fail",
+                "label": "No"
+              }
+            ],
+            "textAlternative": "To test a prescription claim: first check at least 20 years' use. Then check each of three negative conditions in turn — the use must be without force, without secrecy, and without permission. If all three hold, the claim can be pleaded under the Prescription Act 1832, common law prescription, or lost modern grant, whichever fits best. If any condition fails, there is no prescriptive easement."
+          }
+        ],
+        "interaction": {
+          "itemId": "land-11-check-05",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a court works through a disputed prescription claim.",
+          "items": [
+            "Establish at least 20 years of the claimed use",
+            "Check the use was without force, secrecy, or permission",
+            "Identify which mechanism (1832 Act, common law, lost modern grant) the facts best support",
+            "Confirm that mechanism's own technical requirements are met"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the structure: the twenty years and the three negative conditions come first, because if either fails, no mechanism can rescue the claim — only then do you choose and satisfy a specific route.",
+          "feedbackIncorrect": "Check the order — the twenty years and the nec vi/nec clam/nec precario conditions have to be established before it's worth asking which specific prescription mechanism to plead."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "land-11-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the five routes by which an easement can be acquired.",
+      "acceptableAnswers": [
+        "express grant/reservation, implied grant (necessity and common intention), Wheeldon v Burrows, s 62 LPA 1925, prescription"
+      ],
+      "modelAnswer": "Express grant or reservation, implied grant (necessity or common intention), Wheeldon v Burrows, s 62 Law of Property Act 1925, and prescription."
+    },
+    {
+      "itemId": "land-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Does an express grant of an easement need to be made by deed to take effect as a legal easement?",
+      "options": [
+        "Yes — s 52 LPA 1925 requires a deed",
+        "No — a signed letter is always sufficient"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "A neighbour has let you park on their land 'as a favour' for six months. Which statement is correct?",
+      "options": [
+        "This is already an easement, because it's been going on for some time",
+        "This is a bare licence, not an easement, and can be withdrawn at will unless and until some route converts it",
+        "This automatically becomes an easement once you've used it twice"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Duration alone never creates an easement outside prescription's twenty-year threshold, and even prescription requires the use to be without permission — a favour granted 'as a favour' is precario and doesn't count towards it at all."
+    },
+    {
+      "itemId": "land-11-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "What does s 62 LPA 1925 require that the Wheeldon v Burrows test does not?",
+      "options": [
+        "Nothing — the two tests are identical in every requirement",
+        "Historically, prior diversity of occupation between the dominant and servient parts of the land",
+        "A minimum of twenty years' use"
+      ],
+      "correctIndex": 1,
+      "explanation": "Wheeldon has no diversity-of-occupation requirement, which is exactly why it can succeed where s 62 fails on facts involving a single owner's use of their own undivided land before sale."
+    },
+    {
+      "itemId": "land-11-test-05",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below, highlight the sentence that captures the core requirement clarified in Wood v Waddington.",
+      "passage": "The appellant argued that 'continuous and apparent' under Wheeldon required a permanent physical feature such as a worn path or visible pipework. The Court of Appeal rejected that narrow reading. What matters is whether the feature or use would be revealed to a careful inspection of the land, not whether it takes a particular physical form. On the facts, a track used periodically but clearly visible on the ground satisfied the requirement.",
+      "ratioSentence": "What matters is whether the feature or use would be revealed to a careful inspection of the land, not whether it takes a particular physical form."
+    },
+    {
+      "itemId": "land-11-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Order the three negative conditions a prescriptive use must satisfy, as they are conventionally listed (force, secrecy, permission).",
+      "items": [
+        "Without force (nec vi)",
+        "Without secrecy (nec clam)",
+        "Without permission (nec precario)"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "itemId": "land-11-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is better argued under necessity than common intention?",
+      "scenarioA": "A seller divides a plot into two; the rear plot has no boundary touching any road or path, and no alternative access exists.",
+      "scenarioB": "A landlord lets a unit expressly described in the lease as being for use as a hair salon, requiring water and drainage connections through the landlord's retained pipework.",
+      "correctScenario": "A",
+      "explanation": "A is landlocked land — usable for nothing at all without the right — which is exactly what necessity requires. B turns on a specific shared purpose (the salon use) rather than the land being unusable as such, so it fits common intention instead."
+    },
+    {
+      "itemId": "land-11-test-08",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that is essential to satisfying the 'in use at the time of the grant' element of Wheeldon v Burrows.",
+      "scenarioText": "Before selling the rear plot, the seller had for years run a drainage pipe under the front plot to serve the rear building, and this was still draining the rear building on the day contracts were exchanged and the transfer completed.",
+      "tappableSpans": [
+        "Before selling the rear plot",
+        "for years",
+        "run a drainage pipe under the front plot",
+        "was still draining the rear building on the day contracts were exchanged and the transfer completed"
+      ],
+      "correctSpan": "was still draining the rear building on the day contracts were exchanged and the transfer completed",
+      "feedbackCorrect": "Right — Wheeldon requires the quasi-easement to be in use by the seller at the moment of the grant, not merely to have existed at some point in the past.",
+      "feedbackIncorrect": "Look for the fact tied to the date of the grant itself. Wheeldon doesn't just ask whether a quasi-easement ever existed; it asks whether it was still in use when the land was granted."
+    },
+    {
+      "itemId": "land-11-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A single owner used a track across the back of their land to reach a garage at the front, for their own convenience, before selling the garage plot to a buyer. There had never been two separate occupiers before the sale. Which route is most likely to succeed for the buyer?",
+      "options": [
+        "Wheeldon v Burrows, since it has no diversity-of-occupation requirement",
+        "s 62 LPA 1925, since diversity of occupation is required for s 62 specifically",
+        "Prescription, since twenty years is the only relevant test here"
+      ],
+      "correctIndex": 0,
+      "explanation": "Because there was never diversity of occupation before the sale, s 62's historical requirement is not satisfied. Wheeldon has no such requirement and can still succeed if the quasi-easement is continuous and apparent, necessary for reasonable enjoyment, and in use at the time of the grant."
+    },
+    {
+      "itemId": "land-11-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A seller sells the front half of a plot, keeping the rear half for themselves. The rear half has a second, less convenient access from a side lane. Can the seller claim an easement of necessity over the front half for a more direct route?",
+      "options": [
+        "No — an alternative access, however inconvenient, defeats a claim of necessity",
+        "Yes — necessity applies whenever an alternative route is merely less convenient",
+        "Yes — because the seller is the one selling, they automatically retain an implied right"
+      ],
+      "correctIndex": 0,
+      "explanation": "Necessity is an absolute test. Any access at all, even a poor one, defeats the claim — the doctrine exists for landlocked land, not merely inconvenienced land."
+    },
+    {
+      "itemId": "land-11-test-11",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "How confident are you that Wood v Waddington requires a permanent physical feature (like worn paving or visible pipework) before a use can be 'continuous and apparent' under Wheeldon v Burrows?",
+      "sliderLabels": [
+        "Definitely required",
+        "Definitely not required"
+      ],
+      "correctPosition": "not required",
+      "explanation": "Wood v Waddington rejected that narrow reading: the test is whether a careful inspection would reveal the feature or use, not whether it takes a specific permanent physical form."
+    },
+    {
+      "itemId": "land-11-test-12",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A hotel owner has, for years, used a strip of their own riverside land to allow guests to moor small boats and walk down to the river. The hotel owner then sells the riverside strip to a buyer who wants to build on it, while keeping the hotel itself. The former hotel guests' successor in title (the new hotel operator) claims a right to continue mooring and access. Analyse whether an easement has been acquired.",
+      "factsToOrder": [
+        "The mooring and access use was continuous and apparent before the sale",
+        "The riverside strip and the hotel were, before the sale, in single ownership (no diversity of occupation)",
+        "The mooring and access rights were necessary for the reasonable enjoyment of the hotel business",
+        "The use was ongoing at the date of the sale of the riverside strip"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the hotel, as the retained (dominant) land, acquired an easement of mooring and access over the sold riverside strip.",
+        "rule": "Under Wheeldon v Burrows, a quasi-easement passes on a sale of the retained land's neighbouring plot where it is continuous and apparent, necessary for reasonable enjoyment, and in use at the time of the grant; Wheeldon has no diversity-of-occupation requirement, unlike s 62 LPA 1925, so it can succeed even though the two plots were in single ownership before the sale.",
+        "application": "The mooring and access use was continuous and apparent (visible on inspection of the riverside strip), necessary for the reasonable enjoyment of the hotel business, and still ongoing at the date of sale — satisfying all three Wheeldon elements. The absence of prior diversity of occupation would defeat a s 62 claim, but is irrelevant to Wheeldon, as confirmed by Platt v Crouch on materially similar facts.",
+        "conclusion": "The hotel most likely acquired an easement of mooring and access under Wheeldon v Burrows, even though a s 62 claim on the same facts would likely fail for want of prior diversity of occupation."
+      }
+    },
+    {
+      "itemId": "land-11-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under the Prescription Act 1832, what is the ordinary minimum period of qualifying use for a prescriptive easement claim?",
+      "options": [
+        "20 years",
+        "5 years"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "land-11-test-14",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Which scenario is the stronger candidate for a prescriptive easement, rather than one of the sale-based implied routes?",
+      "scenarioA": "For 25 years, without permission and openly, a homeowner has walked across a neighbour's field to reach a footpath, and the two properties have never shared common ownership or been sold to each other's owners.",
+      "scenarioB": "A seller has, for six months before completing a sale, allowed the buyer to use a shared driveway informally while contracts were being finalised.",
+      "correctScenario": "A",
+      "explanation": "A has no conveyance to trigger Wheeldon or s 62, and no implied-grant transaction at all — but it does have twenty-five years of open, unpermitted use, which is exactly what prescription is built to protect. B is far too short for prescription and depends on a sale, not long use."
+    },
+    {
+      "itemId": "land-11-test-15",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant has used a path for eighteen years with the servient owner's express, repeatedly renewed permission. Which statement is correct?",
+      "options": [
+        "This use is building towards a prescriptive easement and only needs two more years",
+        "This use can never mature into a prescriptive easement while the permission continues, however long it lasts, because it fails nec precario",
+        "Permission is irrelevant to prescription — only the twenty-year period matters"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Students often treat prescription as a pure clock-counting exercise. It isn't: a use that depends on ongoing permission is precario and never counts towards prescription at all, no matter how many years accumulate, because it was never 'as of right.'"
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson is picking a route that could plausibly work and stopping there, without checking whether a more specific route's conditions are actually satisfied on the facts given — especially confusing Wheeldon (no diversity of occupation needed) with s 62 (historically requires it).",
+    "reviewMisses": true,
+    "linkToPathway": "land.easements.acquisition"
+  }
+}

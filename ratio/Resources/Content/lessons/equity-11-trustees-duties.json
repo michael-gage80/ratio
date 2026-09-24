@@ -1,0 +1,485 @@
+{
+  "lessonId": "equity-11",
+  "moduleId": "equity",
+  "moduleTitle": "Equity and Trusts",
+  "lessonNumber": 11,
+  "topicId": "equity.trustees.duties",
+  "title": "Trustees' duties",
+  "subtitle": "Standard of care, investment, delegation and disclosure",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the statutory and common law standards of care that apply to a trustee's conduct, and identify when each applies",
+    "Explain the scope of the trustee's investment duties under the Trustee Act 2000 and the unresolved tension between fiduciary duty and ethical investment preferences",
+    "Apply the rules governing delegation to agents, nominees and custodians to a new fact pattern, and identify what liability a trustee retains after delegating",
+    "Explain the basis and limits of a beneficiary's right to disclosure of trust information"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Trustee Act 2000, ss 1, 3-5, 11-23, Sch 1",
+      "role": "Statutory duty of care; general power of investment and standard investment criteria; power to delegate and the safeguards attached to it"
+    },
+    {
+      "citation": "Speight v Gaunt (1883) 9 App Cas 1",
+      "role": "Source of the common law 'prudent person of business' standard, still the baseline where the statutory duty does not apply"
+    },
+    {
+      "citation": "Cowan v Scargill [1985] Ch 270",
+      "role": "Trustees' investment powers must be exercised to secure the best financial return for beneficiaries, not to advance the trustees' own ethical or political views"
+    },
+    {
+      "citation": "Butler-Sloss v Charity Commission [2022] EWHC 974 (Ch)",
+      "role": "Updates the modern position for charity trustees: ethically motivated exclusions can be consistent with the duty where conflicting with the charity's purposes, or where the financial detriment is justified"
+    },
+    {
+      "citation": "Schmidt v Rosewood Trust [2003] UKPC 26",
+      "role": "Right to disclosure of trust documents rests on the court's inherent supervisory jurisdiction, not on a proprietary right vested in the beneficiary"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite the prudent person test as a slogan. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the standard — this lesson is about what a trustee is actually meant to do with it, in a portfolio, in a delegation, in a disclosure request.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards application: expect a trustee facing a real decision, not a definition to complete.",
+      "weakKnowledge": "Start with Part 1 and be sure you can state both the statutory duty of care and the common law standard before moving on — the later parts on investment and delegation both assume you already have this straight."
+    }
+  },
+  "lawStatedAt": "2026-09-01",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A trustee who loses money for the beneficiaries is not automatically in breach. A trustee who makes money the 'wrong' way can be. The law does not ask trustees to be lucky, or even especially skilled — it asks them to behave the way a careful, businesslike person would behave with property that isn't their own. This lesson is about what that actually requires, case by case: how you invest it, who you can hand it to, and what you have to tell the people it belongs to."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The standard: prudent person, statutory duty of care",
+        "voice": "practical — states the standard, then asks what it actually demands in practice",
+        "body": [
+          "Start with the baseline. At common law, a trustee must act with the care of an 'ordinary prudent man of business' managing his own affairs, but managing them for someone else — meaning more caution is expected than a person might show with their own money, because the trustee is handling property on behalf of people who cannot supervise every decision. Speight v Gaunt is the source of this formula, and it has never been displaced; it is simply supplemented.",
+          "The Trustee Act 2000 layered a statutory duty of care on top of the common law standard for a defined set of functions — principally investment, the exercise of powers of delegation, insurance, and the acquisition of land. Section 1 requires a trustee to exercise 'such care and skill as is reasonable in the circumstances', and — critically — the standard rises if the trustee holds themselves out as having special knowledge or is acting in the course of a profession. A solicitor-trustee or a professional trust corporation is held to a higher bar than a lay trustee doing a favour for family.",
+          "This matters practically because the two standards don't always overlap. Where the statutory duty applies (Schedule 1 lists the relevant functions), it governs; where it doesn't — for example, some exercises of a dispositive discretion that fall outside the listed functions — the older common law prudent-person standard still does the work. An exam answer that only cites section 1 for every kind of trustee conduct is missing half the map."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Statutory duty of care (Trustee Act 2000, s 1)",
+            "definition": "A duty to exercise such care and skill as is reasonable in the circumstances, having regard in particular to any special knowledge or experience the trustee has or holds themselves out as having, and, if acting in the course of a business or profession, to any special knowledge or experience it is reasonable to expect of a person acting in that business or profession."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-11-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A solicitor acting as a professional trustee and a lay trustee who is a family friend are judged against exactly the same standard of care under the Trustee Act 2000.",
+          "options": [
+            "False — the statutory duty rises for a trustee acting in a professional capacity or holding themselves out as having special expertise",
+            "True — the statutory duty of care is a single fixed standard applied identically to every trustee"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 1 is objective but not uniform — it flexes upward for professional trustees and anyone claiming special expertise.",
+          "feedbackIncorrect": "Not quite — section 1's language explicitly ties the standard to any special knowledge or experience the trustee has, or that it's reasonable to expect from someone acting in their business or profession. A solicitor-trustee is held to more than a lay one."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Investment powers: the general power, and the standard investment criteria",
+        "voice": "reference-style — a part students will return to before drafting an investment clause answer",
+        "body": [
+          "Before 2000, trustees' investment powers were notoriously narrow unless the trust instrument expanded them. The Trustee Act 2000 fixed this with a general power of investment under section 3: a trustee may make any kind of investment they could make if they were absolutely entitled to the trust assets themselves. This is a default power, displaceable by the trust instrument — always check the deed first, because a settlor can restrict it.",
+          "The power is not unconditional. Section 4 requires the trustee to have regard to the 'standard investment criteria' — the suitability of the particular kind of investment to the trust, and the suitability of that particular investment as an example of its kind, plus the need for diversification, so far as appropriate to the circumstances of the trust. Section 5 adds a duty to obtain and consider proper advice before exercising the power, unless the trustee reasonably concludes advice is unnecessary given the amount involved.",
+          "None of this is a one-off box to tick. Section 4(2) requires the trustee to review the investments 'from time to time' and consider whether they should be varied, having regard again to the standard investment criteria. A portfolio that was prudent when set up in one year can become imprudent through simple neglect — failing to review is itself capable of being a breach, quite separately from any single bad investment decision."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Trustee Act 2000, s 4",
+            "text": "(1) In exercising any power of investment, whether arising under this Part or otherwise, a trustee must have regard to the standard investment criteria. (2) A trustee must from time to time review the investments of the trust and consider whether, having regard to the standard investment criteria, they should be varied. (3) The standard investment criteria, in relation to a trust, are — (a) the suitability to the trust of investments of the same kind as any particular investment proposed to be made or retained and of that particular investment as an investment of that kind, and (b) the need for diversification of investments of the trust, in so far as is appropriate to the circumstances of the trust.",
+            "elements": [
+              "Have regard to suitability of the kind of investment",
+              "Have regard to suitability of the particular investment",
+              "Have regard to the need for diversification, so far as appropriate",
+              "Review the investments from time to time — this is an ongoing duty, not a one-off"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-11-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 4 Trustee Act 2000, a trustee who selected a perfectly suitable, well-diversified portfolio five years ago and has not looked at it since is complying with the standard investment criteria.",
+          "options": [
+            "False — s 4(2) imposes an ongoing duty to review the investments from time to time, not just a duty at the point of selection",
+            "True — once the standard investment criteria are satisfied at outset, no further obligation arises unless the beneficiaries complain"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The duty is continuing: suitability and diversification have to be revisited from time to time, not assessed once and forgotten.",
+          "feedbackIncorrect": "Look again at s 4(2) — it separately requires the trustee to review the investments from time to time. Getting the initial selection right doesn't discharge an ongoing duty to keep checking it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Cowan v Scargill and the ethical investment problem",
+        "voice": "argumentative — sets out the hard-edged rule, then shows where the modern case law has softened it",
+        "body": [
+          "Cowan v Scargill is the case every student remembers as 'trustees can't invest ethically' — and that shorthand is not quite right, which is exactly why it earns careful treatment here. The National Union of Mineworkers' representatives on a pension fund's board of trustees wanted to exclude investment in oil, and in industries competing with coal, for reasons connected to the union's own interests rather than the fund's financial performance. Megarry V-C held this was a breach of duty: the trustees' paramount duty in selecting investments is to secure the best realistic return for the beneficiaries, judged by financial criteria — and personal or political views about how money should be invested cannot be allowed to override that.",
+          "The judgment is often over-read as banning ethical investment outright. It doesn't. Megarry V-C's own reasoning left room for exclusions that a prudent trustee, applying ordinary standards, would make on financial grounds anyway — and the case concerned trustees substituting their own social or political preferences for the beneficiaries' financial interests, which is a narrower target than 'any ethical consideration whatsoever'.",
+          "Butler-Sloss v Charity Commission brings the modern position up to date, for charities specifically. The court confirmed that charity trustees can adopt an ethical investment policy — even one that excludes profitable investments — where continuing to hold those investments would conflict with the charity's own purposes, or would risk alienating supporters and donors to a degree that outweighs the financial disadvantage, provided trustees balance the relevant factors reasonably and do not apply a blanket exclusion without proper consideration. The tension Cowan v Scargill identified — beneficiaries' financial interests versus the trustees' own convictions — has not disappeared, but the modern approach is more willing to treat purpose-alignment and reputational risk as themselves financially and organisationally relevant, rather than as an illegitimate override of the duty."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Cowan v Scargill",
+            "citation": "[1985] Ch 270",
+            "court": "Chancery Division",
+            "year": 1985,
+            "factsShort": "NUM-nominated pension fund trustees wanted to exclude investment in oil and competitor industries to coal, for reasons connected to the union's interests rather than fund performance.",
+            "ratioShort": "A trustee's paramount duty when selecting investments is to secure the best financial return for the beneficiaries; the trustee's own ethical or political preferences cannot override that where they conflict with it.",
+            "expanded": {
+              "facts": "The mineworkers' pension scheme was managed by a board with trustees nominated by the NUM and by the National Coal Board. The union-nominated trustees refused to approve an investment plan that included investment in oil and gas and in industries overseas that might compete with coal, wanting instead to restrict investment to what aligned with the union's wider industrial interests.",
+              "judgmentExtract": "Megarry V-C held that the starting point is that trustees' powers of investment must be exercised so as to yield the best return for the beneficiaries, judged in relation to the risks of the investments in question; the interests of the beneficiaries are normally their financial interests, and trustees must not allow their own views — however sincerely held on moral, social or political grounds — to be a factor in the choice of investments to the detriment of that financial interest.",
+              "significance": "The case sets the default rule against which every later ethical-investment case is read: financial return to the beneficiaries is the trustee's touchstone, not the trustee's own conscience. It is a decision about whose interests count, not a blanket rule against ever declining a profitable investment."
+            }
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Butler-Sloss v Charity Commission",
+            "citation": "[2022] EWHC 974 (Ch)",
+            "court": "Chancery Division",
+            "year": 2022,
+            "factsShort": "Charity trustees of two environmental grant-making charities sought clarification of their power to adopt an investment policy excluding fossil fuel investments even where this meant giving up some financial return.",
+            "ratioShort": "Charity trustees may exclude a class of investment on ethical grounds, even at some financial cost, where continued investment would conflict with the charity's purposes or risk alienating supporters, provided the decision is reached by weighing the relevant considerations reasonably.",
+            "expanded": {
+              "facts": "The claimant charities' purposes were closely tied to protecting the environment. Their trustees wished to move towards excluding fossil fuel investments across the portfolio, even though this was expected to reduce the range of available investments and could affect returns, and sought the court's guidance on whether this was consistent with their duties.",
+              "judgmentExtract": "The court held that Cowan v Scargill remains good law but is not a bar on ethical investment: trustees may exclude investments that conflict with the charity's purposes, and may give weight to the risk of alienating support for the charity's work, so long as they exercise a balanced judgment rather than applying an automatic exclusion without considering the financial implications.",
+              "significance": "This is the modern restatement for charities: it does not overrule Cowan v Scargill but reframes the balancing exercise, treating purpose-conflict and reputational risk as legitimate factors a reasonable trustee can weigh — narrowing, without eliminating, the gap between 'best financial return' and 'ethically-informed investment'."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-11-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two boards of trustees each exclude a profitable class of investment. Which more closely mirrors the reasoning that would be upheld under Butler-Sloss rather than condemned under Cowan v Scargill?",
+          "scenarioA": "Trustees of a pension fund for retired steelworkers refuse to invest in a profitable, well-run competitor steel producer purely because several trustees personally resent that company as a former rival employer.",
+          "scenarioB": "Trustees of an environmental charity exclude fossil fuel investments after weighing the conflict with the charity's own purposes and the risk of alienating its donor base against the financial cost of doing so.",
+          "correctScenario": "B",
+          "explanation": "B reflects Butler-Sloss: a reasoned balancing of purpose-conflict and reputational considerations against financial cost, by trustees whose beneficiaries' interests are bound up with the charity's purposes. A is the Cowan v Scargill problem in its purest form — a decision driven by the trustees' own personal feelings, not the beneficiaries' financial interests or any purpose-based justification."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Delegation: handing the job to someone else without handing off the duty",
+        "voice": "direct — sets out the mechanism and the trap in one motion",
+        "body": [
+          "Trustees are not required to do everything themselves. The Trustee Act 2000, ss 11-23, allows collective delegation of 'delegable functions' to agents, and separately permits the appointment of nominees to hold trust assets and custodians to safeguard them. This is a significant liberalisation from the old law, which treated delegation with deep suspicion.",
+          "But delegation is not abdication. Two safeguards do almost all the work here. First, under section 15 a trustee who appoints an agent, nominee or custodian must keep the arrangements under review, and must intervene if there is reason to do so — meaning the trustee retains an ongoing supervisory duty even after delegating, not just a duty of care in the original selection. Second, Schedule 1 imposes the statutory duty of care on the very acts of selecting, appointing and reviewing the agent — so choosing carelessly, or failing to monitor, is itself capable of being a breach even where the agent's own conduct was flawless.",
+          "The practical effect: a trustee who delegates investment management to a competent, regulated fund manager and then never checks in again has not discharged their duty by delegating well — they have created a fresh duty to supervise, and breaching that supervisory duty is judged by the same statutory standard of care as everything else in this lesson."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "What delegation does and does not do",
+            "points": [
+              "Permits collective delegation of delegable functions to an agent (s 11), and separate appointment of nominees and custodians (ss 16-19)",
+              "Requires a written policy statement (s 15) where investment functions are delegated to an agent",
+              "Requires the trustee to keep the delegation under review and to intervene where appropriate (s 22) — delegation does not end the trustee's engagement",
+              "Applies the statutory duty of care to the acts of selecting, appointing and reviewing the agent, nominee or custodian (Sch 1) — a trustee can breach duty here even if the agent performs perfectly"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-11-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A trustee delegates investment management to a well-regarded, appropriately regulated fund manager, signs the required policy statement, and then has no further contact with the manager or the portfolio for six years. The portfolio underperforms badly over that period for reasons unrelated to the manager's competence. Has the trustee likely breached their duty?",
+          "options": [
+            "No — once a competent agent is properly appointed, the trustee has no further responsibility for the portfolio",
+            "Yes — the duty to keep the delegation under review continues after appointment, and six years of no contact is likely to be a failure of that ongoing supervisory duty",
+            "Yes, but only because the portfolio underperformed — a well-performing portfolio would mean no breach regardless of supervision"
+          ],
+          "correctIndex": 1,
+          "explanation": "Proper initial appointment does not discharge the ongoing duty under s 22 to keep the arrangement under review. Six years without any check-in is likely a breach of that supervisory duty regardless of how the portfolio happened to perform — the breach is in the neglect, not simply in the outcome."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Disclosure: what beneficiaries can actually demand to see",
+        "voice": "Socratic — poses the ownership question before resolving it",
+        "body": [
+          "Here's a question that looks simple and isn't: if beneficiaries are, in a sense, the real owners of the trust property, do they have a right to see every document the trustees hold about it? The older case law sometimes reasoned as if disclosure followed from a proprietary interest in the trust documents themselves — which made the analysis turn on categorising documents as 'trust documents' or not.",
+          "Schmidt v Rosewood Trust rejected that framing. The Privy Council held that no beneficiary has an enforceable proprietary right to disclosure of trust documents as such. Instead, disclosure is an aspect of the court's inherent jurisdiction to supervise, and if necessary intervene in, the administration of trusts — the right to seek disclosure is really a right to ask the court to exercise its supervisory jurisdiction, and the court has a discretion to weigh in each case, considering factors like the nature of the interest held, the confidentiality of the material sought (for example, trustees' reasons for exercising a discretion), and the practical workability of any disclosure ordered.",
+          "This reframing matters because it changes the question a lawyer asks. The old question was 'does this document count as a trust document the beneficiary owns a share of?' The right question after Schmidt v Rosewood is 'would the court, exercising its supervisory jurisdiction over this trust, order disclosure to this claimant of this material, given their interest and the confidentiality concerns at stake?' — a flexible, discretionary inquiry rather than a fixed proprietary entitlement."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Disclosure as an incident of supervisory jurisdiction",
+            "definition": "Following Schmidt v Rosewood Trust, a beneficiary's access to trust information does not rest on a proprietary right in the documents themselves, but on the court's discretionary, inherent jurisdiction to supervise trust administration — meaning the strength of the beneficiary's interest, the confidentiality of what's sought, and practical considerations all bear on whether disclosure will be ordered."
+          }
+        ],
+        "interaction": {
+          "itemId": "equity-11-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "Priya is a discretionary beneficiary under a family trust. She asks the trustees for the minutes recording their reasons for excluding her from a recent distribution. The trustees refuse, citing confidentiality. Analyse whether Priya has any route to disclosure.",
+          "factsToOrder": [
+            "Priya is a discretionary beneficiary, not a beneficiary with a fixed, vested interest",
+            "The material sought is the trustees' reasons for exercising a discretion, traditionally treated as sensitive",
+            "The trustees have refused disclosure citing confidentiality",
+            "No proprietary right to trust documents exists post-Schmidt v Rosewood"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 4,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether Priya, as a discretionary beneficiary, can compel disclosure of the trustees' reasons for excluding her from a distribution.",
+            "rule": "Schmidt v Rosewood Trust holds that disclosure is not founded on a proprietary right but on the court's inherent supervisory jurisdiction; the court exercises a discretion, weighing the strength and nature of the claimant's interest against the confidentiality of the material and practical considerations.",
+            "application": "Priya has a real, if discretionary, interest in the trust, which is enough to engage the court's jurisdiction to consider her request — Schmidt v Rosewood confirms even discretionary objects can invoke it, though the weight given to their interest is lighter than a vested beneficiary's. Against this sits the traditionally strong confidentiality attaching to trustees' reasons for exercising a discretion, which courts are cautious about ordering disclosed since doing so can undermine the trustees' ability to exercise discretions candidly and could invite unwelcome scrutiny of family or commercial decisions.",
+            "conclusion": "Priya has no automatic entitlement, but she can apply to the court to exercise its supervisory jurisdiction; success is not guaranteed given the sensitivity traditionally attached to reasons for a discretionary decision, and the outcome depends on the court's balancing exercise rather than any fixed rule."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "equity-11-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the common law standard of care that applies to a trustee's conduct, as set out in Speight v Gaunt.",
+      "acceptableAnswers": [
+        "the ordinary prudent person of business managing their own affairs, but for someone else",
+        "prudent person of business standard",
+        "prudent man of business"
+      ],
+      "modelAnswer": "A trustee must act with the care of an ordinary prudent person of business managing their own affairs — but managing them on behalf of someone else, which in practice demands more caution than a person would show with their own money."
+    },
+    {
+      "itemId": "equity-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Does the statutory duty of care under s 1 Trustee Act 2000 apply to every exercise of every trustee function, with no exceptions?",
+      "options": [
+        "No — Schedule 1 defines the specific functions to which it applies; outside those, the common law standard may still govern",
+        "Yes — it is a universal duty replacing the common law standard entirely"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT a requirement under the Trustee Act 2000's investment provisions?",
+      "options": [
+        "Having regard to the standard investment criteria (s 4)",
+        "Reviewing investments from time to time (s 4(2))",
+        "Obtaining and considering proper advice unless reasonably unnecessary (s 5)",
+        "Obtaining the beneficiaries' prior written consent to every individual investment made"
+      ],
+      "correctIndex": 3,
+      "trapExplanation": "There is no requirement to get beneficiary sign-off on individual investment decisions — the Act's safeguards (standard investment criteria, review, advice) operate on the trustee, not through beneficiary consent. Confusing investment duties with a consent requirement is a common error."
+    },
+    {
+      "itemId": "equity-11-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 5 Trustee Act 2000, in what circumstance can a trustee lawfully exercise the power of investment without first obtaining proper advice?",
+      "options": [
+        "Where the trustee reasonably concludes that, in the circumstances, obtaining advice is unnecessary or inappropriate — for example given the amount involved",
+        "Never — advice must always be obtained before any investment decision",
+        "Only if all beneficiaries are adults and consent in writing"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-11-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these steps in the order a trustee should follow when exercising the general power of investment under the Trustee Act 2000.",
+      "items": [
+        "Check the trust instrument for any restriction on the statutory general power",
+        "Consider the standard investment criteria (suitability and diversification)",
+        "Obtain and consider proper advice, unless reasonably unnecessary",
+        "Make the investment, and review it from time to time thereafter"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "equity-11-test-06",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below adapted from Cowan v Scargill, highlight the sentence that states the ratio.",
+      "passage": "The trustees' powers of investment must be exercised so as to yield the best return for the beneficiaries, judged in relation to the risks of the investments in question. The interests of the beneficiaries are normally their financial interests, and the trustees must not let their own views, however sincerely held, override that financial interest. Some of the defendants' arguments confused their own moral or political views with the interests of the beneficiaries they were bound to serve.",
+      "ratioSentence": "The interests of the beneficiaries are normally their financial interests, and the trustees must not let their own views, however sincerely held, override that financial interest."
+    },
+    {
+      "itemId": "equity-11-test-07",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario is more likely to be treated as consistent with the modern, Butler-Sloss-informed approach to ethical investment, rather than falling foul of Cowan v Scargill?",
+      "scenarioA": "A charity for the relief of respiratory illness excludes tobacco-industry investments after formally weighing the conflict with its own purposes and reputational risk against the resulting financial cost.",
+      "scenarioB": "A commercial pension scheme's trustees exclude a profitable, unrelated sector purely because the chair of trustees personally dislikes the industry, with no analysis of the fund's purposes or beneficiaries' interests.",
+      "correctScenario": "A",
+      "explanation": "Scenario A mirrors Butler-Sloss: a reasoned, purpose-linked balancing exercise by charity trustees. Scenario B is a straightforward Cowan v Scargill breach — a personal preference substituted for the beneficiaries' financial interests, with no purpose-based or reasoned justification at all."
+    },
+    {
+      "itemId": "equity-11-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A lay trustee, with no financial background, personally researches and selects a diversified, low-cost index fund portfolio for a modest trust fund, without taking formal advice. Is this necessarily a breach of s 5?",
+      "options": [
+        "Yes — failing to obtain any formal advice is always a breach regardless of circumstances",
+        "Not necessarily — a trustee may reasonably conclude advice is unnecessary in the circumstances, and the size of the fund and simplicity of the chosen investments are relevant to that judgment",
+        "No — lay trustees are entirely exempt from the advice requirement"
+      ],
+      "correctIndex": 1,
+      "explanation": "Section 5 permits a trustee to proceed without advice where they reasonably conclude it is unnecessary — a modest fund invested in simple, low-cost, diversified products is the paradigm case where that conclusion might be reasonable, though it depends on the full circumstances rather than being automatic."
+    },
+    {
+      "itemId": "equity-11-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Trustees appoint a custodian to hold trust assets, sign the appropriate policy statement, and then receive quarterly statements which they file without reading for three years, missing clear signs of mismanagement visible on the statements themselves. Have the trustees likely complied with their duty of care regarding the delegation?",
+      "options": [
+        "Yes — appointing a custodian and receiving statements satisfies the duty regardless of whether the statements are read",
+        "No — the duty to keep arrangements under review requires more than passively filing statements; visible signs of mismanagement that go unnoticed suggest a failure of the ongoing supervisory duty",
+        "No, but only because a custodian was used rather than an agent — custodians attract a stricter duty"
+      ],
+      "correctIndex": 1,
+      "explanation": "The s 22 duty to keep delegation arrangements under review is not satisfied by mechanically receiving paperwork; it requires meaningful engagement sufficient to catch problems a reasonably attentive trustee would notice."
+    },
+    {
+      "itemId": "equity-11-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that most clearly shows the trustee has breached their ongoing supervisory duty after delegation, rather than merely having made a defensible initial appointment.",
+      "scenarioText": "The trustees appointed a properly regulated fund manager after taking advice and signing a policy statement. The manager's own conduct was competent throughout. However, the trustees never once reviewed performance reports or contacted the manager again over a four-year period, despite the policy statement requiring an annual review.",
+      "tappableSpans": [
+        "appointed a properly regulated fund manager",
+        "taking advice and signing a policy statement",
+        "manager's own conduct was competent",
+        "never once reviewed performance reports"
+      ],
+      "correctSpan": "never once reviewed performance reports",
+      "explanation": "The initial appointment was sound. The breach lies in the trustees' total failure to review, contrary to both s 22 and their own policy statement's stated annual review requirement — the manager's competence does not cure the trustees' own neglect of their supervisory duty."
+    },
+    {
+      "itemId": "equity-11-test-11",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Does Schmidt v Rosewood Trust hold that beneficiaries have a proprietary right to inspect all trust documents?",
+      "options": [
+        "No — it holds that disclosure rests on the court's discretionary, inherent supervisory jurisdiction, not on a proprietary right",
+        "Yes — it confirms a fixed proprietary right to inspect any document categorised as a 'trust document'"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "equity-11-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which best captures why Schmidt v Rosewood Trust changed the analytical approach to disclosure disputes?",
+      "options": [
+        "It abolished any right for beneficiaries to ever see trust documents",
+        "It replaced a fixed-category, proprietary-rights analysis with a flexible, discretionary exercise of the court's supervisory jurisdiction, weighing the claimant's interest against confidentiality and practicality",
+        "It made disclosure automatic for any person named anywhere in the trust instrument"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers treat the case as an all-or-nothing rule in either direction. The actual shift was methodological: away from asking whether a document counts as a 'trust document' a beneficiary owns a share of, towards a discretionary balancing exercise under the court's supervisory jurisdiction."
+    },
+    {
+      "itemId": "equity-11-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A trust corporation acting as professional trustee places the entire trust fund in a single speculative venture recommended by a friend of one director, without taking advice, without considering diversification, and without any subsequent review over two years, resulting in a substantial loss. Analyse whether the trustee is in breach of duty.",
+      "factsToOrder": [
+        "The trustee is a professional trust corporation, not a lay trustee",
+        "The entire fund was placed in a single investment, with no diversification considered",
+        "No advice was obtained before the investment",
+        "No review took place over the following two years",
+        "A substantial loss resulted"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the trust corporation breached its duty of care in relation to the investment of the trust fund.",
+        "rule": "A professional trustee is held to a heightened standard under s 1 Trustee Act 2000. Section 4 requires regard to the standard investment criteria, including diversification so far as appropriate; s 4(2) requires ongoing review; s 5 requires advice unless reasonably concluded to be unnecessary.",
+        "application": "As a professional trust corporation, the trustee is judged against the heightened standard expected of someone acting in the course of a business. Placing the entire fund in a single speculative venture, recommended informally rather than through proper channels, with no advice taken and no consideration of diversification, falls well short of s 4's standard investment criteria. The two years without review is a further, independent breach of the s 4(2) duty to review from time to time. Each failure — no advice, no diversification, no review — is capable of being a breach in its own right; together they plainly are.",
+        "conclusion": "The trust corporation is in breach of its statutory duty of care, both in the original investment decision and in its subsequent failure to review, and is likely liable for the resulting loss."
+      }
+    },
+    {
+      "itemId": "equity-11-test-14",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Name the case establishing that a beneficiary's access to trust information is grounded in the court's inherent supervisory jurisdiction rather than a proprietary right.",
+      "acceptableAnswers": [
+        "Schmidt v Rosewood Trust",
+        "Schmidt v Rosewood"
+      ],
+      "modelAnswer": "Schmidt v Rosewood Trust [2003] UKPC 26."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is treating each trustee duty as a one-off box to tick — select the right investment, appoint the right agent, apply the right ethical policy — rather than as a continuing obligation. Review, supervision and reconsideration over time are where most of the real breaches happen.",
+    "reviewMisses": true,
+    "linkToPathway": "equity.trustees.duties"
+  }
+}
