@@ -332,6 +332,14 @@ describe('settings, plans and devices', () => {
     await assertFails(updateDoc(amara(), { settings: { homeHidden: Array(11).fill('news') } }));
   });
 
+  test('SQE1: the programme, its modules and an SQE1 sitting can be saved', async () => {
+    await assertSucceeds(updateDoc(amara(), { programme: 'sqe1', modules: ['sqe1-dispute-resolution', 'sqe1-legal-system-legal-services'] }));
+    await assertSucceeds(updateDoc(amara(), { sqeSitting: '2027-01' }));
+    await assertFails(updateDoc(amara(), { sqeSitting: '2027-03' }));
+    await assertFails(updateDoc(amara(), { programme: 'bptc' }));
+    await assertFails(updateDoc(amara(), { modules: ['sqe1-made-up'] }));
+  });
+
   test('the notifications page can mark itself read, only at the server time', async () => {
     await assertSucceeds(updateDoc(amara(), { notificationsReadAt: serverTimestamp() }));
     await assertFails(updateDoc(amara(), { notificationsReadAt: new Date(Date.now() + 86_400_000) }));

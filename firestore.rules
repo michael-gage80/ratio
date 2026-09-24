@@ -191,7 +191,7 @@ service cloud.firestore {
       let changed = after.diff(before).affectedKeys();
       return changed.hasOnly(['birthYear', 'ageConfirmedAt', 'displayName', 'initial', 'programme', 'waitlist',
                               'universityId', 'universityOther', 'year', 'modules', 'settings', 'consents',
-                              'notificationsReadAt'])
+                              'notificationsReadAt', 'sqeSitting'])
         // The age gate comes first and is final: nothing else is accepted until it's
         // passed, and the birth year can't be changed afterwards.
         && ((!('birthYear' in before) && passesAgeGate(after, changed))
@@ -201,7 +201,7 @@ service cloud.firestore {
         && (!changed.hasAny(['initial'])
             || !('initial' in after)
             || (after.initial is string && after.initial.matches('^\\p{Lu}$')))
-        && (!changed.hasAny(['programme']) || after.programme == 'llb')
+        && (!changed.hasAny(['programme']) || after.programme in ['llb', 'sqe1'])
         && (!changed.hasAny(['waitlist'])
             || (after.waitlist is list && after.waitlist.hasOnly(['gdl', 'sqe', 'bptc'])))
         // A listed university (an ID from the Remote Config list) or free text for an
@@ -214,6 +214,8 @@ service cloud.firestore {
             || !('universityOther' in after)
             || (after.universityOther is string && after.universityOther.size() >= 2 && after.universityOther.size() <= 80))
         && (!changed.hasAny(['year']) || after.year in [1, 2, 3])
+        // SQE1 sittings run in January and July.
+        && (!changed.hasAny(['sqeSitting']) || (after.sqeSitting is string && after.sqeSitting.matches('^20[0-9]{2}-(01|07)$')))
         && (!changed.hasAny(['settings']) || isValidSettings(after.settings))
         // When the student last opened the notifications page (unread dot).
         && (!changed.hasAny(['notificationsReadAt']) || after.notificationsReadAt == request.time)
@@ -222,7 +224,8 @@ service cloud.firestore {
                 && after.consents.values().hasOnly([true, false])))
         && (!changed.hasAny(['modules'])
             || (after.modules is list && after.modules.size() >= 1
-                && after.modules.hasOnly(['crime', 'contract', 'tort', 'public', 'land', 'equity', 'companylaw', 'eulaw', 'humanrights', 'jurisprudence', 'employmentlaw', 'familylaw'])));
+                && after.modules.hasOnly(['crime', 'contract', 'tort', 'public', 'land', 'equity', 'companylaw', 'eulaw', 'humanrights', 'jurisprudence', 'employmentlaw', 'familylaw',
+                                     'sqe1-dispute-resolution', 'sqe1-legal-system-legal-services', 'sqe1-business-law-practice', 'sqe1-property-practice', 'sqe1-wills-estates', 'sqe1-solicitors-accounts', 'sqe1-criminal-law-practice'])));
     }
 
     // Only the birth year is stored (not the full date), with the server time of the

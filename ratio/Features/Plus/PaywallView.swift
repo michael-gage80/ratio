@@ -34,7 +34,7 @@ struct PaywallView: View {
                 }
                 VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     if let reason { Text(reason).ratioFont(.body).foregroundStyle(Color.ratioOxblood) }
-                    Text("All \(Module.allCases.count) modules, unlimited duels, and your full profile.").ratioFont(.h3)
+                    Text("All \(student.programme.modules.count) \(student.programme.title) modules, unlimited duels, and your full profile.").ratioFont(.h3)
                 }
                 VStack(alignment: .leading, spacing: RatioSpace.s) {
                     comparison
@@ -99,7 +99,7 @@ struct PaywallView: View {
         VStack(spacing: 0) {
             Rectangle().fill(Color.ratioInk).frame(height: 1)
             row("", free: "Free", plus: "Plus", header: true)
-            row("Modules", free: "1 of your choice", plus: "All \(Module.allCases.count)")
+            row("Modules", free: "1 of your choice", plus: "All \(student.programme.modules.count)")
             row("Brief and reviews", free: "Your free module", plus: "Every module")
             row("Duels", free: "3 a day", plus: "Unlimited")
             row("Profile", free: "Headline scores", plus: "Topic drill-down and trends")

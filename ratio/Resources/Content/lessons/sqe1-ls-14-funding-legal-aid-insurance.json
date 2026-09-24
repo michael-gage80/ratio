@@ -1,0 +1,362 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-14",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 14,
+  "topicId": "sqe1.legal-system.funding-legal-aid",
+  "title": "Funding legal services II: legal aid, insurance, and third-party funding",
+  "subtitle": "Who still qualifies for legal aid post-LASPO, and how insurance and outside funders fill the gap",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the narrowed scope of civil legal aid following LASPO 2012, and apply the means and merits tests that gate access to it",
+    "Explain the Legal Aid Agency's statutory charge and the interests-of-justice test governing criminal legal aid",
+    "Distinguish before-the-event and after-the-event insurance, and identify when third-party or trade union funding is the appropriate route"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO), Part 1", "role": "Sets the scope of civil legal aid, the means and merits gateway tests, and exceptional case funding" },
+    { "citation": "LASPO 2012, s 10", "role": "Exceptional Case Funding safety net for out-of-scope matters engaging ECHR or EU rights" },
+    { "citation": "Access to Justice Act 1999, s 22 (as applied)", "role": "Statutory basis for the Legal Aid Agency's first charge over money or property recovered or preserved" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can name 'legal aid was cut back' as a fact. Where the profile shows application lagging knowledge, this note appears: 'You know legal aid shrank — the tested skill is knowing exactly what's still in scope, and why a client might still be refused even when it is.'",
+    "profileHooks": {
+      "weakApplication": "You've done well on the definitions here before. This pool leans towards fact patterns testing whether a specific client actually qualifies — read for the details that trip the means or merits test.",
+      "weakKnowledge": "Start with Part 1 and hold the scope categories precisely — everything else in this lesson assumes you know what LASPO left in, not just that it took things out."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Before 2013, legal aid was available for most kinds of civil dispute. Today, a client can walk into a solicitor's office with a genuinely serious problem and be told, correctly, that legal aid simply doesn't reach it. This lesson is about knowing exactly where that boundary now sits — and what fills the gap when it doesn't.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. Civil legal aid scope and eligibility thresholds are periodically reviewed by the Ministry of Justice and Legal Aid Agency; the categories and tests described here reflect the current framework but the specific financial thresholds should be checked against the latest guidance at each refresh."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "What LASPO left in scope",
+        "voice": "structural — sets a checklist students will need to reproduce",
+        "body": [
+          "The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) reshaped civil legal aid by moving from a list of what was excluded to a list of what remains included. If a matter isn't in Schedule 1, civil legal aid generally isn't available for it — full stop, subject to one safety net covered later in this lesson.",
+          "What stayed in scope tends to cluster around matters engaging personal safety, liberty, and the state's power over the individual: domestic abuse and child abduction cases in family law; possession proceedings risking a client's home; community care and mental health matters; special educational needs; asylum and immigration detention; and public law challenges such as judicial review of a public body's decision.",
+          "Notice what's conspicuously absent: most private family law disputes (financial remedy, routine children arrangements) without a domestic abuse element, most employment claims, and most general civil and commercial litigation. Clients in these areas are pushed towards private funding, CFAs, DBAs, or insurance — the subject of the rest of this lesson."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Categories that remain in scope (illustrative, not exhaustive)",
+            "points": [
+              "Family proceedings involving domestic abuse or child abduction",
+              "Housing possession or homelessness proceedings risking loss of the home",
+              "Community care and mental health matters",
+              "Public law challenges, including judicial review",
+              "Asylum and immigration detention matters",
+              "Special educational needs disputes"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-14-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the statute that narrowed the scope of civil legal aid from 2013 onwards.",
+          "acceptableAnswers": ["LASPO", "Legal Aid, Sentencing and Punishment of Offenders Act 2012", "Legal Aid Sentencing and Punishment of Offenders Act"],
+          "modelAnswer": "The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO), whose Part 1 moved civil legal aid to a scoped list of included matters rather than a list of exclusions."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The gateway: means and merits",
+        "voice": "Socratic — poses the practical question before resolving it",
+        "body": [
+          "Falling within scope is necessary but not sufficient. Even a matter squarely within Schedule 1 must clear two further gateways before legal aid is granted: the means test and the merits test.",
+          "The means test assesses the client's income and capital against set thresholds. A client whose gross income or disposable capital sits above the relevant limit is simply ineligible, however strong the case — legal aid is a means-tested benefit, not an automatic entitlement to anyone with an in-scope problem. Clients close to the threshold may be granted aid subject to a contribution, assessed on a sliding scale.",
+          "The merits test asks a different question: is the case worth public money? It weighs the prospects of success (poor prospects generally fail the test outright) against a cost-benefit analysis — comparing the likely costs of running the case to what the client stands to gain. A case with excellent prospects but trivial stakes can still fail the merits test if the cost-benefit balance doesn't justify public funding."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Means test",
+            "definition": "An assessment of a legal aid applicant's income and capital against statutory thresholds, determining eligibility and, where eligible, any contribution required towards costs."
+          },
+          {
+            "type": "keyConcept",
+            "term": "Merits test",
+            "definition": "An assessment of whether a case is a sound use of public funds, weighing the prospects of success against a cost-benefit comparison of likely costs to likely benefit."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-14-check-02",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A client has excellent prospects of success (95%) in an in-scope claim, but the likely damages are small and the litigation costs would be disproportionately high. How confident should you be that this case passes the merits test?",
+          "sliderLabels": ["Certain to pass — prospects are what matter", "Certain to fail — the cost-benefit balance is separate from prospects"],
+          "correctPosition": "fail",
+          "explanation": "Strong prospects of success do not, on their own, satisfy the merits test. The cost-benefit element is assessed separately, and a disproportionate cost-to-benefit ratio can fail an otherwise strong case."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The statutory charge: legal aid isn't free money",
+        "voice": "case-narrative — traces the mechanism through a worked sequence",
+        "body": [
+          "A common misconception is that a legally aided client who wins pays nothing at all. In fact, the Legal Aid Agency holds a statutory charge over any money or property recovered or preserved in the proceedings, standing as a first charge to recover the shortfall between what legal aid spent on the case and whatever costs, if any, are recovered from the losing party.",
+          "Walk the mechanism through in order: the LAA funds the litigation; if the case succeeds, any costs order against the opponent is collected first; if that doesn't cover the full cost of the legally aided work, the statutory charge bites on the client's own damages or preserved property to make up the difference; only what's left after the charge is satisfied goes to the client.",
+          "This is why solicitors must explain the statutory charge to a legally aided client at the outset, not as an afterthought when damages are calculated — a client who expected to keep their full award can be badly surprised otherwise."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "How the statutory charge operates",
+            "description": "The order of events determining what a legally aided client actually receives.",
+            "nodes": [
+              { "id": "fund", "label": "LAA funds the litigation on the client's behalf" },
+              { "id": "outcome", "label": "Case concludes: won, settled, or property/money preserved" },
+              { "id": "costs-order", "label": "Any costs recovered from the losing party are applied first" },
+              { "id": "shortfall", "label": "If a shortfall remains, the statutory charge bites on the client's own recovery" },
+              { "id": "client", "label": "Client receives what remains after the charge is satisfied" }
+            ],
+            "edges": [
+              { "from": "fund", "to": "outcome" },
+              { "from": "outcome", "to": "costs-order" },
+              { "from": "costs-order", "to": "shortfall" },
+              { "from": "shortfall", "to": "client" }
+            ],
+            "textAlternative": "The Legal Aid Agency funds the case; on conclusion, any costs recovered from the losing party are applied to the shortfall first; if the shortfall remains, the statutory charge is applied against the client's own damages or preserved property; the client receives only what is left after that."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-14-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of the statutory charge mechanism in the correct order.",
+          "items": ["LAA funds the litigation", "Case concludes with money or property recovered", "Costs recovered from the opponent are applied to the shortfall first", "Any remaining shortfall is deducted from the client's own recovery"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the mechanism end to end — the opponent's costs are used first, and only the remaining gap is taken from the client's own award.",
+          "feedbackIncorrect": "Check the order again — costs recovered from the losing party are applied before the statutory charge touches the client's own damages, not after."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Criminal legal aid: the interests-of-justice test",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Criminal legal aid runs on a different logic entirely, because a defendant's liberty is at stake. Representation in criminal proceedings is granted where it passes both a means test (assessing the defendant's ability to pay, with different thresholds for magistrates' and Crown Court proceedings) and an interests-of-justice test.",
+          "The interests-of-justice test looks at factors including: whether the defendant risks losing their liberty, livelihood, or serious damage to their reputation; whether the case involves a substantial question of law; whether the defendant is unable to understand the proceedings or present their own case (due to inadequate English, youth, or mental or physical disability); whether the case requires tracing and interviewing witnesses; and whether it's in someone else's interest that the defendant be represented (for example, to allow proper cross-examination of a vulnerable witness).",
+          "A student's instinct is often to treat 'seriousness of the charge' as the whole test. It's one factor among several — a comparatively minor charge can still pass the interests-of-justice test on the strength of, say, a genuinely complex point of law or a defendant unable to follow the proceedings unaided."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume the interests-of-justice test is satisfied simply by the charge being 'serious enough' — treating risk of losing liberty as the only relevant factor.",
+            "whyItsWrong": "Risk of losing liberty is one of several recognised factors, not the sole test. A substantial point of law, a defendant's inability to understand or present the case, or the need to trace and interview witnesses can each independently satisfy the test, even for a less serious charge."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-14-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A defendant faces a summary-only charge unlikely to result in imprisonment, but the case turns on a genuinely novel and complex point of statutory interpretation. Is the interests-of-justice test likely to be satisfied?",
+          "options": ["No — only charges risking imprisonment can satisfy the test", "Yes — a substantial question of law is itself a recognised factor, independent of the risk of losing liberty", "No — the interests-of-justice test only applies in the Crown Court", "Yes, but only if the defendant also cannot afford private representation"],
+          "correctIndex": 1,
+          "trapExplanation": "The instinct to require a risk of imprisonment is the trap. A substantial question of law is a standalone factor that can satisfy the test on its own, whatever the likely sentence."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "When legal aid isn't there: insurance and outside funders",
+        "voice": "synthesising — closes the lesson with a comparison of the alternatives",
+        "body": [
+          "For the many clients and matters legal aid no longer reaches, insurance and outside funding fill much of the gap. Before-the-event (BTE) insurance is typically bought in advance, often bundled into home or motor insurance, and covers the policyholder's legal costs (and sometimes an opponent's, if ordered) for disputes arising after the policy started — a client with a BTE policy may already be funded before they ever call a solicitor.",
+          "After-the-event (ATE) insurance is taken out once a dispute has already arisen, usually to cover the risk of an adverse costs order if the claim fails. It's commonly paired with a CFA: the client risks nothing on their own solicitor's fees if they lose (no win, no fee), and the ATE premium covers the risk of paying the other side's costs.",
+          "Two further routes matter for completeness. Third-party litigation funding sees a commercial funder, unconnected to the dispute, pay some or all of the litigation costs in exchange for a share of any proceeds — common in large commercial claims. Trade union funding sees a union pay for a member's legal costs, typically in employment or personal injury claims arising from their work, as a member benefit rather than a commercial arrangement."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "BTE vs ATE insurance",
+            "definition": "Before-the-event (BTE) insurance is purchased before any dispute arises and often covers a client's own legal costs; after-the-event (ATE) insurance is purchased after a dispute has arisen, typically to cover the risk of paying the opponent's costs if the claim fails."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-14-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A client's employment claim is out of scope for civil legal aid. She has no relevant BTE insurance, but she is a union member and the dispute arises directly from her employment. Advise on the funding routes realistically available to her.",
+          "factsToOrder": [
+            "The claim is out of scope for civil legal aid",
+            "No BTE insurance is in place",
+            "The client is a trade union member",
+            "The dispute arises directly from her employment"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model answer shown, mapping each fact to the funding analysis" },
+            { "level": 2, "support": "Issue and rule given; student applies the facts and writes the conclusion" },
+            { "level": 3, "support": "No scaffold; student identifies the issue, rule, application, and conclusion unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Which funding routes remain available to a client excluded from civil legal aid, with no BTE cover, for an employment dispute.",
+            "rule": "Where civil legal aid and BTE insurance are unavailable, remaining routes include a private retainer, a CFA or DBA (both available for employment tribunal claims, subject to their respective caps), ATE insurance to cover adverse costs risk, and trade union funding where the claim arises from the member's employment.",
+            "application": "The client's union membership and the direct link to her employment make trade union funding a realistic and likely cost-free route. If union funding is unavailable or partial, a CFA (with ATE insurance covering costs risk) or a DBA capped at 35% of any award are both viable alternatives, since employment claims are not subject to the family/criminal ban.",
+            "conclusion": "Trade union funding is the most promising first avenue; failing that, a CFA with ATE cover or a DBA capped at 35% remain lawfully available."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-14-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under the post-LASPO framework, is civil legal aid available for a routine, non-abuse related dispute about children's living arrangements?",
+      "options": ["No — this falls outside the scope categories retained by LASPO", "Yes — all family proceedings remain in scope", "Yes, but only with a means-tested contribution", "No — family matters were never within scope, even before LASPO"],
+      "correctIndex": 0,
+      "explanation": "Routine private family disputes without a domestic abuse or child abduction element are a classic example of a matter LASPO removed from scope."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which two gateway tests must an in-scope civil matter also pass before legal aid is granted?",
+      "options": ["The means test and the merits test", "The means test and the interests-of-justice test", "The merits test and the statutory charge test", "The costs-benefit test and the Widgery test"],
+      "correctIndex": 0,
+      "explanation": "Falling within scope is only the first hurdle; the means test and merits test are the further gateways for civil legal aid specifically."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "What is the purpose of the Legal Aid Agency's statutory charge?",
+      "options": ["To recover the shortfall between the cost of legally aided work and any costs recovered from the opponent, from the client's own recovery", "To fine solicitors who overspend a legal aid budget", "To recover the full legal aid spend regardless of any costs order made", "To prevent a legally aided client from receiving any damages at all"],
+      "correctIndex": 0,
+      "explanation": "The charge is a shortfall-recovery mechanism, applied after any costs recovered from the losing party, not a blanket confiscation of damages."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A client's claim is within Schedule 1 scope and she has excellent prospects of success. Is legal aid guaranteed?",
+      "options": ["Yes — scope and good prospects are all that is required", "No — she must also pass the means test and the cost-benefit element of the merits test", "Yes, provided she is a British citizen", "No — legal aid is never available once a private solicitor has already been consulted"],
+      "correctIndex": 1,
+      "trapExplanation": "Scope and prospects alone are a common false stopping point. The means test and the cost-benefit side of the merits test are independent hurdles that must also be cleared."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client recovers £15,000 in a legally aided claim. Costs of £6,000 are recovered from the losing party, but the LAA spent £9,000 funding the case. What happens to the shortfall?",
+      "options": ["It is written off by the LAA", "It is deducted from the client's £15,000 recovery via the statutory charge", "It is charged to the client's solicitor", "It is added to the losing party's costs liability retrospectively"],
+      "correctIndex": 1,
+      "trapExplanation": "A common wrong answer assumes the LAA simply absorbs any shortfall once a costs order is made. The statutory charge exists precisely to recover that shortfall from the client's own recovery."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant is charged with an offence carrying no realistic risk of imprisonment, but has a significant learning disability that prevents her from following the proceedings or giving evidence coherently without support. Is the interests-of-justice test likely satisfied?",
+      "options": ["No — imprisonment risk is the only relevant factor", "Yes — inability to understand or present her own case is a recognised factor independent of sentence risk", "No — disability is only relevant to sentencing, not to the funding decision", "Yes, but only if she is also unemployed"],
+      "correctIndex": 1,
+      "trapExplanation": "Treating imprisonment risk as the sole factor is the recurring trap. A defendant's inability to understand or present her own case, due to disability, is an independently sufficient factor."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What is the function of Exceptional Case Funding under LASPO 2012, s 10?",
+      "options": ["It grants legal aid automatically to any case involving a vulnerable client", "It provides a safety net where refusing legal aid for an out-of-scope matter would breach ECHR or EU rights", "It removes the means test for all family cases", "It funds appeals only, never first-instance proceedings"],
+      "correctIndex": 1,
+      "trapExplanation": "Exceptional Case Funding is not a general vulnerability exception — it is narrowly tied to avoiding a breach of ECHR or EU rights where refusal would otherwise cause one."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client's dispute is a housing possession claim putting her family home at immediate risk. She has very low income and savings. What is her most likely funding position?",
+      "options": ["Excluded from legal aid entirely, as housing was removed from scope by LASPO", "Likely eligible for civil legal aid, subject to passing the means and merits tests", "Eligible only for criminal legal aid", "Funded automatically without any means assessment"],
+      "correctIndex": 1,
+      "explanation": "Possession proceedings risking loss of the home remain within the retained scope categories; her low income and savings make her likely, though not automatically, to pass the means test."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client bought a home insurance policy last year that includes legal expenses cover for future disputes. A boundary dispute with her neighbour has just arisen. What kind of funding does she likely already have?",
+      "options": ["After-the-event (ATE) insurance", "Before-the-event (BTE) insurance", "A damages-based agreement", "Criminal legal aid"],
+      "correctIndex": 1,
+      "explanation": "A policy taken out before the dispute arose, bundled into home insurance, is a classic example of BTE cover."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-10",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A client with a CFA is worried about having to pay her opponent's costs if she loses. What funding product is designed to address that specific risk?",
+      "options": ["BTE insurance", "ATE insurance", "The statutory charge", "Trade union funding"],
+      "correctIndex": 1,
+      "explanation": "ATE insurance, typically taken out after a CFA is entered into, is specifically aimed at covering the risk of an adverse costs order."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under LASPO 2012, how is the scope of civil legal aid structured?",
+      "options": ["As a list of matters specifically excluded, with everything else included", "As a list of matters specifically included in Schedule 1, with everything else excluded by default", "As an entirely discretionary decision by the Legal Aid Agency on a case-by-case basis", "As a scope identical to that in place before 2013"],
+      "correctIndex": 1,
+      "explanation": "LASPO reversed the previous structure: instead of listing exclusions, it lists the categories that remain included, with everything else excluded by default."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which factor is NOT one of the recognised interests-of-justice factors for criminal legal aid?",
+      "options": ["Risk of losing liberty, livelihood, or serious reputational damage", "A substantial question of law", "The defendant's preference for a particular firm of solicitors", "Need to trace and interview witnesses"],
+      "correctIndex": 2,
+      "explanation": "Preference for a particular firm has no bearing on the interests-of-justice test, which is concerned with the fairness and practicality of the proceedings, not client preference."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A commercial litigation funder, with no connection to the underlying dispute, agrees to pay a claimant company's litigation costs in exchange for a percentage of any damages recovered. What is this arrangement?",
+      "options": ["Third-party litigation funding", "A damages-based agreement between solicitor and client", "Trade union funding", "Before-the-event insurance"],
+      "correctIndex": 0,
+      "explanation": "This is third-party litigation funding: an outside commercial funder, not the client's own solicitor, takes a stake in the proceeds in exchange for funding the litigation."
+    },
+    {
+      "itemId": "sqe1-ls-14-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A client assumes that, because her claim is within LASPO's scope and she has a strong case, she will keep all of any damages she recovers under legal aid. Is this assumption correct?",
+      "options": ["Yes — legal aid guarantees the client keeps the full award", "No — the statutory charge may recover a shortfall from her damages even after a successful claim", "No — legally aided clients never receive any of their damages", "Yes, provided the case settles rather than goes to trial"],
+      "correctIndex": 1,
+      "trapExplanation": "The common misconception is that a successful legally aided claim means the client keeps everything. The statutory charge can still apply against the damages themselves if the LAA's costs are not fully recovered from the opponent."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring failure mode in this lesson is stopping the analysis too early — assuming scope alone grants legal aid, assuming a serious charge alone satisfies the interests-of-justice test, or assuming a successful claim means the client keeps every penny despite the statutory charge. Each of these has an independent further test that must still be applied.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.funding-legal-aid"
+  }
+}

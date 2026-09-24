@@ -30,7 +30,7 @@ struct SettingsView: View {
     @State private var iconName = UIApplication.shared.alternateIconName
 
     private enum Sheet: String, Identifiable {
-        case name, modules, year, freeModule, report, licence, notice
+        case name, modules, year, sitting, freeModule, report, licence, notice
         var id: String { rawValue }
     }
 
@@ -70,6 +70,7 @@ struct SettingsView: View {
             case .name: NameSheet(profile: profile, uid: student.uid)
             case .modules: ModulesSheet(profile: profile, uid: student.uid)
             case .year: YearSheet(uid: student.uid, year: profile.year).presentationDetents([.height(260)])
+            case .sitting: SittingSheet(uid: student.uid, sitting: profile.sqeSitting).presentationDetents([.medium])
             case .freeModule: FreeModuleSheet()
             case .report: ReportErrorSheet(itemId: "general", lessonId: nil)
             case .licence: LicenceCodeSheet().presentationDetents([.medium])
@@ -188,8 +189,13 @@ struct SettingsView: View {
 
     private var study: some View {
         SettingsSection(number: "III", title: "Study") {
-            SettingsRow("Modules", value: "\(profile.modules?.count ?? 0) of \(Module.allCases.count)") { sheet = .modules }
-            SettingsRow("Year of study", value: profile.year.map { "Year \($0)" } ?? "Add") { sheet = .year }
+            SettingsRow("Programme", value: student.programme.title) { sheet = .modules }
+            SettingsRow("Modules", value: "\(student.modules.count) of \(student.programme.modules.count)") { sheet = .modules }
+            if student.programme == .sqe1 {
+                SettingsRow("SQE1 sitting", value: profile.sqeSitting.map { SQESitting.title($0) } ?? "Add") { sheet = .sitting }
+            } else {
+                SettingsRow("Year of study", value: profile.year.map { "Year \($0)" } ?? "Add") { sheet = .year }
+            }
             if !student.isPlus {
                 SettingsRow("Free module", detail: profile.freeModuleChanges ?? 0 >= 1 ? "Changed once already" : "You can change it once",
                             value: student.freeModule?.title ?? "—") { sheet = .freeModule }
@@ -665,6 +671,7 @@ private struct ModulesSheet: View {
     let uid: String
 
     @Environment(\.dismiss) private var dismiss
+    @State private var programme: Programme = .llb
     @State private var modules: Set<Module> = []
     @State private var failed = false
 
@@ -672,7 +679,14 @@ private struct ModulesSheet: View {
         NavigationStack {
             List {
                 Section {
-                    ForEach(Module.allCases) { module in
+                    RatioSegmentedControl(options: Programme.allCases.map { ($0, $0.title) }, selection: $programme)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets())
+                } footer: {
+                    Text("Switching keeps all your progress, scores and ratings.")
+                }
+                Section {
+                    ForEach(programme.modules) { module in
                         Button {
                             if modules.contains(module) { modules.remove(module) } else { modules.insert(module) }
                         } label: {
@@ -685,31 +699,74 @@ private struct ModulesSheet: View {
                         .accessibilityAddTraits(modules.contains(module) ? .isSelected : [])
                     }
                 } header: {
-                    Text("Modules this year")
+                    Text(programme == .sqe1 ? "SQE1 subjects" : "Modules this year")
                 } footer: {
                     Text(failed ? "That didn't save. Try again." : "They set the order of your lessons.")
                 }
             }
-            .navigationTitle("Modules")
+            .navigationTitle("Programme and modules")
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         Task {
-                            let ordered = Module.allCases.filter(modules.contains).map(\.rawValue)
-                            do { try await UserRepository().update(uid: uid, ["modules": ordered]); dismiss() } catch { failed = true }
+                            // Only the chosen programme's modules are kept.
+                            let ordered = programme.modules.filter(modules.contains).map(\.rawValue)
+                            do {
+                                try await UserRepository().update(uid: uid, ["programme": programme.rawValue, "modules": ordered])
+                                dismiss()
+                            } catch { failed = true }
                         }
                     }
-                    .disabled(modules.isEmpty)
+                    .disabled(!programme.modules.contains(where: modules.contains))
                 }
             }
         }
-        .onAppear { modules = Set(profile.modules ?? []) }
+        .onAppear {
+            programme = Programme(profile: profile.programme)
+            modules = Set(profile.modules ?? [])
+        }
     }
 }
 
 /// Year of study — optional, set from Me or Settings.
+/// SQE1 students: which sitting they're aiming for (optional).
+struct SittingSheet: View {
+    let uid: String
+    let sitting: String?
+
+    @Environment(\.dismiss) private var dismiss
+    @State private var failed = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text("Your SQE1 sitting").ratioFont(.h2)
+            ForEach(SQESitting.upcoming(), id: \.self) { option in
+                Button {
+                    Task {
+                        do { try await UserRepository().update(uid: uid, ["sqeSitting": option]); dismiss() } catch { failed = true }
+                    }
+                } label: {
+                    Text(SQESitting.title(option))
+                        .ratioFont(.h3)
+                        .frame(maxWidth: .infinity, minHeight: 48)
+                        // Parchment on ink flips with the theme (ink turns light in dark mode).
+                        .foregroundStyle(sitting == option ? Color.ratioParchment : Color.ratioInk)
+                        .background(sitting == option ? Color.ratioInk : Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                        .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
+                }
+                .buttonStyle(.ratioPress)
+                .accessibilityAddTraits(sitting == option ? .isSelected : [])
+            }
+            if failed { Text("That didn't save. Try again.").ratioFont(.small).foregroundStyle(Color.ratioOxblood) }
+            Spacer()
+        }
+        .padding(RatioSpace.m)
+        .ratioPage()
+    }
+}
+
 struct YearSheet: View {
     let uid: String
     let year: Int?

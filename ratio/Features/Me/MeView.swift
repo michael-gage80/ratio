@@ -42,7 +42,11 @@ struct MeView: View {
             }
         }
         .sheet(isPresented: $choosingYear) {
-            YearSheet(uid: student.uid, year: profile.year).presentationDetents([.medium])
+            if student.programme == .sqe1 {
+                SittingSheet(uid: student.uid, sitting: profile.sqeSitting).presentationDetents([.medium])
+            } else {
+                YearSheet(uid: student.uid, year: profile.year).presentationDetents([.medium])
+            }
         }
         .onChange(of: photo) { _, item in
             guard let item else { return }
@@ -85,8 +89,8 @@ struct MeView: View {
             .padding(.bottom, RatioSpace.xs)
             Text(name).ratioFont(.h1).multilineTextAlignment(.center)
             Text(details).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center)
-            if profile.year == nil {
-                Button("Add your year") { choosingYear = true }
+            if student.programme == .sqe1 ? profile.sqeSitting == nil : profile.year == nil {
+                Button(student.programme == .sqe1 ? "Add your SQE1 sitting" : "Add your year") { choosingYear = true }
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioOxblood)
                     .frame(minHeight: 44)
@@ -102,10 +106,13 @@ struct MeView: View {
         [profile.displayName, profile.initial.map { "\($0)." }].compactMap { $0 }.joined(separator: " ")
     }
 
-    /// "UCL · LLB · Year 2"
+    /// "UCL · LLB · Year 2", or "BPP · SQE1 · January 2027 · 18 weeks to go".
     private var details: String {
         let university = UniversityDirectory.shortName(id: profile.universityId) ?? profile.universityOther
-        return [university, "LLB", profile.year.map { "Year \($0)" }].compactMap { $0 }.joined(separator: " · ")
+        let stage: [String?] = student.programme == .sqe1
+            ? [profile.sqeSitting.map { SQESitting.title($0) }, profile.sqeSitting.flatMap { SQESitting.countdown($0) }]
+            : [profile.year.map { "Year \($0)" }]
+        return ([university, student.programme.title] + stage).compactMap { $0 }.joined(separator: " · ")
     }
 
     private func upload(_ item: PhotosPickerItem) async {

@@ -1,0 +1,329 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-11",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 11,
+  "topicId": "sqe1.legal-system.code-conduct-client-care",
+  "title": "The SRA Code of Conduct I: client care, conflicts, and confidentiality",
+  "subtitle": "Competent service, cost transparency, conflicts of interest, and the duty of confidentiality",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the Code of Conduct's requirements for competent, timely service and transparent information about costs",
+    "Distinguish an own-interest conflict from a client conflict, and state when informed written consent can permit a solicitor to act despite one",
+    "Explain the duty of confidentiality, its recognised exceptions, and how it differs from legal professional privilege"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Code of Conduct for Solicitors, para 3", "role": "Requires competent service, timely delivery, and clear information about costs" },
+    { "citation": "SRA Code of Conduct for Solicitors, paras 6.1–6.2", "role": "Governs own-interest and client conflicts, and when informed written consent permits acting" },
+    { "citation": "SRA Code of Conduct for Solicitors, paras 6.3–6.4", "role": "States the duty of confidentiality and its recognised exceptions" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson is where SQE1 tests whether you can tell a client conflict from an own-interest conflict under time pressure, and whether you know confidentiality and privilege are not the same idea wearing two names.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions here well. The test pool leans hard on scenario recognition — expect fact patterns that require you to classify the conflict type before you can answer anything else.",
+      "weakKnowledge": "Slow down on Parts 2 and 3 — the exact wording the SRA uses to distinguish own-interest from client conflicts, and the conditions for consent, is tested precisely, not loosely."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A solicitor is asked to act for both parties buying and selling the same house, at a discount, because they're old friends and neither wants the expense of a second firm. Everyone in the room is happy. That should be the end of it — and it very nearly never is.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the SRA Code of Conduct for Solicitors 2019. These provisions have not been amended since the Standards and Regulations came into force in November 2019; no change is currently proposed."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Competent service, delivered on time, at a price the client understood",
+        "voice": "structural — sets the baseline obligation before the more contested territory",
+        "body": [
+          "Paragraph 3 of the Code of Conduct for Solicitors is the least glamorous provision in the whole document, and one of the most frequently breached in practice. It requires that the service provided to clients is competent, delivered in a timely manner, and that the solicitor considers and takes account of the client's attributes, needs and circumstances.",
+          "It also requires clear information to be given about costs — both at the outset and as a matter progresses — including how those costs are to be met, whether other funding options (such as legal aid or a conditional fee arrangement) are available, and any costs that may become payable to a third party, such as the other side's costs if a claim is lost.",
+          "This isn't a soft, aspirational obligation. Failing to keep a client properly informed about costs is one of the most common sources of complaints to the Legal Ombudsman and the SRA, and a shortfall here is often what turns a routine transaction into a disciplinary matter — long before any dishonesty is in the picture."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Costs transparency",
+            "definition": "Under para 3, a solicitor must give clients clear, timely information about the likely overall cost of a matter, how it will be charged, funding alternatives, and any costs risk they face from a third party — not merely an initial estimate given once at the start."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-11-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under para 3 of the Code of Conduct, is a solicitor's costs information obligation satisfied once a single estimate is given at the outset of the matter?",
+          "options": ["Yes — an initial estimate discharges the obligation", "No — costs information must be kept clear and current as the matter progresses"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. Costs transparency is an ongoing obligation, not a one-off disclosure at the start of the retainer.",
+          "feedbackIncorrect": "Not quite — para 3 requires costs information to stay clear and current throughout the matter, which means updating the client as the picture changes, not just at the start."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Two kinds of conflict, and why the difference matters",
+        "voice": "argumentative — draws the line precisely because students blur it",
+        "body": [
+          "The Code distinguishes two categories of conflict, and SQE1 expects you to classify a scenario correctly before you can answer anything about it. An own-interest conflict is any situation where a solicitor's own interests — financial, personal, or otherwise — conflict, or appear to conflict, with the duty to act in the best interests of a client. A client conflict is a situation where the separate interests of two or more clients the solicitor (or firm) acts for conflict, or appear to conflict, with each other.",
+          "These two categories are treated very differently. An own-interest conflict can never be cured by consent — a solicitor (or the firm) simply must not act, full stop, where there is an own-interest conflict, or a significant risk of one. A client conflict, by contrast, can sometimes be managed and the solicitor can continue to act, but only in the narrow circumstances Part 3 of this lesson covers.",
+          "Getting the category wrong is the single most common error in this area — students often assume any conflict can be resolved with consent, when the correct first question is always: whose interests are actually opposed here?"
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Own-interest vs client conflict",
+            "points": [
+              "Own-interest conflict — the solicitor's or firm's own interests conflict with a client's; can never be cured by consent",
+              "Client conflict — two or more clients' interests conflict with each other; may sometimes be managed with informed written consent",
+              "The threshold in both cases includes 'a significant risk of' a conflict, not only an actual, realised one"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-11-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of the following is an own-interest conflict rather than a client conflict?",
+          "scenarioA": "A solicitor is asked to act for both the buyer and the seller in a straightforward residential property sale.",
+          "scenarioB": "A solicitor is asked to draft a will for a client under which the solicitor personally stands to inherit a significant legacy.",
+          "correctScenario": "B",
+          "explanation": "B is an own-interest conflict — the solicitor's personal financial interest conflicts with the duty to advise the client impartially about the will's terms. A is a client conflict, since it involves two separate clients' interests, and may (in limited circumstances) be managed with consent, which an own-interest conflict cannot be."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "When informed written consent can permit acting despite a client conflict",
+        "voice": "statutory — works closely from the wording of the rule",
+        "body": [
+          "Paragraph 6.2 sets out the two narrow gateways through which a solicitor may act for clients with conflicting interests. The first is where the clients have a substantially common interest in relation to the matter or a particular aspect of it. The second is where the clients are competing for the same objective — most commonly seen where several buyers are bidding for the same asset and each wants the same solicitor.",
+          "Even within these gateways, acting is only permitted where all the clients concerned have given informed written consent, and where the solicitor is satisfied it is reasonable to act for all the clients. 'Informed' consent means each client must understand what they are consenting to and what the risks are — a signature obtained without a genuine explanation of the risk does not meet the standard.",
+          "Outside these two gateways, a client conflict simply cannot be managed by consent at all, however well-informed the clients are — the solicitor must decline to act, or must cease acting, for one or more of the clients."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Code of Conduct for Solicitors, para 6.2",
+            "text": "You do not act in relation to a matter or particular aspect of it if you have a conflict of interest or a significant risk of such a conflict in relation to that matter or aspect of it, unless: (a) the clients have a substantially common interest in relation to the matter or the aspect of it, as appropriate; or (b) the clients are competing for the same objective, and, in either case: (i) any of the clients has given informed consent, given or evidenced in writing, to you acting; (ii) where appropriate, you have put in place effective safeguards to protect your clients' confidential information; and (iii) you are satisfied it is reasonable for you to act for all the clients.",
+            "elements": ["Substantially common interest, or competing for the same objective", "Informed consent, given or evidenced in writing", "Effective safeguards for confidential information where appropriate", "The solicitor is satisfied it is reasonable to act for all clients"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-11-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under para 6.2, which of the following is NOT one of the conditions that must be satisfied before a solicitor may act despite a client conflict?",
+          "options": ["The clients have a substantially common interest, or are competing for the same objective", "Informed consent has been given or evidenced in writing", "The solicitor is satisfied it is reasonable to act for all the clients", "The clients have each paid an equal share of the solicitor's fees"],
+          "correctIndex": 3,
+          "explanation": "Fee-splitting arrangements are not a condition of para 6.2 at all. The genuine conditions are a substantially common interest (or competing for the same objective), informed written consent, safeguards for confidential information where appropriate, and the solicitor's own assessment that acting for all clients is reasonable."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Confidentiality: the default, and the recognised exceptions",
+        "voice": "case-narrative — walks a scenario to the point where the default breaks down",
+        "body": [
+          "Paragraph 6.3 requires a solicitor to keep the affairs of current and former clients confidential unless disclosure is required or permitted by law, or the client consents. This is a broad, default-on duty — it covers essentially everything a solicitor learns in the course of acting, not only information that is obviously sensitive.",
+          "The exceptions are narrower than students often assume. 'Required by law' covers situations such as a valid court order or a statutory reporting obligation (for example, under money-laundering legislation). 'Permitted by law' includes limited situations — such as preventing a client from committing a criminal act that risks serious bodily harm — where disclosure is not just excused but may be the right thing to do.",
+          "What confidentiality does not yield to is mere inconvenience, embarrassment to the solicitor, or a belief that disclosure would simply be helpful to someone else. Absent one of the recognised exceptions, the default is silence, even where staying silent feels uncomfortable."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Duty of confidentiality",
+            "definition": "A solicitor must keep the affairs of current and former clients confidential, unless disclosure is required or permitted by law, or the client consents — a broad default duty with narrow, defined exceptions."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-11-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that most clearly falls within a recognised exception to confidentiality.",
+          "scenarioText": "During a meeting, a client mentions in passing that he is behind on his mortgage payments. Later in the same meeting he tells his solicitor, calmly and specifically, that he intends to seriously assault his former business partner next week and has already bought what he needs to do it.",
+          "tappableSpans": ["behind on his mortgage payments", "intends to seriously assault his former business partner", "next week", "already bought what he needs"],
+          "correctSpan": "intends to seriously assault his former business partner",
+          "feedbackCorrect": "That's the trigger. A credible, specific threat of serious bodily harm to an identified person falls within the narrow 'permitted by law' exception — the mortgage arrears do not.",
+          "feedbackIncorrect": "Financial difficulty is ordinary confidential information with no exception attached. Look for the statement that credibly threatens serious harm to a specific person — that is what can permit disclosure."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Confidentiality is not the same thing as privilege",
+        "voice": "Socratic — poses the distinction as a question before resolving it",
+        "body": [
+          "Here's a question worth sitting with: if confidentiality and legal professional privilege protect the same thing, why does the law need two separate concepts? The answer is that they don't protect the same thing, and conflating them is one of the most reliable ways to lose marks in this area.",
+          "Confidentiality is a professional conduct duty, owed by the solicitor, covering essentially all information about a client's affairs, and it can be overridden by the exceptions covered in Part 4 above. Legal professional privilege is a rule of evidence, belongs to the client (not the solicitor), and — once it applies — is close to absolute: it protects communications from being compelled into evidence, and generally survives even a court order, subject only to the narrow crime-fraud exception.",
+          "The practical consequence: information can be confidential without being privileged (routine client correspondence, for instance, disclosed under a valid court order despite the duty of confidentiality), and a solicitor cannot assume that because something is 'privileged', it is automatically also outside the reach of every confidentiality exception, or vice versa. They are answers to two different questions — 'must I keep this quiet?' and 'can this be forced out of me in court?' — and a Code of Conduct question about confidentiality is not answered by reasoning about privilege."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Confidentiality vs privilege",
+            "description": "Two distinct concepts that are frequently, and wrongly, treated as interchangeable.",
+            "nodes": [
+              { "id": "conf", "label": "Confidentiality: a conduct duty owed by the solicitor, covering a client's affairs generally" },
+              { "id": "priv", "label": "Privilege: an evidential rule, belonging to the client, protecting communications from compelled disclosure" },
+              { "id": "overlap", "label": "Most privileged material is also confidential — but plenty of confidential material is not privileged" }
+            ],
+            "edges": [
+              { "from": "conf", "to": "overlap" },
+              { "from": "priv", "to": "overlap" }
+            ],
+            "textAlternative": "Confidentiality is a professional conduct duty owed by the solicitor over a client's affairs generally, subject to the exceptions covered earlier. Privilege is a separate evidential rule belonging to the client, protecting certain communications from being compelled into evidence, and it is close to absolute. Most privileged material is also confidential, but a great deal of confidential material — such as routine correspondence — is not privileged at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-11-check-05",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that best states the core distinction between confidentiality and privilege.",
+          "passage": "A solicitor's duty of confidentiality arises from professional conduct rules and covers the affairs of a client broadly, subject to defined exceptions. Legal professional privilege is a separate rule of evidence belonging to the client, not the solicitor, and protects certain communications from being compelled into evidence even where the general duty of confidentiality would otherwise have to yield. Confidential information is therefore not always privileged, and the two concepts answer different questions.",
+          "ratioSentence": "Confidential information is therefore not always privileged, and the two concepts answer different questions."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-11-test-01",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Under para 3 of the Code of Conduct, which of the following must a solicitor's costs information cover?",
+      "options": ["Only the total fixed fee agreed at the outset", "The likely overall cost, how charges arise, funding alternatives, and any third-party costs risk, kept current as the matter progresses", "Only costs payable to the solicitor's own firm", "Costs information only where the client specifically asks for it"],
+      "correctIndex": 1,
+      "explanation": "Para 3 requires clear, current information covering likely overall cost, the basis of charging, funding alternatives such as legal aid, and third-party costs risk (such as an adverse costs order), not a single static figure given once."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-02",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which of the following best defines an 'own-interest conflict' under the Code of Conduct?",
+      "options": ["A conflict between the interests of two clients the same firm acts for", "A situation where a solicitor's own interests conflict, or risk conflicting, with the duty to act in a client's best interests", "Any dispute between a solicitor and a client over an unpaid invoice", "A conflict that arises only after a retainer has ended"],
+      "correctIndex": 1,
+      "explanation": "An own-interest conflict is defined by reference to the solicitor's (or firm's) own interests coming into conflict, or risking conflict, with the duty owed to the client — distinct from a client conflict, which involves two or more clients."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-03",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A solicitor is instructed to act for a client in the purchase of a business from a company in which the solicitor's spouse holds a significant shareholding. The client is aware of the connection and is happy to proceed. What should the solicitor do?",
+      "options": ["Act, since the client has given informed consent to the connection", "Decline to act, since this is an own-interest conflict, and consent — however informed — cannot cure it", "Act, but disclose the connection to the other side instead of the client", "Act only if the fee is reduced to reflect the connection"],
+      "correctIndex": 1,
+      "trapExplanation": "Client consent looks like the obvious fix, and it is the fix for a client conflict — but this is an own-interest conflict (the solicitor's spouse's financial interest), which the Code treats as one a solicitor simply must not act in, regardless of what the client is prepared to consent to.",
+      "explanation": "The spouse's shareholding creates a financial interest that conflicts with the solicitor's duty to the client. Because this is an own-interest conflict, not a client conflict, it cannot be cured by consent of any kind — the solicitor must decline to act."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-04",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "Two siblings jointly inheriting a family business ask the same solicitor to advise them on restructuring their shared ownership. Both want broadly the same outcome but have not yet discussed how profits will be split between them. What must the solicitor do before agreeing to act for both?",
+      "options": ["Nothing further, since siblings are presumed to have a substantially common interest", "Assess whether there is a significant risk their interests will diverge (e.g. over the profit split) and, if so, obtain informed written consent from both before acting for both", "Refuse to act for either sibling under any circumstances", "Act for both, but only communicate with one sibling directly"],
+      "correctIndex": 1,
+      "explanation": "A shared inheritance does not automatically mean 'substantially common interest' once the siblings' positions may diverge, as they may over how profits are split. The solicitor must assess the risk of a client conflict and, if one exists, secure informed written consent from both before acting for both — family relationship alone is not a shortcut around this."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-05",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Which of the following situations falls within the 'competing for the same objective' gateway in para 6.2?",
+      "options": ["Two unconnected buyers, both represented by the same solicitor, bidding against each other for the same commercial property", "A husband and wife jointly buying a house from a single seller", "A company and its sole director, both wanting the company to succeed in the same litigation", "A landlord and tenant negotiating a new lease on largely agreed terms"],
+      "correctIndex": 0,
+      "explanation": "'Competing for the same objective' describes exactly this scenario — multiple clients each seeking the same prize (here, the same property) where only one can succeed. The other options describe parties whose interests are aligned or complementary rather than competing for a single, exclusive outcome."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-06",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Under para 6.3, what is the default position on a solicitor's duty to keep client affairs confidential?",
+      "options": ["It applies only to current clients, not former clients", "It applies to both current and former clients, unless disclosure is required or permitted by law or the client consents", "It applies only where the client has expressly requested confidentiality", "It lapses automatically once the retainer ends"],
+      "correctIndex": 1,
+      "explanation": "The duty of confidentiality under para 6.3 extends to both current and former clients and continues indefinitely, subject only to the recognised exceptions — it does not depend on an express request and does not lapse when the retainer ends."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-07",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A former client tells his old solicitor, in a chance conversation at a social event, that he is planning to defraud a bank next month using a scheme he describes in detail, but with no threat of violence to anyone. The solicitor considers reporting this to the bank. What is the correct analysis?",
+      "options": ["The solicitor should report it, since any planned crime automatically falls within a confidentiality exception", "The solicitor should not disclose to the bank on this basis alone — the 'permitted by law' exception is narrow and does not extend to every planned offence, particularly one involving no threat of serious bodily harm", "The duty of confidentiality does not apply at all, since he is a former client", "The solicitor may disclose only if the bank is also a client of the firm"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think 'planning a crime' is enough on its own to unlock disclosure — but the recognised exception is narrower than that, and a financial-crime scheme with no threat of bodily harm sits outside the clearest version of the exception discussed in this lesson; a solicitor in this position should seek advice rather than assume disclosure is permitted.",
+      "explanation": "The duty of confidentiality survives the end of the retainer, and the 'permitted by law' exception is genuinely narrow — planning a financial crime, without more, is not automatically equivalent to the serious-bodily-harm scenario that most clearly falls within it."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-08",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Which of the following best distinguishes legal professional privilege from the duty of confidentiality?",
+      "options": ["Privilege is a professional conduct rule; confidentiality is a rule of evidence", "Privilege belongs to the client and is a rule of evidence protecting against compelled disclosure; confidentiality is a professional conduct duty owed by the solicitor over the client's affairs generally", "They are two names for the same legal protection", "Privilege applies only to barristers, and confidentiality only to solicitors"],
+      "correctIndex": 1,
+      "explanation": "Privilege is an evidential rule that belongs to the client and resists compelled disclosure in proceedings, close to absolute subject to the crime-fraud exception. Confidentiality is a broader professional conduct duty owed by the solicitor, covering more information but yielding to defined exceptions that privilege generally does not."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-09",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A court makes a valid order requiring a solicitor to disclose routine correspondence with a client that is confidential but not privileged. Must the solicitor comply?",
+      "options": ["No — confidentiality can never be overridden by a court", "Yes — disclosure required by law is a recognised exception to the duty of confidentiality", "Only if the client separately consents in writing", "No, unless the correspondence is also privileged"],
+      "correctIndex": 1,
+      "explanation": "Disclosure 'required by law' — which includes a valid court order — is one of the express exceptions to confidentiality under para 6.3. Whether the material is privileged is a separate question; here it is not, so there is no additional barrier to disclosure once the order is validly made."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-10",
+      "skillTag": "understanding",
+      "type": "mcqWithTrap",
+      "prompt": "A trainee argues that because a document is confidential, it must also be privileged and therefore can never be disclosed to anyone. Which of the following best evaluates that argument?",
+      "options": ["The argument is correct — confidentiality and privilege always rise and fall together", "The argument is incorrect — confidentiality and privilege are distinct concepts, and confidential material is frequently not privileged at all", "The argument is correct only for documents created before litigation began", "The argument is incorrect only where the client is a company rather than an individual"],
+      "correctIndex": 1,
+      "trapExplanation": "Assuming confidentiality and privilege are the same protection is exactly the error this lesson is built to correct — plenty of routine, confidential client material (such as ordinary correspondence) attracts no privilege at all and can be disclosed if a recognised confidentiality exception applies.",
+      "explanation": "Confidentiality is the broader, more easily-overridden concept; privilege is narrower but stronger. A great deal of confidential information is not privileged, so the trainee's blanket claim does not hold."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-11",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which of the following is a condition that must be met before a solicitor may act for clients with a client conflict, under para 6.2?",
+      "options": ["The clients must be related to each other", "The clients must have a substantially common interest, or be competing for the same objective, and give informed written consent", "The clients must agree to pay identical fees", "The conflict must have already caused actual loss to one of the clients"],
+      "correctIndex": 1,
+      "explanation": "Para 6.2 requires either a substantially common interest or the clients competing for the same objective, together with informed consent given or evidenced in writing and the solicitor's own assessment that acting for all is reasonable — none of the other options is a stated condition."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-12",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A solicitor is acting for a lender and a borrower on a straightforward mortgage on standard terms, with no indication of any divergence of interest between them. Partway through, the borrower discloses information suggesting he cannot meet the loan conditions, and the lender is unaware of this. What has happened to the conflict position?",
+      "options": ["Nothing has changed, since the transaction is still 'straightforward'", "A client conflict has now arisen: the solicitor cannot withhold this from the lender consistently with the lender's interests, yet cannot disclose it consistently with the duty of confidentiality owed to the borrower", "The solicitor should simply tell the lender, since transparency is always required", "The solicitor should stop acting for the lender only, and continue for the borrower without telling anyone"],
+      "correctIndex": 1,
+      "explanation": "What began as an aligned-interest transaction has developed a genuine client conflict: continuing to act for the lender while holding back materially relevant information received in confidence from the borrower is not sustainable. This typically requires the solicitor to stop acting for one or both clients, since simply disclosing the borrower's confidential information to the lender is not permitted without consent."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-13",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "'Informed' consent under para 6.2 requires more than a signature. Which of the following best captures what is additionally required?",
+      "options": ["The client must be a sophisticated commercial party", "The client must genuinely understand what they are consenting to and the risks involved, not merely sign a standard form", "The consent must be given orally, not in writing", "The client must obtain independent legal advice from a different firm before consenting"],
+      "correctIndex": 1,
+      "explanation": "Informed consent requires genuine understanding of the position and its risks; a signature obtained without a real explanation does not meet the standard, even though the Code does require the consent to be given or evidenced in writing, not that it be oral or independently advised upon."
+    },
+    {
+      "itemId": "sqe1-ls-11-test-14",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A solicitor learns, from a source entirely outside the retainer, information that happens to overlap with something a client once told him in confidence years earlier for an unrelated matter. Does the duty of confidentiality prevent the solicitor using the independently-obtained information for other purposes?",
+      "options": ["Yes — once information has ever been disclosed by a client, all future references to the same facts are automatically confidential", "No — the duty of confidentiality attaches to information received in the solicitor's professional capacity from or about the client, not to facts independently known or later learned from an unconnected source", "Yes, but only if the earlier matter is still open", "No, because confidentiality only ever binds the solicitor's firm, not the individual solicitor"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat any overlap with something a client once said as automatically confidential forever — but the duty attaches to information obtained in the solicitor's professional capacity in relation to that client, not to every fact that happens to coincide with something once disclosed; the solicitor should still take care, but the source here is genuinely independent.",
+      "explanation": "Confidentiality protects information the solicitor holds because of the professional relationship. Genuinely independent knowledge of overlapping facts, from an unconnected source, is not transformed into confidential client information merely because it happens to coincide with something disclosed years earlier in an unrelated matter."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two recurring traps in this lesson are: treating any conflict as curable by consent (an own-interest conflict never is), and treating confidentiality and privilege as interchangeable (they protect different things, in different ways, and against different people).",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.code-conduct-client-care"
+  }
+}

@@ -83,6 +83,12 @@ final class StudentStore {
 
     var settings: StudySettings { profile.settings ?? StudySettings() }
 
+    var programme: Programme { Programme(profile: profile.programme) }
+
+    /// The student's modules in their programme (a student who switched keeps the old
+    /// ones on file, but sees these).
+    var modules: [Module] { (profile.modules ?? []).filter { $0.programme == programme } }
+
     func start() {
         guard listeners.isEmpty else { return }
         let user = Firestore.firestore().collection("users").document(uid)

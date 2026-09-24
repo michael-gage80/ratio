@@ -1,0 +1,336 @@
+{
+  "lessonId": "sqe1-dr-05",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 5,
+  "topicId": "sqe1.dispute-resolution.summary-judgment-strike-out",
+  "title": "Ending a claim before trial",
+  "subtitle": "Summary judgment and strike out",
+  "estimatedMinutes": 18,
+  "track": "SQE1",
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the summary judgment test under CPR 24 and the strike out grounds under CPR 3.4(2)",
+    "Explain the practical and evidential distinction between an application that a case has no real prospect of success and one that a statement of case is itself defective",
+    "Apply both tests to a fact pattern and identify which application — if either — a party should realistically bring"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 24", "role": "The summary judgment test: no real prospect of success and no other compelling reason for trial" },
+    { "citation": "Civil Procedure Rules, r 3.4", "role": "Strike out grounds: no reasonable grounds, abuse of process, or failure to comply with a rule, practice direction or order" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Candidates frequently treat summary judgment and strike out as interchangeable ways to 'get rid of a bad claim early'. SQE1 tests the difference precisely, because the two applications look to different things — the merits of the evidence versus the adequacy of the pleaded case — and picking the wrong one on a fact pattern is a common scoring trap. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know both tests — this lesson checks whether you can tell which one a given scenario actually calls for.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the bare tests before. The test pool below leans on scenarios that require choosing between CPR 24 and CPR 3.4, not just reciting either one.",
+      "weakKnowledge": "Start with Part 1 and fix the wording of the CPR 24 test precisely — 'no real prospect of success' is a specific, examinable phrase, and imprecise recall of it is the most common source of lost marks here."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A claimant sues for breach of contract. The defence, on its face, pleads a full and coherent case — but when the defendant's own disclosed emails are examined, they flatly contradict the defence pleaded. Is that a strike out, because the defence is somehow defective on paper? Or summary judgment, because there's no real prospect the defence will succeed once the evidence is looked at? Getting this wrong doesn't just cost marks in an exam — in practice it means bringing the wrong application, on the wrong evidential footing, and losing the costs of doing so."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two routes to the same destination, from different directions",
+        "voice": "argumentative — states the practical stakes before the rule",
+        "body": [
+          "Most civil claims run their full course: statements of case, disclosure, evidence, trial. But a significant number never get that far, because one side persuades the court to end the claim — or part of it — well before trial. Two mechanisms do most of this work, and SQE1 expects you to be able to tell them apart on sight, not just recite each in isolation.",
+          "Summary judgment under CPR 24 looks forward: it asks whether, on the evidence realistically available, a party's case or defence has any real chance of succeeding at trial. Strike out under CPR 3.4 looks backward, at the statement of case itself: does the document, as pleaded, disclose a legally viable claim or defence at all, regardless of what the evidence might later show?",
+          "The overlap between the two is real — many weak cases could be attacked either way — but the tests ask genuinely different questions, use different evidence, and produce different practical consequences for a party who loses. Confusing them is the single most common error this lesson exists to correct."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Interim application",
+            "definition": "An application made to the court during the course of proceedings, before trial, seeking a ruling that disposes of all or part of the claim, or otherwise manages its progress — summary judgment and strike out are the two most commonly examined case-ending interim applications."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In broad terms, which of these two applications is primarily concerned with the strength of the evidence, rather than the adequacy of the pleaded document itself?",
+          "options": ["Summary judgment under CPR 24", "Strike out under CPR 3.4"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — summary judgment asks whether the evidence realistically available gives a case any real prospect of success. Strike out, by contrast, looks at the statement of case on its face.",
+          "feedbackIncorrect": "Summary judgment is the evidence-facing test: it asks whether the case, once the evidence is considered, has a real prospect of success. Strike out is about the adequacy of the document pleaded, which we cover next."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The summary judgment test under CPR 24",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "CPR 24 allows the court to decide a claim or a particular issue without a full trial, where it is satisfied the respondent's case (or defence) has no real prospect of succeeding, and there is no other compelling reason why the case should be disposed of at trial. Either party can apply — a claimant can seek summary judgment against a hopeless defence, and a defendant can seek it against a hopeless claim.",
+          "'No real prospect of success' is a deliberately demanding threshold, not a balance-of-probabilities test. It is more than merely arguable, but it does not require the court to conduct a mini-trial: the court considers the evidence that can reasonably be expected to be available at trial, without resolving genuine, substantial disputes of fact that would need live evidence and cross-examination to determine. Where the evidence discloses a real, triable dispute — even a fairly weak one — summary judgment must be refused and the case must go to trial.",
+          "The second limb — 'no other compelling reason for trial' — exists to catch cases where the merits look weak on paper but something else (a novel point of law that deserves full argument, or a need for disclosure not yet available) means it would still be wrong to shut the case out without a trial."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, Part 24",
+            "text": "The court may give summary judgment against a claimant or defendant on the whole of a claim or on a particular issue if it considers that the party has no real prospect of succeeding on the claim, defence or issue, and there is no other compelling reason why the case or issue should be disposed of at a trial.",
+            "elements": ["No real prospect of success (a demanding threshold, more than merely arguable)", "No other compelling reason for a trial", "Available to either claimant or defendant, against the whole claim or a specific issue", "The court does not resolve genuine disputed facts — it identifies whether a real dispute exists"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-05-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in this scenario that means summary judgment should be refused.",
+          "scenarioText": "A defendant applies for summary judgment against a claim for damages. The claimant's witness statement and the defendant's own disclosed correspondence genuinely conflict on the key factual question of when a warning was given, and each side's account is credible on paper. The claimant's legal argument is otherwise unremarkable.",
+          "tappableSpans": ["applies for summary judgment", "witness statement", "genuinely conflict on the key factual question", "legal argument is otherwise unremarkable"],
+          "correctSpan": "genuinely conflict on the key factual question",
+          "feedbackCorrect": "Right. A genuine, substantial factual dispute that needs live evidence to resolve is exactly what summary judgment cannot dispose of — the court will not conduct a mini-trial on the papers.",
+          "feedbackIncorrect": "Look for the fact showing there is a real, unresolved dispute of fact rather than a merely weak case. Where the parties' accounts genuinely conflict on a key issue, that dispute needs a trial to resolve — summary judgment is refused."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Strike out under CPR 3.4: attacking the document, not the evidence",
+        "voice": "structural — reference-style, building the second half of the framework",
+        "body": [
+          "CPR 3.4(2) gives the court power to strike out a statement of case — or part of one — on three grounds, and it is worth learning all three by name because exam scenarios are often built to test which ground actually fits.",
+          "The court may strike out a statement of case that discloses no reasonable grounds for bringing or defending the claim (for example, a claim that even taken entirely at face value does not amount to a recognised cause of action in law); that is an abuse of the court's process or is otherwise likely to obstruct the just disposal of proceedings (for example, a claim brought for an improper collateral purpose, or one that duplicates litigation already concluded); or that fails to comply with a rule, practice direction or court order (for example, persistent failure to file a compliant statement of case despite being given the chance to amend).",
+          "The critical distinction from summary judgment: strike out looks at the pleaded document as it stands, assessed on its own terms, not at whether the underlying evidence supports it. A claim can be perfectly well evidenced and still struck out because of how it is pleaded (for instance, failing to plead an essential element of the cause of action) — and, conversely, a claim can be beautifully pleaded and still fail summary judgment scrutiny because the evidence behind it doesn't stand up."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "CPR 3.4(2): the three strike out grounds",
+            "points": [
+              "No reasonable grounds for bringing or defending the claim — the pleaded case, even taken at face value, discloses no viable cause of action or defence",
+              "Abuse of process or likely to obstruct the just disposal of proceedings — an improper purpose, duplicative litigation, or similar misuse of the court",
+              "Failure to comply with a rule, practice direction or court order — a procedural default, such as ignoring an unless order",
+              "In all three, the focus is the statement of case itself — not whether the underlying evidence would ultimately succeed at trial"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-05-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the phrase that identifies which CPR 3.4(2) ground is being applied.",
+          "passage": "The particulars of claim, even taken entirely at face value and assuming every factual allegation to be true, do not disclose any recognised cause of action known to English law. The application to strike out is therefore granted on the basis that the statement of case discloses no reasonable grounds for bringing the claim.",
+          "ratioSentence": "the statement of case discloses no reasonable grounds for bringing the claim"
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Choosing between them: a practical decision path",
+        "voice": "Socratic — poses the choice before resolving it",
+        "body": [
+          "In practice, a party facing a weak opponent often asks: which application do I actually bring? The answer depends on what, precisely, is wrong with the other side's case.",
+          "If the problem is that the pleaded case, on its face, doesn't add up to a legal claim at all — missing an essential element, based on a cause of action that doesn't exist, or otherwise defective as a document — strike out is the natural route, and it can often be argued from the statement of case alone, without needing evidence. If the problem is that the pleaded case looks legally coherent but the evidence simply doesn't support it — no witness can substantiate a key fact, or disclosed documents contradict the pleaded account — summary judgment is the right application, because it is designed precisely to test whether the evidence gives the case any real prospect of success.",
+          "In practice the two are frequently pleaded in the alternative in a single application notice, because the same facts can sometimes be attacked both ways — but a well-prepared practitioner (and a well-prepared SQE1 candidate) identifies which ground actually fits the specific defect before defaulting to 'both'."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Strike out or summary judgment?",
+            "description": "A decision path for choosing which pre-trial application fits a given defect.",
+            "nodes": [
+              { "id": "start", "label": "What is wrong with the opponent's case?" },
+              { "id": "pleading", "label": "The statement of case itself is defective, discloses no cause of action, or is an abuse of process" },
+              { "id": "evidence", "label": "The pleaded case is legally coherent, but the evidence does not support it" },
+              { "id": "strikeout", "label": "Strike out under CPR 3.4(2)" },
+              { "id": "sj", "label": "Summary judgment under CPR 24" }
+            ],
+            "edges": [
+              { "from": "start", "to": "pleading", "label": "" },
+              { "from": "start", "to": "evidence", "label": "" },
+              { "from": "pleading", "to": "strikeout", "label": "" },
+              { "from": "evidence", "to": "sj", "label": "" }
+            ],
+            "textAlternative": "Start by asking what is actually wrong with the opponent's case. If the defect is in the pleaded document itself — no cause of action disclosed, or an abuse of process — strike out under CPR 3.4(2) is the fitting application. If the pleading is legally coherent but the evidence simply doesn't support it, summary judgment under CPR 24 is the fitting application."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-05-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario calls for strike out rather than summary judgment?",
+          "scenarioA": "A defence pleads a full defence of consent, but the defendant's own witness statement, when disclosed, directly contradicts the facts needed to support that defence.",
+          "scenarioB": "A claimant's particulars of claim describe a dispute between neighbours over noise but plead no recognised cause of action — no nuisance, no breach of covenant, nothing the law recognises as actionable, even taken at face value.",
+          "correctScenario": "B",
+          "explanation": "B is a pleading defect — the document itself discloses no viable cause of action, which is a CPR 3.4(2) strike out ground. A is an evidential problem: the pleading is coherent, but the evidence undermines it, which is the territory of summary judgment under CPR 24."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Consequences of getting the application wrong",
+        "voice": "reflective — closes by tying the choice to practical and costs stakes",
+        "body": [
+          "Choosing the wrong application isn't a purely academic error. A strike out application is generally decided on the statement of case alone, without needing extensive evidence — bringing one where the real problem is evidential means the court is being asked the wrong question, and the application is likely to fail even if the underlying case genuinely is weak.",
+          "Conversely, a summary judgment application invites the court to weigh evidence, which means both sides can put in witness evidence and the hearing can become more substantial — disproportionate, and often more expensive, if the actual defect was a simple pleading failure that strike out could have resolved more cheaply and quickly.",
+          "There is a further practical point worth holding onto for the rest of this module: losing either application is not usually the end of the story. A court refusing summary judgment or strike out will often give directions for the claim to proceed to trial in the normal way — which is why both applications are best understood as filters that end weak or defective cases early, not as the primary mechanism by which most claims conclude."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that if a case 'looks weak', either application will do and the choice between them is a matter of preference.",
+            "whyItsWrong": "The two applications test genuinely different things — the adequacy of the pleaded document versus the strength of the evidence — and bringing the wrong one against a defect it isn't designed to catch will usually fail, however weak the underlying case actually is. Matching the application to the specific defect is the skill being tested, not simply recognising that a case is weak."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-05-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A defendant's witness statement flatly contradicts the defence pleaded, but the defence is otherwise a coherent, legally recognised defence on its face. Which application is best suited to this defect?",
+          "options": ["Strike out under CPR 3.4(2), because the defence is obviously weak", "Summary judgment under CPR 24, because the problem lies in the evidence, not the pleading itself", "Neither — the claimant must wait until trial regardless of the evidence", "Both applications simultaneously, since either would definitely succeed"],
+          "correctIndex": 1,
+          "trapExplanation": "The trap is assuming 'obviously weak' automatically means strike out. Here the pleading itself is legally coherent — the defect is evidential, which is precisely what summary judgment is designed to test. Strike out would be answering the wrong question."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-05-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under CPR 24, what threshold must a respondent's case fall below before the court will grant summary judgment against them?",
+      "options": ["No real prospect of success, and no other compelling reason for a trial", "Less than a 50% chance of success at trial", "No prospect whatsoever of any argument being raised", "A failure to respond to the application within 14 days"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which rule sets out the grounds on which a statement of case may be struck out?",
+      "options": ["CPR 3.4", "CPR 24", "CPR 26", "CPR 31"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-05-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "A defendant argues that even if every fact pleaded in the particulars of claim is true, no cause of action known to law arises. Which application does this argument most naturally support?",
+      "options": ["Strike out under CPR 3.4(2), for disclosing no reasonable grounds for the claim", "Summary judgment under CPR 24, because the evidence is insufficient", "Neither — this argument can only be raised at trial", "An application for security for costs"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-05-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the three grounds for strike out listed in CPR 3.4(2)?",
+      "options": ["No reasonable grounds for bringing or defending the claim", "Abuse of the court's process", "Failure to comply with a rule, practice direction or order", "The claim is worth less than the small claims threshold"],
+      "correctIndex": 3,
+      "trapExplanation": "Claim value has nothing to do with strike out — that is a track allocation concept from CPR Part 26, not a CPR 3.4(2) ground. The three real grounds are no reasonable grounds, abuse of process, and non-compliance with a rule, practice direction or order."
+    },
+    {
+      "itemId": "sqe1-dr-05-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant applies for summary judgment, arguing the claimant's case has 'no real prospect of success' because the defendant's own witnesses are, in the defendant's view, more credible than the claimant's. The claimant's account is plausible and directly conflicts with the defendant's. How should the court approach this application?",
+      "options": ["It should refuse summary judgment, because resolving which side's witnesses are more credible is a matter for trial, not the summary judgment hearing", "It should grant summary judgment, because the defendant's witnesses need only be marginally more credible", "It should strike out the claimant's case instead, since credibility issues are pleading defects", "It should grant summary judgment automatically once any witness evidence is filed"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is treating summary judgment as a mini-trial on credibility. Where accounts genuinely and plausibly conflict, the court does not weigh whose witnesses seem more believable on the papers — that assessment needs live evidence and cross-examination, so the case must proceed to trial."
+    },
+    {
+      "itemId": "sqe1-dr-05-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A claimant has already litigated and lost a claim on the same facts against the same defendant in an earlier action, and now brings what is substantially the same claim again in a new action. Which is the most fitting application for the defendant to bring?",
+      "options": ["Strike out under CPR 3.4(2), on the ground that the claim is an abuse of the court's process", "Summary judgment under CPR 24, because the claimant's witnesses are unreliable", "An application for security for costs, because the claimant has previously lost litigation", "No application is available — the claimant is free to relitigate a lost claim indefinitely"],
+      "correctIndex": 0,
+      "trapExplanation": "This is a textbook abuse of process, one of the three CPR 3.4(2) grounds — relitigating substantially the same claim already determined is precisely what that ground exists to stop, distinct from an evidential weakness that summary judgment would address."
+    },
+    {
+      "itemId": "sqe1-dr-05-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant's particulars of claim plead breach of contract but never identify which term of the contract was breached, despite three opportunities to amend and an unless order requiring compliance. What is the defendant's strongest basis for a CPR 3.4(2) application?",
+      "options": ["Failure to comply with a rule, practice direction or order, given the unless order was not complied with", "No reasonable grounds for bringing the claim, because breach of contract can never be pleaded without full disclosure first", "Abuse of process, because the claimant filed the claim in the wrong court", "Summary judgment, because the claimant's case has no real prospect of success"],
+      "correctIndex": 0,
+      "explanation": "Persistent non-compliance with an unless order, despite repeated chances to amend, squarely fits the third CPR 3.4(2) ground — failure to comply with a rule, practice direction or court order — rather than the no-reasonable-grounds or abuse-of-process limbs, and this is a strike out question, not summary judgment."
+    },
+    {
+      "itemId": "sqe1-dr-05-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant applies to strike out a claim, arguing the claimant's case has no real prospect of success at trial because the claimant's key witness has since become unavailable to give evidence. Is strike out the correct application for this argument?",
+      "options": ["No — an argument about the strength or availability of evidence goes to summary judgment under CPR 24, not strike out under CPR 3.4", "Yes — any weakness in a case, however caused, is a strike out ground", "Yes — witness unavailability is expressly listed as a CPR 3.4(2) ground", "No — witness unavailability can never be raised in any pre-trial application"],
+      "correctIndex": 0,
+      "explanation": "The defendant has framed an evidential argument ('no real prospect of success') using the language of CPR 24, but has applied under the wrong rule. Strike out looks at the statement of case, not the strength or availability of evidence — the correct application here is summary judgment."
+    },
+    {
+      "itemId": "sqe1-dr-05-test-09",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Can a claimant, as well as a defendant, apply for summary judgment under CPR 24?",
+      "options": ["Yes — a claimant can apply for summary judgment against a defence with no real prospect of success, just as a defendant can apply against a weak claim", "No — only a defendant can ever apply for summary judgment", "No — summary judgment is available only where both parties consent", "Yes, but only in claims already allocated to the multi-track"],
+      "correctIndex": 0,
+      "explanation": "CPR 24 is available to either party. A claimant facing a hopeless defence can apply for summary judgment just as readily as a defendant facing a hopeless claim."
+    },
+    {
+      "itemId": "sqe1-dr-05-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under CPR 24, what happens if the court identifies a genuine, substantial dispute of fact that requires live evidence to resolve?",
+      "options": ["Summary judgment must be refused, and the disputed issue proceeds to trial", "The court must resolve the factual dispute itself on the papers before ruling", "The claim is automatically struck out instead", "The court adjourns indefinitely until the parties settle"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-05-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which phrase from CPR 24 captures the idea that summary judgment can still be refused even where a case looks legally and evidentially weak?",
+      "options": ["'No other compelling reason why the case or issue should be disposed of at a trial'", "'Binding in its entirety'", "'Directly applicable in all Member States'", "'Subject to detailed assessment'"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-05-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A claim looks weak on the evidence disclosed so far, but the point of law it raises — whether a relatively new statutory provision applies to a certain category of contract — has never been considered by any court and would benefit from full argument at trial. Applying the second limb of the CPR 24 test, what is the likely outcome of a summary judgment application?",
+      "options": ["It may be refused despite the apparent weakness of the case, because the novel and unresolved point of law is capable of being a compelling reason for a trial", "It must be granted automatically, since the evidence is weak regardless of any point of law", "It is irrelevant to summary judgment whether the point of law is novel or settled", "The application will be struck out for raising a point of law at all"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-05-test-13",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A solicitor is deciding whether to advise a client to apply for strike out, summary judgment, or both, against a weak counterclaim. What is the most sound general practice?",
+      "options": ["Identify precisely which kind of defect the counterclaim suffers from — a pleading defect, an evidential weakness, or both — and frame the application, or applications, to match", "Always apply for both regardless of the facts, since one is bound to succeed", "Always choose strike out first because it is cheaper, regardless of the nature of the defect", "Never apply for either before trial, since both are rarely granted in practice"],
+      "correctIndex": 0,
+      "explanation": "The two tests answer different questions, so sound practice is diagnosing the actual defect first — a pleading problem points to strike out, an evidential problem points to summary judgment, and a case can genuinely suffer from both."
+    },
+    {
+      "itemId": "sqe1-dr-05-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "A junior colleague says strike out and summary judgment are simply two names for the same application. Why is this wrong?",
+      "options": ["Because strike out examines whether the pleaded statement of case is legally adequate, while summary judgment examines whether the evidence gives the case a real prospect of success — they test different things", "Because strike out is only available to claimants and summary judgment only to defendants", "Because summary judgment can only be applied for after trial has already begun", "Because strike out requires the permission of the Court of Appeal"],
+      "correctIndex": 0,
+      "trapExplanation": "The two applications share a family resemblance — both can end a claim early — but they are not interchangeable procedurally. Strike out is about the adequacy of the document; summary judgment is about the strength of the evidence behind it."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is picking whichever application 'sounds right' for a weak case without checking whether the actual defect is in the pleading (strike out) or in the evidence (summary judgment) — the two tests are not interchangeable, and fact patterns are built specifically to test which one fits.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.summary-judgment-strike-out"
+  }
+}

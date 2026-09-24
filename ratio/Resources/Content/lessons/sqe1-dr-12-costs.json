@@ -1,0 +1,344 @@
+{
+  "lessonId": "sqe1-dr-12",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 12,
+  "topicId": "sqe1.dispute-resolution.costs",
+  "track": "SQE1",
+  "title": "Who pays, and how much",
+  "subtitle": "Costs follow the event, standard vs indemnity assessment, and qualified one-way costs shifting",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the general rule that costs follow the event under CPR 44 and identify the factors the court weighs in exercising its costs discretion",
+    "Distinguish standard basis from indemnity basis assessment and explain how each treats doubt about reasonableness and proportionality",
+    "Explain qualified one-way costs shifting in personal injury claims, its main exceptions, and how track allocation determines whether fixed or assessed costs apply"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 44", "role": "The general costs regime: the court's discretion, the general rule that costs follow the event, and the standard/indemnity basis distinction" },
+    { "citation": "CPR 44.2", "role": "Sets the court's general discretion over costs and the 'costs follow the event' starting point, together with the conduct factors the court must consider" },
+    { "citation": "CPR 44.3", "role": "Defines the standard basis and the indemnity basis of assessment, and how doubt is resolved differently under each" },
+    { "citation": "CPR 44.13–44.17 (qualified one-way costs shifting)", "role": "Protects most personal injury claimants from paying a defendant's costs if the claim fails, subject to defined exceptions" },
+    { "citation": "Ho v Adelekun [2021] UKSC 43", "role": "Confirms QOCS protection can be set off against costs a claimant is separately ordered to pay, capping the claimant's real exposure at damages and interest recovered" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Costs questions on SQE1 are rarely about the headline rule alone — they hinge on which of several overlapping regimes (general discretion, QOCS, fixed costs by track) actually governs the fact pattern in front of you. Where the profile shows knowledge is ahead of application, this brief note appears: 'You can state the general rule — this lesson checks whether you can tell when it's displaced.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. Expect the test pool to combine a claim type, a track, and an outcome, and ask which costs regime actually applies — not just what CPR 44.2 says in the abstract.",
+      "weakKnowledge": "Start with Part 1 and make sure the 'costs follow the event' starting point and the standard/indemnity distinction are solid — QOCS and fixed costs in the later parts are exceptions and add-ons to that baseline, not a replacement for it."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Winning a personal injury claim and losing it can, from a costs perspective, look almost identical for the claimant — because qualified one-way costs shifting means a losing claimant in most personal injury cases still walks away without having to pay the defendant's costs. That protection does not exist in ordinary commercial litigation, where losing can mean paying both sides' bills. This lesson is about why costs outcomes vary so much depending on the type of claim and which track it sits in — and how the general rule, and its exceptions, actually work."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The starting point: costs follow the event",
+        "voice": "structural — sets the baseline every later exception is measured against",
+        "body": [
+          "CPR 44.2 gives the court a general discretion as to costs: whether they are payable by one party to another, the amount, and when they are to be paid. But that discretion does not operate in a vacuum — CPR 44.2(2) sets out the general rule that the unsuccessful party will be ordered to pay the costs of the successful party, usually summarised as 'costs follow the event'. It is the default outcome, not an inevitable one.",
+          "The court can, and regularly does, depart from that default. CPR 44.2 directs the court to have regard to all the circumstances, including the conduct of the parties before and during the proceedings (which is where an unreasonable refusal to engage in ADR, covered in Lesson 10, and the Part 36 mechanics of Lesson 11 both feed back in), whether a party has succeeded on part of its case even if not wholly successful, and any admissible offer to settle that does not fall under Part 36's own automatic regime.",
+          "Keep two separate ideas apart here, because exam questions deliberately blur them: 'who pays' (governed by CPR 44.2's general rule and discretion) is a different question from 'how much is paid' — which is where the standard and indemnity bases of assessment, covered next, come in."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Costs follow the event",
+            "definition": "The general rule under CPR 44.2(2) that the unsuccessful party will be ordered to pay the costs of the successful party — the default starting point for a costs order, which the court can depart from having regard to all the circumstances, including the parties' conduct."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-12-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under CPR 44.2, is a costs order that follows the general rule ('costs follow the event') the only outcome available to the court?",
+          "options": ["No — it is the general starting point, but the court retains a discretion to depart from it having regard to all the circumstances", "Yes — the court has no discretion once a winner and loser are identified"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. CPR 44.2 gives the court a genuine discretion; 'costs follow the event' describes the default outcome, not a rule the court is bound to apply mechanically regardless of conduct or partial success.",
+          "feedbackIncorrect": "The court's costs power under CPR 44.2 is a discretion, guided by the general rule that costs follow the event — it is not an automatic, inflexible outcome, and conduct or partial success can shift the result."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Standard vs indemnity: how much gets paid",
+        "voice": "statute-first — builds the comparison directly from the rule's own wording",
+        "body": [
+          "Once a costs order is made, CPR 44.3 governs how the amount payable is actually assessed, and it sets out two bases that behave very differently when there is doubt about whether a cost was reasonably incurred or reasonable in amount.",
+          "On the standard basis — the default, and by far the more common in practice — the court will only allow costs that are proportionate to the matters in issue, and will resolve any doubt as to whether a cost was reasonably and proportionately incurred, or reasonable and proportionate in amount, in favour of the paying party. On the indemnity basis, proportionality drops out of the test entirely, and any doubt is resolved in favour of the receiving party instead — a markedly more generous regime for whoever is being paid.",
+          "Indemnity costs are not the default; they are typically awarded as a mark of the court's disapproval of a party's conduct — for example, where litigation has been conducted unreasonably, or (as covered in the previous lesson) where a defendant fails to beat a claimant's Part 36 offer, which triggers indemnity basis costs automatically under CPR 36.17(4). Spotting which basis applies, and why, is one of the most frequently tested costs points on SQE1 precisely because the two produce very different bills from the same underlying spend."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "CPR 44.3(2)–(3)",
+            "text": "Where the amount of costs is to be assessed on the standard basis, the court will only allow costs which are proportionate to the matters in issue and will resolve any doubt which it may have as to whether costs were reasonably and proportionately incurred or reasonable and proportionate in amount in favour of the paying party. Where the amount of costs is to be assessed on the indemnity basis, the court will resolve any doubt which it may have as to whether costs were reasonably incurred or were reasonable in amount in favour of the receiving party.",
+            "elements": ["Standard basis — proportionality applies; doubt resolved in favour of the paying party", "Indemnity basis — no proportionality requirement; doubt resolved in favour of the receiving party"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-12-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the extract from CPR 44.3 above, highlight the phrase that shows the key difference in whose favour doubt is resolved under the indemnity basis.",
+          "passage": "Where the amount of costs is to be assessed on the indemnity basis, the court will resolve any doubt which it may have as to whether costs were reasonably incurred or were reasonable in amount in favour of the receiving party.",
+          "ratioSentence": "the court will resolve any doubt which it may have as to whether costs were reasonably incurred or were reasonable in amount in favour of the receiving party"
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Qualified one-way costs shifting: protecting the PI claimant",
+        "voice": "case-narrative — explains the policy first, then the mechanics",
+        "body": [
+          "Personal injury litigation is treated differently from most other civil claims, and QOCS (qualified one-way costs shifting), found in CPR 44.13–44.17, is the mechanism that does it. The policy concern behind QOCS was access to justice: after the changes to the funding of personal injury litigation (notably restricting recoverable success fees and after-the-event insurance premiums), claimants risked being deterred from bringing genuine claims by the fear of a large adverse costs order if they lost. QOCS answers that by making costs shifting 'one-way' in most personal injury claims — a losing claimant is broadly protected from paying the defendant's costs, while a winning claimant can still recover its own costs from the defendant in the ordinary way.",
+          "'Qualified' is the operative word: the protection is not absolute. The main recognised exceptions are where the claim is found to be fundamentally dishonest; where the claim is struck out for disclosing no reasonable grounds, being an abuse of process, or the claimant's conduct is otherwise likely to obstruct the just disposal of proceedings; and — for a claim that includes a non-personal-injury element — where the claim is not, or is no longer, a personal injury claim for QOCS purposes at all. Outside those categories, the default protection holds even for a claimant who simply loses the claim on its merits.",
+          "Ho v Adelekun added an important refinement the exam favours: where a claimant benefits from QOCS but is separately ordered to pay some of the defendant's costs (for example, following an unsuccessful Part 36 dynamic), the Supreme Court confirmed the defendant's costs can be set off against costs the claimant is owed — which in practice caps the claimant's real financial exposure at the damages and interest actually recovered, rather than leaving a costs order that could exceed the claimant's own recovery."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "QOCS — the shape of the protection",
+            "points": [
+              "Applies to most personal injury claims — a losing claimant is generally protected from paying the defendant's costs",
+              "A winning claimant is unaffected — QOCS is 'one-way': it protects claimants from adverse orders, it does not stop claimants recovering their own costs when they win",
+              "Main exceptions: fundamental dishonesty; the claim being struck out (no reasonable grounds, abuse of process, or conduct obstructing just disposal); and claims that are not, or cease to be, personal injury claims for QOCS purposes",
+              "Ho v Adelekun — a defendant's costs order can be set off against costs owed to the claimant, effectively capping the claimant's exposure at sums it has recovered"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-12-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that would most likely remove QOCS protection from the claimant.",
+          "scenarioText": "A claimant brings a personal injury claim following a road traffic accident. At trial, the judge finds the claimant genuinely but mistakenly overestimated the extent of ongoing pain, and dismisses the claim on the medical evidence. There is no finding of dishonesty and no strike out.",
+          "tappableSpans": ["following a road traffic accident", "genuinely but mistakenly overestimated", "dismisses the claim on the medical evidence", "no finding of dishonesty and no strike out"],
+          "correctSpan": "no finding of dishonesty and no strike out",
+          "feedbackCorrect": "Correct — or rather, this is the fact that confirms QOCS protection survives. Simply losing on the merits, without dishonesty or a strike-out ground, is exactly the ordinary case QOCS is designed to protect.",
+          "feedbackIncorrect": "Look for what is absent, not what happened at trial. QOCS is designed to survive an honest claimant simply losing on the merits — the exceptions require something more specific: fundamental dishonesty or a strike-out ground, neither of which is present here."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Track allocation and the costs regime that follows",
+        "voice": "structural — connects this lesson back to an earlier one by name",
+        "body": [
+          "Lesson 4 (Track allocation) covered how a claim is assigned to the small claims track, the fast track, the intermediate track or the multi-track, and why that allocation drives the procedural regime a claim follows. Costs is the clearest example of why that allocation matters: which track a claim sits in largely determines whether the parties are litigating under a fixed costs regime or the ordinary assessed-costs regime this lesson has covered so far.",
+          "Small claims track cases attract essentially no recoverable costs for legal representation beyond narrow fixed items — a deliberate policy choice to keep low-value disputes proportionate and accessible without lawyers. Fast track and intermediate track claims are, since the reforms extending fixed recoverable costs (including the October 2023 extension to the intermediate track covered in Lesson 4), generally subject to fixed costs set by reference to the type of claim, the amount recovered, and the stage the case reached — the winning party recovers a prescribed figure, not a sum assessed after the fact on the standard or indemnity basis. Multi-track claims, by contrast, generally remain within the standard/indemnity assessment regime this lesson has described, because their complexity and value make a one-size-fits-all fixed figure unsuitable.",
+          "The exam-relevant consequence: a question that gives you a claim value and asks about likely costs recovery cannot be answered from CPR 44 alone — you need to know, or work out from the value and complexity given, which track the claim would be allocated to, because that allocation is what decides whether CPR 44's assessed-costs machinery even applies, or whether a fixed sum from the relevant fixed costs table governs instead."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Fixed recoverable costs",
+            "definition": "A prescribed costs figure, set by reference to claim type, sum recovered and case stage, that applies (largely) to fast track and intermediate track claims instead of the standard or indemnity basis assessment covered earlier in this lesson — a direct consequence of the track allocation decision covered in Lesson 4."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-12-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order they occur when working out what a winning party can recover in costs.",
+          "items": [
+            "The claim is allocated to a track (small claims, fast, intermediate or multi-track) under the track allocation rules",
+            "The court identifies whether that track carries a fixed recoverable costs regime or the standard/indemnity assessment regime",
+            "If fixed costs apply, the recoverable sum is read from the prescribed table by claim type, value and stage",
+            "If assessed costs apply, the court applies CPR 44.2's general rule and CPR 44.3's standard or indemnity basis to determine the sum"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the logical order this lesson has been building towards: track allocation is decided first, and it is that decision — not the substantive merits — that determines which costs machinery (fixed, or assessed under CPR 44) applies at all.",
+          "feedbackIncorrect": "Track allocation has to come first — it is the gateway decision that determines whether fixed costs or the CPR 44 assessment regime applies, not something decided after the costs regime is already known."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it together: choosing the right regime on a fact pattern",
+        "voice": "applied — works a composite scenario through every layer covered in this lesson",
+        "body": [
+          "Bring the pieces together on a single fact pattern, because that is exactly how SQE1 will test this. Suppose a claimant brings a personal injury claim allocated to the fast track, the defendant makes no Part 36 offer, and the claimant loses at trial because the judge is not satisfied the defendant was negligent — no dishonesty, no strike out.",
+          "Work through it in the order this lesson has laid out. First, CPR 44.2's general rule would ordinarily point to the claimant paying the defendant's costs, having lost. Second, because this is a personal injury claim and none of the QOCS exceptions are made out, that ordinary costs-follow-the-event outcome is displaced — the claimant is protected, and (subject to the narrow exceptions) will not actually have to pay the defendant's costs, notwithstanding losing outright. Third, because the claim was allocated to the fast track, even the amounts either side could in principle have recovered, had QOCS not intervened, would have been governed by the fixed costs regime rather than a standard or indemnity basis assessment.",
+          "Every layer — general rule, basis of assessment, QOCS, track-driven fixed costs — can be in play on the same fact pattern, and they do not always point the same way. The skill this lesson is building is not memorising each rule in isolation, but working out, on a given set of facts, which rule actually governs and in what order the others get displaced by it."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Which costs regime actually applies — a decision path",
+            "description": "A flowchart for identifying the governing costs regime on a fact pattern.",
+            "nodes": [
+              { "id": "start", "label": "Is this a personal injury claim within QOCS?" },
+              { "id": "qocs-yes", "label": "Yes — check the QOCS exceptions (fundamental dishonesty, strike out, not a PI claim)" },
+              { "id": "qocs-exception", "label": "Exception made out — ordinary costs-follow-the-event applies" },
+              { "id": "qocs-protected", "label": "No exception — losing claimant is generally protected from paying the defendant's costs" },
+              { "id": "qocs-no", "label": "No — ordinary CPR 44.2 costs-follow-the-event applies, subject to conduct and any Part 36 consequence" },
+              { "id": "track-check", "label": "Whichever result applies, check track allocation: does fixed recoverable costs apply (small claims/fast/intermediate), or standard/indemnity assessment (multi-track)?" }
+            ],
+            "edges": [
+              { "from": "start", "to": "qocs-yes", "label": "Yes" },
+              { "from": "start", "to": "qocs-no", "label": "No" },
+              { "from": "qocs-yes", "to": "qocs-exception", "label": "Exception applies" },
+              { "from": "qocs-yes", "to": "qocs-protected", "label": "No exception" },
+              { "from": "qocs-exception", "to": "track-check", "label": "" },
+              { "from": "qocs-protected", "to": "track-check", "label": "" },
+              { "from": "qocs-no", "to": "track-check", "label": "" }
+            ],
+            "textAlternative": "First ask whether the claim is a personal injury claim within QOCS. If yes, check the QOCS exceptions (fundamental dishonesty, strike out, or the claim ceasing to be a PI claim) — if an exception applies, ordinary costs-follow-the-event governs; if not, the losing claimant is generally protected from paying the defendant's costs. If the claim is not within QOCS at all, ordinary CPR 44.2 costs-follow-the-event applies, subject to conduct and any Part 36 consequence. Whichever result applies, then check track allocation to see whether fixed recoverable costs (small claims, fast or intermediate track) or standard/indemnity assessment (multi-track) governs the actual sum."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-12-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A claimant brings a fast-track personal injury claim and loses at trial with no finding of dishonesty and no strike out. Which best describes the likely costs outcome?",
+          "options": ["QOCS generally protects the claimant from paying the defendant's costs, and any recoverable costs in the claim would in any event have been governed by the fast track's fixed costs regime rather than standard or indemnity assessment", "The claimant automatically pays the defendant's costs, assessed on the indemnity basis, because the claimant lost", "QOCS never applies to fast-track claims, only to multi-track claims", "Track allocation is irrelevant once QOCS applies"],
+          "correctIndex": 0,
+          "explanation": "QOCS is the governing protection here — no exception is made out, so the claimant is shielded from paying the defendant's costs despite losing. Track allocation is a separate, additional layer: it would have determined the costs regime for any recoverable costs in the claim, and here it points to the fast track's fixed costs regime rather than CPR 44.3 assessment."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-12-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under CPR 44.2(2), what is the general rule as to costs where one party is successful?",
+      "options": ["The unsuccessful party will be ordered to pay the costs of the successful party", "Each party bears its own costs regardless of outcome", "The court has no power to order costs in civil claims", "Costs are always shared equally between the parties"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which of the following best describes the court's costs power under CPR 44.2?",
+      "options": ["A general discretion, guided by the rule that costs follow the event but not limited to it", "A fixed, non-discretionary rule with no scope for departure", "A power that only arises if both parties expressly request a costs order", "A power exercised solely by reference to which party issued proceedings first"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "On the standard basis of assessment under CPR 44.3, how is doubt about whether a cost was reasonably and proportionately incurred resolved?",
+      "options": ["In favour of the paying party", "In favour of the receiving party", "By reference to which party has greater financial resources", "Doubt is never resolved — the disputed cost is simply disallowed"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following is generally true of QOCS in personal injury claims?",
+      "options": ["It protects a losing claimant from paying the defendant's costs in most cases, subject to defined exceptions", "It prevents a winning claimant from recovering its own costs", "It applies to all civil claims, not only personal injury", "It removes the court's costs discretion under CPR 44.2 entirely"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT a recognised exception to QOCS protection in a personal injury claim?",
+      "options": ["The claim is found to be fundamentally dishonest", "The claim is struck out for disclosing no reasonable grounds or as an abuse of process", "The claimant simply loses the claim on the medical evidence, with no dishonesty finding", "The claim is not, or ceases to be, a personal injury claim for QOCS purposes"],
+      "correctIndex": 2,
+      "trapExplanation": "Simply losing on the merits is exactly the ordinary situation QOCS is designed to protect against — the exceptions require something more specific, such as fundamental dishonesty or a strike-out ground, not a genuine but unsuccessful claim."
+    },
+    {
+      "itemId": "sqe1-dr-12-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following best describes indemnity basis assessment under CPR 44.3, compared with the standard basis?",
+      "options": ["Proportionality does not apply, and doubt is resolved in favour of the receiving party rather than the paying party", "It is simply the standard basis with a higher hourly rate applied", "It applies automatically to every costs order the court makes", "It applies only to claims allocated to the multi-track"],
+      "correctIndex": 0,
+      "trapExplanation": "Indemnity costs are not the default, and track allocation has nothing to do with which basis applies — the defining features are the absence of a proportionality requirement and doubt being resolved in the receiving party's favour, which makes it markedly more generous than the standard basis."
+    },
+    {
+      "itemId": "sqe1-dr-12-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant benefits from QOCS but is separately ordered to pay some of the defendant's costs following an unsuccessful Part 36 dynamic. Following Ho v Adelekun, what is the effect?",
+      "options": ["The defendant's costs order can be set off against costs owed to the claimant, capping the claimant's real exposure at sums it has actually recovered", "QOCS is disapplied entirely the moment any costs order is made against the claimant", "The claimant must pay the defendant's costs in full, in addition to keeping all damages recovered", "Ho v Adelekun has no bearing on QOCS and concerns an unrelated area of costs law"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming any adverse costs order simply overrides QOCS. Ho v Adelekun instead permits a set-off mechanism, which protects the policy purpose of QOCS — keeping the claimant's real financial exposure capped — without pretending no costs order was ever made."
+    },
+    {
+      "itemId": "sqe1-dr-12-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following claims is most likely to remain within the standard/indemnity costs assessment regime, rather than a fixed recoverable costs regime?",
+      "options": ["A complex, high-value claim allocated to the multi-track", "A claim allocated to the fast track", "A claim allocated to the intermediate track", "A claim allocated to the small claims track"],
+      "correctIndex": 0,
+      "trapExplanation": "It is tempting to assume all tracks now use fixed costs given the extension of the regime, but multi-track claims — by design the most complex and highest value — generally remain within the standard/indemnity assessment regime under CPR 44.3, precisely because a one-size fixed figure would not suit them."
+    },
+    {
+      "itemId": "sqe1-dr-12-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant in a personal injury claim is found by the trial judge to have deliberately exaggerated the extent of their injuries. Is the claimant still protected by QOCS if the claim otherwise fails?",
+      "options": ["No — a finding of fundamental dishonesty removes QOCS protection", "Yes — QOCS protection is absolute in personal injury claims", "Yes, provided the claimant still recovers some damages", "No, but only because the claim was allocated to the fast track"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A commercial claim (not personal injury) is allocated to the multi-track. The claimant wins at trial having conducted the litigation reasonably throughout. Which costs consequence is the starting point?",
+      "options": ["Costs follow the event under CPR 44.2, with the amount assessed on the standard basis under CPR 44.3, since there is no QOCS protection and no fixed costs regime for multi-track claims", "QOCS automatically protects the defendant from paying any costs, since QOCS applies to all claim types", "The claim is subject to fixed recoverable costs because it went to trial", "No costs order is possible because the claim was multi-track"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant behaves unreasonably during litigation — for example, pursuing hopeless applications purely to increase the claimant's costs. What is the most likely effect on a subsequent costs order in the claimant's favour?",
+      "options": ["The court may reflect the conduct in its costs order, potentially by awarding costs on the indemnity basis rather than the standard basis", "Conduct is never relevant to a costs order under CPR 44.2", "The claim is automatically reallocated to a different track as a result", "The defendant automatically forfeits the right to be heard on costs at all"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under CPR 44.2, which of the following is a factor the court must have regard to when deciding what costs order to make?",
+      "options": ["The conduct of the parties before and during the proceedings", "The number of solicitors instructed by either party", "The personal wealth of the losing party, considered in isolation from conduct", "Whether the claim was originally issued in the correct court building"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following claim allocations is most likely to attract fixed recoverable costs rather than standard or indemnity basis assessment, following the extension of the fixed costs regime?",
+      "options": ["A claim allocated to the intermediate track", "A high-value, factually complex claim allocated to the multi-track", "A claim that has settled before allocation to any track", "A claim proceeding in the Commercial Court under its own bespoke costs rules"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-12-test-14",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under CPR 44.13–44.17, QOCS is expressed to apply, as a default, to which category of claim?",
+      "options": ["Personal injury claims (including claims arising from death or personal injury)", "All money claims regardless of subject matter", "Only claims allocated to the multi-track", "Only claims where the claimant is a litigant in person"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is applying only one costs layer at a time — treating CPR 44.2's general rule, QOCS, and track-driven fixed costs as competing rules rather than a stack that has to be worked through in order. On these facts, ask first whether QOCS displaces the general rule, and only then ask which regime (fixed or assessed) governs the amount that regime allows.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.costs"
+  }
+}

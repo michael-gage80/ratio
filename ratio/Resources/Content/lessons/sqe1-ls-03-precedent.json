@@ -1,0 +1,330 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-03",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 3,
+  "topicId": "sqe1.legal-system.precedent",
+  "title": "Precedent and the doctrine of stare decisis",
+  "subtitle": "How binding precedent operates up, down and across the court hierarchy",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the vertical and horizontal operation of the doctrine of precedent within the court hierarchy of England and Wales",
+    "Distinguish ratio decidendi from obiter dicta and explain the different binding effect each carries",
+    "Apply the concepts of distinguishing, overruling and departing from precedent, including the Supreme Court's 1966 Practice Statement, to a given scenario"
+  ],
+  "leadingAuthorities": [
+    { "citation": "London Street Tramways v London County Council [1898] AC 375", "role": "Established that the House of Lords was bound by its own previous decisions, subject only to correcting errors made per incuriam" },
+    { "citation": "Practice Statement (Judicial Precedent) [1966] 1 WLR 1234", "role": "Freed the House of Lords (now the Supreme Court) to depart from its own previous decisions where it appears right to do so" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Precedent is the operating system every other case-law-based SQE1 topic runs on. Where the profile shows understanding lagging behind knowledge, this note appears: 'You can define ratio and obiter — this lesson is about using that distinction correctly under exam pressure.'",
+    "profileHooks": {
+      "weakApplication": "You know the vocabulary already. The test pool leans on scenario questions — identifying which court is bound by what, and why — rather than bare definitions.",
+      "weakKnowledge": "Go through Parts 1 and 2 in full before moving on. Everything else in this module assumes fluency with the hierarchy and the ratio/obiter distinction."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "In 1898, the House of Lords ruled that it was bound by its own past decisions forever — even a decision it now believed was wrong. For nearly seventy years, English law's highest court could get something wrong once and be stuck defending it indefinitely. Understanding why that rule existed, and why it was eventually abandoned, tells you almost everything you need to know about how precedent actually works.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The structure of vertical and horizontal precedent, and the 1966 Practice Statement's operation, are settled law; how sparingly the Supreme Court should in practice use its power to depart from its own decisions remains a live and legitimately debated question among judges and commentators, and is flagged as such here rather than presented as settled."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The hierarchy and why lower courts are bound",
+        "voice": "expository — establishes the structural picture first",
+        "body": [
+          "The doctrine of stare decisis ('to stand by things decided') is the principle that courts should follow the reasoning of earlier decisions, particularly those of higher courts, in later cases raising the same point of law. Its core justification is consistency: like cases should be treated alike, and people should be able to predict how the law will apply to them without relitigating settled points every time.",
+          "In England and Wales, precedent operates within a defined court hierarchy: the Supreme Court sits at the top, below it the Court of Appeal (Civil and Criminal Divisions), then the High Court, and below that the county courts, magistrates' courts and Crown Court (which mainly decide facts rather than make precedent, though Crown Court sentencing remarks and some rulings can still be cited persuasively). Roughly parallel sits the Judicial Committee of the Privy Council, whose decisions are not binding in England and Wales but are highly persuasive, given its judges are typically also Supreme Court justices.",
+          "'Vertical' precedent describes the basic rule: a court lower in the hierarchy is bound to follow the ratio decidendi of a decision from any court above it, regardless of whether the lower court's judges agree with it. This is not optional or a matter of respect — it is a strict rule that gives the system its predictability."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Vertical precedent",
+            "definition": "The binding effect of a higher court's decision on every court beneath it in the hierarchy, regardless of whether the lower court agrees with the reasoning."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-03-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the principle that lower courts must follow the legal reasoning of decisions made by courts above them in the hierarchy.",
+          "acceptableAnswers": ["vertical precedent", "stare decisis", "binding precedent"],
+          "modelAnswer": "Vertical precedent — the rule that a court is bound by the ratio decidendi of decisions from any court above it in the hierarchy, regardless of whether its judges personally agree."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "1898 to 1966: the rule that bound itself",
+        "voice": "case-narrative — tells the history in sequence before naming the doctrine",
+        "body": [
+          "'Horizontal' precedent asks a different question: is a court bound by its own past decisions? For the House of Lords, the answer was settled with unusual rigidity in London Street Tramways v London County Council in 1898. The House of Lords held that, in the interests of certainty, it was bound by its own previous decisions and could not depart from them, except to correct a decision made per incuriam (in ignorance or forgetfulness of a relevant statute or binding authority).",
+          "This rule held for almost seventy years, and its cost became increasingly visible: the House of Lords could recognise that one of its own earlier decisions was simply wrong, or had become outdated by changing social or commercial conditions, and still be compelled to apply it, leaving reform entirely to Parliament — a slow and uncertain route for correcting judicial error.",
+          "In 1966, the House of Lords issued the Practice Statement (Judicial Precedent), announcing that it would in future depart from a previous decision of its own 'when it appears right to do so', while still treating the use of that power with caution — recognising the special need for certainty in areas like criminal law and contracts, where people structure their affairs around settled law. That power transferred to the Supreme Court when it replaced the House of Lords' judicial function in 2009, and the Court has continued to exercise it sparingly."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "London Street Tramways v London County Council",
+            "citation": "[1898] AC 375",
+            "court": "House of Lords",
+            "year": 1898,
+            "factsShort": "The House of Lords considered whether it was bound to follow its own previous decisions.",
+            "ratioShort": "The House of Lords held it was bound by its own past decisions, in the interests of certainty, subject only to the narrow exception of correcting a decision made per incuriam.",
+            "expanded": {
+              "facts": "The case concerned compensation for tramway undertakings, but its lasting significance lies entirely in the procedural question the House of Lords addressed: whether it could depart from its own earlier rulings.",
+              "judgmentExtract": "The House held that certainty in the law was of such importance that the House of Lords must be bound by its own decisions, even where a later panel considered an earlier decision wrong, save for the narrow per incuriam exception.",
+              "significance": "This decision fixed the House of Lords' horizontal precedent rule for nearly seven decades, and the difficulties it caused are the direct reason the 1966 Practice Statement was issued."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-03-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these developments in the order they occurred.",
+          "items": [
+            "London Street Tramways establishes that the House of Lords is bound by its own past decisions",
+            "The rigid self-binding rule causes difficulty as some decisions become outdated or are seen as wrong",
+            "The House of Lords issues the 1966 Practice Statement, permitting departure from its own past decisions",
+            "The Supreme Court, from 2009, inherits and continues to exercise that power cautiously"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the arc: an 1898 rule creating rigidity, decades of accumulating difficulty, the 1966 fix, and its continuation in the modern Supreme Court.",
+          "feedbackIncorrect": "Check the order again — the self-binding rule came first (1898), the problems it caused built up over decades, and only then did the 1966 Practice Statement create the escape route the Supreme Court still uses today."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Ratio decidendi versus obiter dicta",
+        "voice": "structural — a precise, reference-style distinction",
+        "body": [
+          "Not everything a judge writes in a judgment is binding, even in a case that otherwise sets precedent. The ratio decidendi ('the reason for deciding') is the legal principle actually necessary to reach the court's decision on the facts before it — this is the part of the judgment that binds later courts under vertical precedent.",
+          "Obiter dicta ('things said by the way') are observations, comments or reasoning in the judgment that were not necessary to the decision — for example, a judge speculating about how the case might have been decided on different facts, or discussing a related point of law not actually before the court. Obiter dicta are never binding, though they can be highly persuasive, especially when they come from a senior court and are carefully reasoned.",
+          "Identifying the ratio is not always mechanical, particularly in multi-judge appellate decisions where several judges may reach the same outcome by different routes, or write differing formulations of the underlying principle — later courts sometimes have to work out the ratio of an earlier case for themselves, which is itself a live source of legal argument."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Ratio vs obiter at a glance",
+            "points": [
+              "Ratio decidendi: the legal principle necessary to the actual decision on the facts — binding on lower courts",
+              "Obiter dicta: everything else said in the judgment — never binding, but potentially persuasive",
+              "In multi-judge decisions, extracting a single agreed ratio can itself require careful analysis",
+              "A statement's persuasive weight generally tracks the seniority of the court and the care of the reasoning, even where it is strictly obiter"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-03-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "In a burglary appeal, the Court of Appeal (A) states the legal test for what counts as 'entry' as a building — necessary to decide the appeal — and (B) adds, in passing, a comment about how a hypothetical case involving a different offence entirely might have been decided. Which statement is the ratio decidendi?",
+          "scenarioA": "The stated legal test for 'entry', which the court needed in order to decide the actual appeal before it",
+          "scenarioB": "The passing comment speculating about how an unrelated hypothetical case might be decided",
+          "correctScenario": "A",
+          "explanation": "A is the ratio — the reasoning genuinely necessary to reach the decision on the facts before the court. B is a classic example of obiter dicta: a comment on a hypothetical, unrelated situation not before the court, which is never binding, however persuasive it might be."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Distinguishing, overruling and departing",
+        "voice": "practical — sets out the tools courts actually use to escape unwanted precedent",
+        "body": [
+          "Being bound by precedent doesn't mean a court has no room to manoeuvre. Distinguishing is the most commonly used tool: a court identifies a material factual difference between the case before it and the earlier precedent, and holds that the earlier ratio simply does not apply to these different facts. This is available to any court, including one otherwise bound by the earlier decision, and does not require overruling anything.",
+          "Overruling is different and more drastic: a higher court, in a later case, holds that an earlier decision (usually of a lower court, or occasionally its own earlier decision under the Practice Statement) was wrongly decided, and replaces its ratio going forward. Overruling operates prospectively from that later case; it does not automatically reopen the outcome of the original case, whose result between the original parties normally stands.",
+          "Departing is the specific term for the Supreme Court (or House of Lords, before 2009) using its 1966 Practice Statement power to decline to follow one of its own previous decisions. It is reserved for cases where the Court considers it genuinely right to do so — for example where a past decision has proved unworkable, has been overtaken by developments in the law elsewhere, or produces injustice — but it is not exercised routinely, precisely because certainty in the law is itself a value the Court weighs heavily, particularly in areas like the interpretation of contracts or criminal liability."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often use 'overrule' and 'distinguish' interchangeably, or say a Court of Appeal panel can 'overrule' a decision of a different Court of Appeal panel simply because it disagrees with it.",
+            "whyItsWrong": "Distinguishing avoids a precedent on the facts without disturbing its authority at all. Overruling actually displaces the earlier ratio and requires a court with the necessary standing to do it — the Court of Appeal cannot generally overrule its own previous decisions outside narrow recognised exceptions, and certainly cannot overrule a decision of the Supreme Court above it."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-03-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "The Court of Appeal is faced with a Supreme Court decision it considers wrongly decided, but the facts of the current case are materially identical to that Supreme Court case. What is the Court of Appeal's most accurate option?",
+          "options": ["It may overrule the Supreme Court decision if it strongly disagrees with the reasoning", "It must follow the Supreme Court decision; it has no power to overrule or depart from a decision of a court above it in the hierarchy", "It may distinguish the case purely because it disagrees with the outcome, even without a material factual difference", "It may apply the 1966 Practice Statement itself to depart from the Supreme Court decision"],
+          "correctIndex": 1,
+          "explanation": "A lower court, however senior, cannot overrule or depart from a decision of a court above it — that power belongs only to the Supreme Court over its own past decisions, via the Practice Statement. With materially identical facts, distinguishing is not genuinely available either, so the Court of Appeal must follow the Supreme Court decision."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Reading the Practice Statement itself",
+        "voice": "direct — close reading of the operative text",
+        "body": [
+          "It's worth reading the 1966 Practice Statement closely, because its careful wording is often more nuanced than the shorthand version students learn ('the House of Lords/Supreme Court can depart from its own decisions'). The actual statement balances the value of departure against the value of certainty explicitly, rather than treating departure as a routine option.",
+          "Notice what the Practice Statement does not do: it does not touch vertical precedent at all (lower courts remain just as bound by Supreme Court decisions as before), and it does not give the Court of Appeal or any other court the same self-departure power — that remains, deliberately, confined to the Supreme Court alone. This is a frequently tested distinction: many students correctly remember that 1966 changed something about precedent, but wrongly assume it loosened the rules for every court, rather than only the very top of the hierarchy.",
+          "In practice, the Supreme Court invokes its Practice Statement power only rarely — a handful of times across matters as significant as accessory liability in criminal law — precisely because the certainty argument that justified London Street Tramways in 1898 has not disappeared; it has simply been weighed, since 1966, against the competing risk of perpetuating a decision the Court now regards as clearly wrong."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Practice Statement (Judicial Precedent) [1966] 1 WLR 1234 (summary of the operative text)",
+            "text": "Their Lordships regard the use of precedent as an indispensable foundation for deciding what is the law, and its application by the House as at least a sure guide to the conduct of business. They nevertheless recognise that too rigid an adherence to precedent may lead to injustice in a particular case and also unduly restrict the proper development of the law. They propose, therefore, to modify their present practice and, while treating former decisions of this House as normally binding, to depart from a previous decision when it appears right to do so.",
+          "elements": ["Precedent remains the normal, default rule", "Departure is reserved for cases of injustice or where legal development is unduly restricted", "Departure applies only to the House's/Court's own previous decisions", "The power is to be exercised only 'when it appears right to do so' — not routinely"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-03-check-05",
+          "type": "statuteParser",
+          "skillTag": "application",
+          "prompt": "Applying the wording of the 1966 Practice Statement above, which of the following is the most accurate statement of what it permits?",
+          "options": ["Any court in England and Wales may depart from any binding precedent whenever it considers the precedent unjust", "The Supreme Court (as successor to the House of Lords) may depart from its own previous decisions where it appears right to do so, while treating precedent as the normal rule", "The Court of Appeal gained the same departure power as the House of Lords from 1966 onwards", "The Practice Statement abolished the doctrine of precedent entirely"],
+          "correctIndex": 1,
+          "explanation": "The Practice Statement is narrowly confined: it lets the House of Lords (now Supreme Court) depart from its own past decisions where it appears right to do so, while stating precedent remains the normal, indispensable foundation — it says nothing about any other court's powers."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-03-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which term describes the binding effect of a higher court's decision on every court below it in the hierarchy?",
+      "options": ["Horizontal precedent", "Vertical precedent", "Obiter dicta", "The mischief rule"],
+      "correctIndex": 1,
+      "explanation": "Vertical precedent is the rule that a lower court is bound to follow the ratio decidendi of a decision from any court above it in the hierarchy."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the ratio decidendi of a case?",
+      "options": ["Every word written by the judge in the judgment", "The legal principle actually necessary to reach the court's decision on the facts before it", "A summary of the facts as found by the trial judge", "A statement made by counsel during argument"],
+      "correctIndex": 1,
+      "explanation": "The ratio decidendi is the legal reasoning necessary to the actual decision — this is the part of a judgment that binds later courts."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A solicitor describes obiter dicta as 'a part of the judgment that is never useful and can always be ignored.' Is this an accurate description?",
+      "options": ["Yes — obiter dicta has no legal relevance whatsoever and should never be cited", "No — obiter dicta is never strictly binding, but can be highly persuasive, particularly from a senior court with carefully reasoned observations", "Yes, because only the ratio of a case can ever be cited in court", "No — obiter dicta is in fact always binding on lower courts"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat 'non-binding' as meaning 'irrelevant' — the two are not the same. Obiter dicta lacks binding force but can carry real persuasive weight, especially when it comes from a senior court.",
+      "explanation": "Obiter dicta is never binding, but it is not worthless — carefully reasoned obiter from a senior court is regularly cited and can be highly persuasive on later courts."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Before 1966, what was the House of Lords' position on being bound by its own previous decisions, per London Street Tramways?",
+      "options": ["It was never bound by its own past decisions", "It was bound by its own past decisions, subject only to a narrow exception for decisions made per incuriam", "It was bound only for criminal cases, not civil cases", "It could depart from its own decisions whenever a majority of judges disagreed with the outcome"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes assume the 1898 rule had broad exceptions built in — it did not. The per incuriam exception (a decision made in ignorance of a relevant binding authority or statute) was the only recognised escape route until 1966.",
+      "explanation": "London Street Tramways established a strict self-binding rule for the House of Lords, with per incuriam as effectively the only exception, which is precisely why the 1966 Practice Statement was needed."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Reading the operative wording of the 1966 Practice Statement, which court's decisions does it allow the Supreme Court to depart from?",
+      "options": ["Decisions of the Court of Appeal", "Its own previous decisions (as successor to the House of Lords)", "Decisions of the High Court", "Decisions of the Privy Council"],
+      "correctIndex": 1,
+      "explanation": "The Practice Statement is confined to the House of Lords' (now Supreme Court's) own previous decisions — it says nothing about the Court's power over decisions of any other court."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "The Practice Statement states that precedent will be treated as 'normally binding' but departed from 'when it appears right to do so'. What does this wording most accurately signal about how the power should be used?",
+      "options": ["The power should be used in the majority of appeals reaching the Supreme Court", "The power is intended to be used sparingly, with precedent remaining the default position", "The wording has no practical effect on how the power is actually exercised", "The power can only be used in criminal cases, never civil ones"],
+      "correctIndex": 1,
+      "explanation": "The wording deliberately frames departure as an exception to a rule that remains 'normally binding' — consistent with the Supreme Court's cautious, infrequent use of the power in practice."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-07",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A Court of Appeal panel is bound by a decision of another Court of Appeal panel from ten years earlier, but considers the earlier decision wrong. Applying what the 1966 Practice Statement actually covers, can the Court of Appeal use it to depart from that earlier decision?",
+      "options": ["Yes — the Practice Statement gives every appellate court the same departure power", "No — the Practice Statement applies only to the House of Lords/Supreme Court's own decisions, not to Court of Appeal decisions", "Yes, but only if the Supreme Court gives prior written permission", "No — because the Court of Appeal has no power to depart from any earlier decision under any circumstances"],
+      "correctIndex": 1,
+      "explanation": "The Practice Statement's departure power is confined to the House of Lords/Supreme Court's own past decisions. Whether and how the Court of Appeal can depart from its own earlier decisions is governed by a separate, narrower set of recognised exceptions, not by the 1966 Practice Statement."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A High Court judge is faced with a Court of Appeal decision directly on point but factually indistinguishable from the case before her. She personally believes the Court of Appeal decision was wrongly reasoned. What must she do?",
+      "options": ["Follow the Court of Appeal decision, since she is bound by it under vertical precedent regardless of her personal view", "Depart from it, since a judge may always follow her own reasoning over that of a higher court", "Refer the case directly to the Supreme Court for a ruling before proceeding", "Apply the 1966 Practice Statement to overrule the Court of Appeal decision"],
+      "correctIndex": 0,
+      "explanation": "Vertical precedent binds the High Court to the ratio of a directly applicable Court of Appeal decision, regardless of the judge's personal view of its correctness — only distinguishing on the facts, or a higher court's later ruling, can change that outcome."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "The Supreme Court decides a case and, in its judgment, also comments in passing on how a hypothetical scenario involving a different statutory scheme might be resolved, though that scenario was not before the Court. A County Court later faces exactly that hypothetical scenario for real. What is the status of the Supreme Court's earlier comment?",
+      "options": ["It is binding ratio decidendi and the County Court must follow it", "It is obiter dicta; highly persuasive given it comes from the Supreme Court, but not strictly binding", "It has no legal relevance at all and cannot be cited", "It automatically becomes binding once the hypothetical scenario actually occurs"],
+      "correctIndex": 1,
+      "explanation": "A comment on a hypothetical scenario not actually before the court is, by definition, obiter dicta — not necessary to the decision reached. It remains highly persuasive given its Supreme Court source, but the County Court is not strictly bound to follow it."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A later court considers an earlier precedent but identifies that the facts of the current case differ in a material way from the earlier case, so it declines to apply the earlier ratio. What has the later court done?",
+      "options": ["Overruled the earlier decision", "Distinguished the earlier decision", "Departed from the earlier decision under the 1966 Practice Statement", "Ignored binding precedent without justification"],
+      "correctIndex": 1,
+      "explanation": "Identifying a material factual difference and holding that the earlier ratio does not apply to it is distinguishing — a technique available to any court and one that leaves the earlier decision's authority intact."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "The Supreme Court, in a later case, expressly states that one of its own previous decisions was wrongly decided and should no longer be followed, invoking the 1966 Practice Statement. What is the effect on the earlier case's original outcome between the original parties?",
+      "options": ["The original parties' case is automatically reopened and reversed", "The original decision's outcome between those parties is unaffected; the departure operates for future cases going forward", "The original decision is treated as if it never existed for any purpose", "The original parties can claim compensation from the Supreme Court"],
+      "correctIndex": 1,
+      "explanation": "Departing from a previous decision changes the law that later cases will apply; it does not itself reopen or reverse the result already reached between the parties to the earlier case."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "Decisions of the Judicial Committee of the Privy Council are best described, from the perspective of the courts of England and Wales, as:",
+      "options": ["Strictly binding on the Supreme Court", "Not binding, but highly persuasive, given the overlap in judicial personnel with the Supreme Court", "Binding only on the Court of Appeal", "Irrelevant and never cited"],
+      "correctIndex": 1,
+      "explanation": "The Privy Council sits outside the domestic hierarchy of England and Wales, so its decisions are not binding there, but they are treated as highly persuasive, particularly because its panels are typically drawn from Supreme Court justices."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A student argues: 'Since the 1966 Practice Statement, the Supreme Court departs from its own previous decisions relatively often, because certainty in the law is no longer considered important.' Is this an accurate summary?",
+      "options": ["Yes, entirely accurate — certainty stopped mattering to the Court after 1966", "No — the Practice Statement itself continues to emphasise certainty, and in practice the power to depart is used sparingly, not routinely", "Yes, because the Practice Statement removed any restriction on how often the power can be used", "No — the Supreme Court has never once used the power since 1966"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting error is to read the 1966 change as abandoning certainty altogether. The Practice Statement's own wording preserves precedent as the normal rule; departure is the exception, used only rarely, not a sign that certainty stopped mattering.",
+      "explanation": "The Practice Statement explicitly frames precedent as remaining 'normally binding', and departure is exercised sparingly in practice — the change did not abandon the value of certainty, it simply created a careful, exceptional escape route."
+    },
+    {
+      "itemId": "sqe1-ls-03-test-14",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A first-instance High Court decision on a novel point of law is later cited in the Court of Appeal in an unrelated case, where it is treated as a useful but non-binding guide. What best explains this treatment?",
+      "options": ["High Court decisions bind the Court of Appeal under vertical precedent", "A High Court decision cannot bind a court above it in the hierarchy, so the Court of Appeal may treat it only as persuasive", "The High Court decision automatically becomes obiter once cited elsewhere", "The Court of Appeal is required by the 1966 Practice Statement to follow it"],
+      "correctIndex": 1,
+      "explanation": "Vertical precedent only binds a court to decisions from courts above it in the hierarchy. A High Court decision sits below the Court of Appeal, so it can never bind that court — at most it is persuasive."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is conflating distinguishing, overruling and departing, or assuming the 1966 Practice Statement loosened precedent rules for every court rather than only the Supreme Court over its own past decisions. Keep the hierarchy, the ratio/obiter line, and exactly which court holds which power straight, and most scenario questions here resolve cleanly.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.precedent"
+  }
+}

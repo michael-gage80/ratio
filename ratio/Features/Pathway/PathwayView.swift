@@ -12,9 +12,9 @@ struct PathwayView: View {
     @State private var selected: Module?
     @State private var peeking: String?
 
-    private var mine: [Module] { student.profile.modules ?? [] }
-    /// The student's modules, then every other module.
-    private var modules: [Module] { mine + Module.allCases.filter { !mine.contains($0) } }
+    private var mine: [Module] { student.modules }
+    /// The student's modules, then the rest of their programme's.
+    private var modules: [Module] { mine + student.programme.modules.filter { !mine.contains($0) } }
     private var module: Module { selected ?? modules.first ?? .crime }
 
     var body: some View {
@@ -22,7 +22,7 @@ struct PathwayView: View {
         let groups = TopicGroup.groups(of: lessons)
         ScrollView {
             VStack(alignment: .leading, spacing: RatioSpace.m) {
-                RatioPageHeader(eyebrow: [student.profile.year.map { "Year \($0)" }, "Your modules first"].compactMap { $0 }.joined(separator: " · "),
+                RatioPageHeader(eyebrow: [student.programme == .sqe1 ? "SQE1" : student.profile.year.map { "Year \($0)" }, "Your modules first"].compactMap { $0 }.joined(separator: " · "),
                                 title: "Lessons")
                     .padding(.horizontal, RatioSpace.m)
 
@@ -90,7 +90,7 @@ struct PathwayView: View {
     private func contentsHeader(lessons: [Lesson], topics: Int) -> some View {
         let count = lessons.isEmpty ? Spine.lessons(in: module).count : lessons.count
         let title = Text("\(module.title) \(Text("contents").italic().foregroundStyle(Color.ratioInk2))").ratioFont(.h2)
-        let summary = Text(lessons.isEmpty ? "\(count) lessons planned" : "\(topics) topics · \(count) lessons")
+        let summary = Text(lessons.isEmpty ? (count == 0 ? "In preparation" : "\(count) lessons planned") : "\(topics) topics · \(count) lessons")
             .ratioFont(.monoLabel)
             .foregroundStyle(Color.ratioInk2)
         return VStack(alignment: .leading, spacing: RatioSpace.xs) {
@@ -237,7 +237,9 @@ struct PathwayView: View {
     /// Lessons for a module still being written, from the spine: visible, locked, no scores.
     private var planned: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("In preparation. These are the lessons planned for \(module.title); each opens once it's been reviewed.")
+            Text(Spine.lessons(in: module).isEmpty
+                 ? "In preparation. Lessons for \(module.title) open here as each one is written and reviewed."
+                 : "In preparation. These are the lessons planned for \(module.title); each opens once it's been reviewed.")
                 .ratioFont(.small)
                 .italic()
                 .foregroundStyle(Color.ratioInk2)

@@ -1,0 +1,345 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-15",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 15,
+  "topicId": "sqe1.legal-system.aml-financial-crime",
+  "title": "Anti-money laundering and financial crime",
+  "subtitle": "Client due diligence, suspicious activity reports, and the POCA 2002 offences every solicitor must be able to spot",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain a solicitor's client due diligence, source-of-funds, and suspicious activity reporting obligations under the Money Laundering Regulations",
+    "State the principal money laundering offences under POCA 2002, ss 327–333, including the tipping-off offence",
+    "Apply these obligations to conveyancing and client-account fact patterns, and explain why this work carries particular AML risk"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017", "role": "Sets client due diligence, source-of-funds, and reporting obligations for regulated firms" },
+    { "citation": "Proceeds of Crime Act 2002, ss 327–333", "role": "Creates the principal money laundering offences and the tipping-off offence" },
+    { "citation": "Proceeds of Crime Act 2002, s 335", "role": "Provides the appropriate consent (DAML) mechanism allowing a transaction to proceed lawfully" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the last lesson in the Legal System and Legal Services module, and it's the one with the sharpest personal stakes: getting AML wrong isn't a client-care failure, it's a criminal offence a solicitor can personally commit. Where the profile shows application lagging knowledge, this note appears: 'You can define the offences — the tested skill is spotting the fact pattern that triggers one.'",
+    "profileHooks": {
+      "weakApplication": "You know the framework. This pool is weighted towards recognising which offence, if any, arises on a given set of facts — read every scenario for the moment suspicion should have been triggered.",
+      "weakKnowledge": "Hold the three principal offences and the tipping-off offence precisely before moving to application — mixing up concealing, arranging, and acquiring is the single most common error in this area."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A conveyancing solicitor completes a straightforward-looking property purchase: a cash buyer, a slightly unusual corporate structure, funds arriving from an account she's never seen before. Nothing about the file screams 'crime'. That's precisely the point — this lesson closes the module by looking at the obligations that exist because money laundering is designed to look ordinary.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. Anti-money laundering regulation is reviewed and updated periodically, including amendments to the Money Laundering Regulations and related SRA and Legal Sector Affinity Group guidance. Check the current Money Laundering Regulations and any amending statutory instruments against this content at each lawStatedAt refresh."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Client due diligence: knowing who you're actually acting for",
+        "voice": "grounding — establishes the baseline obligation before the exceptions and risk tiers",
+        "body": [
+          "Solicitors carrying out certain kinds of work — conveyancing, company formation, trust and tax advice, and handling client money among them — are 'relevant persons' under the Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017 (the MLRs). That status brings a set of obligations that apply before the file is even opened properly.",
+          "The core obligation is client due diligence (CDD): verifying the identity of the client, and of any beneficial owner behind the client, using documents or information from a reliable and independent source, before establishing the business relationship or carrying out an occasional transaction above the relevant threshold. This isn't a box-ticking formality — it's the mechanism that stops a solicitor from unknowingly acting for a shell company or a nominee.",
+          "CDD isn't one-size-fits-all. Standard due diligence applies by default; simplified due diligence may apply where the regulations recognise a lower risk; enhanced due diligence (EDD) is mandatory in higher-risk situations — dealing with a politically exposed person (PEP), a client connected to a high-risk third country, or a transaction that is complex, unusually large, or has no apparent economic or lawful purpose."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Client due diligence (CDD)",
+            "definition": "The process of identifying and verifying a client and any beneficial owner, using reliable and independent evidence, before or during the establishment of a business relationship covered by the Money Laundering Regulations."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-15-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the Money Laundering Regulations, is enhanced due diligence mandatory when a client is identified as a politically exposed person?",
+          "options": ["Yes — PEP status is a recognised trigger for mandatory enhanced due diligence", "No — PEP status only matters for criminal legal aid eligibility"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. PEP status is one of the clearest, most frequently tested triggers for mandatory EDD.",
+          "feedbackIncorrect": "Not quite — PEP status is one of the regulations' clearest triggers for mandatory enhanced due diligence, not an optional or discretionary consideration."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Source of funds, and what happens when something looks wrong",
+        "voice": "structural — walks the reporting process in the order it actually happens",
+        "body": [
+          "Alongside identity, the regulations require firms to understand where a client's money is coming from — a source-of-funds check. This matters most acutely in conveyancing, where large sums move quickly and an opaque or implausible funding story is often the first and only warning sign a solicitor will see.",
+          "When something does look wrong — a solicitor knows or suspects, or has reasonable grounds to know or suspect, that property is criminal property, or that a transaction may involve money laundering — the obligation is not to confront the client or quietly decline the retainer. It's to make an internal report to the firm's nominated officer (often called the MLRO).",
+          "If the nominated officer agrees the suspicion is well founded, they submit a Suspicious Activity Report (SAR) to the National Crime Agency (NCA). Where proceeding with the transaction would otherwise amount to a principal money laundering offence, the firm may need to seek 'appropriate consent' under POCA 2002 s 335 before continuing — a defence against money laundering, commonly abbreviated DAML, that allows the transaction to go ahead lawfully once consent is given or a statutory notice period expires without refusal."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "From suspicion to a lawful transaction",
+            "description": "The sequence a solicitor follows once suspicion of money laundering arises.",
+            "nodes": [
+              { "id": "suspicion", "label": "Solicitor knows or suspects criminal property is involved" },
+              { "id": "internal", "label": "Internal report made to the firm's nominated officer" },
+              { "id": "sar", "label": "Nominated officer submits a SAR to the NCA, if satisfied" },
+              { "id": "consent", "label": "Appropriate consent (DAML) sought under s 335 if needed to proceed" },
+              { "id": "proceed", "label": "Transaction proceeds lawfully once consent is given, or the notice period expires" }
+            ],
+            "edges": [
+              { "from": "suspicion", "to": "internal" },
+              { "from": "internal", "to": "sar" },
+              { "from": "sar", "to": "consent" },
+              { "from": "consent", "to": "proceed" }
+            ],
+            "textAlternative": "Suspicion of criminal property triggers an internal report to the nominated officer; if satisfied, the officer submits a SAR to the NCA; where the transaction would otherwise be a principal offence, appropriate consent is sought under s 335; the transaction proceeds lawfully once consent is given or the statutory notice period expires without refusal."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-15-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a solicitor follows once suspicion of money laundering arises on a transaction.",
+          "items": ["Solicitor forms a suspicion about the source of funds", "Internal report made to the nominated officer", "Nominated officer submits a SAR to the NCA", "Appropriate consent obtained before the transaction proceeds"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the pathway — the individual solicitor never contacts the NCA directly; everything routes through the nominated officer first.",
+          "feedbackIncorrect": "Check the order — the solicitor's own suspicion always goes to the firm's nominated officer first, who decides whether a SAR to the NCA is warranted, before any question of consent arises."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Three ways to commit a principal offence",
+        "voice": "reference-style — a part students will return to for precise distinctions",
+        "body": [
+          "POCA 2002 creates three principal money laundering offences, and SQE1 tests the ability to tell them apart on facts, not just recite their names. All three require that the property in question is, in whole or part, criminal property, and that the defendant knows or suspects this.",
+          "Section 327 — concealing — covers concealing, disguising, converting, transferring, or removing criminal property from the jurisdiction. Section 328 — arranging — covers entering into or becoming concerned in an arrangement which the defendant knows or suspects facilitates another person's acquisition, retention, use, or control of criminal property; this is the one most often committed by a professional adviser structuring a deal, rather than by the launderer themselves. Section 329 — acquiring — covers simply acquiring, using, or possessing criminal property.",
+          "The distinction that matters in practice: a solicitor rarely concerns themselves with s 327 or s 329 directly, since they're not usually the one hiding or personally holding the property. The offence most likely to catch a solicitor off guard is s 328 — becoming 'concerned in an arrangement' simply by doing their normal professional job (drafting, transferring funds, completing a deal) once they know or suspect what the arrangement actually facilitates."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The three principal offences",
+            "points": [
+              "s 327 — concealing, disguising, converting, transferring, or removing criminal property",
+              "s 328 — entering into or becoming concerned in an arrangement facilitating another's acquisition, retention, use, or control of criminal property",
+              "s 329 — acquiring, using, or possessing criminal property",
+              "All three require knowledge or suspicion that the property is, wholly or partly, criminal property"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-15-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario most clearly illustrates the s 328 'arrangement' offence, rather than s 327 or s 329?",
+          "scenarioA": "A solicitor drafts and completes the legal documentation for a property purchase, having come to know that the purchase funds derive from a client's drug trafficking, thereby facilitating the client's acquisition of the property.",
+          "scenarioB": "A courier is found in physical possession of a bag of cash he knows to be the proceeds of theft, with no involvement in any transaction or arrangement.",
+          "correctScenario": "A",
+          "explanation": "Scenario A is the textbook s 328 pattern: the solicitor becomes concerned in an arrangement (completing the purchase) that facilitates another's acquisition of criminal property. Scenario B is straightforward possession, which sits under s 329."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The tipping-off offence: why you can't warn the client",
+        "voice": "direct — sets up the trap this offence exists to prevent",
+        "body": [
+          "Once a solicitor has made an internal report, or knows or suspects an investigation into money laundering is being contemplated or carried out, a further offence comes into play: tipping off, under s 333A. It is an offence for a person in the regulated sector to disclose that a SAR has been made, or that an investigation is being considered, where that disclosure is likely to prejudice the investigation.",
+          "This creates a genuinely uncomfortable position for a solicitor mid-transaction: the client who is the subject of the suspicion cannot simply be told 'I've reported you' or even 'there's a delay because of a compliance issue', if that disclosure would tip them off. Client care duties of openness give way to this statutory prohibition.",
+          "The trap here is procedural, not conceptual: students often correctly identify that a SAR was needed, then wrongly assume the solicitor can explain the delay to the client in general terms. The safer, and legally required, approach is to give no explanation that could reveal a report has been made, and to take advice from the firm's nominated officer or MLRO on exactly what, if anything, can be said."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often think a vague, non-specific explanation to the client ('there's a delay for compliance reasons') is a safe way to balance client care against the reporting obligation.",
+            "whyItsWrong": "Even a vague explanation can amount to tipping off if it is likely to alert the client that a report has been or may be made, and thereby prejudice an investigation. The safe course is to say nothing that risks that inference, and to follow the firm's guidance on handling the client relationship during this period."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-15-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that creates a tipping-off risk under s 333A.",
+          "scenarioText": "A solicitor submits an internal report about a client's transaction. Days later, the client asks why completion is delayed. The solicitor tells the client, 'There's a compliance issue on this file that means I can't proceed just yet, and I'd rather not go into detail.'",
+          "tappableSpans": ["submits an internal report", "client asks why completion is delayed", "compliance issue on this file", "I'd rather not go into detail"],
+          "correctSpan": "compliance issue on this file",
+          "feedbackCorrect": "That's the risky disclosure. Even framed vaguely, referring to a 'compliance issue' at this specific point in the transaction risks alerting the client that a report has been made — exactly what s 333A is designed to prevent.",
+          "feedbackIncorrect": "Look again at what's actually said to the client, not just the fact that a report was made. The tipping-off risk lies in the wording used to explain the delay, however vague it seems."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why property and client accounts are where AML risk concentrates",
+        "voice": "synthesising — closes the module by pulling the risk picture together",
+        "body": [
+          "This module has covered how legal services are structured, funded, and regulated — and it closes here because AML obligations sit on top of almost everything else you've studied: they apply regardless of how a matter is funded, who the client is, or which area of law is involved, wherever the firm is undertaking relevant business.",
+          "Conveyancing and client-account work carry particular AML risk for structural reasons, not because property lawyers are careless. Property transactions move large sums quickly, provide a plausible commercial reason for complex fund flows (deposits, bridging finance, overseas buyers, corporate vehicles), and — critically — can complete the 'integration' stage of laundering, turning illicit funds into a clean, legitimate-looking asset. A solicitor's client account, holding client money separately and often in large sums, is itself an attractive vehicle for layering funds through an apparently respectable intermediary.",
+          "The practical takeaway to carry forward: AML vigilance isn't a specialist add-on for a minority of practice areas. Wherever a solicitor is handling client money, a property transaction, or a complex corporate structure, the CDD, source-of-funds, and reporting obligations in this lesson are live — and getting them wrong is not merely a professional conduct failure, but potentially a criminal offence."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Why conveyancing concentrates AML risk",
+            "definition": "High transaction values, plausible commercial cover for complex fund flows, and the ability to complete the 'integration' stage of laundering by converting illicit funds into a legitimate-looking asset (property) combine to make conveyancing and client-account work particularly attractive to launderers."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-15-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A residential conveyancing file involves a buyer purchasing entirely in cash through an overseas shell company, with funds arriving from an account unconnected to the company or its directors, and no plausible commercial explanation offered. What is the solicitor's correct first response?",
+          "options": ["Proceed to completion, since cash purchases are common and not inherently unlawful", "Apply enhanced due diligence and make further source-of-funds enquiries before proceeding, given the recognised risk indicators", "Refuse to act for the client without any further enquiry", "Advise the client informally that the file looks unusual and ask them to explain before recording anything"],
+          "correctIndex": 1,
+          "explanation": "The combination of a shell company, unconnected funding source, and no commercial explanation are recognised higher-risk indicators requiring enhanced due diligence and further enquiry — not an automatic refusal to act, and not an informal conversation that risks tipping off if suspicion later crystallises."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-15-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which regulations set out a solicitor's client due diligence obligations in relevant business such as conveyancing?",
+      "options": ["The Money Laundering Regulations 2017", "The Solicitors Accounts Rules", "The Legal Aid, Sentencing and Punishment of Offenders Act 2012", "The Bribery Act 2010"],
+      "correctIndex": 0,
+      "explanation": "The Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017 set out CDD, source-of-funds, and reporting obligations for regulated firms."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "To whom should a solicitor first report a suspicion of money laundering arising on a client's file?",
+      "options": ["The firm's nominated officer (MLRO)", "The National Crime Agency directly", "The client, so they can explain themselves", "The Solicitors Regulation Authority"],
+      "correctIndex": 0,
+      "explanation": "Reports are made internally to the firm's nominated officer first; the nominated officer, not the individual solicitor, decides whether to submit a SAR to the NCA."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is a recognised trigger for mandatory enhanced due diligence under the Money Laundering Regulations?",
+      "options": ["The client being a politically exposed person (PEP)", "The client paying by bank transfer rather than cash", "The transaction being for a first-time buyer", "The client instructing the firm for the first time"],
+      "correctIndex": 0,
+      "explanation": "PEP status is a clear, recognised trigger for mandatory EDD; routine features like bank transfer payment or being a new client are not, on their own."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which POCA 2002 offence is most directly aimed at a person simply having possession of property they know to be criminal property?",
+      "options": ["s 327 — concealing", "s 328 — arranging", "s 329 — acquiring, using, or possessing", "s 333A — tipping off"],
+      "correctIndex": 2,
+      "trapExplanation": "Students often default to s 327 because 'concealing' sounds closest to hiding stolen property, but simple possession without concealment, conversion, or transfer sits under s 329."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A solicitor completes a property transaction knowing the purchase funds are proceeds of fraud, thereby facilitating her client's acquisition of the property. Which principal offence has she most likely committed?",
+      "options": ["s 327 — concealing", "s 328 — arranging", "s 329 — acquiring", "No offence, because she did not personally benefit"],
+      "correctIndex": 1,
+      "trapExplanation": "The instinct to reach for s 327 (concealing) or to assume no offence arises without personal benefit are both traps. Completing the transaction is 'becoming concerned in an arrangement' facilitating another's acquisition of criminal property — the core s 328 pattern for professional advisers."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "After making an internal report, a solicitor tells her client 'I can't discuss why, but there's an issue with this file that means we can't complete yet.' Is this disclosure safe?",
+      "options": ["Yes — she gave no specific detail about a report or investigation", "No — even a vague reference to 'an issue' at this point risks tipping off the client that a report has been made", "Yes, provided the client does not ask any follow-up questions", "No, but only because she should have said nothing at all rather than mentioning a delay"],
+      "correctIndex": 1,
+      "trapExplanation": "Vagueness is not automatically safe. If the disclosure, in context, is likely to alert the client that a report or investigation may be underway, it can amount to tipping off regardless of how little detail is given."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A solicitor forms a suspicion that a transaction would otherwise amount to a principal money laundering offence if she completes it. What must she obtain before proceeding?",
+      "options": ["Written confirmation from the client that the funds are legitimate", "Appropriate consent (DAML) under POCA 2002, s 335", "Sign-off from the Solicitors Regulation Authority", "A costs indemnity from her firm's insurer"],
+      "correctIndex": 1,
+      "trapExplanation": "Client assurances are not a defence and carry no legal weight here. The statutory mechanism that allows the transaction to proceed lawfully is appropriate consent under s 335, obtained via the reporting process."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A buyer wants to purchase a property using funds transferred from a relative's account, with a plausible, documented explanation (a gifted deposit, evidenced by a bank statement and a signed gift letter). What is the appropriate level of scrutiny?",
+      "options": ["No due diligence is required once a family relationship is claimed", "Standard due diligence, verifying the explanation with the supporting documentation provided", "Automatic refusal to act, since third-party funding is always high risk", "Enhanced due diligence is mandatory in every case involving a gifted deposit"],
+      "correctIndex": 1,
+      "explanation": "A plausible, well-evidenced explanation for third-party funding is dealt with through standard due diligence and verification of the documentation, not automatic escalation or refusal."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A solicitor is asked to set up a corporate structure involving several offshore entities with no clear commercial rationale, for a client who is evasive about the ultimate beneficial owner. What should the solicitor do?",
+      "options": ["Proceed, since structuring corporate entities is routine legal work", "Apply enhanced due diligence, press for clarity on the beneficial owner, and consider whether a suspicion has arisen requiring an internal report", "Tell the client the structure looks suspicious and ask them to use a different firm", "Proceed but bill at a higher rate to reflect the additional risk"],
+      "correctIndex": 1,
+      "explanation": "Evasiveness about beneficial ownership combined with an unclear commercial rationale are recognised risk indicators triggering EDD and, if suspicion crystallises, the internal reporting obligation — not a commercial fix like higher billing, and not an informal warning that risks tipping off."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-10",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Why does conveyancing work carry particular AML risk compared with many other areas of legal practice?",
+      "options": ["Because conveyancing solicitors are less well trained in compliance than other specialists", "Because large sums move quickly and property can complete the 'integration' stage of laundering by converting illicit funds into a legitimate-looking asset", "Because conveyancing is the only area of practice covered by the Money Laundering Regulations", "Because conveyancing clients are statistically more likely to have a criminal record"],
+      "correctIndex": 1,
+      "explanation": "The risk is structural, not about individual competence or client profiling — high transaction values and the ability to convert illicit funds into a clean asset are what make conveyancing attractive to launderers."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "What state of mind is required for the principal offences under POCA 2002, ss 327–329?",
+      "options": ["Actual knowledge only — suspicion is not enough", "Knowledge or suspicion that the property is, wholly or partly, criminal property", "Strict liability — no knowledge or suspicion is required", "Wilful blindness proven beyond reasonable doubt in every case"],
+      "correctIndex": 1,
+      "explanation": "All three principal offences are satisfied by either knowledge or suspicion, not knowledge alone and not strict liability."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What is the purpose of the tipping-off offence under POCA 2002, s 333A?",
+      "options": ["To penalise firms that fail to keep adequate CDD records", "To prevent disclosures likely to prejudice a money laundering investigation, such as revealing that a SAR has been made", "To require solicitors to inform clients whenever a SAR is submitted", "To penalise clients who provide false source-of-funds information"],
+      "correctIndex": 1,
+      "explanation": "Section 333A is specifically aimed at disclosures that would prejudice an investigation, most commonly revealing that a report has been made or is being contemplated."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm's nominated officer submits a SAR and is waiting on the statutory notice period before completion can proceed. Which statement correctly describes the transaction's status?",
+      "options": ["The transaction must be abandoned entirely once a SAR is submitted", "The transaction may proceed lawfully once consent is given, or the notice period expires without a refusal", "The transaction can proceed immediately regardless of the SAR, since submitting it discharges all obligations", "The client must be told a SAR has been submitted before the transaction can proceed"],
+      "correctIndex": 1,
+      "explanation": "A SAR does not require abandoning the transaction outright; appropriate consent under s 335 allows it to proceed lawfully once given, or once the statutory notice period passes without refusal — and telling the client would itself risk tipping off."
+    },
+    {
+      "itemId": "sqe1-ls-15-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of these is a 'relevant person' obligation category commonly triggering AML duties for a law firm?",
+      "options": ["Conveyancing and handling client money", "Advising on employment tribunal claims only", "General litigation advocacy with no client account involvement", "Pro bono advice given free of charge"],
+      "correctIndex": 0,
+      "trapExplanation": "Students sometimes assume AML obligations attach only where a fee is charged, or apply uniformly across all practice areas. Conveyancing and client-money handling are specifically and consistently flagged as high-obligation categories, unlike work with no financial transaction element."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring failure mode in this lesson is confusing the three principal POCA offences with each other, and underestimating how easily a well-intentioned explanation to a client can amount to tipping off. As the module's closing lesson, the underlying message carries forward: AML obligations are not a specialist add-on, they sit underneath almost every kind of client-money and property work covered across this module.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.aml-financial-crime"
+  }
+}

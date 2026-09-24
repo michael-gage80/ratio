@@ -64,13 +64,15 @@ final class OnboardingModel {
         }
     }
 
-    func saveProgramme(waitlist: Set<String>) async {
+    func saveProgramme(_ programme: Programme, waitlist: Set<String>) async {
         let list = waitlist.sorted()
-        await save(["programme": "llb", "waitlist": list]) {
-            $0.programme = "llb"
+        await save(["programme": programme.rawValue, "waitlist": list]) {
+            $0.programme = programme.rawValue
             $0.waitlist = list
         }
     }
+
+    var programme: Programme { Programme(profile: profile.programme) }
 
     func saveUniversity(id: String) async {
         await save(["universityId": id, "universityOther": FieldValue.delete()]) {
@@ -119,7 +121,7 @@ final class OnboardingModel {
         if profile.displayName == nil { return .name }
         if profile.programme == nil { return .programme }
         if profile.universityId == nil && profile.universityOther == nil { return .university }
-        if (profile.modules ?? []).isEmpty { return .modules }
+        if !(profile.modules ?? []).contains(where: { $0.programme == Programme(profile: profile.programme) }) { return .modules }
         if profile.headline == nil { return .diagnostic }
         return nil
     }

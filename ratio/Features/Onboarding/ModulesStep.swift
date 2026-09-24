@@ -5,16 +5,20 @@ import SwiftUI
 struct ModulesStep: View {
     let model: OnboardingModel
 
+    @Environment(ContentStore.self) private var content
+
     @State private var modules: Set<Module>
+
+    private var programme: Programme { model.programme }
 
     init(model: OnboardingModel) {
         self.model = model
-        _modules = State(initialValue: Set(model.profile.modules ?? []))
+        _modules = State(initialValue: Set((model.profile.modules ?? []).filter { $0.programme == model.programme }))
     }
 
     var body: some View {
         OnboardingStepLayout(
-            title: "Which modules are you taking?",
+            title: programme == .sqe1 ? "Which subjects are you preparing?" : "Which modules are you taking?",
             subtitle: "They set the order of your lessons. You can change them any time in Settings.",
             canContinue: !modules.isEmpty && !model.isSaving,
             onContinue: {
@@ -24,12 +28,12 @@ struct ModulesStep: View {
             VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 ViewThatFits(in: .horizontal) {
                     HStack {
-                        Text("Modules this year").ratioFont(.monoLabel)
+                        Text(programme == .sqe1 ? "SQE1 subjects" : "Modules this year").ratioFont(.monoLabel)
                         Spacer()
                         selectedCount
                     }
                     VStack(alignment: .leading, spacing: RatioSpace.xxs) {
-                        Text("Modules this year").ratioFont(.monoLabel)
+                        Text(programme == .sqe1 ? "SQE1 subjects" : "Modules this year").ratioFont(.monoLabel)
                         selectedCount
                     }
                 }
@@ -39,20 +43,27 @@ struct ModulesStep: View {
     }
 
     private var selectedCount: some View {
-        Text("\(modules.count) of \(Module.allCases.count) selected")
+        Text("\(modules.count) of \(programme.modules.count) selected")
             .ratioFont(.monoData)
             .foregroundStyle(Color.ratioInk2)
     }
 
     private var moduleList: some View {
         VStack(spacing: 0) {
-            ForEach(Module.allCases) { module in
+            ForEach(programme.modules) { module in
                 let isSelected = modules.contains(module)
                 Button {
                     if isSelected { modules.remove(module) } else { modules.insert(module) }
                 } label: {
                     HStack(spacing: RatioSpace.s) {
-                        Text(module.title).ratioFont(.h3).multilineTextAlignment(.leading)
+                        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                            Text(module.title).ratioFont(.h3).multilineTextAlignment(.leading)
+                            if let paper = module.paper {
+                                Text(content.lessons(in: module).isEmpty ? "\(paper) · lessons in preparation" : paper)
+                                    .ratioFont(.monoLabel)
+                                    .foregroundStyle(Color.ratioInk2)
+                            }
+                        }
                         Spacer(minLength: 0)
                         checkbox(isSelected)
                     }
@@ -61,7 +72,7 @@ struct ModulesStep: View {
                 }
                 .buttonStyle(.ratioPress)
                 .accessibilityAddTraits(isSelected ? .isSelected : [])
-                if module != Module.allCases.last {
+                if module != programme.modules.last {
                     Divider().overlay(Color.ratioRule)
                 }
             }

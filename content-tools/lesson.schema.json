@@ -28,7 +28,7 @@
   "properties": {
     "lessonId": {
       "type": "string",
-      "pattern": "^[a-z]+-[0-9]{2}$"
+      "pattern": "^([a-z]+|sqe1-[a-z]+)-[0-9]{2}$"
     },
     "moduleId": {
       "$ref": "#/$defs/moduleId"
@@ -194,6 +194,12 @@
           "$ref": "#/$defs/topicId"
         }
       }
+    },
+    "track": {
+      "enum": [
+        "SQE1"
+      ],
+      "description": "Set on SQE lessons; absent on LLB lessons."
     }
   },
   "$defs": {
@@ -221,12 +227,19 @@
         "humanrights",
         "jurisprudence",
         "employmentlaw",
-        "familylaw"
+        "familylaw",
+        "sqe1-dispute-resolution",
+        "sqe1-legal-system-legal-services",
+        "sqe1-business-law-practice",
+        "sqe1-property-practice",
+        "sqe1-wills-estates",
+        "sqe1-solicitors-accounts",
+        "sqe1-criminal-law-practice"
       ]
     },
     "topicId": {
       "type": "string",
-      "pattern": "^(crime|contract|tort|public|land|equity|companylaw|eulaw|humanrights|jurisprudence|employmentlaw|familylaw)(\\.[a-z0-9-]+)+$"
+      "pattern": "^((crime|contract|tort|public|land|equity|companylaw|eulaw|humanrights|jurisprudence|employmentlaw|familylaw)|sqe1\\.[a-z0-9-]+)(\\.[a-z0-9-]+)+$"
     },
     "skill": {
       "enum": [

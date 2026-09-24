@@ -1,0 +1,343 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-dr-07",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 7,
+  "topicId": "sqe1.dispute-resolution.default-judgment-security-costs",
+  "title": "Judgment without a fight, and a shield against an empty win",
+  "subtitle": "Default judgment and security for costs",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the conditions for entering default judgment under Part 12, and the grounds on which it must or may be set aside under Part 13",
+    "Identify the statutory and discretionary gateways to a security for costs order under Part 25, and the conditions the court must additionally find satisfied",
+    "Apply both regimes to fact patterns that mix procedural failure with a defendant's tactical response"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 12", "role": "Default judgment: when it is available and how it is entered" },
+    { "citation": "Civil Procedure Rules, Part 13", "role": "Setting aside or varying a default judgment: mandatory and discretionary grounds" },
+    { "citation": "Civil Procedure Rules, Part 25", "role": "Security for costs: the statutory gateways in r 25.13(2) and the discretionary 'just' requirement" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Both topics in this lesson turn on a single fact pattern skill: reading a procedural timeline and spotting the one date, or the one detail about the claimant's finances, that changes the answer. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the tests — this lesson is about running them against a clock and a company balance sheet.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans hard on scenario timelines: expect to work out exactly what day a defence was due, or exactly which security-for-costs gateway is open, rather than being asked to define one in the abstract.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — Part 12's deadlines and Part 25's gateway list are the scaffolding the rest of the lesson assumes you can recall without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A defendant who says nothing can lose a case just as completely as one who fights and loses — sometimes faster. A claimant who presses ahead against a defendant who then discovers the claimant is a shell company with no assets can win a judgment worth nothing at all. This lesson is about the two procedural tools that sit either side of that trap: the club that ends a case for silence, and the shield that stops a hollow claim being litigated to a hollow victory."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "When silence costs the case",
+        "voice": "structural — sets out the mechanics before the traps",
+        "body": [
+          "Default judgment under CPR Part 12 is the procedural consequence of doing nothing. If a defendant fails to file an acknowledgment of service within 14 days of service of the particulars of claim, or fails to file a defence within the applicable period (14 days after service of particulars, or 28 days if an acknowledgment of service was filed), the claimant may — subject to conditions — simply ask the court to enter judgment without a trial at all.",
+          "Two routes exist. Where the claim is for a specified sum of money, the claimant can request judgment administratively, through the court office, with no judicial decision required. Where the claim is for an unspecified amount, or for some other remedy, the claimant must apply to the court, which retains a degree of control over the terms of the judgment (for example, damages may still need to be assessed).",
+          "Default judgment is not available in every case. CPR 12.3 excludes it where the defendant has applied to strike out the claim or for summary judgment before filing a defence, where the defendant has satisfied the whole claim, or — critically for exam purposes — where the claim falls into one of the excluded categories in Part 12 (for example claims against the Crown, or where a claim form has not in fact been properly served). Spotting that a case falls outside Part 12's gateway is as important as spotting that it falls inside it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Default judgment",
+            "definition": "Judgment entered against a defendant who has failed, within the applicable time limit, to file an acknowledgment of service or a defence — obtained without any assessment of the merits of the claim."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-07-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Under CPR Part 12, if a defendant files an acknowledgment of service but no defence, how many days from service of the particulars of claim does the defendant have to file a defence?",
+          "acceptableAnswers": ["28 days", "28"],
+          "modelAnswer": "28 days after service of the particulars of claim — the acknowledgment of service extends the ordinary 14-day period by a further 14 days."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Unpicking a default judgment: Part 13",
+        "voice": "reference-style — a checklist students will return to",
+        "body": [
+          "A default judgment is not always the end of the matter. CPR Part 13 gives the defendant a route back in, and the exam turns almost entirely on whether that route is mandatory or discretionary — the two produce very different outcomes on the same set of facts.",
+          "The court **must** set aside a default judgment under CPR 13.2 where it was wrongly entered — for example, where the defendant had in fact filed a defence or an acknowledgment of service in time, where the whole claim had already been satisfied, or where a relevant procedural condition in Part 12 was not actually met. There is no discretion here: if the judgment was irregular, it falls.",
+          "Where the judgment was regularly entered, the court has a **discretion** under CPR 13.3 to set it aside or vary it, but only if the defendant shows either a real prospect of successfully defending the claim, or some other good reason why the judgment should be set aside or the defendant allowed to defend. The court must also consider whether the application was made promptly. A defendant who sat on their hands for months after discovering the judgment will struggle even with a strong defence on the merits."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Part 13: mandatory vs discretionary",
+            "points": [
+              "CPR 13.2 (mandatory) — the judgment was wrongly entered: a defence or acknowledgment was in fact filed in time, the claim had been satisfied, or a Part 12 condition wasn't met",
+              "CPR 13.3 (discretionary) — the judgment was regularly entered, but the defendant shows a real prospect of successfully defending, or some other good reason",
+              "Under CPR 13.3, promptness of the application is an express factor the court must weigh, separate from the merits of the defence"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-07-check-02",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "A defendant filed a defence on time, but the court's administrative system failed to record it, and default judgment was entered in error. Is the court obliged to set the judgment aside?",
+          "options": ["Yes — this is a mandatory ground under CPR 13.2, because the judgment was wrongly entered", "No — this only ever falls within the court's discretion under CPR 13.3"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. A defence genuinely filed in time means the judgment was irregular from the start — CPR 13.2 gives the court no discretion to refuse to set it aside.",
+          "feedbackIncorrect": "Look again at whether a condition for entering judgment was actually satisfied. A defence filed in time but not recorded means the judgment was wrongly entered at all — that puts it in CPR 13.2's mandatory category, not 13.3's discretionary one."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Why a claimant might be made to pay in advance",
+        "voice": "argumentative — states the tension the doctrine is trying to resolve",
+        "body": [
+          "Security for costs, under CPR Part 25, solves a different problem entirely: not a defendant who won't engage, but a claimant who might win nothing worth having and lose without being able to pay. If a defendant successfully defends a claim, it is ordinarily entitled to its costs — but that right is worthless against a claimant who has no money and no assets within the jurisdiction to enforce against.",
+          "The remedy is to require the claimant to pay a sum of money into court, or provide some other form of security, before the claim proceeds further — money the defendant can draw on for its costs if it wins. It is a significant intervention: done wrongly, it can shut a genuine claimant out of court entirely by pricing them out of litigating. That tension is exactly why the rule is built as a two-stage test rather than a single discretion.",
+          "Stage one is jurisdictional: has the claimant brought itself within one of the specific gateways listed in CPR 25.13(2)? Stage two is evaluative: even if a gateway is open, is it just, in all the circumstances, to order security? A defendant satisfies stage one and still loses the application if stage two isn't met."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Civil Procedure Rules, r 25.13(1)–(2) (selected gateways)",
+            "text": "The court may make an order for security for costs under rule 25.12 if — (a) it is satisfied, having regard to all the circumstances of the case, that it is just to make such an order; and (b) one or more of the conditions in paragraph (2) applies... (c) the claimant is a company or other body ... and there is reason to believe it will be unable to pay the defendant's costs if ordered to do so; ... (a) the claimant is resident out of the jurisdiction, but not resident in a Brussels Contracting State, a State bound by the Lugano Convention... or a State bound by the 2005 Hague Convention...",
+            "elements": ["A recognised CPR 25.13(2) gateway applies (e.g. impecunious company, claimant resident outside a relevant jurisdiction, claimant has taken steps to avoid the consequences of the claim)", "It is just, in all the circumstances, to make the order", "The amount and form of security are then set by the court's discretion"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-07-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that most clearly opens a CPR 25.13(2) gateway for a security for costs application.",
+          "scenarioText": "A claimant company brings a breach of contract claim. Its most recent filed accounts show liabilities exceeding assets by a wide margin, and it has no trading income. The claim itself appears well pleaded and the sums involved are moderate.",
+          "tappableSpans": ["breach of contract claim", "liabilities exceeding assets by a wide margin", "well pleaded", "sums involved are moderate"],
+          "correctSpan": "liabilities exceeding assets by a wide margin",
+          "feedbackCorrect": "That's the gateway: reason to believe the claimant company will be unable to pay the defendant's costs if ordered to do so. The merits of the pleaded claim and the size of the sums in dispute go to the separate 'just' question, not to whether the gateway is open at all.",
+          "feedbackIncorrect": "Look for the fact about the claimant's ability to pay, not the strength or size of the claim. The gateway in CPR 25.13(2)(c) turns on reason to believe the claimant company cannot meet an adverse costs order."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Gateway open, order refused: the 'just' question",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Here's the question that separates a pass answer from a fail answer on this topic: if a claimant company genuinely cannot pay an adverse costs order, is the court obliged to order security? No. Satisfying a gateway under CPR 25.13(2) only unlocks the court's discretion — it does not compel the order.",
+          "The court weighs factors including whether the claimant's impecuniosity was caused by the defendant's own conduct (the alleged breach itself, for example), whether the application is oppressive or being used tactically to stifle a genuine claim, the claimant's prospects of success, and whether security would in practice shut the claimant out of pursuing a legitimate case altogether.",
+          "This is the trap examiners return to: a fact pattern will often hand you a textbook gateway (an impecunious company, a claimant resident abroad) and expect you to stop and ask the second question anyway. Finding the gateway is necessary but never sufficient."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Security for costs: the two-stage test",
+            "description": "How a court decides a Part 25 security for costs application.",
+            "nodes": [
+              { "id": "start", "label": "Does a CPR 25.13(2) gateway apply (e.g. impecunious company, claimant outside the jurisdiction, claimant has hidden assets)?" },
+              { "id": "no-gateway", "label": "No → application fails; the court has no jurisdiction to order security" },
+              { "id": "yes-gateway", "label": "Yes → is it just, in all the circumstances, to make the order?" },
+              { "id": "no-just", "label": "No → application refused despite the gateway being open (e.g. defendant caused the impecuniosity, or order would stifle a genuine claim)" },
+              { "id": "yes-just", "label": "Yes → court orders security, and separately decides the amount and form" }
+            ],
+            "edges": [
+              { "from": "start", "to": "no-gateway", "label": "No" },
+              { "from": "start", "to": "yes-gateway", "label": "Yes" },
+              { "from": "yes-gateway", "to": "no-just", "label": "No" },
+              { "from": "yes-gateway", "to": "yes-just", "label": "Yes" }
+            ],
+            "textAlternative": "First ask whether a CPR 25.13(2) gateway applies. If not, the application fails outright. If a gateway applies, ask a second, separate question: is it just, in all the circumstances, to order security? Only if both questions are answered yes does the court go on to fix the amount and form of security."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-07-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that satisfying a gateway under CPR 25.13(2) is, by itself, enough to guarantee a security for costs order?",
+          "sliderLabels": ["Definitely enough on its own", "Definitely not enough on its own"],
+          "correctPosition": "not enough on its own",
+          "explanation": "Not enough. A gateway only opens the court's discretion; the court must go on to decide separately whether it is just to make the order, weighing factors such as the cause of the claimant's impecuniosity and whether the order would stifle a genuine claim."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Two doctrines, one exam trap: reading the timeline",
+        "voice": "direct — closes by rehearsing the skill the test pool will demand",
+        "body": [
+          "Both topics in this lesson reward the same underlying skill: reading a fact pattern as a timeline and asking what stage the parties are actually at, rather than answering the question the facts seem to be asking on the surface.",
+          "A common examiner move is to describe a defendant who has 'not responded' and invite you to conclude default judgment is automatically available — without checking whether the claim form was validly served, whether the time limit has actually expired, or whether the defendant has in fact taken a step (like applying for summary judgment) that blocks Part 12 entirely.",
+          "The equivalent move on security for costs is to hand you a claimant with every hallmark of impecuniosity and stop there, hoping you'll skip the 'just' question. Both traps are solved the same way: never treat a single satisfied condition as the end of the analysis when the rule you're applying has more than one stage."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often conclude that because a defendant has missed the deadline for a defence, default judgment is automatically available on the facts as given.",
+            "whyItsWrong": "CPR 12.3 carves out several situations where default judgment cannot be entered even though a deadline has passed — most importantly where the defendant has already applied to strike out the claim or for summary judgment before the defence was due. A missed deadline is the starting point for the analysis, not the answer."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-07-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is default judgment available to the claimant on the facts given?",
+          "scenarioA": "The defendant was served with particulars of claim 20 days ago, filed no acknowledgment of service, and has taken no other procedural step.",
+          "scenarioB": "The defendant was served with particulars of claim 20 days ago, filed no acknowledgment of service, but applied to strike out the claim as an abuse of process 10 days ago.",
+          "correctScenario": "A",
+          "explanation": "In A, no acknowledgment or defence has been filed within the applicable period and no blocking step has been taken, so default judgment is available. In B, the defendant's strike-out application before the defence deadline falls due is exactly the kind of step CPR 12.3 recognises as blocking default judgment — the claimant must wait for that application to be resolved."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-07-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A defendant is served with particulars of claim and files no acknowledgment of service and no defence. Absent any exclusion under CPR 12.3, on what day does the claimant first become entitled to request default judgment for failure to file a defence?",
+      "options": ["15 days after service", "The 15th day after service (14 days plus one)", "29 days after service, because filing no acknowledgment extends the period", "There is no fixed day; the court must first list a hearing"],
+      "correctIndex": 1,
+      "explanation": "With no acknowledgment of service filed, the ordinary period for filing a defence is 14 days from service of the particulars of claim; the claimant can act once that period has expired without a defence being filed, i.e. from the 15th day."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following is a recognised gateway to a security for costs order under CPR 25.13(2)?",
+      "options": ["The claimant has instructed leading counsel", "The claimant is a company and there is reason to believe it will be unable to pay the defendant's costs", "The claim is for a sum exceeding £100,000", "The defendant has filed a defence denying all liability"],
+      "correctIndex": 1,
+      "explanation": "An impecunious corporate claimant — reason to believe it cannot meet an adverse costs order — is one of the CPR 25.13(2) gateways. None of the other options is a recognised gateway."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A default judgment is entered against a defendant who had, unknown to the claimant, already fully paid the sum claimed before proceedings were issued. Which provision governs the defendant's application to set the judgment aside?",
+      "options": ["CPR 13.2 — the court must set it aside, as it was wrongly entered", "CPR 13.3 — the court may set it aside if there is a real prospect of a successful defence", "CPR 24 — the defendant must apply for summary judgment instead", "CPR 3.4 — the defendant must apply to strike out the claim"],
+      "correctIndex": 0,
+      "explanation": "Because the whole claim had already been satisfied, one of the express Part 12 conditions was never met — the judgment was wrongly entered, which is a mandatory ground for setting aside under CPR 13.2."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following is NOT a factor the court considers when deciding a discretionary application to set aside a default judgment under CPR 13.3?",
+      "options": ["Whether the defendant has a real prospect of successfully defending the claim", "Whether there is some other good reason why the judgment should be set aside", "Whether the application to set aside was made promptly", "Whether the claimant would have won at trial in any event"],
+      "correctIndex": 3,
+      "trapExplanation": "The court is not asked to pre-try the whole case and decide who would have won — that would defeat the purpose of a set-aside application. CPR 13.3 asks about the defendant's prospects of a successful defence, other good reason, and promptness, not a prediction of the claimant's ultimate success."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant applies for security for costs against a claimant company. The court finds the claimant is genuinely unable to pay an adverse costs order, but the evidence also shows the defendant's own conduct — the alleged breach itself — caused the claimant's financial collapse. What is the most likely outcome?",
+      "options": ["Security is ordered automatically, because the CPR 25.13(2) gateway is satisfied", "The application may be refused, because the court can take into account whether the defendant caused the claimant's impecuniosity when assessing whether it is just to order security", "The application must fail because the gateway was never engaged", "The court will strike out the claim instead of considering security"],
+      "correctIndex": 1,
+      "trapExplanation": "Satisfying the gateway is not the end of the analysis. Whether the defendant's own conduct caused the claimant's impecuniosity is a recognised factor at the 'just' stage, and can lead the court to refuse an order it would otherwise have jurisdiction to make."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant files a claim form and particulars of claim. The defendant, believing the claim to be hopeless, immediately applies for summary judgment against the claimant rather than filing a defence. The defence deadline then passes with no defence filed. Can the claimant now enter default judgment?",
+      "options": ["Yes, because the defence deadline has passed with nothing filed", "No, because CPR 12.3 excludes default judgment where the defendant has applied for summary judgment before filing a defence", "Yes, but only with the court's permission at a hearing", "No, because summary judgment applications automatically strike out the underlying claim"],
+      "correctIndex": 1,
+      "trapExplanation": "A missed deadline looks decisive but isn't the end of the analysis. CPR 12.3 specifically blocks default judgment where the defendant has already applied for summary judgment (or to strike out the claim) before the defence was due — the claimant must wait for that application to be resolved."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A claimant obtains default judgment against a defendant for a specified sum after the defendant failed to respond. The defendant later shows the court it never received the particulars of claim because they were sent to the wrong address, in breach of the rules on service. What should the defendant do?",
+      "options": ["Appeal the judgment to a higher court", "Apply under CPR 13.2 to set the judgment aside, since it was never properly served and so was wrongly entered", "Apply for a new trial under CPR 39", "Wait for the claimant to attempt enforcement and raise the point then"],
+      "correctIndex": 1,
+      "explanation": "Defective service means a fundamental precondition for default judgment was never satisfied. That places this squarely within CPR 13.2's mandatory ground: the judgment was wrongly entered and the court has no discretion to refuse to set it aside."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A claimant company has a strong claim on the merits but its latest accounts show it is significantly insolvent, with no evidence its finances resulted from the defendant's conduct. The defendant applies for security for costs. Which outcome best reflects the two-stage test?",
+      "options": ["The strength of the claim on the merits automatically defeats the application at the gateway stage", "The gateway is engaged by the company's inability to pay, and, absent factors pointing the other way, an order for security is likely to be found just", "Security for costs cannot be ordered against a company under any circumstances", "The application fails because impecuniosity alone can never justify security"],
+      "correctIndex": 1,
+      "explanation": "An impecunious corporate claimant with no explanation tying that impecuniosity to the defendant's conduct is close to the paradigm case for security: the gateway is satisfied, and with no countervailing 'just' factors identified, an order is the likely outcome."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-09",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant applies for security for costs, arguing only that the claimant is likely to lose at trial. No CPR 25.13(2) gateway is put forward. What is the correct outcome?",
+      "options": ["The application succeeds, because weak merits alone justify security", "The application fails, because the court has no jurisdiction to order security unless a CPR 25.13(2) gateway is satisfied, whatever the merits appear to be", "The court will adjourn until after trial to assess the merits properly", "The application succeeds automatically because the defendant is a company"],
+      "correctIndex": 1,
+      "explanation": "Weak prospects of success are relevant, if at all, only once a gateway is open and the court reaches the 'just' stage — they are not themselves a gateway. With no gateway engaged, the court has no jurisdiction to make the order at all."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under the CPR 25.13 structure, which best describes the relationship between the gateway conditions in r 25.13(2) and the requirement that it be 'just' to order security?",
+      "options": ["They are alternative routes to the same order; satisfying either is sufficient", "The 'just' requirement is only considered if no gateway condition is satisfied", "Both must be satisfied: a gateway condition opens the court's jurisdiction, and the court must separately be satisfied it is just to make the order", "The 'just' requirement replaced the gateway conditions in recent reforms"],
+      "correctIndex": 2,
+      "explanation": "The rule is cumulative, not alternative. A CPR 25.13(2) gateway must be satisfied before the court has jurisdiction to consider security at all, and the court must independently be satisfied that making the order is just in all the circumstances."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under CPR Part 13, what is the key structural difference between an application under r 13.2 and one under r 13.3?",
+      "options": ["r 13.2 applies only to specified money claims; r 13.3 applies only to unspecified claims", "r 13.2 is mandatory where the judgment was wrongly entered; r 13.3 is a discretionary power exercised where the judgment was regularly entered", "r 13.2 requires a hearing; r 13.3 can be decided on paper", "There is no material difference; both provide the same discretionary power"],
+      "correctIndex": 1,
+      "explanation": "r 13.2 removes the court's discretion where a condition for entering judgment was never met. r 13.3 only comes into play where judgment was regularly (correctly) entered, and gives the court a discretion based on the merits of the proposed defence and other good reason, subject to promptness."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under CPR Part 12, which of the following claims is excluded from the default judgment procedure?",
+      "options": ["A claim for a specified sum of money against an individual defendant", "A claim against the Crown", "A claim for an unspecified amount of damages", "A claim where the defendant has failed to file a defence at all"],
+      "correctIndex": 1,
+      "explanation": "Part 12 expressly excludes certain categories from the default judgment procedure, including claims against the Crown, reflecting the special procedural position of the state as a litigant."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A defendant applies to set aside a default judgment eight months after learning of it, offering no explanation for the delay, despite having what looks like a strong defence on the merits. Is the court likely to exercise its CPR 13.3 discretion in the defendant's favour?",
+      "options": ["Yes — a strong defence on the merits is all that is required, regardless of delay", "Not necessarily — the court must also weigh whether the application was made promptly, and an unexplained eight-month delay counts against the defendant", "No — CPR 13.3 applications must always be made within 14 days or they are time-barred", "Yes — CPR 13.3 has no promptness requirement at all"],
+      "correctIndex": 1,
+      "explanation": "CPR 13.3 requires the court to consider promptness as a distinct factor. A strong defence does not automatically overcome a long, unexplained delay in applying to set the judgment aside, though there is no fixed 14-day bar — promptness is weighed, not applied as a strict cut-off."
+    },
+    {
+      "itemId": "sqe1-dr-07-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Which statement most accurately captures why security for costs is structured as a two-stage test rather than a single, broad judicial discretion?",
+      "options": ["Because Parliament wanted to make the procedure slower for defendants", "Because an unconstrained discretion risks being used to price genuine claimants out of court, so a gateway condition first confines when the power can even be considered", "Because the gateway conditions replaced the need for any assessment of fairness", "Because CPR 25 only applies to claims worth over £100,000"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers treat the gateway and the 'just' requirement as redundant or procedural friction. In fact the structure exists precisely because security for costs can shut a genuine claimant out of litigating — the gateway limits when the power is even engaged, and the 'just' stage then checks it is not being used oppressively."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's items is stopping at the first satisfied condition — a missed deadline, or an impecunious claimant — and not checking whether a blocking rule or a second-stage test applies before reaching a conclusion. Both Part 12/13 and Part 25 are multi-stage tests; treat a single tick as the start of the analysis, not the end.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.default-judgment-security-costs"
+  }
+}

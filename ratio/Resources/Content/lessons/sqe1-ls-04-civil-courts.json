@@ -1,0 +1,316 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-04",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 4,
+  "topicId": "sqe1.legal-system.civil-courts",
+  "title": "Court structure and hierarchy: the civil courts",
+  "subtitle": "The County Court, the High Court, the Court of Appeal and the Supreme Court",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Describe the jurisdiction and structure of the County Court and the three Divisions of the High Court",
+    "Explain the appellate role of the Court of Appeal (Civil Division) and the Supreme Court as the final court of appeal in civil matters",
+    "Apply jurisdictional rules to identify which court should hear a given civil claim, and trace an appeal through the correct route"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Senior Courts Act 1981", "role": "Establishes the High Court's three Divisions and the constitution of the Court of Appeal" },
+    { "citation": "County Courts Act 1984", "role": "Establishes the County Court and its general civil jurisdiction" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Every civil transaction question you'll face as a solicitor starts with a practical one: which court? Get the forum wrong and you waste a client's time and money before the substance of the case is even reached.",
+    "profileHooks": {
+      "weakApplication": "You know the names of the courts — this lesson is weighted towards the harder skill: routing a real set of facts to the right forum and the right Division.",
+      "weakKnowledge": "Start with Part 1 and build the ladder from the County Court upward before worrying about jurisdictional lines — the later parts assume you can name each tier without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A client walks in with a £9,000 dispute and another with a £2 million one. Both are 'civil claims'. Neither will be heard by the same court, in front of the same kind of judge, or under the same procedural rules — and choosing wrong is a mistake a trainee makes exactly once.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The core structure below — County Court, three High Court Divisions, Court of Appeal, Supreme Court — is settled. The financial thresholds that route claims between tracks and between the County Court and High Court are set by Practice Direction and periodically revised; treat any specific figure in this lesson as illustrative of the current rule rather than a number to memorise as permanent."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The County Court: where most civil claims begin",
+        "voice": "practical — grounds the abstract structure in where claims actually land",
+        "body": [
+          "The County Court, established under the County Courts Act 1984, is a single court sitting at numerous hearing centres across England and Wales, and it is where the overwhelming majority of civil claims start. There is no independent 'County Court for Manchester' or 'County Court for Bristol' in law — since reforms consolidated it, it is legally one court operating from many buildings.",
+          "Once a claim is issued, it is allocated to a track based broadly on value and complexity: the small claims track for the lowest-value, simplest disputes; the fast track for moderate claims expected to be resolved in a short trial; and the multi-track for higher-value or more complex matters, including most County Court claims that eventually approach High Court territory.",
+          "District Judges hear the bulk of County Court work, with Circuit Judges taking the more substantial multi-track trials. The point to hold onto: value is a proxy for complexity, not the whole story — a low-value claim with a genuinely difficult point of law can still be allocated multi-track, and track allocation is a case-management decision, not a rigid formula."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Track allocation",
+            "definition": "The case-management decision that assigns a County Court claim to the small claims, fast, or multi-track, driven primarily by the value and complexity of the dispute rather than value alone."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-04-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Is the County Court a collection of separate local courts, or legally a single court sitting at many hearing centres?",
+          "options": ["A collection of independent local courts", "Legally a single court, sitting at many hearing centres"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — this matters practically because a claim issued in one hearing centre can be transferred to another without any question of jurisdiction arising.",
+          "feedbackIncorrect": "It's legally one court. That's why a claim can move between hearing centres freely — there's no jurisdictional boundary between them, unlike moving a claim between wholly separate courts."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The High Court and its three Divisions",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "The High Court, constituted under the Senior Courts Act 1981, deals with higher-value and more complex first-instance civil claims, and is organised into three Divisions, each with its own specialist work.",
+          "The King's Bench Division is the largest and handles general contract and tort claims, alongside specialist courts sitting within it: the Administrative Court (judicial review and statutory appeals against public bodies), the Commercial Court (business and finance disputes), and the Admiralty Court (shipping).",
+          "The Chancery Division handles business, property and trusts work: company and insolvency disputes, disputes over land and trusts, intellectual property, and probate contested in litigation. The Family Division deals with the High Court's family jurisdiction — the most serious and complex family proceedings, including international child abduction and cases with a significant public law dimension.",
+          "A claimant does not choose a Division on a whim: the nature of the claim points to one Division over the others, and starting in the wrong one is a procedural error that can and does get corrected — usually by transfer, at cost and delay to the parties."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The three Divisions at a glance",
+            "points": [
+              "King's Bench Division — general contract and tort; Administrative Court (judicial review); Commercial Court; Admiralty Court",
+              "Chancery Division — company and insolvency, trusts, land, intellectual property, contested probate",
+              "Family Division — the most serious and complex family proceedings, including international child abduction"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-04-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that tells you this claim belongs in the Chancery Division.",
+          "scenarioText": "A company director disputes the validity of a trust set up to hold the company's shares, arguing the trust deed was never properly executed. The claim also touches on an unpaid commercial invoice between two of the parties.",
+          "tappableSpans": ["A company director disputes", "the validity of a trust", "an unpaid commercial invoice", "between two of the parties"],
+          "correctSpan": "the validity of a trust",
+          "feedbackCorrect": "Correct. Trust disputes are core Chancery work. The invoice dispute is incidental here — the trust issue is what determines the Division.",
+          "feedbackIncorrect": "Look again at which element is Chancery's specialist subject matter. An unpaid invoice alone would be King's Bench work; a trust dispute is what pulls this claim into Chancery."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "County Court or High Court: choosing the forum",
+        "voice": "rule-driven — states the governing principle before the exceptions",
+        "body": [
+          "Civil Procedure Rule Practice Direction 7A governs where a claim should start. The general position is that most claims can be started in either the County Court or the High Court, but claims should not be started in the High Court unless the claimant's or a party's interest in the outcome exceeds the financial threshold set for High Court starts, or the claim otherwise falls within a category — such as certain specialist Chancery or Commercial Court work, or claims of unusual complexity or importance — that justifies High Court treatment regardless of value.",
+          "In practice, this means a claim's value is a screening test, not a guarantee: a high-value but legally straightforward debt claim may still be perfectly suited to the County Court's multi-track, while a lower-value claim raising a novel or important point of law can be started in, or transferred to, the High Court.",
+          "Getting this wrong has consequences beyond embarrassment — a claim started in the wrong court can be transferred, and costs sanctions can follow where a party started in the High Court without sufficient justification."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "CPR Practice Direction 7A, para 2",
+            "text": "Proceedings in which the sum claimed is not more than the amount specified for High Court starts should generally be issued in the County Court. A claim may be started in the High Court only where the amount claimed exceeds that threshold, or the claim falls within a specialist jurisdiction or category of case for which the High Court is appropriate.",
+            "elements": ["Claim value relative to the High Court starting threshold", "Whether the claim falls within a specialist jurisdiction (e.g. Chancery, Commercial Court)", "Complexity or importance justifying High Court treatment regardless of value"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-04-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Based on the rule above, which of these claims is most clearly justified in starting in the High Court?",
+          "options": ["A modest-value debt claim with no legal complexity", "A claim comfortably above the High Court starting threshold, raising a genuinely novel point of commercial law", "A personal injury claim of average value and complexity", "A small claims track dispute between neighbours"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — both limbs point the same way here: value above the threshold and genuine legal novelty, either of which alone could justify a High Court start.",
+          "feedbackIncorrect": "Re-read the rule: it asks about value relative to the threshold and specialist or complex subject matter. Only one option satisfies either limb clearly."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The Court of Appeal (Civil Division): correcting first-instance decisions",
+        "voice": "direct — sets out role and limits without padding",
+        "body": [
+          "The Court of Appeal (Civil Division), headed by the Master of the Rolls, hears appeals from the High Court and, for the more substantial matters, from the County Court. It does not rehear a case from scratch: its role is to review whether the decision below was wrong in law, or was a procedural decision so flawed as to be unjust, not to substitute its own view simply because it might have decided differently on the facts.",
+          "Permission to appeal is required for almost all civil appeals to the Court of Appeal — either from the court that made the decision being appealed, or from the Court of Appeal itself. Permission will only be given where the court considers the appeal has a real prospect of success, or there is some other compelling reason for the appeal to be heard.",
+          "This filtering function matters: it means an unhappy litigant does not have an automatic right to a second full hearing. The appeal has to clear a threshold before it is even heard on its merits."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Permission to appeal",
+            "definition": "A gatekeeping requirement, applied at each level of the civil appellate hierarchy, that filters out appeals without a real prospect of success or a compelling reason to be heard, before the merits are argued."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-04-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A County Court multi-track trial ends with a judgment the losing party strongly disagrees with, believing the trial judge simply weighed the witness evidence differently than they would have. On what basis, if any, is an appeal to the Court of Appeal likely to succeed on this ground alone?",
+          "options": ["It will succeed automatically because the losing party disagrees with the outcome", "It is unlikely to succeed on this ground alone — disagreement with a trial judge's assessment of the evidence is not, without more, a basis for permission or for allowing an appeal", "It cannot be appealed at all because it was a County Court decision", "It will succeed only if the losing party pays an additional court fee"],
+          "correctIndex": 1,
+          "explanation": "Appellate courts give real weight to a trial judge's assessment of witness evidence, having heard it directly. A bare disagreement about how the evidence was weighed rarely shows the decision was wrong in law or unjust — the appellant needs something more than a difference of view."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The Supreme Court: the final word in civil matters",
+        "voice": "structural — closes the hierarchy and names the trap examiners set",
+        "body": [
+          "The Supreme Court sits at the top of the civil (and criminal) court hierarchy for England and Wales, hearing appeals from the Court of Appeal and, in a limited category of cases, directly from the High Court under the 'leapfrog' procedure where the case raises a point of law of general public importance that is either already substantially settled by binding precedent the lower courts cannot depart from, or of national importance.",
+          "Permission to appeal to the Supreme Court is required, and the test is deliberately narrow: the case must raise an arguable point of law of general public importance. This is a higher bar than the ordinary Court of Appeal permission test — the Supreme Court is not there to correct case-specific errors, but to resolve questions that matter beyond the parties in front of it.",
+          "A common error is assuming any losing party can simply 'go to the Supreme Court' after the Court of Appeal. In reality, very few civil appeals clear this final threshold — the Supreme Court hears a small number of cases each year, chosen precisely because of their wider significance."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume an appeal automatically progresses County Court → High Court → Court of Appeal → Supreme Court as a matter of routine, with each stage simply the next rung on a ladder anyone can climb.",
+            "whyItsWrong": "Each stage requires permission, and the test tightens as the hierarchy rises. The Supreme Court in particular only takes cases of general public importance — the great majority of litigants' journeys end at the Court of Appeal, not because they ran out of budget, but because there is no arguable case for the Supreme Court to hear."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-04-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A litigant has lost in the Court of Appeal on a point that turns entirely on the specific facts of their case, with no wider legal significance. What is the most accurate description of their prospects before the Supreme Court?",
+          "options": ["Strong, because the Supreme Court hears any case the Court of Appeal has decided", "Weak, because the Supreme Court's permission test requires an arguable point of law of general public importance, which a fact-specific dispute is unlikely to raise", "Guaranteed to succeed once permission is granted", "Irrelevant, because civil appeals cannot go beyond the Court of Appeal"],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting error is treating the Supreme Court as simply 'the next level up' that any determined litigant can reach. Its jurisdiction is deliberately narrowed to points of general public importance — a purely fact-specific disagreement, however strongly felt, is unlikely to clear that bar."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-04-test-01",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "A client wants to bring a straightforward claim for an unpaid invoice worth £7,500 against another business. No point of law is in dispute. In which court should proceedings normally start?",
+      "options": ["The County Court", "The High Court, King's Bench Division", "The High Court, Chancery Division", "The Court of Appeal"],
+      "correctIndex": 0,
+      "explanation": "A modest-value, legally straightforward claim of this kind is exactly what the County Court's small claims or fast track is designed for. There is nothing here to justify a High Court start."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-02",
+      "skillTag": "knowledge",
+      "type": "mcqWithTrap",
+      "prompt": "A client wants to bring judicial review proceedings against a local authority's housing decision. Which part of the High Court has jurisdiction?",
+      "options": ["The Chancery Division", "The Family Division", "The King's Bench Division, via the Administrative Court", "The Court of Appeal, directly"],
+      "correctIndex": 2,
+      "trapExplanation": "Students sometimes assume judicial review, because it involves 'important' public law questions, must belong to Chancery. It doesn't — judicial review of public bodies is Administrative Court work, sitting within the King's Bench Division."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-03",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A claimant's solicitor is deciding whether to issue a £250,000 breach of contract claim in the County Court or the High Court. The facts are legally straightforward and the case involves no specialist subject matter. What should the solicitor consider before choosing the High Court?",
+      "options": ["That value alone, without more, does not automatically justify a High Court start under the relevant Practice Direction, and an unjustified High Court start can attract adverse costs consequences", "That the High Court has no jurisdiction over contract claims at all", "That only claims under £10,000 can be issued in the County Court", "That the choice of court has no procedural consequences either way"],
+      "correctIndex": 0,
+      "explanation": "Practice Direction 7A treats value as a threshold, not an automatic entitlement. A straightforward claim, even at a substantial value, is often still appropriately issued in the County Court, and starting unnecessarily in the High Court risks a costs sanction."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-04",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Under the Senior Courts Act 1981, the High Court is organised into which structure?",
+      "options": ["A single undivided court with no internal specialisation", "Three Divisions: King's Bench, Chancery and Family", "Two Divisions: Civil and Criminal", "Regional divisions matching each County Court hearing centre"],
+      "correctIndex": 1,
+      "explanation": "The 1981 Act's structure of three Divisions — King's Bench, Chancery and Family — is the foundation for how High Court work is allocated by subject matter."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-05",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Who heads the Court of Appeal (Civil Division)?",
+      "options": ["The Lord Chief Justice", "The Master of the Rolls", "The President of the Supreme Court", "The Lord Chancellor"],
+      "correctIndex": 1,
+      "explanation": "The Master of the Rolls heads the Civil Division; the Lord Chief Justice is head of the judiciary overall and presides over the Criminal Division."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-06",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A litigant has just lost their case in the High Court and wants to appeal directly to the Supreme Court, skipping the Court of Appeal, because they believe the case is important. What should they be advised?",
+      "options": ["This is always possible for any litigant who considers their case important", "A direct 'leapfrog' appeal from the High Court to the Supreme Court is only available in limited circumstances, and requires permission", "Appeals from the High Court can never go beyond the Court of Appeal", "The Supreme Court only hears appeals that started in the County Court"],
+      "correctIndex": 1,
+      "trapExplanation": "Believing a case is 'important' does not by itself unlock the leapfrog route. The procedure is narrow and requires specific conditions to be met and permission granted — it is the exception, not a general alternative to the ordinary appellate ladder."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-07",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A dispute concerns whether a company validly went into insolvent liquidation and whether a director breached fiduciary duties to creditors. Which Division of the High Court should this be issued in?",
+      "options": ["The King's Bench Division", "The Family Division", "The Chancery Division", "None — this can only be heard in the County Court"],
+      "correctIndex": 2,
+      "explanation": "Insolvency and directors' duties are core Chancery Division business, reflecting its specialism in company, trusts and business disputes."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-08",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "The County Courts Act 1984 establishes the County Court's general civil jurisdiction. Which statement best reflects its practical effect alongside the track allocation rules in the Civil Procedure Rules?",
+      "options": ["The Act itself fixes every claim's track allocation in primary legislation, leaving the CPR no role", "The Act establishes the court and its jurisdiction, while the CPR provide the procedural machinery — including track allocation — for cases within it", "The Act only applies to claims under £1,000", "The Act has been repealed and no longer has any effect"],
+      "correctIndex": 1,
+      "explanation": "The 1984 Act supplies the constitutional and jurisdictional foundation; the day-to-day procedural rules, including how claims are allocated to a track, sit in the Civil Procedure Rules made under it."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-09",
+      "skillTag": "understanding",
+      "type": "quickCheck",
+      "prompt": "What is the general test for permission to appeal to the Court of Appeal (Civil Division)?",
+      "options": ["The appeal must be certain to succeed", "The appeal must have a real prospect of success, or there must be some other compelling reason to hear it", "Any appellant may appeal as of right with no permission needed", "The appeal must involve a claim above a set financial value"],
+      "correctIndex": 1,
+      "explanation": "This is the standard permission test applied at first-instance and Court of Appeal level for civil appeals — a filter based on prospects of success or another compelling reason, not an automatic right."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-10",
+      "skillTag": "knowledge",
+      "type": "mcqWithTrap",
+      "prompt": "Which of the following best describes the Commercial Court?",
+      "options": ["A wholly separate court outside the High Court structure", "A specialist court sitting within the King's Bench Division, dealing with business and finance disputes", "A tribunal dealing with employment disputes", "The trial-level court for criminal fraud cases"],
+      "correctIndex": 1,
+      "trapExplanation": "The name suggests a standalone institution, but the Commercial Court is not separate from the High Court — it is a specialist forum operating within the King's Bench Division for business disputes."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-11",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A claimant wants to challenge a decision by a government minister as unlawful, on the basis it was made without proper legal authority. What kind of proceedings, in which part of the court structure, is this?",
+      "options": ["A breach of contract claim in the Chancery Division", "A claim for judicial review in the Administrative Court (King's Bench Division)", "A small claims track hearing in the County Court", "An appeal directly to the Supreme Court"],
+      "correctIndex": 1,
+      "explanation": "Challenging the legality of a public body's decision-making is the defining feature of judicial review, which is the Administrative Court's core work within the King's Bench Division."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-12",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "CPR Practice Direction 7A directs that a claim should not normally be started in the High Court unless which condition is met?",
+      "options": ["The claimant simply prefers the High Court", "The claim's value exceeds the relevant threshold, or it falls within a specialist jurisdiction or category justifying High Court treatment", "The claim is against a government body", "The defendant has agreed to the High Court in writing"],
+      "correctIndex": 1,
+      "explanation": "The Practice Direction ties a High Court start to value relative to a set threshold, or to the claim falling within a recognised specialist category — not to either party's simple preference."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-13",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which court is the final court of appeal for civil matters in England and Wales?",
+      "options": ["The Court of Appeal (Civil Division)", "The High Court", "The Supreme Court", "The Judicial Committee of the Privy Council"],
+      "correctIndex": 2,
+      "explanation": "The Supreme Court sits above the Court of Appeal as the final domestic appellate court for civil (and criminal) matters from England and Wales."
+    },
+    {
+      "itemId": "sqe1-ls-04-test-14",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A defendant in a County Court multi-track claim loses at trial and wants to appeal. They tell their solicitor: 'I just want the Court of Appeal to hear all the evidence again and decide for themselves.' What should the solicitor explain about how an appeal actually works?",
+      "options": ["That is exactly what will happen — the Court of Appeal reruns the trial from scratch", "The Court of Appeal reviews whether the decision was wrong in law or the process was seriously unjust; it does not generally rehear the evidence afresh", "Appeals are decided purely on which party pays a higher fee", "The Court of Appeal only reviews criminal, not civil, decisions"],
+      "correctIndex": 1,
+      "trapExplanation": "Clients often expect an appeal to be a second trial. It isn't: the appellate court reviews the first-instance decision for legal error or serious unfairness, giving real weight to findings the trial judge made having heard the evidence directly."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is treating claim value as the whole test for choosing a court, or treating the appellate ladder as something any losing party can simply climb. Both are gated: value is one factor among several under Practice Direction 7A, and every stage of appeal requires permission against a test that gets harder to meet the higher you go.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.civil-courts"
+  }
+}

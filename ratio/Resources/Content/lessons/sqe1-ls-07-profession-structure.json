@@ -1,0 +1,344 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-07",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 7,
+  "topicId": "sqe1.legal-system.profession-structure",
+  "title": "The structure of the legal profession",
+  "subtitle": "Solicitors, barristers, CILEX and other authorised persons — and who may stand up in which court",
+  "estimatedMinutes": 15,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify the three traditional branches of the legal profession in England and Wales — solicitors, barristers, and chartered legal executives — and describe their traditional working roles",
+    "Explain what a right of audience is, how it is conferred, and how it varies by court level and by branch of the profession",
+    "Apply knowledge of the profession's structure to identify which type of authorised person is competent to carry out a given task on a given fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Legal Services Act 2007, s 13", "role": "Defines the exercise of a right of audience as a reserved legal activity and sets out how such a right is acquired" },
+    { "citation": "Courts and Legal Services Act 1990, s 27", "role": "Opened higher-court rights of audience to solicitors who obtain higher rights, ending the Bar's historic monopoly" },
+    { "citation": "Legal Services Act 2007, s 18 and Sch 4", "role": "Enables bodies such as CILEX Regulation to become an approved regulator, giving chartered legal executives authorised-person status" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Every SQE1 candidate can say 'solicitors and barristers are different'. Where the profile shows knowledge is ahead of application, this note appears: 'You know the branches — this lesson is about which one a client actually needs.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards short fact patterns: expect 'who should do this' questions, not definitions.",
+      "weakKnowledge": "Start with Part 1 and take your time over the three branches and the authorised-person list — the rest of the lesson assumes you can name who does what without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A client walks into a high street firm wanting a will drafted, a boundary dispute litigated, and — if it comes to it — a barrister instructed for a three-day trial in the County Court. Three different tasks, and in principle three different kinds of professional could lawfully do each one. None of that is obvious from the word 'lawyer'. This lesson maps who is actually authorised to do what."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three branches, one profession",
+        "voice": "structural — sets up the map before filling in detail",
+        "body": [
+          "England and Wales has never had a single, undifferentiated 'lawyer'. Historically the profession split into two branches — solicitors and barristers — and a third, chartered legal executives, has since grown into a fully qualified, independently regulated branch alongside them.",
+          "The old caricature was clean: solicitors dealt directly with clients and did the paperwork; barristers were specialist advocates and advisers, instructed by solicitors rather than the public, and did the courtroom work. That division has eroded a great deal — many solicitors now advocate routinely, and direct public access to barristers is common — but the three branches remain distinct professions, each with its own qualification route, its own regulator, and its own professional title.",
+          "Chartered legal executives (CILEX members) qualify through a structured programme combining study and supervised practice, often while working. They are fee-earners with their own rights — including, once accredited, rights of audience and other reserved-activity rights — not paralegals working under someone else's authorisation."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Authorised person",
+            "definition": "Someone entitled, under the Legal Services Act 2007, to carry out a reserved legal activity — either because they are individually authorised by an approved regulator (e.g. admitted as a solicitor) or because they act through an authorised entity."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-07-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the three traditional branches of the legal profession in England and Wales.",
+          "acceptableAnswers": ["solicitors, barristers, chartered legal executives", "solicitors, barristers and cilex", "solicitors barristers legal executives"],
+          "modelAnswer": "Solicitors, barristers, and chartered legal executives (CILEX members) — three separately qualified and separately regulated branches of one profession."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What solicitors and barristers actually do",
+        "voice": "comparative — sets the two roles side by side",
+        "body": [
+          "Solicitors are typically the client's first point of contact: they take instructions, advise, run transactions and litigation, and — where needed — instruct a barrister for specialist advocacy or opinion work. Most solicitors work in firms, though increasingly some practise as sole practitioners or through alternative business structures.",
+          "Barristers are traditionally self-employed, working from chambers and sharing administrative overheads with other barristers rather than being employed by them. Their core skills are advocacy and specialist written advice, and they are trained from the outset to argue a case in court. Since reforms allowing direct public access, a barrister can in some circumstances be instructed directly by a client without a solicitor as intermediary — though many areas of work still route through one.",
+          "Both branches can, and often do, appear in court — the old idea that only barristers advocate is out of date. What actually determines who may appear in which court is not branch membership as such, but rights of audience, which the next part deals with directly."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Solicitors and barristers, compared",
+            "points": [
+              "Solicitors: client-facing, transactional and litigious work, typically firm-based, can be employed or self-employed",
+              "Barristers: traditionally self-employed from chambers, specialist advocacy and opinion work, increasingly accessible directly by the public",
+              "Both may hold rights of audience — branch membership alone does not determine who can appear where",
+              "Both are subject to their own regulator (solicitors: the SRA; barristers: the Bar Standards Board) and their own code of conduct"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-07-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Is it still accurate to say that only barristers can advocate in court?",
+          "options": ["No — solicitors can also hold rights of audience and appear in court", "Yes — advocacy remains the exclusive preserve of barristers"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The old strict divide has gone: what matters is whether a person holds the relevant right of audience, not which branch they belong to.",
+          "feedbackIncorrect": "Not any more. Solicitors can and do acquire rights of audience, including in the higher courts — branch membership is not the same question as who can advocate."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Rights of audience: the real gatekeeper",
+        "voice": "argumentative — explains why this concept, not job title, is the exam-relevant one",
+        "body": [
+          "The exercise of a right of audience is one of the reserved legal activities under the Legal Services Act 2007 — meaning it is a criminal offence to exercise it without being entitled to. Section 13 of the Act sets out how a person becomes entitled: broadly, by being authorised to do so by a relevant approved regulator (such as the SRA, the Bar Standards Board, or CILEX Regulation) in relation to the activity concerned, or by being exempt under other provision.",
+          "Rights of audience are not uniform. A newly qualified solicitor automatically has rights of audience in the lower courts — the County Court and magistrates' courts, broadly, for certain proceedings — but not, without further accreditation, in the higher courts (the High Court, Crown Court and above). To appear there, a solicitor must qualify as a solicitor-advocate by obtaining higher rights of audience, a separate accreditation introduced after the Courts and Legal Services Act 1990 broke the Bar's historic monopoly on higher-court advocacy.",
+          "Barristers, by contrast, acquire full rights of audience in all courts as part of their initial qualification as a matter of course. Chartered legal executives can also gain rights of audience, including in some higher-court proceedings, through further CILEX accreditation — again, this is not automatic on qualifying as a legal executive."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Legal Services Act 2007, s 13",
+            "text": "A person is entitled to carry on an activity which is a reserved legal activity if the person is authorised to carry on the activity by a relevant approved regulator (in relation to the reserved legal activity), or the person is exempt in relation to that activity.",
+            "elements": ["The activity must be a reserved legal activity (here, exercise of a right of audience)", "Authorisation must come from a relevant approved regulator for that activity", "Absent authorisation, the person must fall within a recognised exemption"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-07-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that determines whether this solicitor may advocate in the Crown Court.",
+          "scenarioText": "Priya qualified as a solicitor three years ago and regularly appears in the County Court. She has never applied for or obtained higher rights of audience. Her firm asks her to conduct a Crown Court trial next month.",
+          "tappableSpans": ["qualified as a solicitor three years ago", "regularly appears in the County Court", "never applied for or obtained higher rights of audience", "asks her to conduct a Crown Court trial"],
+          "correctSpan": "never applied for or obtained higher rights of audience",
+          "feedbackCorrect": "That's the operative fact. Without higher rights of audience, Priya's automatic rights do not extend to the Crown Court, however experienced she is in the County Court.",
+          "feedbackIncorrect": "Look for the fact about accreditation, not experience or seniority. Rights of audience in the higher courts depend on a specific further qualification, which Priya has not obtained."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Beyond the traditional three: other authorised persons",
+        "voice": "reference-style — a part students will return to",
+        "body": [
+          "The three traditional branches are not the whole picture. The Legal Services Act 2007 recognises a range of other authorised persons who may lawfully carry out specific reserved legal activities within their own defined scope, each under their own approved regulator.",
+          "Licensed conveyancers are authorised to carry out reserved instrument activities — the paperwork of transferring land — without being solicitors, regulated by the Council for Licensed Conveyancers. Costs lawyers are authorised in relation to costs-related litigation work, regulated by the Costs Lawyer Standards Board. Notaries public carry out notarial activities (a small, historically distinct reserved activity, largely concerned with authenticating documents for use abroad), regulated by the Master of the Faculties.",
+          "The pattern across all of these is the same one from s 13: no reserved activity may be exercised by anyone who is not authorised by an approved regulator for that specific activity, or exempt. A person can be a perfectly competent, qualified professional in one respect and still have no authority whatsoever to carry out a different reserved activity."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Other authorised persons (non-exhaustive)",
+            "points": [
+              "Licensed conveyancers — reserved instrument activities (property transactions), regulated by the CLC",
+              "Costs lawyers — costs-related litigation work, regulated by the Costs Lawyer Standards Board",
+              "Notaries public — notarial activities, regulated by the Master of the Faculties",
+              "Patent attorneys and trade mark attorneys — rights of audience and conduct of litigation within their specialist IP jurisdiction, once accredited"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-07-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the correct logical order for working out whether someone may lawfully carry out a reserved legal activity.",
+          "items": [
+            "Identify the activity in question and confirm it is a reserved legal activity",
+            "Identify who is proposing to carry it out",
+            "Check whether that person is authorised by a relevant approved regulator for that specific activity",
+            "If not authorised, check whether an exemption applies",
+            "If neither applies, the activity may not lawfully be carried out by that person"
+          ],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "feedbackCorrect": "That is exactly the s 13 structure: identify the activity, identify the person, check authorisation, check exemption, and only then conclude.",
+          "feedbackIncorrect": "Check the order again — you must pin down the activity and the person first, then test authorisation, and only fall back on exemption if authorisation is absent."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Applying the map: who does the client actually need?",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "SQE1 questions in this area rarely ask you to define a branch. They give you a task and ask who may lawfully do it — and the trap is almost always assuming that professional title settles the question, when authorisation for the specific reserved activity is what actually matters.",
+          "A commercial solicitor with no higher rights cannot suddenly advocate in the Crown Court because they are 'a lawyer'. A licensed conveyancer cannot draft a will just because conveyancing and probate both involve property. A trainee solicitor, not yet admitted, cannot exercise rights of audience at all, however capable they are, because they are not yet an authorised person.",
+          "The reliable method is always the same: identify the specific reserved activity in play, then ask who is authorised — by which regulator, for which activity, in which court or context — before assuming any given professional can do it."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because someone is 'a qualified solicitor', they are automatically entitled to carry out any reserved legal activity, including higher-court advocacy or probate work.",
+            "whyItsWrong": "Authorisation under the Legal Services Act 2007 is activity-specific, not status-general. Being admitted as a solicitor confers only the rights the SRA's authorisation actually extends to — automatic lower-court rights of audience, for example, but not higher-court rights without separate accreditation, and not other reserved activities the solicitor has not been authorised for."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-07-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client wants a straightforward residential property transfer handled as cheaply as possible, with no advocacy or litigation involved. Which of the following professionals is authorised to carry out the core reserved activity here?",
+          "options": ["A costs lawyer, because the work involves paying fees", "A licensed conveyancer, because reserved instrument activities are within their specific authorisation", "A barrister, because barristers can undertake any reserved legal activity", "Only a solicitor may ever handle a property transfer"],
+          "correctIndex": 1,
+          "explanation": "Reserved instrument activities — the core of a property transfer — are within a licensed conveyancer's specific authorisation under their own regulator, the CLC. Solicitors can also do this work, but they are not the only, or automatically the cheapest, authorised option."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-07-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A trainee solicitor, not yet admitted, wants to know whether she may exercise rights of audience in any court. What is the position?",
+      "options": ["She may exercise rights of audience only in the magistrates' court", "She has no rights of audience at all, as she is not yet an authorised person", "She has the same rights of audience as a qualified solicitor from day one of her training contract", "She may exercise rights of audience only if supervised by a barrister"],
+      "correctIndex": 1,
+      "explanation": "Rights of audience attach to authorised persons. An unadmitted trainee is not yet authorised by the SRA and so holds no rights of audience, regardless of the court."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "A newly admitted solicitor asks her supervisor which courts she may automatically appear in without any further accreditation. What should the supervisor tell her?",
+      "options": ["All courts, including the Crown Court and High Court, from the date of admission", "The County Court and magistrates' courts, broadly, but not the higher courts without obtaining higher rights of audience", "No courts at all until she has practised for two years", "Only the court in which she completed her training contract"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often assume admission as a solicitor confers rights of audience everywhere, on the reasoning that a solicitor is 'a fully qualified lawyer'. Admission confers only the lower-court rights automatically; higher-court rights require separate accreditation as a solicitor-advocate.",
+      "explanation": "A solicitor's automatic rights of audience are confined to the lower courts. Higher-court rights of audience require obtaining higher rights of audience as a distinct, further qualification."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A barrister in independent practice is approached directly by a member of the public who wants advice on a contractual dispute, without going through a solicitor first. What is the position under current rules?",
+      "options": ["This is never permitted — barristers may only be instructed by a solicitor", "This may be permitted, as direct public access to barristers is allowed in many types of work", "This is only permitted if the barrister is also dual-qualified as a solicitor", "This is only permitted in criminal matters"],
+      "correctIndex": 1,
+      "explanation": "Reforms to the Bar's practising rules permit direct public access in many areas of work, meaning a client can instruct a barrister without a solicitor as intermediary, subject to the barrister's own training and the nature of the matter."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under Legal Services Act 2007, s 13, what is required for a person to be entitled to carry on a reserved legal activity?",
+      "options": ["Good character alone, as assessed by any regulator", "Authorisation by a relevant approved regulator for that activity, or a recognised exemption", "A university law degree, regardless of subsequent qualification", "Membership of any one of the three traditional branches of the profession"],
+      "correctIndex": 1,
+      "explanation": "Section 13 requires either authorisation by a relevant approved regulator in relation to the specific reserved activity, or that the person falls within a recognised exemption — not general legal qualification or good character alone."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A licensed conveyancer is asked by a long-standing client to draft a will alongside the client's house sale, purely as a convenience. Should the conveyancer agree?",
+      "options": ["Yes, because will drafting and conveyancing both concern property", "No, because will drafting falls outside the reserved instrument activities the conveyancer is authorised for", "Yes, provided the client signs a waiver", "No, because conveyancers may never do any work connected with wills"],
+      "correctIndex": 1,
+      "trapExplanation": "The overlap in subject matter (property) tempts students into thinking authorisation transfers across related work. Authorisation is activity-specific: a licensed conveyancer's authorisation covers reserved instrument activities, not the separate reserved activity of probate work or general will drafting outside that scope.",
+      "explanation": "A licensed conveyancer's authorisation is confined to reserved instrument activities. Will drafting is a different matter and not automatically within that authorisation merely because both concern property."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-06",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which regulator is responsible for chartered legal executives?",
+      "options": ["The Solicitors Regulation Authority", "The Bar Standards Board", "CILEX Regulation", "The Legal Services Board directly, with no intermediate regulator"],
+      "correctIndex": 2,
+      "explanation": "Chartered legal executives are regulated by CILEX Regulation, an approved regulator in its own right under the Legal Services Act 2007, distinct from the SRA and the BSB."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A client needs a document notarised for use in a foreign jurisdiction that requires notarisation as a formality. Which authorised person is specifically suited to this task?",
+      "options": ["A costs lawyer", "A notary public", "A patent attorney", "Any solicitor, regardless of accreditation"],
+      "correctIndex": 1,
+      "explanation": "Notarial activities are a distinct reserved legal activity carried out by notaries public, regulated by the Master of the Faculties — not a task within a solicitor's or costs lawyer's ordinary authorisation."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "What is the significance of the Courts and Legal Services Act 1990, s 27, for the structure of the profession?",
+      "options": ["It created the Bar Standards Board", "It abolished the barrister profession", "It opened a route for solicitors to gain higher-court rights of audience, ending the Bar's historic advocacy monopoly", "It gave licensed conveyancers rights of audience in the Crown Court"],
+      "correctIndex": 2,
+      "explanation": "Section 27 of the 1990 Act created the mechanism by which solicitors could obtain higher-court rights of audience, breaking what had previously been an effective monopoly held by the Bar over higher-court advocacy."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A student says: 'Since solicitors can now advocate in all courts, the old distinction between solicitors and barristers has disappeared entirely.' Which best evaluates that claim?",
+      "options": ["The claim is correct — the branches are now functionally identical in every respect", "The claim overstates the position — advocacy convergence has occurred to a degree, but the branches remain separately regulated professions with different default rights and qualification routes", "The claim is wrong because solicitors have never been permitted any rights of audience", "The claim is correct only for criminal matters"],
+      "trapExplanation": "It's tempting to treat convergence in advocacy practice as meaning the branches have merged. They remain distinct regulated professions with different regulators, qualification routes, and — absent further accreditation — different default rights.",
+      "correctIndex": 1,
+      "explanation": "Convergence in who can advocate does not erase the branches: solicitors, barristers and CILEX members remain separately regulated, with different qualification routes and different starting-point rights, even though overlap in practice has grown."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm needs someone to conduct detailed work on the recoverability of legal costs following a hard-fought piece of litigation. Which authorised person is specifically trained and regulated for this work?",
+      "options": ["A notary public", "A costs lawyer", "A licensed conveyancer", "A patent attorney"],
+      "correctIndex": 1,
+      "explanation": "Costs lawyers are authorised in relation to costs-related litigation work and regulated by the Costs Lawyer Standards Board, making them the specifically suited authorised person for this task."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-11",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "True or false: exercising a right of audience without being entitled to do so under the Legal Services Act 2007 is a criminal offence.",
+      "options": ["True", "False", "True, but only for barristers", "False, it is a civil matter only"],
+      "correctIndex": 0,
+      "explanation": "Exercising a reserved legal activity, including a right of audience, without entitlement under the Act is a criminal offence — this is what gives the reserved-activities scheme its force."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A solicitor-advocate holds higher rights of audience. What does this specifically add to her ordinary rights as a solicitor?",
+      "options": ["The ability to draft wills without further qualification", "The ability to appear as an advocate in the higher courts, in addition to the lower-court rights she already has as a solicitor", "Automatic membership of the Bar", "The ability to regulate other solicitors"],
+      "correctIndex": 1,
+      "explanation": "Higher rights of audience specifically extend a solicitor's advocacy rights to the higher courts, on top of the lower-court rights that come automatically with admission — it does not confer unrelated reserved activities or regulatory powers."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A qualified chartered legal executive with CILEX advocacy accreditation is instructed to appear in a County Court hearing. A junior colleague says she cannot, because 'only solicitors and barristers can advocate'. Is the colleague correct?",
+      "options": ["Yes, CILEX members can never hold rights of audience", "No — chartered legal executives can gain rights of audience, including in some County Court proceedings, through CILEX accreditation", "Yes, unless she is supervised throughout by a solicitor", "No, but only if she first re-qualifies as a solicitor"],
+      "correctIndex": 1,
+      "trapExplanation": "The colleague's assumption treats the three branches as though only two of them can ever advocate. In fact rights of audience are activity-specific and regulator-conferred, not limited by branch — a suitably accredited CILEX member can hold them too.",
+      "explanation": "CILEX Regulation, as an approved regulator, can confer rights of audience on suitably accredited chartered legal executives — the right depends on authorisation for the specific activity, not on which of the three branches someone belongs to."
+    },
+    {
+      "itemId": "sqe1-ls-07-test-14",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Which statement best captures the relationship between professional title and authorisation under the Legal Services Act 2007?",
+      "options": ["Title determines authorisation automatically and completely", "Authorisation is specific to the reserved activity and the approved regulator concerned, and is not simply implied by professional title", "Only solicitors require any authorisation at all", "Authorisation, once granted for one activity, extends to all others"],
+      "correctIndex": 1,
+      "explanation": "The Act's scheme is activity-specific: what a person may lawfully do depends on which reserved activities they are authorised for by which regulator, not on their job title in general terms."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is treating professional title as settling the question of authority. It almost never does on its own — check which specific reserved activity is in play, and who is actually authorised, by which regulator, to carry it out.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.profession-structure"
+  }
+}

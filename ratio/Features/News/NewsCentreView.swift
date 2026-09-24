@@ -79,7 +79,8 @@ struct NewsCentreView: View {
         ScrollView(.horizontal) {
             HStack(spacing: RatioSpace.xs) {
                 chip("All", selected: module == nil) { module = nil }
-                ForEach(Module.allCases) { m in
+                // Only modules with stories this week (news is tagged by LLB subject).
+                ForEach(Module.allCases.filter { m in student.news.contains { $0.modules.contains(m.rawValue) || $0.whyItMatters?.moduleId == m.rawValue } }) { m in
                     chip(m.title, selected: module == m) { module = m }
                 }
             }

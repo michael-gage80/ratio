@@ -1,0 +1,337 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-ls-06",
+  "moduleId": "sqe1-legal-system-legal-services",
+  "moduleTitle": "SQE1 · Legal System and Legal Services",
+  "lessonNumber": 6,
+  "topicId": "sqe1.legal-system.judiciary-appeals",
+  "title": "The judiciary and appeals",
+  "subtitle": "Judicial roles, appointment, independence, and the permission-to-appeal framework",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Describe the main judicial ranks and explain how the Judicial Appointments Commission selects candidates for judicial office",
+    "Explain the constitutional principle of judicial independence and identify the mechanisms that protect it",
+    "Apply the correct permission-to-appeal test and appellate route to a case at a given level of the court hierarchy"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Constitutional Reform Act 2005", "role": "Creates the Judicial Appointments Commission, reforms the office of Lord Chancellor, establishes the Supreme Court, and puts judicial independence on a statutory footing" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Understanding who sits in judgment, how they got there, and why they can rule against the government of the day without fear, is what makes sense of everything else in the legal system module — it's the constitutional scaffolding the courts sit on.",
+    "profileHooks": {
+      "weakApplication": "You've got the concepts down — the test pool here is weighted towards routing appeal scenarios through the right test and the right level, so read each fact pattern for what level of court it's actually at.",
+      "weakKnowledge": "Start with Part 1 and build the judicial ladder before tackling independence and appeals — the later parts assume you can place a judge's rank without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A judge rules against the Home Secretary in a case the government cares about a great deal. The judge keeps their job, their salary, and their reputation the next morning. That outcome isn't an accident of character — it's the product of a deliberate constitutional design, much of it barely twenty years old.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The framework below — the Judicial Appointments Commission, the separated office of Lord Chancellor, and the core independence protections — rests on the Constitutional Reform Act 2005 and is settled. The detailed permission-to-appeal tests are set out in the Civil Procedure Rules and are procedural rules that are periodically amended; treat the specific wording given here as the current formulation rather than a fixed statutory text."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The judicial ladder",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Judicial office in England and Wales runs across a wide ladder, from lay magistrates at the base — unpaid, trained volunteers who decide the great majority of criminal cases day to day — through legally qualified District Judges sitting in the Magistrates' Court and County Court.",
+          "Above them sit Recorders (part-time judges, often practitioners who continue in practice alongside judging), Circuit Judges (full-time, sitting in the Crown Court and County Court), and then High Court Judges, who sit in one of the three High Court Divisions and take on the most substantial first-instance work.",
+          "At the top of the ladder are the Lord and Lady Justices of Appeal, who sit in the Court of Appeal, and the Justices of the Supreme Court. The Lord Chief Justice is head of the judiciary of England and Wales and President of the Courts of England and Wales — a role that matters for understanding who actually leads the judiciary day to day, separate from the Lord Chancellor discussed in Part 2."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The judicial ladder, base to top",
+            "points": [
+              "Lay magistrates and District Judges (Magistrates' Courts) — Magistrates' Court",
+              "District Judges — County Court",
+              "Recorders and Circuit Judges — Crown Court and County Court",
+              "High Court Judges — High Court",
+              "Lord/Lady Justices of Appeal — Court of Appeal",
+              "Justices of the Supreme Court — Supreme Court"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-06-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Is a Recorder a full-time or part-time judicial office?",
+          "options": ["Full-time", "Part-time — Recorders typically continue in legal practice alongside judging"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. The Recorder role is a deliberate route into the judiciary that lets practitioners gain judicial experience while continuing in practice.",
+          "feedbackIncorrect": "Recorders sit part-time. This matters because it's often the first rung practising solicitors and barristers use to move towards a full-time judicial career."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The Judicial Appointments Commission: selection on merit",
+        "voice": "explanatory — walks through the mechanism and why it was created",
+        "body": [
+          "Before 2005, judicial appointments were effectively a matter for the Lord Chancellor, a government minister, acting largely on informal soundings — a system that drew increasing criticism for lacking transparency and for blurring the line between the executive and the judiciary it was appointing.",
+          "The Constitutional Reform Act 2005 created the Judicial Appointments Commission (JAC), an independent body responsible for selecting candidates for judicial office in England and Wales on the basis of merit, good character, and — under a statutory duty — with regard to the need to encourage diversity in the range of persons available for selection.",
+          "The JAC's process runs through advertised vacancies, structured applications, qualifying tests and interviews, culminating in a recommendation of a single candidate for each post. The Lord Chancellor's remaining role is narrow: for most posts, they can accept the recommendation, reject it once (with reasons), or ask the JAC to reconsider once — but cannot appoint their own preferred candidate in place of the JAC's recommendation. This is the mechanism that converts 'selection on merit' from an aspiration into an enforceable process."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Judicial Appointments Commission (JAC)",
+            "definition": "An independent statutory body, created by the Constitutional Reform Act 2005, responsible for selecting candidates for judicial office in England and Wales on merit and good character, with a duty to encourage diversity in the pool of candidates."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-06-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact that shows the Lord Chancellor cannot simply appoint their own preferred candidate to a judicial post.",
+          "scenarioText": "The JAC recommends Candidate X for a Circuit Judge vacancy after a competitive process. The Lord Chancellor personally prefers Candidate Y, a longstanding acquaintance, but under the statutory scheme may only accept the recommendation, reject it once with reasons, or ask the JAC to reconsider once.",
+          "tappableSpans": ["The JAC recommends Candidate X", "after a competitive process", "personally prefers Candidate Y", "may only accept the recommendation, reject it once with reasons, or ask the JAC to reconsider once"],
+          "correctSpan": "may only accept the recommendation, reject it once with reasons, or ask the JAC to reconsider once",
+          "feedbackCorrect": "Correct. This is the operative constraint — the Lord Chancellor's options are limited to those three, and none of them allows simply substituting a personally preferred candidate.",
+          "feedbackIncorrect": "Look for the sentence that actually limits what the Lord Chancellor can do with the recommendation, rather than the sentence describing their personal preference."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Judicial independence: what protects it, and from what",
+        "voice": "argumentative — builds the case for why independence needs active protection",
+        "body": [
+          "Judicial independence is not simply a matter of judicial temperament or professional pride — it is structurally protected, because a judiciary that could be removed, underpaid, or punished for unpopular decisions would not stay independent for long, however well-intentioned any individual judge might be.",
+          "Security of tenure is the first pillar: senior judges (from the High Court upwards) can only be removed by the monarch following an address by both Houses of Parliament — a threshold so high it has essentially never been used in the modern era. This insulates a judge's continued tenure from executive displeasure at any single ruling.",
+          "Judicial immunity from civil suit for acts done in a judicial capacity is the second pillar — a judge cannot be sued for defamation or negligence over the content of a ruling, however wrong a losing party believes it to be, which frees judges to decide difficult and unpopular cases without personal legal exposure.",
+          "The third pillar is the separation the Constitutional Reform Act 2005 itself created: it removed the Lord Chancellor's historic position as head of the judiciary (transferring that role to the Lord Chief Justice) and ended the practice of the Lord Chancellor sitting as a judge, sharpening the separation between the executive and the judicial branch that the office had previously blurred."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Constitutional Reform Act 2005, s 3(1)",
+            "text": "The Lord Chancellor, other Ministers of the Crown and all with responsibility for matters relating to the judiciary or otherwise to the administration of justice must uphold the continued independence of the judiciary.",
+            "elements": ["A statutory duty on the Lord Chancellor and other ministers", "To uphold judicial independence", "Applying to all with responsibility for the administration of justice"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-06-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Based on the provision above, which statement is most accurate?",
+          "options": ["Judicial independence is protected only by informal convention, with no statutory basis", "Section 3(1) imposes an express statutory duty on the Lord Chancellor and other ministers to uphold judicial independence", "The provision applies only to the Lord Chancellor personally and no other minister", "The provision has been repealed and no longer has legal effect"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — the 2005 Act didn't leave independence to convention alone; it created an explicit statutory duty binding ministers generally, not just the Lord Chancellor.",
+          "feedbackIncorrect": "Re-read the provision: it names the Lord Chancellor and other ministers, and imposes a duty — this is a statutory footing, not mere convention, and it isn't confined to the Lord Chancellor alone."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Permission to appeal: the gatekeeping tests",
+        "voice": "rule-driven — sets out the tests precisely, because precision is what's tested",
+        "body": [
+          "Very few civil appeals proceed as of right. Permission is generally required, and the test is set out in the Civil Procedure Rules: permission to appeal may be given only where the court considers that the appeal would have a real prospect of success, or that there is some other compelling reason for the appeal to be heard.",
+          "For a second appeal — an appeal from a decision that was itself already made on appeal — the test is deliberately tighter: permission will only be given where the appeal would raise an important point of principle or practice, or there is some other compelling reason for the relevant appellate court to hear it. This reflects a policy that litigation should not simply run indefinitely upward through successive appeals on ordinary points.",
+          "The pattern to notice across both tests: 'real prospect of success' is the ordinary, first-appeal standard, while 'important point of principle or practice' (echoed, at Supreme Court level, by 'arguable point of law of general public importance') marks the higher bar reserved for further appeals. The higher up the hierarchy an appeal sits, the less it is about whether this litigant was hard done by, and the more it is about whether the point matters beyond their case."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Permission tests by level",
+            "points": [
+              "First appeal (e.g. to the Court of Appeal from a first-instance decision) — real prospect of success, or some other compelling reason",
+              "Second appeal (an appeal from a decision already made on appeal) — important point of principle or practice, or some other compelling reason",
+              "Appeal to the Supreme Court — arguable point of law of general public importance"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-06-check-04",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A litigant lost at first instance in the County Court, then lost again on appeal to the High Court. They now want to appeal a second time, to the Court of Appeal, on a point that is specific to their own facts and raises no wider issue. Analyse whether permission is likely to be granted.",
+          "factsToOrder": [
+            "The litigant lost at first instance",
+            "The litigant lost again on their first appeal",
+            "The proposed further appeal would be a second appeal",
+            "The point raised is fact-specific with no wider significance"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Rule given; student applies it to the facts and writes the conclusion" },
+            { "level": 2, "support": "Issue given only; student selects the rule, applies it, and concludes" },
+            { "level": 3, "support": "No scaffold; student writes the full analysis unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether permission for a second appeal to the Court of Appeal is likely to be granted.",
+            "rule": "A second appeal requires permission on the tighter test: an important point of principle or practice, or some other compelling reason for the appeal to be heard.",
+            "application": "The point raised is fact-specific and has no wider significance beyond the parties' own dispute — it does not engage an important point of principle or practice, and nothing in the facts suggests any other compelling reason.",
+            "conclusion": "Permission for the second appeal is unlikely to be granted."
+          }
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Tracing an appeal through the hierarchy",
+        "voice": "synthesising — pulls the whole lesson together into one worked route",
+        "body": [
+          "Put independence and appointment to one side for a moment and follow a single dispute upward. A claim starts in the County Court, before a District Judge. If the losing party wants to challenge the outcome, they need permission, applying the ordinary first-appeal test, and the appeal typically goes to a Circuit Judge or the High Court, depending on the level of the original decision and the nature of the case — with genuinely substantial multi-track matters sometimes appealing directly to the Court of Appeal.",
+          "If that appeal fails and the losing party wants to go further, they now face a second appeal — the tighter 'important point of principle or practice' test applies, and permission is correspondingly harder to obtain, reflecting the policy against endless re-litigation of ordinary disputes.",
+          "If a case does reach the Court of Appeal and permission is refused or the appeal fails, the final step — to the Supreme Court — requires an arguable point of law of general public importance, the narrowest test of all. At every stage, the same underlying structural logic recurs: the appellate tests get harder, not easier, the higher the case climbs, because the purpose of the system shifts from correcting an individual wrong towards resolving questions that matter beyond the parties in front of the court."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Appellate escalation",
+            "definition": "The pattern by which permission-to-appeal tests become progressively harder to satisfy at each successive level of the court hierarchy, reflecting the shift from correcting individual errors to resolving points of wider legal significance."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-ls-06-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A litigant has already had one appeal heard and lost, on an ordinary contractual interpretation point specific to their own agreement. They want a second appeal. What should they be advised about the applicable test?",
+          "options": ["The same 'real prospect of success' test that applied to their first appeal will apply again", "The tighter 'important point of principle or practice, or some other compelling reason' test applies, and a purely fact-specific point is unlikely to meet it", "No permission is needed for a second appeal", "The test becomes easier to satisfy the second time, since the point has already been argued once"],
+          "correctIndex": 1,
+          "explanation": "Second appeals are deliberately harder to bring than first appeals. An ordinary point of contractual interpretation confined to the parties' own agreement is unlikely to be an 'important point of principle or practice', so permission is unlikely to be granted."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-ls-06-test-01",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which body is responsible for selecting candidates for judicial office in England and Wales on merit?",
+      "options": ["The Lord Chancellor, acting alone", "The Judicial Appointments Commission", "The Prime Minister", "The Court of Appeal"],
+      "correctIndex": 1,
+      "explanation": "The Judicial Appointments Commission, created by the Constitutional Reform Act 2005, runs the selection process on the basis of merit and good character."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-02",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "The JAC recommends a candidate for a High Court judicial post. The Lord Chancellor is unimpressed and would prefer a different, unrecommended candidate. What may the Lord Chancellor lawfully do?",
+      "options": ["Appoint their preferred candidate instead of the JAC's recommendation", "Accept the recommendation, reject it once with reasons, or ask the JAC to reconsider once — but not substitute their own preferred candidate", "Abolish the vacancy entirely without explanation", "Personally interview all candidates again and decide afresh"],
+      "correctIndex": 1,
+      "explanation": "The Lord Chancellor's role is deliberately narrow under the statutory scheme: accept, reject once with reasons, or ask for reconsideration once. None of those options permits simply substituting a personally preferred candidate."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-03",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "What did the Constitutional Reform Act 2005 do to the office of Lord Chancellor in relation to the judiciary?",
+      "options": ["It gave the Lord Chancellor sole power to appoint all judges", "It removed the Lord Chancellor's position as head of the judiciary, transferring that role to the Lord Chief Justice, and ended the Lord Chancellor sitting as a judge", "It abolished the office of Lord Chancellor entirely", "It made the Lord Chancellor a member of the Supreme Court"],
+      "correctIndex": 1,
+      "explanation": "The 2005 Act sharpened the separation between the executive and the judiciary by removing the Lord Chancellor's historic judicial headship and judicial sitting role, transferring judicial leadership to the Lord Chief Justice."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-04",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "How can a senior judge (High Court and above) normally be removed from office?",
+      "options": ["By a decision of the Lord Chancellor alone", "Only by the monarch following an address by both Houses of Parliament", "By a vote of the Judicial Appointments Commission", "Senior judges cannot be removed under any circumstances"],
+      "correctIndex": 1,
+      "explanation": "This extremely high threshold — parliamentary address followed by removal by the monarch — is the core security-of-tenure protection for senior judges, and has essentially never been invoked in the modern era."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-05",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A party who lost a High Court claim wants to sue the judge personally, alleging the judgment was negligently reasoned. What should they be advised?",
+      "options": ["This is a straightforward negligence claim likely to succeed", "Judicial immunity generally protects a judge from civil suit for acts done in a judicial capacity, so such a claim is very unlikely to succeed", "They should sue the Judicial Appointments Commission instead", "Judges can be sued freely for any judgment a party disagrees with"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to treat a wrong or unwelcome decision as ordinary professional negligence. Judicial immunity exists precisely to prevent that route — the correct remedy for an allegedly wrong decision is appeal, not a personal claim against the judge."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-06",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Section 3(1) of the Constitutional Reform Act 2005 imposes a duty to uphold judicial independence on whom?",
+      "options": ["Judges themselves, and no one else", "The Lord Chancellor and other ministers with responsibility for the administration of justice", "Only the Prime Minister", "The Judicial Appointments Commission alone"],
+      "correctIndex": 1,
+      "explanation": "The duty is placed on the Lord Chancellor and other ministers with relevant responsibility — a statutory obligation on the executive, not a duty judges owe to themselves."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-07",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A litigant lost at first instance, appealed and lost again, and now wants to bring a further appeal on a point specific to their own contract with no wider significance. What test governs whether permission for this further appeal will be granted?",
+      "options": ["The ordinary first-appeal test of a real prospect of success", "The second-appeal test: an important point of principle or practice, or some other compelling reason", "No test applies — second appeals are automatic", "The test used for judicial appointments"],
+      "correctIndex": 1,
+      "explanation": "Because this would be a second appeal, the tighter test applies, and permission is unlikely where the point is purely fact-specific and raises no wider principle."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-08",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "What is the general test for permission to bring a first appeal under the Civil Procedure Rules?",
+      "options": ["A real prospect of success, or some other compelling reason for the appeal to be heard", "An arguable point of law of general public importance", "The appellant must simply pay a fee", "No permission is required for any civil appeal"],
+      "correctIndex": 0,
+      "explanation": "This is the ordinary, first-appeal permission standard — a lower bar than the tests applied to second appeals or appeals to the Supreme Court."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-09",
+      "skillTag": "understanding",
+      "type": "mcqWithTrap",
+      "prompt": "Which of the following best explains why the permission-to-appeal tests become progressively harder to satisfy at higher levels of the court hierarchy?",
+      "options": ["Higher courts simply want to reduce their workload for its own sake", "The purpose of appellate review shifts from correcting an individual error towards resolving questions of wider legal significance", "Litigants at higher levels are assumed to be less credible", "There is no real difference between the tests at each level"],
+      "correctIndex": 1,
+      "trapExplanation": "Reducing workload might be a side effect, but it isn't the doctrinal reason for the tightening tests. The structural justification is about the purpose of appellate review changing — from correcting this litigant's case to resolving issues of broader importance."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-10",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Which judicial office is typically part-time, often held by a practising solicitor or barrister alongside their practice?",
+      "options": ["High Court Judge", "Circuit Judge", "Recorder", "Justice of the Supreme Court"],
+      "correctIndex": 2,
+      "explanation": "The Recorder role is the classic part-time judicial post, commonly used as a stepping stone towards a full-time judicial career while the holder continues in practice."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-11",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A case has already reached the Court of Appeal, where permission for a further appeal is being sought to take it to the Supreme Court. The point raised affects only the parties' own dispute, with no wider legal significance. Is permission likely to be granted?",
+      "options": ["Yes — the Supreme Court hears any case the Court of Appeal has already decided", "Unlikely — the Supreme Court's test requires an arguable point of law of general public importance, which a purely party-specific point does not raise", "Yes, provided the litigant can afford the fees", "Permission is not required to appeal to the Supreme Court"],
+      "correctIndex": 1,
+      "explanation": "The Supreme Court's permission test is the narrowest in the hierarchy. A point with no significance beyond the parties in front of the court is unlikely to be treated as one of general public importance."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-12",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Which statement best reflects the diversity duty placed on the Judicial Appointments Commission?",
+      "options": ["The JAC must appoint a fixed quota of candidates from underrepresented groups regardless of merit", "The JAC selects solely and only on merit and good character, with a statutory duty also to have regard to the need to encourage diversity in the range of persons available for selection", "Diversity plays no role in the JAC's statutory framework at all", "Diversity considerations apply only to the most senior judicial appointments"],
+      "correctIndex": 1,
+      "explanation": "Selection remains on merit and good character; the diversity duty is about encouraging a diverse range of candidates coming forward, not displacing the merit-based selection of the successful candidate."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-13",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Who is head of the judiciary of England and Wales?",
+      "options": ["The Lord Chancellor", "The Lord Chief Justice", "The Master of the Rolls", "The Prime Minister"],
+      "correctIndex": 1,
+      "explanation": "Since the Constitutional Reform Act 2005 transferred judicial headship away from the Lord Chancellor, the Lord Chief Justice has held this role."
+    },
+    {
+      "itemId": "sqe1-ls-06-test-14",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A government minister publicly criticises a judge's ruling and suggests the judge should be removed for reaching a decision the minister dislikes. What is the most accurate assessment of whether this can happen?",
+      "options": ["The minister can remove the judge directly given their seniority in government", "Removing a senior judge requires an address by both Houses of Parliament followed by removal by the monarch — a minister's disapproval of a single ruling does not achieve this, and ministers are under a statutory duty to uphold judicial independence", "The judge automatically loses their post once a minister criticises them publicly", "This is a matter for the Judicial Appointments Commission to decide immediately"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to assume a minister's public disapproval carries some direct removal power. It does not — the removal threshold for senior judges is extremely high and entirely separate from ministerial opinion, and ministers are themselves under a statutory duty to uphold independence, not undermine it."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson is flattening the permission-to-appeal tests into one undifferentiated 'ask the court nicely' step. They are not uniform: the bar rises deliberately at each level, from 'real prospect of success' through 'important point of principle or practice' to 'arguable point of law of general public importance' — and a fact-specific point that clears the first often fails the later ones.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.legal-system.judiciary-appeals"
+  }
+}

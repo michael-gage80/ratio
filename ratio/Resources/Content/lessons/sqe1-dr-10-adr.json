@@ -1,0 +1,347 @@
+{
+  "lessonId": "sqe1-dr-10",
+  "moduleId": "sqe1-dispute-resolution",
+  "moduleTitle": "SQE1 · Dispute Resolution",
+  "lessonNumber": 10,
+  "topicId": "sqe1.dispute-resolution.adr",
+  "track": "SQE1",
+  "title": "Settling without a trial",
+  "subtitle": "Mediation, arbitration, without-prejudice privilege and the costs risk of refusing to engage",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify mediation and arbitration as the principal forms of alternative dispute resolution and state the key procedural and legal differences between them",
+    "Explain the scope of without-prejudice privilege in ADR communications and the recognised exceptions to it",
+    "Apply the Halsey factors to a fact pattern to determine whether a refusal to engage in ADR was unreasonable, and predict the likely costs consequence"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Civil Procedure Rules, Part 1 (overriding objective)", "role": "Requires the court and the parties to further the overriding objective, which expressly includes encouraging and facilitating the use of ADR" },
+    { "citation": "Arbitration Act 1996, s 1", "role": "States the Act's guiding principles: party autonomy, a fair and impartial tribunal, and minimal court intervention" },
+    { "citation": "Halsey v Milton Keynes General NHS Trust [2004] EWCA Civ 576", "role": "Sets out the factors for deciding whether a successful party's refusal to engage in ADR was unreasonable, triggering a costs sanction" },
+    { "citation": "PGF II SA v OMFS Company 1 Ltd [2013] EWCA Civ 1288", "role": "Holds that silence in the face of a reasonable invitation to mediate is, without more, unreasonable" },
+    { "citation": "Unilever plc v The Procter & Gamble Co [2000] 1 WLR 2436", "role": "Sets out the recognised exceptions to without-prejudice privilege" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "SQE1 rarely tests ADR as an abstract topic — it tests whether you can spot, inside a costs or case-management fact pattern, that a party's conduct around mediation or arbitration is the live issue. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know what mediation is — this lesson checks whether you can spot when refusing it becomes expensive.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans heavily on fact patterns: expect a client scenario and a 'what should happen next' question, not a bare definition.",
+      "weakKnowledge": "Start with Part 1 and take your time distinguishing mediation from arbitration — the costs and privilege material later in this lesson assumes you already have that distinction solid."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A claimant's solicitor ignores three separate invitations to mediate, wins at trial — and still ends up paying the other side's costs. Winning the case and winning on costs are not the same question in English civil procedure, and ADR is the sharpest place that gap shows up. This lesson is about the two main routes out of court, what you can and can't repeat from a failed settlement attempt, and the one conversation you cannot afford to go silent on."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "A system that expects you to try settling first",
+        "voice": "structural — sets the framework the rest of the lesson sits inside",
+        "body": [
+          "The Civil Procedure Rules do not merely tolerate ADR — CPR 1.1's overriding objective, which governs every case management decision a court makes, expressly requires the court to further dealing with cases 'justly and at proportionate cost', and the accompanying rules and practice direction identify encouraging the parties to use ADR as one of the ways that objective is achieved. This is not background colour: a court actively managing a case can, and regularly does, stay proceedings of its own motion to enable ADR to be attempted, and factors this into costs orders at the end.",
+          "'ADR' covers a range of processes, but SQE1 focuses on two: mediation and arbitration. They are not interchangeable, and confusing them is a common examiner trap. Mediation is a facilitated negotiation — a neutral third party (the mediator) helps the parties reach their own agreement, but has no power to impose an outcome; if it fails, the parties are exactly where they started, free to litigate. Arbitration is fundamentally different: the parties agree (usually in advance, by contract) to have a neutral third party (the arbitrator) decide the dispute, and that decision — the award — is final and binding, enforceable in much the same way as a court judgment.",
+          "Keep that distinction sharp going into the rest of this lesson: mediation is about preserving the parties' control over the outcome; arbitration is about replacing the court with a different, chosen decision-maker."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "ADR (alternative dispute resolution)",
+            "definition": "Any process for resolving a dispute other than court litigation. For SQE1 purposes, the two processes that matter most are mediation (a facilitated negotiation with no binding outcome unless the parties agree one) and arbitration (a private, binding adjudication by an arbitrator chosen by the parties)."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-10-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A mediation between two commercial parties ends without agreement. Can either party still bring court proceedings on the same dispute?",
+          "options": ["Yes — an unsuccessful mediation has no binding outcome, so litigation remains open", "No — attempting mediation extinguishes the right to litigate the same dispute"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Mediation only produces a binding outcome if the parties choose to make one — typically by signing a settlement agreement. Failing to agree simply leaves litigation as the next step.",
+          "feedbackIncorrect": "Mediation has no power to bind the parties unless they agree a settlement themselves. An unsuccessful mediation changes nothing about either party's right to sue — this is the core distinction from arbitration, which does produce a binding decision."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Mediation in practice",
+        "voice": "practical — walks through what actually happens in the room",
+        "body": [
+          "A civil or commercial mediation is typically a single day. The parties, usually with their solicitors, attend with a trained, independent mediator. After a joint opening session, the mediator usually moves between separate private rooms ('shuttle mediation'), testing each side's position, exploring what actually matters to each party (which is often not the same as their pleaded case), and looking for room to move that a purely legal analysis would miss.",
+          "Two features distinguish mediation from a straightforward without-prejudice negotiation between solicitors. First, the mediator is independent of both sides and has no stake in either party's case — their role is process, not advocacy. Second, mediation is confidential by agreement (usually recorded in a mediation agreement signed before the day starts) as well as protected by without-prejudice privilege, so what is said and offered inside the mediation cannot be deployed later, including before the mediator themselves if the case does not settle.",
+          "If the mediation succeeds, the outcome is recorded in a settlement agreement, which is a contract — enforceable by ordinary contract remedies, not by the mediator or the court's procedural machinery. If it fails, the parties return to the litigation exactly where they left it, save for one thing this lesson comes back to at the end: the fact that ADR was attempted, or refused, can itself affect who pays the costs of the litigation that follows."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Mediation vs arbitration at a glance",
+            "points": [
+              "Mediation — facilitated negotiation; mediator has no power to decide; outcome only binds if the parties agree a settlement",
+              "Arbitration — private adjudication; arbitrator decides; the award is final and binding on the parties",
+              "Mediation is usually voluntary in the moment (either party can walk away); arbitration is usually mandatory once agreed, because it displaces the court's jurisdiction entirely for that dispute",
+              "Both are protected, in different ways, by confidentiality and without-prejudice principles"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-10-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact that shows this process is mediation rather than arbitration.",
+          "scenarioText": "The parties spend a day with a neutral facilitator who moves between separate rooms exploring each side's real interests. By the end of the day no agreement is reached, and both parties remain free to issue court proceedings on exactly the same dispute.",
+          "tappableSpans": ["a neutral facilitator", "moves between separate rooms", "no agreement is reached", "both parties remain free to issue court proceedings"],
+          "correctSpan": "both parties remain free to issue court proceedings",
+          "feedbackCorrect": "That's the tell. An arbitrator's award would have ended the dispute one way or the other; here nothing binds the parties because mediation only produces an outcome if they agree one — which they didn't.",
+          "feedbackIncorrect": "Look for the consequence of the process ending without agreement. Arbitration ends with a binding award whatever happens; mediation only binds the parties if they choose to settle — the fact that litigation is still open afterwards is the giveaway."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Arbitration: a private court the parties build themselves",
+        "voice": "statute-first — works from the Act's own stated principles outward",
+        "body": [
+          "Arbitration in England and Wales is governed by the Arbitration Act 1996, and the Act is unusually explicit about the philosophy behind it: s 1 states three guiding principles that every other provision in the Act should be read against — that the object of arbitration is to obtain the fair resolution of disputes by an impartial tribunal without unnecessary delay or expense; that the parties should be free to agree how their disputes are resolved, subject only to such safeguards as are necessary in the public interest; and that the court should not intervene except as provided by the Act.",
+          "That third principle — minimal court intervention — is what makes arbitration distinctive for exam purposes. Once parties have validly agreed to arbitrate (typically through an arbitration clause in a commercial contract), the court will generally stay any court proceedings brought in breach of that agreement and require the parties to arbitrate instead. The court's remaining role is narrow: supporting the arbitral process (for example, enforcing a witness summons) and a limited supervisory jurisdiction over the award itself — principally challenges for serious irregularity or on a point of law, not a full appeal on the merits.",
+          "This is why arbitration suits parties who want privacy, a decision-maker with relevant technical expertise, and finality — and why it suits SQE1 to test the boundary of that finality: an arbitral award being binding does not mean it is unchallengeable in every respect, but the grounds for challenge are deliberately narrow, not a second bite at the litigation the parties opted out of."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Arbitration Act 1996, s 1",
+            "text": "The provisions of this Part are founded on the following principles, and shall be construed accordingly — (a) the object of arbitration is to obtain the fair resolution of disputes by an impartial tribunal without unnecessary delay or expense; (b) the parties should be free to agree how their disputes are resolved, subject only to such safeguards as are necessary in the public interest; (c) in matters governed by this Part the court should not intervene except as provided by this Part.",
+            "elements": ["Fair resolution by an impartial tribunal, without unnecessary delay or expense", "Party autonomy, subject to necessary public-interest safeguards", "Minimal court intervention — only as the Act itself provides"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-10-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under the Arbitration Act 1996, s 1, what is the court's general posture towards a matter the parties have validly agreed to arbitrate?",
+          "options": ["The court should not intervene except as the Act itself provides", "The court retains a full concurrent jurisdiction to hear the same dispute at either party's request", "The court must approve the arbitrator's identity before any award can be made"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — s 1(c) sets minimal court intervention as a founding principle, which is why the court will generally stay competing litigation and confine itself to the narrow supportive and supervisory roles the Act allows.",
+          "feedbackIncorrect": "Look again at s 1(c). The Act's stated principle is minimal intervention — the court does not run a parallel process or need to approve the tribunal; its role is confined to what the Act itself provides for."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What can't be used later: without-prejudice privilege",
+        "voice": "case-narrative — builds the rule from the leading case's own reasoning",
+        "body": [
+          "Genuine settlement negotiations — whether inside a formal mediation or an ordinary exchange of letters marked 'without prejudice' — are protected by without-prejudice privilege. The policy is straightforward: parties will only speak candidly about weaknesses in their own case, and make real concessions, if they know nothing said in that context can be produced to a court later as an admission. Without the privilege, settlement discussions would collapse into the same guarded positioning as the litigation itself.",
+          "Unilever plc v The Procter & Gamble Co is the leading case on the boundary of the privilege, because it does two things at once: it confirms the rule is broad and applies even without the actual words 'without prejudice' being used, provided the communication was genuinely part of an attempt to settle — and it sets out the recognised exceptions where the privilege will not apply. Those exceptions are narrow and specific: where the without-prejudice material shows the negotiations were used to disguise a threat, fraud, or other 'unambiguous impropriety'; where it is needed to explain delay or acquiescence, for example on a limitation point; where it shows what was actually agreed, if a concluded settlement is itself disputed; and a small number of other established categories — not a general 'interests of justice' override.",
+          "The exam trap here is treating without-prejudice privilege as absolute. It is a strong, policy-driven rule, but it yields at the edges — and the exceptions exist precisely to stop the privilege being used as a shield for conduct that has nothing to do with genuine settlement."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Unilever plc v The Procter & Gamble Co",
+            "citation": "[2000] 1 WLR 2436",
+            "court": "Court of Appeal",
+            "year": 2000,
+            "factsShort": "A letter sent as part of settlement negotiations over a patent dispute was later relied on by one party as evidence of a threat to bring separate proceedings.",
+            "ratioShort": "Without-prejudice privilege protects genuine settlement communications broadly, but yields to a defined set of exceptions, including where the communication itself evidences unambiguous impropriety.",
+            "expanded": {
+              "facts": "During negotiations to settle a trade mark and passing-off dispute, Procter & Gamble's solicitors sent a letter that Unilever later sought to rely on in separate proceedings, arguing it amounted to a threat. Procter & Gamble argued the letter, sent as part of without-prejudice negotiations, could not be admitted.",
+              "judgmentExtract": "The Court of Appeal held the letter remained protected. Robert Walker LJ reviewed the authorities and confirmed that the without-prejudice rule is not confined to admissions, applies to the whole course of negotiations (not just isolated statements), and does not depend on the label 'without prejudice' being used — but he also catalogued the recognised exceptions, emphasising that they are established, limited categories rather than a broad discretion.",
+              "significance": "This is the reference point for both halves of the doctrine SQE1 tests: how far the privilege reaches, and precisely where it stops. Candidates are expected to know that the exceptions are narrow and named, not a general fairness override."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-10-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario falls within a recognised exception to without-prejudice privilege?",
+          "scenarioA": "A defendant's without-prejudice letter offering to settle for a lower sum is later produced by the claimant simply to show the defendant's case was weak.",
+          "scenarioB": "A defendant's without-prejudice letter is produced to prove that a settlement both parties say was reached genuinely was, because the existence and terms of the agreement are themselves in dispute.",
+          "correctScenario": "B",
+          "explanation": "B falls within the recognised exception allowing without-prejudice material to be used to show what was actually agreed, where a concluded settlement is itself in dispute. A is exactly what the privilege exists to prevent — using a genuine settlement offer as evidence of the weakness of the offeror's case."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The price of saying nothing: costs and the Halsey factors",
+        "voice": "argumentative — states the rule, then the trap most students fall into",
+        "body": [
+          "This is where ADR stops being optional in practice, even though it remains formally voluntary. CPR 44.2 gives the court a general discretion over costs, and in exercising that discretion the court will take into account the parties' conduct, including whether a party unreasonably refused to engage in ADR. A successful party — the party who would otherwise expect to recover their costs — can lose some or all of that recovery, or even be ordered to pay the other side's costs, if their refusal to mediate or otherwise engage with ADR was unreasonable.",
+          "Halsey v Milton Keynes General NHS Trust sets out the factors the court weighs: the nature of the dispute (is it genuinely suitable for ADR?); the merits of the case as the refusing party reasonably saw them; whether other settlement methods had already been attempted; whether the costs of ADR would be disproportionately high; whether any delay in setting up ADR would have been prejudicial; and whether ADR had a reasonable prospect of success. No single factor is decisive, and the burden is on the party who failed to mediate to show their refusal was reasonable — not on the other side to prove it was not.",
+          "PGF II SA v OMFS Company 1 Ltd sharpened this considerably: a party who simply ignores an invitation to mediate — says nothing at all, rather than engaging with the request and giving reasons — will, without more, generally be found to have acted unreasonably. Silence is not a neutral, safe option. The practical lesson for practice, and the exam point most often tested, is the same: an invitation to mediate should always be answered, even if the answer is a reasoned 'no'."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because ADR is voluntary, a party who simply never responds to an invitation to mediate has done nothing wrong — they never agreed to mediate, so there's nothing to be unreasonable about.",
+            "whyItsWrong": "PGF II SA v OMFS establishes the opposite: silence in the face of a reasonable invitation to engage in ADR is, without more, unreasonable conduct for costs purposes. The voluntariness of ADR governs whether you can be forced to mediate — it does not protect you from the costs consequences of refusing to engage with the question at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-dr-10-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A defendant wins at trial on a straightforward debt claim. During the litigation, the claimant twice invited the defendant to mediate; the defendant did not reply to either letter. Analyse whether the defendant's normal costs recovery is at risk.",
+          "factsToOrder": [
+            "The defendant won at trial",
+            "The claimant sent two invitations to mediate",
+            "The defendant did not respond to either invitation",
+            "The dispute was a straightforward debt claim, generally suitable for mediation"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model answer shown, mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule given; student applies it to the facts and writes the conclusion" },
+            { "level": 3, "support": "No scaffold; student writes the full analysis unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the defendant's failure to respond to invitations to mediate puts its normal costs recovery, as the successful party, at risk.",
+            "rule": "Under CPR 44.2 the court has a discretion over costs which takes into account the parties' conduct, including an unreasonable refusal to engage in ADR (Halsey); PGF II SA v OMFS establishes that silence in response to a reasonable invitation to mediate is, without more, unreasonable.",
+            "application": "The defendant did not merely decline — it never responded at all, twice. The dispute (a straightforward debt claim) is on its face suitable for mediation, and nothing in the facts suggests a Halsey factor (disproportionate cost, no reasonable prospect of success, prejudicial delay) that would excuse the silence. On the PGF II principle, this silence is likely to be treated as unreasonable conduct.",
+            "conclusion": "The defendant's normal costs recovery is genuinely at risk — the court may reduce the costs award, or in a strong case depart from the general rule entirely, notwithstanding that the defendant won the claim on the merits."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-dr-10-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A commercial contract contains a clause requiring disputes to go to arbitration. One party instead issues court proceedings. What will the court generally do?",
+      "options": ["Stay the court proceedings and require the parties to arbitrate, consistent with minimal court intervention under the Arbitration Act 1996", "Ignore the clause, since arbitration clauses are not binding on the courts", "Hear the case itself and treat the clause as merely advisory", "Automatically strike out the claim with no possibility of arbitration proceeding at all"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which of the following best describes the outcome of a mediation that concludes without any agreement being reached?",
+      "options": ["Nothing is legally binding, and either party may still pursue court proceedings on the dispute", "The mediator issues a binding decision resolving the dispute", "The parties are barred from litigating the same dispute for twelve months", "The mediation is automatically converted into arbitration"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under the Arbitration Act 1996, s 1, which of the following is one of the Act's stated founding principles?",
+      "options": ["The court should not intervene except as the Act itself provides", "Arbitration awards must always be approved by the High Court before taking effect", "Parties may never agree their own procedure and must follow the CPR", "Arbitration is only available for disputes below the small claims limit"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A solicitor writes a letter marked 'without prejudice' proposing settlement terms. Which statement best describes when that letter can later be shown to the trial judge?",
+      "options": ["Only in narrow, recognised exceptional circumstances — for example where it evidences unambiguous impropriety or is needed to show what was actually agreed", "Whenever either party considers it would assist their case", "Never, under any circumstances, even by consent of both parties", "Only if the letter fails to use the exact words 'without prejudice'"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT a recognised exception to without-prejudice privilege under Unilever v Procter & Gamble?",
+      "options": ["Where the communication evidences unambiguous impropriety, such as a threat or fraud", "Where it is needed to explain delay or acquiescence relevant to a limitation issue", "Where it shows what was actually agreed, and the existence of a concluded settlement is itself disputed", "Where either party simply believes disclosure would be in the interests of justice"],
+      "correctIndex": 3,
+      "trapExplanation": "There is no general 'interests of justice' override — Unilever is explicit that the exceptions are a limited, established set of categories, not a broad judicial discretion to lift the privilege whenever it seems fair to do so."
+    },
+    {
+      "itemId": "sqe1-dr-10-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant receives an invitation to mediate and writes back explaining, with specific reasons tied to the case, why mediation would have no reasonable prospect of success on these facts. The defendant later wins at trial. What is the most likely costs consequence?",
+      "options": ["A significant costs sanction is likely, since any refusal to mediate is automatically unreasonable", "No sanction is likely on these facts alone — a reasoned refusal addressing a genuine Halsey factor is very different from silence", "The court has no power to consider ADR conduct when awarding costs", "The defendant automatically forfeits all its costs regardless of the reasons given"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is treating any refusal as automatically punished. Halsey asks whether the refusal was unreasonable, weighing several factors including a genuine view that ADR had no reasonable prospect of success; a reasoned, engaged response is the opposite of the PGF II silence scenario that is treated as unreasonable without more."
+    },
+    {
+      "itemId": "sqe1-dr-10-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the Halsey factors relevant to whether a refusal to engage in ADR was unreasonable?",
+      "options": ["The nature of the dispute and whether it was suitable for ADR", "Whether the costs of ADR would have been disproportionately high", "Whether the refusing party's opponent was represented by a solicitor rather than acting in person", "Whether ADR had a reasonable prospect of success"],
+      "correctIndex": 2,
+      "trapExplanation": "Whether the other side has a solicitor plays no part in the Halsey analysis. The factors go to the suitability and proportionality of ADR on these facts — not to the parties' respective representation."
+    },
+    {
+      "itemId": "sqe1-dr-10-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A claimant's solicitor receives a letter inviting mediation and simply does not reply, taking the view that since mediation is voluntary there is no need to respond. The claimant later wins at trial. Which best describes the likely outcome?",
+      "options": ["The claimant is safe, because mediation being voluntary means no response is ever required", "Following PGF II SA v OMFS, the silence is likely to be treated as unreasonable conduct for costs purposes, notwithstanding that the claimant won", "The claimant's win at trial automatically cures any earlier conduct issue", "Silence only matters if it continues for more than six months"],
+      "correctIndex": 1,
+      "trapExplanation": "The voluntariness of ADR is a trap here — it means a party cannot be compelled to mediate, but PGF II SA v OMFS treats unanswered silence in the face of a reasonable invitation as unreasonable conduct in its own right, regardless of who ultimately wins the litigation."
+    },
+    {
+      "itemId": "sqe1-dr-10-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A supplier and a retailer are locked in a long-running commercial dispute where the ongoing relationship matters to both sides, and each wants to preserve some control over any resolution. Which ADR route is generally better suited to this scenario?",
+      "options": ["Mediation, because it preserves the parties' control over the outcome and can help repair an ongoing relationship", "Arbitration, because only a binding award can genuinely resolve a commercial dispute", "Neither — ADR is unavailable once a commercial relationship exists", "Arbitration, because it is always faster and cheaper than mediation"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Two parties to a shipping contract have an arbitration clause. A dispute arises and one party is dissatisfied with the arbitrator's award, believing the arbitrator simply weighed the evidence wrongly. What should that party do next?",
+      "options": ["Accept that the grounds to challenge an award are narrow (broadly, serious irregularity or a point of law) and that mere disagreement with the arbitrator's assessment of the evidence is unlikely to succeed", "Issue fresh court proceedings on the same dispute, since the award does not bind the courts", "Apply to have the arbitrator personally removed and the process restarted from scratch as of right", "Ignore the award, since arbitral awards are not enforceable in the same way as a court judgment"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "During a mediation, a party's representative admits privately in the mediator's private session that the claim is weaker than pleaded. The mediation fails and the case proceeds to trial. Can the other side use that admission at trial?",
+      "options": ["No — admissions made within mediation are protected by without-prejudice privilege and mediation confidentiality, absent a recognised exception", "Yes — anything said to a mediator can be repeated at trial", "Yes, but only if the mediator agrees to give evidence about it", "No, but only because mediators are prohibited by statute from ever discussing sessions"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under CPR Part 1, the overriding objective of dealing with cases justly and at proportionate cost is furthered, among other things, by which of the following?",
+      "options": ["Encouraging and facilitating the use of ADR where appropriate", "Requiring every case to proceed straight to trial without any case management", "Prohibiting the court from considering settlement at any stage", "Limiting ADR to disputes valued below the small claims track"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A court is considering awarding costs after trial and is weighing whether the winning party's refusal to mediate should reduce its costs recovery. Which rule most directly gives the court that power?",
+      "options": ["CPR 44.2, which gives the court a general discretion over costs having regard to the parties' conduct, including conduct in relation to ADR", "The Arbitration Act 1996, s 1, which governs arbitral awards only", "CPR Part 1 alone, which has no bearing on costs orders", "There is no rule permitting this — costs always follow the event regardless of ADR conduct"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "sqe1-dr-10-test-14",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Under the Arbitration Act 1996, s 1(b), the principle of party autonomy in arbitration is best described as which of the following?",
+      "options": ["The parties should be free to agree how their disputes are resolved, subject only to such safeguards as are necessary in the public interest", "The parties may agree to ignore any award they dislike", "Only one party's procedural preferences need be respected", "Party autonomy applies only to the choice of arbitrator, not to procedure generally"],
+      "correctIndex": 0
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating ADR's voluntariness as a shield: because no one can be forced to mediate, students assume there is no cost to refusing or ignoring an invitation. PGF II SA v OMFS is the direct answer to that assumption — silence itself is unreasonable conduct, and the Halsey factors are what a reasoned refusal has to satisfy instead.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.dispute-resolution.adr"
+  }
+}
