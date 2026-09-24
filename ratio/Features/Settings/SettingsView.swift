@@ -45,8 +45,7 @@ struct SettingsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Me").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).padding(.bottom, 12)
-                Text("Settings.").ratioFont(.display).padding(.bottom, 12)
+                RatioPageHeader(eyebrow: "Me", title: "Settings")
                 account
                 appearanceSection
                 study
@@ -59,12 +58,12 @@ struct SettingsView: View {
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 32)
+                    .padding(.vertical, RatioSpace.l)
             }
-            .padding(.horizontal, 24)
+            .padding(.horizontal, RatioSpace.m)
+            .padding(.top, RatioSpace.s)
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
         .sheet(item: $sheet) { sheet in
             switch sheet {
@@ -132,39 +131,49 @@ struct SettingsView: View {
 
     private var appearanceSection: some View {
         SettingsSection(number: "II", title: "Appearance") {
-            HStack {
-                Text("Theme").ratioFont(.body)
-                Spacer()
-                Picker("Theme", selection: $appearance) {
-                    Text("Light").tag("light")
-                    Text("Dark").tag("dark")
-                    Text("Auto").tag("auto")
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: RatioSpace.s) {
+                    Text("Theme").ratioFont(.body)
+                    Spacer()
+                    themePicker.frame(width: 216)
                 }
-                .pickerStyle(.segmented)
-                .frame(width: 200)
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    Text("Theme").ratioFont(.body)
+                    themePicker
+                }
             }
-            .padding(.vertical, 12)
-            Text("App icon").ratioFont(.body).padding(.top, 8)
+            .padding(.vertical, RatioSpace.s)
+            Divider().overlay(Color.ratioRule)
+            Text("App icon").ratioFont(.body).padding(.top, RatioSpace.s)
             ScrollView(.horizontal) {
-                HStack(spacing: 14) {
+                HStack(spacing: RatioSpace.s) {
                     ForEach(AppIconChoice.all) { icon in
+                        let selected = iconName == icon.assetName
                         Button { setIcon(icon) } label: {
-                            VStack(spacing: 6) {
+                            VStack(spacing: RatioSpace.xs) {
                                 icon.preview
-                                    .frame(width: 60, height: 60)
-                                    .overlay { RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(iconName == icon.assetName ? Color.ratioInk : .clear, lineWidth: 3).padding(-4) }
-                                Text(icon.title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                                    .frame(width: 64, height: 64)
+                                    .padding(RatioSpace.xxs)
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: RatioRadius.panel + RatioSpace.xxs, style: .continuous)
+                                            .strokeBorder(selected ? Color.ratioInk : .clear, lineWidth: 2)
+                                    }
+                                Text(icon.title).ratioFont(.monoLabel).foregroundStyle(selected ? Color.ratioInk : Color.ratioInk2)
                             }
                         }
-                        .buttonStyle(.plain)
+                        .buttonStyle(.ratioPress)
                         .accessibilityLabel("\(icon.title) app icon")
-                        .accessibilityAddTraits(iconName == icon.assetName ? .isSelected : [])
+                        .accessibilityAddTraits(selected ? .isSelected : [])
                     }
                 }
-                .padding(.vertical, 8)
+                .padding(.vertical, RatioSpace.s)
             }
             .scrollIndicators(.hidden)
         }
+    }
+
+    private var themePicker: some View {
+        RatioSegmentedControl(options: [("light", "Light"), ("dark", "Dark"), ("auto", "Auto")], selection: $appearance)
     }
 
     private func setIcon(_ icon: AppIconChoice) {
@@ -185,20 +194,18 @@ struct SettingsView: View {
                 SettingsRow("Free module", detail: profile.freeModuleChanges ?? 0 >= 1 ? "Changed once already" : "You can change it once",
                             value: student.freeModule?.title ?? "—") { sheet = .freeModule }
             }
-            HStack {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Weekly target").ratioFont(.body)
-                    Text("Days a week you aim to study").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: RatioSpace.s) {
+                    weeklyTargetLabel
+                    Spacer()
+                    weeklyTargetStepper
                 }
-                Spacer()
-                Stepper("\(settings.weeklyTarget ?? Streak.defaultTarget) of 7 days", value: Binding(
-                    get: { settings.weeklyTarget ?? Streak.defaultTarget },
-                    set: { save(["settings.weeklyTarget": $0]) }
-                ), in: 1...7)
-                .ratioFont(.monoData)
-                .fixedSize()
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    weeklyTargetLabel
+                    weeklyTargetStepper
+                }
             }
-            .padding(.vertical, 12)
+            .padding(.vertical, RatioSpace.s)
             Divider().overlay(Color.ratioRule)
             examPause
             SettingsToggle("Daily brief reminder", detail: "One a day. Mentions any reviews due", isOn: Binding(
@@ -221,6 +228,22 @@ struct SettingsView: View {
             SettingsTime("Quiet from", time: settings.quietStart ?? "22:00") { save(["settings.quietStart": $0]) }
             SettingsTime("Quiet until", time: settings.quietEnd ?? "08:00") { save(["settings.quietEnd": $0]) }
         }
+    }
+
+    private var weeklyTargetLabel: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+            Text("Weekly target").ratioFont(.body)
+            Text("Days a week you aim to study").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+        }
+    }
+
+    private var weeklyTargetStepper: some View {
+        Stepper("\(settings.weeklyTarget ?? Streak.defaultTarget) of 7 days", value: Binding(
+            get: { settings.weeklyTarget ?? Streak.defaultTarget },
+            set: { save(["settings.weeklyTarget": $0]) }
+        ), in: 1...7)
+        .ratioFont(.monoData)
+        .fixedSize()
     }
 
     /// PRD: "Exam pause: up to 3 weeks a year, which the student switches on."
@@ -249,7 +272,7 @@ struct SettingsView: View {
                            isOn: Binding(get: { extendedSeconds == DuelTime.extended }, set: { extendedSeconds = $0 ? DuelTime.extended : 0 }))
             SettingsToggle("Reduce motion", detail: "Changes without movement", isOn: $reduceMotion)
             SettingsToggle("Haptics", isOn: $haptics)
-            Text("Accessibility features are always free.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2).padding(.top, 8)
+            Text("Accessibility features are always free.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2).padding(.top, RatioSpace.s)
         }
     }
 
@@ -311,7 +334,7 @@ struct SettingsView: View {
                 ShareLink(item: exportFile) {
                     SettingsRowLabel(title: "Export my data", detail: "UK GDPR · ready to share", value: "Share ↗")
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.ratioPress)
             } else {
                 SettingsRow("Export my data", detail: "UK GDPR", value: working ? "Preparing…" : "→") { Task { await export() } }
             }
@@ -396,12 +419,13 @@ private struct SettingsSection<Content: View>: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack(alignment: .firstTextBaseline, spacing: 14) {
-                Text(number).ratioFont(.h1).italic().foregroundStyle(Color.ratioOxblood)
+            HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                Text(number).ratioFont(.h1).italic().foregroundStyle(Color.ratioOxblood).accessibilityHidden(true)
                 Text(title).ratioFont(.monoLabel)
             }
-            .padding(.top, 36)
-            .padding(.bottom, 8)
+            .padding(.top, RatioSpace.l)
+            .padding(.bottom, RatioSpace.xs)
+            .accessibilityElement(children: .combine)
             .accessibilityAddTraits(.isHeader)
             Rectangle().fill(Color.ratioInk).frame(height: 1)
             content
@@ -415,19 +439,54 @@ private struct SettingsRowLabel: View {
     let value: String
     var destructive = false
 
+    @Environment(\.dynamicTypeSize) private var typeSize
+
     var body: some View {
         VStack(spacing: 0) {
-            HStack(alignment: .firstTextBaseline, spacing: 12) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(title).ratioFont(.body).foregroundStyle(destructive ? Color.ratioOxblood : Color.ratioInk)
-                    if let detail { Text(detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2) }
+            Group {
+                if typeSize.isAccessibilitySize {
+                    // The value under the title rather than squeezed beside it.
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        labels
+                        Text(value).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                } else {
+                    // Title, a dotted leader, the value (screens/30-settings.png).
+                    HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
+                        labels
+                        DottedLeader().frame(minWidth: RatioSpace.s)
+                        Text(value).ratioFont(.monoData).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.trailing)
+                    }
                 }
-                Spacer(minLength: 12)
-                Text(value).ratioFont(.monoData).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.trailing)
             }
-            .padding(.vertical, 14)
+            .padding(.vertical, RatioSpace.s)
             .contentShape(Rectangle())
             Divider().overlay(Color.ratioRule)
+        }
+    }
+
+    private var labels: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+            Text(title).ratioFont(.body).foregroundStyle(destructive ? Color.ratioOxblood : Color.ratioInk)
+            if let detail { Text(detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2) }
+        }
+        .layoutPriority(1)
+    }
+}
+
+/// A dotted rule leading from a label to its value.
+private struct DottedLeader: View {
+    var body: some View {
+        Line()
+            .stroke(Color.ratioRule, style: StrokeStyle(lineWidth: 1, dash: [1, 3]))
+            .frame(height: 1)
+            .accessibilityHidden(true)
+    }
+
+    private struct Line: Shape {
+        func path(in rect: CGRect) -> Path {
+            Path { $0.move(to: CGPoint(x: 0, y: rect.midY)); $0.addLine(to: CGPoint(x: rect.maxX, y: rect.midY)) }
         }
     }
 }
@@ -450,7 +509,7 @@ private struct SettingsRow: View {
     var body: some View {
         if let action {
             Button(action: action) { SettingsRowLabel(title: title, detail: detail, value: value, destructive: destructive) }
-                .buttonStyle(.plain)
+                .buttonStyle(.ratioPress)
         } else {
             SettingsRowLabel(title: title, detail: detail, value: value).accessibilityElement(children: .combine)
         }
@@ -467,7 +526,7 @@ private struct SettingsLink: View {
     }
 
     var body: some View {
-        Link(destination: url) { SettingsRowLabel(title: title, value: "↗") }.buttonStyle(.plain)
+        Link(destination: url) { SettingsRowLabel(title: title, value: "↗") }.buttonStyle(.ratioPress)
     }
 }
 
@@ -485,13 +544,13 @@ private struct SettingsToggle: View {
     var body: some View {
         VStack(spacing: 0) {
             Toggle(isOn: $isOn) {
-                VStack(alignment: .leading, spacing: 2) {
+                VStack(alignment: .leading, spacing: RatioSpace.xxs) {
                     Text(title).ratioFont(.body)
                     if let detail { Text(detail).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2) }
                 }
             }
             .tint(Color.ratioInk)
-            .padding(.vertical, 10)
+            .padding(.vertical, RatioSpace.s)
             Divider().overlay(Color.ratioRule)
         }
     }
@@ -513,7 +572,7 @@ private struct SettingsTime: View {
         VStack(spacing: 0) {
             DatePicker(title, selection: Binding(get: { date(time) }, set: { save(Self.format($0)) }), displayedComponents: .hourAndMinute)
                 .ratioFont(.body)
-                .padding(.vertical, 8)
+                .padding(.vertical, RatioSpace.xs)
             Divider().overlay(Color.ratioRule)
         }
     }
@@ -552,9 +611,9 @@ struct AppIconChoice: Identifiable {
     ]
 
     var preview: some View {
-        RoundedRectangle(cornerRadius: 14, style: .continuous)
+        RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous)
             .fill(ground)
-            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(Color.ratioRule))
+            .overlay(RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule))
             .overlay {
                 HStack(alignment: .lastTextBaseline, spacing: 1) {
                     Text("R").font(.custom("NewsreaderDisplay-Regular", size: 30)).foregroundStyle(glyph)
@@ -576,7 +635,7 @@ private struct NameSheet: View {
     @State private var failed = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Display name").ratioFont(.h2)
             Text("Other players see your first name and the first letter of your surname.").ratioFont(.small).foregroundStyle(Color.ratioInk2)
             RatioTextField("First name", placeholder: "Amara", text: $name)
@@ -592,9 +651,8 @@ private struct NameSheet: View {
             }
             Spacer()
         }
-        .padding(24)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .padding(RatioSpace.m)
+        .ratioPage()
         .onAppear {
             name = profile.displayName ?? ""
             initial = profile.initial ?? ""
@@ -657,12 +715,14 @@ struct YearSheet: View {
     let year: Int?
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var failed = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: RatioSpace.xs)) : AnyLayout(HStackLayout(spacing: RatioSpace.xs))
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Year of study").ratioFont(.h2)
-            HStack(spacing: 10) {
+            layout {
                 ForEach(1...3, id: \.self) { option in
                     Button {
                         Task {
@@ -672,20 +732,20 @@ struct YearSheet: View {
                         Text("Year \(option)")
                             .ratioFont(.h3)
                             .frame(maxWidth: .infinity, minHeight: 56)
-                            .foregroundStyle(year == option ? Color.ratioOnInk : Color.ratioInk)
-                            .background(year == option ? Color.ratioInk : Color.ratioPaper, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            .overlay { RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(Color.ratioRule) }
+                            // Parchment on ink flips with the theme (ink turns light in dark mode).
+                            .foregroundStyle(year == option ? Color.ratioParchment : Color.ratioInk)
+                            .background(year == option ? Color.ratioInk : Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                            .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(.ratioPress)
                     .accessibilityAddTraits(year == option ? .isSelected : [])
                 }
             }
             if failed { Text("That didn't save. Try again.").ratioFont(.small).foregroundStyle(Color.ratioOxblood) }
             Spacer()
         }
-        .padding(24)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .padding(RatioSpace.m)
+        .ratioPage()
     }
 }
 
@@ -724,14 +784,13 @@ private struct FreeModuleSheet: View {
 
 private struct NoticeSheet: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Text("Educational, not legal advice").ratioFont(.h2)
             Text("Ratio helps you learn the law of England and Wales for your degree. It isn't legal advice, and nothing in it should be relied on for a real legal problem. The law is stated as at the date shown on each lesson and may have changed since. If you need advice, speak to a solicitor or an advice service.")
                 .ratioFont(.body)
             Spacer()
         }
-        .padding(24)
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .padding(RatioSpace.m)
+        .ratioPage()
     }
 }
