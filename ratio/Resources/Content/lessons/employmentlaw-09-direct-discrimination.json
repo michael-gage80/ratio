@@ -1,0 +1,459 @@
+{
+  "lessonId": "employmentlaw-09",
+  "moduleId": "employmentlaw",
+  "moduleTitle": "Employment Law",
+  "lessonNumber": 9,
+  "topicId": "employmentlaw.discrimination.direct",
+  "title": "Because of, not in spite of",
+  "subtitle": "Direct discrimination under the Equality Act 2010",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "List the nine protected characteristics under s 4 Equality Act 2010 and state the s 13 test for direct discrimination",
+    "Explain how the comparator — real or hypothetical — is constructed under s 23, and why direct discrimination requires no discriminatory motive",
+    "Identify discrimination by perception and by association, and apply the s 13 test to new fact patterns"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Equality Act 2010, s 4",
+      "role": "Lists the nine protected characteristics: age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, sexual orientation"
+    },
+    {
+      "citation": "Equality Act 2010, s 13",
+      "role": "Defines direct discrimination: less favourable treatment of A by B because of a protected characteristic"
+    },
+    {
+      "citation": "Equality Act 2010, s 23",
+      "role": "Requires that, in a comparison of cases for the purposes of s 13, there must be no material difference between the circumstances relating to each case"
+    },
+    {
+      "citation": "James v Eastleigh Borough Council [1990] 2 AC 751",
+      "role": "Direct discrimination is established by 'but for' causation; the discriminator's motive or good intentions are irrelevant"
+    },
+    {
+      "citation": "Shamoon v Chief Constable of the RUC [2003] UKHL 11",
+      "role": "Guidance on constructing and applying a hypothetical comparator where no real comparator exists"
+    },
+    {
+      "citation": "English v Thomas Sanderson Blinds Ltd [2008] EWCA Civ 1421",
+      "role": "Direct discrimination by perception: treating someone less favourably because they are believed to have a protected characteristic, even if they do not actually have it"
+    },
+    {
+      "citation": "Coleman v Attridge Law (C-303/06) [2008] ECR I-5603",
+      "role": "Direct discrimination by association: less favourable treatment because of another person's protected characteristic, not the claimant's own"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can list the nine protected characteristics from memory within seconds. Where the profile shows understanding or application is behind knowledge, this brief note appears: 'You know the list — this lesson checks whether you can apply the causal test underneath it.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below includes scenario items on perception and association discrimination — situations where the claimant may not even have the characteristic in question themselves.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — the nine characteristics and the s 13 wording are the foundation the comparator and perception/association material in Parts 3–5 all assume you already have."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A council worker is dismissed shortly before her state pension age, on the same day a male colleague of the same age keeps his job — because, under the pension rules then in force, men and women became eligible for a state pension at different ages, and the council used that age gap to decide who went first. Nobody had to prove anyone in the room felt any animosity towards women. The House of Lords held it was still direct sex discrimination: the treatment was worse, and it happened because of sex, full stop. That single, cold causal test — 'because of' — is what this lesson is really about."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Nine characteristics, one statutory list",
+        "voice": "structural — a reference part students will return to",
+        "body": [
+          "Every discrimination claim under the Equality Act 2010 starts by anchoring the facts to one of a closed list. Section 4 names nine protected characteristics: age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, and sexual orientation. There is no tenth category and no general 'unfairness' discrimination claim sitting alongside them — if the treatment complained of isn't linked to one of these nine, the Equality Act simply has no purchase, whatever else might be said about how badly someone was treated.",
+          "A few of the nine repay a moment's extra care because their boundaries are narrower than they sound. 'Marriage and civil partnership' protects only people who are actually married or in a civil partnership — it does not extend to people who are merely cohabiting, engaged, or single. 'Race' is itself defined broadly under s 9 to include colour, nationality, and ethnic or national origins, so a claim can rest on any one of those sub-strands.",
+          "Learn the list as a checklist you run against the facts, not as background colour. An exam scenario will describe conduct and a reason — you're expected to identify which, if any, of the nine characteristics the reason is tied to before anything else in this lesson can apply."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The nine protected characteristics (s 4 Equality Act 2010)",
+            "points": [
+              "Age",
+              "Disability",
+              "Gender reassignment",
+              "Marriage and civil partnership",
+              "Pregnancy and maternity",
+              "Race (colour, nationality, ethnic or national origins)",
+              "Religion or belief",
+              "Sex",
+              "Sexual orientation"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does the 'marriage and civil partnership' protected characteristic extend to an employee who is engaged to be married but not yet married?",
+          "options": [
+            "No — it protects only those actually married or in a civil partnership",
+            "Yes — it protects anyone in a committed romantic relationship, including engaged couples"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The characteristic is drawn narrowly to actual marital or civil partnership status — being engaged, or simply in a relationship, falls outside it.",
+          "feedbackIncorrect": "Not quite — this characteristic is narrower than it might sound. It protects people who are actually married or in a civil partnership, not those who are engaged or in a relationship short of that formal status."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The s 13 test: less favourable treatment 'because of'",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Section 13 supplies the core test, and its wording deserves to be read slowly: 'A person (A) discriminates against another (B) if, because of a protected characteristic, A treats B less favourably than A treats or would treat others.' Two elements are doing the work here — less favourable treatment, and a causal link expressed as 'because of'.",
+          "The causal question is deliberately not about motive. *James v Eastleigh Borough Council* [1990] 2 AC 751 settled this: a council that let women use its swimming pool free from age 60 but made men wait until 65 — mirroring the then state pension ages — was found to have directly discriminated against a 61-year-old man, even though the council had no hostile intent towards men at all; it was simply applying a pension-age rule that happened to be sex-based. The House of Lords asked a 'but for' question: but for his sex, would he have been treated the same way? He wouldn't, so the treatment was because of sex — motive, good faith, or even a benevolent underlying purpose is irrelevant to that causal question.",
+          "This is the single most tested proposition in this area, because it cuts against most people's intuitive sense of what 'discrimination' means. You do not need to show anyone intended to discriminate, or even realised they were doing so. You need to show the protected characteristic was the reason — in the 'but for' sense — for the less favourable treatment."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Equality Act 2010, s 13(1)",
+            "text": "A person (A) discriminates against another (B) if, because of a protected characteristic, A treats B less favourably than A treats or would treat others.",
+            "elements": [
+              "A protected characteristic (s 4)",
+              "Less favourable treatment of B by A",
+              "A causal link — the treatment is because of that characteristic, tested by 'but for' causation, not motive"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-09-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that shows motive is irrelevant to this direct discrimination analysis.",
+          "scenarioText": "A gym offers free membership to women from age 55 and to men from age 60, mirroring what management believed (mistakenly, and with entirely good intentions) to be the state pension age gap. A 56-year-old man is charged the standard fee and complains.",
+          "tappableSpans": [
+            "offers free membership to women from age 55",
+            "men from age 60",
+            "mistakenly, and with entirely good intentions",
+            "charged the standard fee"
+          ],
+          "correctSpan": "mistakenly, and with entirely good intentions",
+          "feedbackCorrect": "Right. Under James v Eastleigh, the gym's good intentions and mistaken belief are irrelevant to the causal question — the man was treated less favourably than a woman of his age would have been, because of sex, and that's enough.",
+          "feedbackIncorrect": "Look for the fact about the employer's state of mind, not the age policy itself. James v Eastleigh establishes that motive — even entirely benevolent motive — doesn't change the 'because of' analysis once the causal link to sex is otherwise established."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The comparator: real or hypothetical",
+        "voice": "structural — reference-style",
+        "body": [
+          "Section 13's 'less favourable' language is inherently comparative — less favourable than what? The claimant must show they were treated worse than a comparator was, or would have been, treated. Section 23 supplies the crucial control on this comparison: there must be no material difference between the circumstances of the claimant and the comparator, other than the protected characteristic itself. A comparator who differs in some other significant respect — different role, different disciplinary history, different qualifications — isn't a valid comparator at all, because the comparison would no longer isolate the protected characteristic as the explanation for the difference in treatment.",
+          "Often there's no real person who fits neatly — no actual comparator with matching circumstances but a different protected characteristic. Section 23 allows for a hypothetical comparator instead: the tribunal constructs, from the evidence, how a person without the claimant's protected characteristic but otherwise in the same circumstances would have been treated. *Shamoon v Chief Constable of the RUC* [2003] UKHL 11 gives the leading guidance on this exercise, and also cautions tribunals against getting lost in an artificial comparator exercise where the simpler and more direct question — was the reason for the treatment the protected characteristic? — can be answered without one.",
+          "This is worth internalising as a genuine structural point, not a technicality: the comparator exercise exists to isolate the protected characteristic as the explanation, not to demand a perfectly matched real-world twin before a claim can succeed."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The comparator under s 23",
+            "points": [
+              "The comparator's circumstances must be materially the same as the claimant's, other than the protected characteristic",
+              "A real comparator can be used if one exists on sufficiently similar facts",
+              "If no real comparator fits, a hypothetical comparator is constructed (Shamoon)",
+              "Shamoon: don't let the comparator exercise obscure the simpler underlying question — was the protected characteristic the reason for the treatment?"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-09-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "An employee claims direct race discrimination but cannot point to a real colleague of a different race treated better in genuinely comparable circumstances. Does this defeat her claim?",
+          "options": [
+            "No — a tribunal can construct a hypothetical comparator under s 23 if no real one fits",
+            "Yes — s 13 requires an actual, named comparator or the claim automatically fails",
+            "Yes, unless she can find at least three real comparators"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "Students sometimes treat the absence of a real comparator as fatal. It isn't — s 23 and Shamoon expressly allow a hypothetical comparator to be constructed from the evidence, and in many cases the tribunal can answer the 'because of' question directly without needing a comparator exercise at all."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Discrimination by perception",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "*English v Thomas Sanderson Blinds Ltd* [2008] EWCA Civ 1421 involved a man subjected to years of homophobic banter and insults by colleagues, despite the fact that he was not gay, was known by his colleagues not to be gay, and had never been to the boarding school the jibes referenced. He brought a claim for direct discrimination on grounds of sexual orientation.",
+          "The employer's argument had a surface logic: how can you discriminate against someone 'because of' sexual orientation if everyone involved knew the claimant wasn't gay? The Court of Appeal rejected it. Section 13 (then the equivalent provision under the earlier Employment Equality (Sexual Orientation) Regulations 2003) doesn't require the claimant to actually possess the protected characteristic — it requires the treatment to be because of that characteristic, and where the perpetrators' reason for their conduct is a perceived characteristic, that satisfies the causal test just as much as an actual one would.",
+          "This is discrimination by perception: less favourable treatment because the discriminator believes — rightly or wrongly — that the claimant has a protected characteristic. It matters practically because it closes off an otherwise obvious defence ('but they don't even have that characteristic') that would let overtly discriminatory conduct escape liability on a technicality."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Discrimination by perception",
+            "definition": "Direct discrimination where the discriminator treats the claimant less favourably because they believe the claimant has a protected characteristic, whether or not that belief is correct (English v Thomas Sanderson Blinds Ltd)."
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-09-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which scenario most clearly illustrates discrimination by perception, as in English v Thomas Sanderson Blinds?",
+          "scenarioA": "An employee who genuinely holds a particular religious belief is passed over for promotion once colleagues learn of that belief.",
+          "scenarioB": "An employee who has no religious belief at all, and has never claimed to, is excluded from a team social event after a manager wrongly assumes from his name that he holds a particular religious belief he does not in fact hold.",
+          "correctScenario": "B",
+          "explanation": "B is perception discrimination — the treatment is driven by a mistaken belief about the claimant's characteristic, not an actual one. A is straightforward direct discrimination on an actual characteristic, which doesn't need the perception doctrine at all."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Discrimination by association",
+        "voice": "case-narrative — closes the lecture by widening the frame",
+        "body": [
+          "A related but distinct extension covers cases where the claimant's own characteristics are entirely unremarkable, but they are treated badly because of someone else's protected characteristic. *Coleman v Attridge Law* (C-303/06) is the leading case: a legal secretary whose son was disabled found herself refused flexible working arrangements offered to colleagues with non-disabled children, and was subjected to hostile comments about her son. She herself was not disabled.",
+          "The Court of Justice held that the discrimination principle wasn't limited to less favourable treatment because of the claimant's own protected characteristic — it extended to less favourable treatment because of a characteristic possessed by someone the claimant was associated with, here her caring responsibility for her disabled son. UK tribunals and courts have since applied this associative principle under the Equality Act 2010 framework.",
+          "Perception and association discrimination share a structural lesson worth carrying forward: s 13's 'because of a protected characteristic' language asks about the reason for the treatment, and that reason can be rooted in a characteristic the claimant is believed to have, or in a characteristic someone close to the claimant actually has — not only in a characteristic the claimant personally and demonstrably possesses."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Discrimination by association",
+            "definition": "Direct discrimination where the claimant is treated less favourably because of a protected characteristic possessed by someone else they are associated with — for example, a family member — rather than a characteristic of their own (Coleman v Attridge Law)."
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-09-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Marcus, who is not disabled, is consistently denied the flexible working his colleagues without caring responsibilities are granted, because his manager resents the time he takes to care for his disabled wife. Does Marcus have a potential direct discrimination claim?",
+          "options": [
+            "Yes — this is discrimination by association, following Coleman v Attridge Law, because the less favourable treatment is because of his wife's disability",
+            "No — Marcus cannot claim disability discrimination because he is not himself disabled",
+            "No — association discrimination only applies to children, not spouses"
+          ],
+          "correctIndex": 0,
+          "explanation": "Coleman established that direct discrimination extends to treatment because of a protected characteristic possessed by someone the claimant is associated with. Marcus's own disability status is irrelevant; what matters is that the less favourable treatment is because of his wife's disability, and the associative principle is not limited to parent–child relationships."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "employmentlaw-09-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Name the statutory provision that lists the nine protected characteristics, and name at least six of them.",
+      "acceptableAnswers": [
+        "s 4 Equality Act 2010; age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion or belief, sex, sexual orientation"
+      ],
+      "modelAnswer": "Section 4 Equality Act 2010: age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, and sexual orientation."
+    },
+    {
+      "itemId": "employmentlaw-09-test-02",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "State the s 13 Equality Act 2010 test for direct discrimination in your own words.",
+      "acceptableAnswers": [
+        "less favourable treatment because of a protected characteristic",
+        "A treats B less favourably than A treats or would treat others, because of a protected characteristic"
+      ],
+      "modelAnswer": "A discriminates against B if, because of a protected characteristic, A treats B less favourably than A treats or would treat others."
+    },
+    {
+      "itemId": "employmentlaw-09-test-03",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a claimant must prove the discriminator intended to discriminate in order to succeed in a direct discrimination claim?",
+      "sliderLabels": [
+        "Confident — intent must be proved",
+        "Confident — intent is irrelevant"
+      ],
+      "correctPosition": "Confident — intent is irrelevant",
+      "explanation": "James v Eastleigh Borough Council establishes that direct discrimination turns on 'but for' causation, not motive. Even a well-intentioned or unwitting discriminator can be found to have directly discriminated if the protected characteristic was the reason for the less favourable treatment."
+    },
+    {
+      "itemId": "employmentlaw-09-test-04",
+      "type": "thresholdSlider",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "How confident are you that 'marriage and civil partnership' as a protected characteristic covers someone who is simply cohabiting with a long-term partner, unmarried?",
+      "sliderLabels": [
+        "Confident it's covered",
+        "Confident it's not covered"
+      ],
+      "correctPosition": "Confident it's not covered",
+      "explanation": "The characteristic protects only those who are actually married or in a civil partnership — cohabitation without that formal status falls outside s 4's marriage and civil partnership characteristic entirely."
+    },
+    {
+      "itemId": "employmentlaw-09-test-05",
+      "type": "sequence",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Put these steps in the order a tribunal works through when assessing a direct discrimination claim under s 13.",
+      "items": [
+        "Identify the protected characteristic relied on",
+        "Establish that the claimant was treated less favourably",
+        "Identify a real or hypothetical comparator with no material difference in circumstances (s 23)",
+        "Ask whether the protected characteristic was the reason ('because of') for the less favourable treatment"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "itemId": "employmentlaw-09-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 23 Equality Act 2010, what must be true of a valid comparator's circumstances relative to the claimant's?",
+      "options": [
+        "There must be no material difference between them, other than the protected characteristic itself",
+        "The comparator must be identical in every conceivable respect, including personality and working style",
+        "The comparator can differ in any way, as long as they work for the same employer"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "employmentlaw-09-test-07",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below summarising James v Eastleigh Borough Council, highlight the sentence that states the 'but for' causation ratio.",
+      "passage": "The council applied different ages for free swimming access, mirroring the state pension age then in force for men and women. The council had no hostile intent towards men. The House of Lords nonetheless found direct sex discrimination: the correct test asks whether, but for his sex, the claimant would have received the same treatment as a woman of his age. Since he would not, the treatment was because of sex, regardless of the council's motive.",
+      "ratioSentence": "The correct test asks whether, but for his sex, the claimant would have received the same treatment as a woman of his age."
+    },
+    {
+      "itemId": "employmentlaw-09-test-08",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "scaffoldLevels": 4,
+      "prompt": "A recruitment consultancy rejects a candidate for a client-facing role. The hiring manager later admits, in an internal message, that she assumed from the candidate's name and accent that he was not a British national and worried clients would 'prefer someone more familiar'. The candidate is, in fact, a British national. Analyse whether he has a direct discrimination claim.",
+      "factsToOrder": [
+        "The candidate is rejected for a client-facing role",
+        "The hiring manager assumed, from name and accent, that he was not British",
+        "This assumption was incorrect — the candidate is in fact British",
+        "The manager's stated reason was a wish to have 'someone more familiar' to clients"
+      ],
+      "scaffolds": [
+        {
+          "level": 1,
+          "support": "Full model answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+        },
+        {
+          "level": 2,
+          "support": "Rule and Issue given; student drags facts into Application and writes the Conclusion"
+        },
+        {
+          "level": 3,
+          "support": "Issue given only; student selects the Rule, drags facts into Application, and writes the Conclusion"
+        },
+        {
+          "level": 4,
+          "support": "No scaffold; student writes the full IRAC unaided"
+        }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the candidate can bring a direct race discrimination claim under s 13 despite the discriminator's belief about his nationality being factually wrong.",
+        "rule": "Section 13 requires less favourable treatment because of a protected characteristic (race, including national origins, under s 4 and s 9). English v Thomas Sanderson Blinds establishes that discrimination by perception is covered: the claimant need not actually possess the characteristic, provided the treatment was because of a perceived characteristic.",
+        "application": "The manager's own words show the rejection was motivated by an assumption about the candidate's nationality/national origin — a protected characteristic under s 4/s 9 — even though that assumption was mistaken. Under the perception principle, the fact he is actually British does not defeat the claim; what matters is that the perceived characteristic was the reason for the less favourable treatment.",
+        "conclusion": "The candidate has a strong direct discrimination claim on grounds of race (perceived national origin), notwithstanding that the manager's belief about his nationality was incorrect."
+      }
+    },
+    {
+      "itemId": "employmentlaw-09-test-09",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under the Equality Act 2010, is pregnancy and maternity treated as its own separate protected characteristic, distinct from sex discrimination?",
+      "options": [
+        "Yes — s 4 lists pregnancy and maternity as its own protected characteristic",
+        "No — pregnancy and maternity claims are always brought as ordinary sex discrimination claims"
+      ],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "employmentlaw-09-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows this is association, rather than perception, discrimination.",
+      "scenarioText": "A team leader consistently excludes Priya from weekend rota flexibility that other colleagues without caring responsibilities receive, telling a colleague privately that he 'can't be doing with' the time Priya spends caring for her elderly, disabled father.",
+      "tappableSpans": [
+        "excludes Priya from weekend rota flexibility",
+        "other colleagues without caring responsibilities receive",
+        "the time Priya spends caring for her elderly, disabled father",
+        "telling a colleague privately"
+      ],
+      "correctSpan": "the time Priya spends caring for her elderly, disabled father",
+      "explanation": "This is association discrimination — the less favourable treatment is because of her father's disability (someone else's protected characteristic), not because anyone perceives Priya herself to have a protected characteristic she doesn't actually have, which would instead be perception discrimination."
+    },
+    {
+      "itemId": "employmentlaw-09-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the nine protected characteristics under s 4 Equality Act 2010?",
+      "options": [
+        "Religion or belief",
+        "Sexual orientation",
+        "Socio-economic status",
+        "Gender reassignment"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "Socio-economic status is not a protected characteristic under s 4, even though s 1 of the Act contains a separate (and largely unimplemented) socio-economic duty aimed at public bodies. Students sometimes conflate the two — s 4's closed list of nine characteristics does not include it."
+    },
+    {
+      "itemId": "employmentlaw-09-test-12",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which scenario more clearly requires a hypothetical, rather than a real, comparator under s 23?",
+      "scenarioA": "A claimant points to a real colleague of a different religion, doing the same job on the same team with an identical disciplinary record, who was promoted instead of her.",
+      "scenarioB": "A sole employee in a highly specialised, one-person role is dismissed, and there is no other employee anywhere in the organisation whose circumstances are even broadly comparable.",
+      "correctScenario": "B",
+      "explanation": "B has no real comparator available at all, so the tribunal must construct a hypothetical one under s 23, following Shamoon's guidance. A already has a workable real comparator with materially similar circumstances, so no hypothetical construction is needed."
+    },
+    {
+      "itemId": "employmentlaw-09-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "An employer refuses to shortlist a candidate after mistakenly believing, from a misread CV, that she is significantly older than she actually is, wanting a 'younger, more dynamic' team. She is, in fact, well within the age range the employer would otherwise have been happy to consider. Does she have a viable direct age discrimination claim?",
+      "options": [
+        "Yes — this is discrimination by perception; the mistaken belief about her age can still satisfy the s 13 causal test",
+        "No — because her actual age doesn't match the employer's belief, there is no protected characteristic in play at all",
+        "No — perception discrimination only applies to sexual orientation, not to age"
+      ],
+      "correctIndex": 0,
+      "explanation": "The perception principle from English v Thomas Sanderson Blinds is not limited to sexual orientation — it applies across the protected characteristics generally, including age. The employer's mistaken belief about her age can still be the reason for the less favourable treatment, satisfying s 13."
+    },
+    {
+      "itemId": "employmentlaw-09-test-14",
+      "type": "sequence",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Put these events from Coleman v Attridge Law in the order they occurred.",
+      "items": [
+        "Ms Coleman's son is born with a disability",
+        "She is refused flexible working arrangements granted to colleagues with non-disabled children",
+        "She is subjected to hostile comments about her son",
+        "The Court of Justice holds the discrimination principle extends to treatment because of a characteristic of someone the claimant is associated with"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is assuming direct discrimination requires proof of intent, or requires the claimant to actually possess the protected characteristic in question. Neither is true: the test is 'but for' causation (James v Eastleigh), and perception and association cases show the characteristic in play can be a mistaken belief about the claimant, or a real characteristic belonging to someone else entirely.",
+    "reviewMisses": true,
+    "linkToPathway": "employmentlaw.discrimination.direct"
+  }
+}

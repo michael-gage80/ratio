@@ -1,0 +1,378 @@
+{
+  "lessonId": "employmentlaw-01",
+  "moduleId": "employmentlaw",
+  "moduleTitle": "Employment Law",
+  "lessonNumber": 1,
+  "topicId": "employmentlaw.foundations.employment-status",
+  "title": "Who counts as an employee?",
+  "subtitle": "Employment status and the tests that decide it",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State why employment status is a threshold question, and identify the three status categories — employee, worker, self-employed — and how the rights available differ between them",
+    "Apply the multiple/economic reality test, including control and mutuality of obligation, to determine status on a new fact pattern",
+    "Explain why courts look at the reality of the relationship rather than the label the parties give it, including the limited effect of a substitution clause"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Ready Mixed Concrete (South East) Ltd v Minister of Pensions and National Insurance [1968] 2 QB 497", "role": "Sets out the multiple test — mutual obligation, control, and other provisions consistent with a contract of service" },
+    { "citation": "Autoclenz Ltd v Belcher [2011] UKSC 41", "role": "Tribunals may look past the written contract's wording to the true, agreed reality of the working relationship" },
+    { "citation": "Uber BV v Aslam [2021] UKSC 5", "role": "Applies the reality-over-label approach in the gig economy, holding platform drivers to be workers" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Almost nothing else in this module works until status is settled: unfair dismissal, redundancy, most of the Equality Act, and the wage protections in Lessons 2 and 3 all switch on or off depending on whether someone is an employee, a worker, or genuinely self-employed. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the test by name — this lesson checks whether you can run it on a new set of facts.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards scenario questions: expect a set of facts, not a definition to restate.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — the three status categories and the multiple test are the foundation the rest of this module assumes you can name without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A courier logs into an app, is offered a delivery, and can decline it with no penalty. A different courier logs into the same app and is quietly deprioritised for declining too often. Both signed the same 'independent contractor' agreement. Only one of them, on the facts, might actually be self-employed — and the label in the contract is, on its own, worth almost nothing. This lesson is about the test that actually decides it."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three boxes, three very different sets of rights",
+        "voice": "structural — sets out the framework the rest of the lesson, and much of the module, hangs off",
+        "body": [
+          "UK employment law does not use a single on/off switch. It uses three status categories, and where a person falls determines which rights they can claim at all — this is why status is usually the first thing counsel checks, before a single word is said about the merits of any claim.",
+          "An **employee** works under a contract of employment (a 'contract of service') and gets the full suite of protections: unfair dismissal and redundancy rights (subject to a qualifying period), the right to a written statement of particulars, family leave rights, and more. A **worker** is a wider category — it includes employees, but also catches people who personally perform work for another party without that party being a client or customer of their own independent business. Workers get a meaningful but narrower core: national minimum wage, paid annual leave, protection from unlawful deductions, and protection from certain kinds of discrimination — but not unfair dismissal or redundancy rights. The genuinely **self-employed** — running their own business, with clients rather than an employer — fall outside employment protection altogether and rely on the general law of contract instead.",
+          "Section 230 of the Employment Rights Act 1996 supplies the statutory definitions of the first two categories, and it's worth reading closely: the definition of 'worker' is built by extending the definition of 'employee' outward, not by starting from scratch."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Employment Rights Act 1996, s 230(1)–(3)",
+            "text": "(1) In this Act 'employee' means an individual who has entered into or works under (or, where the employment has ceased, worked under) a contract of employment. (2) In this Act 'contract of employment' means a contract of service or apprenticeship, whether express or implied, and (if it is express) whether oral or in writing. (3) In this Act 'worker' means an individual who has entered into or works under (or, where the employment has ceased, worked under) — (a) a contract of employment, or (b) any other contract, whether express or implied and (if it is express) whether oral or in writing, whereby the individual undertakes to do or perform personally any work or services for another party to the contract whose status is not by virtue of the contract that of a client or customer of any profession or business undertaking carried on by the individual.",
+            "elements": ["Employee — works under a contract of service", "Worker (limb (b)) — personally performs work or services for another, who is not a client or customer of the individual's own business", "Self-employed — outside both definitions, contracting as an independent business with clients"]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-01-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Which status category is entitled to claim unfair dismissal, subject to the qualifying period?",
+          "options": ["Employee", "Worker (limb (b)) who is not an employee"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Unfair dismissal and redundancy rights are employee-only rights — being a worker gets you the wage and working-time floor covered later in this module, but not these two.",
+          "feedbackIncorrect": "Not quite — unfair dismissal is one of the rights reserved to employees specifically. A limb (b) worker who isn't also an employee gets the wage and working-time protections in Lessons 2 and 3, but not this one."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The multiple test: control, mutuality, and everything else",
+        "voice": "case-narrative — builds the test out of the facts of the founding case",
+        "body": [
+          "The modern test for employee status traces back to a case about concrete lorries. Ready Mixed Concrete supplied a driver, Mr Latimer, with a lorry on hire-purchase terms; he wore the company's colours, carried their concrete, but owned the vehicle, paid for its running costs, and could — under his contract — get someone else to drive it in his place. The Minister of Pensions wanted to treat him as an employee for National Insurance purposes; the company said he was an independent contractor running his own small haulage business.",
+          "MacKenna J's judgment gives the test its enduring structure. A contract of service exists only where three conditions are all met: first, the individual agrees, in return for a wage or other remuneration, to provide their own work and skill in performing a service; second, they agree — expressly or impliedly — to be subject to a sufficient degree of control by the other party for that party to be called a master; and third, the other provisions of the contract are consistent with it being a contract of service rather than something else.",
+          "On the facts, the third limb sank the claim: Latimer owned and maintained the vehicle at his own risk, bore the financial risk of the enterprise, and could substitute another driver — indicators pointing towards a contract of a genuinely independent kind. The test survives today essentially unchanged, folded into the wider 'multiple test' that looks at control, mutuality of obligation, and the overall picture together, rather than any single factor being decisive on its own."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Ready Mixed Concrete (South East) Ltd v Minister of Pensions and National Insurance",
+            "citation": "[1968] 2 QB 497",
+            "court": "High Court (Queen's Bench Division)",
+            "year": 1968,
+            "factsShort": "A lorry driver owned his vehicle on hire-purchase, bore the running costs and financial risk, and could send a substitute — but drove exclusively for one concrete company.",
+            "ratioShort": "A contract of service requires personal service in return for wages, a sufficient degree of control, and other terms consistent with service rather than an independent business — all three must be present together.",
+            "expanded": {
+              "facts": "Mr Latimer drove a mixer lorry for Ready Mixed Concrete under an agreement that described him as an independent contractor. He bought the lorry from a finance company on hire-purchase terms arranged through the company, painted it in the company's livery, and drove exclusively for it, but he paid for fuel, repairs and insurance, bore the risk of the venture, and had a contractual right to hire a substitute driver at his own expense if he could not drive himself.",
+              "judgmentExtract": "MacKenna J held that a contract of service exists only if: (i) the individual agrees that, for a wage, he will provide his own work and skill; (ii) he agrees, expressly or impliedly, to be subject to the other's control to a sufficient degree; and (iii) the other provisions of the contract are consistent with its being a contract of service. On the facts, ownership of the vehicle, the bearing of running costs and financial risk, and the right to substitute another driver were all inconsistent with a contract of service — Latimer was an independent contractor.",
+              "significance": "This is the founding statement of what became the 'multiple test'. It matters as much for what it rejects as for what it establishes: control alone is not enough, and a single indicator (however strong) cannot decide status where the rest of the picture points the other way."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-01-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under MacKenna J's three-part test in Ready Mixed Concrete, which single element sank Mr Latimer's claim to be an employee?",
+          "options": ["The absence of any control by the company over how he worked", "The third element — other contractual provisions (ownership of the lorry, financial risk, the right to substitute) inconsistent with a contract of service", "The absence of any wage or remuneration"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. The company did exercise real control, and Latimer was paid — it was the third, catch-all limb that failed, because owning the asset, bearing the financial risk and holding a substitution right all pointed away from employee status.",
+          "feedbackIncorrect": "Look again at which limb actually failed. Control and payment for personal service were both present here — it was the third condition, consistency with a contract of service overall, that Latimer's ownership, risk-bearing and substitution right defeated."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Substitution clauses: a real test, not a magic word",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Students often treat a substitution clause as a trump card: 'the contract lets them send someone else, so it can't be personal service, so there's no employment relationship.' That is too quick. A substitution clause only defeats status where it reflects a genuine, unfettered right that the individual could actually exercise in practice — not a clause inserted into the paperwork that nobody ever uses and that the other party would, in reality, refuse to honour.",
+          "Courts and tribunals draw a distinction between an unfettered right of substitution (genuinely inconsistent with personal service, and fatal to worker or employee status) and a conditional or dormant right — one requiring the other party's approval, limited to specific circumstances like illness, or simply never exercised or exercisable because of how the work actually operates. A conditional right of this kind does not defeat the requirement of personal service, because the individual is still, in substance, the one expected to turn up and do the work.",
+          "This is exactly the kind of clause that surfaces in gig-economy contracts, and it is the doctrinal hinge for the cases in the rest of this lesson: businesses that want to avoid worker status often draft a substitution clause deliberately, and the legal question is always whether that clause describes reality or merely decorates the paperwork."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Personal service",
+            "definition": "The requirement, central to both the employee and worker definitions, that the individual is engaged to do the work themselves — an unfettered, genuinely exercisable right to send a substitute is inconsistent with this and can defeat both employee and worker status; a merely conditional or theoretical substitution right does not."
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-01-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which of these two substitution clauses is more likely to defeat a claim to worker status?",
+          "scenarioA": "Maya's contract lets her substitute anyone she chooses, without needing her employer's approval, and she has in fact done so on several occasions.",
+          "scenarioB": "Josh's contract contains a substitution clause, but in practice any substitute must first be approved by the company, must already be an approved contractor on the company's own books, and Josh has never once used the clause.",
+          "correctScenario": "A",
+          "explanation": "Maya's right is genuinely unfettered and has actually been exercised — that is real inconsistency with personal service. Josh's clause is conditional on approval and drawn from a closed pool controlled by the company; on those facts it is dormant paperwork, not a substitution right capable of defeating personal service."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Autoclenz: reading past the label",
+        "voice": "argumentative — states the employer's case before dismantling it",
+        "body": [
+          "Autoclenz Ltd v Belcher concerned car valeters whose written agreements described them as self-employed, stated they had no obligation to work and no guaranteed hours, and — deliberately — included a right to send a substitute. On paper, this looked like precisely the kind of contract that fails the multiple test: no mutuality, no personal service, no control in the relevant sense.",
+          "The Supreme Court was not persuaded that the paperwork settled anything. Lord Clarke held that where there is a significant inequality of bargaining power, and the written terms do not reflect what was actually agreed or what actually happens in practice, a tribunal is entitled to disregard those terms and find the true agreement — using all the evidence, including how the parties actually behaved. This is not confined to cases of deliberate sham; it applies wherever the documented terms simply don't reflect the reality both sides understood and lived by.",
+          "The valeters, in practice, worked regular hours, were required to do the work personally, and were subject to a rota and supervision inconsistent with the 'no obligation, no personal service' story the contract told. The Supreme Court found they were, in reality, employees — and that the written contract's contrary wording carried no weight once it was shown to be a false description of the actual relationship."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Autoclenz Ltd v Belcher",
+            "citation": "[2011] UKSC 41",
+            "court": "Supreme Court",
+            "year": 2011,
+            "factsShort": "Car valeters signed contracts describing them as self-employed with no obligation to work and a right to substitute, but in practice worked regular hours and did the work personally.",
+            "ratioShort": "Where there is inequality of bargaining power and the written terms do not reflect the true agreement, a tribunal may find the actual terms from the reality of the relationship, disregarding contrary contractual wording.",
+            "expanded": {
+              "facts": "Belcher and his colleagues valeted cars for Autoclenz. Their written agreements stated they were self-employed sub-contractors, had no obligation to accept work and Autoclenz had no obligation to offer any, and that they could arrange a substitute to do the work. In practice they worked set daily hours, were expected to attend and do the work personally, and were subject to supervision typical of employment.",
+              "judgmentExtract": "Lord Clarke, giving the leading judgment, held that the relative bargaining power of the parties must be taken into account in deciding whether the terms of a written agreement represent what was actually agreed, and that the tribunal is entitled to disregard the terms of a written agreement where they do not reflect the true agreement between the parties, considering all the evidence including subsequent conduct.",
+              "significance": "Autoclenz is the leading authority for 'reality over label' in the employment status context. It confirms tribunals are not confined to interpreting the written contract as they would a commercial agreement between equals; they must ask what was really agreed and really happened, especially where bargaining power is unequal."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-01-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the extract below from Autoclenz, highlight the sentence that states the ratio.",
+          "passage": "The relative bargaining power of the parties must be taken into account in deciding whether the terms of any written agreement in truth represent what was agreed. The tribunal is entitled to disregard the terms of a written agreement where they do not reflect the true agreement between the parties, considering all the evidence including how the parties actually behaved. This is not confined to cases of sham.",
+          "ratioSentence": "The tribunal is entitled to disregard the terms of a written agreement where they do not reflect the true agreement between the parties, considering all the evidence including how the parties actually behaved."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Uber v Aslam: reality over label in the gig economy",
+        "voice": "Socratic — poses the platform's argument before resolving it",
+        "body": [
+          "Here is the platform's argument, stated at its strongest: Uber's paperwork cast Uber as a booking agent, with drivers contracting directly with passengers and Uber merely facilitating the transaction. Drivers were 'independent contractors', free to work for competing apps, free to decline trips, and running their own transport businesses. If contract interpretation is just about reading the document the parties signed, that argument wins.",
+          "The Supreme Court held that this gets the exercise backwards. Lord Leggatt's judgment treats the question of who counts as a 'worker' under s 230(3)(b) ERA 1996 as a matter of statutory interpretation, not ordinary contractual construction — the statutory definition exists to protect people in a position of subordination and dependency, and a business cannot contract its way out of that protection by choosing different words for the relationship it actually maintains.",
+          "Looking at the reality, the Court found substantial control: Uber set the fares (drivers could not negotiate a higher fare), fixed the contract terms unilaterally, constrained drivers' acceptance rate through penalties, and monitored performance through a rating system that could lead to a driver's account being deactivated. Drivers were held to be workers for the entire period they were logged into the app and available to accept trips — not only while a passenger was actually in the car — because that was when they were, in substance, working under Uber's control."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Uber BV v Aslam",
+            "citation": "[2021] UKSC 5",
+            "court": "Supreme Court",
+            "year": 2021,
+            "factsShort": "Uber's contracts cast drivers as self-employed, contracting directly with passengers, with Uber as a mere booking agent — but Uber set fares, fixed terms, and could penalise or deactivate drivers.",
+            "ratioShort": "Worker status under s 230(3)(b) ERA 1996 is a matter of statutory purpose, not contractual label; drivers subject to this degree of Uber's control were workers throughout the time they were logged in and available for work.",
+            "expanded": {
+              "facts": "Uber drivers were engaged under written agreements describing Uber as an agent for drivers, who contracted directly with passengers as independent businesses. In practice, Uber set the fares drivers could charge, imposed standard contractual terms with no scope for negotiation, monitored drivers via a ratings system with penalties for cancelling or declining too many trips, and could deactivate a driver's account.",
+              "judgmentExtract": "Lord Leggatt held that the correct approach is not to ask what the contractual documents say, but whether the individual falls within the statutory definition of a worker — a definition designed to protect vulnerable individuals from subordination and dependency on a controlling party, regardless of how the parties have chosen to label the relationship. Applying that approach to the degree of control Uber exercised, drivers were workers throughout the time they were logged into the app within their territory and willing to accept trips.",
+              "significance": "This is the leading modern authority extending Autoclenz's reality-over-label principle into the platform economy, and it settles that 'working time' for gig workers is not limited to time actually spent on a job — it includes time spent available and under the platform's effective control."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-01-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "Nadia delivers parcels through an app. The app sets the delivery fee, penalises her account if she declines too many jobs in a row, and can suspend her account for poor ratings. Her written agreement describes her as an independent contractor free to work for other apps. Analyse whether Nadia is likely to be found a worker.",
+          "factsToOrder": [
+            "The written agreement labels Nadia an independent contractor",
+            "The app sets the delivery fee unilaterally",
+            "The app penalises declined jobs and can suspend the account for poor ratings",
+            "Nadia is nominally free to work for competing apps"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model answer shown, mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule given; student applies it to the facts and writes the conclusion" },
+            { "level": 3, "support": "No scaffold; student writes the full analysis unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether Nadia is a worker under s 230(3)(b) ERA 1996, despite a written label of 'independent contractor'.",
+            "rule": "Following Autoclenz and Uber v Aslam, the label in a written agreement does not settle status where it does not reflect the reality of the relationship; the statutory question is whether the individual personally performs work for another who is not, in substance, their client or customer, assessed by looking at actual control.",
+            "application": "The app sets the fee (no genuine negotiation), penalises declined work and can suspend the account for ratings — all indicators of a controlling, subordinating relationship of the kind Uber identified, regardless of the 'independent contractor' label. Freedom to work for other apps does not, on its own, outweigh this degree of control during the time Nadia is logged in and available.",
+            "conclusion": "Nadia is likely to be found a worker for the periods she is logged into the app and available for work, notwithstanding the contractual label."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "employmentlaw-01-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the three employment status categories recognised by UK law.",
+      "acceptableAnswers": ["employee, worker, self-employed", "employee, worker and self-employed"],
+      "modelAnswer": "Employee, worker, and self-employed."
+    },
+    {
+      "itemId": "employmentlaw-01-test-02",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Name the three conditions MacKenna J held must all be present for a contract of service to exist in Ready Mixed Concrete.",
+      "acceptableAnswers": ["personal service for wages, control, other terms consistent with a contract of service", "wage in return for personal work, sufficient control, consistency of the rest of the contract with a contract of service"],
+      "modelAnswer": "(1) The individual provides their own work and skill for a wage; (2) they are subject to a sufficient degree of control; and (3) the rest of the contract is consistent with it being a contract of service."
+    },
+    {
+      "itemId": "employmentlaw-01-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Can someone who is not an employee still be entitled to national minimum wage and paid annual leave?",
+      "options": ["Yes — if they qualify as a worker under s 230(3)(b) ERA 1996", "No — those rights are reserved to employees only"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "employmentlaw-01-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which statement about the self-employed and employment protection is correct?",
+      "options": ["The genuinely self-employed fall outside employee and worker protection and rely on ordinary contract law", "The genuinely self-employed still qualify for unfair dismissal rights after two years", "The genuinely self-employed automatically qualify as workers"],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to assume some residual statutory protection survives for anyone doing regular work for one client, but genuine self-employment — running your own business, with clients rather than an employer — sits entirely outside the employee and worker categories."
+    },
+    {
+      "itemId": "employmentlaw-01-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these steps in the order a tribunal applies them when a written contract's label is challenged, following Autoclenz.",
+      "items": ["Identify what the written agreement says about the relationship", "Consider the relative bargaining power of the parties", "Examine all the evidence, including how the parties actually behaved in practice", "Find the true agreement, disregarding contractual wording that doesn't reflect it"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "employmentlaw-01-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 230(3)(b) ERA 1996, what disqualifies someone from worker status even though they personally perform work for another party?",
+      "options": ["Being paid weekly rather than monthly", "The other party being, by virtue of the contract, a client or customer of the individual's own profession or business", "Working fewer than 16 hours a week"],
+      "correctIndex": 1
+    },
+    {
+      "itemId": "employmentlaw-01-test-07",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that a substitution clause always defeats worker or employee status, whatever the surrounding facts?",
+      "sliderLabels": ["Always defeats status", "Only if genuinely unfettered and actually exercisable"],
+      "correctPosition": "Only if genuinely unfettered and actually exercisable",
+      "explanation": "A conditional, dormant or approval-dependent substitution right does not defeat personal service. Only a genuine, unfettered right the individual can actually exercise is inconsistent with personal service."
+    },
+    {
+      "itemId": "employmentlaw-01-test-08",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the extract below from Uber BV v Aslam, highlight the sentence that captures the ratio.",
+      "passage": "The correct approach is not simply to construe the written contractual documents as one would in an ordinary commercial dispute between equals. The question of who falls within the definition of a 'worker' is a matter of statutory interpretation, and the statutory definition exists to protect those in a position of subordination and dependency on a controlling party, regardless of how the relationship has been labelled.",
+      "ratioSentence": "The question of who falls within the definition of a 'worker' is a matter of statutory interpretation, and the statutory definition exists to protect those in a position of subordination and dependency on a controlling party, regardless of how the relationship has been labelled."
+    },
+    {
+      "itemId": "employmentlaw-01-test-09",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact in this scenario that most strongly suggests mutuality of obligation is absent.",
+      "scenarioText": "Ben is offered shifts by text message roughly once a fortnight, with no guarantee of any particular number, and has turned down more than half the offers he's received over the last year without any consequence.",
+      "tappableSpans": ["offered shifts by text message", "roughly once a fortnight", "no guarantee of any particular number", "turned down more than half the offers"],
+      "correctSpan": "turned down more than half the offers",
+      "feedbackCorrect": "Right. Actually declining a majority of offers without consequence is strong evidence there is no ongoing obligation on Ben to accept work, nor a reciprocal obligation on the employer to offer it — the core of a mutuality-of-obligation problem.",
+      "feedbackIncorrect": "Look for the fact showing the relationship in operation, not just its structure. The irregular offers describe how work is offered; it's Ben's actual pattern of freely refusing more than half of it, without penalty, that undermines mutuality of obligation."
+    },
+    {
+      "itemId": "employmentlaw-01-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "Autoclenz is sometimes summarised as 'the courts will strike down a sham contract.' Why is this an incomplete description of the ratio?",
+      "options": ["Because Autoclenz applies only where the written contract is a deliberate sham designed to deceive a court", "Because the principle applies more broadly, wherever the written terms fail to reflect the true agreement — deliberate sham is not required", "Because Autoclenz was overruled by Uber BV v Aslam"],
+      "correctIndex": 1,
+      "trapExplanation": "The 'sham' framing is the most common misreading of this case. Lord Clarke was explicit that the principle is not confined to sham arrangements — it reaches any written term that, considered against the whole evidential picture including conduct, does not represent the true agreement."
+    },
+    {
+      "itemId": "employmentlaw-01-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Which of these two platform-worker scenarios more closely mirrors the reasoning in Uber BV v Aslam?",
+      "scenarioA": "A courier sets her own delivery prices, negotiates directly with each business she delivers for, and can decline any job with no penalty or rating consequence at all.",
+      "scenarioB": "A courier is assigned a fixed delivery fee by the app with no room to negotiate, is automatically logged out after declining several jobs in a row, and can be permanently deactivated for a low average rating.",
+      "correctScenario": "B",
+      "explanation": "B mirrors Uber: the platform sets the fee, imposes consequences for declining work, and controls continued access to the platform through performance monitoring — the combination of control the Supreme Court found decisive. A describes genuine independence: price-setting, negotiation and consequence-free refusal all point away from worker status."
+    },
+    {
+      "itemId": "employmentlaw-01-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Priya's contract says she is self-employed and free to refuse any shift. In practice, her manager has told her that refusing more than one shift a month means she 'won't be offered work again'. Which is the better view of her status on the multiple/economic reality test?",
+      "options": ["Self-employed, because the written contract says so", "Potentially an employee or worker, because the real, operative arrangement imposes an ongoing obligation the written contract denies", "Definitely self-employed, because refusal is nominally permitted"],
+      "correctIndex": 1,
+      "explanation": "Following Autoclenz, the tribunal looks past the label to what actually happens. An unwritten but enforced expectation that shifts must generally be accepted, on pain of losing future work, points towards a real obligation to work and a real obligation to offer it — the opposite of what the contract states."
+    },
+    {
+      "itemId": "employmentlaw-01-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "Tom is engaged as a 'consultant', invoices through his own limited company, sets his own hours, uses his own equipment, and has three other clients he works for concurrently. Applying the third limb of Ready Mixed Concrete, is Tom likely an employee?",
+      "options": ["Yes — invoicing through a company is irrelevant to status", "No — owning his own equipment, controlling his own hours, and working for multiple concurrent clients are all provisions consistent with an independent business, not a contract of service", "Yes — because he personally performs the work"],
+      "correctIndex": 1,
+      "explanation": "Personal service and some control might be present, but the third Ready Mixed Concrete limb looks at the whole picture: equipment ownership, control over working hours, and genuinely concurrent clients are all strong indicators of an independent business, echoing the factors that defeated employee status for Mr Latimer."
+    },
+    {
+      "itemId": "employmentlaw-01-test-14",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "Lena drives for a food-delivery app. Her contract lets her nominate a substitute, but any substitute must pass the app's own background check and sign the app's standard agreement before being allowed to deliver. Lena has never used this clause. The app sets delivery fees and can suspend accounts for late deliveries. Analyse Lena's likely employment status.",
+      "factsToOrder": [
+        "Lena's contract contains a substitution clause",
+        "Any substitute must pass the app's own vetting and sign its standard terms",
+        "Lena has never exercised the substitution clause",
+        "The app sets delivery fees unilaterally",
+        "The app can suspend accounts for late deliveries"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether Lena's conditional substitution clause defeats personal service, and whether she is otherwise a worker under s 230(3)(b) ERA 1996.",
+        "rule": "A substitution right defeats personal service only where it is genuinely unfettered and exercisable in practice; a right conditional on the other party's approval or vetting process is not. Worker status then turns on the reality of control (Uber v Aslam), not the contractual label.",
+        "application": "Lena's substitution right is conditional on the app's own vetting and standard terms — it is not unfettered, and she has never used it, so it does not defeat personal service. The app's unilateral fee-setting and power to suspend for late deliveries are strong indicators of the kind of control found decisive in Uber.",
+        "conclusion": "Lena is likely a worker: personal service survives the conditional substitution clause, and the degree of control the app exercises is inconsistent with genuine self-employment."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating a single fact — a written 'self-employed' label, or the mere presence of a substitution clause — as decisive on its own. Every case here turns on weighing the whole picture: what the contract says, what actually happens, and whether any get-out clause is real or dormant.",
+    "reviewMisses": true,
+    "linkToPathway": "employmentlaw.foundations.employment-status"
+  }
+}

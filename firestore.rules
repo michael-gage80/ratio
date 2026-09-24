@@ -174,7 +174,7 @@ service cloud.firestore {
         && (!changed.hasAny(['year']) || after.year in [1, 2, 3])
         && (!changed.hasAny(['modules'])
             || (after.modules is list && after.modules.size() >= 1
-                && after.modules.hasOnly(['crime', 'contract', 'tort', 'public', 'land', 'equity', 'companylaw', 'eulaw', 'humanrights', 'jurisprudence'])));
+                && after.modules.hasOnly(['crime', 'contract', 'tort', 'public', 'land', 'equity', 'companylaw', 'eulaw', 'humanrights', 'jurisprudence', 'employmentlaw', 'familylaw'])));
     }
 
     // Only the birth year is stored (not the full date), with the server time of the

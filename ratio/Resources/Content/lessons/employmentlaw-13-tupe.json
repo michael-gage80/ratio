@@ -1,0 +1,344 @@
+{
+  "lessonId": "employmentlaw-13",
+  "moduleId": "employmentlaw",
+  "moduleTitle": "Employment Law",
+  "lessonNumber": 13,
+  "topicId": "employmentlaw.transactions.tupe",
+  "title": "Same job, new employer",
+  "subtitle": "TUPE and the automatic transfer of contracts of employment",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 13,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State when TUPE 2006 applies — business transfers and service provision changes — and identify the two routes into the Regulations",
+    "Explain the effect of reg 4: automatic transfer of contracts, continuity of employment, and which rights and liabilities pass to the transferee",
+    "Apply reg 7 to determine whether a transfer-connected dismissal is automatically unfair, and distinguish a genuine ETO reason from a disguised transfer-related dismissal"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Transfer of Undertakings (Protection of Employment) Regulations 2006, reg 4", "role": "Automatic transfer of the contract of employment, with continuity, on a relevant transfer" },
+    { "citation": "Transfer of Undertakings (Protection of Employment) Regulations 2006, reg 7", "role": "Automatic unfair dismissal for a transfer-connected reason, subject to the ETO exception" },
+    { "citation": "Spijkers v Gebroeders Benedik Abattoir CV [1986] ECR 1119", "role": "The 'retained identity' factors for whether a business transfer has occurred" },
+    { "citation": "Cheesman v R Brewer Contracts Ltd [2001] IRLR 144", "role": "The conditions for an 'organised grouping of employees' under a service provision change" },
+    { "citation": "Litster v Forth Dry Dock and Engineering Co Ltd [1990] 1 AC 546", "role": "Anti-avoidance: dismissals connected with a transfer are treated as if the employee were still employed immediately before it" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite 'TUPE transfers the contract automatically' without hesitation. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the headline rule — this lesson is about the exception that swallows it if you're not careful with the facts.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below is weighted towards scenario questions: expect fact patterns about outsourcing, re-tendering and dismissal timing, not bare definitions.",
+      "weakKnowledge": "Start with Part 1 and take it slowly — the two gateways (business transfer and service provision change) are the foundation the rest of this lesson assumes you can identify on sight."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "On Friday, the hospital's cleaning staff work for Contractor A. Over the weekend, nothing about their jobs changes — same mop, same wards, same hours — except that on Monday morning their payslip says Contractor B. No one asked them. No one needed to. This lesson is about the regulation that makes that possible, and the much narrower gap through which an employer can still lawfully dismiss someone connected with a transfer like this.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. TUPE 2006 (as amended) is settled, in-force law with no pending repeal or major reform; the case law developing 'service provision change' and the ETO exception continues to move incrementally, so treat any single Employment Appeal Tribunal decision on the borderline facts with appropriate caution."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two doors into TUPE: business transfers and service provision changes",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "TUPE 2006 protects employees when the business or service they work for changes hands, by making the transfer of their contract automatic rather than something that has to be negotiated, agreed or even noticed by the employee. Two genuinely distinct routes trigger this protection, and confusing them is the single most common analytical error in a TUPE problem question.",
+          "reg 3(1)(a) — the 'business transfer' route — covers a transfer of an undertaking, business or part of one, where there is a transfer of an economic entity that retains its identity: an organised grouping of resources with the object of pursuing an economic activity, whether or not that activity is central or ancillary. Courts assess this using the 'retained identity' factors from Spijkers: the type of undertaking, whether tangible assets (premises, equipment) transfer, the value of any intangible assets transferred, whether the majority of the workforce is taken over, whether customers transfer, the degree of similarity between activities before and after, and any period of suspension of those activities.",
+          "reg 3(1)(b) — the 'service provision change' (SPC) route — was added specifically to catch outsourcing, re-tendering and insourcing without forcing every case through the sometimes awkward Spijkers analysis. It covers three scenarios: a client contracting out a service for the first time, a new contractor taking over from an outgoing one, and a client bringing an outsourced service back in-house. SPC requires an organised grouping of employees whose principal purpose is carrying out the relevant activities on behalf of the client — the Cheesman conditions.",
+          "In practice: check business transfer first, because it is the conceptually broader idea; then check SPC as a second, purpose-built net designed to catch situations — especially pure labour contracts with no assets changing hands — where Spijkers might otherwise leave employees unprotected."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The two TUPE gateways",
+            "points": [
+              "reg 3(1)(a) business transfer — an economic entity that retains its identity moves to a new employer (Spijkers factors: assets, staff, customers, activities, continuity)",
+              "reg 3(1)(b) service provision change — outsourcing, re-tendering or insourcing of a service carried out by an organised grouping of employees (Cheesman conditions)",
+              "The two routes overlap in practice but are legally independent — a transfer can satisfy one, both, or neither"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A hospital trust switches its catering contract from Contractor A to Contractor B. No equipment or premises change hands — the same kitchen staff simply start working for B. Can TUPE still apply?",
+          "options": ["Yes — this is the classic case for a service provision change under reg 3(1)(b)", "No — without any transfer of assets, TUPE cannot apply"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. SPC exists precisely for cases like this — a pure labour contract moving between contractors, where an organised grouping of employees carries out the same activities for the same client.",
+          "feedbackIncorrect": "Look again at what SPC was designed for. It doesn't require assets to transfer at all — an organised grouping of employees doing the same work for the same client is enough."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "reg 4: contracts transfer automatically, on their existing terms",
+        "voice": "statute-first — works from the text outward",
+        "body": [
+          "Once a relevant transfer is established, reg 4 does the heavy lifting. Employees assigned to the transferring undertaking or grouping move to the new employer automatically, by operation of law — no fresh recruitment, no need for consent, and, critically, no break in continuity of employment.",
+          "reg 4(2) extends this beyond the bare contract: all of the transferor's rights, powers, duties and liabilities under or connected with the contract pass to the transferee too — including accrued length of service, outstanding disciplinary warnings, and (subject to a specific carve-out) liability for pre-transfer breaches such as unpaid holiday pay or a discrimination claim arising before the transfer date. The significant exception is old age, invalidity and survivors' benefits under an occupational pension scheme, which do not transfer — though a separate statutory minimum matching obligation falls on the new employer instead.",
+          "reg 4(4) then closes an obvious loophole: a variation of contract is void if the sole or principal reason for it is the transfer itself, unless the reason is an ETO reason entailing changes in the workforce, or it is a variation the contract already permitted regardless of the transfer. An employer who tries to 'harmonise' pay or terms on day one of a transfer, with no genuine ETO reason behind it, simply cannot bind the employee to the change — even if the employee appears to agree to it at the time."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "TUPE 2006, reg 4(1)–(2)",
+            "text": "Except where objected to under paragraph (7), a relevant transfer shall not operate so as to terminate the contract of employment of any person employed by the transferor and assigned to the organised grouping of resources or employees that is subject to the relevant transfer, which would otherwise be terminated by the transfer, but any such contract shall have effect after the transfer as if originally made between the person so employed and the transferee. Without prejudice to paragraph (1), on the completion of a relevant transfer all the transferor's rights, powers, duties and liabilities under or in connection with any such contract shall be transferred to the transferee, and anything done before the transfer is completed by or in relation to the transferor in respect of that contract shall be deemed to have been done by or in relation to the transferee.",
+            "elements": ["Contract does not terminate on the transfer — it continues as if always made with the transferee", "Continuity of employment is preserved, with no gap", "All rights, powers, duties and liabilities under the contract transfer too", "Pre-transfer acts of the transferor are treated as acts of the transferee", "Occupational pension old-age, invalidity and survivors' benefits are the main statutory exception"]
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-13-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under reg 4, what happens to an employee's accrued length of service on a relevant transfer?",
+          "options": ["It transfers to the new employer and counts as continuous, with no gap", "It resets to zero with the new employer, who treats the employee as a new starter", "It is preserved only if the employee signs a new contract with the transferee"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. reg 4(1) preserves the contract itself — it is not terminated and re-made — so continuity of service simply carries over.",
+          "feedbackIncorrect": "reg 4(1) is explicit that the contract is not terminated by the transfer; it continues as if originally made with the transferee, which is exactly why continuity of service is unbroken."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "reg 7: a transfer is not a lawful reason to dismiss",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Forth Dry Dock and Engineering was in serious financial difficulty and facing a takeover. An hour before the sale completed, receivers dismissed the entire workforce. The purchaser then completed the deal and re-engaged some of the workers — on worse terms, and without the liabilities that would have come with taking on employees whose contracts had transferred intact. On paper, the dismissals happened before the transfer, so TUPE's automatic-transfer machinery might never even engage.",
+          "The House of Lords refused to let the timing trick work. It read what is now reg 7 purposively: where the reason (or principal reason) for a dismissal is the transfer itself, and the dismissal takes place in connection with that transfer, the employee is treated as if still employed immediately before the transfer — so their contract, and the liability for their unfair dismissal, transfers to the purchaser regardless of the hour-before timing.",
+          "Litster is the leading anti-avoidance authority in this area for a reason: it tells students exactly what an exam scenario is testing whenever a dismissal happens suspiciously close to a transfer date. The question is never 'did the dismissal happen before the transfer, on the calendar' — it's 'was the transfer the reason for it'."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Litster v Forth Dry Dock and Engineering Co Ltd",
+            "citation": "[1990] 1 AC 546",
+            "court": "House of Lords",
+            "year": 1990,
+            "factsShort": "Receivers dismissed the entire workforce one hour before a business sale completed; the purchaser then re-engaged some staff on worse terms.",
+            "ratioShort": "A dismissal connected with a transfer is treated as if the employee were still employed immediately before it — the contract, and liability for the dismissal, transfers to the new employer regardless of the precise timing.",
+            "expanded": {
+              "facts": "Forth Dry Dock and Engineering Co Ltd was in financial difficulty. A prospective purchaser agreed to buy the business, but only on terms that excluded the existing workforce and its associated liabilities. An hour before completion, the receivers dismissed all the employees. The purchaser then completed the purchase and re-engaged a number of the former staff on new, less favourable contracts.",
+              "judgmentExtract": "The House of Lords held that the relevant TUPE provision (then reg 8, now reg 7) had to be read as if it included words extending its protection to a person who would have been employed immediately before the transfer if they had not been dismissed for a reason connected with the transfer. On that reading, the dismissed employees were deemed to have been employed immediately before the transfer, so their contracts — and the liability for their dismissals — passed to the purchaser under what is now reg 4.",
+              "significance": "Litster closes the obvious avoidance route: dismissing staff moments before a sale completes does not defeat TUPE if the transfer is the real reason for the dismissal. It remains the leading authority cited whenever a problem question features a dismissal suspiciously timed around a transfer date."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-13-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that shows Litster-style anti-avoidance reasoning applies to this scenario.",
+          "scenarioText": "A facilities company is about to lose its cleaning contract to a rival on re-tender. Two days before the handover, the outgoing employer dismisses all the cleaners assigned to that contract, citing 'restructuring', and the incoming contractor then offers some of them new jobs on lower pay.",
+          "tappableSpans": ["about to lose its cleaning contract", "Two days before the handover", "dismisses all the cleaners assigned to that contract, citing 'restructuring'", "offers some of them new jobs on lower pay"],
+          "correctSpan": "dismisses all the cleaners assigned to that contract, citing 'restructuring'",
+          "feedbackCorrect": "That's the moment Litster targets. A vague label like 'restructuring', timed immediately before a transfer that the employer already knows is happening, is exactly the pattern the anti-avoidance reasoning was built to catch — the tribunal will look past the label to the real, transfer-connected reason.",
+          "feedbackIncorrect": "Look for the dismissal itself, and its timing and stated reason, rather than the surrounding commercial facts. Litster is triggered by a transfer-connected dismissal happening around the transfer date, not by the fact of the re-tender or the new employer's later offer."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The ETO exception: the narrow escape hatch",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "reg 7(2) supplies the one route out of automatic unfairness: if the sole or principal reason for the dismissal is an economic, technical or organisational reason entailing changes in the workforce (an 'ETO reason'), the dismissal drops out of reg 7(1) entirely. It is not automatically unfair — it is simply tested under the ordinary unfair dismissal framework, with the employer having to show a potentially fair reason and a reasonable process, exactly as in lessons 5 and 6.",
+          "'Entailing changes in the workforce' is construed narrowly. It requires an actual change in headcount, job function or workplace location — not merely a wish to harmonise pay, benefits or other terms across an existing workforce. A genuine post-transfer redundancy, where the new employer needs fewer staff overall for economic reasons, is a textbook ETO reason. A dismissal used simply to strip out a more generous benefit and replace the employee on the same job with someone on cheaper terms is not — there is no change in the workforce at all, just a change in terms, and reg 7(1) still applies in full force.",
+          "This distinction is where most marks are won or lost in application questions: the label an employer puts on the reason is never decisive. A tribunal looks past 'redundancy' or 'reorganisation' to whether the workforce itself — its size, its composition, its functions — genuinely changed as a result."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that once an employer says the dismissal was for 'redundancy' following a transfer, the ETO exception is automatically satisfied and reg 7(1) no longer applies.",
+            "whyItsWrong": "Labelling a dismissal 'redundancy' proves nothing on its own. The tribunal must be satisfied that the sole or principal reason genuinely was economic, technical or organisational, and that it entailed a real change in the workforce — not simply that the employer used the word. A dismissal dressed up as redundancy but really aimed at removing an employee because of the transfer itself remains automatically unfair under reg 7(1)."
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-13-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "Following a business transfer, the new employer genuinely needs three fewer warehouse operatives than the transferring workforce provided, because the two previously separate depots are being merged into one. Which best describes this dismissal under reg 7?",
+          "options": ["It is a genuine ETO reason entailing changes in the workforce, so reg 7(1) does not make it automatically unfair", "It is automatically unfair under reg 7(1) because it happened after a transfer, regardless of the reason", "It can never be fair because TUPE prohibits any dismissal connected with a transfer"],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answer treats 'happened after a transfer' as decisive on its own. It isn't — reg 7(1) only bites where the transfer is the sole or principal reason. Here the reason is a genuine reduction in headcount caused by merging two depots: an actual change in the workforce, which is precisely what reg 7(2)'s ETO exception is designed to accommodate. The dismissal still has to satisfy the ordinary unfair dismissal test, but it is not automatically unfair."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Employee objection and constructive dismissal on transfer",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Here's a question worth sitting with before answering it: what happens if the employee simply doesn't want to work for the new employer at all — nothing unfair has happened, they just don't want the switch? Does TUPE force them into a contract with someone they never agreed to work for?",
+          "reg 4(7) answers this directly: an employee may object to becoming employed by the transferee. If they do, the contract terminates automatically on the transfer date, by operation of law — but this is not a dismissal. No unfair dismissal claim, and no redundancy payment, arises purely from the objection itself, however unwelcome the transfer might be to the employee.",
+          "reg 4(9) then carves out the genuinely different situation: if the transfer involves, or would involve, a substantial change in working conditions to the employee's material detriment — a significant relocation, a real cut to responsibilities, materially worse hours — the employee may treat the contract as having come to an end, and is treated as having been dismissed by the employer. This is a transfer-specific form of constructive dismissal, and unlike a bare objection, it does open the door to an unfair dismissal claim.",
+          "The line between these two is entirely fact-dependent: an employee who simply prefers their old employer has no claim; an employee facing a genuinely detrimental change to their working conditions because of the transfer does."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Transfer-related constructive dismissal (reg 4(9))",
+            "definition": "Where a relevant transfer involves a substantial change in working conditions to the employee's material detriment, the employee may treat their contract as terminated and is treated in law as having been dismissed — distinct from a bare objection under reg 4(7), which produces no dismissal at all."
+          }
+        ],
+        "interaction": {
+          "itemId": "employmentlaw-13-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that an employee who simply refuses to work for the transferee — with no detrimental change in their working conditions — has an unfair dismissal claim, without more?",
+          "sliderLabels": ["Definitely has a claim", "Definitely has no claim"],
+          "correctPosition": "has no claim",
+          "explanation": "Has no claim. reg 4(7) treats a bare objection as terminating the contract automatically, not as a dismissal at all. A claim only opens up under reg 4(9), where the transfer brings a substantial, materially detrimental change to working conditions — mere reluctance to work for someone new is not enough on its own."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "employmentlaw-13-test-01",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Name the two routes into TUPE 2006 protection.",
+      "acceptableAnswers": ["business transfer and service provision change", "reg 3(1)(a) and reg 3(1)(b)", "reg 3(1)(a) business transfer and reg 3(1)(b) service provision change"],
+      "modelAnswer": "A business transfer under reg 3(1)(a) — an economic entity retaining its identity — and a service provision change under reg 3(1)(b), covering outsourcing, re-tendering and insourcing."
+    },
+    {
+      "itemId": "employmentlaw-13-test-02",
+      "type": "recallFirst",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Name the leading case establishing that a dismissal connected with a transfer, even if timed shortly before it, is treated as transferring to the new employer along with the rest of the workforce.",
+      "acceptableAnswers": ["Litster v Forth Dry Dock", "Litster", "Litster v Forth Dry Dock and Engineering Co Ltd"],
+      "modelAnswer": "Litster v Forth Dry Dock and Engineering Co Ltd [1990] 1 AC 546."
+    },
+    {
+      "itemId": "employmentlaw-13-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under reg 4(2), do accrued disciplinary warnings against an employee transfer to the new employer along with the contract?",
+      "options": ["Yes", "No"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "employmentlaw-13-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following, standing alone, is enough to satisfy the ETO exception in reg 7(2)?",
+      "options": ["A genuine reduction in the number of employees needed for the work after the transfer, caused by an economic, technical or organisational reason", "The new employer wanting to align pay scales across its existing and newly transferred staff", "The new employer using the word 'redundancy' in the dismissal letter"],
+      "correctIndex": 0,
+      "trapExplanation": "Wanting to harmonise pay is not, by itself, a change in the workforce — it's a change in terms, which reg 4(4) already treats as void if the transfer is the reason. Using the word 'redundancy' proves nothing on its own; the tribunal looks at the real, substantive reason, not the label attached to it."
+    },
+    {
+      "itemId": "employmentlaw-13-test-05",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Put these events from Litster v Forth Dry Dock in the order they happened.",
+      "items": ["The dock company is in serious financial difficulty and a sale is being negotiated", "Receivers dismiss the entire workforce roughly an hour before completion", "The purchaser completes the sale and re-engages some staff on worse terms", "The House of Lords holds the dismissals were connected with the transfer, so the contracts (and liability for the dismissals) transferred to the purchaser regardless"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "employmentlaw-13-test-06",
+      "type": "sequence",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Order the steps in analysing whether a re-tendered cleaning contract triggers a service provision change under reg 3(1)(b).",
+      "items": ["Identify the activities the outgoing contractor's staff carried out immediately before the change", "Confirm there is an organised grouping of employees whose principal purpose is carrying out those activities for the client", "Check that the activities carried out after the change are fundamentally the same", "Conclude that a service provision change has occurred and TUPE applies"],
+      "correctOrder": [0, 1, 2, 3]
+    },
+    {
+      "itemId": "employmentlaw-13-test-07",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under reg 4(4), when is a variation of an employee's contract made because of the transfer void?",
+      "options": ["Unless it is for an ETO reason entailing changes in the workforce, or the contract already permitted the variation regardless of the transfer", "Whenever the employee has less than two years' continuous service", "Only if the employee later objects to it in writing within seven days of the transfer"],
+      "correctIndex": 0
+    },
+    {
+      "itemId": "employmentlaw-13-test-08",
+      "type": "highlightTheRatio",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "In the passage below summarising the reg 7 anti-avoidance position, highlight the sentence that states the ratio.",
+      "passage": "A dismissal is automatically unfair where the sole or principal reason for it is the transfer itself. Where the dismissal takes place shortly before a transfer for a reason connected with it, the employee is nonetheless treated as if still employed immediately before the transfer, so that the contract — and liability for the dismissal — passes to the transferee in the ordinary way. The precise timing of the dismissal relative to the transfer date is not, on its own, decisive of anything.",
+      "ratioSentence": "Where the dismissal takes place shortly before a transfer for a reason connected with it, the employee is nonetheless treated as if still employed immediately before the transfer, so that the contract — and liability for the dismissal — passes to the transferee in the ordinary way."
+    },
+    {
+      "itemId": "employmentlaw-13-test-09",
+      "type": "thresholdSlider",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "How confident are you that old-age, invalidity and survivors' benefits under an occupational pension scheme transfer automatically to the new employer under reg 4?",
+      "sliderLabels": ["Definitely transfer automatically", "Definitely excluded from automatic transfer"],
+      "correctPosition": "definitely excluded from automatic transfer",
+      "explanation": "Excluded. reg 4 carves these specific occupational pension benefits out of the automatic transfer — the transferee instead comes under a separate, narrower statutory minimum matching obligation rather than simply stepping into the transferor's pension scheme."
+    },
+    {
+      "itemId": "employmentlaw-13-test-10",
+      "type": "tapTheFact",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Tap the fact that shows this is a service provision change rather than a business transfer under Spijkers.",
+      "scenarioText": "A council brings its grounds-maintenance service back in-house after eight years of outsourcing. No equipment, vehicles or land change hands — the council already owns all of that — but the same team of gardeners, previously employed by the contractor and organised specifically to serve this council contract, now works directly for the council doing exactly the same work.",
+      "tappableSpans": ["brings its grounds-maintenance service back in-house", "No equipment, vehicles or land change hands", "the same team of gardeners", "organised specifically to serve this council contract", "doing exactly the same work"],
+      "correctSpan": "organised specifically to serve this council contract",
+      "feedbackCorrect": "That's the SPC trigger. An organised grouping of employees whose principal purpose was carrying out this specific client's activities is exactly what reg 3(1)(b) requires — no assets need to change hands at all, which is precisely why SPC exists alongside the Spijkers business-transfer test.",
+      "feedbackIncorrect": "The absence of any asset transfer is a clue this isn't a Spijkers-style business transfer, but it doesn't by itself establish SPC. Look for the fact that positively satisfies reg 3(1)(b) — the existence of a team organised around serving this particular client's contract."
+    },
+    {
+      "itemId": "employmentlaw-13-test-11",
+      "type": "distinguishTheCase",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "In which scenario is the dismissal most likely to fall within the reg 7(2) ETO exception, rather than being automatically unfair under reg 7(1)?",
+      "scenarioA": "Two months after a transfer, the new employer merges two previously separate customer-service teams into one, genuinely reducing headcount needs by four roles, and fairly selects four employees for redundancy from the combined pool.",
+      "scenarioB": "Immediately after a transfer, the new employer dismisses an employee on the transferred team and re-engages someone to do the identical job on a lower salary, in order to bring pay into line with its existing staff.",
+      "correctScenario": "A",
+      "explanation": "A involves a genuine reduction in the workforce required after a structural merger — an ETO reason entailing changes in the workforce. B involves no change to the job or headcount at all, only a cheaper replacement for the same role because of the transfer, which reg 7(1) treats as automatically unfair."
+    },
+    {
+      "itemId": "employmentlaw-13-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A payroll function transfers under reg 3(1)(b) when a client insources it from an outsourcing provider. One payroll clerk, assigned to the client's account, tells her new employer she does not want to move and would rather stay with her current employer in a different role. She raises no complaint about pay, hours or duties. What is the legal effect?",
+      "options": ["Her contract terminates automatically on the transfer date under reg 4(7); this is not a dismissal and gives rise to no unfair dismissal or redundancy claim", "She is automatically unfairly dismissed under reg 7(1) because the objection is connected with the transfer", "She remains employed by her original employer indefinitely, because objection cancels the transfer for her alone"],
+      "correctIndex": 0,
+      "explanation": "This is a straightforward reg 4(7) objection: no detrimental change is alleged, so there is no constructive dismissal under reg 4(9). The objection simply ends the contract by operation of law, with no dismissal and therefore no unfair dismissal or redundancy claim arising from it."
+    },
+    {
+      "itemId": "employmentlaw-13-test-13",
+      "type": "irac",
+      "skillTag": "application",
+      "difficultyStart": 0.65,
+      "scaffoldLevels": 4,
+      "prompt": "A logistics firm loses a warehousing contract to a rival on re-tender. Three days before the handover, the outgoing firm dismisses the ten warehouse staff assigned to that contract, telling them the decision is 'part of a wider restructuring unrelated to the contract loss'. The incoming contractor then recruits eight replacement staff at a lower rate. Analyse whether the ten dismissed employees have a claim.",
+      "factsToOrder": [
+        "The staff are specifically assigned to the contract being re-tendered",
+        "The dismissal happens three days before the handover",
+        "The stated reason is a vague, unparticularised 'wider restructuring'",
+        "The incoming contractor recruits replacements for the same roles at lower pay shortly afterwards"
+      ],
+      "scaffolds": [
+        { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+        { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+        { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+        { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+      ],
+      "modelAnswer": {
+        "issue": "Whether the dismissals, though timed shortly before the transfer, are automatically unfair under reg 7(1), or fall within the reg 7(2) ETO exception because of the stated 'restructuring' reason.",
+        "rule": "reg 7(1) makes a dismissal automatically unfair where the sole or principal reason is the transfer itself; Litster extends this to dismissals connected with the transfer even where timed just before it, treating the employees as employed immediately before the transfer. reg 7(2) removes automatic unfairness only where the sole or principal reason is genuinely an ETO reason entailing changes in the workforce.",
+        "application": "The staff are assigned specifically to the contract being lost, the dismissal happens days before the handover, and replacements are recruited for the identical roles shortly after — a classic Litster fact pattern of a transfer-connected dismissal dressed up in vague language. 'Wider restructuring unrelated to the contract loss' is unparticularised and contradicted by the timing and the like-for-like replacement of staff at lower pay, which shows no genuine change in the workforce's size or function, only a cheaper substitute for the same jobs.",
+        "conclusion": "The tribunal is likely to find the real reason was the transfer itself, so reg 7(1) applies via Litster and the dismissals are automatically unfair; the employer's stated reason does not satisfy the ETO exception."
+      }
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is accepting an employer's stated reason for a dismissal at face value once the word 'redundancy' or 'restructuring' appears. Check the substance — has the workforce genuinely changed, or has the transfer simply been used as an occasion to dismiss and replace someone cheaply?",
+    "reviewMisses": true,
+    "linkToPathway": "employmentlaw.transactions.tupe"
+  }
+}
