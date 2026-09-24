@@ -2,7 +2,9 @@ import SwiftUI
 
 /// screens/18-lecture-gated-scroll.png — the lecture as one long page, each part
 /// opening once the student answers the one before (PRD: lesson stage 2, "Lecture").
-/// Progress is saved after every part, so the lecture resumes where it stopped.
+/// Progress is saved after every part, so the lecture resumes where it stopped. There's
+/// no Continue button: once an answer locks, its feedback stays, the next part opens
+/// beneath, and the page scrolls to it after a moment (not with Reduce Motion).
 struct LectureView: View {
     let lesson: Lesson
     /// Fallback for the IRAC scaffold level when this topic hasn't been assessed yet.
@@ -11,11 +13,15 @@ struct LectureView: View {
     let onExit: () -> Void
 
     @Environment(ContentStore.self) private var content
+    @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
+    @AppStorage(RatioPreferences.reduceMotion) private var reduceMotion = false
     @State private var applicationEstimate: Estimate?
 
     @State private var partsCompleted = 0
-    /// The current part's answer, once locked in.
-    @State private var lockedResponse: ItemResponse?
+    /// Answers locked in this visit, by part, so their feedback stays on the page.
+    @State private var responses: [Int: ItemResponse] = [:]
+    /// The part answered most recently (for the haptic).
+    @State private var lastLocked: Int?
     @State private var loaded = false
     @State private var showsExamRoom = false
 
@@ -62,8 +68,8 @@ struct LectureView: View {
             applicationEstimate = await SkillRepository().estimate(topicId: lesson.topicId, skill: .application) ?? headline?.application
             loaded = true
         }
-        .ratioFeedback(trigger: lockedResponse) { _, response in
-            guard let response, let item = lesson.parts[safe: partsCompleted]?.interaction else { return nil }
+        .ratioFeedback(trigger: lastLocked) { _, index in
+            guard let index, let response = responses[index], let item = lesson.parts[safe: index]?.interaction else { return nil }
             return item.isCorrect(response) ? .success : .error
         }
         .fullScreenCover(isPresented: $showsExamRoom) {
@@ -106,6 +112,7 @@ struct LectureView: View {
 
     private func partView(_ part: Lesson.Part, index: Int, scroll: ScrollViewProxy) -> some View {
         let isCurrent = index == partsCompleted
+        let response = responses[index]
         return VStack(alignment: .leading, spacing: 18) {
             Text("Part \(Self.numerals[safe: index] ?? "\(index + 1)")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text(part.heading).ratioFont(.h2)
@@ -116,18 +123,13 @@ struct LectureView: View {
                 LessonComponentView(component: component, moduleTitle: lesson.moduleId.title)
             }
 
-            if isCurrent {
+            if isCurrent || response != nil {
                 VStack(alignment: .leading, spacing: 16) {
                     Label(part.interaction.typeTitle, systemImage: "circle.fill")
                         .labelStyle(DotLabelStyle())
                         .ratioFont(.monoLabel)
-                    ItemInteractionView(item: part.interaction, lockedResponse: lockedResponse, context: context(for: part.interaction)) { response in
-                        lockedResponse = response
-                    }
-                    if lockedResponse != nil {
-                        RatioButton(index == lesson.parts.count - 1 ? "To the tests" : "Continue", style: .secondary) {
-                            advance(scroll: scroll)
-                        }
+                    ItemInteractionView(item: part.interaction, lockedResponse: response, context: context(for: part.interaction)) { response in
+                        lock(response, part: index, scroll: scroll)
                     }
                 }
                 .padding(20)
@@ -172,15 +174,22 @@ struct LectureView: View {
         )
     }
 
-    private func advance(scroll: ScrollViewProxy) {
-        let isLast = partsCompleted == lesson.parts.count - 1
-        partsCompleted += 1
-        lockedResponse = nil
+    /// Opens the next part straight away; after a moment, scrolls to it — or, after the
+    /// last part, opens the exam room.
+    private func lock(_ response: ItemResponse, part index: Int, scroll: ScrollViewProxy) {
+        guard index == partsCompleted, responses[index] == nil else { return }
+        responses[index] = response
+        lastLocked = index
+        partsCompleted = index + 1
         progress.save(lessonId: lesson.id, partsCompleted: partsCompleted)
-        if isLast {
-            showsExamRoom = true
-        } else if let next = lesson.parts[safe: partsCompleted] {
-            withAnimation { scroll.scrollTo(next.id, anchor: .top) }
+        let next = lesson.parts[safe: partsCompleted]
+        Task {
+            try? await Task.sleep(for: .seconds(1.5))
+            if next == nil {
+                showsExamRoom = true
+            } else if let next, !(reduceMotion || systemReduceMotion) {
+                withAnimation(.easeInOut(duration: 0.6)) { scroll.scrollTo(next.id, anchor: .top) }
+            }
         }
     }
 }

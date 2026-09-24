@@ -64,6 +64,8 @@ enum Route: Hashable {
     case brief
     case news
     case notifications
+    case library
+    case libraryEntry(String)
     case settings
     case module(Module)
     case overview(String)
@@ -164,6 +166,10 @@ private struct RouteDestination: View {
             NewsCentreView()
         case .notifications:
             NotificationsView()
+        case .library:
+            LibraryView()
+        case .libraryEntry(let id):
+            LibraryEntryView(id: id)
         case .settings:
             SettingsView()
         case .module(let module):
