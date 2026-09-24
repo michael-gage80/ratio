@@ -18,7 +18,7 @@ public struct RatioWhyCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
     }
 }
 
@@ -43,7 +43,7 @@ public struct RatioTrapCard: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
-        .background(Color.ratioOxWash, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color.ratioOxWash, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
     }
 }
 

@@ -27,7 +27,7 @@ public struct RatioSegmentedControl<T: Hashable>: View {
                         .padding(.vertical, 8)
                         .background {
                             if isSelected {
-                                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                RoundedRectangle(cornerRadius: RatioRadius.chip, style: .continuous)
                                     .fill(Color.ratioPaper)
                                     .shadow(color: .black.opacity(0.08), radius: 2, y: 1)
                             }
@@ -38,6 +38,6 @@ public struct RatioSegmentedControl<T: Hashable>: View {
             }
         }
         .padding(3)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 17, style: .continuous))
+        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
     }
 }

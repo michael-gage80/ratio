@@ -29,6 +29,7 @@ public enum RatioTextStyle: CaseIterable {
     case monoLabel                // Uppercase tag/status labels, wide tracking
     case monoData                   // Citations, ratings, timers
     case displayAccent               // Law-report case titles / statute headers only
+    case figure                        // Big numbers: ratings, stat tiles, scores (tabular)
 }
 
 private struct RatioFontSpec {
@@ -77,6 +78,8 @@ public enum RatioTypography {
             return RatioFontSpec(size: 12, lineHeightMultiple: 1.3, trackingEm: 0, weight: .regular, italic: false, dynamicTypeAnchor: .footnote, uppercase: false, mono: true)
         case .displayAccent:
             return RatioFontSpec(size: 40, lineHeightMultiple: 1.1, trackingEm: -0.02, weight: .regular, italic: true, dynamicTypeAnchor: .largeTitle, uppercase: false, mono: false)
+        case .figure:
+            return RatioFontSpec(size: 36, lineHeightMultiple: 1.05, trackingEm: -0.02, weight: .regular, italic: false, dynamicTypeAnchor: .largeTitle, uppercase: false, mono: false)
         }
     }
 
@@ -163,6 +166,8 @@ private struct RatioFontModifier: ViewModifier {
             .tracking(RatioTypography.tracking(for: style))
             .lineSpacing(RatioTypography.lineSpacing(for: style))
             .textCase(RatioTypography.isUppercase(style) ? .uppercase : nil)
+            // Numbers that change or line up in columns don't jitter.
+            .monospacedDigit()
     }
 }
 

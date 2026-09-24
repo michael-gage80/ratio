@@ -79,6 +79,7 @@ struct MainTabView: View {
     @State private var navigator = AppNavigator()
     @Environment(DeepLinks.self) private var links
     @Environment(\.scenePhase) private var scenePhase
+    @State private var network = NetworkMonitor()
 
     init(uid: String, profile: UserProfile) {
         _student = State(initialValue: StudentStore(uid: uid, profile: profile))
@@ -119,6 +120,14 @@ struct MainTabView: View {
             }
         }
         .tint(Color.ratioInk)
+        .overlay(alignment: .top) {
+            if !network.isOnline {
+                OfflineBanner()
+                    .padding(.top, RatioSpace.xxs)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+            }
+        }
+        .animation(RatioMotion.reveal, value: network.isOnline)
         .sheet(isPresented: Binding(get: { navigator.paywall != nil }, set: { if !$0 { navigator.paywall = nil } })) {
             PaywallView(reason: navigator.paywall?.isEmpty == false ? navigator.paywall : nil)
         }
@@ -142,7 +151,12 @@ struct MainTabView: View {
             links.pending = nil
             _ = navigator.handle(url)
         }
-        .onAppear { student.start() }
+        .onAppear {
+            student.start()
+            #if DEBUG
+            DebugHooks.open(navigator)
+            #endif
+        }
         .onDisappear {
             student.setPresent(false)
             student.stop()
