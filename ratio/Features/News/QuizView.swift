@@ -29,10 +29,10 @@ struct QuizView: View {
                 summary
             } else {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(alignment: .leading, spacing: RatioSpace.m) {
                         story
                         Text(question.prompt).ratioFont(.h1)
-                        VStack(spacing: 10) {
+                        VStack(spacing: RatioSpace.xs) {
                             ForEach(question.options.indices, id: \.self) { i in
                                 RatioOptionRow(letter: String(Character(UnicodeScalar(UInt8(65 + i)))), text: question.options[i], state: state(i),
                                                action: locked ? nil : { selection = i })
@@ -48,13 +48,12 @@ struct QuizView: View {
                             }
                         }
                     }
-                    .padding(24)
+                    .padding(RatioSpace.m)
                 }
                 footer
             }
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .ratioFeedback(trigger: locked) { _, isLocked in
             guard isLocked else { return nil }
             return selection == question.correctIndex ? .success : .error
@@ -62,19 +61,16 @@ struct QuizView: View {
     }
 
     private var header: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: RatioSpace.s) {
             HStack {
-                Button { dismiss() } label: {
-                    Image(systemName: "xmark").font(.body.weight(.semibold)).frame(width: 44, height: 44)
-                        .ratioGlass(in: Circle())
-                }
-                .accessibilityLabel("Close")
+                RatioIconButton(systemImage: "xmark", label: "Close") { dismiss() }
                 Spacer()
                 Text("Sunday quiz · \(min(index + 1, quiz.questions.count)) of \(quiz.questions.count)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    .multilineTextAlignment(.center)
                 Spacer()
                 Color.clear.frame(width: 44, height: 44)
             }
-            HStack(spacing: 6) {
+            HStack(spacing: RatioSpace.xxs) {
                 ForEach(quiz.questions.indices, id: \.self) { i in
                     Capsule()
                         .fill(i < index || finished ? Color.ratioInk : i == index ? Color.ratioOxblood : Color.ratioRule)
@@ -83,26 +79,26 @@ struct QuizView: View {
             }
             .accessibilityHidden(true)
         }
-        .padding(.horizontal, 24)
-        .padding(.top, 8)
+        .padding(.horizontal, RatioSpace.m)
+        .padding(.top, RatioSpace.xs)
     }
 
     private var story: some View {
         Link(destination: question.story.link ?? URL(fileURLWithPath: "/")) {
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: RatioSpace.xs) {
                 Text("From the week · \(question.story.source)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 Text(question.story.title).ratioFont(.h3).italic().foregroundStyle(Color.ratioInk2).multilineTextAlignment(.leading)
             }
-            .padding(.leading, 14)
-            .overlay(alignment: .leading) { Rectangle().fill(Color.ratioRule).frame(width: 3) }
+            .padding(.leading, RatioSpace.s)
+            .overlay(alignment: .leading) { Rectangle().fill(Color.ratioRule).frame(width: 2) }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.ratioPress)
         .disabled(question.story.link == nil)
         .accessibilityHint("Opens the story")
     }
 
     private var footer: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: RatioSpace.s) {
             Text("Counts as practice. Not on the boards.").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             if locked {
                 RatioButton(index + 1 == quiz.questions.count ? "See your score" : "Next question", style: .secondary) { next() }
@@ -110,12 +106,13 @@ struct QuizView: View {
                 RatioButton("Lock it in", isEnabled: selection != nil) { lock() }
             }
         }
-        .padding(24)
+        .padding(RatioSpace.m)
         .background(Color.ratioPaper.ignoresSafeArea(edges: .bottom))
+        .overlay(alignment: .top) { Divider().overlay(Color.ratioRule) }
     }
 
     private var summary: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
             Spacer()
             Text("Sunday quiz · Done").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
             Text("\(right) of \(quiz.questions.count) \(Text("right.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
@@ -124,7 +121,7 @@ struct QuizView: View {
             Spacer()
             RatioButton("Done", style: .secondary) { dismiss() }
         }
-        .padding(24)
+        .padding(RatioSpace.m)
     }
 
     private func state(_ i: Int) -> RatioOptionState {

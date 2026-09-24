@@ -14,22 +14,22 @@ struct SplashView: View {
             Spacer()
             RatioMark(size: 96)
             Spacer()
-            HStack(spacing: 8) {
+            HStack(spacing: RatioSpace.xs) {
                 Text("Entering chambers")
                 if ready { Image(systemName: "checkmark").foregroundStyle(Color.ratioVerdigris) }
             }
             .ratioFont(.monoData)
             .foregroundStyle(Color.ratioInk2)
-            .padding(.bottom, 16)
+            .padding(.bottom, RatioSpace.s)
             Capsule()
                 .fill(Color.ratioRule)
                 .frame(width: 160, height: 1.5)
                 .overlay(alignment: .leading) {
                     Capsule().fill(Color.ratioOxblood).frame(width: 160 * (ready ? 1 : progress), height: 1.5)
                 }
-                .padding(.bottom, 44)
+                .padding(.bottom, RatioSpace.xl)
         }
-        .padding(24)
+        .padding(RatioSpace.m)
         // Fill the screen: nothing inside is full width, and the page-curl host would
         // otherwise size the page to its content.
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -60,7 +60,7 @@ struct SplashCover: View {
                 .task(id: ready) {
                     guard ready else { return }
                     try? await Task.sleep(for: .seconds(0.25))
-                    withAnimation(.easeInOut(duration: 0.35)) { faded = true }
+                    withAnimation(RatioMotion.reveal) { faded = true }
                     try? await Task.sleep(for: .seconds(0.35))
                     done()
                 }

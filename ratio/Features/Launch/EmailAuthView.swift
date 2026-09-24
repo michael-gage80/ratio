@@ -19,8 +19,8 @@ struct EmailAuthView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     Text(mode == .createAccount ? "Create your account." : "Welcome back.")
                         .ratioFont(.h1)
                     Text(mode == .createAccount
@@ -36,7 +36,7 @@ struct EmailAuthView: View {
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
 
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     RatioTextField("Password", text: $password, isSecure: true)
                         .textContentType(mode == .createAccount ? .newPassword : .password)
                     if mode == .createAccount {
@@ -50,20 +50,19 @@ struct EmailAuthView: View {
                     resetPassword
                 }
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             RatioButton(mode == .createAccount ? "Create account" : "Log in", isEnabled: canSubmit) {
                 Task { await submit() }
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
         .overlay {
             if session.isWorking { ProgressView().controlSize(.large) }
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
     }
 
     @ViewBuilder
@@ -78,6 +77,7 @@ struct EmailAuthView: View {
             }
             .ratioFont(.small)
             .underline()
+            .frame(minHeight: 44)
             .disabled(!looksLikeEmail)
         }
     }

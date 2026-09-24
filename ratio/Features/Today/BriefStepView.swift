@@ -8,6 +8,7 @@ struct BriefStepView: View {
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var practising: PracticeStep?
 
     var body: some View {
@@ -18,8 +19,7 @@ struct BriefStepView: View {
                 ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .background(Color.ratioParchment.ignoresSafeArea())
-        .foregroundStyle(Color.ratioInk)
+        .ratioPage()
         .fullScreenCover(item: $practising) { practice in
             if let brief = student.brief {
                 PracticeSessionView(brief: brief, stepIndex: practice.index)
@@ -42,17 +42,28 @@ struct BriefStepView: View {
         let step = brief.steps[shown]
         return VStack(alignment: .leading, spacing: 0) {
             ScrollView {
-                VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
                     Text(current == nil ? "Brief · Complete" : "Brief · Step \(shown + 1) of \(brief.steps.count) · \(step.kind.title)")
                         .ratioFont(.monoLabel)
                         .foregroundStyle(Color.ratioInk2)
-                    if shown > 0 && current != nil {
-                        let previous = brief.steps[shown - 1]
-                        Label("\(previous.kind.title) complete", systemImage: "checkmark")
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioVerdigris)
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        if shown > 0 && current != nil {
+                            // "Read ✓ COMPLETE", as in screens/15-brief-step.png.
+                            let previous = brief.steps[shown - 1]
+                            HStack(alignment: .firstTextBaseline, spacing: RatioSpace.xs) {
+                                Text(previous.kind.title)
+                                    .strikethrough(color: .ratioVerdigris)
+                                    .foregroundStyle(Color.ratioInk2)
+                                    .ratioFont(.h3)
+                                Label("Complete", systemImage: "checkmark")
+                                    .ratioFont(.monoLabel)
+                                    .foregroundStyle(Color.ratioVerdigris)
+                            }
+                            .accessibilityElement(children: .ignore)
+                            .accessibilityLabel("\(previous.kind.title) complete")
+                        }
+                        heading(current: current, of: brief).ratioFont(.display)
                     }
-                    heading(current: current, of: brief).ratioFont(.display)
                     Text(current == nil ? "Everything you answered is scheduled for review. A new brief is waiting tomorrow." : detail(step, in: brief))
                         .ratioFont(.h3)
                     VStack(spacing: 0) {
@@ -63,16 +74,16 @@ struct BriefStepView: View {
                         Divider().overlay(Color.ratioRule)
                     }
                 }
-                .padding(24)
+                .padding(RatioSpace.m)
             }
-            VStack(spacing: 10) {
+            Group {
                 if let current {
                     RatioButton("Continue →", style: .secondary) { begin(current, of: brief) }
                 } else {
                     RatioButton("Back to Today", style: .secondary) { dismiss() }
                 }
             }
-            .padding(24)
+            .padding(RatioSpace.m)
         }
         .toolbar {
             ToolbarItem(placement: .principal) { progress(done: brief.steps.indices.count { student.isDone(step: $0, of: brief, content: content) }, of: brief.steps.count) }
@@ -104,31 +115,39 @@ struct BriefStepView: View {
 
     private func row(_ step: DailyBrief.Step, index: Int, brief: DailyBrief, isCurrent: Bool) -> some View {
         let done = student.isDone(step: index, of: brief, content: content)
-        return HStack(alignment: .firstTextBaseline, spacing: 20) {
+        let title = HStack(alignment: .firstTextBaseline, spacing: RatioSpace.m) {
             Text(String(format: "%02d", index + 1)).ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
             Text(step.kind.title)
                 .ratioFont(.h2)
                 .italic(isCurrent)
                 .strikethrough(done, color: .ratioVerdigris)
                 .foregroundStyle(done ? Color.ratioInk2 : isCurrent ? Color.ratioOxblood : Color.ratioInk)
-            Spacer()
-            Group {
-                if done {
-                    Label("Done", systemImage: "checkmark").foregroundStyle(Color.ratioVerdigris)
-                } else if isCurrent {
-                    Text(step.kind == .read ? "Now · \(step.minutes) min" : "Now · \(step.itemIds.count) questions").foregroundStyle(Color.ratioOxblood)
-                } else {
-                    Text("\(step.minutes) min").foregroundStyle(Color.ratioInk2)
-                }
-            }
-            .ratioFont(.monoLabel)
         }
-        .padding(.vertical, 18)
+        let status = Group {
+            if done {
+                Label("Done", systemImage: "checkmark").foregroundStyle(Color.ratioVerdigris)
+            } else if isCurrent {
+                Text(step.kind == .read ? "Now · \(step.minutes) min" : "Now · \(step.itemIds.count) questions").foregroundStyle(Color.ratioOxblood)
+            } else {
+                Text("\(step.minutes) min").foregroundStyle(Color.ratioInk2)
+            }
+        }
+        .ratioFont(.monoLabel)
+        // Side by side, or stacked at the accessibility text sizes.
+        return Group {
+            if typeSize.isAccessibilitySize {
+                VStack(alignment: .leading, spacing: RatioSpace.xs) { title; status }
+            } else {
+                HStack(alignment: .firstTextBaseline) { title; Spacer(minLength: RatioSpace.xs); status }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, RatioSpace.s)
         .accessibilityElement(children: .combine)
     }
 
     private func progress(done: Int, of total: Int) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: RatioSpace.s) {
             GeometryReader { proxy in
                 let x = proxy.size.width * CGFloat(done) / CGFloat(max(total, 1))
                 ZStack(alignment: .leading) {
@@ -138,7 +157,8 @@ struct BriefStepView: View {
                 }
                 .frame(maxHeight: .infinity)
             }
-            .frame(width: 180, height: 8)
+            .frame(minWidth: 120, maxWidth: 220)
+            .frame(height: 8)
             Text("\(done) / \(total)").ratioFont(.monoData).foregroundStyle(Color.ratioInk2)
         }
         .accessibilityElement(children: .ignore)

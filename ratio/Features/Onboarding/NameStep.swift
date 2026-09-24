@@ -27,7 +27,7 @@ struct NameStep: View {
                 Task { await model.saveName(firstName: trimmedName, initial: initial.isEmpty ? nil : initial) }
             }
         ) {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: RatioSpace.m) {
                 RatioTextField("First name", text: $firstName)
                     .textContentType(.givenName)
                     .onChange(of: firstName) { _, new in
@@ -59,16 +59,14 @@ struct NameStep: View {
     }
 
     private var preview: some View {
-        HStack(spacing: 14) {
+        HStack(spacing: RatioSpace.s) {
             RatioAvatar(initial: trimmedName.isEmpty ? "?" : trimmedName, seed: model.uid, size: 40)
             Text("Other players see: \(Text(publicName.isEmpty ? "—" : publicName).foregroundStyle(Color.ratioInk))")
                 .ratioFont(.monoData)
                 .textCase(.uppercase)
                 .foregroundStyle(Color.ratioInk2)
         }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .ratioPanel()
         .accessibilityElement(children: .combine)
     }
 }
