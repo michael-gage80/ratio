@@ -49,8 +49,19 @@ struct QuizView: View {
                         }
                     }
                     .padding(RatioSpace.m)
+                    // iPad: one readable column, centred.
+                    .ratioReadableWidth(760)
                 }
                 .holdsStillWhileReordering()
+                .background {
+                    // Hardware keyboard: 1–4 choose an answer.
+                    ForEach(question.options.indices, id: \.self) { i in
+                        Button("") { if !locked { selection = i } }
+                            .keyboardShortcut(KeyEquivalent(Character("\(i + 1)")), modifiers: [])
+                            .opacity(0)
+                            .accessibilityHidden(true)
+                    }
+                }
                 footer
             }
         }
@@ -65,6 +76,7 @@ struct QuizView: View {
         VStack(spacing: RatioSpace.s) {
             HStack {
                 RatioIconButton(systemImage: "xmark", label: "Close") { dismiss() }
+                    .keyboardShortcut(.cancelAction)
                 Spacer()
                 Text("Sunday quiz · \(min(index + 1, quiz.questions.count)) of \(quiz.questions.count)").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     .multilineTextAlignment(.center)
@@ -101,13 +113,21 @@ struct QuizView: View {
     private var footer: some View {
         VStack(spacing: RatioSpace.s) {
             Text("Counts as practice. Not on the boards.").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-            if locked {
-                RatioButton(index + 1 == quiz.questions.count ? "See your score" : "Next question", style: .secondary) { next() }
-            } else {
-                RatioButton("Lock it in", isEnabled: selection != nil) { lock() }
+            Group {
+                if locked {
+                    RatioButton(index + 1 == quiz.questions.count ? "See your score" : "Next question", style: .secondary) { next() }
+                } else {
+                    RatioButton("Lock it in", isEnabled: selection != nil) { lock() }
+                }
+            }
+            .keyboardShortcut(.return, modifiers: .command)
+            HStack(spacing: RatioSpace.m) {
+                KeyHint(keys: "1–\(question.options.count)", label: "Choose")
+                KeyHint(keys: "⌘↩", label: locked ? "Next" : "Lock it in")
             }
         }
         .padding(RatioSpace.m)
+        .ratioReadableWidth(760)
         .background(Color.ratioPaper.ignoresSafeArea(edges: .bottom))
         .overlay(alignment: .top) { Divider().overlay(Color.ratioRule) }
     }
@@ -123,6 +143,7 @@ struct QuizView: View {
             RatioButton("Done", style: .secondary) { dismiss() }
         }
         .padding(RatioSpace.m)
+        .ratioReadableWidth(760)
     }
 
     private func state(_ i: Int) -> RatioOptionState {

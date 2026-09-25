@@ -307,6 +307,15 @@ struct DuelPlayed: Equatable {
     let winner: Int?
 }
 
+/// A round already played, for the iPad "Match so far" panel.
+struct DuelRoundSummary: Identifiable, Equatable {
+    /// The round's number (1-based).
+    let id: Int
+    let kind: DuelQuestion.Kind
+    let isFinal: Bool
+    let played: DuelPlayed
+}
+
 /// What the round screen needs: sparring, live and async matches all provide it.
 protocol DuelRoundModel: AnyObject, Observable {
     var roundPhase: DuelRoundPhase { get }
@@ -325,6 +334,8 @@ protocol DuelRoundModel: AnyObject, Observable {
     var pulse: Int { get }
     var labelPrefix: String { get }
     var opponent: DuelOpponent { get }
+    /// Every round revealed so far, oldest first (for the iPad arena's side panel).
+    var history: [DuelRoundSummary] { get }
     func opponentLocked(at date: Date) -> Bool
     func answer(_ index: Int)
     /// The line under a revealed round, and whether it went the student's way.
@@ -334,6 +345,7 @@ protocol DuelRoundModel: AnyObject, Observable {
 extension DuelRoundModel {
     var showsScore: Bool { true }
     var labelPrefix: String { "" }
+    var history: [DuelRoundSummary] { [] }
 
     func revealMessage(_ played: DuelPlayed, question: DuelQuestion) -> (text: String, good: Bool?) {
         let seconds = { (ms: Int) in String(format: "%.1f", Double(ms) / 1000) }

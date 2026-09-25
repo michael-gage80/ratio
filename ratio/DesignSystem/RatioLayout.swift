@@ -96,6 +96,8 @@ struct RatioPressStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed && !reduceMotion ? 0.98 : 1)
             .opacity(configuration.isPressed ? 0.85 : 1)
             .animation(RatioMotion.tap, value: configuration.isPressed)
+            // A pointer (trackpad or mouse on iPad) highlights it too.
+            .hoverEffect(.highlight)
     }
 }
 

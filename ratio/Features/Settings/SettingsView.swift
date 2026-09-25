@@ -6,9 +6,12 @@ import SwiftUI
 
 /// screens/30-settings.png — the index of everything the student can change (PRD: "Me tab
 /// and settings"): account, appearance, study, accessibility, content, subscription,
-/// privacy and legal, and the danger zone.
+/// privacy and legal, and the danger zone. On iPad
+/// (screens/iPad/4-pathway-me-settings/06-settings.png) the index sits beside the chosen
+/// section.
 struct SettingsView: View {
     @Environment(StudentStore.self) private var student
+    @Environment(\.ratioWidth) private var width
     @Environment(SessionStore.self) private var session
     @Environment(AppNavigator.self) private var navigator
     @Environment(Purchases.self) private var purchases
@@ -28,10 +31,46 @@ struct SettingsView: View {
     @State private var exportFile: URL?
     @State private var managingSubscription = false
     @State private var iconName = UIApplication.shared.alternateIconName
+    /// iPad: the section open beside the index.
+    @State private var page: Page = .account
 
     private enum Sheet: String, Identifiable {
-        case name, modules, year, sitting, freeModule, report, licence, notice
+        case name, modules, year, sitting, freeModule, report, licence, notice, shortcuts
         var id: String { rawValue }
+    }
+
+    /// The eight sections, for the iPad index.
+    private enum Page: Int, CaseIterable, Identifiable {
+        case account, appearance, study, accessibility, content, subscription, privacy, danger
+
+        var id: Int { rawValue }
+        var numeral: String { ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][rawValue] }
+
+        var title: String {
+            switch self {
+            case .account: "Account"
+            case .appearance: "Appearance"
+            case .study: "Study"
+            case .accessibility: "Accessibility"
+            case .content: "Content"
+            case .subscription: "Subscription"
+            case .privacy: "Privacy and legal"
+            case .danger: "Danger zone"
+            }
+        }
+
+        var summary: String {
+            switch self {
+            case .account: "Email · sign-in · name"
+            case .appearance: "Theme · app icon"
+            case .study: "Programme · target · exam pause · hours"
+            case .accessibility: "Dyslexia · duel time · motion · keyboard"
+            case .content: "Report an error · tutorials"
+            case .subscription: "Ratio Plus · licence code"
+            case .privacy: "Policy · terms · your data"
+            case .danger: "Log out · reset · delete"
+            }
+        }
     }
 
     private enum Confirmation: Identifiable {
@@ -44,24 +83,39 @@ struct SettingsView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                RatioPageHeader(eyebrow: "Me", title: "Settings")
-                account
-                appearanceSection
-                study
-                accessibility
-                content
-                subscription
-                privacy
-                danger
-                Text("Ratio \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")")
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioInk2)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, RatioSpace.l)
+            if width.isCompact {
+                VStack(alignment: .leading, spacing: 0) {
+                    RatioPageHeader(eyebrow: "Me", title: "Settings")
+                    account
+                    appearanceSection
+                    study
+                    accessibility
+                    content
+                    subscription
+                    privacy
+                    danger
+                    version
+                }
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.top, RatioSpace.s)
+            } else {
+                ColumnsLayout(fraction: 0.4, spacing: RatioSpace.l) {
+                    VStack(alignment: .leading, spacing: RatioSpace.m) {
+                        RatioPageHeader(eyebrow: "Me", title: "Settings")
+                        index
+                    }
+                    VStack(alignment: .leading, spacing: 0) {
+                        section(page)
+                        version
+                    }
+                    .padding(.horizontal, RatioSpace.m)
+                    .padding(.bottom, RatioSpace.s)
+                    .background(Color.ratioPaper, in: RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous))
+                    .overlay { RoundedRectangle(cornerRadius: RatioRadius.card, style: .continuous).strokeBorder(Color.ratioRule) }
+                }
+                .padding(.horizontal, RatioSpace.l)
+                .padding(.vertical, RatioSpace.m)
             }
-            .padding(.horizontal, RatioSpace.m)
-            .padding(.top, RatioSpace.s)
         }
         .ratioPage()
         .toolbar(.hidden, for: .navigationBar)
@@ -75,6 +129,7 @@ struct SettingsView: View {
             case .report: ReportErrorSheet(itemId: "general", lessonId: nil)
             case .licence: LicenceCodeSheet().presentationDetents([.medium])
             case .notice: NoticeSheet().presentationDetents([.medium])
+            case .shortcuts: ShortcutsSheet().presentationDetents([.medium, .large])
             }
         }
         .manageSubscriptionsSheet(isPresented: $managingSubscription)
@@ -93,6 +148,69 @@ struct SettingsView: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(message ?? "")
+        }
+    }
+
+    private var version: some View {
+        Text("Ratio \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")")
+            .ratioFont(.monoLabel)
+            .foregroundStyle(Color.ratioInk2)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, RatioSpace.l)
+    }
+
+    // MARK: iPad index
+
+    /// I–VIII with a line on what's in each; the open one is a card.
+    private var index: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+            ForEach(Page.allCases) { option in
+                let selected = option == page
+                Button {
+                    withAnimation(RatioMotion.tap) { page = option }
+                } label: {
+                    HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
+                        Text(option.numeral)
+                            .ratioFont(.h1)
+                            .italic()
+                            .foregroundStyle(Color.ratioOxblood)
+                            .frame(minWidth: 56, alignment: .leading)
+                            .accessibilityHidden(true)
+                        VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                            Text(option.title).ratioFont(.h3)
+                            Text(option.summary).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        }
+                        Spacer(minLength: RatioSpace.xs)
+                        if selected {
+                            Image(systemName: "arrow.right").foregroundStyle(Color.ratioInk2)
+                        }
+                    }
+                    .padding(RatioSpace.s)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(selected ? Color.ratioPaper : Color.clear, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
+                    .overlay {
+                        if selected {
+                            RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule)
+                        }
+                    }
+                }
+                .buttonStyle(.ratioPress)
+                .accessibilityAddTraits(selected ? .isSelected : [])
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func section(_ page: Page) -> some View {
+        switch page {
+        case .account: account
+        case .appearance: appearanceSection
+        case .study: study
+        case .accessibility: accessibility
+        case .content: content
+        case .subscription: subscription
+        case .privacy: privacy
+        case .danger: danger
         }
     }
 
@@ -278,6 +396,7 @@ struct SettingsView: View {
                            isOn: Binding(get: { extendedSeconds == DuelTime.extended }, set: { extendedSeconds = $0 ? DuelTime.extended : 0 }))
             SettingsToggle("Reduce motion", detail: "Changes without movement", isOn: $reduceMotion)
             SettingsToggle("Haptics", isOn: $haptics)
+            SettingsRow("Keyboard shortcuts", detail: "For a hardware keyboard", value: "→") { sheet = .shortcuts }
             Text("Accessibility features are always free.").ratioFont(.small).italic().foregroundStyle(Color.ratioInk2).padding(.top, RatioSpace.s)
         }
     }
@@ -849,5 +968,53 @@ private struct NoticeSheet: View {
         }
         .padding(RatioSpace.m)
         .ratioPage()
+    }
+}
+
+/// What a hardware keyboard can do (Settings → Accessibility → Keyboard shortcuts).
+private struct ShortcutsSheet: View {
+    @Environment(\.dismiss) private var dismiss
+
+    private let shortcuts: [(keys: String, action: String)] = [
+        ("1–4", "Choose an answer"),
+        ("⌘↩", "Lock it in, or start"),
+        ("esc", "Close"),
+        ("→", "Next"),
+        ("⌘F", "Search the Library"),
+        ("⌘C", "Copy a lobby code"),
+    ]
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(shortcuts, id: \.keys) { shortcut in
+                        HStack(spacing: RatioSpace.s) {
+                            Text(shortcut.keys)
+                                .ratioFont(.monoData)
+                                .padding(.horizontal, RatioSpace.xs)
+                                .padding(.vertical, RatioSpace.xxs)
+                                .overlay { RoundedRectangle(cornerRadius: 6, style: .continuous).strokeBorder(Color.ratioRule) }
+                                .frame(minWidth: 56, alignment: .leading)
+                            Text(shortcut.action).ratioFont(.body)
+                            Spacer(minLength: 0)
+                        }
+                        .padding(.vertical, RatioSpace.s)
+                        .accessibilityElement(children: .combine)
+                        Divider().overlay(Color.ratioRule)
+                    }
+                    Text("Hold ⌘ on the keyboard to see them anywhere in Ratio.")
+                        .ratioFont(.small)
+                        .italic()
+                        .foregroundStyle(Color.ratioInk2)
+                        .padding(.top, RatioSpace.s)
+                }
+                .padding(RatioSpace.m)
+            }
+            .ratioPage()
+            .navigationTitle("Keyboard shortcuts")
+            .toolbarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Done") { dismiss() } } }
+        }
     }
 }

@@ -1,16 +1,56 @@
 import SwiftUI
 
-/// screens/17-lesson-overview.png — the title page (PRD: lesson stage 1, "Overview").
+/// screens/17-lesson-overview.png — the title page (PRD: lesson stage 1, "Overview"). On
+/// iPad (screens/iPad/3-lesson/01) the art and title sit beside the objectives.
 struct LessonOverviewView: View {
     let lesson: Lesson
     let headline: Headline?
     let onBegin: () -> Void
 
+    @Environment(\.ratioWidth) private var width
+
     private static let numerals = ["i.", "ii.", "iii.", "iv.", "v."]
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: RatioSpace.l) {
+            if width.isCompact {
+                VStack(alignment: .leading, spacing: RatioSpace.l) {
+                    titlePage
+                    details
+                }
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.top, RatioSpace.s)
+                .padding(.bottom, RatioSpace.m)
+            } else {
+                ColumnsLayout(fraction: 0.42, spacing: RatioSpace.xl) {
+                    VStack(alignment: .leading, spacing: RatioSpace.l) { titlePage }
+                    VStack(alignment: .leading, spacing: RatioSpace.l) { details }
+                }
+                .padding(.horizontal, RatioSpace.xl)
+                .padding(.top, RatioSpace.m)
+                .padding(.bottom, RatioSpace.m)
+            }
+        }
+        .safeAreaInset(edge: .bottom) {
+            HStack {
+                if !width.isCompact {
+                    Spacer()
+                    KeyHint(keys: "⌘↩", label: "Begin")
+                }
+                RatioButton("Begin", action: onBegin)
+                    .keyboardShortcut(.return, modifiers: .command)
+                    .frame(maxWidth: width.isCompact ? .infinity : 360)
+            }
+            .padding(.horizontal, width.isCompact ? RatioSpace.m : RatioSpace.xl)
+            .padding(.vertical, RatioSpace.s)
+            .background(Color.ratioParchment)
+        }
+        .ratioPage()
+        .toolbarTitleDisplayMode(.inline)
+    }
+
+    @ViewBuilder
+    private var titlePage: some View {
                 ModuleIllustration(module: lesson.moduleId)
                     .foregroundStyle(Color.ratioInk)
                     .frame(height: 128)
@@ -33,7 +73,10 @@ struct LessonOverviewView: View {
                 }
 
                 Text(lesson.overview.hook).ratioFont(.body)
+    }
 
+    @ViewBuilder
+    private var details: some View {
                 section("Objectives") {
                     ForEach(Array(lesson.objectives.enumerated()), id: \.offset) { index, objective in
                         HStack(alignment: .firstTextBaseline, spacing: RatioSpace.s) {
@@ -65,19 +108,6 @@ struct LessonOverviewView: View {
                 Text(lesson.overview.lawStatedNotice ?? "Law stated as at \(lesson.lawStatedDate).")
                     .ratioFont(.small)
                     .foregroundStyle(Color.ratioInk2)
-            }
-            .padding(.horizontal, RatioSpace.m)
-            .padding(.top, RatioSpace.s)
-            .padding(.bottom, RatioSpace.m)
-        }
-        .safeAreaInset(edge: .bottom) {
-            RatioButton("Begin", action: onBegin)
-                .padding(.horizontal, RatioSpace.m)
-                .padding(.vertical, RatioSpace.s)
-                .background(Color.ratioParchment)
-        }
-        .ratioPage()
-        .toolbarTitleDisplayMode(.inline)
     }
 
     private func section(_ title: String, @ViewBuilder content: () -> some View) -> some View {

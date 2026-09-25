@@ -10,6 +10,7 @@ struct LawReportSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.ratioDyslexiaFriendly) private var dyslexiaFriendly
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
 
     var body: some View {
         ScrollView {
@@ -75,9 +76,14 @@ struct LawReportSheet: View {
                 Text("Paraphrased for study. Not a reproduction of the judgment or headnote.")
                     .ratioFont(.monoLabel)
                     .foregroundStyle(Color.ratioInk2)
-                RatioButton("Close", style: .tertiary) { dismiss() }
+                HStack(spacing: RatioSpace.s) {
+                    RatioButton("Close", style: .tertiary) { dismiss() }
+                        .keyboardShortcut(.cancelAction)
+                    if KeyboardMonitor.shared.isConnected { KeyHint(keys: "esc", label: "Close") }
+                }
             }
-            .padding(RatioSpace.m)
+            .padding(width.isCompact ? RatioSpace.m : RatioSpace.xl)
+            .ratioReadableWidth(760)
         }
         .background(Color.ratioPaper.ignoresSafeArea())
         .foregroundStyle(Color.ratioInk)

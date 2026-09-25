@@ -41,6 +41,11 @@ final class DuelMatchModel: DuelRoundModel {
     var limitMs: Int { match?.limitMs ?? seconds * 1000 }
     var question: DuelQuestion? { current.flatMap { match?.questions[safe: $0] } }
     var lastPlayed: DuelPlayed? { played.last }
+    var history: [DuelRoundSummary] {
+        played.enumerated().compactMap { index, round in
+            match?.questions[safe: round.questionIndex].map { DuelRoundSummary(id: index + 1, kind: $0.kind, isFinal: $0.isFinal, played: round) }
+        }
+    }
 
     var roundPhase: DuelRoundPhase {
         switch phase {

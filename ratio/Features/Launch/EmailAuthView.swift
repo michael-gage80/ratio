@@ -51,13 +51,16 @@ struct EmailAuthView: View {
                 }
             }
             .padding(RatioSpace.m)
+            .ratioReadableWidth(560)
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             RatioButton(mode == .createAccount ? "Create account" : "Log in", isEnabled: canSubmit) {
                 Task { await submit() }
             }
+            .keyboardShortcut(.return, modifiers: .command)
             .padding(RatioSpace.m)
+            .ratioReadableWidth(560)
         }
         .overlay {
             if session.isWorking { ProgressView().controlSize(.large) }

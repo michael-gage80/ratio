@@ -42,6 +42,7 @@ struct DiagnosticStep: View {
             DiagnosticResultsFlow(finish: finish) { headline in
                 onboarding.finishDiagnostic(headline: headline)
             }
+            .ratioMeasuresWidth()
         }
     }
 
@@ -83,13 +84,17 @@ struct DiagnosticStep: View {
                         .id(item.id)
 
                         if diagnostic.lastAnswerCorrect != nil {
-                            RatioButton(diagnostic.isFinished ? "See your profile →" : "Next →", style: .secondary) {
-                                if diagnostic.isFinished {
-                                    finish = .answered(diagnostic.responses)
-                                } else {
-                                    diagnostic.advance()
-                                    scroll.scrollTo("top", anchor: .top)
+                            HStack(spacing: RatioSpace.s) {
+                                RatioButton(diagnostic.isFinished ? "See your profile →" : "Next →", style: .secondary) {
+                                    if diagnostic.isFinished {
+                                        finish = .answered(diagnostic.responses)
+                                    } else {
+                                        diagnostic.advance()
+                                        scroll.scrollTo("top", anchor: .top)
+                                    }
                                 }
+                                .keyboardShortcut(.return, modifiers: .command)
+                                KeyHint(keys: "⌘↩", label: "Next")
                             }
                         }
                     }
@@ -111,6 +116,8 @@ struct DiagnosticStep: View {
                     }
                 }
                 .padding(RatioSpace.m)
+                // iPad: one readable column (no change on iPhone).
+                .ratioReadableWidth(720)
             }
             .holdsStillWhileReordering()
             .scrollDismissesKeyboard(.interactively)

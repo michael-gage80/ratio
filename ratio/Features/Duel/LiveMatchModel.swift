@@ -22,6 +22,7 @@ final class LiveMatchModel: DuelRoundModel {
     private(set) var roundNumber = 0
     private(set) var yourAnswer: DuelAnswer?
     private(set) var lastPlayed: DuelPlayed?
+    private(set) var history: [DuelRoundSummary] = []
     private(set) var roundStart = Date.distantFuture
     private(set) var revealing = false
     private(set) var pulse = 0
@@ -165,6 +166,7 @@ final class LiveMatchModel: DuelRoundModel {
         let none = DuelAnswer(answerIndex: nil, timeMs: limitMs)
         lastPlayed = DuelPlayed(questionIndex: reveal.questionIndex, you: answers[safe: me] ?? none, them: answers[safe: 1 - me] ?? none,
                                 winner: reveal.winner.map { $0 == me ? 0 : 1 })
+        if let lastPlayed { history.append(DuelRoundSummary(id: reveal.number, kind: shown.kind, isFinal: shown.isFinal, played: lastPlayed)) }
         if yourAnswer == nil { yourAnswer = none }
         revealing = true
         phase = .round

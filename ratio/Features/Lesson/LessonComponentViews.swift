@@ -98,6 +98,9 @@ struct CaseCardView: View {
         .ratioCard()
         .sheet(isPresented: $showsReport) {
             LawReportSheet(card: card, moduleTitle: moduleTitle)
+                // iPad: a centred reading sheet over the lecture (screens/iPad/3-lesson/04).
+                .presentationSizing(.page)
+                .ratioMeasuresWidth()
         }
     }
 

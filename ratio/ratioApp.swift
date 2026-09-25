@@ -42,6 +42,15 @@ struct ratioApp: App {
                     if !GIDSignIn.sharedInstance.handle(url) { links.pending = url }
                 }
         }
+        // iPad: a lesson or library entry in a window of its own ("Open in new window").
+        WindowGroup(id: "item", for: SceneItem.self) { $item in
+            ItemWindow(item: item)
+                .ratioPreferences()
+                .environment(session)
+                .environment(content)
+                .environment(links)
+                .environment(purchases)
+        }
     }
 }
 

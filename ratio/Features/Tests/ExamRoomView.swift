@@ -4,6 +4,8 @@ import SwiftUI
 /// debrief (23). A dark full-screen moment: "without the notes". Answers aren't marked
 /// one by one here; everything is revealed in the debrief. SQE1 lessons run as "SQE1
 /// practice", with the real exam's pace (about 1 min 42 s a question) shown as a guide.
+/// On iPad (screens/iPad/3-lesson/06–07) a question's fact pattern sits on the left and
+/// the question and options on the right.
 struct ExamRoomView: View {
     let lesson: Lesson
     let headline: Headline?
@@ -12,6 +14,7 @@ struct ExamRoomView: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(ContentStore.self) private var content
+    @Environment(\.ratioWidth) private var width
     @State private var model: TestModel
     @State private var started = false
     @State private var result: TestModel.Result?
@@ -52,20 +55,32 @@ struct ExamRoomView: View {
                 intro
             } else if let item = model.current {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: RatioSpace.m) {
-                        Text("\(isSQE ? "Question" : "Test") \(model.responses.count + 1) of \(model.items.count)\(isSQE ? "" : " · \(item.typeTitle)")")
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioInk2)
-                        if isSQE { PaceGuide(start: questionStart) }
-                        ItemInteractionView(item: item, lockedResponse: nil, context: context(for: item)) { response in
-                            model.answer(response)
-                            if model.isFinished { Task { await submit() } }
+                    if width.isCompact {
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            question(item, prompt: nil)
                         }
-                        .id(item.id)
+                        .padding(.horizontal, RatioSpace.m)
+                        .padding(.top, RatioSpace.s)
+                        .padding(.bottom, RatioSpace.xl)
+                    } else if let split = Self.factPattern(of: item) {
+                        ColumnsLayout(fraction: 0.44, spacing: RatioSpace.xl) {
+                            factPattern(split.facts)
+                            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                                question(item, prompt: split.question)
+                            }
+                        }
+                        .padding(.horizontal, RatioSpace.xl)
+                        .padding(.top, RatioSpace.m)
+                        .padding(.bottom, RatioSpace.xl)
+                    } else {
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            question(item, prompt: nil)
+                        }
+                        .ratioReadableWidth(760)
+                        .padding(.horizontal, RatioSpace.xl)
+                        .padding(.top, RatioSpace.m)
+                        .padding(.bottom, RatioSpace.xl)
                     }
-                    .padding(.horizontal, RatioSpace.m)
-                    .padding(.top, RatioSpace.s)
-                    .padding(.bottom, RatioSpace.xl)
                 }
                 .holdsStillWhileReordering()
                 .scrollDismissesKeyboard(.interactively)
@@ -83,6 +98,46 @@ struct ExamRoomView: View {
             Button("Leave — nothing is saved", role: .destructive) { dismiss() }
             Button("Keep going", role: .cancel) {}
         }
+    }
+
+    @ViewBuilder
+    private func question(_ item: Item, prompt: String?) -> some View {
+        Text("\(isSQE ? "Question" : "Test") \(model.responses.count + 1) of \(model.items.count)\(isSQE ? "" : " · \(item.typeTitle)")")
+            .ratioFont(.monoLabel)
+            .foregroundStyle(Color.ratioInk2)
+        if isSQE { PaceGuide(start: questionStart) }
+        ItemInteractionView(item: item, lockedResponse: nil, context: context(for: item), promptOverride: prompt) { response in
+            model.answer(response)
+            if model.isFinished { Task { await submit() } }
+        }
+        .id(item.id)
+    }
+
+    /// iPad: the fact pattern, set large beside the question.
+    private func factPattern(_ facts: String) -> some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text("Fact pattern").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            Text(facts)
+                .ratioFont(.h2)
+                .italic()
+                .padding(.leading, RatioSpace.m)
+                .overlay(alignment: .leading) { Rectangle().fill(Color.ratioInk2).frame(width: 2) }
+            Rectangle().fill(Color.ratioRule).frame(height: 1).padding(.top, RatioSpace.l)
+            Text("No hints in the exam room. Everything is marked at the end, with the reasoning.")
+                .ratioFont(.small)
+                .foregroundStyle(Color.ratioInk2)
+        }
+    }
+
+    /// A question whose prompt sets out facts and then asks something ("Dev sets fire to a
+    /// flat… On Woollin, the safest direction to the jury is —"): the facts and the
+    /// question, or nil for a short prompt or an interaction that needs its text inline.
+    private static func factPattern(of item: Item) -> (facts: String, question: String)? {
+        guard case .choice = item.kind, item.prompt.count >= 140 else { return nil }
+        let sentences = Item.sentences(in: item.prompt)
+        guard sentences.count >= 2, let last = sentences.last,
+              ["?", "—", ":", "…"].contains(where: { last.hasSuffix($0) }) else { return nil }
+        return (sentences.dropLast().joined(separator: " "), last)
     }
 
     private var topBar: some View {
@@ -133,15 +188,21 @@ struct ExamRoomView: View {
                     }
                 }
             }
+            .ratioReadableWidth(width.isCompact ? .infinity : 760)
             .padding(.horizontal, RatioSpace.m)
             .padding(.top, RatioSpace.l)
             .padding(.bottom, RatioSpace.m)
         }
         .holdsStillWhileReordering()
         .safeAreaInset(edge: .bottom) {
-            RatioButton("Begin", isEnabled: !model.items.isEmpty) {
-                withAnimation(RatioMotion.reveal) { started = true }
+            VStack(spacing: RatioSpace.xs) {
+                RatioButton("Begin", isEnabled: !model.items.isEmpty) {
+                    withAnimation(RatioMotion.reveal) { started = true }
+                }
+                .keyboardShortcut(.return, modifiers: .command)
+                if KeyboardMonitor.shared.isConnected { KeyHint(keys: "⌘↩", label: "Begin") }
             }
+            .ratioReadableWidth(width.isCompact ? .infinity : 480)
             .padding(.horizontal, RatioSpace.m)
             .padding(.vertical, RatioSpace.s)
             .background(Color.ratioParchment)

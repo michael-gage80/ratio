@@ -18,6 +18,9 @@ struct LobbyView: View {
     @State private var error: String?
     @State private var listeners: [ListenerRegistration] = []
     @State private var playing: String?
+    /// While typing a message, ⌘C copies the selection, not the code.
+    @FocusState private var typing: Bool
+    @Environment(\.ratioWidth) private var width
 
     private var isHost: Bool { lobby?.host == student.uid }
 
@@ -26,30 +29,39 @@ struct LobbyView: View {
             VStack(alignment: .leading, spacing: RatioSpace.m) {
                 HStack {
                     RatioIconButton(systemImage: "xmark", label: "Leave the lobby") { leave() }
+                        .keyboardShortcut(.cancelAction)
                     Spacer()
                     Text("Friend lobby · \(lobby.map { DuelScope.title(of: $0.moduleId) } ?? "")").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                 }
                 .padding(.horizontal, -RatioSpace.xs)
-                Text("Share this \(Text("code.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
-                VStack(spacing: RatioSpace.xs) {
-                    codeKeys
-                    Text("No 0, O, 1 or I · Easy to read aloud").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center)
-                }
-                .frame(maxWidth: .infinity)
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: RatioSpace.s) { copyButton; shareButton }
-                    VStack(spacing: RatioSpace.xs) { copyButton; shareButton }
-                }
-                if let lobby { expiry(lobby) }
-                players
-                chat
-                if isHost {
-                    RatioButton(starting ? "Starting…" : "Start the duel", isEnabled: lobby?.guest != nil && !starting) { start() }
-                    Text(lobby?.guest == nil ? "Start unlocks when a friend joins" : "The duel starts with a 5-second countdown")
-                        .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+                if width.isCompact {
+                    Text("Share this \(Text("code.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
+                    codeSection
+                    players
+                    chat
+                    startSection
                 } else {
-                    Text("Waiting for \(lobby.map { $0.names[$0.host] ?? "the host" } ?? "the host") to start")
-                        .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+                    // iPad (screens/iPad/5-duel/10-friend-lobby.png): the code on the left; the
+                    // lobby, chat and Start on the right.
+                    HStack(alignment: .firstTextBaseline) {
+                        Text("Share this \(Text("code.").italic().foregroundStyle(Color.ratioOxblood))").ratioFont(.display)
+                        Spacer(minLength: RatioSpace.s)
+                        if let lobby { expiry(lobby).fixedSize() }
+                    }
+                    ColumnsLayout(fraction: 0.5, spacing: RatioSpace.m) {
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            VStack(alignment: .leading, spacing: RatioSpace.m) {
+                                Text("Invite code").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                                codeSection
+                            }
+                            .ratioCard()
+                        }
+                        VStack(alignment: .leading, spacing: RatioSpace.m) {
+                            players
+                            chat
+                            startSection
+                        }
+                    }
                 }
             }
             .padding(.horizontal, RatioSpace.m)
@@ -57,6 +69,7 @@ struct LobbyView: View {
         }
         .scrollDismissesKeyboard(.interactively)
         .ratioPage()
+        .ratioMeasuresWidth()
         .onAppear(perform: listen)
         .onDisappear { listeners.forEach { $0.remove() } }
         .fullScreenCover(item: Binding(get: { playing.map(MatchRef.init) }, set: { playing = $0?.id })) { match in
@@ -74,8 +87,37 @@ struct LobbyView: View {
 
     // MARK: Code and players
 
+    private var codeSection: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.m) {
+            VStack(spacing: RatioSpace.xs) {
+                codeKeys
+                Text("No 0, O, 1 or I · Easy to read aloud").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: RatioSpace.s) { copyButton; shareButton }
+                VStack(spacing: RatioSpace.xs) { copyButton; shareButton }
+            }
+            KeyHint(keys: "⌘C", label: "Copy code").frame(maxWidth: .infinity)
+            if width.isCompact, let lobby { expiry(lobby) }
+        }
+    }
+
+    @ViewBuilder
+    private var startSection: some View {
+        if isHost {
+            RatioButton(starting ? "Starting…" : "Start the duel", isEnabled: lobby?.guest != nil && !starting) { start() }
+            Text(lobby?.guest == nil ? "Start unlocks when a friend joins" : "The duel starts with a 5-second countdown")
+                .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+        } else {
+            Text("Waiting for \(lobby.map { $0.names[$0.host] ?? "the host" } ?? "the host") to start")
+                .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
+        }
+    }
+
     private var copyButton: some View {
         RatioButton("Copy", style: .tertiary) { UIPasteboard.general.string = code }
+            .keyboardShortcut(typing ? nil : KeyboardShortcut("c", modifiers: .command))
     }
 
     private var shareButton: some View {
@@ -170,6 +212,7 @@ struct LobbyView: View {
                     .frame(minHeight: 48)
                     .background(Color.ratioSunk, in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                     .submitLabel(.send)
+                    .focused($typing)
                     .onSubmit(send)
                 Button(action: send) {
                     Text("Send").ratioFont(.h3).foregroundStyle(Color.ratioParchment).padding(.horizontal, RatioSpace.s).frame(minHeight: 48)

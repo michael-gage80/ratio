@@ -4,12 +4,15 @@ import SwiftUI
 
 /// screens/27-me.png — "Dossier + story": four numbers, the archetype (its K/U/A bands
 /// behind an arrow), retention, twelve weeks of activity, dated milestones, then the
-/// modules the student has started and their duels (PRD: "Me tab").
+/// modules the student has started and their duels (PRD: "Me tab"). On iPad
+/// (screens/iPad/4-pathway-me-settings/04-me.png) the identity runs across the top and
+/// the dossier sits in two columns.
 struct MeView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.ratioWidth) private var width
     @State private var photo: PhotosPickerItem?
     @State private var uploading = false
     @State private var uploadError: String?
@@ -19,18 +22,23 @@ struct MeView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: RatioSpace.m) {
-                identity
-                StatTiles()
-                ProfileCard(headline: student.headline, updatedAt: profile.headlineUpdatedAt)
-                RetentionCard(retention: student.retention)
-                ActivityHeatmap(activeDays: student.activeDays)
-                MilestoneTimeline()
-                modules
-                duels
+            if width.isCompact {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    identity
+                    StatTiles()
+                    ProfileCard(headline: student.headline, updatedAt: profile.headlineUpdatedAt)
+                    RetentionCard(retention: student.retention)
+                    ActivityHeatmap(activeDays: student.activeDays)
+                    MilestoneTimeline()
+                    modules
+                    ratings
+                    recentDuels
+                }
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.vertical, RatioSpace.s)
+            } else {
+                wideDossier
             }
-            .padding(.horizontal, RatioSpace.m)
-            .padding(.vertical, RatioSpace.s)
         }
         .ratioPage()
         .toolbar {
@@ -59,47 +67,107 @@ struct MeView: View {
         }
     }
 
+    // MARK: iPad
+
+    /// Identity across the top; stat tiles and the archetype on the left; scores,
+    /// retention, activity and the story on the right; then modules beside duel ratings,
+    /// and recent duels.
+    private var wideDossier: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.l) {
+            HStack(alignment: .center, spacing: RatioSpace.m) {
+                photo(size: 88)
+                VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                    Text(name).ratioFont(.display)
+                    Text(([details] + [modulesLine].compactMap { $0 }).joined(separator: " · "))
+                        .ratioFont(.monoLabel)
+                        .foregroundStyle(Color.ratioInk2)
+                    addStageButton
+                    if uploading {
+                        Text("Checking your photo…").ratioFont(.small).foregroundStyle(Color.ratioInk2)
+                    }
+                }
+                Spacer(minLength: 0)
+            }
+            ColumnsLayout(fraction: 0.56, spacing: RatioSpace.m) {
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    StatTiles()
+                    ProfileCard(headline: student.headline, updatedAt: profile.headlineUpdatedAt, showsScores: false)
+                }
+                VStack(alignment: .leading, spacing: RatioSpace.m) {
+                    ScoresCard(headline: student.headline)
+                    RetentionCard(retention: student.retention)
+                    ActivityHeatmap(activeDays: student.activeDays).ratioCard()
+                    MilestoneTimeline()
+                }
+            }
+            ColumnsLayout(fraction: 0.5, spacing: RatioSpace.l) {
+                modules
+                ratings
+            }
+            recentDuels
+        }
+        .padding(.horizontal, RatioSpace.l)
+        .padding(.vertical, RatioSpace.m)
+    }
+
+    /// "Crime, Contract, Tort, Public law"
+    private var modulesLine: String? {
+        let names = student.modules.map(\.title)
+        return names.isEmpty ? nil : names.joined(separator: ", ")
+    }
+
     // MARK: Identity
 
     private var identity: some View {
         VStack(spacing: RatioSpace.xs) {
-            ZStack(alignment: .bottomTrailing) {
-                ProfilePhoto(uid: student.uid, initial: profile.displayName ?? "?", version: profile.avatarVersion, size: 112)
-                    .overlay {
-                        if uploading {
-                            Circle().fill(Color.ratioInk.opacity(0.45))
-                            ProgressView().tint(Color.ratioParchment)
-                        }
-                    }
-                PhotosPicker(selection: $photo, matching: .images) {
-                    // A 32pt badge inside a 44pt target.
-                    Image(systemName: "pencil")
-                        .font(.footnote)
-                        .frame(width: 32, height: 32)
-                        .background(Color.ratioPaper, in: Circle())
-                        .overlay(Circle().strokeBorder(Color.ratioRule))
-                        .foregroundStyle(Color.ratioInk)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
-                }
-                .offset(x: 6, y: 6)
-                .disabled(uploading)
-                .accessibilityLabel("Change photo")
-            }
-            .padding(.bottom, RatioSpace.xs)
+            photo(size: 112)
+                .padding(.bottom, RatioSpace.xs)
             Text(name).ratioFont(.h1).multilineTextAlignment(.center)
             Text(details).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center)
-            if student.programme == .sqe1 ? profile.sqeSitting == nil : profile.year == nil {
-                Button(student.programme == .sqe1 ? "Add your SQE1 sitting" : "Add your year") { choosingYear = true }
-                    .ratioFont(.monoLabel)
-                    .foregroundStyle(Color.ratioOxblood)
-                    .frame(minHeight: 44)
-            }
+            addStageButton
             if uploading {
                 Text("Checking your photo…").ratioFont(.small).foregroundStyle(Color.ratioInk2)
             }
         }
         .frame(maxWidth: .infinity)
+    }
+
+    /// "Add your year" (or SQE1 sitting) when it isn't set.
+    @ViewBuilder
+    private var addStageButton: some View {
+        if student.programme == .sqe1 ? profile.sqeSitting == nil : profile.year == nil {
+            Button(student.programme == .sqe1 ? "Add your SQE1 sitting" : "Add your year") { choosingYear = true }
+                .ratioFont(.monoLabel)
+                .foregroundStyle(Color.ratioOxblood)
+                .frame(minHeight: 44)
+        }
+    }
+
+    /// The photo with its change badge.
+    private func photo(size: CGFloat) -> some View {
+        ZStack(alignment: .bottomTrailing) {
+            ProfilePhoto(uid: student.uid, initial: profile.displayName ?? "?", version: profile.avatarVersion, size: size)
+                .overlay {
+                    if uploading {
+                        Circle().fill(Color.ratioInk.opacity(0.45))
+                        ProgressView().tint(Color.ratioParchment)
+                    }
+                }
+            PhotosPicker(selection: $photo, matching: .images) {
+                // A 32pt badge inside a 44pt target.
+                Image(systemName: "pencil")
+                    .font(.footnote)
+                    .frame(width: 32, height: 32)
+                    .background(Color.ratioPaper, in: Circle())
+                    .overlay(Circle().strokeBorder(Color.ratioRule))
+                    .foregroundStyle(Color.ratioInk)
+                    .frame(width: 44, height: 44)
+                    .contentShape(Rectangle())
+            }
+            .offset(x: 6, y: 6)
+            .disabled(uploading)
+            .accessibilityLabel("Change photo")
+        }
     }
 
     private var name: String {
@@ -128,9 +196,8 @@ struct MeView: View {
     // MARK: Duels
 
     @ViewBuilder
-    private var duels: some View {
+    private var ratings: some View {
         let rated = ([DuelScope.mixed] + Module.allCases.map { .module($0) }).compactMap { scope in student.ratings[scope].map { (scope, $0) } }
-        let finished = student.matches.filter { $0.status == "complete" && $0.result(for: student.uid) != nil }
         if !rated.isEmpty {
             VStack(alignment: .leading, spacing: 0) {
                 Text("Duel ratings").ratioFont(.h2).padding(.bottom, RatioSpace.s)
@@ -173,12 +240,21 @@ struct MeView: View {
                     .accessibilityElement(children: .ignore)
                     .accessibilityLabel("\(scope.title): rating \(Int(rating.rating.rounded())), \(rating.duels) duels, \(rating.wins) won")
                 }
-                if !finished.isEmpty {
-                    Text("Recent duels").ratioFont(.h2).padding(.top, RatioSpace.m).padding(.bottom, RatioSpace.xs)
-                    ForEach(finished) { match in
-                        Divider().overlay(Color.ratioRule)
-                        MatchRow(match: match, uid: student.uid)
-                    }
+            }
+        }
+    }
+
+    /// Shown with the ratings (only once there are any), as before.
+    @ViewBuilder
+    private var recentDuels: some View {
+        let hasRatings = !student.ratings.isEmpty
+        let finished = student.matches.filter { $0.status == "complete" && $0.result(for: student.uid) != nil }
+        if hasRatings && !finished.isEmpty {
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Recent duels").ratioFont(.h2).padding(.bottom, RatioSpace.xs)
+                ForEach(finished) { match in
+                    Divider().overlay(Color.ratioRule)
+                    MatchRow(match: match, uid: student.uid)
                 }
             }
         }
@@ -243,6 +319,8 @@ struct MeView: View {
 private struct ProfileCard: View {
     let headline: Headline
     let updatedAt: Date?
+    /// On iPad the scores have their own card beside this one.
+    var showsScores = true
     @State private var expanded = false
 
     var body: some View {
@@ -257,27 +335,29 @@ private struct ProfileCard: View {
             Text("\(archetype.summary)\(updated)").ratioFont(.body)
             ProfileTriangle(headline: headline, highlight: Archetype.growthEdge(headline))
                 .padding(.horizontal, RatioSpace.xs)
-            Divider().overlay(Color.ratioRule)
-            Button {
-                withAnimation(RatioMotion.tap) { expanded.toggle() }
-            } label: {
-                HStack(spacing: RatioSpace.xs) {
-                    Text("Knowledge, understanding, application").ratioFont(.h3).multilineTextAlignment(.leading)
-                    Spacer()
-                    Image(systemName: "chevron.down").rotationEffect(.degrees(expanded ? 180 : 0))
+            if showsScores {
+                Divider().overlay(Color.ratioRule)
+                Button {
+                    withAnimation(RatioMotion.tap) { expanded.toggle() }
+                } label: {
+                    HStack(spacing: RatioSpace.xs) {
+                        Text("Knowledge, understanding, application").ratioFont(.h3).multilineTextAlignment(.leading)
+                        Spacer()
+                        Image(systemName: "chevron.down").rotationEffect(.degrees(expanded ? 180 : 0))
+                    }
+                    .frame(minHeight: 44)
                 }
-                .frame(minHeight: 44)
-            }
-            .buttonStyle(.ratioPress)
-            .accessibilityValue(expanded ? "Expanded" : "Collapsed")
-            if expanded {
-                ForEach(Skill.allCases) { skill in
-                    SkillRow(title: skill.title, estimate: headline[skill])
+                .buttonStyle(.ratioPress)
+                .accessibilityValue(expanded ? "Expanded" : "Collapsed")
+                if expanded {
+                    ForEach(Skill.allCases) { skill in
+                        SkillRow(title: skill.title, estimate: headline[skill])
+                    }
+                    Text("The shaded band is our uncertainty. It narrows as you answer more.")
+                        .ratioFont(.small)
+                        .italic()
+                        .foregroundStyle(Color.ratioInk2)
                 }
-                Text("The shaded band is our uncertainty. It narrows as you answer more.")
-                    .ratioFont(.small)
-                    .italic()
-                    .foregroundStyle(Color.ratioInk2)
             }
         }
         .ratioCard()
@@ -285,6 +365,25 @@ private struct ProfileCard: View {
 
     private var updated: String {
         updatedAt.map { " Updated \($0.formatted(.relative(presentation: .named)))." } ?? ""
+    }
+}
+
+/// iPad: each score with its band, beside the archetype ("Scores · with uncertainty").
+private struct ScoresCard: View {
+    let headline: Headline
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text("Scores · with uncertainty").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            ForEach(Skill.allCases) { skill in
+                SkillRow(title: skill.title, estimate: headline[skill])
+            }
+            Text("The shaded band is our uncertainty. It narrows as you answer more.")
+                .ratioFont(.small)
+                .italic()
+                .foregroundStyle(Color.ratioInk2)
+        }
+        .ratioCard()
     }
 }
 

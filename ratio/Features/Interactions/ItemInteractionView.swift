@@ -10,6 +10,9 @@ struct ItemInteractionView: View {
     /// Set once the student has locked in; the view then shows the outcome.
     let lockedResponse: ItemResponse?
     var context = InteractionContext()
+    /// The question alone, when the screen shows the fact pattern elsewhere (the iPad
+    /// exam room puts it in a column of its own).
+    var promptOverride: String?
     let onLock: (ItemResponse) -> Void
 
     /// Bumped by Reset to rebuild the interaction with fresh state.
@@ -18,7 +21,7 @@ struct ItemInteractionView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: RatioSpace.m) {
-            Text(item.prompt)
+            Text(promptOverride ?? item.prompt)
                 .ratioFont(.h2)
                 .fixedSize(horizontal: false, vertical: true)
 
@@ -112,7 +115,26 @@ private struct ChoiceInteraction: View {
                 RatioButton("Lock it in", isEnabled: selection != nil) {
                     onLock(ItemResponse(itemId: itemId, choiceIndex: selection))
                 }
+                .keyboardShortcut(.return, modifiers: .command)
                 .padding(.top, RatioSpace.xs)
+                if KeyboardMonitor.shared.isConnected {
+                    HStack(spacing: RatioSpace.m) {
+                        KeyHint(keys: "1–\(options.count)", label: "Choose")
+                        KeyHint(keys: "⌘↩", label: "Lock it in")
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            }
+        }
+        // A hardware keyboard: 1–4 choose an option.
+        .background {
+            if locked == nil {
+                ForEach(Array(options.indices.prefix(9)), id: \.self) { index in
+                    Button("Option \(index + 1)") { selection = index }
+                        .keyboardShortcut(KeyEquivalent(Character("\(index + 1)")), modifiers: [])
+                }
+                .opacity(0)
+                .accessibilityHidden(true)
             }
         }
     }
