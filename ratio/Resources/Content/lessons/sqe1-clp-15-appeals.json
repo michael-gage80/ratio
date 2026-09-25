@@ -1,0 +1,359 @@
+{
+  "lessonId": "sqe1-clp-15",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 15,
+  "topicId": "sqe1.criminal-practice.appeals",
+  "title": "From arrest to the final appeal",
+  "subtitle": "Appeal routes from the magistrates' court and the Crown Court, and the module's case brought full circle",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish the three appeal routes from a magistrates' court decision — to the Crown Court, by case stated, and (rarely) by judicial review — and identify which is appropriate on given facts",
+    "Explain the Court of Appeal's route from the Crown Court, the 'unsafe' conviction test, and why the risk of an increased sentence differs between the Crown Court and Court of Appeal routes",
+    "Trace a single case through the full criminal practice lifecycle, from arrest to its final appellate outcome, identifying the correct procedural stage at each point"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Criminal Appeal Act 1968, s 2", "role": "The Court of Appeal must quash a conviction it considers unsafe, and may otherwise dismiss the appeal" },
+    { "citation": "Magistrates' Courts Act 1980, s 108", "role": "Right of appeal from the magistrates' court to the Crown Court against conviction and/or sentence" },
+    { "citation": "Senior Courts Act 1981, s 28", "role": "Appeal by way of case stated from the magistrates' court to the High Court on a point of law or excess of jurisdiction" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the closing lesson of the module, and it is deliberately cumulative — every stage this module has covered, from the first police station decision to the final sentence, has an appeal route sitting behind it. Where the profile shows application lagging behind recall, this note appears: 'You know the appeal routes exist. This lesson is about picking the right one under pressure, and seeing how the whole module connects.'",
+    "profileHooks": {
+      "weakApplication": "The test pool is weighted towards routing questions — which appeal court, on which ground, with what risk. Read each fact pattern for the two things that decide the route: which court decided the case, and whether the challenge is to fact, law, or sentence.",
+      "weakKnowledge": "Before the fact patterns, fix the two starting points in your head: magistrates' court decisions go to the Crown Court (facts and law) or the High Court (law only, by case stated); Crown Court decisions go to the Court of Appeal."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "This module opened with a person being arrested. It closes with the same case — arrest, charge, court, trial, sentence — finally running out of road at the Court of Appeal, or stopping earlier because nobody had grounds to go further. Every stage in between has been a decision point with its own rules. This lesson is where all of those decision points get stitched back into one journey."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Magistrates' court to Crown Court: a full second go at the case",
+        "voice": "structural — sets out the route before its consequences",
+        "body": [
+          "A defendant convicted in a magistrates' court has a right of appeal to the Crown Court under s 108 of the Magistrates' Courts Act 1980. Two things make this route distinctive, and both matter for SQE1.",
+          "First, who can use it. A defendant convicted after a not-guilty plea can appeal against conviction and/or sentence; a defendant who pleaded guilty can appeal against sentence only — having admitted the offence, there is no conviction to challenge on the facts. The prosecution has no equivalent right of appeal to the Crown Court against an acquittal.",
+          "Second, and more important, what the Crown Court actually does with the appeal. This is not a review of the magistrates' reasoning for errors — it is a full rehearing. The case is heard afresh, by a circuit judge (or recorder) sitting with two lay magistrates, with witnesses giving evidence again and the Crown Court forming its own view of the facts from scratch. No deference is given to the magistrates' original findings; the Crown Court is not asking 'did the magistrates get this right', it is trying the case itself."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Full rehearing",
+            "definition": "An appeal to the Crown Court from the magistrates' court under s 108 of the Magistrates' Courts Act 1980 is not a review for error — the case is heard again from scratch, with the Crown Court reaching its own independent conclusion on the facts and the law, giving no deference to the magistrates' original decision."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-15-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Is an appeal to the Crown Court against a magistrates' court conviction a review of the magistrates' reasoning for legal error, or a full rehearing of the case?",
+          "options": ["A full rehearing — the Crown Court hears the evidence afresh and reaches its own conclusion", "A review — the Crown Court only checks whether the magistrates made a legal error"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The Crown Court starts from scratch — it does not defer to, or simply check, the magistrates' original findings.",
+          "feedbackIncorrect": "Not quite — an appeal to the Crown Court under s 108 is a full rehearing, not a review for error. That distinction is exactly what separates this route from case stated."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The trap: the Crown Court can increase the sentence",
+        "voice": "direct — corrects a dangerous misconception before it costs a client",
+        "body": [
+          "Here is the fact that catches out students and, worse, underprepared clients: a defendant who appeals their own conviction or sentence to the Crown Court can end up with a heavier sentence than the magistrates imposed. The Crown Court, rehearing the case, has the full range of sentencing powers available to the magistrates' court — and it is not limited to the sentence originally imposed, or to reducing it.",
+          "This follows directly from the full rehearing point in Part 1. If the Crown Court is trying the case afresh rather than reviewing it, it makes sense that its sentencing powers are equally fresh — it is not bound by what the magistrates decided, in either direction. In practice the Crown Court cannot exceed the sentencing powers the magistrates' court itself could have imposed for that offence (it cannot suddenly impose a sentence only the Crown Court could give as a court of first instance for an either-way offence sent up), but within that ceiling, an increase is a genuine risk, not a theoretical one.",
+          "This is advice a solicitor has to give explicitly and in plain terms before a client appeals a sentence they consider too harsh: appealing is not a one-way bet. A client should understand that the Crown Court could leave the sentence exactly as it is, reduce it, or — within the magistrates' own sentencing powers — increase it."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume an appeal can only make a defendant's position better or leave it unchanged, by analogy with ordinary civil litigation risk.",
+            "whyItsWrong": "A Crown Court appeal is a full rehearing with the Crown Court exercising the magistrates' own sentencing powers afresh, not a one-directional review. The Crown Court can increase the sentence (up to what the magistrates could themselves have imposed), and a client appealing sentence alone needs to be told that plainly before deciding to proceed."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-15-check-02",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A client convicted and sentenced in the magistrates' court believes the sentence was too harsh and wants to appeal to the Crown Court against sentence only. Which of the following should the solicitor tell the client before the appeal is lodged?",
+          "options": ["The Crown Court could increase the sentence, up to the limit of what the magistrates' court itself could have imposed, as well as reduce it or leave it unchanged", "The Crown Court can only reduce or confirm the sentence — it has no power to increase it", "The appeal will automatically succeed because the client pleaded guilty in the magistrates' court", "The Crown Court cannot deal with the appeal unless the prosecution also agrees the sentence was too harsh"],
+          "correctIndex": 0,
+          "trapExplanation": "The dangerous assumption here is treating this appeal as risk-free for the defendant. A full rehearing with the magistrates' own sentencing powers means an increase, within that ceiling, is a real outcome the client must be warned about.",
+          "explanation": "Because the Crown Court rehears the case exercising the magistrates' own sentencing powers, it can increase the sentence up to that ceiling, reduce it, or confirm it — all three are live outcomes."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Case stated: when the argument is about law, not facts",
+        "voice": "structural — introduces a genuinely different route",
+        "body": [
+          "Not every magistrates' court appeal is about disputed facts or a sentence thought too severe. Sometimes the argument is that the magistrates got the law wrong, or acted outside their jurisdiction altogether — wrongly admitted evidence as a matter of law, misapplied a statutory test, or dealt with a matter they had no power to deal with. For that kind of challenge, the appropriate route is not the Crown Court but an appeal by way of case stated to the High Court, under s 28 of the Senior Courts Act 1981.",
+          "This route is available to either party — defence or prosecution — and it works differently from a Crown Court appeal in a fundamental way: it is not a rehearing at all. The magistrates' court is asked to 'state a case' — to set out the facts it found and the legal question it decided — and the High Court then rules purely on the point of law or jurisdiction identified, based on the facts as the magistrates found them. The High Court does not hear the evidence again and does not revisit the magistrates' factual findings.",
+          "The practical consequence follows: case stated is the right tool when the complaint is 'the law was applied wrongly to facts that are not really in dispute', and the wrong tool when the complaint is 'the magistrates got the facts wrong' or 'the sentence was too harsh' — those go to the Crown Court instead. A defendant (or the prosecution) generally cannot use both routes for the same decision; choosing case stated typically forecloses a Crown Court appeal on the same matter, so the choice of route has to be made deliberately."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Senior Courts Act 1981, s 28(1)",
+            "text": "Any party to any proceedings before a magistrates' court may question the proceeding on the ground that it is wrong in law or is in excess of jurisdiction by applying to the justices to state a case for the opinion of the High Court on the question of law or jurisdiction involved.",
+            "elements": ["Any party to magistrates' court proceedings", "May question the proceeding as wrong in law or in excess of jurisdiction", "By applying for a case to be stated", "For the opinion of the High Court on that point of law or jurisdiction"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-15-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Based on s 28 of the Senior Courts Act 1981, what does an appeal by way of case stated actually ask the High Court to decide?",
+          "options": ["A specific point of law or jurisdiction, based on the facts as found by the magistrates, without the High Court rehearing the evidence", "The whole case afresh, including re-examining all the factual evidence", "Only whether the sentence imposed was manifestly excessive", "Whether the magistrates should have granted bail during the proceedings"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — case stated is a narrow, law-focused route: the High Court takes the magistrates' factual findings as given and rules only on the point of law or jurisdiction.",
+          "feedbackIncorrect": "Look again at the statutory wording — case stated is confined to a point of law or excess of jurisdiction, decided on the facts the magistrates already found, not a fresh look at the evidence."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "From the Crown Court to the Court of Appeal: 'unsafe', and no risk of a worse sentence",
+        "voice": "case-narrative — works through the route by contrast with what's already been covered",
+        "body": [
+          "Once a case has been tried or sentenced in the Crown Court, the appeal route changes court entirely: a defendant appeals to the Court of Appeal (Criminal Division), not back to a different tier of first-instance court. This is governed by the Criminal Appeal Act 1968, and it works on a genuinely different model from both routes already covered in this lesson.",
+          "Against conviction, the test the Court of Appeal applies is not 'would we have reached a different verdict' — it is whether the conviction is unsafe. Section 2 of the 1968 Act requires the Court of Appeal to allow the appeal if it thinks the conviction is unsafe, and to dismiss it otherwise. 'Unsafe' is a broader concept than 'wrong on the facts': a conviction can be unsafe because of a material misdirection to the jury, because evidence was wrongly admitted or excluded, because of significant procedural unfairness, or because fresh evidence undermines confidence in the verdict — even where the original decision-making process looked superficially sound at the time.",
+          "Against sentence, the Court of Appeal can quash the sentence and substitute any sentence the Crown Court could have passed — but, critically, it cannot increase the sentence on a defendant's own appeal. This is the direct opposite of the Crown Court appeal route in Part 2, and the contrast is exactly what SQE1 tests: appeal your magistrates' court sentence to the Crown Court and it can go up; appeal your Crown Court sentence to the Court of Appeal and, on your own appeal, it cannot."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Criminal Appeal Act 1968, s 2(1)",
+            "text": "The Court of Appeal (a) shall allow an appeal against conviction if they think that the conviction is unsafe; and (b) shall dismiss such an appeal in any other case.",
+            "elements": ["Court of Appeal (Criminal Division)", "Appeal against conviction", "Allowed if the conviction is unsafe", "Dismissed in any other case"]
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Crown Court appeal vs Court of Appeal: the sentence-risk contrast",
+            "points": [
+              "Magistrates' court → Crown Court (s 108 Magistrates' Courts Act 1980): full rehearing; the Crown Court CAN increase the sentence, up to the magistrates' own sentencing ceiling",
+              "Crown Court → Court of Appeal (Criminal Appeal Act 1968): the Court of Appeal CANNOT increase the sentence on the defendant's own appeal",
+              "The Attorney General has a separate route (an Unduly Lenient Sentence reference) to ask the Court of Appeal to increase a Crown Court sentence — but that is not the defendant's own appeal, and is outside this lesson's scope"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-15-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two clients want to appeal a sentence they consider too harsh. Which one faces the real risk that the appeal itself could result in a longer sentence?",
+          "scenarioA": "A client sentenced in the Crown Court, appealing to the Court of Appeal (Criminal Division) against sentence only.",
+          "scenarioB": "A client sentenced in the magistrates' court, appealing to the Crown Court against sentence only.",
+          "correctScenario": "B",
+          "explanation": "A Crown Court appeal from the magistrates' court is a full rehearing that can result in an increased sentence, up to the magistrates' own sentencing ceiling. By contrast, the Court of Appeal cannot increase a sentence on the defendant's own appeal — that risk simply does not exist on that route."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "One case, start to finish",
+        "voice": "narrative — closes the module by tracing a single case through every stage",
+        "body": [
+          "Follow one case through the whole of this module. Maya is arrested on suspicion of an either-way offence — say, a assault occasioning actual bodily harm. She is interviewed under caution at the police station, advised by a duty solicitor on the right to silence and the consequences of the adverse inference provisions, and is subsequently charged.",
+          "Her first appearance is in the magistrates' court, where the either-way offence triggers the plea before venue procedure: she indicates a not-guilty plea, and the court, applying its allocation guideline, determines the case is suitable for summary trial — but Maya, entitled to elect Crown Court trial for an either-way offence, chooses to have the case dealt with in the magistrates' court instead, on legal advice about the relative risks.",
+          "At trial in the magistrates' court, the bench applies the criminal standard of proof and convicts. At the sentencing hearing that follows, the court works through the Sentencing Council's guideline — culpability and harm at Step 1, aggravating and mitigating factors at Step 2 — checks the custody threshold under s 230 of the Sentencing Act 2020, and (because Maya pleaded not guilty and was convicted at trial) no guilty-plea discount applies. She is sentenced to a suspended sentence order.",
+          "Maya instructs her solicitor to appeal. Because her complaint is that the magistrates' verdict was against the weight of the evidence — a factual dispute, not a point of law — the correct route is an appeal to the Crown Court under s 108 of the Magistrates' Courts Act 1980, understanding that this is a full rehearing and that the sentence itself is technically at risk of increase as well as decrease. If, instead, her complaint had been that the magistrates misapplied a legal test for admitting evidence, the correct route would have been case stated to the High Court — not the Crown Court. And had Maya originally elected Crown Court trial and been convicted there instead, her only route from that point onward would run to the Court of Appeal under the Criminal Appeal Act 1968, arguing her conviction was unsafe, with no risk that her own appeal could increase the sentence.",
+          "That is the whole module in miniature: arrest and interview, charge and venue, trial and the standard of proof, sentencing through the guideline framework and the custody threshold, the guilty-plea discount and Newton hearings where a plea and the facts diverge, and finally the appeal route that depends entirely on which court decided the case and what, precisely, is being challenged."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Maya's case: the full journey",
+            "description": "One case traced from arrest through to its final appellate route.",
+            "nodes": [
+              { "id": "arrest", "label": "Arrest, police station interview under caution" },
+              { "id": "charge", "label": "Charge; first appearance in the magistrates' court" },
+              { "id": "venue", "label": "Plea before venue and allocation; either-way offence, Maya elects magistrates' court trial" },
+              { "id": "trial", "label": "Summary trial; conviction on the criminal standard" },
+              { "id": "sentence", "label": "Sentencing: Step 1/Step 2 guideline, custody threshold, no guilty-plea discount (convicted after trial)" },
+              { "id": "appeal", "label": "Appeal: Crown Court (facts/sentence) or case stated to High Court (law only) — route chosen depends on the ground of challenge" }
+            ],
+            "edges": [
+              { "from": "arrest", "to": "charge" },
+              { "from": "charge", "to": "venue" },
+              { "from": "venue", "to": "trial" },
+              { "from": "trial", "to": "sentence" },
+              { "from": "sentence", "to": "appeal" }
+            ],
+            "textAlternative": "Maya's case runs: arrest and police station interview; charge and first appearance in the magistrates' court; plea before venue and allocation, with Maya electing magistrates' court trial for her either-way offence; summary trial and conviction; sentencing through the Step 1/Step 2 guideline framework and the custody threshold, with no guilty-plea discount since she was convicted after a not-guilty plea; and finally an appeal, with the correct route — Crown Court for a factual or sentence challenge, case stated to the High Court for a pure point of law — depending entirely on the ground of challenge raised."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-15-check-05",
+          "type": "sequence",
+          "skillTag": "application",
+          "prompt": "Put the stages of Maya's case in the correct order.",
+          "items": [
+            "Arrest and police station interview under caution",
+            "Charge and first appearance in the magistrates' court",
+            "Plea before venue and allocation; election of magistrates' court trial",
+            "Summary trial and conviction",
+            "Sentencing under the guideline framework and the custody threshold",
+            "Appeal, via the route matching the ground of challenge"
+          ],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "feedbackCorrect": "That's the full lifecycle this module has covered — and the appeal route at the end is never automatic; it is chosen deliberately based on what, exactly, is being challenged and which court decided the case.",
+          "feedbackIncorrect": "Check the order against the stages of criminal practice covered across this module — venue and allocation happen before trial, sentencing happens only after conviction, and the appeal route is the final, and most fact-dependent, step."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-15-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A defendant convicted after a not-guilty plea in the magistrates' court wishes to appeal against conviction. Which court hears that appeal, and on what basis?",
+      "options": ["The Crown Court, by way of a full rehearing", "The Crown Court, by way of a review for legal error only", "The Court of Appeal, applying the unsafe conviction test", "The High Court, by way of case stated on the facts"],
+      "correctIndex": 0,
+      "explanation": "An appeal from the magistrates' court to the Crown Court under s 108 of the Magistrates' Courts Act 1980 is a full rehearing of the case, not a review for error and not the Court of Appeal or case stated route."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A defendant who pleaded guilty in the magistrates' court believes the sentence imposed was too severe. Which appeal is available to her?",
+      "options": ["An appeal to the Crown Court against sentence only", "An appeal to the Crown Court against conviction and sentence", "An appeal to the Court of Appeal against conviction", "No appeal is available once a guilty plea has been entered"],
+      "correctIndex": 0,
+      "explanation": "A defendant who pleaded guilty has admitted the offence, so there is no conviction to appeal on the facts — but an appeal against sentence to the Crown Court remains available."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "Which of the following correctly distinguishes case stated from a Crown Court appeal, both from the magistrates' court?",
+      "options": ["Case stated asks the High Court to rule on a point of law or jurisdiction based on facts already found; a Crown Court appeal is a full rehearing of both facts and law", "Case stated is a full rehearing; a Crown Court appeal is limited to points of law only", "Both routes involve a full rehearing of the evidence, differing only in which court hears it", "Case stated is only available to the prosecution, while a Crown Court appeal is only available to the defence"],
+      "correctIndex": 0,
+      "explanation": "Case stated is a narrow, law-focused route decided on the facts as the magistrates found them; the Crown Court route is a full rehearing of fact and law, and both defence and prosecution may in principle use case stated."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A defendant, convicted and sentenced in the magistrates' court, appeals to the Crown Court against sentence only, believing the worst outcome is that the sentence stays exactly the same. Is this belief correct?",
+      "options": ["No — because the appeal is a full rehearing, the Crown Court can increase the sentence up to the magistrates' own sentencing ceiling", "Yes — the Crown Court can only confirm or reduce a magistrates' court sentence on a defendant's own appeal", "No — the Crown Court is legally required to reduce the sentence on any defendant's appeal", "Yes, provided the defendant did not also appeal against conviction"],
+      "correctIndex": 0,
+      "trapExplanation": "This is the single most heavily tested trap in the appeals topic: students assume an appeal is a one-way bet for the defendant. A Crown Court appeal, as a full rehearing exercising the magistrates' own sentencing powers, genuinely carries the risk of an increased sentence.",
+      "explanation": "Because the Crown Court rehears the case and exercises the magistrates' own sentencing powers, an increase is a real possible outcome, up to the ceiling the magistrates' court itself could have imposed."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A defendant convicted in the Crown Court appeals against sentence only to the Court of Appeal (Criminal Division), believing there is the same risk of an increased sentence as on a Crown Court appeal from the magistrates' court. Is this correct?",
+      "options": ["No — the Court of Appeal cannot increase a sentence on the defendant's own appeal, unlike a Crown Court appeal from the magistrates' court", "Yes — both appeal routes carry an identical risk that the sentence could be increased", "No — the Court of Appeal can only ever reduce a sentence, never confirm it", "Yes, but only where the original trial was for an indictable-only offence"],
+      "correctIndex": 0,
+      "trapExplanation": "Students often assume the two appeal routes behave identically because both are described as 'sentence appeals'. They do not: the sentence-increase risk that exists on a Crown Court appeal from the magistrates' court has no equivalent on a defendant's own appeal to the Court of Appeal.",
+      "explanation": "On a defendant's own appeal, the Court of Appeal can quash and substitute a sentence but cannot increase it — the direct opposite of the position on a Crown Court appeal from the magistrates' court."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A defendant argues her Crown Court conviction should be quashed because, although the jury's verdict was open to them on the evidence, a significant procedural irregularity during the trial undermines confidence in the outcome. Which is the correct legal characterisation of her argument?",
+      "options": ["An argument that the conviction is unsafe under s 2 of the Criminal Appeal Act 1968, which extends beyond simple factual disagreement with the verdict", "An argument that cannot succeed, since the verdict was open to the jury on the evidence", "An argument only available by way of case stated to the High Court", "An argument that requires the Attorney General's consent before it can be raised"],
+      "correctIndex": 0,
+      "trapExplanation": "Students sometimes assume 'unsafe' only covers cases where the verdict was plainly wrong on the facts. It is broader — procedural unfairness, misdirection, or wrongly admitted evidence can render a conviction unsafe even where the jury's factual conclusion was, on its own, a reasonable one.",
+      "explanation": "'Unsafe' under s 2 of the Criminal Appeal Act 1968 captures more than factual error — including procedural irregularities that undermine confidence in the verdict, regardless of whether the jury's conclusion was superficially open to them."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant wants to argue that the magistrates' court had no power to try a particular charge at all, because it fell outside their jurisdiction. Which route should the solicitor advise?",
+      "options": ["Case stated to the High Court, since this is an argument about jurisdiction rather than disputed facts or the sentence imposed", "An appeal to the Crown Court, since jurisdiction is always treated as a factual matter for rehearing", "An appeal to the Court of Appeal, since Crown Court issues can be bypassed entirely", "No appeal route exists for a jurisdictional challenge"],
+      "correctIndex": 0,
+      "explanation": "Section 28 of the Senior Courts Act 1981 expressly covers proceedings that are wrong in law or in excess of jurisdiction — exactly this kind of challenge — making case stated to the High Court the correct route."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant was convicted in the magistrates' court and now wants to argue both that the bench should not have believed a key prosecution witness, and, separately, that the bench misapplied the legal test for identification evidence. What is the most accurate advice about the appeal route(s) available?",
+      "options": ["The two complaints point towards different routes — the credibility challenge suits a Crown Court appeal, while the legal test challenge suits case stated — and the solicitor should advise on which single route best serves the client, since pursuing both concurrently is not generally available", "Both complaints must be raised together in a single Crown Court appeal, since that is the only available route from the magistrates' court", "Both complaints must be raised together by way of case stated, since any legal argument forecloses the Crown Court route entirely", "Neither complaint can be raised on appeal, since the defendant did not raise them at trial"],
+      "correctIndex": 0,
+      "explanation": "A factual credibility challenge is suited to the Crown Court's full rehearing, while a pure legal-test challenge is suited to case stated — but the two routes are generally not combined for the same decision, so the solicitor needs to help the client choose deliberately."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-09",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A defendant convicted in the Crown Court is advised that fresh evidence, not available at trial, seriously undermines the safety of her conviction. Which is the correct next step in the appeal analysis?",
+      "options": ["Consider whether the fresh evidence renders the conviction unsafe under s 2 of the Criminal Appeal Act 1968, as grounds for an appeal to the Court of Appeal", "Apply for case stated to the High Court, since fresh evidence is always treated as a point of law", "Appeal to the Crown Court, since fresh evidence always requires a full rehearing", "No appeal is possible once the Crown Court trial has concluded"],
+      "correctIndex": 0,
+      "explanation": "Fresh evidence undermining confidence in a Crown Court verdict is a recognised basis for arguing a conviction is unsafe, engaging the Court of Appeal's jurisdiction under s 2 of the Criminal Appeal Act 1968 — not case stated or a Crown Court appeal, which apply to different decisions and different courts."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A client, tracing the same case discussed in this lesson, asks at what point the guilty-plea discount would have applied had she pleaded guilty instead of contesting the case. Which stage of the case timeline is that?",
+      "options": ["At the sentencing hearing following conviction, applied to reflect the stage at which the plea was entered rather than at any earlier or later stage", "At the appeal stage, applied by the Crown Court regardless of the original plea", "At the plea before venue hearing, applied automatically once venue is determined", "The discount is irrelevant to any stage of a case that proceeds to trial"],
+      "correctIndex": 0,
+      "explanation": "The guilty-plea discount is applied at sentencing, reflecting the stage at which the plea was entered — in a case that proceeds to trial and conviction (as Maya's did), no discount applies at all, since there was no guilty plea to credit."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Under s 108 of the Magistrates' Courts Act 1980, which of the following correctly describes who may appeal a magistrates' court conviction to the Crown Court?",
+      "options": ["A defendant convicted after pleading not guilty may appeal against conviction and/or sentence; a defendant who pleaded guilty may appeal against sentence only", "Both the prosecution and the defendant have an equal right of appeal against conviction and sentence", "Only the prosecution may appeal a magistrates' court decision to the Crown Court", "A defendant may appeal to the Crown Court only if new evidence has come to light since the trial"],
+      "correctIndex": 0,
+      "explanation": "Section 108 gives the defendant, not the prosecution, the right of appeal to the Crown Court, with the scope of that right (conviction and/or sentence, or sentence only) turning on whether the original plea was not guilty or guilty."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Section 2 of the Criminal Appeal Act 1968 sets out the test the Court of Appeal applies to a conviction appeal. Which of the following is the correct test?",
+      "options": ["The Court of Appeal must allow the appeal if it thinks the conviction is unsafe, and dismiss it otherwise", "The Court of Appeal must allow the appeal if the trial judge made any error, however minor", "The Court of Appeal must allow the appeal if the jury's verdict was not unanimous", "The Court of Appeal must allow the appeal whenever fresh evidence is presented, regardless of its content"],
+      "correctIndex": 0,
+      "explanation": "Section 2(1) states the test precisely: allow the appeal if the conviction is thought unsafe, dismiss it otherwise. Minor errors, a non-unanimous but otherwise properly accepted verdict, or the mere presence of fresh evidence do not, without more, satisfy that test."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "Applying s 28 of the Senior Courts Act 1981 to a defendant who wants to challenge the magistrates' factual assessment of a witness's credibility, which of the following is correct?",
+      "options": ["Case stated is the wrong route for this challenge, since s 28 is confined to points of law or jurisdiction, not disputes about the facts as found", "Case stated is the correct route, since credibility assessments are always treated as questions of law", "Case stated and a Crown Court appeal are equally available and interchangeable for this challenge", "This challenge cannot be brought by any appeal route once the magistrates have made a finding on credibility"],
+      "correctIndex": 0,
+      "explanation": "Section 28 is confined to a point of law or excess of jurisdiction decided on the facts the magistrates found — a pure credibility dispute is a factual challenge, and belongs with a Crown Court appeal instead."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-14",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "Once a defendant has elected Crown Court trial for an either-way offence and is convicted there, which appeal route is available if she wishes to challenge that conviction?",
+      "options": ["An appeal to the Court of Appeal (Criminal Division) under the Criminal Appeal Act 1968", "An appeal to the Crown Court under the Magistrates' Courts Act 1980", "Case stated to the High Court under the Senior Courts Act 1981", "There is no appeal route once Crown Court trial has been elected"],
+      "correctIndex": 0,
+      "explanation": "Once the trial itself takes place in the Crown Court, the appeal route moves up to the Court of Appeal (Criminal Division) — the Crown Court appeal and case stated routes apply to magistrates' court decisions, not to a Crown Court trial."
+    },
+    {
+      "itemId": "sqe1-clp-15-test-15",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Tracing a case from arrest to its final appellate outcome, which of the following correctly orders the stage at which a Newton hearing (if needed) would arise relative to sentencing and any subsequent appeal?",
+      "options": ["Before sentencing, since a Newton hearing resolves a disputed factual basis so the court knows what facts to sentence on", "After sentencing but before any appeal is lodged, as a routine check on the fairness of the sentence imposed", "Only at the Court of Appeal stage, as part of assessing whether a conviction is unsafe", "Only where the case has been sent to the Crown Court on a not-guilty plea, never in the magistrates' court"],
+      "correctIndex": 0,
+      "explanation": "A Newton hearing exists precisely to resolve a disputed factual basis before sentencing, so that the sentencing court knows which version of events it is sentencing on — it therefore sits between plea and sentence, not after sentence or only at the appellate stage."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap across this closing lesson is assuming appeal routes and appeal risk work the same way at every level. They don't: a Crown Court appeal from the magistrates' court can increase a sentence, while an appeal to the Court of Appeal on the defendant's own case cannot; and case stated is available only for a genuine point of law or jurisdiction, never as a shortcut for a factual disagreement.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.appeals"
+  }
+}

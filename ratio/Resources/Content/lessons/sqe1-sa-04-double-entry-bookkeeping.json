@@ -1,0 +1,356 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-sa-04",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "lessonNumber": 4,
+  "topicId": "sqe1.solicitors-accounts.double-entry-bookkeeping",
+  "title": "Double-entry bookkeeping for solicitors",
+  "subtitle": "The dual cash book system and the client ledger",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain why a solicitors' firm keeps two cash books — a client cash book and a business cash book — plus an individual ledger for every client",
+    "State the debit/credit convention on a client ledger: credit for money received on a client's behalf, debit for money paid out",
+    "Apply the double-entry principle to identify the two entries a single transaction must always produce"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Accounts Rules 2019, r 8", "role": "Requires accurate, contemporaneous, chronological accounting records, including a client ledger for each client" },
+    { "citation": "SRA Accounts Rules 2019, r 2.1", "role": "Client money must be kept separate from the firm's own money, which is why a separate client cash book exists" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students treat 'debit' and 'credit' as vaguely interchangeable with 'money in' and 'money out'. On a client ledger they mean the opposite of a personal bank statement, and the SQE1 exam is built to catch that exact confusion. Where the profile shows recall is ahead of application, this note appears: 'You know the definitions — now check you can apply them the right way round, under pressure, against the clock.'",
+      "profileHooks": {
+      "weakApplication": "You've scored well on the terminology here before. The test pool below is weighted towards spotting which side of the ledger an entry belongs on — expect worked figures, not definitions.",
+      "weakKnowledge": "Start with Part 1 and don't rush the convention in Part 2. Every later lesson in this module assumes you can name which book and which column an entry goes in without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A firm holds £4,000 of a client's money in its client account. The client's own bank would call that £4,000 an asset of the client sitting with a debtor. The firm's ledger calls it a credit. Nothing about the money has changed — only whose eyes you're looking through it with. Get that reversal wrong on exam day and every entry that follows will be wrong too.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the SRA Accounts Rules 2019. The double-entry mechanics taught here are standard bookkeeping practice referenced by, rather than directly prescribed word-for-word by, r 8 — firms retain some latitude in software and layout provided the rule's outcomes (accurate, contemporaneous, client-by-client records) are met. Always check the current SRA Handbook wording rather than relying on rule numbers alone."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two firms in one firm: why there are two cash books",
+        "voice": "structural — sets up the whole module's architecture before any mechanics",
+        "body": [
+          "A solicitors' firm is, for accounting purposes, really two businesses wearing one name. One business holds money that belongs to clients — money on account of costs, sale proceeds, settlement sums, money held for a property completion. The other business is the firm's own commercial enterprise, earning fees and paying its own rent and salaries. Rule 2.1 of the SRA Accounts Rules 2019 is the reason these two businesses can never be allowed to blur into one set of figures: client money must be kept separate from the firm's own money.",
+          "That separation is enforced by keeping two cash books. The client cash book records every movement of client money — money that belongs to clients and is merely passing through the firm's hands. The business cash book records the firm's own money — earned fees once billed, and the firm's own overheads. A receipt of costs on account, before any bill is delivered, is client money and goes in the client cash book. Once a bill is delivered and the earned element is transferred out to the firm, it becomes business money and moves into the business cash book.",
+          "Underneath the two cash books sits a third set of records: an individual ledger for every client, showing that client's own dealings with the firm in isolation from every other client's money. Rule 8 requires exactly this — accurate, contemporaneous records that let the firm show, for any one client at any moment, precisely how much of that client's money it is holding."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Client money",
+            "definition": "Money held or received by a firm for a client, or for a specified third party, or as a trustee — as opposed to money that belongs to the firm itself, such as earned costs after billing."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-04-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A firm receives £2,000 on account of costs before any work has been billed. Which cash book records this receipt?",
+          "options": ["The client cash book", "The business cash book"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Until a bill is delivered, the £2,000 is client money — it belongs to the client, not the firm, however confident the firm is that it will earn every penny of it.",
+          "feedbackIncorrect": "Not yet. Nothing has been billed, so nothing has been earned — the money is still the client's, and unbilled client money always sits in the client cash book, never the business one."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The convention that trips everyone up: credit in, debit out",
+        "voice": "direct — states the rule plainly, then explains why it feels backwards",
+        "body": [
+          "On a personal bank statement, money paid in increases your balance and is usually shown as a credit; that much lines up with instinct. On a client ledger, the same word is used the same way — but because the ledger is recording the firm's liability to the client, not the client's own account, it can feel reversed if you think about it from the client's side rather than the firm's.",
+          "The convention is fixed and must be learned exactly: when the firm receives money on behalf of a client, that is a credit entry on the client ledger — it increases the amount the firm owes back to the client. When the firm pays money out on the client's behalf — a disbursement, a transfer to the business account, a payment to the client themselves — that is a debit entry, reducing what the firm owes.",
+          "Read it as a statement about the firm's obligations, not the client's cash: a credit balance on a client ledger is money the firm still holds for the client and must account for. A ledger that ever shows a debit balance — the firm owing money it doesn't have — is a serious red flag, because it means client money has been paid out in excess of what was ever held. That situation is one of the clearest and most heavily tested breaches in the whole subject."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The client ledger convention",
+            "points": [
+              "Money received on behalf of a client → credit entry on that client's ledger",
+              "Money paid out on behalf of a client → debit entry on that client's ledger",
+              "A credit balance = money the firm holds for the client (normal and expected)",
+              "A debit balance = the firm has paid out more client money than it holds (a breach)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-04-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the word in this client ledger entry that shows the firm has just received money on the client's behalf.",
+          "scenarioText": "Client ledger for Mr Osei: 14 March — client account — credit £1,500 — receipt on account of costs.",
+          "tappableSpans": ["client account", "credit", "£1,500", "receipt on account"],
+          "correctSpan": "credit",
+          "feedbackCorrect": "Right. 'Credit' is what marks this as money coming in on the client's behalf — the firm's liability to Mr Osei has just gone up by £1,500.",
+          "feedbackIncorrect": "Look for the accounting term rather than the plain-English description. 'Receipt on account' describes what happened in the real world; 'credit' is the bookkeeping entry that records it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Two entries, always: the mechanics of double entry",
+        "voice": "worked-example — walks through a single transaction on both sides",
+        "body": [
+          "Double entry means exactly what it says: every transaction produces two entries, of equal value, on opposite sides — one debit, one credit — so that the books always balance. A single figure never stands alone; it always has a matching opposite somewhere else in the system.",
+          "Take a straightforward example. A client, Ms Farrow, pays £3,000 into the firm's client account on account of costs. That single event produces two entries: a debit entry of £3,000 in the cash sheet (or cash account) of the client cash book, recording that the client bank account itself now holds £3,000 more; and a credit entry of £3,000 on Ms Farrow's individual client ledger, recording that the firm now owes her that £3,000 back.",
+          "Notice what each side of the double entry is actually tracking. The cash book side tracks the physical money — what's really sitting in the bank. The ledger side tracks the personal account — what's owed to, or held for, a particular client. The two must always agree in total: add up every client ledger credit balance in the firm, and it should equal the total held in the client bank account. That reconciliation is the whole point of keeping both."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Worked example — Farrow receipt",
+            "citation": "Illustrative, not a reported case",
+            "court": "N/A",
+            "year": 2026,
+            "factsShort": "Ms Farrow pays £3,000 to the firm on account of costs, before any bill has been delivered.",
+            "ratioShort": "One transaction, two entries: debit the client cash account (money received into the bank), credit Farrow's client ledger (money the firm now owes her).",
+            "expanded": {
+              "facts": "£3,000 arrives by bank transfer into the firm's client bank account, referenced to Ms Farrow's matter, before any costs have been billed to her.",
+              "judgmentExtract": "N/A — this is a bookkeeping illustration, not case law.",
+              "significance": "This is the simplest possible double entry in the whole module and the template every later, more complicated transaction builds on: identify what happened to the cash, and what happened to the client's personal balance, and record both."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-04-check-03",
+          "type": "sequence",
+          "skillTag": "application",
+          "prompt": "Put these steps in the correct order for recording Ms Farrow's £3,000 receipt.",
+          "items": [
+            "£3,000 arrives in the firm's client bank account",
+            "Debit entry of £3,000 made in the client cash book",
+            "Credit entry of £3,000 made on Ms Farrow's client ledger",
+            "The two entries are checked to confirm they match in value"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the full cycle — a real-world event, then the two matching bookkeeping entries it produces, then the check that they tie out.",
+          "feedbackIncorrect": "Think about what happens physically first (money arriving), then which two book entries that single event produces, before any checking step."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Reading rule 8: what the SRA actually requires of the records",
+        "voice": "statute-first — reads the rule closely before applying it",
+        "body": [
+          "Rule 8 of the SRA Accounts Rules 2019 is short, but every word is examinable. It requires firms to keep and maintain accurate, contemporaneous and chronological records of all dealings with client money — including a client ledger account for each client, kept separately from every other client's account, so that the firm can at any time produce an up-to-date record of the client money it holds and demonstrate compliance with the rules.",
+          "Three words carry most of the weight in practice: accurate (the figures must be right, not approximately right), contemporaneous (entries must be made at, or very close to, the time of the transaction — not reconstructed weeks later from memory), and chronological (entries appear in the order events actually happened, not in whatever order is administratively convenient).",
+          "This is also why every client gets their own individual ledger rather than one shared pool of figures. Mixing two clients' money on a single ledger — even briefly, even by accident — makes it impossible to show, client by client, exactly how much is held for each, which is the entire purpose the rule exists to serve."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Accounts Rules 2019, r 8 (summarised)",
+            "text": "You must keep and maintain accurate, contemporaneous and chronological records to (a) record all dealings with client money, and (b) show separately, in relation to each client, all money received, held or paid on behalf of that client.",
+            "elements": ["Accurate records", "Contemporaneous records", "Chronological records", "Separate ledger per client"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-04-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A trainee enters client receipts into the ledgers once a week, on a Friday, reconstructing the figures from memory and a stack of paying-in slips. Which requirement of r 8 is most clearly at risk?",
+          "options": ["The requirement that records be contemporaneous", "The requirement that each client have a separate ledger", "The requirement that money be paid into a client account without delay", "The requirement that a bill be delivered before a transfer"],
+          "correctIndex": 0,
+          "explanation": "A week's delay, and reconstruction from memory rather than the transaction itself, is the opposite of contemporaneous. The other requirements aren't obviously breached by this practice on these facts alone."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it together: one transaction, applied",
+        "voice": "applied — a single scenario worked through both books and the ledger",
+        "body": [
+          "Consider a slightly fuller scenario. The firm holds £5,000 for a client, Mr Iqbal, on his client ledger (a credit balance of £5,000). The firm then pays a £600 court fee on his behalf, direct from the client account, as a disbursement before any bill is delivered.",
+          "Two entries follow, as always. First, a credit entry disappears from the cash side: the client cash book records a payment out of £600, since real money has left the client bank account. Second, Mr Iqbal's individual ledger records a debit entry of £600, because £600 less is now held for him — his ledger balance falls from a credit of £5,000 to a credit of £4,400.",
+          "Notice the balance never goes negative and never flips to a debit here, because there was always enough held for Mr Iqbal to cover the payment. That is exactly the discipline double entry is designed to make visible at a glance: anyone reading his ledger can see, instantly and without doing separate sums, that £4,400 of his money remains with the firm."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "One transaction, two books, two entries",
+            "description": "How a single disbursement payment flows through the client cash book and the client ledger.",
+            "nodes": [
+              { "id": "event", "label": "Firm pays £600 court fee for Mr Iqbal from client account" },
+              { "id": "cashbook", "label": "Client cash book: £600 payment out recorded" },
+              { "id": "ledger", "label": "Iqbal client ledger: £600 debit entry recorded" },
+              { "id": "balance", "label": "Iqbal ledger balance falls from £5,000 credit to £4,400 credit" }
+            ],
+            "edges": [
+              { "from": "event", "to": "cashbook", "label": "cash side" },
+              { "from": "event", "to": "ledger", "label": "personal account side" },
+              { "from": "ledger", "to": "balance", "label": "result" }
+            ],
+            "textAlternative": "The firm pays a £600 court fee for Mr Iqbal from the client account. This produces two entries: a £600 payment out in the client cash book (the cash side) and a £600 debit on Iqbal's client ledger (the personal account side). His ledger balance falls from a £5,000 credit to a £4,400 credit."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-04-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client ledger shows a credit balance of £900. The firm pays a £250 disbursement on the client's behalf from the client account. What should the resulting ledger balance and entry type be?",
+          "options": ["A debit entry of £250, giving a credit balance of £650", "A credit entry of £250, giving a credit balance of £1,150", "A debit entry of £250, giving a debit balance of £250", "No entry is needed until the bill is delivered"],
+          "correctIndex": 0,
+          "explanation": "Payments out are always debit entries on the client ledger. £900 credit minus a £250 debit leaves a £650 credit balance — there is still enough held to cover the payment, so the ledger stays in credit throughout."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-04-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A firm holds money for a client that has not yet been billed for costs. In which cash book does this money sit?",
+      "options": ["The client cash book", "The business cash book", "Neither — unbilled money is not recorded until the bill is raised", "Both, in equal and offsetting entries"],
+      "correctIndex": 0,
+      "explanation": "Unbilled money belongs to the client, not the firm, so it is client money and belongs in the client cash book until a bill or written notification of costs changes its character."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "On an individual client ledger, which entry records money received on behalf of that client?",
+      "options": ["A credit entry", "A debit entry", "A memorandum entry with no value", "It depends on whether the money came from the client or a third party"],
+      "correctIndex": 0,
+      "explanation": "Money received on a client's behalf is always a credit entry on the client ledger, increasing what the firm holds for — and owes to — that client."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A client ledger unexpectedly shows a debit balance after a series of payments out. What does this most likely indicate?",
+      "options": ["The firm has paid out more of that client's money than it actually holds", "The client has simply not yet paid any money to the firm", "The ledger has been closed and archived correctly", "The firm has earned costs but not yet delivered a bill"],
+      "correctIndex": 0,
+      "explanation": "A debit balance on a client ledger means payments out have exceeded money held — the firm has, in effect, paid out client money it did not have, which is a serious compliance failure, not a routine result."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A client's ledger shows a credit balance of £2,200. The client sends a further £800 to be held on account of costs. What entry is made and what is the new balance?",
+      "options": ["A credit entry of £800, giving a credit balance of £3,000", "A debit entry of £800, giving a credit balance of £1,400", "A credit entry of £800, giving a debit balance of £800", "No ledger entry is needed for a top-up payment"],
+      "correctIndex": 0,
+      "explanation": "Every receipt on the client's behalf is a credit entry. £2,200 plus a further £800 credit gives a new credit balance of £3,000 — the firm now holds and owes £3,000 to this client."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A firm pays a £150 search fee from the client account on behalf of a client whose ledger shows a £400 credit balance. What entry and resulting balance follow?",
+      "options": ["A debit entry of £150, giving a credit balance of £250", "A credit entry of £150, giving a credit balance of £550", "A debit entry of £150, giving a debit balance of £150", "A credit entry of £150, giving a debit balance of £250"],
+      "correctIndex": 0,
+      "explanation": "Payments out on a client's behalf are debit entries. £400 credit less a £150 debit leaves a £250 credit balance, with enough client money still held to have covered the payment."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A trainee is asked to post a client's £1,000 receipt. She records a credit of £1,000 on the client ledger but forgets to record anything in the client cash book. What has gone wrong from a double-entry perspective?",
+      "options": ["The transaction is incomplete — every entry requires a matching, equal and opposite entry elsewhere in the system", "Nothing has gone wrong, provided the ledger entry is accurate", "The entry should have been a debit, not a credit", "The cash book entry is optional for receipts of costs on account"],
+      "correctIndex": 0,
+      "explanation": "Double entry means exactly what it says: the ledger credit must be matched by a corresponding entry in the client cash book recording the cash actually arriving. One-sided entries break reconciliation and are themselves a records failure."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which statement correctly describes why a firm keeps a client cash book that is separate from its business cash book?",
+      "options": ["Because client money must be kept separate from the firm's own money", "Because HMRC requires two separate bank accounts for VAT purposes", "Because client cash books are only needed for firms handling conveyancing", "Because the business cash book is only used once a year at audit"],
+      "correctIndex": 0,
+      "trapExplanation": "VAT and conveyancing-specific reasoning are both plausible-sounding distractors, but the real driver is the client money protection principle in r 2.1: client and business money must never be mixed or recorded as though they were one pool."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm keeps one combined ledger recording two clients' money together, on the basis that the two matters are related and were opened on the same day. Which requirement of r 8 does this most clearly breach?",
+      "options": ["The requirement for a separate ledger account for each client", "The requirement that records be contemporaneous", "The requirement that money be paid without delay into a client account", "The requirement that a bill be delivered before funds are transferred"],
+      "correctIndex": 0,
+      "trapExplanation": "Being opened on the same day, or being factually related, is irrelevant — r 8 requires a distinct ledger per client so that each client's money can be shown and accounted for separately, whatever the relationship between the matters."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A cashier enters all of a week's transactions into the ledgers on Friday afternoon, working from memory and a pile of receipts, rather than as each transaction happens. Which principle is most directly compromised?",
+      "options": ["The contemporaneous nature of the records required by r 8", "The requirement to keep client and business money in separate accounts", "The requirement that a bill be delivered before costs are transferred", "The requirement that disbursements be paid promptly"],
+      "correctIndex": 0,
+      "trapExplanation": "This scenario is not about which account money sits in, or about billing — it is squarely about timing. Entries reconstructed at week's end, from memory, are the opposite of the contemporaneous record-keeping r 8 demands."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-10",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Rule 8 of the SRA Accounts Rules 2019 requires accounting records to have which three qualities?",
+      "options": ["Accurate, contemporaneous and chronological", "Accurate, audited and digital", "Contemporaneous, itemised and client-signed", "Chronological, notarised and dual-authorised"],
+      "correctIndex": 0,
+      "explanation": "The rule's own wording turns on these three qualities together — a record that is accurate but stale, or timely but wrong, still fails the rule."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm's records are accurate and chronological, but entries are routinely made three weeks after the underlying transaction. Which requirement of r 8 is most clearly not met?",
+      "options": ["Contemporaneous", "Accurate", "Chronological", "None — three weeks is within an acceptable range"],
+      "correctIndex": 0,
+      "explanation": "The scenario expressly concedes accuracy and chronological ordering; what fails is timeliness. A three-week lag is not close enough to the transaction to count as contemporaneous."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A compliance officer wants to check, for one specific client, exactly how much client money the firm is currently holding. Which record should she consult first?",
+      "options": ["That client's individual client ledger", "The firm's combined business cash book", "The firm's annual profit and loss account", "The firm's VAT return"],
+      "correctIndex": 0,
+      "explanation": "The individual client ledger is designed for precisely this purpose — showing, client by client, the current balance of money held — which is why r 8 requires one for every client."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following best describes a 'credit balance' on a client ledger?",
+      "options": ["Money the firm currently holds for, and owes back to, the client", "Money the client still owes the firm for unpaid fees", "An error that must be corrected before the file can be closed", "The total value of disbursements paid on the client's behalf"],
+      "correctIndex": 0,
+      "explanation": "A credit balance simply reflects the firm's liability to the client for money it is holding on the client's behalf — it is the normal, expected state of a live client ledger with funds in hand."
+    },
+    {
+      "itemId": "sqe1-sa-04-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client ledger shows a £300 credit balance. The firm mistakenly pays a £500 disbursement on the client's behalf from the client account. What does the resulting ledger show, and what has occurred?",
+      "options": ["A £200 debit balance, showing client money has been overpaid — a breach requiring immediate correction", "A £200 credit balance, which is unusual but not a breach", "A £800 credit balance, since both entries are credits", "No entry is required because the payment exceeded funds held"],
+      "correctIndex": 0,
+      "explanation": "Debiting £500 against a £300 credit produces a £200 debit balance: the firm has paid out £200 of client money it did not hold for this client. This is exactly the debit-balance red flag the module keeps returning to."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is treating 'credit' and 'debit' on a client ledger as if they meant the same thing they mean on a personal bank statement. On a client ledger, credit always means money received on the client's behalf, and debit always means money paid out — learn the direction, not just the words.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.double-entry-bookkeeping"
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-pp-07",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 7,
+  "topicId": "sqe1.property-practice.sdlt",
+  "title": "Post-completion I: SDLT and the other UK land transaction taxes",
+  "subtitle": "Bands, reliefs, surcharges and the 14-day deadline",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the SDLT band structure and calculate the tax due on a straightforward residential purchase",
+    "Identify when first-time buyer relief, the additional-property surcharge and the non-resident surcharge apply, and how they interact",
+    "State the 14-day SDLT filing and payment deadline and its consequences, and identify when LTT or LBTT applies instead of SDLT"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Finance Act 2003", "role": "Primary legislation establishing SDLT, its charging structure and the filing deadline" },
+    { "citation": "Land Transaction Tax and Anti-avoidance of Devolved Taxes (Wales) Act 2017", "role": "Establishes Land Transaction Tax as the separate devolved regime for property in Wales" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "SDLT questions reward arithmetic done in the right order, not memorised totals. Where the profile shows knowledge is solid but application lags, this note appears: 'You know the bands — this lesson is about running the calculation on facts you haven't seen before.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the rules here before. The test pool below leans hard on fact patterns — expect purchase prices and buyer circumstances to work through, not definitions to recite.",
+      "weakKnowledge": "Slow down through Parts 1 and 2 and get the band structure genuinely fixed before moving on — every later part in this lesson assumes you can apply it without looking it up."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A buyer completes on a £310,000 flat, breathes out, and thinks the hard part is over. It isn't. A clock has just started — fourteen days, not to move in or arrange insurance, but to file a tax return and pay HMRC, or start accruing penalties and interest on a transaction that's already gone through. Completion is not the finish line this lesson is about.",
+    "lawStatedNotice": "SDLT bands, surcharges and reliefs are 2025/26 figures. HMRC reviews land transaction tax rates at least annually, typically at the Budget, and this lesson's figures should be checked against the current rates in force before being relied on in practice."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Why a land transaction attracts its own tax",
+        "voice": "structural — orients before the arithmetic starts",
+        "body": [
+          "Stamp Duty Land Tax is charged on the buyer, not the seller, and it is charged on the transaction — the acquisition of a chargeable interest in land — rather than on the property itself. That matters: SDLT is triggered by completion (or, if earlier, substantial performance of the contract), not by exchange, and it is the buyer's solicitor who is almost always the one who ends up managing the filing.",
+          "Three separate regimes now exist across the UK. SDLT applies to land in England and Northern Ireland. Wales has its own Land Transaction Tax, administered by the Welsh Revenue Authority. Scotland has its own Land and Buildings Transaction Tax, administered by Revenue Scotland. Get the wrong regime and every later calculation is wasted — the first thing any transaction requires is establishing where the land actually sits.",
+          "This lesson works through SDLT in depth, because it is the regime tested most heavily, and then places LTT and LBTT alongside it so you can recognise, rather than calculate in detail, when a transaction falls outside SDLT altogether."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Chargeable interest",
+            "definition": "An estate, interest, right or power in or over land in the UK, or the benefit of an obligation restricting such an interest — the acquisition of which is what SDLT (or its devolved equivalents) taxes."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-07-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Which UK land transaction tax applies to a residential purchase in Cardiff?",
+          "acceptableAnswers": ["Land Transaction Tax", "LTT", "Welsh Land Transaction Tax"],
+          "modelAnswer": "Land Transaction Tax (LTT), administered by the Welsh Revenue Authority — SDLT does not apply to land in Wales."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The SDLT band structure: calculating the tax",
+        "voice": "worked-example — walks the arithmetic in full before generalising",
+        "body": [
+          "SDLT on a residential purchase is charged on a slice basis, like income tax: each band of the price is taxed at its own rate, not the whole price at the top rate reached. Getting this wrong — applying the top rate to the entire price — is the single most common calculation error candidates make.",
+          "Take a straightforward £400,000 purchase by a buyer who already owns no other property and is not a first-time buyer. Nothing is payable on the first £125,000. The next slice, £125,001 to £250,000, is taxed at 2% — that's £2,500. The remaining £150,000, from £250,001 to £400,000, falls in the 5% band — that's £7,500. Total SDLT due: £10,000.",
+          "The full residential band structure for 2025/26 is set out below. Learn it as a table you can apply, not a number to recall in isolation — SQE1 questions give you a price and ask you to work the liability out."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Finance Act 2003, s 55 and Sch 4",
+            "text": "Residential SDLT bands (2025/26): £0–£125,000 at 0%; £125,001–£250,000 at 2%; £250,001–£925,000 at 5%; £925,001–£1,500,000 at 10%; above £1,500,000 at 12%. Each band applies only to the slice of the price falling within it.",
+            "elements": ["£0–£125,000 → 0%", "£125,001–£250,000 → 2%", "£250,001–£925,000 → 5%", "£925,001–£1,500,000 → 10%", "Above £1,500,000 → 12%"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-07-check-02",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A buyer with no other property purchases a house for £600,000. Using the standard residential bands, what SDLT is due?",
+          "options": ["£17,500", "£30,000", "£20,000", "£12,500"],
+          "correctIndex": 2,
+          "explanation": "0% on the first £125,000 = £0. 2% on £125,001–£250,000 (£125,000) = £2,500. 5% on £250,001–£600,000 (£350,000) = £17,500. Total = £0 + £2,500 + £17,500 = £20,000. A common error is to stop at the top slice (£17,500) and forget to add the lower bands in."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "First-time buyer relief",
+        "voice": "rule-and-limit — states the relief, then the point where it disappears entirely",
+        "body": [
+          "First-time buyer relief reduces SDLT for a buyer (or, on a joint purchase, all buyers) who has never previously owned a residential property anywhere in the world, and who intends to occupy the property as their only or main residence.",
+          "Where it applies, no SDLT is due on the first £300,000 of the price, and 5% is charged on the slice between £300,001 and £500,000. A first-time buyer paying £450,000, for instance, pays 5% on £150,000 — £7,500 — rather than the higher figure a non-first-time buyer would owe on the same price.",
+          "The relief has a hard cliff-edge that examiners like to test: it does not taper. If the purchase price exceeds £500,000, no relief is available at all, and the buyer pays SDLT at the ordinary bands on the full price — not the ordinary bands minus something. A buyer at £501,000 gets nothing; a buyer at £499,999 gets the full relief."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "First-time buyer relief — the two conditions and the limit",
+            "points": [
+              "Buyer (all buyers, on a joint purchase) must never have owned residential property anywhere",
+              "Buyer must intend to occupy the property as their only or main residence",
+              "Nil rate up to £300,000; 5% from £300,001–£500,000",
+              "No relief at all — not tapered relief — once the price exceeds £500,000"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-07-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A first-time buyer purchases at exactly £500,001. How confident are you that they still receive first-time buyer relief on the first £500,000 of that price?",
+          "sliderLabels": ["Definitely still gets relief on part of the price", "Definitely gets no relief at all"],
+          "correctPosition": "gets no relief at all",
+          "explanation": "The £500,000 figure is a cliff-edge, not a taper. One pound over it and the relief is lost entirely — the buyer pays ordinary residential rates on the whole £500,001, not relief rates on the first slice and ordinary rates above it."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The surcharges: additional property and non-residence",
+        "voice": "layered — builds one surcharge on top of another",
+        "body": [
+          "Two surcharges sit on top of the ordinary bands, and a single transaction can attract both at once. The additional-property surcharge adds 5 percentage points to every band where, at the end of the day of completion, the buyer owns two or more residential properties and is not simply replacing their only or main residence. It is a blanket addition across the whole price, not just the top slice.",
+          "The non-resident surcharge adds a further 2 percentage points where the buyer does not meet the statutory residence test for SDLT purposes — broadly, has not spent at least 183 days in the UK in the twelve months ending with the effective date of the transaction (with a refund available if that condition is later met within the following twelve months).",
+          "These stack. A non-resident buyer purchasing a second home could face the ordinary band rate, plus 5% for the additional property, plus 2% for non-residence, on every slice of the price — a combined top-up of 7 percentage points before the ordinary bands are even applied."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume the additional-property surcharge only bites on the slice of the price above the nil-rate band, mirroring how the ordinary bands work.",
+            "whyItsWrong": "The surcharge is added to every band, including the 0% band — a buyer subject to the surcharge pays at least 5% (or 7% if also non-resident) even on the first £125,000, where an ordinary buyer would pay nothing."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-07-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A buyer already owns one home and is buying a second residential property as a buy-to-let, while remaining UK-resident. Which surcharge, if any, applies?",
+          "options": ["The additional-property surcharge only", "The non-resident surcharge only", "Both surcharges combined", "No surcharge — surcharges only apply to non-residents"],
+          "correctIndex": 0,
+          "trapExplanation": "The non-resident surcharge is a separate, residence-based test entirely — it has nothing to do with how many properties the buyer owns. A UK-resident buyer acquiring a second property pays the additional-property surcharge alone.",
+          "explanation": "Owning an existing home and buying a further residential property, without replacing the main residence, triggers the 5-point additional-property surcharge. Residence in the UK means the 2-point non-resident surcharge does not apply."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The 14-day deadline, and the devolved regimes",
+        "voice": "practical — consequence-led",
+        "body": [
+          "SDLT must be filed and paid within 14 days of the effective date of the transaction — ordinarily completion, though substantial performance before completion can trigger the clock earlier. This is a short window and it runs in calendar days, not working days, so it can bite hard over a holiday period.",
+          "Missing the deadline exposes the buyer to an automatic penalty even if the tax is eventually paid in full — starting at a fixed amount and escalating the longer the return remains outstanding — plus interest on any unpaid tax running from the due date. In practice, the buyer's conveyancing solicitor files the return (usually online) and arranges payment as one of the standard post-completion steps, precisely because the deadline is too tight to leave to the client.",
+          "None of this applies where the land is in Wales or Scotland. Wales charges Land Transaction Tax under its own 2017 Act, with its own bands, its own first-time buyer position (LTT has no first-time buyer relief at all) and its own filing deadline, currently also 30 days rather than SDLT's 14. Scotland charges Land and Buildings Transaction Tax, again with separate bands and a separate filing regime. A solicitor acting on a cross-border instruction, or simply qualifying across the UK, has to know which regime applies before doing anything else — and must not assume SDLT's rules transfer across the border unchanged."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Which land tax, and by when?",
+            "description": "A decision path for identifying the applicable land transaction tax regime and its filing deadline.",
+            "nodes": [
+              { "id": "start", "label": "Where is the land situated?" },
+              { "id": "eng-ni", "label": "England or Northern Ireland → SDLT, file and pay within 14 days" },
+              { "id": "wales", "label": "Wales → Land Transaction Tax (Welsh Revenue Authority), no first-time buyer relief, own filing deadline" },
+              { "id": "scot", "label": "Scotland → Land and Buildings Transaction Tax (Revenue Scotland), own bands and filing deadline" }
+            ],
+            "edges": [
+              { "from": "start", "to": "eng-ni", "label": "England/NI" },
+              { "from": "start", "to": "wales", "label": "Wales" },
+              { "from": "start", "to": "scot", "label": "Scotland" }
+            ],
+            "textAlternative": "First identify where the land is situated. England or Northern Ireland: SDLT applies, filed and paid within 14 days of the effective date. Wales: Land Transaction Tax applies instead, administered by the Welsh Revenue Authority, with no first-time buyer relief and its own filing deadline. Scotland: Land and Buildings Transaction Tax applies instead, administered by Revenue Scotland, with its own bands and filing deadline."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-07-check-05",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Under the SDLT regime, within how many days of the effective date must the return be filed and the tax paid?",
+          "options": ["7 days", "14 days", "30 days", "60 days"],
+          "correctIndex": 1,
+          "explanation": "SDLT must be filed and paid within 14 days of the effective date of the transaction — the tightest of the UK's three land transaction tax deadlines."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-07-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A residential purchase completes in Belfast. Which land transaction tax regime applies?",
+      "options": ["Land Transaction Tax", "Land and Buildings Transaction Tax", "Stamp Duty Land Tax", "No land transaction tax applies in Northern Ireland"],
+      "correctIndex": 2,
+      "explanation": "SDLT applies to land in both England and Northern Ireland; only Wales and Scotland have their own separate devolved regimes."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the effective date that ordinarily starts the 14-day SDLT filing clock?",
+      "options": ["The date of exchange of contracts", "The date of completion (or earlier substantial performance)", "The date the transfer is registered at HM Land Registry", "The date the mortgage offer is issued"],
+      "correctIndex": 1,
+      "explanation": "The effective date is ordinarily completion, though the clock can start earlier if the contract is substantially performed beforehand — for example where the buyer takes possession or pays most of the price before formal completion."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A solicitor is advising a client buying in Cardiff and wrongly applies SDLT's first-time buyer relief when calculating the liability. What is the main problem with this approach?",
+      "options": ["The client should have used the Scottish bands instead", "LTT, which actually applies, has no first-time buyer relief at all", "First-time buyer relief only applies to second homes", "SDLT and LTT use identical rules, so no error has occurred"],
+      "correctIndex": 1,
+      "explanation": "Land in Wales is subject to LTT, not SDLT, and LTT does not offer a first-time buyer relief equivalent to SDLT's — applying SDLT concepts to a Welsh transaction produces the wrong answer even before any arithmetic is done."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A buyer with no other property purchases a flat for £200,000 and is not a first-time buyer. What SDLT is due on the standard residential bands?",
+      "options": ["£0", "£1,500", "£4,000", "£10,000"],
+      "correctIndex": 1,
+      "explanation": "0% on the first £125,000 leaves £75,000 in the 2% band: £75,000 × 2% = £1,500."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A first-time buyer purchases their only residential property for £320,000. What SDLT is due, applying first-time buyer relief?",
+      "options": ["£0", "£1,000", "£6,400", "£3,600"],
+      "correctIndex": 1,
+      "trapExplanation": "A common error is to apply 5% to the full £320,000 rather than only to the slice above £300,000 — first-time buyer relief still works band-by-band above the nil-rate threshold.",
+      "explanation": "No SDLT on the first £300,000. The remaining £20,000 (£300,001–£320,000) is taxed at 5% = £1,000."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A client asks whether they still get first-time buyer relief on a £510,000 purchase, since it is only just over the £500,000 limit. What should the solicitor advise?",
+      "options": ["Relief applies on the first £500,000, with ordinary rates on the remaining £10,000", "No relief applies at all, because the price exceeds £500,000", "Relief applies in full because the excess is small", "Relief is halved once the price exceeds £500,000"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to assume the relief simply stops applying above £500,000 and ordinary rates take over for the excess, as with the ordinary band structure. First-time buyer relief does not work that way — it is an all-or-nothing threshold.",
+      "explanation": "Exceeding £500,000 by even £1 removes the relief entirely; SDLT is then calculated on the whole price using the standard residential bands, with no relief applied to any part of it."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A couple sell their only home and, on the same day, complete the purchase of a new one to live in. At no point do they own two properties simultaneously. Does the additional-property surcharge apply to the purchase?",
+      "options": ["Yes — any purchase of a second property while owning one triggers it", "No — they are replacing their only or main residence, not adding to their portfolio", "Yes, but only at half the usual rate", "It depends on whether they are first-time buyers"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes fixate on the fact that two properties were technically owned by the household within the same conveyancing chain and assume the surcharge must apply. What matters is the position at the end of the day of completion — here, the old home has already been sold.",
+      "explanation": "The additional-property surcharge is aimed at buyers acquiring an additional property, not at buyers simply replacing their main residence. Since the old home is sold before or on completion of the new one, no surcharge arises."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A buyer who has lived and worked outside the UK for the last three years returns briefly to complete on a UK residential purchase, having spent fewer than 183 days in the UK in the twelve months ending on the effective date. What is the most likely SDLT consequence?",
+      "options": ["No consequence — residence is irrelevant to SDLT", "The 2% non-resident surcharge applies on top of the ordinary bands", "The purchase is exempt from SDLT entirely", "First-time buyer relief is automatically lost"],
+      "correctIndex": 1,
+      "trapExplanation": "It's easy to assume residence only affects income tax or capital gains tax, not a transaction tax like SDLT. The non-resident surcharge is a distinct SDLT rule triggered by the buyer's own days-in-the-UK test, independent of first-time buyer status.",
+      "explanation": "Failing the 183-day test in the relevant 12-month period triggers the 2 percentage point non-resident surcharge on every band, though a refund can be claimed if UK residence is later established within the following 12 months."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A non-resident buyer who already owns one UK property purchases a second residential property for £300,000, with no relief available. Which rate structure applies to the whole price?",
+      "options": ["Ordinary residential bands only", "Ordinary residential bands plus 5% (additional property)", "Ordinary residential bands plus 2% (non-residence)", "Ordinary residential bands plus 5% plus 2% (both surcharges)"],
+      "correctIndex": 3,
+      "explanation": "Owning an existing property and acquiring a further one triggers the 5-point additional-property surcharge; failing the UK residence test adds the further 2-point non-resident surcharge. The two stack, adding 7 percentage points to every band across the whole price."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-10",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A firm's conveyancer discovers, sixteen days after completion, that the SDLT return has not yet been filed. What is the most accurate advice to give the client at this point?",
+      "options": ["No action is needed as SDLT has no fixed deadline", "The deadline has already passed; file immediately, as a penalty and interest will now apply and will grow the longer it remains outstanding", "Wait until the next quarterly filing window", "The transaction is automatically void once 14 days have elapsed"],
+      "correctIndex": 1,
+      "explanation": "The 14-day deadline has already been missed, so an automatic penalty will apply regardless of how quickly the firm now acts, plus interest on the tax from the original due date — but filing immediately stops both from growing further."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-11",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "prompt": "Which body administers Land Transaction Tax on a residential purchase in Swansea?",
+      "options": ["HM Revenue and Customs", "Revenue Scotland", "The Welsh Revenue Authority", "HM Land Registry"],
+      "correctIndex": 2,
+      "explanation": "Land Transaction Tax on property in Wales is administered by the Welsh Revenue Authority under the Land Transaction Tax and Anti-avoidance of Devolved Taxes (Wales) Act 2017, entirely separately from HMRC's administration of SDLT."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Under Finance Act 2003, on what basis is SDLT charged as the price rises through the residential bands?",
+      "options": ["The whole price is taxed at the single rate for the band the top of the price falls into", "Each slice of the price is taxed only at the rate for the band it falls within", "The buyer chooses whichever band produces the lower liability", "SDLT is a flat percentage regardless of price"],
+      "correctIndex": 1,
+      "explanation": "SDLT operates on a slice basis, like income tax — each band of the price is taxed at its own rate, and the amounts for each slice are added together to reach the total liability."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A trainee is asked to confirm the current SDLT nil-rate threshold and surcharge percentages before advising a client. Why is this step necessary even though the trainee learned the figures recently?",
+      "options": ["SDLT figures never change once set by statute", "SDLT bands, reliefs and surcharges are reviewed at least annually, typically at the Budget, and can change", "The figures only matter for commercial, not residential, property", "HMRC does not publish current rates, so estimation is required"],
+      "correctIndex": 1,
+      "explanation": "SDLT thresholds, reliefs and surcharge rates are set by secondary legislation and Budget announcements and are reviewed at least annually — a solicitor must check the rates currently in force rather than relying on figures learned at an earlier point."
+    },
+    {
+      "itemId": "sqe1-pp-07-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A buyer purchasing for £950,000, with no reliefs or surcharges applicable, needs the SDLT calculated across the residential bands including the 10% band. Which slice of the price is taxed at 10%?",
+      "options": ["The whole £950,000", "£925,001 to £950,000 only", "£500,001 to £950,000", "None — 10% only applies to non-residential property"],
+      "correctIndex": 1,
+      "explanation": "Only the slice of the price falling between £925,001 and £1,500,000 is taxed at 10%; here that is the final £25,000 of the £950,000 price, with the earlier slices taxed at 0%, 2% and 5% respectively."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson's items is treating a relief, surcharge or deadline as if it worked like the ordinary SDLT bands — tapering gently at the edges. First-time buyer relief has a cliff-edge, not a taper; the additional-property surcharge applies to the whole price, not just the top slice; and the 14-day deadline has already passed the moment it's missed, with no grace period built in.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.sdlt"
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "lessonId": "sqe1-clp-13",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 13,
+  "topicId": "sqe1.criminal-practice.sentencing-purposes",
+  "title": "Why we punish, and how much",
+  "subtitle": "The purposes of sentencing, the guidelines framework, and the custody threshold",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the five statutory purposes of sentencing and explain that no purpose is given formal priority over the others",
+    "Apply the Sentencing Council's culpability/harm framework to place an offence within the correct category and starting point",
+    "Apply the custody threshold test to decide whether a custodial sentence is available on a given set of facts"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Sentencing Act 2020, s 57", "role": "Sets out the five statutory purposes of sentencing for adult offenders" },
+    { "citation": "Sentencing Act 2020, s 59", "role": "Duty on courts to follow relevant sentencing guidelines unless contrary to the interests of justice" },
+    { "citation": "Sentencing Act 2020, s 230", "role": "The custody threshold: a custodial sentence only where the offence is so serious that neither a fine nor a community sentence can be justified" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Sentencing is where criminal practice stops being about guilt and starts being about consequences — and it's tested as heavily as any topic in this module. Where the profile shows application lagging behind recall, this note appears: 'You can list the five purposes. This lesson is about applying the framework that turns them into an actual number.'",
+    "profileHooks": {
+      "weakApplication": "You know the purposes and the threshold test by name. The harder skill — and the one SQE1 actually tests — is running the culpability/harm grid against a fact pattern. Slow down on Parts 3 and 4.",
+      "weakKnowledge": "Start with Part 1 and make sure you can name all five statutory purposes without prompting before moving on — the rest of the lesson assumes you have them cold."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two defendants plead guilty to identical offences — same facts, same value stolen, same previous convictions. One walks out with a fine. The other goes to prison. The difference isn't luck; it's a structured framework that every sentencing court in England and Wales is required to follow, in a specific order, whether the case is heard by a lay bench in a magistrates' court or a circuit judge in the Crown Court.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The statutory framework (Sentencing Act 2020) is settled, but the Sentencing Council periodically revises individual offence guidelines — including the culpability/harm categories and starting points used in worked examples below. Always check the current guideline in practice; the structure taught here (not the specific starting points) is what SQE1 examines."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Five reasons to sentence, and no ranking between them",
+        "voice": "structural — sets out the statutory list before complicating it",
+        "body": [
+          "Before a court can decide how much punishment fits an offence, it has to know what sentencing is actually for. Section 57 of the Sentencing Act 2020 answers that question directly: when dealing with an offender aged 18 or over, a court must have regard to five purposes of sentencing.",
+          "Those five purposes are: the punishment of offenders; the reduction of crime (including its reduction by deterrence); the reform and rehabilitation of offenders; the protection of the public; and the making of reparation by offenders to persons affected by their offences.",
+          "Two things trip students up here. First, the list is exhaustive as a statutory statement — there is no sixth purpose to invent, and 'retribution' is not the word Parliament used, even though punishment does that work. Second, and more important for application questions: no purpose is ranked above the others. A court doesn't work through the list in order and stop at the first that fits — it weighs all five against the facts of the case and decides what mix of purposes the sentence should serve.",
+          "There are limited statutory exceptions where this general list gives way to something else — sentencing offenders under 18 is governed by a different framework, and certain sentences (a mandatory life sentence for murder, for example) leave little room for the purposes to operate at all. For SQE1 purposes, assume the general adult framework unless a question tells you otherwise."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The five statutory purposes (Sentencing Act 2020, s 57)",
+            "points": [
+              "Punishment of offenders",
+              "Reduction of crime, including by deterrence",
+              "Reform and rehabilitation of offenders",
+              "Protection of the public",
+              "Reparation by offenders to persons affected by their offences"
+            ]
+          },
+          {
+            "type": "keyConcept",
+            "term": "No statutory hierarchy",
+            "definition": "The five purposes in s 57 are not ranked. A court must have regard to all of them and decide, on the facts of the individual case, which purposes the sentence should primarily serve — it is not required to work through the list and apply the first purpose that fits."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under s 57 of the Sentencing Act 2020, is a court sentencing an adult offender required to apply the five statutory purposes in a fixed order of priority?",
+          "options": ["No — it must have regard to all five, with none formally ranked above the others", "Yes — punishment always takes priority over the other four purposes"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The list is comprehensive, not sequential — the court weighs all five against the facts of the individual case.",
+          "feedbackIncorrect": "Not quite — s 57 gives no purpose formal priority. The court must have regard to all five and decide, on the facts, what balance the sentence should strike."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Guidelines aren't advisory — they're the starting point courts must follow",
+        "voice": "direct — corrects a common misconception before it takes root",
+        "body": [
+          "The five purposes tell a court what sentencing is for. They don't, on their own, tell a court how long a sentence should be. That job belongs to the Sentencing Council, an independent body that issues sentencing guidelines for individual offences — and those guidelines are not optional reading.",
+          "Section 59 of the Sentencing Act 2020 imposes a duty: every court must follow any sentencing guideline relevant to the offender's case, unless the court is satisfied that it would be contrary to the interests of justice to do so. That is a high bar. Guidelines are the default, not a menu — a sentencer who wants to depart from one has to be able to justify why following it would produce an unjust result on these facts, not simply that a different figure feels more appropriate.",
+          "Most Sentencing Council guidelines for individual offences follow the same architecture, and this is the structure worth memorising rather than any single offence's numbers: Step 1 determines the offence category by assessing culpability and harm; Step 2 takes the resulting starting point and category range and adjusts it for aggravating and mitigating factors, and for matters such as totality (multiple offences) and a guilty plea. The rest of this lesson works through Step 1 in detail; Lesson 14 covers how a guilty plea interacts with Step 2."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Sentencing Act 2020, s 59",
+            "text": "Every court must, in sentencing an offender, follow any sentencing guidelines which are relevant to the offender's case unless the court is satisfied that it would be contrary to the interests of justice to do so.",
+            "elements": ["A relevant sentencing guideline exists", "The court must follow it", "Unless satisfied that doing so would be contrary to the interests of justice"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-13-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Based on s 59 of the Sentencing Act 2020, which of the following correctly describes when a court may depart from a relevant sentencing guideline?",
+          "options": ["Whenever the sentencer personally disagrees with the guideline's starting point", "Only where following it would be contrary to the interests of justice", "Only with the prior written consent of the Sentencing Council", "Never — guidelines are absolutely binding in every case"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct — s 59 sets 'contrary to the interests of justice' as the test, a genuine but narrow exception to what is otherwise a binding duty to follow the guideline.",
+          "feedbackIncorrect": "Look at the statutory wording again — s 59 creates a duty to follow guidelines with one specific, narrow exception: where following it would be contrary to the interests of justice."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Step 1: culpability and harm, in that order",
+        "voice": "structural — a reference part students will return to",
+        "body": [
+          "Step 1 of the standard guideline format asks two questions, and the order matters for how you work through a fact pattern: how culpable was the offender, and how much harm did the offence cause (or risk, or intend to cause)?",
+          "Culpability is usually assessed across a small number of bands — typically labelled A to D, from very high to lesser culpability — built from factors specific to the offence: was a weapon used, was the offence planned, was there an abuse of trust or position, was the offender's role leading or minor? Harm is assessed separately, usually across two or three categories, built from factors like the value of property taken, the seriousness of injury caused, or the degree of harm risked even where it did not eventuate.",
+          "Once culpability and harm are each placed in their category, the guideline's own grid — a simple table cross-referencing the two — produces a starting point and a category range for the sentence. That figure is not the final sentence; it's the beginning of Step 2, where aggravating and mitigating factors move the sentence up or down within (occasionally outside) that range.",
+          "The order is worth holding onto precisely because exam fact patterns will often bury culpability factors and harm factors in the same sentence, daring you to conflate them. A weapon carried into an offence is almost always a culpability factor — it speaks to what the offender intended or was prepared to do. The injury the weapon actually caused is a harm factor — it speaks to the consequence. Keep the two questions separate."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The two-step guideline structure",
+            "description": "How a Sentencing Council guideline moves from offence facts to a sentence.",
+            "nodes": [
+              { "id": "culp", "label": "Assess culpability (A–D): what did the offender intend, plan, or risk?" },
+              { "id": "harm", "label": "Assess harm: what actual, intended, or risked harm resulted?" },
+              { "id": "grid", "label": "Cross-reference culpability and harm on the guideline grid → offence category, starting point, category range" },
+              { "id": "step2", "label": "Step 2: adjust within/outside the range for aggravating and mitigating factors, totality, and guilty plea" }
+            ],
+            "edges": [
+              { "from": "culp", "to": "grid" },
+              { "from": "harm", "to": "grid" },
+              { "from": "grid", "to": "step2" }
+            ],
+            "textAlternative": "Step 1 assesses culpability (what the offender intended, planned, or risked) and harm (the actual, intended, or risked consequence) separately, then cross-references them on the offence's guideline grid to produce a category, a starting point, and a category range. Step 2 then adjusts that figure for aggravating and mitigating factors, totality, and any guilty plea reduction."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-13-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the standard Sentencing Council guideline process in the correct order.",
+          "items": [
+            "Assess culpability and harm separately against the guideline's factors",
+            "Cross-reference culpability and harm on the grid to find the offence category",
+            "Identify the starting point and category range for that category",
+            "Adjust up or down within the range for aggravating and mitigating factors (Step 2)"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the architecture behind almost every Sentencing Council guideline — categorise first, then adjust.",
+          "feedbackIncorrect": "Check the order — culpability and harm are assessed first and used to find a category and starting point; aggravating and mitigating factors only come into play once that starting point exists."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Applying the grid to facts",
+        "voice": "case-narrative — works a fact pattern through the framework",
+        "body": [
+          "Take a straightforward assault occasioning actual bodily harm. The guideline for this offence — like most — sets out culpability factors (for example: use of a weapon, a sustained or repeated assault, targeting a vulnerable victim, a significant degree of planning) and harm factors (for example: injury more serious than typical for the offence, or a sustained attack causing fear).",
+          "Suppose the facts are: the defendant punched the victim once, unplanned, during a heated argument outside a pub, causing a fractured cheekbone that required surgery. No weapon, no targeting, no planning — culpability sits at the lower end. But the injury is more serious than the offence's typical harm — a fracture requiring surgery is not a minor injury — so harm sits at the higher end. The two questions pull in different directions, and that's normal: culpability and harm are not the same axis, and a fact pattern rarely maxes out or bottoms out on both simultaneously.",
+          "The grid takes exactly that combination — lower culpability, higher harm — and produces a category and starting point specific to that cell, which will usually sit somewhere in the middle of the guideline's overall range rather than at either extreme. This is the discipline SQE1 is testing: not whether you can quote a specific offence's numbers from memory, but whether you can correctly sort facts into a culpability factor or a harm factor and see that the two can move independently."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that a single severe fact (here, the fractured cheekbone) should push both culpability and harm to the top of the scale.",
+            "whyItsWrong": "Culpability asks about the offender's state of mind and conduct — planning, weapon use, targeting. Harm asks about the outcome. A single unplanned punch that happens to cause serious injury is low culpability, high harm — not high on both. Conflating the two is the single most common Step 1 error."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-13-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A defendant deliberately brings a knife to a confrontation, brandishes it to intimidate the victim, but the victim is not physically injured. Under the standard Step 1 framework, how should this fact pattern be assessed?",
+          "options": ["High culpability (weapon use, deliberate intimidation) and lower harm (no physical injury caused)", "Low culpability and low harm, since no injury actually resulted", "High culpability and high harm, because a knife was involved", "The facts cannot be categorised without expert medical evidence"],
+          "correctIndex": 0,
+          "explanation": "Bringing and brandishing a weapon deliberately is a culpability factor — it speaks to intent and conduct. The absence of physical injury affects harm, not culpability; many guidelines also treat harm risked (not just harm caused) as relevant, but on these facts culpability and harm still pull in different directions."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The custody threshold: the last question, not the first",
+        "voice": "Socratic — poses the practical question before resolving it",
+        "body": [
+          "Once a court has worked through the guideline and arrived at a provisional sentence, one further statutory hurdle applies before custody is available at all. Section 230 of the Sentencing Act 2020 provides that a court must not pass a custodial sentence unless it is satisfied that the offence, or the combination of the offence and one or more offences associated with it, was so serious that neither a fine alone nor a community sentence can be justified.",
+          "Notice what this test does not ask. It does not ask whether custody is available in principle for the offence — plenty of offences carry a maximum custodial sentence but will never reach it in practice. It does not ask whether the defendant deserves punishment — almost every offence justifies some punishment. It asks a narrower, comparative question: could a fine or a community sentence do the job instead? Only if the answer is no does custody become available — and even then, the court still has to decide the length, applying totality and any mitigation.",
+          "This is why the custody threshold sits logically after the guideline's Step 1 and Step 2 analysis, not before it: the culpability/harm categorisation and the aggravating/mitigating adjustment tell the court roughly where on the scale the offence sits, and the custody threshold then asks whether that point on the scale is serious enough to close off the non-custodial options entirely."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Sentencing Act 2020, s 230(2)",
+            "text": "The court must not pass a custodial sentence unless it is of the opinion that the offence, or the combination of the offence and one or more offences associated with it, was so serious that neither a fine alone nor a community sentence can be justified for the offence.",
+            "elements": ["Custodial sentence sought", "Offence (or offence plus associated offences)", "So serious that", "Neither a fine alone nor a community sentence can be justified"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-13-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A defendant with no previous convictions is convicted of a single, low-value shoplifting offence with no aggravating features. Where does this sit against the custody threshold?",
+          "sliderLabels": ["Custody threshold clearly not crossed", "Custody threshold clearly crossed"],
+          "correctPosition": "not crossed",
+          "explanation": "On these facts a fine or community sentence would ordinarily be capable of dealing with the offence, so the s 230 threshold — which requires that neither of those options can be justified — is not met, and custody is not available."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-13-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A magistrates' court is sentencing an adult offender for theft and considering the purposes it must have regard to. Which of the following is one of the five statutory purposes of sentencing under s 57 of the Sentencing Act 2020?",
+      "options": ["Protection of the public", "Compensating the court service for its costs", "Satisfying media interest in the case", "Ensuring proportional representation on sentencing panels"],
+      "correctIndex": 0,
+      "explanation": "Protection of the public is one of the five statutory purposes, alongside punishment, reduction of crime, reform and rehabilitation, and reparation."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A district judge remarks that punishment must always be weighed before the other statutory purposes are considered. Is this an accurate statement of s 57 of the Sentencing Act 2020?",
+      "options": ["No — the five purposes are not ranked, and the court must have regard to all of them", "Yes — punishment is expressly given priority by statute", "Yes, but only for offences triable either way", "No — protection of the public must always be considered first"],
+      "correctIndex": 0,
+      "explanation": "Section 57 lists five purposes without ranking them. A court must have regard to all five and decide, on the facts, what balance is appropriate — there is no statutory requirement to consider punishment first."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which body is responsible for issuing the sentencing guidelines that courts in England and Wales are required to follow under s 59 of the Sentencing Act 2020?",
+      "options": ["The Sentencing Council", "The Crown Prosecution Service", "The Law Commission", "His Majesty's Courts and Tribunals Service"],
+      "correctIndex": 0,
+      "explanation": "The Sentencing Council is the independent body responsible for producing sentencing guidelines. Courts must follow a relevant guideline unless satisfied it would be contrary to the interests of justice to do so."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A trainee solicitor is asked to list the five statutory purposes of sentencing under s 57 of the Sentencing Act 2020. Which of the following is NOT one of the five?",
+      "options": ["Reform and rehabilitation of offenders", "Reduction of crime, including by deterrence", "Retribution proportionate to the offender's moral blameworthiness", "Reparation by offenders to persons affected by their offences"],
+      "correctIndex": 2,
+      "trapExplanation": "This is a wording trap. Punishment — not 'retribution' — is the statutory term used in s 57, and the phrase 'proportionate to moral blameworthiness' is not part of the statutory list at all, even though it captures similar thinking. Learn the five exact statutory purposes, not a paraphrase.",
+      "explanation": "The five statutory purposes are punishment, reduction of crime, reform and rehabilitation, protection of the public, and reparation."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A defence solicitor argues that a Sentencing Council guideline should not be followed simply because a different sentence would, in her view, be fairer to her client. Should the court accept that argument as a basis for departing from the guideline?",
+      "options": ["No — a personal view that a different sentence is fairer is not the same as showing the guideline would be contrary to the interests of justice", "Yes — sentencing guidelines are advisory and may be departed from whenever counsel disagrees with them", "Yes, but only if the prosecution consents", "No — guidelines can never be departed from under any circumstances"],
+      "correctIndex": 0,
+      "trapExplanation": "Students often treat guidelines as merely advisory. Section 59 makes them binding by default; the 'contrary to the interests of justice' exception requires more than a general submission that a different outcome would be fairer — it requires a genuine reason why following the guideline on these particular facts would produce injustice.",
+      "explanation": "Guidelines must be followed unless the court is satisfied that doing so would be contrary to the interests of justice — a narrow test, not a general discretion to prefer a different figure."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A defendant carries a bottle to a fight, intending to use it as a weapon, but is disarmed before causing any injury. Which of the following best describes how this fact pattern should be assessed at Step 1 of the guideline?",
+      "options": ["Higher culpability (deliberately arming himself for violence) but lower harm (no injury in fact caused)", "Lower culpability and lower harm, since no injury resulted", "Higher culpability and higher harm, because a weapon was present", "The fact pattern cannot be assessed until sentencing for a separate weapons offence is complete"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming that weapon possession alone pushes both culpability and harm up together. Bringing a weapon with intent to use it is a culpability factor; the fact that no injury resulted keeps harm lower, even though many guidelines also account for harm that was risked, not just harm caused.",
+      "explanation": "Culpability and harm are assessed on separate axes. Intentional arming for violence raises culpability; the absence of actual injury keeps harm at the lower end, though risk of harm may still be relevant under the specific guideline."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A defendant with several previous convictions for similar offences is convicted of a further offence that, taken alone, would ordinarily attract a community sentence. The solicitor advises that the custody threshold is automatically crossed because of the previous convictions. Is this correct?",
+      "options": ["No — previous convictions are relevant to sentence but do not, by themselves, automatically cross the s 230 custody threshold", "Yes — any offender with previous convictions for similar offences must receive a custodial sentence", "Yes, but only if the previous convictions were also for offences of violence", "No — previous convictions can never be taken into account when applying the custody threshold"],
+      "correctIndex": 0,
+      "trapExplanation": "Previous convictions are a recognised aggravating factor under s 65 of the Sentencing Act 2020 and can properly influence where an offence sits, but there is no rule that they automatically cross the s 230 threshold — the court must still be satisfied that neither a fine nor a community sentence can be justified on the case as a whole.",
+      "explanation": "The custody threshold requires the court's own assessment of seriousness taking all relevant factors (including previous convictions) into account — it is not triggered automatically by any single factor."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant is convicted of causing criminal damage after a single, unplanned act during an argument, resulting in minor, easily repaired damage. No aggravating features are present. Applying the standard Step 1 framework, where is this offence most likely to fall?",
+      "options": ["Lower culpability and lower harm", "Higher culpability and lower harm", "Lower culpability and higher harm", "Higher culpability and higher harm"],
+      "correctIndex": 0,
+      "explanation": "An unplanned, spontaneous act with no aggravating culpability factors sits at the lower end of culpability; minor, easily repaired damage sits at the lower end of harm. Both axes point the same way here, which is not always the case."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant, in a position of trust as a care worker, steals a modest sum of money from a vulnerable resident over a period of months. Which factor most clearly raises culpability rather than harm?",
+      "options": ["The abuse of a position of trust", "The modest total sum involved", "The vulnerability of the victim as it affects the emotional impact of the loss", "The period over which the offending occurred, considered only as it affects the total value taken"],
+      "correctIndex": 0,
+      "explanation": "Abuse of a position of trust is a classic culpability factor — it speaks to how the offender exploited their role, not to the scale of the resulting loss. Victim vulnerability can also affect harm, but the trust factor is the clearest culpability marker here."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A court has categorised an offence at Step 1 as falling into a mid-range category, giving a starting point of a moderate financial penalty. At the custody threshold stage, what should the court primarily ask?",
+      "options": ["Whether, on the facts as a whole, neither a fine alone nor a community sentence can be justified", "Whether the statutory maximum sentence for the offence includes imprisonment", "Whether the defendant has expressed remorse in open court", "Whether the victim has requested a custodial sentence"],
+      "correctIndex": 0,
+      "explanation": "Section 230 asks a comparative question: can a fine alone or a community sentence be justified? Only if neither can be justified does custody become available — the statutory maximum, remorse, and victim preference are not themselves the test."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Section 57 of the Sentencing Act 2020 lists five purposes a court must have regard to when sentencing an adult offender. Which of the following is closest to the statutory wording of one of those purposes?",
+      "options": ["The reduction of crime, including its reduction by deterrence", "The efficient administration of the court list", "The avoidance of unnecessary delay in proceedings", "The consistency of sentencing outcomes across different courts"],
+      "correctIndex": 0,
+      "explanation": "\"The reduction of crime (including its reduction by deterrence)\" is one of the five statutory purposes in s 57. The other options, while sensible administrative goals, are not part of the statutory list."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Under s 59 of the Sentencing Act 2020, a court dealing with an offender for an offence must follow any relevant sentencing guideline. Which condition allows the court to depart from that guideline?",
+      "options": ["Being satisfied that following it would be contrary to the interests of justice", "Being satisfied that a different guideline is more commonly used in that court", "Receiving joint written agreement from both prosecution and defence counsel", "Concluding that the offender is unlikely to reoffend"],
+      "correctIndex": 0,
+      "explanation": "The only statutory basis for departure under s 59 is that following the guideline would be contrary to the interests of justice. None of the other conditions listed is the statutory test."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following most accurately paraphrases the custody threshold test in s 230 of the Sentencing Act 2020?",
+      "options": ["A custodial sentence must not be passed unless the offence was so serious that neither a fine alone nor a community sentence can be justified", "A custodial sentence may be passed whenever the maximum sentence for the offence includes imprisonment", "A custodial sentence must be passed for any offence involving actual or threatened violence", "A custodial sentence may only be passed with the agreement of the Sentencing Council"],
+      "correctIndex": 0,
+      "explanation": "Section 230(2) sets the threshold in exactly these terms: the offence, or offence combined with associated offences, must be so serious that neither a fine alone nor a community sentence can be justified before custody becomes available."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-14",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A first-time offender pleads guilty to a low-level public order offence with no aggravating features and modest actual harm. A colleague suggests the custody threshold is met simply because the offence is capable of being tried in the Crown Court. Is the colleague correct?",
+      "options": ["No — the venue in which an offence can be tried is not the test; the question is whether a fine or community sentence can be justified", "Yes — any offence triable in the Crown Court automatically crosses the custody threshold", "Yes, because Crown Court offences are always more serious than the custody threshold requires", "No — the custody threshold applies only to offences triable exclusively in the magistrates' court"],
+      "correctIndex": 0,
+      "explanation": "Triability has nothing to do with the s 230 test. The threshold turns on whether, on the specific facts, neither a fine nor a community sentence can be justified — many either-way and even some Crown Court offences will not cross it."
+    },
+    {
+      "itemId": "sqe1-clp-13-test-15",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A court, having categorised an offence at Step 1, moves to Step 2 of the guideline. Which of the following is correctly treated at Step 2 rather than Step 1?",
+      "options": ["Adjusting the starting point for aggravating and mitigating factors", "Assessing which culpability band the offender's conduct falls into", "Assessing which harm category the offence's consequences fall into", "Cross-referencing culpability and harm on the offence's grid"],
+      "correctIndex": 0,
+      "explanation": "Step 1 is where culpability and harm are assessed and cross-referenced on the grid to find a starting point and category range. Adjusting that figure for aggravating and mitigating factors is the work of Step 2."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson is collapsing culpability and harm into a single question — treating one severe fact as if it must push both axes to the extreme, or assuming a binding guideline is really just advisory. Keep the two Step 1 questions separate, and remember s 59 makes guidelines the default, not a suggestion.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.sentencing-purposes"
+  }
+}

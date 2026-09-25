@@ -1,0 +1,336 @@
+{
+  "lessonId": "sqe1-pp-10",
+  "track": "SQE1",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 10,
+  "topicId": "sqe1.property-practice.leasehold-assignment",
+  "title": "Leasehold conveyancing II: assignment, alienation covenants, and guarantees",
+  "subtitle": "Consent to assign, the landlord's statutory duty to respond, and who stays on the hook afterwards",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish absolute, qualified, and fully qualified covenants against assignment, and explain what s 19(1)(a) LTA 1927 does to a qualified covenant",
+    "State the landlord's statutory duty under the Landlord and Tenant Act 1988 to respond to an application for consent to assign, and the consequence of failing to meet it",
+    "Apply the Landlord and Tenant (Covenants) Act 1995 to determine, on a given set of facts, who remains liable on the tenant covenants after an assignment"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Landlord and Tenant Act 1927, s 19(1)(a)", "role": "Implies a proviso into every qualified covenant against assignment that consent is not to be unreasonably withheld" },
+    { "citation": "Landlord and Tenant Act 1988", "role": "Imposes a statutory duty on the landlord to give or refuse consent within a reasonable time, in writing, with reasons" },
+    { "citation": "Landlord and Tenant (Covenants) Act 1995, s 5", "role": "Automatically releases the outgoing tenant on assignment of a 'new tenancy' (granted on or after 1 January 1996)" },
+    { "citation": "Landlord and Tenant (Covenants) Act 1995, s 16", "role": "Permits the landlord to require an Authorised Guarantee Agreement as a condition of consent, limited to the tenant's immediate successor" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Assignment questions reward precision about which regime applies to which lease, and precision about who is actually on the hook after the ink is dry. Where the profile shows application is behind knowledge, this brief note appears: 'You know the rules — this lesson is about applying the right one to the right lease.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well here on the underlying rules before. The test pool is weighted towards fact patterns: expect to work out which lease regime applies and who is liable, not just recite the statute.",
+      "weakKnowledge": "Start with Part 1 and hold onto the three covenant categories before moving on — the rest of the lesson assumes you can tell a qualified covenant from an absolute one without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A tenant assigns a 30-year lease, hands back the keys, and moves on with their life. Eleven years later a solicitor's letter arrives: the assignee has gone into liquidation owing three quarters' rent, and the landlord wants the original tenant to pay. Whether that letter has any force at all turns on one date on the front page of the lease — and on whether anyone thought to ask for a guarantee at the time.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The 1995 Act's old-lease/new-lease split turns on the fixed date of 1 January 1996; nothing in this area is presently under reform."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three doors marked assignment: absolute, qualified, fully qualified",
+        "voice": "structural — sets out the taxonomy the rest of the lesson relies on",
+        "body": [
+          "Every lease says something about whether the tenant can assign it to someone else. What it says falls into one of three categories, and getting the label right is the first move in almost every assignment question.",
+          "An absolute covenant prohibits assignment outright — there is no mechanism for asking permission, because none is on offer. A qualified covenant permits assignment with the landlord's consent, full stop. A fully qualified covenant permits assignment with consent that is not to be unreasonably withheld.",
+          "Here is the trap: leases are very rarely drafted as 'fully qualified' in so many words. Most say 'qualified' — consent required, nothing more. Statute does the rest, and that statute is the subject of Part 2."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Alienation covenant",
+            "definition": "The clause in a lease governing the tenant's ability to part with the property — by assignment, underletting, charging, or sharing occupation. 'Assignment' specifically means transferring the whole of the tenant's remaining interest to someone else."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-10-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the three categories of covenant against assignment, from most restrictive to least.",
+          "acceptableAnswers": ["absolute, qualified, fully qualified", "absolute then qualified then fully qualified"],
+          "modelAnswer": "Absolute (no assignment permitted at all), qualified (assignment permitted with landlord's consent), and fully qualified (assignment permitted with consent not to be unreasonably withheld)."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Section 19(1)(a): the statute that quietly rewrites the lease",
+        "voice": "close statutory reading — walks through what the words actually do",
+        "body": [
+          "Section 19(1)(a) of the Landlord and Tenant Act 1927 takes any qualified covenant against assignment (or underletting, or charging) and implies into it a proviso: consent is not to be unreasonably withheld. It converts a bare 'qualified' covenant into a 'fully qualified' one by operation of law, whether or not the lease says so.",
+          "This only bites on a qualified covenant. An absolute covenant is untouched — the landlord can refuse assignment for any reason, or no reason, because the lease never offered a right to assign in the first place. Students who reach for s 19(1)(a) reflexively, without first checking whether the covenant is genuinely absolute, answer the wrong question.",
+          "Once s 19(1)(a) applies, the burden sits with the landlord to show a refusal was reasonable — reasonableness is judged objectively, by reference to the landlord's own interest in the property and the terms of the lease, not by reference to the tenant's hardship in being refused."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Landlord and Tenant Act 1927, s 19(1)(a)",
+            "text": "In all leases containing a covenant condition or agreement against assigning, underletting, charging or parting with the possession of demised premises or any part thereof without licence or consent, such covenant condition or agreement shall... be deemed to be subject to a proviso to the effect that such licence or consent is not to be unreasonably withheld.",
+            "elements": ["A lease contains a covenant against assignment requiring consent", "The covenant is qualified, not absolute", "A proviso against unreasonable withholding is implied by statute"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-10-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that determines whether s 19(1)(a) LTA 1927 applies to this lease clause.",
+          "scenarioText": "Clause 4.3 of the lease reads: 'The Tenant shall not assign the whole of the Premises without the prior written consent of the Landlord, such consent not to be unreasonably withheld.' The Tenant asks whether s 19(1)(a) adds anything here.",
+          "tappableSpans": ["shall not assign the whole", "without the prior written consent", "such consent not to be unreasonably withheld", "the Tenant asks"],
+          "correctSpan": "such consent not to be unreasonably withheld",
+          "feedbackCorrect": "Correct — the clause is already drafted as fully qualified, so s 19(1)(a) has nothing to add; the reasonableness proviso is express, not implied.",
+          "feedbackIncorrect": "Look for what the clause already says about withholding consent. Where a lease is drafted as fully qualified from the outset, s 19(1)(a) is doing no independent work — it only matters when the drafting stops at 'qualified'."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The landlord's duty to answer — and to answer in writing",
+        "voice": "practical — frames the rule around what a solicitor actually has to chase",
+        "body": [
+          "Section 19(1)(a) tells you consent can't be unreasonably withheld. It says nothing about how quickly the landlord has to decide, or in what form. That gap is filled by the Landlord and Tenant Act 1988.",
+          "Once a tenant makes a written application for consent under a qualified covenant, the 1988 Act imposes a duty on the landlord: to give consent within a reasonable time, except where it is reasonable not to; to serve written notice of the decision within a reasonable time, specifying any conditions or, if refusing, the reasons for refusal; and to pass the application on promptly to anyone else whose consent is also needed (a superior landlord, for example).",
+          "Breach of this duty is actionable as a breach of statutory duty — the tenant can sue for damages, and delay itself can found a claim even where the landlord would ultimately have been entitled to refuse. In practice, this is why a solicitor acting for a tenant chases a licence to assign in writing and keeps a paper trail of every silence."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "What the 1988 Act actually requires",
+            "points": [
+              "A written decision, not a verbal nod at a site visit",
+              "Reasons given for any refusal, not just a bare 'no'",
+              "Any conditions attached must themselves be reasonable",
+              "All of this within a reasonable time — delay is itself a breach, independent of whether refusal would have been justified"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-10-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A tenant applies in writing for consent to assign. Eleven weeks pass with no response of any kind from the landlord, who then telephones to refuse. Has the landlord complied with the Landlord and Tenant Act 1988?",
+          "options": ["Yes — a phone call refusing consent satisfies the Act, since a decision was eventually communicated", "No — the decision must be given within a reasonable time and in writing, and a bare oral refusal after an eleven-week silence satisfies neither requirement", "No — because the Act requires the landlord to consent automatically once eight weeks have passed"],
+          "correctIndex": 1,
+          "explanation": "The 1988 Act requires both timeliness and a written decision with reasons. An eleven-week silence followed by an oral refusal breaches the duty twice over — there is no automatic-consent rule at any fixed number of weeks, but delay of this kind is itself actionable."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Old leases, new leases: privity of contract versus statutory release",
+        "voice": "comparative — builds the two regimes side by side before testing the split",
+        "body": [
+          "The single most important date in this lesson is 1 January 1996. It is the line the Landlord and Tenant (Covenants) Act 1995 draws between 'old tenancies' (granted before that date) and 'new tenancies' (granted on or after it) — and the two regimes work in opposite directions.",
+          "Under an old tenancy, the common law doctrine of privity of contract survives the 1995 Act largely intact. The original tenant remains contractually liable on the tenant covenants for the whole term, even after assigning the lease away — potentially decades after they last had anything to do with the property. Their only real protection is the requirement, introduced by the same Act, that a landlord must serve formal notice on a former tenant within six months of a fixed sum falling due before that former tenant can be pursued for it.",
+          "Under a new tenancy, s 5 of the 1995 Act reverses this: on a lawful assignment, the outgoing tenant is automatically released from the tenant covenants, and the incoming tenant steps into their place. Privity of contract, as a source of ongoing liability after assignment, is abolished for new tenancies outright — subject to the guarantee mechanism in Part 5."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Which regime applies?",
+            "description": "The threshold question for every assignment liability problem.",
+            "nodes": [
+              { "id": "start", "label": "Was the lease granted before 1 January 1996?" },
+              { "id": "old", "label": "Yes → old tenancy: privity of contract continues; original tenant stays liable for the whole term" },
+              { "id": "new", "label": "No → new tenancy: s 5 automatically releases the assignor on a lawful assignment" }
+            ],
+            "edges": [
+              { "from": "start", "to": "old", "label": "Yes" },
+              { "from": "start", "to": "new", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the lease was granted before 1 January 1996. If yes, it is an old tenancy: privity of contract survives and the original tenant remains liable for the whole term even after assigning. If no, it is a new tenancy: s 5 of the 1995 Act automatically releases the assignor on a lawful assignment, subject to any Authorised Guarantee Agreement."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-10-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events in the order they would occur for an old tenancy (granted 1990) where the original tenant assigned in 2010 and the current tenant defaults on rent in 2026.",
+          "items": [
+            "Lease granted in 1990, before the 1995 Act's new-tenancy regime applies",
+            "Original tenant assigns the lease in 2010; privity of contract is unaffected by the assignment",
+            "Current tenant defaults on rent in 2026",
+            "Landlord must serve notice on the original tenant within six months of the rent falling due to preserve any claim against them"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the old-tenancy chain: the 1990 grant date fixes the regime, the 2010 assignment does not release the original tenant, and the landlord's ability to chase them in 2026 depends on the statutory notice being served in time.",
+          "feedbackIncorrect": "Anchor the sequence on the grant date first — it decides which regime applies before anything else happens. Everything downstream (assignment, default, the notice requirement) follows from that."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The Authorised Guarantee Agreement: guaranteeing your successor, not the world",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Section 5's automatic release for new tenancies isn't unconditional in practice. Section 16 of the 1995 Act allows a landlord to require the outgoing tenant to enter an Authorised Guarantee Agreement (AGA) as a condition of consent to assign — but only where the lease itself authorises this, typically as a condition attached to a qualified covenant.",
+          "An AGA is deliberately narrow. The outgoing tenant guarantees performance of the tenant covenants by their immediate assignee only — not by whoever that assignee later assigns to. The moment the immediate assignee itself validly assigns the lease on, the AGA (and the guarantor's exposure under it) comes to an end. This is the single most tested point in the whole topic: students routinely assume an AGA follows the lease down an entire chain of assignments, and it does not.",
+          "Put the two regimes side by side and the contrast is sharp: an old-tenancy original tenant is exposed to the whole term by the common law, with no election involved. A new-tenancy assignor is released automatically by statute, and can only be pulled back in — for one link in the chain — by an AGA the lease specifically permits the landlord to demand."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say an AGA means the original tenant guarantees the lease covenants for the rest of the term, in the same way privity of contract does for an old tenancy.",
+            "whyItsWrong": "An AGA guarantees only the performance of the tenant's immediate assignee. Once that assignee lawfully assigns the lease on to someone else, the AGA falls away with it — the guarantor is not on risk for the second assignee's defaults, however similar this might feel to old-tenancy privity."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-10-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "A new tenancy is assigned twice: Tenant A to Tenant B (A signs an AGA), then Tenant B to Tenant C. Tenant C later defaults on rent. In which scenario is A liable to the landlord for C's default?",
+          "scenarioA": "The lease permits AGAs, A signed one on assigning to B, and B has since validly assigned to C, who is now in default.",
+          "scenarioB": "The lease permits AGAs, A signed one on assigning to B, and B (not C) is the one in default, with no further assignment having taken place.",
+          "correctScenario": "B",
+          "explanation": "A's AGA guarantees only B's performance. Once B assigns on to C, the AGA — and A's exposure under it — ends; A has no liability for C's default in scenario A. In scenario B, B is still the immediate assignee in default, so A's AGA is live."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-10-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A lease permits assignment 'with the landlord's consent' and says nothing more. Which category of covenant is this before any statute is applied?",
+      "options": ["Absolute covenant", "Qualified covenant", "Fully qualified covenant", "No covenant at all"],
+      "correctIndex": 1,
+      "explanation": "Bare consent, with nothing said about withholding it, is the classic qualified covenant — the one s 19(1)(a) LTA 1927 then converts into a fully qualified covenant by implication."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which statute implies a proviso into a qualified covenant against assignment that consent is not to be unreasonably withheld?",
+      "options": ["Landlord and Tenant Act 1954", "Landlord and Tenant Act 1927, s 19(1)(a)", "Landlord and Tenant (Covenants) Act 1995, s 5", "Law of Property Act 1925, s 146"],
+      "correctIndex": 1,
+      "trapExplanation": "The 1954 Act governs business tenancy renewal, not assignment; s 5 of the 1995 Act deals with release on assignment of new tenancies; s 146 LPA 1925 concerns forfeiture. Only s 19(1)(a) LTA 1927 does the work described.",
+      "explanation": "Section 19(1)(a) LTA 1927 is the source of the implied reasonableness proviso in a qualified covenant."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-03",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A commercial lease contains an absolute covenant against assignment. The tenant argues s 19(1)(a) LTA 1927 nonetheless entitles them to demand a reasonable response from the landlord. Is this argument correct?",
+      "options": ["Yes — s 19(1)(a) applies to every covenant against assignment regardless of wording", "No — s 19(1)(a) only implies a reasonableness proviso into qualified covenants; an absolute covenant is unaffected by it", "Yes — but only where the lease is a new tenancy under the 1995 Act", "No — s 19(1)(a) was repealed for leases granted after 1996"],
+      "correctIndex": 1,
+      "explanation": "Section 19(1)(a) operates only on covenants that already permit assignment with consent (qualified covenants). An absolute prohibition offers no consent mechanism for the section to attach to, so it is untouched by the statute."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A tenant applies in writing to assign under a fully qualified covenant. The landlord refuses within a fortnight, in writing, giving as its sole stated reason that it 'would simply prefer to deal with someone else'. What should the tenant's solicitor advise?",
+      "options": ["The refusal is valid because it was given promptly and in writing, which is all the 1988 Act requires", "The refusal is likely unreasonable and therefore in breach of the qualified covenant, because a landlord's personal preference for a different tenant is not, on its own, a recognised ground for withholding consent", "The refusal is automatically void because any refusal under a fully qualified covenant is unlawful", "The refusal is valid provided the landlord also refunds any application fee paid"],
+      "correctIndex": 1,
+      "explanation": "Timeliness and form (the 1988 Act) are necessary but not sufficient. The reason given must also be objectively reasonable, judged by reference to the landlord's legitimate interest in the property — an unexplained preference for a different tenant does not meet that standard."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Under the Landlord and Tenant Act 1988, in what form must a landlord communicate a decision to refuse consent to assign?",
+      "options": ["Orally, provided a witness is present", "In writing, specifying the reasons for refusal", "By conduct, such as returning the application unopened", "There is no prescribed form under the Act"],
+      "correctIndex": 1,
+      "explanation": "The 1988 Act requires a written decision, and where consent is refused, written reasons for the refusal — this is one of the Act's central obligations."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A lease was granted in 1992 and assigned in 2005. The current tenant has just defaulted on rent. Which best describes the original 1992 tenant's exposure?",
+      "options": ["None — assignment always ends the original tenant's liability", "They may still be liable under privity of contract as an old tenancy, subject to the landlord serving a valid notice within six months of the sum falling due", "They are liable only if they signed an Authorised Guarantee Agreement in 2005", "They are liable only for the first three years following the 2005 assignment"],
+      "correctIndex": 1,
+      "trapExplanation": "AGAs are a new-tenancy mechanism introduced by the 1995 Act; a 1992 lease is an old tenancy governed by surviving privity of contract, not by the AGA regime, so the second and fourth options misapply the wrong regime.",
+      "explanation": "Old tenancies keep the original tenant liable for the whole term under privity of contract, with the landlord's ability to enforce a fixed charge against them depending on timely statutory notice."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-07",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Section 5 of the Landlord and Tenant (Covenants) Act 1995 has which effect on assignment of a new tenancy?",
+      "options": ["It requires the outgoing tenant to obtain an AGA in every case", "It automatically releases the outgoing tenant from the tenant covenants on a lawful assignment", "It extends privity of contract to leases granted after 1996", "It gives the landlord an automatic right to refuse consent"],
+      "correctIndex": 1,
+      "explanation": "Section 5 is the release provision: on a lawful assignment of a new tenancy, the assignor drops out of the tenant covenants by operation of statute, not by any election."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A new tenancy is assigned from Tenant X to Tenant Y, with the lease requiring an AGA and X duly signing one. Y later assigns to Tenant Z without incident, and Z then defaults. Can the landlord recover from X?",
+      "options": ["Yes — X's AGA guarantees the lease covenants for the whole of the remaining term, however many further assignments occur", "No — X's AGA guaranteed only Y's performance and lapsed once Y validly assigned to Z", "Yes — but only for the six months following Z's default", "No — because AGAs are unenforceable against original tenants under new tenancies"],
+      "correctIndex": 1,
+      "explanation": "An AGA is limited to the immediate assignee. X guaranteed Y, not Z; once Y assigned on, X's guarantee came to an end regardless of what Z later does."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-09",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "What date does the Landlord and Tenant (Covenants) Act 1995 use to distinguish an 'old tenancy' from a 'new tenancy'?",
+      "options": ["1 January 1996", "1 January 1995", "24 September 2026", "The date of the first rent review"],
+      "correctIndex": 0,
+      "explanation": "A tenancy granted before 1 January 1996 is an old tenancy governed by surviving privity of contract; one granted on or after that date is a new tenancy governed by the 1995 Act's release and AGA regime."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A landlord under a fully qualified covenant receives a tenant's written application to assign, considers it fully, and correctly decides that reasonable grounds exist to refuse. It communicates this decision to the tenant by telephone four days later, promising written confirmation 'in due course', which never arrives. Has the landlord complied with the 1988 Act?",
+      "options": ["Yes — because the substantive decision to refuse was reasonable and made promptly", "No — a reasonable substantive decision does not cure the failure to give written notice of it, which the Act separately requires", "Yes — because a phone call satisfies the notice requirement once confirmed as intended to be followed by writing", "No — because the tenant is automatically entitled to assign once four days have passed"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to treat a reasonable underlying decision as sufficient. The 1988 Act imposes two separate duties — a reasonable decision, and a written communication of it — and breach of the second is actionable even where the first was properly made.",
+      "explanation": "The written-notice requirement is independent of whether the refusal itself was substantively reasonable; failing to confirm in writing is its own breach of statutory duty."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-11",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A lease granted in 2018 contains a qualified covenant against assignment with no mention of an AGA. The landlord wants to require an AGA before consenting to the tenant's proposed assignment. What should the solicitor advise?",
+      "options": ["The landlord may require an AGA as of right on any new tenancy, regardless of the lease wording", "The landlord may only require an AGA if the lease itself authorises this as a condition of consent", "The landlord cannot require an AGA under any circumstances after 1996", "The tenant must offer an AGA automatically whenever assigning a new tenancy"],
+      "correctIndex": 1,
+      "explanation": "Section 16 of the 1995 Act permits an AGA to be required only where the lease authorises it as a condition of giving consent — it is not a default entitlement that arises simply because the tenancy postdates 1996."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A tenant under an old tenancy assigned the lease in 2015 and has heard nothing since. In 2026 the current tenant falls eight months into rent arrears. What must the landlord do before it can pursue the original 2015 tenant for those arrears?",
+      "options": ["Nothing — the original tenant remains automatically liable with no further steps required", "Serve a valid notice on the original tenant within six months of each sum falling due", "Obtain a court order releasing the current tenant first", "Nothing can be recovered from the original tenant under any circumstances"],
+      "correctIndex": 1,
+      "explanation": "Even though privity of contract keeps an old-tenancy original tenant exposed, the landlord must still serve timely statutory notice on them for each fixed sum before it can be recovered — silence for years does not itself extinguish the original tenant's liability, but a missed notice deadline does."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following correctly pairs a covenant type with the consequence of a landlord refusing consent to assign under it?",
+      "options": ["Absolute covenant — refusal must be reasonable or it is void", "Qualified covenant, unaffected by s 19(1)(a) — refusal need never be justified, since no reasonableness proviso applies to it", "Fully qualified covenant — refusal must be reasonable, and the burden is on the landlord to justify it", "Qualified covenant — the tenant may assign regardless of any refusal, since 'qualified' means consent is optional"],
+      "correctIndex": 2,
+      "trapExplanation": "The 1927 Act converts virtually all qualified covenants (in leases it applies to) into fully qualified ones, so a genuinely unqualified refusal right is confined to absolute covenants — the reverse of what the wrong options suggest.",
+      "explanation": "Under a fully qualified covenant (whether express or implied via s 19(1)(a)), the landlord's refusal must be reasonable, and it bears the burden of showing that it was."
+    },
+    {
+      "itemId": "sqe1-pp-10-test-14",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "Two leases are otherwise identical save for their grant dates: Lease A was granted in 1994, Lease B in 2018. Both original tenants assigned five years after grant and neither signed anything beyond the assignment itself. Which best describes the position of each original tenant today?",
+      "options": ["Both remain fully liable, because assignment never affects an original tenant's liability under either regime", "The Lease A tenant remains potentially liable under surviving privity of contract; the Lease B tenant was automatically released by s 5 of the 1995 Act on assignment", "Both were automatically released on assignment, because the 1995 Act applies to all leases regardless of grant date", "The Lease B tenant remains liable because no AGA was signed, while the Lease A tenant was released because old tenancies are outside the 1995 Act entirely"],
+      "correctIndex": 1,
+      "explanation": "Lease A, granted before 1 January 1996, is an old tenancy where privity of contract survives assignment. Lease B, granted after that date, is a new tenancy where s 5 releases the assignor automatically — and since no AGA was required or signed, there is nothing pulling the Lease B tenant back into liability."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson is treating the three separate questions — is the covenant qualified at all, has the landlord met its 1988 Act duties, and which liability regime applies post-assignment — as one question. They are three, and an SQE1 fact pattern is usually testing which one is actually live.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.leasehold-assignment"
+  }
+}

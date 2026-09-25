@@ -1,0 +1,363 @@
+{
+  "lessonId": "sqe1-clp-14",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 14,
+  "topicId": "sqe1.criminal-practice.sentencing-types-guilty-plea",
+  "title": "From discharge to custody, and the price of pleading early",
+  "subtitle": "The sentencing ladder, the guilty plea discount, and Newton hearings",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Place the available sentence types — discharge, fine, community order, suspended sentence, and immediate custody — in order on the sentencing ladder",
+    "Apply the sliding guilty-plea discount to a fact pattern, identifying how the stage of the plea affects the available reduction",
+    "Explain when a Newton hearing is required and the risk it creates to the guilty-plea discount"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Sentencing Act 2020", "role": "Statutory framework for the sentencing ladder: discharge, fine, community order, suspended sentence, custody" },
+    { "citation": "R v Newton (1982) 77 Cr App R 13", "role": "Establishes the procedure for resolving a factual dispute between a guilty plea and the prosecution case that affects sentence" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is where sentencing stops being theory and becomes advice you give a client in the interview room — what a plea is actually worth, and when. Where the profile shows application lagging behind recall, this note appears: 'You know the ladder exists. This lesson is about advising a real client on where they'll land on it.'",
+    "profileHooks": {
+      "weakApplication": "The test pool here is weighted heavily towards fact patterns — advising on plea timing, spotting when a Newton hearing is needed. Work through the scenarios slowly rather than reaching for the nearest familiar term.",
+      "weakKnowledge": "Before the fact patterns, make sure you can recite the sentencing ladder in order and the guilty-plea discount stages without hesitation — Parts 1 to 3 build that foundation."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A client asks a blunt question in the first interview: 'If I plead guilty now, what happens to me?' The honest answer has two parts — where on the sentencing ladder the offence sits, and how much credit an early plea buys against it. Get either part wrong and the advice is worthless, however confidently it's delivered.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The guilty-plea discount framework in the Sentencing Council's guideline has itself been revised within recent years; always confirm the current percentages and stage definitions against the guideline in force at the time of advice — the structure taught here (a sliding scale keyed to the stage of the plea) is the stable, examinable principle."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The ladder: five rungs from nothing to custody",
+        "voice": "structural — sets out the sequence before the detail",
+        "body": [
+          "English sentencing works on a ladder, and the position on that ladder is meant to track seriousness: the more serious the offence (after Step 1 and Step 2 of the guideline), the higher the rung. Five broad rungs matter for SQE1, from least to most severe.",
+          "At the bottom sits the discharge — an absolute discharge (no penalty at all, reserved for the most trivial or technical offending) or a conditional discharge (no immediate penalty, but the offender can be resentenced for the original offence if they reoffend within a set period, typically up to two years). Above that sits the fine, the most commonly imposed sentence in the criminal courts by volume, calculated with reference to the offender's means as well as the offence's seriousness.",
+          "Above the fine sits the community order — a sentence served in the community but with real requirements attached (unpaid work, a curfew, a rehabilitation activity requirement, and others), available once the offence is serious enough to cross the community order threshold but not so serious as to require custody. Above that sits the suspended sentence order: a custodial sentence in every sense — it has a length, and it can be activated — but one that does not take immediate effect provided the offender complies with its requirements and doesn't reoffend during the operational period.",
+          "At the top of the ladder sits immediate custody: the sentence actually takes effect straight away. The custody threshold from Lesson 13 is the gatekeeper for the top two rungs — nothing above a community order is available unless that threshold is crossed."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The sentencing ladder (least to most severe)",
+            "points": [
+              "Discharge — absolute (no penalty) or conditional (no immediate penalty, resentencing risk if reoffending occurs)",
+              "Fine — set with reference to seriousness and the offender's means",
+              "Community order — requirements served in the community",
+              "Suspended sentence order — a custodial sentence not immediately activated, subject to compliance",
+              "Immediate custody — the sentence takes effect straight away"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-14-check-01",
+          "type": "sequence",
+          "skillTag": "knowledge",
+          "prompt": "Put these sentence types in order from least to most severe on the sentencing ladder.",
+          "items": ["Conditional discharge", "Fine", "Community order", "Suspended sentence order", "Immediate custody"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "feedbackCorrect": "That's the ladder — and the custody threshold from Lesson 13 is what gates access to the top two rungs.",
+          "feedbackIncorrect": "Check the order again — discharge and fine sit below the custody threshold entirely, the community order is the highest non-custodial option, and a suspended sentence is technically custodial even though it isn't immediately activated."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Choosing the right rung on the facts",
+        "voice": "case-narrative — works two contrasting clients through the ladder",
+        "body": [
+          "Consider two clients convicted of the same offence — handling stolen goods of modest value. Client A has no previous convictions, cooperated fully, and the offence was a one-off lapse of judgement. Client B has several recent convictions for similar dishonesty offences and breached a previous community order.",
+          "For Client A, once Step 1 and Step 2 place the offence at the lower end of the guideline range, the custody threshold is unlikely to be crossed at all — a fine or a modest community order (perhaps with a rehabilitation activity requirement) is the realistic range, and a solicitor advising them should say so plainly rather than alarming them with talk of prison.",
+          "For Client B, the same offence facts sit in a different context: the aggravating history and the breach of trust in a previous order push the case towards the custody threshold, and once crossed, the next question is whether the court can properly suspend any custodial sentence — which depends on factors including the risk of reoffending, whether appropriate punishment can be achieved by requirements attached to the suspension, and whether immediate custody would cause a disproportionate impact on others (for example, dependants).",
+          "The skill being tested here is not reciting the ladder — it's placing a specific client's facts on it and explaining, in terms a client understands, why they sit where they do."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Suspended sentence order (SSO)",
+            "definition": "A custodial sentence that is not immediately activated. It carries a custodial term and an operational period; the court will normally attach requirements (similar to a community order). Breach of those requirements, or reoffending during the operational period, puts activation of the custodial term back on the table."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-14-check-02",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client with a settled history of relevant previous convictions and a recent breach of a community order is convicted of an offence that clearly crosses the custody threshold. Which of the following is the most accurate advice about a suspended sentence?",
+          "options": ["A suspended sentence remains possible in principle, but the court will scrutinise the risk of reoffending and the client's recent breach history closely before deciding whether to suspend", "A suspended sentence is automatically unavailable once any previous community order has been breached", "Crossing the custody threshold guarantees immediate custody with no possibility of suspension", "Suspension is available only for first-time offenders"],
+          "correctIndex": 0,
+          "explanation": "Crossing the custody threshold makes custody available, not mandatory in its immediate form — the court still separately considers whether the sentence can properly be suspended, weighing factors including the risk of reoffending and any relevant breach history, which here would weigh against suspension but does not rule it out automatically."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The guilty-plea discount: a sliding scale, not a flat rate",
+        "voice": "direct — sets up the mechanics before the trap in Part 5",
+        "body": [
+          "A guilty plea earns a reduction in sentence — but the size of that reduction depends on when, not just whether, the defendant pleads. The Sentencing Council's guideline sets a sliding scale keyed to the stage of proceedings: the earlier the plea, the greater the discount.",
+          "The maximum reduction — up to one third — is available for a guilty plea entered at the first stage of proceedings, generally the first hearing in the magistrates' court (or the equivalent first reasonable opportunity for an indictable-only matter destined for the Crown Court). Once that first-stage window has passed, the maximum available reduction drops — typically to around a quarter for a plea entered after the first stage but before the trial date is set, and reduces further, down to a maximum of around one tenth, for a plea entered on the day of trial itself.",
+          "The discount is not automatic at the stated maximum — it is a maximum available at each stage, and the court retains discretion as to the actual percentage applied on the facts. Nor is the discount forfeited simply because the evidence against a defendant is overwhelming: the guideline is deliberately built so that even a defendant facing a very strong prosecution case is still encouraged to plead early, because the discount rewards the system-wide benefit of an early plea (saved court time, spared witnesses) rather than rewarding a defendant only for waiving a genuine dispute about guilt.",
+          "For a client asking 'what do I get for pleading now versus waiting', the honest answer is always: it depends on the stage, and the stage that matters is measured from now, not from the date of the offence."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Guilty plea discount — sliding scale",
+            "points": [
+              "Plea at the first stage of proceedings — maximum reduction of up to one third",
+              "Plea after the first stage but before the trial date is set — maximum reduction reduces, typically to around one quarter",
+              "Plea entered on the day of trial — maximum reduction falls further, typically to around one tenth",
+              "The stated figures are maxima, not guaranteed reductions, and the current guideline should always be checked for the exact stage definitions and percentages in force"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-14-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A defendant enters a guilty plea at the first hearing in the magistrates' court, at the earliest realistic opportunity. Where does the available discount sit on the scale?",
+          "sliderLabels": ["No discount available", "Maximum discount available (up to one third)"],
+          "correctPosition": "maximum",
+          "explanation": "A plea at the first stage of proceedings attracts the highest available reduction on the sliding scale — up to one third, subject to the court's overall discretion on the facts."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When a guilty plea isn't the end of the fact-finding: Newton hearings",
+        "voice": "Socratic — poses the procedural puzzle before resolving it",
+        "body": [
+          "A guilty plea normally ends any dispute about the facts — the defendant admits the offence, and the court moves to sentence. But what happens when the defendant pleads guilty on one version of events, and the prosecution's version — which the defendant disputes — would justify a materially higher sentence?",
+          "This is exactly the problem in R v Newton (1982) 77 Cr App R 13. The defendant pleaded guilty to a serious sexual offence but gave an account of the circumstances markedly less serious than the victim's account; the prosecution did not accept the defendant's version. The Court of Appeal held that where a guilty plea is accompanied by a factual basis that the prosecution does not accept, and the dispute is one that would materially affect sentence, the court should resolve it before sentencing — either by hearing evidence and deciding the facts itself (a Newton hearing), or, in limited cases, by accepting the defendant's version if it is not manifestly incredible even though the prosecution disputes it.",
+          "A Newton hearing operates like a trial without a jury on the disputed issue: the court hears evidence, applies the criminal standard of proof, and decides which version of the facts to sentence on. It is not a re-run of the whole case — guilt is already admitted — only the specific disputed facts that bear on sentence are in issue.",
+          "The procedural trigger to spot in a fact pattern is simple: guilty plea, plus a factual account from the defendant that differs from the prosecution's account in a way that would change the sentence, plus the prosecution rejecting that account. All three elements need to be present before a Newton hearing is required."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Newton",
+            "citation": "(1982) 77 Cr App R 13",
+            "court": "Court of Appeal",
+            "year": 1982,
+            "factsShort": "The defendant pleaded guilty but gave an account of the offence significantly less serious than the prosecution's version, which the prosecution did not accept.",
+            "ratioShort": "Where a guilty plea comes with a disputed factual basis that would materially affect sentence, the court must resolve the dispute — typically by hearing evidence — before sentencing.",
+            "expanded": {
+              "facts": "Newton pleaded guilty to a serious sexual offence against his wife. His account of what had happened was materially less serious than the account given by the victim, and the prosecution did not accept his version. The sentencing judge sentenced on the basis of the prosecution's version without resolving the dispute through evidence.",
+              "judgmentExtract": "The Court of Appeal held that where there is a substantial conflict between the two accounts, the judge should either hear evidence to resolve it, or, if no evidence is called, should give the defendant the benefit of any reasonable doubt by sentencing on the basis most favourable to him consistent with his plea — unless his account is out of the ordinary or manifestly false.",
+              "significance": "This case gives its name to the procedure now used whenever a guilty plea is accompanied by a genuinely disputed factual basis material to sentence. It protects a defendant from being sentenced on a version of events they never admitted, without requiring a full trial on an issue where guilt is not in dispute."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-14-check-04",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A defendant pleads guilty to supplying a controlled drug. He says he supplied the drug on a single occasion, as a favour, for no payment. The prosecution's evidence, which it does not withdraw, points to repeated supply for profit over several months — a materially more serious basis for sentence. Analyse whether a Newton hearing is required.",
+          "factsToOrder": [
+            "The defendant has pleaded guilty",
+            "The defendant's account is a single, unpaid, one-off supply",
+            "The prosecution's version is repeated supply for profit over months",
+            "The prosecution does not accept the defendant's account",
+            "The difference between the two accounts would materially affect the sentence"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the disputed factual basis for the guilty plea requires a Newton hearing before sentencing.",
+            "rule": "Where a defendant pleads guilty on a factual basis that the prosecution does not accept, and the dispute would materially affect sentence, the court should resolve it — typically by hearing evidence — rather than sentence on an assumed version (R v Newton).",
+            "application": "The defendant has pleaded guilty, so guilt itself is not in issue. But his account (single, unpaid, one-off supply) and the prosecution's account (repeated, paid, sustained supply) diverge sharply, the prosecution does not accept his version, and sentencing on one account rather than the other would plainly produce a materially different sentence — single low-level social supply attracts a far lower starting point than sustained commercial dealing.",
+            "conclusion": "All three Newton triggers are present (a guilty plea, a genuinely disputed factual basis, and a dispute material to sentence), so a Newton hearing is required before the court can sentence."
+          }
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Losing the discount: the risk a Newton hearing creates",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "A Newton hearing is not a cost-free safety net for a defendant who wants to argue a more favourable version of events while keeping the full guilty-plea discount in reserve. If the court holds a Newton hearing and rejects the defendant's account, preferring the prosecution's version, the defendant is sentenced on the facts the court has found — and the guilty-plea discount is at real risk of reduction.",
+          "The reasoning is straightforward once stated: the discount rewards a defendant for sparing the system the burden of a full trial and for genuine acceptance of responsibility. A defendant who forces a contested Newton hearing and loses it has, in substance, required the court to resolve a disputed issue much as a trial would — calling and testing evidence, on the point that mattered most to sentence. Courts are entitled to reflect that by reducing the credit that would otherwise be given for the plea, though the reduction is a matter of degree and the defendant does not necessarily lose the discount altogether merely by losing the Newton hearing.",
+          "Advising a client on whether to run a Newton hearing therefore means advising on a real trade-off: contest the facts and, if successful, be sentenced on a much more favourable basis — or contest them, lose, and face sentence on the prosecution's account with a reduced guilty-plea discount on top. This is precisely the calculation a solicitor needs to walk a client through before the hearing, not after."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume a defendant who loses a Newton hearing simply keeps the full guilty-plea discount, since the plea itself was never withdrawn.",
+            "whyItsWrong": "The plea surviving is not the same as the discount surviving intact. Losing a contested Newton hearing — where the court finds against the defendant's account after hearing evidence — puts the size of the discount genuinely at risk, because the defendant has, in effect, required a trial-like process on the disputed facts rather than accepting responsibility on the version the court ultimately finds true."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-14-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A defendant pleads guilty but disputes the prosecution's account of the offence. A Newton hearing is held and the court rejects the defendant's account entirely, accepting the prosecution's version. What is the most accurate statement of the consequence for the guilty-plea discount?",
+          "options": ["The defendant is sentenced on the facts the court has found, and the discount is genuinely at risk of reduction because a contested hearing was required and lost", "The defendant automatically loses the guilty-plea discount in full, regardless of the circumstances", "The guilty-plea discount is unaffected, since the plea of guilty itself was never withdrawn", "The court must offer the defendant a chance to withdraw the plea before sentencing"],
+          "correctIndex": 0,
+          "trapExplanation": "The two tempting wrong answers sit at opposite extremes: assuming the discount is automatically wiped out (too harsh — the reduction is a matter of degree, not an automatic forfeiture) and assuming the discount is unaffected because the plea stood (too generous — it ignores why the discount exists in the first place).",
+          "explanation": "Losing a contested Newton hearing puts the discount genuinely at risk of reduction, reflecting that the defendant required the court to resolve the disputed facts much as a trial would, but this is a matter of degree rather than an automatic, total forfeiture."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-14-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following correctly places the sentence types in order from least to most severe on the sentencing ladder?",
+      "options": ["Discharge, fine, community order, suspended sentence, immediate custody", "Fine, discharge, community order, immediate custody, suspended sentence", "Community order, discharge, fine, suspended sentence, immediate custody", "Discharge, community order, fine, suspended sentence, immediate custody"],
+      "correctIndex": 0,
+      "explanation": "The ladder runs discharge, fine, community order, suspended sentence order, and finally immediate custody, with the custody threshold gating access to the top two rungs."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A magistrate imposes a conditional discharge on a defendant for a minor offence. What is the practical consequence if the defendant reoffends within the specified period?",
+      "options": ["The defendant can be resentenced for the original offence, as well as being sentenced for the new one", "Nothing — a conditional discharge has no consequences attached once imposed", "The original offence is automatically wiped from the defendant's record", "The defendant must serve an automatic custodial sentence for the original offence"],
+      "correctIndex": 0,
+      "explanation": "A conditional discharge carries no immediate penalty, but reoffending within the specified period exposes the defendant to being resentenced for the original offence in addition to being dealt with for the new one."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A client asks whether a suspended sentence order means they avoid custody altogether. Which of the following best describes the correct position?",
+      "options": ["No — a suspended sentence is a custodial sentence with a length attached; it is simply not activated immediately, provided the offender complies with its requirements", "Yes — a suspended sentence is legally equivalent to a community order and is not a custodial sentence at all", "Yes — a suspended sentence can never be activated once imposed", "No — a suspended sentence takes effect immediately in every case"],
+      "correctIndex": 0,
+      "explanation": "A suspended sentence is a genuine custodial sentence in terms and length; what is suspended is its immediate activation, which depends on the offender complying with attached requirements and not reoffending during the operational period."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A trainee is asked when the maximum available guilty-plea discount of up to one third applies. Which of the following correctly identifies that stage?",
+      "options": ["A guilty plea entered at the first stage of proceedings, generally the first hearing", "A guilty plea entered at any point before the jury retires to consider its verdict", "A guilty plea entered after the trial date has been fixed but before the trial itself", "A guilty plea entered on the day of trial, provided it is before the trial actually starts"],
+      "correctIndex": 0,
+      "trapExplanation": "Students often assume the discount is available at its maximum right up until the trial starts, provided the case never actually goes to a full hearing. In fact the maximum reduction is reserved for the earliest stage — the discount reduces as the case moves through later stages, well before the trial date itself.",
+      "explanation": "The maximum discount of up to one third is reserved for a plea entered at the first stage of proceedings; later pleas attract progressively smaller maxima."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A defendant facing overwhelming prosecution evidence argues she should get no guilty-plea discount at all, since she 'had no real choice' but to plead guilty. Is this an accurate account of how the discount operates?",
+      "options": ["No — the discount is not withheld merely because the evidence is strong; it rewards the practical benefits of an early plea regardless of how strong the case against the defendant was", "Yes — a defendant facing overwhelming evidence receives no credit for pleading guilty", "Yes, but only if the defendant can show she genuinely believed she might be acquitted", "No — a defendant facing overwhelming evidence automatically receives the maximum one-third discount regardless of when the plea is entered"],
+      "correctIndex": 0,
+      "trapExplanation": "Strength of the prosecution case is a common but mistaken basis for denying, or for automatically maximising, the discount. The discount is stage-dependent, not strength-of-case-dependent — it exists to reward the system-wide benefits of an early plea, and applies according to the stage reached, whatever the strength of the evidence.",
+      "explanation": "The sliding scale is keyed to the stage at which the plea is entered, not to how strong the prosecution's case was — an early plea still attracts credit even where conviction was near-certain."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A defendant pleads guilty to theft but disputes the value of the property taken, giving a figure well below the amount the prosecution alleges, which the prosecution maintains. The disputed value would move the offence into a significantly higher harm category. What should the solicitor advise?",
+      "options": ["A Newton hearing is likely required, since the dispute is genuine, unresolved, and would materially affect sentence", "No further procedure is needed, since the defendant has already pleaded guilty to the offence", "The court must simply accept the defendant's figure because it is more favourable to him", "The prosecution must formally withdraw the charge if it disagrees with the defendant's account"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming that pleading guilty resolves every factual question relevant to sentence. It resolves guilt, not necessarily the specific facts that determine how serious that guilt is — here, the disputed value is exactly the kind of materially relevant dispute Newton exists to address.",
+      "explanation": "All three Newton triggers are present: a guilty plea, a factual dispute the prosecution does not accept, and a dispute that would materially change the sentence. A Newton hearing (or an acceptance of the defendant's account if not manifestly incredible) is required."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A defendant loses a contested Newton hearing: the court prefers the prosecution's more serious account over his own. He argues he should still receive the full one-third discount because he pleaded guilty at the earliest opportunity. What is the strongest response to this argument?",
+      "options": ["The stage of the plea affects the maximum available discount, but losing a contested Newton hearing puts the actual discount given at real risk of reduction, separate from the stage question", "He is correct — the stage of the plea is the only factor relevant to the discount, so the Newton hearing outcome is irrelevant", "He is entitled to no discount at all once he has contested any fact at a Newton hearing, regardless of stage", "The Newton hearing outcome only affects sentence length, never the discount itself"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is treating the stage-of-plea question and the Newton-hearing-outcome question as the same issue. They are related but distinct: an early plea sets the maximum discount available in principle, while losing a contested Newton hearing is a separate reason the court may reduce the credit actually given, reflecting the trial-like process the defendant required.",
+      "explanation": "Pleading early sets the ceiling on the available discount; losing a Newton hearing is a separate ground on which the court may reduce the credit actually awarded within or below that ceiling."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant enters a guilty plea for the first time on the day fixed for trial, having previously indicated a not-guilty plea at every earlier hearing. Which of the following best describes the likely guilty-plea discount available to him?",
+      "options": ["A reduced discount, at the lower end of the sliding scale reserved for a plea entered on the day of trial", "The full one-third discount, since a guilty plea before the trial actually starts is treated the same regardless of stage", "No discount at all, since he previously maintained a not-guilty plea", "A discount fixed solely by reference to the strength of the prosecution's evidence"],
+      "correctIndex": 0,
+      "explanation": "Pleading guilty for the first time on the day of trial attracts the lowest maximum reduction on the sliding scale, reflecting that the case proceeded through all the earlier stages without the benefit of an earlier plea."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant with a genuine risk of reoffending, but also with caring responsibilities that would be severely disrupted by immediate imprisonment, is convicted of an offence that crosses the custody threshold. Which sentence type should the solicitor realistically flag as worth arguing for?",
+      "options": ["A suspended sentence order, since the court can weigh the risk of reoffending against the disproportionate impact of immediate custody on others when deciding whether to suspend", "An absolute discharge, since the custody threshold has already been crossed", "A fine, since fines are always available once custody is being considered", "There is no realistic non-immediate-custody option once the custody threshold is crossed"],
+      "correctIndex": 0,
+      "explanation": "Crossing the custody threshold does not force immediate custody — the court separately considers whether to suspend, weighing factors including reoffending risk and disproportionate impact on others (such as dependants), which is exactly the argument worth raising here."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-10",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A defendant pleads guilty at the first hearing but gives an account of events that the prosecution accepts as broadly accurate, differing only in minor, sentence-irrelevant detail. Is a Newton hearing required?",
+      "options": ["No — a Newton hearing is only required where the dispute is genuine and would materially affect sentence, which is not the case here", "Yes — any disagreement at all between the defendant's account and the prosecution's account requires a Newton hearing", "Yes, but only because the plea was entered at the first hearing", "No — Newton hearings are never available once a guilty plea has been entered at the first stage"],
+      "correctIndex": 0,
+      "explanation": "Newton hearings are reserved for disputes the prosecution does not accept and that would materially affect the sentence. A minor difference in detail that the prosecution accepts as broadly accurate, and which would not change the outcome, does not trigger the procedure."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "The Sentencing Council's guilty-plea guideline sets a sliding scale of reductions. Which of the following correctly describes the general shape of that scale?",
+      "options": ["The maximum available reduction decreases as the case moves through later procedural stages, from up to one third at the earliest stage down to a much smaller maximum on the day of trial", "The reduction is a flat one-third at any point up to the day of trial, and zero thereafter", "The reduction increases the later in proceedings the plea is entered, to reward defendants who genuinely contest the evidence before conceding", "The reduction is fixed entirely by the offence type and does not vary with the stage of the plea"],
+      "correctIndex": 0,
+      "explanation": "The guideline is a sliding scale: the earlier the plea, the greater the maximum available reduction, falling as the case progresses through later stages towards trial."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following best states the principle established in R v Newton (1982) 77 Cr App R 13?",
+      "options": ["Where a guilty plea is accompanied by a factual dispute the prosecution does not accept, and the dispute would materially affect sentence, the court should resolve it, typically by hearing evidence, before sentencing", "A defendant who pleads guilty can never subsequently dispute any fact relevant to sentence", "The prosecution must always accept a defendant's account of events once a guilty plea has been entered", "A Newton hearing is required in every case where a defendant pleads guilty to more than one offence"],
+      "correctIndex": 0,
+      "explanation": "Newton establishes the procedure and its trigger precisely: a genuine, prosecution-disputed factual issue that would materially affect sentence, following a guilty plea, calls for resolution before the court sentences."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "In a Newton hearing, which standard of proof does the court apply in resolving the disputed facts?",
+      "options": ["The criminal standard — beyond reasonable doubt — as in a trial", "The civil standard — the balance of probabilities", "No fixed standard; the court exercises unstructured discretion", "The standard applied is whichever the defendant proposes"],
+      "correctIndex": 0,
+      "explanation": "A Newton hearing operates like a trial without a jury on the disputed issue, and the court applies the ordinary criminal standard of proof — beyond reasonable doubt — to resolve which account of the facts is correct."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-14",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A defendant's solicitor is deciding whether to advise contesting a factual dispute at a Newton hearing rather than accepting the prosecution's account for sentencing purposes. Which consideration is most directly relevant to that advice?",
+      "options": ["The risk that losing the hearing could reduce the guilty-plea discount, weighed against the benefit of a more favourable sentence if the defendant's account is accepted", "Whether the defendant has previously entered a not-guilty plea at any earlier hearing", "Whether the offence is triable only on indictment", "Whether the victim supports the prosecution's account of events"],
+      "correctIndex": 0,
+      "explanation": "The core of this advice is a trade-off: the possible reward of a more favourable sentencing basis if the defendant's account succeeds, against the real risk of a reduced guilty-plea discount if it is rejected."
+    },
+    {
+      "itemId": "sqe1-clp-14-test-15",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A trainee assumes that a suspended sentence order sits on the same rung of the sentencing ladder as a community order, since neither results in the defendant going to prison immediately. Is this correct?",
+      "options": ["No — a suspended sentence order is a custodial sentence in law, and sits above a community order on the ladder, even though it is not immediately activated", "Yes — both are non-custodial sentences of equal severity", "No — a suspended sentence order is in fact less severe than a discharge", "Yes, provided the offence does not cross the custody threshold"],
+      "correctIndex": 0,
+      "trapExplanation": "The 'no immediate prison' feature of a suspended sentence is what misleads students into equating it with a community order. Legally, a suspended sentence is a custodial sentence — it can only be imposed once the custody threshold is crossed — and sits above the community order on the ladder precisely because it carries that custodial character.",
+      "explanation": "A suspended sentence order is custodial in nature and requires the custody threshold to be crossed before it is even available, placing it above a community order on the ladder despite not being immediately activated."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is treating related-but-distinct questions as one: the stage of a guilty plea sets the maximum discount available, but losing a contested Newton hearing is a separate reason the discount can be reduced; crossing the custody threshold makes custody available, but a suspended sentence remains a live option the court must separately consider.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.sentencing-types-guilty-plea"
+  }
+}

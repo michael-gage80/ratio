@@ -133,9 +133,11 @@ enum LessonComponent: Decodable {
     case trap(commonWrongAnswer: String, whyItsWrong: String)
     case doctrineMap(DoctrineMap)
     case timeline(title: String, events: [TimelineEvent])
+    /// Solicitors Accounts: a ledger (client and business columns) at a point in a worked transaction.
+    case ledgerTable(title: String, columns: [String], rows: [[String]])
 
     private enum CodingKeys: String, CodingKey {
-        case type, citation, text, elements, term, definition, label, points, commonWrongAnswer, whyItsWrong, title, events
+        case type, citation, text, elements, term, definition, label, points, commonWrongAnswer, whyItsWrong, title, events, columns, rows
     }
 
     init(from decoder: Decoder) throws {
@@ -158,6 +160,10 @@ enum LessonComponent: Decodable {
             self = .doctrineMap(try DoctrineMap(from: decoder))
         case "timeline":
             self = .timeline(title: try c.decode(String.self, forKey: .title), events: try c.decode([TimelineEvent].self, forKey: .events))
+        case "ledgerTable":
+            self = .ledgerTable(title: try c.decode(String.self, forKey: .title),
+                                columns: try c.decode([String].self, forKey: .columns),
+                                rows: try c.decode([[String]].self, forKey: .rows))
         case let other:
             throw DecodingError.dataCorruptedError(forKey: .type, in: c, debugDescription: "Unknown component \(other)")
         }

@@ -1,0 +1,432 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-06",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 6,
+  "topicId": "sqe1.business-law.equity-financing",
+  "title": "Equity financing: share classes and pre-emption rights",
+  "subtitle": "Ordinary, preference and redeemable shares, statutory pre-emption, and varying class rights",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish ordinary, preference, redeemable and bespoke share classes and explain what each is typically used for",
+    "Explain the s 561 statutory pre-emption right on an allotment of equity securities and how it can be disapplied",
+    "Apply the s 630 procedure and s 633 minority protection to a proposed variation of class rights"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006, s 561", "role": "Statutory pre-emption right on the allotment of new equity securities" },
+    { "citation": "Companies Act 2006, ss 569-571", "role": "Mechanisms for excluding or disapplying the s 561 pre-emption right" },
+    { "citation": "Companies Act 2006, s 630", "role": "Procedure for varying class rights, including the 75% consent threshold" },
+    { "citation": "Companies Act 2006, s 633", "role": "Minority shareholders' right to apply to court to have a variation of class rights set aside" },
+    { "citation": "Companies Act 2006, ss 684-689", "role": "Framework governing redeemable shares" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can list 'ordinary, preference, redeemable' as share types from memory. Where the profile shows knowledge is ahead of application, this note appears: 'You know the categories — this lesson is about the two protections that actually get tested: pre-emption on new allotments, and the minority's right to challenge a class rights variation.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on naming share classes before. The test pool below leans on scenarios: whether pre-emption applies, whether it's been validly disapplied, and whether a class rights variation can be challenged.",
+      "weakKnowledge": "Start with Part 1 and be precise about what each share class actually promises its holder — the rest of the lesson assumes you can tell preference shares from redeemable shares without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company allots new shares to a single new investor. Every existing shareholder is furious — not necessarily because the price was wrong, but because none of them was offered the chance to buy in first and keep their percentage stake. Whether that anger has any legal teeth depends entirely on one statutory right most founders have never heard of until it's too late."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The share class toolkit",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "'Shares' is not one product. A company's articles (or the terms of an allotment) can create different classes, each carrying its own bundle of rights over dividends, capital on a winding up, and voting. Four categories come up repeatedly in practice.",
+          "Ordinary shares are the default: no special priority, but the residual claim on both dividends and surplus capital once everyone with priority rights has been paid — the class most exposed to the company's fortunes, for better and worse, and typically carrying one vote per share.",
+          "Preference shares typically carry a fixed dividend, paid in priority to ordinary shareholders, and often priority to a return of capital on a winding up (up to a fixed amount) — but usually with no further participation in surplus profits beyond that fixed return, and often no voting rights except in defined circumstances (for example, when their dividend is in arrears).",
+          "Redeemable shares can be bought back by the company itself, on terms fixed at issue or agreed later — a mechanism companies use to return capital to a class of investors on an agreed timetable without a full share buyback process for the class as a whole (subject to the statutory framework in ss 684-689, including the requirement that redeemable shares are only issued if the company also has at least one class of non-redeemable shares in issue). Beyond these three, companies are free to create genuinely bespoke classes — deferred shares, non-voting shares, or shares with tailored dividend and return-of-capital rights designed around a specific investor's requirements."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Four share class categories at a glance",
+            "points": [
+              "Ordinary — residual claim on dividends and capital, no priority, typically full voting rights",
+              "Preference — fixed dividend priority, often capital priority on winding up, usually limited or no voting rights",
+              "Redeemable — can be bought back by the company on agreed terms; a private company cannot have redeemable shares as its only class",
+              "Bespoke — any other combination of rights tailored to a class or a specific investor, subject to the articles and CA 2006's general framework"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-06-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Which share class typically carries a fixed dividend paid in priority to ordinary shareholders?",
+          "options": [
+            "Preference shares",
+            "Ordinary shares"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The fixed, prior dividend is the defining feature that gives preference shares their name.",
+          "feedbackIncorrect": "Not quite — ordinary shares carry the residual, uncapped claim. It's preference shares that typically carry the fixed, priority dividend."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The statutory pre-emption right on new equity",
+        "voice": "case-narrative — builds the rule through a running scenario",
+        "body": [
+          "A company wants to allot new ordinary shares to raise capital. Existing shareholders have not been consulted. Section 561 CA 2006 answers whether that is lawful: before a company allots 'equity securities' (broadly, ordinary shares, or rights to subscribe for or convert into ordinary shares), it must first offer them to existing holders of ordinary shares, pro rata to their existing holdings, on the same or more favourable terms.",
+          "The purpose is straightforward: without pre-emption, a board could quietly dilute an existing shareholder's percentage stake — and, with it, their proportion of future dividends and their voting weight — by allotting new shares to someone else entirely. Pre-emption protects the existing shareholder's relative position in the company, not merely their absolute shareholding.",
+          "The right attaches specifically to equity securities as defined — new ordinary shares, or rights over them. An allotment of preference shares alone, carrying no right to participate beyond a specified amount in either dividends or capital, generally falls outside the definition of equity securities and so outside s 561 pre-emption altogether. This distinction is exactly the kind of point a fact pattern will hinge on."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 561",
+            "text": "A company must not allot equity securities to a person on any terms unless it has made an offer to each person who holds ordinary shares in the company to allot to him on the same or more favourable terms a proportion of those securities that is as nearly as practicable equal to the proportion in nominal value held by him of the ordinary share capital of the company.",
+            "elements": [
+              "The securities being allotted fall within the definition of 'equity securities'",
+              "An offer must first be made to existing ordinary shareholders",
+              "The offer must be pro rata to each shareholder's existing proportion of the ordinary share capital",
+              "The offer must be on the same or more favourable terms than the eventual allotment"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-06-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states what pre-emption is actually protecting.",
+          "passage": "Without a pre-emption right, a board could allot new shares to a favoured outsider and quietly dilute an existing shareholder's stake. Section 561 exists to protect an existing shareholder's relative position in the company — their proportion of dividends and voting weight — not merely the number of shares they happen to hold. It does this by requiring new equity securities to be offered first, pro rata, to existing ordinary shareholders.",
+          "ratioSentence": "Section 561 exists to protect an existing shareholder's relative position in the company — their proportion of dividends and voting weight — not merely the number of shares they happen to hold."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Disapplying pre-emption",
+        "voice": "practical — the mechanics a solicitor actually drafts around",
+        "body": [
+          "Pre-emption is a default right, not an absolute one, and in practice it is disapplied on most funding rounds involving a genuinely new outside investor — existing shareholders rarely want to, or are able to, match a large new investment pro rata, and a strict pre-emption process can be slow and administratively heavy for a time-sensitive deal.",
+          "The Act provides more than one route to disapplication. Private companies with only one class of shares can exclude the pre-emption right altogether by a provision in the articles, or the directors can be given power to allot as if s 561 did not apply, by a special resolution of the members under s 571 (often granted for a specified allotment, or for a period of up to five years, mirroring the time limits on s 551 authorisations).",
+          "Because disapplication under s 571 requires a special resolution, it sits at the same 75% threshold as altering the articles — a deliberate design choice, since disapplying pre-emption has much the same dilutive effect on minority shareholders as an article change removing a protective right would."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Can this allotment proceed without pre-emption?",
+            "description": "A decision path for whether s 561 pre-emption applies, and if so, whether it has been validly disapplied.",
+            "nodes": [
+              { "id": "start", "label": "Are the shares being allotted 'equity securities' (ordinary shares or rights over them)?" },
+              { "id": "no-equity", "label": "No (e.g. preference shares alone) → s 561 does not apply at all" },
+              { "id": "yes-equity", "label": "Yes → has the right been excluded by the articles, or disapplied by special resolution under s 571 (or equivalent)?" },
+              { "id": "yes-disapplied", "label": "Yes → allotment can proceed without offering existing shareholders first" },
+              { "id": "no-disapplied", "label": "No → pro rata offer to existing ordinary shareholders required before allotment" }
+            ],
+            "edges": [
+              { "from": "start", "to": "no-equity", "label": "No" },
+              { "from": "start", "to": "yes-equity", "label": "Yes" },
+              { "from": "yes-equity", "to": "yes-disapplied", "label": "Yes" },
+              { "from": "yes-equity", "to": "no-disapplied", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the shares being allotted are equity securities — ordinary shares or rights over them. If not, such as an allotment of preference shares alone, s 561 does not apply at all. If they are equity securities, ask whether the pre-emption right has been excluded by the articles or disapplied by special resolution. If disapplied, the allotment can proceed without a pro rata offer. If not disapplied, a pro rata offer to existing ordinary shareholders is required before the allotment can proceed."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-06-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a solicitor would work through when a private company plans to allot new ordinary shares to a single outside investor.",
+          "items": [
+            "Confirm the shares to be allotted are equity securities within s 561",
+            "Check the articles for an existing exclusion of pre-emption, or a standing disapplication",
+            "If none exists, put a special resolution disapplying pre-emption to the members under s 571",
+            "Proceed with the allotment to the outside investor once disapplication is validly in place"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: confirm the right applies at all, check for an existing route out of it, and if none exists, secure disapplication by special resolution before the allotment goes ahead.",
+          "feedbackIncorrect": "Reorder this by dependency: you first confirm s 561 is even engaged, then check whether disapplication already exists, and only then seek a fresh special resolution if it doesn't — the allotment itself must come last."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Varying class rights, and the minority's safety valve",
+        "voice": "argumentative — states the majority's power, then the check on it",
+        "body": [
+          "Where a company has more than one class of shares, the rights attached to a particular class can be varied — but not simply by an ordinary majority riding roughshod over the class affected. Section 630 CA 2006 requires the consent of holders of at least 75% in nominal value of the issued shares of that class, either given in writing or by a resolution passed at a separate meeting of that class alone (assuming the articles do not set out their own variation procedure, in which case that procedure applies instead).",
+          "This 75% threshold exists because a variation of class rights is functionally similar to altering the articles as it affects that class — the same logic that sets the special resolution bar for article changes generally. It protects a class as a group from having its bargain rewritten by shareholders outside that class, or even by a bare majority within it.",
+          "Even a 75% class vote is not the end of the story. Section 633 allows the holders of not less than 15% of the issued shares of the class in question, who did not consent to or vote in favour of the variation, to apply to court within 21 days of the resolution or consent being given, asking the court to set the variation aside. The court will do so if it is satisfied the variation would unfairly prejudice the class members represented by the applicants — a genuine, if narrow, minority safety valve layered on top of the majority procedure."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Variation of class rights — statutory framework",
+            "citation": "CA 2006, ss 630, 633",
+            "court": "Statute (not a case)",
+            "year": 2006,
+            "factsShort": "A company wants to vary the rights attached to one class of shares — for example, reducing a preference dividend rate.",
+            "ratioShort": "Variation requires 75% class consent (or the articles' own procedure); a 15% dissenting minority within that class can apply to court within 21 days to have the variation set aside as unfairly prejudicial.",
+            "expanded": {
+              "facts": "Section 630 applies where the rights attached to a class of shares are sought to be varied, and the company's articles contain no variation procedure of their own — the statutory default is 75% consent by that class.",
+              "judgmentExtract": "Section 633(2)-(3) gives dissenting holders of at least 15% of the class the right to apply to court within 21 days of the variation being agreed; the court may disallow the variation if satisfied it would unfairly prejudice the applicants' class.",
+              "significance": "This pairing — a majority procedure plus a minority court challenge — mirrors the broader company law pattern of allowing majority governance subject to a targeted unfair prejudice-style check, rather than requiring unanimity for every class-affecting decision."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-06-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A company's preference shareholders, as a class, pass a 75% resolution consenting to a reduction in their fixed dividend rate. What can dissenting preference shareholders holding 20% of that class do?",
+          "options": [
+            "Apply to court within 21 days under s 633, asking the court to set the variation aside as unfairly prejudicial to their class",
+            "Nothing — a valid 75% class consent is final and cannot be challenged by any dissenting minority",
+            "Demand the company buy back their shares immediately at the original issue price",
+            "Block the variation entirely by refusing to attend the class meeting"
+          ],
+          "correctIndex": 0,
+          "explanation": "Because they hold at least 15% of the class and did not consent, s 633 gives them a genuine, time-limited route to court — the 75% threshold is not the final word if the variation is unfairly prejudicial to them."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it together: a funding round across two classes",
+        "voice": "case-narrative — applies the whole lesson to one running client file",
+        "body": [
+          "A private company has one class of ordinary shares, held by three founders, and unmodified Model Articles. A venture investor offers £2 million for new preference shares with a fixed 8% dividend and capital priority on a winding up, but no general participation beyond that. The founders also agree, as part of the same deal, to reduce the voting rights attached to a small existing block of founder shares held by a departing co-founder.",
+          "First question: does s 561 pre-emption apply to the preference share allotment? Generally, no — preference shares of this kind, carrying no right to participate beyond a fixed return, typically fall outside the 'equity securities' definition, so the founders do not need to run a pro rata offer process for this tranche.",
+          "Second question: does reducing the departing co-founder's voting rights require the class rights variation procedure? If those shares are treated as forming their own class (or a distinguishable class within the ordinary shares) by virtue of the differing rights, then yes — s 630 applies, and 75% consent of the affected class is required, with the co-founder able to apply to court under s 633 if they hold at least 15% of that class and did not consent.",
+          "This is the recurring SQE1 pattern: identify precisely which right is engaged — pre-emption on new allotments, or variation on existing rights — because the two protections answer completely different questions and are triggered by different facts."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often treat 'the company is changing something to do with shares' as automatically triggering pre-emption, class variation, or both together, without separating the two questions.",
+            "whyItsWrong": "Pre-emption under s 561 is exclusively about new allotments of equity securities diluting existing holders. Class rights variation under s 630 is about altering the rights already attached to an existing class. A single transaction can raise one, both, or neither — the facts need to be checked against each right's own trigger separately, not treated as one undifferentiated 'shareholder protection' issue."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-06-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which of these two changes engages the class rights variation procedure under s 630, rather than the s 561 pre-emption right?",
+          "scenarioA": "A company allots entirely new ordinary shares to a new outside investor, without offering them first to existing ordinary shareholders.",
+          "scenarioB": "A company reduces the fixed dividend rate attached to its existing preference shares, with the preference shareholders voting on the change as a class.",
+          "correctScenario": "B",
+          "explanation": "A is a pre-emption question — new equity securities being allotted without a prior pro rata offer. B is a variation question — the rights already attached to an existing class being altered, which is precisely what s 630 (and the s 633 minority safeguard) governs."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-06-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which share class typically carries the residual, uncapped claim on dividends and surplus capital once other classes with priority have been paid?",
+      "options": [
+        "Ordinary shares",
+        "Preference shares",
+        "Redeemable shares",
+        "Deferred shares held by the founders alone"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ordinary shares carry no priority but the uncapped residual claim — the class most exposed to the company's performance in both directions."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What must be true of a private company for it to issue redeemable shares?",
+      "options": [
+        "It must also have at least one class of non-redeemable shares in issue",
+        "It must be a public company, since private companies cannot issue redeemable shares at all",
+        "It must first obtain shareholder approval by unanimous written resolution",
+        "It must have at least two designated members appointed"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sections 684-689 require a company to retain at least one non-redeemable class — redeemable shares cannot be the company's only class of shares."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following best describes 'equity securities' for the purposes of s 561 pre-emption?",
+      "options": [
+        "Any shares issued by the company, including preference shares carrying only a fixed, capped return",
+        "Ordinary shares, or rights to subscribe for or convert into ordinary shares",
+        "Only shares that carry voting rights, regardless of their dividend entitlement",
+        "Only shares allotted to a director or a connected person"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to assume 'equity securities' covers every type of share issued — it doesn't. Preference shares with no participation beyond a fixed, capped return generally fall outside the definition altogether.",
+      "explanation": "The pre-emption right is targeted at ordinary shares and rights over them, because those are the shares whose dilution actually affects an existing holder's proportional stake in the company's uncapped upside."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "What does s 561 CA 2006 require a company to do before allotting new equity securities?",
+      "options": [
+        "Offer the securities first to existing ordinary shareholders, pro rata to their existing holdings, on the same or more favourable terms",
+        "Obtain the unanimous written consent of every shareholder in the company",
+        "File a statement of capital with the Registrar before the offer is made to anyone",
+        "Offer the securities to the company's directors before any outside investor"
+      ],
+      "correctIndex": 0,
+      "explanation": "The statutory mechanism is a pro rata offer to existing ordinary shareholders on terms at least as good as those eventually given to the new allottee."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which route allows a private company with one class of shares to disapply pre-emption for a specific allotment?",
+      "options": [
+        "A special resolution under s 571, or exclusion by the articles",
+        "A simple majority board resolution alone, with no shareholder involvement",
+        "An application to the Registrar for a formal waiver",
+        "Pre-emption can never be disapplied under any circumstances"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 571 lets members disapply pre-emption for a given allotment (or a defined period up to five years) by special resolution, alongside the option of excluding it in the articles altogether."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A private company wants to allot new ordinary shares to a single outside investor without first offering them to its existing shareholders. Its articles are unmodified Model Articles and no disapplication resolution has been passed. What must happen before the allotment can proceed?",
+      "options": [
+        "The company must make a pro rata offer of the new shares to its existing ordinary shareholders, or pass a special resolution disapplying that requirement first",
+        "Nothing further is required, since the Model Articles are assumed to disapply pre-emption by default",
+        "The company must obtain Registrar approval before allotting to any outside investor",
+        "The allotment is automatically void because outside investors can never be offered new ordinary shares"
+      ],
+      "correctIndex": 0,
+      "explanation": "With no exclusion in the articles and no disapplication resolution passed, the default s 561 pro rata offer requirement remains in force and must be satisfied, or displaced by a fresh special resolution, before the allotment can proceed."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A company allots new preference shares carrying a fixed, capped dividend and no participation in surplus capital, without offering them to existing ordinary shareholders first. Have the existing shareholders' s 561 rights been infringed?",
+      "options": [
+        "No — shares of this kind generally fall outside the definition of equity securities, so s 561 does not apply to this allotment",
+        "Yes — any new share allotment triggers s 561 regardless of the class being allotted",
+        "Yes, but only if the existing shareholders are also directors of the company",
+        "No, but only because the company is private rather than public"
+      ],
+      "correctIndex": 0,
+      "explanation": "Preference shares with a fixed, capped return and no further participation are generally outside the 'equity securities' definition, so no pre-emption right arises on this allotment in the first place."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A company's preference shareholders, voting as a separate class, pass a resolution with 80% in favour consenting to a variation reducing their fixed dividend. A holder of 18% of that class voted against and did not consent. What can that dissenting holder do?",
+      "options": [
+        "Apply to court within 21 days under s 633 to have the variation set aside as unfairly prejudicial to their class",
+        "Nothing at all — an 80% class vote is final and cannot be challenged by any minority",
+        "Unilaterally block the variation by simply refusing to accept the reduced dividend payments",
+        "Demand an immediate buy-back of their shares at the company's expense as of right"
+      ],
+      "correctIndex": 0,
+      "explanation": "Holding at least 15% of the class and not having consented, this shareholder meets the threshold under s 633 to apply to court within the 21-day window."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-09",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "In the absence of a variation procedure in the articles, what threshold does s 630 CA 2006 set for varying the rights attached to a class of shares?",
+      "options": [
+        "Consent in writing, or a resolution passed at a separate class meeting, of holders of at least 75% in nominal value of the issued shares of that class",
+        "A simple majority of all shareholders across every class combined",
+        "Unanimous written consent of every shareholder in the company",
+        "Board approval alone, with no shareholder consent required"
+      ],
+      "correctIndex": 0,
+      "explanation": "The statutory default is 75% consent by the affected class specifically — not a company-wide vote across all classes."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A company proposes to alter the rights attached to its preference shares. Its articles are silent on any variation procedure. Which statement correctly describes the applicable threshold?",
+      "options": [
+        "The s 630 default of 75% class consent applies, since the articles contain no bespoke variation procedure of their own",
+        "No variation is possible at all unless the articles expressly provide a procedure",
+        "A simple ordinary resolution of the whole company, across all classes, is sufficient",
+        "The variation requires unanimous consent of the entire company regardless of class"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming silence in the articles means no variation procedure exists at all — in fact s 630 supplies the statutory default (75% class consent) precisely for that situation.",
+      "explanation": "Section 630 is a fallback: it applies unless the articles set out their own variation procedure, which is not the case here."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A company allots new ordinary shares to an outside investor after validly disapplying pre-emption by special resolution six months earlier, within the resolution's stated period. An existing shareholder complains they were not offered the shares first. Is the complaint well founded?",
+      "options": [
+        "No — a valid disapplication under s 571, still within its stated period, means no pro rata offer was required for this allotment",
+        "Yes — pre-emption can never be validly disapplied under the Companies Act 2006",
+        "Yes, because disapplication resolutions only ever last for 12 months regardless of what was stated",
+        "No, but only because the investor is not a competitor of the existing shareholders"
+      ],
+      "correctIndex": 0,
+      "explanation": "Once pre-emption has been properly disapplied by special resolution, and the allotment falls within the period and scope of that disapplication, no pro rata offer is required."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A company reduces the voting rights attached to a distinguishable class of its ordinary shares, held by a departing co-founder holding 12% of that class, who voted against the change. The remaining 88% consented. Can the departing co-founder apply to court under s 633?",
+      "options": [
+        "No — s 633 requires the dissenting applicant(s) to hold at least 15% of the class, and 12% alone falls short of that threshold",
+        "Yes — any dissenting minority shareholder, however small their stake, can apply to court under s 633",
+        "Yes, because 88% consent is below the required threshold for a valid variation in the first place",
+        "No, because s 633 only applies to preference shares and never to ordinary shares"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming any dissent at all is enough — s 633 sets a specific 15% floor, and a lone 12% holder cannot meet it alone (though combining with other dissenters to reach 15% together would).",
+      "explanation": "Section 633 is only available to holders reaching at least 15% of the class in question; below that threshold, the class variation procedure's 75% majority stands unchallenged by this route."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-13",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "Do the s 630 variation procedure and the s 561 pre-emption right answer the same underlying question?",
+      "options": [
+        "No — pre-emption concerns new allotments diluting existing holders, while variation concerns altering the rights already attached to an existing class",
+        "Yes — both provisions exist purely to prevent any change to a company's share capital structure",
+        "Yes — both provisions apply only to public companies",
+        "No — pre-emption applies only to preference shares, while variation applies only to ordinary shares"
+      ],
+      "correctIndex": 0,
+      "explanation": "They are triggered by different facts and protect different interests: one governs new issues, the other governs changes to existing rights."
+    },
+    {
+      "itemId": "sqe1-blp-06-test-14",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Within what period must a dissenting minority apply to court under s 633 after a class rights variation is agreed?",
+      "options": [
+        "21 days",
+        "3 months",
+        "6 months",
+        "There is no time limit"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 633 imposes a short, strict 21-day window running from when the variation was agreed or the resolution passed — missing it forfeits the right to challenge under this route."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson is conflating pre-emption on new allotments with variation of existing class rights, or assuming every new share issue automatically triggers s 561 regardless of the class being allotted. Check the class of shares involved and whether the right in question is even engaged before reaching for a threshold.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.equity-financing"
+  }
+}

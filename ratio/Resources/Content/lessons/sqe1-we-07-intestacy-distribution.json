@@ -1,0 +1,325 @@
+{
+  "lessonId": "sqe1-we-07",
+  "track": "SQE1",
+  "moduleId": "sqe1-wills-administration-estates",
+  "moduleTitle": "SQE1 · Wills and Administration of Estates",
+  "lessonNumber": 7,
+  "topicId": "sqe1.wills-estates.intestacy-distribution",
+  "title": "Intestacy: distribution beyond the spouse, survivorship, and forfeiture",
+  "subtitle": "The statutory order past the spouse's share, the 28-day survivorship rule, and losing an inheritance through unlawful killing",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the order of entitlement under the intestacy rules where no spouse or civil partner survives, from issue through to bona vacantia",
+    "Explain the 28-day survivorship requirement in s 46(2A) Administration of Estates Act 1925 and identify which class of relative it applies to",
+    "Apply the Forfeiture Act 1982 to a scenario involving unlawful killing, including the limits on the court's discretion to modify forfeiture"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Administration of Estates Act 1925, s 46(2A)", "role": "28-day survivorship requirement for a surviving spouse or civil partner" },
+    { "citation": "Forfeiture Act 1982", "role": "Bars an unlawful killer from inheriting, subject to a limited judicial discretion to modify the rule" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students who can recite 'spouse then issue then parents' often stop there. The SQE1 questions that actually bite live further down the list — what happens when the spouse dies 12 days after the intestate, or when the only person left standing is the person who caused the death.",
+    "profileHooks": {
+      "weakApplication": "You know the order of entitlement cold. This lesson's test pool leans hard on fact patterns — expect scenarios where you have to work out which class actually inherits, not recite the list.",
+      "weakKnowledge": "Slow down through Part 2's statutory trusts and Part 3's survivorship rule before you move on — the later scenarios assume you can place a fact pattern on the hierarchy without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A woman dies intestate. Her husband survives her — by nineteen days, before he too dies in the same accident's aftermath. Under one reading of the rules, he inherits and his estate benefits. Under the actual rule, he never inherited at all, and the whole estate goes to her side of the family instead. The rule that decides which of those is true is twelve words long, and it is exactly the kind of provision SQE1 likes to hide inside a fact pattern."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Past the spouse: the statutory ladder",
+        "voice": "structural — a reference part students will return to before the exam",
+        "body": [
+          "Where an intestate leaves a spouse or civil partner, that survivor's entitlement (the statutory legacy, personal chattels, and a share of any residue) is carved out first. This lesson picks up from there: what happens to whatever is left, or to the whole estate where no spouse or civil partner survives at all.",
+          "The Administration of Estates Act 1925, as amended, sets out a strict ladder. Each rung is only reached if every rung above it is empty — there is no averaging or blending between classes. The order is: issue (children, and grandchildren by substitution); then parents; then siblings of the whole blood and their issue; then siblings of the half blood and their issue; then grandparents; then uncles and aunts of the whole blood (and their issue); then uncles and aunts of the half blood (and their issue); and only if every one of those classes is empty, the estate passes to the Crown (or the Duchy of Lancaster or Duchy of Cornwall, depending on where the deceased was domiciled) as bona vacantia.",
+          "Two features of this ladder come up repeatedly in single-best-answer questions. First, 'whole blood' beats 'half blood' at every level where the distinction exists — a full sibling excludes a half-sibling entirely, they don't share. Second, bona vacantia is a genuine last resort: examiners like to plant one distant relative who is easy to miss, precisely so the Crown answer is wrong."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The order of entitlement beyond the spouse",
+            "points": [
+              "1. Issue (statutory trusts, per stirpes by substitution)",
+              "2. Parents (equally, if both survive)",
+              "3. Siblings of the whole blood, and their issue",
+              "4. Siblings of the half blood, and their issue",
+              "5. Grandparents",
+              "6. Uncles and aunts of the whole blood, and their issue",
+              "7. Uncles and aunts of the half blood, and their issue",
+              "8. The Crown, Duchy of Lancaster, or Duchy of Cornwall — bona vacantia"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "An intestate dies with no surviving spouse and no children. Both of her parents are alive. Who inherits?",
+          "options": ["Her parents, equally", "Her siblings", "Her grandparents", "The Crown, as bona vacantia"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — parents sit directly below issue on the ladder, and both are still alive, so siblings and everyone further down are never reached.",
+          "feedbackIncorrect": "Go back to the ladder: issue is empty here, so you move to the next occupied rung. Both parents are alive, which answers the question before you need to look any further down."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Statutory trusts: how a class actually splits",
+        "voice": "worked-example — walks through a family tree step by step",
+        "body": [
+          "Naming the right class is only half the job — you also need to know how that class divides the money up. The rules use 'statutory trusts': within a class, the estate is divided equally per capita among the members who are alive and have met any contingency (for issue, usually reaching 18 or marrying or forming a civil partnership earlier).",
+          "The complication examiners favour is substitution. If a member of the class has already died but left their own issue, those issue don't lose out — they step into the dead parent's shoes and take that parent's share between them, split again per stirpes. A grandchild only inherits at all because their own parent (the intestate's child) predeceased; a grandchild whose parent is still alive gets nothing directly.",
+          "Work it through concretely. Suppose the intestate had three children: two survive her, and the third died years earlier leaving two children of his own. The estate is divided into three equal shares — not two. The two surviving children each take one third outright. The dead child's third is not lost or reallocated to his siblings; it is split equally between his two children, who each end up with one sixth of the whole."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Statutory trusts",
+            "definition": "The mechanism by which a class of relatives shares the estate on intestacy: an equal per capita division among class members, with a predeceased member's share passing per stirpes to that member's own issue rather than being reallocated among the surviving class members."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-07-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order you would apply them to work out how much each grandchild inherits under statutory trusts.",
+          "items": [
+            "Identify the class the estate falls into (here, issue)",
+            "Divide the estate into equal shares, one per child — whether that child is alive or predeceased",
+            "Pay out each surviving child's share to that child directly",
+            "Split a predeceased child's share equally among that child's own children"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the mechanism: the class is fixed first, the division is by number of children (not number of ultimate recipients), and substitution only operates within a dead child's own share.",
+          "feedbackIncorrect": "The key ordering point is that the estate is divided by the number of children first — including a predeceased one — before substitution ever comes into play for that child's share."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Surviving by less than 28 days",
+        "voice": "statute-first — puts the provision on the page before unpacking it",
+        "body": [
+          "A spouse or civil partner only inherits on intestacy if they survive the intestate by at least 28 days. This is the effect of s 46(2A) Administration of Estates Act 1925, inserted by the Law Reform (Succession) Act 1995 — a deliberately short, precise rule designed to stop an estate passing briefly through a dying spouse's hands and then straight on to that spouse's own family, in a case where both die close together.",
+          "If the spouse or civil partner dies within 28 days of the intestate, they are treated as having predeceased the intestate for every purpose under the intestacy rules. The practical effect is that the whole estate is distributed as though there had been no surviving spouse at all — the statutory legacy and share of residue that would otherwise have gone to the spouse now fall into the estate passed down the ladder covered in Part 1, typically to the intestate's issue.",
+          "The rule is narrow in an important way that examiners test directly: it is written to apply to the spouse or civil partner's entitlement specifically. It does not create a general 28-day survivorship requirement for every class of relative on the intestacy ladder — a parent, sibling, or grandchild who outlives the intestate by even a single day still inherits under the ordinary rules for that class."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Administration of Estates Act 1925, s 46(2A)",
+            "text": "Where the intestate's husband or wife survived the intestate for a period of twenty-eight days, then, in the foregoing provisions of this section, references to the intestate's husband or wife shall be construed as references to a husband or wife who survived the intestate for that period, and any reference to the intestate's husband or wife who fails to attain a vested interest shall be construed accordingly.",
+            "elements": ["A surviving husband, wife, or civil partner", "Must survive the intestate by 28 days or more", "Failing that, treated as having predeceased for intestacy purposes", "Applies to the spousal/civil partner class only"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-07-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Which element must be satisfied before a surviving spouse takes anything at all under the intestacy rules?",
+          "options": ["Survival by 28 days or more", "Survival by any period, however short", "Being named in a side letter left by the intestate", "Being married for at least 5 years at the date of death"],
+          "correctIndex": 0,
+          "explanation": "Section 46(2A) sets the bar at 28 days. Dying even a day short of that means the spouse is treated as having predeceased, and takes nothing under the intestacy rules — however long the marriage lasted."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Applying the 28-day rule to a fact pattern",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Raymond and Della are married. Raymond dies intestate in a car accident. Della survives the crash but her injuries are severe, and she dies in hospital nineteen days later, having never regained consciousness. Neither made a will.",
+          "On these facts, Della survived Raymond — but not by 28 days. Section 46(2A) treats her as having predeceased him for the purposes of distributing his estate. Raymond's estate is therefore distributed as though he died a widower: whatever would have gone to Della as his spouse instead passes down the intestacy ladder, most likely to his own children or other blood relatives, not to Della's estate and not onward to Della's own family.",
+          "Students sometimes assume the rule is about fault, timing of death certificates, or who died 'first' in some medical sense — it isn't. It is a pure clock: did the spouse survive by 28 days or more, yes or no. Nothing else about the manner or order of death matters once that single fact is established."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often reason that because Della was alive when Raymond died, she must have inherited something that then passes through her own estate to her family.",
+            "whyItsWrong": "Being alive at the moment of the intestate's death is necessary but not sufficient. Section 46(2A) adds a further condition — 28 days' survival — and failing that condition means Della is treated as never having inherited at all, however briefly she was technically alive afterwards."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-07-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that determines whether Della inherits from Raymond's intestate estate.",
+          "scenarioText": "Raymond dies intestate in a car accident. Della survives the crash but her injuries are severe, and she dies in hospital nineteen days later, having never regained consciousness.",
+          "tappableSpans": ["dies intestate in a car accident", "survives the crash", "severe", "dies in hospital nineteen days later"],
+          "correctSpan": "dies in hospital nineteen days later",
+          "feedbackCorrect": "That's the fact that decides it. Nineteen days is short of the 28-day threshold in s 46(2A), so Della is treated as having predeceased Raymond — nothing about the severity of her injuries or the fact she never regained consciousness changes that outcome.",
+          "feedbackIncorrect": "Focus on the length of time Della survived Raymond, not the severity of her injuries or whether she regained consciousness. Only the 28-day clock in s 46(2A) matters to the outcome."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Forfeiture: losing an inheritance by unlawful killing",
+        "voice": "argumentative — states the strict rule, then complicates it with the statutory discretion",
+        "body": [
+          "A long-standing rule of public policy holds that a person cannot benefit from their own crime. Applied to succession, this means a person who unlawfully kills another cannot inherit from that person's estate — whether under a will or under the intestacy rules — and is treated, broadly, as though they had predeceased the victim for the purposes of that inheritance.",
+          "The Forfeiture Act 1982 puts this rule on a statutory footing and, crucially, gives the court a discretion to modify its effect where the justice of the case requires — for example, where the killing was manslaughter arising from years of abuse, rather than a calculated killing for gain. The court weighs the conduct of the offender, the conduct of the deceased, and any other material circumstances. An application to modify forfeiture must generally be made within three months of conviction.",
+          "The discretion has a hard limit that is heavily tested: it does not apply to murder. Where the offender is convicted of murder, forfeiture is mandatory and the court has no power under the Act to relieve them of it, however sympathetic the background circumstances might otherwise be. The discretion exists only for other forms of unlawful killing, such as manslaughter."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Forfeiture rule",
+            "definition": "The public policy rule, given statutory form by the Forfeiture Act 1982, that a person who unlawfully kills another cannot inherit from that person's estate. The court has a discretion to modify the rule's effect in cases other than murder, applied for within three months of conviction."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-07-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario does the court have a discretion under the Forfeiture Act 1982 to relieve the offender of forfeiture?",
+          "scenarioA": "Priti is convicted of the murder of her uncle, having planned the killing for financial gain and stood to inherit under his will.",
+          "scenarioB": "Priti is convicted of manslaughter by reason of diminished responsibility after killing her abusive partner, and stood to inherit under his will.",
+          "correctScenario": "B",
+          "explanation": "The Act's discretion to modify forfeiture is available for manslaughter and other unlawful killings short of murder — the court can weigh conduct on both sides. A murder conviction, as in scenario A, triggers mandatory forfeiture with no discretion to relieve it."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-we-07-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "An intestate dies with no spouse, no issue, and no surviving parents. She has one full sibling and one half-sibling, both alive. What is the correct outcome?",
+      "options": ["The full sibling takes the whole estate; the half-sibling takes nothing", "The estate is split equally between the full sibling and the half-sibling", "The half-sibling takes priority over the full sibling", "The estate passes to the Crown as bona vacantia"],
+      "correctIndex": 0,
+      "explanation": "Siblings of the whole blood exclude siblings of the half blood entirely at the level of the intestacy ladder where the distinction applies — they do not share, and the half-sibling only comes into play if there were no whole-blood siblings (or their issue) at all."
+    },
+    {
+      "itemId": "sqe1-we-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A solicitor is asked when an intestate's estate will actually pass to the Crown as bona vacantia. Which answer is correct?",
+      "options": ["Only after every class on the statutory ladder, down to half-blood uncles and aunts and their issue, has been exhausted", "As soon as there is no surviving spouse or civil partner", "Whenever the deceased left no will, regardless of surviving relatives", "Only if the deceased had no children"],
+      "correctIndex": 0,
+      "explanation": "Bona vacantia is the final rung, reached only when every preceding class — down to half-blood uncles and aunts and their issue — is empty. A distant surviving relative in any of those classes takes before the Crown does."
+    },
+    {
+      "itemId": "sqe1-we-07-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A trainee is drafting advice on how a predeceased child's share passes to that child's own children under statutory trusts. Which statement is correct?",
+      "options": ["It is split per stirpes between the predeceased child's own issue", "It is reallocated equally among the intestate's other surviving children", "It passes to the Crown as bona vacantia", "It lapses and is treated as though the intestate had one fewer child"],
+      "correctIndex": 0,
+      "explanation": "Substitution under statutory trusts means a predeceased class member's share passes down to their own issue per stirpes — it is never redistributed among the deceased's surviving siblings or lost."
+    },
+    {
+      "itemId": "sqe1-we-07-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "Fara dies intestate. She is unmarried and had two children, Ben and Cara. Ben predeceased Fara, leaving one child, Deja. Cara survives Fara. How is Fara's estate divided?",
+      "options": ["Cara takes one half; Deja takes the other half", "Cara takes the whole estate, as Ben's death removes his line entirely", "Cara and Deja share the estate equally between the two of them as individuals", "Deja takes the whole estate as Ben's substitute"],
+      "correctIndex": 0,
+      "explanation": "The estate is divided by reference to Fara's two children. Cara, surviving, takes her one-half share outright. Ben's one-half share does not lapse — it passes to his substitute, Deja, who as his only child takes the whole of that half."
+    },
+    {
+      "itemId": "sqe1-we-07-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A client asks how long her husband must survive her for him to inherit anything under the intestacy rules if she dies without a will. What should the solicitor advise?",
+      "options": ["He must survive her by at least 28 days", "He must simply be alive at the moment of her death", "He must survive her by at least 6 months", "There is no survivorship requirement for a spouse"],
+      "correctIndex": 0,
+      "trapExplanation": "Being alive at the moment of death feels intuitively sufficient, but s 46(2A) AEA 1925 imposes an additional 28-day survivorship requirement specifically for a spouse or civil partner — falling short of it means no entitlement arises at all."
+    },
+    {
+      "itemId": "sqe1-we-07-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A trainee assumes the 28-day survivorship rule in s 46(2A) AEA 1925 applies to every relative on the intestacy ladder, not just a spouse or civil partner. Is this correct?",
+      "options": ["No — the 28-day rule applies specifically to a surviving spouse or civil partner", "Yes — every beneficiary must survive by 28 days to inherit", "Yes, but only for issue, not for parents or siblings", "No — the rule applies only to civil partners, not spouses"],
+      "correctIndex": 0,
+      "trapExplanation": "It is tempting to generalise a survivorship rule across the whole ladder, but s 46(2A) is drafted narrowly around the spousal and civil partnership class. Other relatives, such as issue or parents, inherit as soon as they survive the intestate at all, however briefly."
+    },
+    {
+      "itemId": "sqe1-we-07-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "Aled dies intestate in a house fire. His wife Non is pulled from the fire alive but dies in hospital 25 days later without regaining consciousness. What is the effect on Non's entitlement to Aled's estate?",
+      "options": ["Non is treated as having predeceased Aled, and takes nothing under the intestacy rules", "Non inherits in full, since she was alive when Aled died", "Non inherits a reduced share, proportional to the 25 days she survived", "Non's estate takes her share, to be distributed to her own family"],
+      "correctIndex": 0,
+      "trapExplanation": "Twenty-five days falls short of the 28-day threshold, so despite surviving the fire itself and being alive for over three weeks afterwards, Non is treated as having predeceased Aled for intestacy purposes — there is no partial or proportional entitlement."
+    },
+    {
+      "itemId": "sqe1-we-07-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "Marek is convicted of the murder of his father, from whose intestate estate he would otherwise have inherited as sole surviving child. Marek's solicitor argues the killing followed years of the father's violence towards him, and asks the court to exercise its discretion under the Forfeiture Act 1982 to allow Marek to inherit. Will this application succeed?",
+      "options": ["No — forfeiture is mandatory on a murder conviction and the court has no discretion to modify it", "Yes — the court can modify forfeiture in any case where the deceased's own conduct contributed to the killing", "Yes — because Marek was the only surviving child, the estate would otherwise pass to the Crown", "No — but only because the application was not made within three months of the killing itself"],
+      "correctIndex": 0,
+      "trapExplanation": "The background of abuse is exactly the kind of fact that invites sympathy, and it is genuinely relevant to the court's discretion — but only where the conviction is for something short of murder. A murder conviction removes the discretion entirely, regardless of how compelling the mitigating history is."
+    },
+    {
+      "itemId": "sqe1-we-07-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "An intestate dies leaving no spouse, no issue, and no surviving parents. Her only surviving relatives are one full sibling and the two children of a full sibling who predeceased her. How should the estate be divided?",
+      "options": ["Into two shares: one to the surviving full sibling, and the other split equally between the two children of the predeceased sibling", "Into three equal shares, one to the surviving sibling and one each to the two children", "Wholly to the surviving full sibling, as the predeceased sibling's line is excluded", "Wholly to the Crown, as no sibling survived in full health"],
+      "correctIndex": 0,
+      "explanation": "The class is fixed by the number of siblings (two), not the number of ultimate recipients. The surviving sibling takes one half outright; the predeceased sibling's half passes per stirpes to his two children, who split it equally between them."
+    },
+    {
+      "itemId": "sqe1-we-07-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Owen dies intestate. His wife Bethan died 30 days after him, having never regained capacity following the same accident. Owen has one adult child, Rhys. On these facts, who inherits Owen's estate?",
+      "options": ["Bethan's estate takes her spousal entitlement, which then passes under her own will or intestacy; the balance goes to Rhys", "Rhys takes the whole estate, as Bethan is treated as having predeceased Owen", "The estate is split equally between Rhys and the Crown", "Rhys takes nothing, as Bethan's later death overrides his entitlement"],
+      "correctIndex": 0,
+      "explanation": "Bethan survived Owen by 30 days — more than the 28-day threshold in s 46(2A) — so she is not treated as predeceasing him. Her spousal entitlement vests and, because she then dies, it passes through her own estate; anything beyond her share passes to Rhys as issue."
+    },
+    {
+      "itemId": "sqe1-we-07-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A solicitor is advising the personal representatives of an estate where the sole beneficiary under the intestacy rules has been convicted of the deceased's manslaughter by reason of loss of control after sustained provocation. What is the correct first step under the Forfeiture Act 1982?",
+      "options": ["Consider whether an application should be made to the court, within three months of conviction, to modify the forfeiture rule", "Advise that forfeiture cannot apply at all, since the conviction was for manslaughter rather than murder", "Distribute the estate to the beneficiary as normal, since forfeiture only applies to murder", "Advise that the estate must pass automatically to the Crown as bona vacantia"],
+      "correctIndex": 0,
+      "explanation": "Forfeiture applies to unlawful killing generally, including manslaughter — it is not limited to murder. What differs for manslaughter is that the court has a discretion to modify the rule's effect, and an application to invoke that discretion should be made within three months of conviction."
+    },
+    {
+      "itemId": "sqe1-we-07-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Section 46(2A) Administration of Estates Act 1925 is best described as doing which of the following?",
+      "options": ["Deeming a spouse or civil partner who fails to survive the intestate by 28 days to have predeceased the intestate", "Requiring every beneficiary on intestacy to survive by 28 days", "Setting a 28-day time limit for personal representatives to distribute the estate", "Requiring a marriage to have lasted at least 28 days before the survivor can inherit"],
+      "correctIndex": 0,
+      "explanation": "The provision operates as a deeming rule aimed specifically at the spousal/civil partner class — short survival is treated, for intestacy purposes, as no survival at all."
+    },
+    {
+      "itemId": "sqe1-we-07-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Under the Forfeiture Act 1982, in which type of case does the court have no discretion at all to modify the forfeiture rule?",
+      "options": ["Murder", "Manslaughter by reason of diminished responsibility", "Manslaughter by reason of loss of control", "Unlawful killing falling short of murder generally"],
+      "correctIndex": 0,
+      "explanation": "The Act's discretion to modify forfeiture is expressly excluded for murder. It remains available across other forms of unlawful killing, where the court weighs the offender's and deceased's conduct and the surrounding circumstances."
+    },
+    {
+      "itemId": "sqe1-we-07-test-14",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A personal representative wants to know the outer time limit for an application to modify the forfeiture rule following a qualifying conviction. Which is correct?",
+      "options": ["Three months from the date of conviction", "Twelve months from the date of death", "Six months from the grant of representation", "There is no time limit"],
+      "correctIndex": 0,
+      "explanation": "An application under the Forfeiture Act 1982 to modify the effect of forfeiture must generally be brought within three months of the conviction for the unlawful killing."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two traps this lesson sets are mirror images of each other: students either stretch the 28-day survivorship rule to relatives it was never meant to cover, or assume the Forfeiture Act's discretion reaches further than it does — forgetting that murder removes the court's discretion entirely.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.wills-estates.intestacy-distribution"
+  }
+}

@@ -232,7 +232,7 @@
         "sqe1-legal-system-legal-services",
         "sqe1-business-law-practice",
         "sqe1-property-practice",
-        "sqe1-wills-estates",
+        "sqe1-wills-administration-estates",
         "sqe1-solicitors-accounts",
         "sqe1-criminal-law-practice"
       ]
@@ -296,7 +296,8 @@
             "ratioPanel",
             "theTrap",
             "doctrineMap",
-            "timeline"
+            "timeline",
+            "ledgerTable"
           ]
         }
       },
@@ -468,6 +469,44 @@
                   "required": [
                     "label"
                   ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "ledgerTable"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "title",
+              "columns",
+              "rows"
+            ],
+            "properties": {
+              "title": {
+                "$ref": "#/$defs/text"
+              },
+              "columns": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "$ref": "#/$defs/text"
+                }
+              },
+              "rows": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
               }
             }

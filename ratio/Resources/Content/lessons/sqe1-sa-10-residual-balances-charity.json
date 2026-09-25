@@ -1,0 +1,336 @@
+{
+  "lessonId": "sqe1-sa-10",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "track": "SQE1",
+  "lessonNumber": 10,
+  "topicId": "sqe1.solicitors-accounts.residual-balances",
+  "title": "Residual balances and payment to charity",
+  "subtitle": "Rule 5 of the SRA Accounts Rules 2019 — the £500 threshold and when the SRA must say yes first",
+  "estimatedMinutes": 15,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the conditions in SRA Accounts Rules 2019, r 5.1 under which a firm may pay a residual client balance to charity without prior SRA permission",
+    "Explain when r 5.2 requires the firm to obtain the SRA's prior written permission before making that payment",
+    "Apply the residual balance rules to a fact pattern, including the firm's continuing obligation to repay a client who later resurfaces"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Accounts Rules 2019, r 5", "role": "Sets the conditions for treating a residual client balance as no longer client money and paying it to charity, with a £500 threshold for self-certification" },
+    { "citation": "SRA guidance — withdrawing client money to charity (residual balances)", "role": "Regulator guidance on what counts as reasonable steps to trace an owner, and on the central register firms must keep" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students remember there's 'a £500 rule' for old client balances. Where the profile shows the number is solid but the mechanics around it are shaky, this note appears: 'You know the figure — this lesson is about the conditions attached to it, and what happens if you get them wrong.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well recalling the £500 threshold before. The test pool here is weighted towards fact patterns: expect specific balances and specific histories of what steps were taken, not bare definitions.",
+      "weakKnowledge": "Slow down on Parts 2 and 3 — everything else in this lesson assumes you can state the £500 line and the SRA-permission line without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A conveyancing file closed eighteen months ago. £42.17 is still sitting in the client ledger — an overpayment nobody chased, for a client who moved and left no forwarding address. The firm cannot keep it, cannot easily return it, and cannot simply write it off. Rule 5 is the narrow, procedural answer to exactly this problem — and it turns almost entirely on one number and one piece of paper.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. Rule 5 has been stable since the SRA Accounts Rules 2019 came into force; the £500 threshold is set by the rule itself rather than by separate guidance, so watch for any future SRA consultation on revising the figure rather than treating it as fixed for all time."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The problem of the balance nobody claims",
+        "voice": "narrative — opens with the ledger nobody remembers",
+        "body": [
+          "Every firm that holds client money accumulates a handful of balances that simply won't tidy themselves away: a cheque the client never banked, a small costs refund calculated after the file closed, an overpayment nobody noticed until the final reconciliation. The general rule under the SRA Accounts Rules 2019 is that client money must be returned to the person entitled to it promptly, as soon as there is no longer any proper reason to hold it. Most of the time that happens without difficulty.",
+          "The difficulty arises when it doesn't — when the client has moved without leaving an address, has died with no traceable estate, or simply never responds to attempts to return a small sum. The firm cannot keep the money in the client account indefinitely as a kind of permanent limbo, because client account is meant to hold money currently due to someone, not money nobody will collect.",
+          "Rule 5 exists to give firms a lawful way out of that limbo — but it is deliberately narrow. It does not say 'write it off.' It sets out exactly what has to be tried first, exactly how small the balance has to be, and exactly who has to be told, before a firm may treat the money as no longer client money at all."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Residual balance",
+            "definition": "A sum of client money remaining on a client ledger after a matter has otherwise concluded, which the firm has been unable to return to the rightful owner despite taking reasonable steps to do so."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-10-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the general duty in the SRA Accounts Rules 2019, when must client money be returned to the person entitled to it?",
+          "options": ["Only when the client formally requests it in writing", "Promptly, as soon as there is no longer any proper reason to hold it", "Within six years of the matter closing", "Only if the balance exceeds £500"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. The default is prompt return once there's no proper reason left to hold the money — r 5 is the fallback for the cases where that default can't be met.",
+          "feedbackIncorrect": "The starting point is the general duty to return client money promptly once holding it is no longer justified. Rule 5 only becomes relevant once that ordinary route has failed."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Rule 5.1: the £500 route",
+        "voice": "structural — rule text first, then the conditions unpacked",
+        "body": [
+          "Rule 5.1 lets a firm pay a residual balance to a charity of its own choosing, without asking the SRA first, but only if three conditions are all met together. Miss any one of them and the self-certification route isn't available — the firm either has to keep trying to return the money, or apply to the SRA under r 5.2 instead.",
+          "The three conditions are cumulative, not alternatives: reasonable steps to trace and repay the owner must actually have been taken and be capable of being shown; the balance must not exceed £500 in relation to that one client or trust matter; and the firm must make and retain a central record of the payment. 'Reasonable steps' is doing real work here — a firm that never tried to contact the client at all cannot rely on r 5.1 just because the sum is small.",
+          "The £500 ceiling is assessed per client, per matter — not against a firm's total residual balances, and not by lumping together several small amounts left over from several unrelated matters for the same client into one bigger figure to avoid the threshold."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Accounts Rules 2019, r 5.1",
+            "text": "You may only cease to treat client money as such and pay any residual balance to a charity of your choice where: (a) you have taken reasonable steps to return the money to the rightful owner; (b) the residual balance in relation to any one client or trust matter does not exceed £500; and (c) you make and retain a central register of residual balances so withdrawn.",
+            "elements": ["Reasonable steps taken to trace and repay the rightful owner", "Residual balance does not exceed £500 for that client or matter", "Payment recorded in a central register retained by the firm"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-10-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under r 5.1, against what is the £500 ceiling measured?",
+          "options": ["The firm's total residual balances across all clients", "The balance for that one client and that one matter", "The client's total funds ever held by the firm, across every matter", "There is no fixed ceiling under r 5.1"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct. It's a per-client, per-matter test — a firm can't dodge the threshold by aggregating, but equally can't be caught out by an unrelated balance on a different file for the same client.",
+          "feedbackIncorrect": "Re-read the rule text: it says 'in relation to any one client or trust matter' — the £500 figure attaches to that single balance, not to the client's overall history with the firm."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Above £500: no self-certification",
+        "voice": "cautionary — sets up the trap examiners like",
+        "body": [
+          "Once a residual balance exceeds £500 for that client or matter, r 5.1's self-certification route is closed off entirely. The firm cannot simply apply the same 'reasonable steps plus register' logic to a larger sum and pay it to charity on its own authority — r 5.2 requires the firm to obtain the SRA's prior written permission before making that payment.",
+          "This is the single most commonly tested distinction in this area, precisely because the two routes look procedurally similar — reasonable steps, a decision to pay to charity, a record kept — and differ only in one gatekeeping step. A firm that pays a £900 residual balance to charity without asking the SRA first has not made a paperwork slip; it has paid away client money it had no authority to pay away.",
+          "There is no shortcut around this by splitting a balance into instalments to keep each payment under £500, or by treating the threshold as advisory rather than a hard line — the rule is drafted as a bright-line figure precisely so it can't be argued around."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that once reasonable steps have genuinely been taken and a register is kept, the size of the balance doesn't matter much — the paperwork is what counts.",
+            "whyItsWrong": "The £500 figure in r 5.1 is a hard ceiling on the self-certification route, not a factor to be weighed against how thorough the tracing effort was. Above it, however diligent the firm has been, the only lawful route to paying the balance to charity is prior written SRA permission under r 5.2."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-10-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A firm has taken extensive, well-documented steps to trace a former client and cannot locate them. £740 remains on the client ledger. What must the firm do before paying the balance to charity?",
+          "options": ["Nothing further — the reasonable steps taken satisfy r 5.1 regardless of the amount", "Obtain the SRA's prior written permission, because the balance exceeds £500", "Split the payment into two instalments of £370 each to stay under the threshold", "Wait a further six years before any payment can be made"],
+          "correctIndex": 1,
+          "explanation": "Above £500, r 5.1's self-certification route is unavailable however good the tracing effort was. The firm must apply to the SRA under r 5.2 and obtain prior written permission before paying the balance to charity."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The register, and the debt that doesn't vanish",
+        "voice": "explanatory — walks through what the paper trail has to show",
+        "body": [
+          "The central register required by r 5.1(c) isn't a formality — it's what the firm produces if the SRA, or an accountant carrying out an accountant's report, later asks why client money left the client account without the client's instruction. A well-kept register typically records the client's name, the matter, the amount, the steps taken to trace them, the date of payment, and the charity to which the sum was paid.",
+          "Paying a residual balance to charity settles the client ledger, but it does not extinguish the firm's underlying obligation to the client if they later reappear. If a client resurfaces and can show they were entitled to the money, the firm remains liable to pay them — and since the sum is no longer held as client money, that repayment has to come from the firm's own office money, not from the client account, because the client account no longer holds anything belonging to that client.",
+          "This is why r 5.1 is really a risk-transfer mechanism rather than a true write-off: it lets the firm stop treating the sum as client money on its books, but the firm — not the charity, and not the SRA — carries the risk of the original owner turning up later."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "What the register should show, and what stays the firm's problem",
+            "points": [
+              "Client name, matter reference, and the amount paid",
+              "The steps taken to trace the rightful owner, and their outcome",
+              "The date of payment and the charity chosen",
+              "If the client later reappears: the firm repays from its own office money — the payment to charity does not discharge that risk, only the client-account entry"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-10-check-04",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in this scenario that shows the firm's risk hasn't actually disappeared just because the balance was paid to charity.",
+          "scenarioText": "A firm pays a £310 residual balance to a local charity in March, having kept a full register of its tracing efforts. In November, the former client contacts the firm and proves she was entitled to the money. The firm repays her £310 from its own office account.",
+          "tappableSpans": ["pays a £310 residual balance to a local charity", "kept a full register", "the former client contacts the firm and proves she was entitled", "repays her £310 from its own office account"],
+          "correctSpan": "repays her £310 from its own office account",
+          "feedbackCorrect": "Right. Paying to charity clears the client ledger, not the underlying obligation — if the true owner resurfaces, the firm funds the repayment itself, from its own money.",
+          "feedbackIncorrect": "Look for the moment the firm's own money, rather than client money, is used. The register and the charity payment don't make the client's underlying claim disappear."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Where firms get this wrong",
+        "voice": "direct — trap-focused, aimed squarely at exam distractors",
+        "body": [
+          "The most common failure isn't miscalculating the £500 figure — it's treating a small balance as automatically writable off just because it's small, without having actually taken and documented reasonable steps first. 'No forwarding address on file' is not, by itself, evidence of reasonable steps; a firm needs to show it tried to find one.",
+          "A second common failure runs the other way: over-caution, where a firm assumes every residual balance needs SRA permission and delays indefinitely rather than using the £500 route it's actually entitled to use. Both errors come from treating r 5 as vaguer than it is — it's a precise, conditional rule, not a general discretion.",
+          "A third failure is forgetting the register altogether — paying a small balance to charity, with genuinely reasonable steps behind it, but keeping no record. Without the register, the firm cannot demonstrate compliance with r 5.1(c), and the payment sits as an unexplained withdrawal from client account when the file is later reviewed."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Exam questions often present a firm that has simply 'been unable to reach the client' with no detail of what was tried, and expect students to accept that as sufficient for r 5.1.",
+            "whyItsWrong": "Absence of contact is not the same as reasonable steps to establish it. The facts need to show some active effort — checking the last known address, attempting alternative contact details, allowing a reasonable period to elapse — before the £500 route is genuinely available."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-10-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A firm holds a £120 residual balance and has simply noted on the file 'client unreachable' with no further detail, then pays the sum to charity. Has the firm complied with r 5.1?",
+          "options": ["Yes — the balance is well under £500, which is all that matters", "No — a bare note that the client is unreachable does not show reasonable steps were actually taken to trace them", "Yes — because the payment was recorded in the firm's accounts", "No — because balances under £500 must still go through SRA permission"],
+          "correctIndex": 1,
+          "trapExplanation": "The £500 figure and the register are only two of three cumulative conditions. Reasonable steps have to be shown, not asserted — a bare 'unreachable' note doesn't establish what was actually tried.",
+          "feedbackCorrect": "Correct. Size and record-keeping alone don't satisfy r 5.1 — the reasonable-steps limb has to be independently made out.",
+          "feedbackIncorrect": "Focus on what's missing from the facts, not what's present. The balance is small enough and a payment was made, but nothing shows genuine tracing effort."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-10-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A firm wishes to pay a £310 residual balance to a charity of its own choosing without applying to the SRA first. Which rule permits this, subject to conditions?",
+      "options": ["SRA Accounts Rules 2019, r 5.1", "SRA Accounts Rules 2019, r 8", "SRA Accounts Rules 2019, r 12", "SRA Code of Conduct for Firms, para 2.1"],
+      "correctIndex": 0,
+      "explanation": "Rule 5.1 is the self-certification route — reasonable steps taken, balance under £500, and a central register kept."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What is the maximum residual balance, per client or matter, that a firm may pay to charity without the SRA's prior written permission?",
+      "options": ["£250", "£500", "£1,000", "There is no fixed limit"],
+      "correctIndex": 1,
+      "explanation": "£500 is the ceiling set by r 5.1. Above that figure, prior written SRA permission is required under r 5.2."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Besides taking reasonable steps to trace the owner and staying within the £500 limit, what third condition must a firm satisfy to use the r 5.1 route?",
+      "options": ["Obtaining the client's advance written consent", "Making and retaining a central register of the residual balances paid away", "Notifying the Legal Ombudsman within 28 days", "Publishing the payment in the London Gazette"],
+      "correctIndex": 1,
+      "explanation": "Rule 5.1(c) requires a central register recording the payment — without it, the firm cannot demonstrate compliance."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A client for whom a firm paid a residual balance to charity two years ago gets in touch and proves she was entitled to the money. What is the firm's position?",
+      "options": ["The firm has no further liability once the charity payment was properly made", "The firm remains liable to repay her, funded from the firm's own office money", "The client must now claim the money back from the charity directly", "The client must apply to the SRA for reimbursement"],
+      "correctIndex": 1,
+      "explanation": "The charity payment clears the client ledger entry, not the underlying obligation. If the true owner reappears, the firm repays from its own funds."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A firm holds a £680 residual balance after extensive, well-documented tracing efforts fail to locate the former client. It keeps a full register and pays the sum to a local charity without contacting the SRA. Has the firm acted properly?",
+      "options": ["Yes — reasonable steps were taken and a register was kept, which is all r 5 requires", "No — above £500, the firm needed the SRA's prior written permission before paying the balance away", "Yes — because £680 is close enough to the £500 threshold to be treated as within it", "No — residual balances above £500 can never be paid to charity under any circumstances"],
+      "correctIndex": 1,
+      "trapExplanation": "Thorough tracing and a good register satisfy two of the three limbs of r 5.1, but the £500 ceiling is a separate, non-negotiable gate. Above it, only r 5.2's prior-permission route is available.",
+      "explanation": "The quality of the tracing effort cannot substitute for SRA permission once the balance exceeds £500 — the two routes are not interchangeable."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A firm has three unrelated matters for the same client, each with a residual balance of £200 left over. Combined, the balances total £600. Can the firm rely on r 5.1 for each balance separately?",
+      "options": ["No — the balances must be aggregated across all matters for that client, so the £500 limit is breached", "Yes — the £500 limit under r 5.1 applies per client, per matter, not to the client's combined balances", "No — a client can only have one residual balance addressed under r 5 at any time", "Yes, but only if the firm obtains SRA permission first regardless of the amounts"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to add the figures together because they relate to the same client, but the rule measures the £500 ceiling against each client-and-matter combination, not the client's overall history with the firm.",
+      "explanation": "Each £200 balance is assessed against its own matter. Provided reasonable steps and a register are in place for each, all three fall within r 5.1 individually."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A fee earner notes on a file 'unable to contact client' with no further detail, then relies on r 5.1 to pay a £90 balance to charity. What is the most accurate assessment?",
+      "options": ["Compliant — the balance is well under £500", "Not compliant — a bare assertion of no contact does not show reasonable steps were genuinely taken", "Compliant — small balances are exempt from the reasonable-steps requirement", "Not compliant — balances under £100 require SRA permission regardless"],
+      "correctIndex": 1,
+      "trapExplanation": "It's easy to focus only on the £500 figure and treat a small balance as low-risk enough to skip scrutiny of the reasonable-steps limb — but all three conditions in r 5.1 are cumulative, whatever the amount.",
+      "explanation": "Reasonable steps must be capable of being evidenced. A bare note without detail of what was actually tried does not satisfy r 5.1(a)."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT one of the three conditions in r 5.1 for paying a residual balance to charity without SRA permission?",
+      "options": ["Reasonable steps taken to return the money to the rightful owner", "The balance does not exceed £500 for that client or matter", "The firm obtains the client's prior written consent to the charity payment", "The firm makes and retains a central register of the payment"],
+      "correctIndex": 2,
+      "trapExplanation": "Client consent sounds like it should be required — after all, it's their money — but r 5.1 exists precisely for cases where the client cannot be reached at all, so consent is never a listed condition.",
+      "explanation": "The rule is built around the client being untraceable or unresponsive; requiring their prior consent would defeat the purpose of the rule entirely."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm's client died with no traceable estate and no known next of kin. A residual balance of £460 remains on the ledger after genuine, documented efforts to identify an estate or beneficiary. What is the correct next step?",
+      "options": ["The firm may pay the balance to a charity of its choice, provided it keeps a central register of the payment", "The firm must apply to the SRA for prior written permission because the client has died", "The firm must hold the balance indefinitely until an executor is appointed", "The firm must transfer the balance to the Official Solicitor automatically"],
+      "correctIndex": 0,
+      "explanation": "£460 falls within the £500 threshold, and reasonable steps were genuinely taken. Death of the client does not change the applicable route — r 5.1 applies on the same terms as any other untraceable owner."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm wants to pay a £1,200 residual balance to charity. It has documented extensive tracing efforts and wants to proceed as quickly as possible. What must happen before the payment can lawfully be made?",
+      "options": ["Nothing further — extensive tracing efforts are sufficient regardless of amount", "The firm must obtain the SRA's prior written permission before making the payment", "The firm must wait six years from the date the balance arose before any payment", "The firm may proceed, provided it notifies the SRA within 28 days after payment"],
+      "correctIndex": 1,
+      "explanation": "Above £500, permission must be obtained from the SRA before the payment is made, not after. Notifying after the fact does not satisfy r 5.2."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A firm properly pays a £480 residual balance to charity under r 5.1, keeping a full register. Six years later, no one has come forward to claim it. What is the significance of the register at this point?",
+      "options": ["It can now be destroyed, since the limitation period for any claim has expired", "It remains the firm's evidence of compliance if the SRA or an accountant later reviews the file", "It converts the payment into a permanent write-off requiring no further consideration", "It must be re-submitted annually to the SRA for renewed approval"],
+      "correctIndex": 1,
+      "explanation": "The register's function is evidential — it is what the firm produces to demonstrate that r 5.1's conditions were satisfied, whenever that compliance is later reviewed."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Reading r 5.1's three conditions together, what do they have in common structurally?",
+      "options": ["They are alternatives — satisfying any one of the three is enough", "They are cumulative — all three must be satisfied before the route is available", "They apply only to balances arising from conveyancing matters", "They are guidance only and carry no binding force"],
+      "correctIndex": 1,
+      "explanation": "The conditions in r 5.1 are joined cumulatively: reasonable steps, the £500 ceiling, and the register must all be satisfied together, not any one in isolation."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which rule governs the position once a residual balance exceeds the £500 figure set out in r 5.1?",
+      "options": ["SRA Accounts Rules 2019, r 5.2", "SRA Accounts Rules 2019, r 6", "SRA Accounts Rules 2019, r 5.1, applied at a higher threshold", "No further rule applies — the balance is simply written off"],
+      "correctIndex": 0,
+      "explanation": "Rule 5.2 is the higher-threshold counterpart to r 5.1: it requires the SRA's prior written permission before a payment above £500 can be made."
+    },
+    {
+      "itemId": "sqe1-sa-10-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm has two residual balances for the same client: £300 on a completed conveyancing matter, and £250 on a separate, unrelated probate matter. How should the £500 threshold be applied?",
+      "options": ["The balances must be combined to £550, exceeding the threshold, so r 5.2 permission is needed for both", "Each balance is tested separately against £500, so both may be paid under r 5.1 if the other conditions are met", "Only the larger balance can be paid to charity; the smaller must be returned to the client directly", "The threshold does not apply where a client has more than one matter with the firm"],
+      "correctIndex": 1,
+      "explanation": "The £500 ceiling in r 5.1 is measured per client, per matter — unrelated matters for the same client are not aggregated for this purpose."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's test items is treating r 5.1 as a single test about the size of the balance. It's three cumulative conditions — reasonable steps, the £500 ceiling, and the register — and the size of the balance only ever answers one of the three.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.residual-balances"
+  }
+}

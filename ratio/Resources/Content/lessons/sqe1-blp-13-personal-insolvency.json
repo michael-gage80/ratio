@@ -1,0 +1,453 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-13",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 13,
+  "topicId": "sqe1.business-law.personal-insolvency",
+  "title": "Personal insolvency: bankruptcy and IVAs",
+  "subtitle": "Petitions, the trustee's powers, the one-year rule on the family home, and the negotiated alternative",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish the debtor's own route into bankruptcy from a creditor's petition, and state the statutory minimum debt for a creditor's petition",
+    "Explain the trustee in bankruptcy's powers over the bankrupt's estate, including the one-year rule that protects a non-bankrupt spouse's interest in the family home",
+    "Compare bankruptcy with an individual voluntary arrangement and identify which route better fits a given client's facts"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Insolvency Act 1986, s 267",
+      "role": "Grounds and minimum debt threshold for a creditor's bankruptcy petition"
+    },
+    {
+      "citation": "Insolvency Act 1986, s 272",
+      "role": "Statutory anchor for the debtor route into bankruptcy"
+    },
+    {
+      "citation": "Insolvency Act 1986, s 279",
+      "role": "Duration of bankruptcy and automatic discharge"
+    },
+    {
+      "citation": "Insolvency Act 1986, s 336",
+      "role": "Rights of occupation of the bankrupt's home; the one-year rule protecting a non-bankrupt spouse"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Clients rarely arrive asking about 'personal insolvency' — they arrive asking whether they're going to lose their house, or whether there's a way to deal with debt that doesn't involve bankruptcy at all. Where the profile shows application is ahead of the underlying framework, this note appears: 'You can spot the right answer on a familiar fact pattern — this lesson checks you know why it's right.'",
+    "profileHooks": {
+      "weakApplication": "You know the statutory scaffolding here. The test pool leans towards fact patterns — expect to be asked what happens to a specific client, not to recite a section number.",
+      "weakKnowledge": "Slow down through Parts 1 and 2 before the home and the IVA material — the rest of this lesson assumes you can already place a debt problem on the debtor-route/creditor-petition map without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A trustee in bankruptcy can, in principle, sell the roof over a family's head to pay creditors. In practice they very rarely do it quickly — and the one-year pause built into the statute is the reason why. This lesson is about that pause, what triggers it, and what happens once it runs out.",
+    "lawStatedNotice": "Since 2016 reforms, a debtor's own bankruptcy application is made online to an adjudicator at the Insolvency Service rather than by petitioning the court; s 272 is used here as the traditional statutory anchor for the debtor route, but its court-petition mechanics have been superseded by that administrative process. Creditor's petitions under s 267 remain court-based."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two roads into bankruptcy",
+        "voice": "structural — sets out the map before the detail",
+        "body": [
+          "Bankruptcy can start from either side of the debt. A debtor who accepts they cannot pay can apply for their own bankruptcy — since 2016 this is done online, to an adjudicator at the Insolvency Service, not by petitioning a court. It is a comparatively fast, low-friction route: the debtor is choosing insolvency status for themselves.",
+          "A creditor's petition runs the other way, and it is the route SQE1 tests most closely because it has hard edges. Under s 267 Insolvency Act 1986, a creditor may petition for a debtor's bankruptcy only where the debt is at least the statutory minimum — currently £5,000 — and is either the subject of an unsatisfied statutory demand or a judgment debt the debtor has failed to satisfy, and the debt is unsecured.",
+          "The distinction matters practically: a creditor cannot use bankruptcy as a debt-collection shortcut for a small or disputed sum. The £5,000 threshold, and the requirement that the debt actually be undisputed and due, exist precisely to stop bankruptcy being weaponised against a solvent debtor who simply disputes an invoice."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Statutory demand",
+            "definition": "A formal written demand for payment of a debt of at least the statutory minimum; if unsatisfied after 21 days, it is one of the two routes (alongside an unsatisfied judgment) that lets a creditor petition for the debtor's bankruptcy."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A creditor is owed £3,200, undisputed and overdue. Can they petition for the debtor's bankruptcy under s 267?",
+          "options": [
+            "Yes, any undisputed unsecured debt qualifies",
+            "No — the debt falls below the £5,000 statutory minimum"
+          ],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — below £5,000 the creditor has other routes (a county court claim, for instance) but not a bankruptcy petition.",
+          "feedbackIncorrect": "Check the threshold again: s 267 sets a statutory minimum debt of £5,000 for a creditor's petition — £3,200 does not qualify, however undisputed it is."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What a trustee in bankruptcy actually controls",
+        "voice": "reference-style — a part students will return to",
+        "body": [
+          "Once a bankruptcy order is made, the bankrupt's estate — essentially everything of value they own, with a short list of exceptions — vests automatically in a trustee in bankruptcy. The trustee's job is to gather in, realise, and distribute that estate to creditors according to the statutory order of priority.",
+          "The estate is wide, but not total. Tools of the bankrupt's trade and basic household items needed for the bankrupt and their family are excluded, as are most pension rights. Everything else — the house, a car above modest value, a share portfolio, money owed to the bankrupt — is fair game, and the trustee has statutory powers to sell it, sue for it, or disclaim it if it is a liability rather than an asset.",
+          "This is where a well-prepared answer separates itself from a vague one: 'the trustee takes everything' is not the rule. The exam-safe version is that the trustee takes the estate as statutorily defined, and the interesting cases — the family home chief among them — are the ones where the statute deliberately slows the trustee down rather than handing over an unqualified power of sale."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "What is (and isn't) in the estate",
+            "points": [
+              "In: the bankrupt's property, money, and most rights of action, as at the date of the bankruptcy order",
+              "In: the family home, to the extent of the bankrupt's own beneficial share",
+              "Out: tools of trade reasonably required for the bankrupt's employment or business",
+              "Out: basic household items reasonably required to meet the domestic needs of the bankrupt and their family",
+              "Largely out: most approved pension arrangements"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-13-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A sole-trader plumber is made bankrupt. Which of the following best describes what the trustee can reach?",
+          "options": [
+            "Everything the plumber owns without exception, including tools of the trade",
+            "The plumber's estate generally, but not tools reasonably needed for their trade or basic household items",
+            "Only property acquired after the bankruptcy order",
+            "Nothing until a creditor separately applies for a charging order"
+          ],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct — the estate vests in the trustee widely, but the statute carves out tools of trade and basic domestic necessities precisely so bankruptcy doesn't strip someone of the means to keep working or living.",
+          "feedbackIncorrect": "The estate is wide but not unlimited — tools of trade and basic household items are statutorily excluded from what the trustee can take."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The family home: the one-year rule",
+        "voice": "case-narrative — walks through the timeline before naming the rule",
+        "body": [
+          "Say the bankrupt co-owns the family home with a spouse who is not themselves bankrupt. The trustee's interest is real — the bankrupt's beneficial share has vested in them — but s 336 Insolvency Act 1986 does not let the trustee force an immediate sale.",
+          "For the first year after the bankruptcy, the court weighs the creditors' interests against the interests of the bankrupt's spouse or civil partner and any children, alongside all the circumstances of the case — including the conduct of the non-bankrupt spouse contributing to the bankruptcy, and their needs and those of any children. In practice this gives the family real breathing room to find alternative arrangements.",
+          "After that first year has passed, s 336(5) flips the presumption: the court must assume the interests of the creditors outweigh all other considerations, unless the circumstances are exceptional. Exceptional does not mean merely difficult or upsetting — the courts have consistently read it narrowly, so that the ordinary hardship of losing a family home does not itself count."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, s 336(5)",
+            "text": "Where such an application is made after the end of the period of one year beginning with the first vesting ... of the bankrupt's estate in a trustee, the court shall assume, unless the circumstances of the case are exceptional, that the interests of the bankrupt's creditors outweigh all other considerations.",
+            "elements": [
+              "Application for sale/possession of the home is made",
+              "More than one year has passed since the estate first vested in a trustee",
+              "Absent exceptional circumstances, creditors' interests are presumed to outweigh all others"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-13-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events in the order they happen under the s 336 one-year rule.",
+          "items": [
+            "Bankruptcy order is made and the estate vests in the trustee",
+            "Within the first year, the court weighs creditors' interests against the family's needs and circumstances",
+            "The one-year period ends",
+            "Any later application for sale is decided on the presumption that creditors' interests outweigh all else, absent exceptional circumstances"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the shape of it — a genuine balancing exercise in year one, hardening into a strong presumption in favour of sale after it.",
+          "feedbackIncorrect": "Check the order again — the balancing exercise happens first, within the first year; the presumption in favour of creditors only takes over once that year has run out."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Coming out the other side: discharge",
+        "voice": "direct — states the rule, then the exception that tests it",
+        "body": [
+          "Bankruptcy is not indefinite. Under s 279 Insolvency Act 1986, a bankrupt is automatically discharged from bankruptcy after one year, whether or not their creditors have been paid in full. Discharge releases the bankrupt from most of their pre-bankruptcy debts and lifts the restrictions that came with bankrupt status.",
+          "That one-year period can be extended in practice where the bankrupt fails to cooperate with the trustee — for example by not disclosing assets or not attending required interviews — through a bankruptcy restrictions order or undertaking, which can extend restrictions for up to fifteen years. Discharge from the underlying bankruptcy still generally happens at one year; what a restrictions order extends is the set of disqualifications and controls that would otherwise fall away.",
+          "Students sometimes conflate 'discharge' with 'the estate comes back'. It doesn't: property that has already vested in the trustee stays vested and gets distributed to creditors regardless of discharge. Discharge is about the bankrupt's future, not about clawing back what has already been realised."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Automatic discharge",
+            "definition": "Release from bankrupt status, and from most pre-bankruptcy debts, occurring automatically one year after the bankruptcy order under s 279 — independent of whether the estate has been fully realised or creditors paid in full."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-13-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a cooperative bankrupt is automatically discharged one year after the bankruptcy order, even if creditors haven't been paid in full?",
+          "sliderLabels": [
+            "Not confident — discharge depends on creditors being paid",
+            "Confident — discharge is automatic at one year regardless"
+          ],
+          "correctPosition": "Confident — discharge is automatic at one year regardless",
+          "explanation": "s 279 makes discharge automatic at one year for a cooperative bankrupt — it is not conditional on creditors having recovered their debts in full. Non-cooperation is what puts that timeline at risk, via a bankruptcy restrictions order."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The negotiated alternative: individual voluntary arrangements",
+        "voice": "comparative — sets bankruptcy and the IVA side by side",
+        "body": [
+          "Bankruptcy is not the only formal route out of unmanageable debt. An individual voluntary arrangement, governed by Part VIII Insolvency Act 1986, lets a debtor propose a structured repayment plan to creditors — typically over several years — supervised by a licensed insolvency practitioner, without the debtor being made bankrupt.",
+          "The mechanics matter for advice: if creditors representing 75% by value of those voting approve the proposal at a creditors' meeting or by correspondence, the arrangement binds all the debtor's unsecured creditors who had notice of it — including any who voted against it or didn't vote at all. That's a real advantage over informal negotiation, where a single holdout creditor can derail everything.",
+          "The trade-off is discipline: an IVA requires the debtor to keep to the agreed payments over its life, and failure can tip the debtor back into bankruptcy anyway. Bankruptcy, by contrast, is faster to reach a clean slate but carries wider immediate restrictions — for instance, an undischarged bankrupt cannot act as a company director without the court's permission. Advising a client well means matching the route to whether they have a steady income to sustain a repayment plan, or need the harder reset bankruptcy provides."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Bankruptcy vs IVA — the practical contrast",
+            "points": [
+              "Bankruptcy: faster route to a clean slate (discharge in one year); wider immediate restrictions (e.g. on acting as a company director); estate vests in a trustee",
+              "IVA: debtor keeps control of assets while performing the arrangement; requires a sustainable income stream over the plan's life",
+              "IVA: binds all unsecured creditors with notice once 75% by value approve — dissenters included",
+              "Both: supervised by an insolvency practitioner acting as trustee (bankruptcy) or supervisor (IVA)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-13-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client has £40,000 of unsecured debt, a stable salary, and wants to avoid the restrictions on acting as a company director that bankruptcy would trigger. Which route best fits?",
+          "options": [
+            "Bankruptcy — it resolves the debt fastest regardless of the client's other goals",
+            "An IVA — it lets the client repay from stable income over time without becoming bankrupt",
+            "Neither is available without a creditor's petition first",
+            "An IVA is only available once a bankruptcy order has already been made"
+          ],
+          "correctIndex": 1,
+          "explanation": "Stable income to sustain a repayment plan, plus a wish to avoid bankruptcy's director restrictions, is the classic profile pointing towards an IVA rather than bankruptcy."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-13-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A debtor accepts they cannot pay their debts and wants to apply for their own bankruptcy. A client asks how this application is made today. What should they be told?",
+      "options": [
+        "By petitioning the county court in person",
+        "By an online application to an adjudicator at the Insolvency Service",
+        "By writing to their largest creditor for consent",
+        "By applying to the Official Receiver's local office by post only"
+      ],
+      "correctIndex": 1,
+      "explanation": "Since 2016, a debtor's own bankruptcy application is made online to an adjudicator at the Insolvency Service rather than by court petition — a genuine change worth stating precisely, since 'petition' is often used loosely to cover both routes."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A creditor wants to petition for a debtor's bankruptcy over an undisputed unsecured debt of £4,500. Can the petition proceed on that sum alone?",
+      "options": [
+        "Yes, any undisputed unsecured debt supports a petition",
+        "No — s 267 sets a statutory minimum of £5,000",
+        "No — only debts over £10,000 qualify",
+        "Yes, but only if the debt is secured"
+      ],
+      "correctIndex": 1,
+      "explanation": "s 267 requires the debt to be at least the statutory minimum, currently £5,000. £4,500 falls just short, whatever else is true about the debt."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A bankrupt's estate has vested in the trustee. The bankrupt is a self-employed carpenter. What happens to their basic set of hand tools?",
+      "options": [
+        "They vest in the trustee along with everything else",
+        "They are excluded from the estate as tools reasonably required for the bankrupt's trade",
+        "They must be sold and the proceeds given to the bankrupt as an allowance",
+        "They vest in the trustee unless the bankrupt argues exceptional hardship"
+      ],
+      "correctIndex": 1,
+      "explanation": "Tools reasonably required for the bankrupt's employment, business or vocation are excluded from the estate by statute — no separate hardship argument is needed to keep them."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "A bankrupt cooperates fully with the trustee throughout. When, under s 279, is they automatically discharged from bankruptcy?",
+      "options": [
+        "Only once all creditors have been paid in full",
+        "One year after the bankruptcy order",
+        "Five years after the bankruptcy order",
+        "Never automatically — discharge always requires a court application"
+      ],
+      "correctIndex": 1,
+      "explanation": "Discharge under s 279 is automatic at one year for a cooperative bankrupt, and does not depend on creditors having been paid in full."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A trustee applies for possession and sale of the family home fourteen months after the bankruptcy order. The bankrupt's spouse, who is not bankrupt, argues that losing the home would be very distressing for their two young children. How is the application most likely to be decided?",
+      "options": [
+        "The application is refused, because any distress to children counts as exceptional circumstances",
+        "The application is likely to succeed — after one year, creditors' interests are presumed to outweigh other considerations unless circumstances are genuinely exceptional, and ordinary hardship is not enough",
+        "The application automatically fails because more than a year has passed",
+        "The court has no jurisdiction to order sale of a home the bankrupt co-owns with a non-bankrupt spouse"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat any real hardship to children as 'exceptional', but the courts read s 336(5) narrowly: the ordinary distress and disruption that comes with losing a family home is not itself exceptional — something materially different from the run of cases is required, and the presumption in favour of creditors applies once a year has passed.",
+      "explanation": "Past the one-year mark, s 336(5) presumes creditors' interests outweigh all other considerations absent exceptional circumstances, and the courts set that bar high."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A trustee applies for sale of the family home eight months after the bankruptcy order. Which best describes how the court approaches the application at this stage?",
+      "options": [
+        "It applies the same strong presumption in favour of creditors that applies after one year",
+        "It weighs the creditors' interests against the needs and circumstances of the bankrupt's spouse and any children, without the post-one-year presumption",
+        "It automatically refuses any application made within the first year",
+        "It has no power to consider the application until the one-year period has expired"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer imports the post-one-year presumption too early — within the first year the court conducts a genuine balancing exercise; the statutory presumption in favour of creditors only bites once a year has actually passed.",
+      "explanation": "Within the first year, s 336 requires the court to weigh creditors' interests against the family's circumstances directly, rather than applying the later presumption."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "A creditor holds an unsatisfied statutory demand for £7,000, unsecured and undisputed, served on the debtor 25 days ago with no response. Can the creditor now petition for bankruptcy?",
+      "options": [
+        "No — the demand must be unsatisfied for at least 90 days before a petition can be presented",
+        "Yes — the debt exceeds the statutory minimum and the 21-day period for compliance has passed without payment",
+        "No — only judgment debts, not statutory demands, can found a petition",
+        "Yes, but only if the debt is secured on property"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes invent a longer waiting period by analogy with other notice regimes — the statutory demand route requires 21 days' non-compliance, not 90, and this demand has already run well past that with no payment.",
+      "explanation": "The debt exceeds £5,000, is unsecured, and the demand has gone unsatisfied for more than 21 days — all the s 267 conditions for a creditor's petition are met."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client owes ¤60,000 to several unsecured creditors, has a modest but reliable salary, and is desperate to avoid the restrictions bankruptcy would place on their role as a company director. What should the client be advised?",
+      "options": [
+        "Bankruptcy, since it resolves the debt fastest and director restrictions are only theoretical",
+        "An IVA may suit them, since it can allow repayment from income over time while avoiding bankrupt status and its director restrictions",
+        "Nothing can be done outside informal negotiation with each creditor individually",
+        "They should wait for a creditor to petition, since debtors cannot initiate their own arrangement"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is treating bankruptcy's speed as decisive without weighing what the client said they actually want to avoid — an IVA is designed for exactly this profile: steady income, a wish to keep control of assets and avoid bankrupt status.",
+      "explanation": "An IVA is proposed by the debtor and can be structured around a reliable income stream, letting the client avoid the restrictions — including on acting as a company director — that bankruptcy would trigger."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "At a creditors' meeting on a proposed IVA, creditors representing 80% by value vote in favour; the remaining 20% by value vote against. What is the effect on the dissenting creditors?",
+      "options": [
+        "They are not bound and can pursue the debtor individually for their debt",
+        "They are bound by the arrangement along with everyone else, provided they had notice of it",
+        "The IVA fails because approval must be unanimous",
+        "They can apply within 28 days to have the whole arrangement set aside as of right"
+      ],
+      "correctIndex": 1,
+      "explanation": "Once 75% by value of those voting approve, the arrangement binds all unsecured creditors who had notice of it — dissenters included — which is precisely what makes an IVA more useful than informal negotiation."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A bankrupt has refused to disclose several bank accounts to the trustee and missed two required interviews. What is the most likely consequence for the one-year discharge timeline?",
+      "options": [
+        "None — discharge at one year is fixed regardless of cooperation",
+        "The Official Receiver or trustee may seek a bankruptcy restrictions order or undertaking, extending restrictions on the bankrupt for up to fifteen years",
+        "The bankruptcy order is automatically set aside",
+        "The bankrupt is immediately re-classified as a debtor under an IVA instead"
+      ],
+      "correctIndex": 1,
+      "explanation": "Non-cooperation of this kind is exactly what a bankruptcy restrictions order or undertaking is aimed at — it extends the restrictions that would otherwise lift on discharge, for up to fifteen years, without undoing the bankruptcy itself."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-11",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "A trustee in bankruptcy wants to realise the bankrupt's shareholding in a private company to pay creditors. Does the shareholding form part of the estate available to the trustee?",
+      "options": [
+        "No, shares are always excluded from a bankrupt's estate",
+        "Yes, in principle — the estate captures the bankrupt's property generally, and shares are not among the statutory exclusions",
+        "Only if the company consents to the transfer",
+        "Only if the shares were acquired after the bankruptcy order"
+      ],
+      "correctIndex": 1,
+      "explanation": "The estate is defined widely to capture the bankrupt's property; shares are ordinary property and are not within the narrow exclusions for tools of trade, basic household items and most pensions."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Under s 336(5), once the one-year period following vesting of the estate has passed, how must the court approach an application for sale of the family home?",
+      "options": [
+        "It must refuse sale unless the bankrupt consents",
+        "It must assume creditors' interests outweigh all other considerations, unless the circumstances are exceptional",
+        "It must order sale automatically with no discretion at all",
+        "It must adjourn the application for a further year before deciding"
+      ],
+      "correctIndex": 1,
+      "explanation": "s 336(5) creates a presumption, not an automatic rule — the court retains a narrow discretion where circumstances are genuinely exceptional, but the starting assumption after one year strongly favours the creditors."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which combination correctly states the conditions a creditor must meet under s 267 to petition for a debtor's bankruptcy?",
+      "options": [
+        "Debt of at least £5,000, unsecured, and either an unsatisfied statutory demand or unsatisfied judgment debt",
+        "Any amount of debt, provided it is secured on the debtor's property",
+        "Debt of at least £750, whether secured or unsecured",
+        "Three separate creditors must join the petition together"
+      ],
+      "correctIndex": 0,
+      "explanation": "s 267 requires an unsecured debt of at least the statutory minimum (£5,000), which the debtor has failed to satisfy following either a statutory demand or an unsatisfied judgment."
+    },
+    {
+      "itemId": "sqe1-blp-13-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A trustee wants to apply for sale of the family home nine months after the bankruptcy order, relying on the post-one-year presumption in s 336(5) to strengthen the application. Will that presumption apply?",
+      "options": [
+        "Yes, the presumption applies from the date of the bankruptcy order regardless of when the application is made",
+        "No — the presumption only applies to applications made after the one-year period has actually elapsed; at nine months the court conducts the ordinary balancing exercise",
+        "Yes, provided the trustee undertakes to wait three further months before enforcing any order",
+        "No — the presumption never applies to a family home, only to other property"
+      ],
+      "correctIndex": 1,
+      "explanation": "The s 336(5) presumption is tied to the one-year period actually having elapsed since vesting; an application at nine months is decided under the ordinary balancing exercise the statute sets out for the first year."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is timing: students reach for the post-one-year presumption on s 336 applications made well within the first year, or assume discharge is conditional on creditors being paid in full. Check the clock before you apply the rule.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.personal-insolvency"
+  }
+}

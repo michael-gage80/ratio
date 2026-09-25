@@ -1,0 +1,345 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-15",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 15,
+  "topicId": "sqe1.business-law.taxing-company-choosing-structure",
+  "title": "Taxing the company, and choosing a structure for tax",
+  "subtitle": "Corporation tax and marginal relief, group relief, VAT, and why the vehicle you choose changes the tax bill",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Calculate, in outline, a company's corporation tax liability across the small profits rate, marginal relief, and the main rate",
+    "Explain when group relief is available between 75%-related companies and how VAT charges output tax against input tax",
+    "Compare the overall tax position of an unincorporated business against a company on broadly similar profits, and identify the client factors that should drive the choice of vehicle"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Corporation Tax Act 2010, s 151", "role": "Anchors the small profits rate and marginal relief mechanism for corporation tax" },
+    { "citation": "Value Added Tax Act 1994", "role": "Charges VAT on taxable supplies and governs registration, rates, and output/input tax" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "By this point in the module, most students can state each tax in isolation — corporation tax, VAT, income tax on the unincorporated alternative. Where the profile shows knowledge is ahead of application, this note appears: 'You know each tax on its own — this lesson is about weighing them against each other for one client.'",
+    "profileHooks": {
+      "weakApplication": "You know the rates and reliefs individually. This lesson's test pool leans towards putting them side by side — expect questions that ask you to compare, not just recall.",
+      "weakKnowledge": "Go through Parts 1 to 3 carefully before the comparison in Parts 4 and 5 — the closing argument of this lesson only lands if the corporation tax and VAT mechanics are solid first."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "This module opened with a choice: sole trader, partnership, or company, made on day one, often before there's any real business to speak of. Everything since has been about what that choice commits a client to — and tax is where the commitment shows up most starkly. Two owners with identical profits can pay meaningfully different total tax purely because one incorporated and the other didn't. This closing lesson brings that comparison into focus.",
+    "lawStatedNotice": "The corporation tax rates, marginal relief thresholds, and VAT rates and registration threshold given in this lesson are 2025/26 figures, reviewed at least annually at the Budget — check them against the current position before relying on any figure quoted here."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Corporation tax: two rates and a bridge between them",
+        "voice": "structural — sets out the mechanism before the numbers",
+        "body": [
+          "A company's profits — trading profits, investment income, and chargeable gains together — are charged to corporation tax, not income tax or CGT. For 2025/26, companies with profits up to £50,000 pay the small profits rate of 19%; companies with profits above £250,000 pay the main rate of 25%.",
+          "Between those two figures sits marginal relief, a mechanism under the framework in the Corporation Tax Act 2010 that tapers the rate smoothly from 19% up towards 25% as profits rise through the band, rather than letting a company fall off a cliff edge the moment it passes £50,000. Without marginal relief, a company one pound over the small profits threshold would otherwise face the full main rate on its entire profit — marginal relief avoids that distortion.",
+          "The practical effect is an effective marginal rate on profits within the band that is higher than either the small profits rate or the main rate on its own — commonly cited as around 26.5% for 2025/26. That is worth flagging to a client: the 'worst' rate a growing company faces is not the main rate itself, but the rate on the slice of profit inside the marginal relief band."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Marginal relief",
+            "definition": "A tapering mechanism that smooths the transition between the small profits rate and the main rate of corporation tax, so that profits between the lower and upper thresholds are taxed at an effective rate between the two, rather than the whole profit jumping straight to the main rate."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-15-check-01",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that explains why marginal relief exists.",
+          "passage": "A company's profits are charged to corporation tax at the small profits rate below the lower threshold and the main rate above the upper threshold. Without a bridging mechanism, a company crossing the lower threshold by a single pound would face the full main rate on its entire profit, not just the excess. Marginal relief tapers the rate smoothly between the two thresholds so that only the effective rate on profit within the band rises, avoiding that cliff-edge effect.",
+          "ratioSentence": "Marginal relief tapers the rate smoothly between the two thresholds so that only the effective rate on profit within the band rises, avoiding that cliff-edge effect."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Reading the marginal relief band correctly",
+        "voice": "reference-style — a checklist for applying the rates",
+        "body": [
+          "Applying corporation tax correctly means identifying which of three positions a company's profit falls into: at or below the small profits threshold (19% flat), at or above the main rate threshold (25% flat), or in between (main rate on the whole profit, reduced by marginal relief).",
+          "One detail examiners like to test: the thresholds are reduced proportionately where a company has associated companies (broadly, companies under common control) or where the accounting period is shorter than twelve months. A company that looks like it sits comfortably within the small profits band on a standalone view can be pushed into the marginal band, or even the main rate, once associated companies are taken into account — because the £50,000 and £250,000 thresholds are shared out between them.",
+          "This is a natural point to connect back to group structures discussed elsewhere in this module: a group of associated companies cannot each separately claim the small profits rate on the full £50,000 as if the others didn't exist."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Corporation Tax Act 10, s 151 (small profits rate and marginal relief framework)",
+            "text": "Where a company's augmented profits for an accounting period exceed the lower threshold but do not exceed the upper threshold, corporation tax is charged at the main rate, reduced by marginal relief calculated by reference to the excess of the upper threshold over the augmented profits. The lower and upper thresholds are proportionately reduced where the company has associated companies or a short accounting period.",
+            "elements": ["Profits between the lower and upper thresholds", "Main rate charged, then reduced by marginal relief", "Thresholds shared/reduced for associated companies or short accounting periods"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-15-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A company has £180,000 of profit for the year and one associated company, each with equal profits. What is the effect of the association on its corporation tax thresholds?",
+          "options": ["No effect — each company gets the full £50,000/£250,000 thresholds regardless of association", "The thresholds are shared proportionately between the associated companies, potentially pushing this company into the marginal relief band or beyond", "Association only matters for VAT, not corporation tax", "Association doubles each company's thresholds"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — the small profits and main rate thresholds are divided between associated companies, so a group of companies can't each claim the full band as if standing alone.",
+          "feedbackIncorrect": "Association reduces the thresholds proportionately, shared between the group — it doesn't leave each company with the full £50,000/£250,000 band untouched."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Group relief: sharing losses between 75%-related companies",
+        "voice": "direct — states the mechanism, then the threshold that triggers it",
+        "body": [
+          "Where companies in a group are related closely enough, a loss made by one can be surrendered to offset the taxable profit of another, rather than each company's tax position being assessed in total isolation. This is group relief, and the threshold that unlocks it is a 75% relationship — broadly, one company holding at least 75% of the ordinary share capital of another, or two companies both being 75% subsidiaries of a common parent.",
+          "The commercial logic is straightforward: a group that structures its trading across several subsidiaries for good operational reasons shouldn't be taxed worse overall than if it had run the same activities through a single company. Group relief lets a loss-making subsidiary's loss reduce the group's overall corporation tax bill in the same period, rather than being trapped, unused, inside the loss-making company alone.",
+          "The 75% figure is a bright line, not a general 'close relationship' test — a 70% holding does not qualify, however commercially integrated the companies are in practice. This is a common examiner trap: dressing up a clearly-connected group of companies that nonetheless falls just under 75%."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Group relief",
+            "definition": "The surrender of a trading loss (or certain other losses) by one company to another company within the same 75% group, to be set against the recipient company's taxable total profits for a corresponding accounting period."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-15-check-03",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Parent Co owns 70% of the ordinary share capital of Sub Co. Sub Co makes a trading loss this year. Can Sub Co surrender that loss to Parent Co under group relief?",
+          "options": ["Yes — 70% is close enough to count as a group relationship", "No — group relief requires at least a 75% relationship, and 70% falls short"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct — the 75% threshold is a bright line. A 70% holding, however commercially close the companies are, does not unlock group relief.",
+          "feedbackIncorrect": "Check the threshold again — group relief requires at least a 75% relationship. 70% does not qualify, regardless of how integrated the companies otherwise are."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "VAT: a tax on the transaction, not the profit",
+        "voice": "case-narrative — follows a supply through the VAT mechanism",
+        "body": [
+          "Value added tax, governed by the Value Added Tax Act 1994, sits apart from corporation tax and income tax conceptually: it is charged on taxable supplies of goods and services, not on profit, and it applies regardless of whether the supplier is a company, a partnership, or a sole trader.",
+          "A business must register for VAT once its taxable turnover exceeds the registration threshold (currently £90,000 in any rolling twelve-month period), though a business can also register voluntarily below that figure — often worthwhile if most of its customers are themselves VAT-registered and can recover the VAT charged to them.",
+          "Once registered, the business charges output tax on its taxable supplies at the applicable rate — standard rate 20% on most goods and services, reduced rate 5% on a specified list (such as domestic fuel and power), and zero rate 0% on another specified list (such as most food and children's clothing) — and can reclaim input tax it has itself been charged on its own business purchases. The business accounts to HMRC for the difference between output tax collected and input tax reclaimed."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "VAT in one pass",
+            "points": [
+              "Registration required once taxable turnover exceeds the threshold (currently £90,000 in a rolling 12 months); voluntary registration is available below it",
+              "Output tax: VAT the business charges on its own taxable supplies",
+              "Input tax: VAT the business has been charged on its own purchases, reclaimable if the purchases relate to taxable supplies",
+              "Standard rate 20%, reduced rate 5% (specified supplies), zero rate 0% (specified supplies) — zero-rated supplies are taxable supplies, so input tax on related costs remains reclaimable"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-15-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A VAT-registered business sells zero-rated children's clothing. It charges no VAT on those sales. Can it still reclaim the VAT it was charged on the shop fittings it bought to sell the clothing?",
+          "options": ["No — if output tax is nil, input tax can never be reclaimed", "Yes — zero-rated supplies are still taxable supplies, so related input tax remains reclaimable", "Only if the business also makes some standard-rated sales", "Only if HMRC grants special permission"],
+          "correctIndex": 1,
+          "explanation": "Zero-rated is not the same as exempt: a zero-rated supply is a taxable supply charged at 0%, so input tax on costs relating to it remains reclaimable — unlike genuinely exempt supplies, where input tax recovery is restricted."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Bringing it together: why the vehicle changes the bill",
+        "voice": "argumentative — closes the module by weighing the alternatives against each other",
+        "body": [
+          "Go back to where this module started: a client choosing between trading as a sole trader, a partnership, or a company. Everything since has filled in what that choice actually means — and tax is the sharpest illustration of it, because the same underlying profit can be taxed under genuinely different regimes depending on the vehicle chosen.",
+          "An unincorporated trader pays income tax on the whole of their profit as it arises, at rates up to 45%, plus Class 4 National Insurance — there is no separate 'company' layer to plan around. A company pays corporation tax on its profit at 19%, up to 25% with marginal relief in between, and profit only reaches the owner personally — typically taxed again, at dividend or salary rates — once it is actually extracted. Retained profit inside a company can therefore sit at a materially lower rate than the same profit would face in an unincorporated trader's hands, for as long as it stays retained.",
+          "None of this makes incorporation automatically 'better'. A company brings VAT, corporation tax and (on extraction) personal tax layered together, plus the compliance and disclosure obligations this module has covered elsewhere; an unincorporated business is simpler but taxes profit fully and immediately as income, whether or not the owner draws it out. The honest answer, and the one worth giving a client, is that the right vehicle depends on how much profit is likely to be retained versus drawn, how the client values simplicity against tax efficiency, and how the disposal is eventually structured — which is exactly why this module built the comparison up one piece at a time rather than handing over a single rule."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The vehicle comparison, closed out",
+            "points": [
+              "Unincorporated (sole trader/partnership): income tax on all profit as it arises (up to 45%) plus Class 4 NICs; no separate entity-level tax; simpler structure and compliance",
+              "Company: corporation tax on profit (19% to 25%, with marginal relief between); a further personal tax charge only on profit actually extracted; more compliance, but potential to defer personal tax on retained profit",
+              "Both: eventual disposal of the business or company shares can attract CGT, with Business Asset Disposal Relief available on either structure if the qualifying conditions are met",
+              "The right choice turns on the client's actual plans for the profit — retain and reinvest, or draw and spend — not on which vehicle sounds more sophisticated"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-15-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "application",
+          "prompt": "A client expects to retain most of their profit in the business for reinvestment over the next several years, drawing out only a modest amount to live on. How strongly does this factor point towards incorporating rather than trading as a sole trader?",
+          "sliderLabels": ["Weak pointer — retention has little bearing on the choice", "Strong pointer — retaining profit is one of the clearest reasons to prefer a company"],
+          "correctPosition": "strong",
+          "explanation": "Retained profit is exactly where incorporation tends to pay off: corporation tax on the retained amount can be materially lower than the income tax the same profit would face immediately in a sole trader's hands, and personal tax on extraction is deferred until the owner actually draws it out."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-15-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A company has £40,000 of profit for the year and no associated companies. Which corporation tax rate applies to the whole of that profit for 2025/26?",
+      "options": ["The main rate of 25%", "The small profits rate of 19%", "A blended rate calculated under marginal relief", "No corporation tax is due below £50,000"],
+      "correctIndex": 1,
+      "explanation": "At £40,000, the company's profit sits at or below the small profits threshold, so the small profits rate of 19% applies to the whole of the profit."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A company has £300,000 of profit for the year and no associated companies. Which rate applies?",
+      "options": ["The small profits rate of 19% on the whole amount", "The main rate of 25% on the whole amount", "Marginal relief applies because the profit exceeds £50,000", "No corporation tax is due above £250,000"],
+      "correctIndex": 1,
+      "explanation": "At £300,000, profit exceeds the upper threshold (£250,000), so the main rate of 25% applies to the whole of the profit — marginal relief only operates for profits between the two thresholds."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A company's profit sits between the small profits threshold and the main rate threshold. Which best describes how it is taxed?",
+      "options": ["At the small profits rate on the whole amount", "At the main rate on the whole amount, then reduced by marginal relief", "Split, with part taxed at 19% and part at 25% as if in two separate bands", "It escapes corporation tax entirely, being in a gap between the thresholds"],
+      "correctIndex": 1,
+      "explanation": "Within the band, the main rate is charged on the whole profit and then reduced by marginal relief, producing an effective rate between 19% and 25% — it is not simply split into two flat-rate slices."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "What is the minimum shareholding relationship generally required between two companies for group relief to be available?",
+      "options": ["50%", "51%", "70%", "75%"],
+      "correctIndex": 3,
+      "explanation": "Group relief requires at least a 75% relationship — broadly, 75% ownership of ordinary share capital, either directly between the companies or via a common parent."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Two subsidiaries are each 70%-owned by the same parent company, and are run as a single integrated business in practice. One makes a large trading loss. Can it surrender that loss to the other subsidiary under group relief?",
+      "options": ["Yes — they are clearly a commercial group, and that is enough", "No — the statutory test is a 75% ownership relationship, and 70% does not meet it however integrated the companies are commercially", "Yes, provided both subsidiaries have the same registered office", "No — group relief is never available between subsidiaries, only between parent and subsidiary directly"],
+      "correctIndex": 1,
+      "trapExplanation": "Commercial integration is not the legal test — students are often tempted to reason from how closely the businesses operate together, but group relief turns on the 75% shareholding threshold specifically, which these facts do not meet.",
+      "explanation": "The 75% threshold is a bright line, not a general test of commercial closeness; falling short at 70% means no group relief, regardless of how integrated the businesses are in practice."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A business sells goods that are zero-rated for VAT purposes. A director assumes that because no VAT is charged on sales, the business cannot be VAT-registered or reclaim any VAT. Is the director right?",
+      "options": ["Yes — zero-rated goods take the business outside the VAT system entirely", "No — zero-rated supplies are still taxable supplies, so the business can register and reclaim input tax on related costs", "Yes, unless the business also sells some standard-rated goods", "No, but only because zero-rated status is temporary and will convert to standard rate eventually"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is confusing 'zero-rated' with 'exempt' — they sound similar but have opposite consequences for input tax recovery. Zero-rated supplies are taxable supplies at a 0% rate, which keeps the business inside the VAT system and able to reclaim related input tax; exempt supplies are outside it.",
+      "explanation": "Zero-rated supplies remain taxable supplies, just charged at 0%. The business can be VAT-registered and reclaim input tax on costs relating to those sales, unlike a business making genuinely exempt supplies."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client is comparing trading as a sole trader against incorporating, on the assumption that a company is 'always more tax-efficient'. Their plan is to draw out almost all of the business's profit each year to live on. What should they be advised?",
+      "options": ["Incorporating is still clearly better, since corporation tax rates are lower than income tax rates", "The corporation tax advantage is weakest here, because profit drawn out is generally taxed again on extraction, eroding much of the benefit of the lower corporation tax rate", "Sole trader status is always worse regardless of drawing patterns", "VAT registration is only available to companies, so incorporation is required regardless"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is treating the lower corporation tax rate as the whole story — for a client who draws out nearly all the profit, the deferral advantage that makes incorporation attractive largely disappears, because extraction usually triggers a further personal tax charge.",
+      "explanation": "The tax advantage of incorporation is strongest where profit is retained; a client planning to draw out almost everything gets little benefit from the lower corporation tax rate once extraction is taxed again."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A company's taxable turnover is forecast to reach £95,000 over the next rolling twelve months, though it is currently below £90,000. What should the company be advised about VAT registration?",
+      "options": ["No action is needed until turnover actually exceeds £90,000 in a rolling 12-month period, at which point registration becomes compulsory", "Registration is only ever voluntary and there is no compulsory threshold", "The company must deregister now to avoid future liability", "VAT registration only applies to companies, not to any other business structure, so this is irrelevant"],
+      "correctIndex": 0,
+      "explanation": "Compulsory registration is triggered once taxable turnover exceeds the registration threshold (currently £90,000) in a rolling 12-month period — the company should monitor its turnover and register once that threshold is actually crossed, though it may also choose to register voluntarily earlier."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A group consists of a parent company and a wholly-owned subsidiary. The subsidiary makes a £200,000 trading loss; the parent makes £200,000 of taxable profit in the corresponding period. What is the most likely outcome under group relief?",
+      "options": ["The loss is trapped in the subsidiary and cannot be used elsewhere in the group", "The subsidiary can surrender the loss to the parent to offset against the parent's taxable profit, since the 75% relationship is comfortably met", "Group relief only works in the other direction, from parent to subsidiary", "The companies must first merge before any loss can be shared"],
+      "correctIndex": 1,
+      "explanation": "A wholly-owned subsidiary easily meets the 75% threshold, so the subsidiary's trading loss can be surrendered to the parent and set against the parent's taxable profit for the corresponding period."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-10",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A client asks which statute governs the VAT charge on their company's sales. Which is the correct answer?",
+      "options": ["Corporation Tax Act 2010", "Income Tax (Trading and Other Income) Act 2005", "Value Added Tax Act 1994", "Taxation of Chargeable Gains Act 1992"],
+      "correctIndex": 2,
+      "explanation": "The Value Added Tax Act 1994 governs the charge to VAT, registration, and the rates and rules for output and input tax; the other statutes listed govern corporation tax, income tax on unincorporated profit, and CGT respectively."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company has three associated companies, each with equal profits, and their combined group profit for the year is £200,000. How does the association affect each company's small profits threshold?",
+      "options": ["Each company still gets the full £50,000 threshold on a standalone basis", "The £50,000 and £250,000 thresholds are divided proportionately among the associated companies, so each effectively gets a smaller band before marginal relief or the main rate bites", "Association is only relevant to VAT registration, not to corporation tax thresholds", "Associated companies are simply taxed as one company for all purposes"],
+      "correctIndex": 1,
+      "explanation": "Where companies are associated, the small profits and main rate thresholds are shared proportionately between them, so each company's individual band is reduced rather than each claiming the full £50,000/£250,000 range independently."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement best describes the purpose of marginal relief under the Corporation Tax Act 2010 framework?",
+      "options": ["It exempts profits between the two thresholds from corporation tax altogether", "It tapers the effective rate smoothly between the small profits rate and the main rate, avoiding a sudden jump to the main rate on the whole profit", "It only applies to companies with associated companies", "It replaces the main rate entirely for all companies above £50,000"],
+      "correctIndex": 1,
+      "explanation": "Marginal relief smooths the transition between the two rates so that profits within the band face a gradually rising effective rate, rather than the whole profit suddenly being taxed at the full main rate once the lower threshold is crossed."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under the VAT framework, what is the correct description of 'output tax' and 'input tax'?",
+      "options": ["Output tax is VAT the business reclaims; input tax is VAT it charges customers", "Output tax is VAT the business charges on its own taxable supplies; input tax is VAT it has been charged on its own business purchases, generally reclaimable", "Both terms refer to the same amount, described differently depending on the VAT return period", "Output tax applies only to exports; input tax applies only to domestic sales"],
+      "correctIndex": 1,
+      "explanation": "Output tax is the VAT a registered business charges on what it supplies; input tax is the VAT it has itself been charged on its purchases, which it can generally reclaim against the output tax it owes."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A company's profit for the year falls exactly on the upper threshold of £250,000, with no associated companies. Which rate structure applies?",
+      "options": ["The small profits rate of 19% applies to the whole amount", "The main rate of 25% applies to the whole amount, since profit at or above the upper threshold is outside the marginal relief band", "Marginal relief continues to apply above the upper threshold", "The company is exempt because it sits exactly on the boundary"],
+      "correctIndex": 1,
+      "explanation": "Marginal relief operates only for profits between the lower and upper thresholds; at or above the upper threshold, the main rate applies to the whole of the profit with no further tapering."
+    },
+    {
+      "itemId": "sqe1-blp-15-test-15",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A sole trader and a company each generate £150,000 of pre-tax profit in a year. The sole trader draws out all of it; the company retains all of it for reinvestment and pays nothing out to its shareholder. Which best describes the immediate tax position on that profit?",
+      "options": ["Both face an identical total tax charge, since the underlying profit is the same", "The sole trader's whole £150,000 is charged to income tax (plus Class 4 NICs) as it arises; the company's £150,000 is charged only to corporation tax for now, with no further personal tax charge until profit is actually extracted", "The company pays no tax at all on retained profit", "The sole trader pays no tax until the profit is spent"],
+      "correctIndex": 1,
+      "explanation": "The sole trader's profit is taxed in full as income the moment it arises, regardless of drawings. The company's profit faces corporation tax only for now; because nothing has been extracted, there is no further personal tax charge yet — illustrating why retained profit is where incorporation's tax advantage shows up most clearly."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap across this closing lesson is treating each tax as if it exists in isolation from the choice of vehicle that produced it. Corporation tax, group relief and VAT are mechanically separate rules, but the question a client actually needs answered — sole trader, partnership, or company — only makes sense once you can weigh them against the unincorporated alternative together.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.taxing-company-choosing-structure"
+  }
+}

@@ -1,0 +1,480 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-sa-06",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "lessonNumber": 6,
+  "topicId": "sqe1.solicitors-accounts.billing-and-transfer",
+  "title": "Recording transactions II: billing and transferring to office account",
+  "subtitle": "What a bill changes, and why transferring early is a breach",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain what changes on the client ledgers the moment a bill or written notification of costs is delivered",
+    "Record the transfer of earned fees and incurred disbursements from client account to business account following a bill",
+    "Explain why transferring money before a bill is delivered is itself a breach of the rules, whatever the firm's confidence in the sum"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "SRA Accounts Rules 2019, r 5",
+      "role": "Governs withdrawals from client account, including transfer of billed costs to the business account"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Lessons 4 and 5 built the mechanics of holding and spending client money. This lesson is where those mechanics meet the single most heavily tested trigger point in the whole subject: the moment of billing. Get the timing of a transfer wrong by even a day and you've described a breach as routine practice. Where the profile shows the mechanics are solid but the timing rule is shaky, this note appears: 'You can do the arithmetic — this lesson is about the one moment that legally matters.'",
+    "profileHooks": {
+      "weakApplication": "You know the entries. The test pool below is weighted towards spotting exactly when a bill has (or hasn't) been delivered — that single fact decides whether a transfer is lawful.",
+      "weakKnowledge": "Start with Part 1 and be precise about what 'delivery of a bill' actually means before moving on — the rest of this lesson assumes you can identify the triggering event without hesitation."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A firm has done £1,800 of work it is entirely confident it will bill. It transfers £1,800 from client account to its own business account the same afternoon — a day before the bill actually goes out. Nothing about the £1,800 figure is wrong. The transfer is still a breach, in full, from the moment it happens. This lesson is about why a single piece of paper — the bill — is doing all of that legal work.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the SRA Accounts Rules 2019. What counts as 'delivery' of a bill or written notification of costs can turn on firm-specific engagement terms as well as the rule itself; this lesson states the settled general position, but always check a firm's client care letter for its own agreed definition."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The moment everything changes: delivery of the bill",
+        "voice": "structural — names the trigger before exploring its consequences",
+        "body": [
+          "Everything in this module up to now has treated money held for a client as untouchable by the firm for its own purposes, however much work the firm has done. That protection has one, and only one, release valve: delivery of a bill of costs, or written notification of costs, to the client.",
+          "The moment a bill is delivered, the character of the money changes — not before. Costs that were previously just an internal estimate of value earned become a debt the client owes the firm, which the firm may now recover out of client money already held, to the extent the bill covers it. Delivery is doing all the legal work here: not the work being finished, not the firm's own confidence in the figure, not even the client's agreement that the fee is fair.",
+          "This is why 'delivery' itself matters so much as a concept. A bill that has been drafted, checked by a partner, and sits ready to send is not yet delivered. A bill emailed to the client, or a written notification of the amount sent to them, is. SQE1 fact patterns turn on exactly this distinction more often than on any calculation."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Delivery of a bill",
+            "definition": "The point at which a bill of costs, or written notification of costs, is actually given or sent to the client — the trigger that converts held client money into a debt the firm may recover from it."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-06-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the single event that permits a firm to transfer earned costs out of the client account and into its own business account.",
+          "acceptableAnswers": [
+            "delivery of a bill",
+            "delivery of a bill or written notification of costs",
+            "billing the client",
+            "sending the bill"
+          ],
+          "modelAnswer": "Delivery of a bill of costs, or written notification of costs, to the client — before that moment, no transfer of costs to the business account is permitted, however much work has been done."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What the ledgers show once a bill is delivered",
+        "voice": "worked-example — a single billing event traced through both ledgers",
+        "body": [
+          "Take a client, Ms Okonjo, whose ledger shows a £3,000 credit balance — client money the firm has been holding on account. The firm completes the matter and delivers a bill for £1,100 in costs, all of which is covered by money already held.",
+          "Delivery of the bill does not itself move any money — it only creates the entitlement to transfer it. A separate transfer must then be recorded: a debit entry of £1,100 on Ms Okonjo's client ledger (money leaving the client side, reducing her balance to £1,900 credit) and, mirroring it, a credit entry of £1,100 on the business side of her ledger, or equivalently on the firm's business cash book, recording the money arriving as the firm's own income.",
+          "Two things to hold onto here. First, the bill and the transfer are two separate events — a bill can be delivered without the transfer happening the same day, though good practice is to do both promptly. Second, only the billed amount moves. If Ms Okonjo's ledger held £3,000 and the bill was for £1,100, the remaining £1,900 stays exactly where it was: client money, still protected, still shown as a credit balance on the client side."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Worked example — Okonjo billing and transfer",
+            "citation": "Illustrative, not a reported case",
+            "court": "N/A",
+            "year": 2026,
+            "factsShort": "Client ledger holds £3,000; a £1,100 bill is delivered and the billed sum is transferred to the business account.",
+            "ratioShort": "The bill creates the entitlement to transfer; the transfer itself is a separate, recorded event moving only the billed amount.",
+            "expanded": {
+              "facts": "Ms Okonjo's client ledger shows a £3,000 credit balance. The firm delivers a bill for £1,100 in costs, then transfers £1,100 from client account to business account.",
+              "judgmentExtract": "N/A — bookkeeping illustration.",
+              "significance": "This is the standard shape of a billing question: a larger balance held, a smaller amount billed, and a candidate needing to isolate exactly what moves and what stays put."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-06-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these events in the correct order for the Okonjo billing.",
+          "items": [
+            "Firm holds £3,000 client money for Ms Okonjo",
+            "Firm delivers a bill for £1,100",
+            "£1,100 is transferred from client account to business account",
+            "Ms Okonjo's client ledger shows a £1,900 credit balance"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "Right — the bill comes first and only creates the entitlement; the transfer is a distinct step that actually moves the money, leaving the balance still held on her behalf.",
+          "feedbackIncorrect": "Check the order: delivery of the bill must happen before the transfer, and the transfer is what actually changes the ledger balance — the bill alone does not."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Disbursements at billing: what if they were paid from client account already?",
+        "voice": "problem-based — resolves an apparent overlap with the last lesson",
+        "body": [
+          "Lesson 5 established that disbursements can be paid from client account before billing, provided sufficient funds are held. A natural question follows: if the disbursement has already been paid from client money, what happens to it at billing stage?",
+          "The answer is that a disbursement already paid from client account before billing does not need to be transferred again — it has already left the client account and been paid to the third party. What the bill does, for that disbursement, is simply record it as an item the client is being charged for and is entitled to see itemised; no further client-to-business transfer is needed for a sum that has already gone to a third party.",
+          "Contrast this with a disbursement the firm has incurred but not yet paid — say counsel's fee is outstanding at billing. Here, the bill includes the amount as owed, and once billed, the firm may transfer that sum from client account (if funds are held) to reimburse itself once it pays counsel, or use it directly to pay counsel from client account as a disbursement in the ordinary way. The key distinction throughout is between money already spent on the client's behalf and money still held that the bill now entitles the firm to deal with differently."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Disbursements and billing — two situations",
+            "points": [
+              "Disbursement already paid from client account before billing: already recorded as a debit when paid; the bill simply itemises it for the client — no further transfer needed for that sum",
+              "Disbursement not yet paid at billing: the bill lists it as owed; once billed, the amount can be dealt with — paid to the third party from client account, or reimbursed to the firm if the firm has already paid it from its own money"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-06-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A firm paid a £200 search fee from client account for a client three weeks before delivering the bill, which lists the £200 as a disbursement charged to the client. What further client-to-business transfer is needed for that £200?",
+          "options": [
+            "None — the £200 already left the client account when it was paid, and the bill simply itemises it",
+            "A fresh £200 transfer from client to business account is required at billing",
+            "The £200 must be refunded to the client and then re-charged after billing",
+            "The £200 must be moved to a separate disbursement-only ledger"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "It's tempting to think every billed item triggers a transfer, but a disbursement already paid from client account has already left that account — the bill is simply showing the client what they're being charged for, not moving money a second time."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Reading rule 5: why an early transfer is a breach, full stop",
+        "voice": "statute-first — reads the rule, then confronts the strongest counterargument",
+        "body": [
+          "Rule 5 of the SRA Accounts Rules 2019 sets out the limited grounds on which money may be withdrawn from a client account. Transferring costs to the business account is one of those grounds — but only once a bill or written notification of costs has been delivered. Before that point, this ground for withdrawal simply does not exist.",
+          "The strongest-sounding argument against treating an early transfer as a breach is that the firm has, in substance, earned the money — the work is done, the value is real, and billing is a formality that will follow within days regardless. That argument fails, and it fails deliberately: the rule is not asking whether the firm has earned the money in some economic sense. It is asking whether the specific, formal trigger — delivery — has occurred. Substitute the firm's own judgement for that trigger, even once, and the protection rule 5 exists to provide collapses, because every firm believes its own unbilled work is safely earned.",
+          "This is why an early transfer is treated as a serious breach even when the sum later billed matches exactly, and even when the client never complains. The breach is complete the moment the transfer happens, regardless of what happens afterwards."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Accounts Rules 2019, r 5 (summarised)",
+            "text": "A withdrawal from a client account may only be made on specified grounds, including that it is properly required for a payment to, or on behalf of, the client, or that it represents costs for which a bill or written notification has been given.",
+            "elements": [
+              "Withdrawal only on specified grounds",
+              "Costs may be withdrawn once a bill or written notification has been given",
+              "No withdrawal of unbilled costs, however confidently estimated"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-06-check-04",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A firm transfers £900 in fees from client to business account the day before sending the bill, confident the figure will match exactly (and it does). What is the position under r 5?",
+          "options": [
+            "This is a breach — the transfer occurred before the bill was delivered, regardless of the figure's accuracy",
+            "This is not a breach, since the final bill confirmed the same amount",
+            "This is not a breach, provided the client is told about the transfer afterwards",
+            "This is a breach only if the client later disputes the £900 figure"
+          ],
+          "correctIndex": 0,
+          "explanation": "The breach turns entirely on timing — the transfer happened before delivery of the bill. Accuracy of the figure, later client agreement, or disclosure afterwards does not undo a breach that was already complete at the moment of transfer."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it all together: a full billing sequence",
+        "voice": "applied — a final worked scenario spanning receipt, disbursement, billing and transfer",
+        "body": [
+          "Bring the whole module together on one client file. Mr Tran's ledger opens at nil. He sends £2,400 on account of costs (credit £2,400; balance £2,400 credit). The firm pays a £180 court fee on his behalf before billing (debit £180; balance £2,220 credit). The matter concludes, and the firm delivers a bill for £950 in costs, itemising the £180 disbursement already paid alongside the £950 fee.",
+          "The transfer that follows moves only the newly billed fee element — £950 — from client account to business account, because the £180 disbursement has already left the client account when it was paid and needs no second transfer. After the £950 transfer, Mr Tran's ledger shows a debit of £950 against the £2,220 balance, leaving £1,270 credit — client money still properly held, available to be returned to him or applied to any further costs as the matter requires.",
+          "If, instead, the firm had transferred the £950 the day before the bill went out, every fact in the scenario would be unchanged except the timing — and the transfer would be a clear-cut breach of r 5, however identical the final figures turned out to be. That single distinction, timing against the trigger of delivery, is the thread running through this entire lesson."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "From receipt to transfer: the full lawful sequence",
+            "description": "The order of events that must occur before a transfer of costs to the business account is lawful.",
+            "nodes": [
+              {
+                "id": "receipt",
+                "label": "Client money received; credited to client ledger"
+              },
+              {
+                "id": "disb",
+                "label": "Disbursements paid from client account as needed (if funds held) — debited when paid"
+              },
+              {
+                "id": "bill",
+                "label": "Bill or written notification of costs delivered to the client"
+              },
+              {
+                "id": "transfer",
+                "label": "Billed fee element transferred: debit client ledger, credit business side"
+              },
+              {
+                "id": "remaining",
+                "label": "Any remaining balance stays as client money, still protected"
+              }
+            ],
+            "edges": [
+              {
+                "from": "receipt",
+                "to": "disb"
+              },
+              {
+                "from": "disb",
+                "to": "bill"
+              },
+              {
+                "from": "bill",
+                "to": "transfer"
+              },
+              {
+                "from": "transfer",
+                "to": "remaining"
+              }
+            ],
+            "textAlternative": "The lawful sequence is: client money is received and credited to the client ledger; disbursements are paid from the client account as needed, provided funds are held, and debited when paid; a bill or written notification of costs is delivered to the client; the billed fee element is then transferred, debited from the client ledger and credited to the business side; any remaining balance stays as client money, still protected. Transferring the fee element before the bill is delivered breaks this sequence and is a breach."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-06-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Mr Tran's client ledger shows a £2,220 credit balance, which already reflects a disbursement paid earlier. The firm delivers a bill for £950 in costs. What transfer, if any, should follow, and what is the resulting balance?",
+          "options": [
+            "Transfer £950 from client to business account; resulting balance £1,270 credit",
+            "Transfer £2,220 from client to business account; resulting balance nil",
+            "No transfer is needed, since the disbursement was already paid",
+            "Transfer £950 from business to client account; resulting balance £3,170 credit"
+          ],
+          "correctIndex": 0,
+          "explanation": "Only the newly billed £950 fee element is transferred — the disbursement already left the client account when it was paid. £2,220 less £950 leaves £1,270 credit, still properly held for Mr Tran."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-06-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "What event permits a firm to transfer earned costs from client account to its own business account?",
+      "options": [
+        "Delivery of a bill or written notification of costs",
+        "Completion of the underlying work",
+        "The client's verbal agreement that the fee is fair",
+        "The passage of 28 days from the start of the retainer"
+      ],
+      "correctIndex": 0,
+      "explanation": "Only delivery of a bill or written notification of costs creates the entitlement to transfer — completing the work or the client's informal agreement does not, on their own, permit anything."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Before a bill is delivered, how must a firm treat money it believes it has fully earned through work already done?",
+      "options": [
+        "As client money, to be kept in the client account until the bill is delivered",
+        "As business money, transferable at any time once the work is finished",
+        "As a disbursement, transferable to a third party",
+        "As money that must be returned to the client immediately"
+      ],
+      "correctIndex": 0,
+      "explanation": "Belief that the fee is earned does not change its legal character — until delivery of a bill, it remains client money and must stay in the client account."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A firm delivers a bill for £600 but does not transfer any money out of the client account for two weeks afterwards. Is the delayed transfer itself a breach of r 5?",
+      "options": [
+        "No — the bill has already been delivered, so the entitlement to transfer exists; delay in transferring is not the same problem as transferring early",
+        "Yes — the transfer must happen on the same day as the bill or it becomes unlawful",
+        "Yes — any delay converts the £600 back into pure client money permanently",
+        "No — but only if the client is informed of the delay in writing"
+      ],
+      "correctIndex": 0,
+      "explanation": "The rule's central concern is transferring before delivery. Once delivered, the entitlement exists; a delay in acting on it is a different (and lesser) practice issue, not the breach this lesson focuses on."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A client ledger shows a £4,000 credit balance. The firm delivers a bill for £1,500 in costs and then transfers the billed sum to business account. What is the resulting client ledger balance?",
+      "options": [
+        "£2,500 credit",
+        "£4,000 credit, unchanged",
+        "£1,500 credit",
+        "£5,500 credit"
+      ],
+      "correctIndex": 0,
+      "explanation": "The £1,500 transfer is debited against the £4,000 balance, leaving £2,500 credit still held as client money."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A client ledger shows a £1,000 credit balance, reflecting a £150 disbursement already paid from client account. The firm delivers a bill for £400 in costs, itemising that disbursement. What sum should be transferred to business account?",
+      "options": [
+        "£400, being only the newly billed fee element",
+        "£550, combining the fee and the disbursement",
+        "£150, being only the disbursement",
+        "£1,000, the full ledger balance"
+      ],
+      "correctIndex": 0,
+      "explanation": "The £150 disbursement already left the client account when paid and needs no second transfer; only the £400 fee element, newly billed, is transferred now."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm transfers £700 in fees from client to business account the day before delivering the bill for that exact amount. What is the correct characterisation of this transfer?",
+      "options": [
+        "A breach of r 5, because it occurred before delivery of the bill",
+        "Lawful, because the bill confirmed the same figure the next day",
+        "Lawful, because the transfer and the bill relate to the same matter",
+        "A breach only if the client formally objects after the fact"
+      ],
+      "correctIndex": 0,
+      "explanation": "Timing, not accuracy, is what r 5 turns on. A transfer made before delivery is a breach the moment it happens, regardless of whether the bill that follows matches exactly."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following best explains why a firm cannot transfer unbilled costs even when completely confident of the final figure?",
+      "options": [
+        "Because the rule's protection depends on a fixed, external trigger (delivery), not the firm's own judgement of what it has earned",
+        "Because unbilled costs are always inaccurate until independently audited",
+        "Because clients must approve every fee amount in advance by law",
+        "Because the SRA requires a minimum 14-day cooling-off period after work is completed"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The real reasoning is structural: the rule needs an objective, checkable trigger rather than relying on each firm's own confidence, however well-founded. Accuracy, client approval and a cooling-off period are all distractors that miss why the rule is framed around delivery specifically."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm has already paid a £300 disbursement from client account before billing. The bill later itemises that £300. A trainee proposes transferring a further £300 from client to business account at billing stage to 'settle' the disbursement. Is this correct?",
+      "options": [
+        "No — the £300 already left the client account when it was paid; a further transfer would move money a second time",
+        "Yes — every billed item requires a transfer at billing stage regardless of when it was paid",
+        "Yes — but only half of £300 should be transferred",
+        "No — because disbursements can never appear on a bill"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming a bill always triggers a transfer for every line item. A disbursement already paid from client account has already left that account; transferring again would incorrectly move client money a second time."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under r 5, which of these is a valid ground for withdrawing money from a client account?",
+      "options": [
+        "The money represents costs for which a bill or written notification has been given",
+        "The firm's managing partner instructs the transfer verbally",
+        "The client has been a customer of the firm for over five years",
+        "The firm needs to cover a temporary business account shortfall"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Only a properly grounded withdrawal — such as billed costs — is valid. Seniority of the instruction, client tenure, and the firm's own cash flow needs are never, on their own, valid grounds under r 5."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-10",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "According to r 5, on what basis may costs be withdrawn from a client account and transferred to the business account?",
+      "options": [
+        "Where a bill or written notification of costs has been given to the client",
+        "Where the firm's accountant certifies the work as complete",
+        "Where twelve months have elapsed since the retainer began",
+        "Where the client has paid at least half the estimated total costs"
+      ],
+      "correctIndex": 0,
+      "explanation": "The rule's ground is delivery of a bill or written notification of costs — none of the other conditions listed is a recognised basis under the rule."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-11",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm sends a client an informal email stating 'our fees on this matter come to £850' but does not issue a formal invoice. Could this satisfy the rule's trigger for a transfer?",
+      "options": [
+        "Yes — the rule is satisfied by a bill or written notification of costs, and a clear written statement of costs can count as the latter",
+        "No — only a formally numbered invoice on headed paper ever counts",
+        "No — the client must countersign the email before it counts",
+        "Yes — but only once 30 days have passed with no client response"
+      ],
+      "correctIndex": 0,
+      "explanation": "The rule expressly covers 'written notification of costs' as an alternative to a formal bill, so a clear written statement of the costs figure can be sufficient, without needing a specific invoice format."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm drafts a bill, has it checked and approved internally, and schedules it to be emailed to the client the next morning. That evening, it transfers the billed fee from client to business account. Has the r 5 trigger occurred?",
+      "options": [
+        "No — internal drafting and approval is not delivery; the bill had not yet been sent to the client",
+        "Yes — internal sign-off is treated as equivalent to delivery",
+        "Yes — because the bill was scheduled to be sent within 24 hours",
+        "No — but only because it was scheduled for the next morning rather than the same day"
+      ],
+      "correctIndex": 0,
+      "explanation": "Delivery means the bill or notification actually reaching the client, not internal preparation or approval. An unsent bill, however finished, has not triggered the entitlement to transfer."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-13",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client ledger shows a £600 credit balance. The firm delivers a bill for £750 in costs, more than the balance held. What is the correct position?",
+      "options": [
+        "Only £600 can be transferred from client account; the remaining £150 is an unpaid debt the client separately owes the firm",
+        "The full £750 should be transferred, taking the ledger to a £150 debit balance",
+        "The bill is invalid because it exceeds the funds held",
+        "The firm must reduce the bill to match the £600 held"
+      ],
+      "correctIndex": 0,
+      "explanation": "A transfer can never exceed the client money actually held, whatever the bill states. The shortfall of £150 becomes an ordinary debt owed by the client, to be recovered separately — it is not taken from client account by creating a debit balance."
+    },
+    {
+      "itemId": "sqe1-sa-06-test-14",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A firm transfers billed costs from client to business account the same day the bill is delivered, in the correct order. A colleague argues this is still risky because 'the client hasn't had time to query the bill yet.' Is the colleague's objection a rule 5 compliance issue?",
+      "options": [
+        "No — r 5 turns on delivery having occurred, not on how much time the client has had to review or query the bill afterwards",
+        "Yes — a transfer is only lawful after any query period has expired",
+        "Yes — the client must expressly confirm the bill before any transfer",
+        "No — but only because the amount happened to be small"
+      ],
+      "correctIndex": 0,
+      "explanation": "The rule's trigger is delivery itself, not the client's opportunity to query or dispute the bill afterwards. Once delivered, the transfer is properly grounded, whatever practical concerns a colleague might otherwise raise."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is treating the accuracy of a fee, or the firm's confidence that work has been earned, as if it were a substitute for the one thing r 5 actually requires: delivery of a bill or written notification of costs, before any transfer. Timing is the whole issue — check the date on the bill against the date of the transfer, every time.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.billing-and-transfer"
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "lessonId": "sqe1-clp-12",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 12,
+  "topicId": "sqe1.criminal-practice.evidence-bad-character",
+  "title": "Bad character and fairness",
+  "subtitle": "The s 101 gateways, and the s 78 discretion to exclude unfair evidence",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the definition of bad character evidence and identify the s 101 CJA 2003 gateways through which it may be admitted against a defendant",
+    "Explain the court's discretion to exclude bad character evidence even where a gateway under s 101(3) applies",
+    "Apply the s 78 PACE 1984 discretion to determine whether admitting prosecution evidence would adversely affect the fairness of proceedings"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Criminal Justice Act 2003, s 101", "role": "Sets out the seven gateways through which evidence of a defendant's bad character may be admitted" },
+    { "citation": "Criminal Justice Act 2003, s 101(3)", "role": "Requires the court to exclude bad character evidence admitted via gateway (d) or (g) if admitting it would have such an adverse effect on fairness that it ought not be admitted" },
+    { "citation": "PACE 1984, s 78", "role": "General discretion to exclude any prosecution evidence where admitting it would have such an adverse effect on the fairness of proceedings that it ought not to be admitted" },
+    { "citation": "R v Hanson [2005] EWCA Crim 1824", "role": "Guidance on applying gateway (d) to evidence of propensity from previous convictions" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Bad character questions in SQE1 rarely ask you to recite the seven gateways cold — they ask you to pick the right one from a fact pattern and then test whether you remember the court still has a job to do after that: deciding whether fairness demands exclusion anyway.",
+    "profileHooks": {
+      "weakApplication": "You know the gateways. The test pool here is fact-pattern led throughout — expect to match fact patterns to gateways and to spot when exclusion, not admission, is the right answer.",
+      "weakKnowledge": "Start with Part 1 and Part 2 and get the seven gateways and the definition of bad character fixed before moving on to the exclusion discretions."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A defendant, on trial for a burglary he says he didn't commit, accuses the arresting officers of lying and planting the evidence. The moment he says it, a door opens: his own two prior burglary convictions can now be put before the jury — convictions the prosecution could not otherwise have mentioned. This lesson is about that door, the six others like it, and the moments when a court decides some doors should still stay shut.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The CJA 2003 bad character regime and the s 78 PACE discretion are stable, well-settled provisions."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "What counts as bad character, and the seven doors in",
+        "voice": "structural — statute-first",
+        "body": [
+          "Section 98 CJA 2003 defines bad character as evidence of, or a disposition towards, misconduct on the part of the defendant, other than evidence which has to do with the facts of the offence charged, or is evidence of misconduct in connection with the investigation or prosecution of that offence. In short: it is evidence about the defendant's character or past conduct, separate from the facts of this offence itself.",
+          "The general position is that such evidence is not admissible — until it comes in through one of seven gateways set out in s 101(1) CJA 2003. Those gateways are: (a) all parties agree; (b) the defendant himself adduces it, or it comes out in answer to a question asked by the defence; (c) it is important explanatory evidence; (d) it is relevant to an important matter in issue between the defendant and the prosecution — most often, propensity; (e) it has substantial probative value in relation to an important matter in issue between co-defendants; (f) it is evidence to correct a false impression given by the defendant; and (g) the defendant has made an attack on another person's character.",
+          "Two of these gateways — (d) and (g) — recur constantly in practice and are the ones this lesson focuses on, because they carry with them a specific statutory safeguard that the other gateways do not."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Criminal Justice Act 2003, s 101(1)",
+            "text": "In criminal proceedings evidence of the defendant's bad character is admissible if, but only if — (a) all parties to the proceedings agree to the evidence being admissible, (b) the evidence is adduced by the defendant himself or is given in answer to a question asked by him in cross-examination and intended to elicit it, (c) it is important explanatory evidence, (d) it is relevant to an important matter in issue between the defendant and the prosecution, (e) it has substantial probative value in relation to an important matter in issue between the defendant and a co-defendant, (f) it is evidence to correct a false impression given by the defendant, or (g) the defendant has made an attack on another person's character.",
+            "elements": ["Gateway (a) — agreement of all parties", "Gateway (b) — adduced by the defendant himself", "Gateway (c) — important explanatory evidence", "Gateway (d) — relevant to an important matter in issue (commonly propensity)", "Gateway (e) — substantial probative value between co-defendants", "Gateway (f) — corrects a false impression", "Gateway (g) — defendant attacks another person's character"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-12-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Which gateway under s 101(1) CJA 2003 most commonly permits the prosecution to adduce evidence of a defendant's previous convictions to show a propensity to commit the type of offence charged?",
+          "options": ["Gateway (d) — relevant to an important matter in issue between the defendant and the prosecution", "Gateway (a) — all parties agree to the evidence being admissible"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Propensity is the classic 'important matter in issue' gateway (d) is used for.",
+          "feedbackIncorrect": "Gateway (a) depends on agreement, which propensity evidence is rarely offered up voluntarily by the defence — gateway (d) is the one built for contested propensity arguments."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Gateway (g): the defendant who attacks someone else's character",
+        "voice": "case-narrative — grounds the rule in a realistic example",
+        "body": [
+          "Gateway (g) is triggered when the defendant makes an attack on another person's character — for example, accusing a prosecution witness of lying, or alleging that the police fabricated evidence. It does not require the defendant to claim good character for himself first; an attack on someone else's character is enough on its own to open the door to his own bad character being admitted.",
+          "R v Hanson gives the leading guidance on the related gateway (d) propensity route: courts are directed to ask whether the offences show a pattern capable of establishing propensity, whether that propensity makes it more likely the defendant committed the offence charged, and whether it would nonetheless be unjust to rely on the earlier convictions given, for example, their age or dissimilarity.",
+          "Both gateways share a common structure: something the defendant does or says (or a pattern the prosecution wants to rely on) opens a door that would otherwise stay shut. What happens after the door opens is the subject of the next part."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Hanson",
+            "citation": "[2005] EWCA Crim 1824",
+            "court": "Court of Appeal",
+            "year": 2005,
+            "factsShort": "Conjoined appeals concerning the application of gateway (d) to evidence of a defendant's propensity from previous convictions.",
+            "ratioShort": "Courts applying gateway (d) should ask whether the convictions establish a propensity, whether that propensity makes it more likely the defendant committed the offence charged, and whether reliance on them would be unjust.",
+            "expanded": {
+              "facts": "Several defendants appealed convictions in which evidence of their previous convictions had been admitted under gateway (d) to show propensity to commit offences of the kind charged.",
+              "judgmentExtract": "The Court of Appeal set out a structured approach: does the history of offending establish a propensity to commit offences of the kind charged; does that propensity make it more likely that the defendant committed the offence charged; and would it be unjust for the convictions to be relied on, having regard to matters such as the age and circumstances of the previous offending?",
+              "significance": "Hanson remains the standard reference point for applying gateway (d) in practice, and its structure — pattern, relevance, and fairness — mirrors the broader exclusionary safeguard found in s 101(3)."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-12-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that opens gateway (g) — an attack on another person's character — in this scenario.",
+          "scenarioText": "The defendant is charged with burglary. In interview and again in his defence statement, he claims the arresting officers planted the stolen items in his car and are lying about finding them there. He has two previous convictions for burglary.",
+          "tappableSpans": ["charged with burglary", "claims the arresting officers planted the stolen items", "are lying about finding them there", "two previous convictions for burglary"],
+          "correctSpan": "claims the arresting officers planted the stolen items",
+          "feedbackCorrect": "That's the trigger — alleging the officers planted evidence is a direct attack on their character, opening gateway (g) regardless of whether the defendant also says they are lying.",
+          "feedbackIncorrect": "Look for the fact that is itself an attack on someone else's character, rather than the underlying charge or the defendant's own conviction history."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Even through the door: the court's power to keep bad character out",
+        "voice": "direct — builds towards the application exercise",
+        "body": [
+          "Getting through a gateway is not the end of the story for gateways (d) and (g). Section 101(3) CJA 2003 requires the court not to admit the evidence — on an application by the defendant to exclude it — if it appears that admitting it would have such an adverse effect on the fairness of the proceedings that the court ought not to admit it.",
+          "Section 101(4) directs the court, in exercising that power, to have particular regard to the length of time between the matters to which the evidence relates and the matters forming the subject of the offence charged. A stale, dissimilar conviction from decades ago carries far less probative value, and correspondingly greater risk of unfair prejudice, than a recent conviction for a strikingly similar offence.",
+          "This is the point students most often skip: passing through a gateway does not guarantee admission. For gateways (d) and (g) specifically, the court still has to ask whether fairness requires the evidence to be kept out regardless."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Section 101(3) exclusion",
+            "definition": "A duty on the court, applicable to bad character evidence admitted via gateway (d) or (g), to refuse to admit it — on the defendant's application — if admitting it would have such an adverse effect on the fairness of the proceedings that it ought not to be admitted."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-12-check-03",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "The prosecution seeks to admit evidence of the defendant's conviction, twenty-two years ago as a teenager, for a similar but far less serious offence, via gateway (d) to show propensity. The defendant has no other convictions since. Analyse whether the court should exclude the evidence.",
+          "factsToOrder": ["The conviction is twenty-two years old", "The earlier offence was similar but far less serious than the current charge", "The defendant has no convictions in the intervening period", "The prosecution relies on gateway (d) to show propensity"],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether evidence of the defendant's twenty-two-year-old conviction, admitted via gateway (d), should be excluded under s 101(3).",
+            "rule": "Under s 101(3), the court must exclude gateway (d) or (g) evidence, on the defendant's application, if admitting it would have such an adverse effect on the fairness of proceedings that it ought not to be admitted; s 101(4) directs particular regard to the length of time between the earlier matter and the offence charged.",
+            "application": "The conviction is twenty-two years old and for a far less serious offence, and there has been no reoffending in the intervening period — factors that both reduce the probative value of the propensity argument and increase the risk that the jury gives the conviction more weight than it deserves. This combination points towards the adverse effect on fairness outweighing the evidence's limited probative value.",
+            "conclusion": "On these facts, the court is likely to exclude the evidence under s 101(3): its age, dissimilarity in seriousness, and the clean intervening period undermine its probative value relative to the risk of unfair prejudice."
+          }
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Section 78 PACE: the general fairness backstop",
+        "voice": "structural — sets out a general power beyond bad character",
+        "body": [
+          "Section 78 PACE 1984 gives the court a general discretion to exclude prosecution evidence of any kind — not just bad character or confession evidence — where, having regard to all the circumstances, including the circumstances in which the evidence was obtained, admitting it would have such an adverse effect on the fairness of proceedings that the court ought not to admit it.",
+          "This is deliberately broader than s 101(3), which is confined to bad character evidence admitted through gateways (d) or (g). Section 78 can be invoked for improperly obtained identification evidence, breaches of the PACE Codes generally, evidence gathered through undercover operations, and much else besides.",
+          "In practice, the analysis follows a consistent shape: confirm the evidence is otherwise admissible; examine the circumstances, including how it was obtained; weigh its probative value against the risk of unfair prejudice; and decide whether the balance tips towards exclusion."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The shape of a s 78 analysis",
+            "points": [
+              "Confirm the evidence is otherwise admissible under the relevant rules",
+              "Examine all the circumstances, including how the evidence was obtained",
+              "Weigh probative value against the risk of unfair prejudice",
+              "Decide whether admission would have such an adverse effect on fairness that it ought to be excluded"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-12-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of a s 78 PACE fairness challenge in the order a court would typically consider them.",
+          "items": ["Confirm the evidence is otherwise admissible under the relevant rules", "Examine all the circumstances, including how the evidence was obtained", "Weigh the evidence's probative value against its potential prejudicial or unfair effect", "Decide whether admitting it would have such an adverse effect on fairness that it ought to be excluded"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the shape of the analysis — admissibility first, then the circumstances, then the weighing, then the conclusion.",
+          "feedbackIncorrect": "Check the order again — you cannot weigh probative value against prejudice before establishing the evidence is otherwise admissible and examining how it was obtained."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Choosing the right tool: s 101(3), s 78, or both",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "By this point you have met three distinct exclusionary provisions across these lessons: s 76 PACE (mandatory exclusion of a confession on specific grounds), s 101(3) CJA 2003 (bad-character-specific exclusion for gateways (d) and (g)), and s 78 PACE (a general discretion over prosecution evidence of any kind). Picking the right one — and knowing when more than one might apply — is exactly what SQE1 application questions test.",
+          "Where bad character evidence is admitted via gateway (d) or (g), s 101(3) is the primary, tailored route to exclusion, and it directly addresses fairness in that specific context. Section 78 remains available too — including for bad character evidence admitted through other gateways, or alongside a s 101(3) argument — but it is not the default starting point where s 101(3) already squarely applies."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often reach for s 78 as a catch-all whenever bad character evidence feels unfair, without first checking whether s 101(3) — the bad-character-specific exclusion — already covers the point.",
+            "whyItsWrong": "Where evidence is admitted via gateway (d) or (g), s 101(3) is the primary route to exclusion and directly addresses fairness in that context. Section 78 remains available for prosecution evidence generally, including bad character evidence admitted through other gateways, but it is not the default starting point where s 101(3) already applies."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-12-check-05",
+          "type": "quickCheck",
+          "skillTag": "application",
+          "prompt": "Bad character evidence is admissible via gateway (g) after the defendant attacks a witness's character. The defence wants to argue that admitting it would be unfair. Which provision most directly gives the court power to exclude it on that basis?",
+          "options": ["Section 101(3) CJA 2003", "Section 3 CPIA 1996"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — s 101(3) is the tailored exclusion for gateway (d) and (g) evidence.",
+          "feedbackIncorrect": "Section 3 CPIA is about prosecution disclosure of unused material, not about excluding bad character evidence — s 101(3) is the provision built for exactly this situation."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-12-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under s 98 CJA 2003, which of the following best describes 'bad character' evidence?",
+      "options": ["Evidence of, or a disposition towards, misconduct other than evidence which has to do with the facts of the offence charged or connected investigation or prosecution", "Any evidence the defendant finds embarrassing", "Only evidence of previous convictions", "Only evidence given by prosecution witnesses"],
+      "correctIndex": 0,
+      "explanation": "Section 98 carves out evidence that has to do with the facts of the offence charged, or its investigation or prosecution — bad character is misconduct evidence beyond that scope."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "How many gateways for admitting a defendant's bad character are set out in s 101(1) CJA 2003?",
+      "options": ["Seven", "Three", "Ten", "Five"],
+      "correctIndex": 0,
+      "explanation": "Section 101(1) sets out gateways (a) through (g) — seven in total."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which two gateways under s 101(1) CJA 2003 are specifically subject to the court's exclusionary duty in s 101(3)?",
+      "options": ["Gateways (d) and (g)", "Gateways (a) and (b)", "Gateways (c) and (e)", "All seven gateways equally"],
+      "correctIndex": 0,
+      "explanation": "Section 101(3) applies specifically to evidence admissible under gateway (d) or (g), not to the other five gateways."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "What is the general test applied under s 78 PACE 1984 for excluding prosecution evidence?",
+      "options": ["Whether admitting the evidence would have such an adverse effect on the fairness of proceedings that it ought not to be admitted", "Whether the evidence is hearsay", "Whether the defendant consents to its admission", "Whether the evidence was obtained more than six months before trial"],
+      "correctIndex": 0,
+      "explanation": "This is the statutory test in s 78 — a fairness-based discretion applicable to prosecution evidence generally."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant argues that his previous convictions were adduced by his own advocate to explain the background of a long-running dispute with the complainant. A trainee solicitor assumes the prosecution must have relied on gateway (d) to get this evidence in. Is the trainee correct?",
+      "options": ["Yes, gateway (d) is the only route by which bad character evidence enters the trial", "No — bad character evidence deliberately introduced by the defence itself is more naturally explained by gateway (b) or (a), not gateway (d)", "No, because defence-introduced evidence is never bad character evidence", "Yes, because propensity is always at issue once a defendant has any previous convictions"],
+      "correctIndex": 1,
+      "trapExplanation": "The trainee assumes gateway (d) is the only route, forgetting that evidence the defence itself puts before the court, or that both parties agree to, comes in through gateways (b) or (a) rather than the prosecution's propensity gateway.",
+      "explanation": "Where the defence itself adduces bad character evidence, gateway (b) — or (a) if all parties agree — is the natural route, not gateway (d), which is aimed at prosecution-driven propensity arguments."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "The prosecution adduces evidence of the defendant's conviction, six months earlier, for an offence of the same type as the one charged, via gateway (d). Defence counsel argues this must automatically be excluded under s 101(3) simply because it is prejudicial. Which statement best addresses the flaw?",
+      "options": ["There is no flaw — any prejudicial bad character evidence must be excluded automatically", "The flaw is that s 101(3) requires the court to weigh whether the adverse effect on fairness is such that the evidence ought not to be admitted — mere prejudice, without more, does not automatically require exclusion, particularly where the conviction is recent and closely similar", "The flaw is that s 101(3) only applies to hearsay evidence", "The flaw is that gateway (d) evidence can never be excluded once admitted"],
+      "correctIndex": 1,
+      "trapExplanation": "All admissible bad character evidence is, by its nature, somewhat prejudicial to the defendant — that alone cannot be the exclusion test, or gateway (d) would be meaningless. The court weighs the adverse effect against the evidence's probative value, and a recent, closely similar conviction typically carries strong probative value.",
+      "explanation": "Section 101(3) is a weighing exercise, not an automatic bar — recency and similarity here point towards genuine probative value that is unlikely, without more, to be outweighed by unfairness."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant's bad character evidence was admitted through gateway (c), important explanatory evidence. Defence counsel applies to exclude it under s 101(3), assuming that provision applies to every gateway. Is this assumption correct?",
+      "options": ["Yes, s 101(3) applies to all seven gateways equally", "No — s 101(3) applies only to evidence admitted under gateways (d) and (g); evidence admitted under other gateways may still potentially be excluded, but not via that specific provision", "Yes, because gateway (c) is simply a sub-category of gateway (d)", "No, because gateway (c) evidence can never be excluded under any provision"],
+      "correctIndex": 1,
+      "trapExplanation": "Counsel has assumed s 101(3) is a general safety valve for all gateways, when it is, by its express terms, confined to gateways (d) and (g) only.",
+      "explanation": "Section 101(3) is drafted specifically to apply to gateway (d) and (g) evidence — challenges to evidence admitted under other gateways must look to a different route, such as s 78 PACE, if one applies."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which statement correctly distinguishes the s 76 PACE confession exclusion from the s 78 PACE general fairness discretion?",
+      "options": ["Section 76 is a discretionary power like s 78, just applied to confessions specifically", "Section 76 exclusion is mandatory once properly raised, subject to the prosecution disproving the grounds; s 78 is a genuinely discretionary power exercisable over prosecution evidence generally", "Section 78 only applies to confession evidence", "Both provisions require proof beyond reasonable doubt from the defence"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting error is treating both provisions as equally discretionary, when s 76 is mandatory in its terms once its grounds are raised, unlike the genuinely discretionary s 78.",
+      "explanation": "Section 76 removes the court's discretion once its grounds are properly raised; s 78 is a broader, genuinely discretionary power not confined to confessions."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A defendant charged with fraud gives evidence asserting he is a person of honesty who has never been in trouble before, when in fact he has two prior convictions for dishonesty offences. Which gateway is most likely to permit the prosecution to adduce those convictions?",
+      "options": ["Gateway (f) — to correct a false impression given by the defendant", "Gateway (c) — important explanatory evidence", "Gateway (a) — agreement of all parties", "Gateway (e) — evidence between co-defendants"],
+      "correctIndex": 0,
+      "explanation": "Gateway (f) exists precisely for this scenario: correcting a false impression the defendant himself has created by claiming good character he does not have."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "In a joint trial, one co-defendant wishes to adduce evidence of the other co-defendant's previous violent conviction because it is highly relevant to an important issue between them, such as who instigated the offence. Which gateway most directly applies?",
+      "options": ["Gateway (e) — substantial probative value in relation to an important matter in issue between co-defendants", "Gateway (a) — agreement of all parties", "Gateway (g) — attack on another person's character", "Gateway (b) — evidence adduced by the defendant himself"],
+      "correctIndex": 0,
+      "explanation": "Gateway (e) is specifically tailored to evidence one co-defendant wants to use against another where an important issue is in dispute between them."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "Police obtain a key piece of identification evidence in a way that breaches the relevant PACE Code of Practice, though the evidence is otherwise reliable. The defence wants it excluded not because it is bad character or a confession, but because admitting it would be fundamentally unfair given how it was obtained. Which provision should the defence rely on?",
+      "options": ["Section 78 PACE 1984", "Section 101(3) CJA 2003", "Section 3 CPIA 1996", "Section 6A CPIA 1996"],
+      "correctIndex": 0,
+      "explanation": "Section 78 is the general fairness discretion applicable to prosecution evidence of any kind, including identification evidence obtained in breach of the Codes — s 101(3) is confined to bad character evidence and does not apply here."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Section 101(3) CJA 2003 sets a specific test for excluding bad character evidence admitted under gateways (d) or (g). Which of the following correctly states that test?",
+      "options": ["The court must not admit the evidence if it appears that admission would have such an adverse effect on the fairness of proceedings that the court ought not to admit it", "The court must exclude the evidence automatically whenever the defendant objects", "The court must admit the evidence provided it is relevant", "The court has no power to exclude evidence admitted under those gateways"],
+      "correctIndex": 0,
+      "explanation": "This is the statutory wording of s 101(3), applicable specifically to gateway (d) and (g) evidence on a defendant's application."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Section 78 PACE 1984 directs the court, in deciding whether to exclude prosecution evidence, to have regard to 'all the circumstances, including the circumstances in which the evidence was obtained'. What does this indicate about the scope of the s 78 discretion?",
+      "options": ["It is limited only to how the evidence was gathered, not its content", "It is a broad, fact-sensitive discretion applicable to prosecution evidence generally, not confined to bad character or confession evidence", "It applies only to evidence obtained abroad", "It applies only where the defendant is unrepresented"],
+      "correctIndex": 1,
+      "explanation": "The 'all the circumstances' wording signals a genuinely broad, fact-sensitive discretion that is not restricted to any single category of evidence."
+    },
+    {
+      "itemId": "sqe1-clp-12-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "Section 101(4) CJA 2003 directs the court, when considering whether to exclude evidence under s 101(3), to have particular regard to one specified factor. What is it?",
+      "options": ["The length of time between the matters to which the evidence relates and the matters which form the subject of the offence charged", "The defendant's nationality", "Whether the defendant is legally represented", "The number of witnesses called by the prosecution"],
+      "correctIndex": 0,
+      "explanation": "Section 101(4) singles out the time gap between the earlier matter and the offence charged as a factor the court must particularly consider — a stale conviction weighs differently from a recent, similar one."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap is reaching for s 78 as a catch-all whenever bad character evidence feels unfair, without checking whether s 101(3) already governs the point for gateways (d) and (g).",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.evidence-bad-character"
+  }
+}

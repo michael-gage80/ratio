@@ -1,0 +1,363 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-07",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 7,
+  "topicId": "sqe1.business-law.fixed-floating-charges",
+  "title": "Debt financing and security: fixed and floating charges",
+  "subtitle": "Why a charge's substance, not its label, decides how it ranks",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the legal distinction between a fixed charge and a floating charge, and how each attaches to a company's assets",
+    "Describe the three characteristics of a floating charge identified in Re Yorkshire Woolcombers and explain what crystallisation means",
+    "Apply the substance-over-label test from Re Spectrum Plus to classify a purported 'fixed' charge over a fluctuating asset class such as book debts"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Re Spectrum Plus Ltd [2005] UKHL 41", "role": "Confirms that a charge's substance — the degree of control retained over the asset — not its label, determines its classification" },
+    { "citation": "Illingworth v Houldsworth [1904] AC 355", "role": "Classic description of a floating charge as one that 'hovers' over a shifting class of assets until crystallisation" },
+    { "citation": "Re Yorkshire Woolcombers Association Ltd [1903] 2 Ch 284", "role": "Romer LJ's three defining characteristics of a floating charge" },
+    { "citation": "Agnew v Commissioner of Inland Revenue [2001] 2 AC 710", "role": "Applies the control test to book debts: continued freedom to deal with proceeds is inconsistent with a fixed charge" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often treat 'fixed vs floating' as a labelling exercise — read the document, find the word. Re Spectrum Plus exists precisely because that approach fails: banks drafted 'fixed' charges over book debts for years, and the House of Lords held most of them were floating all along. Where the profile shows application lagging behind knowledge, this lesson pushes past the label to the control test underneath it.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions. The test pool below leans hard on fact patterns where a charge is labelled one thing and behaves like another — that gap is the exam.",
+      "weakKnowledge": "Start with Part 2 and get Romer LJ's three characteristics solid before moving on — the rest of the lesson assumes you can recite them without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company grants its bank a charge over its stock, calling it 'fixed'. Eighteen months later the company collapses, and the question is worth millions: was that charge ever really fixed at all — or was it floating the whole time, whatever the document said?",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The fixed/floating distinction is settled law following Re Spectrum Plus (2005); no legislative reform is pending. Genuine uncertainty persists only at the margins — for example, charges over asset classes subject to partial or intermittent control — which this lesson treats as fact-sensitive rather than governed by a bright-line rule."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Same word, two very different charges",
+        "voice": "argumentative — states the practical stakes before the doctrine",
+        "body": [
+          "A charge is a form of security: the chargor (usually the company) grants the chargee (usually a lender) rights over an asset, so that if the debt isn't repaid, the chargee can look to that asset for satisfaction ahead of ordinary unsecured creditors. But not all charges behave the same way, and the difference between the two main types — fixed and floating — is one of the most commercially consequential distinctions in company law.",
+          "A **fixed charge** attaches to a specific, identifiable asset the moment the charge is created. From that point, the company cannot deal with the asset — sell it, lease it, charge it again — without the chargee's consent. Think of a charge over a single freehold building or a specific piece of machinery.",
+          "A **floating charge** is different in kind, not just degree. It hangs over a class of assets — stock, book debts, movable plant — without attaching to any specific item, and critically, it lets the company carry on dealing with those assets in the ordinary course of business: selling stock, collecting debts, buying new stock, all without reference to the chargee. The charge only 'crystallises' onto specific assets later, when something triggers it."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Fixed charge",
+            "definition": "A charge that attaches immediately to a specific, identified asset at the moment of creation, restricting the chargor's ability to deal with that asset without the chargee's consent."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A lender takes a charge over a company's head office building, which the company may continue to occupy but may not sell, lease, or further charge without the lender's written consent. Which type of charge is this?",
+          "options": ["A fixed charge", "A floating charge", "A retention of title clause", "A negative pledge"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — a specific, identified asset with dealing restricted from the outset is the hallmark of a fixed charge.",
+          "feedbackIncorrect": "Look again at what's restricted and when: the company cannot deal with this specific building at all without consent, from the moment the charge is created. That immediate restriction on a specific asset is what makes a charge fixed."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Three characteristics: Romer LJ's test",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "The classic definition of a floating charge comes from Romer LJ in Re Yorkshire Woolcombers Association Ltd, and it is still the starting point nearly 125 years later. A charge is floating if it has three characteristics.",
+          "First, it is a charge on a class of assets, present and future. Second, that class is one which, in the ordinary course of the company's business, would be changing from time to time — stock is bought and sold, debts are created and collected. Third, and most important for exam purposes, it is contemplated that until some step is taken by the chargee, the company may carry on business and deal with the assets in the ordinary way.",
+          "That third limb is the one that does the real work. A charge can be over a class of shifting assets and still be fixed, in principle — what actually makes it floating is that the company retains freedom to deal with the assets without needing the chargee's say-so."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Romer LJ's three characteristics of a floating charge",
+            "points": [
+              "A charge on a class of assets, present and future",
+              "A class which, in the ordinary course of business, would be changing from time to time",
+              "It is contemplated that, until some step is taken by the chargee, the company may carry on business and deal with the assets in the ordinary way"
+            ]
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Illingworth v Houldsworth",
+            "citation": "[1904] AC 355",
+            "court": "House of Lords",
+            "year": 1904,
+            "factsShort": "An early case distinguishing a charge fixed on specific property from one that floats over a shifting class of assets.",
+            "ratioShort": "A floating charge is 'ambulatory and shifting in its nature, hovering over' the class of assets until some event causes it to settle and fasten on the assets within the class at that time.",
+            "expanded": {
+              "facts": "The case concerned the classification of a debenture creating security over a company's undertaking and assets, including stock-in-trade that necessarily changed as the business traded.",
+              "judgmentExtract": "Lord Macnaghten's description — a charge that 'floats' over a class of assets, changing from time to time, until it 'crystallises' — became the standard image used in every later case, including Re Spectrum Plus a century later.",
+              "significance": "This is the origin of the vocabulary the whole topic still uses: 'hovering', 'crystallisation', a charge that has not yet 'fastened' on anything specific."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-07-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states Romer LJ's core test for the third characteristic of a floating charge.",
+          "passage": "A charge may be over a class of assets that changes from time to time in the ordinary course of business without automatically being floating. What converts it into a floating charge is that it is contemplated that, until some step is taken by the person entitled to the charge, the company may carry on its business in the ordinary way as far as concerns the assets charged.",
+          "ratioSentence": "What converts it into a floating charge is that it is contemplated that, until some step is taken by the person entitled to the charge, the company may carry on its business in the ordinary way as far as concerns the assets charged.",
+          "feedbackCorrect": "That's the operative sentence — freedom to carry on dealing with the assets, absent intervention by the chargee, is what makes a charge float rather than fix.",
+          "feedbackIncorrect": "Look for the sentence describing what the company is still allowed to do with the assets before the chargee steps in — that ongoing freedom is the third characteristic doing the work."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Control is everything: Spectrum and book debts",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "For decades, banks drafted charges over companies' book debts and called them 'fixed'. The commercial appeal was obvious: a fixed charge ranks ahead of preferential creditors and the floating charge pool on insolvency, so a bank naturally wanted its book debts security classified as fixed.",
+          "Re Spectrum Plus Ltd put that practice to the test. The bank's charge document required the company to pay the proceeds of its book debts into a specified account with the bank — but the company remained free to draw on that account and use the money for its ordinary trading purposes, without needing the bank's consent for each withdrawal.",
+          "The House of Lords held this was a floating charge, whatever the document called it. The company's continued freedom to draw down and use the proceeds was simply inconsistent with a fixed charge — a fixed charge requires the chargee to actually control the asset, not merely to be entitled to intervene at some hypothetical future point. Agnew v Commissioner of Inland Revenue, an earlier Privy Council case on the same point, had reached the same conclusion: what matters is the degree of control retained in practice, not the label chosen."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because the parties expressly used the word 'fixed' and had solicitors draft the document, the classification is settled by the parties' intention.",
+            "whyItsWrong": "The label the parties choose is evidence of their intention, but the classification turns on what the document actually permits the company to do with the asset in practice. If the company retains free use of a fluctuating asset, the charge is floating regardless of what it is called."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-07-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that is decisive in classifying this charge as floating rather than fixed.",
+          "scenarioText": "A charge document over a company's book debts is headed 'Fixed Charge Over Book Debts'. It requires proceeds to be paid into a designated bank account, but the company may withdraw and spend those funds for ordinary trading purposes without needing the bank's prior consent.",
+          "tappableSpans": ["headed 'Fixed Charge Over Book Debts'", "requires proceeds to be paid into a designated bank account", "may withdraw and spend those funds", "without needing the bank's prior consent"],
+          "correctSpan": "without needing the bank's prior consent",
+          "feedbackCorrect": "Exactly — the label and even the segregated account don't decide it. The company's unrestricted freedom to draw on the proceeds is what makes this a floating charge under Spectrum.",
+          "feedbackIncorrect": "The heading and the designated account are both consistent with either classification on their own. Look for the fact about what the company can still do with the money without asking permission — that's the control test from Spectrum."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Crystallisation: from floating to fixed",
+        "voice": "Socratic — poses the question before resolving it",
+        "body": [
+          "If a floating charge lets the company deal freely with the assets, when — if ever — does the lender's security actually become concrete? The answer is crystallisation: the point at which a floating charge stops floating and attaches to the specific assets then within the class, exactly like a fixed charge from that moment on.",
+          "Several events can trigger crystallisation: the company going into liquidation, the appointment of an administrator or receiver, the company ceasing to carry on business, or an event specified in the charge document itself — many modern charges include an automatic crystallisation clause triggered by a defined default.",
+          "Once crystallisation occurs, the company's freedom to deal with the assets in the ordinary course ends. Selling stock or collecting debts without the chargee's consent after crystallisation is a breach of the chargee's now-fixed security, not routine trading."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Crystallisation",
+            "definition": "The process by which a floating charge converts into a charge fixed on the specific assets within the class at the moment of the triggering event, ending the company's freedom to deal with them in the ordinary course of business."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-07-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the appointment of an administrator over a company will cause its floating charges to crystallise?",
+          "sliderLabels": ["Definitely does not crystallise", "Definitely crystallises"],
+          "correctPosition": "crystallises",
+          "explanation": "Appointment of an administrator is one of the standard crystallisation events. From that point, the floating charge attaches to the specific assets then held within the charged class, and the company's freedom to deal with them in the ordinary course ends."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why classification matters: consequences of getting it wrong",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Classification isn't an academic exercise — it decides who gets paid, and in what order, when a company becomes insolvent. Fixed chargeholders are paid from the proceeds of their specific charged assets ahead of almost everyone else. Floating chargeholders, by contrast, are paid only after the expenses of the insolvency process, preferential creditors, and a statutory carve-out for unsecured creditors (the 'prescribed part') have been deducted from the floating charge pool.",
+          "This is why lenders fought so hard, for so long, to have their book debts security classified as fixed — and why Re Spectrum Plus mattered enormously in practice, not just doctrinally. A charge that a bank believed was fixed, and had priced its lending on that basis, could turn out on insolvency to rank well below where the bank expected.",
+          "The trap most students fall into is assuming that whichever charge was created or registered first automatically wins. Registration and priority as between competing charges are governed by a distinct set of rules — covered in the next lesson — and classification as fixed or floating is a separate, prior question that has to be resolved before priority can even be assessed."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Classifying a charge: the practical question to ask",
+            "description": "A simplified decision path for classifying a charge as fixed or floating.",
+            "nodes": [
+              { "id": "start", "label": "Does the charge attach to a specific, identified asset at creation?" },
+              { "id": "specific", "label": "Yes — check: can the chargor deal with that asset (sell, lease, re-charge) without the chargee's consent?" },
+              { "id": "no-deal", "label": "No dealing without consent → fixed charge" },
+              { "id": "yes-deal", "label": "Free dealing permitted → likely floating, whatever the label says" },
+              { "id": "class", "label": "No — it covers a changing class of assets → apply Romer LJ's three characteristics" }
+            ],
+            "edges": [
+              { "from": "start", "to": "specific", "label": "Specific asset" },
+              { "from": "start", "to": "class", "label": "Class of assets" },
+              { "from": "specific", "to": "no-deal", "label": "Consent required" },
+              { "from": "specific", "to": "yes-deal", "label": "No consent required" }
+            ],
+            "textAlternative": "To classify a charge: first ask whether it attaches to a specific, identified asset at creation. If so, ask whether the chargor can deal with that asset without the chargee's consent — if not, it is fixed; if free dealing is permitted despite the label, it is likely floating. If the charge instead covers a changing class of assets, apply Romer LJ's three characteristics from Re Yorkshire Woolcombers."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-07-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two charge documents. In which is the charge most clearly fixed, applying the control test?",
+          "scenarioA": "A charge over a company's book debts requires all proceeds to be paid into a blocked account, and the company must obtain the lender's prior written consent before any sum is withdrawn.",
+          "scenarioB": "A charge over a company's book debts is labelled 'fixed' and requires proceeds to be paid into a specified account, but the company may draw on that account freely for day-to-day trading.",
+          "correctScenario": "A",
+          "explanation": "In A, the lender genuinely controls the proceeds — no withdrawal without consent — which is consistent with a fixed charge under Spectrum and Agnew. In B, despite the 'fixed' label, the company's freedom to draw down funds is inconsistent with a fixed charge and points to a floating charge."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-07-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A lender takes a charge over a company's single warehouse, identified by title number, and the company may not sell or further charge it without the lender's consent. Which type of charge is this?",
+      "options": ["A fixed charge", "A floating charge", "A negative pledge", "A prescribed part"],
+      "correctIndex": 0,
+      "explanation": "A specific, identified asset with dealing restricted from creation is the defining feature of a fixed charge."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A charge document describes itself as a 'fixed charge' over the company's stock-in-trade but permits the company to sell stock in the ordinary course of business without reference to the lender. How will a court classify this charge, applying Re Spectrum Plus?",
+      "options": ["As a fixed charge, because the parties labelled it as such", "As a floating charge, because the company retains freedom to deal with the class of assets", "As void for uncertainty", "As a fixed charge only over stock existing at the date the charge was created"],
+      "correctIndex": 1,
+      "explanation": "The label does not control. Freedom to deal with a changing class of assets in the ordinary course of business is inconsistent with a fixed charge, regardless of what the document calls it."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-03",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A company grants a charge over its plant and machinery, every item identified by serial number in a schedule, with no right for the company to dispose of any listed item without the chargee's consent. Is this charge fixed or floating?",
+      "options": ["Fixed — specific assets are identified and dealing is restricted", "Floating — plant and machinery are always business assets", "Neither — equipment cannot be the subject of a company charge", "Fixed, but only once the charge crystallises"],
+      "correctIndex": 0,
+      "explanation": "Specific identification plus a restriction on dealing without consent is exactly the fixed-charge pattern, whatever the asset type."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-04",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following is capable of causing a floating charge to crystallise?",
+      "options": ["The company's ordinary trading continuing as normal", "The appointment of an administrator over the company", "The chargee simply choosing not to enforce the charge", "The passage of five years from the date the charge was created"],
+      "correctIndex": 1,
+      "explanation": "Appointment of an administrator (or receiver, or liquidation) is a standard crystallisation event; ordinary continued trading and mere lender inaction do not crystallise a floating charge."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following is NOT one of Romer LJ's three characteristics of a floating charge in Re Yorkshire Woolcombers?",
+      "options": ["It is a charge on a class of assets, present and future", "The class of assets is one that would ordinarily change from time to time in the course of business", "The company's shareholders must first pass a resolution before the charge can take effect", "It is contemplated that the company may carry on business and deal with the assets in the ordinary way until some step is taken"],
+      "correctIndex": 2,
+      "trapExplanation": "A shareholder resolution requirement plays no part in Romer LJ's test — it is an invented distractor. The three genuine characteristics concern the class of assets and the company's continuing freedom to deal with them.",
+      "explanation": "Romer LJ's test is entirely about the nature of the charged assets and the chargor's continuing freedom over them — corporate governance formalities are irrelevant to classification."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A finance director insists a charge over book debts is 'definitely fixed' because the charge document uses the word 'fixed' throughout and was drafted by solicitors. Is the finance director correct?",
+      "options": ["Yes, because the parties' express intention as recorded in the document is determinative", "No, because a court looks at the actual degree of control the lender exercises over the asset, not the label used", "Yes, provided the document was independently drafted by qualified solicitors", "No, because book debts can never be the subject of a fixed charge under any circumstances"],
+      "correctIndex": 1,
+      "trapExplanation": "Option A is the classic mislabelling trap that Spectrum exists to correct. Option D overstates the position — book debts can be fixed where the lender genuinely restricts dealing with the proceeds, such as through a blocked account.",
+      "explanation": "Spectrum makes the label evidential at best. What decides classification is whether the company retains free use of the asset in practice."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A lender requires a company to pay all proceeds of its book debts into a designated account and the company may not withdraw any sum from that account without the lender's prior written consent for each withdrawal. Which classification is most consistent with Re Spectrum Plus?",
+      "options": ["Floating, because book debts are inherently a fluctuating class of assets", "Fixed, because the lender has effectively barred the company's free use of the proceeds", "Floating, because the company can still generate new book debts after the charge is created", "Void, because dual control over the same debts is not legally permitted"],
+      "correctIndex": 1,
+      "trapExplanation": "Options A and C tempt students into assuming book debts can never support a fixed charge. What Spectrum actually requires is genuine restriction on the proceeds — which is exactly what a blocked account with consent-only withdrawal achieves.",
+      "explanation": "Real, exercised control over the proceeds — not merely a label — is what supports a fixed classification here."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A company's floating charge crystallises on the appointment of an administrator. Which statement about the effect of crystallisation is correct?",
+      "options": ["The charge is extinguished and a new charge must be created from scratch", "The charge attaches to the specific assets then within the class, and the company's freedom to deal with them in the ordinary course ends", "The charge converts automatically into a fixed charge over all of the company's assets, whether or not originally covered by the charge", "Crystallisation has no legal effect until the charge is registered again at Companies House"],
+      "correctIndex": 1,
+      "trapExplanation": "Option C overreaches: crystallisation only fastens the charge onto the assets within the originally charged class, not the company's entire asset base. Option D confuses crystallisation with registration, a separate topic.",
+      "explanation": "Crystallisation is a change in the character of the existing charge over its existing class of assets, not the creation of new security or a registration event."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Dara Ltd grants its bank a charge described as 'fixed' over its entire stock of raw materials. The document is silent on whether Dara may sell or use the materials without consent, and in practice Dara has continued to buy and sell stock freely for two years without reference to the bank. On enforcement, how is a court likely to classify the charge?",
+      "options": ["Fixed, because the document used the word 'fixed'", "Floating, because Dara's continued, unrestricted dealing with the stock is inconsistent with a fixed charge, regardless of the label", "Fixed, but only over stock held at the two-year mark", "Void for failing to specify the assets charged"],
+      "correctIndex": 1,
+      "explanation": "Continued, unrestricted dealing over two years is strong evidence of a floating charge in substance, whatever the document is titled."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A charge over a company's single freehold property, identified by title number, prohibits any disposal without the chargee's consent. The company later disposes of the property without asking. What is the effect on the classification of the charge?",
+      "options": ["The disposal breaches the fixed charge terms, but the charge itself remains fixed in character", "The charge automatically becomes floating from the date of the breach", "The charge is discharged the moment consent is not obtained", "The charge converts into a floating charge over all of the company's remaining assets"],
+      "correctIndex": 0,
+      "explanation": "A breach of a fixed charge's restriction is a remedies issue for the chargee, not a reclassification of the charge — the charge was fixed from creation and remains so."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Which pairing correctly matches an asset with the charge type most commonly used over it in practice?",
+      "options": ["Freehold property — fixed charge; stock-in-trade sold in the ordinary course — floating charge", "Freehold property — floating charge; stock-in-trade — fixed charge", "Both freehold property and stock-in-trade are always charged as floating", "Neither asset type can be the subject of a company charge"],
+      "correctIndex": 0,
+      "explanation": "Static, identifiable assets like freehold property suit fixed charges; fluctuating trading assets like stock typically remain subject to a floating charge so the company can keep trading."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Insolvency Act 1986, s 251 defines a 'floating charge' for the purposes of that Act as 'a charge which, as created, was a floating charge.' Schedule B1 further allows a 'qualifying floating charge holder' — broadly, one whose charge covers the whole or substantially the whole of the company's property — to appoint an administrator out of court. Which of the following charges would qualify its holder for that out-of-court route?",
+      "options": ["A floating charge over the company's book debts only, representing 15% of total assets", "A floating charge, created as such, covering substantially the whole of the company's property", "A fixed charge over a single item of plant", "Any charge, fixed or floating, regardless of scope"],
+      "correctIndex": 1,
+      "explanation": "The qualifying floating charge holder route depends on the charge being a floating charge covering substantially the whole of the company's property — a narrow charge over one asset class does not qualify."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Section 251 Insolvency Act 1986 fixes a charge's classification 'as created' rather than allowing it to shift on later facts. Why does the statute anchor classification to the moment of creation?",
+      "options": ["Because a charge's character is only relevant once it crystallises, not at creation", "Because classification depends on the rights the charge document reserved to the parties at the outset, not on how the company happens to behave afterwards", "Because Parliament intended floating charges to become fixed automatically after five years", "Because the statute abolished the fixed/floating distinction entirely"],
+      "correctIndex": 1,
+      "explanation": "The rights reserved in the charge document at creation — what control the chargee actually has — fix the classification; subsequent conduct is evidence of what those rights were, not a separate trigger for reclassification."
+    },
+    {
+      "itemId": "sqe1-blp-07-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A charge document states the charge takes effect 'as a fixed charge' over present and future book debts and their proceeds, but permits the company unfettered use of the proceeds once received into its general trading account. Applying s 251 Insolvency Act 1986 together with Re Spectrum Plus, what is the correct classification?",
+      "options": ["The charge is floating as created, since the company retained free disposal over the proceeds despite the label", "The charge is fixed as created, since the parties expressly chose the word 'fixed'", "The charge is fixed over the debts but floating over the proceeds only", "The classification cannot be determined until the company enters insolvency"],
+      "correctIndex": 0,
+      "explanation": "Because classification is fixed at creation by the rights actually reserved, and the company retained free disposal of the proceeds, the charge was a floating charge from the moment it was created — notwithstanding its label."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is stopping at the word on the page. 'Fixed' or 'floating' in the document title tells you what the parties hoped for, not what a court will find — always check what the company can still do with the asset in practice.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.fixed-floating-charges"
+  }
+}

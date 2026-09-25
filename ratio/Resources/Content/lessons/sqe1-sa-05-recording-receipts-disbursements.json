@@ -1,0 +1,365 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-sa-05",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "lessonNumber": 5,
+  "topicId": "sqe1.solicitors-accounts.receipts-and-disbursements",
+  "title": "Recording transactions I: receipts and disbursements",
+  "subtitle": "Working a client ledger through a receipt-then-payment sequence",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Record a receipt of money on account of costs correctly on both the client cash book and the client ledger",
+    "Record payment of a disbursement from client account before a bill is delivered, and explain why this is permitted",
+    "Work a client ledger and client cash book through a full receipt-then-payment sequence to a correct running balance"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Accounts Rules 2019, r 2.1", "role": "Requires client money to be paid promptly into a client account and kept there" },
+    { "citation": "SRA Accounts Rules 2019, r 4", "role": "Governs receipt and holding of costs and disbursements, including payment of disbursements before billing" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Lesson 4 taught the convention in isolation; this lesson is where it gets tested as a sequence. Most errors on this topic don't come from misunderstanding a single entry — they come from losing track of the running balance across two or three transactions in a row. Where the profile shows single-step accuracy but multi-step slippage, this note appears: 'You get each entry right on its own — this lesson is about not losing the thread across several in a row.'",
+    "profileHooks": {
+      "weakApplication": "You know the receipt and payment rules individually. The test pool below is weighted towards multi-step sequences — track the running balance after every single entry, not just at the end.",
+      "weakKnowledge": "Before working any sequence, make sure you can state without hesitation when a disbursement may be paid from the client account before billing, and why. Part 2 covers exactly that."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A client sends £2,500 on account of costs. Three days later the firm pays a £400 land registry fee on her behalf. Two transactions, both routine, both lawful — and yet a disproportionate number of SQE1 candidates get the second entry wrong, because they stop thinking about the first one the moment it's posted. This lesson is about holding the whole running balance in your head, not just the entry in front of you.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the SRA Accounts Rules 2019. Rule numbering and the precise conditions for holding disbursements before billing should always be checked against the current SRA Handbook; this lesson states the settled general position."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Recording a receipt on account of costs",
+        "voice": "worked-example — a single receipt, entered correctly, then checked",
+        "body": [
+          "Recall the mechanics from the last lesson and apply them to a receipt of costs specifically. A client, Mr Delaney, sends the firm £2,500 by bank transfer to be held on account of his forthcoming costs and expenses, before any work has been billed. Rule 2.1 requires that money to be paid into the client account without delay — it cannot sit in the firm's own account even briefly, and it cannot be treated as earned income before a bill exists.",
+          "Two entries follow. In the client cash book, a debit entry of £2,500 records the cash arriving into the client bank account. On Mr Delaney's individual client ledger, a credit entry of £2,500 records that the firm now holds — and owes back — £2,500 on his behalf. His ledger balance, previously nil, is now a £2,500 credit.",
+          "Nothing here depends on what the £2,500 will eventually be spent on. At the moment of receipt, the money is simply client money, held on trust, and the entries record exactly that — no more, no less."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Money on account of costs",
+            "definition": "Client money paid to a firm in advance of costs being billed, held as client money until a bill or written notification of costs changes its character."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-05-check-01",
+          "type": "thresholdSlider",
+          "skillTag": "knowledge",
+          "prompt": "How confident are you that a receipt of £2,500 on account of costs, before any bill, should be entered as a credit on the client's ledger?",
+          "sliderLabels": ["Not confident — should be a debit", "Fully confident — it's a credit"],
+          "correctPosition": "credit",
+          "explanation": "Every receipt on a client's behalf is a credit on that client's ledger, whether it is described as 'on account of costs', a settlement sum, or anything else — the label doesn't change the entry."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Paying a disbursement before the bill exists",
+        "voice": "rule-first — states the permission, then the reasoning behind it",
+        "body": [
+          "A disbursement is a cost incurred on a client's behalf to a third party — a court fee, a land registry fee, counsel's fee, a search fee. Rule 4 permits a firm to pay a disbursement from the client account on the client's behalf before any bill has been delivered, provided the firm is holding enough of that client's money in the client account to cover it.",
+          "This might look, at first glance, like an exception to the 'no transfer before billing' theme running through this module — but it isn't. The money never leaves the client's ownership at all; it simply moves from being held for the client's general benefit to being spent, on the client's behalf, on a specific third-party expense the client has authorised. No costs are being earned or transferred to the firm by this payment — the firm's own fees are untouched.",
+          "Contrast this sharply with the firm trying to take its own earned costs out of the client account before billing — that is not permitted under any circumstances, and is the subject of the next lesson. The distinction is precisely who ends up with the money: a disbursement payment sends it to a third party on the client's behalf; an unbilled transfer of costs would send it to the firm itself."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Disbursement before billing — the conditions",
+            "points": [
+              "The payment is to a third party, on the client's behalf (not to the firm itself)",
+              "The client account holds enough of that client's money to cover it",
+              "No bill needs to have been delivered first",
+              "The entry is a debit on the client ledger and a payment out in the client cash book"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-05-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of these two payments from a client account, made before any bill is delivered, is permitted?",
+          "scenarioA": "The firm pays a £350 court issue fee to HM Courts and Tribunals Service on the client's behalf, having sufficient client funds in hand.",
+          "scenarioB": "The firm pays itself £350 representing time already spent on the matter, treating it as 'earned', with no bill having been sent.",
+          "correctScenario": "A",
+          "explanation": "A is a disbursement paid to a third party on the client's behalf and is permitted under r 4 provided sufficient funds are held. B sends money to the firm itself without a bill ever having been delivered — that is never permitted, regardless of how confident the firm is that the fee has been earned."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Running the sequence: receipt, then payment",
+        "voice": "worked-example — a full two-step sequence with a running balance",
+        "body": [
+          "Now combine the two mechanics into the sequence the exam actually tests. Ms Whitlock instructs the firm on a property dispute. On 3 March she sends £2,000 on account of costs. On 9 March, before any bill is delivered, the firm pays a £320 court fee on her behalf from the client account.",
+          "Work it in order, one entry at a time, rather than jumping to the end. On 3 March: client cash book debited £2,000 (cash in); Whitlock ledger credited £2,000 (running balance: £2,000 credit). On 9 March: client cash book credited £320 (cash out — note that on the cash book itself, money leaving the bank is recorded on the opposite side from money arriving); Whitlock ledger debited £320 (running balance: £1,680 credit).",
+          "The running balance after both entries — £1,680 credit — tells you, at a glance, exactly how much of Ms Whitlock's money the firm is still holding. That single figure is what a compliance check, or an SRA inspection, would look for first: does the ledger balance match what is actually held in the bank for her? Get the sequence right and the two always agree."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Worked example — Whitlock sequence",
+            "citation": "Illustrative, not a reported case",
+            "court": "N/A",
+            "year": 2026,
+            "factsShort": "Client sends £2,000 on account, then the firm pays a £320 court fee on her behalf before any bill.",
+            "ratioShort": "Work each entry in chronological order and track the running balance after every single transaction, not only at the end.",
+            "expanded": {
+              "facts": "3 March: £2,000 received on account of costs. 9 March: £320 court fee paid on the client's behalf from client account, no bill yet delivered.",
+              "judgmentExtract": "N/A — bookkeeping illustration.",
+              "significance": "This is the template SQE1 fact patterns most often use for this topic: a receipt followed by a disbursement, testing whether the candidate can track a balance across more than one step without losing it."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-05-check-03",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "Using the Whitlock facts, work out and justify the client ledger balance after both transactions.",
+          "factsToOrder": [
+            "£2,000 received on account of costs on 3 March",
+            "Client ledger credited £2,000 (balance: £2,000 credit)",
+            "£320 court fee paid on the client's behalf on 9 March, before any bill",
+            "Client ledger debited £320 (balance: £1,680 credit)"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full worked answer shown, entry by entry" },
+            { "level": 2, "support": "Facts given in order; student states each resulting entry and running balance" },
+            { "level": 3, "support": "No scaffold; student works the full sequence unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "What is Ms Whitlock's client ledger balance after the receipt and the disbursement payment?",
+            "rule": "Receipts on a client's behalf are credited to the client ledger; payments out, including disbursements paid before billing where sufficient funds are held, are debited.",
+            "application": "The £2,000 receipt on 3 March is credited, giving a £2,000 credit balance. The £320 disbursement on 9 March is permitted because sufficient client funds are held, and is debited, reducing the balance to £1,680 credit.",
+            "conclusion": "After both transactions, Ms Whitlock's client ledger shows a £1,680 credit balance, matching the client money the firm is actually holding for her."
+          }
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What if there isn't enough money to cover the disbursement?",
+        "voice": "problem-based — poses the shortfall scenario before resolving it",
+        "body": [
+          "The permission in rule 4 to pay a disbursement before billing is conditional, not automatic: it only applies where the client account holds enough of that client's money to cover the payment. If it doesn't, the firm cannot simply pay the disbursement from the client account regardless — doing so would create exactly the debit-balance problem flagged in the last lesson.",
+          "Two lawful routes exist when funds are short. The firm can ask the client for further money on account before making the payment, or the firm can pay the disbursement itself from the business account, in which case it is not a client account transaction at all — it becomes a debt the client owes the firm, to be recovered later, typically on billing.",
+          "What the firm cannot do is pay the disbursement out of client money held for a different client. Each client ledger is self-contained; a shortfall on one matter is never made good by borrowing, even temporarily, from another client's balance. That would breach rule 8's requirement to show each client's money separately, and would put the firm in breach on two clients' matters at once rather than one."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes say a firm can cover a shortfall on one client's disbursement using surplus funds held for another client, reasoning that the client account is 'one pool' of money.",
+            "whyItsWrong": "The client account is a single bank account operationally, but the ledgers behind it must show each client's money separately. Using one client's credit balance to cover another client's shortfall breaches that separation and creates a debit balance on the client actually being paid for — even though the bank account itself never goes overdrawn."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-05-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the core condition for paying a disbursement before billing.",
+          "passage": "A disbursement may be paid on a client's behalf from the client account before any bill is delivered. This is not an exception to the rules protecting client money, because the client account must hold sufficient funds belonging to that client to cover the payment before it is made. Where funds are insufficient, the firm must either request further money on account or pay the disbursement itself from the business account.",
+          "ratioSentence": "This is not an exception to the rules protecting client money, because the client account must hold sufficient funds belonging to that client to cover the payment before it is made."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "A three-step sequence, tested",
+        "voice": "applied — a fuller scenario combining receipt, disbursement and a shortfall check",
+        "body": [
+          "Bring everything in this lesson together on one final scenario. Mr Aziz's client ledger opens at nil. On 1 June he sends £600 on account of costs (credit £600; balance £600 credit). On 5 June the firm pays a £150 search fee on his behalf (debit £150; balance £450 credit). On 12 June the firm is asked to pay a £700 counsel's fee on his behalf, still before any bill.",
+          "Check the condition before recording anything: does the client account hold enough of Mr Aziz's money to cover £700? At this point his ledger balance is only £450 credit — insufficient. The firm cannot simply pay the £700 disbursement from the client account and let the ledger swing into a £250 debit balance; that would be a breach.",
+          "The lawful options are exactly as set out in Part 4: request a further £250 (or more) from Mr Aziz before paying the fee, or pay the £700 from the business account and treat it as a debt owed by the client, to be recovered later. What must never happen is the payment being made from client account regardless of the shortfall."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Deciding whether a disbursement can be paid from client account",
+            "description": "The check a firm must run before paying a disbursement on a client's behalf before billing.",
+            "nodes": [
+              { "id": "start", "label": "Firm is asked to pay a disbursement on a client's behalf, no bill yet delivered" },
+              { "id": "check", "label": "Does the client account hold enough of that client's money to cover it?" },
+              { "id": "yes", "label": "Yes → pay from client account; debit the client ledger" },
+              { "id": "no", "label": "No → do not pay from client account" },
+              { "id": "route1", "label": "Request further money on account, then pay" },
+              { "id": "route2", "label": "Pay from the business account; treat as a debt owed by the client" }
+            ],
+            "edges": [
+              { "from": "start", "to": "check" },
+              { "from": "check", "to": "yes", "label": "Sufficient funds" },
+              { "from": "check", "to": "no", "label": "Insufficient funds" },
+              { "from": "no", "to": "route1" },
+              { "from": "no", "to": "route2" }
+            ],
+            "textAlternative": "Before paying a disbursement on a client's behalf before billing, check whether the client account holds enough of that client's money to cover it. If yes, pay from the client account and debit the client ledger. If no, do not pay from the client account — instead either request further money on account first, or pay from the business account and treat the amount as a debt owed by the client."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-05-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Mr Aziz's client ledger shows a £450 credit balance. The firm is asked to pay a £700 counsel's fee on his behalf before any bill is delivered. What should the firm do?",
+          "options": ["Not pay it from the client account; either obtain further funds from Mr Aziz first, or pay it from the business account", "Pay it from the client account and let the ledger show a £250 debit balance", "Pay the £250 shortfall from another client's ledger balance and the rest from Mr Aziz's", "Wait until a bill is delivered, since disbursements can never be paid before billing"],
+          "correctIndex": 0,
+          "explanation": "With only £450 held for Mr Aziz, the client account cannot cover the £700 fee. The firm must not create a debit balance, and must not use another client's money — it must top up funds from Mr Aziz first or pay from the business account instead."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-05-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A client sends £1,800 to the firm on account of costs before any bill is delivered. What entry is made on the client's ledger?",
+      "options": ["A credit entry of £1,800", "A debit entry of £1,800", "No entry until the bill is raised", "A credit entry split equally between the client and business ledgers"],
+      "correctIndex": 0,
+      "explanation": "A receipt on the client's behalf is always a credit entry on the client ledger, whatever it will later be spent on."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following is a disbursement, for the purposes of paying it from a client account before billing?",
+      "options": ["A land registry fee paid to a third party on the client's behalf", "The firm's own hourly-rate fee for work already carried out", "A general contribution towards the firm's office overheads", "An estimate of costs not yet incurred"],
+      "correctIndex": 0,
+      "explanation": "A disbursement is a payment to a third party on the client's behalf, such as a land registry fee. The firm's own fees are never a disbursement, and cannot be taken from client account before a bill is delivered."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A client ledger has a nil balance. The firm is asked to pay a £200 court fee on the client's behalf before any money has been received from the client. What should happen?",
+      "options": ["The firm should not pay the fee from the client account, as there are no client funds to cover it", "The firm should pay it and record a £200 credit on the ledger", "The firm should pay it and leave the ledger unchanged", "The firm should pay it from another client's ledger balance temporarily"],
+      "correctIndex": 0,
+      "explanation": "With nothing held for this client, there is no client money to cover the payment — it cannot be paid from the client account until funds are received, or it must be paid from the business account instead."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A client ledger shows a nil balance. The client sends £1,200 on account of costs. What is the resulting ledger entry and balance?",
+      "options": ["A credit entry of £1,200, giving a £1,200 credit balance", "A debit entry of £1,200, giving a £1,200 debit balance", "A credit entry of £1,200, giving a nil balance", "No entry, since the ledger opened at nil"],
+      "correctIndex": 0,
+      "explanation": "The receipt is credited to the ledger, moving the balance from nil to a £1,200 credit — the standard result of any receipt on a client's behalf."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client's ledger shows a £1,200 credit balance. The firm pays a £180 search fee on the client's behalf from client account, no bill yet delivered. What is the new balance?",
+      "options": ["£1,020 credit", "£1,380 credit", "£180 debit", "£1,200 credit, unchanged"],
+      "correctIndex": 0,
+      "explanation": "The disbursement is a debit entry. £1,200 credit less a £180 debit leaves £1,020 credit, with sufficient funds having existed to cover the payment throughout."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client ledger opens at nil. £900 is received on account of costs, then a £250 disbursement is paid on the client's behalf, then a further £400 is received. What is the final balance?",
+      "options": ["£1,050 credit", "£1,550 credit", "£650 credit", "£400 credit"],
+      "correctIndex": 0,
+      "explanation": "Working in sequence: £900 credit (balance £900 credit); £250 debit (balance £650 credit); £400 credit (balance £1,050 credit)."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A client ledger shows a £300 credit balance. The firm is asked to pay a £550 counsel's fee on the client's behalf before any bill. What is the correct course of action?",
+      "options": ["Do not pay from client account; obtain further funds from the client first, or pay from the business account", "Pay the £550 from client account, accepting a £250 debit balance", "Split the payment, taking £250 from another client's ledger", "Refuse to pay the fee under any circumstances until a bill is issued"],
+      "correctIndex": 0,
+      "explanation": "The £300 held is insufficient to cover £550. The firm must not create a debit balance or dip into another client's funds — it must top up from this client or use the business account instead."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm pays a disbursement on a client's behalf from client account before any bill is delivered, having confirmed sufficient client funds are held. Which of the following best describes this?",
+      "options": ["A permitted payment under r 4, since it is made to a third party on the client's behalf and is covered by funds held", "A breach, because no payment may ever leave the client account before a bill is delivered", "A breach, because disbursements may only be paid from the business account", "Permitted only if the client gives fresh written authority for each individual payment"],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to treat 'before billing' as an absolute bar on any payment out of client account, but that overstates the rule — it is transfers of the firm's own unbilled costs that are barred, not disbursements paid to third parties on the client's behalf where funds are held."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm is short of funds to pay one client's disbursement and pays it using a credit balance held for a different, unrelated client, intending to correct the figures later. What is the position?",
+      "options": ["This is a breach — each client's money must be accounted for separately, and one client's funds cannot be used for another's payment", "This is permitted, since the client account is legally one shared pool of money", "This is permitted only if both clients are on the same conveyancing chain", "This is permitted provided the figures are corrected within 24 hours"],
+      "correctIndex": 0,
+      "trapExplanation": "The client account being one bank account operationally does not mean client ledgers can be treated as one pool. Borrowing from one client's balance to fund another's payment breaches the separate-ledger requirement, whatever the intention to correct it later."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following, paid before any bill is delivered, could lawfully be paid from a client account with sufficient client funds held?",
+      "options": ["A £250 land registry fee on the client's behalf", "The firm's own £250 time-cost charge for work already done", "A £250 contribution to the firm's general office costs", "A £250 payment to the firm's client account itself, to 'pre-pay' future fees"],
+      "correctIndex": 0,
+      "trapExplanation": "Only the third-party disbursement is genuinely money leaving on the client's behalf to someone else. The other options all involve the firm receiving or keeping money for itself before any bill — that is never permitted regardless of how the payment is labelled."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under the SRA Accounts Rules 2019, what must be true of a client account before a disbursement is paid from it on a client's behalf, prior to billing?",
+      "options": ["The account must hold sufficient funds belonging to that client to cover the payment", "The client must have signed a specific disbursement authority form", "The disbursement must be under £500", "A partner must personally authorise every disbursement regardless of amount"],
+      "correctIndex": 0,
+      "explanation": "The rule's condition is sufficiency of that client's own funds — there is no fixed monetary cap and no universal requirement for a specific form or partner sign-off in the rule itself."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Rule 2.1 requires client money to be paid into a client account 'without delay'. In the context of a receipt on account of costs, what does this most directly require?",
+      "options": ["The money must be banked into the client account promptly on receipt, not held elsewhere first", "The client ledger entry must be made within the same financial quarter", "The client must confirm receipt in writing before the money can be banked", "The firm must wait for cleared funds before recording any entry at all"],
+      "correctIndex": 0,
+      "explanation": "'Without delay' governs how quickly the money physically reaches the client account once received — it is a banking-speed requirement, not a documentation or clearance-timing rule."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm receives a client's cheque for £1,000 on account of costs and leaves it in a drawer for eight days before paying it into the client account. Which requirement is most clearly breached?",
+      "options": ["The requirement to pay client money into a client account without delay", "The requirement to keep a separate ledger for each client", "The requirement that disbursements be paid to third parties, not the firm", "The requirement that a bill be delivered before costs are transferred"],
+      "correctIndex": 0,
+      "explanation": "An eight-day delay in banking client money is a straightforward breach of the 'without delay' requirement in r 2.1 — the other listed requirements are not engaged by these facts at all."
+    },
+    {
+      "itemId": "sqe1-sa-05-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client ledger shows a £500 credit balance. The firm pays a £500 disbursement on the client's behalf from client account, leaving a nil balance, then immediately pays a further £80 disbursement from the same account for the same client. What is correct?",
+      "options": ["The second payment should not be made from client account, as no client funds remain to cover it", "The second payment is fine, since the client account itself is not overdrawn", "The second payment is fine provided it is recorded as a credit rather than a debit", "The second payment should be split between this client and the firm's business account automatically"],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is looking at the bank account balance instead of the client ledger balance. The bank account overall might have plenty of money in it (other clients' funds), but this client's own ledger is at nil — paying the £80 anyway would create a debit balance on this client specifically."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is checking only the bank account's overall balance, or only the most recent entry, instead of that specific client's running ledger balance before every payment. Before any disbursement is paid, ask: what does this client's own ledger show right now?",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.receipts-and-disbursements"
+  }
+}

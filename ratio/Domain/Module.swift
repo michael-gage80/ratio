@@ -24,7 +24,7 @@ enum Module: String, CaseIterable, Identifiable, Codable {
     case sqeLegalSystem = "sqe1-legal-system-legal-services"
     case sqeBusinessLaw = "sqe1-business-law-practice"
     case sqePropertyPractice = "sqe1-property-practice"
-    case sqeWills = "sqe1-wills-estates"
+    case sqeWills = "sqe1-wills-administration-estates"
     case sqeAccounts = "sqe1-solicitors-accounts"
     case sqeCriminalPractice = "sqe1-criminal-law-practice"
 
@@ -77,10 +77,19 @@ enum Module: String, CaseIterable, Identifiable, Codable {
         }
     }
 
-    /// SQE1 topic IDs name the subject in their second part, which may be shorter than
-    /// the module ID ("dispute-resolution" in "sqe1-dispute-resolution").
+    /// SQE1 topic IDs name the subject in their second part ("sqe1.criminal-practice.bail").
+    /// Keep in step with SQE_SUBJECTS in content-tools/validate.mjs.
     private init?(sqeSubject subject: String) {
-        guard let module = Module.allCases.first(where: { $0.programme == .sqe1 && $0.rawValue.dropFirst(5).hasPrefix(subject) }) else { return nil }
+        let subjects: [String: Module] = [
+            "dispute-resolution": .sqeDisputeResolution,
+            "legal-system": .sqeLegalSystem,
+            "business-law": .sqeBusinessLaw,
+            "property-practice": .sqePropertyPractice,
+            "wills-estates": .sqeWills,
+            "solicitors-accounts": .sqeAccounts,
+            "criminal-practice": .sqeCriminalPractice,
+        ]
+        guard let module = subjects[subject] else { return nil }
         self = module
     }
 

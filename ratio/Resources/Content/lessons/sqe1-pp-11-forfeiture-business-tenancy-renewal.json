@@ -1,0 +1,490 @@
+{
+  "lessonId": "sqe1-pp-11",
+  "track": "SQE1",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 11,
+  "topicId": "sqe1.property-practice.forfeiture-business-tenancy-renewal",
+  "title": "Forfeiture and business tenancy renewal",
+  "subtitle": "Ending a lease for breach, and the statutory machinery that lets a business tenant stay",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how forfeiture for non-payment of rent differs procedurally from forfeiture for other breaches, including the requirements of a valid s 146 notice and the tenant's routes to relief",
+    "State when the Leasehold Property (Repairs) Act 1938 counter-notice procedure applies and how it constrains a landlord seeking to forfeit for disrepair",
+    "Apply the Landlord and Tenant Act 1954 Part II renewal machinery — the s 25 and s 26 notice procedure and the seven grounds of opposition under s 30(1) — to determine whether a business tenant can stay, and whether compensation is due if not"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Law of Property Act 1925, s 146",
+      "role": "Requires notice specifying the breach, requiring remedy where capable of remedy, and requiring compensation, before forfeiture for breach other than non-payment of rent"
+    },
+    {
+      "citation": "Landlord and Tenant Act 1954, ss 25–26",
+      "role": "The landlord's notice to terminate and the tenant's request for a new tenancy — the two routes into the renewal procedure"
+    },
+    {
+      "citation": "Landlord and Tenant Act 1954, s 30(1)",
+      "role": "Sets out the seven statutory grounds on which a landlord may oppose the grant of a new tenancy"
+    },
+    {
+      "citation": "Landlord and Tenant Act 1954, s 37",
+      "role": "Provides compensation for a tenant refused renewal on the 'no-fault' grounds"
+    },
+    {
+      "citation": "Landlord and Tenant Act 1954, s 38A",
+      "role": "Permits the parties to contract out of security of tenure, subject to a prescribed warning notice and declaration"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson sits at the join of two very different logics — forfeiture punishes breach, renewal protects occupation — and SQE1 fact patterns like to test whether you can tell which one is actually in play. Where the profile shows application is behind knowledge, this brief note appears: 'You know the mechanics — this lesson is about spotting which mechanic the facts are asking for.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well here on the rules before. The test pool leans towards fact patterns — expect scenarios that require you to work out whether forfeiture or renewal is even the right frame, not just define the procedure.",
+      "weakKnowledge": "Start with Part 1 and take the forfeiture route methodically before moving to renewal — the two procedures share almost no vocabulary, and mixing them up is the most common error this lesson is designed to catch."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two tenants, two landlords, both facing the end of a lease. One tenant is three months behind on rent and the landlord wants them out immediately. The other has paid every invoice on time for fifteen years and simply wants to renew — and the landlord wants them out too. The law gives the first landlord a blunt instrument and the second almost none at all. Understanding why is the whole of this lesson.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. Forfeiture and the 1954 Act renewal scheme are both long-settled, though practitioners should always check whether a given tenancy has been validly contracted out under s 38A before assuming security of tenure applies."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Forfeiture for non-payment of rent: the landlord's fastest route out",
+        "voice": "direct — establishes the baseline procedure before complicating it",
+        "body": [
+          "Forfeiture ends a lease early because the tenant has broken a term of it. Where the breach is non-payment of rent, the landlord's path is comparatively short: no s 146 notice is required at all. The lease is forfeited either by peaceable re-entry (subject to strict limits where the premises are residential and occupied) or by issuing court proceedings for possession.",
+          "There is one procedural trap that survives from the common law: unless the lease expressly dispenses with it, the landlord must make a formal demand for the rent before forfeiting — a technical requirement that is almost always excluded by a well-drafted lease, but worth checking, because its absence can unravel an otherwise valid forfeiture.",
+          "The tenant is not without options even here. Relief from forfeiture allows a court to reinstate the lease, typically on payment of the arrears and costs, and the tenant's ability to apply for it survives even after the landlord has physically re-entered, provided the tenant acts promptly."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Relief from forfeiture",
+            "definition": "A court's discretionary power to reinstate a forfeited lease, most commonly exercised for rent arrears on payment of the sums due and costs — the practical safety valve that stops forfeiture operating as an automatic windfall for the landlord."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-11-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does a landlord forfeiting a lease for non-payment of rent need to serve a s 146 notice before doing so?",
+          "options": [
+            "No — s 146 notice requirements apply to breaches other than non-payment of rent",
+            "Yes — s 146 applies to every forfeiture regardless of the breach"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Non-payment of rent is carved out of the s 146 notice requirement entirely — it is the fastest of the forfeiture routes precisely because that formal notice step is absent.",
+          "feedbackIncorrect": "Look again at what s 146 actually covers. Non-payment of rent is the one breach it does not require notice for — everything else needs the s 146 process covered in Part 2."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Forfeiture for other breaches: what a valid s 146 notice must say",
+        "voice": "close statutory reading — treats the notice as a checklist",
+        "body": [
+          "For any breach other than non-payment of rent — disrepair, unlawful alteration, unauthorised use — the landlord cannot forfeit without first serving a notice compliant with s 146 of the Law of Property Act 1925. Skip this step, or get its contents wrong, and any purported forfeiture is invalid.",
+          "The notice must specify the breach complained of; where the breach is capable of remedy, it must require the tenant to remedy it within a reasonable time; and it must require the tenant to pay compensation for the breach, if the landlord wants compensation as well as forfeiture. Only once the notice has been served and, where relevant, a reasonable time to remedy has passed without compliance, can the landlord proceed to forfeit.",
+          "Not every breach is capable of remedy — a breach of a covenant not to use the premises for an immoral or illegal purpose, for instance, is generally treated as incapable of remedy, because the stigma cannot be undone even if the conduct stops. That distinction changes what the notice can validly demand."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Law of Property Act 1925, s 146(1)",
+            "text": "A right of re-entry or forfeiture... shall not be enforceable... unless and until the lessor serves on the lessee a notice specifying the particular breach complained of, and, if the breach is capable of remedy, requiring the lessee to remedy the breach, and in any case, requiring the lessee to make compensation in money for the breach, and the lessee fails, within a reasonable time thereafter, to remedy the breach, if it is capable of remedy, and to make reasonable compensation to the satisfaction of the lessor for the breach.",
+            "elements": [
+              "Notice specifies the particular breach",
+              "If capable of remedy, notice requires the breach to be remedied",
+              "Notice requires compensation if sought",
+              "Tenant fails, within a reasonable time, to comply"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-11-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A landlord serves a notice on a tenant stating only: 'You are in breach of the repairing covenant. Vacate within 14 days.' Does this satisfy s 146(1)?",
+          "options": [
+            "Yes — identifying the breach and giving a deadline is enough",
+            "No — the notice must require the tenant to remedy the breach where capable of remedy, not simply demand they leave",
+            "Yes — but only if the tenant does not respond within 14 days",
+            "No — s 146 notices must always be served by a court"
+          ],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct — disrepair is a classic remediable breach, so the notice must give the tenant the chance to fix it, not simply announce forfeiture is coming.",
+          "feedbackIncorrect": "The notice's job, for a remediable breach like disrepair, is to give the tenant a genuine opportunity to put things right — a bare instruction to vacate skips that step entirely and would not satisfy s 146(1)."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The 1938 Act: a shield built for long leases in disrepair",
+        "voice": "Socratic — poses the landlord's blind spot before resolving it",
+        "body": [
+          "Here's a scenario a landlord's solicitor needs to see coming: a 99-year lease, 40 years still to run, and the tenant has let the property fall into disrepair. The landlord serves a compliant s 146 notice. Can they now simply forfeit once the remedy period expires? Not necessarily — and missing this is a classic error.",
+          "The Leasehold Property (Repairs) Act 1938 gives certain tenants a further shield. It applies where the lease was originally granted for a term of seven years or more, with at least three years still unexpired at the date the s 146 notice is served, and the notice relates to a breach of a repairing covenant. Where it applies, the s 146 notice must itself tell the tenant of their right to serve a counter-notice within 28 days.",
+          "If the tenant serves a valid counter-notice, the landlord cannot forfeit (or claim damages) for the disrepair without first obtaining the leave of the court — and the court will only grant leave on one of a limited set of grounds, such as that the value of the reversion has been substantially diminished, or that the repairs are needed to comply with another statutory obligation. The practical effect is to convert what looked like a straightforward forfeiture into a contested application."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "When the 1938 Act bites",
+            "points": [
+              "Lease originally granted for 7 years or more",
+              "At least 3 years unexpired when the s 146 notice is served",
+              "The breach relied on is a repairing covenant breach",
+              "The s 146 notice must inform the tenant of the right to counter-notice",
+              "A valid counter-notice within 28 days forces the landlord to seek the court's leave before forfeiting"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-11-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a s 146 notice for disrepair, served under a 20-year lease with 12 years left to run, must warn the tenant of a right to counter-notice under the 1938 Act?",
+          "sliderLabels": [
+            "Definitely not required",
+            "Definitely required"
+          ],
+          "correctPosition": "Definitely required",
+          "explanation": "A 20-year original term comfortably exceeds the 7-year threshold, and 12 years unexpired comfortably exceeds the 3-year threshold — the 1938 Act applies, and the s 146 notice must include the counter-notice warning."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Renewal begins: the s 25 and s 26 notices",
+        "voice": "structural — lays out who moves first and what each notice must do",
+        "body": [
+          "Forfeiture is about breach; the Landlord and Tenant Act 1954 Part II is about something entirely different — a qualifying business tenant's statutory right to stay in occupation after the contractual term ends, and to be granted a new tenancy, unless the landlord can make out one of a limited set of grounds.",
+          "Either side can start the process. A landlord who wants to end or renew the tenancy on new terms serves a s 25 notice, which must state whether the landlord opposes the grant of a new tenancy and, if so, on which of the s 30(1) grounds. A tenant who wants to take the initiative instead serves a s 26 request for a new tenancy — but only where the current tenancy was itself granted for a fixed term of more than a year, and the tenant proposes terms of their own.",
+          "A common examiner's trap is to give a tenant facts that look ripe for a s 26 request when the tenancy is, in fact, periodic — s 26 simply is not available to a periodic tenant, who must instead wait for the landlord to act, or negotiate directly."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Contracting out (s 38A)",
+            "definition": "Landlord and tenant may agree before the tenancy is granted to exclude ss 24–28 (the whole security-of-tenure and renewal scheme), provided the landlord serves a prescribed warning notice in advance and the tenant makes the required declaration — get this wrong procedurally, and the tenancy remains protected despite the parties' intentions."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-11-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A business tenant occupies under a periodic (month-to-month) tenancy and wants to force the landlord's hand by requesting a new, longer fixed term. Can the tenant serve a valid s 26 request?",
+          "options": [
+            "Yes — any business tenant with security of tenure may serve a s 26 request",
+            "No — s 26 is only available where the current tenancy was granted for a fixed term exceeding one year",
+            "Yes — provided the tenant has been in occupation for at least five years",
+            "No — only landlords may initiate the renewal procedure"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "It's tempting to assume security of tenure and the right to request renewal travel together — they don't. A periodic tenant still enjoys Part II protection against termination, but the s 26 request mechanism is reserved for tenants holding under a fixed term of more than one year.",
+          "feedbackCorrect": "Right — the periodic tenant here must wait for the landlord to serve a s 25 notice, or negotiate outside the statutory machinery; s 26 is simply unavailable on these facts.",
+          "feedbackIncorrect": "The fixed-term-over-one-year requirement is a hard gate on s 26. A periodic tenancy never clears it, however long the tenant has actually been in occupation."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The seven grounds of opposition — and which ones pay compensation",
+        "voice": "argumentative — builds the fault/no-fault distinction as the organising idea",
+        "body": [
+          "Section 30(1) gives a landlord seven grounds on which to oppose a new tenancy. The grounds split cleanly into two families, and that split is the single most tested idea in this part of the syllabus: grounds (a) to (c) turn on something the tenant has done wrong — persistent delay paying rent, breach of repairing obligations, or other substantial breaches. Grounds (e) to (g) turn on something about the landlord's own plans or position — wanting to relet a larger unit as a whole, intending to demolish or reconstruct, or intending to occupy the premises themselves. Ground (d) — the landlord has offered suitable alternative accommodation — sits with the no-fault grounds in substance, though it is not itself a compensation trigger.",
+          "Compensation under s 37 exists precisely because grounds (e), (f) and (g) are not the tenant's fault. Where the landlord successfully opposes renewal relying only on one or more of those three grounds, the tenant is entitled to statutory compensation, calculated by reference to the rateable value of the premises (doubled if the tenant, or a predecessor in the same business, has been in occupation for 14 years or more). Rely on a fault ground — even alongside a no-fault one — and no compensation is payable at all.",
+          "This is why landlord's solicitors think hard before pleading ground (f) (redevelopment) where a genuine breach also exists: relying on the fault ground alone may cost the client nothing in compensation, while adding a no-fault ground into the mix, or relying on it exclusively, can trigger a real liability."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Fault, no-fault, and compensation",
+            "description": "How the seven s 30(1) grounds map onto the s 37 compensation rule.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Which ground(s) does the landlord rely on?"
+              },
+              {
+                "id": "fault",
+                "label": "Grounds (a)-(d): tenant conduct or suitable alternative offered → no compensation"
+              },
+              {
+                "id": "nofault",
+                "label": "Grounds (e)-(g) only: landlord's own plans → compensation under s 37 if opposition succeeds"
+              },
+              {
+                "id": "mixed",
+                "label": "Mixture of fault and no-fault grounds relied on → no compensation"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "fault",
+                "label": "(a)-(d) relied on"
+              },
+              {
+                "from": "start",
+                "to": "nofault",
+                "label": "only (e)-(g) relied on"
+              },
+              {
+                "from": "start",
+                "to": "mixed",
+                "label": "both types relied on"
+              }
+            ],
+            "textAlternative": "Grounds (a) to (d) reflect tenant conduct or a suitable alternative and never trigger compensation. Grounds (e) to (g) reflect the landlord's own plans; if the landlord relies exclusively on one or more of these and succeeds, s 37 compensation is payable. Relying on any fault ground at all, even mixed with a no-fault ground, takes compensation off the table."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-11-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A landlord opposes renewal solely on the ground that it intends to demolish and reconstruct the premises, and succeeds. The tenant has occupied the premises (through a chain of the same business) for 20 years. Analyse whether compensation is payable, and how it would be calculated in outline.",
+          "factsToOrder": [
+            "Landlord relies solely on the redevelopment ground, s 30(1)(f)",
+            "The opposition succeeds and the tenant does not get a new tenancy",
+            "Ground (f) is a 'no-fault' ground going to the landlord's own plans",
+            "The tenant (through the same business) has occupied for 20 years, over the 14-year threshold"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the tenant is entitled to statutory compensation under s 37 LTA 1954 having been refused a new tenancy on ground (f).",
+            "rule": "Compensation under s 37 is payable where the landlord successfully opposes renewal relying exclusively on one or more of the no-fault grounds, (e), (f) or (g); the amount is based on rateable value, doubled where the tenant (or a predecessor in the same business) has occupied for 14 years or more.",
+            "application": "The landlord relied solely on ground (f), a no-fault ground concerned with its own redevelopment plans rather than any conduct of the tenant, and succeeded. The tenant's 20 years of occupation through the same business clears the 14-year threshold.",
+            "conclusion": "Compensation is payable under s 37, calculated at double the rateable value given the length of occupation through the same business."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-11-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "For which type of breach is a landlord not required to serve a s 146 notice before forfeiting?",
+      "options": [
+        "Breach of a repairing covenant",
+        "Non-payment of rent",
+        "Unlawful alteration of the premises",
+        "Unauthorised subletting"
+      ],
+      "correctIndex": 1,
+      "explanation": "Section 146 LPA 1925 is expressly disapplied to forfeiture for non-payment of rent, which follows its own, shorter route."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-02",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Under s 146(1) LPA 1925, what must a valid notice do where the breach relied on is capable of remedy?",
+      "options": [
+        "It must simply state that the lease is forfeited",
+        "It must require the tenant to remedy the breach within a reasonable time, as well as specifying the breach and requiring compensation if sought",
+        "It must be served by the court, not the landlord",
+        "It must give the tenant at least 12 months to comply"
+      ],
+      "correctIndex": 1,
+      "explanation": "Where the breach is capable of remedy, s 146(1) requires the notice to give the tenant a genuine opportunity to remedy it, alongside specifying the breach and any compensation sought — a fixed 12-month period is not part of the statutory test."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A tenant's lease, originally granted for 15 years, has 5 years left to run. The landlord serves a s 146 notice for breach of the repairing covenant, and the tenant serves a valid counter-notice within 28 days. What is the effect?",
+      "options": [
+        "The lease is automatically saved and the landlord can take no further action",
+        "The landlord must obtain the leave of the court before forfeiting or claiming damages for the disrepair",
+        "The counter-notice is invalid because the unexpired term is under 7 years",
+        "The tenant must now pay double rent until the repairs are completed"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to read a valid counter-notice as ending the matter outright, but the 1938 Act does not save the lease automatically — it simply forces the landlord to seek the court's leave, which may or may not be granted.",
+      "explanation": "The original term (15 years) and unexpired term (5 years) both clear the 1938 Act thresholds, so a valid counter-notice requires the landlord to obtain leave of the court before proceeding."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A lease was originally granted for 4 years. The landlord wants to forfeit for disrepair and has served a compliant s 146 notice. Does the tenant have a right to serve a 1938 Act counter-notice?",
+      "options": [
+        "Yes — all repairing-covenant forfeitures attract the counter-notice right",
+        "No — the 1938 Act only applies where the lease was originally granted for 7 years or more",
+        "Yes — but only if the tenant has occupied for at least 4 years",
+        "No — because forfeiture for disrepair is never available on a short lease"
+      ],
+      "correctIndex": 1,
+      "explanation": "The 1938 Act's protection is reserved for leases originally granted for 7 years or more with at least 3 years unexpired; a 4-year original term never qualifies, however long is left to run."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which notice does a landlord serve to begin the process of ending or renewing a business tenancy under Part II of the 1954 Act?",
+      "options": [
+        "A s 146 notice",
+        "A s 25 notice",
+        "A statutory demand",
+        "A notice to quit under common law only"
+      ],
+      "correctIndex": 1,
+      "explanation": "The s 25 notice is the landlord's route into the renewal machinery, stating whether the landlord opposes a new tenancy and on which ground(s) if so."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A tenant occupies under a periodic tenancy and wants to force renewal by serving a request for a new tenancy under s 26. Can they?",
+      "options": [
+        "Yes — s 26 is available to any tenant with security of tenure",
+        "No — s 26 requests are only available where the current tenancy was granted for a fixed term of more than one year",
+        "Yes — but only with the landlord's prior written agreement",
+        "No — periodic tenants have no security of tenure at all"
+      ],
+      "correctIndex": 1,
+      "explanation": "Section 26 requires the current tenancy to be a fixed term exceeding one year; a periodic tenant, though still protected against termination, cannot use this route."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following is one of the seven grounds of opposition under s 30(1) LTA 1954?",
+      "options": [
+        "The tenant has failed to serve a s 26 request",
+        "The landlord intends to demolish or reconstruct the premises",
+        "The tenant has sublet part of the premises without consent",
+        "The landlord has not received a rent increase in five years"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The other options describe procedural failures or landlord grievances that are not, on their own, recognised s 30(1) grounds — only a specific, defined list of seven grounds qualifies, and redevelopment intention is one of them.",
+      "explanation": "Ground (f) — intention to demolish or reconstruct — is one of the seven statutory grounds of opposition."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A landlord successfully opposes renewal relying solely on the tenant's persistent delay in paying rent (ground (b)). Is compensation payable to the tenant under s 37?",
+      "options": [
+        "Yes — compensation is payable whenever a business tenant loses their tenancy",
+        "No — ground (b) is a fault ground, and compensation under s 37 is confined to the no-fault grounds (e), (f) and (g)",
+        "Yes — but only at half the usual rate",
+        "No — because compensation is only available to tenants who occupied for under 14 years"
+      ],
+      "correctIndex": 1,
+      "explanation": "Persistent delay in paying rent is a fault ground. Section 37 compensation is reserved for cases where the landlord relies exclusively on the no-fault grounds (e), (f) or (g) — a fault ground being relied on takes compensation off the table entirely."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-09",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "How is s 37 compensation broadly calculated where it is payable?",
+      "options": [
+        "A fixed statutory sum regardless of the premises",
+        "By reference to the rateable value of the premises, doubled for 14 or more years of occupation through the same business",
+        "By reference to the tenant's annual turnover",
+        "By reference to the landlord's costs of redevelopment"
+      ],
+      "correctIndex": 1,
+      "explanation": "Compensation is rateable-value based, with a doubling for long occupation (14 years or more, including occupation by a predecessor in the same business) — not turnover- or cost-based."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A landlord opposes renewal relying on both ground (c) (other substantial breach of obligations) and ground (g) (intention to occupy) and succeeds on both. Is s 37 compensation payable?",
+      "options": [
+        "Yes — because ground (g) alone would have triggered compensation",
+        "No — because a fault ground (c) was also relied on, compensation is not payable even though (g) is a no-fault ground",
+        "Yes — but only in respect of the (g) element of the claim",
+        "No — because compensation is never available where two grounds are pleaded together"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to award partial credit for the no-fault ground, but the rule is exclusivity: reliance on any fault ground removes the compensation entitlement, however strong the no-fault ground also relied on might have been.",
+      "explanation": "Compensation under s 37 requires the landlord's successful opposition to rest exclusively on grounds (e), (f) and/or (g); mixing in a fault ground like (c) removes the entitlement."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-11",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A landlord and an incoming business tenant wish to exclude the security-of-tenure provisions of the 1954 Act before the lease is granted. What must happen for this to be effective?",
+      "options": [
+        "Nothing — the parties' written agreement alone is sufficient",
+        "The landlord must serve a prescribed warning notice in advance and the tenant must make the required declaration, in line with s 38A",
+        "The tenant must simply initial each page of the lease",
+        "Contracting out is not permitted under any circumstances"
+      ],
+      "correctIndex": 1,
+      "explanation": "Section 38A permits contracting out, but only where the prescribed warning notice and tenant declaration procedure is properly followed — get the procedure wrong, and the tenancy keeps its statutory protection despite the parties' intentions."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-12",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A tenant is three months in arrears with rent. The lease contains no clause dispensing with the common law requirement for a formal demand. What is the landlord's best next step before attempting forfeiture?",
+      "options": [
+        "Serve a s 146 notice immediately",
+        "Make a formal demand for the rent before proceeding, since the lease has not dispensed with that common law requirement",
+        "Serve a s 25 notice under the 1954 Act",
+        "Apply directly for relief from forfeiture on the tenant's behalf"
+      ],
+      "correctIndex": 1,
+      "explanation": "Forfeiture for non-payment of rent needs no s 146 notice, but where the lease has not excluded the old common law requirement for a formal demand, skipping that step can unravel the forfeiture — a s 25 notice is irrelevant here, as that belongs to the renewal scheme, not forfeiture."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A tenant's lease is forfeited for rent arrears and the landlord has already re-entered. Has the tenant necessarily lost the ability to have the lease reinstated?",
+      "options": [
+        "No — the tenant may still apply for relief from forfeiture provided they act promptly",
+        "Yes — relief from forfeiture is unavailable once re-entry has occurred",
+        "No — but only if the landlord consents to reinstatement",
+        "Yes — relief is only available before any court proceedings are issued"
+      ],
+      "correctIndex": 0,
+      "explanation": "Relief from forfeiture survives even actual re-entry, provided the tenant applies promptly — it is not a right that automatically disappears the moment the landlord physically retakes possession."
+    },
+    {
+      "itemId": "sqe1-pp-11-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "Which statement best distinguishes forfeiture from the 1954 Act renewal procedure?",
+      "options": [
+        "Forfeiture and renewal are two names for the same process applied at different stages of a lease",
+        "Forfeiture ends a lease early for the tenant's breach; renewal governs whether a business tenant already at the end of their term can obtain a new one, largely independent of any breach",
+        "Renewal is only available once a forfeiture notice has been validly served",
+        "Forfeiture can only be used against business tenants protected by the 1954 Act"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to link the two procedures because both can end a tenant's occupation, but they answer different questions — one is about punishing a breach mid-term, the other about what happens, breach or no breach, once the contractual term is over.",
+      "explanation": "Forfeiture is a remedy for breach during the term; the 1954 Act renewal scheme operates at the end of the term and does not depend on any breach having occurred at all."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson is applying the wrong statutory frame — reaching for s 146 language in a renewal scenario, or for s 30(1) grounds in a forfeiture scenario. Identify which regime the facts belong to before applying any rule within it.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.forfeiture-business-tenancy-renewal"
+  }
+}

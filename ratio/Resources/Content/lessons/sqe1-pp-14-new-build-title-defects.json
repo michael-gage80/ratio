@@ -1,0 +1,354 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-pp-14",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 14,
+  "topicId": "sqe1.property-practice.new-build-title-defects",
+  "title": "New-build purchases and title defects",
+  "subtitle": "Off-plan conveyancing, structural warranties, and curing or insuring around a defective title",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify the features distinctive to an off-plan or new-build purchase — reservation, the developer's contract, the long-stop date, and the 10-year structural warranty",
+    "Recognise common categories of title defect encountered in practice, including missing consents, absent building regulation approval, and chancel repair liability",
+    "Apply the choice between curing a title defect and obtaining indemnity insurance to a given fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Building Act 1984", "role": "Statutory framework for building regulations approval and compliance certificates" },
+    { "citation": "Chancel Repairs Act 1932", "role": "Statutory basis for a parochial church council's ability to enforce historic chancel repair liability against certain landowners" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Two skills sit side by side in this lesson: reading a developer's non-negotiable contract accurately, and knowing when a title problem needs fixing versus when it can simply be insured over. Where the profile shows strong doctrine but thinner transactional judgement, this note appears: 'You know what a defect is — this lesson is about what you actually do with one.'",
+    "profileHooks": {
+      "weakApplication": "The test pool is weighted towards deciding cure-versus-insure on realistic facts. Read for what the client actually needs (a mortgage completing next week, or time to sort the problem properly) before picking an answer.",
+      "weakKnowledge": "Start with Part 1 for the off-plan process and Part 3 for the defect categories — the later parts assume you can name a long-stop date and a chancel repair liability without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A buyer pays a deposit on a flat that doesn't exist yet — no walls, no roof, sometimes not even a foundation. Eighteen months later it does exist, but the contract that got them there was never really a negotiation. It was a form, and the only real question was how carefully anyone read it."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Buying something that isn't built yet",
+        "voice": "structural — walks through the off-plan process in sequence",
+        "body": [
+          "An off-plan purchase begins with a reservation: the buyer pays a small, usually non-refundable reservation fee to take the plot or unit off the market for a limited period, typically 28 days, while solicitors are instructed and a contract is prepared. This is not exchange, and it does not bind either side to complete — it simply buys time and priority.",
+          "The contract itself is drafted by the developer's solicitors and offered on a largely non-negotiable basis, often with a specification schedule attached describing fittings, finishes and any works still to be completed. A buyer's solicitor cannot renegotiate the structure of a developer's standard contract the way they might on a resale, but they can and should scrutinise it closely — particularly the completion mechanism, because there is no finished building to inspect yet.",
+          "Because construction timescales slip, developer contracts fix a long-stop date rather than a fixed completion date: a final backstop by which the building must be ready, after which the buyer typically gains a right to rescind and recover the deposit if completion still hasn't happened. Advising a buyer to understand what the long-stop date actually guarantees — and what it doesn't — is one of the most practically important things a solicitor does on this kind of transaction."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Long-stop date",
+            "definition": "The final date by which a new-build must be ready for completion under the developer's contract; if it passes without completion, the buyer typically gains a right (subject to the contract's exact wording) to rescind and recover the deposit."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-14-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "In an off-plan purchase, does paying a reservation fee bind the buyer to complete the purchase?",
+          "options": ["No — reservation simply holds the plot while contracts are prepared", "Yes — reservation is legally equivalent to exchange of contracts"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Reservation is a holding step, well short of a binding commitment to complete.",
+          "feedbackIncorrect": "Not quite — reservation only secures the plot for a limited period. The binding commitment comes later, at exchange."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The 10-year structural warranty",
+        "voice": "reference — sets out the mechanism precisely",
+        "body": [
+          "Because a new building has no history a buyer's solicitor can investigate through title, lenders and buyers instead rely on a structural warranty — commonly an NHBC Buildmark policy or an equivalent scheme — that covers defects in the structure for ten years from practical completion, with the first two years typically covered by the developer directly and the remainder by an insurer.",
+          "A structural warranty is not optional in practice: almost every mortgage lender will refuse to lend on a new-build without one, because the lender is relying on the same building as its security and has no more history to go on than the buyer does. Checking that a warranty is in place, on cover that meets the lender's minimum requirements, and that it will be assigned to the buyer on completion, is a standard due diligence step.",
+          "It's worth being precise about what the warranty actually covers: structural defects, broadly — not every snagging issue, cosmetic fault or appliance fault, which are usually the developer's separate short-term responsibility under the building contract or a defects list. Overstating what the ten-year cover reaches is a common misunderstanding worth correcting early with a client."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "What a structural warranty typically covers",
+            "points": [
+              "Structural defects in the building's construction for up to 10 years from practical completion",
+              "Usually the developer's direct responsibility for roughly the first two years, then insurer-backed cover for the balance",
+              "Does not usually cover cosmetic snagging or non-structural appliance faults — those sit with the developer's separate defects process",
+              "Almost always required by mortgage lenders as a condition of lending on a new-build"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-14-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in this scenario that a 10-year structural warranty is unlikely to cover.",
+          "scenarioText": "A buyer moves into a new-build flat. Six months later a hairline crack appears in a load-bearing wall, the kitchen tap starts to drip, and a window is found not to close properly.",
+          "tappableSpans": ["hairline crack appears in a load-bearing wall", "kitchen tap starts to drip", "window is found not to close properly"],
+          "correctSpan": "kitchen tap starts to drip",
+          "feedbackCorrect": "Right — a dripping tap is a snagging/appliance issue, not a structural defect, so it sits outside typical warranty cover and is a matter for the developer's defects process instead.",
+          "feedbackIncorrect": "Think about which of these three problems is structural (affecting the building's fabric or load-bearing elements) rather than a cosmetic or fitting fault — the warranty is aimed at the former."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Where new-build titles go wrong",
+        "voice": "case-narrative — three short vignettes before drawing the pattern",
+        "body": [
+          "New-build and older titles fail in different but equally recurring ways. Take three examples a solicitor might see in a single week. First: a developer built an extension or made an alteration without the freeholder's consent required under a superior lease or covenant — a missing consent that clouds title even though the physical work is long finished and unremarkable. Second: works were carried out without building regulations approval being obtained or a completion certificate issued under the Building Act 1984 — meaning there is no official confirmation the construction met the applicable standards, which matters enormously to a future buyer's own lender.",
+          "Third, and often the most surprising to students: chancel repair liability. Under the Chancel Repairs Act 1932, a parochial church council can, in narrow and increasingly rare circumstances, enforce a historic liability against the owner of land that was once part of a rectorial estate, requiring a contribution to the repair of a parish church's chancel. Most conveyancers now search for this risk (or check whether the risk has already been extinguished) rather than assume it is irrelevant, because it can attach to land with no visible or obvious connection to the church at all.",
+          "None of these defects necessarily stops a transaction. What they all share is that the solicitor's job is to identify the defect precisely enough to choose the right response — and the right response is very often not to try to fix the underlying problem at all."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Building Act 1984, s 16",
+            "text": "Where plans of proposed work have been deposited... and the work is carried out in accordance with the plans, or with the appropriate deviations..., the local authority shall give the depositor of the plans a certificate to that effect.",
+            "elements": ["Plans deposited with the local authority", "Work carried out in accordance with the approved plans", "Local authority issues a completion certificate confirming compliance"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-14-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a solicitor would typically follow on discovering an unexplained rear extension with no paperwork on file.",
+          "items": [
+            "Notice the extension shown on a plan or site visit but absent from the title documents",
+            "Raise enquiries with the seller about consents and building regulations approval",
+            "Establish that no building regulations completion certificate was ever obtained",
+            "Advise the buyer on the available options for addressing the gap"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the standard sequence: spot the discrepancy, ask about it, confirm what is actually missing, then advise on the fix.",
+          "feedbackIncorrect": "Check the order — enquiries come after spotting the issue and before advising on options; you can't sensibly advise on a fix before confirming exactly what's missing."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Cure or insure: choosing the practical response",
+        "voice": "Socratic — poses the choice before resolving it",
+        "body": [
+          "Faced with a title defect, a solicitor generally has two live options, and the exam (like practice) expects a reasoned choice between them, not a reflex answer. Curing the defect means going back and fixing the underlying problem directly: applying for retrospective planning permission or a regularisation certificate for building regulations, or obtaining the missing consent from a freeholder or management company after the fact.",
+          "Indemnity insurance takes the opposite approach: rather than fixing the problem, a single-premium policy is taken out that compensates the buyer (and its lender, and successors in title) if the defect ever actually causes a loss — for example, if a freeholder later tries to enforce a covenant breach, or a chancel repair liability is actually asserted. The insurer is betting the risk will never crystallise; the buyer is buying certainty of cost rather than certainty of resolution.",
+          "The choice between the two usually turns on three things: cost and speed (insurance is typically far cheaper and faster than a formal cure, especially against a completion deadline), what the lender will accept (most lenders are entirely comfortable with indemnity insurance for lower-risk defects), and whether curing is even realistically achievable (retrospective planning permission may simply be refused). Curing is worth pursuing chiefly where the defect actually affects the buyer's intended use of the property in a way insurance cannot fix — insurance pays money after a loss; it does not, for example, retrospectively grant planning permission for a use the buyer actually needs."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Cure or insure? A working approach",
+            "description": "A decision path for choosing between curing a title defect and obtaining indemnity insurance.",
+            "nodes": [
+              { "id": "start", "label": "Does the defect affect the buyer's actual intended use of the property (e.g. a needed planning consent)?" },
+              { "id": "yes-use", "label": "Yes → curing is likely necessary; insurance cannot supply a missing permission the buyer needs to rely on" },
+              { "id": "no-use", "label": "No → is the risk of the defect ever being enforced genuinely low, and would insurance be acceptable to the lender?" },
+              { "id": "yes-low", "label": "Yes → indemnity insurance is usually the quicker, cheaper, practical answer" },
+              { "id": "no-low", "label": "No → consider curing, or renegotiating price/timing to allow it before completion" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-use", "label": "Yes" },
+              { "from": "start", "to": "no-use", "label": "No" },
+              { "from": "no-use", "to": "yes-low", "label": "Yes" },
+              { "from": "no-use", "to": "no-low", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the defect affects the buyer's actual intended use of the property, such as a needed planning consent — if so, curing is likely necessary because insurance cannot supply a permission the buyer needs to rely on. If not, ask whether the enforcement risk is genuinely low and whether the lender will accept insurance — if so, indemnity insurance is usually the quicker, cheaper, practical answer. If the risk is not low or insurance is unacceptable, curing or renegotiation should be considered instead."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-14-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is indemnity insurance clearly the more appropriate response, rather than curing the defect?",
+          "scenarioA": "A buyer intends to run a nursery from the ground floor of a converted building, but the change of use to that specific commercial purpose was never granted planning permission.",
+          "scenarioB": "A residential seller's rear extension, built 15 years ago and never causing any complaint, lacks a building regulations completion certificate, and the buyer intends only to use the house as an ordinary home exactly as it stands.",
+          "correctScenario": "B",
+          "explanation": "In B, the missing certificate is a historic paperwork gap that doesn't affect the buyer's intended use — a textbook case for indemnity insurance. In A, the buyer actually needs the planning permission to run the business as intended; insurance would only pay out after enforcement action, not grant the permission the buyer needs to operate."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it together on a new-build with a defect",
+        "voice": "direct — combines both threads and sets up the trap the tests will probe",
+        "body": [
+          "A realistic exam scenario often combines both threads of this lesson: a new-build purchase where a defect surfaces during the transaction — perhaps the developer's own paperwork shows an earlier planning condition was never formally discharged, or a management company consent for shared infrastructure was never obtained. The buyer's solicitor still has to run the off-plan process (checking the contract, the long-stop date, the warranty) and separately resolve the defect using the cure-or-insure analysis, and the two are not the same question.",
+          "The most common mistake is treating 'it's a new-build, so it must be fine' as a reason to skip defect analysis altogether. New-build status answers questions about structural warranty cover and the contractual process; it says nothing about whether every consent behind the build was actually obtained."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because a structural warranty is in place, any title or consent defect is automatically covered or irrelevant.",
+            "whyItsWrong": "A structural warranty addresses build quality and structural defects; it says nothing about whether the correct planning permissions, building regulations approval or third-party consents were obtained. Those are separate title issues requiring their own cure-or-insure analysis."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-14-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A new-build purchase has a valid 10-year structural warranty in place, but the developer's paperwork shows a planning condition attached to the original permission was never formally discharged. What is the correct view?",
+          "options": ["No further action is needed — the structural warranty covers all defects including planning issues", "The undischarged condition is a separate title issue requiring its own analysis, regardless of the warranty", "The warranty automatically lapses because of the planning issue", "The lender's requirements are irrelevant once a warranty is in place"],
+          "correctIndex": 1,
+          "trapExplanation": "The warranty's presence is a distractor — it covers structural build quality, not planning compliance, so it does nothing to resolve an undischarged planning condition.",
+          "feedbackCorrect": "Exactly — the warranty and the planning condition are answers to two different questions, and both need addressing on their own terms.",
+          "feedbackIncorrect": "Think about what a structural warranty actually promises: build quality, not regulatory compliance. An undischarged planning condition needs its own separate resolution."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-14-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A buyer has just paid a reservation fee on an off-plan flat. Has a binding contract to purchase been formed at this stage?",
+      "options": ["No — reservation only secures the plot while contracts are prepared", "Yes — reservation fees create an immediately binding contract", "Yes, but only once the buyer's mortgage offer is issued", "No — no agreement of any kind exists until building work is complete"],
+      "correctIndex": 0,
+      "explanation": "Reservation is a preliminary, time-limited holding arrangement, not exchange of contracts — the binding commitment to complete comes later."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What is the practical function of a long-stop date in a new-build developer's contract?",
+      "options": ["It fixes the final backstop by which the building must be ready, after which the buyer typically gains rights including possible rescission", "It is the date the buyer must pay the reservation fee by", "It is the date the structural warranty cover begins", "It is the earliest date the buyer is permitted to exchange contracts"],
+      "correctIndex": 0,
+      "explanation": "The long-stop date protects the buyer against indefinite construction delay by fixing an ultimate backstop, typically triggering a right to rescind and recover the deposit if it passes without completion."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A buyer of a new-build home asks whether the 10-year structural warranty will cover a loose kitchen cabinet door discovered shortly after moving in. What should the solicitor advise?",
+      "options": ["Yes — the warranty covers every defect in the property for ten years", "No — this is a minor snagging/fitting issue, not a structural defect, so it is unlikely to be covered by the structural warranty", "No — structural warranties never cover anything in the first two years", "Yes, but only if the developer has gone into insolvency"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting answer treats 'ten-year warranty' as blanket cover for anything wrong with the property — but the scope is structural, not cosmetic or fitting-related.",
+      "explanation": "Structural warranties are aimed at defects in the building's fabric and structure; a loose cabinet door is a snagging issue for the developer's separate defects process."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A mortgage lender is asked to fund a new-build purchase where no structural warranty is in place. Which of the following best describes the likely outcome?",
+      "options": ["The lender will very likely refuse to lend, since a structural warranty is a near-universal lending requirement on new-builds", "The lender is indifferent, since structural warranties are a matter for the buyer alone", "The lender will lend but at a reduced loan-to-value ratio only", "The absence of a warranty is irrelevant once building regulations approval has been obtained"],
+      "correctIndex": 0,
+      "trapExplanation": "Building regulations approval and warranty cover answer different questions — approval alone does not satisfy a lender's separate, near-universal requirement for structural warranty cover on new-build security.",
+      "explanation": "Lenders rely on the same building as security and have no history to assess, so a structural warranty (or equivalent) is almost always a condition of new-build lending."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A search reveals the property may be within an area historically connected to a rectorial estate, raising a possible chancel repair liability. The risk of it ever being enforced is assessed as very low, and the buyer intends ordinary residential use. What should the solicitor advise?",
+      "options": ["Refuse to proceed with the transaction until the liability is formally extinguished", "Advise on indemnity insurance against the (low) risk of the liability being asserted, rather than trying to have it formally removed", "Ignore the issue entirely, since chancel repair liability was abolished by statute", "Advise the buyer that the liability automatically transfers only to commercial buyers, not residential ones"],
+      "correctIndex": 1,
+      "explanation": "With a low, well-understood risk and no effect on the buyer's intended residential use, indemnity insurance is the standard, proportionate response — curing (formally extinguishing the liability) is neither quick nor usually necessary here."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A buyer intends to convert a property's garage into a home gym and discovers building regulations approval was never obtained for a previous owner's earlier garage conversion into a habitable room. Completion is in three weeks. What is the most practical advice?",
+      "options": ["Apply for full retrospective planning permission before completion, regardless of timescale", "Advise on a regularisation certificate or indemnity insurance as a quicker route, given the tight completion timescale and that the buyer's own planned works are separate and new", "Advise the buyer to abandon the purchase, since the defect cannot be resolved", "Advise that nothing needs to be done because building regulations only apply to new-builds"],
+      "correctIndex": 1,
+      "explanation": "Given the short timescale and that the historic conversion doesn't block the buyer's own intended (separate) works, a quicker route — regularisation or, more commonly, indemnity insurance — is the practical answer rather than an open-ended cure process."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A buyer needs planning permission for a change of use that was never granted to a previous owner, and the buyer's intended use of the property genuinely depends on that consent existing. Why is indemnity insurance a poor solution here?",
+      "options": ["Indemnity insurance is always more expensive than curing a defect", "Indemnity insurance would only pay compensation if the missing consent is later enforced against — it cannot retrospectively grant the permission the buyer actually needs to operate", "Insurers refuse to insure any planning-related risk", "Indemnity insurance policies cannot be assigned to a buyer's lender"],
+      "correctIndex": 1,
+      "explanation": "Where the defect actually affects the buyer's intended use, insurance is the wrong tool — it compensates for a loss after enforcement, but does not supply the underlying permission the buyer needs in order to use the property as planned."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-08",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under the Building Act 1984, what does a local authority completion certificate confirm?",
+      "options": ["That the work was carried out in accordance with the plans deposited and approved under building regulations", "That the property has full planning permission for its current use", "That a structural warranty has been issued for the building", "That chancel repair liability has been extinguished"],
+      "correctIndex": 0,
+      "explanation": "The certificate is a building-regulations compliance document — it says nothing about planning permission, warranty cover, or chancel repair liability, which are each governed separately."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-09",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A seller cannot produce a building regulations completion certificate for works carried out several years ago. Which of the following best reflects the legal significance of this gap under the Building Act 1984 framework?",
+      "options": ["The works are automatically unlawful and must be demolished", "It is evidence of a gap in the compliance paperwork, which a buyer's solicitor should investigate and address through cure or insurance rather than assume is fatal to the transaction", "It has no legal significance whatsoever", "It converts the property into an unregistrable title"],
+      "correctIndex": 1,
+      "explanation": "A missing certificate is a paperwork gap to be investigated and resolved — through regularisation or indemnity insurance in most cases — not an automatic bar to proceeding."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-10",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Under the Chancel Repairs Act 1932, what is the essential basis on which a parochial church council can seek to enforce liability against a landowner?",
+      "options": ["That the landowner's property was historically part of a rectorial estate to which the liability was attached", "That the landowner has personally damaged the parish church", "That the landowner has entered into a modern contract agreeing to fund chancel repairs", "That the property is located within one mile of any parish church"],
+      "correctIndex": 0,
+      "explanation": "The liability is historic and proprietary in origin, tied to former rectorial land, not to anything the current owner has done or agreed to — which is exactly why it can surface unexpectedly and why conveyancers search for it routinely."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A freeholder's consent for a loft conversion carried out five years ago cannot be located, though the works themselves appear sound and cause no visible problems. The buyer's lender requires the title to be clean or adequately protected before releasing funds. What should the solicitor advise?",
+      "options": ["Tell the lender the issue is trivial and can be ignored", "Advise on indemnity insurance to satisfy the lender's requirement, given the low apparent risk and the practical difficulty of tracing consent retrospectively", "Insist the freeholder be sued for a declaration before completion can proceed", "Advise the buyer that lenders never accept indemnity insurance for consent issues"],
+      "correctIndex": 1,
+      "trapExplanation": "Both extremes are traps here — dismissing the issue ignores the lender's requirement, while litigation against the freeholder is a disproportionate response to a low-risk historic gap that most lenders will happily accept insured.",
+      "explanation": "Indemnity insurance is the standard, lender-acceptable response to a low-risk missing consent where retrospective consent is impractical to obtain."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which of these is the better general description of indemnity insurance in a conveyancing context?",
+      "options": ["A policy that compensates for loss if a known title risk is later enforced, rather than fixing the underlying problem", "A guarantee that a title defect will be permanently and formally resolved", "A type of structural warranty covering build quality", "A statutory scheme that automatically applies to all new-build purchases"],
+      "correctIndex": 0,
+      "explanation": "Indemnity insurance buys financial certainty against a defined risk crystallising — it does not cure the defect itself."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-13",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A structural warranty on a new-build home is typically structured so that the developer bears direct responsibility for roughly which period, before insurer-backed cover takes over for the remainder of the ten years?",
+      "options": ["The first two years from practical completion", "The full ten years", "Only the first six months", "The final two years only"],
+      "correctIndex": 0,
+      "explanation": "The common structure (as under an NHBC-style scheme) splits cover: developer responsibility for roughly the first two years, with insurer-backed cover for the balance up to year ten."
+    },
+    {
+      "itemId": "sqe1-pp-14-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A trainee notes that a new-build has a valid 10-year structural warranty and concludes the transaction has 'no title risk.' Why is this reasoning incomplete?",
+      "options": ["Structural warranties are frequently invalid and cannot be relied on", "A structural warranty addresses build quality only — it says nothing about consents, planning compliance, or other title issues, which need their own separate check", "New-build titles never have title risk regardless of warranty status", "Warranties only take effect after ten years have passed"],
+      "correctIndex": 1,
+      "trapExplanation": "The trainee's error is a scope error: conflating one specific protection (structural build quality) with the whole of title due diligence, which covers a much wider range of possible defects.",
+      "explanation": "A structural warranty is one piece of new-build due diligence, not a substitute for checking consents, planning history and building regulations compliance separately."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is collapsing two separate questions into one: whether a new-build has good structural cover, and whether its title is clean. A strong warranty says nothing about a missing consent, and a clean planning history says nothing about structural quality — each needs its own check.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.new-build-title-defects"
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "lessonId": "sqe1-pp-12",
+  "track": "SQE1",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 12,
+  "topicId": "sqe1.property-practice.mortgages-in-practice",
+  "title": "Mortgages in conveyancing practice",
+  "subtitle": "Creating and registering a legal charge, acting for lender and borrower, and protecting a surety",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how a legal charge over registered land is created by deed and why it takes effect only in equity until registration, applying LPA 1925 s 87 and LRA 2002 s 27(2)(f)",
+    "State the fiduciary and disclosure duties of a solicitor acting for both borrower and lender, including what must be reported to the lender client",
+    "Apply the Etridge protocol to determine whether a lender is protected against a later claim of undue influence by a surety, and identify the consequence of failing to follow it"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Law of Property Act 1925, s 87", "role": "Gives a deed expressed to be by way of legal mortgage the same effect as a mortgage by demise, creating the legal charge" },
+    { "citation": "Land Registration Act 2002, s 27(2)(f)", "role": "Makes a legal charge of registered land a registrable disposition, taking effect only in equity until registered" },
+    { "citation": "Royal Bank of Scotland v Etridge (No 2) [2001] UKHL 44", "role": "Sets out the protocol a lender must follow to be protected against a surety's later claim of undue influence" },
+    { "citation": "Mortgage Express v Bowerman [1996] 2 All ER 836", "role": "A solicitor acting for both borrower and lender must disclose to the lender facts material to the lender's decision, discovered in the course of the same transaction" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Mortgage practice is where conveyancing stops being about the buyer alone — a second client, with its own interests and its own risk of being misled, enters the room. Where the profile shows application is behind knowledge, this brief note appears: 'You know the rules on charges and duties — this lesson is about spotting when they're actually engaged on the facts.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well here on the underlying rules before. The test pool leans towards fact patterns — expect scenarios that test whether a duty to report has actually arisen, or whether the Etridge protocol actually applies, not just definitions.",
+      "weakKnowledge": "Start with Part 1 and be sure you can state, without hesitating, why a charge is equitable-only before registration — everything else in this lesson assumes that timing is second nature."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A lender releases half a million pounds on completion day, confident it now holds a legal charge over the property. For a short but real window, it holds nothing of the kind — only an equitable interest, waiting on a Land Registry application to do the rest. Understanding that gap, and the duties that sit either side of it, is what this lesson is about.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The Etridge protocol and the registration requirements for legal charges are both settled and in routine daily use; nothing here is presently under review."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "From deed to legal charge: what s 87 actually creates",
+        "voice": "structural — establishes the mechanism before the timing question in Part 2",
+        "body": [
+          "A mortgage of registered land is, in practice, always created by a charge — a deed expressed to be 'by way of legal mortgage', executed by the borrower in favour of the lender. Section 87 of the Law of Property Act 1925 is what gives that document its legal teeth: it provides that a charge by deed expressed to be by way of legal mortgage takes effect with the same protection, powers and remedies as if the lender had been granted a long lease of the property (a mortgage by demise), without the property actually needing to be carved up into two estates.",
+          "The document itself is standard-form for most residential and much commercial lending: it identifies the property, the sum secured, the borrower's covenants (to repay, to insure, to keep the property in repair), and the lender's remedies on default (possession, sale, appointment of a receiver). Getting the deed properly executed — correctly witnessed, by the right party, in the right capacity — is a precondition for everything that follows.",
+          "None of this, on its own, tells you when the lender's interest actually becomes legal. That is a separate, and separately testable, question — the subject of Part 2."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Legal charge",
+            "definition": "A deed, expressed to be by way of legal mortgage, by which a borrower secures a debt against their property in favour of a lender — the standard mechanism for creating a mortgage of registered land under s 87 LPA 1925."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-12-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "What document, executed by the borrower, is the standard mechanism for creating a mortgage of registered land?",
+          "options": ["A deed expressed to be by way of legal mortgage (a legal charge)", "A simple contract for sale", "A statutory declaration of solvency", "A notice to complete"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 87 LPA 1925 gives a charge by deed expressed to be by way of legal mortgage its legal effect — this is the everyday mechanism, not a lease or a separate demise of the property.",
+          "feedbackIncorrect": "The mechanism is a charge — a deed expressed to be by way of legal mortgage — not a lease, a contract for sale, or anything to do with completion notices. Section 87 LPA 1925 gives that deed its effect."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Equitable until registered: the gap s 27(2)(f) creates",
+        "voice": "practical — walks the timeline a lender's solicitor actually manages",
+        "body": [
+          "Execution of the charge deed is not the end of the story. Section 27(2)(f) of the Land Registration Act 2002 lists a legal charge of registered land among the dispositions that must be completed by registration — until the charge is entered on the register of the borrower's title, it takes effect in equity only, not at law.",
+          "This is not a technicality with no teeth: an equitable interest is inherently more vulnerable than a legal one, particularly to competing interests that might arise or come to light in the gap between completion and registration. Lenders and their solicitors manage this risk with a priority search (an official search with priority, OS1 or OS2) immediately before completion, which gives a protected priority period — typically 30 working days — within which the registration application must be lodged to take priority over anything that might otherwise intervene.",
+          "The sequence, in practice, is: search with priority shortly before completion; complete, with the charge deed executed and the loan released; then apply to register the charge within the priority period. Only registration converts the equitable charge into a legal one — until then, the lender's protection rests on the priority period, not on any inherent quality of the charge deed itself."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Land Registration Act 2002, s 27(2)(f)",
+            "text": "The dispositions... required to be completed by registration are... the grant of a legal charge.",
+            "elements": ["A legal charge is a registrable disposition", "It does not operate at law until the relevant registration requirements are met", "Before registration, it takes effect only in equity"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-12-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a lender's solicitor follows to secure a legal charge over registered land.",
+          "items": [
+            "Carry out an official search with priority shortly before completion",
+            "Complete, with the charge deed executed and funds released",
+            "Apply to register the charge within the priority search period",
+            "The charge takes effect as a legal charge once registration is completed"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: the priority search protects the slot, completion creates an equitable charge, and only registration within the priority period converts it into a legal one.",
+          "feedbackIncorrect": "Anchor the sequence on registration being the final, converting step. Everything before it — the search and completion itself — only ever creates an equitable interest, however confidently the parties behave at completion."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Acting for both sides: the lender's solicitor's fiduciary duty",
+        "voice": "case-narrative — lets Bowerman's facts carry the doctrine",
+        "body": [
+          "It is routine for one firm to act for both the borrower and the lender on a residential remortgage or purchase, particularly at lower loan values. This is efficient, and permitted, but it creates a genuine fiduciary duty running to the lender client that is easy to underweight in practice — because the solicitor's day-to-day contact is almost entirely with the borrower.",
+          "Mortgage Express v Bowerman is the leading illustration. The solicitor, acting for both a borrower and a second lender, discovered in the course of investigating title that the property was already subject to a first mortgage for a sum close to the property's full value — information plainly material to whether the second lender's security was any use at all. The solicitor did not pass this on.",
+          "The court held the solicitor liable to the lender. Knowledge acquired in the course of acting on the same transaction — even where it comes to light while doing work nominally 'for' the borrower, such as investigating title — must be disclosed to the lender client where it is relevant to the lender's decision to proceed. A solicitor cannot use the borrower's instructions as a reason to withhold facts the lender needs."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Mortgage Express v Bowerman",
+            "citation": "[1996] 2 All ER 836",
+            "court": "Court of Appeal",
+            "year": 1996,
+            "factsShort": "A solicitor acting for both borrower and second lender failed to tell the lender that the property was already charged for close to its full value under a first mortgage.",
+            "ratioShort": "A solicitor acting for both borrower and lender must disclose to the lender facts discovered during the transaction that are material to the lender's decision, regardless of which client's instructions the work was formally done under.",
+            "expanded": {
+              "facts": "The borrower obtained a second mortgage from Mortgage Express, and the same solicitors acted for both the borrower and Mortgage Express. In the course of investigating title (work done in substance for the transaction as a whole), the solicitors learned that the property was already subject to a first mortgage close to its full value, meaning the second lender's security was largely illusory. The solicitors did not report this to Mortgage Express before completion.",
+              "judgmentExtract": "The Court of Appeal held that a solicitor acting for a mortgage lender owes a duty to report to the lender anything material to the lender's decision to lend, discovered in the course of the retainer — irrespective of whether the solicitor learned it while nominally acting for the borrower on title investigation.",
+              "significance": "Bowerman is the standard authority cited for the proposition that dual representation does not dilute the duty owed to the lender; a solicitor cannot treat information gathered 'for the borrower' as outside the scope of what must be reported to the lender."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-12-check-03",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the ratio of Mortgage Express v Bowerman.",
+          "passage": "The solicitors acted for both the borrower and the lender on this transaction. During the course of that retainer, they discovered the property was already charged to another lender for close to its full value. A solicitor acting for a lender owes a duty to report to that lender anything material to its lending decision that is discovered in the course of the retainer, whichever client the work was nominally done for. The solicitors here failed to do so, and were liable accordingly.",
+          "ratioSentence": "A solicitor acting for a lender owes a duty to report to that lender anything material to its lending decision that is discovered in the course of the retainer, whichever client the work was nominally done for."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "What must actually be reported to the lender",
+        "voice": "direct — turns the doctrine into a working checklist",
+        "body": [
+          "In practice, lenders instructing a solicitor to act for them also (via a certificate of title or lender's handbook, such as the UK Finance Mortgage Lenders' Handbook) specify categories of information the solicitor must report before releasing funds. Bowerman is the doctrinal foundation; the handbook conditions are the operational expression of it.",
+          "Common reportable matters include: any discrepancy between the price stated in the mortgage offer and the actual purchase price; any cashback, discount, or incentive from the seller that isn't disclosed on the face of the transfer; any adult occupier of the property who is not a party to the mortgage, who may need to sign a consent or waiver of rights; and any matter revealed on title (a restrictive covenant, an existing charge, an adverse entry) that could affect the lender's security or its priority.",
+          "Where reporting one of these matters to the lender would conflict with the solicitor's duty of confidentiality to the borrower — because the borrower does not want it disclosed — the solicitor cannot simply choose the lender's interests over the borrower's, or vice versa. A genuine conflict of this kind normally means the solicitor must stop acting for one or both clients, rather than resolve the conflict by silent disclosure or silent non-disclosure."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Typical reportable matters",
+            "points": [
+              "Price discrepancy between the mortgage offer and the actual purchase price",
+              "Undisclosed incentives, discounts, or cashback from the seller",
+              "Occupiers of the property who are not party to the mortgage",
+              "Adverse entries on title affecting the lender's security or priority"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-12-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that the solicitor, acting for both borrower and lender, must report to the lender.",
+          "scenarioText": "The mortgage offer records a purchase price of £310,000. During the transaction the solicitor learns the seller has privately agreed to pay the buyer a £15,000 cashback after completion, which does not appear anywhere on the transfer. The buyer asks the solicitor to keep this arrangement quiet.",
+          "tappableSpans": ["mortgage offer records a purchase price of £310,000", "seller has privately agreed to pay the buyer a £15,000 cashback", "does not appear anywhere on the transfer", "buyer asks the solicitor to keep this arrangement quiet"],
+          "correctSpan": "seller has privately agreed to pay the buyer a £15,000 cashback",
+          "feedbackCorrect": "Correct. An undisclosed cashback of this kind directly affects the lender's assessment of the true price and its security — this is a textbook reportable matter, and the borrower's request for confidentiality does not override the duty to the lender.",
+          "feedbackIncorrect": "Look for the fact that would change what the lender thinks it is lending against. The undisclosed cashback misrepresents the true price to the lender — that is the reportable matter, regardless of the buyer's wish for it to stay quiet."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "The Etridge protocol: protecting the lender against undue influence",
+        "voice": "argumentative — frames the protocol as risk allocation, not paperwork",
+        "body": [
+          "A different risk arises where a third party — most often a spouse, partner, or family member — offers their own property, or their share in the family home, as security for someone else's debt (typically a business loan). If that surety's consent was procured by undue influence, and the transaction gives them no clear financial benefit, the charge may later be challenged as against them.",
+          "Royal Bank of Scotland v Etridge (No 2) sets out how a lender protects itself against exactly this risk. Where the lender is 'put on inquiry' — broadly, wherever the transaction is not to the surety's own financial advantage and there is a substantial risk that the principal debtor has procured the surety's agreement by undue influence — the lender must take reasonable steps to satisfy itself that the surety has entered into the obligation freely and with knowledge of the true facts.",
+          "In practice this means: the lender must insist the surety receives independent legal advice from a solicitor who is not, in substance, simply acting for the couple as a unit on the same transaction; that solicitor must meet the surety alone, explain the nature and effect of the documents and the risks involved, and confirm to the lender in writing that this advice has been given; and the lender must itself provide the solicitor with the financial information the surety needs to be properly advised. Skip the protocol, and the lender takes the mortgage subject to whatever equity affecting the surety later turns out to exist — meaning that if undue influence is proved, the lender may be unable to enforce the charge against the surety's interest at all."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that simply requiring a surety to 'get legal advice' from any solicitor, in any circumstances, satisfies Etridge.",
+            "whyItsWrong": "Etridge requires more than advice in the abstract: a private meeting with the surety alone, explanation of the specific documents and risks, written confirmation to the lender, and the lender itself supplying the solicitor with the relevant financial information. Advice given jointly with the principal debtor present, or without the lender's information being passed on, does not meet the protocol and leaves the lender exposed."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-12-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A wife agrees to charge her share of the family home to secure her husband's business loan, a transaction of no financial benefit to her. The bank arranges for the couple's usual family solicitor to give her 'advice', in a joint meeting with her husband present throughout, and receives a one-line confirmation letter. If undue influence is later established, is the bank protected?",
+          "options": ["Yes — because a solicitor gave advice and confirmed this in writing", "No — the advice was not given at a private meeting with the wife alone, so the Etridge protocol was not properly followed and the bank is not protected against the undue influence claim", "Yes — because the husband was present, which shows the transaction was transparent", "No — because Etridge requires the bank itself to interview the wife, not a solicitor"],
+          "correctIndex": 1,
+          "explanation": "Etridge requires a private meeting with the surety alone, among other steps. Advice given with the debtor present defeats the purpose of independent advice, so the protocol was not satisfied, and the bank is not protected against a later finding of undue influence."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-12-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which statute gives a deed expressed to be by way of legal mortgage the effect of creating a legal charge?",
+      "options": ["Law of Property Act 1925, s 87", "Land Registration Act 2002, s 27", "Law of Property (Miscellaneous Provisions) Act 1989, s 2", "Landlord and Tenant Act 1954, s 25"],
+      "correctIndex": 0,
+      "explanation": "Section 87 LPA 1925 is the source of the legal charge's effect, giving the lender the same protection, powers and remedies as if granted a long lease, without an actual demise."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-02",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Under s 27(2)(f) LRA 2002, what is the status of a legal charge of registered land before it is registered?",
+      "options": ["It has no effect at all", "It takes effect only in equity", "It takes effect as a full legal charge from the date of the deed", "It automatically lapses after 30 days"],
+      "correctIndex": 1,
+      "explanation": "A legal charge is a registrable disposition; until the registration requirements are met, it takes effect only in equity, notwithstanding execution of the charge deed."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A lender's solicitor completes a purchase and remortgage on Monday, but does not lodge the application to register the new legal charge until six weeks later, after the priority period conferred by the pre-completion search has expired. What is the practical risk to the lender?",
+      "options": ["None — the charge remains legal from the moment the deed was executed", "The lender's interest may lose priority to another interest that arose or was registered in the gap, because the charge was only equitable until registration and the protection of the priority search had lapsed", "The charge becomes automatically void after 30 days regardless of registration", "The borrower automatically becomes the legal owner of the charge instead"],
+      "correctIndex": 1,
+      "explanation": "Missing the priority period does not void the charge, but it does mean the lender's equitable interest, pending late registration, is exposed to anything that may have intervened in the gap — precisely the risk the priority search exists to close off."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "What did Mortgage Express v Bowerman establish about a solicitor acting for both borrower and lender?",
+      "options": ["The solicitor owes no independent duty to the lender, since the borrower is the primary client", "The solicitor must disclose to the lender facts material to its lending decision, discovered in the course of the transaction, regardless of which client the work was nominally done for", "The solicitor may act for the lender only with the borrower's written consent", "The solicitor's duty to the lender is limited to matters expressly requested in writing"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think the borrower, as the more actively-instructed client, comes first — but Bowerman rejects exactly that framing: the duty to report material facts to the lender does not depend on whose instructions the underlying work was nominally carried out under.",
+      "explanation": "Bowerman is the leading authority for the proposition that material facts discovered during the transaction must be reported to the lender, irrespective of which client's file the work sat under."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-05",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "Which of the following is a typical matter a dual-representation solicitor must report to the lender before completion?",
+      "options": ["The borrower's choice of furniture for the new property", "An undisclosed cashback or incentive from the seller not shown on the transfer", "The borrower's preferred moving date", "The name of the borrower's estate agent"],
+      "correctIndex": 1,
+      "explanation": "An undisclosed cashback affects the lender's understanding of the true price and its security, and is a standard reportable matter under the handbook conditions built on Bowerman's duty of disclosure."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A solicitor acting for both borrower and lender discovers, while investigating title, an existing restrictive covenant that may affect the lender's proposed use of the property as security. The borrower asks the solicitor not to mention it, worried it will delay the loan. What should the solicitor do?",
+      "options": ["Report the covenant to the lender, since it is material to the lender's decision, and address the resulting conflict with the borrower's confidentiality wishes by ceasing to act for one or both clients if the conflict cannot otherwise be resolved", "Say nothing, respecting the borrower's express instruction", "Report it only if the borrower later gives permission", "Ignore it, since restrictive covenants are never relevant to a lender's security"],
+      "correctIndex": 0,
+      "explanation": "A matter material to the lender's security must be reported; a genuine conflict between that duty and the borrower's confidentiality is not resolved by silent non-disclosure, but typically requires the solicitor to stop acting for one or both parties."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-07",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "What does it mean, in Etridge terms, for a lender to be 'put on inquiry'?",
+      "options": ["The lender is required to conduct a full independent audit of the borrower's finances", "The transaction is not to the surety's own financial advantage and there is a substantial risk the surety's agreement was procured by undue influence, triggering the lender's obligation to take protective steps", "The lender has received a formal complaint from the surety", "The surety has already begun court proceedings to set aside the charge"],
+      "correctIndex": 1,
+      "explanation": "Being 'put on inquiry' is the trigger condition for the whole protocol — a non-commercial surety transaction offering the surety no clear financial benefit puts the lender on notice that it must take reasonable steps to protect itself."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A husband stands surety for his wife's business loan, with no financial benefit to him. The bank ensures he receives written independent legal advice by post from a solicitor he has never met, with no meeting and no confirmation letter sent back to the bank. Has the bank followed the Etridge protocol?",
+      "options": ["Yes — written advice satisfies the protocol regardless of format", "No — Etridge requires a private meeting with the surety, an explanation of the documents and risks, and written confirmation back to the lender, none of which occurred here", "Yes — because the solicitor was independent of the bank", "No — because Etridge only applies where the surety is a wife, not a husband"],
+      "correctIndex": 1,
+      "trapExplanation": "The protocol is not satisfied by 'independence' alone, nor is it confined to wives — Etridge applies to any non-commercial surety relationship carrying the relevant risk factors, and the missing elements here are the meeting, explanation, and confirmation, not the surety's gender.",
+      "explanation": "Etridge requires substantive engagement — a meeting, explanation, and written confirmation to the lender — none of which occurred on these facts, so the bank has not followed the protocol and is unprotected."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-09",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the consequence for a lender that fails to follow the Etridge protocol where required, and undue influence is later proved?",
+      "options": ["The loan itself becomes void as against the borrower", "The lender may be unable to enforce the charge against the surety's interest", "The solicitor who advised is automatically struck off", "Nothing — Etridge is advisory only and carries no legal consequence"],
+      "correctIndex": 1,
+      "explanation": "Failing to follow the protocol where the lender was put on inquiry means the lender takes the charge subject to the surety's equity; if undue influence is proved, the charge may not be enforceable against the surety's interest."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-10",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A couple jointly borrow to buy a home in their joint names, both benefiting equally and directly from the loan. Does the Etridge protocol typically need to be followed for this transaction?",
+      "options": ["Yes — Etridge applies to every mortgage involving more than one borrower", "No — Etridge is concerned with a surety securing someone else's debt in a transaction of no benefit to them; a joint loan for the couple's own joint benefit does not usually put the lender on inquiry in the same way", "Yes — but only where one party earns less than the other", "No — Etridge only applies to commercial lending"],
+      "correctIndex": 1,
+      "explanation": "Etridge's trigger is a non-commercial surety obtaining no clear benefit from standing behind someone else's debt. A joint loan taken for the couple's shared benefit is a different transaction in substance, and does not typically engage the same protective protocol."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-11",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A charge deed over registered land is validly executed on completion day but the application to register it is rejected by the Land Registry for a technical defect, and corrected and resubmitted two weeks later, still within the original priority period. What is the charge's status in the meantime?",
+      "options": ["Legal from the moment of execution, unaffected by the rejection", "Equitable only, pending successful registration — s 27(2)(f) means the charge does not take effect at law until the registration requirements are actually met", "Void, because the first application was rejected", "Automatically converted to a legal charge once two weeks have passed"],
+      "correctIndex": 1,
+      "explanation": "Until registration is actually completed, the charge remains equitable only, however routine the eventual correction and resubmission turn out to be — s 27(2)(f) ties the legal effect to registration itself, not to execution or to a good-faith first attempt."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A solicitor acting for both lender and borrower notices, during title investigation, that the actual completion price agreed between buyer and seller is £20,000 lower than the price stated in the mortgage offer. What should the solicitor do?",
+      "options": ["Say nothing, since price is a matter between buyer and seller only", "Report the discrepancy to the lender, since it directly affects the lender's assessment of its security and lending decision", "Report it only to the seller's solicitor", "Adjust the mortgage offer figure without telling anyone"],
+      "correctIndex": 1,
+      "explanation": "A price discrepancy of this kind is a classic reportable matter — it goes directly to what the lender believes it is securing its loan against, and Bowerman-style duties require it to be disclosed to the lender."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "Which statement best captures the relationship between s 87 LPA 1925 and s 27(2)(f) LRA 2002 in creating a legal charge?",
+      "options": ["Section 87 alone is sufficient to create a legal charge with no registration required", "Section 87 gives the charge deed its intended legal effect and content; s 27(2)(f) determines when that effect actually takes hold at law, by requiring registration", "Section 27(2)(f) replaces s 87 entirely for registered land", "The two provisions apply to different types of property and never interact"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat s 87 as doing the whole job, since it is the provision that defines what a legal charge is — but for registered land its effect is deferred by s 27(2)(f) until registration, so the two provisions work together rather than either one alone completing the picture.",
+      "explanation": "Section 87 defines what the charge deed achieves in substance; s 27(2)(f) governs the timing, deferring the charge's legal status until registration is completed."
+    },
+    {
+      "itemId": "sqe1-pp-12-test-14",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "prompt": "A mother offers her home as security for her adult son's business loan, receiving no financial benefit herself, and the lender is aware of the family relationship. What is the lender's first practical obligation under Etridge on these facts?",
+      "options": ["To decline to lend altogether", "To recognise it is put on inquiry and take reasonable steps, including insisting the mother receives independent legal advice meeting the Etridge requirements", "To require the son, rather than the mother, to receive legal advice", "To register the charge before any advice is given"],
+      "correctIndex": 1,
+      "explanation": "A non-commercial surety transaction with no benefit to the surety puts the lender on inquiry; its first obligation is to take the protective steps Etridge sets out, centred on the surety (the mother) receiving proper independent advice, not to abandon the loan or divert the advice to the debtor."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson is treating 'a solicitor was involved' or 'a document was signed' as the end of the analysis. Registration timing, disclosure duties, and the Etridge protocol all turn on specific steps being properly completed, not merely attempted.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.mortgages-in-practice"
+  }
+}

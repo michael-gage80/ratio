@@ -1,0 +1,341 @@
+{
+  "lessonId": "sqe1-we-05",
+  "moduleId": "sqe1-wills-administration-estates",
+  "moduleTitle": "SQE1 · Wills and Administration of Estates",
+  "lessonNumber": 5,
+  "topicId": "sqe1.wills-estates.alterations-construction",
+  "track": "SQE1",
+  "title": "Alterations and the construction of gifts",
+  "subtitle": "Post-execution changes, anti-lapse for children, ademption, and abatement",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain why an unattested alteration made after execution is presumed invalid, and identify the exceptions",
+    "Apply the s 33 anti-lapse rule to a gift to the testator's child or remoter issue who predeceases the testator",
+    "Distinguish ademption of a specific gift from lapse, and state the order in which gifts abate when an estate is insufficient"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Wills Act 1837, s 21", "role": "Alterations made after execution have no effect unless executed like a will, or fall within a recognised exception" },
+    { "citation": "Wills Act 1837, s 33", "role": "Anti-lapse: a gift to the testator's child or remoter issue does not lapse on their predeceasing the testator if they leave issue of their own living at the testator's death" },
+    { "citation": "Re Slater [1907] 1 Ch 665", "role": "Illustrates ademption: a specific gift described by reference to a particular fund or security fails if that asset no longer exists in that form at death" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This lesson covers four doctrines that all answer the same underlying question — 'does this gift still take effect, and if so, in what form?' — but each gets there by a different route. Where the profile shows knowledge is ahead of application, this note appears: 'You can define ademption and abatement separately — this lesson is about telling them apart under pressure.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the definitions here before. The test pool below leans towards fact patterns that require you to identify which doctrine (alteration validity, anti-lapse, ademption, or abatement) is actually in play.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state the s 21 default rule and the s 33 anti-lapse rule precisely before moving on — the later parts on ademption and abatement build directly on the vocabulary introduced there."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A testator, years after signing her will, crosses out '£5,000 to my niece' in biro and writes '£10,000' above it. She never re-signs anything. Is her niece now owed £10,000, £5,000, or nothing at all? The answer depends on a formality rule most people assume only applies to the will itself — and on what, if anything, can still be read underneath the crossing-out.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The statutory rules on alteration (s 21) and anti-lapse (s 33) are long-settled Wills Act provisions; the case law on ademption and abatement is likewise well established with no reform pending."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Why a will, once signed, resists being edited",
+        "voice": "argumentative — states the default rule, then complicates it with the exceptions",
+        "body": [
+          "The formalities in s 9 of the Wills Act 1837 — writing, signature, witnesses — exist to guard against fraud and uncertainty. Section 21 extends that same protection to changes made after the will is executed: an obliteration, interlineation, or other alteration made after execution is presumed to have no effect, unless the alteration is itself executed with the same formalities (typically, the testator and witnesses sign or initial in the margin next to the change).",
+          "Without that fresh execution, the will simply takes effect as though the alteration had never been made — the court looks at the original wording, not the amended one. This is why a testator who wants to change a legacy amount, cross out a beneficiary, or add a gift should execute a codicil, or re-execute the will, rather than pick up a pen.",
+          "There is an important practical wrinkle: if an alteration is apparent (visible, so the original wording can no longer be read), and it was not properly executed, the gift may simply fail rather than reverting to the original wording — because the original wording is no longer ascertainable. If the original wording can still be deciphered (for example, by infra-red or ultraviolet examination), the court gives effect to that original wording instead."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Apparent alteration",
+            "definition": "An alteration to a will where the original wording has been obliterated so that it cannot be read by ordinary inspection. Where an apparent alteration is not validly executed, the original wording is treated as revoked (if it truly cannot be recovered) rather than as still applying."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A testator crosses out a legacy amount in her already-executed will and writes a new figure above it, without having the change signed or witnessed by anyone. What is the default position under s 21?",
+          "options": ["The alteration has no effect and the original wording (if it can still be read) governs", "The new figure automatically takes effect because it reflects the testator's most recent wishes", "The whole will is revoked by the unauthorised alteration"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Without fresh execution, an alteration made after the will is signed simply has no legal effect — the original wording, if still legible, is what the court gives effect to.",
+          "feedbackIncorrect": "Not quite — s 21 does not let a later, unattested alteration override the original wording. The presumption runs the other way: no effect unless it was validly executed like a will."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Anti-lapse: keeping a gift in the family",
+        "voice": "structural — sets out the rule as a checklist before testing it",
+        "body": [
+          "The general rule on lapse is simple and harsh: if a beneficiary predeceases the testator, their gift fails (lapses) and falls back into residue, unless the will itself provides a substitute gift. Section 33 of the Wills Act 1837 creates a significant, narrow exception to that general rule for the testator's own descendants.",
+          "Where a will leaves a gift to a child, or a remoter descendant (grandchild, great-grandchild, and so on), of the testator, and that beneficiary predeceases the testator, the gift does not lapse — provided the predeceasing beneficiary left issue of their own who are living at the testator's death. In that case, the gift takes effect as a gift to those surviving issue instead, taking their deceased parent's share.",
+          "This is a rule about the testator's own bloodline, not any beneficiary. A gift to a friend, a sibling, a spouse, or a niece who predeceases the testator falls back into the ordinary lapse rule — s 33 simply does not apply to them, however much the drafting resembles a family gift. The section also only applies 'unless a contrary intention appears by the will', so an express substitution clause, or a clear indication the testator wanted the gift to lapse outright, displaces it."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Wills Act 1837, s 33",
+            "text": "Where a will contains a devise or bequest to a child or remoter descendant of the testator, and the intended beneficiary dies before the testator, leaving issue, and issue of the intended beneficiary are living at the testator's death, then ... the devise or bequest shall take effect as a devise or bequest to the issue living at the testator's death.",
+            "elements": ["Gift to the testator's own child or remoter descendant", "That beneficiary predeceases the testator", "The beneficiary leaves issue of their own", "Those issue are living at the testator's death", "No contrary intention appears in the will"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-05-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario does the s 33 anti-lapse rule operate to save the gift?",
+          "scenarioA": "A testator leaves £20,000 to her son, who predeceases her leaving two children of his own, both alive at the testator's death.",
+          "scenarioB": "A testator leaves £20,000 to her nephew, who predeceases her leaving two children of his own, both alive at the testator's death.",
+          "correctScenario": "A",
+          "explanation": "Section 33 only protects gifts to the testator's own child or remoter descendant. In A, the son is the testator's child, so his children (the testator's grandchildren) take his share. In B, a nephew is not a descendant of the testator, so s 33 does not apply — the gift lapses into residue regardless of the nephew's own children."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Ademption: when the thing itself is gone",
+        "voice": "case-narrative — tells the underlying story before naming the doctrine",
+        "body": [
+          "Ademption is a different failure mechanism entirely, and students frequently confuse it with lapse. Lapse is about the beneficiary dying first; ademption is about the gift itself — specifically, a specific gift — no longer existing, in the form described, at the testator's death.",
+          "A specific gift identifies a particular item or asset: 'my diamond ring', 'my house at 12 Elm Street', 'my shares in XYZ Ltd'. If that exact item has been sold, given away, destroyed, or has otherwise ceased to form part of the estate by the time the testator dies, the gift adeems — it simply fails, and the beneficiary receives nothing in its place, even if the testator received cash proceeds from selling it. This is true even where the testator plainly did not intend to disinherit that beneficiary; ademption operates automatically, looking only at whether the described asset survives.",
+          "Re Slater illustrates the doctrine's precision. The testator left a gift described by reference to money owed to him under a specific mortgage. By the time he died, that mortgage had been redeemed and the debt no longer existed in that form. The court held the gift adeemed: because it was tied to a specific, identifiable fund rather than expressed as a general sum, the disappearance of that particular fund defeated the gift, even though the testator's estate as a whole was unaffected in overall value."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re Slater",
+            "citation": "[1907] 1 Ch 665",
+            "court": "Court of Appeal",
+            "year": 1907,
+            "factsShort": "A testator left a gift of money owed to him under a specific mortgage; by his death the mortgage had been redeemed and that debt no longer existed in that form.",
+            "ratioShort": "A gift tied to a specific, identifiable asset or fund adeems if that asset no longer exists in that form at death, even where a general economic equivalent (such as sale proceeds) can be traced.",
+            "expanded": {
+              "facts": "The testator's will included a gift described by reference to a sum of money owing to him on a named mortgage. Before his death, the mortgage debt was repaid to him and the specific fund described in the will ceased to exist in that identifiable form.",
+              "judgmentExtract": "The court held that because the gift was drafted by reference to a particular, identifiable source rather than as a general pecuniary legacy, its disappearance meant the gift could not be satisfied — the specificity of the description was decisive.",
+              "significance": "Re Slater is regularly cited for the proposition that the way a gift is described — specific and tied to a particular asset, versus general and payable out of the estate at large — determines whether ademption can apply at all. It is a caution to drafters: vague or asset-specific wording can accidentally expose a gift to ademption that a general legacy would have avoided."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-05-check-03",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A testator's will leaves 'my Rolex watch' to her godson. Two years before her death, the testator sold the watch and used the proceeds to buy a car, which she still owns at death. Analyse whether the godson is entitled to anything.",
+          "factsToOrder": [
+            "The will makes a specific gift of a particular, identified item (the watch)",
+            "The testator sold that exact item before death",
+            "The proceeds were converted into a different asset (the car), not kept separately",
+            "The car, not the watch, is part of the estate at death"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the gift of 'my Rolex watch' has adeemed because the testator no longer owned that specific item at death.",
+            "rule": "A specific gift adeems where the identified asset no longer forms part of the estate at the testator's death, regardless of what became of any sale proceeds; the beneficiary is not entitled to a substitute or to trace into replacement assets, absent a contrary provision in the will.",
+            "application": "The watch was specifically identified, was sold during the testator's lifetime, and the proceeds were used to buy an unrelated asset (the car) rather than being kept as an identifiable fund earmarked for the godson. The watch simply no longer exists in the estate at death.",
+            "conclusion": "The gift has adeemed. The godson takes nothing — not the car, and no cash equivalent — because ademption looks only at whether the described item survives, not at what it was converted into."
+          }
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Abatement: what happens when there isn't enough",
+        "voice": "direct — sets out the order as a practical checklist",
+        "body": [
+          "Abatement addresses a different problem again: not that a gift's subject-matter has disappeared, but that the estate, after paying debts, funeral and administration expenses, simply does not have enough left to satisfy every gift in the will in full. Something has to give, and the law fixes the order in which gifts are cut down, rather than leaving it to guesswork.",
+          "The general order of abatement, absent contrary intention in the will, is: first, the residuary gift bears the shortfall, being reduced or extinguished before anything else is touched; second, if the shortfall exceeds the residue, general legacies (ordinary pecuniary gifts not tied to a specific asset or fund) abate proportionately between themselves; and third, specific legacies (gifts of a particular, identified item) abate last, and only proportionately among themselves if even they cannot all be met in full.",
+          "The logic mirrors what testators usually intend, even if they never say so expressly: residue is the 'leftover' category the testator expected to be variable in amount, so it absorbs the first hit; specific gifts of named items are usually the ones a testator cared most about preserving intact, so they are protected until last."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Order of abatement (absent contrary intention)",
+            "points": [
+              "1. Residuary gifts abate first — reduced or exhausted before anything else",
+              "2. General (pecuniary) legacies abate next, proportionately between themselves if the shortfall continues",
+              "3. Specific legacies abate last, and only proportionately among themselves if the shortfall reaches that far"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-05-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the correct order of abatement.",
+          "passage": "An estate may prove insufficient to satisfy every gift a will makes after debts and expenses are paid. The law does not treat every gift equally in that event. Residuary gifts bear the shortfall first, being reduced or extinguished before any other category of gift is touched; only once residue is exhausted do general legacies abate, proportionately among themselves; specific legacies are protected until last, abating only if the shortfall reaches even that far. This order reflects an assumption about what most testators would have wanted, not a rule the testator must expressly adopt.",
+          "ratioSentence": "Residuary gifts bear the shortfall first, being reduced or extinguished before any other category of gift is touched; only once residue is exhausted do general legacies abate, proportionately among themselves; specific legacies are protected until last, abating only if the shortfall reaches even that far."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Telling the four doctrines apart under pressure",
+        "voice": "Socratic — walks through a compound fact pattern",
+        "body": [
+          "Exam fact patterns often combine two or three of these doctrines in a single question, and the examiner is testing whether you can correctly label which one is operating before you apply it. The four failure points are easy to blur together because they all end with a beneficiary getting less than the will, read literally, appears to promise.",
+          "A quick discipline: ask first whether the will's wording was changed after execution (s 21, alteration) — that is about the document itself, not any beneficiary's circumstances. If not, ask whether a named beneficiary has died before the testator (lapse, and possibly s 33 anti-lapse if they are the testator's own descendant). If the beneficiary is alive but the specific thing given no longer exists, that is ademption. And if every named gift is intact but the estate simply cannot afford them all, that is abatement.",
+          "Precision matters because the consequences differ sharply: anti-lapse redirects a gift to the next generation; ademption extinguishes a gift entirely with no substitute; abatement proportionately reduces gifts rather than extinguishing any of them outright (until the shortfall is severe enough to wipe out a whole category)."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students frequently label ademption as 'lapse', because both result in a beneficiary getting nothing, and then apply the s 33 anti-lapse rule to try to rescue a gift that has actually adeemed.",
+            "whyItsWrong": "Anti-lapse under s 33 only rescues a gift where the named beneficiary has died before the testator. It has nothing to do with whether the subject-matter of the gift still exists. A living beneficiary whose specific gift has adeemed gets no help from s 33 at all — the doctrines address entirely different failure points."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-05-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "A testator's will leaves 'my holiday cottage' to her granddaughter. The testator sold the cottage the year before she died and never bought a replacement. How confident are you that this is a case of ademption rather than lapse?",
+          "sliderLabels": ["Definitely lapse", "Definitely ademption"],
+          "correctPosition": "ademption",
+          "explanation": "The granddaughter is alive; nothing about her survival is in issue. The problem is that the specifically identified asset — the cottage — no longer exists in the estate. That is the textbook definition of ademption, not lapse, and s 33 anti-lapse (which only responds to a predeceasing beneficiary) has no application here."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-we-05-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A testator adds a handwritten note in the margin of her already-signed will increasing a legacy, but neither she nor any witness signs next to the change. What is the effect of the unattested change?",
+      "options": ["It has no effect; the original wording stands if it can still be read", "It automatically increases the legacy because it reflects her later wishes", "It revokes the entire will", "It is valid provided she told her executor about it verbally"],
+      "correctIndex": 0,
+      "explanation": "Under s 21, an alteration made after execution has no effect unless it is itself executed with the will formalities. Without that, the original wording governs, provided it remains legible."
+    },
+    {
+      "itemId": "sqe1-we-05-test-02",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A testator obliterates a beneficiary's name so heavily in biro that it can no longer be read by ordinary inspection, and does not have the change witnessed. What is the effect, assuming the original wording genuinely cannot be recovered?",
+      "options": ["The original gift is treated as revoked, since the wording cannot be ascertained", "The gift automatically passes to residue, but the original wording still technically applies", "The whole will fails for uncertainty", "The obliteration is ignored and the will is read as if it were never touched"],
+      "correctIndex": 0,
+      "explanation": "Where an apparent, unattested alteration genuinely obliterates the original wording beyond recovery, the original gift is treated as revoked because the court has nothing left to give effect to — this differs from a case where infra-red or similar examination can still reveal the original text."
+    },
+    {
+      "itemId": "sqe1-we-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A testator leaves £30,000 to her daughter. The daughter predeceases the testator, survived by one child (the testator's grandchild), who is alive when the testator later dies. What happens to the £30,000?",
+      "options": ["It lapses into residue because the daughter died before the testator", "It passes to the grandchild under s 33, since the daughter was the testator's own child and left issue living at the testator's death", "It passes automatically to the daughter's husband as her next of kin", "It is held on trust for the testator's residuary beneficiaries until the grandchild reaches 18"],
+      "correctIndex": 1,
+      "trapExplanation": "The instinct to apply the general lapse rule is understandable, but s 33 is specifically designed to override it here: because the daughter is the testator's own child and left a surviving child of her own, the gift is saved and redirected rather than lapsing.",
+      "explanation": "This is exactly the scenario s 33 is built for: a gift to the testator's own child who predeceases, leaving issue living at the testator's death. The £30,000 passes to the grandchild in the daughter's place, rather than lapsing into residue."
+    },
+    {
+      "itemId": "sqe1-we-05-test-04",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A testator leaves £30,000 to his best friend. The friend predeceases the testator, survived by two adult children, both alive when the testator later dies. Does s 33 save the gift for the friend's children?",
+      "options": ["Yes — any predeceasing beneficiary's surviving issue can take under s 33", "No — s 33 only applies to gifts to the testator's own child or remoter descendant, and a friend is neither", "Yes, but only if the friend's children are also named as beneficiaries elsewhere in the will", "No — s 33 was repealed and no anti-lapse rule currently exists"],
+      "correctIndex": 1,
+      "explanation": "Section 33 is confined to the testator's own descendants. A gift to a friend who predeceases the testator lapses in the ordinary way regardless of whether the friend leaves children of their own — those children have no claim under s 33."
+    },
+    {
+      "itemId": "sqe1-we-05-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What does 'ademption' mean in the context of a specific gift under a will?",
+      "options": ["The gift fails because the beneficiary died before the testator", "The gift fails because its specific subject-matter no longer exists in the estate at the testator's death", "The gift fails because the estate cannot afford to pay it alongside other gifts", "The gift is automatically replaced with its cash value at date of death"],
+      "correctIndex": 1,
+      "explanation": "Ademption is specifically about the disappearance of the described asset itself, not the beneficiary's survival (that is lapse) and not the estate's overall solvency (that is abatement)."
+    },
+    {
+      "itemId": "sqe1-we-05-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A testator's will leaves 'my BMW motor car' to her nephew. Before her death she traded that car in as part-exchange for a different BMW, which she owned at death. Is the gift adeemed?",
+      "options": ["No — because she still owned a BMW of the same make, the gift is treated as referring to whichever car she owned at death", "Yes — the specific car described no longer exists, so the gift adeems and the nephew takes nothing, regardless of the replacement car being similar", "Yes, but the nephew is entitled to the difference in value between the two cars", "No — ademption never applies to vehicles, only to real property and named securities"],
+      "correctIndex": 1,
+      "explanation": "Ademption looks at whether the exact asset described survives, not whether a similar replacement exists. The originally described car no longer forms part of the estate, so the gift adeems; the nephew has no claim to the replacement vehicle."
+    },
+    {
+      "itemId": "sqe1-we-05-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "Which best describes the significance of Re Slater [1907] 1 Ch 665?",
+      "options": ["It held that a general pecuniary legacy can never adeem, however the estate changes", "It held that a gift tied to a specific, identifiable fund adeems if that fund ceases to exist in that form, even though it traced back to money the testator could account for", "It abolished the doctrine of ademption for gifts of debts and mortgages", "It held that ademption only applies to gifts of land"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes read Re Slater as a case about the estate's overall solvency, confusing it with abatement. It is squarely an ademption case: the issue was whether the specific fund described in the gift still existed, not whether the estate had enough money overall.",
+      "explanation": "Re Slater confirms that specificity of description is decisive: because the gift referred to a particular mortgage debt rather than a general sum, the disappearance of that particular fund (through repayment) defeated the gift under the ademption doctrine."
+    },
+    {
+      "itemId": "sqe1-we-05-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "An estate, after debts and expenses, cannot satisfy every gift in a will in full. Absent contrary intention, which category of gift is reduced first?",
+      "options": ["Specific legacies", "General (pecuniary) legacies", "The residuary gift", "All gifts are reduced by an identical percentage regardless of category"],
+      "correctIndex": 2,
+      "explanation": "The residuary gift bears the shortfall first under the standard order of abatement. General legacies are only touched once residue is exhausted, and specific legacies are protected until last."
+    },
+    {
+      "itemId": "sqe1-we-05-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A testator's estate, after debts, is worth £80,000. The will leaves £100,000 in general legacies to three friends and the residue to a charity, with no specific legacies. What happens?",
+      "options": ["The charity receives nothing and the three friends split the £80,000 equally regardless of their individual legacy amounts", "The residuary gift to the charity is extinguished first, and if that alone does not close the £20,000 shortfall the general legacies abate proportionately between themselves", "The general legacies are paid in full and the charity's residuary gift simply becomes negative", "The estate is distributed on intestacy because the gifts exceed the estate's value"],
+      "correctIndex": 1,
+      "explanation": "Because there is no residue left once the shortfall is applied (the residuary gift is wiped out entirely, as there was no residue to begin with once £100,000 of legacies exceed an £80,000 estate), the general legacies must abate proportionately between themselves to absorb the remaining shortfall — the charity's residuary gift is the first, but not necessarily the only, casualty."
+    },
+    {
+      "itemId": "sqe1-we-05-test-10",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A testator's will gives 'my grandmother's engagement ring' to her daughter, and £50,000 to her son, with a modest residue to charity. Which category of gift is best protected if the estate later turns out to be worth less than expected?",
+      "options": ["The ring, because specific legacies abate last", "The £50,000, because general legacies are always paid before specific gifts", "The residuary gift to charity, because charities have statutory priority", "All three are reduced in identical proportion regardless of category"],
+      "correctIndex": 0,
+      "explanation": "Specific legacies, such as the named ring, are the most protected category in the order of abatement — they are only touched once both residue and general legacies have already been exhausted."
+    },
+    {
+      "itemId": "sqe1-we-05-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A testator leaves her house to her son, who predeceases her leaving a daughter (the testator's granddaughter) living at the testator's death. Separately, before the testator's death, she sold the house and never replaced it. What is the correct analysis?",
+      "options": ["Section 33 saves the gift for the granddaughter because the son predeceased the testator", "The gift has adeemed because the specific property no longer exists in the estate; s 33 cannot revive a gift whose subject-matter has disappeared", "The granddaughter takes the sale proceeds instead of the house", "The gift lapses in the ordinary way because s 33 does not apply to gifts of land"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to reach for s 33 because the son (the testator's own child) predeceased her leaving issue — but that rule only rescues a gift from lapse. Here the gift has already failed for a different reason: ademption, because the specific asset itself is gone. Anti-lapse cannot resurrect a gift that has adeemed.",
+      "explanation": "Two separate doctrines are in play, and ademption defeats the gift regardless of what s 33 might otherwise have done. The house was specifically identified and no longer exists in the estate at death, so the gift fails by ademption; the granddaughter has no claim to the sale proceeds or to any substitute."
+    },
+    {
+      "itemId": "sqe1-we-05-test-12",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Under s 33, if the predeceasing child leaves no surviving issue at all, what happens to their gift?",
+      "options": ["It still passes to the child's spouse", "It lapses in the ordinary way, since the condition for anti-lapse (surviving issue) is not met", "It is held in trust indefinitely in case issue are later born", "It automatically passes to the testator's other children"],
+      "correctIndex": 1,
+      "explanation": "Section 33 only operates where the predeceasing child or remoter descendant leaves issue of their own who are living at the testator's death. Without surviving issue, the ordinary lapse rule applies and the gift falls into residue."
+    },
+    {
+      "itemId": "sqe1-we-05-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Section 33 begins 'unless a contrary intention appears by the will'. What is the practical effect of this qualifying phrase?",
+      "options": ["It means s 33 can never actually apply in practice", "It allows the testator to expressly exclude the anti-lapse rule, for example by providing that a gift is only to take effect if the named beneficiary personally survives", "It only applies to gifts made after 2014", "It requires a separate deed to be executed alongside the will"],
+      "correctIndex": 1,
+      "explanation": "Like most default rules in succession law, s 33 yields to a clearly expressed contrary intention in the will itself — a testator can draft around it, for instance by making a gift conditional on the beneficiary's personal survival, which displaces the statutory substitution."
+    },
+    {
+      "itemId": "sqe1-we-05-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following pairs correctly matches each doctrine to the failure it addresses?",
+      "options": ["Ademption addresses a beneficiary's death before the testator; lapse addresses disappearance of the gift's subject-matter", "Lapse addresses a beneficiary's death before the testator; ademption addresses disappearance of the gift's subject-matter", "Abatement addresses disappearance of the gift's subject-matter; ademption addresses an estate shortfall", "Anti-lapse under s 33 applies to any beneficiary who predeceases the testator, regardless of relationship"],
+      "correctIndex": 1,
+      "trapExplanation": "The terms are easy to swap under exam pressure. The safest fix is to anchor each to its trigger: lapse and ademption are commonly transposed, and abatement is commonly confused with ademption because both can be described loosely as 'the gift didn't work out'.",
+      "explanation": "Lapse is triggered by the beneficiary predeceasing the testator; ademption is triggered by the specific gift's subject-matter no longer existing. Abatement is a third, distinct doctrine addressing insufficiency of the estate as a whole, not the disappearance of any one asset."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is blurring lapse, anti-lapse, ademption and abatement together because they all end with a beneficiary receiving less than the will's wording seems to promise. Anchor each doctrine to its precise trigger — beneficiary's death, disappearance of the described asset, or insufficiency of the whole estate — before applying any rule.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.wills-estates.alterations-construction"
+  }
+}

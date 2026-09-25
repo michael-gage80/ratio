@@ -1,0 +1,374 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-we-11",
+  "moduleId": "sqe1-wills-administration-estates",
+  "moduleTitle": "SQE1 · Wills and Administration of Estates",
+  "lessonNumber": 11,
+  "topicId": "sqe1.wills-estates.caveats-citations",
+  "title": "Caveats, citations, and contentious probate practice",
+  "subtitle": "Stopping a grant, compelling an applicant, and the limits of renunciation",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the function of a caveat and the procedural steps that follow its entry, including a warning and an appearance",
+    "Distinguish a citation, which compels a person with a prior right either to apply for a grant or to renounce it, from a caveat, which prevents a grant issuing without notice",
+    "Apply the renunciation rules to a set of facts to determine whether a renunciation can be retracted"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Non-Contentious Probate Rules 1987, r 44", "role": "Entry, effect and renewal of a caveat" },
+    { "citation": "Non-Contentious Probate Rules 1987, r 47", "role": "Citations: procedure for citing a person with a prior right to a grant" },
+    { "citation": "Non-Contentious Probate Rules 1987, r 37", "role": "Form and effect of renunciation of probate or administration" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can define a caveat as 'something that stops a grant'. Where the profile shows knowledge is ahead of application, this note appears: 'You have the definitions — this lesson tests whether you can pick the right tool for a live dispute, and spot when a step can't be undone.'",
+    "profileHooks": {
+      "weakApplication": "You've done well here on definitions before. The test pool leans hard on application: expect short dispute scenarios asking which mechanism the solicitor should use, not abstract definitions.",
+      "weakKnowledge": "Start with Part 1 and fix the basic distinction firmly: a caveat stops a grant issuing at all; a citation forces someone with a prior right to either act or step aside. Confusing the two is the single most common error in this area."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A family discovers, two weeks after their father's funeral, that his solicitor is about to apply for a grant of probate on the strength of a will made eighteen months before he died — a will they believe was made under undue influence from a much younger partner. They can't yet prove anything. What they need first isn't a lawsuit. It's a way to make sure nothing irreversible happens while they investigate. That mechanism exists, and it does exactly one job: freeze the process, not win the argument.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. This is a stable, long-settled area of procedure with no pending reform."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The caveat: a procedural brake, not a verdict",
+        "voice": "argumentative — states the strongest case for the mechanism, then complicates it",
+        "body": [
+          "A caveat is a formal notice lodged at the Probate Registry that prevents any grant of representation issuing in that estate without notice being given to the person who lodged it (the caveator). It costs a small fee, requires no evidence of wrongdoing, and can be entered by anyone with an interest in opposing a grant — a disappointed beneficiary, a rival executor, a family member who suspects undue influence or a lack of capacity.",
+          "This is deliberately a low bar. The system would be worse if it forced people to prove their suspicions before they could even pause events — by the time a grant issues, assets can be distributed, and unwinding a mistaken distribution is far harder than preventing it in the first place. A caveat buys time to investigate, nothing more.",
+          "But precisely because it's so easy to lodge, a caveat is not evidence of anything and does not itself start litigation. It lasts six months from entry and can be renewed, but if the caveator never actually challenges the grant, the other side has a mechanism to force the issue rather than being left in limbo indefinitely — the warning, covered next."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Caveat",
+            "definition": "A notice lodged at the Probate Registry under r 44 preventing any grant of representation from issuing in a named estate without notice to the caveator. It lasts six months (renewable) and is a procedural block only — it asserts no ground and proves nothing on its own."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-11-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does lodging a caveat require the caveator to provide any evidence of a defect in the will or the applicant's entitlement?",
+          "options": ["No — a caveat can be entered on suspicion alone, with no evidence required at that stage", "Yes — the Registry requires sworn evidence before accepting a caveat"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The low evidential bar is the whole point: a caveat exists to freeze the position while grounds are investigated, not to prove them.",
+          "feedbackIncorrect": "Not quite — a caveat is deliberately easy to lodge, requiring no evidence at the outset. The evidential burden comes later, if the dispute proceeds further."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The warning: forcing the caveator's hand",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "A caveat cannot sit unchallenged forever while a would-be applicant is left unable to obtain a grant. Once a caveat is entered, the person seeking the grant may issue a warning — served on the caveator through the Registry — which requires the caveator either to enter an appearance (a formal step confirming they intend to maintain the caveat and contest the grant) or to withdraw it.",
+          "If the caveator does nothing within the time allowed after being warned, the caveat lapses and ceases to have effect, clearing the way for the grant to proceed. If the caveator does enter an appearance, the caveat remains in force, and the dispute typically moves towards contentious probate proceedings — a probate claim in the courts, outside the scope of this lesson but the natural next step.",
+          "The sequence is worth holding in your head as a single chain: caveat entered → warning served → caveator either enters an appearance (dispute continues) or does nothing (caveat lapses, grant proceeds). Skipping a step, or assuming a caveat alone resolves anything, is the most common error students make under time pressure."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The caveat-and-warning sequence",
+            "description": "The procedural chain from lodging a caveat to either a contested claim or a cleared path to grant.",
+            "nodes": [
+              { "id": "caveat", "label": "Caveat entered at the Registry" },
+              { "id": "warning", "label": "Person seeking the grant serves a warning on the caveator" },
+              { "id": "appearance", "label": "Caveator enters an appearance → caveat stands, dispute proceeds" },
+              { "id": "nothing", "label": "Caveator does nothing within the time allowed → caveat lapses, grant may proceed" }
+            ],
+            "edges": [
+              { "from": "caveat", "to": "warning" },
+              { "from": "warning", "to": "appearance", "label": "Caveator contests" },
+              { "from": "warning", "to": "nothing", "label": "Caveator takes no action" }
+            ],
+            "textAlternative": "A caveat is entered at the Registry. The person seeking the grant then serves a warning on the caveator. The caveator must either enter an appearance, in which case the caveat stands and the dispute proceeds towards a probate claim, or take no action within the time allowed, in which case the caveat lapses and the grant may proceed."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-11-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the correct procedural order.",
+          "items": [
+            "A family member enters a caveat, suspecting undue influence",
+            "The executor applying for probate serves a warning on the caveator",
+            "The caveator enters an appearance to maintain the caveat",
+            "The dispute proceeds towards a contested probate claim"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the chain: caveat, then warning, then the caveator's choice to appear (or not), then — if they appear — a contested claim.",
+          "feedbackIncorrect": "Check the order again: the caveat comes first and is passive; it's the person seeking the grant who has to actively serve a warning to force the caveator to show their hand."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The citation: compelling someone to act, or step aside",
+        "voice": "case-narrative — tells the scenario before naming the doctrine",
+        "body": [
+          "Sometimes the problem isn't that someone wants to stop a grant — it's that the person with the strongest right to apply for one simply won't move. An executor named in a will might refuse to apply for probate and refuse to renounce, leaving the estate in limbo while beneficiaries wait. This is where a citation comes in, under r 47.",
+          "A citation is issued by the court, at the request of a person interested in the estate, compelling the person with the prior right either to apply for the grant themselves or to renounce that right formally. Unlike a caveat, which is a defensive block, a citation is an offensive tool: it forces the cited person off the fence.",
+          "There are a few distinct forms this can take — most importantly, a citation to accept or refuse a grant (aimed at someone entitled to apply who has not yet done anything, such as an executor who has neither applied for probate nor renounced) and a citation to propound a will (aimed at compelling someone who is asserting a will's validity, but has not yet taken any formal step, to prove it in solemn form before the court, or else lose the right to rely on it later).",
+          "If the cited person still does nothing after being cited, the court can order that a grant issue to someone else instead — the citation is the mechanism that finally breaks the deadlock, rather than leaving the estate to wait on one uncooperative individual indefinitely."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Citation",
+            "definition": "A formal process under r 47 by which the court, at the request of an interested party, compels a person with a prior right to a grant (or a person propounding a will) either to take up that right — applying for the grant, or proving the will — or to formally renounce it."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-11-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario calls for a citation, rather than a caveat?",
+          "scenarioA": "A beneficiary suspects the will may have been forged and wants to prevent any grant issuing until she can investigate.",
+          "scenarioB": "The named executor has done nothing for a year — has not applied for probate, and refuses to say whether he will renounce — leaving the estate unadministered.",
+          "correctScenario": "B",
+          "explanation": "Scenario A calls for a caveat: the beneficiary wants to block a grant while she investigates. Scenario B is the opposite problem — someone with priority is inert, and needs to be forced to act or step aside, which is exactly what a citation compels."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Renunciation: a door that usually only opens one way",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Here's a question worth sitting with before the answer: if an executor formally renounces probate, and three months later changes their mind, can they simply withdraw the renunciation and apply after all? Intuitively, since nothing may have happened in the meantime, it feels like it should be easy to undo. The rules say otherwise.",
+          "Under r 37, renunciation of probate or administration is a formal, written act, filed at the Registry. Once properly made and filed, it generally cannot be retracted except with the leave of the court — and the court will not grant leave lightly, particularly once another grant has issued, or third parties have acted in reliance on the renunciation (for example, another administrator has already begun collecting in assets).",
+          "The policy reason mirrors the caveat-and-warning logic: the whole system depends on being able to treat a formal step as final, so that estates can move forward without every earlier decision remaining permanently reversible. A change of heart is not, on its own, a special circumstance justifying retraction — there generally needs to be something more, such as the renunciation having been made under a genuine mistake or misunderstanding.",
+          "One further nuance worth holding onto: an executor who renounces probate is, in the ordinary case, also treated as renouncing any right to apply for letters of administration with the will annexed in some other capacity (for example, as a residuary beneficiary), unless the court otherwise directs — renunciation is not intended to be a way of stepping back from one role while quietly preserving a claim to another."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because renunciation feels like 'just paperwork', it should be freely reversible provided nothing irreversible has yet happened in the estate.",
+            "whyItsWrong": "The rule treats renunciation as final from the point it is validly made and filed, not from the point something irreversible occurs downstream. The court's leave is required to retract it at all, and mere reconsideration is not usually enough — the emphasis is on the formality and finality of the act itself, not on how much has changed since."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-11-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a validly filed renunciation can ordinarily be withdrawn simply because the person changes their mind, with no further justification?",
+          "sliderLabels": ["Freely withdrawable", "Effectively final without the court's leave"],
+          "correctPosition": "Effectively final without the court's leave",
+          "explanation": "A renunciation, once validly made and filed, is treated as final unless the court gives leave to retract it — and a simple change of mind is not, by itself, a circumstance the court will usually treat as sufficient."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Choosing the right tool under pressure",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "In practice, these three mechanisms answer three different questions, and the exam will reward you for identifying which question is actually live on the facts. Is someone trying to stop a grant issuing while they investigate a concern? That's a caveat. Is someone with a prior right simply refusing to engage — neither applying nor renouncing? That's a citation. Has someone already renounced and now wants to reverse course? That turns on r 37 and the court's leave, not on entering a fresh caveat or citation.",
+          "A frequent SQE1 trap is offering a caveat as the answer to a citation-shaped problem, or vice versa, because both sound vaguely like 'a way to challenge a grant'. They are not interchangeable: a caveat is purely defensive and passive from the caveator's side (it just blocks); a citation is offensive and requires the citing party to actively compel someone else to move.",
+          "The other frequent trap is treating renunciation as something that can be casually undone — remember that once filed, it is presumptively final, and the correct advice to a client who wants to retract one is that they will need to apply to the court for leave, with no guarantee of success, rather than simply submitting a new form."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Three tools, three purposes",
+            "points": [
+              "Caveat (r 44) — blocks a grant issuing without notice; entered by someone opposing a grant, requiring no evidence at the outset",
+              "Warning — forces a caveator to either enter an appearance (contest) or let the caveat lapse",
+              "Citation (r 47) — compels a person with a prior right (or someone propounding a will) to act or formally step aside",
+              "Renunciation (r 37) — a formal, filed act giving up a right to a grant, presumptively final absent the court's leave to retract"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-11-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A named executor has renounced probate in writing, and the Registry has recorded it. Two months later, before any other grant has issued, she tells the solicitor she has changed her mind and wants to apply after all. What should the solicitor advise?",
+          "options": [
+            "She may simply submit a fresh application for probate, since no grant has yet issued to anyone else",
+            "She would need to apply to the court for leave to retract the renunciation, and a mere change of mind is unlikely, on its own, to be treated as sufficient",
+            "A caveat should be entered to block any other grant while she reconsiders",
+            "She should be cited to accept or refuse the grant"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "It's tempting to think that because no other grant has yet issued, nothing is truly lost and she can simply reapply — but r 37 treats a validly filed renunciation as final from the point of filing, not from the point some other event occurs. The absence of a competing grant does not by itself entitle her to retract.",
+          "explanation": "Retracting a filed renunciation requires the court's leave, and the threshold is not met by a simple change of mind. A caveat and a citation are both the wrong tool here — neither addresses the renunciation itself."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-we-11-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the primary legal effect of a validly entered caveat?",
+      "options": ["It prevents any grant of representation issuing in that estate without notice to the caveator", "It automatically transfers the right to apply for a grant to the caveator", "It permanently revokes any will already admitted to probate", "It compels the executor to renounce"],
+      "correctIndex": 0,
+      "explanation": "A caveat's effect is purely to block a grant issuing without notice to the caveator — it does not transfer any right, revoke anything already granted, or compel anyone to act."
+    },
+    {
+      "itemId": "sqe1-we-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "How long does a caveat last from entry, before it needs to be renewed?",
+      "options": ["Six months", "One month", "Twelve months", "It lasts indefinitely until actively withdrawn"],
+      "correctIndex": 0,
+      "explanation": "A caveat lasts six months from the date it is entered, and can be renewed if the caveator still wishes to maintain it."
+    },
+    {
+      "itemId": "sqe1-we-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which mechanism is used to compel a person with a prior right to a grant either to apply for it or to renounce it?",
+      "options": ["A caveat", "A citation", "A warning entered by the applicant", "A grant limited in time (ad colligenda bona)"],
+      "correctIndex": 1,
+      "trapExplanation": "A caveat and a warning are both procedural steps in the same family of proceedings, which makes them tempting distractors, but neither compels anyone to act — a caveat blocks, and a warning forces a caveator to choose between appearing or lapsing. Only a citation actively compels a person with a prior right to move.",
+      "explanation": "A citation, under r 47, is the mechanism that compels a person with a prior right to a grant (or someone propounding a will) either to act on that right or to formally step aside."
+    },
+    {
+      "itemId": "sqe1-we-11-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A trainee describes a warning as 'a second, stronger type of caveat'. Which correction is most accurate?",
+      "options": [
+        "A warning is not entered by the caveator at all — it is served by the person seeking the grant, and requires the caveator to enter an appearance or let the caveat lapse",
+        "A warning and a caveat are simply two names for the same document",
+        "A warning is entered before the caveat, not after it",
+        "A warning permanently ends the caveator's right to ever contest the grant"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to think of a warning as simply 'more of the same' procedural blocking, but it actually comes from the opposite side of the dispute — it is the applicant's tool for forcing the caveator's hand, not an escalation of the caveator's own position.",
+      "explanation": "The warning is served by the person seeking the grant, in response to a caveat, and requires the caveator either to enter an appearance and contest the grant, or do nothing and let the caveat lapse."
+    },
+    {
+      "itemId": "sqe1-we-11-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which statement best captures the structural difference between a caveat and a citation?",
+      "options": [
+        "A caveat is a defensive tool used to block a grant; a citation is an offensive tool used to compel someone else to act or step aside",
+        "A caveat can only be used by an executor; a citation can only be used by a beneficiary",
+        "A caveat is a court order; a citation is a private notice with no court involvement",
+        "They serve identical functions and are used interchangeably in practice"
+      ],
+      "correctIndex": 0,
+      "explanation": "The functional distinction is defensive versus offensive: a caveat blocks a grant from the caveator's side; a citation forces someone with a prior right to actively move, one way or the other."
+    },
+    {
+      "itemId": "sqe1-we-11-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Under r 37, once a renunciation of probate or administration has been validly made and filed, what is the default position on retracting it?",
+      "options": [
+        "It can be retracted freely at any time before a grant issues to anyone else",
+        "It is presumptively final and generally requires the court's leave to retract, which is not readily given for a mere change of mind",
+        "It cannot be retracted under any circumstances, even with the court's leave",
+        "It automatically lapses after three months if no grant has issued"
+      ],
+      "correctIndex": 1,
+      "explanation": "Rule 37 treats a filed renunciation as final. Retraction requires the court's leave, and the court is not generally persuaded by a simple change of mind, particularly once anyone has acted in reliance on the renunciation."
+    },
+    {
+      "itemId": "sqe1-we-11-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A beneficiary suspects the deceased lacked testamentary capacity when the will was made and wants to make sure no grant issues while she gathers medical evidence. What should the solicitor advise as the immediate next step?",
+      "options": ["Enter a citation compelling the executor to prove the will", "Enter a caveat at the Probate Registry", "Apply to court for an order under s 116 of the Senior Courts Act 1981 straight away", "Wait until probate has been granted, then apply to revoke it"],
+      "correctIndex": 1,
+      "explanation": "At this stage the beneficiary wants to prevent a grant issuing while she investigates — that is precisely what a caveat is for, and it requires no evidence of capacity issues at the outset."
+    },
+    {
+      "itemId": "sqe1-we-11-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "An executor has neither applied for probate nor renounced, eighteen months after death, despite repeated requests from the residuary beneficiaries. What is the correct next step to break the deadlock?",
+      "options": ["Enter a caveat against the estate", "Have the executor cited to accept or refuse the grant", "Ask the Probate Registry to issue the grant automatically to the beneficiaries", "Wait a further period before taking any action, since no fixed deadline applies"],
+      "correctIndex": 1,
+      "explanation": "This is a citation scenario: the executor has a prior right but is neither applying nor renouncing, so a citation to accept or refuse the grant is the tool that compels them to choose."
+    },
+    {
+      "itemId": "sqe1-we-11-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A caveat has been entered against an estate. The executor applying for probate serves a warning, and the caveator does not respond within the time allowed. What happens to the caveat?",
+      "options": ["It automatically converts into a citation", "It lapses, and the executor may proceed to obtain the grant", "It remains in force indefinitely until formally withdrawn in writing", "It is referred automatically to a full contested probate trial"],
+      "correctIndex": 1,
+      "explanation": "If the caveator does nothing after being warned, the caveat simply lapses, clearing the way for the applicant to proceed with the grant. Nothing converts automatically into a citation or a trial."
+    },
+    {
+      "itemId": "sqe1-we-11-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A caveator is served with a warning and, wishing to contest the grant, files a formal appearance in response. What is the immediate practical effect?",
+      "options": ["The caveat lapses automatically once an appearance is filed", "The caveat remains in force, and the matter typically moves towards contentious probate proceedings", "The executor is automatically barred from ever applying for a grant", "The Registry issues the grant regardless, since an appearance has no effect on the grant itself"],
+      "correctIndex": 1,
+      "explanation": "Entering an appearance keeps the caveat in force and signals that the caveator intends to contest the grant, which typically moves the dispute towards a probate claim in the courts."
+    },
+    {
+      "itemId": "sqe1-we-11-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "An administrator renounces letters of administration in writing, and the renunciation is filed. A week later, before any other grant has issued, they discover they misunderstood a key fact (they had been wrongly told a more senior relative wanted to apply, which was untrue) and now want to retract. What is the most accurate advice?",
+      "options": [
+        "Retraction is automatic since no other grant has yet issued",
+        "Retraction is impossible under any circumstances once filed",
+        "They may apply to the court for leave to retract, and a genuine mistake of this kind is more likely to support the application than a simple change of mind would be",
+        "They must instead apply for a citation against themselves"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "The absence of a competing grant is tempting but is not itself the test — the test is whether the court will give leave, and a documented mistake of fact is a materially stronger basis for that than mere reconsideration, though it is still not automatic.",
+      "explanation": "A retraction always requires the court's leave under r 37. A genuine mistake as to a material fact is the kind of circumstance more likely to persuade the court than a simple change of mind, though the outcome still depends on the court's assessment."
+    },
+    {
+      "itemId": "sqe1-we-11-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A person wants to challenge the validity of a will itself — arguing it is a forgery — rather than simply delay matters while they investigate. Once they have gathered their evidence, which of the following is the most accurate next step beyond the caveat already entered?",
+      "options": [
+        "Do nothing further; the caveat alone determines the will's validity",
+        "If warned, enter an appearance to maintain the caveat, which moves the dispute towards a contested probate claim where the will's validity can be determined",
+        "Apply for a fresh grant themselves without any further step",
+        "Ask the Registry to strike out the will administratively, without any court proceedings"
+      ],
+      "correctIndex": 1,
+      "explanation": "A caveat itself never determines validity — it only holds the position. Once warned, entering an appearance keeps the caveat alive and moves matters towards a probate claim, which is the forum where the forgery allegation can actually be tested."
+    },
+    {
+      "itemId": "sqe1-we-11-test-13",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following can lodge a caveat against an estate?",
+      "options": ["Only a person who is already named as executor in a will", "Anyone with an interest in opposing the grant, such as a beneficiary or rival applicant", "Only the Probate Registry itself, acting on its own initiative", "Only a creditor of the deceased"],
+      "correctIndex": 1,
+      "explanation": "A caveat is available to anyone with a genuine interest in opposing a grant, which includes beneficiaries and rival applicants, not only a named executor or a creditor."
+    },
+    {
+      "itemId": "sqe1-we-11-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A student writes that renouncing probate 'has no effect on any other capacity in which the executor might apply for a grant'. Is this an accurate general statement?",
+      "options": [
+        "Yes — renunciation only ever affects the specific capacity renounced, with no wider effect",
+        "No — in the ordinary case, renouncing probate is also treated as renouncing any right to apply for administration with the will annexed in another capacity, absent a direction of the court",
+        "No — renunciation of probate automatically also revokes the will itself",
+        "Yes, but only where the executor is also a residuary beneficiary"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat renunciation as narrowly confined to the exact role given up, but the rules are deliberately broader than that in the ordinary case, to stop renunciation being used to shed one role while quietly preserving a claim to apply in another capacity under the same will.",
+      "explanation": "Renouncing probate is, absent a court direction otherwise, treated as also renouncing the right to apply for administration with the will annexed in another capacity — the point being that renunciation is meant to be a clean exit, not a selective one."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is reaching for a caveat where a citation is needed, or the reverse. Ask first whether the problem is 'stop a grant issuing' (caveat) or 'force an inert prior-right holder to move' (citation) — the answer to that question dictates the tool.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.wills-estates.caveats-citations"
+  }
+}

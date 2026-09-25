@@ -26,7 +26,7 @@ export const HISTORY_LIMIT = 100;
 
 export const MODULES = ["crime", "contract", "tort", "public", "land", "equity", "companylaw", "eulaw", "humanrights", "jurisprudence", "employmentlaw", "familylaw",
   // SQE1 (Functioning Legal Knowledge), Ratio-Lesson-Spine.md part two.
-  "sqe1-dispute-resolution", "sqe1-legal-system-legal-services", "sqe1-business-law-practice", "sqe1-property-practice", "sqe1-wills-estates", "sqe1-solicitors-accounts", "sqe1-criminal-law-practice"];
+  "sqe1-dispute-resolution", "sqe1-legal-system-legal-services", "sqe1-business-law-practice", "sqe1-property-practice", "sqe1-wills-administration-estates", "sqe1-solicitors-accounts", "sqe1-criminal-law-practice"];
 
 /**
  * Items without a `difficultyStart` are treated as middling (0.5), as the app does; the

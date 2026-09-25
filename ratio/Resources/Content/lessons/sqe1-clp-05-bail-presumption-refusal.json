@@ -1,0 +1,455 @@
+{
+  "lessonId": "sqe1-clp-05",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 5,
+  "topicId": "sqe1.criminal-practice.bail-presumption-refusal",
+  "title": "Bail: the presumption and the grounds for refusal",
+  "subtitle": "The s 4 Bail Act presumption, who it excludes, and the three refusal grounds",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the s 4 Bail Act 1976 presumption in favour of bail and identify the categories of defendant to which it does not apply",
+    "Identify the three statutory grounds on which a court may refuse bail for an imprisonable offence, and the factors relevant to each",
+    "Apply the 'no real prospect of a custodial sentence' principle to determine whether remand in custody is available on the facts"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Bail Act 1976, s 4 and Sch 1",
+      "role": "Creates the general right to bail and sets out the grounds and factors on which it may be refused"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Bail decisions happen fast, often on incomplete information, and get a defendant's liberty wrong in either direction if the framework isn't applied precisely. This lesson is the framework: who starts with a presumption in their favour, who doesn't, and exactly what a prosecutor has to show to displace it.",
+    "profileHooks": {
+      "weakApplication": "You can recite the three grounds. The test pool is weighted towards matching specific facts — previous absconding, offence seriousness, contact with a witness — to the correct ground and the correct Schedule 1 factor, not just naming the ground in the abstract.",
+      "weakKnowledge": "Start with Part 2 and make sure the s 4 presumption and its exceptions are solid before moving on — every later part assumes you already know who is, and isn't, covered by the general right to bail."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Every year, courts remand people in custody who are later acquitted, and release people on bail who go on to commit further offences. Neither outcome is a system failure by itself — bail decisions are made on incomplete information, under time pressure, against a legal framework that starts from a presumption of liberty and asks what, specifically, justifies taking it away. This lesson is that framework."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The starting point: a presumption, not a discretion",
+        "voice": "structural — frames the whole lesson around one statutory provision",
+        "body": [
+          "Bail Act 1976, s 4 creates a general right to bail for any defendant appearing before a magistrates' court or the Crown Court in connection with an offence, at every stage of proceedings, unless one of the statutory exceptions applies. This is not a starting point of 'the court will consider bail' — it is a presumption the prosecution must actively displace.",
+          "That framing matters for how you argue a bail application: the defence does not need to persuade the court that bail should be granted. The prosecution needs to persuade the court that bail should be refused, by bringing the case within one of the recognised exceptions and grounds. Get the burden the wrong way round in an SQE1 answer and the whole analysis collapses.",
+          "The s 4 right does not apply to everyone, however. It is excluded (rather than merely capable of being displaced) for defendants charged with murder, attempted murder, manslaughter or rape who have a relevant previous conviction for one of those offences, and for a defendant who has already been convicted and is only appearing for sentence in certain circumstances. For most defendants at most stages, though, s 4 is the default the rest of this lesson works against."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "General right to bail",
+            "definition": "The Bail Act 1976, s 4 presumption that a defendant appearing before a court in connection with an offence is entitled to bail unless the prosecution brings the case within a recognised statutory exception and ground for refusal."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the s 4 Bail Act 1976 presumption, whose burden is it to justify departing from bail?",
+          "options": [
+            "The defence must persuade the court bail should be granted",
+            "The prosecution must persuade the court bail should be refused"
+          ],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct. Bail is the default; refusal is the thing that has to be justified, not the other way round.",
+          "feedbackIncorrect": "Reverse it. Bail Act 1976, s 4 makes bail the default position — it is refusal that requires justification from the prosecution, not the grant of bail that requires justification from the defence."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Who falls outside the presumption",
+        "voice": "direct — a checklist of the recognised exceptions",
+        "body": [
+          "The s 4 presumption applies broadly, but two categories of defendant sit largely outside it and are worth knowing precisely, because SQE1 fact patterns test the boundary as often as the general rule itself.",
+          "First, a defendant charged with, or convicted of, murder, attempted murder, manslaughter, rape or certain other serious sexual offences, who has a previous conviction for one of those offences, does not benefit from the general right to bail at all — bail can only be granted in that situation if the court is satisfied there are exceptional circumstances justifying it. Second, an adult defendant charged with an indictable or either-way offence which appears to have been committed while already on bail in other proceedings does not lose the right entirely, but the court is required to give particular weight to that fact when assessing risk under the usual grounds.",
+          "It is important to keep these limited categories distinct from the three ordinary refusal grounds covered in the next part. The categories in this part narrow or remove the presumption itself; the grounds in Schedule 1 are the substantive reasons a court can rely on, within the presumption, to refuse bail for an ordinary imprisonable offence."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Defendants outside, or partly outside, the s 4 presumption",
+            "points": [
+              "Charged with murder/attempted murder/manslaughter/rape with a relevant previous conviction — no right to bail absent exceptional circumstances",
+              "Already convicted, appearing only for sentence in certain circumstances — presumption does not apply in the same way",
+              "Offence committed while on bail in other proceedings — presumption still applies, but the court must give this particular weight when assessing risk"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-05-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A defendant is charged with rape and has a previous conviction for manslaughter. What is the effect on the s 4 presumption?",
+          "options": [
+            "No effect — the presumption applies in full",
+            "The presumption is displaced entirely; bail can only be granted if exceptional circumstances are shown",
+            "The presumption applies but with extra weight given to risk of reoffending",
+            "The presumption only applies if the previous conviction is more than ten years old"
+          ],
+          "correctIndex": 1,
+          "explanation": "A defendant charged with rape (or murder, attempted murder or manslaughter) who has a relevant previous conviction for one of those offences falls outside the general right to bail altogether; bail becomes available only where the court finds exceptional circumstances."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The three grounds for refusing bail on an imprisonable offence",
+        "voice": "case-narrative — walks through each ground with a concrete example",
+        "body": [
+          "Bail Act 1976, Sch 1 sets out the grounds on which a court may refuse bail once the offence is imprisonable and the defendant is within the general s 4 presumption. There are three, and each has its own rationale and its own list of relevant factors — treating them as interchangeable is the single most common SQE1 error.",
+          "The first ground is failure to surrender: substantial grounds for believing the defendant, if released, would fail to attend court as required. Relevant factors include the nature and seriousness of the offence and the likely sentence, the defendant's character and community ties, their bail record on previous occasions, and the strength of the evidence against them.",
+          "The second ground is further offending: substantial grounds for believing the defendant would commit an offence while on bail. The same broad factors apply — particularly the defendant's record of offending while previously on bail, and the seriousness of the offence charged.",
+          "The third ground is interference with the administration of justice: substantial grounds for believing the defendant would interfere with witnesses or otherwise obstruct the course of justice, for example by intimidation, tampering with evidence, or contacting a co-defendant to align accounts. This ground looks specifically at the risk to the trial process itself, not simply at the defendant's general trustworthiness."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The three Schedule 1 grounds for refusal (imprisonable offences)",
+            "points": [
+              "Failure to surrender — substantial grounds to believe the defendant would not attend court",
+              "Further offending — substantial grounds to believe the defendant would commit an offence on bail",
+              "Interference with justice — substantial grounds to believe the defendant would interfere with witnesses or otherwise obstruct justice"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-05-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these into the order in which a court should work through them when a prosecutor opposes bail on an imprisonable offence.",
+          "items": [
+            "Confirm the offence is imprisonable and the defendant falls within the s 4 presumption",
+            "Identify which Schedule 1 ground(s) the prosecution relies on",
+            "Assess the relevant factors for that ground on the specific facts",
+            "Decide whether substantial grounds for refusal are made out, and if so on what conditions bail might still be granted"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the structure. Skipping straight to 'is this defendant risky' without first confirming the presumption applies and naming the specific ground is exactly the shortcut that loses marks.",
+          "feedbackIncorrect": "Check the order again — you must first establish the presumption applies, then identify the specific ground relied on, before assessing the facts against that ground's own factors."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The custody-sentence ceiling: 'no real prospect'",
+        "voice": "Socratic — poses the limiting principle as a question first",
+        "body": [
+          "Here's a question that catches out students who've learned the three grounds well but stop there: can a court remand a defendant in custody on a case where, even on conviction, no judge would actually send them to prison? The answer is no — and this limit sits on top of, not instead of, the three grounds.",
+          "Where it appears to the court that there is no real prospect that the defendant will receive a custodial sentence if convicted, the court must not remand the defendant in custody, even if one of the three grounds for refusal would otherwise be made out. This reflects a proportionality principle: custody pending trial should not be more severe, in practice, than the outcome even a conviction would produce.",
+          "This limit is easy to miss in an exam because it sits at the end of the analysis, after the grounds have already been considered. A fact pattern testing this will typically involve a minor, non-imprisonable-in-practice offence with a defendant who nonetheless has, say, a poor bail record — inviting you to refuse bail on the failure-to-surrender ground before the custody-sentence ceiling shuts that option down."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Applying the ceiling",
+            "description": "Where the no-real-prospect limit sits relative to the three grounds.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "Is one of the three Schedule 1 grounds made out on the facts?"
+              },
+              {
+                "id": "no-ground",
+                "label": "No → bail must be granted"
+              },
+              {
+                "id": "yes-ground",
+                "label": "Yes → is there no real prospect of a custodial sentence on conviction?"
+              },
+              {
+                "id": "no-prospect",
+                "label": "No real prospect of custody → court must not remand in custody, whatever the ground shows"
+              },
+              {
+                "id": "real-prospect",
+                "label": "Real prospect of custody exists → refusal on the established ground is available"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "no-ground",
+                "label": "No"
+              },
+              {
+                "from": "start",
+                "to": "yes-ground",
+                "label": "Yes"
+              },
+              {
+                "from": "yes-ground",
+                "to": "no-prospect",
+                "label": "No real prospect"
+              },
+              {
+                "from": "yes-ground",
+                "to": "real-prospect",
+                "label": "Real prospect"
+              }
+            ],
+            "textAlternative": "First check whether one of the three Schedule 1 grounds is made out. If not, bail must be granted. If a ground is made out, ask whether there is nonetheless no real prospect of a custodial sentence on conviction — if so, the court must not remand in custody regardless of the ground. Only where a real prospect of custody exists does refusal on the established ground remain available."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-05-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a court can remand a defendant in custody where there is no real prospect of a custodial sentence, purely because one of the three Schedule 1 grounds is made out?",
+          "sliderLabels": [
+            "Yes, the ground is enough on its own",
+            "No, the ceiling overrides the ground"
+          ],
+          "correctPosition": "No, the ceiling overrides the ground",
+          "explanation": "The no-real-prospect limit overrides an otherwise-established ground. Even substantial grounds for believing the defendant would fail to surrender, reoffend, or interfere with witnesses cannot justify a remand in custody where custody itself is not a realistic sentencing outcome."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Matching facts to the right ground",
+        "voice": "direct — sets up the discrimination task the tests will probe",
+        "body": [
+          "The examiner's favourite trap in this area is giving you facts that plainly show risk, without telling you which of the three grounds those facts support — or giving you facts that support one ground strongly while looking, on a careless read, like they support another.",
+          "A defendant with three previous convictions for failing to appear supports the failure-to-surrender ground directly, through their bail record. A defendant charged with burglary who has been messaging the victim asking them to 'forget what they saw' supports interference with the administration of justice, not failure to surrender, even though both might feel like generic 'this person is a risk' facts.",
+          "Precision here is what separates a strong SQE1 answer from a vague one: name the ground, then show which specific Schedule 1 factor the facts satisfy — offence seriousness, bail record, community ties, strength of evidence, or (for the interference ground) the specific conduct suggesting witness tampering."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often write 'the defendant is a flight risk and likely to reoffend and might interfere with witnesses' as a single undifferentiated conclusion, listing all three grounds regardless of which facts actually support which.",
+            "whyItsWrong": "Each ground requires its own substantial-grounds finding on its own relevant factors. Pleading all three without matching specific facts to each ground reads as unfocused, and in practice a court will only refuse bail on the ground(s) actually supported by evidence."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-05-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two defendants charged with the same imprisonable offence. Which fact pattern most clearly supports refusal on the failure-to-surrender ground specifically?",
+          "scenarioA": "The defendant has twice previously been granted bail and failed to attend court on both occasions, with warrants issued each time.",
+          "scenarioB": "The defendant has sent messages to the complainant asking them to change their account of events before trial.",
+          "correctScenario": "A",
+          "explanation": "A's facts — a documented history of failing to attend — go directly to the likelihood of future non-attendance, the core of the failure-to-surrender ground. B's facts go to interference with the administration of justice, a distinct ground with its own factors."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-05-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Under Bail Act 1976, s 4, what is the default position for a defendant appearing before a court in connection with an offence?",
+      "options": [
+        "Bail is presumed unless the prosecution displaces it",
+        "Custody is presumed unless the defence displaces it",
+        "Bail is only available once trial has concluded",
+        "The position depends entirely on the offence category with no general presumption"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 4 creates a general right to bail; the burden lies on the prosecution to bring the case within a recognised exception or ground before bail can be refused."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A defendant is charged with rape and has a previous conviction for rape. Which statement correctly describes their position under the Bail Act 1976?",
+      "options": [
+        "They benefit from the general right to bail in the same way as any other defendant",
+        "They fall outside the general right to bail; bail is only available if the court finds exceptional circumstances",
+        "They are automatically refused bail with no possibility of it being granted",
+        "The general right to bail applies but with an additional electronic monitoring condition"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes think this category means bail is impossible. It isn't automatic refusal — the presumption is removed, but bail remains available in exceptional circumstances, which is a materially different (and testable) position."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant charged with theft is alleged to have committed the offence while already on bail for an unrelated burglary charge. What is the effect of this on the bail decision?",
+      "options": [
+        "The s 4 presumption no longer applies to this defendant at all",
+        "The presumption still applies, but the court must give particular weight to the offending-on-bail fact when assessing the refusal grounds",
+        "It is irrelevant unless the burglary charge has already resulted in conviction",
+        "It automatically satisfies the interference-with-justice ground"
+      ],
+      "correctIndex": 1,
+      "explanation": "Committing an offence while on bail does not remove the general right to bail, but the court is specifically required to give that fact particular weight when assessing risk under the ordinary grounds, especially further offending."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which of the following is NOT one of the three Schedule 1 grounds on which bail may be refused for an imprisonable offence?",
+      "options": [
+        "Failure to surrender to custody",
+        "Committing further offences while on bail",
+        "Interference with the administration of justice",
+        "The defendant's inability to afford private legal representation"
+      ],
+      "correctIndex": 3,
+      "explanation": "Inability to fund private representation has no bearing on the three Schedule 1 grounds, all of which concern risk arising from release — non-attendance, further offending, or obstruction of the trial process."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant charged with assault has strong community ties, a stable address, and no previous convictions, but the evidence against him is exceptionally strong and the likely sentence on conviction is significant. Which ground is the prosecution most likely to rely on?",
+      "options": [
+        "Interference with the administration of justice",
+        "Failure to surrender to custody",
+        "Further offending only",
+        "None of the grounds are available on these facts"
+      ],
+      "correctIndex": 1,
+      "explanation": "Strong evidence combined with a significant likely sentence is a classic factor pointing towards the failure-to-surrender ground: the more serious the likely outcome, the greater the incentive to abscond, notwithstanding otherwise favourable community ties."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A defendant is charged with an offence that, on conviction, could not realistically result in a custodial sentence given its nature and the defendant's clean record. The prosecution nonetheless argues the failure-to-surrender ground is made out on the facts. What is the correct outcome?",
+      "options": [
+        "Bail must be refused because the ground is made out",
+        "The court must not remand in custody, because there is no real prospect of a custodial sentence, regardless of the ground being made out",
+        "The decision is entirely at the magistrates' discretion with no statutory limit",
+        "Bail must be refused unless the defendant offers a surety"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to stop once a ground appears satisfied. But the no-real-prospect-of-custody limit operates as a ceiling on top of the three grounds — even a properly established ground cannot justify remand in custody where custody itself is not a realistic outcome."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-07",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the effect of the 'no real prospect of a custodial sentence' principle?",
+      "options": [
+        "It prevents a court remanding a defendant in custody where custody would not realistically follow conviction, regardless of the grounds otherwise available",
+        "It prevents a court granting bail where the offence is serious",
+        "It only applies to defendants under the age of 18",
+        "It only applies once a guilty plea has been entered"
+      ],
+      "correctIndex": 0,
+      "explanation": "This principle is a proportionality limit: pre-trial custody should not exceed, in practical severity, what conviction itself would realistically produce."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant charged with fraud has repeatedly telephoned a key prosecution witness, urging them not to attend court to give evidence. Which Schedule 1 ground do these facts most directly support?",
+      "options": [
+        "Failure to surrender to custody",
+        "Further offending while on bail",
+        "Interference with the administration of justice",
+        "None — this conduct is not relevant to bail at all"
+      ],
+      "correctIndex": 2,
+      "explanation": "Contacting a witness to dissuade them from giving evidence is a direct example of conduct going to interference with the administration of justice, distinct from the risk of the defendant simply failing to attend or reoffending generally."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-09",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which factor is relevant across all three Schedule 1 grounds for refusing bail?",
+      "options": [
+        "The defendant's tax residency status",
+        "The nature and seriousness of the offence charged",
+        "Whether the defendant owns a passport",
+        "The defendant's employer's opinion of their character"
+      ],
+      "correctIndex": 1,
+      "explanation": "The nature and seriousness of the offence, and the likely sentence, is a factor relevant to the court's assessment under each of the three grounds, alongside ground-specific factors such as bail record or evidence of witness contact."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Do the three Schedule 1 grounds for refusing bail apply to a summary-only, non-imprisonable offence in the same way as to an imprisonable offence?",
+      "options": [
+        "Yes, identically in every respect",
+        "No — the Schedule 1 grounds discussed in this lesson concern imprisonable offences; non-imprisonable offences are dealt with under separate, narrower provisions",
+        "No — bail is never available for non-imprisonable offences",
+        "Yes, but only the further offending ground applies"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's easy to assume the same three grounds apply across the board. The grounds covered here specifically concern imprisonable offences; the Bail Act treats non-imprisonable offences under a narrower separate framework, which is a distinction worth flagging even though it sits outside this lesson's main focus."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant charged with robbery has two previous convictions for offences committed while on bail in earlier proceedings. Which ground does this bail record most directly support?",
+      "options": [
+        "Interference with the administration of justice only",
+        "Further offending while on bail",
+        "Failure to surrender only",
+        "It is irrelevant to any of the three grounds"
+      ],
+      "correctIndex": 1,
+      "explanation": "A documented history of offending while previously on bail is a core factor relevant to the further-offending ground, showing a pattern of reoffending when granted liberty pending trial."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "Does a defendant need to prove they will attend court in order to be granted bail under s 4?",
+      "options": [
+        "No — the presumption favours bail unless the prosecution shows substantial grounds for refusal",
+        "Yes — the defendant bears the burden of proving they will attend",
+        "Yes, but only where the offence is triable either way",
+        "No, but only where the defendant has no previous convictions"
+      ],
+      "correctIndex": 0,
+      "explanation": "The burden never shifts to the defendant to prove compliance; it remains on the prosecution to establish substantial grounds under one of the recognised grounds."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which of the following best describes the relationship between the s 4 presumption and the Schedule 1 grounds?",
+      "options": [
+        "They are unrelated provisions dealing with separate areas of law",
+        "Section 4 creates the presumption in favour of bail; Schedule 1 supplies the grounds and factors capable of displacing it for an imprisonable offence",
+        "Schedule 1 creates the presumption and s 4 supplies the grounds for refusing it",
+        "Section 4 only applies in the Crown Court and Schedule 1 only in the magistrates' court"
+      ],
+      "correctIndex": 1,
+      "explanation": "Section 4 is the presumption; Schedule 1 is the mechanism by which, for an imprisonable offence, that presumption can be displaced on one of the three recognised grounds."
+    },
+    {
+      "itemId": "sqe1-clp-05-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant is of good character, has a fixed address, and is charged with a minor imprisonable offence, but the prosecution can point to no specific fact suggesting a risk of non-attendance, reoffending, or witness interference. What is the correct outcome?",
+      "options": [
+        "Bail must be refused as a precaution",
+        "Bail should be granted, since none of the three grounds is made out on the facts",
+        "The court should adjourn indefinitely until more information is available",
+        "Bail should be refused unless the defendant proposes a surety"
+      ],
+      "correctIndex": 1,
+      "explanation": "Without substantial grounds under any of the three heads, the s 4 presumption is not displaced, and bail should be granted. A generic sense of caution is not a substitute for evidence going to one of the recognised grounds."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is naming a ground for refusal without matching it to the specific facts that support it — or forgetting that even an established ground cannot override the no-real-prospect-of-custody ceiling. Name the ground, cite the factor, and check the ceiling last.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.bail-presumption-refusal"
+  }
+}

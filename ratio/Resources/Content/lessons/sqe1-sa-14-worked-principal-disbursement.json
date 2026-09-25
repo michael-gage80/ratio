@@ -1,0 +1,419 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-sa-14",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "lessonNumber": 14,
+  "topicId": "sqe1.solicitors-accounts.worked-principal-disbursement",
+  "title": "Applying the rules II: a worked transaction with a principal disbursement",
+  "subtitle": "Recording the firm's own liability, and why VAT gets added twice",
+  "estimatedMinutes": 19,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish a principal disbursement from an agency disbursement by identifying who is personally liable to the third party",
+    "Apply SRA Accounts Rules 2019, rr 2.1, 4 and 5 to record and pay a principal disbursement alongside an agency disbursement on the same matter",
+    "Apply VAT Notice 700's disbursement conditions to explain why a principal disbursement is recharged to the client with VAT added, while an agency disbursement is not"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Accounts Rules 2019, r 2.1", "role": "Defines client money — the starting point for classifying any payment on the matter" },
+    { "citation": "SRA Accounts Rules 2019, r 4", "role": "Governs when money must be in a client account and when costs may be transferred out" },
+    { "citation": "SRA Accounts Rules 2019, r 5", "role": "Governs the use of client money, including funding a disbursement the firm is itself liable for" },
+    { "citation": "VAT Notice 700, para 25.1", "role": "Sets the conditions for a payment to qualify as a VAT-neutral disbursement — conditions a principal disbursement fails" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Every SQE1 candidate can define 'disbursement'. Far fewer can explain, with figures, why one disbursement reappears on the bill with VAT added and another doesn't — and that distinction is exactly where single-best-answer questions like to sit a trap.",
+    "profileHooks": {
+      "weakApplication": "The theory here is short; the difficulty is entirely in running two disbursements through one ledger without mixing them up. Expect the test items to lean hard on figures.",
+      "weakKnowledge": "Before the worked example starts, be clear on one sentence: a principal disbursement is one the firm is personally liable for; an agency disbursement is one it merely passes on. Everything else in this lesson follows from that single distinction."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two invoices land on the same file in the same week. One is a £155 court fee, addressed to the client's matter, paid and forgotten. The other is a £720 expert's invoice — addressed to the firm. Same-looking payment, same client account, completely different legal and VAT consequences. This lesson is about telling them apart under pressure, and billing both correctly.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The SRA Accounts Rules 2019 and HMRC's VAT Notice 700 disbursement guidance are both settled and current; no change is in force or imminently expected."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two disbursements, two different animals",
+        "voice": "comparative — sets the two payments side by side before either is paid",
+        "body": [
+          "The previous lesson worked through an agency disbursement: a Land Registry fee the firm paid on a client's behalf, with the firm never personally liable to the Land Registry at any point. This lesson adds a second kind of payment to the same file — a principal disbursement — and the difference between the two is the entire subject of the next twenty minutes.",
+          "Take a personal injury matter. The client has paid £3,000 on account. Two payments are needed: a £155 court issue fee, and an independent medical expert's report. The court fee behaves exactly like the Land Registry fee from the last lesson — an agency disbursement, paid from client money, with no liability attaching to the firm.",
+          "The expert's invoice is different in one crucial respect: it is addressed to the firm, not the client. The firm instructed the expert, and it is the firm — not the client — who owes the expert the fee under their contract. That single fact is what makes this a principal disbursement, and it changes how the payment is recorded and, later, how it is billed."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Principal disbursement",
+            "definition": "A disbursement for which the firm itself is personally liable to the third party — typically because the invoice is addressed to the firm rather than the client — as distinct from an agency disbursement, where the firm merely passes on the client's own money."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-14-check-01",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of these two payments is a principal disbursement?",
+          "scenarioA": "A £155 court issue fee, invoiced by the court directly against the client's claim, with the firm never personally liable to pay it.",
+          "scenarioB": "A £720 invoice from a medical expert, addressed to the firm, arising from the firm's own instruction of the expert.",
+          "correctScenario": "B",
+          "explanation": "In B the firm is the party contractually liable to the expert — the invoice is addressed to the firm, not the client. That personal liability is what makes it a principal, rather than agency, disbursement."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Recording the firm's own liability",
+        "voice": "structural — introduces the bookkeeping consequence before any money moves",
+        "body": [
+          "When the expert's invoice for £720 (£600 fees plus £120 VAT) arrives addressed to the firm, something has happened that never happened with the court fee: the firm has incurred a liability of its own, independent of whatever client money happens to be sitting on the ledger.",
+          "This matters even before a penny is paid. If the client's matter collapsed the day the invoice arrived — instructions withdrawn, the case abandoned — the firm would still owe the expert £720. An agency disbursement never creates that exposure, because the firm was never a party to the underlying obligation in the first place.",
+          "Recognising this is what SQE1 tests under the heading of 'principal disbursement': not a different account, not a different form, but a different legal relationship sitting underneath an outwardly similar-looking payment on the same client ledger."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Personal liability",
+            "definition": "The feature that separates a principal disbursement from an agency disbursement: the firm owes the third party under its own contract, regardless of the state of the client relationship or the funds currently held for that client."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-14-check-02",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "The client's retainer is terminated the day after the expert's £720 invoice arrives, addressed to the firm, and before it is paid. What is the position?",
+          "options": [
+            "The firm's liability to the expert disappears along with the retainer",
+            "The firm remains personally liable to pay the expert £720, regardless of what happens with the client",
+            "The expert must now invoice the client directly instead",
+            "The firm can simply return the invoice unpaid since the underlying matter has ended"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "It's tempting to assume the disbursement obligation rises and falls with the client relationship. It doesn't — a principal disbursement is the firm's own contractual liability to the third party, and ending the retainer with the client has no effect on it.",
+          "feedbackIncorrect": "Separate the two relationships: the firm-client retainer and the firm-expert contract are independent. Ending the first does nothing to the second."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Paying the expert",
+        "voice": "worked-example — moves the money and updates the ledger",
+        "body": [
+          "The firm pays the £155 court fee first, from the client account, exactly as an agency disbursement is paid — client money, client authority, no liability of the firm's own involved. The client balance falls from £3,000 to £2,845.",
+          "The expert's £720 invoice is different in character but, practically, is very often paid the same way: from the client account, using money the client has already provided and authorised the firm to spend on their behalf. The account the payment is drawn from does not change the disbursement's classification — what makes it principal rather than agency is who is liable to the expert, not which account funds the cheque.",
+          "After payment, the client ledger shows £2,845 less £720, a running balance of £2,125. Nothing on the ledger yet distinguishes the two payments — both simply appear as money out. The distinction only becomes visible at the next stage, when the firm bills the client and has to decide how to recharge each one."
+        ],
+        "components": [
+          {
+            "type": "ledgerTable",
+            "title": "Client ledger — Okafor (personal injury) — after both disbursements paid",
+            "columns": ["Date", "Narrative", "Client account (£)", "Business account (£)", "Client balance (£)"],
+            "rows": [
+              ["Day 1", "Received on account of costs and disbursements", "3,000.00 (in)", "—", "3,000.00"],
+              ["Day 9", "Court issue fee paid (agency disbursement)", "155.00 (out)", "—", "2,845.00"],
+              ["Day 40", "Medical expert's invoice paid (principal disbursement)", "720.00 (out)", "—", "2,125.00"]
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-14-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "The firm has £2,845 in client money held for this matter and pays the expert's £720 invoice from the client account, with the client's authority. Does paying it this way turn the principal disbursement into an agency disbursement?",
+          "options": [
+            "No — the classification turns on who is liable to the expert, not which account funds the payment",
+            "Yes — any payment from client account is automatically an agency disbursement",
+            "Yes, but only if the client separately confirms it in writing",
+            "No, but only because the sum exceeds £500"
+          ],
+          "correctIndex": 0,
+          "explanation": "The account used to fund a payment is a practical convenience. The legal classification depends entirely on who owes the third party — here, the firm — and that does not change because client money happened to fund the payment."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Billing it on: why VAT gets added twice",
+        "voice": "Socratic — poses the VAT puzzle before resolving it",
+        "body": [
+          "Here is the question this part answers: the expert already charged VAT — £120 on top of a £600 fee. When the firm bills the client for that £720, does it simply pass the figure on unchanged, or does it add VAT again?",
+          "VAT Notice 700, at para 25.1, sets out when a recharged cost can be treated as a VAT-neutral 'disbursement' for VAT purposes — passed on to the client without the firm adding its own VAT on top. The conditions include that the firm acted as no more than the client's agent in paying it, that the supply was made to the client (not the firm), and that the exact sum is passed on and separately itemised.",
+          "A principal disbursement fails this test at the first condition. The expert's report was supplied to the firm — the firm instructed it, the firm is named as the client on the expert's invoice, and the firm reclaims the £120 as its own input VAT. Because the firm, not the client, was the recipient of the expert's supply, HMRC treats the firm's onward charge to the client as part of the firm's own supply of legal services — which means the firm must charge its own output VAT on the recharge.",
+          "The arithmetic often lands on the same total by coincidence of a single VAT rate, but the mechanism is different: the firm reclaims £120 input VAT on what it paid the expert, then charges £120 output VAT again when it recharges the £600 net figure to the client. An agency disbursement, by contrast, is passed on at the exact figure paid, with no VAT added by the firm at all, because it never fails the Notice 700 conditions in the first place."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "VAT Notice 700, para 25.1 (summarised)",
+            "text": "A payment qualifies as a disbursement for VAT purposes, and may be passed on without further VAT, only where the supplier's payment was made as an agent of the client, the goods or services were supplied to and used by the client, the client was responsible for paying the supplier, and the exact amount is passed on and separately itemised.",
+            "elements": ["Firm acted only as agent, not as the recipient of the supply", "The supply was made to and used by the client, not the firm", "The client (not the firm) was liable to the supplier", "The exact sum is passed on and shown separately"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-14-check-04",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A firm instructs and is invoiced by a medical expert for £600 plus £120 VAT. It later recharges this to the client on its bill. Analyse whether the firm is entitled to add its own VAT to that recharge.",
+          "factsToOrder": [
+            "The firm, not the client, instructed the expert and is named on the expert's invoice",
+            "The expert's supply was made to the firm rather than directly to the client",
+            "The firm reclaims the £120 as its own input VAT",
+            "The firm recharges the client on its bill for the underlying legal services"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the firm may charge its own VAT when recharging the expert's fee to the client.",
+            "rule": "Under VAT Notice 700, para 25.1, a recharge only escapes further VAT if the firm acted purely as the client's agent and the supply was made to and used by the client. Where these conditions are not met, the recharge is part of the firm's own supply of services and attracts VAT in the ordinary way.",
+            "application": "The expert's invoice is addressed to the firm, not the client, and the supply was made to the firm, which instructed the expert and reclaims the input VAT itself. The client was never the direct recipient of the expert's supply, so the disbursement conditions are not satisfied.",
+            "conclusion": "The firm is entitled — indeed required — to treat the recharge as part of its own taxable supply and add VAT, notwithstanding that VAT was already charged once by the expert."
+          }
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Assembling the final bill",
+        "voice": "worked-example — completes the transaction and totals it",
+        "body": [
+          "The firm's bill now has three components. Profit costs of £1,000 plus VAT of £200, totalling £1,200. The recharge of the expert's fee — £600 net, plus the firm's own output VAT of £120, totalling £720. Together, the bill comes to £1,920. Nothing further is charged for the court fee: at £155, it was already paid using the client's own money and, as an agency disbursement, is never re-billed or re-VATed.",
+          "Once the bill is delivered, £1,920 transfers from client account to business account, exactly as in the previous lesson's mechanics — the trigger is the bill, and the transfer cannot exceed the sum actually billed.",
+          "The final client ledger balance: £3,000 received, less £155 (court fee), less £720 (expert's fee, paid as a principal disbursement), less £1,920 (costs and disbursement recharge transferred on billing) — a remaining balance of £205, still the client's own money, held pending the end of the matter.",
+          "Hold the comparison in view: one disbursement disappeared from the bill entirely because it was already fully accounted for as an agency payment; the other reappeared, net of the VAT the firm itself reclaimed, with fresh VAT added because the firm — not the client — was the true recipient of that expert's services."
+        ],
+        "components": [
+          {
+            "type": "ledgerTable",
+            "title": "Client ledger — Okafor (personal injury) — final position",
+            "columns": ["Date", "Narrative", "Client account (£)", "Business account (£)", "Client balance (£)"],
+            "rows": [
+              ["Day 1", "Received on account of costs and disbursements", "3,000.00 (in)", "—", "3,000.00"],
+              ["Day 9", "Court issue fee paid (agency disbursement)", "155.00 (out)", "—", "2,845.00"],
+              ["Day 40", "Medical expert's invoice paid (principal disbursement)", "720.00 (out)", "—", "2,125.00"],
+              ["Day 55", "Bill delivered: £1,200 costs + £720 disbursement recharge", "—", "—", "2,125.00"],
+              ["Day 55", "Costs and disbursement recharge transferred", "1,920.00 (out)", "1,920.00 (in)", "205.00"]
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-14-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the £155 court fee should NOT reappear anywhere on the firm's bill?",
+          "sliderLabels": ["Should reappear on the bill", "Should not reappear on the bill"],
+          "correctPosition": "Should not reappear on the bill",
+          "explanation": "As an agency disbursement, the £155 was already paid using the client's own money with the client's authority. It has already been fully accounted for on the client ledger — re-billing it would mean charging the client twice for the same payment."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-14-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A medical expert's invoice for a report is addressed to the firm rather than the client. What kind of disbursement is this?",
+      "options": ["A principal disbursement", "An agency disbursement", "A statutory disbursement", "An unregulated disbursement"],
+      "correctIndex": 0,
+      "explanation": "The invoice being addressed to the firm signals that the firm, not the client, is personally liable to the expert — the defining feature of a principal disbursement."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which factor determines whether a disbursement is 'principal' rather than 'agency'?",
+      "options": [
+        "The size of the payment",
+        "Which account the payment is made from",
+        "Whether the firm itself is personally liable to the third party",
+        "Whether the client has given written authority to pay it"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "Candidates often assume the paying account decides the classification. It doesn't — both types can be paid from client account. Only personal liability to the third party marks the difference.",
+      "explanation": "Personal liability to the supplier is the sole test. Everything else — account used, sum involved, client authority — is common to both types."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A firm pays a £720 expert's invoice, addressed to the firm, out of client money already held with the client's authority. Has this payment become an agency disbursement because client money funded it?",
+      "options": [
+        "No — the firm remains personally liable to the expert regardless of which account funded the payment",
+        "Yes — using client money always converts a principal disbursement into an agency disbursement",
+        "Yes, but only where the sum is under £1,000",
+        "No, but only because the client separately confirmed the payment in writing"
+      ],
+      "correctIndex": 0,
+      "explanation": "The source of funds is a practical detail. Liability to the expert is what defines the disbursement, and that liability sits with the firm throughout."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Under VAT Notice 700, para 25.1, which of the following is a condition for treating a recharged payment as a VAT-neutral disbursement?",
+      "options": [
+        "The firm acted purely as the client's agent and the supply was made to and used by the client",
+        "The payment is under £1,000",
+        "The client has given verbal consent to the payment",
+        "The supplier is registered for VAT"
+      ],
+      "correctIndex": 0,
+      "explanation": "The core test is agency and who the supply was made to. Value, verbal consent and the supplier's own VAT status are irrelevant to the disbursement test."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-05",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "An agency disbursement, such as a £155 court fee already paid from client money, is delivered to the client on the final bill. What should the bill show for that item?",
+      "options": [
+        "Nothing — it has already been fully accounted for and should not be re-billed",
+        "£155, recharged with VAT added",
+        "£155, recharged without VAT",
+        "£310, to reflect both the original payment and the recharge"
+      ],
+      "correctIndex": 0,
+      "explanation": "An agency disbursement was already paid using the client's own money. Re-billing it, with or without VAT, would double-charge the client."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm pays an expert £600 plus £120 VAT for a report addressed to the firm, then recharges the client £600 plus a further £120 VAT on its bill. Has the client been overcharged VAT?",
+      "options": [
+        "Yes — VAT has effectively been charged twice on the same report",
+        "No — the firm reclaims the original £120 as input VAT and properly charges its own output VAT of £120 when recharging its own supply",
+        "Yes, unless the client is VAT-registered",
+        "No, because VAT Notice 700 exempts expert reports from VAT entirely"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It looks like double taxation at first glance, but the firm recovers the first £120 as its own input tax via its VAT return — the client only ever bears one net £120 of VAT, charged as the firm's output tax on its own supply.",
+      "explanation": "Because this is a principal disbursement, the firm reclaims the input VAT and charges output VAT on the recharge — the client is not double-charged in substance."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm's bill totals £1,200 profit costs (incl. VAT) plus a £720 disbursement recharge for a principal disbursement. What is the maximum sum the firm may transfer from client to business account on delivery of this bill?",
+      "options": ["£1,920", "£1,200", "£720", "£2,125"],
+      "correctIndex": 0,
+      "explanation": "The transfer matches the full billed sum — £1,200 plus £720 — a total of £1,920, no more."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-08",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which SRA Accounts Rules provision requires client money to be paid into a client account without delay, regardless of whether it will later fund a principal or agency disbursement?",
+      "options": ["Rule 4", "Rule 2.1", "Rule 8", "Rule 12"],
+      "correctIndex": 0,
+      "explanation": "Rule 4 imposes the 'without delay' requirement on receipt of client money; r 2.1 supplies the definition of client money that triggers it."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-09",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Why does an agency disbursement never attract VAT when it is passed on to the client, while a principal disbursement typically does?",
+      "options": [
+        "Because the client, not the firm, is the true recipient of the agency-disbursement supply, satisfying the Notice 700 conditions",
+        "Because agency disbursements are always below the VAT threshold",
+        "Because principal disbursements are illegal to recharge without VAT under any circumstances",
+        "Because agency disbursements are paid later in the transaction"
+      ],
+      "correctIndex": 0,
+      "explanation": "The client being the true recipient of the underlying supply is exactly what the Notice 700 disbursement conditions require — that is present for an agency disbursement and absent for a principal one."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A firm's retainer with a client ends unexpectedly, three days after an expert's £720 invoice (addressed to the firm) arrived but before it is paid. What is the firm's position regarding that invoice?",
+      "options": [
+        "The firm remains liable to pay the expert £720, independent of the client relationship ending",
+        "The liability transfers automatically to the former client",
+        "The invoice is cancelled because the underlying retainer ended",
+        "The firm may simply ignore the invoice since no further work will be billed"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to assume the disbursement obligation depends on the client relationship still being alive. It doesn't — the firm's liability to the expert arises under a separate contract and survives the retainer ending.",
+      "explanation": "The firm-expert contract is independent of the firm-client retainer, so the firm's liability to pay the £720 continues regardless of what happens with the client."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "On a matter with both a £155 agency disbursement and a £720 principal disbursement, which item(s) should appear on the firm's final bill to the client?",
+      "options": [
+        "Only the principal disbursement, recharged net of the original VAT with the firm's own output VAT added",
+        "Both disbursements, each recharged with fresh VAT added",
+        "Neither disbursement, since both were already paid from client money",
+        "Only the agency disbursement, recharged at the exact sum paid"
+      ],
+      "correctIndex": 0,
+      "explanation": "The agency disbursement is already fully accounted for and does not reappear on the bill. Only the principal disbursement is recharged, and it attracts the firm's own output VAT."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm recharges a client £600 (net) for an expert's report, adding £120 of its own VAT, having already reclaimed £120 as input VAT on the original invoice. Does this comply with VAT Notice 700?",
+      "options": [
+        "Yes — because the disbursement conditions in para 25.1 are not met, the recharge is correctly treated as part of the firm's own taxable supply",
+        "No — VAT can never be charged twice on the same underlying expense",
+        "No — the firm should have passed on the original £720 unchanged, without further VAT",
+        "Yes, but only if the client is also VAT-registered"
+      ],
+      "correctIndex": 0,
+      "explanation": "Because the supply was made to the firm, not the client, the disbursement conditions fail and the firm is correct to treat its onward charge as a fresh taxable supply, complete with output VAT."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A client ledger shows £3,000 received, £155 paid (agency disbursement), £720 paid (principal disbursement), and a bill for £1,920 delivered and transferred. What should the client ledger balance show?",
+      "options": ["£205", "£925", "£1,080", "£280"],
+      "correctIndex": 0,
+      "explanation": "£3,000 minus £155 minus £720 minus £1,920 leaves £205 still held as client money."
+    },
+    {
+      "itemId": "sqe1-sa-14-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A trainee argues that because both the £155 court fee and the £720 expert's fee were paid from the same client account, they must be treated identically when the bill is prepared. Is the trainee correct?",
+      "options": [
+        "No — only the principal disbursement (the expert's fee) is recharged on the bill, with fresh VAT; the agency disbursement is not recharged at all",
+        "Yes — both were client account payments, so both are recharged identically",
+        "No — only the agency disbursement is recharged, and the principal disbursement is written off",
+        "Yes, provided both are under £1,000"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The shared paying account creates the illusion that the two payments are interchangeable at billing stage. They are not — the classification, not the funding account, governs how each is treated on the bill.",
+      "explanation": "Payment source tells you nothing about billing treatment. Classification as principal or agency disbursement is what determines whether, and how, an item is recharged."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson's test items is assuming that because two disbursements were paid from the same client account, they must be billed the same way. They aren't — classification as principal or agency disbursement, not the funding account, decides whether an item is recharged at all and whether VAT is added.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.worked-principal-disbursement"
+  }
+}

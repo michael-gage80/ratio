@@ -238,7 +238,7 @@ service cloud.firestore {
         && (!changed.hasAny(['modules'])
             || (after.modules is list && after.modules.size() >= 1
                 && after.modules.hasOnly(['crime', 'contract', 'tort', 'public', 'land', 'equity', 'companylaw', 'eulaw', 'humanrights', 'jurisprudence', 'employmentlaw', 'familylaw',
-                                     'sqe1-dispute-resolution', 'sqe1-legal-system-legal-services', 'sqe1-business-law-practice', 'sqe1-property-practice', 'sqe1-wills-estates', 'sqe1-solicitors-accounts', 'sqe1-criminal-law-practice'])));
+                                     'sqe1-dispute-resolution', 'sqe1-legal-system-legal-services', 'sqe1-business-law-practice', 'sqe1-property-practice', 'sqe1-wills-administration-estates', 'sqe1-solicitors-accounts', 'sqe1-criminal-law-practice'])));
     }
 
     // Only the birth year is stored (not the full date), with the server time of the

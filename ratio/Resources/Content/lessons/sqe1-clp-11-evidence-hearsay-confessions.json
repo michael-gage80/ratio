@@ -1,0 +1,342 @@
+{
+  "lessonId": "sqe1-clp-11",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 11,
+  "topicId": "sqe1.criminal-practice.evidence-hearsay-confessions",
+  "title": "Hearsay and confessions",
+  "subtitle": "Admissibility gateways, and excluding an unreliable confession",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the general rule that hearsay evidence is inadmissible in criminal proceedings and identify the principal statutory gateways under the Criminal Justice Act 2003 that permit it",
+    "Explain the grounds on which a confession may be excluded under s 76 PACE 1984 and the mandatory nature of that exclusion once raised",
+    "Apply the hearsay gateways and the s 76 exclusion test to a fact pattern to determine whether contested evidence is admissible"
+  ],
+  "leadingAuthorities": [
+    { "citation": "PACE 1984, s 76", "role": "Governs exclusion of confession evidence obtained by oppression or in consequence of anything said or done likely to render it unreliable" },
+    { "citation": "Criminal Justice Act 2003, s 114", "role": "Sets the general rule against hearsay and lists the gateways through which it may be admitted" },
+    { "citation": "Criminal Justice Act 2003, s 116", "role": "Gateway admitting hearsay where the witness is unavailable — death, illness, absence abroad, cannot be found, or fear" },
+    { "citation": "R v Horncastle and others [2009] UKSC 14", "role": "Confirms the CJA 2003 hearsay safeguards are compatible with the right to a fair trial even where hearsay is the sole or decisive evidence" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Hearsay and confessions look like two separate topics until an exam scenario forces you to apply the exclusionary tests, not just recall that they exist. SQE1 rewards precise application of the gateway or exclusion ground, not a general sense that 'this evidence seems unfair'.",
+    "profileHooks": {
+      "weakApplication": "You have the rules. This lesson's test pool is fact-pattern heavy — expect to identify which gateway or ground applies, not to define hearsay in the abstract.",
+      "weakKnowledge": "Start with Part 1 and Part 3 and get the default position on hearsay and the s 76 grounds fixed before moving to application."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A confession, extracted after eighteen sleepless hours in a cell, is thrown out before the jury ever hears it — not because it was false, but because of how it was obtained. Meanwhile, a written statement from a witness too frightened to testify is read aloud in court and believed. Both outcomes follow the same underlying question: not 'is this evidence true?', but 'is this evidence safe to rely on, given how it came to exist?'",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The CJA 2003 hearsay regime and PACE 1984 confession rules are long-settled; Horncastle remains the leading authority confirming the regime's compatibility with Article 6."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The default: hearsay is out",
+        "voice": "explanatory — states the rule before the exceptions",
+        "body": [
+          "Hearsay is a statement made otherwise than in oral evidence in the proceedings, tendered as evidence of the matters stated in it. Put simply: if a witness in court says 'John told me the defendant did it', and that statement is being used to prove the defendant did it, that is hearsay — John's account, not the witness's own firsthand knowledge.",
+          "Section 114(1) CJA 2003 sets the default position: hearsay is not admissible except as provided by that section. It is inadmissible unless it falls within one of a limited number of gateways — this lesson calls them gateways deliberately, because each one is a specific, named route in, not a general exception.",
+          "The rule exists because hearsay cannot be tested in the way live evidence can — no cross-examination of the original speaker, no chance for the jury to assess their demeanour. The gateways exist because a blanket ban would exclude genuinely reliable and sometimes essential evidence, such as the statement of a witness who has since died."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Hearsay",
+            "definition": "A statement not made in oral evidence in the proceedings, tendered as evidence of the matters stated in it — inadmissible under s 114(1) CJA 2003 unless it falls within a recognised gateway."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-11-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the general rule governing the admissibility of hearsay evidence in criminal proceedings, and the source of the modern statutory framework.",
+          "acceptableAnswers": ["hearsay is inadmissible unless it falls within a gateway", "hearsay excluded unless a CJA 2003 exception applies", "general exclusion under CJA 2003 s114"],
+          "modelAnswer": "Hearsay — an out-of-court statement tendered as evidence of the matters stated — is inadmissible under s 114(1) CJA 2003 unless it falls within one of the gateways: a statutory provision, a preserved common law exception, agreement of the parties, or the interests-of-justice safety valve."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The four gateways, and where witness unavailability fits",
+        "voice": "structural — reference-style part",
+        "body": [
+          "Section 114(1) recognises four routes through which hearsay becomes admissible: (a) a specific statutory provision makes it admissible — the most important of these is s 116, covering an unavailable witness; (b) a preserved common law exception applies, under s 118 — for example res gestae, a statement made so spontaneously in connection with an event that concoction is effectively ruled out; (c) all parties to the proceedings agree to it being admissible; or (d) the court is satisfied it is in the interests of justice for it to be admissible — a genuine safety valve, applied by reference to a list of statutory factors.",
+          "Section 116 is worth knowing in detail because it recurs constantly in practice: it admits hearsay where the witness is unavailable because they are dead, unfit to attend as a witness because of their bodily or mental condition, outside the United Kingdom and it is not reasonably practicable to secure their attendance, cannot be found despite reasonably practicable steps, or does not give oral evidence through fear.",
+          "None of this removes the court's underlying concern for reliability. Horncastle confirms that the regime — including its inbuilt safeguards and the court's power to exclude unreliable or unfairly prejudicial hearsay — is enough to keep a trial fair, even where the hearsay evidence turns out to be the sole or decisive evidence against the defendant."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Horncastle and others",
+            "citation": "[2009] UKSC 14",
+            "court": "Supreme Court",
+            "year": 2009,
+            "factsShort": "Convictions rested partly or wholly on the hearsay statements of witnesses who had since died or were too frightened to give live evidence.",
+            "ratioShort": "The CJA 2003 hearsay safeguards are compatible with the right to a fair trial, even where hearsay evidence is the sole or decisive evidence against a defendant.",
+            "expanded": {
+              "facts": "In conjoined appeals, defendants had been convicted substantially or wholly on the basis of hearsay statements — in one case from a victim who had since died, in another from a witness too frightened to give live evidence. The defendants argued that admitting such decisive hearsay breached their right to a fair trial under Article 6 ECHR, relying on Strasbourg case law suggesting a rigid rule against convictions based solely or decisively on hearsay.",
+              "judgmentExtract": "The Supreme Court held that the statutory scheme in the CJA 2003 — including the court's power under s 78 PACE and its own statutory tests to exclude unreliable or unfairly prejudicial hearsay — provided sufficient safeguards to ensure trials remained fair, without needing to import a rigid 'sole or decisive' rule from Strasbourg.",
+              "significance": "Horncastle is the leading modern authority confirming that the CJA 2003 hearsay regime, properly applied, is Article 6 compliant. It reassures that admitting hearsay as the sole or decisive evidence is not automatically unfair — the safeguards built into the gateways do the necessary work."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-11-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the ratio of Horncastle.",
+          "passage": "The appellants argued that admitting hearsay evidence as the sole or decisive evidence against a defendant breached the right to a fair trial. The Supreme Court held that the statutory safeguards built into the CJA 2003 regime, including the court's power to exclude unreliable or unfairly prejudicial hearsay, were sufficient to ensure a fair trial even where such evidence was decisive. The regime did not need to import a rigid 'sole or decisive' rule from Strasbourg case law to remain compatible with Article 6.",
+          "ratioSentence": "The Supreme Court held that the statutory safeguards built into the CJA 2003 regime, including the court's power to exclude unreliable or unfairly prejudicial hearsay, were sufficient to ensure a fair trial even where such evidence was decisive.",
+          "feedbackCorrect": "That's the ratio — the safeguards, not a rigid rule imported from Strasbourg, are what keep the regime Article 6 compliant.",
+          "feedbackIncorrect": "Look for the sentence that identifies why the regime is fair — it's the one about the sufficiency of the statutory safeguards, not the description of the appellants' argument or the closing point about Strasbourg."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Confessions: the s 76 exclusion, and why it is not discretionary",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Section 76(2) PACE 1984 provides that, where it is represented to the court that a confession was or may have been obtained by (a) oppression, or (b) in consequence of anything said or done which was likely, in the circumstances existing at the time, to render unreliable any confession which might be made in consequence, the court shall not allow the confession to be given in evidence — unless the prosecution proves beyond reasonable doubt that it was not obtained in that way.",
+          "The word to notice is 'shall'. Once the issue is properly raised, the court has no discretion to weigh the point and admit the confession anyway because it seems likely to be true. The only question left is whether the prosecution discharges the burden — to the criminal standard — of proving the confession was not so obtained.",
+          "'Oppression' is defined non-exhaustively in s 76(8) to include torture, inhuman or degrading treatment, and the use or threat of violence. The unreliability limb is broader and does not require misconduct as serious as that: circumstances such as prolonged questioning without breaks, denial of food or sleep, deception about the strength of the evidence, or a significant breach of the PACE Codes can all be 'likely to render unreliable' a confession made as a result."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often think exclusion of a confession under s 76 is a matter for the court's discretion, in the same way as s 78.",
+            "whyItsWrong": "Section 76(2) is mandatory in its terms — 'the court shall...exclude' — once the issue is properly raised. The court has no discretion; the only live question is whether the prosecution discharges the burden of proving, beyond reasonable doubt, that the confession was not obtained by oppression or in unreliability-inducing circumstances."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-11-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "Defence counsel raises the issue that a confession may have been obtained after the defendant was interviewed without sleep for eighteen hours and denied access to a solicitor. The prosecution wishes to rely on the confession. What must the prosecution now do?",
+          "options": ["Show it is more likely than not that the confession was reliable", "Prove beyond reasonable doubt that the confession was not obtained by oppression or in circumstances likely to render it unreliable", "Nothing — s 76 only excludes evidence the court finds unfair in its discretion", "Call the defendant to explain why he confessed"],
+          "correctIndex": 1,
+          "trapExplanation": "The standard is the criminal standard, on the prosecution — not the civil balance of probabilities — and exclusion is mandatory once raised, not a discretionary fairness call (that is s 78's role, covered in the next lesson).",
+          "feedbackCorrect": "Right — beyond reasonable doubt, and the burden sits with the prosecution throughout.",
+          "feedbackIncorrect": "Reconsider the standard and who carries it. Once raised, s 76 puts the prosecution to proof beyond reasonable doubt — this is not a discretionary balancing exercise."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Oppression vs unreliability: two different roads to exclusion",
+        "voice": "Socratic — poses the distinction before resolving it",
+        "body": [
+          "Here's the question worth sitting with: does it matter whether a confession is actually true, if the circumstances in which it was obtained were oppressive or likely to produce an unreliable confession? The answer is no — and that surprises people who expect the law to care most about accuracy.",
+          "The unreliability limb in s 76(2)(b) asks whether the circumstances existing at the time were likely to render unreliable any confession made in consequence of them. It is a test about the process, applied prospectively to the circumstances — not a test about whether this particular confession happens to check out against other evidence.",
+          "Oppression, by contrast, focuses on the quality of the treatment itself — violence, threats, or degrading conduct — regardless of whether it actually affected reliability. The two limbs can overlap on the same facts, but they ask different questions: one about how the defendant was treated, the other about what that treatment was likely to do to the accuracy of anything said as a result."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Oppression vs unreliability",
+            "points": [
+              "Oppression (s 76(2)(a)) — focuses on the quality of treatment: torture, inhuman or degrading treatment, use or threat of violence (s 76(8))",
+              "Unreliability (s 76(2)(b)) — focuses on whether the circumstances were likely to produce an unreliable confession, judged prospectively at the time",
+              "Neither limb turns on whether the confession is actually true — both look at process, not outcome",
+              "The two limbs can apply to the same facts, but are analytically distinct grounds"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-11-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that whether a confession is actually true is relevant to excluding it under the s 76(2)(b) unreliability limb?",
+          "sliderLabels": ["Definitely relevant — truth is the test", "Definitely irrelevant — the test looks at the circumstances, not the truth of the confession"],
+          "correctPosition": "irrelevant",
+          "explanation": "The unreliability limb asks whether the circumstances were likely to produce an unreliable confession — not whether this particular confession happens to be true. A truthful confession obtained in oppressive or unreliability-inducing circumstances is still excluded."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Distinguishing the confession route from the general fairness discretion",
+        "voice": "direct — previews the next lesson's boundary",
+        "body": [
+          "Section 76 is confession-specific and mandatory once its grounds are raised. There is a separate, broader provision — s 78 PACE 1984 — giving the court a general discretion to exclude any prosecution evidence, not just confessions, where admitting it would have such an adverse effect on the fairness of proceedings that it ought not to be admitted. The next lesson covers s 78 in depth.",
+          "The distinction matters for spotting the right tool in an exam scenario. If the facts concern a confession and involve oppression or circumstances likely to produce unreliability, s 76 is the first port of call, and it is mandatory. If the facts concern other prosecution evidence — identification evidence obtained irregularly, for instance — or a confession issue that does not squarely fit s 76's wording, s 78's general discretion is the relevant tool."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Mandatory exclusion vs general discretion",
+            "definition": "Section 76 PACE 1984 mandates exclusion of a confession once oppression or unreliability-inducing circumstances are properly raised, unless the prosecution disproves them beyond reasonable doubt. Section 78 PACE 1984 gives the court a general discretion over prosecution evidence of any kind, based on the overall fairness of the proceedings."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-11-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario falls within the mandatory s 76 PACE exclusion, rather than requiring the general fairness discretion?",
+          "scenarioA": "A suspect confesses after officers, in breach of the PACE Codes, deny him food and rest for sixteen hours and imply that cooperating now will affect whether he is bailed.",
+          "scenarioB": "A witness gives evidence of a street identification that was carried out without following the formal identification procedure, and the defence argues admitting it would be unfair.",
+          "correctScenario": "A",
+          "explanation": "A concerns a confession obtained in circumstances likely to render it unreliable — squarely s 76(2)(b), with mandatory exclusion unless the prosecution disproves it. B concerns the fairness of admitting identification evidence generally, which falls to the s 78 discretion covered in the next lesson."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-11-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "What is the default position on the admissibility of hearsay evidence in criminal proceedings?",
+      "options": ["Admissible unless the defence objects", "Inadmissible unless it falls within a recognised gateway", "Admissible only if given under oath", "Inadmissible only if the maker of the statement is available to give live evidence"],
+      "correctIndex": 1,
+      "explanation": "Section 114(1) CJA 2003 makes hearsay inadmissible by default, subject to falling within one of the recognised gateways."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which Act provides the modern statutory framework governing the admissibility of hearsay evidence in criminal proceedings?",
+      "options": ["Criminal Justice Act 2003", "Police and Criminal Evidence Act 1984", "Criminal Procedure and Investigations Act 1996", "Youth Justice and Criminal Evidence Act 1999"],
+      "correctIndex": 0,
+      "explanation": "The CJA 2003, particularly ss 114–118, sets the modern hearsay regime."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under s 76 PACE 1984, on what two grounds may a confession be excluded?",
+      "options": ["Oppression, or circumstances likely to render the confession unreliable", "Irrelevance, or lack of corroboration", "Hearsay, or lack of a caution", "Bad character, or unfair prejudice"],
+      "correctIndex": 0,
+      "explanation": "Section 76(2)(a) and (b) provide the two grounds: oppression, and circumstances likely to render unreliable a confession made in consequence."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Once the defence properly raises the issue that a confession may have been obtained by oppression, where does the burden of proof lie?",
+      "options": ["On the prosecution, to the criminal standard", "On the defence, to the civil standard", "On the prosecution, to the civil standard", "There is no burden; the court decides on its own initiative"],
+      "correctIndex": 0,
+      "explanation": "Section 76(2) requires the prosecution to prove, beyond reasonable doubt, that the confession was not obtained by oppression or in unreliability-inducing circumstances."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A witness who saw the offence has since died. The prosecution wishes to adduce her earlier written statement as hearsay. A trainee solicitor argues this can never be admitted because 'hearsay is always excluded'. Is the trainee correct?",
+      "options": ["Yes, hearsay is always excluded with no exceptions", "No — a statutory gateway, such as witness unavailability through death under s 116, may render the statement admissible", "No, because deceased witnesses' statements are used evidence, not hearsay", "Yes, unless the defendant consents in writing"],
+      "correctIndex": 1,
+      "trapExplanation": "The trainee treats the default rule as absolute, forgetting that s 114 expressly builds in gateways — death of the witness is a textbook example under s 116.",
+      "explanation": "Section 116 specifically addresses unavailable witnesses, including where the witness has died, and can render such a statement admissible as hearsay."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant argues his confession should be excluded because, in his view, he was pressured during a long interview. The prosecution argues that because the confession accurately matches facts later verified by other evidence, it must be reliable and should be admitted regardless. Which statement best addresses the flaw in the prosecution's argument?",
+      "options": ["There is no flaw — accuracy of content is the test under s 76(2)(b)", "The flaw is that the unreliability limb under s 76(2)(b) looks at whether the circumstances were likely to produce an unreliable confession, not whether this confession turned out to be accurate", "The flaw is that only oppression, not unreliability, can ever exclude a confession", "There is no flaw, because s 76 does not apply once other evidence supports the confession"],
+      "correctIndex": 1,
+      "trapExplanation": "This is the most tested misconception in the topic: treating actual accuracy as a defence to a s 76(2)(b) challenge. The test is prospective and process-focused, not outcome-focused.",
+      "explanation": "Later corroboration does not cure circumstances that were, at the time, likely to produce an unreliable confession — the unreliability limb does not ask whether the confession happened to be right."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Defence counsel raises the issue that a confession may have been obtained through circumstances likely to render it unreliable, given a clear breach of PACE Code C on access to legal advice. The judge decides to weigh the point but ultimately admits the confession because, on balance, the judge thinks it was probably reliable. Which best describes the error?",
+      "options": ["No error — the judge has a wide discretion whether to exclude under s 76", "The error is that s 76(2) requires exclusion once the issue is raised unless the prosecution proves beyond reasonable doubt the confession was not so obtained — 'probably reliable' does not meet that standard, and exclusion is mandatory, not discretionary", "The error is that Code C breaches are irrelevant to s 76", "The error is that only the defendant, not defence counsel, can raise a s 76 issue"],
+      "correctIndex": 1,
+      "trapExplanation": "The judge has applied the wrong standard and the wrong process — a balancing exercise where the statute mandates exclusion unless a specific, higher burden is discharged by the prosecution.",
+      "explanation": "Once properly raised, s 76 removes the court's discretion; the confession must be excluded unless the prosecution proves, beyond reasonable doubt, that it was not obtained by oppression or unreliability-inducing circumstances."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is the correct standard the prosecution must meet to resist exclusion once a s 76 issue is properly raised?",
+      "options": ["Prove beyond reasonable doubt that the confession was not obtained by oppression or in unreliability-inducing circumstances", "Show on the balance of probabilities that the confession is likely to be true", "Show that the defendant signed a written caution", "Show that another piece of evidence corroborates the confession"],
+      "correctIndex": 0,
+      "trapExplanation": "Options involving a caution being signed or corroboration by other evidence are both plausible-sounding but irrelevant substitutes for the actual statutory test, which is about how the confession was obtained, not about paperwork or corroboration.",
+      "explanation": "The statutory standard is proof beyond reasonable doubt that the confession was not obtained by oppression or in circumstances likely to render it unreliable."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A suspect is interviewed for nine hours without a break, is shouted at repeatedly, and is told falsely that a co-defendant has already confessed and implicated him. He then confesses. Defence counsel raises s 76. Which ground(s) is/are most clearly engaged on these facts?",
+      "options": ["Oppression only, and not the unreliability limb", "The unreliability limb only, and not oppression", "Potentially both oppression (shouting, denial of breaks) and the unreliability limb (the false claim about a co-defendant's confession)", "Neither — deception by police is never relevant to s 76"],
+      "correctIndex": 2,
+      "explanation": "The prolonged, aggressive interview conditions are capable of amounting to oppression, while the false statement about a co-defendant's confession is exactly the kind of circumstance likely to render a resulting confession unreliable — both limbs are in play."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A key prosecution witness is too frightened to give evidence at trial after receiving threats. The prosecution seeks to adduce her earlier statement to police as hearsay under the witness-unavailability gateway. What must the court additionally consider before admitting it, given the Horncastle line of authority?",
+      "options": ["Nothing further — fear of testifying automatically renders the statement admissible with no further safeguards", "Whether the statutory safeguards, including the power to exclude unreliable or unfairly prejudicial hearsay, are sufficient to ensure a fair trial even if this evidence proves decisive", "Whether the statement was given under oath", "Whether the defendant consents to its admission"],
+      "correctIndex": 1,
+      "explanation": "Horncastle confirms the regime is fair because of its built-in safeguards, not because fear alone guarantees admissibility with no further scrutiny."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant's solicitor is deciding whether to challenge a confession under s 76 or, instead, argue for its exclusion only under the general fairness discretion. The interview breached PACE Code C by denying the defendant food for over twelve hours before he confessed. Which route should the solicitor pursue first, and why?",
+      "options": ["Section 76, because the denial of food for a prolonged period is capable of amounting to oppression or of being likely to render the confession unreliable, and exclusion is mandatory once established", "Section 78 only, because s 76 never applies to breaches of the PACE Codes", "Neither, because Code C breaches are disciplinary matters with no evidential consequence", "Section 76, but only because the confession happens to be false"],
+      "correctIndex": 0,
+      "explanation": "Prolonged denial of food is the kind of circumstance capable of engaging s 76, and, because exclusion under s 76 is mandatory once established, it is the stronger and more direct route where the facts fit it."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Section 114(1) CJA 2003 sets the general rule on hearsay. According to that section, in what circumstances is a hearsay statement admissible?",
+      "options": ["Only if it falls within a statutory provision, a preserved common law exception, party agreement, or the court is satisfied it is in the interests of justice to admit it", "Whenever it is relevant to a fact in issue", "Whenever the maker of the statement cannot be traced", "Only where both parties are legally represented"],
+      "correctIndex": 0,
+      "explanation": "This restates the four routes recognised in s 114(1) — the general relevance of a statement is not, on its own, enough to make hearsay admissible."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Section 76(2) PACE 1984 states that, where the issue is properly raised, the court 'shall' exclude a confession unless the prosecution proves a particular matter. What must the prosecution prove, and to what standard?",
+      "options": ["That the confession was not obtained by oppression or in circumstances likely to render it unreliable, proved beyond reasonable doubt", "That the confession is substantially true, proved on the balance of probabilities", "That the defendant was cautioned, proved beyond reasonable doubt", "That no solicitor was present, proved on the balance of probabilities"],
+      "correctIndex": 0,
+      "explanation": "This is the statutory formulation of the s 76(2) test and the criminal standard the prosecution must meet."
+    },
+    {
+      "itemId": "sqe1-clp-11-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.35,
+      "prompt": "Section 76(8) PACE 1984 gives a non-exhaustive definition of 'oppression'. Which of the following best reflects what that definition includes?",
+      "options": ["Torture, inhuman or degrading treatment, and the use or threat of violence", "Any interview conducted for more than two hours", "Any interview conducted without a caution", "Any confession later shown to be false"],
+      "correctIndex": 0,
+      "explanation": "Section 76(8) lists torture, inhuman or degrading treatment, and the use or threat of violence, without limiting oppression to only these examples."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap is treating s 76 exclusion as discretionary, like s 78. Once oppression or unreliability is properly raised, exclusion is mandatory unless the prosecution disproves it beyond reasonable doubt — there is no balancing exercise.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.evidence-hearsay-confessions"
+  }
+}

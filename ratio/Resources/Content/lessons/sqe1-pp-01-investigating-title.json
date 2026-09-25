@@ -1,0 +1,371 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-pp-01",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 1,
+  "topicId": "sqe1.property-practice.investigating-title",
+  "title": "Investigating title: registered and unregistered land in practice",
+  "subtitle": "Reading the register, unregistered epitomes, and the compulsory first registration trap",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain what each of the three registers of title shows, and what official copies are used to prove",
+    "Identify when an unregistered interest can nonetheless bind a buyer of registered land under Schedule 3, paragraph 2 LRA 2002",
+    "Apply the triggers for compulsory first registration and the consequence of missing the two-month priority period to a transaction fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Land Registration Act 2002, s 4", "role": "Lists the events triggering compulsory first registration" },
+    { "citation": "Land Registration Act 2002, ss 6-7", "role": "Duty to apply within the priority period, and the effect of failing to do so" },
+    { "citation": "Land Registration Act 2002, Sch 3, para 2", "role": "Overriding status of the interest of a person in actual occupation" },
+    { "citation": "Williams & Glyn's Bank Ltd v Boland [1981] AC 487", "role": "A spouse's equitable interest coupled with actual occupation binds an incoming mortgagee who fails to investigate" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite that registered land has three registers. What separates a pass from a fail is knowing which register you'd actually check to answer a specific client question, and knowing that a clean register is never the end of the enquiry — Schedule 3 exists precisely because some interests never make it onto paper.",
+    "profileHooks": {
+      "weakApplication": "You know the structure of the register cold. This lesson leans hard on fact patterns — where the trap is not naming the rule but spotting when Schedule 3 or the two-month window is actually in play.",
+      "weakKnowledge": "Slow down on Parts 1 and 4 — the names of the three registers and the exact triggers for compulsory first registration are tested precisely, not approximately."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A buyer's solicitor can pull up official copies of a title in seconds and feel like the job is done. It isn't. The register tells you who owns the land and what burdens are on file — it says nothing about the person quietly living in the back bedroom whose interest was never written down anywhere, and who may still be able to stop your client's purchase in its tracks.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the Land Registration Act 2002 as amended. HM Land Registry's practice guides are updated periodically and should always be checked for current procedural detail; the substantive framework here is stable."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The register of title: what a solicitor actually reads",
+        "voice": "practical — walks through the document as a solicitor would open it",
+        "body": [
+          "Registered title in England and Wales is held on three separate registers, and a conveyancer's first job on any transaction is to obtain official copies of all three — never to rely on a client's own paperwork, which may be out of date the moment it is printed.",
+          "The property register describes the land itself: its extent, usually by reference to a title plan, plus any rights that benefit the land, such as an easement to use a shared driveway. The proprietorship register names the current registered proprietor, states the class of title (absolute, possessory, qualified or good leasehold), and records the price paid on the last registered disposition plus any restrictions — for example, a Form A restriction reflecting a beneficial tenancy in common, which signals that a sole proprietor cannot give a valid receipt for capital money alone.",
+          "The charges register lists the burdens on the land: mortgages, registered leases, and notices protecting third-party interests such as restrictive covenants or options. Official copies of these three registers, together with the title plan, are what a buyer's solicitor relies on as evidence of title — registration replaces the old need to trace a paper history of deeds, because the state itself now guarantees the register's accuracy."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Official copies",
+            "definition": "Land Registry-issued copies of the property, proprietorship and charges registers (plus title plan) that are admissible as evidence of the register's contents to the same extent as the register itself — the standard proof of title for registered land."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-01-check-01",
+          "type": "tapTheFact",
+          "skillTag": "knowledge",
+          "prompt": "Tap the part of this scenario that tells you which register a solicitor needs to check to find a restrictive covenant burdening the land.",
+          "scenarioText": "A buyer's solicitor is reviewing official copies. The property register describes the title plan and a right of way benefiting the land. The proprietorship register shows the seller as sole registered proprietor with absolute title. The charges register lists a 2019 restrictive covenant and a 2021 legal charge.",
+          "tappableSpans": ["property register describes the title plan", "right of way benefiting the land", "sole registered proprietor with absolute title", "charges register lists a 2019 restrictive covenant"],
+          "correctSpan": "charges register lists a 2019 restrictive covenant",
+          "feedbackCorrect": "Right. Burdens on the land — covenants, mortgages, adverse leases — sit on the charges register, never the property register, which only records rights benefiting the land.",
+          "feedbackIncorrect": "Look again at which register lists burdens rather than benefits. The property register records what helps the land (like a right of way in); the charges register records what burdens it."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Overriding interests: what the register doesn't tell you",
+        "voice": "argumentative — builds the case for why a clean register isn't enough",
+        "body": [
+          "Registration is meant to make title investigation simple: check the register, and what you see is what binds you. But the Land Registration Act 2002 deliberately preserves a category of interests that bind a buyer even though they never appear on the register at all — overriding interests, set out in Schedule 3.",
+          "The most heavily tested of these is Schedule 3, paragraph 2: the interest of a person in actual occupation of the land. If someone has a proprietary interest — commonly an equitable share under a trust of land — and is in actual occupation at the relevant time, that interest can bind a buyer or lender even though no notice was ever registered, unless an exception applies: the occupier failed to disclose the interest when reasonably asked, the occupation would not have been obvious on a reasonably careful inspection, or the interest belongs to someone whose occupation was not itself disclosed.",
+          "This is the doctrine behind Williams & Glyn's Bank v Boland: a wife with a beneficial interest under a resulting trust, living in the matrimonial home, was held to have an overriding interest that bound the bank which had taken a charge from the husband alone without ever asking who else lived there. The practical lesson for a conveyancer is blunt — a clean register is not proof of an unencumbered title, and every transaction requires enquiries about who is actually in occupation, not just who is registered as owner."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Williams & Glyn's Bank Ltd v Boland",
+            "citation": "[1981] AC 487",
+            "court": "House of Lords",
+            "year": 1981,
+            "factsShort": "A husband was sole registered proprietor but his wife had contributed to the purchase price, giving her a beneficial interest; she lived in the house. The husband charged the property to the bank without the wife's knowledge.",
+            "ratioShort": "A person with a beneficial interest who is in actual occupation has an overriding interest that binds an incoming chargee who failed to make enquiries of the occupier.",
+            "expanded": {
+              "facts": "Mr Boland was registered as sole proprietor of the family home, but Mrs Boland had contributed to its purchase and so held a beneficial interest under a resulting or constructive trust. Mr Boland charged the property to the bank to secure his business borrowing; when the business failed, the bank sought possession to enforce the charge. The bank had not made any enquiry of Mrs Boland before taking the charge.",
+              "judgmentExtract": "The House of Lords held that Mrs Boland's beneficial interest, combined with her actual occupation of the property at the relevant time, took priority over the bank's charge — the bank ought to have made enquiries of anyone in occupation and, having failed to do so, could not claim to take free of an interest it should have discovered.",
+              "significance": "Boland is the foundation case for what is now Schedule 3, paragraph 2 LRA 2002. It established that occupation itself puts a buyer or lender on notice to enquire, and that failing to do so carries real risk — a lesson every conveyancer applies by insisting all adult occupiers either consent to the transaction or are otherwise accounted for."
+            }
+          },
+          {
+            "type": "ratioPanel",
+            "label": "Schedule 3, paragraph 2 — the exceptions",
+            "points": [
+              "No override where the occupier failed to disclose the interest on being reasonably asked, and could reasonably have been expected to do so",
+              "No override where the occupation would not have been obvious on a reasonably careful inspection of the land at the time",
+              "No override where the interest belongs to a person whose occupation was not itself apparent"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-01-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is a Schedule 3, paragraph 2 overriding interest most likely to bind the buyer?",
+          "scenarioA": "A buyer's solicitor asks the seller who else lives at the property; the seller's adult daughter, who has a beneficial interest under a trust, is disclosed and asked to sign a consent form, which she does.",
+          "scenarioB": "The seller tells the buyer's solicitor he lives alone. In fact his sister, who contributed to the purchase price years earlier, has been living there throughout and was never asked about or mentioned.",
+          "correctScenario": "B",
+          "explanation": "In A, the occupier was identified and dealt with, so there is no undisclosed interest left to override anything. In B, the sister's beneficial interest plus undisclosed actual occupation is exactly the Boland fact pattern — the buyer failed to enquire and the interest is not defeated by any of the Schedule 3 exceptions on these facts."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Unregistered land: proving title without a register",
+        "voice": "structural — a reference-style part on how title is proved the old way",
+        "body": [
+          "Not all land in England and Wales is registered. Where title remains unregistered, there is no state-guaranteed register to check — title must instead be proved by producing an unbroken documentary chain of ownership, known as the epitome of title.",
+          "The starting point is a good root of title: a document at least 15 years old (the period was reduced from 30 to 15 years by the Law of Property Act 1969, s 23) that deals with the whole of the legal and equitable interest in the land, contains an adequate description of the property, and casts no doubt on the seller's title. A conveyance on sale is typically the strongest root, because a sale usually implies the seller had good title to give.",
+          "From that root document, the epitome of title traces every subsequent document affecting ownership — conveyances, assents, mortgages and their discharges — down to the present seller, with each transfer in the chain checked for consistency of parties and description. A buyer's solicitor examines this chain (and raises requisitions on any gap or defect) in place of the official copies used for registered land."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Good root of title",
+            "definition": "A document at least 15 years old that deals with the whole legal and equitable estate, adequately describes the land, and contains nothing casting doubt on title — the anchor document from which an unregistered chain of title is traced forward to the present."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-01-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a solicitor follows when proving unregistered title.",
+          "items": [
+            "Identify a document at least 15 years old dealing with the whole legal and equitable interest (the good root)",
+            "Trace every subsequent conveyance, assent or mortgage discharge forward from the root",
+            "Check each link in the chain for consistent parties and an adequate description",
+            "Raise requisitions on any gap or defect found in the chain before proceeding"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: find the root, trace forward, check consistency, then query anything that doesn't add up — you can't raise a sensible requisition before you've traced the chain that reveals the gap.",
+          "feedbackIncorrect": "Check the order again — you must identify the root document before you can trace anything forward from it, and you can only spot a defect worth querying once the chain has been checked link by link."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Compulsory first registration: triggers and the two-month trap",
+        "voice": "direct — sets up the practical consequence the tests will probe",
+        "body": [
+          "Unregistered land does not stay unregistered forever. Section 4 of the Land Registration Act 2002 lists a set of triggering events which, once they occur, create a compulsory duty to apply for first registration — most commonly a transfer of the freehold or of a leasehold with more than seven years unexpired, or the grant of a lease for a term of more than seven years, or the grant of certain first legal mortgages.",
+          "Section 6 imposes the duty to apply within a strict priority period: two months from the date of the triggering disposition (extendable by the Registrar in limited circumstances, but not something a solicitor should ever plan around). Missing that window is not a mere administrative slip.",
+          "Section 7 sets out the consequence, and it is severe: if the application is not made within the priority period, the transfer or grant becomes void as to the legal estate. For a transfer, the legal title reverts to the transferor, who holds it on bare trust for the transferee — the transferee is left with only an equitable interest until a fresh registrable disposition is executed. For a protected first legal mortgage, the effect is that it takes effect merely as a contract to create the legal charge, not as the legal charge itself. This is why diarising the two-month deadline is treated as a non-negotiable file-opening task on any unregistered land matter."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Land Registration Act 2002, s 6",
+            "text": "If the requirement of registration applies, the responsible estate owner, or their successor in title, must, before the end of the period for registration, apply to the registrar to be registered as the proprietor of the registrable estate.",
+            "elements": ["A triggering event under s 4 has occurred", "The estate owner (or successor) must apply for registration", "The application must be made before the end of the priority period (normally two months)"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-01-check-04",
+          "type": "statuteParser",
+          "skillTag": "application",
+          "prompt": "A freehold transfer of unregistered land completes on 1 March. No application for first registration is made by 10 May. What is the effect on the transfer under s 7 LRA 2002?",
+          "options": ["The transfer is void as to the legal estate; the transferor holds the legal title on bare trust for the transferee", "The transfer remains fully effective, but the transferee cannot sell the land on until it is registered", "The transfer is automatically registered by the Land Registry after a short grace period", "The transferee loses their equitable interest as well as the legal estate"],
+          "correctIndex": 0,
+          "explanation": "The two-month priority period runs from 1 March and expires on 1 May, so an application on or after 10 May is out of time. Under s 7, the legal estate reverts to the transferor, who holds it on bare trust — the transferee keeps only an equitable interest until a fresh disposition is registered."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Bringing it together: what 'investigating title' means in practice",
+        "voice": "Socratic — poses the practical question before resolving it",
+        "body": [
+          "Here is the question an exam fact pattern is really testing when it describes a title investigation: is this land registered or unregistered, and, whichever it is, what does 'proof of title' actually consist of? For registered land, the answer is official copies of the three registers plus attention to Schedule 3 overriding interests that the register will never show. For unregistered land, it is an epitome of title running from a good root at least 15 years old.",
+          "The two systems also connect at one point that examiners like to test: an unregistered disposition that triggers first registration under s 4 must be registered within the s 6 priority period, or it collapses under s 7. A solicitor acting on the sale of unregistered land, or the grant of a long lease out of unregistered land, is therefore not finished at completion — the file only closes once first registration has actually been achieved.",
+          "Treat 'investigating title' as a single discipline with two different toolkits, not two unrelated topics: the underlying question — who owns this land, and what binds a buyer of it — is the same whichever register (or absence of one) you're working from."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Investigating title: which toolkit applies?",
+            "description": "A decision path for choosing between registered and unregistered proof of title, and flagging the first-registration trigger.",
+            "nodes": [
+              { "id": "start", "label": "Is the land already registered at HM Land Registry?" },
+              { "id": "yes", "label": "Yes → obtain official copies of the property, proprietorship and charges registers" },
+              { "id": "yes-2", "label": "Also check: any Schedule 3 overriding interests (actual occupation) not shown on the register?" },
+              { "id": "no", "label": "No → obtain an epitome of title tracing back to a good root at least 15 years old" },
+              { "id": "no-2", "label": "Does this transaction trigger compulsory first registration under s 4?" },
+              { "id": "no-3", "label": "Yes → diarise the two-month s 6 priority period; apply, or the disposition becomes void under s 7" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes", "label": "Registered" },
+              { "from": "yes", "to": "yes-2", "label": "Then" },
+              { "from": "start", "to": "no", "label": "Unregistered" },
+              { "from": "no", "to": "no-2", "label": "Then" },
+              { "from": "no-2", "to": "no-3", "label": "If triggered" }
+            ],
+            "textAlternative": "First ask whether the land is already registered. If yes, obtain official copies of the three registers and separately check for Schedule 3 overriding interests such as undisclosed actual occupation. If no, obtain an epitome of title tracing back to a good root at least 15 years old, then check whether the transaction triggers compulsory first registration under s 4 — if it does, the two-month priority period under s 6 must be diarised and met, or the disposition becomes void under s 7."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-01-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A solicitor completes the grant of a 10-year lease out of unregistered freehold land on 5 June. The lease is never sent for first registration. The tenant later discovers the freeholder has sold the reversion to a third party who denies the lease is binding. Analyse the tenant's position.",
+          "factsToOrder": [
+            "The lease was granted for a term of more than seven years",
+            "The grant of a lease over seven years is a s 4 triggering event",
+            "No application for first registration was made within the two-month priority period",
+            "The freeholder has since sold the reversion to a third party"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Issue and rule given; student drags facts into application and writes conclusion" },
+            { "level": 2, "support": "Issue given only; student selects rule, orders facts, writes conclusion" },
+            { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the tenant's 10-year lease remains legally effective against the freeholder's successor in title, given that first registration was never applied for.",
+            "rule": "Grant of a lease for a term exceeding seven years is a compulsory first registration trigger under s 4 LRA 2002; s 6 requires an application within two months; under s 7, failure to register in time renders the grant void as to the legal estate, leaving only an equitable interest under a bare trust of the legal term.",
+            "application": "The lease exceeded seven years, so first registration was compulsory. No application was made within the two-month priority period, so under s 7 the legal lease was never validly created — the tenant holds, at most, an equitable lease. Whether that equitable interest binds the new freeholder depends on separate priority rules rather than on the lease having full legal effect.",
+            "conclusion": "The tenant does not have a legal lease binding on the successor freeholder; at best they have an equitable interest, and the solicitor's failure to register within the priority period is the direct cause of the tenant's weakened position."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-01-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A buyer's solicitor wants to check whether the seller's title is subject to a registered restrictive covenant. Which register should they examine?",
+      "options": ["The property register", "The proprietorship register", "The charges register", "The title plan alone"],
+      "correctIndex": 2,
+      "explanation": "Burdens on the land, including restrictive covenants, mortgages and adverse leases, are recorded on the charges register, not the property register (which records benefits) or the proprietorship register (which records ownership)."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A solicitor needs to confirm the class of title held by the registered proprietor before advising on insurance for a defective title. Where will this information be found?",
+      "options": ["The charges register", "The proprietorship register", "The property register", "An epitome of title"],
+      "correctIndex": 1,
+      "explanation": "The proprietorship register states the registered proprietor's name and the class of title (absolute, possessory, qualified or good leasehold), along with any restrictions."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following best describes an official copy of the register?",
+      "options": ["A private solicitor's summary of title, prepared for the client's convenience", "A Land Registry-issued copy of the register admissible as evidence of its contents", "A certified copy of the original paper deeds held by the seller's solicitor", "A provisional document issued only pending completion of a sale"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes confuse official copies with a solicitor's own summary or with the old deeds bundle used for unregistered land. Official copies are issued by HM Land Registry itself and stand as evidence of the register's contents.",
+      "explanation": "Official copies are the registered-land equivalent of proof of title, replacing the need to examine historic deeds."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A buyer's solicitor obtains official copies showing the seller as sole registered proprietor with no restrictions and no adverse entries. On a pre-completion inspection, an elderly relative is found living in a converted annexe, unmentioned in any paperwork. What should the solicitor advise?",
+      "options": ["Proceed to completion — a clean register is conclusive proof there is no competing interest", "Make enquiries of the occupier and the seller, because an undisclosed occupier may hold an overriding interest under Sch 3, para 2 that a clean register would not reveal", "Ignore the annexe, since Schedule 3 only applies to occupation of the main dwelling", "Refuse to act further, since any occupier automatically defeats the buyer's title"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is treating a clean register as conclusive. Schedule 3, paragraph 2 exists precisely because some proprietary interests never reach the register — actual occupation itself is the trigger for further enquiry, not a bar to proceeding once properly investigated.",
+      "explanation": "The solicitor must investigate: if the relative has no proprietary interest, there is nothing to override; if they do, disclosure and consent (or an exception applying) determines whether it binds the buyer."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A husband is sole registered proprietor of the family home. His wife contributed to the purchase price and lives there, but was never asked about her interest before the husband charged the property to a bank. The bank now seeks possession. Applying Boland, is the wife's interest likely to bind the bank?",
+      "options": ["Yes, because her beneficial interest plus actual occupation was capable of overriding the charge and the bank made no enquiry of her", "No, because only interests registered as notices can ever bind a chargee", "No, because a spouse's interest is automatically subordinate to a mortgage taken by the other spouse", "Yes, but only if the wife's name appeared on the title deeds"],
+      "correctIndex": 0,
+      "explanation": "This mirrors Boland precisely: an undisclosed beneficial interest coupled with actual occupation can override a later charge where the chargee failed to make enquiries of the occupier."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A seller tells the buyer's solicitor that a lodger occupies a spare room under a short-term licence with no proprietary interest, and this is confirmed by the lodger in writing. Does the lodger's occupation create a risk of an overriding interest under Sch 3, para 2?",
+      "options": ["Yes, actual occupation alone is always sufficient regardless of the nature of the interest", "No, because Schedule 3 paragraph 2 requires a proprietary interest in the land, and a bare licence to occupy does not qualify", "Yes, but only if the lodger has lived there for more than 12 months", "No, because lodgers are expressly excluded from Schedule 3 by name"],
+      "correctIndex": 1,
+      "explanation": "Occupation alone is not enough — Schedule 3, paragraph 2 protects a proprietary right (such as a beneficial interest under a trust) coupled with actual occupation. A bare licensee with no proprietary interest has nothing capable of overriding anything."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-07",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Under s 4 LRA 2002, which of the following is a triggering event for compulsory first registration?",
+      "options": ["The grant of a lease for a term of three years", "The grant of a lease for a term of more than seven years", "A tenancy at will of any duration", "An equitable assignment of a lease with six years remaining"],
+      "correctIndex": 1,
+      "explanation": "Section 4 catches, among other events, the grant of a lease with a term of more than seven years, along with a transfer of freehold or of a leasehold with more than seven years unexpired, and certain first legal mortgages."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A first legal mortgage is granted over unregistered land but the priority period under s 6 is missed. What effect does s 7 give the mortgage?",
+      "options": ["It is entirely void and secures nothing at all", "It takes effect merely as a contract to create the legal charge, not as the legal charge itself", "It automatically converts into an equitable charge with full priority preserved", "It remains a fully effective legal mortgage regardless of registration"],
+      "correctIndex": 1,
+      "explanation": "For a protected first legal mortgage that misses the priority period, s 7 provides that it takes effect only as a contract to grant the legal charge — the lender is left without the legal security it thought it had."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-09",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A freehold transfer of unregistered land completes on 4 April. The buyer's solicitor applies for first registration on 3 June. Has the application been made within the priority period?",
+      "options": ["Yes, because the application was made within three months of completion", "No, because the two-month priority period expired on 4 June and the deadline was measured wrongly", "No, because the two-month priority period expired on 4 June, so the application on 3 June was actually still in time", "The priority period does not apply to freehold transfers"],
+      "correctIndex": 2,
+      "explanation": "Two months from 4 April runs to 4 June, so an application on 3 June is within time. This item tests whether students can actually calculate the s 6 window rather than just recite that one exists."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "Which statement best describes a good root of title for unregistered land?",
+      "options": ["Any document over 15 years old, regardless of its content", "A document at least 15 years old dealing with the whole legal and equitable interest, adequately describing the land and casting no doubt on title", "The original conveyance from the Crown, however old", "A document at least 30 years old, as required by the Law of Property Act 1969"],
+      "correctIndex": 1,
+      "trapExplanation": "Two traps here: age alone is not sufficient (the document must also deal with the whole interest and cast no doubt on title), and the period was reduced from 30 to 15 years by LPA 1969, s 23 — reciting the old 30-year figure is a common error.",
+      "explanation": "A good root must satisfy content requirements as well as the 15-year age threshold; a document that is old but incomplete or doubtful cannot serve as the root."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A solicitor is proving unregistered title and identifies a 1998 conveyance that deals with the whole legal and equitable interest, adequately describes the property, and raises no doubts. A 2015 assent is also on file. Which document is the good root of title?",
+      "options": ["The 2015 assent, because it is the most recent document", "The 1998 conveyance, because it satisfies the good root requirements and is old enough", "Neither document can serve as a root; a fresh statutory declaration is always required", "Both documents together form a single root of title"],
+      "correctIndex": 1,
+      "explanation": "The 1998 conveyance meets the substantive test for a good root and is well over 15 years old; the 2015 assent is simply a later link in the chain traced forward from that root, not the root itself."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "What is the practical consequence for a buyer if the seller's solicitor cannot produce an unbroken epitome of title back to a good root?",
+      "options": ["The buyer must accept the title as offered with no recourse", "The buyer's solicitor will raise requisitions and may require the defect to be resolved, insured against, or the contract renegotiated before completion", "The transaction automatically proceeds via registered land rules instead", "The gap is legally irrelevant provided the seller has been in possession for any length of time"],
+      "correctIndex": 1,
+      "explanation": "A gap or defect in the chain of title is a live issue requiring investigation — through requisitions, further evidence, indemnity insurance, or renegotiation — not something a buyer's solicitor can simply overlook."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "Why does a solicitor acting on the grant of a long lease out of unregistered land need to diarise a deadline after completion, rather than treating the file as closed?",
+      "options": ["Because SDLT returns are always due exactly two months after any lease grant", "Because the grant triggers compulsory first registration under s 4, and missing the s 6 priority period renders the grant void as to the legal estate under s 7", "Because leases automatically lapse after two months unless renewed", "Because the landlord must re-sign the lease every two months until registration"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap answer about SDLT timing sounds plausible because SDLT deadlines are also commonly tested, but it is not the reason for this particular post-completion deadline — the real driver is the s 4/s 6/s 7 first-registration chain.",
+      "explanation": "The two-month deadline exists because of the first registration regime, not tax administration; a solicitor's file only truly closes once registration is confirmed."
+    },
+    {
+      "itemId": "sqe1-pp-01-test-14",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "prompt": "A client asks whether a transfer of registered leasehold land with 40 years unexpired needs to be registered at all, given the title is already on the register. What should the solicitor advise?",
+      "options": ["No further registration step is needed, since the title is already registered", "The buyer must still apply to register the transfer itself as a new registrable disposition, or the buyer will not become the legal owner", "Registration is only needed if the price exceeds a statutory threshold", "The transfer takes effect automatically upon completion without any Land Registry application"],
+      "correctIndex": 1,
+      "explanation": "Registered land does not remove the need to register each subsequent disposition — a transfer of an already-registered title is a registrable disposition, and the buyer does not acquire the legal estate until that disposition is itself registered."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap across this lesson's items is treating either a clean register, or the mere existence of an old document, as proof that title investigation is finished. Both registered and unregistered systems require an active check — for undisclosed occupiers in one case, for a genuinely good root and unbroken chain in the other.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.investigating-title"
+  }
+}
