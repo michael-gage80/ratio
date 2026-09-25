@@ -1,0 +1,457 @@
+{
+  "lessonId": "sqe1-clp-01",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 1,
+  "topicId": "sqe1.criminal-practice.custody-clock",
+  "title": "Detention and the custody clock",
+  "subtitle": "The custody officer, the grounds for detention, and the statutory time limits",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the custody officer's role and explain why PACE requires that role to be independent of the investigation",
+    "Identify the statutory grounds on which a custody officer may authorise detention before charge",
+    "Set out the detention clock accurately: the 24-hour period as of right, the extension to 36 hours, and the further extension to 96 hours on a magistrates' warrant, together with the review timetable"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "Police and Criminal Evidence Act 1984, s 37",
+      "role": "Custody officer's duties before charge and the grounds for authorising detention"
+    },
+    {
+      "citation": "Police and Criminal Evidence Act 1984, s 41",
+      "role": "The basic 24-hour limit on detention without charge, running from the relevant time"
+    },
+    {
+      "citation": "Police and Criminal Evidence Act 1984, s 42",
+      "role": "Superintendent's power to extend detention to 36 hours for an indictable offence"
+    },
+    {
+      "citation": "Police and Criminal Evidence Act 1984, ss 43-44",
+      "role": "Magistrates' warrant of further detention, extendable up to a 96-hour overall maximum"
+    },
+    {
+      "citation": "Police and Criminal Evidence Act 1984, s 40",
+      "role": "The review timetable: first review within 6 hours, then every 9 hours"
+    },
+    {
+      "citation": "PACE Code C",
+      "role": "Code of practice governing detention, treatment and questioning of persons by police officers"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is one of the most literal parts of SQE1: the numbers (24, 36, 96, 6, 9) are tested precisely, and single-best-answer questions are built to catch anyone who blends them together.",
+    "profileHooks": {
+      "weakApplication": "You know the numbers. The test pool below leans on fact patterns that make you work out which stage of the clock applies and who has the power to act at that stage — read each scenario for rank and offence type before answering.",
+      "weakKnowledge": "Slow down on Parts 2 to 5. This lesson is arithmetic built on a small set of fixed rules — get the rules solid first, because every later SQE1 criminal practice topic assumes you can recite this clock without hesitation."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A custody sergeant who has never met the arresting officer's case, who owes that officer no favours, decides within minutes of your arrival whether you go home or go into a cell. That separation of roles is not an accident of bureaucracy — it is the single structural safeguard PACE built to stop the police investigating and detaining the same person unchecked. Everything else in this lesson is what happens once that decision is made: how long you can be held, and who has to keep checking that holding you is still justified."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The custody officer: gatekeeper, not investigator",
+        "voice": "structural — establishes the institutional design before the detail",
+        "body": [
+          "Every police station designated to hold detained suspects must have a custody officer, of at least the rank of sergeant, appointed to take charge of everyone brought in under arrest. That officer's defining feature is independence: PACE requires, so far as practicable, that the custody officer takes no part in the investigation of the offence for which the suspect has been arrested.",
+          "This matters because the custody officer is the decision-maker at every stage that follows — whether there is enough evidence to charge, whether detention without charge is justified, and later, whether continued detention remains justified. If the same officer who arrested you and wants a confession also decided whether you should be held, that decision would carry no independent check at all.",
+          "The custody officer opens and maintains the custody record for each detained person — a contemporaneous log of every decision taken about them, the reasons for it, and the time it was made. That record is what a defence solicitor scrutinises first: it is the primary evidence of whether detention was lawful at every point."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Custody officer",
+            "definition": "A police officer of at least sergeant rank, appointed at a designated police station, who must (so far as practicable) play no part in investigating the offence, and who is responsible for authorising and reviewing a suspect's detention and for the accuracy of the custody record."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-01-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A detective who led the arrest for a burglary wants to also act as custody officer for that same suspect at the station. Is this compatible with PACE?",
+          "options": [
+            "No — the custody officer must, so far as practicable, take no part in investigating the offence",
+            "Yes — any officer of any rank may act as custody officer for a suspect they arrested"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The independence requirement is the whole point of the role — it is what stops the investigation from marking its own homework on detention.",
+          "feedbackIncorrect": "Look again at the independence requirement. The custody officer's value comes precisely from having no stake in the investigation — an investigating officer doubling up in that role defeats the safeguard."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Grounds for authorising detention before charge",
+        "voice": "statutory — works directly from the text of s 37",
+        "body": [
+          "When a suspect arrives at the station, the custody officer's first job under s 37 is to decide whether there is already sufficient evidence to charge. If there is, the suspect should normally be charged (or released) without further detention for questioning.",
+          "If there is not yet sufficient evidence, the custody officer may authorise detention without charge — but only on a specific statutory ground: that detention is necessary to secure or preserve evidence relating to the offence, or to obtain evidence by questioning the suspect. A general sense that 'more time would help the investigation' does not, on its own, satisfy this test.",
+          "Once detention is authorised, the custody officer must record the grounds in the custody record, in terms the suspect can understand, and must inform the suspect of those grounds. Detention that is authorised without a documented, statutory ground is unlawful from the outset — the clock analysis in the rest of this lesson only matters once this first gate has been passed correctly."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Police and Criminal Evidence Act 1984, s 37(2)",
+            "text": "If the custody officer determines that he does not have such evidence before him, the person arrested shall be released without charge... unless the custody officer has reasonable grounds for believing that his detention without being charged is necessary to secure or preserve evidence relating to an offence for which he is under arrest or to obtain such evidence by questioning him.",
+            "elements": [
+              "No sufficient evidence to charge yet",
+              "Custody officer holds a reasonable belief",
+              "Detention is necessary to secure or preserve evidence, or to obtain evidence by questioning",
+              "Grounds recorded and communicated to the suspect"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-01-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Which of these, standing alone, satisfies the s 37(2) ground for authorising detention without charge?",
+          "options": [
+            "The custody officer believes questioning the suspect is necessary to obtain evidence of the offence",
+            "The investigating team would simply prefer more time to build the case generally",
+            "The suspect has previous convictions for similar offences",
+            "The custody sergeant is short-staffed and wants to deal with the file later"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "That is the statutory ground itself — detention to obtain evidence by questioning (or to secure/preserve evidence) is precisely what s 37(2) permits.",
+          "feedbackIncorrect": "Only the specific grounds in s 37(2) — securing or preserving evidence, or obtaining it by questioning — will do. General investigative convenience, previous convictions, and staffing pressure are not statutory grounds for detention."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The 24-hour clock and how it runs",
+        "voice": "sequential — walks the clock from its starting point",
+        "body": [
+          "Detention without charge is time-limited from the moment it begins. Under s 41, a person may not be kept in police detention for more than 24 hours without charge, calculated from the 'relevant time' — broadly, the time the suspect arrives at the first police station after arrest (or, for some categories, the time of arrest itself).",
+          "This 24-hour period runs as of right: no authorisation from a more senior officer or a court is needed to detain a suspect up to this limit, provided the s 37 grounds continue to be satisfied throughout. It is the baseline every SQE1 question on this topic starts from.",
+          "At the 24-hour mark, the suspect must be charged or released — unless a more senior officer has already extended detention under the powers covered in the next part. There is no automatic extension; someone with the statutory power has to actively authorise it before the 24 hours expires."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The clock, stage by stage",
+            "points": [
+              "Relevant time — the clock starts, broadly, on arrival at the first police station after arrest",
+              "0–24 hours — detention without charge as of right, provided s 37 grounds remain satisfied",
+              "24–36 hours — only with a superintendent's authorisation, and only for an indictable offence",
+              "36–96 hours — only on a magistrates' warrant of further detention, which can itself be extended up to the overall 96-hour maximum"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-01-check-03",
+          "type": "sequence",
+          "skillTag": "knowledge",
+          "prompt": "Put these detention stages in the order they occur, from arrival at the station onward.",
+          "items": [
+            "Relevant time begins on arrival at the police station",
+            "Detention continues as of right up to 24 hours",
+            "A superintendent authorises continued detention up to 36 hours",
+            "Magistrates grant a warrant of further detention beyond 36 hours"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "Correct. Each stage requires a higher level of authorisation than the last — as of right, then a superintendent, then a court.",
+          "feedbackIncorrect": "Check the order again: detention starts at the relevant time, runs as of right to 24 hours, then needs a superintendent to reach 36 hours, and only a magistrates' warrant can extend it further."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Extending detention: 36 hours and beyond",
+        "voice": "case-narrative — walks a fact pattern through the extension powers",
+        "body": [
+          "Suppose a suspect arrested for robbery — an indictable offence — has been detained for 22 hours and the investigating team still needs to await forensic results before deciding whether to charge. Detention can be extended, but not by just anyone: only a police officer of the rank of superintendent or above may authorise continued detention beyond 24 hours, and only up to a total of 36 hours.",
+          "That extension is available only for an indictable offence. This is a hard filter: for a summary-only offence, once 24 hours has elapsed the suspect must be charged or released, however compelling the investigative case for more time might be. The offence type is decided before the clock question, not after.",
+          "Beyond 36 hours, no police officer — however senior — can authorise further detention. Only a magistrates' court can grant a warrant of further detention under s 43, and that warrant itself cannot authorise detention beyond 36 hours at a time; it can be extended under s 44, but the combined total from the relevant time can never exceed 96 hours. After that, the suspect must be charged or released."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume any senior officer, or the custody officer acting alone with a supervisor's nod, can extend detention to 36 hours.",
+            "whyItsWrong": "The power to extend to 36 hours is reserved specifically to an officer of superintendent rank or above, and is available only for an indictable offence. A custody sergeant — the officer who has been running the case day to day — has no power to make this extension personally."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-01-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that determines whether a superintendent can lawfully extend this suspect's detention to 36 hours.",
+          "scenarioText": "Priya has been in custody for 23 hours on suspicion of criminal damage, a summary-only offence in her case. The custody sergeant wants more time, and a superintendent is on site and willing to authorise continued detention.",
+          "tappableSpans": [
+            "23 hours",
+            "criminal damage, a summary-only offence",
+            "custody sergeant wants more time",
+            "superintendent is on site"
+          ],
+          "correctSpan": "criminal damage, a summary-only offence",
+          "feedbackCorrect": "That is the decisive fact. The s 42 extension power only applies to an indictable offence — a summary-only offence like this cannot be extended past 24 hours, whatever the superintendent's willingness.",
+          "feedbackIncorrect": "Look again at the offence itself, not the time elapsed or who is available. The extension to 36 hours is only available for an indictable offence — Priya's summary-only offence takes her outside the power entirely."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Reviews: keeping detention honest throughout",
+        "voice": "Socratic — poses the safeguard question before answering it",
+        "body": [
+          "Here is the question a detention clock alone doesn't answer: what stops a suspect being quietly forgotten in a cell for 20 of their 24 hours? The answer is the review system under s 40, which runs independently of — and in addition to — the extension powers already covered.",
+          "A review officer, of at least the rank of inspector and, again, not involved in the investigation, must periodically check that the original grounds for detention still apply. The first review must take place no later than six hours after detention was first authorised. Later reviews must then follow at intervals of no more than nine hours each.",
+          "If a review officer is not satisfied the grounds still hold — for example, because the evidence needed has already been secured — the suspect must be released at that point, even if the outer time limit for that stage of detention has not yet been reached. The clock sets the maximum; the review system is what tests, continuously, whether detention should end sooner."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Review officer",
+            "definition": "An officer of at least inspector rank, not involved in investigating the offence, responsible for checking at set intervals (first within 6 hours, then every 9 hours) that the statutory grounds for detention continue to be met."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-01-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "knowledge",
+          "prompt": "How confident are you that the first review of detention must happen no later than 6 hours after detention was authorised, with each later review no more than 9 hours apart?",
+          "sliderLabels": [
+            "Not confident",
+            "Fully confident"
+          ],
+          "correctPosition": "Fully confident",
+          "explanation": "That is the correct timetable under s 40: first review within 6 hours, then every 9 hours thereafter. These figures are tested precisely — do not round them to a tidier interval."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-01-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A suspect is arrested and brought to a designated police station. Who takes charge of deciding whether they should be detained?",
+      "options": [
+        "The custody officer, an officer of at least sergeant rank who, so far as practicable, is not involved in the investigation",
+        "The arresting officer, since they know the facts of the case best",
+        "Any available duty solicitor",
+        "A magistrate, who must approve every detention in advance"
+      ],
+      "correctIndex": 0,
+      "explanation": "PACE places this decision with an independent custody officer precisely so the investigating team is not also policing its own decision to detain."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A suspect has been in police detention without charge for exactly 24 hours and no further authorisation has been sought. Which of the following correctly states the custody officer's position?",
+      "options": [
+        "The suspect must be charged or released, since 24 hours is the limit as of right and no extension has been authorised",
+        "Detention automatically continues to 36 hours unless someone objects",
+        "The custody officer may extend detention by a further 12 hours on their own authority",
+        "The suspect can be held indefinitely provided the custody record is kept up to date"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "There is no automatic extension. The 24-hour period is a hard limit as of right; going beyond it requires a superintendent to have actively authorised the extension before the limit expired, which this suspect's custody officer has not obtained.",
+      "explanation": "Without a superintendent's authorisation in place before the 24-hour mark, the suspect must be charged or released at that point."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A suspect arrested on suspicion of theft (a summary-only offence on these facts) has been detained for 23 hours. The investigating officers believe another hour or two would let them complete an interview. Who, if anyone, can authorise detention beyond 24 hours?",
+      "options": [
+        "A superintendent, since 23 hours is close enough to the 36-hour extension threshold",
+        "No one — the extension to 36 hours is only available for an indictable offence, so this suspect must be charged or released at 24 hours",
+        "The custody officer, using their ordinary detention powers",
+        "A magistrates' court, by way of an immediate warrant of further detention"
+      ],
+      "correctIndex": 1,
+      "explanation": "The s 42 extension power to 36 hours is restricted to indictable offences. A summary-only offence falls outside that power entirely, regardless of how close the investigation is to finishing."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 37(2) PACE, on what basis may a custody officer authorise detention without charge where there is not yet sufficient evidence to charge?",
+      "options": [
+        "Reasonable grounds for believing detention is necessary to secure or preserve evidence, or to obtain evidence by questioning the suspect",
+        "A general belief that the investigation would benefit from more time",
+        "The seriousness of the offence alone, regardless of the evidential position",
+        "The suspect's failure to answer questions during the initial arrest"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 37(2) requires a specific, evidence-focused ground — securing or preserving evidence, or obtaining it by questioning — not a general sense that detention would be useful."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What is the maximum total period a suspect can be detained without charge, taking into account both the superintendent's extension and the magistrates' warrant of further detention?",
+      "options": [
+        "96 hours from the relevant time",
+        "48 hours from the relevant time",
+        "72 hours from the relevant time",
+        "There is no fixed maximum once a magistrates' warrant has been granted"
+      ],
+      "correctIndex": 0,
+      "explanation": "96 hours from the relevant time is the absolute ceiling. Beyond that, the suspect must be charged or released, regardless of the investigation's progress."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A review officer conducts the first review of a suspect's detention at the 7-hour mark, having been unavailable earlier. Which statement best describes the position?",
+      "options": [
+        "This complies with PACE, since reviews only need to happen roughly every 6 to 9 hours",
+        "This is late — the first review must take place no later than 6 hours after detention was first authorised",
+        "This is irrelevant, since only the outer 24-hour limit matters, not the review timetable",
+        "This is only a problem if the suspect complains about it"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The 6-hour and 9-hour figures are precise statutory limits, not rough guidance. A first review at 7 hours breaches the requirement that it happen no later than 6 hours after detention was authorised, whatever the practical reason for the delay.",
+      "explanation": "The review timetable operates independently of officer availability — a first review beyond 6 hours does not comply with s 40."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "At a review of detention conducted at the 6-hour mark, the review officer finds that the evidence the police were waiting to secure has now been obtained and there is no remaining basis for detention. What should happen?",
+      "options": [
+        "The suspect must be released at this point, even though the 24-hour limit has not been reached",
+        "Detention continues automatically until the 24-hour limit, since that is the statutory maximum",
+        "Only a superintendent can order release before 24 hours has elapsed",
+        "The review officer has no power to end detention; only the original custody officer can do so"
+      ],
+      "correctIndex": 0,
+      "explanation": "Reviews test whether the grounds for detention still hold, independently of the outer time limit. Once the grounds no longer apply, the suspect must be released — the 24-hour figure is a maximum, not an entitlement to hold someone regardless."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-08",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which rank is the minimum required to act as a review officer under s 40 PACE?",
+      "options": [
+        "Inspector",
+        "Sergeant",
+        "Superintendent",
+        "Constable, provided a sergeant approves the review"
+      ],
+      "correctIndex": 0,
+      "explanation": "The review officer must be at least an inspector — one rank above the custody officer's minimum of sergeant, reflecting the review's function as an additional check."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A suspect arrested for an indictable assault has been detained for 30 hours. A superintendent, satisfied the s 42 conditions are met, wishes to extend detention. To what point can that extension take detention?",
+      "options": [
+        "Up to a total of 36 hours from the relevant time",
+        "A further 30 hours on top of the time already served",
+        "Up to 96 hours immediately, without needing a magistrates' warrant",
+        "Up to 24 hours only, since that has already been exceeded"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The 36-hour figure is a total elapsed from the relevant time, not an additional block of hours tacked onto whatever has already passed. A superintendent's power stops at 36 hours in total; anything beyond that needs a magistrates' warrant.",
+      "explanation": "The superintendent's extension under s 42 caps total detention at 36 hours from the relevant time — it is not a fresh clock starting from the point of authorisation."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-10",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Which body has the power to authorise detention beyond 36 hours, up to the overall 96-hour maximum?",
+      "options": [
+        "A magistrates' court, by way of a warrant of further detention which can itself be extended",
+        "A second superintendent, acting jointly with the first",
+        "The Crown Prosecution Service, on written application by the custody officer",
+        "The Chief Constable of the relevant force, in person"
+      ],
+      "correctIndex": 0,
+      "explanation": "Only the courts can push detention past 36 hours. A magistrates' warrant of further detention under s 43 can be extended under s 44, but the combined total can never exceed 96 hours from the relevant time."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A trainee solicitor is asked why a magistrates' court, rather than a senior police officer, is required to authorise detention beyond 36 hours. Which explanation best reflects the structure of PACE?",
+      "options": [
+        "Because the longer a suspect is held without charge, the more independent the scrutiny of that detention needs to be, so the decision moves from the police to a court",
+        "Because magistrates are faster to reach than a superintendent overnight",
+        "Because only a court can order the police to continue an investigation",
+        "Because 36 hours is when legal aid funding is first triggered"
+      ],
+      "correctIndex": 0,
+      "explanation": "The escalating authorisation requirement — custody officer, then superintendent, then court — tracks the increasing intrusion of continued detention, moving the check further outside the police the longer detention runs."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following best describes the 'relevant time' from which the detention clock generally starts running?",
+      "options": [
+        "Broadly, the time the suspect arrives at the first police station after arrest",
+        "The moment the offence was committed",
+        "The moment the custody officer signs the custody record",
+        "The start of the first interview under caution"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Students sometimes anchor the clock to the interview or to the custody officer's paperwork rather than to arrival at the station. The relevant time is fixed by arrival (subject to specific statutory variations), not by when any particular procedural step is completed afterwards.",
+      "explanation": "Fixing the start point at arrival prevents the clock being manipulated by delaying the paperwork or the first interview."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A custody officer at a small station wants to extend a suspect's detention from 24 to 36 hours for an indictable robbery. No superintendent is on site, but an inspector is. Can the inspector lawfully authorise the extension?",
+      "options": [
+        "No — only an officer of at least superintendent rank can authorise detention beyond 24 hours",
+        "Yes — an inspector may exercise the superintendent's powers if none is available",
+        "Yes, but only with the suspect's consent",
+        "Yes, provided the custody record notes the inspector's reasons in full"
+      ],
+      "correctIndex": 0,
+      "explanation": "The rank requirement for the 24-to-36-hour extension is fixed at superintendent or above; an inspector's involvement, however senior for review purposes, cannot substitute for it."
+    },
+    {
+      "itemId": "sqe1-clp-01-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What must a custody officer do when authorising detention without charge under s 37(2)?",
+      "options": [
+        "Record the grounds in the custody record and inform the suspect of them, in terms the suspect can understand",
+        "Notify the Crown Prosecution Service before any grounds are recorded",
+        "Wait for the suspect's solicitor to arrive before recording any grounds",
+        "Record the grounds only if the suspect specifically asks for them"
+      ],
+      "correctIndex": 0,
+      "explanation": "Recording and communicating the grounds is mandatory and immediate — it is not conditional on a request from the suspect or the arrival of legal representation."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common error is treating the numbers as interchangeable — swapping 24 for 36, or 36 for 96, or assuming any senior-sounding officer can authorise any extension. Check three things every time: the elapsed time, the offence type (indictable or not), and exactly who has the power to act at that stage.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.custody-clock"
+  }
+}

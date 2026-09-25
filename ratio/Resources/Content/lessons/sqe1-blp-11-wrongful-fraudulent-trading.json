@@ -1,0 +1,356 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-11",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 11,
+  "topicId": "sqe1.business-law.wrongful-fraudulent-trading",
+  "title": "Wrongful and fraudulent trading",
+  "subtitle": "The dual test under s 214, the higher dishonesty threshold under s 213, and why 'I didn't realise' is not a defence",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the test for wrongful trading under s 214 Insolvency Act 1986, including the combined subjective/objective standard applied to the director",
+    "Explain why a director's own ignorance, inexperience or optimism does not excuse continued trading once the objective limb of s 214 is met",
+    "Distinguish wrongful trading from fraudulent trading under s 213, including the higher dishonesty threshold and how that threshold is now assessed following Ivey v Genting Casinos"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Insolvency Act 1986, s 214", "role": "Wrongful trading — liability for continuing to trade once insolvent liquidation could not reasonably be avoided" },
+    { "citation": "Insolvency Act 1986, s 213", "role": "Fraudulent trading — liability for carrying on business with intent to defraud creditors" },
+    { "citation": "Re D'Jan of London Ltd [1994] 1 BCLC 561", "role": "Illustrates the objective competence standard applied to a director's conduct in an insolvency context" },
+    { "citation": "Ivey v Genting Casinos (UK) Ltd [2017] UKSC 67", "role": "Sets the modern two-stage test for dishonesty, now applied to the fraudulent trading threshold" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite that s 214 and s 213 both punish trading on while insolvent. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know both sections exist — this lesson is about knowing which one a given fact pattern actually triggers, and why that distinction changes everything about the remedy.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans on fact patterns that sit right on the wrongful/fraudulent line — read for the director's state of mind, not just the outcome.",
+      "weakKnowledge": "Start with Part 1 and take your time separating the two limbs of s 214 before moving to fraudulent trading — the rest of the lesson assumes you can state both without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two directors, two failing companies, six months before insolvent liquidation. One genuinely believed, right up to the end, that a big contract would save the business. The other knew it wouldn't, and kept trading anyway to buy time. Both are potentially liable — but only one is potentially liable for something close to fraud. This lesson is about the line between those two directors, and why the law refuses to let the honest, hopeless optimist off the hook entirely.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The dishonesty test applied to fraudulent trading has shifted since Ivey v Genting Casinos [2017] UKSC 67 removed the requirement that a defendant appreciate their own conduct was dishonest by ordinary standards — this is settled law, but worth flagging as a relatively recent shift from the older Ghosh test that some older textbooks still describe."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Wrongful trading: the point at which optimism stops being a defence",
+        "voice": "argumentative — states the strongest case for the rule, then complicates it",
+        "body": [
+          "Section 214 Insolvency Act 1986 allows a liquidator to apply to the court for a contribution order against a director where, at some point before the company went into insolvent liquidation, that director knew or ought to have concluded there was no reasonable prospect of avoiding insolvent liquidation — and did not then take every step a reasonably diligent director should have taken to minimise loss to creditors.",
+          "The provision is deliberately not about dishonesty. It doesn't ask whether the director lied, hid anything, or intended harm. It asks a narrower, harder question: at what point should this director have stopped believing the company could be saved, and started acting to protect creditors instead? Continuing to trade past that point — even in good faith, even hoping for a turnaround — is what triggers liability.",
+          "That combination is what makes s 214 unusually demanding for directors to navigate. Trading on while insolvent is not itself unlawful; companies recover from insolvency regularly, and a director who resigns or stops trading at the first sign of trouble may simply crystallise losses that a few more weeks would have avoided. The test only bites once the point of 'no reasonable prospect' has actually been passed."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, s 214(2)-(4)",
+            "text": "...that person knew or ought to have concluded that there was no reasonable prospect that the company would avoid going into insolvent liquidation... the facts which a director of a company ought to know or ascertain, the conclusions which he ought to reach... are those which would be known or ascertained, or reached, by a reasonably diligent person having both (a) the general knowledge, skill and experience that may reasonably be expected of a person carrying out the same functions... and (b) the general knowledge, skill and experience that that director actually has.",
+            "elements": ["Company has gone into insolvent liquidation", "Director knew or ought to have concluded there was no reasonable prospect of avoiding it", "Standard combines an objective minimum (the reasonably diligent director in that role) with the director's own actual knowledge, skill and experience if higher", "Director failed to take every step a reasonably diligent director should have taken to minimise loss to creditors"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-11-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Under s 214, does the liquidator have to prove the director was dishonest?",
+          "acceptableAnswers": ["no", "not dishonest, just failed to conclude/act", "no, it's an objective/subjective competence test not a dishonesty test"],
+          "modelAnswer": "No. Wrongful trading under s 214 does not require dishonesty — it asks whether the director knew, or ought to have concluded, there was no reasonable prospect of avoiding insolvent liquidation, and failed to take every step to minimise creditor loss from that point."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The dual test: an objective floor, raised by what this director actually knew",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "The s 214(4) standard is genuinely dual, and examiners like to test whether students can hold both halves at once rather than collapsing them into one.",
+          "The first half is objective and non-negotiable: every director is judged against the reasonably diligent person carrying out the same functions in that company. A director cannot escape liability by pointing to their own inexperience, lack of financial training, or genuine confusion about the accounts — the law imposes a floor of competence attached to the role itself, not to the individual filling it.",
+          "The second half is subjective, but it only ever raises the bar, never lowers it. If this particular director actually had greater knowledge, skill or experience than the objective minimum — a qualified accountant serving as finance director, for instance — they are judged against that higher personal standard too. A finance director with real accounting expertise cannot claim the benefit of a lower, generalist standard just because a less qualified colleague might have missed the same warning signs.",
+          "Put together: the objective limb sets a floor that protects creditors from directors hiding behind incompetence, while the subjective limb ensures genuinely expert directors can't hide behind a generalist standard either."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Dual (combined) standard",
+            "definition": "The s 214(4) test judges a director against whichever is higher: the knowledge, skill and experience reasonably expected of someone in that role generally (objective), or the director's own actual knowledge, skill and experience if greater (subjective)."
+          },
+          {
+            "type": "caseCard",
+            "caseName": "Re D'Jan of London Ltd",
+            "citation": "[1994] 1 BCLC 561",
+            "court": "High Court (Chancery Division)",
+            "year": 1994,
+            "factsShort": "A company director signed an insurance proposal form without reading it properly, leaving a material fact undisclosed; the company later couldn't claim on the policy when the premises burned down, contributing to its insolvency.",
+            "ratioShort": "A director is judged against an objective standard of competence for the role, not excused by genuine carelessness or a failure to engage properly with paperwork central to the company's protection.",
+            "expanded": {
+              "facts": "Mr D'Jan, the director, signed a proposal form for fire insurance on the company's premises without checking its contents carefully, leaving out a material fact about a previous business failure. When a fire caused significant loss, the insurers avoided the policy for non-disclosure, and the company's subsequent insolvent liquidation left a shortfall.",
+              "judgmentExtract": "The court held that failing to read a document of that importance before signing it fell below the standard of care and skill reasonably expected of a director in that position, applying an objective, function-based standard rather than assessing only what this particular director subjectively believed was adequate care.",
+              "significance": "Although decided under the general director's duty of care rather than s 214 itself, D'Jan is commonly used to illustrate the objective competence standard that s 214(4)(a) later codified — directors are judged by what a reasonably diligent person in that role would have done, not excused by their own inattention or lack of expertise."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-11-check-02",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "A newly appointed, financially inexperienced director claims they genuinely didn't understand the company's cash-flow forecasts were dire. Does the objective limb of s 214(4) excuse them on that basis?",
+          "options": ["No — they are still judged against the reasonably diligent person carrying out the same functions, regardless of their own inexperience", "Yes — genuine lack of financial understanding is always a full defence"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The objective limb is a floor attached to the role, not the individual — genuine inexperience does not lower the standard a director is judged against.",
+          "feedbackIncorrect": "The objective limb of s 214(4) fixes a standard tied to the function being performed, not to this particular director's personal level of understanding — inexperience on its own does not excuse a failure to meet it."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Fraudulent trading: a different section, a different wrong",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Section 213 sits alongside s 214 but does a fundamentally different job. It applies where, in the course of winding up, it appears that any business of the company has been carried on with intent to defraud creditors of the company or creditors of any other person, or for any other fraudulent purpose.",
+          "Unlike wrongful trading, fraudulent trading requires actual dishonesty — carrying on business knowing there is no genuine prospect of paying creditors, and doing so anyway to obtain a benefit or avoid a loss at their expense. It is closer in spirit to deceit than to negligence, and it is available against anyone knowingly party to the fraudulent carrying on of the business, not only directors.",
+          "This is precisely why the two sections coexist rather than one replacing the other. Parliament created s 214 in 1986 largely because s 213's dishonesty threshold proved so difficult to satisfy in practice that genuinely harmful trading-on-while-insolvent conduct was going unpunished. Wrongful trading was the deliberately lower-threshold alternative — it catches the negligent, over-optimistic director that fraudulent trading was never built to reach."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, s 213",
+            "text": "If in the course of the winding up of a company it appears that any business of the company has been carried on with intent to defraud creditors of the company or creditors of any other person, or for any fraudulent purpose, the court, on the application of the liquidator, may declare that any persons who were knowingly parties to the carrying on of the business in the manner above-mentioned are to be liable to make such contributions (if any) to the company's assets as the court thinks proper.",
+            "elements": ["Business carried on with intent to defraud creditors (of the company or of any other person)", "Or carried on for any other fraudulent purpose", "Applies to any person knowingly party to the fraudulent carrying on of the business, not only directors", "Requires actual dishonest intent, not merely negligent failure to stop trading"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-11-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that pushes it from wrongful trading towards fraudulent trading under s 213.",
+          "scenarioText": "A director continues trading a struggling company for four months after cash-flow forecasts show insolvent liquidation is inevitable, genuinely hoping a delayed contract payment will arrive in time. To keep going, he takes new customer deposits for orders he knows the company will never be able to fulfil.",
+          "tappableSpans": ["continues trading", "genuinely hoping a delayed contract payment will arrive", "takes new customer deposits for orders he knows the company will never be able to fulfil"],
+          "correctSpan": "takes new customer deposits for orders he knows the company will never be able to fulfil",
+          "feedbackCorrect": "That's the dishonest element. Trading on in the hope of a turnaround is the territory of wrongful trading; knowingly taking money for orders that will never be delivered is deliberate deception of specific creditors, which is what fraudulent trading requires.",
+          "feedbackIncorrect": "Look for the point where hope turns into knowing deception of a specific class of creditor — genuinely (if unreasonably) hoping for a rescue is wrongful trading territory, not fraud."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "How dishonesty is now tested: Ivey v Genting Casinos",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "For decades, English law tested dishonesty using the two-stage Ghosh test: was the conduct dishonest by the standards of ordinary reasonable people, and did the defendant realise that ordinary people would regard it as dishonest? That second, subjective limb meant a defendant with a genuinely skewed personal moral compass could sometimes escape a dishonesty finding.",
+          "The Supreme Court in Ivey v Genting Casinos (UK) Ltd, although a civil case about a professional gambler's technique for gaining an edge at cards, took the opportunity to hold that the second limb of Ghosh was wrong and should no longer be followed — in that case or in criminal law. The test is now: first, ascertain the defendant's actual state of knowledge or belief as to the facts (this part is subjective — what did this person actually know or believe, however unreasonable); then, applying the objective standards of ordinary decent people, determine whether that conduct was dishonest. There is no further requirement that the defendant recognised their own conduct as dishonest by those standards.",
+          "This matters directly for fraudulent trading under s 213, because the intent to defraud has generally been understood, following the criminal case law it draws on, to require genuine dishonesty in the modern Ivey sense. A director who genuinely (if implausibly) believed their conduct was honest is judged by what a reasonable, decent person would think of their conduct given what that director actually knew — not by whether the director personally recognised themselves as a fraudster."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "The Ivey dishonesty test, applied to s 213",
+            "description": "The two stages a court now applies when assessing whether conduct was dishonest for the purposes of fraudulent trading.",
+            "nodes": [
+              { "id": "stage1", "label": "Stage 1 (subjective): what did the defendant actually know or believe about the facts, however unreasonable that belief was?" },
+              { "id": "stage2", "label": "Stage 2 (objective): given that actual knowledge or belief, was the conduct dishonest by the standards of ordinary decent people?" },
+              { "id": "noThirdStage", "label": "No further requirement that the defendant recognised their own conduct as dishonest — the old Ghosh second limb is no longer applied" }
+            ],
+            "edges": [
+              { "from": "stage1", "to": "stage2" },
+              { "from": "stage2", "to": "noThirdStage" }
+            ],
+            "textAlternative": "The modern dishonesty test from Ivey v Genting Casinos has two stages: first, subjectively establish what the defendant actually knew or believed about the facts (however unreasonable); second, objectively ask whether that conduct, given that actual knowledge or belief, was dishonest by the standards of ordinary decent people. There is no longer a third requirement that the defendant themselves recognised the conduct as dishonest."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-11-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that, after Ivey, a defendant escapes a dishonesty finding simply by genuinely believing their own conduct was honest?",
+          "sliderLabels": ["Genuine belief in own honesty is enough to escape a finding", "Genuine belief in own honesty is not enough on its own"],
+          "correctPosition": "Genuine belief in own honesty is not enough on its own",
+          "explanation": "Ivey removed exactly that escape route. The defendant's actual factual knowledge or belief still matters (stage one), but once that is established, whether the conduct was dishonest is assessed objectively — the defendant's own view of their own honesty is no longer decisive."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Choosing between s 214 and s 213 on the facts",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "In application questions, the two sections are usually tested side by side precisely because the facts are designed to be close, and the correct answer turns on the director's state of mind rather than the outcome for creditors, which can look identical either way.",
+          "The default starting point should be s 214: it has the lower threshold, applies only to directors (including shadow and de facto directors), and requires only that the objective 'no reasonable prospect' point was passed and the director then failed to minimise loss. Move to s 213 only where the facts show something more — actual knowledge that specific creditors would not be paid, combined with conduct designed to obtain a benefit or avoid a loss at their expense (taking deposits for undeliverable goods, backdating documents, diverting company funds to a personal account while telling suppliers the company is solvent).",
+          "The remedies also differ in character even though both produce a contribution order to the company's assets: fraudulent trading under s 213 additionally exposes the wrongdoer to criminal liability under a parallel provision in the Companies Act 2006, and courts have generally treated a fraudulent trading finding as carrying a more serious contribution and a stronger stigma, reflecting the dishonesty at its core."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because a director's conduct caused serious loss to creditors, or because the company clearly should have stopped trading much earlier, the case must be fraudulent trading rather than 'merely' wrongful trading.",
+            "whyItsWrong": "Severity of loss and lateness of the decision to stop trading are relevant to wrongful trading under s 214 — they go to when the 'no reasonable prospect' point was passed and what steps should then have been taken. They say nothing on their own about dishonesty. A director can cause catastrophic, obviously avoidable loss through pure over-optimism and incompetence without ever crossing into the actual dishonest intent that s 213 requires."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-11-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two directors, both trading on well past the point their companies should reasonably have stopped. In which scenario is s 213 fraudulent trading the better characterisation, rather than s 214 wrongful trading?",
+          "scenarioA": "Priya keeps her failing shop trading for six months after her accountant warns insolvent liquidation is now unavoidable, genuinely convinced a new investor will appear, and takes no steps to protect creditors in the meantime.",
+          "scenarioB": "Raj keeps his failing shop trading, knowing suppliers will never be paid, specifically so he can take a final large delivery of stock on credit, sell it for cash, and pay that cash into his personal account before the company collapses.",
+          "correctScenario": "B",
+          "explanation": "A is the classic s 214 pattern: a genuine, if unreasonable, belief in rescue combined with a failure to act once that belief should have been abandoned. B shows actual knowledge that specific creditors would not be paid, combined with conduct designed to extract a personal benefit at their expense — the dishonest intent that s 213 requires."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-11-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which statutory provision allows a liquidator to seek a contribution order against a director for continuing to trade once insolvent liquidation could not reasonably be avoided, without needing to prove dishonesty?",
+      "options": ["Insolvency Act 1986, s 214 (wrongful trading)", "Insolvency Act 1986, s 213 (fraudulent trading)", "Companies Act 2006, s 172", "Insolvency Act 1986, s 122"],
+      "correctIndex": 0,
+      "explanation": "s 214 wrongful trading is the lower-threshold provision that does not require dishonesty, unlike s 213 fraudulent trading."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under s 213, what state of mind must a liquidator generally establish to succeed in a fraudulent trading claim?",
+      "options": ["Actual dishonest intent to defraud creditors, or that the business was carried on for another fraudulent purpose", "Mere negligence in failing to spot the company was insolvent", "Simple failure to file accounts on time", "Strict liability, with no state of mind required at all"],
+      "correctIndex": 0,
+      "explanation": "Fraudulent trading requires actual dishonesty — a materially higher bar than the objective/subjective competence standard used for wrongful trading."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A director argues she should not be liable under s 214 because she genuinely lacked the financial expertise to understand the company's management accounts. Which statement best reflects how s 214(4) treats this argument?",
+      "options": ["It succeeds, because the subjective limb of the test lowers the standard to match her actual, lesser expertise", "It fails, because the objective limb sets a floor based on the reasonably diligent person carrying out that function, regardless of her personal shortfall in expertise", "It succeeds automatically, because wrongful trading requires proof of dishonesty which is absent here", "It is irrelevant, because s 214 only ever applies to qualified accountants acting as directors"],
+      "correctIndex": 1,
+      "trapExplanation": "The subjective limb of s 214(4) only ever raises the bar for a director with greater-than-average expertise — it never lowers it for a director with less. A common wrong answer assumes 'subjective' means the test bends to fit each director's actual ability either way.",
+      "explanation": "The objective limb is a non-negotiable floor tied to the function being performed; genuine personal inexperience does not excuse falling below it."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A finance director with formal accountancy qualifications is assessed under s 214(4) alongside a co-director with no financial background. Which best describes how the standard applies to each of them?",
+      "options": ["Both are judged against exactly the same standard, since s 214(4) applies only one objective test to all directors equally", "The finance director may be judged against a higher standard reflecting her actual qualifications, in addition to the objective floor that applies to both", "The finance director is judged more leniently, since her expertise means she is entitled to rely on her own judgment over the objective standard", "Only the co-director without financial background can be liable, since the finance director's expertise is a complete defence"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think expertise helps a director escape liability. In fact the subjective limb works against the more qualified director — her actual knowledge and skill, being higher than the objective minimum, becomes the standard she is judged against.",
+      "explanation": "s 214(4)(b) raises the bar for a director whose actual knowledge, skill and experience exceeds the objective minimum in s 214(4)(a) — it never provides a shield."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-05",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under s 213 Insolvency Act 1986, who may be found liable to contribute to a company's assets for fraudulent trading?",
+      "options": ["Any persons who were knowingly parties to the carrying on of the business in a fraudulent manner, not directors alone", "Only the company's registered directors", "Only the company's auditors", "Only the person who filed the winding-up petition"],
+      "correctIndex": 0,
+      "explanation": "s 213 is drafted broadly — 'any persons knowingly parties' — so it can catch non-director participants in the fraud, unlike s 214, which is confined to directors (including de facto and shadow directors)."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "According to the modern dishonesty test from Ivey v Genting Casinos (UK) Ltd, what is the correct first step when assessing whether conduct was dishonest?",
+      "options": ["Ascertain the defendant's actual subjective knowledge or belief as to the facts, however unreasonable that belief was", "Ask whether the defendant would have regarded their own conduct as dishonest by the standards of ordinary people", "Apply only the objective standard of ordinary decent people, ignoring what the defendant actually believed", "Ask whether a jury would personally find the defendant likeable"],
+      "correctIndex": 0,
+      "explanation": "Ivey retains a subjective first stage — establishing what the defendant actually knew or believed — before applying an objective standard at the second stage. What it removed was the further requirement that the defendant recognised their own conduct as dishonest."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-07",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "What did Ivey v Genting Casinos (UK) Ltd change about the previous Ghosh test for dishonesty?",
+      "options": ["It removed the requirement that the defendant personally recognised their conduct as dishonest by the standards of ordinary people", "It removed any requirement to consider the defendant's actual state of knowledge or belief", "It replaced the objective standard with a purely subjective one", "It abolished dishonesty as a relevant concept in fraudulent trading altogether"],
+      "correctIndex": 0,
+      "explanation": "Ivey kept the subjective inquiry into actual knowledge or belief but discarded Ghosh's second limb, which had required the defendant to have realised ordinary people would view their conduct as dishonest."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A liquidator's investigation shows a director continued trading for three months after management accounts made clear the company had no reasonable prospect of avoiding insolvent liquidation. During that period he took no steps to reduce new credit taken from suppliers or otherwise protect creditors, but there is no evidence of any dishonest intent. Which claim is best supported on these facts?",
+      "options": ["Wrongful trading under s 214", "Fraudulent trading under s 213", "Neither, since no dishonest intent is shown", "Only a claim for breach of the general duty to promote the success of the company under s 172, with no insolvency-specific claim available"],
+      "correctIndex": 0,
+      "explanation": "This is the textbook s 214 pattern: the objective 'no reasonable prospect' point was passed, and the director failed to take steps to minimise creditor loss — no dishonesty is required or shown, which rules out s 213 but not s 214."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A director, knowing her company cannot pay its debts and has no realistic prospect of doing so, continues to accept advance customer payments for goods she knows will never be delivered, in order to fund her own director's loan account before the company collapses. Which claim best fits these facts?",
+      "options": ["Fraudulent trading under s 213", "Wrongful trading under s 214 only, since dishonesty is never required for an insolvency claim", "No claim is available, since customer deposits are not creditor claims", "A claim can only be brought against the company itself, not the director personally"],
+      "correctIndex": 0,
+      "explanation": "Knowingly taking payments for goods that will never be delivered, in order to extract a personal benefit, shows the actual dishonest intent to defraud that distinguishes fraudulent trading from the lower wrongful trading threshold."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company's cash-flow forecasts show a serious but not yet hopeless position. The board takes professional advice, restructures supplier terms, and continues trading for a further two months before the company ultimately fails anyway. A liquidator later alleges wrongful trading from the date the forecasts first looked concerning. What is the key weakness in that allegation?",
+      "options": ["The directors may not have known or ought to have concluded there was no reasonable prospect of avoiding insolvent liquidation at that early point, and in any event appear to have taken steps to minimise creditor loss", "Wrongful trading can never be alleged where a company takes professional advice", "The allegation is automatically defeated because it wasn't the company but the liquidator who identified the date", "Wrongful trading claims require proof of dishonesty, which is absent here"],
+      "correctIndex": 0,
+      "explanation": "s 214 only bites once the 'no reasonable prospect' threshold is actually passed, not merely once things look concerning — and taking active steps to protect creditors (restructuring terms, seeking advice) is precisely the kind of conduct that can defeat or reduce a s 214 claim."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A shadow director who is not formally appointed but who in practice instructs the board on all major financial decisions is alleged to have caused the company to trade on past the point of no reasonable prospect of avoiding insolvent liquidation. Can a s 214 claim be brought against them?",
+      "options": ["Yes — s 214 extends to shadow and de facto directors, not only formally appointed ones", "No — s 214 only applies to directors formally registered at Companies House", "No — s 214 only applies to the company secretary, never to directors of any kind", "Yes, but only if the shadow director is also convicted of a criminal offence first"],
+      "correctIndex": 0,
+      "explanation": "Wrongful trading liability is not limited to formally appointed directors; shadow and de facto directors who in substance direct the company's affairs can also be caught."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A director genuinely believes, based on a personal (if unreasonable) conviction that 'things always work out', that the company will avoid insolvency even after every objective indicator says otherwise, and takes no protective steps for creditors before it collapses. Does her genuine personal belief prevent a finding of wrongful trading?",
+      "options": ["No — s 214(4) applies an objective floor regardless of what the director personally, if unreasonably, believed", "Yes — genuine subjective belief is always a complete defence to wrongful trading", "Yes, but only if she can show she consulted a professional adviser at some point", "No, but only because her belief also amounts to dishonesty under s 213"],
+      "correctIndex": 0,
+      "trapExplanation": "Students sometimes import the Ivey-style subjective belief inquiry from fraudulent trading into wrongful trading. The two sections use different structures: s 213's dishonesty test cares what the defendant actually believed; s 214's objective floor does not excuse a director merely because their personal belief was genuine but unreasonable.",
+      "explanation": "Unlike fraudulent trading, wrongful trading is not defeated by showing the director's belief was sincerely held — the objective 'ought to have concluded' limb exists precisely to catch genuine but unreasonable optimism."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following remedies is available under s 214 once wrongful trading is established?",
+      "options": ["The court may declare that the director is to be liable to make such contribution to the company's assets as the court thinks proper", "Automatic disqualification for life with no court discretion", "Automatic criminal conviction with no separate criminal proceedings required", "Compulsory transfer of the director's personal assets to the liquidator without a court order"],
+      "correctIndex": 0,
+      "explanation": "Both s 213 and s 214 empower the court to order a contribution to the company's assets, at the court's discretion as to amount — neither section imposes an automatic penalty without a court order."
+    },
+    {
+      "itemId": "sqe1-blp-11-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Why did Parliament introduce wrongful trading under s 214 in 1986 alongside the pre-existing fraudulent trading provision?",
+      "options": ["Because fraudulent trading's dishonesty threshold was so difficult to satisfy that genuinely harmful trading-on-while-insolvent conduct was going unpunished", "Because fraudulent trading was abolished and needed a direct replacement", "Because wrongful trading was required by an EU insolvency directive with no domestic policy rationale", "Because s 213 only applied to public companies and a separate provision was needed for private companies"],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to think the two provisions duplicate each other, or that one replaced the other. Fraudulent trading was not abolished — s 214 was added as a lower-threshold alternative precisely because dishonesty is hard to prove, leaving a gap that the older law could not reach.",
+      "explanation": "Wrongful trading fills the gap left by fraudulent trading's high dishonesty bar, catching negligent or over-optimistic directors who trade on without the actual dishonest intent s 213 requires."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is treating severity of loss, or how late a director left it to stop trading, as evidence of dishonesty. It isn't — those facts go to the objective wrongful trading threshold. Fraudulent trading needs something more: actual knowledge that specific creditors would not be paid, combined with conduct aimed at a benefit at their expense.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.wrongful-fraudulent-trading"
+  }
+}

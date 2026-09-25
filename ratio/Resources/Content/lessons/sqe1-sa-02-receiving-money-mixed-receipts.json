@@ -1,0 +1,484 @@
+{
+  "lessonId": "sqe1-sa-02",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "lessonNumber": 2,
+  "topicId": "sqe1.solicitors-accounts.receiving-money-mixed-receipts",
+  "title": "Receiving client money: prompt banking and mixed receipts",
+  "subtitle": "Getting money into the right account, and what to do when one cheque covers both",
+  "track": "SQE1",
+  "estimatedMinutes": 15,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the duty under rule 4 to pay client money into a client account without delay on receipt",
+    "Identify the two compliant routes for handling a mixed receipt containing both client and business elements",
+    "Explain why paying the whole of a mixed receipt into the business account first is not a compliant route, even if the business element is later transferred out"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "SRA Accounts Rules 2019, r 4",
+      "role": "Requires client money to be paid into a client account without delay"
+    },
+    {
+      "citation": "SRA Accounts Rules 2019, r 2.1",
+      "role": "Underlying definition that determines which part of a mixed receipt is client money"
+    },
+    {
+      "citation": "SRA Glossary, definition of 'client account'",
+      "role": "Defines the account that must receive client money"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "A mixed receipt looks like an edge case until you realise most receipts on a live litigation or conveyancing file are mixed. Where the profile shows understanding is behind knowledge, this note appears: 'You can define client money — this lesson is about what to physically do with a single cheque that contains both kinds.'",
+    "profileHooks": {
+      "weakApplication": "You've handled the rule 2.1 definitions well before. This lesson's test pool is about mechanics — where the cheque actually goes — so read each scenario for exactly what was paid in and when.",
+      "weakKnowledge": "Before the interactions, make sure you can state the rule 4 duty in one sentence: client money must be paid into a client account without delay on receipt."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A cheque for £4,500 arrives from a client: £4,000 to settle a delivered bill, £500 on account of costs for the next stage. It is one piece of paper, one banking action — and two different legal destinations. Get the mechanics wrong here and a compliant intention still produces a breach.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the SRA Accounts Rules 2019, rule 4. This is a settled, current provision; no amendment is pending."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The duty: without delay, not 'when convenient'",
+        "voice": "direct — states the rule plainly before layering in the complexity",
+        "body": [
+          "Rule 4 is short and easy to underestimate: client money received by a firm must be paid into a client account without delay. There is no fixed number of days specified — consistent with the 2019 rules' principles-based style — but 'without delay' sets a demanding standard. A firm cannot sit on a client cheque over a quiet week, or wait for a more convenient banking run, without good administrative reason.",
+          "The duty attaches on receipt, not on the firm deciding what the money is for. Even where a receipt needs to be investigated or queried before it can be correctly allocated, the safe default is to bank it into the client account promptly and resolve the allocation question afterwards — money sitting in neither account, or defaulting into the business account 'until we work it out', is the wrong direction to err in.",
+          "This lesson builds directly on Lesson 1's classification rules: you cannot comply with rule 4 without first knowing, item by item, which part of a receipt is client money at all."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Without delay",
+            "definition": "The rule 4 standard for banking client money: not a fixed number of days, but a requirement that a firm act promptly once money is received and its client-money status is established, without unnecessary administrative hold-up."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-02-check-01",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the correct order for handling an incoming client payment under rule 4.",
+          "items": [
+            "Payment is received by the firm",
+            "The firm identifies which part, if any, is client money",
+            "Client money is paid into the client account without delay",
+            "Any business money element is paid into the business account"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feedbackCorrect": "That's the sequence rule 4 assumes: classification has to happen before banking, and banking then follows without delay for the client money portion.",
+          "feedbackIncorrect": "Check the order again — classification (working out what the money actually is) has to come before it can be correctly banked, not after."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What makes a receipt 'mixed'",
+        "voice": "structural — sets up the vocabulary before the routes are introduced",
+        "body": [
+          "A mixed receipt is a single payment that contains both a client money element and a business money element. The commonest example in practice is a payment settling a delivered bill (business money, following Lesson 1's rule 2.1(d) trigger) alongside a further sum paid on account of costs for future work (client money, because no bill covers it yet).",
+          "Mixed receipts are not unusual or exceptional — on an active file with staged billing, most payments from a client are mixed to some degree. The rules therefore build in a mechanism for handling them without forcing every payment to be split at source by the client, which would be impractical.",
+          "The starting point is the same one from Lesson 1: identify the two amounts precisely before deciding where either of them goes. A firm that treats a mixed receipt as a single undifferentiated sum has already made the classification error the rest of this lesson exists to prevent."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Anatomy of a mixed receipt",
+            "points": [
+              "A business money element — typically settling a bill already delivered",
+              "A client money element — typically a payment on account of costs not yet billed, or an unrelated client money receipt",
+              "Both elements arrive as one payment (one cheque, one bank transfer) but must be treated as legally separate sums from the moment of receipt"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-02-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of these two payments is a 'mixed receipt' for rule 4 purposes?",
+          "scenarioA": "A client pays £5,000, all of which is on account of costs for work not yet billed.",
+          "scenarioB": "A client pays £5,000: £3,000 to settle a bill already delivered, and £2,000 on account of costs for the next stage.",
+          "correctScenario": "B",
+          "explanation": "Scenario A is a single, wholly client-money payment — nothing is mixed. Scenario B combines a business money element (the billed £3,000) with a client money element (the unbilled £2,000) in one payment, which is what makes it mixed."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Route one: split it at source",
+        "voice": "worked-example — walks the first compliant route through numbers",
+        "body": [
+          "The cleanest compliant route for a mixed receipt is to split it before it is banked at all: pay the client money element into the client account, and the business money element into the business account, as two separate banking actions carried out promptly on receipt.",
+          "Where the payment arrives as a single cheque that cannot itself be physically split, the firm can still achieve this outcome by banking the whole cheque into the client account first, then transferring the business money element out to the business account promptly — provided that transfer happens without delay, and provided the firm can show it treated the business element as needing to move, not as money it was entitled to keep in the client account.",
+          "The key discipline in both variants is the same: the client account never ends up holding business money for longer than it takes to identify and move it out, and at no point does client money pass through the business account."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Accounts Rules 2019, r 4",
+            "text": "You must ensure that client money is paid without delay into a client account unless, in accordance with rule 2.3, the client or third party for whom the money is held has agreed otherwise, or the money is exempt under this rule.",
+            "elements": [
+              "Client money",
+              "Paid into a client account",
+              "Without delay on receipt"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-02-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A firm receives a single cheque for £6,000: £4,500 settling a delivered bill and £1,500 on account of costs. Which of these is a compliant way to handle it?",
+          "options": [
+            "Bank the whole £6,000 into the client account, then promptly transfer £4,500 to the business account",
+            "Bank the whole £6,000 into the business account, then promptly transfer £1,500 to the client account",
+            "Bank the whole £6,000 into the client account and leave it there until the matter concludes",
+            "Split the cheque physically before banking, which is required whenever a receipt is mixed"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "It can look symmetrical — 'bank it all into one account, then move the wrong part out' — but only one direction is compliant. Banking into the business account first exposes client money to the firm's own account, which rule 4 exists to prevent.",
+          "explanation": "Banking the whole receipt into the client account and promptly transferring out the business element keeps client money inside the client account at every stage — the only correct direction of travel for the interim step."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Route two: bank it all as client money, and leave the business element there only as long as needed",
+        "voice": "Socratic — poses the puzzle of why a second route is even needed",
+        "body": [
+          "If route one already works, why would a firm need a second compliant route at all? Because in some cases it is impractical or genuinely uncertain, at the point of banking, exactly how a receipt should be split — for example, where the bill amount is still being finalised, or where the firm needs a short window to verify the allocation the client has specified.",
+          "The second compliant route recognises this: the whole receipt can be paid into the client account as a single action, provided the firm then promptly identifies the business money element and transfers it out to the business account once the split is confirmed. This is functionally close to route one's cheque variant, and the two often collapse into the same practical steps — the important shared feature is that the business element's stay in the client account is genuinely short and driven by a real need to confirm the split, not by convenience.",
+          "What both compliant routes have in common is direction: client money never sits in the business account, even briefly, and any business money temporarily inside the client account is there only as long as it takes to identify and move it out."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Handling a mixed receipt: compliant vs non-compliant",
+            "description": "Decision path for banking a mixed receipt.",
+            "nodes": [
+              {
+                "id": "start",
+                "label": "A mixed receipt arrives (client + business elements in one payment)"
+              },
+              {
+                "id": "route1",
+                "label": "Route 1: split at source or bank whole into client account, transfer business element out promptly"
+              },
+              {
+                "id": "route2",
+                "label": "Route 2: bank whole into client account, confirm the split, transfer business element out promptly once confirmed"
+              },
+              {
+                "id": "noncompliant",
+                "label": "Non-compliant: bank whole receipt into business account first"
+              },
+              {
+                "id": "breach",
+                "label": "Client money has passed through the business account — breach of rule 4, even if later corrected"
+              }
+            ],
+            "edges": [
+              {
+                "from": "start",
+                "to": "route1",
+                "label": "Compliant"
+              },
+              {
+                "from": "start",
+                "to": "route2",
+                "label": "Compliant"
+              },
+              {
+                "from": "start",
+                "to": "noncompliant",
+                "label": "Non-compliant"
+              },
+              {
+                "from": "noncompliant",
+                "to": "breach",
+                "label": "Always"
+              }
+            ],
+            "textAlternative": "A mixed receipt can be handled compliantly in two ways: split it at source, or bank the whole into the client account and transfer the business element out promptly once identified or confirmed. Banking the whole receipt into the business account first is never compliant, because client money has then passed through the business account, and this remains a breach even if the client element is later moved to the client account."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-02-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that banking a mixed receipt wholly into the business account first, then transferring the client element out promptly, is a compliant route?",
+          "sliderLabels": [
+            "Definitely not compliant",
+            "Definitely compliant"
+          ],
+          "correctPosition": "Definitely not compliant",
+          "explanation": "This route is never compliant, however quickly the correction happens. Rule 4 requires client money to go into a client account without delay — passing it through the business account first is itself the breach, regardless of what happens next."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why the third route never becomes compliant by correcting it fast",
+        "voice": "argumentative — makes the strongest case for why speed of correction is irrelevant",
+        "body": [
+          "It is intuitive to think that if a firm banks a mixed receipt entirely into the business account by mistake, and then transfers the client money element into the client account within minutes, no real harm has been done. This instinct is wrong, and it is worth understanding precisely why, because it is the trap the test items in this lesson return to repeatedly.",
+          "Rule 4 does not ask whether client money ended up in the right place eventually — it requires client money to be paid into a client account without delay on receipt. The moment a mixed receipt is banked wholly into the business account, client money has, even briefly, been held in the firm's own account, mixed with the firm's own funds and exposed to the firm's own creditors if anything went wrong at that instant. A subsequent transfer corrects the balance sheet, but it does not undo the fact that the wrong thing happened first.",
+          "This is why the two compliant routes both share the same shape — client money is banked into the client account first, and only the business element is ever moved out afterwards — while the third, tempting-looking route is structurally the mirror image, and structurally wrong for that reason. Speed of correction reduces the practical risk of a breach; it does not convert a breach into compliance."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often reason that banking a mixed receipt into the business account, then quickly correcting it with a transfer to the client account, is compliant 'because it ends up in the right place'.",
+            "whyItsWrong": "Rule 4 is about the destination of the very first banking action, not the eventual resting place of the money. Client money passing through the business account at all is the breach — correcting it afterwards limits the damage but does not retrospectively make the initial step compliant."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-02-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A firm receives a mixed receipt of £8,000 (£6,000 business, £2,000 client money) and, by mistake, banks the entire sum into the business account. Fifteen minutes later, a cashier notices and transfers £2,000 into the client account. Has a breach occurred?",
+          "options": [
+            "No — because the correction happened within the same day",
+            "Yes — client money was paid into the business account first, which breaches rule 4 regardless of how quickly it was corrected",
+            "No — because the net amount in each account is now correct",
+            "Yes, but only if the client later complains about it"
+          ],
+          "correctIndex": 1,
+          "explanation": "The breach occurs at the point client money is banked into the business account. A prompt correction is good practice and limits the consequences, but it does not erase the fact that rule 4 was already breached."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-02-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under rule 4, when must client money be paid into a client account?",
+      "options": [
+        "Without delay on receipt",
+        "Within 28 days of receipt",
+        "By the end of the calendar month",
+        "Once the matter concludes"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rule 4 sets a 'without delay' standard, not a fixed day count — consistent with the principles-based style of the 2019 rules."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "What is a 'mixed receipt' in the context of solicitors accounts?",
+      "options": [
+        "A single payment containing both a client money element and a business money element",
+        "A payment made in two different currencies",
+        "A payment received from two different clients on the same day",
+        "A payment split evenly between two client matters"
+      ],
+      "correctIndex": 0,
+      "explanation": "A mixed receipt is one payment combining client money and business money — for example, a sum settling a delivered bill alongside a further payment on account of costs not yet billed."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is a compliant way to handle a mixed receipt?",
+      "options": [
+        "Bank the whole receipt into the business account, then transfer the client money element out promptly",
+        "Bank the whole receipt into the client account, then transfer the business money element out promptly",
+        "Hold the receipt uncashed until the firm decides how to split it",
+        "Ask the client to re-issue two separate payments before banking anything"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The two 'bank it all, then transfer' options look symmetrical, but only one direction is compliant. Banking the whole sum into the business account first exposes client money to the firm's own account, which is itself the breach rule 4 is designed to prevent.",
+      "explanation": "Client money must go into the client account without delay; a mixed receipt can be banked there in full with the business element promptly transferred out, but never the reverse."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm banks a £10,000 mixed receipt (£7,000 business, £3,000 client) wholly into the business account, and transfers the £3,000 to the client account the same afternoon. What is the correct analysis?",
+      "options": [
+        "No breach, since the money reached the correct accounts by the end of the day",
+        "A breach of rule 4 occurred at the point of banking, regardless of the same-day correction",
+        "No breach, provided the client is informed of the delay",
+        "A breach only arises if the transfer takes longer than 24 hours"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Same-day correction feels like it should cure the problem, but rule 4 is breached the moment client money is banked into the business account — the timing of the fix affects severity, not whether a breach occurred at all.",
+      "explanation": "The breach crystallises at the point of the initial, non-compliant banking action. A prompt transfer afterwards mitigates the position but does not retrospectively make the first step compliant."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client sends a single bank transfer of £9,500: £7,000 settling a delivered bill, £2,500 on account of costs for the next stage. The firm's cashier is unsure how to proceed and leaves the whole sum sitting in a suspense account outside both the client and business accounts for a week while she checks the file. Is this compliant?",
+      "options": [
+        "Yes — a suspense account is a recognised third option under rule 4",
+        "No — the money should have been classified and banked into the appropriate account(s) without delay, not parked in a suspense account",
+        "Yes, provided the delay is under 14 days",
+        "No, but only because the sum involved exceeds £5,000"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "A suspense account can feel like a safe, neutral holding pen while uncertainty is resolved, but rule 4 does not recognise it as a compliant destination — the default should be to bank client money into the client account promptly and resolve the split afterwards.",
+      "explanation": "Uncertainty about allocation does not excuse delay. The safer default is banking into the client account without delay and confirming the precise split afterwards, not leaving the sum unbanked or in a suspense account."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm receives a cheque for £12,000: £9,000 to settle a bill delivered last month, £3,000 on account of costs for a new matter. It banks the full £12,000 into the client account and transfers £9,000 to the business account two days later, after confirming the figures with the client care file. Is this compliant?",
+      "options": [
+        "Yes — client money was never exposed to the business account, and the business element was transferred out promptly once confirmed",
+        "No — the £9,000 should have gone straight into the business account",
+        "No — any delay beyond 24 hours is automatically non-compliant",
+        "Yes, but only because the client was informed of the two-day gap"
+      ],
+      "correctIndex": 0,
+      "explanation": "This follows one of the two compliant routes: the whole receipt lands in the client account first, and the business element is transferred out promptly once confirmed. Client money is never exposed to the business account."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A trainee receives a cheque for £3,000 on account of costs at reception on a Monday morning and puts it in a drawer, intending to hand it to the cashier 'when things are quieter' later in the week. Does this comply with rule 4?",
+      "options": [
+        "Yes — rule 4 only requires banking within a reasonable working week",
+        "No — client money must be paid into the client account without delay, and administrative convenience is not a good reason to hold it back",
+        "Yes, provided the cheque is kept securely locked in the drawer",
+        "No, but only because the trainee is not a qualified solicitor"
+      ],
+      "correctIndex": 1,
+      "explanation": "Rule 4's 'without delay' standard is not satisfied by administrative convenience. The money should be banked promptly, and the fact the delay is caused by a trainee rather than a partner is irrelevant — the duty attaches to the firm and everyone handling money within it."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Which phrase from rule 4 sets the timing standard for banking client money?",
+      "options": [
+        "'Without delay'",
+        "'Within a reasonable period of one calendar month'",
+        "'As soon as reasonably practicable but no later than 14 days'",
+        "'By the close of the next business day'"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rule 4 uses the open-textured phrase 'without delay', not a fixed deadline — part of the 2019 rules' shift towards principles-based standards."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-09",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Why does rule 4 treat 'bank the whole mixed receipt into the client account, then transfer the business element out' as compliant, but not the reverse?",
+      "options": [
+        "Because the client account is a larger account and can absorb temporary errors more easily",
+        "Because client money is protected from exposure to the firm's own account only if it is banked into the client account first",
+        "Because HMRC requires business money to be identified before client money",
+        "Because the business account earns lower interest, so it is safer to move money out of it quickly"
+      ],
+      "correctIndex": 1,
+      "explanation": "The underlying purpose of rule 4 is to prevent client money being exposed to the firm's own funds. Banking client-account-first, business-out-after achieves that; the reverse briefly exposes client money to the business account, which is the harm the rule exists to prevent."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm banks a mixed receipt wholly into the client account, then takes three weeks to identify and transfer out the business element, despite having all the information needed to do so within a day. Is the delay itself potentially a breach?",
+      "options": [
+        "No — because client money was never exposed to the business account",
+        "Yes — leaving business money in the client account longer than necessary is also inconsistent with the rules, even though the client money itself was never at risk",
+        "No — only banking client money late is capable of breaching the rules",
+        "Yes, but only if the client complains about the delay"
+      ],
+      "correctIndex": 1,
+      "explanation": "The client account should not become a parking place for the firm's own money either. An unnecessary three-week delay in transferring out a known business element, when the information was available immediately, is inconsistent with the promptness the rules expect."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which two elements typically combine to make a receipt 'mixed' on an active litigation file with staged billing?",
+      "options": [
+        "A sum settling a delivered interim bill, and a further sum on account of costs for the next stage",
+        "Two separate payments from two different clients",
+        "A payment in sterling and a payment in a foreign currency",
+        "A payment for costs and a payment of court fees paid directly by the court"
+      ],
+      "correctIndex": 0,
+      "explanation": "The classic mixed receipt combines business money (settling a delivered bill) with client money (a further payment on account of unbilled costs) in a single payment."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A firm receives a wholly client-money payment of £5,000 (no business element at all, no bill yet delivered). Does the mixed-receipt guidance in this lesson apply to how it should be banked?",
+      "options": [
+        "No — with nothing to split, the payment is simply banked into the client account without delay under the ordinary rule 4 duty",
+        "Yes — every incoming payment must be treated as mixed by default",
+        "No — payments with no business element are exempt from rule 4 altogether",
+        "Yes, because the firm must always check with the client before banking"
+      ],
+      "correctIndex": 0,
+      "explanation": "The mixed-receipt routes exist to solve the problem of two elements in one payment. A wholly client-money payment raises no such problem — it is simply banked into the client account without delay."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A cashier receives a £15,000 mixed receipt (£11,000 business, £4,000 client) and, believing this is the safest option, splits and banks it correctly on the day of receipt: £11,000 to the business account and £4,000 to the client account, direct from the incoming payment. Is this compliant?",
+      "options": [
+        "No — the whole sum must always go into the client account first",
+        "Yes — splitting the payment at source and banking each element directly into the correct account without delay is itself a compliant route",
+        "No — this bypasses the requirement to confirm the split with the client in writing first",
+        "Yes, but only for payments under £20,000"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to assume the client account must always receive the whole sum first as a matter of rigid procedure. In fact, splitting a mixed receipt correctly at the point of banking is one of the two compliant routes described in this lesson — there is no requirement to route everything through the client account first if the split can be made accurately and promptly.",
+      "explanation": "Splitting a mixed receipt correctly and banking each part directly, without delay, into the right account is itself compliant — it is one of the two accepted routes, not a shortcut around them."
+    },
+    {
+      "itemId": "sqe1-sa-02-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm receives a £20,000 mixed receipt (£18,000 business, £2,000 client) and, to be cautious, banks the entire sum into the client account, planning to transfer the £18,000 out 'once year-end reconciliation is done' in six weeks' time. Is this compliant?",
+      "options": [
+        "Yes — caution about accuracy always justifies any length of delay",
+        "No — a six-week delay in transferring an already-identified business element is not 'promptly', even though the initial banking step was correct",
+        "Yes, because the client money element was correctly protected throughout",
+        "No, because the entire receipt should have gone into the business account instead"
+      ],
+      "correctIndex": 1,
+      "explanation": "Banking the whole sum into the client account first was the right first step, but leaving a known, already-identified business element there for six weeks for administrative convenience is not the prompt transfer the compliant route requires."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson is believing that speed of correction cures a wrong first step. Rule 4 is breached the instant client money is banked into the business account, however quickly it is then moved — the direction of the first banking action is what matters, not the tidiness of the end position.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.receiving-money-mixed-receipts"
+  }
+}

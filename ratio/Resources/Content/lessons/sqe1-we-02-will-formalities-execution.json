@@ -1,0 +1,347 @@
+{
+  "lessonId": "sqe1-we-02",
+  "moduleId": "sqe1-wills-administration-estates",
+  "moduleTitle": "SQE1 · Wills and Administration of Estates",
+  "lessonNumber": 2,
+  "topicId": "sqe1.wills-estates.formalities-execution",
+  "track": "SQE1",
+  "title": "Will formalities and execution",
+  "subtitle": "The four s 9 requirements, and why signing as a witness can cost you your gift",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the four requirements for due execution of a will under s 9 of the Wills Act 1837",
+    "Explain what 'presence' means for attestation purposes and why it is not confined to being in the same room",
+    "Apply s 15 of the Wills Act 1837 and the 1968 amendment to determine whether a gift to an attesting witness survives"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Wills Act 1837, s 9 (as substituted by the Administration of Justice Act 1982, s 17)", "role": "Sets the four formal requirements for a valid will" },
+    { "citation": "Wills Act 1837, s 15", "role": "Voids a gift to an attesting witness, or the spouse or civil partner of an attesting witness" },
+    { "citation": "Wills Act 1968, s 1", "role": "Saves a gift under s 15 where the will is duly executed without counting that witness's attestation" },
+    { "citation": "Casson v Dade (1781) 1 Bro CC 99", "role": "Illustrates that 'presence' for attestation purposes turns on line of sight, not physical proximity" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Formalities questions reward precision over instinct — a will that 'feels' properly signed can still fail s 9 on a detail most people never notice, like witnesses signing at different moments without the right sequence. Where the profile shows formalities are being answered on gut feel, this note appears: 'Slow down and check each of the four s 9 limbs in turn, rather than asking whether the will looks valid overall.'",
+    "profileHooks": {
+      "weakApplication": "You know the four requirements cold. The test pool below is weighted towards fact patterns that get one small detail wrong — read each scenario for the exact sequence of who signed when.",
+      "weakKnowledge": "Start with Part 1 and fix the four s 9 requirements as a strict checklist before moving on — the rest of the lesson assumes you can recite them without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two witnesses, one testator, one signature — and yet a huge proportion of contested wills fail not because anyone doubted what the testator wanted, but because of exactly how, when, and in whose sight the signing happened. Formalities look like paperwork. In practice they are where the most avoidable challenges to a will come from.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The Law Commission has recommended reform of will formalities, including possible provision for electronic wills, but no Act implementing those recommendations has been passed — s 9 of the Wills Act 1837, as substituted in 1982, remains the current law taught here."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The four requirements of s 9",
+        "voice": "structural — a reference part students will return to before the exam",
+        "body": [
+          "Section 9 of the Wills Act 1837 sets out the formal requirements for a valid will. Get any one of the four wrong and the document is not a valid will, however clearly it records what the testator wanted.",
+          "The provision was substituted by the Administration of Justice Act 1982, and the modern wording is worth learning close to verbatim, because exam scenarios are built to test each limb separately.",
+          "Notice what the section does not require: it doesn't require the will to be handwritten, dated (though good practice), or drafted by a solicitor. It requires writing, signature, intention, and attestation by two witnesses present together — nothing more, nothing less."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Wills Act 1837, s 9",
+            "text": "No will shall be valid unless (a) it is in writing, and signed by the testator, or by some other person in his presence and by his direction; and (b) it appears that the testator intended by his signature to give effect to the will; and (c) the signature is made or acknowledged by the testator in the presence of two or more witnesses present at the same time; and (d) each witness either attests and signs the will, or acknowledges his signature, in the presence of the testator (but not necessarily in the presence of any other witness).",
+            "elements": ["Writing, signed by the testator (or by another at their direction, in their presence)", "Intention that the signature gives effect to the will", "Signature made or acknowledged in the joint presence of two or more witnesses", "Each witness attests and signs, or acknowledges their signature, in the testator's presence"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-02-check-01",
+          "type": "statuteParser",
+          "skillTag": "knowledge",
+          "prompt": "Under s 9(c), when must the testator's two witnesses be present together?",
+          "options": ["When the testator makes or acknowledges their own signature", "When each witness signs the will", "At any point during the overall meeting", "Only if the testator is over 70"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Joint presence is required at the moment the testator signs or acknowledges their signature — s 9(d) then allows the witnesses to sign at different times, provided each does so in the testator's presence.",
+          "feedbackIncorrect": "Look again at s 9(c) specifically — the joint-presence requirement attaches to the testator's own signing or acknowledgment, not to when the witnesses later add their own signatures."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Signature and intention: (a) and (b)",
+        "voice": "direct — works through common variations on ordinary signing",
+        "body": [
+          "The signature requirement in s 9(a) is more flexible than students expect. It does not have to be a full legal signature — an initial, a mark, or even signing in an assumed name has been held sufficient, provided it is clear the testator intended it to operate as their signature to the document.",
+          "Section 9(a) also permits someone else to sign on the testator's behalf, provided this is done in the testator's presence and at their direction — useful where a testator is physically unable to sign themselves.",
+          "Section 9(b) adds a separate requirement: it must appear that the testator intended, by that signature, to give effect to the will as a whole. This matters where a testator signs a draft, or signs only the last page of a multi-page document — intention to finalise, not just to acknowledge having read it, is what s 9(b) is after."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Animus testandi",
+            "definition": "The testator's intention that a document should operate as their will. Distinct from testamentary capacity — a capable testator can sign a document without the necessary intention that this particular signature give effect to it as a will."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-02-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order s 9 requires for a will to be validly executed by the testator personally.",
+          "items": [
+            "The document is prepared in writing",
+            "The testator signs, intending the signature to give effect to the will",
+            "The testator signs or acknowledges the signature in the joint presence of two witnesses",
+            "Each witness attests and signs in the testator's presence"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure of s 9: writing and signature with intention come first, then joint presence at signing or acknowledgment, then attestation.",
+          "feedbackIncorrect": "Check the order again — the testator's own signature (with intention) must exist before it is signed or acknowledged in front of the witnesses, and attestation is the final step."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "What does 'presence' actually mean?",
+        "voice": "case-narrative — an old case that still sets the modern test",
+        "body": [
+          "Section 9(c) requires the testator's signature to be made or acknowledged in the presence of the witnesses. 'Presence' does not mean the same room, and it does not mean physical touching distance — the test, going back over two centuries, is one of line of sight.",
+          "In Casson v Dade, the testatrix, too unwell to go into her attorney's office, signed her will while sitting in her carriage outside. Her witnesses signed inside the office. The question was whether she was 'present' for their attestation.",
+          "It was held that she was present, because — through a combination of the carriage's position, the office window, and a mirror inside — she could actually see the witnesses signing. The court didn't ask whether they were in the same room; it asked whether a clear line of sight existed. That remains the test today: could the testator, if they had looked, actually have seen what was happening?"
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Casson v Dade",
+            "citation": "(1781) 1 Bro CC 99",
+            "court": "Court of Chancery",
+            "year": 1781,
+            "factsShort": "A testatrix signed her will in her carriage outside her attorney's office; her witnesses attested inside, visible to her through a window and a mirror.",
+            "ratioShort": "'Presence' for attestation purposes is a question of line of sight, not physical proximity or being in the same room.",
+            "expanded": {
+              "facts": "The testatrix was too unwell to leave her carriage, so she remained outside the attorney's office while her will was taken inside for the witnesses to sign. The carriage was positioned so that, looking through the office window (and, on some accounts, aided by a mirror), she could see into the room where the witnesses signed.",
+              "judgmentExtract": "The court held the execution valid, treating the question of presence as one of fact: whether the testatrix was so placed that she could have seen the act of attestation, had she chosen to look, rather than requiring physical co-location.",
+              "significance": "The case is still cited as authority for the line-of-sight test for 'presence' under s 9. It shows the requirement is about opportunity to observe, not mere proximity — a testator two feet away with their back turned and no way of seeing is arguably less 'present' than one further off but in clear view."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-02-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Applying the Casson v Dade line-of-sight test, in which scenario is the s 9(c) presence requirement most likely satisfied?",
+          "scenarioA": "The testator signs the will, then leaves the room entirely while the two witnesses sign it in a different office out of any possible view.",
+          "scenarioB": "The testator sits at one end of a large open-plan office and signs; the two witnesses sign at a desk across the room, in the testator's clear, unobstructed line of sight the whole time.",
+          "correctScenario": "B",
+          "explanation": "B satisfies the line-of-sight test even without physical proximity, exactly as in Casson v Dade. A involves the testator having left entirely, with no possibility of observing the witnesses at all — presence is not satisfied merely because they were recently in the same building."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The s 15 trap: gifts to attesting witnesses",
+        "voice": "argumentative — states the harsh rule, then the rescue that softens it",
+        "body": [
+          "Section 15 of the Wills Act 1837 does something quietly brutal: if a person who attests the will (or their spouse or civil partner) is also given a gift under it, that gift is void. The will itself remains validly executed — the witness's signature still counts towards the two required — but the beneficiary loses their inheritance.",
+          "The policy is obvious once stated: a witness who stands to gain from the will has an incentive to attest to something untrue, so the law removes the incentive by taking away the gift, rather than by disqualifying the witness (which would risk leaving the will one witness short).",
+          "There is a rescue, added by the Wills Act 1968: if the will is duly executed without needing to count that particular witness's attestation — that is, there were enough other properly qualifying witnesses regardless — the gift is saved. In practice this means a will witnessed by three people, where the beneficiary is one of them, can still pass the gift to that beneficiary, because their attestation was never necessary to validity in the first place."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often think a gift to an attesting witness invalidates the whole will.",
+            "whyItsWrong": "Section 15 only voids the gift to that witness (or their spouse or civil partner) — the will itself, and every other gift in it, remains validly executed. Confusing 'gift voided' with 'will invalid' is the single most common error on this topic."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-02-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A will is signed by exactly two witnesses, one of whom is the testator's daughter and the will's sole beneficiary. What is the effect?",
+          "options": ["The will is validly executed, but the daughter's gift is void under s 15, and the 1968 rescue does not apply because her attestation was necessary to reach the required two witnesses", "The whole will is invalid because a beneficiary cannot act as a witness at all", "The daughter's gift is unaffected because she is a family member, not a stranger", "The will is invalid because only one independent witness signed"],
+          "correctIndex": 0,
+          "trapExplanation": "It's tempting to think family relationships are irrelevant, or that any defect here invalidates the whole will — neither is right. The 1968 rescue only helps if there were enough qualifying witnesses without her; with exactly two witnesses, her attestation is necessary, so s 15 bites in full.",
+          "explanation": "With only two witnesses, both are needed for due execution, so the daughter's attestation cannot be disregarded and her gift is void under s 15 — but the will itself stands, and any gifts to other, non-witnessing beneficiaries remain valid."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting execution together: an application walk-through",
+        "voice": "Socratic — works through a scenario limb by limb",
+        "body": [
+          "In practice, execution problems rarely announce themselves as 'a s 9 issue' or 'a s 15 issue' — you get a narrative of a signing, and you have to check each requirement in turn.",
+          "A useful discipline: check writing and signature first, then intention, then joint presence at the moment of signing or acknowledgment, then attestation by each witness in the testator's presence. Only once execution is confirmed does it make sense to ask whether any witness also happens to be a beneficiary.",
+          "Consider a testator who signs a will at home with two neighbours present, one of whom is left a modest legacy. If a third, independent witness had also been present and had signed, the beneficiary-neighbour's gift would very likely survive under the 1968 rescue — but with only the two witnesses, it will not."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Checking due execution and the s 15/1968 rescue",
+            "description": "The sequence for analysing an execution scenario.",
+            "nodes": [
+              { "id": "start", "label": "Is the will in writing and signed by the testator (or another, at their direction, in their presence)?" },
+              { "id": "intent", "label": "Did the testator intend the signature to give effect to the will (s 9(b))?" },
+              { "id": "presence", "label": "Was the signature made or acknowledged in the joint presence of two or more witnesses (line-of-sight test)?" },
+              { "id": "attest", "label": "Did each witness attest and sign, or acknowledge their signature, in the testator's presence?" },
+              { "id": "valid", "label": "Due execution satisfied — now check s 15: is any beneficiary an attesting witness (or their spouse/civil partner)?" },
+              { "id": "rescue", "label": "If so, was the will duly executed without needing that witness's attestation? If yes, the 1968 rescue saves the gift" }
+            ],
+            "edges": [
+              { "from": "start", "to": "intent" },
+              { "from": "intent", "to": "presence" },
+              { "from": "presence", "to": "attest" },
+              { "from": "attest", "to": "valid" },
+              { "from": "valid", "to": "rescue" }
+            ],
+            "textAlternative": "First check writing and signature, then intention that the signature gives effect to the will, then joint presence of two witnesses at signing or acknowledgment (a line-of-sight test), then attestation by each witness in the testator's presence. Once due execution is established, separately check whether any beneficiary attested the will or is the spouse or civil partner of someone who did — if so, ask whether the will would still have been duly executed without that witness's attestation; if yes, the 1968 Act saves the gift."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-02-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A testator signs his will at his kitchen table. Three neighbours are present and watch him sign; all three then sign as witnesses, one after another, each in the testator's presence. One of the three is left a legacy in the will. Is that legacy valid?",
+          "options": ["Yes — the will was duly executed without needing that neighbour's attestation, since the other two witnesses were sufficient, so the 1968 rescue saves the gift", "No — any gift to any witness is always void regardless of how many witnesses signed", "No — three witnesses is too many for a valid will", "Yes, but only because the neighbour is not a relative of the testator"],
+          "correctIndex": 0,
+          "explanation": "With three attesting witnesses and only two required, the will remains duly executed even disregarding the beneficiary-witness's attestation, so the Wills Act 1968 saves her gift from s 15."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-we-02-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "How many witnesses does s 9 of the Wills Act 1837 require for due execution of a will?",
+      "options": ["Two or more, present at the same time when the testator signs or acknowledges their signature", "One, provided a solicitor also countersigns", "Three, unless the testator is a solicitor", "None, provided the will is typed and dated"],
+      "correctIndex": 0,
+      "explanation": "Section 9(c) requires at least two witnesses present together at the moment of the testator's signature or acknowledgment."
+    },
+    {
+      "itemId": "sqe1-we-02-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Under s 9(d), must both witnesses sign the will at the same moment as each other?",
+      "options": ["No — each witness must sign, or acknowledge their signature, in the testator's presence, but not necessarily in the presence of any other witness", "Yes — both must sign simultaneously or the will is void", "No — witnesses never need to be in the testator's presence when they sign", "Yes, and they must also be in each other's presence"],
+      "correctIndex": 0,
+      "explanation": "Section 9(d) expressly allows witnesses to attest separately, provided each does so in the testator's presence — only the testator's own signing or acknowledgment requires the witnesses' joint presence."
+    },
+    {
+      "itemId": "sqe1-we-02-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A testator, physically unable to hold a pen, directs her son to sign the will for her while she watches. Can this satisfy s 9(a)?",
+      "options": ["Yes — s 9(a) expressly permits another person to sign at the testator's direction and in her presence", "No — only the testator may ever sign their own will", "No — a family member can never sign on the testator's behalf", "Yes, but only if the son is also a solicitor"],
+      "correctIndex": 0,
+      "explanation": "Section 9(a) allows signature by someone else, provided it is done in the testator's presence and at her direction — a common arrangement where a testator cannot physically sign."
+    },
+    {
+      "itemId": "sqe1-we-02-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A testator signs page one of a three-page will, believing it to be a draft, and never signs or initials the final page. Which s 9 requirement is most clearly in doubt?",
+      "options": ["Section 9(b) — intention that the signature give effect to the will as a whole", "Section 9(c) — joint presence of witnesses", "Section 9(d) — attestation by witnesses", "None — the document is valid regardless"],
+      "correctIndex": 0,
+      "explanation": "Signing what is believed to be a draft, without the final document being completed as intended, raises a real question about whether the testator intended that signature to give effect to the will under s 9(b)."
+    },
+    {
+      "itemId": "sqe1-we-02-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "What is the effect of s 15 of the Wills Act 1837 where a beneficiary also attests the will?",
+      "options": ["The gift to that beneficiary is void, but the will itself remains validly executed", "The entire will is void", "The witness's attestation is automatically disregarded and does not count towards the required two", "The gift is reduced by half but not extinguished"],
+      "correctIndex": 0,
+      "trapExplanation": "The most common wrong instinct is that this invalidates the whole will, or that the attestation itself is struck out — s 15 targets only the gift, leaving both the will and the attestation intact.",
+      "explanation": "Section 15 voids the gift, not the will or the attestation. The witness's signature still counts for the purposes of due execution."
+    },
+    {
+      "itemId": "sqe1-we-02-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "How does the Wills Act 1968 modify the effect of s 15?",
+      "options": ["It saves the gift where the will was duly executed without needing that witness's attestation", "It abolishes s 15 entirely for wills made after 1968", "It extends s 15 to cover any friend of a witness, not just a spouse or civil partner", "It allows a witness's gift to survive only if the testator ratifies it in a codicil"],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to assume the 1968 Act simply repealed the harsh rule outright — it did not. It created a narrow, fact-specific rescue that only helps when the witness's attestation was surplus to what was legally required.",
+      "explanation": "The rescue in the 1968 Act applies only where the will would have been duly executed regardless of that witness's attestation — for example, where sufficient other witnesses signed."
+    },
+    {
+      "itemId": "sqe1-we-02-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A testator's will is witnessed by exactly two people: a close friend, and that friend's husband, who is also left a legacy. Is the husband's legacy valid?",
+      "options": ["No — s 15 voids a gift to the spouse of an attesting witness, and with only two witnesses the 1968 rescue does not apply", "Yes — s 15 only applies to the witness personally, never to a spouse", "Yes — the 1968 rescue always saves gifts to spouses of witnesses", "No — the entire will is void because a witness's spouse benefited"],
+      "correctIndex": 0,
+      "trapExplanation": "Two traps sit close together here: assuming s 15 doesn't reach spouses at all, and assuming the 1968 rescue applies regardless of how many witnesses there were. Neither is right on these facts.",
+      "explanation": "Section 15 extends to the spouse or civil partner of an attesting witness. With only two witnesses, both attestations are necessary, so the rescue in the 1968 Act cannot apply and the husband's gift is void."
+    },
+    {
+      "itemId": "sqe1-we-02-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A testator signs her will while seated on a park bench. Her two witnesses stand a few feet away, in her clear, unobstructed view, and sign the document there and then. Is the s 9(c) presence requirement satisfied?",
+      "options": ["Yes — presence is assessed by line of sight, not by being indoors or within touching distance", "No — attestation must take place indoors to count", "No — presence requires the witnesses to be within arm's reach of the testator", "Yes, but only if the testator is also a solicitor"],
+      "correctIndex": 0,
+      "explanation": "Following Casson v Dade, presence turns on whether the testator could see the act of attestation, regardless of the physical setting."
+    },
+    {
+      "itemId": "sqe1-we-02-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A testator signs his will in his solicitor's office. The two witnesses then take the document to a separate room, entirely out of the testator's sight, to add their signatures. Is s 9(d) satisfied?",
+      "options": ["No — each witness must attest and sign, or acknowledge their signature, in the testator's presence", "Yes — witnesses may always sign anywhere, provided the testator signed first", "Yes — s 9(d) only requires witnesses to be present at some point during the appointment", "No — the will is void regardless of what happens next because it left the room"],
+      "correctIndex": 0,
+      "explanation": "Section 9(d) requires the witnesses' own attestation and signature to occur in the testator's presence. Signing in a separate room, out of sight, does not satisfy this."
+    },
+    {
+      "itemId": "sqe1-we-02-test-10",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A will is attested by four witnesses, one of whom is a beneficiary under it. Applying the Wills Act 1968, is the beneficiary-witness's gift likely to be saved?",
+      "options": ["Yes, provided the will was duly executed by the other three witnesses without needing to count the beneficiary's attestation", "No — the rescue never applies once more than two witnesses are used", "No — a beneficiary can never also act as a witness under any circumstances", "Yes, automatically, regardless of how many witnesses there were"],
+      "correctIndex": 0,
+      "explanation": "The 1968 rescue asks whether the will would have been duly executed without that witness. With three other qualifying witnesses (more than the two required), the beneficiary's attestation was unnecessary, and the gift is saved."
+    },
+    {
+      "itemId": "sqe1-we-02-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following is required by s 9 of the Wills Act 1837?",
+      "options": ["That the will is in writing and signed by the testator, or by another at the testator's direction and in the testator's presence", "That the will is dated by the testator", "That the will names an executor", "That the will is witnessed by a solicitor specifically"],
+      "correctIndex": 0,
+      "explanation": "Section 9(a) sets the writing and signature requirement; dating, naming an executor, and solicitor involvement are all good practice but not statutory requirements of due execution."
+    },
+    {
+      "itemId": "sqe1-we-02-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "What is the purpose of s 15 voiding a gift to an attesting witness, rather than disqualifying the witness from attesting at all?",
+      "options": ["To remove the witness's incentive to give false evidence about the signing, without risking the will being left short of the required number of witnesses", "To punish the witness for agreeing to help the testator", "To make sure only solicitors can ever benefit under a will", "To ensure every will has at least three witnesses"],
+      "correctIndex": 0,
+      "explanation": "Disqualifying the witness's attestation outright could leave a will short of the two witnesses s 9 requires. Voiding only the gift removes the conflict of interest while preserving due execution."
+    },
+    {
+      "itemId": "sqe1-we-02-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A testator's will is properly signed and witnessed by two independent, non-beneficiary neighbours. Six months later, one of those neighbours is separately given a gift by the testator in a lifetime transfer, unconnected to the will. Does s 15 affect this gift?",
+      "options": ["No — s 15 only voids gifts made under the will itself to an attesting witness, not unrelated lifetime gifts", "Yes — any gift to a former witness at any time is void", "Yes, but only if the lifetime gift exceeds the value of the estate", "No — s 15 does not apply to neighbours, only to relatives"],
+      "correctIndex": 0,
+      "explanation": "Section 15 is confined to gifts made under the will to a witness (or their spouse or civil partner). A separate, unrelated lifetime gift falls outside its scope entirely."
+    },
+    {
+      "itemId": "sqe1-we-02-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "What does the term 'attestation' mean in the context of s 9?",
+      "options": ["A witness confirming, by their own signature, that they observed the testator sign or acknowledge the will", "The testator's own act of signing the will", "A solicitor's certificate that the will complies with the Wills Act", "The process of registering a will with the Probate Registry"],
+      "correctIndex": 0,
+      "trapExplanation": "Attestation is sometimes confused with the testator's own signature or with post-death registration — it specifically refers to the witnesses' role in confirming and signing to what they saw.",
+      "explanation": "Attestation is the witnesses' act of signing (or acknowledging their signature) to confirm they witnessed the testator's signature or acknowledgment, as required by s 9(d)."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two recurring traps in this lesson are treating any execution defect as invalidating the whole will (it doesn't — s 15 voids only the tainted gift), and assuming 'presence' means physical proximity rather than the line-of-sight test from Casson v Dade.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.wills-estates.formalities-execution"
+  }
+}

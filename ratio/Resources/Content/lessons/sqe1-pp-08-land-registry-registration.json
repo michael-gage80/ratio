@@ -1,0 +1,324 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-pp-08",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 8,
+  "topicId": "sqe1.property-practice.land-registry-registration",
+  "title": "Post-completion II: registration at HM Land Registry",
+  "subtitle": "Why title passes on registration, not completion — and how the gap is protected",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain why legal title to registered land does not pass on completion but on registration, and describe the buyer's position in the interim",
+    "Describe the purpose and effect of an OS1 priority search and the AP1 application that must be lodged within its protection period",
+    "Explain how a seller's existing mortgage is discharged on a sale and why a lender's search protects both the buyer's title and any new charge"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Land Registration Act 2002, s 27", "role": "Provides that a disposition of registered land does not operate at law until the relevant registration requirements are met" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "It feels obvious that a buyer owns a property the moment they complete — they've paid, they've got the keys, the seller has moved out. This lesson is about the gap between that feeling and the legal position: for registered land, ownership at law doesn't move until the Land Registry updates its register, and everything that happens in between exists to manage that gap safely.",
+    "profileHooks": {
+      "weakApplication": "You know the s 27 rule already. The test pool below pushes on what follows from it — priority periods, what happens if AP1 is lodged late, what a buyer actually holds the day after completion.",
+      "weakKnowledge": "Start with Part 1 and make sure the completion/registration distinction is solid before moving on — every later part in this lesson builds directly on it."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A buyer completes on a Tuesday. They have the keys, the seller's solicitor has confirmed receipt of the money, and by every ordinary measure the house is now theirs. Legally, it isn't — not yet. For four to six weeks, sometimes longer, the buyer holds something less than the legal title they paid for, and the entire post-completion process exists to close that gap without anyone losing their priority in the meantime."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Completion is not the moment title passes",
+        "voice": "structural — states the counter-intuitive rule plainly, then justifies it",
+        "body": [
+          "For unregistered land, a deed transfers legal title the moment it is executed and delivered. For registered land — the vast majority of land in England and Wales today — that intuition is wrong. Section 27 of the Land Registration Act 2002 provides that certain dispositions, including a transfer of a registered freehold or the grant of most leases, do not operate at law until the registration requirements relating to them are met.",
+          "In practice, that means the transfer deed executed on completion day passes only an equitable interest. The buyer becomes the beneficial owner immediately, entitled to the property in every practical sense, but does not become the registered — and therefore legal — proprietor until HM Land Registry actually updates the register in the buyer's name.",
+          "This is not a technicality to skim past. The gap between completion and registration is where priority disputes, competing interests and simple administrative delay can all do real damage to a buyer who has already paid the full price and taken possession."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "The registration gap",
+            "definition": "The period between completion, when a buyer of registered land acquires only an equitable interest, and registration, when HM Land Registry updates the register and legal title finally passes under s 27 LRA 2002."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-08-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "For registered land, at what point does legal title pass to the buyer?",
+          "options": ["On exchange of contracts", "On completion", "On registration at HM Land Registry", "On payment of the deposit"],
+          "correctIndex": 2,
+          "feedbackCorrect": "Right — s 27 LRA 2002 holds legal title back until registration, whatever has already happened on completion day.",
+          "feedbackIncorrect": "Not completion. Under s 27 LRA 2002, a transfer of registered land only takes effect at law once the register is updated — completion passes an equitable interest, not the legal title."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What the buyer actually holds, day one after completion",
+        "voice": "Socratic — poses the practical question, then answers it precisely",
+        "body": [
+          "So what is a buyer's position the day after completion, before AP1 has even reached the Land Registry? They hold an equitable interest under the transfer, they are in possession, and they are the beneficial owner — but the seller remains the registered proprietor on paper until the application is processed.",
+          "This matters most where the buyer needs to deal with the property before registration completes — for example, taking out a mortgage, or in rarer cases reselling quickly. A buyer's equitable-only interest can, in principle, be vulnerable to some third-party claims that a fully registered legal title would defeat, which is exactly why solicitors move to protect priority immediately rather than simply waiting for the registration process to run its course in the background.",
+          "None of this means the buyer is unprotected. It means the protection has to be actively secured through the priority search mechanism covered next, rather than assumed to exist automatically from the moment of completion."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Buyer's position between completion and registration",
+            "points": [
+              "Equitable owner and beneficial owner of the property from completion",
+              "Entitled to possession from completion, as agreed in the contract",
+              "Not yet the registered proprietor — the seller remains on the register until AP1 is processed",
+              "Priority against third-party claims depends on the OS1 search and timely AP1 application, not on completion alone"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-08-check-02",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a buyer who has completed but not yet registered is automatically protected against all third-party claims, with nothing further needed?",
+          "sliderLabels": ["Definitely automatically protected", "Definitely not — protection has to be actively secured"],
+          "correctPosition": "not — protection has to be actively secured",
+          "explanation": "Completion alone does not secure the buyer's priority. The buyer's equitable interest is protected against competing claims through the OS1 priority search and a timely AP1 application — a deliberate step, not an automatic consequence of completing."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Priority searches and the AP1 application",
+        "voice": "procedural — sets out the mechanism step by step",
+        "body": [
+          "Before completion, the buyer's conveyancer runs an OS1 search (or OS2 for part of a title) against the registered title. This does two things: it confirms the state of the register immediately before completion, and — critically — it creates a priority period, currently 30 working days, during which any application to register the buyer's interest takes priority over any other application or entry made against the title in the meantime.",
+          "That priority period is what turns the registration gap from a genuine risk into a manageable administrative window. As long as the buyer's application to register — Form AP1, together with the transfer, any mortgage deed and the required fee — is lodged with the Land Registry before the priority period expires, the buyer's interest is protected as though it had been registered from the moment the search was made, even though actual processing can take considerably longer.",
+          "Missing the priority period is the failure mode to watch for. If AP1 is not lodged in time, the protection lapses, and a fresh OS1 search — and a fresh priority period — is needed before the application can be safely submitted, exposing the buyer to whatever has been entered against the title in the gap."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Land Registration Act 2002, s 27 (in practice, applied through HM Land Registry's priority search procedure)",
+            "text": "An OS1 (or OS2) search against a registered title confers a priority period, currently 30 working days, within which an application to register the searched-for interest takes priority over other entries made against the title during that period.",
+            "elements": ["OS1/OS2 search run before completion", "Confirms register position and opens a priority period", "AP1 (with transfer, any mortgage deed, and fee) must be lodged within that period", "Priority secured from the search date, even though processing takes longer"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-08-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these post-completion registration steps in the correct order.",
+          "items": [
+            "OS1 priority search run against the title before completion",
+            "Completion takes place",
+            "Form AP1 lodged with HM Land Registry within the priority period",
+            "Register updated and buyer becomes registered proprietor"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: the search opens the priority window before completion, and everything afterwards is a race to lodge AP1 inside it.",
+          "feedbackIncorrect": "Check the order again — the OS1 search happens before completion, not after, precisely so its priority period is already running by the time AP1 needs to be lodged."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Discharging the seller's mortgage",
+        "voice": "case-narrative — traces the mechanics through a typical transaction",
+        "body": [
+          "Most sales involve a seller who still owes money on an existing mortgage secured against the property. That charge has to be removed from the register before, or as part of, the buyer's registration — a buyer cannot safely be registered with clean title while someone else's lender's charge still sits on it.",
+          "The mechanism is a Form DS1 (or, increasingly, an electronic DS1 — an e-DS1, generated directly through the Land Registry's portal by the seller's lender) confirming that the mortgage debt has been repaid and the lender consents to the charge being removed. The seller's solicitor obtains a redemption statement before completion, uses part of the sale proceeds to repay the seller's lender on completion day, and then either receives DS1 from the lender or triggers an e-DS1 electronically.",
+          "Where the seller's lender operates the Land Registry's Business e-Services system, discharge can happen close to instantly and electronically, without a paper DS1 ever being generated or needing to be chased. Where it does not, DS1 has to be requested, obtained and lodged as a physical document alongside AP1 — which is slower, and is exactly the kind of step that can hold up a straightforward sale if it isn't chased proactively."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "DS1 / e-DS1",
+            "definition": "The form (or its electronic equivalent) by which a lender confirms that a mortgage debt secured against the property has been repaid and consents to its charge being removed from the register."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-08-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that shows the seller's mortgage has been properly dealt with post-completion.",
+          "scenarioText": "The seller's solicitor obtains a redemption statement before completion, repays the seller's lender out of the sale proceeds on completion day, and receives an e-DS1 confirming the charge is discharged, which is then lodged with the buyer's AP1 application.",
+          "tappableSpans": ["obtains a redemption statement", "repays the seller's lender out of the sale proceeds", "receives an e-DS1 confirming the charge is discharged", "lodged with the buyer's AP1 application"],
+          "correctSpan": "receives an e-DS1 confirming the charge is discharged",
+          "feedbackCorrect": "That's the step that actually evidences discharge — the redemption statement and repayment are necessary preconditions, but it's the DS1/e-DS1 that formally confirms to the Land Registry that the seller's charge can be removed.",
+          "feedbackIncorrect": "The redemption statement and repayment matter, but they're inputs to the process, not proof the charge is discharged. Look for the document that actually confirms the lender's consent to removing its charge from the register."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why a lender search protects both sides of the transaction",
+        "voice": "structural — closes the lesson by connecting the buyer's and lender's interests",
+        "body": [
+          "Where the buyer is taking out a new mortgage to fund the purchase, the buyer's OS1 search and AP1 application protect more than the buyer's own title — they also protect the priority of the buyer's new lender's charge, which is registered at the same time as (indeed, usually as part of) the same AP1 application.",
+          "This is why a buyer's lender insists on the conveyancer running a proper priority search and lodging AP1 within the protection period: if the buyer's title were registered but the new charge lodged late, some intervening third-party interest could in principle take priority over the lender's security — leaving the lender with a charge that ranks behind something it never agreed to rank behind.",
+          "The upshot is that registration is never purely a buyer-side administrative step. It simultaneously perfects the buyer's legal title and the lender's security, and the same 30-working-day priority period has to cover both, which is exactly why conveyancers treat the AP1 deadline as one of the hardest deadlines in the whole transaction to miss."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes treat the OS1/AP1 priority period as protecting only the buyer's ownership, and assume the lender's mortgage is separately and automatically safe once the mortgage deed is signed on completion day.",
+            "whyItsWrong": "A mortgage deed executed on completion, like the transfer itself, only creates an equitable charge until registration. The lender's legal charge depends on the same priority search and timely AP1 application as the buyer's own title — which is exactly why lenders require solicitors to follow the priority search procedure correctly, not just to complete the loan."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-08-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A buyer completes with a new mortgage. AP1 is lodged one day after the OS1 priority period has expired, and in the meantime a third party had registered a competing interest against the title. What is the most likely consequence?",
+          "options": ["No consequence — the mortgage deed itself already gave the lender legal priority on completion", "Both the buyer's title and the lender's charge lose the priority they would have had, and may rank behind the intervening interest", "Only the buyer's title is affected; the lender's charge is unaffected", "AP1 can simply be backdated to the completion date to fix the problem"],
+          "correctIndex": 1,
+          "trapExplanation": "It's tempting to think the mortgage deed itself locks in the lender's priority regardless of what happens with registration — but like the transfer, the charge is only equitable until registered, and shares the same priority-period protection (and the same exposure if that period lapses) as the buyer's own title.",
+          "explanation": "Because the transfer and the mortgage deed are both dispositions that depend on registration under s 27 LRA 2002, missing the priority period exposes both the buyer's title and the lender's charge to whatever was registered against the title in the gap — which is precisely why the deadline is treated so seriously."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-08-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which provision of the Land Registration Act 2002 provides that a transfer of registered land does not operate at law until registration?",
+      "options": ["Section 2", "Section 27", "Section 58", "Section 96"],
+      "correctIndex": 1,
+      "explanation": "Section 27 LRA 2002 sets out the dispositions — including a transfer of registered freehold land — that only take effect at law once the relevant registration requirements have been met."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What interest does a buyer of registered land hold in the property the day after completion, before AP1 has been processed?",
+      "options": ["No interest at all until registration", "Full legal title, identical to a registered proprietor's", "An equitable interest only", "A statutory tenancy"],
+      "correctIndex": 2,
+      "explanation": "The transfer executed on completion passes an equitable interest immediately; legal title, and registered proprietorship, follow only once the register is updated."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-03",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What form is used by a buyer's conveyancer to apply to HM Land Registry to register a transfer of registered land?",
+      "options": ["Form DS1", "Form OS1", "Form AP1", "Form TR1"],
+      "correctIndex": 2,
+      "explanation": "Form AP1 is the application to register a dealing with registered land, lodged with the transfer (Form TR1), any mortgage deed, and the fee — normally within the priority period opened by the prior OS1 search."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "prompt": "A conveyancer runs an OS1 search 25 working days before completion. Completion then takes place on schedule. Roughly how much of the priority period remains at completion, assuming a standard 30-working-day period?",
+      "options": ["None — the period has already expired", "About 5 working days", "About 20 working days", "The full 30 working days, unaffected by the search date"],
+      "correctIndex": 1,
+      "explanation": "The priority period runs from the date of the OS1 search, not from completion, so if 25 of the 30 working days have already elapsed by completion, only around 5 working days remain to lodge AP1 within the protected window."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A trainee tells a client that, once completion has taken place, the client's ownership is fully secure and nothing further needs to happen at the Land Registry beyond routine paperwork. What is wrong with this advice?",
+      "options": ["Nothing — completion does secure full legal ownership for registered land", "It understates the risk: legal title has not yet passed, and priority depends on lodging AP1 within the OS1 priority period", "It is wrong only if the buyer used a mortgage to fund the purchase", "It is correct provided the buyer has moved into the property"],
+      "correctIndex": 1,
+      "trapExplanation": "The reassurance sounds right because the buyer has paid, has possession, and feels like the owner — but s 27 LRA 2002 means legal title genuinely has not passed yet, and the buyer's priority is not automatic.",
+      "explanation": "Completion passes only an equitable interest for registered land. The client's priority against third-party claims depends on the OS1 search already run and on AP1 being lodged within the resulting priority period — not on completion alone."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A buyer's AP1 application is lodged one working day after the OS1 priority period expired. In the interim, no third party registered any competing interest against the title. What is the most accurate description of the outcome?",
+      "options": ["The application is automatically rejected and cannot be registered at all", "The buyer's title can still be registered, but the protection of the priority period no longer applies to it", "Nothing changes — priority periods are advisory only", "The buyer must restart the whole conveyancing transaction"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to assume a lapsed priority period is fatal to the whole application. In practice the Land Registry can still process a late AP1 — what is lost is the protection against intervening third-party entries, which matters most, and is most dangerous, when such an entry has actually appeared in the gap.",
+      "explanation": "A late AP1 does not usually prevent registration outright, but it forfeits the priority the OS1 search would otherwise have secured — so if a competing interest had been registered in the gap, it could take priority instead."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A buyer's new mortgage lender is unwilling to release funds until the conveyancer confirms the OS1 search and AP1 timetable is in order. Why does the lender care about this, given the mortgage deed is signed on completion day?",
+      "options": ["The lender's charge is only equitable until registered, and depends on the same priority protection as the buyer's own title", "Lenders are simply being cautious out of habit, with no legal basis", "The mortgage deed is void unless the OS1 search is run first", "This only matters for commercial, not residential, lending"],
+      "correctIndex": 0,
+      "trapExplanation": "It's easy to assume the signed mortgage deed alone gives the lender full legal security from completion day. Like the transfer, the charge only becomes a legal charge once registered, and shares the exposure of a missed priority period.",
+      "explanation": "Because s 27 LRA 2002 applies to the grant of a legal charge just as it does to a transfer, the lender's security depends on the same OS1/AP1 mechanism — which is why lenders require solicitors to follow the priority procedure strictly, not merely to obtain a signed deed."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A seller's mortgage lender uses the Land Registry's Business e-Services system. What is the most likely effect on discharging the seller's existing mortgage after completion?",
+      "options": ["Discharge cannot happen electronically and a paper DS1 must always be used", "The charge can be discharged electronically, via an e-DS1, without waiting for a paper form", "Electronic discharge is only available for commercial property", "The e-DS1 process bypasses the need to repay the mortgage debt"],
+      "correctIndex": 1,
+      "trapExplanation": "It might seem like e-DS1 is just a faster copy of the same paper process with no substantive difference — but the point being tested is recognising that some lenders can discharge electronically and others cannot, which changes how quickly post-completion can be finalised.",
+      "explanation": "Where the seller's lender operates the Business e-Services system, the charge can be discharged electronically via an e-DS1 once the debt is repaid, avoiding the delay of requesting and lodging a paper DS1."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A seller's solicitor is finalising the pre-completion steps for a sale where the seller has an existing mortgage. What should the solicitor obtain before completion to establish how much of the sale proceeds must go to the seller's lender?",
+      "options": ["A DS1 form", "A redemption statement", "An OS1 search result", "A copy of the buyer's mortgage offer"],
+      "correctIndex": 1,
+      "explanation": "A redemption statement from the seller's lender confirms the exact sum needed to discharge the mortgage as at the completion date, so the seller's solicitor knows how much of the proceeds to pay across before releasing the balance to the seller."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-10",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "Two applications are lodged against the same registered title on the same day: the buyer's AP1, made within a valid OS1 priority period, and an unrelated third party's application with no priority search behind it. Which generally takes priority?",
+      "options": ["Whichever was physically received first at the Land Registry that day", "The buyer's AP1, because it falls within the protected priority period from the earlier OS1 search", "The third party's application, because it was not affected by any prior search", "Neither — competing applications on the same day are automatically rejected"],
+      "correctIndex": 1,
+      "explanation": "The whole purpose of the priority period is to let the buyer's application take priority over other applications made against the title during that window, regardless of the exact order in which they are physically received."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-11",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "prompt": "What is the standard length of the priority period conferred by an OS1 search under current Land Registry practice?",
+      "options": ["10 working days", "14 calendar days", "30 working days", "90 calendar days"],
+      "correctIndex": 2,
+      "explanation": "An OS1 (or OS2) priority search currently confers a 30-working-day priority period within which the corresponding AP1 application must be lodged to retain that priority."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Under s 27 LRA 2002, which of the following is true of a transfer of registered freehold land executed on completion?",
+      "options": ["It transfers legal title immediately on execution, exactly as with unregistered land", "It does not operate at law until the registration requirements relating to it are met", "It has no legal effect at all until AP1 is submitted, not merely processed", "It only requires registration if a mortgage is also being registered"],
+      "correctIndex": 1,
+      "explanation": "Section 27 specifically provides that certain dispositions — including a transfer of a registered freehold — do not take effect at law until the relevant registration requirements are satisfied; they still take effect in equity from execution."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "How does s 27 LRA 2002 apply to the grant of a legal charge (mortgage) over registered land, compared to a transfer of the freehold?",
+      "options": ["Section 27 does not apply to charges at all, only to transfers", "The grant of a legal charge is also a disposition caught by s 27, so it too does not operate at law until registered", "A charge takes effect at law immediately on execution, unlike a transfer", "Section 27 applies to charges only where the lender is a bank"],
+      "correctIndex": 1,
+      "explanation": "The grant of a legal charge over registered land is itself a disposition falling within s 27, meaning the lender's charge, like the buyer's title, remains equitable only until the charge is registered — which is why lender security depends on the same priority mechanism."
+    },
+    {
+      "itemId": "sqe1-pp-08-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A solicitor is asked to explain to a client why the Land Registry's processing time for AP1 (which can run to several weeks) does not put the client's priority at risk. What is the correct explanation?",
+      "options": ["Priority is unaffected by processing time because the OS1 search already fixed the priority date once AP1 is lodged within the priority period", "Processing time is irrelevant because s 27 LRA 2002 does not apply to residential property", "There is no risk because completion itself already passed legal title", "The Land Registry guarantees same-day processing for all applications"],
+      "correctIndex": 0,
+      "explanation": "Once AP1 is lodged within the OS1 priority period, the buyer's priority is fixed as at the date of the search, regardless of how long actual processing subsequently takes — the priority period exists precisely to neutralise the risk of Land Registry backlogs."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's items is assuming completion itself finishes the job — that a signed transfer or mortgage deed already gives full legal effect. Under s 27 LRA 2002, both remain equitable only until registered, and the buyer's and lender's priority depend entirely on the OS1 search and a timely AP1 application, not on completion day itself.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.land-registry-registration"
+  }
+}

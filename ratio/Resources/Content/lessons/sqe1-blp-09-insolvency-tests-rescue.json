@@ -1,0 +1,349 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-09",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 9,
+  "topicId": "sqe1.business-law.insolvency-tests-rescue",
+  "title": "Corporate insolvency: tests and rescue procedures",
+  "subtitle": "When a company is 'unable to pay its debts', and what the law does about it before liquidation",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the cash-flow and balance-sheet tests for insolvency under s 123 Insolvency Act 1986, and explain when a statutory demand may be used as evidence of insolvency",
+    "Explain administration as a rescue-first procedure, including the statutory purpose it must pursue and the principal routes by which a company enters administration",
+    "Describe a company voluntary arrangement and explain the 75%-in-value threshold required to bind dissenting unsecured creditors"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Insolvency Act 1986, s 123", "role": "Sets out the cash-flow and balance-sheet tests for a company's inability to pay its debts" },
+    { "citation": "Insolvency Act 1986, Schedule B1", "role": "Governs the administration procedure, including its statutory purpose and the routes of entry" },
+    { "citation": "Insolvency Act 1986, Part I (ss 1-7)", "role": "Governs company voluntary arrangements, including the creditor approval threshold" },
+    { "citation": "Re Cheyne Finance plc [2007] EWHC 2402 (Ch)", "role": "Confirms the balance-sheet test looks at whether liabilities, including contingent and prospective liabilities, exceed assets" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite 'a company is insolvent if it can't pay its debts' — far fewer can name the two distinct statutory tests behind that phrase, or explain that a single unpaid £750 debt and an unanswered statutory demand can trigger a deemed finding of insolvency without any need to examine the company's accounts at all. This lesson is built to hold those details apart.",
+    "profileHooks": {
+      "weakApplication": "You know the definitions. The test pool below is weighted towards scenarios where you have to identify which test is engaged, or work through the CVA voting threshold with real numbers.",
+      "weakKnowledge": "Start with Part 1 and Part 2 and get the two s 123 tests and the statutory demand mechanism solid before moving on to administration and CVAs."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company has more assets than debts on paper. It still cannot pay its electricity bill this month. Is it insolvent? The answer under English law is: possibly yes — and getting that answer right, and knowing which rescue route follows from it, is the difference between saving a business and watching it collapse unnecessarily.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The s 123 tests and the administration and CVA frameworks in the Insolvency Act 1986 are stable and long-settled. Note that the Corporate Insolvency and Governance Act 2020 introduced a separate standalone moratorium procedure alongside these tools; that moratorium is outside the scope of this lesson."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Two ways to be insolvent",
+        "voice": "structural — lays out both statutory tests before either is applied",
+        "body": [
+          "Section 123 Insolvency Act 1986 sets out when a company is treated as 'unable to pay its debts' — the trigger for a winding-up petition and a concept that runs through insolvency law generally, including administration. There are two independent statutory tests, and a company only needs to fail one of them.",
+          "The cash-flow test, in s 123(1)(e), asks whether the company is unable to pay its debts as they fall due — a liquidity question. A company can be balance-sheet solvent (assets exceed liabilities on paper) and still fail this test, if its assets simply aren't liquid enough to meet demands as they arrive.",
+          "The balance-sheet test, in s 123(2), asks whether the value of the company's assets is less than the amount of its liabilities, taking into account its contingent and prospective liabilities. Re Cheyne Finance plc confirmed this test looks beyond debts currently due — contingent and future liabilities count too, which matters especially for structured finance vehicles and companies with long-term commitments."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Cash-flow insolvency (s 123(1)(e))",
+            "definition": "A company is unable to pay its debts as they fall due — a test of present liquidity, independent of the overall balance sheet position."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-09-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the two independent statutory tests under s 123 Insolvency Act 1986 for a company being 'unable to pay its debts'.",
+          "acceptableAnswers": ["cash-flow and balance-sheet tests", "the cash-flow test and the balance-sheet test", "liquidity test and balance sheet test"],
+          "modelAnswer": "The cash-flow test (s 123(1)(e)): unable to pay debts as they fall due. The balance-sheet test (s 123(2)): liabilities, including contingent and prospective liabilities, exceed assets. A company failing either test is treated as unable to pay its debts."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The statutory demand: a shortcut to deemed insolvency",
+        "voice": "direct — states the mechanism plainly",
+        "body": [
+          "Section 123(1)(a) provides a third, more procedural route to the same conclusion. If a creditor is owed more than the statutory minimum — currently £750 — in respect of an undisputed debt, that creditor can serve a formal statutory demand on the company in the prescribed form.",
+          "If the company neither pays, secures, nor compounds the debt to the creditor's reasonable satisfaction within 21 days of service, the company is deemed unable to pay its debts — full stop, without the creditor having to independently prove actual cash-flow or balance-sheet insolvency in the round.",
+          "This is a powerful tool precisely because it sidesteps the need for detailed financial evidence: an unanswered statutory demand for a genuinely undisputed £750+ debt is, by itself, sufficient grounds for that creditor to petition to wind the company up. It is also why a company facing cash-flow pressure should never simply ignore a statutory demand."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, s 123(1)(a) and (e)",
+            "text": "A company is deemed unable to pay its debts if a creditor to whom the company is indebted in a sum exceeding the prescribed minimum then due has served on the company a written demand in the prescribed form requiring the company to pay the sum so due, and the company has for 21 days thereafter neglected to pay the sum or to secure or compound for it to the reasonable satisfaction of the creditor; or if it is proved to the satisfaction of the court that the company is unable to pay its debts as they fall due.",
+            "elements": ["Debt exceeds the prescribed minimum (currently £750)", "Debt is due and undisputed", "Written demand served in the prescribed form", "No payment, security, or compounding within 21 days"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-09-check-02",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "A creditor serves a valid statutory demand on a company for an undisputed debt of £5,000. The company does nothing for 21 days. What is the immediate legal consequence under s 123(1)(a)?",
+          "options": ["Nothing, unless the creditor also obtains a court judgment first", "The company is deemed unable to pay its debts, which can support a winding-up petition", "The debt is automatically written off after 21 days", "The statutory demand must be renewed every 21 days indefinitely"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Correct — an unanswered statutory demand for an undisputed debt over the prescribed minimum triggers a deemed finding of inability to pay debts.",
+          "feedbackIncorrect": "No judgment is needed first — the statutory demand mechanism is designed as a standalone route to deemed insolvency, precisely so a creditor doesn't have to litigate the underlying debt before petitioning."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Administration: rescue first",
+        "voice": "case-narrative — walks through the statutory purpose hierarchy",
+        "body": [
+          "Administration is often misunderstood as a formal step towards liquidation. It is the opposite in design: Schedule B1 Insolvency Act 1986 requires an administrator to perform their functions in pursuit of a strict hierarchy of statutory purposes, and liquidation-style asset realisation is only the last resort.",
+          "The administrator must first ask whether rescuing the company as a going concern is reasonably practicable. Only if it is not may they move to the second purpose — achieving a better result for the company's creditors as a whole than would be likely if the company were wound up without first being in administration. Only if neither of those is achievable may the administrator fall back on the third purpose: realising property to make a distribution to one or more secured or preferential creditors.",
+          "A company can enter administration through more than one route: a court order on the application of the company, its directors, or a creditor; or, more commonly in practice, an out-of-court appointment made by the company or its directors, or by the holder of a qualifying floating charge — broadly, a floating charge covering substantially the whole of the company's property. Administration also triggers a moratorium, an automatic freeze on most creditor enforcement action, giving the company breathing space."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The administrator's statutory purpose hierarchy (Sch B1, para 3)",
+            "points": [
+              "Purpose (a): rescuing the company as a going concern — pursued unless not reasonably practicable",
+              "Purpose (b): achieving a better result for creditors as a whole than an immediate winding up — pursued only if (a) is not reasonably practicable",
+              "Purpose (c): realising property to make a distribution to secured or preferential creditors — pursued only if neither (a) nor (b) is achievable, and without unnecessarily harming the interests of creditors as a whole"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-09-check-03",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A qualifying floating charge holder appoints an administrator out of court over a struggling retail company. The administrator concludes that a going-concern rescue is not reasonably practicable, but that continued trading and an orderly sale of the business would return significantly more to creditors than an immediate winding up. Analyse which statutory purpose the administrator should now pursue.",
+          "factsToOrder": [
+            "A qualifying floating charge holder appoints the administrator out of court",
+            "Going-concern rescue is assessed as not reasonably practicable",
+            "Continued trading and an orderly sale would return more to creditors than immediate winding up",
+            "No purpose-(c) distribution to secured or preferential creditors has yet been considered"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 2, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Which of the three statutory purposes in Sch B1, para 3 the administrator must now pursue.",
+            "rule": "An administrator must pursue purpose (a), rescuing the company as a going concern, unless not reasonably practicable; if so, purpose (b), a better result for creditors than immediate winding up, unless that too is not achievable; only then does purpose (c) apply.",
+            "application": "Going-concern rescue has already been assessed as not reasonably practicable, ruling out purpose (a). Continued trading followed by an orderly sale returning more to creditors than an immediate winding up squarely fits purpose (b), and there is no indication purpose (b) is unachievable here.",
+            "conclusion": "The administrator should pursue purpose (b) — achieving a better result for the company's creditors as a whole than would be likely on an immediate winding up."
+          }
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Company voluntary arrangements: creditors decide",
+        "voice": "Socratic — poses the binding-effect puzzle before resolving it",
+        "body": [
+          "Here's the puzzle a CVA is built to solve: a company wants to renegotiate its debts with its unsecured creditors, but some creditors will always prefer to hold out for full payment rather than accept a compromise. How can a deal bind creditors who refuse to agree to it?",
+          "A company voluntary arrangement is a formal proposal — typically put forward by the directors, or by an administrator or liquidator if the company is already in one of those processes — for a compromise or arrangement with unsecured creditors, supervised by an insolvency practitioner acting as nominee. The proposal is put to a decision procedure of creditors.",
+          "If creditors holding 75% or more in value of those voting approve the proposal, it binds every unsecured creditor who was given notice of the decision procedure — including those who voted against it, and those who did not vote at all. This is the mechanism's real power: a supermajority of those who engage can override a dissenting or disengaged minority. What a CVA cannot do, however, is affect the rights of a secured or preferential creditor to enforce their security or priority, without that creditor's own consent."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, Part I and the Insolvency (England and Wales) Rules 2016",
+            "text": "Where a decision procedure of creditors approves a proposed voluntary arrangement, with the requisite majority of at least 75% in value of those voting (subject to rules disregarding certain connected-creditor votes for that purpose), the approved arrangement takes effect as if made by the company at the decision date, and binds every person who was entitled to vote at the decision procedure, or would have been so entitled if they had notice of it, as if they were a party to the arrangement.",
+            "elements": ["Proposal put to unsecured creditors", "Decision procedure held", "Requisite majority: 75% in value of those voting", "Binds all creditors with notice, including dissenters and non-voters", "Cannot bind a secured or preferential creditor without their consent"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-09-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put the stages of a company voluntary arrangement in the correct order.",
+          "items": ["Directors draft a CVA proposal and appoint a nominee", "The nominee reports on the proposal and a creditors' decision procedure is convened", "Creditors vote on the proposal", "75% in value of those voting approve it, and the arrangement binds all unsecured creditors with notice"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence — proposal and nominee, then the decision procedure, then the vote, then the binding effect once the 75% threshold is cleared.",
+          "feedbackIncorrect": "Check the order again: the proposal and nominee come first, then the decision procedure is convened, then creditors vote, and only once the 75% threshold is met does the arrangement bind everyone with notice."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Choosing the right procedure: a comparison",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Administration and a CVA are not mutually exclusive, and neither is a synonym for liquidation — a common trap is treating all three as points on the same downward path. A company can propose a CVA on its own, while trading normally; it can enter administration and later propose a CVA from within administration to formalise a longer-term restructuring; or it can go straight to liquidation if rescue genuinely isn't viable.",
+          "Administration suits a company that needs the breathing space of a moratorium and, often, a change of control or an orderly sale process, particularly where secured creditors need to be part of the solution. A CVA suits a company that can keep trading under its existing management but needs to bind a class of dissenting unsecured creditors to a reduced or restructured repayment schedule.",
+          "The two procedures also differ sharply in who they can bind: a CVA cannot touch a secured or preferential creditor's rights without consent, while administration's moratorium restrains almost all creditor enforcement action, secured or not, for its duration — which is exactly why a company with a hostile secured lender often needs administration's protection before a CVA has any realistic chance of success."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume administration is simply a formal prelude to liquidation, and that a CVA and administration are alternative labels for the same outcome.",
+            "whyItsWrong": "Administration is legally structured as rescue-first, with liquidation-style asset realisation only as a last-resort purpose. A CVA is a creditor-approved compromise that can run alongside a company's continued trading, independently of administration, or be proposed from within administration as part of a longer-term plan."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-09-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two companies in difficulty. In which is administration more clearly the appropriate first step, rather than a standalone CVA?",
+          "scenarioA": "A retailer facing an aggressive secured lender threatening to enforce its charge immediately needs a moratorium to halt enforcement while a sale of the business is arranged.",
+          "scenarioB": "A manufacturer with no secured lending, but with unsecured trade creditors it wants to bind to a reduced repayment schedule while it continues trading under its existing directors.",
+          "correctScenario": "A",
+          "explanation": "Scenario A needs the moratorium that administration provides, restraining a secured lender's enforcement while a sale is organised. Scenario B has no secured creditor to restrain, and the company wants to keep trading under its own management — a standalone CVA fits that need directly, without administration's moratorium and change of control being required."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-09-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Under s 123(1)(e) Insolvency Act 1986, a company is deemed unable to pay its debts if it...",
+      "options": ["is unable to pay its debts as they fall due", "has fewer than three directors", "has not filed accounts for two years", "owes money specifically to HM Revenue and Customs"],
+      "correctIndex": 0,
+      "explanation": "Section 123(1)(e) is the cash-flow test: inability to meet debts as they fall due, regardless of the overall balance sheet position."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under the balance-sheet test in s 123(2) Insolvency Act 1986, a company is deemed unable to pay its debts if...",
+      "options": ["its assets are worth less than its issued share capital", "the value of its assets is less than the amount of its liabilities, taking into account its contingent and prospective liabilities", "it has missed a single payment to one creditor", "its directors believe it might become insolvent within five years"],
+      "correctIndex": 1,
+      "explanation": "The balance-sheet test compares total liabilities — including contingent and prospective liabilities — against total assets, as confirmed in Re Cheyne Finance plc."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "What is the minimum amount of an undisputed debt for which a creditor may serve a statutory demand on a company under s 123(1)(a) Insolvency Act 1986?",
+      "options": ["£250", "£750", "£5,000", "£10,000"],
+      "correctIndex": 1,
+      "explanation": "The prescribed minimum for a statutory demand against a company is £750."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A creditor serves a valid statutory demand for an undisputed debt of £2,000 on a company. The company neither pays, secures, nor compounds the debt within 21 days. What is the legal consequence?",
+      "options": ["Nothing, unless the creditor also obtains a court judgment first", "The company is deemed unable to pay its debts, and the creditor may petition to wind up the company on that basis", "The debt is automatically written off", "The statutory demand must be renewed every 21 days indefinitely"],
+      "correctIndex": 1,
+      "explanation": "An unanswered statutory demand for a qualifying undisputed debt triggers deemed inability to pay debts, supporting a winding-up petition without further proof."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is the primary statutory purpose an administrator must pursue where reasonably practicable, under Schedule B1 Insolvency Act 1986?",
+      "options": ["Winding up the company as quickly as possible", "Rescuing the company as a going concern", "Maximising the administrator's own recovery of fees", "Dismissing all existing directors immediately"],
+      "correctIndex": 1,
+      "trapExplanation": "Administration is popularly (and wrongly) assumed to be a step towards liquidation. It is legally a rescue-first procedure, with asset realisation only as the last-resort purpose.",
+      "explanation": "Schedule B1, para 3 places rescuing the company as a going concern at the top of the statutory purpose hierarchy, to be pursued unless not reasonably practicable."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A qualifying floating charge holder wishes to appoint an administrator without going to court. A student argues this is impossible because 'only the court can appoint an administrator'. Is the student correct?",
+      "options": ["No — Schedule B1 permits both a court-based route and an out-of-court appointment route, including appointment by a qualifying floating charge holder or by the company or its directors", "Yes — court appointment is the only route available under English law", "No — only the company's shareholders may appoint an administrator, never the directors or a chargeholder", "Yes — a floating chargeholder may only appoint a receiver, never an administrator"],
+      "correctIndex": 0,
+      "trapExplanation": "The assumption that administration must always go through court is common and wrong — the out-of-court routes are, in practice, the more frequently used ones.",
+      "explanation": "Schedule B1 provides both court and out-of-court routes into administration; a qualifying floating charge holder is one of the parties entitled to appoint out of court."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company proposes a CVA. At the creditors' decision procedure, 80% in value of those who vote approve it, but this represents only 40% of the total unsecured creditor body by value once non-voters are included. Does the CVA bind the dissenting and non-voting unsecured creditors?",
+      "options": ["No, because the 75% threshold must be measured against all unsecured creditors, not only those who vote", "Yes, because the 75%-in-value threshold is measured against those voting, and 80% clears it — the arrangement binds all unsecured creditors with notice, including dissenters and non-voters", "No, because a CVA can never bind a creditor who did not vote", "Yes, but only for the creditors who actually voted in favour"],
+      "correctIndex": 1,
+      "trapExplanation": "The common error is assuming the percentage must be calculated against the whole creditor body rather than only those who cast a vote.",
+      "explanation": "The 75%-in-value threshold applies to creditors voting; once cleared, the arrangement binds every creditor with notice of the decision procedure, whether or not they voted or agreed."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A company's CVA proposal, if approved, would reduce payments due to its secured lender under an existing fixed charge, without that lender's consent. Can the requisite 75% majority of unsecured creditors bind the secured lender to this reduction?",
+      "options": ["Yes, because a CVA approved by 75% in value binds every creditor of the company", "No — a CVA cannot affect the rights of a secured or preferential creditor to enforce their security or priority without that creditor's consent", "Yes, provided the secured lender is notified in writing beforehand", "No, because secured creditors are never entitled to vote or be consulted at all"],
+      "correctIndex": 1,
+      "trapExplanation": "The 75% threshold governs unsecured creditors only. A secured creditor's priority position cannot be overridden by that vote without its own consent.",
+      "explanation": "A CVA's binding effect is confined to unsecured creditors with notice; secured and preferential rights require the affected creditor's own consent to be altered."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A company owes £500,000 to unsecured trade creditors and holds assets worth £600,000, but £550,000 of those assets are tied up in long-term contracts that cannot be realised for another three years, leaving it unable to meet payments falling due this month. Which insolvency test is most directly engaged?",
+      "options": ["The balance-sheet test only, because total liabilities exceed total assets", "The cash-flow test, because the company cannot meet debts as they presently fall due, even though assets nominally exceed liabilities", "Neither test, because assets exceed liabilities overall", "Both tests are automatically engaged whenever a company has any unsecured debt"],
+      "correctIndex": 1,
+      "explanation": "Despite assets nominally exceeding liabilities, illiquid assets that cannot meet current payment demands engage the cash-flow test — a distinct, independent question from the balance-sheet position."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Directors of a struggling company want to keep trading under their existing management while binding a class of dissenting trade creditors to a reduced repayment schedule agreed by a 75% majority. Which procedure most directly fits this objective?",
+      "options": ["A company voluntary arrangement", "A members' voluntary liquidation", "A statutory demand", "An unfair prejudice petition"],
+      "correctIndex": 0,
+      "explanation": "A CVA is designed exactly for this: continued trading under existing management, with a creditor-approved compromise binding dissenters once the 75% threshold is met."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A qualifying floating charge holder appoints an administrator out of court. The administrator concludes that rescuing the company as a going concern is not reasonably practicable, but that continuing to trade would achieve a better result for creditors than an immediate winding up. Which statutory purpose should the administrator now pursue?",
+      "options": ["The rescue-as-a-going-concern purpose, regardless of practicability", "The purpose of achieving a better result for creditors than an immediate winding up", "Immediate dissolution of the company", "Referral back to the court for a fresh purpose to be set"],
+      "correctIndex": 1,
+      "explanation": "Once purpose (a) is assessed as not reasonably practicable, the administrator moves to purpose (b) — a better result for creditors as a whole than immediate winding up — without needing to return to court to change purpose."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Section 123(1)(e) Insolvency Act 1986 asks whether a company 'is unable to pay its debts as they fall due'. Section 123(2) separately asks whether the value of a company's assets is less than the amount of its liabilities. What do these two limbs together establish about the meaning of 'unable to pay its debts' under the Act?",
+      "options": ["Only the cash-flow limb matters; the balance-sheet limb is obsolete", "A company can be treated as unable to pay its debts under either limb — cash-flow illiquidity or balance-sheet insufficiency — satisfying either is enough", "Both limbs must be satisfied simultaneously before a company is insolvent for any statutory purpose", "The two limbs apply only to public companies"],
+      "correctIndex": 1,
+      "explanation": "The two tests are independent alternatives; a company failing either one is treated as unable to pay its debts for the purposes of the Act."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Schedule B1, para 3 Insolvency Act 1986 sets out the administrator's objectives in a hierarchy: rescuing the company as a going concern; then achieving a better result for creditors than an immediate winding up; then realising property to make a distribution to secured or preferential creditors. What does this hierarchy establish about the legal character of administration?",
+      "options": ["That administration exists solely to liquidate companies more efficiently than a winding up", "That administration is legally structured as a rescue-first procedure, with liquidation-style asset realisation only as a last-resort fallback", "That the administrator may pursue whichever objective is most profitable for them personally", "That the objectives are entirely optional and administrators need not follow any of them"],
+      "correctIndex": 1,
+      "explanation": "The statutory ordering itself is the point: rescue is mandatory to attempt first where practicable, and asset realisation for secured or preferential creditors is only reached once the first two purposes are ruled out."
+    },
+    {
+      "itemId": "sqe1-blp-09-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "The CVA provisions require approval by 75% in value of unsecured creditors voting for the arrangement to bind dissenting unsecured creditors with notice. If unsecured creditors voting on a proposal hold claims worth £1,000,000 in total, and creditors holding £760,000 of that value vote in favour, is the threshold met?",
+      "options": ["No, because £760,000 is less than 80% of the total", "Yes, because £760,000 represents 76% of the £1,000,000 voted, which clears the 75%-in-value threshold", "No, because the threshold is calculated by number of creditors, not by value", "Yes, but only if every single creditor entitled to vote actually voted"],
+      "correctIndex": 1,
+      "explanation": "£760,000 out of £1,000,000 voted is 76%, clearing the 75%-in-value threshold; the arrangement therefore binds all unsecured creditors with notice, whether or not they voted."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating 'insolvency' as one single test rather than two independent statutory routes (cash-flow and balance-sheet), and treating administration as a formality on the way to liquidation rather than the rescue-first procedure it is legally designed to be.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.insolvency-tests-rescue"
+  }
+}

@@ -8,6 +8,18 @@ import { join } from 'node:path';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 
+// SQE1 topic subjects ("sqe1.<subject>.<slug>") and their modules. Keep in step with
+// Module(sqeSubject:) in ratio/Domain/Module.swift.
+const SQE_SUBJECTS = {
+  'dispute-resolution': 'sqe1-dispute-resolution',
+  'legal-system': 'sqe1-legal-system-legal-services',
+  'business-law': 'sqe1-business-law-practice',
+  'property-practice': 'sqe1-property-practice',
+  'wills-estates': 'sqe1-wills-administration-estates',
+  'solicitors-accounts': 'sqe1-solicitors-accounts',
+  'criminal-practice': 'sqe1-criminal-law-practice',
+};
+
 const CONTENT = new URL('../ratio/Resources/Content/', import.meta.url).pathname;
 const LESSONS = join(CONTENT, 'lessons');
 const WORDS_PER_MINUTE = 200;
@@ -98,7 +110,7 @@ function lintLesson(file) {
   if (!prefix.test(lessonId)) errors.push(`${where}: lessonId ${lessonId} doesn't fit module ${moduleId}`);
   if (Number(number) !== lessonNumber) errors.push(`${where}: lessonNumber ${lessonNumber} doesn't match ${lessonId}`);
   const subject = sqe && topicId.split('.')[1];
-  if (sqe ? !(topicId.startsWith('sqe1.') && moduleId.slice(5).startsWith(subject)) : !topicId.startsWith(`${moduleId}.`)) {
+  if (sqe ? !(topicId.startsWith('sqe1.') && SQE_SUBJECTS[subject] === moduleId) : !topicId.startsWith(`${moduleId}.`)) {
     errors.push(`${where}: topicId ${topicId} isn't in module ${moduleId}`);
   }
   if (itemCounts.lecture !== lecture.parts.length) errors.push(`${where}: itemCounts.lecture is ${itemCounts.lecture} but there are ${lecture.parts.length} parts`);

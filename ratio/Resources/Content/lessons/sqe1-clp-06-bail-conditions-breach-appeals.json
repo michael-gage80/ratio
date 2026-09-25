@@ -1,0 +1,326 @@
+{
+  "lessonId": "sqe1-clp-06",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 6,
+  "topicId": "sqe1.criminal-practice.bail-conditions-breach-appeals",
+  "title": "Bail: conditions, breach, further applications, and appeals",
+  "subtitle": "What conditions do, ss 6 and 7 Bail Act, and the appeal routes",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Identify common bail conditions and explain what risk each is designed to manage",
+    "Distinguish failing to surrender under s 6 Bail Act 1976 (a criminal offence) from breaching a condition under s 7 (not an offence, but grounds for arrest)",
+    "Apply the rules on further bail applications and identify the correct route of appeal against a bail refusal or grant"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Bail Act 1976, s 6", "role": "Creates the criminal offence of failing to surrender to custody" },
+    { "citation": "Bail Act 1976, s 7", "role": "Provides a power of arrest without warrant for breach of a bail condition, without breach itself being an offence" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Bail conditions look like a checklist, but each one exists to manage a specific risk identified under the grounds you covered in the previous lesson — and what happens when a defendant breaches one is very different from what happens when they simply fail to turn up. This lesson is where the presumption and the grounds become live practice: drafting conditions, handling breach, and knowing which court to go to when a bail decision needs to be challenged.",
+    "profileHooks": {
+      "weakApplication": "You know the ss 6 and 7 distinction in the abstract. The test pool leans hard on fact patterns where a breach could look like either a s 6 offence or a s 7 condition breach — read for exactly what the defendant is alleged to have done, not just that something went wrong.",
+      "weakKnowledge": "Anchor Part 2 before anything else: the criminal-offence/no-offence split between ss 6 and 7 is the spine the rest of the lesson hangs off. Get that solid first."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A defendant is bailed on condition he doesn't contact the complainant and reports to a police station twice a week. He misses one reporting session. He also, separately, simply doesn't turn up to his trial date three months later. Both look like 'he broke his bail' to a client explaining it afterwards — but only one of those two things is a crime in its own right, and getting that distinction wrong is the single most exam-tested error in this part of the syllabus."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Conditions as risk management, not punishment",
+        "voice": "structural — frames conditions by function before listing them",
+        "body": [
+          "Bail can be granted unconditionally or subject to conditions. Conditions are not a lesser form of remand or a way to punish the defendant pending trial — they are targeted responses to a specific risk identified under one of the three refusal grounds, imposed only where they are necessary to manage that risk and no more restrictive than required.",
+          "This matters for how conditions should be argued and reviewed: a condition with no connection to an identified risk is vulnerable to challenge. If the concern is failure to surrender, a surety or reporting condition addresses it directly. If the concern is witness interference, a no-contact condition addresses that specific risk — it does nothing useful for a pure flight risk, and imposing it where flight, not interference, is the real concern is a mismatch a good defence solicitor will flag.",
+          "Common conditions include a duty to reside at a specified address, a curfew (sometimes with electronic monitoring), reporting to a police station at set intervals, surrendering a passport, a surety (a third party who forfeits a sum of money if the defendant fails to surrender), a security (money deposited by the defendant), and non-contact or exclusion conditions relating to a complainant or witness or a specified area."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Common bail conditions and the risk each targets",
+            "points": [
+              "Reporting to a police station / curfew — reduces opportunity to abscond (failure to surrender)",
+              "Surrender of passport / residence condition — addresses flight risk directly",
+              "Surety or security — creates a financial incentive against failure to surrender",
+              "Non-contact or exclusion zone — addresses risk of witness interference",
+              "Prohibition on entering a specified area — can address further offending or interference risk depending on the facts"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-06-check-01",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "Should a bail condition be imposed simply because it seems generally cautious, without being linked to a specific identified risk?",
+          "options": ["No — a condition must be necessary to manage a specific identified risk and no more restrictive than required", "Yes — courts should impose as many conditions as possible to be safe"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Conditions are targeted risk management, not a general precaution — an unlinked condition is vulnerable to challenge.",
+          "feedbackIncorrect": "Not quite. A condition has to be tied to a specific risk identified under one of the refusal grounds and be no more restrictive than that risk requires — 'just to be safe' is not a valid basis on its own."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Section 6 versus section 7: the distinction that carries the whole lesson",
+        "voice": "direct — states the rule plainly before complicating it",
+        "body": [
+          "Bail Act 1976, s 6 creates a specific criminal offence: failing, without reasonable cause, to surrender to custody at the time and place appointed. This is prosecuted as a freestanding offence, separate from whatever the original charge was, and it carries its own penalty. A defendant can be convicted of a s 6 offence even if ultimately acquitted of the original matter.",
+          "Bail Act 1976, s 7, by contrast, deals with breach of a bail condition — failing to reside at the specified address, missing a reporting appointment, contacting a person you were told not to contact. Breaching a condition is not, in itself, a criminal offence. What s 7 provides instead is a power: a constable may arrest, without warrant, a person they have reasonable grounds to believe has broken, or is likely to break, a bail condition. That arrested person must then be brought before a court, which decides whether to remand them in custody, grant bail again on the same or varied conditions, or grant bail unconditionally.",
+          "The distinction is not a technicality — it changes the entire procedural consequence. Non-appearance under s 6 triggers a prosecution and a separate conviction risk. Condition breach under s 7 triggers arrest and a fresh bail decision, but no new criminal charge for the breach itself. Confusing the two is the most heavily tested error in this area."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Bail Act 1976, s 6(1)",
+            "text": "If a person who has been released on bail in criminal proceedings fails without reasonable cause to surrender to custody, he shall be guilty of an offence.",
+            "elements": ["Released on bail in criminal proceedings", "Fails to surrender to custody at the appointed time and place", "No reasonable cause for the failure"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-06-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Which of these is a s 6 offence rather than a s 7 condition breach?",
+          "scenarioA": "A defendant on bail simply does not attend court on the date fixed for his trial.",
+          "scenarioB": "A defendant on bail misses one of his twice-weekly police station reporting appointments.",
+          "correctScenario": "A",
+          "explanation": "Failing to attend court as required is the paradigm s 6 offence — failure to surrender to custody. Missing a reporting condition is a breach of a bail condition under s 7, which is not itself an offence but grounds for arrest."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "What happens after an arrest for breach",
+        "voice": "case-narrative — follows the procedural sequence through",
+        "body": [
+          "Once a constable exercises the s 7 power of arrest for a suspected or anticipated condition breach, the defendant must be brought before a magistrates' court as soon as practicable, and in any event within 24 hours. This is not a punishment hearing — no new charge has been laid — it is a fresh bail decision.",
+          "At that hearing the court can take one of three courses: remand the defendant in custody (if satisfied the original grounds for refusing bail, revisited in light of the breach, are now made out); grant bail again on the same conditions; or grant bail on varied conditions, tightened or loosened as the facts of the breach suggest is appropriate. A minor, explained lapse (missing one report due to illness, promptly self-reported) is treated very differently from a pattern suggesting the underlying risk has materialised.",
+          "Note the asymmetry with s 6: a s 6 failure to surrender is itself prosecuted as a new offence, on top of whatever happens to bail on the original matter, and a conviction for it can itself become part of the defendant's bail record in any future application — feeding directly back into the failure-to-surrender ground covered in the previous lesson."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "s 7 arrest power",
+            "definition": "A power allowing a constable to arrest without warrant a person released on bail whom the constable has reasonable grounds to believe has broken, or is likely to break, a condition of that bail — triggering a fresh bail hearing, not a new criminal charge."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-06-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that gives a constable the power to arrest this defendant without warrant under s 7.",
+          "scenarioText": "A defendant is bailed subject to a condition not to contact the complainant. Officers later learn, through a third party, that he has reasonable grounds to believe she intends to send the complainant a message that evening.",
+          "tappableSpans": ["bailed subject to a condition", "not to contact the complainant", "learn, through a third party", "reasonable grounds to believe she intends to send"],
+          "correctSpan": "reasonable grounds to believe she intends to send",
+          "feedbackCorrect": "Correct — s 7 extends to a reasonable belief that a breach is about to happen, not only to a breach that has already occurred.",
+          "feedbackIncorrect": "Look for the forward-looking belief. Section 7 permits arrest where there are reasonable grounds to believe a condition has been broken, or is about to be broken — the anticipatory limb is the trigger here, since no message has actually been sent yet."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Further bail applications: not unlimited",
+        "voice": "Socratic — poses the constraint as a question first",
+        "body": [
+          "If bail is refused once, can the defendant simply ask again at the next hearing, and the one after that, hoping for a different outcome? Not without limit. The rules restrict repeat applications to prevent courts being asked to rehear the identical case on the identical facts over and over.",
+          "In the magistrates' court, a defendant is generally entitled to make one further bail application after an initial refusal, using the same arguments, without needing to show anything new. After that second attempt, a further application will only be heard if the defendant can point to a change in circumstances or new arguments not previously considered — a change of address becoming available, a co-defendant's case concluding, new information undermining one of the factors the court originally relied on.",
+          "This constraint doesn't apply to bail applications made to the Crown Court in the first instance, but the same underlying logic — that a court shouldn't be asked to simply relitigate a settled question — runs through the whole system, including appeals, which is where the lesson turns next."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Repeat bail applications in the magistrates' court",
+            "description": "How many times the same arguments can be re-run.",
+            "nodes": [
+              { "id": "first", "label": "First application refused" },
+              { "id": "second", "label": "Second application: same arguments allowed once, without needing anything new" },
+              { "id": "third", "label": "Third and further applications: must show a change of circumstances or new arguments" }
+            ],
+            "edges": [
+              { "from": "first", "to": "second", "label": "Automatic entitlement" },
+              { "from": "second", "to": "third", "label": "Requires new material" }
+            ],
+            "textAlternative": "After a first bail refusal, a defendant may make one further application using the same arguments without needing anything new. Any application after that second attempt requires a genuine change of circumstances or new arguments not previously put to the court."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-06-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A defendant's bail has been refused twice in the magistrates' court on identical arguments. Nothing has changed since the second refusal. Can he make a third application on the same arguments?",
+          "options": ["Yes, without restriction", "No — a third application will not be heard on the same arguments without a change of circumstances or new material", "Yes, but only if he pleads guilty first", "No — after any refusal, no further application is ever possible"],
+          "correctIndex": 1,
+          "explanation": "The entitlement to reargue the same case unchanged is limited to one further attempt after the first refusal. Anything beyond that needs genuinely new circumstances or arguments, precisely to stop the same question being relitigated indefinitely."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Appeals: defendant against refusal, prosecution against grant",
+        "voice": "direct — sets out both routes side by side",
+        "body": [
+          "Where the magistrates' court refuses bail, a defendant who has been refused (after exhausting or bypassing the repeat-application route where relevant) may appeal that refusal to the Crown Court. This is a route available to the defence, and the Crown Court considers the bail question afresh rather than reviewing the magistrates' decision for error.",
+          "The reverse route also exists, and is tested at least as often: where the prosecution opposed bail unsuccessfully and the magistrates' court grants bail, the prosecution has a right of appeal to the Crown Court against the grant of bail — but only where the offence is imprisonable, and only where the prosecution made representations against bail at the hearing before it was granted. This is a narrower, more procedurally conditioned right than the defence route, precisely because unpicking a grant of liberty already made carries a heavier justificatory burden.",
+          "A prosecution appeal against the grant of bail must be made promptly — notice must be given orally at the end of the hearing at which bail was granted, confirmed in writing shortly afterwards, and the defendant remains in custody pending the appeal being heard. Missing that immediate window forfeits the right to appeal that particular grant."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume the prosecution can appeal any grant of bail it disagreed with, at any later point, in the same way a defendant can appeal a refusal.",
+            "whyItsWrong": "The prosecution's right of appeal is narrower on both counts: it only exists where the offence is imprisonable and the prosecution actively opposed bail at the hearing, and it must be exercised immediately — oral notice at the hearing itself — not raised later once the defendant has already been released."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-06-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "The prosecution opposed bail on an imprisonable offence, the magistrates' court granted bail anyway, and the prosecution now wants to appeal. What must the prosecution do?",
+          "options": ["Give oral notice of appeal at the end of that same hearing, and confirm in writing shortly after", "Wait until the trial date to raise the objection formally", "Apply to the Court of Appeal for permission", "Nothing further is required — the appeal proceeds automatically once bail is granted"],
+          "correctIndex": 0,
+          "trapExplanation": "It's tempting to think an appeal can be lodged at any convenient later point, as a defence appeal against refusal broadly can be. The prosecution's right against a grant of bail is time-critical: oral notice must be given immediately, at the end of the same hearing, or the right is lost for that grant."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-06-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the purpose of a bail condition, as opposed to remanding a defendant in custody?",
+      "options": ["To punish the defendant for being charged with an offence", "To manage a specific identified risk while allowing the defendant to remain at liberty pending trial", "To guarantee the defendant will be found guilty at trial", "To replace the need for a trial altogether"],
+      "correctIndex": 1,
+      "explanation": "Conditions are a proportionate, targeted alternative to custody, addressing a specific risk (such as flight or witness interference) identified under one of the refusal grounds."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A defendant on bail misses a single reporting appointment at a police station due to a genuine medical emergency, which he reports promptly. Has he committed a criminal offence?",
+      "options": ["Yes — any breach of a bail condition is automatically a criminal offence under s 6", "No — breaching a bail condition is not itself a criminal offence, though it may lead to arrest under s 7 and a fresh bail decision", "Yes, but only if he has previous convictions", "No — medical emergencies are a complete defence to any bail-related consequence"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming any bail-related failure is automatically a crime. Breach of a condition under s 7 is not itself an offence — it triggers a power of arrest and a fresh bail hearing, unlike failure to surrender under s 6, which is a freestanding offence."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant on bail simply fails to attend the Crown Court on the date fixed for his trial, offering no explanation. Which provision is engaged?",
+      "options": ["Bail Act 1976, s 7 — breach of condition", "Bail Act 1976, s 6 — the criminal offence of failing to surrender", "Neither — non-attendance at trial has no bail consequences", "Contempt of court exclusively, with no Bail Act consequence"],
+      "correctIndex": 1,
+      "explanation": "Failing without reasonable cause to attend court as required is the core s 6 offence — failure to surrender to custody — and is prosecuted as a freestanding offence separate from the original charge."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Under s 7 Bail Act 1976, on what basis may a constable arrest a person without warrant?",
+      "options": ["Only where the person has already been convicted of the original offence", "Where the constable has reasonable grounds to believe the person has broken, or is likely to break, a bail condition", "Only with a warrant issued in advance by a magistrate", "Only where the original offence was imprisonable"],
+      "correctIndex": 1,
+      "explanation": "Section 7 gives a constable a power of arrest without warrant based on reasonable grounds to believe a bail condition has been, or is about to be, broken — it covers both actual and anticipated breach."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Following an arrest under s 7 for a suspected condition breach, what must happen to the defendant?",
+      "options": ["He must be charged with a new offence within 24 hours", "He must be brought before a magistrates' court as soon as practicable, and in any event within 24 hours, for a fresh bail decision", "He is automatically remanded in custody until trial", "He must be released immediately with no further hearing"],
+      "correctIndex": 1,
+      "explanation": "Arrest under s 7 leads to a prompt court appearance for a fresh bail decision, not a new charge — the court can remand in custody, re-grant bail on the same conditions, or vary the conditions."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "Can a defendant be convicted of a s 6 failure-to-surrender offence even if he is ultimately acquitted of the original charge that led to his bail?",
+      "options": ["No — acquittal on the original charge automatically clears any related bail offence", "Yes — s 6 creates a freestanding offence independent of the outcome of the original charge", "Only if the original charge was for an imprisonable offence", "No — the two are tried together and rise or fall as one"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to assume the fate of the original charge determines everything downstream. Section 6 is a separate offence with its own elements (failure to surrender without reasonable cause), so a conviction for it can stand regardless of the ultimate result on the original matter."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-07",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "In the magistrates' court, after a first bail refusal, how many further applications is a defendant automatically entitled to make on the same arguments?",
+      "options": ["Unlimited further applications", "One further application, without needing to show anything new", "None — any further application requires new material immediately", "Three further applications"],
+      "correctIndex": 1,
+      "explanation": "A defendant is entitled to one further application repeating the same arguments after an initial refusal; beyond that, a change of circumstances or new arguments is required."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant has been refused bail three times already in the magistrates' court on the same facts and arguments each time. He now wants to make a fourth application, still with nothing new to add. What should happen?",
+      "options": ["The court should hear the application in full again as a matter of course", "The court should decline to hear the same arguments again absent a change of circumstances or new material", "The defendant should automatically be granted bail on the fourth attempt", "The defendant must wait until trial to raise bail again"],
+      "correctIndex": 1,
+      "explanation": "Once the automatic further-application entitlement is used up, repeating identical arguments with nothing new does not entitle the defendant to another full hearing — this rule exists precisely to prevent that kind of relitigation."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-09",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which of the following correctly describes the defence route of appeal against a bail refusal in the magistrates' court?",
+      "options": ["There is no appeal route available to the defence", "The defendant may appeal the refusal to the Crown Court, which considers the bail question afresh", "The defendant may only appeal directly to the Court of Appeal", "The defendant may appeal only if the offence is non-imprisonable"],
+      "correctIndex": 1,
+      "explanation": "A defendant refused bail in the magistrates' court may appeal to the Crown Court, which reconsiders bail afresh rather than merely reviewing the magistrates' reasoning for error."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "The magistrates' court grants bail on a non-imprisonable offence despite prosecution objections. Can the prosecution appeal the grant to the Crown Court?",
+      "options": ["Yes — the prosecution can always appeal a grant of bail it opposed", "No — the prosecution right of appeal against a grant of bail is limited to imprisonable offences", "Yes, but only after the trial has concluded", "No — the prosecution has no right of appeal in any circumstances"],
+      "correctIndex": 1,
+      "trapExplanation": "It's easy to assume the prosecution's appeal right mirrors the defence's fairly broadly. It doesn't — it is expressly limited to imprisonable offences, and only where the prosecution actively opposed bail at the hearing in question."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "The prosecution opposed bail on an imprisonable offence, bail was granted, and the prosecution wishes to appeal. When must oral notice of appeal be given?",
+      "options": ["At any point before the trial begins", "At the end of the same hearing at which bail was granted", "Within 28 days of the grant of bail", "There is no time limit for prosecution appeals"],
+      "correctIndex": 1,
+      "explanation": "The prosecution must give oral notice of appeal immediately, at the end of the hearing at which bail was granted, and confirm in writing shortly afterwards — missing that window forfeits the right to appeal that grant."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-12",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Does the defendant remain in custody or at liberty while a prosecution appeal against a grant of bail is pending?",
+      "options": ["He remains in custody pending the appeal", "He is released and remains at liberty regardless of the appeal", "He is released but subject to a curfew only", "It depends solely on the defendant's own preference"],
+      "correctIndex": 0,
+      "explanation": "Because the prosecution appeal challenges the grant itself, the defendant remains in custody while that appeal is determined, rather than being released in the interim."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which statement best captures the difference between s 6 and s 7 Bail Act 1976?",
+      "options": ["Both create identical criminal offences with the same penalties", "Section 6 creates a criminal offence for failure to surrender; section 7 creates a power of arrest for condition breach, without the breach itself being an offence", "Section 6 applies only to conditions; section 7 applies only to non-attendance", "Neither provision has any criminal law consequence"],
+      "correctIndex": 1,
+      "explanation": "This is the structural distinction the whole lesson turns on: s 6 criminalises non-attendance itself; s 7 does not criminalise condition breach but empowers arrest and triggers a fresh bail decision."
+    },
+    {
+      "itemId": "sqe1-clp-06-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A defendant is bailed with a condition to reside at a specified address, aimed at ensuring he can be located and reducing flight risk. He moves out without telling anyone but continues to attend every court date as required. What is the most accurate assessment?",
+      "options": ["He has committed a s 6 offence because he moved address", "He has breached a bail condition, which may lead to arrest under s 7 and a fresh bail hearing, even though he has not failed to surrender under s 6", "No consequence arises because he has continued to attend court", "He must automatically be remanded in custody with no further hearing"],
+      "correctIndex": 1,
+      "explanation": "Moving without notifying the court breaches the residence condition, which is a s 7 matter (arrest power, fresh bail decision) — it is not itself a s 6 offence, which is specifically about failing to surrender to custody, something this defendant has not done."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating any bail-related failure as automatically criminal. Only failure to surrender under s 6 is an offence in its own right; a condition breach under s 7 triggers arrest and a fresh bail decision, not a new charge — and prosecution appeals against a grant of bail are narrow and time-critical in a way defence appeals against refusal are not.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.bail-conditions-breach-appeals"
+  }
+}

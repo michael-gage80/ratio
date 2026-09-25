@@ -1,0 +1,408 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-we-10",
+  "moduleId": "sqe1-wills-administration-estates",
+  "moduleTitle": "SQE1 · Wills and Administration of Estates",
+  "lessonNumber": 10,
+  "topicId": "sqe1.wills-estates.grants-of-representation",
+  "title": "Grants of representation",
+  "subtitle": "Probate, administration with the will annexed, and administration on intestacy",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish probate, letters of administration with the will annexed, and letters of administration on intestacy by the circumstances in which each is granted",
+    "State the priority order for applying for a grant under the Non-Contentious Probate Rules 1987, both where a will exists and on intestacy",
+    "Apply the priority rules to a new set of facts to identify who is entitled to apply for a grant"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Non-Contentious Probate Rules 1987, r 20", "role": "Order of priority for a grant of letters of administration with the will annexed" },
+    { "citation": "Non-Contentious Probate Rules 1987, r 22", "role": "Order of priority for a grant of letters of administration on intestacy" },
+    { "citation": "Administration of Estates Act 1925, s 46", "role": "Statutory order of entitlement on intestacy, which the r 22 priority order tracks" },
+    { "citation": "Senior Courts Act 1981, s 116", "role": "Court's power to pass over the person otherwise entitled to a grant, in special circumstances" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can name 'probate' and 'letters of administration' without hesitation. Where the profile shows knowledge is ahead of application, this note appears: 'You know the labels — this lesson is about which one fits a given set of facts, and who specifically gets to apply.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well here on recall before. The test pool is weighted towards application: expect fact patterns asking who should apply, not definitions.",
+      "weakKnowledge": "Start with Part 1 and be precise about which grant goes with which starting position — a valid will with a willing executor, a valid will with no willing executor, or no valid will at all. Everything else in this lesson assumes you can sort a fact pattern into one of those three boxes."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A woman dies leaving a will that names her brother as sole executor. Her brother died two years before her. The will is perfectly valid — every formality was observed, every gift is clear — and yet nobody can simply pick it up and start distributing the estate. Someone has to be formally authorised first, and the will itself doesn't say who. That authorisation is a grant of representation, and which flavour of grant is needed, and who is first in line to ask for it, are questions with precise statutory answers.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The priority orders under rr 20 and 22 are presented here in simplified form for teaching purposes, grouping categories that the full rules subdivide further (for example, by whether an interest is vested or contingent). The full rule text should be consulted for edge cases; the structure and ranking given here are accurate for SQE1 purposes."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three starting positions, three grants",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Before you can distribute a single asset from a deceased person's estate, someone needs legal authority to act. That authority is called a grant of representation, and there are three kinds — which one is available depends entirely on the starting position: is there a valid will, and if so, is there someone able and willing to act as executor under it?",
+          "A grant of probate is issued where the deceased left a valid will that appoints at least one executor who is willing and able to act. Probate doesn't create the executor's authority — that comes from the will itself, from the moment of death — it confirms it, so that banks, land registries and the court will actually deal with them.",
+          "A grant of letters of administration with the will annexed is issued where the deceased left a valid will, but there is no executor able and willing to act — perhaps none was appointed, the named executor predeceased the testator, renounced, or lacks capacity. The person who takes this grant is called an administrator, not an executor, even though they're giving effect to the same will.",
+          "A grant of letters of administration (sometimes called 'simple administration') is issued where the deceased died wholly intestate — no valid will at all. Here the administrator's authority and the distribution of the estate are both governed by the intestacy rules, not by any testamentary document."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Grant of representation",
+            "definition": "A court order (issued by the Probate Registry) confirming a person's authority to collect in, administer and distribute a deceased person's estate. It takes one of three forms — probate, administration with the will annexed, or administration on intestacy — depending on whether a valid will exists and whether an executor is able and willing to act under it."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-10-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A valid will exists, but its sole named executor died before the testator and no substitute executor was appointed. Which grant is needed?",
+          "options": ["Probate", "Letters of administration with the will annexed", "Letters of administration on intestacy"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. The will is valid and will still govern distribution, but with no executor able to act, an administrator has to be appointed to give effect to it.",
+          "feedbackIncorrect": "There is a valid will here, so this isn't an intestacy case — but with no executor able to act, probate (which requires a willing, able executor) isn't available either. That leaves administration with the will annexed."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Priority with a valid will: rule 20",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Where a valid will exists but administration with the will annexed is needed, the Non-Contentious Probate Rules 1987 don't leave 'who applies' to agreement between the family — r 20 sets a strict priority order, broadly following who stands to benefit most directly under the will.",
+          "The logic is straightforward once you see it: the person with the largest, least conditional stake in the estate is trusted first, because they have the strongest incentive to administer it properly and the most to lose from getting it wrong.",
+          "In simplified form, the order runs: first, any residuary beneficiary who holds their interest on trust for someone else; then any other residuary beneficiary (including one whose interest is for life, or who shares in a partial intestacy of any residue the will fails to dispose of); then the personal representative of such a residuary beneficiary if they have since died; then any other legatee or devisee (a specific or pecuniary gift, rather than residue) or a creditor of the estate; then the personal representative of one of those. A residuary beneficiary whose interest has already vested outranks one whose interest is still contingent on something happening."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Rule 20 priority order (simplified)",
+            "points": [
+              "1. A residuary beneficiary holding on trust for another person",
+              "2. Any other residuary beneficiary (vested interests ranked above contingent ones; interests for life not preferred over interests held on trust for another)",
+              "3. The personal representative of a residuary beneficiary within (2) who has since died",
+              "4. Any other legatee or devisee (a specific or pecuniary gift under the will), or a creditor of the deceased",
+              "5. The personal representative of a person within (4)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-10-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these applicants for administration with the will annexed in their order of priority under r 20, highest first.",
+          "items": [
+            "A residuary beneficiary holding their share on trust for a minor",
+            "A residuary beneficiary entitled absolutely and immediately",
+            "A beneficiary of a specific pecuniary legacy",
+            "A creditor of the deceased with no interest under the will"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the ladder: trustee-residuary beneficiaries first, then other residuary beneficiaries, then those with only a specific or pecuniary interest, then creditors — who rank alongside legatees and devisees, but only once none of the higher categories exists or is willing to act.",
+          "feedbackIncorrect": "Work from the top down: residuary beneficiaries (trustees for others first) outrank beneficiaries of specific gifts, who in turn outrank a mere creditor with no interest under the will at all."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Priority on intestacy: rule 22",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Where the deceased left no valid will, r 22 sets the priority order for who may apply for letters of administration — and it closely tracks the order in which people are entitled to inherit under the intestacy rules in s 46 of the Administration of Estates Act 1925. That's not a coincidence: the person who stands to inherit is, again, treated as the person with the strongest stake in administering the estate correctly.",
+          "The order runs, broadly: surviving spouse or civil partner first; then children of the deceased (and the issue of any child who predeceased); then parents; then siblings of the whole blood (or their issue); then siblings of the half blood (or their issue); then grandparents; then uncles and aunts of the whole blood (or their issue); then uncles and aunts of the half blood (or their issue); and if none of these exist, the Crown (represented by the Treasury Solicitor), followed by a creditor of the estate.",
+          "Notice that a cohabiting but unmarried partner appears nowhere on this list, however long the relationship — intestacy priority, both for inheritance and for who may apply for the grant, is built entirely around formal relationships of marriage, civil partnership and blood (or adoption)."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Rule 22 priority order (simplified)",
+            "points": [
+              "1. Surviving spouse or civil partner",
+              "2. Children of the deceased (and issue of a child who predeceased)",
+              "3. Parents",
+              "4. Siblings of the whole blood, or their issue",
+              "5. Siblings of the half blood, or their issue",
+              "6. Grandparents",
+              "7. Uncles and aunts of the whole blood, or their issue",
+              "8. Uncles and aunts of the half blood, or their issue",
+              "9. The Crown (bona vacantia), then a creditor of the estate"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-10-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Ade dies intestate. He is survived by his long-term cohabiting partner of eighteen years, his sister, and his mother. Who has priority to apply for letters of administration?",
+          "options": ["His cohabiting partner, given the length of the relationship", "His mother", "His sister", "No one — an intestacy with no spouse or children requires the Crown to apply"],
+          "correctIndex": 1,
+          "explanation": "With no spouse, civil partner or children, the next category in r 22 is parents — so Ade's mother has priority over his sister, and well ahead of his cohabiting partner, who has no status under the intestacy priority order regardless of the relationship's length."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When the front-runner won't or can't apply",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "The priority orders identify who is entitled to apply first — not who must apply. A person at the top of the ladder can renounce their right, in which case the right passes down to the next person in the same category, or to the next category if the first is exhausted.",
+          "Equal-ranking applicants sometimes exist together — for example, two siblings of the whole blood. Any one of them may apply alone, or they may apply jointly (up to four administrators may act at once), but a person lower down the ladder cannot simply apply because someone above them is slow or difficult to contact — they must first be cleared off, typically by renouncing or by being cited (a mechanism covered in the next lesson).",
+          "Occasionally the person with formal priority is wholly unsuitable to act — for example, someone with a serious conflict of interest, or a history of financial mismanagement. Here the court has a residual power under s 116 of the Senior Courts Act 1981 to pass over the person with priority and appoint someone else instead, if it considers this necessary 'by reason of any special circumstances'. This is the exception, not the rule: the priority order is otherwise treated as strict, not merely persuasive."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that if the person with the highest priority is simply unresponsive or hard to reach, the next person down the list can step in without more.",
+            "whyItsWrong": "Priority is not automatically forfeited by silence. The person with the higher right must formally be cleared off — typically by renunciation, or by being cited to apply or renounce — before someone lower down the order can take out the grant. An application that simply skips over an unresponsive higher-ranking person will be rejected by the Registry."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-10-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "The person with the highest r 22 priority to apply has not responded to any contact for several months. What is the correct next step for a sibling further down the priority order who wants to apply?",
+          "options": [
+            "Apply directly, since the person with priority has effectively forfeited their right through inaction",
+            "Arrange for the person with priority to be formally cleared off — typically by renunciation or citation — before applying",
+            "Ask the Probate Registry to appoint whichever family member applies first",
+            "Wait indefinitely, since only the person with priority may ever apply"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "Inaction alone does not demote someone in the priority order. The formal mechanisms — renunciation or citation — exist precisely to resolve this situation, and one of them must be used before a lower-ranked applicant can proceed.",
+          "explanation": "The priority order is strict, not merely a default that lapses with silence. Clearing off the person with priority through renunciation or citation is the correct route, and is covered in detail in the next lesson."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Sorting the facts into the right box",
+        "voice": "case-narrative — works through a worked example before generalising",
+        "body": [
+          "Take a single fact pattern and watch how the analysis runs. Priya dies. Her solicitor holds a signed, witnessed will made three years before her death. The will appoints her husband as sole executor and leaves her entire estate to him absolutely. Priya's husband died eight months before she did, and the will contains no substitute executor.",
+          "Step one: is there a valid will? Yes — nothing suggests any formality was missed. Step two: is there an executor able and willing to act? No — the sole executor predeceased her. So probate is not available; this is a case for administration with the will annexed.",
+          "Step three: who has priority under r 20? Priya's husband was also her sole residuary beneficiary, entitled absolutely — but he has died. That doesn't remove the estate from the will's operation (his interest may pass to his own estate, or lapse and fall into a partial intestacy, depending on the will's other terms and the rules on lapse). Whoever is now entitled to the residue under the will (or, if the gift has lapsed, under partial intestacy) sits at the top of the r 20 ladder as the person who should apply.",
+          "This is the pattern the SQE1 exam rewards: identify the starting position (valid will? executor able and willing?), name the correct grant, then work down the relevant priority ladder using who is actually, currently entitled — not who was named, if that person can no longer take up the role."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Identifying the right grant and applicant",
+            "description": "A decision path from the facts to the correct grant and the correctly prioritised applicant.",
+            "nodes": [
+              { "id": "start", "label": "Is there a valid will?" },
+              { "id": "no-will", "label": "No → letters of administration on intestacy; apply r 22 priority order" },
+              { "id": "yes-will", "label": "Yes → is an executor able and willing to act?" },
+              { "id": "exec-yes", "label": "Yes → grant of probate to that executor" },
+              { "id": "exec-no", "label": "No → letters of administration with the will annexed; apply r 20 priority order" }
+            ],
+            "edges": [
+              { "from": "start", "to": "no-will", "label": "No" },
+              { "from": "start", "to": "yes-will", "label": "Yes" },
+              { "from": "yes-will", "to": "exec-yes", "label": "Yes" },
+              { "from": "yes-will", "to": "exec-no", "label": "No" }
+            ],
+            "textAlternative": "First ask whether a valid will exists. If not, letters of administration on intestacy are needed, and the r 22 priority order applies. If a valid will exists, ask whether an executor is able and willing to act. If so, a grant of probate issues to that executor. If not, letters of administration with the will annexed are needed, and the r 20 priority order applies to identify who should apply."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-10-check-05",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario requires letters of administration on intestacy, rather than with the will annexed?",
+          "scenarioA": "The deceased left a signed, witnessed will appointing an executor who has since validly renounced the role.",
+          "scenarioB": "The deceased left a document intended as a will, but it was signed without any witnesses present.",
+          "correctScenario": "B",
+          "explanation": "A will that fails to meet the formalities (such as valid attestation) is not a valid will at all — the estate is treated as intestate, so scenario B needs administration on intestacy under r 22. Scenario A involves a valid will with no executor able to act, which calls for administration with the will annexed under r 20."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-we-10-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "A solicitor is asked which grant confirms an executor's existing authority under a valid will, rather than creating a new authority. Which grant is this?",
+      "options": ["Grant of probate", "Letters of administration with the will annexed", "Letters of administration on intestacy", "A grant de bonis non"],
+      "correctIndex": 0,
+      "explanation": "Probate confirms authority that already vested in the executor at the moment of death; it does not create it. Both forms of letters of administration create authority in someone who did not otherwise have it."
+    },
+    {
+      "itemId": "sqe1-we-10-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which grant is required where the deceased died leaving no valid will of any kind?",
+      "options": ["Grant of probate", "Letters of administration with the will annexed", "Letters of administration on intestacy", "A grant limited to settled land"],
+      "correctIndex": 2,
+      "explanation": "With no valid will, the estate is administered under the intestacy rules, and the grant needed is letters of administration on intestacy, following the r 22 priority order."
+    },
+    {
+      "itemId": "sqe1-we-10-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A client asks which rule governs priority to apply for a grant of letters of administration with the will annexed. Which is the correct source?",
+      "options": ["Non-Contentious Probate Rules 1987, r 20", "Non-Contentious Probate Rules 1987, r 22", "Administration of Estates Act 1925, s 46", "Senior Courts Act 1981, s 116"],
+      "correctIndex": 0,
+      "trapExplanation": "Rule 22 and s 46 both concern intestacy, not administration with the will annexed, so they are tempting but wrong answers for a case where a valid will exists. Section 116 is a separate, exceptional power to pass over an applicant altogether, not the ordinary priority rule.",
+      "explanation": "Rule 20 sets the priority order specifically for administration with the will annexed, which applies whenever a valid will exists but no executor is able and willing to act."
+    },
+    {
+      "itemId": "sqe1-we-10-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A firm's trainee summarises the r 20 priority order as 'largest beneficial interest first'. A supervisor asks for a correction. Which refinement is most accurate?",
+      "options": [
+        "Residuary beneficiaries holding on trust for another person are ranked above other residuary beneficiaries, even if the trustee's own personal share is smaller",
+        "The order is based purely on family relationship to the deceased, not on any interest under the will",
+        "Creditors always rank above legatees and devisees, regardless of whether they have any interest under the will",
+        "The order is identical to the r 22 intestacy order"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to think purely in terms of beneficial size, but r 20 puts a residuary beneficiary who holds their interest on trust for someone else (for example, a minor) above other residuary beneficiaries, reflecting their fiduciary responsibility rather than the size of any personal share.",
+      "explanation": "The r 20 order reflects both the size of interest and the nature of the holding (trust versus personal, vested versus contingent) — it isn't a pure size ranking, and it is a distinct order from r 22, which applies only on intestacy."
+    },
+    {
+      "itemId": "sqe1-we-10-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Reading r 22's structure, which statement correctly describes how it treats siblings of the whole blood compared with siblings of the half blood?",
+      "options": [
+        "Whole-blood siblings rank above half-blood siblings",
+        "Half-blood siblings rank above whole-blood siblings",
+        "Whole-blood and half-blood siblings rank equally, and must always apply jointly",
+        "Siblings of any kind rank above parents"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rule 22 ranks siblings of the whole blood (or their issue) above siblings of the half blood (or their issue), and both categories rank below parents, reflecting the ordinary intestacy hierarchy of closeness to the deceased."
+    },
+    {
+      "itemId": "sqe1-we-10-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "A student asks why r 22's priority order for who may apply so closely mirrors the entitlement order under s 46 of the Administration of Estates Act 1925. Which explanation best captures the rule-makers' reasoning?",
+      "options": [
+        "The person who stands to inherit under the intestacy rules has the strongest incentive to administer the estate correctly, so entitlement to apply tracks entitlement to inherit",
+        "It is a historical coincidence with no underlying policy connection",
+        "Section 46 was drafted after r 22 and simply copied its wording",
+        "The two orders are actually unrelated, and any similarity is superficial"
+      ],
+      "correctIndex": 0,
+      "explanation": "The alignment is deliberate: whoever benefits most directly from the estate is treated as having both the standing and the incentive to administer it properly, so the rules give that person first refusal on applying for the grant."
+    },
+    {
+      "itemId": "sqe1-we-10-test-07",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A testator's will leaves the entire residuary estate to a beneficiary absolutely and immediately, with no life interest and no trust for anyone else. Under r 20, where does this beneficiary sit in the priority order?",
+      "options": [
+        "At the very top, ahead of a residuary beneficiary who holds their share on trust for a minor",
+        "Below a residuary beneficiary who holds their share on trust for a minor, but above beneficiaries of specific gifts",
+        "Below beneficiaries of specific pecuniary legacies",
+        "Outside the priority order entirely, since only executors may apply"
+      ],
+      "correctIndex": 1,
+      "explanation": "Rule 20 places a trustee-residuary beneficiary (holding for someone else) above other residuary beneficiaries, including one entitled absolutely and immediately in their own right — but a residuary beneficiary of any kind still outranks anyone with only a specific or pecuniary interest under the will."
+    },
+    {
+      "itemId": "sqe1-we-10-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Farida dies leaving a will that names her business partner as executor. The business partner is willing to act but is currently overseas and unreachable for several weeks. Farida's adult daughter wants to know whether she may apply for a grant now instead.",
+      "options": [
+        "Yes, because a family member always has priority over a non-family executor",
+        "No — the named executor is able and willing to act, so probate should be sought by, or on behalf of, that executor once contactable; the daughter cannot simply substitute herself",
+        "Yes, because letters of administration on intestacy are available whenever an executor is temporarily unreachable",
+        "No, because only the Probate Registry itself may apply for a grant in these circumstances"
+      ],
+      "correctIndex": 1,
+      "explanation": "The executor being temporarily hard to reach does not make them unable or unwilling to act. Probate remains the correct grant, and it should be sought for or by the named executor; the daughter has no basis to apply in their place merely because contact is currently difficult."
+    },
+    {
+      "itemId": "sqe1-we-10-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Tomasz dies intestate. He is survived by his wife and their two adult children. Who has priority to apply for letters of administration under r 22?",
+      "options": [
+        "The two children jointly, as the closest blood relatives",
+        "His wife",
+        "His wife and children must apply together as a single unit, or not at all",
+        "Whichever family member reaches the Probate Registry first"
+      ],
+      "correctIndex": 1,
+      "explanation": "A surviving spouse or civil partner sits at the very top of the r 22 order, ahead of children. Tomasz's wife has priority to apply; the children rank below her, though she may choose to apply jointly with one or more of them if she wishes."
+    },
+    {
+      "itemId": "sqe1-we-10-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Bea dies intestate with no surviving spouse, civil partner, children, or parents. She is survived only by one full sibling and one half-sibling. Who has priority to apply for the grant?",
+      "options": [
+        "The half-sibling, because half-blood relationships are given priority to correct for their otherwise smaller inheritance",
+        "The full sibling, because whole-blood relationships rank above half-blood relationships under r 22",
+        "Both must apply jointly or neither may apply",
+        "Neither — with no spouse, children or parents, only the Crown may apply"
+      ],
+      "correctIndex": 1,
+      "explanation": "Rule 22 places siblings of the whole blood (or their issue) above siblings of the half blood (or their issue). With no one in a higher category, Bea's full sibling has priority over the half-sibling."
+    },
+    {
+      "itemId": "sqe1-we-10-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A firm is instructed by the deceased's cousin, who is keen to apply for a grant on an intestacy where the deceased is also survived by a nephew (the son of a predeceased sibling of the whole blood). What should the solicitor advise?",
+      "options": [
+        "The cousin has priority, being of the same generation as the deceased",
+        "The nephew has priority, standing in his deceased parent's place as issue of a whole-blood sibling, which ranks well above a cousin",
+        "They rank equally and must apply jointly",
+        "Neither may apply; only a spouse, child or parent may ever apply on an intestacy"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to assume a cousin (closer in generation to the deceased than a young nephew) might rank higher, but r 22 follows the intestacy entitlement categories strictly: the issue of a predeceased sibling of the whole blood steps into that sibling's place, which ranks far above a cousin — a category that does not even appear until much further down the intestacy order.",
+      "explanation": "Where a sibling of the whole blood has predeceased, their issue (here, the nephew) takes their place in the priority order. A cousin ranks well below siblings and their issue, so the nephew has clear priority."
+    },
+    {
+      "itemId": "sqe1-we-10-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A colleague claims that once someone renounces their right to apply for a grant, the next person in the priority order may apply immediately without any further formality. Is this accurate?",
+      "options": [
+        "Yes, in every case, with no further steps required",
+        "It depends on the correct grant type and whether the renunciation has been properly made and filed, but broadly yes — a validly filed renunciation is one recognised way of clearing a person off the priority order",
+        "No — renunciation has no effect on the priority order at all",
+        "No — only a court order under s 116 of the Senior Courts Act 1981 can clear someone off the priority order"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answers overstate the position in both directions: renunciation clearly does have legal effect on the priority order (so it isn't nothing), but it must be properly made and filed to take effect — it isn't automatic just because someone says informally that they don't want to act.",
+      "explanation": "A validly executed and filed renunciation removes that person from the priority order for that grant, allowing the next person in line to apply — this is one of the two main ways (alongside citation) of clearing off a higher-ranked non-applicant, covered in detail in the next lesson."
+    },
+    {
+      "itemId": "sqe1-we-10-test-13",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A grant applicant has priority under r 22 but has a documented history of serious financial mismanagement, and other beneficiaries are concerned about the safety of the estate's assets in their hands. What is the correct procedural route to prevent them taking the grant, if renunciation is not forthcoming?",
+      "options": [
+        "Nothing can be done; the priority order is absolute and cannot be displaced by the court",
+        "An application to the court under s 116 of the Senior Courts Act 1981 to pass over that person 'by reason of special circumstances'",
+        "The other beneficiaries may simply apply themselves, ignoring the priority order",
+        "The Probate Registry may refuse the grant on its own initiative without any application to court"
+      ],
+      "correctIndex": 1,
+      "explanation": "Section 116 of the Senior Courts Act 1981 gives the court a residual power to pass over the person with priority where special circumstances justify it. This is an exceptional route, used precisely for situations like a documented risk to the estate, rather than mere family disagreement."
+    },
+    {
+      "itemId": "sqe1-we-10-test-14",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which statutory provision sets out the underlying order of entitlement to inherit on intestacy, which the r 22 grant-priority order is designed to track?",
+      "options": ["Administration of Estates Act 1925, s 46", "Trustee Act 1925, s 27", "Wills Act 1837, s 9", "Inheritance (Provision for Family and Dependants) Act 1975, s 1"],
+      "correctIndex": 0,
+      "explanation": "Section 46 of the Administration of Estates Act 1925 sets the order in which relatives inherit on intestacy, and r 22's priority order for who may apply for the grant is deliberately aligned with it."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating priority as forfeited by mere silence, delay or being hard to reach. Priority is only displaced by a formal step — renunciation, citation, or (exceptionally) a s 116 court order — never by inaction alone.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.wills-estates.grants-of-representation"
+  }
+}

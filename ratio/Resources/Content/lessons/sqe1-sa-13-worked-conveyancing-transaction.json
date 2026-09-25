@@ -1,0 +1,435 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-sa-13",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "lessonNumber": 13,
+  "topicId": "sqe1.solicitors-accounts.worked-conveyancing-transaction",
+  "title": "Applying the rules I: a worked conveyancing transaction",
+  "subtitle": "Tracking a residential purchase through the client ledger, cash book and business ledger",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Track a full conveyancing transaction — receipt on account, an agency disbursement, delivery of a bill, and transfer of costs — through the client ledger, client cash book and business ledger",
+    "Apply SRA Accounts Rules 2019, rr 2.1, 4 and 5 to identify which entries must be made in the client account and which in the business account at each stage of the transaction",
+    "Calculate the correct residual balance held for a client after a mixed transaction involving a disbursement paid and a bill delivered including VAT"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Accounts Rules 2019, r 2.1", "role": "Defines client money — the trigger for every entry in this lesson" },
+    { "citation": "SRA Accounts Rules 2019, r 4", "role": "Requires client money to be paid into a client account without delay" },
+    { "citation": "SRA Accounts Rules 2019, r 5", "role": "Governs what client money may be used for, including paying disbursements and transferring costs once a bill is delivered" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite the rules in isolation — client money goes in the client account, costs get transferred once billed. What SQE1 actually tests is whether you can run all of that through a single transaction without losing track of which pound is sitting where. This lesson does exactly that, with real figures.",
+    "profileHooks": {
+      "weakApplication": "You know the individual rules well. This lesson is pure mechanics — expect to be tracking a running balance across five stages, not defining terms.",
+      "weakKnowledge": "Before the figures start moving, make sure r 2.1's definition of client money and r 4's 'without delay' requirement are solid — everything else in this lesson assumes you have both automatically."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "£5,000 lands in the client account on a Tuesday morning. By Friday it has funded a Land Registry fee, part of it has become the firm's own money, and what's left has to reconcile to the penny against a bank statement. Nobody hands you a diagram for this — you're expected to build the ledger in your head as the facts unfold. This lesson builds one, in full, with real numbers.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The SRA Accounts Rules 2019 are stable and no amendment is in force or imminently expected; this lesson reflects the rules as currently in force."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Opening the file: money on account",
+        "voice": "worked-example — builds the ledger from the first entry",
+        "body": [
+          "Take a straightforward instruction: a client is buying a house and sends the firm £5,000 on account of costs and disbursements before exchange. Before anything else happens, one question decides everything that follows — is this client money?",
+          "Rule 2.1 defines client money as money held or received for a client, or for a third party in relation to regulated services, subject to specified exceptions. £5,000 sent by a client, for that client's own transaction, with nothing yet earned or spent against it, is about as clean a case of client money as SQE1 sets — there is no exception in play.",
+          "Because it is client money, r 4 takes over: the firm must pay it into a client account, and must do so without delay — meaning on the day of receipt or, if that is not possible, the next working day. There is no discretion to leave it in the business account 'for convenience', and no discretion to wait until a bill is raised before opening the ledger entry.",
+          "The ledger entry that results is simple, but it is the anchor for every later entry in this lesson: a receipt of £5,000 on the client side of this client's ledger, and a corresponding £5,000 in the client cash book, which records the movement of money through the client bank account as a whole."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Client money",
+            "definition": "Money held or received by a firm for a client, or for a third party in connection with regulated services, as defined by r 2.1 of the SRA Accounts Rules 2019 — the definition that decides whether every subsequent rule in this lesson applies at all."
+          },
+          {
+            "type": "ledgerTable",
+            "title": "Client ledger — Smith (purchase) — after receipt",
+            "columns": ["Date", "Narrative", "Client account (£)", "Business account (£)", "Client balance (£)"],
+            "rows": [
+              ["Day 1", "Received on account of costs and disbursements", "5,000.00 (in)", "—", "5,000.00"]
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-13-check-01",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client sends the firm £5,000 by bank transfer 'on account of costs and disbursements' before any work is billed. Under r 4, what must the firm do with it?",
+          "options": [
+            "Pay it into a client account without delay",
+            "Pay it into the business account until a bill is delivered",
+            "Hold it uncredited until completion, then decide which account it belongs in",
+            "Split it automatically 50/50 between client and business account"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Money received for the client's matter, with nothing yet earned against it, is client money — r 4 requires it into the client account without delay, full stop.",
+          "feedbackIncorrect": "Work from the definition first: this is client money under r 2.1 because nothing has been earned or billed against it yet. r 4 then requires it into the client account without delay — there's no discretion to route it elsewhere first."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Paying an agency disbursement: the Land Registry fee",
+        "voice": "structural — walks through why this payment comes from client account",
+        "body": [
+          "Two weeks later the firm needs to pay a £270 Land Registry fee to register the purchase. This is a disbursement — but specifically an agency disbursement: the firm is not personally liable to the Land Registry for the fee, it is simply the conduit through which the client's own money reaches a third party. The firm never owes this money itself.",
+          "Because the fee is still, at this point, entirely the client's money — nothing has been billed, nothing has crystallised into a debt owed to the firm — the payment must be made from the client account, under the authority the client has given by instructing the firm to proceed with registration. This is r 5 in operation: client money may be used for the purposes for which it is held, and paying a disbursement the client has authorised on their own matter is exactly that purpose.",
+          "Contrast this with a principal disbursement, where the firm itself incurs the liability to a third party (an expert, counsel) before recovering it from the client — that is a different mechanism, and is the subject of the next lesson. Here, the firm never owes the Land Registry anything; it is passing the client's own money on.",
+          "The ledger absorbs the payment cleanly: £270 leaves the client side of the ledger and the client cash book, reducing the running client balance to £4,730. No business-account entry is needed at all, because the firm's own money was never involved."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Agency disbursement",
+            "definition": "A disbursement the firm pays on the client's behalf without ever becoming personally liable for it — classically a Land Registry fee, court fee or Stamp Duty Land Tax payment — paid from client account using the client's own money."
+          },
+          {
+            "type": "ledgerTable",
+            "title": "Client ledger — Smith (purchase) — after Land Registry fee",
+            "columns": ["Date", "Narrative", "Client account (£)", "Business account (£)", "Client balance (£)"],
+            "rows": [
+              ["Day 1", "Received on account of costs and disbursements", "5,000.00 (in)", "—", "5,000.00"],
+              ["Day 14", "Land Registry registration fee paid", "270.00 (out)", "—", "4,730.00"]
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-13-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the correct order for paying the £270 Land Registry fee out of client money already held.",
+          "items": [
+            "Client money of £5,000 is held on the client ledger, unspent",
+            "Client authorises the firm to proceed with registration",
+            "Firm pays £270 to the Land Registry from the client account",
+            "Client ledger balance reduces to £4,730, with no business-account entry"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: authority to spend the client's own money on an agency disbursement comes before the payment, and the payment comes straight out of client account because the firm was never personally liable.",
+          "feedbackIncorrect": "Check the order — authority to proceed has to precede the payment, and because this is an agency disbursement (the firm owes the Land Registry nothing itself), the money comes from the client account, not the business account."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Delivering the bill: costs crystallise",
+        "voice": "case-narrative — the transaction reaches its billing moment",
+        "body": [
+          "Exchange and completion go smoothly. The firm now delivers its bill: £1,200 profit costs plus VAT at the standard rate of 20% (£240), a total of £1,440. No further disbursement is billed here, because the £270 Land Registry fee was already paid from money the client had specifically provided for it.",
+          "Delivery of the bill is the pivot point of the whole transaction. Before the bill, the £1,200 (plus VAT) sitting in the client account was still client money — the firm had done the work but not yet rendered an account for it. The moment the bill is delivered, that sum stops being client money and becomes a debt the client owes the firm; correspondingly, it must be moved out of the client account.",
+          "This is the operation r 4 and r 5 work together to require: money ceases to be client money once it is validly earned and billed, and must then be transferred to the business account — promptly, and only up to the amount actually billed. A firm cannot transfer more than the bill states just because more money happens to be sitting on the ledger; the balance beyond £1,440 remains client money and stays exactly where it is.",
+          "VAT is not a separate pot in the ledger — the full £1,440 (net costs plus VAT) transfers together to the business account, where the firm subsequently accounts to HMRC for the £240 output tax through its normal VAT return; the client ledger does not track VAT payment to HMRC at all."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Accounts Rules 2019, r 4.3 (summarised)",
+            "text": "A firm must transfer costs from client account within 14 days of sending a bill or other written notification of costs, to the extent that the sum has been earned and billed.",
+            "elements": ["A bill or written notification of costs has been sent", "The sum transferred does not exceed the amount billed", "The transfer is out of client account into the business account", "The transfer happens promptly, not on an arbitrary later date"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-13-check-03",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "The firm delivers a bill for £1,440 (£1,200 costs + £240 VAT). What is the maximum sum the firm may transfer from client account to business account against that bill?",
+          "options": [
+            "£1,440 — the full billed sum, no more and no less",
+            "£1,200 only — VAT must stay in the client account permanently",
+            "Whatever remains on the client ledger, regardless of the bill amount",
+            "£1,440 plus an estimate of costs on the next stage of the matter"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. The transfer tracks the bill exactly — £1,440, including the VAT element, moves together. Anything beyond that figure is still client money and stays in the client account.",
+          "feedbackIncorrect": "Look at what the bill actually states. The transfer can only match the sum billed — £1,440 in total, VAT included — never more, and VAT is not held back separately in the client account."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Transferring costs and identifying what remains",
+        "voice": "direct — completes the mechanical picture before reconciliation",
+        "body": [
+          "The transfer itself is a single, precisely sized movement: £1,440 out of the client account and into the business account. On the client ledger this appears as a deduction from the client-side balance; on the business ledger it appears as income received, split internally between profit costs (£1,200) and output VAT (£240) for the firm's own accounting and VAT return purposes.",
+          "What triggers this movement is not the passage of time or the end of the matter generally — it is specifically the act of delivering the bill. A firm that transfers costs before a bill (or other written notification of costs) has gone out to the client has transferred money it had no entitlement to yet, however confident it was that the work would be billed at that figure.",
+          "After the transfer, the client ledger reads: £5,000 received, less £270 (Land Registry fee), less £1,440 (costs transferred) — a remaining client balance of £3,290. That £3,290 is still the client's money. It has not been earned, and nothing in this transaction converts it into the firm's money; it must stay in the client account until either further costs are billed against it or it is returned to the client at the end of the matter.",
+          "This is the discipline the whole lesson is building towards: at every stage, ask what triggered the entry, and check that the ledger records the client's money and the firm's money as two genuinely separate things that only move across the line when a specific rule says they may."
+        ],
+        "components": [
+          {
+            "type": "ledgerTable",
+            "title": "Client ledger — Smith (purchase) — final position",
+            "columns": ["Date", "Narrative", "Client account (£)", "Business account (£)", "Client balance (£)"],
+            "rows": [
+              ["Day 1", "Received on account of costs and disbursements", "5,000.00 (in)", "—", "5,000.00"],
+              ["Day 14", "Land Registry registration fee paid", "270.00 (out)", "—", "4,730.00"],
+              ["Day 28", "Bill delivered: £1,200 costs + £240 VAT", "—", "—", "4,730.00"],
+              ["Day 28", "Costs transferred to business account", "1,440.00 (out)", "1,440.00 (in)", "3,290.00"]
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-13-check-04",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that is the trigger allowing the firm to transfer £1,440 from client account to business account.",
+          "scenarioText": "The firm completes the file, is confident the total costs will come to £1,440, and two days later formally delivers a bill to the client for that exact sum.",
+          "tappableSpans": ["completes the file", "is confident the total costs will come to £1,440", "delivers a bill to the client", "for that exact sum"],
+          "correctSpan": "delivers a bill to the client",
+          "feedbackCorrect": "Right. Confidence about the eventual figure is not enough, and completing the file is not enough — the transfer is only authorised once a bill (or other written notification of costs) has actually gone out.",
+          "feedbackIncorrect": "Look for the specific triggering event, not the surrounding circumstances. Completing the file and being confident of the final figure don't authorise a transfer on their own — only actual delivery of the bill does."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Does it all add up? Reconciling the position",
+        "voice": "reflective — closes the worked example and points forward",
+        "body": [
+          "A ledger that looks tidy on paper still has to be checked against reality. Firms are required to reconcile client account records regularly — comparing the sum of individual client balances (like the £3,290 shown here) against the client cash book, and both of those against the actual client bank statement. If the three don't match, something in the transaction has gone unrecorded or wrong, and it needs finding before it compounds across other clients sharing the same pooled client account.",
+          "In this transaction, everything ties out cleanly: £5,000 in, £270 and £1,440 out, £3,290 remaining — a figure that should appear identically on the client ledger, in the client cash book, and as this client's share of the client bank statement balance.",
+          "That clean result is the point of working through a transaction like this in full rather than rule by rule. SQE1 rarely tests r 4 or r 5 as abstract propositions; it tests whether you can hold a running balance in your head while facts arrive out of order — a receipt here, a disbursement there, a bill some pages later — and still say, correctly, what belongs in which account and why.",
+          "The next lesson complicates the picture in one specific way: a disbursement the firm itself becomes liable for, before it is ever recovered from the client. Keep this worked example in mind as the comparison case."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Three-way reconciliation",
+            "definition": "The routine check that the total of individual client ledger balances, the client cash book, and the client bank account statement all agree — the practical safeguard that catches a misapplied entry before it becomes a shortage."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-13-check-05",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "After the receipt, the Land Registry fee payment, and the costs transfer described in this lesson, what client balance should the client ledger, client cash book, and client bank statement all show for this client?",
+          "options": ["£3,290", "£5,000", "£1,440", "£4,730"],
+          "correctIndex": 0,
+          "feedbackCorrect": "£5,000 in, less £270, less £1,440 — £3,290 is what should still be sitting in the client account for this client, and it's what all three records should agree on.",
+          "feedbackIncorrect": "Work the figures through: £5,000 received, minus the £270 Land Registry fee, minus the £1,440 transferred on delivery of the bill, leaves £3,290 — and that figure should match across all three records."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-13-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A firm receives £5,000 from a client on account of costs and disbursements for a residential purchase, before any work has been billed. What must the firm do with the money?",
+      "options": [
+        "Pay it into a client account without delay",
+        "Pay it into the business account until a bill is delivered",
+        "Hold it uncredited pending completion",
+        "Pay half into each account as a precaution"
+      ],
+      "correctIndex": 0,
+      "explanation": "Money received for a client's matter that has not yet been earned or billed is client money under r 2.1, and r 4 requires it into a client account without delay."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following best describes an agency disbursement such as a Land Registry registration fee?",
+      "options": [
+        "A cost the firm recharges to the client after paying it out of the firm's own funds and being personally liable for it",
+        "A payment the firm makes to a third party as a conduit for the client's own money, without ever becoming personally liable itself",
+        "Any expense listed on the firm's final bill to the client",
+        "A payment that must always be made from the business account"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting wrong answer treats any recharged expense as an 'agency disbursement'. The defining feature is that the firm is never personally liable — it is simply passing the client's own money to a third party, which is why the payment comes from client account.",
+      "explanation": "An agency disbursement is paid from client money because the firm incurs no liability of its own — contrast this with a principal disbursement, covered in the next lesson."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A firm holds £5,000 of client money on account. It needs to pay a £270 Land Registry fee, for which it has no personal liability. From which account should the £270 be paid?",
+      "options": [
+        "The client account, using the client's own money already held",
+        "The business account, then reimbursed from the client later",
+        "Either account, at the fee earner's discretion",
+        "A separate disbursement account held outside the client account"
+      ],
+      "correctIndex": 0,
+      "explanation": "Because the firm has no personal liability for the fee, there is nothing for the business account to fund — the payment is simply the client's own money being applied for an authorised purpose, so it comes from the client account."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under r 4.3, what event allows a firm to transfer money representing its costs out of the client account?",
+      "options": [
+        "Sending a bill or other written notification of costs to the client",
+        "The passage of 30 days since the matter opened",
+        "The fee earner's internal time recording showing the work is complete",
+        "The client verbally confirming they are happy to be charged"
+      ],
+      "correctIndex": 0,
+      "explanation": "The trigger is formal: a bill or other written notification of costs. Confidence, completed work, or a verbal conversation are not enough on their own."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-05",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm delivers a bill for £1,200 profit costs plus £240 VAT, a total of £1,440. How should the VAT element be treated when the transfer to the business account is made?",
+      "options": [
+        "It transfers together with the profit costs, as part of the single £1,440 sum",
+        "It must remain in the client account indefinitely",
+        "It is paid directly to HMRC from the client account",
+        "It is transferred only once the client separately confirms the VAT amount"
+      ],
+      "correctIndex": 0,
+      "explanation": "VAT is not held back as a separate client-account item. The whole billed sum, VAT included, transfers together; the firm later accounts to HMRC through its ordinary VAT return."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Two days before formally delivering a bill, a fee earner transfers £1,440 from client account to business account because she is confident the final bill will come to that figure. Has a breach occurred?",
+      "options": [
+        "No — since the figure turned out to be correct, no breach occurred",
+        "Yes — the transfer was made before a bill or written notification of costs was sent, so there was no valid trigger at the time",
+        "No — fee earners may transfer estimated costs at any time before billing",
+        "Yes, but only because the amount exceeded £1,000"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming that getting the final number right retrospectively cures the problem. It doesn't — the rule is about the trigger, not the accuracy of the estimate. Transferring before the bill is sent is a breach regardless of how the figures later turn out.",
+      "explanation": "r 4.3 requires the bill or written notification to precede the transfer. An accurate guess made in advance of billing is still an unauthorised transfer at the time it happens."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client ledger shows £5,000 received on account, £270 paid as an agency disbursement, and a bill for £1,440 (including VAT) delivered and transferred. What should the client ledger balance show afterwards?",
+      "options": ["£3,290", "£3,560", "£2,850", "£4,730"],
+      "correctIndex": 0,
+      "explanation": "£5,000 minus £270 minus £1,440 leaves £3,290 still held as client money."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-08",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under r 2.1, which of the following is the clearest example of client money?",
+      "options": [
+        "£5,000 sent by a client on account of costs and disbursements, before any work is billed",
+        "The firm's own office rent, held in a separate account",
+        "A partner's personal salary payment",
+        "Interest earned by the firm on its own business account"
+      ],
+      "correctIndex": 0,
+      "explanation": "Money sent by a client for the client's own matter, nothing yet earned against it, sits squarely within r 2.1's definition of client money."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-09",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A firm has £4,730 remaining in client account for a matter after paying a Land Registry fee. It then delivers a bill for £1,440. What is the maximum sum it may transfer to the business account?",
+      "options": ["£1,440", "£4,730", "£3,290", "£1,710"],
+      "correctIndex": 0,
+      "explanation": "The transfer is capped at the amount actually billed — £1,440 — regardless of how much more sits on the client ledger."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which statement best explains why a Land Registry fee is paid from the client account rather than the business account?",
+      "options": [
+        "Because client account payments are always cheaper to process",
+        "Because the firm never becomes personally liable to the Land Registry — it is only passing on the client's own money",
+        "Because Land Registry fees are always below £500",
+        "Because the client account earns interest for the firm"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The wrong options describe irrelevant administrative or financial features. The real reason is the absence of personal liability on the firm's part — that is what marks this out as an agency disbursement.",
+      "explanation": "Only the firm's lack of personal liability explains why the payment is client money moving through the client account, not the firm's own money."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A firm has just delivered a bill and correctly transferred the billed sum to the business account. What should the client ledger's remaining balance represent?",
+      "options": [
+        "Client money still held for the client, unrelated to the firm's own funds",
+        "Money now owned by the firm but temporarily left in client account",
+        "An amount that should be transferred to business account within 14 days regardless of further billing",
+        "Interest accrued on the transferred sum"
+      ],
+      "correctIndex": 0,
+      "explanation": "Any balance remaining after a correctly sized transfer is still client money — it has not been earned or billed, and stays in the client account until it is."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm delivers a bill for £1,440 but, by administrative error, transfers £1,600 from the client account. What is the correct characterisation of the extra £160?",
+      "options": [
+        "An improper transfer — the firm has taken client money beyond what was actually billed",
+        "A permissible buffer against future costs on the same matter",
+        "Interest properly due to the firm",
+        "A disbursement recovery that does not need to match the bill"
+      ],
+      "correctIndex": 0,
+      "explanation": "A transfer can never exceed the sum actually billed. The extra £160 remains client money that should not have left the client account, and the error must be corrected."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-13",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "In the worked transaction, why is no business-account entry needed when the £270 Land Registry fee is paid?",
+      "options": [
+        "Because the firm is never personally liable for the fee — only client money is involved",
+        "Because agency disbursements under £500 are exempt from ledger entries",
+        "Because the fee is deducted from the firm's profit costs automatically",
+        "Because Land Registry fees are VAT-exempt"
+      ],
+      "correctIndex": 0,
+      "explanation": "The firm's own money is never engaged at all, so the business ledger simply has nothing to record at this stage."
+    },
+    {
+      "itemId": "sqe1-sa-13-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client's ledger shows £5,000 received, £270 paid as an agency disbursement, and a bill for £1,440 delivered but not yet transferred. What is the client account balance at this point?",
+      "options": [
+        "£4,730 — the bill has been delivered but the transfer has not yet been made",
+        "£3,290 — because delivering the bill automatically reduces the client balance",
+        "£5,000 — delivery of a bill has no effect until the transfer physically happens",
+        "£1,440 — only the billed sum remains client money"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The trap is assuming delivery of the bill itself moves money. It doesn't — delivery only creates the entitlement to transfer. The client account balance only falls to £3,290 once the £1,440 is actually transferred.",
+      "explanation": "Delivering the bill is the authority to transfer, not the transfer itself. Until the transfer is made, the client account still shows £4,730."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson's test items is treating delivery of a bill, or confidence about a final figure, as if it were the transfer itself. It is only ever the trigger — the ledger only moves when the actual transfer is made, and never by more than the bill states.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.worked-conveyancing-transaction"
+  }
+}

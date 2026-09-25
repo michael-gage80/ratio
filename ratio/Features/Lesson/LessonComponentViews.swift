@@ -20,6 +20,8 @@ struct LessonComponentView: View {
             RatioTrapCard(commonWrongAnswer: wrong, whyItsWrong: why)
         case .doctrineMap(let map):
             DoctrineMapView(map: map)
+        case .ledgerTable(let title, let columns, let rows):
+            LedgerTableView(title: title, columns: columns, rows: rows)
         case .timeline(let title, let events):
             LessonTimelineView(title: title, events: events)
         }
@@ -301,5 +303,58 @@ struct LessonTimelineView: View {
                 Text(description).ratioFont(.small)
             }
         }
+    }
+}
+
+/// A Solicitors Accounts ledger at one step of a worked transaction: mono figures in
+/// ruled columns, scrolling sideways when there are more columns than room. At
+/// accessibility sizes each row becomes a stack of "column: value" lines.
+struct LedgerTableView: View {
+    let title: String
+    let columns: [String]
+    let rows: [[String]]
+
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: RatioSpace.s) {
+            Text(title).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+            if typeSize.isAccessibilitySize {
+                ForEach(Array(rows.enumerated()), id: \.offset) { index, row in
+                    if index > 0 { Divider().overlay(Color.ratioRule) }
+                    VStack(alignment: .leading, spacing: RatioSpace.xxs) {
+                        ForEach(Array(columns.enumerated()), id: \.offset) { column, name in
+                            Text("\(Text(name + ": ").foregroundStyle(Color.ratioInk2))\(row[safe: column] ?? "")").ratioFont(.monoData)
+                        }
+                    }
+                }
+            } else {
+                ScrollView(.horizontal) {
+                    Grid(alignment: .leading, horizontalSpacing: RatioSpace.m, verticalSpacing: RatioSpace.xs) {
+                        GridRow {
+                            ForEach(Array(columns.enumerated()), id: \.offset) { _, name in
+                                Text(name).ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                            }
+                        }
+                        Rectangle().fill(Color.ratioInk).frame(height: 1).gridCellUnsizedAxes(.horizontal)
+                        ForEach(Array(rows.enumerated()), id: \.offset) { index, row in
+                            if index > 0 { Divider().overlay(Color.ratioRule).gridCellUnsizedAxes(.horizontal) }
+                            GridRow {
+                                ForEach(Array(columns.indices), id: \.self) { column in
+                                    Text(row[safe: column] ?? "").ratioFont(column == 1 ? .small : .monoData)
+                                        .fixedSize(horizontal: column != 1, vertical: false)
+                                        .frame(maxWidth: column == 1 ? 220 : nil, alignment: .leading)
+                                }
+                            }
+                        }
+                    }
+                    .padding(.bottom, RatioSpace.xxs)
+                }
+                .scrollIndicators(.hidden)
+            }
+        }
+        .ratioPanel(.ratioPaper)
+        .overlay { RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous).strokeBorder(Color.ratioRule) }
+        .accessibilityElement(children: .contain)
     }
 }

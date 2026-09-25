@@ -1,0 +1,437 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-05",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 5,
+  "topicId": "sqe1.business-law.company-formation",
+  "title": "Forming and financing a company in practice",
+  "subtitle": "Incorporation documents, Model Articles, and who can allot shares",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the incorporation documents required to register a private company and explain why the certificate of incorporation is conclusive evidence of due registration",
+    "Explain the effect of the Model Articles for private companies limited by shares, and how articles may be altered",
+    "Apply s 550 and s 551 to determine whether a director needs shareholder authorisation before allotting shares"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006, s 9", "role": "Sets the documents and statements required to be delivered on registration" },
+    { "citation": "Companies Act 2006, s 15", "role": "Certificate of incorporation as conclusive evidence of compliance with registration requirements" },
+    { "citation": "Companies Act 2006, ss 21-22", "role": "Alteration of articles by special resolution, and entrenched provisions" },
+    { "citation": "Companies Act 2006, s 550", "role": "Directors' power to allot shares without further authorisation where the company has only one class of shares" },
+    { "citation": "Companies Act 2006, s 551", "role": "Requirement for shareholder authorisation to allot shares outside the s 550 single-class exception" },
+    { "citation": "Companies (Model Articles) Regulations 2008, SI 2008/3229, Sch 1", "role": "Model Articles for private companies limited by shares" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite 'file Form IN01 and get a certificate'. Where the profile shows knowledge is ahead of application, this note appears: 'You know the paperwork — this lesson is about the one clause (s 550 v s 551) that trips people up on almost every transactional SQE1 question about allotting shares.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on the incorporation mechanics before. The test pool below leans on scenarios asking whether a director can allot shares without a shareholder vote — read each fact pattern for the number of share classes.",
+      "weakKnowledge": "Start with Part 1 and fix the incorporation sequence firmly — the rest of the lesson assumes you know what a certificate of incorporation actually proves before it looks at share allotment powers."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A director allots a new tranche of shares to a friendly investor without asking the shareholders. Sometimes that's a routine exercise of an everyday power. Sometimes it's an allotment the shareholders never authorised and can unwind. The difference between those two outcomes usually comes down to one fact: how many classes of shares the company has."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "What actually gets filed to bring a company into existence",
+        "voice": "structural — walks the registration package in order",
+        "body": [
+          "Incorporating a private company limited by shares starts with delivering a package to the Registrar under s 9 of the Companies Act 2006 (CA 2006): the application for registration (in practice, Form IN01 or its electronic equivalent), the memorandum of association, and — unless the company adopts the Model Articles wholesale — its own articles of association.",
+          "The memorandum has a narrow but formal role since the 2006 reforms: under s 8, it is simply a statement by each subscriber that they wish to form the company and agree to become a member, taking at least one share each. It is no longer the constitutional document it once was under earlier Companies Acts — that job now belongs to the articles.",
+          "Form IN01 supplies the operational detail the Registrar needs: the proposed company name, registered office address, the officers (directors, and a company secretary if one is appointed), details of the initial shareholders and their shareholdings, and a statement of capital. Once the Registrar is satisfied these requirements are met, a certificate of incorporation is issued, and — exactly as with an LLP — s 15 makes that certificate conclusive evidence that the registration requirements have been complied with and that the company is duly registered from the date it gives."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Statement of capital",
+            "definition": "A required part of the registration package (and later, allotment filings) setting out the company's total number of shares, their aggregate nominal value, and the rights attached to each class — the Registrar's public record of what has actually been issued."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-05-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the Companies Act 2006, what is the memorandum of association's role on incorporation?",
+          "options": [
+            "A statement by each subscriber that they wish to form the company and agree to take at least one share as a member",
+            "The company's principal constitutional document, setting out its objects, share rights and internal governance"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Since the 2006 Act, the memorandum's role has been reduced to that founding statement — the governance detail now lives in the articles.",
+          "feedbackIncorrect": "Not under the current Act. Since 2006, the memorandum is a narrow founding statement of intent to form the company and take at least one share; the articles now carry the constitutional detail."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Model Articles: the default constitution, and how to change it",
+        "voice": "practical — what a trainee actually has to check on a company's file",
+        "body": [
+          "A private company limited by shares that registers without specifying its own articles is deemed to have adopted the Model Articles for Private Companies Limited by Shares, set out in Schedule 1 to the Companies (Model Articles) Regulations 2008. Most small and medium private companies run on the Model Articles, sometimes with limited bespoke amendments layered on top — a solicitor's first job on any company file is to check whether, and how far, the Model Articles have been modified.",
+          "The Model Articles cover the everyday mechanics of running the company: decision-making by directors, calling and conducting general meetings, share transfers, and dividends, among other matters. They are a genuinely useful default, but they are exactly that — a default, not a mandatory template. A company is free to exclude or modify them wholly or in part when it registers, or to amend them later.",
+          "Altering the articles generally requires a special resolution — a 75% majority of members voting (s 21 CA 2006). This is deliberately a higher bar than ordinary company business, reflecting that the articles are the company's constitution. Some provisions can go further still: s 22 allows a company to 'entrench' specified provisions, meaning they can only be altered subject to conditions more restrictive than a special resolution (for example, unanimous consent) — a mechanism minority shareholders sometimes negotiate for at the outset to protect a particular right."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Model Articles: what to check on a file",
+            "points": [
+              "Has the company adopted the Model Articles as they stand, or excluded/modified them on registration?",
+              "Alteration after registration normally needs a special resolution (75%) under s 21",
+              "Entrenched provisions under s 22 can require something stricter than a special resolution to alter — check for these before assuming a 75% vote is always enough",
+              "The Model Articles are a default template, not a mandatory one — bespoke articles are common, especially once external investors are involved"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-05-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "understanding",
+          "prompt": "Two companies want to change a provision in their articles. In which is a bare special resolution (75%) NOT enough on its own?",
+          "scenarioA": "A company operating under unmodified Model Articles wants to change its quorum requirement for board meetings.",
+          "scenarioB": "A company's articles entrench a provision requiring unanimous consent of all members before any change to share transfer restrictions, and it now wants to alter that provision.",
+          "correctScenario": "B",
+          "explanation": "In A, ordinary alteration under s 21 by special resolution suffices. In B, the entrenchment under s 22 means the stricter condition attached to that specific provision — here, unanimity — must be satisfied; a bare 75% vote will not do."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The director's everyday power to allot shares",
+        "voice": "case-narrative — builds the rule through a running example",
+        "body": [
+          "Suppose a private company has only ever issued ordinary shares — one class, held by its three founder-directors. The board wants to allot new ordinary shares to a new investor. Do the directors need shareholder approval first?",
+          "Under s 550 CA 2006, the answer is no — where a private company has only one class of shares, the directors may exercise any power of the company to allot shares of that class, or grant rights to subscribe for or convert into such shares, without needing separate authorisation from the members. This is a deliberately practical rule: in a simple, single-class private company, requiring a shareholder resolution for every allotment would be a routine bureaucratic hurdle with little protective value, since the shareholders and the class receiving new shares are effectively the same group.",
+          "The moment a second class of shares exists — say, the company also has preference shares in issue, or is creating a new class as part of the same transaction — s 550 stops applying, and the position moves to s 551."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 550",
+            "text": "Where a private company has only one class of shares, the directors may exercise any power of the company to allot shares of that class, or to grant rights to subscribe for or to convert any security into such shares, except to the extent that they are prohibited from doing so by the company's articles.",
+            "elements": [
+              "The company is private",
+              "It has only one class of shares in issue",
+              "The power is being exercised to allot shares of that same class (or rights over it)",
+              "The articles do not prohibit the directors from exercising the power"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-05-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact in this scenario that determines whether s 550 applies without more.",
+          "scenarioText": "A private company has always had only ordinary shares in issue. Its articles are the unmodified Model Articles. The board resolves to allot 1,000 new ordinary shares to an incoming investor without holding a shareholder meeting.",
+          "tappableSpans": ["always had only ordinary shares in issue", "unmodified Model Articles", "board resolves to allot", "without holding a shareholder meeting"],
+          "correctSpan": "always had only ordinary shares in issue",
+          "feedbackCorrect": "Correct. It is the single-class fact that switches on s 550 — combined with nothing in the articles prohibiting it, which the unmodified Model Articles do not do here.",
+          "feedbackIncorrect": "Look for the fact about how many classes of shares exist. That single-class position, not the absence of a meeting, is what makes s 550 available in the first place."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When shareholder authorisation is required: s 551",
+        "voice": "structural — the counterpart rule, set out precisely",
+        "body": [
+          "Outside the s 550 single-class exception, directors need authorisation to allot shares under s 551. That authorisation can come from the articles themselves, or from an ordinary resolution of the members (a simple majority) — either fixing a maximum amount of shares that can be allotted and, if given for a limited period, stating an expiry date of no more than five years.",
+          "This matters most in three recurring scenarios: a company creating a new class of shares for the first time (for example, issuing preference shares to a new investor alongside existing ordinary shares); a company that already has more than one class in issue; and a public company, which is always subject to s 551 authorisation requirements regardless of how many classes it has.",
+          "The practical drafting point for a solicitor advising on a financing round: check the articles first for a standing authorisation (many bespoke articles for investor-backed companies build one in), and if none exists, an ordinary resolution needs to be passed before, or at the same time as, the allotment."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Does the director need s 551 authorisation to allot?",
+            "description": "A decision path distinguishing the s 550 exception from the general s 551 requirement.",
+            "nodes": [
+              { "id": "start", "label": "Is the company private, with only one class of shares, and allotting shares of that same class?" },
+              { "id": "yes-single", "label": "Yes → s 550 applies: directors may allot without further authorisation (unless the articles prohibit it)" },
+              { "id": "no-single", "label": "No → s 551 applies: authorisation needed, from the articles or an ordinary resolution" },
+              { "id": "check-articles", "label": "Does an authorisation already exist in the articles (with a stated maximum, and expiry if time-limited)?" },
+              { "id": "yes-articles", "label": "Yes → allotment can proceed within that authorisation" },
+              { "id": "no-articles", "label": "No → an ordinary resolution of the members is needed before the allotment" }
+            ],
+            "edges": [
+              { "from": "start", "to": "yes-single", "label": "Yes" },
+              { "from": "start", "to": "no-single", "label": "No" },
+              { "from": "no-single", "to": "check-articles", "label": "" },
+              { "from": "check-articles", "to": "yes-articles", "label": "Yes" },
+              { "from": "check-articles", "to": "no-articles", "label": "No" }
+            ],
+            "textAlternative": "First ask whether the company is private, has only one class of shares, and is allotting shares of that same class. If yes, s 550 applies and directors may allot without further authorisation, unless the articles prohibit it. If no, s 551 applies: check whether the articles already contain a standing authorisation with a stated maximum and, if time-limited, an expiry date. If so, the allotment can proceed within it. If not, an ordinary resolution of the members is needed before the allotment can go ahead."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-05-check-04",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A private company has ordinary shares in issue and now wants to create and allot a new class of preference shares to an investor. Which of the following is correct?",
+          "options": [
+            "Section 550 applies because the company is private, so no further authorisation is needed",
+            "Section 551 applies, because the allotment involves a new class of shares rather than more of the company's single existing class — authorisation is needed from the articles or an ordinary resolution",
+            "No authorisation of any kind is ever required for a private company to allot shares"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The trap is treating 'private company' as the whole test for s 550 — it isn't. Section 550 is confined to a private company allotting shares of the one class it already has; introducing a new class takes the allotment outside that exception into s 551.",
+          "explanation": "Because the allotment creates a second class, the single-class condition for s 550 is no longer met, so authorisation under s 551 — via the articles or an ordinary resolution — is required."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "A financing round from start to finish",
+        "voice": "applied — a single running scenario across incorporation and allotment",
+        "body": [
+          "Return to the company from Part 1. It incorporated on the Model Articles, unmodified, with three founder-directors each holding ordinary shares — its only class. Eighteen months later it wants outside investment.",
+          "Round one: the investor is happy to take ordinary shares alongside the founders. Because the company still has only one class and the articles do not prohibit it, the directors can allot the new ordinary shares under s 550 without a shareholder vote — a fast, low-friction process.",
+          "Round two, a year later: a venture investor insists on preference shares with a liquidation preference, an entirely new class. The company's Model Articles contain no standing allotment authorisation for a new class. Before that allotment can proceed, the members must pass an ordinary resolution authorising it — and, separately, the articles themselves will need amending (by special resolution) to create the rights attaching to the new preference share class in the first place.",
+          "This sequence is exactly the pattern SQE1 fact patterns tend to test: identify the number of classes in issue at the moment of allotment, not at incorporation, since a company's position under s 550 versus s 551 can change from one funding round to the next."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because a company allotted shares under s 550 once, without a shareholder vote, it can always do so for any future allotment.",
+            "whyItsWrong": "The s 550 exception is tested afresh at the time of each allotment. The moment a second class exists, or is being created by the allotment itself, s 550 no longer applies and s 551 authorisation is required — the company's history of easy allotments under s 550 says nothing about its position once a new class is introduced."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-05-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "prompt": "The company above (founders holding ordinary shares only, then one round of new ordinary shares to an investor) now wants to allot a new class of preference shares to a venture investor, and its articles contain no standing authorisation for a new class. Analyse whether the directors can proceed to allot without further steps.",
+          "scaffoldLevels": 3,
+          "factsToOrder": [
+            "The company previously allotted new ordinary shares under s 550 without a shareholder vote",
+            "The company still had only one class of shares at that time",
+            "The new investment requires creating a new class of preference shares",
+            "The articles contain no standing authorisation for allotting a new class"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the directors can allot the new preference shares without further shareholder authorisation.",
+            "rule": "Section 550 permits directors to allot without authorisation only where the company has one class of shares and is allotting more of that same class. Outside that, s 551 requires authorisation from the articles or an ordinary resolution.",
+            "application": "The earlier allotment fell within s 550 because only one class existed at that time. This allotment creates a new class of preference shares, taking it outside s 550. With no standing authorisation in the articles, the directors cannot proceed without members passing an ordinary resolution; the articles will also need amending by special resolution to define the new class's rights.",
+            "conclusion": "The directors cannot allot the preference shares on the current position — an ordinary resolution authorising the allotment, and a special resolution amending the articles to create the class rights, are both needed first."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-05-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the effect of CA 2006, s 15 once a certificate of incorporation is issued?",
+      "options": [
+        "It is conclusive evidence that the registration requirements have been complied with and that the company is duly registered",
+        "It is rebuttable evidence only, and can be challenged if a filing defect later comes to light",
+        "It confirms the company's tax residence but not its legal existence",
+        "It only takes effect once the company has held its first AGM"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 15 mirrors the LLP position: the certificate is conclusive, not merely rebuttable, evidence of due incorporation."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Since the Companies Act 2006 reforms, what is the memorandum of association's role?",
+      "options": [
+        "A narrow founding statement that each subscriber wishes to form the company and take at least one share",
+        "The company's core constitutional document setting out its objects and governance rules",
+        "A record of the company's registered charges and security interests",
+        "A statement of the company's proposed trading name reserved with the Registrar"
+      ],
+      "correctIndex": 0,
+      "explanation": "Governance detail now lives in the articles; the memorandum's role since 2006 is limited to that founding statement of intent."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A private company registers without specifying its own articles. Which of the following correctly describes its constitutional position?",
+      "options": [
+        "It has no articles at all until it drafts bespoke ones",
+        "It is deemed to have adopted the Model Articles for Private Companies Limited by Shares under Schedule 1 to the 2008 Regulations",
+        "The Registrar drafts bespoke articles on the company's behalf",
+        "It automatically adopts the Model Articles for public companies instead"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to think a company without bespoke articles has none — in fact the default Model Articles for Private Companies Limited by Shares apply automatically, filling exactly that gap.",
+      "explanation": "The Model Articles are a genuine default constitution, not an optional fallback the company must separately opt into."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which statement correctly describes the ordinary route for altering a company's articles under s 21 CA 2006?",
+      "options": [
+        "A special resolution, requiring at least a 75% majority of members voting",
+        "An ordinary resolution, requiring a simple majority of members voting",
+        "Unanimous written consent of all members in every case",
+        "Board approval alone, without any shareholder vote"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 21 sets the general bar at a special resolution (75%), reflecting the constitutional status of the articles — a higher threshold than ordinary company business."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "What does an entrenched provision under s 22 CA 2006 do?",
+      "options": [
+        "It requires that provision to be altered subject to conditions more restrictive than a special resolution",
+        "It permanently prevents that provision from ever being altered under any circumstances",
+        "It allows that provision to be altered by ordinary resolution instead of special resolution",
+        "It has no legal effect beyond signalling the members' intentions"
+      ],
+      "correctIndex": 0,
+      "explanation": "Entrenchment raises the bar above a bare special resolution — for example, requiring unanimous consent — without making the provision literally unalterable."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A private company has only ordinary shares in issue, unmodified Model Articles, and its board wants to allot new ordinary shares to an existing shareholder who is increasing their stake. What should the solicitor advise about authorisation?",
+      "options": [
+        "The directors may allot under s 550 without needing further shareholder authorisation",
+        "An ordinary resolution is required before any allotment can proceed",
+        "A special resolution amending the articles is required before any allotment can proceed",
+        "The allotment cannot proceed because the shares are being offered to an existing shareholder rather than a new investor"
+      ],
+      "correctIndex": 0,
+      "explanation": "The company has one class only, is allotting more of that same class, is private, and its articles do not prohibit the directors' power — s 550's conditions are all met."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A private company already has ordinary and preference shares in issue. Its board wants to allot further ordinary shares. What is the position?",
+      "options": [
+        "Section 550 applies, because the allotment itself is only of ordinary shares",
+        "Section 551 applies, because the company has more than one class of shares in issue, taking it outside the s 550 single-class exception",
+        "No authorisation is ever needed once a company has issued shares once before",
+        "The allotment is automatically void because two classes already exist"
+      ],
+      "correctIndex": 1,
+      "explanation": "Section 550 requires the company to have only one class of shares in issue at all — having a second class (preference shares) already in existence takes every allotment outside the exception, even if the new shares themselves are ordinary."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A public company with only one class of ordinary shares wants its directors to allot new shares of that class without a shareholder resolution. Can it rely on s 550?",
+      "options": [
+        "No — s 550's single-class exception is available only to private companies; a public company always needs s 551 authorisation",
+        "Yes — s 550 applies to any company with a single class of shares, public or private",
+        "Yes, but only if the public company's shares are not listed on a regulated market",
+        "No, because public companies can never allot new shares under any circumstances"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 550 is expressly confined to private companies. A public company always needs s 551 authorisation for an allotment, regardless of how many classes of shares it has."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A private company's articles include a standing authorisation permitting the directors to allot up to 500,000 new shares of any class, with no expiry date stated in the resolution granting it. The directors now want to allot 100,000 preference shares under this authorisation, five years after it was granted. What should the solicitor check first?",
+      "options": [
+        "Whether the authorisation was given for a fixed period and, if so, has since expired — since s 551 caps time-limited authorisations at five years",
+        "Whether the company has changed its registered office since the authorisation was granted",
+        "Whether the directors are also shareholders of the company",
+        "Whether the preference shares carry voting rights"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The scenario is engineered to make the five-year mark salient — the key check is whether the authorisation was time-limited at all and, if so, whether the five-year statutory cap on a time-limited authorisation has been reached.",
+      "explanation": "Under s 551, an authorisation may be unlimited or for a fixed period of up to five years; if this one was time-limited, five years later is exactly when it needs re-checking for expiry."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-10",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Which of the following documents is delivered to the Registrar under s 9 CA 2006 as part of registering a private company?",
+      "options": [
+        "The memorandum of association, together with the application for registration and (unless Model Articles are adopted wholesale) the company's articles",
+        "A copy of the company's first set of audited annual accounts",
+        "A certificate of good standing from the company's bank",
+        "A tax registration certificate from HMRC"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 9 sets out the registration package: the application (Form IN01 in practice), the memorandum, and the articles unless the Model Articles are simply adopted as they stand."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A company operating under unmodified Model Articles wants to change a routine provision on board quorum, with nothing in its articles entrenched. What is required?",
+      "options": [
+        "A special resolution under s 21, since no entrenchment applies to raise the threshold further",
+        "Unanimous consent of every member, because any change to board procedure is treated as entrenched by default",
+        "Board resolution alone, with no shareholder involvement required at all",
+        "No formal process is required because the Model Articles cannot be altered once adopted"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to assume board-procedure provisions get special treatment — they don't. Absent entrenchment, the ordinary s 21 special resolution threshold applies to any article alteration, however routine the provision seems.",
+      "explanation": "Entrenchment under s 22 is the exception, not the rule; without it, s 21's special resolution requirement governs alteration of any article, including routine procedural ones."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A private company with only ordinary shares in issue has articles that expressly state the directors may not allot shares without prior shareholder approval, even though the company has only one class. Can the directors rely on s 550 to allot without a resolution?",
+      "options": [
+        "No — s 550 itself is subject to any prohibition in the articles, so the express restriction there overrides the statutory exception",
+        "Yes — s 550 always overrides anything stated in the articles",
+        "Yes, provided the allotment is to an existing shareholder rather than a new investor",
+        "No, because s 550 never applies once articles mention allotment at all"
+      ],
+      "correctIndex": 0,
+      "explanation": "Section 550's exception is expressly qualified: it applies 'except to the extent that the directors are prohibited from doing so by the company's articles' — an express restriction in the articles displaces the default statutory power."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-13",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "Is a company obliged to adopt the Model Articles in their unmodified form when it registers?",
+      "options": [
+        "No — a company can exclude or modify the Model Articles wholly or in part, or adopt entirely bespoke articles instead",
+        "Yes — the Model Articles are mandatory and cannot be excluded or amended at registration",
+        "No, but only public companies are permitted to depart from the Model Articles",
+        "Yes, unless the company has more than one director"
+      ],
+      "correctIndex": 0,
+      "explanation": "The Model Articles are a default, not a mandatory template — companies routinely modify or replace them, particularly once external investors are involved."
+    },
+    {
+      "itemId": "sqe1-blp-05-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A private company creating a brand-new class of preference shares for the first time has articles with no standing authorisation for allotment. Its directors allot the preference shares before any shareholder resolution is passed. What is the legal position?",
+      "options": [
+        "The allotment falls outside s 550 because a new class is being created, and required s 551 authorisation that was never obtained",
+        "The allotment is valid under s 550 because the company is private",
+        "The allotment is valid because directors always have an inherent power to allot shares regardless of class",
+        "The allotment only needed board approval, since preference shares carry no voting rights"
+      ],
+      "correctIndex": 0,
+      "explanation": "Creating a new class takes the company outside the single-class condition for s 550, so s 551 authorisation was required before the allotment — proceeding without it means the necessary authorisation was missing."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson is treating 'private company' alone as enough to trigger s 550. Always check the number of share classes at the moment of the allotment in question — and check the articles for an express prohibition or a standing s 551 authorisation before concluding either way.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.company-formation"
+  }
+}

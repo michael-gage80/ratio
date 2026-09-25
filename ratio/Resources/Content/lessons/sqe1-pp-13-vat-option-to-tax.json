@@ -1,0 +1,345 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-pp-13",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 13,
+  "topicId": "sqe1.property-practice.vat-option-to-tax",
+  "title": "VAT and the option to tax",
+  "subtitle": "Commercial property, the option to tax, and transfers of a going concern",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain why the default VAT treatment of a commercial property sale is exemption, and what an option to tax does to that default",
+    "Explain the practical consequence for a buyer who cannot recover input VAT when purchasing property the seller has opted to tax",
+    "Apply the transfer of a going concern conditions to a fact pattern, identifying when the buyer's own option to tax is needed to preserve TOGC treatment"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Value Added Tax Act 1994, Sch 10", "role": "Statutory basis for opting to tax land and buildings" },
+    { "citation": "HMRC VAT Notice 742A", "role": "Practical guidance on the transfer of a going concern exemption applied to property transfers" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "VAT on commercial property is the SQE1 topic students most often skip until the mock exam, then discover it turns up as a single, decisive fact buried in a longer question. Where the profile shows this hasn't been tested yet, this note appears: 'This is a small topic with an outsized exam footprint — five minutes here saves a wrong answer later.'",
+    "profileHooks": {
+      "weakApplication": "You know the definitions here. The test pool leans hard on fact patterns — a stated opted/unopted status, a stated VAT-registered/unregistered buyer — so read every stem for which of those facts is actually given.",
+      "weakKnowledge": "Slow down on Part 1 and Part 2 before the rest of the lesson. Everything downstream — TOGC, the buyer's cost problem — only makes sense once the exempt/opted default is solid."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two buyers agree identical prices for two identical warehouses next door to each other. One pays 20% more than the other for the privilege of buying the same square footage. Nothing about the building explains the difference — a piece of paper the seller filed with HMRC years earlier does."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The default: commercial property sales are VAT-exempt",
+        "voice": "structural — establishes the baseline before any complication",
+        "body": [
+          "Start from the position that surprises most students: the sale or lease of commercial land and buildings is, by default, an exempt supply for VAT purposes. No VAT is chargeable, and — because exemption is not the same as zero-rating — the seller cannot recover the VAT it incurs on its own costs of holding or improving the building.",
+          "This exemption is the reason the option to tax exists at all. A seller who has spent heavily on a building — refurbishment, professional fees, a new roof — has paid VAT on all of it. If the eventual sale is exempt, that input VAT is simply lost, sitting as an irrecoverable cost that erodes the seller's return.",
+          "The solicitor's first job on any commercial property transaction is not to work out the VAT treatment from scratch — it is to find out which position applies to this seller and this building, because the exempt default can be displaced by a choice the seller made, possibly years before instructions were even taken."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Exempt supply",
+            "definition": "A supply on which no VAT is charged and against which the supplier cannot recover the VAT on its own related costs — the default position for commercial land and buildings absent an option to tax."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-13-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "By default, and absent any election, is the sale of a commercial office building subject to VAT?",
+          "options": ["No — it is exempt by default", "Yes — all commercial property sales are standard-rated"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — exemption is the starting point. Everything in this lesson is about what displaces it.",
+          "feedbackIncorrect": "Not quite — the default for commercial land and buildings is exemption, not standard-rating. Keep that baseline in mind as the option to tax is introduced."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The option to tax: turning exemption off",
+        "voice": "reference — the statutory mechanism, precisely stated",
+        "body": [
+          "A person with an interest in commercial land or buildings can elect — 'opt' — to charge VAT on future supplies of that property, under Value Added Tax Act 1994, Sch 10. Once made and notified to HMRC, the option applies to that specific building (not the seller's whole portfolio) and, subject to limited exceptions, cannot easily be revoked for twenty years.",
+          "Why would anyone choose to charge VAT when exemption is the default? Because opting lets the seller recover the input VAT it has paid on the building's costs. A landlord who has just spent heavily refurbishing a building will typically opt to tax so that VAT becomes recoverable — the cost of doing so is that VAT must now be charged on rent or on a sale, which most commercial tenants and buyers can simply reclaim in turn if they are VAT-registered and using the building for taxable purposes.",
+          "For the conveyancer, the option to tax is a fact to be discovered, not assumed. It is checked by raising a specific commercial property enquiry and, ideally, by asking to see HMRC's acknowledgement of the notification. Silence on the point is not evidence either way."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Value Added Tax Act 1994, Sch 10",
+            "text": "Where a person exercises an option to tax in relation to land, any supply made by that person in relation to that land which would otherwise be exempt shall, subject to the provisions of this Schedule, be taxable at the standard rate.",
+            "elements": ["An election made by a person with an interest in the land", "Notified to HMRC", "Applies building-by-building, not portfolio-wide", "Converts what would be an exempt supply into a standard-rated one"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-13-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "A landlord opts to tax Building A in a three-building portfolio. What is the effect on Buildings B and C?",
+          "options": ["Nothing — the option applies only to the building it was made in respect of", "They automatically become opted too", "The option is invalid unless made for the whole portfolio at once", "They become permanently exempt from any future option"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. The option to tax is building-specific — this is one of the most commonly tested points in this area.",
+          "feedbackIncorrect": "Look again at the scope of the election — Sch 10 options operate building by building, not across a portfolio automatically."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The buyer's problem: VAT you cannot get back",
+        "voice": "argumentative — states the buyer's dilemma plainly",
+        "body": [
+          "An opted sale means VAT is added to the purchase price. For a VAT-registered buyer using the building for a taxable business, this is close to a non-event: the VAT is paid to the seller and reclaimed from HMRC as input tax, so the buyer's net cost is unaffected (though it must still find the cash to fund the VAT upfront, which affects completion funds and any SDLT calculation, since SDLT is charged on the VAT-inclusive price).",
+          "The real problem arises for a buyer who cannot recover input VAT in full — typically because the buyer makes exempt supplies itself (a bank, an insurer, a residential landlord letting on exempt terms) or is not VAT-registered at all. For that buyer, VAT on an opted purchase is a genuine, irrecoverable cost, sometimes running to hundreds of thousands of pounds on a substantial commercial property.",
+          "This is why the buyer's VAT status is one of the first things a commercial property solicitor establishes — before agreeing a price, not after. A buyer who cannot recover VAT has every incentive to negotiate the price down, to seek confirmation the seller will not opt, or to explore whether the transaction can instead qualify as a transfer of a going concern."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Irrecoverable input VAT",
+            "definition": "VAT charged to a buyer that the buyer cannot reclaim from HMRC, because it does not make sufficient taxable supplies of its own — a real cash cost, not merely a cash-flow timing issue."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-13-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "An insurer, which makes almost entirely VAT-exempt supplies, is buying an opted office building for its own occupation. What is the practical consequence?",
+          "options": ["None — VAT-registered buyers can always recover VAT in full", "The insurer will likely bear the VAT as an irrecoverable cost, because its own supplies are exempt", "The seller must automatically revoke the option before completion", "SDLT will not apply because VAT has been charged"],
+          "correctIndex": 1,
+          "explanation": "An insurer's own output supplies are largely exempt, so it cannot fully recover input VAT — the VAT on an opted purchase becomes a real cost to price into the deal, not a pass-through."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Escaping VAT altogether: transfer of a going concern",
+        "voice": "case-narrative — walks through a worked scenario before naming the rule",
+        "body": [
+          "A landlord sells a fully let office building, with the tenants, leases and management arrangements all passing to the buyer, who intends to continue letting the building as an investment. If the conditions are met, this sale can be treated as a transfer of a going concern (TOGC) — outside the scope of VAT altogether. No VAT is charged; none needs to be recovered.",
+          "TOGC treatment for a property letting business broadly requires: the property is sold together with the tenancies (a lettings business, not just bricks and mortar); the buyer intends to continue that letting business; and — this is the condition that most often trips up an otherwise straightforward deal — if the building is opted or is a 'new' commercial building still within the standard-rated period, the buyer must also have a valid option to tax in place, and must notify HMRC of it, by the relevant date (broadly, before the earlier of completion or any payment).",
+          "This is why TOGC status so often turns on the buyer's own conduct rather than the seller's. A seller cannot single-handedly guarantee TOGC treatment on an opted building — the buyer must opt too, and get the timing and notification right, or the sale reverts to being a standard, VAT-chargeable (or exempt, if unopted) supply after all."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "TOGC conditions for a property letting business",
+            "points": [
+              "The property is transferred together with the letting business (tenancies and management arrangements), not as a bare asset",
+              "The buyer intends to continue that letting business",
+              "There is no significant break in trading",
+              "If the property is opted (or a 'new' standard-rated commercial building), the buyer must also opt to tax and notify HMRC in time"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-13-check-04",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A fully let, opted warehouse is sold to a buyer who intends to continue letting it to the existing tenants. The buyer has not opted to tax and completion is imminent. Analyse whether the sale can be treated as a TOGC.",
+          "factsToOrder": [
+            "The warehouse is opted to tax by the seller",
+            "The building is sold with the sitting tenants and letting arrangements intact",
+            "The buyer intends to continue the letting business",
+            "The buyer has not made or notified its own option to tax"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 2, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the sale qualifies for TOGC treatment given the buyer's VAT position.",
+            "rule": "TOGC treatment for a letting business requires the tenancies and letting business to transfer, continuity of that business by the buyer, and — where the property is opted — a matching option to tax by the buyer, notified to HMRC in time.",
+            "application": "The letting-business and continuity conditions are met. But the building is opted, and the buyer has not opted or notified HMRC. Without that matching election in place before completion, TOGC treatment is not available.",
+            "conclusion": "As matters stand, the sale cannot be treated as a TOGC; unless the buyer opts and notifies HMRC before completion, VAT will be chargeable on the sale in the ordinary way."
+          }
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Advising on an opted sale: what the solicitor actually does",
+        "voice": "direct — practice-focused, sets up the trap the tests will probe",
+        "body": [
+          "Pulling this together, a commercial property solicitor acting for a buyer runs through a short, fixed sequence: establish whether the seller has opted to tax the specific building; establish the buyer's own VAT position and ability to recover input VAT; if TOGC is a live possibility, check the letting-business and continuity conditions and, critically, whether the buyer needs to opt and notify HMRC before completion; and reflect the answer in the price and the drafting, including the SDLT calculation, which is based on the VAT-inclusive consideration where VAT is chargeable.",
+          "The most common exam trap is treating VAT-registration as if it automatically solves the problem. It does not — registration lets a buyer reclaim VAT on taxable supplies it makes, but says nothing about whether this particular buyer's own supplies are taxable enough to permit full recovery."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that because the buyer is VAT-registered, VAT charged on an opted purchase is automatically recoverable and therefore irrelevant to price.",
+            "whyItsWrong": "Registration is necessary but not sufficient. Recovery depends on the proportion of the buyer's own supplies that are taxable — a VAT-registered buyer making exempt supplies (banks, insurers, some residential landlords) can still be left bearing VAT as a real cost."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-13-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that being VAT-registered, on its own, guarantees a buyer can fully recover VAT charged on an opted property purchase?",
+          "sliderLabels": ["Definitely guarantees recovery", "Definitely does not guarantee recovery"],
+          "correctPosition": "does not guarantee",
+          "explanation": "Registration is a precondition for recovery, not a guarantee of it. Full recovery depends on the buyer's own supplies being sufficiently taxable — a registered buyer making exempt supplies can still bear irrecoverable VAT."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-13-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A solicitor is asked whether VAT is chargeable on the sale of a commercial unit and is told nothing else about the building. What should the solicitor's starting assumption be?",
+      "options": ["The sale is exempt from VAT unless an option to tax is established", "The sale is automatically standard-rated", "The sale is automatically zero-rated", "VAT never applies to commercial property"],
+      "correctIndex": 0,
+      "explanation": "Exemption is the statutory default for commercial land and buildings; a standard-rated outcome depends on finding that the seller has opted to tax (or that the building falls within the separate new-build rules)."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Under Value Added Tax Act 1994, Sch 10, to whom does an option to tax apply once validly made and notified?",
+      "options": ["The specific building or land in respect of which it was made", "The seller's entire property portfolio automatically", "Every future owner of any property that seller ever sells", "Only new-build commercial buildings"],
+      "correctIndex": 0,
+      "explanation": "The option operates building by building. A seller with several properties must consider, and if desired make, a separate election for each one."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A landlord opted to tax a warehouse ten years ago after a major refurbishment. A buyer's solicitor is now asked to confirm the VAT position before exchange. Which of the following best describes the correct next step?",
+      "options": ["Assume the sale is exempt, since most commercial sales are", "Raise a specific enquiry and request evidence of the option (such as HMRC's notification acknowledgement) rather than relying on assumption", "Assume the option has lapsed after ten years and treat the sale as exempt", "Rely on the fact the seller is VAT-registered as proof the option was made"],
+      "correctIndex": 1,
+      "trapExplanation": "Ten years' currency and VAT registration are both red herrings — an option to tax does not lapse after a fixed period on that basis alone, and registration says nothing about whether this specific building has been opted. The only reliable step is to check directly.",
+      "explanation": "VAT status is a fact to be verified, not inferred. A specific enquiry, backed by documentary evidence where possible, is standard practice on any commercial property transaction."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A seller opts to tax a building shortly before marketing it, having spent heavily on refurbishment. What is the seller's most likely commercial reason for doing so?",
+      "options": ["To avoid paying any SDLT on the eventual sale", "To recover the input VAT incurred on the refurbishment costs", "Because opting is legally compulsory for any building over ten years old", "To reduce the sale price for the buyer"],
+      "correctIndex": 1,
+      "trapExplanation": "SDLT is a buyer's liability, not the seller's, so 'avoiding SDLT' cannot be the seller's motive — and opting typically increases, not reduces, the price payable by an unregistered or partly-exempt buyer.",
+      "explanation": "Opting lets the seller reclaim input VAT on its own costs; the trade-off is that VAT must then be charged on the eventual sale or letting."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A residential landlord letting flats on exempt terms is buying an opted retail unit to diversify into commercial letting. VAT will be charged on the purchase. What should the solicitor advise about recovery of that VAT?",
+      "options": ["The VAT will be fully recoverable because the buyer is a landlord", "The buyer's exempt residential lettings mean it may not be able to recover the VAT in full, and this should be factored into the deal", "VAT recovery is irrelevant to a share of freehold purchase", "The seller is responsible for reclaiming the VAT, not the buyer"],
+      "correctIndex": 1,
+      "explanation": "Recovery turns on the proportion of the buyer's own supplies that are taxable. A landlord whose income is largely exempt residential rents is likely only partially, or not at all, able to recover VAT on this purchase — a real cost to flag before exchange."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A buyer intends to continue letting a fully tenanted, opted office building it is purchasing, and wants to avoid VAT being charged on the purchase price. What must the buyer's solicitor ensure happens before completion?",
+      "options": ["Nothing — TOGC treatment applies automatically whenever tenants remain in place", "The buyer itself makes and notifies an option to tax to HMRC before completion", "The seller revokes its own option to tax", "The buyer registers for VAT for the first time, which alone secures TOGC status"],
+      "correctIndex": 1,
+      "explanation": "Because the building is opted, TOGC treatment additionally requires the buyer to have its own option to tax in place and notified to HMRC in time — without it, the letting-business and continuity conditions alone are not enough."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A buyer is purchasing a vacant, unlet commercial unit with no ongoing letting arrangements, intending to occupy it for its own business. The seller has opted to tax. Can this sale qualify as a TOGC?",
+      "options": ["Yes — any sale of an opted building automatically qualifies", "No — there is no letting business being transferred for the buyer to continue, since the unit is vacant and unlet", "Yes, provided the buyer is VAT-registered", "No — TOGC only ever applies to residential property"],
+      "correctIndex": 1,
+      "explanation": "TOGC treatment for a property requires an actual business (typically a letting business) to be transferred and continued. A vacant unit bought for owner-occupation is not a letting business changing hands, so TOGC does not apply regardless of the buyer's VAT status."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-08",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under VATA 1994, Sch 10, what is the general legal effect of a validly made and notified option to tax on a supply that would otherwise be exempt?",
+      "options": ["The supply becomes taxable at the standard rate", "The supply becomes zero-rated", "The supply remains exempt but the seller may nonetheless recover input VAT", "The supply is removed from the scope of VAT entirely"],
+      "correctIndex": 0,
+      "explanation": "The option converts what would be an exempt supply into a standard-rated one — that is the entire statutory mechanism, and the reason it allows input VAT recovery."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-09",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A firm advising a seller with a multi-unit retail parade is asked whether opting to tax one unit affects the VAT treatment of the parade's other units. What is the correct answer, applying Sch 10?",
+      "options": ["The other units are unaffected — the election is specific to the unit it was made for", "All units in the parade automatically become opted", "The election is invalid unless it covers the whole parade", "The other units become permanently VAT-exempt as a result"],
+      "correctIndex": 0,
+      "explanation": "This tests the same building-specific scope point from a portfolio angle: an option to tax one unit has no automatic effect on the VAT status of any other, separately-titled unit."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-10",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A buyer's solicitor confirms the seller opted to tax the property being purchased. What consequence follows for the SDLT calculation on completion?",
+      "options": ["SDLT is calculated on the price excluding VAT, since VAT and SDLT are entirely separate taxes", "SDLT is calculated on the VAT-inclusive consideration", "No SDLT is payable because VAT has already been charged", "SDLT is charged at a reduced rate whenever VAT is also chargeable"],
+      "correctIndex": 1,
+      "explanation": "SDLT is charged on the VAT-inclusive price where VAT is chargeable on the transaction — a point that catches out anyone who treats the two taxes as fully independent of each other."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A buyer's in-house team tells its solicitor: 'We're VAT-registered, so charge ahead — VAT on this purchase is not our problem.' The property is opted, and the buyer makes a mix of taxable and exempt supplies. What should the solicitor advise?",
+      "options": ["Proceed without further enquiry, since VAT registration resolves the issue", "Establish the buyer's partial-exemption position, since registration alone does not guarantee full recovery of the VAT that will be charged", "Advise that VAT cannot be charged to a VAT-registered buyer", "Advise the buyer to deregister for VAT before completion"],
+      "correctIndex": 1,
+      "trapExplanation": "The client's own confidence that registration 'solves' the VAT question is the trap — registration is necessary for recovery but says nothing about the proportion of the buyer's supplies that are taxable, which is what actually determines recovery.",
+      "explanation": "A mixed taxable/exempt buyer is only partially exempt, meaning some of the VAT charged may be irrecoverable — this needs to be quantified and reflected in advice on cost, not waved away because the buyer happens to be registered."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following best describes why a seller who has spent heavily refurbishing a commercial building is likely to opt to tax it before sale?",
+      "options": ["Opting is compulsory once refurbishment costs exceed a statutory threshold", "Opting allows the seller to recover the input VAT incurred on the refurbishment, at the cost of charging VAT on the sale", "Opting exempts the seller from SDLT on the eventual sale", "Opting guarantees the sale will qualify as a transfer of a going concern"],
+      "correctIndex": 1,
+      "trapExplanation": "There is no statutory compulsion threshold, opting has no effect on the buyer's SDLT liability being removed, and opting alone does not guarantee TOGC status — TOGC needs its own separate conditions to be met.",
+      "explanation": "The core trade-off is input VAT recovery for the seller in exchange for output VAT being charged on the eventual supply."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-13",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Which of these is a condition for TOGC treatment on the sale of a let commercial investment property?",
+      "options": ["The buyer intends to continue the letting business being transferred", "The property must be sold vacant with no tenants", "The seller must be unregistered for VAT", "The buyer must intend to occupy the building itself"],
+      "correctIndex": 0,
+      "explanation": "Continuity of the letting business by the buyer is a core TOGC condition — a vacant sale or an intention to occupy rather than let would point away from TOGC treatment, not towards it."
+    },
+    {
+      "itemId": "sqe1-pp-13-test-14",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A buyer asks its solicitor whether it needs to worry about VAT if the seller confirms the building has never been opted to tax and is not a 'new' standard-rated building. What is the correct advice?",
+      "options": ["VAT will still be charged regardless of the seller's confirmation", "The sale should be VAT-exempt, so VAT is not expected to be charged on the purchase price", "The buyer must still opt to tax itself before completion", "TOGC treatment is compulsory in these circumstances"],
+      "correctIndex": 1,
+      "explanation": "With no option in place and the new-build rules not engaged, the exempt default applies: no VAT should be charged, and the buyer does not need to consider recovery or TOGC at all."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is treating VAT registration as if it were the same question as VAT recovery. Registration is a precondition; recovery depends on what the buyer itself supplies. Always ask both questions separately.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.vat-option-to-tax"
+  }
+}

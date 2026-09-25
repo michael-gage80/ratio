@@ -1,0 +1,351 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-12",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 12,
+  "topicId": "sqe1.business-law.antecedent-transactions",
+  "title": "Antecedent transactions: undervalue, preference, and floating-charge avoidance",
+  "subtitle": "Unwinding transactions at an undervalue, preferences, and floating charges granted for past consideration before insolvency",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the elements of a transaction at an undervalue under s 238 Insolvency Act 1986 and the applicable look-back period",
+    "State the elements of a preference under s 239, including the desire requirement, and the extended look-back period for connected persons",
+    "Apply s 238, s 239 and s 245 to a fact pattern to determine whether a pre-insolvency transaction is liable to be unwound or a floating charge automatically avoided"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Insolvency Act 1986, s 238", "role": "Transactions at an undervalue — gifts or transactions for significantly less than market value in the two years before insolvency" },
+    { "citation": "Insolvency Act 1986, s 239", "role": "Preferences — putting a creditor, surety or guarantor in a better position than they would otherwise have been, driven by a desire to prefer" },
+    { "citation": "Insolvency Act 1986, s 245", "role": "Automatic avoidance of a floating charge granted for past consideration shortly before the onset of insolvency" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often treat 'the company sold something cheap before it collapsed' and 'the company paid one creditor first' as the same wrong. They aren't — s 238 and s 239 have different mental elements, different defences and, for connected persons, different look-back periods. This lesson is about keeping the three antecedent-transaction provisions distinct rather than reaching for whichever one comes to mind first.",
+    "profileHooks": {
+      "weakApplication": "You know the three sections. The pool below leans on fact patterns that could plausibly be either an undervalue or a preference — read for whether the company received less value, or simply paid someone earlier than it had to.",
+      "weakKnowledge": "Start with Part 1 and hold the three provisions apart by name before moving into the detail — s 238, s 239 and s 245 each answer a different question, and confusing them is the most common exam error in this area."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company transfers its only valuable asset to the director's spouse for a nominal sum, eleven months before it collapses. A separate company, on the brink of insolvency, suddenly pays off an old friend's outstanding loan in full while every other creditor goes unpaid. Neither transaction looks criminal. Both can be unwound anyway — because insolvency law doesn't just ask whether a transaction was dishonest, it asks whether it was fair to the creditors left behind.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. This is a stable, well-litigated area of the Insolvency Act 1986; no imminent legislative change is pending, though the case law on the 'desire to prefer' requirement in s 239 continues to develop at the margins."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Why insolvency law looks backwards, not just at the collapse itself",
+        "voice": "argumentative — states the strongest case for the rule, then complicates it",
+        "body": [
+          "Liquidation and administration are usually taught as forward-looking processes — realise the assets, run the waterfall, close the company. But a liquidator's job also includes looking backwards, at what the company (or its directors) did in the run-up to insolvency, because that is exactly when assets are most likely to disappear into the wrong hands.",
+          "The Insolvency Act 1986 gives the liquidator or administrator three separate tools to unwind or invalidate transactions that happened before the formal insolvency process began — collectively known as 'antecedent transactions'. Transactions at an undervalue (s 238) target value leaving the company for too little in return. Preferences (s 239) target one creditor being favoured over others. Floating charge avoidance (s 245) automatically invalidates certain security granted for old debts shortly before collapse.",
+          "These are not the same wrong, and they are not proved the same way. Treating them interchangeably is the single most common source of lost marks in this area — s 238 has no requirement of intent to prefer anyone; s 239 requires exactly that; s 245 requires nothing at all beyond timing and the nature of the consideration."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Three tools, three different questions",
+            "points": [
+              "s 238 — did the company receive significantly less value than it gave, or nothing at all?",
+              "s 239 — did the company, influenced by a desire to do so, put a particular creditor in a better position than they'd otherwise be in?",
+              "s 245 — was a floating charge granted to secure a debt that already existed, shortly before insolvency?",
+              "All three require the company to have been unable to pay its debts at the time, or to become unable to as a result (except that s 238's undervalue limb can, in limited circumstances, apply without proof of insolvency at the time — always check the specific requirement in question)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-12-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Which of the three antecedent transaction provisions requires proof that the company was actually motivated by a desire to improve a particular creditor's position?",
+          "options": ["Section 239 (preferences)", "Section 238 (transactions at an undervalue)", "Section 245 (floating charge avoidance)"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The desire requirement is unique to s 239 — s 238 asks only about the value given and received, and s 245 is essentially automatic once the timing and consideration conditions are met.",
+          "feedbackIncorrect": "The desire to prefer a particular creditor is the defining, and hardest to prove, element of s 239 specifically — s 238 and s 245 don't require it at all."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Transactions at an undervalue: the two-year look-back",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Under s 238, a liquidator or administrator can apply to the court to unwind a transaction entered into by the company in the two years ending with the onset of insolvency, where the company either made a gift, or received consideration significantly less in value than what it gave.",
+          "The test is comparative, not about dishonesty: did the company give more than it got back? A sale at a genuine, if slightly generous, discount in an arm's-length negotiation will usually survive scrutiny; a transfer of a valuable asset for a token sum, or an outright gift, is squarely caught.",
+          "There is a defence: the court will not make an order if it is satisfied that the company entered into the transaction in good faith and for the purpose of carrying on its business, and that at the time there were reasonable grounds for believing the transaction would benefit the company. This protects, for example, a genuinely commercial rescue transaction that happened to involve the company receiving less immediate value in exchange for something else of real business benefit."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, s 238",
+            "text": "...the company enters into a transaction with a person at an undervalue if— (a) the company makes a gift to that person or otherwise enters into a transaction with that person on terms that provide for the company to receive no consideration, or (b) the company enters into a transaction with that person for a consideration the value of which, in money or money's worth, is significantly less than the value, in money or money's worth, of the consideration provided by the company.",
+            "elements": ["Company enters into a transaction within the two years ending with the onset of insolvency", "Either a gift (no consideration) or consideration significantly less in value than what the company gave", "Company was unable to pay its debts at the time, or became unable to as a result (unless the counterparty is connected, where this is presumed)", "Defence available if the transaction was entered in good faith, for the purpose of carrying on the business, with reasonable grounds to believe it would benefit the company"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-12-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 238, what is the look-back period during which a transaction at an undervalue can be challenged?",
+          "options": ["Two years ending with the onset of insolvency", "Six months ending with the onset of insolvency", "Six years ending with the onset of insolvency", "There is no fixed look-back period at all"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — s 238 uses a flat two-year look-back, regardless of whether the counterparty is connected to the company (unlike the shorter, extendable preference period under s 239).",
+          "feedbackIncorrect": "s 238's look-back period is a fixed two years ending with the onset of insolvency — it does not shift depending on the counterparty, unlike the preference period under s 239."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Preferences: the desire to prefer, and why it's hard to prove",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Section 239 targets a different kind of unfairness. A preference occurs where the company does something (or allows something to be done) which has the effect of putting a creditor, surety or guarantor into a better position, in the event of the company's insolvent liquidation, than they would otherwise have been in — and the company was influenced in deciding to do it by a desire to produce that effect.",
+          "The desire requirement is the hard part to prove, and it is what separates an ordinary, unremarkable business decision from a challengeable preference. Paying a supplier who happens to also be a personal friend of the director, in the ordinary course of business and on ordinary terms, is not a preference just because it benefits that supplier over others — there has to be a positive desire to improve that particular creditor's position, not merely an awareness that paying them will have that effect as a side consequence of an otherwise ordinary commercial decision.",
+          "Because that desire is so hard to prove where the payment goes to an unconnected, arm's-length creditor, the Act makes life easier for liquidators where the recipient is a 'connected person' — broadly, a director, shadow director, or an associate of either. Where the preference is given to a connected person, the desire to prefer is presumed, and it is for the recipient to rebut that presumption rather than for the liquidator to prove it from scratch."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Desire to prefer",
+            "definition": "Under s 239, the company must have been positively influenced by a wish to improve the creditor's position (not merely aware that paying them would have that effect) — presumed, subject to rebuttal, where the creditor is a connected person."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-12-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a court works through a s 239 preference claim.",
+          "items": ["Identify whether the company put a creditor, surety or guarantor in a better position on insolvent liquidation", "Ask whether the company was influenced by a desire to produce that effect (presumed if the recipient is connected)", "Check the transaction falls within the applicable look-back period", "Consider whether the court should make an order restoring the position as if the preference had not occurred"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure: identify the effect first, then the state of mind (desire, presumed for connected persons), then confirm timing, then move to remedy.",
+          "feedbackIncorrect": "Check the order again — the desire to prefer is assessed after identifying that a creditor was in fact put in a better position, and timing is checked before the court considers what remedy to grant."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Look-back periods compared: six months, two years, and connected persons",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "The look-back period for a preference is shorter than for an undervalue transaction, but it stretches depending on who received it — and this is one of the most heavily tested details in the whole topic.",
+          "For a preference given to a person who is not connected with the company, the look-back period is six months ending with the onset of insolvency. For a preference given to a person who is connected with the company (a director, shadow director, or their associate), the look-back period extends to two years ending with the onset of insolvency — the same length as the undervalue period, though the elements being tested remain distinct.",
+          "In both cases, the company must also have been unable to pay its debts at the time of the preference, or have become unable to as a result of it — except that, again, where the recipient is connected, this insolvency requirement is presumed rather than something the liquidator must separately prove."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Look-back periods at a glance",
+            "points": [
+              "s 238 (undervalue) — two years ending with the onset of insolvency, for any counterparty",
+              "s 239 (preference) — six months ending with the onset of insolvency, for an unconnected person",
+              "s 239 (preference) — two years ending with the onset of insolvency, for a connected person",
+              "Connected persons also benefit the liquidator procedurally: both the desire to prefer and the company's insolvency at the time are presumed, shifting the burden onto the recipient to rebut"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-12-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that the look-back period for a preference to an unconnected trade creditor is the same length as the look-back period for a transaction at an undervalue?",
+          "sliderLabels": ["Same length (two years for both)", "Different length (preference to an unconnected person is shorter)"],
+          "correctPosition": "Different length (preference to an unconnected person is shorter)",
+          "explanation": "A preference to an unconnected person uses a six-month look-back, not two years — the two-year period only applies to preferences where the recipient is connected with the company, matching (but not because of) the separate two-year period that applies to undervalue transactions generally."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Floating charge avoidance: automatic, and about what the money was for",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Section 245 is the odd one out among the three provisions, because it doesn't require any application about state of mind or value at all — it operates automatically on transactions that meet its conditions, invalidating the floating charge itself (not the underlying debt) to the extent it secures anything other than genuinely new value.",
+          "Ask this: why would the law care about a floating charge granted shortly before insolvency? Picture a company already in serious financial difficulty, owing an existing unsecured creditor £100,000. Rather than pay that debt, the company grants the creditor a floating charge over its assets to secure the same £100,000 debt it already owed. No new money comes into the company at all — the creditor has simply upgraded an unsecured claim into a secured one, at the expense of everyone else, without the company receiving anything in return.",
+          "s 245 catches exactly this. A floating charge created in the year before the onset of insolvency (extended to two years if granted to a connected person) is avoided to the extent that it secures anything other than 'new value' given to the company at the same time as, or after, the charge was created — money paid, goods or services supplied, or an existing debt discharged or reduced in consideration for the charge. For an unconnected person, there is also a requirement that the company was unable to pay its debts at the time, or became so as a result — but for a connected person, this insolvency requirement does not need to be shown at all."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Applying s 245",
+            "description": "The steps for working out whether a floating charge is avoided under s 245.",
+            "nodes": [
+              { "id": "step1", "label": "Was the charge created in the year before the onset of insolvency (or two years, if the chargee is connected)?" },
+              { "id": "step2", "label": "For an unconnected chargee: was the company unable to pay its debts at the time, or did it become unable to as a result? (Not required for a connected chargee)" },
+              { "id": "step3", "label": "Identify what 'new value' was actually given to the company in consideration for the charge (new money, goods, services, or discharge of an existing debt at the time of or after creation)" },
+              { "id": "step4", "label": "The charge is avoided to the extent it secures anything beyond that new value — old, pre-existing debt is not validly secured" }
+            ],
+            "edges": [
+              { "from": "step1", "to": "step2" },
+              { "from": "step2", "to": "step3" },
+              { "from": "step3", "to": "step4" }
+            ],
+            "textAlternative": "To apply s 245: check the charge was created within the relevant look-back window (one year generally, two years for a connected chargee); for an unconnected chargee, check the company was or became unable to pay its debts; then identify what genuinely new value was given in exchange for the charge; the charge is then avoided to the extent it purports to secure anything beyond that new value, such as an old, pre-existing debt."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-12-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Ten months before insolvent liquidation, an unconnected supplier who was already owed £80,000 for past deliveries agrees to supply a further £20,000 of stock immediately, in exchange for a floating charge over the company's assets securing the full £100,000 (the old £80,000 plus the new £20,000). To what extent is the charge valid under s 245?",
+          "options": ["Valid only to the extent of the £20,000 new value supplied at the time of the charge; invalid as to the £80,000 pre-existing debt", "Fully valid, since the supplier is unconnected and the charge was granted within the look-back period regardless of what it secures", "Fully invalid, since any floating charge granted within the look-back period is automatically void in its entirety", "Valid only as to the £80,000 pre-existing debt, since that was the original relationship"],
+          "correctIndex": 0,
+          "explanation": "s 245 avoids a floating charge only to the extent it secures something other than new value given at the time of or after its creation. The £20,000 of stock supplied at the time of the charge is new value and remains validly secured; the pre-existing £80,000 debt receives no benefit from the new security."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-12-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which statutory provision allows a liquidator to challenge a company's gift of an asset, or a sale for significantly less than market value, made in the two years before insolvency?",
+      "options": ["Insolvency Act 1986, s 238 (transactions at an undervalue)", "Insolvency Act 1986, s 239 (preferences)", "Insolvency Act 1986, s 245 (floating charge avoidance)", "Insolvency Act 1986, s 214 (wrongful trading)"],
+      "correctIndex": 0,
+      "explanation": "s 238 is the provision targeting a mismatch in value given and received, whether by outright gift or a transaction on markedly unfavourable terms."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What is the standard look-back period under s 239 for a preference given to a creditor who is NOT connected with the company?",
+      "options": ["Six months ending with the onset of insolvency", "Two years ending with the onset of insolvency", "Five years ending with the onset of insolvency", "There is no time limit for unconnected creditors"],
+      "correctIndex": 0,
+      "explanation": "The default preference look-back is six months; it only extends to two years where the recipient is a connected person, such as a director or their associate."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A company pays its longest-standing, entirely unconnected trade supplier in full, on the supplier's ordinary payment terms, shortly before entering insolvent liquidation, while other creditors go unpaid. Is this necessarily a preference under s 239?",
+      "options": ["Not necessarily — the liquidator must also show the company was influenced by a desire to put that supplier in a better position, not merely that paying them had that effect", "Yes automatically, since any payment to one creditor shortly before insolvency while others go unpaid is a preference", "No, because payments to unconnected creditors can never be preferences", "Yes, but only because the supplier's ordinary payment terms were used"],
+      "correctIndex": 0,
+      "trapExplanation": "The common error is treating the effect (one creditor better off than others) as automatically proving the desire. s 239 requires the company to have been positively influenced by a desire to prefer, not simply aware that an ordinary payment would have that side effect — an unconnected recipient gets no presumption to help the liquidator here.",
+      "explanation": "Without evidence of an actual desire to improve this creditor's position specifically, an ordinary payment on ordinary terms is not automatically caught, however much it benefits that creditor relative to others."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A company, six months before insolvent liquidation, repays a loan in full to its finance director (a connected person) while leaving all other creditors unpaid. What is the effect of the recipient being a connected person?",
+      "options": ["Both the desire to prefer and the company's inability to pay its debts at the time are presumed, shifting the burden to the director to rebut them", "Nothing changes — connected and unconnected persons are treated identically under s 239", "The transaction becomes automatically valid, since directors are entitled to repay their own loans first", "Only the look-back period changes; the desire and insolvency elements must still be proved from scratch by the liquidator either way"],
+      "correctIndex": 0,
+      "trapExplanation": "Students often remember only the extended look-back period for connected persons and miss the evidential presumptions, which are arguably the more powerful practical effect — they shift the burden of proof onto the connected recipient.",
+      "explanation": "Connection to the company doesn't just extend the six-month period to two years; it also triggers presumptions of both desire to prefer and insolvency at the time, which the connected recipient must then rebut."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 238, what defence is available to a person seeking to uphold a transaction the liquidator alleges was at an undervalue?",
+      "options": ["That the company entered the transaction in good faith, for the purpose of carrying on its business, with reasonable grounds to believe it would benefit the company", "That the counterparty was unaware the company was insolvent", "That the transaction was approved by a simple majority of shareholders", "That the transaction took place more than six months before insolvency"],
+      "correctIndex": 0,
+      "explanation": "s 238(5) provides a specific good-faith, business-purpose defence — it is not enough to show the counterparty's ignorance of insolvency, shareholder approval, or mere passage of time, none of which are recognised s 238 defences."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Under s 245, to what extent is a floating charge granted for an existing, pre-insolvency debt (with no new value given) automatically avoided if created within the look-back period?",
+      "options": ["In full, since it secures nothing but old value and none of it qualifies as new value given at the time of or after creation", "Not at all, provided the charge was properly registered at Companies House", "Only as to half the debt secured, as a matter of statutory formula", "Only if the chargee is also shown to have acted dishonestly"],
+      "correctIndex": 0,
+      "explanation": "s 245 avoids a floating charge to the extent it fails to secure genuine new value; where the entire sum secured is an old, pre-existing debt, the charge is avoided in full, with no dishonesty or registration point relevant to that outcome."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-07",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What is the look-back period under s 245 for a floating charge granted to a person connected with the company?",
+      "options": ["Two years ending with the onset of insolvency, with no need to show the company was unable to pay its debts", "One year ending with the onset of insolvency, with no need to show insolvency", "Six months ending with the onset of insolvency, same as an unconnected preference", "There is no look-back period at all for connected persons under s 245"],
+      "correctIndex": 0,
+      "explanation": "The look-back extends from one year (for an unconnected chargee) to two years for a connected chargee, and — unlike the unconnected case — the company's inability to pay its debts does not need to be separately shown for a connected chargee."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Eighteen months before insolvent liquidation, a company sells a piece of machinery worth £50,000 to an unconnected third party for £48,000, following a short arm's-length negotiation. Is this transaction likely to be unwound under s 238?",
+      "options": ["No — a modest, arm's-length discount of this kind is unlikely to be 'significantly less' in value, even within the two-year look-back period", "Yes — any sale below full market value within the look-back period is automatically unwound", "No, because the look-back period for undervalue transactions is only six months and this sale falls outside it", "Yes, because the buyer was unconnected to the company"],
+      "correctIndex": 0,
+      "explanation": "s 238 targets a significant shortfall in value, not any discount at all — a genuine, modest, arm's-length reduction from market value is unlikely to meet the 'significantly less' threshold, even though it falls within the two-year look-back window."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A company transfers its most valuable property to the sole director's sibling for £1, fourteen months before insolvent liquidation. The director later argues the transfer was intended to keep the asset safe for the business's eventual recovery. Which provision is most directly engaged, and what will the liquidator likely need to show?",
+      "options": ["Section 238 — that the transfer was a gift or at a significant undervalue, with the director needing to establish the good-faith business-purpose defence to resist an order", "Section 239 — the liquidator must prove a desire to prefer the sibling as a creditor", "Section 245 — the transfer must be treated as a floating charge granted for past consideration", "No provision applies, since the transfer was to a family member rather than a creditor"],
+      "correctIndex": 0,
+      "explanation": "A near-nil-value transfer of an asset is a classic s 238 undervalue transaction, not a preference (the sibling was not a creditor being paid) or a floating charge case; the director's justification would need to fit within the s 238(5) good-faith, business-benefit defence to succeed."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company, four months before insolvent liquidation, grants an unconnected bank a floating charge over its stock to secure a fresh £150,000 loan advanced to the company on the same day. Is the charge likely to be avoided under s 245?",
+      "options": ["No — the charge secures genuine new value (the £150,000 advanced at the time of creation), so s 245 does not avoid it on that basis", "Yes, automatically, because it was granted within the year before insolvency regardless of what it secures", "Yes, because floating charges granted to banks are always treated as connected-person transactions", "No, because s 245 only ever applies to charges granted more than a year before insolvency"],
+      "correctIndex": 0,
+      "explanation": "s 245 targets charges that secure old debt without new value in return — here the £150,000 was advanced at the time the charge was created, which is exactly the kind of contemporaneous new value the provision is designed to protect."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-11",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A company's finance director (a connected person) is repaid an old £40,000 loan in full nineteen months before insolvent liquidation, while unconnected creditors go unpaid. Is this transaction capable of falling within the s 239 look-back period?",
+      "options": ["Yes — nineteen months falls within the two-year look-back period that applies to preferences given to a connected person", "No — nineteen months falls outside the six-month look-back period, and the connected-person extension does not apply to loan repayments", "No — s 239 only ever applies to transactions in the three months before insolvency, connected or not", "Yes, but only because the loan was originally interest-free"],
+      "correctIndex": 0,
+      "explanation": "Because the director is a connected person, the applicable look-back period is two years, not six months, so a payment nineteen months before insolvency is still within time for a s 239 claim, subject to the desire-to-prefer and insolvency presumptions applying."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company sells a delivery van to an unconnected buyer for full market value three months before insolvent liquidation, and separately repays an unconnected trade creditor in full on the creditor's ordinary invoice terms one month before insolvent liquidation. A liquidator wants to challenge both. What is the correct initial characterisation of each transaction?",
+      "options": ["The van sale is not a s 238 undervalue transaction (full value was received); the creditor repayment may be examined under s 239 but requires proof of a desire to prefer that ordinary-terms payments do not automatically show", "Both transactions are automatically transactions at an undervalue under s 238", "Both transactions are automatically preferences under s 239, since both occurred shortly before insolvency", "Neither transaction can be challenged under any provision, since both counterparties are unconnected"],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to assume any pre-insolvency transaction is fair game under one section or another. A sale at full value is not an undervalue transaction at all, and an ordinary repayment on ordinary terms to an unconnected creditor does not automatically show the desire to prefer that s 239 requires — proximity to insolvency alone proves neither.",
+      "explanation": "Each provision has its own elements: full value received defeats s 238 outright, and the absence of any shown desire to prefer (with no presumption available for an unconnected creditor) makes the s 239 claim weak on these facts alone."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the three provisions in this lesson operates without any need to show the company's state of mind or intention at all, once its timing and consideration conditions are met?",
+      "options": ["Section 245 (floating charge avoidance)", "Section 238 (transactions at an undervalue)", "Section 239 (preferences)", "None of the three — all require proof of intent"],
+      "correctIndex": 0,
+      "explanation": "s 245 operates in an essentially automatic, formula-based way once the timing and new-value conditions are examined — unlike s 239, which turns on the company's desire, and unlike s 238's defence, which turns on good faith and business purpose."
+    },
+    {
+      "itemId": "sqe1-blp-12-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "A student writes: 'A preference and a transaction at an undervalue both require the liquidator to prove the company received nothing, or too little, in return.' What is wrong with this statement?",
+      "options": ["It conflates the two provisions — a preference is about favouring one creditor's position, not about the value the company received, and requires proof of a desire to prefer instead", "Nothing is wrong; the statement correctly describes both provisions", "It is wrong only because preferences never involve any value passing at all", "It is wrong only because undervalue transactions never involve creditors"],
+      "correctIndex": 0,
+      "trapExplanation": "This is the single most common conflation in the topic. s 238 is about a shortfall in value given and received; s 239 is about the ordering and treatment of creditors and requires the separate desire element — value shortfall is not what s 239 tests at all.",
+      "explanation": "Keeping the two provisions distinct is essential: undervalue is a value-comparison test, preference is a creditor-treatment and state-of-mind test, and the two elements are not interchangeable."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is collapsing the three provisions into one undifferentiated 'clawback' idea. s 238 asks about value given and received, s 239 asks about a desire to favour a particular creditor, and s 245 asks only about timing and whether new value was given for a floating charge — mixing up which question a fact pattern is actually asking is the trap to watch for.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.antecedent-transactions"
+  }
+}

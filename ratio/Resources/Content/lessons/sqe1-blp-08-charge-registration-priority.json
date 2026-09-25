@@ -1,0 +1,350 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-08",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 8,
+  "topicId": "sqe1.business-law.charge-registration-priority",
+  "title": "Registration and priority of company charges",
+  "subtitle": "Missing the 21-day window, and who gets paid first on insolvency",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the statutory requirement to register a registrable charge at Companies House within 21 days of creation, and identify the consequence of missing that deadline",
+    "Explain the statutory order of priority on a company's insolvency, including fixed chargeholders, preferential creditors, floating chargeholders, and the prescribed part",
+    "Apply the registration and priority rules to a fact pattern involving competing creditors to advise which will be paid first"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Companies Act 2006, ss 859A-859H", "role": "Statutory scheme requiring registration of a registrable charge at Companies House within 21 days of creation" },
+    { "citation": "Insolvency Act 1986, s 176A", "role": "Introduces the 'prescribed part' — a ring-fenced fund from floating charge realisations set aside for unsecured creditors" },
+    { "citation": "Insolvency Act 1986, s 175 and Schedule 6", "role": "Sets out the categories of preferential debts that rank ahead of a floating chargeholder" },
+    { "citation": "Re Barleycorn Enterprises Ltd [1970] Ch 465", "role": "Confirms that preferential creditors are paid out of floating charge realisations in priority to the floating chargeholder" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Trainees routinely assume that a properly drafted, duly signed charge is automatically effective. It isn't — miss the 21-day registration deadline by even a day, with no application to extend time, and a lender's multi-million-pound security can become worthless against everyone except the company itself. Where the profile shows application lagging knowledge, this lesson stress-tests the deadline and the payout order against concrete numbers.",
+    "profileHooks": {
+      "weakApplication": "You can state the 21-day rule and the priority order. The test pool leans on scenarios with real figures and real dates — practise doing the arithmetic, not just reciting the sequence.",
+      "weakKnowledge": "Start with Part 1 and Part 3 and get the deadline and the priority queue itself solid before tackling the prescribed part calculations in Part 4."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A lender's charge is signed, valid, and worth £2 million between the parties. Two days after the statutory deadline, nobody has registered it. On the company's insolvency, that charge is worth nothing against the very people it was meant to protect against.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The registration scheme in ss 859A-859H Companies Act 2006 and the priority framework in the Insolvency Act 1986 are stable. The prescribed part cap under s 176A is set by secondary legislation and has been revised before (most recently raising the cap to £800,000); figures given here reflect the cap current as at the law-stated date and should always be checked against the current statutory instrument in practice."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The 21-day registration deadline",
+        "voice": "direct — states the rule before the consequence",
+        "body": [
+          "A registrable charge created by a company must have prescribed particulars delivered to Companies House within 21 days beginning with the day after the charge is created. This applies to most charges over company property, including mortgages and both fixed and floating charges.",
+          "The 21-day clock is short, and it runs from creation — not from completion of any related transaction, and not from when someone in the finance team gets round to it. In practice this is usually handled as a routine step immediately after completion, but it is a genuinely strict deadline with a genuinely severe consequence for missing it.",
+          "The particulars are typically filed using the prescribed form, together with a certified copy of the charge instrument, and Companies House issues a certificate of registration once accepted — that certificate is conclusive evidence that the registration requirements have been satisfied."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Companies Act 2006, s 859A(4)",
+            "text": "The period allowed for delivery of the particulars is 21 days beginning with the day after the date of creation of the charge (subject to an order under section 859F extending that period).",
+            "elements": ["A registrable charge is created", "Prescribed particulars must be delivered to the registrar", "Within 21 days beginning the day after creation", "Subject to a possible court-ordered extension"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-08-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Within how many days of creation must the prescribed particulars of a registrable charge normally be delivered to Companies House?",
+          "options": ["7 days", "14 days", "21 days", "28 days"],
+          "correctIndex": 2,
+          "feedbackCorrect": "Correct — 21 days beginning the day after creation, under s 859A(4) Companies Act 2006.",
+          "feedbackIncorrect": "The statutory period is 21 days beginning the day after the charge is created — a genuinely short window given what is at stake if it is missed."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What registration does — and doesn't — protect against",
+        "voice": "structural — works through the statutory text methodically",
+        "body": [
+          "Miss the deadline, with no successful application to extend time, and s 859H bites: the charge becomes void against a liquidator, an administrator, and any creditor of the company. Read that list carefully — it is void against those specific parties, not void in the abstract.",
+          "Critically, the charge remains fully valid and enforceable as between the company and the chargee. The debt secured by the charge does not disappear — in fact, s 859H makes the money secured by the charge immediately repayable on demand once the charge becomes void. What the lender loses is its secured position against everyone who actually matters on an insolvency: the very people it took the charge to protect against.",
+          "The court has power under s 859F to extend the 21-day period, but only on terms and typically only where the failure was accidental, due to inadvertence, or on other grounds the court considers just and equitable — and any late registration only ranks from the date it actually happens, so intervening rights (such as a second charge registered in the meantime) can leap ahead."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Consequences of failing to register in time",
+            "points": [
+              "Void against a liquidator of the company",
+              "Void against an administrator of the company",
+              "Void against any creditor of the company",
+              "Remains valid as between the company and the chargee",
+              "The secured debt becomes immediately repayable once the charge is void",
+              "Late registration is possible only with a court order under s 859F, and ranks only from the date registered"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-08-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Section 859H(3) Companies Act 2006 provides that where a charge becomes void under this section, the money secured by it becomes immediately payable. Why does the statute impose this additional consequence, rather than simply leaving the charge unsecured?",
+          "options": ["To punish the lender for the company's registration failure", "Because once the lender's security is gone, allowing the debt to remain outstanding on its original repayment terms would leave the lender exposed with no protection at all, so the statute accelerates repayment instead", "Because unregistered charges are automatically converted into shares", "Because the debt is written off entirely once the charge is void"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — acceleration is the statute's way of giving the lender at least the chance to recover the debt as an ordinary claim once its security has failed.",
+          "feedbackIncorrect": "Think about what the lender has actually lost: its priority position, not the underlying debt. Acceleration lets the lender pursue repayment immediately, as compensation for losing the protection the charge was meant to give."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Priority order on insolvency: the queue",
+        "voice": "case-narrative — walks the queue step by step",
+        "body": [
+          "When a company becomes insolvent, its assets don't simply get divided up pro rata. There is a strict statutory queue, and understanding it is the single most tested skill in this area.",
+          "Fixed chargeholders stand outside the general insolvency distribution altogether: they are paid from the proceeds of their own specifically charged assets, in priority to everyone else with a claim on those particular assets. Only once a fixed charge is satisfied (or if there's a shortfall, the balance joins the unsecured queue) does the rest of the process matter for that lender.",
+          "From the pool of assets subject to a floating charge, the order is: first, the expenses of the insolvency process itself; second, preferential creditors (certain employee claims and specified HMRC debts, under s 175 and Schedule 6 Insolvency Act 1986); third, the prescribed part is set aside for unsecured creditors; fourth, the floating chargeholder is paid what remains; and finally, any genuine surplus goes to unsecured creditors generally, alongside the prescribed part."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re Barleycorn Enterprises Ltd",
+            "citation": "[1970] Ch 465",
+            "court": "Court of Appeal",
+            "year": 1970,
+            "factsShort": "A company in liquidation had a floating charge and outstanding preferential debts, with insufficient realisations to satisfy both.",
+            "ratioShort": "Preferential creditors are paid out of assets covered by a floating charge in priority to the floating chargeholder itself.",
+            "expanded": {
+              "facts": "The liquidator held realisations from assets subject to a floating charge, and the question was whether preferential creditors or the floating chargeholder should be paid first from that fund.",
+              "judgmentExtract": "The court confirmed that preferential debts rank ahead of the claims of the floating chargeholder in respect of assets comprised in or subject to the floating charge, reflecting the statutory scheme's deliberate protection of certain categories of unsecured creditor.",
+              "significance": "This case, and the statutory provisions that now codify its effect, is the reason a floating chargeholder cannot simply assume it will be paid in full from 'its' asset pool — preferential creditors and the prescribed part both come out of that same pool first."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-08-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these in the correct order of payment from a company's floating charge asset pool on insolvency.",
+          "items": ["Expenses of the insolvency process", "Preferential creditors", "The prescribed part set aside for unsecured creditors", "The floating chargeholder"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the queue — expenses, then preferential creditors, then the prescribed part is carved out, and only then does the floating chargeholder get paid from what's left.",
+          "feedbackIncorrect": "Check the order again: process expenses come first, preferential creditors are paid next, the prescribed part is deducted before the floating chargeholder sees anything, and the floating chargeholder is paid last from that pool."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The prescribed part: carving out something for unsecured creditors",
+        "voice": "Socratic — poses the mechanics as a puzzle before resolving it",
+        "body": [
+          "Why does the law bother setting anything aside for unsecured creditors at all, when a floating charge can sweep up 'all assets' of a company? Because before s 176A was introduced, a floating charge holder could take everything left after preferential creditors, leaving trade creditors with nothing — Parliament decided that was too harsh.",
+          "Section 176A requires the liquidator or administrator to calculate a 'prescribed part' from the company's net property (broadly, what's left of the floating charge realisations after expenses and preferential creditors) and set it aside for unsecured creditors, before paying the floating chargeholder.",
+          "The formula, as currently set, is 50% of the first £10,000 of the relevant fund, plus 20% of the remainder, subject to an overall cap. This only applies to floating charges created on or after 15 September 2003 — and it applies only to the floating charge pool, never to assets subject to a fixed charge."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, s 176A(2)-(3)",
+            "text": "Where a company's net property, after payment of preferential and expense claims, is calculated in accordance with the prescribed formula, the liquidator or administrator must not distribute the prescribed part to the holder of a floating charge, but shall make it available for satisfaction of unsecured debts.",
+            "elements": ["Applies to floating charges created on or after 15 September 2003", "Calculated from net property after expenses and preferential debts", "Formula: 50% of first £10,000, plus 20% of the remainder, subject to a cap", "Set aside before the floating chargeholder is paid"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-08-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "After expenses and preferential creditors, £50,000 remains from floating charge realisations. Applying the prescribed part formula (50% of the first £10,000, plus 20% of the remainder), roughly how much must be set aside for unsecured creditors before the floating chargeholder is paid?",
+          "options": ["£5,000 + 20% of £40,000 = £13,000", "£50,000 in full", "Nothing, because the fund exceeds £10,000", "£10,000 flat"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right — 50% of the first £10,000 is £5,000, plus 20% of the remaining £40,000 is £8,000, giving a prescribed part of £13,000.",
+          "feedbackIncorrect": "Apply the two-tier formula in order: 50% of the first £10,000, then 20% of everything above that. Add the two figures together to get the total prescribed part."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Competing charges: who wins between two lenders",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "So far this lesson has looked at how the assets are shared out. A separate question is priority as between two competing charges over the same asset — which matters when a company has granted security to more than one lender.",
+          "As a general rule, priority between charges follows the order in which they were created, not the order in which they happen to be registered — registration under ss 859A-859H is about validity against a liquidator, administrator, or creditor, not about ranking between competing chargeholders. But a fixed charge will normally take priority over an earlier-created floating charge over the same assets, because the floating chargeholder contemplated the company continuing to deal with (and therefore further charge) those assets — unless the floating charge contains a negative pledge clause restricting further charges, and the later chargee had notice of it (actual or, in some circumstances, constructive, for example from the register entry).",
+          "The trap is assuming registration order settles priority in every case. It doesn't: registration failure voids a charge against certain parties, but as between two validly registered charges, the analysis is about creation order, the fixed/floating distinction, and notice of any negative pledge — not simply which form arrived at Companies House first."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume that whichever charge was registered at Companies House first automatically has priority over a later-registered charge.",
+            "whyItsWrong": "Registration governs validity against a liquidator, administrator, and creditors — it does not itself rank competing charges against each other. Priority between charges turns on creation order, the fixed/floating distinction, and notice of any negative pledge clause."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-08-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A company grants a floating charge to Lender A in January, then a fixed charge over the same assets to Lender B in March. Neither charge contains or has notice of a negative pledge. Which lender is most likely to have priority on the company's insolvency?",
+          "options": ["Lender A, because its charge was created and registered first", "Lender B, because a fixed charge normally takes priority over an earlier floating charge over the same assets, absent a negative pledge the later chargee had notice of", "Whichever lender's charge was registered first at Companies House, regardless of type", "Neither — the two charges cancel each other out"],
+          "correctIndex": 1,
+          "trapExplanation": "The instinct to reach for 'created or registered first' is exactly the trap. A floating chargeholder's own security contemplates further dealing with the assets, so a later fixed charge normally leapfrogs it unless a negative pledge (of which the later lender had notice) says otherwise.",
+          "feedbackCorrect": "Correct — without a negative pledge in play, the later fixed charge ranks ahead of the earlier floating charge over the same assets.",
+          "feedbackIncorrect": "Creation date alone doesn't decide priority here. A floating charge, by its nature, contemplates the company dealing with (and further charging) the assets — so a later fixed charge normally takes priority unless a negative pledge with notice changes that."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-08-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Within how many days of creation must a registrable charge be delivered for registration at Companies House?",
+      "options": ["7 days", "14 days", "21 days", "28 days"],
+      "correctIndex": 2,
+      "explanation": "Section 859A(4) Companies Act 2006 sets the period at 21 days beginning the day after creation."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What is the effect on a charge if a company fails to deliver the required particulars for registration within the statutory period, with no order extending time?",
+      "options": ["The charge is void against the company itself", "The charge is void against a liquidator, administrator, and any creditor of the company, though the underlying debt remains due", "The charge automatically converts into an unsecured debt with no further consequence", "The charge remains fully effective against everyone provided the lender kept its own signed copy of the charge document"],
+      "correctIndex": 1,
+      "explanation": "Section 859H voids the charge against a liquidator, administrator, and creditors specifically — it remains valid as between the company and the chargee, and the secured debt becomes immediately repayable."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "From a company's floating charge realisations in an insolvent liquidation, which of the following is paid first?",
+      "options": ["Preferential creditors", "Unsecured creditors generally", "The expenses of the liquidation", "The floating chargeholder"],
+      "correctIndex": 2,
+      "explanation": "The expenses of the insolvency process are deducted first, before preferential creditors, the prescribed part, or the floating chargeholder are considered."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A company has one registered fixed charge over its factory and one registered floating charge over 'all other assets'. On liquidation, from which pool is the fixed chargeholder paid?",
+      "options": ["The specific assets subject to the fixed charge, in priority to any claim on those assets from the floating charge pool", "The floating charge pool, ranking behind preferential creditors", "The prescribed part only", "Whichever pool the liquidator selects at their discretion"],
+      "correctIndex": 0,
+      "explanation": "A fixed chargeholder is paid from the proceeds of its own specifically charged assets, outside the floating charge distribution scheme entirely."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "Which of the following is NOT ordinarily a preferential debt ranking ahead of a floating chargeholder under the Insolvency Act 1986?",
+      "options": ["Certain unpaid employee wages and holiday pay within the statutory limits", "Certain sums owed to HMRC in respect of specified taxes", "Ordinary unsecured trade debts owed to suppliers", "Occupational pension scheme contributions within the statutory categories"],
+      "correctIndex": 2,
+      "trapExplanation": "Trade debts are the paradigm ordinary unsecured claim — they rank below both preferential creditors and the floating chargeholder, sharing only in the prescribed part and any surplus.",
+      "explanation": "Preferential status is confined to specific statutory categories; general trade debts are not among them."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A floating charge was created and registered before HMRC's preferential status for certain taxes was reinstated by later legislation. A student argues that because the charge pre-dates the change, HMRC cannot rank as preferential in this liquidation. Is the student correct?",
+      "options": ["Yes, because priority status is fixed permanently at the date the charge was created", "No, because preferential status depends on the statutory category of debt and the rules in force at the relevant insolvency date, not on when the charge was created", "Yes, because HMRC can never rank as preferential under any circumstances", "No, because HMRC always ranks above fixed chargeholders"],
+      "correctIndex": 1,
+      "trapExplanation": "The tempting error is to treat the charge's creation date as freezing the priority rules. Preferential status is a feature of the debt category under the insolvency legislation applicable at the relevant time, not a term negotiated into the charge.",
+      "explanation": "Preferential debt categories are set by statute in force at the relevant insolvency date, independent of when any particular charge happened to be created."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company's only floating charge realises £50,000. Preferential creditors are owed £10,000. Once they are paid, applying the prescribed part formula (50% of the first £10,000, 20% of the remainder, subject to the applicable cap), which statement is correct?",
+      "options": ["Nothing is set aside for unsecured creditors until the floating chargeholder is paid in full", "A prescribed part must be calculated on the remaining fund and set aside for unsecured creditors before the floating chargeholder receives anything from it", "The entire remaining £40,000 automatically goes to the floating chargeholder", "The prescribed part only applies if the company is being wound up, never in administration"],
+      "correctIndex": 1,
+      "trapExplanation": "Options A and D reflect the two classic misunderstandings — the prescribed part is deducted before, not after, the floating chargeholder is paid, and it applies in both liquidation and administration.",
+      "explanation": "The prescribed part must be calculated and set aside from the fund remaining after expenses and preferential creditors, before any distribution to the floating chargeholder."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A lender's floating charge was created in 2001. Does the prescribed part under s 176A Insolvency Act 1986 apply to realisations from that charge?",
+      "options": ["No, s 176A only applies to floating charges created on or after 15 September 2003", "Yes, s 176A applies to all floating charges regardless of creation date", "No, s 176A only applies to fixed charges", "Yes, but only if the company is a public company"],
+      "correctIndex": 0,
+      "trapExplanation": "The date restriction is easy to overlook — students often assume the prescribed part applies universally to all floating charges once it was introduced.",
+      "explanation": "The prescribed part regime applies only to floating charges created on or after 15 September 2003, so a 2001 charge falls outside it."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Orion Ltd granted a bank a floating charge on 1 March, validly registered on 15 March. On 1 April, a second lender, unaware of the March charge, took and registered a fixed charge over the same assets, with no negative pledge in play. On Orion's insolvency, which charge is likely to have priority?",
+      "options": ["The April fixed charge, because a validly created fixed charge normally takes priority over an earlier floating charge over the same assets absent a negative pledge the second lender had notice of", "The March floating charge, because it was created first in time", "Whichever charge was registered first at Companies House always determines priority", "Neither charge is valid because they overlap"],
+      "correctIndex": 0,
+      "explanation": "Without a negative pledge affecting the second lender, the later fixed charge takes priority over the earlier floating charge, because the floating charge inherently contemplated the company continuing to deal with (and further charge) the assets."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A floating charge contains a negative pledge clause prohibiting the company from creating any later charge ranking ahead of it, and this restriction is noted on the Companies House register entry. A later lender takes a fixed charge over the same assets with actual knowledge of the negative pledge. Which charge is likely to take priority?",
+      "options": ["The floating charge, because the later fixed chargeholder had notice of the restriction", "The fixed charge, because fixed charges always rank ahead of floating charges regardless of notice", "The floating charge, because negative pledge clauses are never enforceable against third parties", "The fixed charge, because negative pledge clauses only bind the original chargor, never a later lender"],
+      "correctIndex": 0,
+      "explanation": "A negative pledge of which a later chargee has notice displaces the usual fixed-beats-floating rule, so the floating charge retains its priority here."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A company's charge document is signed on 2 January but the required particulars are not delivered to Companies House until 10 February — more than 21 days later — and no application to extend time is made. The company enters administration in March. What is the status of the charge as against the administrator?",
+      "options": ["Valid and fully effective against the administrator", "Void against the administrator, though the debt itself remains owed and becomes immediately payable", "Automatically registered late but still ranking ahead of all other creditors", "Void against the company itself, meaning the underlying debt is written off entirely"],
+      "correctIndex": 1,
+      "explanation": "Missing the 21-day deadline with no extension voids the charge against the administrator specifically — the debt survives and accelerates, but the security is lost against exactly the party who now controls the insolvent estate."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Section 859H Companies Act 2006 provides that where the required particulars of a charge are not delivered within the statutory period, the charge is void against a liquidator, administrator, and any creditor of the company. Based on this wording, against whom does the charge remain valid despite the failure to register?",
+      "options": ["The company itself, as between it and the chargee", "Every subsequent creditor of the company", "The liquidator only, but no one else", "No one — the charge is void for all purposes"],
+      "correctIndex": 0,
+      "explanation": "The provision names specific parties against whom the charge becomes void; it says nothing about the company itself, against whom the charge remains a valid and enforceable contractual security."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Section 176A Insolvency Act 1986 requires the liquidator or administrator to set aside a 'prescribed part' from the company's net property for unsecured creditors, before paying the floating chargeholder. Why does the statute target only floating charge realisations for this set-aside, and not fixed charge realisations?",
+      "options": ["Because fixed chargeholders are themselves treated as unsecured creditors and cannot be given priority anyway", "Because a floating charge, unlike a fixed charge, can sweep up 'all assets' including sums that would otherwise be the only fund available to unsecured creditors, so Parliament carved out a portion for them", "Because fixed charges are, by definition, always registered late", "Because the prescribed part is a tax rather than an insolvency distribution rule"],
+      "correctIndex": 1,
+      "explanation": "The breadth of a typical floating charge — covering the whole undertaking — is exactly why Parliament intervened to protect unsecured creditors from being left with nothing; a fixed charge is confined to specific assets from the start and doesn't raise the same concern."
+    },
+    {
+      "itemId": "sqe1-blp-08-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "After expenses and preferential creditors are paid from floating charge realisations, £120,000 remains. Applying the prescribed part formula (50% of the first £10,000, plus 20% of the remainder), roughly how much should be set aside as the prescribed part before any balance goes to the floating chargeholder?",
+      "options": ["£5,000 + 20% of £110,000 = £27,000", "£120,000 in full", "Nothing, because the fund exceeds £10,000", "£10,000 flat, regardless of the remainder"],
+      "correctIndex": 0,
+      "explanation": "50% of the first £10,000 is £5,000; 20% of the remaining £110,000 is £22,000; the prescribed part totals £27,000, leaving £93,000 available for the floating chargeholder (subject to the overall statutory cap, which is not reached here)."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is collapsing two distinct questions into one: registration decides whether a charge is valid against a liquidator, administrator, or creditor at all; priority and the payout order decide who gets paid first once validity is established. Keep them separate.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.charge-registration-priority"
+  }
+}

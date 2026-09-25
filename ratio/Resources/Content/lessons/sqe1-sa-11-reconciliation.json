@@ -1,0 +1,351 @@
+{
+  "lessonId": "sqe1-sa-11",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "track": "SQE1",
+  "lessonNumber": 11,
+  "topicId": "sqe1.solicitors-accounts.reconciliation",
+  "title": "Reconciliation of the client account",
+  "subtitle": "Rule 8 of the SRA Accounts Rules 2019 — the five-week check that catches what the ledgers alone can't",
+  "estimatedMinutes": 15,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the reconciliation duty in SRA Accounts Rules 2019, r 8, including the maximum interval and the three figures compared",
+    "Explain what a reconciliation is actually designed to detect, and why a mismatch on its own is significant regardless of its cause",
+    "Apply the reconciliation duty to a fact pattern to identify when a breach has occurred and what it triggers"
+  ],
+  "leadingAuthorities": [
+    { "citation": "SRA Accounts Rules 2019, r 8", "role": "Requires reconciliation of the client cash book, individual client ledgers, and bank statements at intervals of no more than five weeks" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students know reconciliation happens 'regularly.' Where the profile shows the five-week figure and the three things actually being compared are shaky, this note appears: 'You know reconciliation is required — this lesson is about exactly what gets compared, how often, and what a mismatch means.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well recalling the five-week interval before. The test pool here is weighted towards fact patterns: expect specific dates and specific figures that don't quite add up, not bare definitions.",
+      "weakKnowledge": "Slow down on Part 2 — the rest of the lesson assumes you can name the three things being reconciled and the maximum interval without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A firm's client ledgers say it holds £340,000 for clients. Its bank statement says the client account holds £338,650. Nobody stole anything — a cheque was double-entered three weeks ago and never spotted. That £1,350 gap is exactly what reconciliation exists to catch, and exactly why the rule doesn't let a firm decide for itself how often to look.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The five-week maximum interval in r 8 is a fixed figure in the current rules; no change is pending, but it is worth checking for updates given the SRA's periodic review of accounts requirements."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three records, one question",
+        "voice": "narrative — sets up the mechanics before naming the rule",
+        "body": [
+          "A firm holding client money keeps more than one record of it. There's the client cash book (or its digital equivalent), which shows all money received and paid out of client account as a whole. There are the individual client ledgers, which break that total down client by client and matter by matter, so the firm can say how much it holds for any one person. And there's the bank statement for the client account itself, produced by the bank, entirely independent of the firm's own records.",
+          "In a firm with no errors, all three should tell the same story: the cash book total should match the sum of every individual client ledger balance, and both should match what the bank says is actually sitting in the account. The question reconciliation asks is simple to state and easy to get wrong in practice: do all three actually agree?",
+          "This matters because the firm's own books can look internally consistent — cash book and client ledgers can agree with each other perfectly — while both are quietly wrong, because an error crept in that both records share, or because the bank's own figure has moved for a reason the firm hasn't recorded yet. Only checking against the bank statement, the one record the firm doesn't control, can catch that."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Client account reconciliation",
+            "definition": "The process of comparing the client cash book, the total of all individual client ledger balances, and the client account bank statement, to confirm the three figures match at a stated date."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-11-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the three records that a client account reconciliation compares against each other.",
+          "acceptableAnswers": ["client cash book, client ledgers, bank statement", "cash book, individual client ledgers, and the bank statement", "the firm's cash book, the client ledgers, and the bank statement for client account"],
+          "modelAnswer": "The client cash book, the individual client ledgers (taken together), and the bank statement for the client account — all three must be shown to agree."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Rule 8: no more than five weeks apart",
+        "voice": "structural — rule text first",
+        "body": [
+          "Rule 8 doesn't leave the frequency of reconciliation to the firm's judgement. It fixes a maximum interval: reconciliations must be carried out at least every five weeks. A firm can reconcile more often — many do it monthly, some weekly on high-volume accounts — but it cannot go longer than five weeks between checks.",
+          "The obligation attaches to the firm (through its COFA, the Compliance Officer for Finance and Administration, in practice), not to any individual fee earner. It is a whole-practice control, run centrally, not something left to whichever solicitor happens to be handling a given client ledger.",
+          "Five weeks is measured from the previous reconciliation, not from some fixed calendar date — so a firm that reconciles on the 3rd of one month and the 2nd of the next is compliant, while a firm that lets six weeks slip by, even once, has breached the rule for that interval regardless of what the reconciliation eventually shows."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Accounts Rules 2019, r 8",
+            "text": "You must, at least every five weeks: (a) compare the balance on the client cash book with the balances shown on the statements or passbooks for all client accounts; and (b) as at the same date, compare the total of the balances shown by the client ledger accounts with the balance on the client cash book, and if there are differences, you must be able to explain them.",
+            "elements": ["Carried out at intervals of no more than five weeks", "Compares the client cash book against the bank statement balance", "Compares the total of individual client ledger balances against the client cash book, as at the same date", "Any difference must be capable of being explained"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-11-check-02",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of a compliant reconciliation in the correct order.",
+          "items": [
+            "Take the client cash book balance as at a chosen date",
+            "Compare it against the bank statement balance for the same date",
+            "Compare the total of individual client ledger balances against the client cash book, as at that same date",
+            "Investigate and explain any difference found at either comparison"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure of r 8: two comparisons, both anchored to the same date, followed by an obligation to explain — not just note — any discrepancy.",
+          "feedbackIncorrect": "Check the order again — both comparisons are made as at the same date, and the duty to explain any difference comes after both comparisons, not before."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "What a mismatch actually tells you",
+        "voice": "Socratic — poses the question before resolving it",
+        "body": [
+          "Here's the question worth sitting with: if the client cash book and the bank statement don't match, does that mean money has been misused? Almost always, no — the overwhelming majority of reconciliation differences are timing issues (a cheque not yet cleared, a transfer not yet showing on the bank statement) or simple entry errors (a transposed figure, a payment posted to the wrong client ledger).",
+          "But the rule doesn't ask the firm to decide in advance whether a discrepancy is innocent before investigating it. It requires every difference to be capable of being explained — which means investigated and understood, not waved away as 'probably just timing.' An unexplained difference is a live compliance problem the moment it's found, whatever eventually turns out to have caused it.",
+          "This is the link to the correction duty covered elsewhere in this rulebook: if the investigation into a mismatch reveals that client money has actually been used incorrectly — paid from the wrong ledger, or a shortage has arisen — the firm must correct the position by paying money into client account without delay, once it is aware. Reconciliation is often the mechanism by which that awareness first arises."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "From mismatch to correction",
+            "description": "How a reconciliation discrepancy connects to the firm's other accounts duties.",
+            "nodes": [
+              { "id": "recon", "label": "Reconciliation carried out (at least every five weeks)" },
+              { "id": "match", "label": "All three figures agree" },
+              { "id": "mismatch", "label": "A difference is found" },
+              { "id": "investigate", "label": "The firm investigates and must be able to explain the difference" },
+              { "id": "timing", "label": "Explained by timing or entry error — corrected on the books" },
+              { "id": "shortage", "label": "Reveals a genuine shortage on client account" },
+              { "id": "correction", "label": "Firm must replace the shortage from its own money without delay" }
+            ],
+            "edges": [
+              { "from": "recon", "to": "match", "label": "No difference" },
+              { "from": "recon", "to": "mismatch", "label": "Difference found" },
+              { "from": "mismatch", "to": "investigate" },
+              { "from": "investigate", "to": "timing", "label": "Innocent cause" },
+              { "from": "investigate", "to": "shortage", "label": "Genuine shortfall" },
+              { "from": "shortage", "to": "correction" }
+            ],
+            "textAlternative": "A reconciliation either shows the three figures agree, or reveals a difference. Any difference must be investigated and explained. Where the cause is timing or an entry error, the books are corrected accordingly. Where the cause is a genuine shortage of client money, the firm must replace it from its own money without delay, under the separate correction duty."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-11-check-03",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that an unexplained reconciliation difference is a compliance issue in its own right, even before its cause is known?",
+          "sliderLabels": ["Not a problem until a cause is found", "A live compliance problem the moment it's unexplained"],
+          "correctPosition": "A live compliance problem the moment it's unexplained",
+          "explanation": "Rule 8 requires every difference to be capable of being explained. An unexplained gap is itself non-compliant, regardless of whether the eventual explanation turns out to be innocent or serious."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Applying the interval in practice",
+        "voice": "direct — works through concrete dates",
+        "body": [
+          "Exam fact patterns on this point almost always turn on dates. A firm that reconciled on 3 March and again on 7 April is fine — that's a five-week interval, right at the edge but not over it. A firm that reconciled on 3 March and next reconciles on 14 April has let roughly six weeks pass, and has breached r 8 for that gap, however clean the eventual reconciliation turns out to be.",
+          "It's worth noticing what doesn't excuse a late reconciliation: being busy, a member of staff being on leave, or a system migration are all real operational pressures, but none of them suspends the five-week maximum. The rule is framed as an outer limit precisely so that a firm can't reason its way past it case by case.",
+          "It's equally worth noticing what a compliant, on-time reconciliation does not guarantee: reconciling every five weeks like clockwork, but never actually investigating and explaining the differences it turns up, still leaves the firm in breach — the interval and the substance of the check are two separate requirements."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Reading a reconciliation timeline",
+            "points": [
+              "Measure from the date of the previous reconciliation, not a fixed calendar date",
+              "Five weeks is a maximum, not a target — reconciling more often is always compliant",
+              "Operational pressure (staff absence, system changes) does not extend the interval",
+              "An on-time reconciliation that ignores its own discrepancies is still non-compliant"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-11-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A firm's last reconciliation was completed on 10 January. Its next reconciliation is completed on 20 February. Has the firm complied with r 8?",
+          "options": ["Yes — reconciliation happened within the same two calendar months", "No — more than five weeks elapsed between the two reconciliations", "Yes — provided both reconciliations showed matching figures", "It depends on whether the firm's COFA approved the delay in advance"],
+          "correctIndex": 1,
+          "explanation": "10 January to 20 February is around six weeks — over the five-week maximum. The lateness itself is the breach, regardless of what either reconciliation showed."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Where students slip on reconciliation questions",
+        "voice": "direct — trap-focused",
+        "body": [
+          "The most common error is treating reconciliation as if it only compares the firm's own books against themselves — cash book against client ledgers — and forgetting the bank statement is the third, independent leg of the comparison. A firm whose internal books agree perfectly with each other can still be non-compliant, and can still be masking a real problem, if neither has been checked against what the bank actually shows.",
+          "A second error is assuming a discrepancy automatically means money has been misused, and answering exam questions as though every mismatch points to dishonesty. Most don't. The skill being tested is recognising that the rule requires investigation and explanation, not assuming the worst — while still treating an unexplained gap as a genuine compliance failure in its own right.",
+          "A third error is confusing r 8 with the correction duty that can follow it. Reconciliation is the checking mechanism; replacing a genuine shortage from the firm's own money is a separate, later step that only arises if the investigation reveals an actual shortfall, not merely a timing difference."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often answer as though 'the cash book and client ledgers matched' is sufficient to show a firm has properly reconciled its accounts.",
+            "whyItsWrong": "Rule 8 requires the bank statement to be brought into the comparison too. Two internal records agreeing with each other, while genuinely useful, does not on its own satisfy the reconciliation duty — the external, bank-held figure has to be checked as well."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-11-check-05",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that identifies why checking only the firm's internal books is not enough.",
+          "passage": "A firm's cash book and its individual client ledgers had agreed with each other for months. Neither had been checked against the bank statement in that time. An external audit later found a shortfall the internal records had never revealed, because both internal records shared the same undetected posting error. Only a comparison against the bank's own figures — a record the firm did not control — would have surfaced it.",
+          "ratioSentence": "Only a comparison against the bank's own figures — a record the firm did not control — would have surfaced it."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-11-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Under SRA Accounts Rules 2019, r 8, what is the maximum interval permitted between client account reconciliations?",
+      "options": ["Two weeks", "Five weeks", "Three months", "Six months"],
+      "correctIndex": 1,
+      "explanation": "Reconciliations must be carried out at intervals of no more than five weeks."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which three figures does a client account reconciliation compare?",
+      "options": ["Office account balance, client account balance, and firm profit", "Client cash book, total of individual client ledger balances, and the bank statement for client account", "Annual accounts, management accounts, and the tax return", "Client care letter, retainer terms, and the final bill"],
+      "correctIndex": 1,
+      "explanation": "Reconciliation checks the cash book, the client ledgers taken together, and the independent bank statement all agree, as at the same date."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A firm reconciles its client account weekly rather than every five weeks. Is this compliant with r 8?",
+      "options": ["No — reconciling too often is itself a breach", "Yes — five weeks is a maximum, not a fixed schedule, so more frequent reconciliation is compliant", "No — the SRA requires reconciliation on exactly a five-week cycle", "Only if the firm obtains prior SRA approval for the shorter interval"],
+      "correctIndex": 1,
+      "explanation": "The five-week figure is an outer limit. Reconciling more frequently is always permitted and often good practice on higher-volume accounts."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm's reconciliation reveals a small, unexplained difference between the client cash book and the bank statement. What does r 8 require at that point?",
+      "options": ["Nothing, provided the difference is under £500", "The firm must investigate until it can explain the difference", "The firm must immediately report the difference to the SRA", "The firm must suspend all client account transactions until the next reconciliation"],
+      "correctIndex": 1,
+      "explanation": "Rule 8 requires every difference to be capable of being explained — that means investigated, not simply noted or tolerated because of its size."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A firm's client cash book and individual client ledgers have matched perfectly for the past year. The firm treats this as evidence its reconciliation duty is being met. Is that a safe conclusion?",
+      "options": ["Yes — if the internal books agree with each other, the reconciliation duty is satisfied", "No — the bank statement, an independent record, must also be checked against those figures", "Yes — the bank statement is only relevant if the firm suspects theft", "No — the client ledgers alone are sufficient and the cash book is not required at all"],
+      "correctIndex": 1,
+      "trapExplanation": "Internal consistency feels reassuring, but two records under the firm's own control agreeing with each other doesn't rule out a shared error. The rule specifically requires the independent bank statement to be brought into the check.",
+      "explanation": "A genuine reconciliation must include the bank statement — the one figure the firm doesn't itself produce — precisely because internal records can agree while both are wrong."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm reconciled on 1 February and next reconciled on 8 March. On investigation, both reconciliations showed the figures matched perfectly. Has the firm complied with r 8?",
+      "options": ["Yes — since both reconciliations showed no discrepancies, there is no breach", "No — the gap between 1 February and 8 March exceeds five weeks, which is itself a breach regardless of the results", "Yes — a five-week interval measured loosely as 'about a month' is acceptable", "No — reconciliations must always fall on the same date each month"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to reason that clean results mean no harm was done, but the interval itself is the obligation. Exceeding five weeks between checks is a breach of r 8 independent of what either reconciliation shows.",
+      "explanation": "1 February to 8 March is around five and a half weeks — over the maximum. The lateness is the breach; the matching figures don't cure it."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A reconciliation turns up a £40 discrepancy. The bookkeeper assumes it's just a timing difference and moves on without further checking. Is this consistent with r 8?",
+      "options": ["Yes — small discrepancies under £100 can be assumed to be timing issues", "No — the difference must actually be investigated and explained, not merely assumed to be innocuous", "Yes — provided the same assumption is applied consistently across all reconciliations", "No — any discrepancy at all must be reported to the SRA immediately"],
+      "correctIndex": 1,
+      "trapExplanation": "Small figures invite the assumption that they're immaterial, but r 8 doesn't set a de minimis threshold for the duty to explain — size doesn't excuse skipping the investigation.",
+      "explanation": "Every difference, however small, must be capable of being explained. Assuming a cause without checking it does not satisfy the rule."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT part of what r 8 requires a firm to do?",
+      "options": ["Compare the client cash book against the client account bank statement", "Compare the total of client ledger balances against the client cash book, as at the same date", "Explain any difference found between the figures", "Notify each individual client whenever a reconciliation is carried out"],
+      "correctIndex": 3,
+      "trapExplanation": "It can seem client-protective to assume clients must be told every time a reconciliation happens, but r 8 is an internal control duty — it creates no obligation to notify clients of routine reconciliations.",
+      "explanation": "Reconciliation is a firm-level compliance check; there is no requirement under r 8 to notify clients each time one is carried out."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm's reconciliation on 15 June shows the client cash book and bank statement agree, but the total of individual client ledger balances is £2,000 lower than the cash book figure. What should the firm do?",
+      "options": ["Ignore the difference, since the cash book and bank statement already agree with each other", "Investigate the £2,000 gap between the cash book and the client ledgers until it can be explained", "Assume the ledgers are wrong and adjust them to match the cash book without further checking", "Report the figure directly to the SRA before any internal investigation"],
+      "correctIndex": 1,
+      "explanation": "Rule 8 requires both comparisons — cash book against bank statement, and cash book against the total of client ledgers. A gap in the second comparison is just as much a live issue as one in the first, and must be investigated."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm's investigation into a reconciliation discrepancy reveals that a payment was posted to the wrong client ledger by mistake, but the client account as a whole was never actually short of money. What is the correct outcome?",
+      "options": ["The firm must replace the shortfall from office money, since any discrepancy triggers the correction duty", "The firm corrects the ledger entries to reflect the true position; no replacement of money is needed since no shortage occurred", "The firm must obtain SRA permission before correcting any ledger entry", "The firm should leave the ledgers as they are, since the total client account balance was unaffected"],
+      "correctIndex": 1,
+      "explanation": "A misposting between ledgers, with no overall shortage, is corrected by fixing the entries — the separate duty to replace missing client money only bites where a genuine shortfall exists."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A firm carries out reconciliations exactly every five weeks without fail, but its bookkeeper routinely writes 'immaterial, no action' next to every discrepancy without checking the underlying cause. Is the firm complying with r 8?",
+      "options": ["Yes — the five-week interval is the entire requirement", "No — meeting the interval does not satisfy the duty if discrepancies are never genuinely investigated and explained", "Yes — provided the discrepancies are all below a reasonable materiality threshold", "No — because reconciliations must be carried out weekly, not every five weeks"],
+      "correctIndex": 1,
+      "explanation": "Timing and substance are separate limbs of r 8. Hitting the five-week interval while never actually explaining discrepancies still leaves the firm in breach."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Rule 8 requires the comparison of the client cash book against the client ledger totals to be made 'as at the same date' as the bank statement comparison. Why does this matter?",
+      "options": ["It doesn't matter — any dates within the same month are acceptable", "Using the same date for both comparisons ensures they are testing the same snapshot of the account, rather than being distorted by transactions in between", "It is a drafting formality with no practical effect", "It only matters for firms with more than one client account"],
+      "correctIndex": 1,
+      "explanation": "If the two comparisons used different dates, transactions occurring between them could create or mask a genuine discrepancy — anchoring both to the same date keeps the comparison meaningful."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-13",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following best captures the two comparisons required by r 8?",
+      "options": ["Office account against client account; and client account against firm profit", "Client cash book against the bank statement; and the total of client ledger balances against the client cash book", "Annual accounts against management accounts; and both against the tax computation", "Client care letter figures against the final invoice"],
+      "correctIndex": 1,
+      "explanation": "Rule 8 sets out exactly these two comparisons: cash book against bank statement, and client ledger totals against the cash book, both as at the same date."
+    },
+    {
+      "itemId": "sqe1-sa-11-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm's five-week reconciliation cycle is disrupted because its bookkeeper is on unplanned sick leave for three weeks, pushing the interval since the last reconciliation to seven weeks. Does this excuse the delay under r 8?",
+      "options": ["Yes — unplanned staff absence is a recognised exception under r 8", "No — r 8 sets a fixed maximum interval with no exception for operational disruption", "Yes — provided the firm notifies the SRA of the reason for the delay", "No — but only because the disruption lasted longer than two weeks"],
+      "correctIndex": 1,
+      "explanation": "The five-week maximum in r 8 is not qualified by operational circumstances. Staff absence may explain why the delay happened, but it does not make the late reconciliation compliant."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring mistake in this lesson's test items is treating internal agreement — cash book matching client ledgers — as if it were the whole reconciliation. It's only half of it: the independent bank statement has to agree too, and every gap, however small, has to be actually explained.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.reconciliation"
+  }
+}

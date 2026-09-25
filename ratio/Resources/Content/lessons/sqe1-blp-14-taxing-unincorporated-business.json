@@ -1,0 +1,348 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-14",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 14,
+  "topicId": "sqe1.business-law.taxing-unincorporated-business",
+  "title": "Taxing the unincorporated business",
+  "subtitle": "Income tax on trading profit, Class 2 and Class 4 NICs, and CGT with Business Asset Disposal Relief",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Calculate, in outline, how a sole trader's or partner's trading profit is charged to income tax across the current bands",
+    "Explain which National Insurance contributions a self-employed individual pays on trading profit and how they differ from an employee's",
+    "Apply the qualifying conditions for Business Asset Disposal Relief to a disposal of a business interest and state its effect on the CGT rate"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Income Tax (Trading and Other Income) Act 2005", "role": "Charges trading profit of a sole trader or partner to income tax as relevant income" },
+    { "citation": "Taxation of Chargeable Gains Act 1992", "role": "Charges gains on disposal of business assets to capital gains tax, including the Business Asset Disposal Relief regime" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Clients selling an interest in a business rarely ask 'what's my marginal income tax rate' — they ask 'how much will I actually keep'. Where the profile shows knowledge is ahead of application, this note appears: 'You can state the bands and reliefs — this lesson is about running the numbers on a specific client.'",
+    "profileHooks": {
+      "weakApplication": "You know the rates. The test pool here leans hard towards applying them to a client's actual figures — expect fact patterns with numbers in them, not definitions.",
+      "weakKnowledge": "Go through Parts 1 and 2 slowly before the CGT material — the rest of the lesson assumes you can place a profit figure into the right income tax band without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two sole traders each make £80,000 profit this year. One has organised a disposal of part of the business to qualify for Business Asset Disposal Relief; the other hasn't thought about it at all. The gap between what they each keep can run to tens of thousands of pounds — and almost none of it comes down to luck.",
+    "lawStatedNotice": "The income tax bands, National Insurance rates and Business Asset Disposal Relief rate given in this lesson are 2025/26 figures and change at least annually — check them against the current tax year at every refresh of this content. Business Asset Disposal Relief in particular is scheduled to rise from 14% to 18% from 6 April 2026, so any figure quoted here needs re-checking against the date of use."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Trading profit is just income, taxed like any other",
+        "voice": "structural — places the unincorporated business inside the ordinary income tax framework",
+        "body": [
+          "A sole trader or a partner in an ordinary partnership is not taxed separately as 'a business' — there is no such thing as corporation tax for an unincorporated business. Instead, trading profit computed under the Income Tax (Trading and Other Income) Act 2005 is simply added to the individual's other income and charged to income tax at their personal rates.",
+          "That has a practical consequence worth stating plainly: the business's profit and the individual's tax position are the same thing. A partner with a well-paid spouse and a modest share of partnership profit sits in a very different tax position from a sole trader with no other income and the same trading profit — even though the trading profit figure might be identical.",
+          "For 2025/26, after the personal allowance (£12,570, tapered away above £100,000 of income), profit is taxed at 20% up to £50,270, 40% up to £125,140, and 45% above that. These figures move every tax year and must be checked before being relied on in practice."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Trading income",
+            "definition": "Profit from carrying on a trade, profession or vocation, computed under the Income Tax (Trading and Other Income) Act 2005 and charged to income tax alongside the individual's other income — there is no separate business-level income tax for a sole trader or partner."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-14-check-01",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact that best shows trading profit is taxed as part of the individual, not the business.",
+          "scenarioText": "Amara runs a small bakery as a sole trader. She makes £40,000 trading profit this year, and also has £15,000 of rental income from a flat she owns separately.",
+          "tappableSpans": ["runs a small bakery", "sole trader", "£40,000 trading profit", "£15,000 of rental income"],
+          "correctSpan": "£15,000 of rental income",
+          "feedbackCorrect": "Right — that rental income sits in the same income tax computation as the trading profit. There's no separate 'business tax' box; it's all Amara's income, taxed together.",
+          "feedbackIncorrect": "Look for the fact that shows the trading profit isn't taxed in isolation — the rental income is charged alongside it, in the same personal income tax computation."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "National Insurance on self-employment: Class 2 and Class 4",
+        "voice": "direct — contrasts self-employed NICs with the employee position",
+        "body": [
+          "Self-employed individuals pay National Insurance differently from employees. Class 2 contributions, historically a flat weekly charge, have effectively been abolished for most self-employed people with profits above the small profits threshold — they are now treated as having paid Class 2 for benefit purposes without actually paying it, while those below the threshold can still pay voluntarily to protect their state pension record.",
+          "The real ongoing charge is Class 4, calculated as a percentage of trading profit between a lower profits limit and an upper profits limit, with a lower percentage above the upper limit — mirroring the structure of employee NICs but at materially different rates. For 2025/26, expect a main Class 4 rate in the region of 6% between the limits and 2% above them, though these numbers are reviewed and can change every tax year.",
+          "The exam-relevant point is structural rather than arithmetical: a self-employed person's total NICs on a given profit figure are usually lower than an equivalent employee's combined employee-and-employer NICs on the same earnings — one reason HMRC and successive governments have periodically narrowed that gap."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "NICs on self-employment — the shape of it",
+            "points": [
+              "Class 2: effectively abolished as a compulsory charge for those above the small profits threshold; voluntary payment available below it to protect benefit entitlement",
+              "Class 4: charged as a percentage of trading profit between a lower and an upper profits limit, at a reduced percentage above the upper limit",
+              "Both Class 2 and Class 4 are collected through the self-assessment return, alongside income tax on the same profit figure"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-14-check-02",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "Name the two classes of National Insurance contribution a self-employed sole trader may need to consider on their trading profit.",
+          "acceptableAnswers": ["Class 2 and Class 4", "Class 2, Class 4", "Class 4 and Class 2 NICs"],
+          "modelAnswer": "Class 2 (now effectively abolished for most, with voluntary payment below the small profits threshold) and Class 4 (a percentage charge on profit between the lower and upper profits limits)."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Selling the business: capital gains tax",
+        "voice": "case-narrative — follows a disposal through the CGT charge",
+        "body": [
+          "Selling a business interest — a sole trader's goodwill and assets, or a partnership share — is a disposal for capital gains tax purposes under the Taxation of Chargeable Gains Act 1992. The gain is the disposal proceeds less the acquisition cost (and allowable expenditure), and it's charged to CGT rather than income tax, at the individual's applicable CGT rates after the annual exempt amount.",
+          "This is where advisers earn their fee. A trading profit figure and a capital gain on disposal of the business that generated it are taxed under completely different regimes, with different rates, different allowances, and — critically — a targeted relief that can dramatically change the rate on the gain if the seller planned ahead.",
+          "The trap to avoid: students sometimes assume the whole value built up in a business over the years is somehow 'income' because it came from trading. It isn't — the annual trading profits were already taxed as income as they arose; the gain on eventual disposal of the business itself is a separate, one-off capital event."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume a lump sum received on selling a sole trader business is charged to income tax, on the reasoning that it 'comes from the business'.",
+            "whyItsWrong": "The annual trading profits were already taxed as income as they were earned, year by year. The proceeds of selling the business itself — goodwill, premises, plant — are a capital event, charged to CGT on the gain over cost, not to income tax."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-14-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "understanding",
+          "prompt": "A sole trader sells the whole of her business, including goodwill built up over fifteen years, for a lump sum well above what she originally invested. How is the gain on that sale most likely to be taxed?",
+          "options": ["As trading income, because it derives from the business", "As a capital gain on disposal of a business asset, separately from any income tax already paid on annual trading profits", "It is entirely tax-free because trading profits were already taxed each year", "As a dividend, because goodwill is treated like a distribution of retained profit"],
+          "correctIndex": 1,
+          "trapExplanation": "The instinct that 'it came from the business, so it must be income' is exactly the trap — disposal of the business itself is a capital event, taxed separately from the income tax already charged on the profits it generated while trading.",
+          "feedbackCorrect": "Exactly — the disposal is a separate capital event from the annual income tax charge on trading profit.",
+          "feedbackIncorrect": "Re-read the distinction: annual trading profit is income, taxed as it arises; the gain on selling the business itself is a one-off capital event, taxed to CGT."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Business Asset Disposal Relief: the qualifying conditions",
+        "voice": "reference-style — a checklist part",
+        "body": [
+          "Business Asset Disposal Relief reduces the CGT rate on a qualifying disposal of a business or business assets, up to a lifetime limit (currently £1 million of qualifying gains). It exists to encourage entrepreneurs and business owners to build and eventually realise value in a trading business, rather than taxing that realisation at the full main CGT rate.",
+          "The qualifying conditions turn on ownership and involvement, tested over a minimum period ending with the disposal — currently two years. For a sole trader or partner, that means having carried on the business (alone or in partnership) throughout that period. For a shareholder in a personal trading company, it means holding at least 5% of the ordinary share capital and voting rights, and being an officer or employee of the company, throughout the period.",
+          "Get the period wrong and the whole relief is lost — there is no partial credit for having qualified for eighteen months out of the required two years. This is one of the more common ways an otherwise well-planned disposal fails to attract the relief in practice."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Taxation of Chargeable Gains Act 1992, Business Asset Disposal Relief provisions",
+            "text": "Relief is available on a qualifying business disposal where, throughout the period of two years ending with the disposal, the individual carries on the business (or, for a company, holds at least 5% of the ordinary share capital and voting rights and is an officer or employee of the company), up to the individual's lifetime limit of qualifying gains.",
+            "elements": ["A qualifying business disposal (sole trade, partnership interest, or shares in a personal company)", "The two-year minimum period, tested up to the date of disposal", "For shares: at least 5% ordinary share capital and voting rights, plus officer/employee status", "Lifetime limit on qualifying gains"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-14-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Two sole traders each sell their business this year. Which is more likely to qualify for Business Asset Disposal Relief?",
+          "scenarioA": "Priti has run her catering business alone for six years and sells the whole business, including goodwill, this year.",
+          "scenarioB": "Dev bought a catering business eighteen months ago and sells it this year, having run it himself throughout that period.",
+          "correctScenario": "A",
+          "explanation": "Priti satisfies the two-year minimum ownership and involvement period comfortably; Dev falls short at eighteen months, so his disposal does not qualify — there is no partial or pro-rated relief for falling short of the period."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "What the relief is actually worth",
+        "voice": "argumentative — makes the case for planning ahead of a disposal",
+        "body": [
+          "Qualifying for Business Asset Disposal Relief doesn't just tweak the numbers at the margins — it changes which rate band the gain sits in altogether. Without it, a gain on disposal of a business is charged at the main CGT rates that apply to individuals generally. With it, up to the £1 million lifetime limit, the gain is charged at a specially reduced rate instead.",
+          "That reduced rate is not fixed for all time — it has already moved once in recent years and is due to move again: for 2025/26 it sits at 14%, and it is scheduled to rise to 18% from 6 April 2026. Advising a client on the timing of a disposal, not just its structure, can therefore genuinely change their tax bill.",
+          "This is the lesson's closing point worth sitting with: two clients with identical businesses, identical gains, and identical two-year qualifying periods can end up paying tax at meaningfully different rates purely because of when they sold and whether anyone checked the current rate before advising them to sign."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Lifetime limit",
+            "definition": "The cumulative cap on gains that can benefit from Business Asset Disposal Relief across an individual's lifetime (currently £1 million) — once gains taxed at the reduced rate reach that limit, later qualifying gains are taxed at the main CGT rates instead."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-14-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "Rosa has run her florist business alone for four years and is planning to sell it. She has never previously claimed Business Asset Disposal Relief. Advise her, in outline, on whether the relief is likely to apply and why the timing of the sale matters.",
+          "factsToOrder": [
+            "Rosa has run the business alone for four years",
+            "She has never previously claimed Business Asset Disposal Relief",
+            "She is planning the timing of the sale",
+            "The relief's reduced rate is scheduled to change from 6 April 2026"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 2, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether Rosa's disposal qualifies for Business Asset Disposal Relief, and whether the timing of the sale affects the rate she pays.",
+            "rule": "Relief is available where the individual has carried on the business throughout the two years ending with disposal, up to the lifetime limit of qualifying gains, at a reduced CGT rate that is subject to change between tax years.",
+            "application": "Rosa comfortably satisfies the two-year ownership and involvement condition, having run the business alone for four years, and has made no prior claims that would erode her lifetime limit. Because the reduced rate is scheduled to rise from 6 April 2026, completing the disposal before that date, rather than after, is likely to reduce the CGT payable on the same gain.",
+            "conclusion": "Rosa is likely to qualify for the relief on the ownership and involvement conditions; she should be advised to check the current rate against the date of completion, since timing the disposal either side of a rate change can materially affect her tax bill."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-14-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A sole trader makes £200,000 trading profit for the year and has no other income. Which of the following correctly describes how the profit is taxed?",
+      "options": ["A separate 'business tax' is charged on the whole profit at a flat rate", "The profit is charged to income tax under the individual's personal allowance and rate bands, exactly like any other income", "Corporation tax applies because the turnover exceeds £85,000", "No tax is due until the profit is drawn out of the business"],
+      "correctIndex": 1,
+      "explanation": "There is no separate business-level tax for a sole trader. Trading profit is simply charged to income tax within the individual's own personal allowance and rate bands as it arises, regardless of whether it is drawn out."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A partner in an ordinary partnership asks whether their share of partnership trading profit is taxed differently from a sole trader's profit. What should they be told?",
+      "options": ["It is taxed under corporation tax instead of income tax", "It is charged to income tax on the partner personally, in the same way as a sole trader's profit, based on their profit share", "It is exempt from tax until the partnership is dissolved", "It is only taxed if the partner also draws a salary from the partnership"],
+      "correctIndex": 1,
+      "explanation": "A partnership is not itself a separate taxpayer for income tax purposes; each partner is taxed personally on their share of the trading profit, just as a sole trader is taxed on the whole of theirs."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A self-employed consultant has trading profit comfortably above the small profits threshold for the year. What is the current practical position on Class 2 National Insurance for someone in her position?",
+      "options": ["She must pay a compulsory flat weekly Class 2 charge in addition to Class 4", "She is treated as having paid Class 2 for benefit purposes without an actual compulsory payment, above the small profits threshold", "Class 2 no longer exists in any form for anyone", "Class 2 is only payable by partners, never by sole traders"],
+      "correctIndex": 1,
+      "explanation": "Above the small profits threshold, self-employed individuals are treated as having Class 2 credited for benefit entitlement purposes without a compulsory payment; below it, voluntary payment remains available to protect benefit entitlement."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-04",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "Which National Insurance class is the main ongoing percentage charge on a self-employed individual's trading profit between the lower and upper profits limits?",
+      "options": ["Class 1", "Class 2", "Class 3", "Class 4"],
+      "correctIndex": 3,
+      "explanation": "Class 4 is the percentage charge on trading profit between the lower and upper profits limits, at a reduced percentage above the upper limit — it is the main ongoing NICs charge for the self-employed."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A sole trader sells her business, realising a substantial gain over what she originally invested in it. Her accountant tells her the gain will be added to her trading profit for the year and taxed as income. Is the accountant right?",
+      "options": ["Yes — anything arising from the business is trading income", "No — the gain on disposal of the business is a capital event, charged to capital gains tax separately from the income tax already paid on trading profits", "Yes, but only if the sale happens in the same tax year as the last year of trading", "No — the gain is entirely exempt because trading profits were already taxed"],
+      "correctIndex": 1,
+      "trapExplanation": "The 'it came from the business, so it's income' reasoning is the trap this item is built to catch — disposal of the business is a one-off capital event under the Taxation of Chargeable Gains Act 1992, distinct from the annual income tax charge on trading profit.",
+      "explanation": "Selling the business itself is a disposal for CGT purposes; the gain is charged separately from, and differently to, the income tax already paid on the profits the business generated while trading."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Dev bought a business eighteen months ago and has run it himself throughout. He now wants to sell and claims Business Asset Disposal Relief. What is the most likely outcome?",
+      "options": ["He qualifies in full, since he has run the business himself the whole time he's owned it", "He qualifies for a pro-rated share of the relief, reflecting eighteen out of the required twenty-four months", "He does not qualify — the two-year minimum period is not met, and there is no partial or pro-rated relief for falling short", "He qualifies automatically because the business is a sole trade rather than a company"],
+      "correctIndex": 2,
+      "trapExplanation": "Students often assume relief scales with however much of the qualifying period was actually met — it doesn't. The two-year period is a threshold condition: falling short by even a few months means no relief at all, not a reduced amount.",
+      "explanation": "The qualifying period is currently two years ending with the disposal. Eighteen months does not meet it, and Business Asset Disposal Relief offers no pro-rated relief for a shorter period of ownership and involvement."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.45,
+      "prompt": "A shareholder in a personal trading company wants to check whether a future share sale could qualify for Business Asset Disposal Relief. Which combination of conditions is closest to what must be satisfied throughout the two-year period?",
+      "options": ["Holding any number of shares, regardless of class or voting rights", "Holding at least 5% of the ordinary share capital and voting rights, and being an officer or employee of the company", "Being a director only, with no minimum shareholding required", "Holding at least 25% of the ordinary share capital, with no employment condition"],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to import the 25% or similar thresholds used elsewhere in company law (for example, for a 'significant' shareholding) — the Business Asset Disposal Relief threshold for shares is materially lower, at 5%, combined with an officer or employee condition.",
+      "explanation": "For a share disposal to qualify, the individual must hold at least 5% of the ordinary share capital and voting rights and be an officer or employee of the company throughout the two-year period."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client has already used £950,000 of qualifying gains against the Business Asset Disposal Relief lifetime limit from an earlier disposal, and is now considering a further qualifying disposal expected to produce a £300,000 gain. What should the client be advised?",
+      "options": ["The whole £300,000 gain will benefit from the reduced rate, since the lifetime limit resets each tax year", "Only £50,000 of the new gain will benefit from the reduced rate; the remaining £250,000 will be taxed at the main CGT rates", "None of the new gain qualifies, because the lifetime limit has already been reached", "The lifetime limit only applies to share disposals, not to a sole trade or partnership interest"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming the lifetime limit either resets or is simply exhausted outright — it is genuinely cumulative and lifetime, so only the remaining headroom (here, £50,000) attracts the reduced rate, with the balance taxed at the main rates.",
+      "explanation": "The lifetime limit is cumulative across an individual's disposals. With £950,000 already used, only £50,000 of headroom remains at the reduced rate; the rest of the new gain is taxed at the main CGT rates."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A partner's trading profit share for the year, once combined with a small amount of savings interest, takes her total income just over £50,270. What is the effect on the portion of trading profit above that threshold?",
+      "options": ["The whole of her trading profit is taxed at the higher rate", "Only the amount of income above £50,270 is taxed at the higher rate; the rest remains at the basic rate", "Trading profit is always taxed at the basic rate regardless of total income", "The savings interest is ignored entirely when calculating which band applies"],
+      "correctIndex": 1,
+      "explanation": "Income tax bands are marginal: only the slice of income above a threshold is taxed at the higher rate for that slice, and all income — including savings interest — is taken into account in working out which band applies to which slice."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A sole trader is deciding whether to complete the sale of his business before or after 6 April 2026, and the disposal will qualify for Business Asset Disposal Relief either way. What should he be advised about timing, based on the scheduled change to the relief's rate?",
+      "options": ["Timing makes no difference, since the relief's rate is fixed permanently", "Completing before 6 April 2026 is likely to result in a lower rate of CGT on the qualifying gain than completing after that date, given the scheduled rise from 14% to 18%", "Completing after 6 April 2026 always produces a lower tax bill", "The relief stops applying altogether from 6 April 2026"],
+      "correctIndex": 1,
+      "explanation": "With the reduced rate scheduled to rise from 14% to 18% on 6 April 2026, completing the qualifying disposal before that date is likely to attract the lower rate on the same gain — though the actual rate in force at completion should always be checked."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-11",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "A client asks which statute governs the income tax charge on their sole trade profits. Which is the correct answer?",
+      "options": ["Corporation Tax Act 2010", "Income Tax (Trading and Other Income) Act 2005", "Taxation of Chargeable Gains Act 1992", "Value Added Tax Act 1994"],
+      "correctIndex": 1,
+      "explanation": "The Income Tax (Trading and Other Income) Act 2005 charges trading profit of a sole trader or partner to income tax; the other statutes listed govern corporation tax, capital gains and VAT respectively."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following best describes how a self-employed individual's Class 4 National Insurance liability is calculated?",
+      "options": ["As a flat weekly amount regardless of profit level", "As a percentage of trading profit between a lower and an upper profits limit, at a reduced percentage above the upper limit", "As a fixed percentage of turnover, before deducting any expenses", "As a percentage of drawings taken from the business, not of profit"],
+      "correctIndex": 1,
+      "explanation": "Class 4 is calculated on trading profit, not turnover or drawings, as a percentage between the lower and upper profits limits, with a reduced percentage applying above the upper limit."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which statement correctly captures the relationship between the two-year qualifying period for Business Asset Disposal Relief and the date of disposal?",
+      "options": ["The two years can fall at any point in the individual's ownership, not necessarily ending with the disposal", "The two years must end with the date of disposal itself", "The two-year period is measured from the date the relief is claimed, not the disposal", "There is no minimum period — only the 5% shareholding condition matters"],
+      "correctIndex": 1,
+      "explanation": "The qualifying period runs for the two years ending with the disposal itself — it is not a floating two years at any earlier point in the individual's ownership."
+    },
+    {
+      "itemId": "sqe1-blp-14-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A trading profit figure needs to be taxed for the current year. Which combination correctly matches each charge to its governing statute?",
+      "options": ["Income tax on the profit under the Income Tax (Trading and Other Income) Act 2005; CGT on any later disposal of the business under the Taxation of Chargeable Gains Act 1992", "Income tax under the Taxation of Chargeable Gains Act 1992; CGT under the Income Tax (Trading and Other Income) Act 2005", "Both income tax and CGT are charged under the Value Added Tax Act 1994", "Income tax under the Corporation Tax Act 2010; CGT under the Income Tax (Trading and Other Income) Act 2005"],
+      "correctIndex": 0,
+      "explanation": "Annual trading profit is charged to income tax under the Income Tax (Trading and Other Income) Act 2005; a later disposal of the business itself is a separate capital event charged to CGT under the Taxation of Chargeable Gains Act 1992."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this lesson is collapsing income tax and capital gains tax into one charge — treating the proceeds of selling a business as if they were simply more trading profit. Keep the annual income charge and the one-off disposal charge separate, and always check whether the current-year rates and thresholds quoted match the year in question.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.taxing-unincorporated-business"
+  }
+}

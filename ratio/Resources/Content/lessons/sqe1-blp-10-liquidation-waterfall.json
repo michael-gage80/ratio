@@ -1,0 +1,366 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-10",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 10,
+  "topicId": "sqe1.business-law.liquidation-waterfall",
+  "title": "Liquidation and the statutory distribution waterfall",
+  "subtitle": "Compulsory, creditors' voluntary and members' voluntary liquidation, and who gets paid first",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Distinguish compulsory liquidation, creditors' voluntary liquidation (CVL) and members' voluntary liquidation (MVL) by their trigger, procedure and who controls the appointment of the liquidator",
+    "State the statutory order of distribution in a liquidation, from the liquidator's expenses through fixed and floating charge holders to unsecured creditors and members",
+    "Apply the statutory waterfall to a set of facts to identify which class of claimant is paid, in what order, and what (if anything) is left for the class below"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Insolvency Act 1986, s 122", "role": "Grounds on which the court may make a compulsory winding-up order, most commonly inability to pay debts" },
+    { "citation": "Insolvency Act 1986, s 123", "role": "Defines when a company is deemed unable to pay its debts (cash-flow and balance-sheet tests, and the statutory demand route)" },
+    { "citation": "Insolvency Act 1986, s 89", "role": "Requires a directors' statutory declaration of solvency before a members' voluntary liquidation can proceed" },
+    { "citation": "Insolvency Act 1986, s 107", "role": "States the pari passu principle governing distribution among unsecured creditors" },
+    { "citation": "Insolvency Act 1986, ss 175, 176A and Sch 6", "role": "Set out preferential debts and the ring-fenced prescribed part for unsecured creditors out of floating charge realisations" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often learn 'liquidation' as one undifferentiated word. In practice, and in the exam, the first question is always which route you're in — because that decides who is in control and who gets a say before anything is distributed.",
+    "profileHooks": {
+      "weakApplication": "You know the categories. The pool below leans on fact patterns where money runs out partway down the waterfall — practise stopping at the right rung, not naming all of them.",
+      "weakKnowledge": "Start with the three liquidation routes in Part 1 before the waterfall in Parts 2 to 4 — the order of payment only makes sense once you know whose liquidation it is and why it started."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A company owes £2 million. Its assets, once sold, raise £340,000. Nobody in the queue for that money is wrong to expect payment — the bank with a fixed charge, the landlord, the employees owed final wages, HMRC, the trade creditors, the directors who put in a personal loan. The law doesn't decide who deserves it most. It decides the order, in advance, and then simply runs out.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The prescribed part cap and the secondary preferential status of certain HMRC debts have both changed within the last few years (most recently the cap rising to £800,000 for floating charges created on or after 6 April 2020) — always check the current figures before advising, as these are adjusted by statutory instrument rather than primary legislation."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three routes into liquidation — and who is driving each one",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "'Liquidation' covers three legally distinct procedures, and the exam will expect you to identify which one is running from the facts alone — the word 'liquidation' on its own tells you almost nothing.",
+          "Compulsory liquidation is court-driven. A creditor (most commonly), the company itself, a director, a contributory, or in some cases the Secretary of State petitions the court under s 122 Insolvency Act 1986 for a winding-up order, typically on the ground that the company is unable to pay its debts (s 123). If the court makes the order, the Official Receiver becomes liquidator initially, with a creditors' decision procedure available to replace them with an insolvency practitioner.",
+          "Creditors' voluntary liquidation (CVL) is used where the company is insolvent but the directors and members choose to wind it up themselves rather than wait for a creditor to petition. The members pass a special resolution to wind up, and the directors must make a statement of the company's affairs; creditors are given the opportunity to nominate the liquidator, and their choice prevails over the members' if the two differ.",
+          "Members' voluntary liquidation (MVL) is the odd one out: it is only available where the company is solvent. Before the resolution to wind up can be passed, the directors must make a statutory declaration of solvency under s 89, confirming they have made a full enquiry into the company's affairs and believe it will be able to pay its debts in full, with interest, within a period not exceeding 12 months. Making that declaration without reasonable grounds for the opinion is a criminal offence."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Three routes at a glance",
+            "points": [
+              "Compulsory liquidation — court order on a s 122 ground, usually inability to pay debts; petition typically by a creditor",
+              "Creditors' voluntary liquidation (CVL) — insolvent company, members resolve to wind up, creditors control the choice of liquidator",
+              "Members' voluntary liquidation (MVL) — solvent company only, gated by a directors' statutory declaration of solvency under s 89",
+              "A false declaration of solvency without reasonable grounds under s 89 is a criminal offence, not merely a professional slip"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-10-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A company's directors want to wind the company up themselves rather than wait for a creditor to petition the court, but the company cannot pay all its debts in full. Which procedure is this?",
+          "options": ["Members' voluntary liquidation", "Creditors' voluntary liquidation", "Compulsory liquidation"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. A CVL is the route for an insolvent company where members and directors initiate winding up themselves — the key word 'creditors' signals who controls the appointment of the liquidator, not who starts the process.",
+          "feedbackIncorrect": "The company here is insolvent and the process is voluntary rather than court-driven — that combination is a CVL. MVL requires solvency; compulsory liquidation is initiated by a court petition."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Building the waterfall: where fixed charges and liquidation expenses sit",
+        "voice": "argumentative — states the strongest case for the rule, then complicates it",
+        "body": [
+          "Once a company is in liquidation, its remaining assets don't simply get divided among everyone who is owed money. They are paid out in a fixed statutory order — the 'waterfall' — and each level must be paid in full before the level below receives anything at all.",
+          "At the very top sit fixed charge holders. Strictly, a fixed charge holder isn't part of the waterfall in the way the rest are: they have a proprietary right over a specific, identified asset (a building, a piece of machinery), and they can realise that security and take the proceeds before the liquidator's general pool of assets is even calculated. Only any surplus, once the fixed charge debt is satisfied, falls back into the pool for everyone else.",
+          "Next come the expenses of the liquidation itself — the liquidator's own remuneration and the costs of realising and distributing the assets. This might look self-serving, but the logic is straightforward: without someone being paid to collect, sell and distribute the assets, there would be no fund for anyone else to share. The Insolvency Rules set out their own internal order of priority among different types of expense, but for SQE1 purposes it's enough to know that liquidation expenses as a class rank above every unsecured class below them."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Insolvency Act 1986, s 107",
+            "text": "Subject to the provisions of this Act as to preferential payments, the company's property in a voluntary winding up shall on the winding up be applied in satisfaction of the company's liabilities pari passu and, subject to that application, shall (unless the articles otherwise provide) be distributed among the members according to their rights and interests in the company.",
+            "elements": ["Company's property applied to liabilities pari passu (equally, rateably)", "Subject to preferential payments taking priority first", "Any surplus after liabilities distributed to members per their class rights"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-10-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 107, what happens to a company's property in a voluntary winding up once liabilities have been satisfied?",
+          "options": ["It is distributed among the members according to their rights and interests in the company", "It is returned automatically to the directors", "It is paid to the Crown as bona vacantia in every case", "It is retained by the liquidator as additional remuneration"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — s 107 makes clear that any surplus after liabilities are met (and after preferential payments) goes to the members, according to their class rights, not to anyone else by default.",
+          "feedbackIncorrect": "Re-read the second half of s 107: the property left over after liabilities are satisfied is distributed among the members according to their rights and interests — not retained or handed elsewhere."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Preferential creditors and the prescribed part",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Below liquidation expenses come the preferential creditors, listed in Schedule 6 to the Insolvency Act 1986. The most important category for SQE1 purposes is employees' claims for unpaid wages, holiday pay and pension contributions, subject to a statutory cap per employee. Since reforms taking effect in December 2020, a second tier of 'secondary preferential' status was created for certain HMRC debts — principally VAT, PAYE income tax and employee National Insurance contributions that the company held on trust or deducted from staff but had not yet paid over. Ordinary corporation tax owed by the company itself remains an unsecured debt, not preferential — a distinction worth holding onto precisely because it is easy to blur.",
+          "Next in the waterfall — and easy to forget — is the prescribed part under s 176A. Where a company has granted a floating charge, a portion of the assets that would otherwise go straight to the floating charge holder is ring-fenced instead for unsecured creditors, calculated on a sliding scale: 50% of the first £10,000 of net property, plus 20% of the remainder, up to a current cap of £800,000 (for floating charges created on or after 6 April 2020). The court can disapply this where the cost of distributing it would be disproportionate to the benefit.",
+          "The prescribed part exists precisely because floating charges, by their nature, can sweep up almost all of a company's circulating assets — stock, receivables, cash — leaving unsecured trade creditors with nothing. Parliament's answer was not to abolish floating charge priority, but to carve a guaranteed slice out of it for the class below."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Prescribed part",
+            "definition": "A ring-fenced sum, calculated under s 176A Insolvency Act 1986 on a sliding scale up to a statutory cap, set aside from floating charge assets for unsecured creditors before the floating charge holder is paid."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-10-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these classes of claimant in the order they are paid in a liquidation, from first to last.",
+          "items": ["Liquidation expenses", "Preferential creditors (Schedule 6)", "Prescribed part for unsecured creditors", "Floating charge holder (remaining balance)"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: expenses first, then preferential debts, then the ring-fenced prescribed part carved out of the floating charge realisations, and only then does the floating charge holder take what remains.",
+          "feedbackIncorrect": "Check the order again — the prescribed part is deliberately taken out of the floating charge holder's pool before the floating charge holder is paid, and both sit below preferential creditors and liquidation expenses."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Floating charge holders, unsecured creditors, and the bottom of the fall",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "Once the prescribed part has been carved out, the floating charge holder is paid from what remains of the assets caught by their charge — a floating charge crystallises into a fixed charge over the relevant class of assets on the onset of insolvency, but it still ranks below liquidation expenses, preferential debts and the prescribed part.",
+          "Below the floating charge holder come the unsecured creditors: trade suppliers, ordinary HMRC debts such as corporation tax, and any part of a preferential or secured debt that wasn't fully covered by its own security. They share pari passu under s 107 — proportionately, according to the size of their debt, not in the order they happen to claim.",
+          "Below unsecured creditors sit two categories worth naming precisely because students conflate them: statutory interest on debts under s 189 (payable only once all the debts themselves have been paid in full — a rare event), and deferred (postponed) debts, which includes sums due to a member in their capacity as a member, such as unpaid dividends, and debts that have been contractually or statutorily subordinated. Only after every one of those rungs is cleared do the members receive any surplus at all — and in the overwhelming majority of liquidations, the waterfall runs dry long before it reaches them."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The full waterfall, top to bottom",
+            "points": [
+              "1. Fixed charge holders (from the specific secured asset)",
+              "2. Costs and expenses of the liquidation",
+              "3. Preferential creditors (Sch 6) — employees, then secondary preferential HMRC debts",
+              "4. Prescribed part (s 176A) — ring-fenced for unsecured creditors",
+              "5. Floating charge holders — remaining balance after the prescribed part",
+              "6. Unsecured creditors — pari passu",
+              "7. Statutory interest on debts (s 189)",
+              "8. Deferred/postponed debts",
+              "9. Members — any surplus, per their class rights"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-10-check-04",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that ordinary trade creditors are paid before the company's floating charge holder receives anything at all?",
+          "sliderLabels": ["Trade creditors paid first", "Floating charge holder paid first"],
+          "correctPosition": "Floating charge holder paid first",
+          "explanation": "Floating charge holders rank above ordinary unsecured trade creditors — only the prescribed part is peeled off for unsecured creditors before the floating charge holder is paid the remaining balance. Trade creditors are further down the waterfall, not further up."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Running the waterfall on the facts",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Here is the question SQE1 actually tests: given a fixed pot of money and a list of claimants, where does the money run out — and who, further down the list, gets nothing at all?",
+          "Take a company in CVL. It has a fixed charge over its factory (held by Bank A, owed £300,000, factory sells for £350,000), a floating charge over its stock and receivables (held by Bank B, owed £200,000), liquidation expenses of £40,000, preferential employee claims of £60,000, and trade creditors owed £150,000. The factory sale raises £350,000, of which £300,000 goes to Bank A and the £50,000 surplus joins the general pool along with £180,000 raised from selling stock and receivables (the floating charge asset).",
+          "Work it through: the general pool is £230,000 (£50,000 surplus plus £180,000). Liquidation expenses of £40,000 come off first, leaving £190,000. Preferential employee claims of £60,000 come next, leaving £130,000. The prescribed part is then calculated on the £180,000 of floating charge realisations (not the whole pool) — roughly £10,000 (50% of the first £10,000) plus 20% of £170,000, i.e. £34,000, so £44,000 total — ring-fenced for unsecured creditors. Bank B then takes what's left of the floating charge realisations up to its £200,000 debt; trade creditors take the prescribed part plus anything left over, pari passu, until the money runs out.",
+          "Notice what the arithmetic actually shows: Bank B, despite being 'secured' by a floating charge, may not recover its debt in full — and trade creditors may recover only a fraction of theirs. The waterfall doesn't guarantee anyone gets paid; it only guarantees the order in which the money is offered."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Running the waterfall: a worked method",
+            "description": "The steps for applying the statutory waterfall to a set of facts.",
+            "nodes": [
+              { "id": "step1", "label": "Identify and pay fixed charge holders directly from their specific secured asset; surplus (if any) joins the general pool" },
+              { "id": "step2", "label": "Deduct liquidation expenses from the general pool" },
+              { "id": "step3", "label": "Deduct preferential creditors (Sch 6) from what remains" },
+              { "id": "step4", "label": "Calculate and ring-fence the prescribed part from floating charge realisations for unsecured creditors" },
+              { "id": "step5", "label": "Pay the floating charge holder the balance of floating charge realisations up to their debt" },
+              { "id": "step6", "label": "Pay unsecured creditors pari passu from what remains, including the prescribed part" },
+              { "id": "step7", "label": "Any surplus after interest and deferred debts goes to members" }
+            ],
+            "edges": [
+              { "from": "step1", "to": "step2" },
+              { "from": "step2", "to": "step3" },
+              { "from": "step3", "to": "step4" },
+              { "from": "step4", "to": "step5" },
+              { "from": "step5", "to": "step6" },
+              { "from": "step6", "to": "step7" }
+            ],
+            "textAlternative": "To run the waterfall on a set of facts: pay fixed charge holders directly from their asset, with any surplus joining the general pool; deduct liquidation expenses; then preferential creditors; then calculate and ring-fence the prescribed part from floating charge realisations; then pay the floating charge holder the remaining floating charge balance; then pay unsecured creditors pari passu, including the prescribed part; any surplus after statutory interest and deferred debts goes to members."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-10-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A company in liquidation has £120,000 left after liquidation expenses and preferential creditors are paid, all of it raised from floating charge assets. Its floating charge holder is owed £150,000; its unsecured trade creditors are owed £90,000. Ignoring the prescribed part for simplicity, what happens to the £120,000?",
+          "options": ["It is split equally between the floating charge holder and the trade creditors", "It all goes to the floating charge holder, since £120,000 is less than the £150,000 owed and there is nothing left for creditors below in the waterfall", "It all goes to the trade creditors, since they are the more vulnerable class", "It is held back for the members"],
+          "correctIndex": 1,
+          "explanation": "The floating charge holder ranks above unsecured trade creditors in the waterfall (subject only to the prescribed part carve-out, ignored here for simplicity). Since the £120,000 doesn't even cover the floating charge holder's £150,000 debt, nothing reaches the unsecured creditors at all — the waterfall has simply run dry before it gets to them."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-10-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A company's directors resolve to wind the company up, having made a statutory declaration under s 89 Insolvency Act 1986 confirming it can pay its debts in full within 12 months. Which procedure is this?",
+      "options": ["Members' voluntary liquidation", "Creditors' voluntary liquidation", "Compulsory liquidation", "Administration"],
+      "correctIndex": 0,
+      "explanation": "A s 89 statutory declaration of solvency is the gateway document unique to an MVL — it is only available where the company is solvent, unlike a CVL or compulsory liquidation."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A creditor petitions the court for a winding-up order on the ground that the company cannot pay its debts. Which route into liquidation is this?",
+      "options": ["Compulsory liquidation", "Members' voluntary liquidation", "Creditors' voluntary liquidation", "A scheme of arrangement"],
+      "correctIndex": 0,
+      "explanation": "A court petition under s 122, typically on the s 123 inability-to-pay-debts ground, is what marks out compulsory liquidation from the two voluntary routes, which are initiated by the company itself."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "A liquidator is finalising the order of payment in a CVL. Which of the following is NOT a preferential debt under Schedule 6 Insolvency Act 1986?",
+      "options": ["Unpaid employee wages within the statutory cap", "Unpaid employee holiday pay", "Corporation tax owed by the company on its own trading profits", "Certain HMRC debts such as VAT and PAYE held on the company's behalf"],
+      "correctIndex": 2,
+      "trapExplanation": "It's tempting to assume all Crown debts are preferential, but ordinary corporation tax owed by the company on its own profits is an unsecured debt. Only specific categories — employee claims, and the secondary preferential HMRC debts the company collected on others' behalf (VAT, PAYE, employee NICs) — carry preferential status.",
+      "explanation": "Preferential status is narrowly defined by Schedule 6 and does not extend to every debt owed to a public body — corporation tax remains unsecured."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A company's floating charge assets, once realised, are about to be distributed. Which of the following best describes the purpose of the prescribed part under s 176A?",
+      "options": ["It abolishes floating charge priority entirely in favour of unsecured creditors", "It ring-fences a portion of floating charge realisations, calculated on a statutory sliding scale up to a cap, for unsecured creditors before the floating charge holder is paid", "It guarantees unsecured creditors are paid in full before any secured creditor", "It only applies where the company has no preferential creditors"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often overstate the prescribed part as abolishing floating charge priority, or as a full-recovery guarantee for unsecured creditors. It does neither — it is a capped, formula-based carve-out from the floating charge pool, and unsecured creditors may still recover only a fraction of what they are owed.",
+      "explanation": "The prescribed part is a partial, formula-based protection for unsecured creditors carved out of floating charge realisations, not a general priority reversal."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Under s 89 Insolvency Act 1986, what must the directors' statutory declaration of solvency confirm for an MVL to proceed?",
+      "options": ["That the company will be able to pay its debts in full, with interest, within a period not exceeding 12 months from commencement of the winding up", "That the company has no creditors at all", "That the company's assets exceed its liabilities by at least 50%", "That the company has been trading profitably for the last three years"],
+      "correctIndex": 0,
+      "explanation": "The s 89 test is forward-looking and time-bound: full payment of debts, with interest, within a maximum of 12 months — not a test of past profitability or a zero-creditor requirement."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under s 107 Insolvency Act 1986, how is a company's property applied among its unsecured liabilities in a voluntary winding up, once preferential payments have been made?",
+      "options": ["Pari passu — equally and rateably, according to the size of each debt", "In the order the debts fell due", "According to which creditor issued proceedings first", "At the liquidator's discretion"],
+      "correctIndex": 0,
+      "explanation": "s 107 establishes the pari passu principle: unsecured creditors share rateably in what is available, not on a first-come, first-served or discretionary basis."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-07",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "A director wishes to petition for the compulsory winding up of their own company. Under s 122 Insolvency Act 1986, is this possible?",
+      "options": ["Yes — s 122 permits a petition by a range of parties including the company itself and, in the right circumstances, its directors or contributories, not only by creditors", "No — only a creditor may ever petition under s 122", "No — only the Secretary of State may petition under s 122", "Yes, but only if the company has already entered administration first"],
+      "correctIndex": 0,
+      "explanation": "s 122 is not limited to creditor petitions — the company itself, directors (via the company), and contributories can also petition on the specified grounds, most commonly inability to pay debts."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A company in liquidation has a fixed charge over its warehouse held by a bank, owed £250,000. The warehouse sells for £310,000 in the liquidation. What should the liquidator do with the sale proceeds?",
+      "options": ["Pay the bank £250,000 from the proceeds and add the £60,000 surplus to the general pool of assets for distribution down the waterfall", "Add the full £310,000 to the general pool and let the bank claim as an unsecured creditor", "Pay the bank the full £310,000 regardless of the debt owed", "Hold the proceeds until all preferential creditors are identified before paying the bank anything"],
+      "correctIndex": 0,
+      "explanation": "A fixed charge holder is paid directly from the specific secured asset up to the debt owed; only the surplus above that debt falls into the general pool for the rest of the waterfall."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "After liquidation expenses and preferential creditors are paid, £80,000 remains from floating charge realisations. The prescribed part calculation ring-fences £24,000 of this for unsecured creditors. The floating charge holder is owed £70,000. How much does the floating charge holder actually receive?",
+      "options": ["£56,000 — the £80,000 remaining after the £24,000 prescribed part is ring-fenced, which is less than the £70,000 owed", "£70,000 in full, since the prescribed part comes from a separate fund", "£80,000, ignoring the prescribed part entirely", "Nothing, because unsecured creditors are paid first from floating charge assets"],
+      "correctIndex": 0,
+      "explanation": "The prescribed part is taken out of the floating charge realisations before the floating charge holder is paid, so the floating charge holder can only draw on what remains — here £56,000, short of the £70,000 owed."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A liquidator has £15,000 left after paying liquidation expenses, preferential creditors, the prescribed part and the floating charge holder in full. Unsecured trade creditors are owed £45,000 in total, and there are no interest or deferred claims. What should happen to the £15,000?",
+      "options": ["It is distributed among the unsecured trade creditors pari passu, so each receives roughly one-third of what they are owed", "It is paid to the members as surplus", "It is retained by the liquidator as a discretionary bonus", "It is returned to the floating charge holder"],
+      "correctIndex": 0,
+      "explanation": "Once the classes above unsecured creditors are cleared, the unsecured pool shares pari passu in what remains — here proportionately, since the fund does not cover the full £45,000 owed."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-11",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Where does a fixed charge holder sit in relation to the statutory waterfall applied to a company's general assets?",
+      "options": ["Outside and above it — they are paid directly from their specific secured asset before the general waterfall is even calculated", "At the very bottom, below members", "Immediately below preferential creditors", "Equal ranking with unsecured trade creditors"],
+      "correctIndex": 0,
+      "explanation": "A fixed charge holder's proprietary right over a specific asset means they are satisfied from that asset directly, ahead of and separate from the general pool that funds the rest of the waterfall."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-12",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A company owes HMRC £40,000 in unpaid VAT (collected from customers but not remitted) and £25,000 in corporation tax on its own profits. In the liquidation waterfall, how should these two HMRC debts be treated?",
+      "options": ["Both are preferential debts ranking above unsecured creditors", "The VAT is a secondary preferential debt; the corporation tax is an unsecured debt", "Both are unsecured debts with no preferential status", "The corporation tax is preferential; the VAT is unsecured"],
+      "correctIndex": 1,
+      "trapExplanation": "The common error is treating all Crown debts alike. VAT held on the company's behalf carries secondary preferential status since the 2020 reforms, but corporation tax on the company's own profits does not — it remains an ordinary unsecured debt.",
+      "explanation": "Secondary preferential status attaches specifically to sums the company collected or deducted on behalf of others (VAT, PAYE, employee NICs), not to taxes on the company's own income."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-13",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A company's floating charge realises £5,000 after liquidation expenses and preferential creditors are paid. The prescribed part formula would technically produce £2,500 to ring-fence for unsecured creditors. What discretion does the court have here under s 176A?",
+      "options": ["The court may disapply the prescribed part where the cost of distributing it would be disproportionate to the likely benefit to unsecured creditors", "The court has no discretion once the formula is calculated", "The court may only increase the prescribed part, never disapply it", "The prescribed part only applies to funds above £100,000"],
+      "correctIndex": 0,
+      "explanation": "s 176A allows the court (or, on smaller sums, the liquidator without applying to court) to disapply the prescribed part where distributing such a small ring-fenced sum would cost more, in administrative terms, than it is worth to unsecured creditors."
+    },
+    {
+      "itemId": "sqe1-blp-10-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "A director makes a statutory declaration of solvency under s 89 without reasonable grounds for believing it to be true, and the company later turns out to be unable to pay its debts. What is the consequence for the director?",
+      "options": ["A civil warning letter from the Insolvency Service only", "A criminal offence, since s 89 makes a declaration without reasonable grounds an offence", "No consequence, as the declaration is not a legally binding statement", "Automatic personal liability for the company's entire debts under s 89 alone"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes assume the sanction here is purely civil (like wrongful trading) or that it is toothless because it is 'just' a declaration. s 89 is explicit: making the declaration without reasonable grounds for the opinion is a criminal offence in its own right.",
+      "explanation": "s 89 treats the statutory declaration as a serious representation, backed by criminal sanction, precisely because it is what allows the company to bypass the creditor-protective features of a CVL."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The single most common mistake in this lesson's test items is assuming a class of creditor is guaranteed payment because it ranks 'above' another class. Ranking only decides the order money is offered in — the waterfall very often runs dry before it reaches classes lower down, including secured floating charge holders.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.liquidation-waterfall"
+  }
+}

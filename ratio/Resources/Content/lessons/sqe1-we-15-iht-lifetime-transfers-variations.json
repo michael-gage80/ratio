@@ -1,0 +1,337 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-we-15",
+  "moduleId": "sqe1-wills-administration-estates",
+  "moduleTitle": "SQE1 · Wills and Administration of Estates",
+  "lessonNumber": 15,
+  "topicId": "sqe1.wills-estates.iht-lifetime-transfers-variations",
+  "title": "Inheritance tax II: lifetime transfers, gifts with reservation, and variations",
+  "subtitle": "PETs, the seven-year rule and taper relief, gifts with reservation of benefit, and reshaping an estate after death",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the potentially exempt transfer regime, the seven-year rule, and what taper relief actually reduces",
+    "Explain why a gift with reservation of benefit under s 102 Finance Act 1986 defeats the seven-year rule",
+    "Apply the two-year variation under s 142 IHTA 1984, including its capital gains tax read-back, to a fact pattern"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Inheritance Tax Act 1984, s 142", "role": "Post-death variation, read back into the deceased's estate for inheritance tax purposes if made within two years" },
+    { "citation": "Finance Act 1986, s 102", "role": "Gifts with reservation of benefit remain in the donor's estate for inheritance tax purposes" },
+    { "citation": "Taxation of Chargeable Gains Act 1992, s 62", "role": "Equivalent capital gains tax read-back for a qualifying post-death variation" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often treat 'gift it and survive seven years' as the whole of lifetime IHT planning. Where the profile shows knowledge is ahead of application, this note appears: 'You know the seven-year rule — this lesson is about the gift that looks like it qualifies but doesn't, and about what can still change after death.'",
+    "profileHooks": {
+      "weakApplication": "You know the rules in outline. The test pool leans on fact patterns designed to look like a clean PET or a clean variation and aren't quite — read every scenario for what the donor actually kept, or what the deadline actually is.",
+      "weakKnowledge": "Start with Parts 1 and 2 and be precise about what taper relief reduces — it is one of the most consistently misunderstood rules in this whole subject."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Everything in this module so far has assumed the estate is fixed by the moment of death — what the deceased owned, what the will or intestacy rules say, what bands and exemptions apply to that fixed picture. This final lesson breaks that assumption twice over: first by looking back at gifts made years before death that can still be pulled back into the taxable estate, and then by looking forward, at how beneficiaries can lawfully rewrite where an inheritance goes after the funeral is over.",
+    "lawStatedNotice": "Inheritance tax rates, bands, and reliefs — including the treatment of lifetime gifts and reliefs referenced in this lesson — are reviewed at least annually at the Budget and can change with little notice. Always confirm the rules current at the relevant date before advising."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Potentially exempt transfers and the seven-year clock",
+        "voice": "structural — sets out the regime as a sequence of steps",
+        "body": [
+          "A lifetime gift by one individual to another (broadly, an outright gift to an individual, or into certain trusts) is a potentially exempt transfer, or PET. The word 'potentially' is doing the work: the gift is not immediately chargeable, and becomes entirely free of inheritance tax if the donor survives seven years from the date of the gift.",
+          "If the donor dies within seven years, the PET 'fails' and becomes chargeable after all, using the nil-rate band and rates in force at the date of death, not the date of the gift. The gift is added back into the donor's cumulative total of transfers in the seven years before death, in chronological order, which can itself affect how much NRB is left for later gifts or the death estate.",
+          "Where tax is payable on a failed PET, taper relief may reduce the tax due if the donor survived at least three years — the next part deals with exactly what that relief does and does not do, because it is one of the most reliably misunderstood rules in this subject."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Potentially exempt transfer (PET)",
+            "definition": "A lifetime gift, typically an outright gift to an individual, that becomes entirely exempt from inheritance tax if the donor survives seven years from the date of the gift, and otherwise becomes chargeable, added back into the donor's cumulative total at death."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-15-check-01",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the correct order for how a failed PET is dealt with on the donor's death.",
+          "items": [
+            "The donor makes a lifetime gift, which is potentially exempt",
+            "The donor dies within seven years of the gift",
+            "The gift is added back into the donor's cumulative total of transfers, in chronological order",
+            "Tax is calculated using the NRB and rates in force at the date of death"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That is the mechanism: the gift's tax fate is only resolved on death, and even then it is assessed using the figures current at death, not at the date of the gift.",
+          "feedbackIncorrect": "Check the order again — the key point is that nothing is finally decided at the date of the gift itself; everything depends on whether the donor survives seven years, and if not, what the position is at death."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Taper relief: what it actually reduces",
+        "voice": "myth-busting — corrects a very common misreading before it hardens",
+        "body": [
+          "Taper relief is the single most misunderstood rule in this area of the syllabus, and it is worth stating plainly what it does not do before saying what it does: taper relief does not reduce the value of the gift that is brought back into the estate. A gift of £200,000 made five years before death is still valued at £200,000 for cumulation purposes, in full.",
+          "What taper relief actually reduces is the tax charged on that gift, and only where tax is otherwise payable on it — that is, where the gift (added to earlier chargeable transfers) exceeds the available nil-rate band. The relief works on a sliding scale depending on how many complete years elapsed between the gift and death, running from three years survived up to the full seven, with no relief at all for death within three years.",
+          "The practical consequence: a large gift that is mostly or wholly within the NRB when cumulated gets no visible benefit from taper relief at all, however long the donor survived past three years — because there was no tax on it to taper in the first place. Students who forget this consistently over-apply taper relief to gifts where it never actually bites."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume taper relief reduces the value of the gift itself, shrinking what gets added back to the estate the longer the donor survived.",
+            "whyItsWrong": "Taper relief only ever reduces the tax charged on a gift that is actually chargeable — it never touches the value transferred. A gift fully covered by the available NRB benefits from no taper relief at all, regardless of survival, simply because there was no tax to taper."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-15-check-02",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Does taper relief reduce the value of a lifetime gift that is added back into the donor's estate on death within seven years?",
+          "options": ["No — it only ever reduces the tax charged on the gift, not the value transferred", "Yes — the longer the donor survives, the lower the gift's value is treated as being"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Keep this distinction sharp: taper relief is a tax-reduction mechanism, not a valuation discount.",
+          "feedbackIncorrect": "Not quite — this is the classic trap. Taper relief leaves the gift's value untouched; it only reduces the tax actually payable on a chargeable gift, and only if tax was payable at all."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Gifts with reservation of benefit: the gift that isn't really given",
+        "voice": "case-style — builds the doctrine around a recognisable fact pattern",
+        "body": [
+          "Suppose a parent 'gives' the family home to their child but carries on living in it rent-free, exactly as before. On paper this looks like a PET — an outright gift that will fall out of the estate if the parent survives seven years. Section 102 Finance Act 1986 stops that from working.",
+          "A gift with reservation of benefit (GROB) is a gift where the donor does not genuinely give up possession and enjoyment of the property, or continues to benefit from it in some way, other than for full consideration. Where a GROB exists, the property remains treated as part of the donor's estate for inheritance tax purposes for as long as the reservation continues — regardless of how many years pass, and even though the property may also have left the donor's legal ownership entirely.",
+          "This is precisely why a GROB defeats the seven-year rule: the seven-year clock only helps a transferor who has genuinely let go of the asset. If the parent in the example above pays a full market rent for continuing to live in the house, the reservation is released and the gift can then run its own seven-year clock from that point — but simply staying on rent-free, however informally, keeps the whole property in the estate at death."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Finance Act 1986, s 102",
+            "text": "Where an individual disposes of any property by way of gift... and either (a) possession and enjoyment of the property is not bona fide assumed by the donee... or (b) at any time in the relevant period the property is not enjoyed to the entire exclusion, or virtually to the entire exclusion, of the donor... the property is referred to... as property subject to a reservation.",
+            "elements": ["A gift of property by the donor", "Possession and enjoyment not genuinely assumed by the donee, or", "The donor continues to enjoy the property (not to the entire exclusion of the donor)", "The reserved benefit is not given for full consideration"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-15-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario is the gift most clearly a gift with reservation of benefit?",
+          "scenarioA": "A father gives his daughter a valuable painting outright, and it hangs in her own home; he visits occasionally and admires it like any guest.",
+          "scenarioB": "A father gives his house to his son but continues to live there rent-free for the rest of his life, exactly as he did before the gift.",
+          "correctScenario": "B",
+          "explanation": "In B, the father has not genuinely given up enjoyment of the property — he continues to live there without paying full consideration, which is a textbook reservation of benefit. In A, the father has no ongoing enjoyment of the painting beyond an ordinary visitor's, so there is no reservation."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Post-death variations: rewriting the will after the funeral",
+        "voice": "practical — treats this as a live planning tool, not a historical curiosity",
+        "body": [
+          "So far, every rule in this module has treated the deceased's dispositions — whether by will or intestacy — as fixed once death occurs. Section 142 IHTA 1984 breaks that assumption. A beneficiary entitled under a will or the intestacy rules can execute a written variation redirecting some or all of their inheritance to someone else, and, provided it is made within two years of the death and meets the formal requirements, it is read back into the deceased's estate for inheritance tax purposes as if the deceased had made that gift themselves.",
+          "This matters enormously in practice. A surviving spouse who inherits everything but doesn't need it all might vary part of the estate to their children or grandchildren, converting what would otherwise be a taxable transfer on the spouse's own later death into something that used the deceased's NRB or exemptions instead. A beneficiary who is comfortably provided for might redirect their share to a sibling in genuine need, or to charity, picking up the charity exemption on an estate that otherwise had none.",
+          "The requirements are formal but manageable: the variation must be in writing, made within two years of death, by the beneficiary who is giving up their entitlement, and — for the IHT read-back specifically — must contain a statement that s 142 is to apply. No consideration in money or money's worth may be given for the variation, other than another variation. There is no need to notify HMRC unless the variation itself gives rise to additional tax payable."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Requirements for an effective s 142 variation",
+            "points": [
+              "In writing, signed by the beneficiary giving up their entitlement",
+              "Made within two years of the date of death",
+              "Contains a statement that s 142 is to apply, for the IHT read-back",
+              "No consideration in money or money's worth, other than another variation",
+              "Notification to HMRC is only required if additional tax becomes payable as a result"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-15-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A widow inherits her late husband's whole estate under his will. Fourteen months after his death, she executes a written, properly worded variation redirecting £200,000 to their granddaughter. What is the effect for inheritance tax purposes?",
+          "options": ["The £200,000 is treated as a gift from the widow to the granddaughter, using the widow's own annual exemption or NRB", "The £200,000 is read back as if the husband had left it to the granddaughter directly, made within the two-year time limit", "The variation is ineffective because more than one year has passed since the death", "The variation has no inheritance tax consequences at all, regardless of the wording used"],
+          "correctIndex": 1,
+          "explanation": "A written variation made within two years of death, containing the necessary s 142 statement, is read back into the deceased's estate — the redirected £200,000 is treated as if the husband himself had left it to the granddaughter, not as a fresh gift from the widow."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Bringing the module together: an estate reshaped after death",
+        "voice": "reflective — capstone tone, ties the whole module's arc together",
+        "body": [
+          "Step back across this module and a shape emerges. It starts with how a valid will is made and how intestacy fills the gaps when there isn't one; moves through how personal representatives are appointed, prove their authority, and administer the estate under duties that expose them personally if they get it wrong; and ends here, with inheritance tax — first the bands and exemptions that apply to the estate as it stands at death, then the rules that reach back into lifetime giving, and finally the rule that reaches forward, after death, and lets beneficiaries reshape where the estate actually lands.",
+          "That last point is worth sitting with. Succession law is sometimes taught as though the moment of death is the final word — the will is fixed, the intestacy rules are fixed, the estate is what it is. Section 142 is the clearest illustration in the whole subject that this isn't quite right: within a two-year window, the people who actually inherit can lawfully rewrite the outcome, and the tax system will treat their rewrite as if the deceased had chosen it themselves.",
+          "For a solicitor, that means advice on an estate rarely ends when probate is granted and assets are distributed. A competent private client practitioner is still asking, well after the funeral, whether a variation could improve the family's overall tax position — which is as good a note as any to end this module on: succession law is not a single event to get right once, but a sequence of decisions, several of which are still open long after the client you first advised has died."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Read-back",
+            "definition": "The effect of a qualifying s 142 variation (or, for capital gains tax, a qualifying variation under s 62 TCGA 1992): the redirected gift is treated, for the relevant tax, as if the deceased had made it directly, rather than as a fresh gift from the original beneficiary."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-15-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A son inherits shares worth £500,000 under his mother's will (her probate value). Eighteen months after her death, he executes a written variation, containing the necessary statements for both s 142 IHTA 1984 and s 62 TCGA 1992, redirecting the shares to his sister, who has no other assets. Analyse the inheritance tax and capital gains tax consequences of the variation.",
+          "factsToOrder": [
+            "The son inherited shares worth £500,000 at his mother's death",
+            "The variation is made within two years of death, in writing",
+            "The variation contains statements applying both s 142 IHTA 1984 and s 62 TCGA 1992",
+            "The shares are redirected to the sister rather than sold"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the variation is read back into the mother's estate for both inheritance tax and capital gains tax purposes, and what the practical effect of that read-back is.",
+            "rule": "A written variation made within two years of death, containing the necessary statement, is read back under s 142 IHTA 1984 as if the deceased had made the redirected gift; an equivalent read-back for capital gains tax purposes is available under s 62 TCGA 1992 where the variation contains the necessary statement for that separate regime.",
+            "application": "Because the variation is in writing, made within the two-year window, and contains both statements, the shares are treated for IHT purposes as if the mother had left them to the sister directly, rather than as a gift by the son of an asset he already owned — meaning no separate PET or chargeable transfer arises from the son to the sister. For capital gains tax, the s 62 read-back means the shares are treated as passing from the mother to the sister at their date-of-death value, so the son incurs no capital gain on the redirection despite no longer owning the shares.",
+            "conclusion": "The variation is effective for both taxes: the mother's estate is treated as though she left the shares to the sister, and the son faces neither an additional IHT transfer nor a CGT disposal as a result of redirecting an asset he never truly kept."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-we-15-test-01",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "A donor makes an outright lifetime gift to their adult child. For how many years must the donor survive the gift for it to become entirely free of inheritance tax as a PET?",
+      "options": ["Two years", "Five years", "Seven years", "Ten years"],
+      "correctIndex": 2,
+      "explanation": "A potentially exempt transfer becomes entirely exempt from inheritance tax once the donor survives seven years from the date of the gift."
+    },
+    {
+      "itemId": "sqe1-we-15-test-02",
+      "skillTag": "knowledge",
+      "type": "quickCheck",
+      "prompt": "Under s 142 IHTA 1984, within what period of the deceased's death must a variation be made for the inheritance tax read-back to apply?",
+      "options": ["Six months", "One year", "Two years", "Three years"],
+      "correctIndex": 2,
+      "explanation": "The variation must be made within two years of the date of death, in writing and containing the required statement, for the s 142 read-back to apply."
+    },
+    {
+      "itemId": "sqe1-we-15-test-03",
+      "skillTag": "understanding",
+      "type": "quickCheck",
+      "prompt": "What does taper relief actually reduce when a PET fails because the donor dies within seven years?",
+      "options": ["The value of the gift added back into the donor's cumulative total", "The tax charged on the gift, where tax is otherwise payable", "The nil-rate band available to the estate", "The two-year period for making a valid variation"],
+      "correctIndex": 1,
+      "explanation": "Taper relief reduces the tax charged on a chargeable gift, on a sliding scale for survival of three to seven years — it never reduces the value of the gift itself."
+    },
+    {
+      "itemId": "sqe1-we-15-test-04",
+      "skillTag": "knowledge",
+      "type": "mcqWithTrap",
+      "prompt": "A donor made a lifetime gift and died two years and three months later. What is the effect of taper relief on the tax charged on that gift?",
+      "options": ["Taper relief reduces the tax charged, on a sliding scale for survival past three years", "Taper relief does not apply at all, since the donor survived less than three years", "Taper relief always applies once any time has passed since the gift", "Taper relief reduces the tax to zero, since more than two years passed"],
+      "correctIndex": 1,
+      "trapExplanation": "Taper relief only starts to apply once at least three complete years have elapsed between the gift and death. Surviving just over two years is not enough, however close to the three-year mark, so the gift (if otherwise chargeable) is taxed in full with no taper reduction."
+    },
+    {
+      "itemId": "sqe1-we-15-test-05",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A father gifted his daughter £400,000 in cash six years before his death, and the whole amount is chargeable because it exceeds his available NRB once cumulated. He also gave her a house worth £300,000 five years before death but continued to live there rent-free until he died. How should a solicitor advise on taper relief for the house?",
+      "options": ["Taper relief applies to both gifts equally, since both were made more than three years before death", "Taper relief applies to the £400,000 cash gift if tax is payable on it, but the house is a gift with reservation of benefit and remains in the estate at full value with no taper relief available on it as a lifetime gift", "Neither gift attracts taper relief, because gifts with reservation are always excluded from all IHT reliefs", "Taper relief applies only to the house, because it was the more recent gift"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is applying the seven-year taper mechanism uniformly to both gifts. Because the house remained subject to a reservation of benefit until death, it is treated as part of the death estate itself under s 102 FA 1986, not as a PET running its own seven-year clock — taper relief, which only reduces tax on a chargeable lifetime transfer, has no role to play on that asset."
+    },
+    {
+      "itemId": "sqe1-we-15-test-06",
+      "skillTag": "application",
+      "type": "mcqWithTrap",
+      "prompt": "A mother 'gives' her flat to her son but continues paying the full market rent to live there for the rest of her life. What is the effect of the market-rent payment on the gift with reservation rules?",
+      "options": ["It has no effect — any continued occupation by the donor is automatically a reservation of benefit", "It releases the reservation, because the donor is no longer enjoying the property otherwise than for full consideration", "It converts the gift into a chargeable lifetime transfer immediately, regardless of survival", "It has no effect because gifts of property can never be PETs"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is assuming any continued occupation by the donor is automatically caught. Section 102 is specifically disapplied where the donor's continued enjoyment is for full consideration — paying full market rent removes the reservation, allowing the gift to run its own seven-year clock from the point the arrangement began (or from the gift, if full rent was paid from the outset)."
+    },
+    {
+      "itemId": "sqe1-we-15-test-07",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A woman gifted £100,000 to her nephew four years and eight months before she died. The gift, once cumulated with her earlier transfers, exceeds her available NRB and is chargeable. What is the practical effect of taper relief here?",
+      "options": ["No taper relief applies at all, since less than five years elapsed", "Taper relief applies on the sliding scale, since more than three complete years elapsed before death", "The gift becomes entirely exempt, since more than four years elapsed", "Taper relief only applies to gifts of cash, not other property"],
+      "correctIndex": 1,
+      "explanation": "Once at least three complete years have elapsed between a chargeable gift and death, taper relief reduces the tax due on a sliding scale up to the full seven years — here, just over four years, so a reduced rate of tax applies to the chargeable amount."
+    },
+    {
+      "itemId": "sqe1-we-15-test-08",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A beneficiary inherits £150,000 under his uncle's will. Nineteen months after the death, he executes a written variation, containing the necessary s 142 statement, redirecting the whole sum to a registered charity. What is the effect for inheritance tax purposes?",
+      "options": ["The variation is ineffective because more than one year has passed", "The £150,000 is treated as if the uncle himself had left it to the charity, potentially engaging the charity exemption on his estate", "The beneficiary is treated as making a lifetime gift to the charity, using his own annual exemption", "The variation has no inheritance tax effect, since redirections to charity are not permitted under s 142"],
+      "correctIndex": 1,
+      "explanation": "A qualifying variation made within two years of death is read back as if the deceased had made the gift directly — here, as if the uncle had left £150,000 to the charity, which can engage the unlimited charity exemption on his estate."
+    },
+    {
+      "itemId": "sqe1-we-15-test-09",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A daughter inherits a rental property from her father's estate at its date-of-death value. Within a year of the death, she executes a variation containing statements for both s 142 IHTA 1984 and s 62 TCGA 1992, redirecting the property to her brother. What is the capital gains tax consequence for the daughter?",
+      "options": ["She is treated as disposing of the property to her brother at its current market value, potentially triggering a chargeable gain", "She incurs no chargeable gain, because the property is treated as passing from the father to the brother directly", "She is automatically liable for capital gains tax at the highest rate, regardless of any variation", "Capital gains tax never applies to property redirected by a variation, regardless of what the variation says"],
+      "correctIndex": 1,
+      "explanation": "Where a variation contains the statement required for s 62 TCGA 1992, the redirected asset is treated as passing from the deceased to the new recipient directly, so the original beneficiary incurs no disposal and no chargeable gain on the redirection itself."
+    },
+    {
+      "itemId": "sqe1-we-15-test-10",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A widower gives his son a valuable classic car outright at a family gathering and never touches it again — the son insures, stores, and drives it exclusively from that point. The widower dies six years later. How is the car most likely treated for inheritance tax purposes?",
+      "options": ["As property subject to a reservation of benefit, remaining in the estate at death", "As a potentially exempt transfer that has become entirely exempt, since the widower survived seven years — wait, he survived six, so it remains chargeable but eligible for taper relief if tax is otherwise due", "As an immediately chargeable lifetime transfer regardless of survival", "As exempt automatically under the small gifts exemption, since a single item was given"],
+      "correctIndex": 1,
+      "explanation": "Because possession and enjoyment genuinely passed to the son with no reservation by the widower, this is an ordinary PET. Surviving six years is not enough for full exemption, but if any tax is due once cumulated, taper relief (survival over three years) can reduce it."
+    },
+    {
+      "itemId": "sqe1-we-15-test-11",
+      "skillTag": "understanding",
+      "type": "statuteParser",
+      "prompt": "Section 102 Finance Act 1986 treats a gift as subject to a reservation where the donee's possession and enjoyment is not bona fide assumed, or where the donor's enjoyment is not excluded (or virtually excluded). What is the practical exception that allows a donor to remain in occupation without triggering this rule?",
+      "options": ["There is no exception — any occupation by the donor always triggers a reservation", "Occupation for full consideration, such as paying a full market rent", "Occupation for less than one year after the gift", "Occupation is only exempted where the donee is a spouse or civil partner"],
+      "correctIndex": 1,
+      "explanation": "Section 102 is not engaged where the donor's continued benefit is provided for full consideration in money or money's worth — paying a genuine full market rent is the standard route to avoiding a reservation while remaining in occupation."
+    },
+    {
+      "itemId": "sqe1-we-15-test-12",
+      "skillTag": "knowledge",
+      "type": "statuteParser",
+      "prompt": "Besides being in writing and made within two years of death, what statement must a variation contain for the s 142 IHTA 1984 inheritance tax read-back to apply?",
+      "options": ["A statement that the beneficiary consents to pay any resulting tax personally", "A statement that s 142 is to apply to the variation", "A statement notifying HMRC of the variation within 30 days", "A statement that the deceased would have approved of the redirection"],
+      "correctIndex": 1,
+      "explanation": "For the inheritance tax read-back specifically, the variation must contain a statement that s 142 is to apply — without it, the variation may still be effective as a matter of general law but will not achieve the IHT read-back."
+    },
+    {
+      "itemId": "sqe1-we-15-test-13",
+      "skillTag": "application",
+      "type": "statuteParser",
+      "prompt": "A beneficiary wants to vary her inheritance in exchange for a payment from another family member. What is the effect of that payment on the s 142 read-back?",
+      "options": ["It has no effect, provided the variation is otherwise in writing and within two years", "It defeats the read-back, because consideration in money or money's worth (other than another variation) was given for the variation", "It only defeats the read-back if the payment exceeds £3,000", "It automatically converts the arrangement into a valid variation with no other requirements needed"],
+      "correctIndex": 1,
+      "explanation": "Section 142 requires that no consideration in money or money's worth is given for the variation, other than the making of another variation — receiving payment in exchange for redirecting the inheritance takes the arrangement outside the read-back."
+    },
+    {
+      "itemId": "sqe1-we-15-test-14",
+      "skillTag": "application",
+      "type": "applyTheRule",
+      "prompt": "A man gifts a rental property to his daughter but continues to receive half of the rental income from the tenant himself, with the daughter receiving the other half. He dies five years later. How should a solicitor advise on the property's treatment for inheritance tax?",
+      "options": ["The whole property escapes the estate as a completed PET, since legal title passed to the daughter", "The gift is likely subject to a reservation of benefit, because the donor continues to enjoy a benefit from the property without paying full consideration for it", "The property is entirely exempt under the spouse exemption", "The arrangement is irrelevant for inheritance tax, since only legal ownership matters"],
+      "correctIndex": 1,
+      "explanation": "Continuing to receive an ongoing benefit from the gifted property — here, a share of the rental income — without paying full consideration for that benefit points towards a reservation of benefit, keeping some or all of the property within the donor's estate rather than letting it run as a clean PET."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The two traps that recur throughout this lesson are treating taper relief as reducing the value of a gift rather than the tax on it, and assuming a lifetime gift is a clean PET without checking what the donor actually kept for themselves. Both traps share a root cause: reading the label on a transaction ('a gift', 'seven years passed') instead of the substance underneath it.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.wills-estates.iht-lifetime-transfers-variations"
+  }
+}

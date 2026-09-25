@@ -1,0 +1,342 @@
+{
+  "lessonId": "sqe1-clp-09",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 9,
+  "topicId": "sqe1.criminal-practice.allocation-sending",
+  "title": "Allocation and sending for either-way offences",
+  "subtitle": "The allocation procedure, the defendant's election, and s 50A sending",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the allocation procedure that applies once a defendant indicates a not guilty plea to an either-way offence",
+    "Explain the defendant's own right of election between summary trial and Crown Court trial where the magistrates accept jurisdiction",
+    "Identify when a case is sent to the Crown Court without allocation under s 50A of the Crime and Disorder Act 1998"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Magistrates' Courts Act 1980, ss 19–20", "role": "Sets out the allocation (mode of trial) procedure and the matters the court must consider" },
+    { "citation": "Magistrates' Courts Act 1980, s 22A", "role": "Governs the defendant's election to Crown Court trial after the magistrates accept jurisdiction" },
+    { "citation": "Crime and Disorder Act 1998, s 50A", "role": "Requires certain serious or complex either-way cases to be sent directly to the Crown Court without allocation" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often think allocation is purely a decision for the magistrates. Where the profile shows this gap, this brief note appears: 'The court decides suitability — but even when it accepts jurisdiction, the defendant still has the final word.'",
+    "profileHooks": {
+      "weakApplication": "You know the stages by name. The test pool here leans on scenarios where you must decide which stage is actually operating — allocation, election, or s 50A sending — rather than reciting definitions.",
+      "weakKnowledge": "Start with Parts 1 to 3 and fix who decides what — the magistrates on suitability, the defendant on election — before moving on to the s 50A exception."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A defendant indicates a not guilty plea to a charge of theft. The magistrates think their own sentencing powers are perfectly adequate for a case like this and are happy to try it themselves. The defendant disagrees — and, remarkably, gets to overrule them. Understanding why the defendant, and not the court, has the last word here is the key to this lesson."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Allocation: who decides, and on what",
+        "voice": "structural — sets out the two-step shape of the procedure",
+        "body": [
+          "Once a defendant indicates a not guilty plea (or gives no indication) to an either-way offence, the case moves to the allocation procedure under ss 19–20 of the Magistrates' Courts Act 1980, sometimes still called 'mode of trial'. This is a two-step process, and mixing up who acts at each step is the most common source of exam errors.",
+          "Step one: the magistrates (or, in practice, often a single justice or a District Judge) decide whether the case is more suitable for summary trial or for trial on indictment. This is the court's own suitability assessment, made by reference to statutory guidelines that focus on matters such as the seriousness of the offence, the adequacy of the magistrates' sentencing powers, and any other circumstances making the case one that ought to be dealt with by one court rather than the other.",
+          "Step two only arises if the magistrates decide the case is suitable for summary trial: the defendant is then given the choice — accept summary trial, or elect trial on indictment in the Crown Court instead. Crucially, the reverse is not true: if the magistrates decide the case is not suitable for summary trial, there is no defendant election at all — the case simply goes to the Crown Court."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The two steps of allocation",
+            "points": [
+              "Step 1 — Magistrates assess suitability for summary trial (s 19)",
+              "If unsuitable for summary trial → sent to Crown Court, no defendant election",
+              "If suitable for summary trial → defendant is asked to elect (s 20)",
+              "Step 2 — Defendant elects: accept summary trial, or elect Crown Court trial"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-09-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "At the allocation procedure, who makes the first decision — whether the case is suitable for summary trial?",
+          "options": ["The defendant", "The magistrates", "The Crown Prosecution Service alone", "The victim"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — suitability for summary trial is the magistrates' own assessment; the defendant's election only becomes relevant if that assessment favours summary trial.",
+          "feedbackIncorrect": "The suitability assessment is made by the magistrates first. The defendant's role — electing between summary trial and Crown Court trial — only arises after, and only if, the magistrates find the case suitable for summary trial."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "What the magistrates must consider",
+        "voice": "case-narrative — works through the statutory guidance via a worked example",
+        "body": [
+          "Section 19 directs the magistrates to have regard to the nature and seriousness of the offence, whether their sentencing powers would be adequate, and any representations from the prosecution and defence, among other relevant circumstances. National allocation guidelines issued to support this decision generally suggest that cases should stay in the magistrates' court unless the likely sentence would clearly exceed the court's sentencing powers, or the case involves complex questions of law or fact that make Crown Court trial more appropriate.",
+          "Take a defendant charged with theft of goods worth £300 from a shop, with no aggravating features and no relevant previous convictions. On these facts, a sentence well within the magistrates' powers is likely, and there is nothing legally or factually complex about the case — the magistrates would ordinarily conclude it is suitable for summary trial.",
+          "Contrast that with a defendant charged with a sophisticated, multi-victim fraud running into hundreds of thousands of pounds, involving extensive documentary and expert evidence. Even though fraud is an either-way offence just like theft, the scale, complexity and likely sentence here point firmly towards unsuitability for summary trial — the magistrates would be expected to decline jurisdiction and send the case onward."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Magistrates' Courts Act 1980, s 19 (summarised)",
+            "text": "In deciding whether an offence appears more suitable for summary trial or trial on indictment, the court shall consider the nature and seriousness of the offence, whether the court's sentencing powers would be adequate, any representations made by the prosecution or the defence, and any other circumstances appearing to the court to make it more suitable for the offence to be tried in one way rather than the other.",
+            "elements": ["Nature and seriousness of the offence", "Adequacy of the magistrates' sentencing powers", "Representations from prosecution and defence", "Any other relevant circumstances"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-09-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 19 of the Magistrates' Courts Act 1980, which of the following is a relevant factor in the suitability assessment?",
+          "options": ["The defendant's personal preference for a jury trial", "Whether the magistrates' sentencing powers would be adequate for the offence", "The number of previous defendants tried for similar offences that year", "Whether the offence occurred on a weekday or a weekend"],
+          "correctIndex": 1,
+          "explanation": "Adequacy of sentencing powers is expressly part of the s 19 suitability assessment. The defendant's own preference is irrelevant at this stage — it only matters at the later election stage, and only if the magistrates first find the case suitable."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The defendant's election: overruling the court",
+        "voice": "Socratic — poses the counterintuitive result before explaining it",
+        "body": [
+          "Here is the detail that catches most students out: if the magistrates decide a case is suitable for summary trial, that is not the end of the matter. The defendant is told of this decision and given the choice, under s 20, to consent to summary trial or to elect trial by jury in the Crown Court instead — and the defendant's choice prevails over the magistrates' own assessment.",
+          "Why give the defendant this override? The right to elect Crown Court trial for an either-way offence is a long-standing feature of English criminal procedure, reflecting the view that a defendant facing a real possibility of a criminal record (and, in some cases, a more significant sentence than they perceive the magistrates would impose) should not be forced into summary trial against their wishes, even where the court itself considers summary trial appropriate.",
+          "The reverse never happens: a defendant cannot insist on summary trial if the magistrates have decided the case is unsuitable for it. The election right runs one way only — towards a jury trial, not away from one."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Defendant's election (s 22A)",
+            "definition": "Where the magistrates decide an either-way offence is suitable for summary trial, the defendant may nonetheless elect trial on indictment in the Crown Court instead of accepting summary trial. The election runs only one way: a defendant cannot elect summary trial once the magistrates have decided the case is unsuitable for it."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-09-check-03",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "A defendant is charged with theft of £200 of goods. The magistrates decide the case is suitable for summary trial, given the modest value and the adequacy of their sentencing powers. The defendant, worried about how a criminal record from a magistrates' conviction might look, wants a jury to decide the case instead. Analyse whether she can insist on a Crown Court trial.",
+          "factsToOrder": [
+            "Magistrates find the case suitable for summary trial under s 19",
+            "The offence is either-way (theft)",
+            "The defendant does not want summary trial",
+            "The defendant wishes to have the case heard by a jury instead"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the defendant can require a Crown Court trial despite the magistrates having found the case suitable for summary trial.",
+            "rule": "Under s 20 of the Magistrates' Courts Act 1980 (election, given effect via s 22A), once the magistrates decide an either-way offence is suitable for summary trial, the defendant may still elect trial on indictment in the Crown Court instead of accepting summary trial; the election is the defendant's to make.",
+            "application": "The offence is either-way, and the magistrates have found it suitable for summary trial. That finding does not bind the defendant — she retains the right to elect Crown Court trial regardless of the court's own view of suitability.",
+            "conclusion": "Yes. She can elect trial on indictment, and her election prevails over the magistrates' suitability finding."
+          }
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Sequencing allocation from start to finish",
+        "voice": "direct — consolidates the full procedure into one ordered sequence",
+        "body": [
+          "It helps to hold the whole allocation procedure in your head as a single ordered sequence, because exam scenarios often test whether you can identify which point in the sequence a given fact pattern has reached — rather than testing the individual rules in isolation.",
+          "The sequence runs: not guilty (or no) indication at plea before venue; magistrates hear representations and apply the s 19 factors; magistrates decide suitability; if unsuitable, straight to Crown Court with no election; if suitable, the defendant is asked to elect; if the defendant accepts summary trial, the magistrates try the case; if the defendant elects Crown Court trial, the case proceeds to the Crown Court instead.",
+          "Getting the sequence right also means correctly identifying dead ends — points at which the procedure simply stops rather than continuing to the next stage. An unsuitability finding is one such dead end: it ends the process at that point, with no further step for the defendant to take."
+        ],
+        "components": [],
+        "interaction": {
+          "itemId": "sqe1-clp-09-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these stages of the allocation procedure in the correct order for a case that ends with the defendant electing Crown Court trial.",
+          "items": [
+            "Defendant indicates a not guilty plea to an either-way offence",
+            "Magistrates apply the s 19 factors and decide the case is suitable for summary trial",
+            "Defendant is invited to consent to summary trial or elect Crown Court trial",
+            "Defendant elects trial on indictment; case proceeds to the Crown Court"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the full sequence — note that the election stage is only reached because the magistrates found the case suitable; an unsuitability finding would have skipped straight to the Crown Court instead.",
+          "feedbackIncorrect": "Check the order — the defendant's election only happens after, and only because, the magistrates have already found the case suitable for summary trial."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Sending without allocation: s 50A",
+        "voice": "argumentative — explains why the ordinary procedure is bypassed",
+        "body": [
+          "Not every either-way case goes through allocation at all. Section 50A of the Crime and Disorder Act 1998 requires certain either-way offences to be sent straight to the Crown Court, bypassing both the magistrates' suitability assessment and any defendant election, where specific serious or complex conditions are met — most notably certain serious or complex fraud cases, and certain cases involving children as witnesses that meet statutory criteria for expedited handling.",
+          "The rationale is efficiency and appropriateness rather than fairness to the defendant in the way election is: cases within s 50A are, almost by definition, ones where an allocation hearing would be a formality — no realistic magistrates' court would ever conclude such a case was suitable for summary trial, so the law dispenses with the exercise and sends the case directly.",
+          "The exam-relevant point is recognising when a fact pattern has moved outside the ordinary allocation framework altogether. If a case involves the hallmark features of s 50A — substantial and complex fraud, for instance — the correct analysis is sending under s 50A, not a discussion of the s 19 suitability factors or the defendant's election rights, because neither stage is engaged."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes apply the ordinary allocation procedure (s 19 suitability, then defendant election) to a case that in fact falls within s 50A.",
+            "whyItsWrong": "Section 50A cases bypass allocation entirely — there is no suitability assessment and no defendant election, because the case is sent directly to the Crown Court. Spotting the serious/complex fraud (or equivalent) fact pattern should trigger s 50A analysis, not a walk through the ordinary two-step allocation procedure."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-09-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A defendant is charged with a complex, high-value fraud involving forged accounting records across multiple jurisdictions, meeting the statutory criteria for serious or complex fraud. Which procedure applies to determine venue?",
+          "options": ["The ordinary allocation procedure under ss 19–20, with the magistrates assessing suitability first", "The defendant may elect summary trial regardless of the magistrates' own view", "The case is sent directly to the Crown Court under s 50A, without an allocation hearing or defendant election", "No procedure applies until the defendant enters a plea at the Crown Court"],
+          "correctIndex": 2,
+          "explanation": "Serious or complex fraud meeting the statutory criteria is sent under s 50A, bypassing the ordinary allocation procedure entirely — there is no suitability assessment and no election for the defendant to make."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-09-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "At the allocation procedure, what is the magistrates' first task?",
+      "options": ["Sentence the defendant", "Assess whether the case is more suitable for summary trial or trial on indictment", "Ask the defendant to elect a court immediately", "Determine guilt on the papers"],
+      "correctIndex": 1,
+      "explanation": "The magistrates' first task under s 19 is a suitability assessment; only if they find the case suitable for summary trial does the defendant's election become relevant."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which statute governs the defendant's right to elect Crown Court trial once the magistrates have found an either-way case suitable for summary trial?",
+      "options": ["Crime and Disorder Act 1998, s 50A", "Magistrates' Courts Act 1980, s 22A", "Prosecution of Offences Act 1985, s 10", "Police and Criminal Evidence Act 1984, s 24"],
+      "correctIndex": 1,
+      "explanation": "Section 22A of the Magistrates' Courts Act 1980 gives effect to the defendant's election between summary trial and trial on indictment."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "If the magistrates decide an either-way case is NOT suitable for summary trial, what happens to the defendant's right to elect?",
+      "options": ["The defendant may still elect summary trial if they prefer it", "There is no election — the case is sent to the Crown Court without the defendant being asked anything", "The defendant must elect Crown Court trial in writing within 28 days", "The election right transfers to the victim instead"],
+      "correctIndex": 1,
+      "explanation": "The defendant's election only arises where the magistrates find the case suitable for summary trial. An unsuitability finding sends the case onward with no election stage at all."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A defendant is charged with a straightforward either-way offence. The magistrates find the case suitable for summary trial, but the defendant elects Crown Court trial anyway. What is the outcome?",
+      "options": ["The magistrates override the defendant's election and try the case themselves", "The case proceeds to the Crown Court, because the defendant's election prevails over the magistrates' suitability finding", "The election is invalid because it contradicts the magistrates' own assessment", "The case is dismissed for procedural inconsistency"],
+      "correctIndex": 1,
+      "explanation": "The defendant's election, once made, prevails — the magistrates' suitability finding does not bind the defendant to summary trial."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "What does s 50A of the Crime and Disorder Act 1998 provide for?",
+      "options": ["An additional appeal route from the Crown Court", "Sending certain serious or complex either-way cases directly to the Crown Court, without allocation", "A defendant's right to demand summary trial in all circumstances", "The procedure for indictable-only offences generally"],
+      "correctIndex": 1,
+      "explanation": "Section 50A allows specified serious or complex either-way cases (such as certain fraud cases) to bypass allocation and be sent straight to the Crown Court."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.5,
+      "prompt": "Which of the following correctly describes the relationship between the magistrates' suitability assessment and the defendant's election in allocation?",
+      "options": ["Both decisions are made jointly by the magistrates and the defendant together", "The magistrates decide suitability first; the defendant's election only follows, and only if the case is found suitable for summary trial", "The defendant elects first; the magistrates' suitability assessment then follows and can override the election", "There is no order — either party's decision can come first depending on the case"],
+      "correctIndex": 1,
+      "trapExplanation": "A common error is treating allocation as a single joint decision, or reversing the order. The sequence is fixed: suitability first (magistrates), election second (defendant, and only where suitability is found)."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "A defendant is charged with a case falling squarely within the s 50A criteria for serious or complex fraud. Which of the following is the correct procedural analysis?",
+      "options": ["The ordinary allocation procedure applies as normal, with the magistrates assessing suitability first", "Allocation is bypassed entirely; the case is sent straight to the Crown Court under s 50A", "The defendant must first indicate a plea before venue before any question of s 50A arises", "The case remains in the magistrates' court permanently because fraud is either-way"],
+      "correctIndex": 1,
+      "trapExplanation": "It's easy to default to the ordinary allocation procedure whenever an either-way offence is mentioned. Serious or complex fraud meeting the s 50A criteria removes the case from that procedure altogether — there is no suitability assessment and no election."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant charged with theft (a straightforward, low-value either-way case with no s 50A features) is told the magistrates find the case unsuitable for summary trial. What should the defendant expect next?",
+      "options": ["An invitation to elect summary trial if she prefers it", "The case proceeding directly to the Crown Court, with no election available to her", "A fresh plea before venue hearing to reconsider the classification", "Automatic acquittal, since the magistrates declined jurisdiction"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes assume the defendant always gets a choice at this stage. The election only exists where the magistrates find the case suitable — an unsuitability finding removes any choice, and the case simply proceeds to the Crown Court."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant is charged with a minor, low-value either-way offence well within the magistrates' sentencing powers, with no complexity of law or fact. Applying the s 19 factors, what is the most likely outcome of the suitability assessment?",
+      "options": ["Unsuitable for summary trial, given the offence is either-way", "Suitable for summary trial, given the modest sentencing exposure and lack of complexity", "The assessment cannot be made without the defendant's input", "Automatically sent under s 50A regardless of the facts"],
+      "correctIndex": 1,
+      "explanation": "Adequacy of sentencing powers and lack of legal or factual complexity both point towards a finding of suitability for summary trial — the offence being either-way in classification does not itself dictate the outcome."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "The magistrates find a case suitable for summary trial. The defendant, having taken advice, decides she would prefer the higher acquittal rate she perceives in jury trials and wishes to be tried in the Crown Court. What is the correct outcome?",
+      "options": ["Her preference is irrelevant and the magistrates try the case regardless", "She may elect Crown Court trial, and that election will be given effect", "She must first appeal the suitability finding before any election is possible", "Her stated reason disqualifies her from electing"],
+      "correctIndex": 1,
+      "explanation": "The defendant's motive for electing Crown Court trial is not scrutinised by the court — the right to elect, once the magistrates find the case suitable, belongs to the defendant regardless of her reasons."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A defendant is charged with an either-way offence involving allegations of a sophisticated, multi-jurisdictional fraud scheme that meets the statutory definition of serious or complex fraud. Which of the following steps in the ordinary allocation procedure will NOT occur in this case?",
+      "options": ["Sending to the Crown Court", "A first hearing in the magistrates' court", "A magistrates' court suitability assessment under s 19", "The offence being formally put to the defendant"],
+      "correctIndex": 2,
+      "explanation": "Section 50A cases bypass the s 19 suitability assessment (and any election) entirely — the case still starts in the magistrates' court and is still sent to the Crown Court, but without that intermediate step."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "According to s 19 of the Magistrates' Courts Act 1980, which of the following is NOT listed as a relevant factor in the suitability assessment?",
+      "options": ["The nature and seriousness of the offence", "The adequacy of the magistrates' sentencing powers", "Representations from the prosecution and defence", "The defendant's personal wish for a jury trial"],
+      "correctIndex": 3,
+      "explanation": "The defendant's personal wish for a jury trial is not part of the s 19 suitability factors — that preference only becomes operative later, at the separate election stage, and only if suitability is found."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "Section 22A gives effect to the defendant's election under s 20 once the magistrates have found a case suitable for summary trial. What does this election allow the defendant to do?",
+      "options": ["Demand that the case be dismissed", "Choose trial on indictment in the Crown Court instead of accepting summary trial", "Reopen the plea before venue procedure", "Request that a different magistrate be appointed"],
+      "correctIndex": 1,
+      "explanation": "The election is specifically about venue — it allows the defendant to opt for Crown Court trial notwithstanding the magistrates' own finding that summary trial would be suitable."
+    },
+    {
+      "itemId": "sqe1-clp-09-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A case involves allegations meeting the statutory criteria in s 50A of the Crime and Disorder Act 1998 for serious or complex fraud. Applying that section, what is the correct procedural consequence?",
+      "options": ["The case proceeds through the ordinary s 19 suitability assessment before any sending decision", "The case is sent to the Crown Court directly, without an allocation hearing", "The defendant must first elect under s 22A before the case can be sent anywhere", "The case remains with the magistrates' court for trial because it is either-way"],
+      "correctIndex": 1,
+      "explanation": "Section 50A operates precisely to remove such cases from the ordinary allocation framework — they are sent directly to the Crown Court, with neither a suitability assessment nor a defendant election taking place."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common error in this lesson is assuming the magistrates' suitability finding is the last word, or applying the ordinary allocation procedure to a case that actually falls within s 50A. Track who acts at each stage — magistrates on suitability, defendant on election — and check first whether s 50A removes the case from that procedure altogether.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.allocation-sending"
+  }
+}

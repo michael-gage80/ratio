@@ -1,0 +1,430 @@
+{
+  "lessonId": "sqe1-clp-02",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 2,
+  "topicId": "sqe1.criminal-practice.legal-advice-delay",
+  "title": "The right to legal advice and its lawful delay",
+  "subtitle": "Section 58 PACE, the narrow grounds for delay, and R v Samuel",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the suspect's right under s 58 PACE to free, private legal consultation at any time during detention",
+    "Explain the narrow statutory grounds on which a superintendent may authorise delaying access to legal advice",
+    "Apply R v Samuel to distinguish a lawful, specific belief justifying delay from an unlawful, general policy of restricting access"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Police and Criminal Evidence Act 1984, s 58", "role": "Creates the right to consult a solicitor privately at any time, and sets the exhaustive grounds for delaying it" },
+    { "citation": "R v Samuel [1988] QB 615", "role": "Holds that delay requires a belief specific to the individual solicitor requested, not a generalised policy concern" },
+    { "citation": "PACE Code C, para 6", "role": "Code of practice detail on how the right to legal advice is to be given effect in practice" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This right sounds absolute until you read the small print of s 58 closely — SQE1 questions are built almost entirely around that small print, not the headline right.",
+    "profileHooks": {
+      "weakApplication": "You can probably state the right and the three grounds from memory. The harder skill this lesson tests is recognising when a fact pattern's justification for delay is really just a policy dressed up as a specific belief — that's where Samuel does its work.",
+      "weakKnowledge": "Start with Part 1 and get the basic right — free, private, at any time — completely fixed before you move on to the exceptions. Students who are shaky on the baseline right tend to misjudge how narrow the exceptions really are."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "In 1988, a 24-year-old man accused of robbery asked to see a solicitor. The police said no — not because he'd done anything to deserve it, but because a superintendent thought, in general terms, that solicitors sometimes tip suspects off. The Court of Appeal quashed his conviction. What that case reveals is that the right to legal advice isn't fragile because it can be delayed — it's robust because the grounds for delaying it are drawn so narrowly that almost nothing the police say in general terms will satisfy them."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The baseline right: free, private, at any time",
+        "voice": "structural — states the right before any exception",
+        "body": [
+          "Section 58 PACE gives any person arrested and held in custody at a police station the right to consult a solicitor privately, at any time. 'At any time' is doing real work in that sentence: the right does not switch on only once questioning begins, and it does not switch off overnight or because an interview is imminent.",
+          "The advice is free, funded through the duty solicitor scheme regardless of the suspect's means, and the consultation is private — meaning the police are not entitled to sit in or listen. A suspect can ask for a specific solicitor by name, or use the duty solicitor if they have no one in mind.",
+          "The right must be actively told to the suspect, not simply left available if they happen to ask. A custody officer who fails to inform a suspect of the right at all has already put any subsequent interview at risk of being ruled inadmissible, independently of anything to do with delay."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Section 58 right",
+            "definition": "The right of a person arrested and held in custody at a police station to consult a solicitor privately, free of charge, at any time — subject only to the narrow delay provisions in s 58 itself."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-02-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "In your own words, state the baseline right created by s 58 PACE before any exception is considered.",
+          "acceptableAnswers": [
+            "the right to consult a solicitor privately, free of charge, at any time while in custody",
+            "free private legal advice at any time in detention",
+            "right to a private consultation with a solicitor at no cost, at any time"
+          ],
+          "modelAnswer": "A person arrested and held in custody at a police station has the right to consult a solicitor privately, free of charge, at any time."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The three statutory grounds for delay",
+        "voice": "statutory — close reading of the text",
+        "body": [
+          "Section 58 does allow the right to be delayed, but only in a narrow set of circumstances, and only for a serious arrestable-type offence. Crucially, delay must be authorised by an officer of at least the rank of superintendent — a custody sergeant has no power to withhold access on their own initiative.",
+          "The superintendent must have reasonable grounds to believe that exercising the right at that time will lead to one of three specific consequences: interference with, or harm to, evidence connected with the offence; interference with, or physical injury to, other persons; or alerting other people suspected of having committed the offence but not yet arrested. A closely related fourth ground allows delay where exercising the right would hinder the recovery of property obtained as a result of the offence.",
+          "Even where a ground is satisfied, delay cannot last indefinitely — it can only be authorised up to a fixed maximum (36 hours from the relevant time), after which the right revives regardless of the original justification."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Police and Criminal Evidence Act 1984, s 58(8)",
+            "text": "An officer may only authorise delaying the exercise... if he has reasonable grounds for believing that the exercise... will (a) lead to interference with or harm to evidence connected with an indictable offence or interference with or physical injury to other persons; or (b) lead to the alerting of other persons suspected of having committed such an offence but not yet arrested for it; or (c) hinder the recovery of any property obtained as a result of such an offence.",
+            "elements": [
+              "Authorised only by an officer of at least superintendent rank",
+              "Reasonable grounds for believing one of the specified consequences will follow",
+              "Offence must be an indictable offence",
+              "Delay is time-limited, not indefinite"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-02-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Which officer's authorisation is required to lawfully delay a suspect's access to legal advice under s 58?",
+          "options": [
+            "An officer of at least superintendent rank",
+            "The custody officer dealing with the suspect",
+            "Any officer involved in the investigation",
+            "The arresting officer, provided they record their reasons"
+          ],
+          "correctIndex": 0,
+          "explanation": "The rank threshold mirrors the seriousness of overriding this right — only a superintendent can authorise delay, never a custody officer acting alone or an investigating officer."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "R v Samuel: specific belief, not general policy",
+        "voice": "case-narrative — the facts drive the doctrine",
+        "body": [
+          "Anthony Samuel was arrested on suspicion of robbery. He asked to see a solicitor. A superintendent refused, on the basis that other suspects were still being sought and that, in the superintendent's general experience, solicitors could — even unintentionally — pass on information that alerted other suspects.",
+          "The Court of Appeal quashed Samuel's conviction. The reasoning is the heart of this lesson: a belief that access to legal advice generally carries a risk of alerting others is not a belief specific enough to satisfy s 58. The superintendent must have reasonable grounds relating to the particular solicitor requested, in the particular case — for example, concrete reasons to think that specific solicitor would, deliberately or carelessly, tip off other suspects.",
+          "Samuel also confirmed something easy to overlook: the vast majority of solicitors, including duty solicitors unknown to the suspect, will comply scrupulously with their professional obligations. A superintendent cannot treat the solicitors' profession as a body with a track record of leaking information — the belief has to attach to this case, this solicitor, these facts."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "R v Samuel",
+            "citation": "[1988] QB 615",
+            "court": "Court of Appeal",
+            "year": 1988,
+            "factsShort": "A superintendent delayed access to legal advice for a robbery suspect on the general basis that solicitors might alert other suspects.",
+            "ratioShort": "A s 58 belief must be specific to the individual solicitor and case in question — a generalised concern about solicitors as a class cannot justify delay.",
+            "expanded": {
+              "facts": "Samuel was arrested on suspicion of robbery and, while other suspects remained at large, asked to consult a solicitor. The superintendent refused, citing a generic concern that legal advisers might, even inadvertently, alert those other suspects.",
+              "judgmentExtract": "The Court of Appeal held that the superintendent's belief did not meet the statutory standard. Reasonable grounds for believing the statutory consequence would follow must be grounds specific to this solicitor, in this case — not a generalised anxiety applicable to almost any suspect with outstanding co-accused.",
+              "significance": "Samuel is the leading authority narrowing s 58 in practice: it makes clear that the exception cannot be operated as a standing policy, and any delay decision must show its working against the individual facts."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-02-check-03",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is more likely to satisfy the s 58(8) standard as explained in R v Samuel?",
+          "scenarioA": "A superintendent believes, as a matter of general experience, that suspects with co-accused at large should not see a solicitor until those co-accused are found.",
+          "scenarioB": "A superintendent has specific intelligence that the named solicitor requested has, in this investigation, previously passed messages between two co-accused, and reasonably believes the same solicitor is likely to do so again if consulted now.",
+          "correctScenario": "B",
+          "explanation": "B ties the belief to a specific solicitor and specific evidence in this case, exactly what Samuel requires. A is the generalised policy reasoning Samuel rejected — it would apply to almost any case with outstanding co-accused, which is precisely why it fails."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Reading the ratio precisely",
+        "voice": "close-reading — trains precision on the exact wording",
+        "body": [
+          "Exam questions on this topic frequently present a superintendent's reasoning almost verbatim and ask whether it meets the Samuel standard. Success depends on spotting the difference between a belief that names a specific person, event, or piece of evidence, and a belief that reads as a rule of thumb applied to a category of suspects.",
+          "A useful test: could the superintendent's stated reasoning be copied and pasted into any other case involving outstanding co-accused, verbatim, without changing a word? If yes, it is almost certainly too general to satisfy s 58(8) as interpreted in Samuel. If the reasoning only makes sense in light of facts unique to this suspect or this solicitor, it is much more likely to be lawful.",
+          "This distinction is not a technicality — it is the entire content of the protection. Without it, 'other suspects are still at large' would justify delaying legal advice in a huge proportion of multi-handed arrests, which would swallow the right almost whole."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often accept 'there are other suspects still at large' as sufficient justification on its own, because it sounds like a real operational concern.",
+            "whyItsWrong": "The mere existence of outstanding co-accused is true in a huge number of arrests and says nothing specific about this solicitor or this suspect. Samuel requires the belief to be anchored to particular facts, not to a circumstance common to almost every multi-handed case."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-02-check-04",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states the ratio of R v Samuel.",
+          "passage": "The superintendent's stated reason was that suspects awaiting the arrest of others should generally not have contact with a solicitor. The Court of Appeal held that reasonable grounds under s 58(8) must relate specifically to the individual solicitor in question and the particular circumstances of the case, not to a generalised belief applicable to suspects with co-accused at large. Because the superintendent's reasoning was of the latter kind, the delay was unlawful.",
+          "ratioSentence": "The Court of Appeal held that reasonable grounds under s 58(8) must relate specifically to the individual solicitor in question and the particular circumstances of the case, not to a generalised belief applicable to suspects with co-accused at large."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Putting it together: a worked refusal",
+        "voice": "direct — sets up the exam-style trap",
+        "body": [
+          "Bring the pieces together with a single scenario. A suspect arrested for a serious, indictable robbery asks for a named solicitor. A superintendent authorises delay, recording as the reason: 'this solicitor's firm has, in the past, represented other members of this same gang, and there is specific intelligence that this solicitor personally passed a message between two co-accused during a previous, separate investigation two months ago.'",
+          "Run that reasoning against the checklist: rank — a superintendent, correct. Offence — indictable, correct. Ground — alerting other suspects, a recognised ground. Specificity — the belief names this solicitor, this firm, and a concrete prior incident, not suspicion of solicitors generally. On these facts, delay is far more likely to be lawful than the generalised reasoning in Samuel itself.",
+          "Change one fact and the answer flips: if the superintendent's note instead said only 'defence solicitors sometimes pass messages between co-accused, so as a precaution I am delaying access', that reasoning collapses straight back into the policy-based belief Samuel condemned — however serious the underlying offence."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Checklist for a lawful s 58 delay",
+            "points": [
+              "Authorised by an officer of at least superintendent rank",
+              "Offence is indictable",
+              "One of the specified consequences is believed likely to follow (interference with evidence, harm/interference with persons, alerting other suspects, or hindering recovery of property)",
+              "The belief is specific to this solicitor and this case, not a generalised policy (R v Samuel)",
+              "Delay is recorded, time-limited, and the right revives once the grounds no longer apply or the maximum period is reached"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-02-check-05",
+          "type": "mcqWithTrap",
+          "skillTag": "application",
+          "prompt": "A superintendent authorises delay for a suspect arrested for indictable burglary, recording only: 'solicitors can occasionally be careless, so I am delaying access as a precaution in this case, as in all similar cases.' Is this delay lawful?",
+          "options": [
+            "No — this is a generalised policy-style justification, not a belief specific to this solicitor or case, so it fails the Samuel standard",
+            "Yes — the offence is indictable and a superintendent has authorised it, which is enough",
+            "Yes — 'as a precaution' shows the superintendent turned their mind to the risk",
+            "No — because burglary can never justify delaying legal advice"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "Rank and offence type being correct is necessary but not sufficient. The reasoning given here is explicitly generalised — 'as in all similar cases' is almost a direct echo of the reasoning Samuel rejected — so it fails the specificity requirement regardless of the other boxes being ticked.",
+          "feedbackIncorrect": "Rank and offence type alone do not save this. Look at the wording of the justification itself: 'as in all similar cases' is exactly the kind of generalised reasoning Samuel held to be unlawful.",
+          "feedbackCorrect": "Right. The stated reason applies to any case, not this one — that is the Samuel flaw exactly."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-02-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Which statement correctly describes the baseline right under s 58 PACE?",
+      "options": [
+        "A person arrested and held in custody has the right to consult a solicitor privately, free of charge, at any time",
+        "A person may consult a solicitor only once formal questioning has begun",
+        "The right applies only to suspects who can pay for their own solicitor",
+        "The right applies only during normal office hours"
+      ],
+      "correctIndex": 0,
+      "explanation": "The right is available at any time during custody, is free through the duty solicitor scheme, and is private — none of the other options reflect the statutory position."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-02",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which officer has the power to authorise a delay in a suspect's access to legal advice under s 58?",
+      "options": [
+        "An officer of at least superintendent rank",
+        "The custody officer, since they control all detention decisions",
+        "The investigating officer, if they believe the case is urgent",
+        "Any officer of inspector rank or above"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "It is tempting to assume the custody officer's general control over detention extends to this decision, or that inspector rank (the review officer threshold elsewhere in PACE) is enough here. Section 58 sets its own, higher rank requirement: superintendent or above.",
+      "explanation": "Only a superintendent (or higher) can authorise delay — a deliberately high threshold given how significant the right is."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-03",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A suspect arrested for an indictable offence asks for a named solicitor. A superintendent authorises delay because, on the facts of this investigation, there is credible intelligence that this specific solicitor has previously relayed messages to a co-accused. Which principle from R v Samuel does this best illustrate?",
+      "options": [
+        "That a belief specific to the individual solicitor and case can satisfy s 58(8), unlike a generalised policy concern",
+        "That solicitors can never be the subject of a delay decision under any circumstances",
+        "That delay is automatically lawful whenever the offence is indictable",
+        "That the suspect's own criminal record is what justifies delay"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is the positive side of Samuel: a specific, evidenced belief about this solicitor in this case is exactly what the section requires, unlike the generalised reasoning that failed in Samuel itself."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-04",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT one of the specified consequences that can justify delaying access to legal advice under s 58(8)?",
+      "options": [
+        "A general risk that any solicitor consulted might, in the abstract, be indiscreet",
+        "Interference with or harm to evidence connected with the offence",
+        "Alerting other persons suspected of the offence but not yet arrested",
+        "Hindering the recovery of property obtained as a result of the offence"
+      ],
+      "correctIndex": 0,
+      "explanation": "The statute lists specific, fact-based consequences. A generalised, abstract risk about solicitors as a class is not one of them and, per Samuel, cannot found a lawful delay."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-05",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "What offence category must be involved before delay to legal advice can be authorised under s 58?",
+      "options": [
+        "An indictable offence",
+        "Any offence at all, however minor",
+        "Only offences carrying a mandatory life sentence",
+        "Only offences involving violence"
+      ],
+      "correctIndex": 0,
+      "explanation": "Delay under s 58 is only available in connection with an indictable offence — the same offence-type filter that also governs the superintendent's power to extend detention."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.5,
+      "prompt": "A superintendent authorises delay, reasoning: 'in cases like this, involving multiple suspects, it is our practice to delay legal advice until all suspects are in custody.' Applying R v Samuel, is this reasoning likely to be lawful?",
+      "options": [
+        "No — it describes a standing practice applied to a category of cases, not a belief specific to this solicitor and case",
+        "Yes — multiple suspects is exactly the scenario s 58(8) was designed for",
+        "Yes — 'practice' shows the force has a consistent, fair approach",
+        "It depends only on whether the offence is indictable"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "A consistent 'practice' sounds fair, but consistency is exactly the problem: Samuel requires an individualised belief, and a standing practice applied across a category of cases is the paradigm example of the generalised reasoning the Court of Appeal rejected.",
+      "explanation": "Any reasoning phrased as a standing practice, rather than facts specific to this case, fails the Samuel test regardless of how evenly it is applied."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A suspect asks to consult the duty solicitor, who is unknown to the police and to the suspect. A superintendent delays access on the basis that 'we have no way of vetting an unfamiliar duty solicitor's discretion.' Is this likely to satisfy s 58(8) as interpreted in Samuel?",
+      "options": [
+        "No — Samuel confirms solicitors, including duty solicitors, are generally trusted to comply with their professional obligations, so unfamiliarity alone is not a specific ground",
+        "Yes — an unfamiliar solicitor is inherently more risky than a known one",
+        "Yes — duty solicitors are outside the scope of s 58 protection",
+        "No — because duty solicitors can never be delayed under any circumstances, even on specific evidence"
+      ],
+      "correctIndex": 0,
+      "explanation": "Samuel treats solicitors, including unfamiliar duty solicitors, as a profession that can generally be trusted. Mere unfamiliarity is not a specific ground — the belief still needs to be anchored to facts about this individual and case."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-08",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which feature of the suspect's right does the phrase 'at any time' in s 58 primarily protect?",
+      "options": [
+        "That the right is available throughout detention, not confined to a particular stage such as after questioning has begun",
+        "That the right must be exercised within the first hour of arrival",
+        "That the solicitor must attend within 30 minutes of being called",
+        "That the right lapses once charge occurs"
+      ],
+      "correctIndex": 0,
+      "explanation": "'At any time' guards against the right being treated as available only once some other procedural stage (like the start of an interview) has been reached."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-09",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A suspect requests a solicitor at 2am. The custody officer, without seeking any superintendent's authorisation, tells the suspect they will have to wait until the morning 'so as not to disturb anyone unnecessarily.' What is the correct analysis?",
+      "options": [
+        "This is an unlawful delay — only a superintendent can authorise delay, and 'not disturbing anyone' is not a recognised s 58(8) ground in any event",
+        "This is lawful, since custody officers routinely manage the practicalities of detention",
+        "This is lawful provided the suspect does not object at the time",
+        "This is lawful because the time of night is itself a recognised ground for delay"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "Practical convenience is doing a lot of work here, but it is irrelevant on two independent grounds: the custody officer has no power to authorise delay at all, and 'not disturbing anyone' does not correspond to any of the specified statutory consequences.",
+      "explanation": "This fails on rank alone before the substance of the ground is even considered — the custody officer simply has no authority to make this call."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-10",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Can delay under s 58 be authorised indefinitely, provided the original grounds continue to apply?",
+      "options": [
+        "No — delay is subject to a fixed statutory maximum, after which the right revives regardless",
+        "Yes — as long as the superintendent renews the authorisation in writing",
+        "Yes — delay can continue for as long as the investigation is active",
+        "No — delay can never last more than one hour under any circumstances"
+      ],
+      "correctIndex": 0,
+      "explanation": "Delay is time-limited by statute (up to 36 hours from the relevant time), not open-ended, and the right returns once that maximum is reached even if the original justification technically persists."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.6,
+      "prompt": "A superintendent has specific, credible information that a named suspect, if allowed to consult the named solicitor requested, will use the consultation to instruct the solicitor to warn a named co-accused who is still at large. Which of the following is the strongest basis to authorise delay here?",
+      "options": [
+        "The belief is specific to this suspect, this solicitor, and a named co-accused, satisfying the 'alerting other suspects' ground in s 58(8)",
+        "The suspect has previous convictions, which is enough on its own",
+        "The offence is serious, which alone satisfies s 58(8)",
+        "The solicitor has not yet met this particular client before"
+      ],
+      "correctIndex": 0,
+      "explanation": "This is a textbook lawful delay: a concrete, individualised belief tied to a specific recognised ground, exactly what Samuel requires and the generalised reasoning in that case lacked."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Which of these grounds, drawn from s 58(8), concerns the consequences of a consultation for the investigation's physical evidence rather than for other people?",
+      "options": [
+        "Interference with or harm to evidence connected with the offence",
+        "Alerting other persons suspected of having committed the offence",
+        "Physical injury to other persons",
+        "The suspect's general reluctance to cooperate"
+      ],
+      "correctIndex": 0,
+      "explanation": "The evidence-interference ground is distinct from the two grounds concerned with other people (alerting suspects, and interference with or injury to persons); the fourth option is not a recognised ground at all."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which case establishes that a belief justifying delay under s 58 must be specific to the individual solicitor and case, rather than a general policy concern?",
+      "options": [
+        "R v Samuel",
+        "R v Miller",
+        "R v Stone and Dobinson",
+        "Airedale NHS Trust v Bland"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "The other three cases are genuine criminal law authorities, but on omissions liability, not on legal advice under PACE — a common trap when several case names appear together in revision material without their subject matter attached.",
+      "explanation": "R v Samuel is the leading authority narrowing the s 58(8) grounds to a case-specific, rather than generalised, standard."
+    },
+    {
+      "itemId": "sqe1-clp-02-test-14",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A superintendent's authorisation record for delaying legal advice reads only: 'offence is serious; delay authorised.' Applying Samuel, what is the principal defect in this record?",
+      "options": [
+        "It identifies no specific ground under s 58(8) and no facts particular to this solicitor or case",
+        "It fails because the officer's rank was not recorded",
+        "It fails only because it is too short",
+        "There is no defect — seriousness of the offence is itself sufficient"
+      ],
+      "correctIndex": 0,
+      "explanation": "Seriousness of the offence, without more, says nothing about which specific s 58(8) consequence is feared or why — exactly the gap Samuel identifies as fatal to a delay decision."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap is accepting a reason for delay that sounds sensible in general terms but would apply to almost any case — 'other suspects are at large', 'solicitors can be indiscreet', 'it's our usual practice'. Test every justification against Samuel: does it name specific facts about this solicitor and this case, or could it be copied into any other file unchanged?",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.legal-advice-delay"
+  }
+}

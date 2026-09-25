@@ -1,0 +1,333 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-02",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 2,
+  "topicId": "sqe1.business-law.partnership-formation",
+  "title": "Partnership formation and default governance",
+  "subtitle": "The s 1(1) definition and the Partnership Act's default terms",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the s 1(1) Partnership Act 1890 definition of a partnership and explain how a partnership can arise without any of the parties intending it",
+    "List the default terms the Act implies into a partnership absent contrary agreement, including profit-sharing, salary, admission of new partners, and ordinary decision-making",
+    "Explain why, and to what extent, an express partnership agreement can displace the Act's default terms, and identify what a written agreement is typically drafted to avoid"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Partnership Act 1890, s 1", "role": "Defines a partnership as persons carrying on a business in common with a view of profit" },
+    { "citation": "Partnership Act 1890, s 24", "role": "Sets out the default terms governing a partnership absent an agreement to the contrary" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite the s 1(1) definition but underestimate how completely s 24's default terms apply the moment that definition is satisfied — with or without paperwork. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the definition — this lesson is about what happens automatically once it's met.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans towards scenarios where a partnership forms by accident, or where a default term produces a result someone didn't expect.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state the s 1(1) definition precisely — the rest of the lesson assumes you can spot when it's satisfied without being told."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Two friends start splitting the profits from a market stall they run together most weekends. Neither has signed anything, neither thinks of themselves as running a 'business' in any formal sense — but in law, they may already be partners, bound by a set of default rules neither of them has read. This lesson is about how easily that happens, and what the default rules actually say.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The Partnership Act 1890 is long-settled legislation; nothing in this lesson is subject to pending reform."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The definition that does all the work",
+        "voice": "structural — isolates the statutory language before anything else",
+        "body": [
+          "Section 1(1) of the Partnership Act 1890 defines a partnership as 'the relation which subsists between persons carrying on a business in common with a view of profit'. Every word in that sentence is load-bearing, and SQE1 questions are built around testing each one in turn.",
+          "'Carrying on a business' requires more than a single joint transaction — an ongoing course of dealing, not a one-off. 'In common' requires the business to be shared, not run by one person with others merely assisting or investing passively. 'With a view of profit' excludes charities, social clubs and purely cost-sharing arrangements, but does not require that a profit is actually made — only that making one is the object.",
+          "Crucially, nothing in s 1(1) requires the parties to have intended to form a partnership, to have called themselves partners, or to have written anything down. The relationship is defined by what the parties are actually doing, assessed objectively — not by what they believed they were doing."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Partnership Act 1890, s 1(1)",
+            "text": "Partnership is the relation which subsists between persons carrying on a business in common with a view of profit.",
+            "elements": ["Persons (two or more)", "Carrying on a business", "In common", "With a view of profit"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-02-check-01",
+          "type": "recallFirst",
+          "skillTag": "knowledge",
+          "prompt": "State the s 1(1) Partnership Act 1890 definition of a partnership.",
+          "acceptableAnswers": ["the relation which subsists between persons carrying on a business in common with a view of profit", "persons carrying on business in common with a view of profit"],
+          "modelAnswer": "Partnership is the relation which subsists between persons carrying on a business in common with a view of profit."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Partnerships that form by accident",
+        "voice": "case-narrative — walks through a scenario before naming the doctrine",
+        "body": [
+          "Because s 1(1) asks only what the parties are actually doing, a partnership can arise entirely unintentionally. Two sole traders who begin sharing premises, staff, and a joint marketing budget, and who split the resulting profit between them, may have become partners in law even though each still thinks of themselves as running their own separate business.",
+          "This matters because partnership status brings consequences neither party may have wanted: each partner becomes an agent of the other for the purposes of the business, each is exposed to the other's decisions, and each becomes personally liable, alongside the other, for partnership debts — even debts they did not personally incur or know about.",
+          "The test is not whether the parties would describe themselves as partners, or whether they filed anything anywhere — there is no filing requirement for an ordinary partnership at all. The test is simply whether, on the facts, a business is being carried on in common with a view of profit. Contrast this with a genuine joint venture limited to a single transaction, or an arrangement where one party is merely lending money or premises without sharing in the running of the business — neither of those, without more, satisfies s 1(1)."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Unintentional partnership",
+            "definition": "A partnership arising purely from conduct satisfying s 1(1), regardless of whether the parties intended, recognised, or labelled their relationship as a partnership."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-02-check-02",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that most clearly pushes this scenario towards an unintentional partnership under s 1(1).",
+          "scenarioText": "Two independent driving instructors share an office and a receptionist to cut costs, each keeping their own separate client list and fees. After a year, they start pooling all lesson income into one account and splitting it equally each month, regardless of whose pupils generated it.",
+          "tappableSpans": ["share an office and a receptionist to cut costs", "each keeping their own separate client list and fees", "pooling all lesson income into one account", "splitting it equally each month, regardless of whose pupils generated it"],
+          "correctSpan": "splitting it equally each month, regardless of whose pupils generated it",
+          "feedbackCorrect": "That's the shift. Sharing overheads while keeping separate income and clients is just cost-sharing — it's the move to pooling and splitting income in common that starts to look like carrying on a business together with a view of profit.",
+          "feedbackIncorrect": "Look for the point where the business itself, not just the overheads, becomes shared. Splitting office costs alone is not carrying on business 'in common' — pooling and sharing the income is what changes the picture."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The default terms: what applies if nobody agreed otherwise",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Section 24 of the Partnership Act 1890 fills the gap left by parties who never wrote an agreement — or who wrote one that is silent on a particular point. These default terms apply automatically the moment s 1(1) is satisfied, whether or not the partners have ever read the Act.",
+          "The defaults are strikingly egalitarian, and often surprise partners who assumed their different contributions of capital, time or clients would be reflected automatically. They are not, unless the partners say so."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Key s 24 default terms",
+            "points": [
+              "Equal profit-sharing — partners share profits (and bear losses) equally, regardless of unequal capital contributions or unequal hours worked (s 24(1))",
+              "No salary — a partner is not entitled to a salary for acting in the partnership business (s 24(6))",
+              "No interest on capital before profits are ascertained (s 24(4)); but interest is payable on advances beyond agreed capital (s 24(3))",
+              "Unanimous consent required to introduce a new partner (s 24(7))",
+              "Every partner may take part in management (s 24(5))",
+              "Ordinary matters decided by majority; a change to the nature of the business requires unanimity (s 24(8))"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-02-check-03",
+          "type": "mcqWithTrap",
+          "skillTag": "knowledge",
+          "prompt": "Under the s 24 default terms, a partner who contributed 80% of the starting capital and works full-time, against a partner who contributed 20% and works part-time, will share profits how?",
+          "options": ["In proportion to capital contributed", "In proportion to hours worked", "Equally, unless the partnership agreement says otherwise", "According to seniority"],
+          "correctIndex": 2,
+          "trapExplanation": "It is tempting to assume profit share tracks contribution or effort, since that feels fairer. The default rule under s 24(1) does not track either — it is strict equality, however unequal the inputs, unless the partners have expressly agreed a different split.",
+          "explanation": "Section 24(1) presumes equal sharing of both profits and losses regardless of unequal capital or unequal effort — a frequent source of dispute precisely because it defeats many partners' assumptions."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Majority rule and its limits",
+        "voice": "Socratic — poses the boundary question before resolving it",
+        "body": [
+          "Section 24(8) draws a distinction that repays close reading: ordinary matters connected with the partnership business may be decided by a majority of the partners, but no change may be made to the nature of the partnership business itself without the consent of all existing partners.",
+          "Where does the line sit? Deciding to switch suppliers, adjust opening hours, or hire a junior employee are ordinary management decisions — majority rule applies. Deciding to expand from selling coffee to also running a full restaurant kitchen, or to close the original business and start an unrelated one, changes the nature of the business itself — and requires everyone's consent, even a single dissenting partner with a small profit share.",
+          "The admission of a new partner sits outside majority rule entirely: s 24(7) requires unanimous consent, full stop, regardless of how the vote would otherwise go on ordinary matters. A partner cannot be forced to accept a new co-partner they have not agreed to, however small their own stake."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Which decision rule applies?",
+            "description": "A flowchart for classifying a partnership decision under the s 24 default terms.",
+            "nodes": [
+              { "id": "start", "label": "What kind of decision is being made?" },
+              { "id": "new-partner", "label": "Admitting a new partner → unanimous consent required (s 24(7))" },
+              { "id": "nature-change", "label": "Changing the nature of the business → unanimous consent required (s 24(8))" },
+              { "id": "ordinary", "label": "Ordinary matter connected with the existing business → majority decides (s 24(8))" }
+            ],
+            "edges": [
+              { "from": "start", "to": "new-partner", "label": "New partner" },
+              { "from": "start", "to": "nature-change", "label": "Nature of business" },
+              { "from": "start", "to": "ordinary", "label": "Day-to-day matter" }
+            ],
+            "textAlternative": "To classify a partnership decision: if it is about admitting a new partner, unanimous consent is required under s 24(7). If it is about changing the nature of the business itself, unanimous consent is required under s 24(8). If it is an ordinary matter connected with the existing business, a majority of the partners decides under s 24(8)."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-02-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "A three-partner accountancy firm is deciding something. In which scenario does the s 24(8) unanimity requirement (rather than majority rule) apply?",
+          "scenarioA": "The partners are deciding, by a 2–1 vote, to switch their office software provider.",
+          "scenarioB": "The partners are deciding, by a 2–1 vote, to stop offering accountancy services altogether and instead operate as a recruitment agency.",
+          "correctScenario": "B",
+          "explanation": "Switching software is an ordinary matter connected with the existing business — majority rule applies and the vote stands. Abandoning accountancy for recruitment changes the nature of the business itself, which s 24(8) reserves for unanimous consent; the dissenting partner cannot be outvoted on this."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Why the agreement usually displaces almost all of this",
+        "voice": "direct — closes the lesson by returning to practice",
+        "body": [
+          "Section 19 of the Act allows partners to vary the terms implied by the Act, whether by an express agreement or by a course of dealing the partners have consistently followed. In practice, nearly every professionally advised partnership displaces most of s 24 with a bespoke written agreement — precisely because the default terms so rarely match what real partners actually want.",
+          "A typical partnership agreement will fix profit shares to reflect unequal capital or effort, provide for partner salaries or drawings, set out a mechanism for admitting new partners that falls short of requiring every existing partner's individual consent in every case, and define clearly what counts as an 'ordinary matter' subject to majority rule versus a fundamental change requiring unanimity.",
+          "This is why the s 1(1) definition and the s 24 defaults matter so much in practice: they are the fallback that fills every gap the agreement leaves, and they are what governs entirely where — as often happens between friends or family — no agreement was ever written down at all."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often say that because most partnerships have a written agreement, the s 24 default terms are of little practical importance and can be treated as a historical curiosity.",
+            "whyItsWrong": "The defaults matter precisely where the agreement is silent, ambiguous, or simply does not exist — which includes every unintentional partnership discussed in Part 2, and every gap a drafter failed to anticipate in an otherwise careful agreement. They are the safety net, not a dead letter."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-02-check-05",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "A partnership agreement fixes the profit-sharing ratio but says nothing about whether a partner is entitled to a salary. What governs the salary question?",
+          "options": ["The s 24(6) default term applies — no partner is entitled to a salary, because the agreement is silent on the point", "The agreement's silence means no default term can apply, and the point is simply unresolved in law", "Salary is always implied at a reasonable market rate where the agreement is silent"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. An express agreement only displaces the Act on the points it actually addresses. Where it is silent, the relevant s 24 default term fills the gap — here, that a partner is not entitled to a salary.",
+          "feedbackIncorrect": "The agreement only displaces the Act where it actually speaks to the point. On anything it is silent about, the relevant s 24 default term simply continues to apply."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-02-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Which four elements together make up the s 1(1) Partnership Act 1890 test for whether a partnership exists?",
+      "options": ["Persons, carrying on a business, in common, with a view of profit", "Persons, a written agreement, registration, and a view of profit", "Two or more directors, a constitution, and a view of profit", "Persons, capital contributions, and equal effort"],
+      "correctIndex": 0,
+      "explanation": "Section 1(1) requires persons carrying on a business in common with a view of profit — no written agreement or registration is part of the statutory test."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-02",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Two friends run a monthly pub quiz purely for fun, splitting the modest entry-fee surplus to cover their own drinks, with no aim of making a profit beyond covering costs. Applying s 1(1), is this a partnership?",
+      "options": ["No — without a view of profit as the object of the arrangement, s 1(1) is not satisfied", "Yes — any sharing of money between two people carrying on a joint activity is a partnership", "Yes, but only once they have run the quiz for more than a year", "No — because no written agreement exists"],
+      "correctIndex": 0,
+      "explanation": "'With a view of profit' excludes arrangements whose object is covering shared costs rather than generating a surplus intended as profit. A written agreement is never required for s 1(1) in any event."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A trainee tells a client that her business only becomes a 'partnership' once she and her co-founder register it at Companies House. Is this correct?",
+      "options": ["Yes — registration is what creates a partnership in law", "No — an ordinary partnership requires no registration at all; it arises from conduct satisfying s 1(1)", "Yes, but only for partnerships with more than two partners", "No — but only limited partnerships avoid the registration requirement"],
+      "correctIndex": 1,
+      "trapExplanation": "Students confuse ordinary partnerships with incorporated vehicles like LLPs and companies, which do require Companies House registration. An ordinary partnership under the 1890 Act has no such requirement — it exists the moment the statutory relationship is satisfied.",
+      "explanation": "There is no registration or filing requirement for an ordinary partnership to come into existence; it is a matter of fact, governed by s 1(1), not of formal registration."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-04",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "prompt": "A partnership agreement is silent on whether a new partner can be admitted by majority vote. Which s 24 provision governs, and what does it require?",
+      "options": ["Section 24(7) — unanimous consent of all existing partners is required", "Section 24(8) — a majority of existing partners can admit a new partner", "Section 24(1) — the new partner is automatically admitted on equal profit terms", "No default term applies, so the question is left entirely unresolved"],
+      "correctIndex": 0,
+      "explanation": "Section 24(7) reserves the admission of a new partner for unanimous consent, and this default applies in full wherever the agreement does not expressly provide a different mechanism."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-05",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "A partner who contributed no capital but works full-time, against a partner who contributed all the starting capital but works only occasionally, have no agreement covering profit shares. How does s 24 divide profit between them?",
+      "options": ["Equally between the two of them", "In proportion to capital contributed", "In proportion to hours worked", "According to whichever partner proposes the higher share"],
+      "correctIndex": 0,
+      "explanation": "Section 24(1) implies equal sharing of profits regardless of unequal capital contribution or unequal time committed — a point that frequently surprises partners who assumed contribution would be reflected automatically."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A partner who advanced the firm £50,000 beyond her agreed capital contribution asks whether she is entitled to interest on that advance under the default terms. What should she be told?",
+      "options": ["No — s 24 never provides for interest of any kind on money contributed to a partnership", "Yes — s 24(3) implies interest at 5% per annum on advances made beyond the agreed capital, even though no interest is implied on the agreed capital itself before profits are ascertained", "Yes, but only if the other partners unanimously agree after the fact", "No — interest can only ever be agreed expressly in the partnership agreement"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often over-generalise 'no interest on capital' from s 24(4) to cover advances as well. Section 24(3) treats an advance beyond agreed capital differently from the agreed capital itself, implying interest on the former even though the latter attracts none before profits are ascertained.",
+      "explanation": "The default terms distinguish an advance beyond agreed capital (interest implied under s 24(3)) from the agreed capital contribution itself (no interest implied under s 24(4) before profits are ascertained)."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-07",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Under s 24(8), how are 'ordinary matters connected with the partnership business' decided, as distinct from a change to the nature of the business itself?",
+      "options": ["Both require unanimous consent of all partners", "Ordinary matters may be decided by a majority; changing the nature of the business requires unanimous consent", "Ordinary matters require unanimous consent; changing the nature of the business may be decided by majority", "Both are decided by whichever partner holds the largest profit share"],
+      "correctIndex": 1,
+      "explanation": "Section 24(8) splits partnership decision-making in two: majority rule for the ordinary running of the existing business, but unanimity where the fundamental nature of that business is being changed."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-08",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A partnership agreement expressly fixes profit shares at 60/40 but is completely silent on whether partners are entitled to a salary. What is the correct analysis?",
+      "options": ["The agreement's silence on salary means the profit-sharing clause is void entirely", "The express term governs profit shares; the s 24(6) default (no salary) fills the gap on the point the agreement does not address", "Because the agreement addresses profit shares, none of s 24 can apply to this partnership at all", "The default terms only apply to partnerships with no written agreement whatsoever"],
+      "correctIndex": 1,
+      "explanation": "An agreement displaces the Act only on the specific points it covers. It is entirely normal for an agreement to expressly fix one default term (profit shares) while leaving another (salary) to the s 24 fallback."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Two osteopaths who have practised independently for years begin sharing a treatment room, a booking system, and start pooling and splitting all patient fees equally each month, though each still treats her own patients. One of them insists 'we never agreed to be partners.' What is the most likely legal position?",
+      "options": ["No partnership exists, because there was never an express agreement to that effect", "A partnership is likely to exist under s 1(1), because they are carrying on business in common with a view of profit, regardless of what either of them intended or called it", "A partnership can only arise where a written agreement has been signed by both parties", "No partnership exists because each still treats her own separate patients"],
+      "correctIndex": 1,
+      "explanation": "Section 1(1) is assessed objectively from conduct, not from subjective intention or labels. Pooling and equally splitting income from a jointly run booking and treatment arrangement points strongly towards carrying on business in common with a view of profit, whatever either osteopath now says she intended."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A four-partner firm has no written agreement. Two partners vote to admit a fifth partner; the other two object. Is the new partner validly admitted?",
+      "options": ["Yes — a 2–2 outcome is treated as passing by default", "No — s 24(7) requires the consent of every existing partner to admit a new partner, so a split vote (or any dissent) means admission fails", "Yes — admission of a new partner is an ordinary matter decided by majority, and this is a tie broken in favour of admission", "No — new partners can never be admitted without a formal deed regardless of consent"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes treat admission of a new partner as an 'ordinary matter' subject to majority rule under s 24(8). It is not — s 24(7) singles it out for unanimous consent, so even a single dissenting partner blocks admission, let alone a split vote.",
+      "explanation": "Unanimous consent under s 24(7) means any dissent, from one partner or several, defeats admission — this is not a majority-rule question at all."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A three-partner catering firm votes 2–1 to relocate to new, larger premises to keep up with demand, while continuing to offer the same catering services. The dissenting partner argues this requires unanimous consent. Is she right?",
+      "options": ["Yes — any decision one partner opposes automatically requires unanimity", "No — relocating premises while continuing the same business is an ordinary matter connected with the business, decided validly by majority under s 24(8)", "Yes — relocation always counts as changing the nature of the business", "No — because the firm has no written agreement, no decision rule applies at all"],
+      "correctIndex": 1,
+      "explanation": "The nature of the business — catering — is unchanged; only its location has moved. This is an ordinary matter connected with the existing business, which s 24(8) leaves to majority rule, so the 2–1 vote stands despite the dissent."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-12",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A partnership agreement says nothing at all about how ordinary business decisions are to be made. Two of three partners want to change the firm's bank. What governs, and what is the outcome?",
+      "options": ["Section 24(8) governs; as an ordinary matter, the 2–1 majority decision stands", "Section 24(7) governs; unanimous consent is required, so the change fails", "No default term applies to banking decisions, so the change cannot proceed", "Section 24(1) governs; the decision must follow the profit-sharing ratio, not a headcount vote"],
+      "correctIndex": 0,
+      "explanation": "Changing the firm's bank is a routine, ordinary matter connected with running the existing business — squarely within s 24(8)'s majority rule, not the s 24(7) unanimity rule reserved for admitting a new partner."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A partner who has contributed significant unpaid overtime for years, well beyond his partners' hours, argues he is owed a salary under the default terms in recognition of that extra work. Is he correct?",
+      "options": ["Yes — s 24 implies a reasonable salary for any partner who works materially more than the others", "No — s 24(6) implies that no partner is entitled to a salary for acting in the partnership business, regardless of the hours worked, absent contrary agreement", "Yes, but only if he can show the extra work increased partnership profit", "No — but he is automatically entitled to a larger profit share instead"],
+      "correctIndex": 1,
+      "trapExplanation": "It feels intuitively fair that extra unpaid work should be compensated, which tempts students to invent a salary entitlement that does not exist. Section 24(6) is a flat default: no salary, however unequal the actual contribution of time, unless the partners have expressly agreed otherwise.",
+      "explanation": "The default terms do not adjust for unequal effort in either salary (s 24(6)) or profit share (s 24(1)) — both defaults are flat and equal, and only an express agreement can build in recognition of extra work."
+    },
+    {
+      "itemId": "sqe1-blp-02-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A five-partner firm's written agreement covers profit shares, salaries and admission of new partners in detail, but is silent on what happens if the partners disagree about switching the firm's IT supplier. Which governs that specific disagreement?",
+      "options": ["The express agreement's profit-sharing clause, applied by analogy", "The s 24(8) default — an ordinary matter connected with the business, decided by majority — since the agreement does not address it", "No rule applies, since the agreement is otherwise comprehensive", "The s 24(7) unanimity rule, since it is the strictest available default"],
+      "correctIndex": 1,
+      "explanation": "A comprehensive agreement still leaves the Act to fill any genuine gap. Switching IT supplier is an ordinary business matter the agreement does not address, so the s 24(8) majority-rule default applies to it specifically, without disturbing the agreement's express terms on other points."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is assuming intention, fairness, or a written agreement is required before the Act's rules bite. Section 1(1) and s 24 apply from conduct alone, and apply flatly and equally unless the partners have expressly said otherwise — however unfair that feels on the particular facts.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.partnership-formation"
+  }
+}

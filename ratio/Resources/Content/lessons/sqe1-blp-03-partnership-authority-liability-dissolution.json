@@ -1,0 +1,375 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-blp-03",
+  "moduleId": "sqe1-business-law-practice",
+  "moduleTitle": "SQE1 · Business Law and Practice",
+  "lessonNumber": 3,
+  "topicId": "sqe1.business-law.partnership-authority-liability-dissolution",
+  "title": "Partners' authority, liability, and dissolution",
+  "subtitle": "Agency, joint and several liability, retirement, and winding up",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 15,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Apply s 5 Partnership Act 1890 to determine whether a partner has bound the firm by acting within their usual course of business, including where a third party did not know of an internal restriction",
+    "Distinguish joint liability for partnership debts (s 9) from joint and several liability for wrongful acts (s 10), and explain how a retiring partner's liability continues unless s 17 notice is given",
+    "Apply the rules on automatic and court-ordered dissolution and on distribution of assets on winding up to a given set of partnership facts"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Partnership Act 1890, s 5", "role": "Gives each partner apparent authority to bind the firm for acts within the usual course of the firm's business" },
+    { "citation": "Partnership Act 1890, s 9", "role": "Makes partners jointly liable for the firm's debts and obligations incurred while they were partners" },
+    { "citation": "Partnership Act 1890, s 10", "role": "Makes partners jointly and severally liable for wrongful acts or omissions of a partner acting in the ordinary course of the firm's business" },
+    { "citation": "Partnership Act 1890, s 17", "role": "Governs a partner's continuing liability for past and future debts on retirement, and the protection given by notice" },
+    { "citation": "Partnership Act 1890, ss 26, 32-35, 44", "role": "Govern automatic and court-ordered dissolution and the order of distribution of assets on winding up" },
+    { "citation": "Mercantile Credit Co Ltd v Garrod [1962] 3 All ER 1103", "role": "Illustrates that a partner can bind the firm under s 5 even by acting outside an internal restriction, where the act appears to a third party to be within the usual course of the firm's business" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite the s 9/s 10 liability split as an abstract rule. Where the profile shows knowledge is ahead of application, this brief note appears: 'You know the rule — this lesson is about applying it to a specific partner, on specific facts, at a specific moment in the firm's life.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well on recall here before. The test pool below leans heavily on fact patterns — a partner acting oddly, a partner retiring, a firm winding up — rather than bare statements of the rule.",
+      "weakKnowledge": "Start with Part 1 and make sure you can state the s 5, s 9 and s 10 rules precisely before moving on — the later parts on retirement and dissolution build directly on them."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A partner the other two have quietly agreed never to let near procurement signs a large supply contract on the firm's behalf, in a line of business the firm genuinely does. The other partners are furious — they never authorised it. The supplier has never heard of any internal restriction, and simply dealt with someone who looked, for all the world, like a partner acting for the firm. Whose problem is that?",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The Partnership Act 1890 provisions covered here are long-settled; this lesson does not cover LLP-specific liability rules, which differ and are addressed elsewhere in this module."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Section 5: how a partner binds the firm",
+        "voice": "structural — isolates the statutory test before applying it",
+        "body": [
+          "Section 5 makes every partner an agent of the firm and of the other partners for the purposes of the partnership business. The practical consequence is that a partner's acts done for carrying on, in the usual way, business of the kind carried on by the firm bind the firm and all the partners — unless the partner had no authority to act and the third party either knew that or did not know or believe the person was a partner.",
+          "Notice what this test does not ask: it does not ask whether the acting partner actually had internal permission. It asks whether the act was of a kind that would usually fall within the ordinary business of a firm like this one, viewed from the outside. Internal restrictions the partners have agreed among themselves do not bind a third party who neither knew of the restriction nor had reason to doubt the partner's authority.",
+          "This is apparent authority, not actual authority, and the gap between the two is where most of the difficulty — and most of the exam questions — live."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Partnership Act 1890, s 5",
+            "text": "Every partner is an agent of the firm and his other partners for the purpose of the business of the partnership; and the acts of every partner who does any act for carrying on in the usual way business of the kind carried on by the firm of which he is a member bind the firm and his partners, unless the partner so acting has in fact no authority to act for the firm in the particular matter, and the person with whom he is dealing either knows that he has no authority, or does not know or believe him to be a partner.",
+            "elements": ["Act done for carrying on the firm's business", "In the usual way", "Of the kind of business the firm carries on", "The third party did not know of any lack of authority, and knew or believed the actor to be a partner"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-03-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under s 5, what is the key question when deciding whether a partner's act binds the firm to an outside third party?",
+          "options": ["Whether the act was of a kind usually carried on in the ordinary course of business of a firm like this one, as it would appear to the third party", "Whether the acting partner had actual internal permission from the other partners", "Whether the acting partner personally benefited from the transaction", "Whether the other partners later ratified the act"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. Section 5 turns on apparent, not actual, authority — how the act would appear to a third party dealing with someone who looks like a partner acting in the firm's usual business.",
+          "feedbackIncorrect": "Not quite — internal permission is irrelevant to whether the firm is bound under s 5. What matters is how the act appears from the outside: is it the kind of thing a firm like this usually does?"
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Garrod: authority survives an internal restriction",
+        "voice": "case-narrative — tells the story before naming the doctrine",
+        "body": [
+          "Mercantile Credit Co Ltd v Garrod concerned a partnership running a garage business that, under the partnership agreement, was expressly restricted from buying and selling cars — only repairs and storage were within its agreed scope. One partner nonetheless purported to sell a car he did not own to a finance company, which paid out in good faith.",
+          "The other partner argued the firm could not be bound: the sale fell squarely outside what the partners had actually agreed the business would do. The Court of Appeal disagreed. Buying and selling cars was the kind of business a garage of this type usually carries on, even though this particular firm had internally agreed not to do it — and the finance company had no notice of that restriction.",
+          "Garrod is the case that makes s 5 concrete: the test is not what this firm had actually agreed to do, but what a firm of this kind usually does, as it would appear to an outsider with no visibility into the partnership's internal arrangements. An internal restriction protects the partners against each other, in the sense that the acting partner may be liable to their co-partners for breach of the agreement — but it does not, without more, protect the firm from the third party."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Mercantile Credit Co Ltd v Garrod",
+            "citation": "[1962] 3 All ER 1103",
+            "court": "Court of Appeal",
+            "year": 1962,
+            "factsShort": "A garage partnership agreement excluded buying and selling cars; one partner sold a car he did not own to a finance company regardless.",
+            "ratioShort": "The firm was bound under s 5 because selling cars was within the usual course of business of a garage of this kind, even though this particular firm had internally excluded it and the third party did not know of that restriction.",
+            "expanded": {
+              "facts": "Two partners ran a garage business. Their written agreement restricted the business to repairs, storage and related work, expressly excluding the buying and selling of cars. One partner nonetheless agreed to sell a car — which, unknown to the finance company, he did not have good title to — and the finance company advanced money against the transaction in good faith, unaware of any restriction.",
+              "judgmentExtract": "The Court of Appeal held that dealing in cars was an act of the kind usually carried on by a garage business generally, and the finance company had no notice that this particular partner lacked authority for this particular transaction. The firm was accordingly bound under s 5, notwithstanding the internal restriction between the partners.",
+              "significance": "Garrod is the leading illustration that apparent authority under s 5 is assessed by reference to the usual business of firms of that type, not by reference to what the specific partners privately agreed between themselves — a distinction that protects innocent third parties at the expense of the partners' internal bargain."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-03-check-02",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario is closest to Mercantile Credit Co Ltd v Garrod on the question of whether the firm is bound?",
+          "scenarioA": "A partner at an accountancy firm, internally restricted from signing audit opinions, signs one anyway; the client has no idea any restriction exists and reasonably believed the partner had authority to sign audit opinions as accountancy partners usually do.",
+          "scenarioB": "A partner at an accountancy firm buys a yacht in the firm's name for his own personal use, and the seller is told at the time of sale that this partner has no authority to make purchases for the firm.",
+          "correctScenario": "A",
+          "explanation": "A mirrors Garrod: the act (signing audit opinions) is within the usual business of a firm of that kind, and the third party had no notice of the internal restriction — the firm is bound. In B, buying a yacht is not within the usual business of an accountancy firm at all, and in any event the third party was told of the lack of authority — s 5 would not bind the firm on either ground."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Two different liability rules: debts versus wrongs",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Once a firm is bound, the next question is how the partners are personally liable to the creditor or claimant — and here the Act draws a sharp distinction that examiners test constantly. Section 9 makes partners jointly liable for the debts and other ordinary contractual obligations of the firm. Section 10 makes partners jointly and severally liable for a wrongful act or omission of a partner acting in the ordinary course of the firm's business (or with the other partners' authority) which causes loss or injury to a third party.",
+          "The practical difference matters enormously to a claimant. Under joint liability (debts, s 9), a claimant who obtains judgment against the partners collectively and does not recover the full amount from that judgment cannot, at common law, simply start a fresh action against a partner left out of the original claim. Under joint and several liability (wrongful acts, s 10), a claimant may sue any one partner, several, or all of them, for the full amount of the loss, leaving that partner to seek a contribution from the others.",
+          "The label to reach for on the facts is simple: is this a debt or contractual obligation the firm owes (s 9, joint), or is it a tort, breach of trust, or other wrongful act by a partner acting in the firm's ordinary business (s 10, joint and several)? Misclassifying which section applies is one of the most common errors in this area."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Section 9 versus section 10",
+            "points": [
+              "Section 9 — debts and contractual obligations of the firm — partners liable jointly",
+              "Section 10 — wrongful acts or omissions (e.g. negligence, breach of trust) by a partner acting in the ordinary course of business — partners liable jointly and severally",
+              "Joint liability: practical risk of being left unable to pursue a partner omitted from the original claim if the judgment is not satisfied in full",
+              "Joint and several liability: a claimant may sue any one, some, or all partners for the full loss"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-03-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the order a solicitor should work through when advising a claimant about who to sue in a partnership dispute.",
+          "items": [
+            "Identify whether the firm is bound at all (s 5 — was the act within the usual course of the firm's business?)",
+            "Classify the claim as a debt/contractual obligation or a wrongful act",
+            "If a debt, apply s 9 (joint liability)",
+            "If a wrongful act, apply s 10 (joint and several liability)"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: whether the firm is bound at all is logically prior to how the partners are personally liable, and the debt/wrong classification determines which liability rule applies.",
+          "feedbackIncorrect": "Check the order — you need to establish the firm is bound under s 5 before asking how the partners are personally liable, and you need to classify the claim as a debt or a wrong before knowing whether s 9 or s 10 applies."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Retirement: liability doesn't simply stop",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "A retiring partner remains liable under s 17(2) for debts and obligations incurred by the firm while they were still a partner, whatever happens afterwards — retirement does not retrospectively erase liability for the past. The more commonly tested issue is liability for debts incurred after retirement, to people the retiring partner dealt with before leaving.",
+          "Section 17(3), read with s 36, provides the protection: a retiring partner avoids liability for new debts incurred after retirement only if adequate notice of the retirement has been given. For a person who dealt with the firm before the retirement, this generally requires actual notice of the change. For a person who had no previous dealings with the firm but knew before the retirement that the person had been a partner, notice by publication (in practice, notice in the London Gazette) is treated as sufficient — even though that person never actually saw it.",
+          "Miss this step and a retired partner can find themselves personally liable for a debt incurred by their former partners months after they left, simply because a long-standing client was never told, and had no reason to know, that anything had changed."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Actual versus Gazette notice",
+            "definition": "A retiring partner must give actual notice of retirement to protect against liability for post-retirement debts owed to existing clients/customers who dealt with the firm before retirement. For people who never dealt with the firm but knew the retiring partner had been a partner, notice by publication in the London Gazette is deemed sufficient even without actual knowledge."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-03-check-04",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A partner retires from a firm and notice is published in the London Gazette, but no individual letters are sent. A long-standing client who has dealt with the firm for ten years, and never reads the Gazette, later contracts with the firm after the retirement, unaware anything changed. Is the retired partner liable for that new debt?",
+          "options": ["No — Gazette publication alone is always sufficient notice to everyone", "Yes — as a person who had previous dealings with the firm, the client needed actual notice of the retirement, which Gazette publication alone does not provide", "No — retirement itself automatically ends all liability for future debts regardless of notice", "Yes, but only for half the debt"],
+          "correctIndex": 1,
+          "explanation": "Gazette notice is sufficient only for those who had no prior dealings with the firm. A client with an existing relationship needed actual notice of the retirement to protect the retired partner from liability for this new, post-retirement debt."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Dissolution and winding up",
+        "voice": "Socratic — closes the lesson by tying liability into the firm's end",
+        "body": [
+          "Dissolution can happen automatically or by court order. Automatic dissolution under s 26 occurs, absent a fixed term, where any partner gives notice to end the partnership at will; a partnership for a fixed term or undertaking also dissolves automatically on expiry of that term, on completion of the undertaking, or on the death or bankruptcy of a partner (subject to any contrary agreement preserving the firm between the remaining partners).",
+          "Court-ordered dissolution under ss 32-35 covers situations the partners cannot resolve themselves: where a partner is shown to be permanently incapable of performing their part of the agreement, where a partner's conduct is prejudicial to the business, where a partner persistently or wilfully breaches the agreement, where the business can only be carried on at a loss, or wherever the court considers it just and equitable to dissolve the partnership.",
+          "On winding up, s 44 sets out the order in which partnership assets are applied: first in paying debts to outside creditors; then in paying to each partner rateably what is due for advances beyond capital (with s 24(3) interest); then in paying out each partner's capital; and only then is any surplus divided among the partners in the profit-sharing ratio. A partner owed nothing under the earlier categories, or whose capital account is in deficit, may find there is little or nothing left for them at the end of that order."
+        ],
+        "components": [
+          {
+            "type": "doctrineMap",
+            "title": "Distribution on winding up (s 44)",
+            "description": "The order in which partnership assets are applied on a winding up.",
+            "nodes": [
+              { "id": "creditors", "label": "1. Pay debts owed to outside creditors" },
+              { "id": "advances", "label": "2. Repay partners' advances beyond agreed capital (with interest)" },
+              { "id": "capital", "label": "3. Repay each partner's agreed capital" },
+              { "id": "surplus", "label": "4. Divide any remaining surplus in the profit-sharing ratio" }
+            ],
+            "edges": [
+              { "from": "creditors", "to": "advances", "label": "then" },
+              { "from": "advances", "to": "capital", "label": "then" },
+              { "from": "capital", "to": "surplus", "label": "then" }
+            ],
+            "textAlternative": "On winding up under s 44, assets are applied in order: first to pay debts owed to outside creditors; second, to repay partners' advances beyond their agreed capital, with interest; third, to repay each partner's agreed capital; and finally, any remaining surplus is divided among the partners according to the profit-sharing ratio."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-blp-03-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A three-partner firm dissolves. After outside creditors are paid in full, remaining assets are just enough to repay all partners' advances beyond capital, but nothing further remains to repay any partner's agreed capital contribution. One partner argues she should still receive her capital back in priority to the others because she contributed the most. Analyse whether she is correct.",
+          "factsToOrder": [
+            "Outside creditors have already been paid in full",
+            "Remaining assets exactly cover advances beyond capital",
+            "No assets remain to repay agreed capital to any partner",
+            "One partner contributed more capital than the others",
+            "She claims priority over the other partners for her capital"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" },
+            { "level": 4, "support": "No scaffold; student writes full IRAC unaided" }
+          ],
+          "modelAnswer": {
+            "issue": "Whether a partner who contributed more capital than her co-partners is entitled to priority repayment of her capital on a winding up under s 44.",
+            "rule": "Section 44 sets a fixed order of application of assets on winding up: outside creditors, then advances beyond capital, then capital itself, then any surplus divided in the profit-sharing ratio. Section 44 does not rank partners against each other within the capital category by the size of their contribution.",
+            "application": "Creditors have already been paid and advances beyond capital have been fully covered, exhausting the assets before the capital category is reached. Because s 44 treats all partners' capital claims as sitting within the same category, rather than ranking larger contributors ahead of smaller ones, the size of her contribution gives her no priority over her co-partners for what capital is repaid.",
+            "conclusion": "She is not entitled to priority; since no assets remain once advances are covered, none of the partners — including her — receive any capital back, regardless of how much each contributed."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-blp-03-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Under s 5 Partnership Act 1890, what type of authority does a partner have to bind the firm to a third party who has no knowledge of any internal restriction?",
+      "options": ["Apparent authority based on acts within the usual course of the firm's business", "Only actual authority expressly given by the other partners", "No authority at all unless the transaction is later ratified", "Authority limited strictly to matters listed in the partnership agreement"],
+      "correctIndex": 0,
+      "explanation": "Section 5 binds the firm on the basis of apparent authority — how the act appears to an outside third party — not on whether the acting partner had actual internal permission."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-02",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Which section of the Partnership Act 1890 makes partners liable jointly and severally, rather than merely jointly, for a partner's wrongful act done in the ordinary course of the firm's business?",
+      "options": ["Section 9", "Section 10", "Section 17", "Section 24"],
+      "correctIndex": 1,
+      "explanation": "Section 10 governs wrongful acts and omissions, imposing joint and several liability; s 9 governs ordinary debts and contractual obligations, imposing joint liability only."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "A trainee states that partners are always liable jointly and severally for everything the firm owes, whether a debt or a tort. Is this correct?",
+      "options": ["Yes — joint and several liability is a single, uniform rule under the Act", "No — s 9 imposes joint liability for debts, while s 10 imposes joint and several liability for wrongful acts; the two are distinct rules", "No — partners are never personally liable for the firm's debts under the Act", "Yes, but only for firms of more than two partners"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is collapsing two distinct liability regimes into one. Debts and ordinary contractual obligations attract joint liability under s 9; wrongful acts attract joint and several liability under s 10 — the distinction is one of the most frequently tested points in this area.",
+      "explanation": "The Act deliberately distinguishes debts (s 9, joint) from wrongful acts (s 10, joint and several) — treating them as a single uniform rule is a common and serious error."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-04",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "prompt": "Under s 17(2) Partnership Act 1890, does a partner who retires remain liable for debts of the firm incurred before retirement?",
+      "options": ["Yes — a retiring partner remains liable for debts and obligations incurred while they were a partner, unless otherwise agreed", "No — retirement automatically discharges all past liability", "Yes, but only for debts they personally negotiated", "No — liability for past debts transfers entirely to the remaining partners on retirement"],
+      "correctIndex": 0,
+      "explanation": "Section 17(2) preserves a retiring partner's liability for pre-retirement debts; retirement is forward-looking only, and does not retrospectively erase liability already incurred."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-05",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "prompt": "What is the key difference in practical effect between joint liability (s 9) and joint and several liability (s 10) from a claimant's perspective?",
+      "options": ["Under joint and several liability, the claimant may sue any one, some, or all of the partners for the full amount; joint liability carries the practical risk of being unable to pursue an omitted partner if judgment is not fully satisfied", "There is no practical difference between the two", "Joint liability allows recovery of double the amount owed", "Joint and several liability only applies to partnerships of more than five partners"],
+      "correctIndex": 0,
+      "explanation": "The practical bite of the distinction is in how flexibly a claimant can pursue individual partners, and what happens if an earlier judgment is not satisfied in full — this is why classifying debt versus wrongful act correctly matters to real clients."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A firm's client is injured due to a partner's negligent advice given in the ordinary course of the firm's business. A trainee advises the client that she must sue all the partners together, jointly, as a single combined claim. Is this correct?",
+      "options": ["Yes — negligence claims against a firm are always brought jointly against every partner together", "No — this is a wrongful act attracting joint and several liability under s 10, so the client may choose to sue any one, some, or all of the partners", "No — the client cannot sue any partner personally, only the firm as an abstract entity", "Yes, because the firm has no separate legal personality"],
+      "correctIndex": 1,
+      "trapExplanation": "The trainee has applied the s 9 debt rule (which does involve a form of joint claim) to a claim that is actually a wrongful act under s 10, where joint and several liability gives the claimant far more flexibility about whom to sue.",
+      "explanation": "Negligent advice is a wrongful act within s 10, not a debt within s 9 — the client is not confined to a single combined claim against every partner and may pursue any one of them for the full loss."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-07",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "A retiring partner gives no individual notice but ensures a notice of retirement is published in the London Gazette. A new customer, who never previously dealt with the firm but had heard socially that this individual was a partner there, contracts with the firm after the retirement. Is the retired partner protected from liability for this new debt?",
+      "options": ["Yes — Gazette notice is sufficient for a person who had no prior dealings with the firm but knew of the individual's status as a partner", "No — only actual, individual notice to every person who ever heard of the partner is sufficient", "Yes, but only if the new customer actually read the Gazette notice", "No — retirement itself is never effective against third parties without a court order"],
+      "correctIndex": 0,
+      "explanation": "Because this customer had no prior dealings with the firm, Gazette publication is treated as sufficient notice under s 36, regardless of whether the customer actually saw it — this is the narrower protection available for people outside the firm's existing client base."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Under s 44, where does repayment of a partner's agreed capital rank relative to repayment of a partner's advances made beyond that agreed capital?",
+      "options": ["Capital and advances rank equally and are paid simultaneously in every case", "Advances beyond agreed capital are repaid before agreed capital itself", "Agreed capital is always repaid before advances beyond capital", "Advances beyond agreed capital are never repaid on a winding up"],
+      "correctIndex": 1,
+      "explanation": "Section 44 places repayment of advances beyond agreed capital ahead of repayment of the agreed capital itself, both of which rank behind payment of outside creditors and ahead of any distribution of surplus."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A partner at a firm of surveyors, contrary to an internal agreement restricting who can sign valuation reports, signs one anyway for a client who has no idea any such restriction exists and reasonably believes signing valuations is ordinary work for a firm like this. The valuation is negligent. Is the firm bound under s 5?",
+      "options": ["No — the internal restriction automatically protects the firm from any liability", "Yes — signing valuation reports is within the usual course of business of a surveying firm, and the client had no notice of the internal restriction", "No — s 5 never applies where any internal restriction exists, regardless of the third party's knowledge", "Yes, but only if the other partners later ratify the signature"],
+      "correctIndex": 1,
+      "explanation": "This mirrors Garrod: the act is of a kind usually carried on by a firm of this type, and the third party had no notice of the internal restriction, so the firm is bound under s 5 notwithstanding the partners' private arrangement."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A partner at a small bakery partnership, without any authority and with the supplier expressly told he has none, orders £200,000 of commercial kitchen equipment far beyond anything the bakery has ever purchased before, purportedly on the firm's behalf. Is the firm bound under s 5?",
+      "options": ["Yes — any purchase made by a partner always binds the firm", "No — the supplier was told of the lack of authority, so the firm is not bound regardless of whether the purchase might otherwise look usual for a business of this kind", "Yes, because bakeries commonly purchase kitchen equipment", "No — s 5 never applies to purchases of equipment, only to service contracts"],
+      "correctIndex": 1,
+      "trapExplanation": "It is tempting to focus only on whether kitchen equipment purchases are 'usual' for a bakery and stop there. But s 5's proviso is not satisfied where the third party actually knew of the lack of authority — actual knowledge defeats apparent authority regardless of how usual the transaction otherwise looks.",
+      "explanation": "Section 5 protects a third party who did not know of the lack of authority. Here, the supplier was expressly told the partner had none, which takes the transaction outside s 5's protection entirely, whatever the scale or type of the purchase."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A four-partner firm dissolves after paying all outside creditors and all advances beyond capital, and repaying every partner's agreed capital in full, leaving a surplus. The partnership agreement is silent on how any surplus should be divided. How is the surplus divided?",
+      "options": ["Equally among the four partners regardless of the profit-sharing ratio", "According to the partnership's ordinary profit-sharing ratio", "It is retained by whichever partner wound up the affairs of the firm", "It reverts to the partner who contributed the most capital"],
+      "correctIndex": 1,
+      "explanation": "Section 44 directs that any surplus remaining after creditors, advances and capital have been paid is divided among the partners in the same proportion as they were entitled to share profits — the ordinary profit-sharing ratio, not an equal split unless that happened to be the ratio."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-12",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "One partner in a three-partner firm has become permanently incapable, through serious illness, of performing any part of her role, and refuses to agree to leave the partnership voluntarily. The partnership agreement contains no relevant provision. What is the appropriate route to end her involvement?",
+      "options": ["The other partners may simply vote her out by majority, as an ordinary business matter", "An application to the court for dissolution, since permanent incapacity is one of the grounds for court-ordered dissolution under the Act", "Nothing can be done unless she resigns voluntarily", "The partnership dissolves automatically the moment illness is diagnosed, with no court involvement needed"],
+      "correctIndex": 1,
+      "explanation": "Permanent incapacity to perform the partner's role is one of the recognised grounds for court-ordered dissolution. Absent her agreement or an applicable provision in the partnership agreement, an application to the court is the appropriate route, rather than an informal majority vote, which has no power to expel a partner on this ground alone."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "A partnership has no fixed term and no partnership agreement at all. One partner, frustrated with the others, simply announces she is leaving with immediate effect. What is the effect on the partnership?",
+      "options": ["Nothing — a partnership at will can only be dissolved by unanimous agreement or court order", "The partnership is automatically dissolved, since a partner in a partnership at will may dissolve it by giving notice at any time", "The announcement has no legal effect unless made in writing and signed by all partners", "The partnership continues unchanged until the end of the current financial year"],
+      "correctIndex": 1,
+      "trapExplanation": "Students sometimes assume dissolution always requires either unanimous agreement or a court order, importing the ss 32-35 grounds into every scenario. Where there is no fixed term, s 26 allows any single partner to dissolve a partnership at will simply by giving notice — no consent from the others or court involvement is needed.",
+      "explanation": "A partnership at will (no fixed term) can be dissolved unilaterally by any one partner giving notice under s 26 — this is automatic dissolution, distinct from the court-ordered grounds in ss 32-35, which apply where the partners cannot otherwise agree to end things."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A partner retires and gives full actual notice to every existing client, and Gazette notice for everyone else. Six months later, a former client the retired partner personally used to deal with enters into a new contract with the remaining partners, having somehow missed the actual notice sent to her. Is the retired partner liable for this new debt?",
+      "options": ["No — once adequate notice has been given in the form required for that category of person, the retiring partner is protected even if a particular recipient failed to notice or absorb it", "Yes — actual notice is only effective if the recipient can show they read and understood it", "No — Gazette notice alone would have sufficed for this client regardless of her prior dealings", "Yes — a retired partner remains liable for all post-retirement debts indefinitely regardless of notice"],
+      "correctIndex": 0,
+      "explanation": "The protection turns on whether adequate notice was given, appropriate to the category of person concerned — not on whether that particular person can later show they actually absorbed it. Having given proper actual notice to an existing client, the retired partner is protected even though this client missed it."
+    },
+    {
+      "itemId": "sqe1-blp-03-test-15",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "A two-partner firm can, on the evidence, only be run at a continuing loss, and one partner refuses to agree to wind it up voluntarily. What is the most appropriate ground for the other partner to pursue?",
+      "options": ["Court-ordered dissolution on the ground that the business can only be carried on at a loss", "Automatic dissolution under s 26, since any disagreement between two partners ends the firm automatically", "No dissolution is possible without both partners' agreement, regardless of the firm's financial position", "Dissolution can only be sought once the firm has formally entered insolvency proceedings"],
+      "correctIndex": 0,
+      "explanation": "The Act expressly recognises that a business which can only be carried on at a loss is a ground for court-ordered dissolution, precisely to address situations where one partner will not agree to wind up a firm that is not commercially viable."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is reasoning from what the partners privately agreed, rather than from how the act, the notice, or the ground for dissolution would appear to an outside third party or to the court. Section 5 authority, s 17 notice, and the dissolution grounds are all assessed from that external vantage point, not from internal partnership politics.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.business-law.partnership-authority-liability-dissolution"
+  }
+}

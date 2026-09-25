@@ -1,0 +1,347 @@
+{
+  "lessonId": "sqe1-clp-07",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 7,
+  "topicId": "sqe1.criminal-practice.charging-decisions",
+  "title": "Charging decisions",
+  "subtitle": "The four post-investigation outcomes and the Full Code Test",
+  "estimatedMinutes": 17,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the four possible outcomes once a police investigation concludes, and explain when each applies",
+    "Explain the two-stage Full Code Test applied by the CPS before a charge may be authorised",
+    "Apply the evidential and public interest tests to a set of facts to determine whether a charge should be authorised"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Code for Crown Prosecutors", "role": "Sets out the Full Code Test that governs every charging decision" },
+    { "citation": "Prosecution of Offences Act 1985, s 10", "role": "Requires the Director of Public Prosecutions to issue the Code" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Students often assume 'enough evidence' is the whole test. Where the profile shows application is ahead of knowledge, this brief note appears: 'You can spot a weak case — now check you're naming both stages correctly.'",
+    "profileHooks": {
+      "weakApplication": "You know the two-stage structure. This test pool is weighted towards fact patterns where one stage is obviously satisfied and the other is doubtful — practise isolating which one is actually in issue.",
+      "weakKnowledge": "Start with Part 1 and fix the four outcomes and the two-stage test in your mind before moving on — later parts assume you can name them without hesitation."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A shop assistant is caught on CCTV apparently pocketing cash from the till. The police have a confession, a clear recording, and a victim who wants ‘the book thrown at her’. On the evidence alone, this looks like an easy charge. It isn’t — not yet. Before anyone is charged with anything, a prosecutor has to ask a second question entirely separate from whether the evidence stacks up, and get a yes to both."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Four doors out of an investigation",
+        "voice": "structural — a reference part students will return to",
+        "body": [
+          "When a police investigation reaches a decision point, there are only four places it can go. Missing one of these in an exam question means missing the actual issue — candidates who only ever think in terms of ‘charged or not charged’ lose marks on the two intermediate outcomes.",
+          "No further action (NFA) closes the matter: the police or CPS decide, on the evidence gathered, that no prosecution will follow. It can be revisited if significant new evidence emerges, but there is no live proceeding and no ongoing restriction on the suspect.",
+          "Release under investigation (RUI) is used where the investigation is not yet complete and there is no proper basis for bail conditions — the suspect is released with no conditions and no fixed return date, while enquiries continue. It replaced the old default of automatic police bail after concerns that suspects were being bailed with conditions for long periods without charge.",
+          "Pre-charge bail releases the suspect subject to conditions (and, since reforms tightening its use, normally for an initial period of up to 28 days, extendable in defined circumstances) pending a charging decision — used where conditions are actually necessary, for example to protect a witness or prevent interference with evidence.",
+          "Charge is the fourth outcome: the suspect is formally accused of an offence and the case moves into the court process. Charge is only authorised once the Full Code Test, covered in the next two parts, is satisfied."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The four post-investigation outcomes",
+            "points": [
+              "No further action (NFA) — investigation ends, no charge",
+              "Release under investigation (RUI) — no conditions, enquiries continue",
+              "Pre-charge bail — conditional release pending a charging decision, normally time-limited",
+              "Charge — formal accusation, only once the Full Code Test is met"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-07-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "A suspect is released with no bail conditions and no return date while police continue to gather evidence. Which outcome is this?",
+          "options": ["No further action", "Release under investigation", "Pre-charge bail", "Charge"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right — no conditions and no fixed date is the hallmark of release under investigation, distinguishing it from conditional pre-charge bail.",
+          "feedbackIncorrect": "Look again at the absence of conditions and a return date — that combination points to release under investigation, not bail (which is conditional) or NFA (which closes the case)."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The evidential stage: would a jury convict?",
+        "voice": "argumentative — states the test, then guards against the common misreading",
+        "body": [
+          "Before anything else, a prosecutor must ask whether there is enough evidence to provide a realistic prospect of conviction. This is an objective test: would a reasonable, impartial jury (or bench of magistrates), properly directed on the law, be more likely than not to convict on the evidence as it stands or can reasonably be expected to stand?",
+          "Two things trip students up here. First, ‘realistic prospect of conviction’ is not the criminal standard of proof — the prosecutor is not asking whether the evidence proves guilt beyond reasonable doubt. That question is for the tribunal of fact at trial. The prosecutor is asking a prediction question: is conviction more likely than not, on admissible, reliable, credible evidence?",
+          "Second, the test looks only at evidence that is likely to be admissible and reliable. Evidence that would probably be excluded (for example, an unlawfully obtained confession) or that is unlikely to be believed cannot be counted towards a realistic prospect of conviction, however strong it looks on paper."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Realistic prospect of conviction",
+            "definition": "The evidential threshold in the Full Code Test: on the admissible, reliable, credible evidence available, a reasonable jury or bench, properly directed, would be more likely than not to convict."
+          },
+          {
+            "type": "statuteBlock",
+            "citation": "Code for Crown Prosecutors, para 4.6–4.7 (summarised)",
+            "text": "Prosecutors must be satisfied there is sufficient evidence to provide a realistic prospect of conviction against each suspect on each charge. This is an objective test based on the prosecutor's assessment of the evidence, including how it is likely to affect the prospects of conviction, and whether that evidence is likely to be reliable, credible and admissible.",
+            "elements": ["Sufficient evidence, assessed objectively", "Realistic prospect of conviction (more likely than not)", "Evidence must be likely to be reliable", "Evidence must be likely to be credible", "Evidence must be likely to be admissible"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-07-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "According to the evidential stage of the Full Code Test, which standard must the prosecutor apply?",
+          "options": ["Beyond reasonable doubt, the same standard the jury will apply at trial", "A realistic prospect of conviction — more likely than not, on reliable, credible, admissible evidence", "Any prima facie case, regardless of whether the evidence would be admissible", "Balance of probabilities, applying civil rules of evidence throughout"],
+          "correctIndex": 1,
+          "explanation": "The evidential stage is a prediction about outcome, applying a lower, distinct standard from the criminal trial standard — and it filters out evidence unlikely to be admissible, reliable or credible before that prediction is made."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The public interest stage",
+        "voice": "case-narrative — works through a scenario to surface the factors",
+        "body": [
+          "Passing the evidential stage does not end the enquiry. A prosecutor must go on to ask whether a prosecution is required in the public interest — and only if both stages are satisfied can a charge be authorised. A strong case on the evidence can still, properly, end in no charge.",
+          "The Code lists factors that make prosecution more or less likely to be needed: the seriousness of the offence and the harm caused, the suspect's culpability, the suspect's age and maturity (particularly relevant to youths), any previous convictions or cautions, whether the offence was motivated by discrimination, and the impact on the victim and the community, among others.",
+          "The public interest test is not a soft option or a route to leniency for its own sake — it is a structured weighing exercise applied to every case, precisely because prosecuting is costly, both financially and to the people involved, and should only proceed where it is genuinely warranted."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Public interest factors (non-exhaustive)",
+            "points": [
+              "Seriousness of the offence and harm caused to the victim",
+              "Level of the suspect's culpability",
+              "Suspect's age and maturity at the time of the offence",
+              "Suspect's previous convictions and cautions",
+              "Whether the offence was motivated by hostility or discrimination",
+              "Impact on the victim, any witnesses and the wider community"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-07-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact most relevant to the public interest stage (as opposed to the evidential stage) in this scenario.",
+          "scenarioText": "A 15-year-old with no previous convictions admits, on clear CCTV evidence, to shoplifting a chocolate bar. The evidence is strong and unchallenged.",
+          "tappableSpans": ["A 15-year-old", "admits", "clear CCTV evidence", "evidence is strong and unchallenged"],
+          "correctSpan": "A 15-year-old",
+          "feedbackCorrect": "Right. Age and maturity is a classic public interest factor — it says nothing about whether the evidence would secure a conviction, which the CCTV and admission already answer.",
+          "feedbackIncorrect": "The admission and CCTV evidence go to the evidential stage — they show the case is strong. Age and maturity is the fact that belongs to the separate public interest question."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Putting the stages in order",
+        "voice": "direct — sets up the sequencing trap the tests will probe",
+        "body": [
+          "The two stages are not interchangeable and not applied in parallel. The evidential stage comes first, and a prosecutor who is not satisfied it is met must stop there — no charge, whatever the public interest considerations might suggest. Only once the evidential stage is passed does the public interest stage even arise.",
+          "This ordering matters because students sometimes try to rescue a weak-evidence case by pointing to a strong public interest in prosecuting (a very serious allegation, for instance). That reasoning is the wrong way round: the public interest can never substitute for insufficient evidence. It can only ever operate to stop a prosecution that the evidence alone would otherwise support."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes argue that a very serious allegation justifies charging even where the evidence is weak, because the public interest in prosecuting serious crime is so high.",
+            "whyItsWrong": "The public interest test only ever operates as a brake on a prosecution that already clears the evidential stage — it cannot supply evidence that is not there. Seriousness of the offence is relevant only once a realistic prospect of conviction is independently established."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-07-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of a CPS charging decision in the correct order.",
+          "items": [
+            "Police refer the case file to the CPS (or apply Code principles under DG6)",
+            "Prosecutor applies the evidential stage: is there a realistic prospect of conviction?",
+            "If the evidential stage is met, prosecutor applies the public interest stage",
+            "Charge is authorised only if both stages are satisfied"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the structure: evidence first, public interest second, and both must be satisfied before a charge is authorised.",
+          "feedbackIncorrect": "Check the order again — the evidential stage always comes before the public interest stage, and the public interest stage is only reached once the evidential stage is passed."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Applying the Full Code Test",
+        "voice": "Socratic — walks through the reasoning before confirming the answer",
+        "body": [
+          "Take the shop assistant from the opening scenario: CCTV footage, a confession, and a victim keen to see her prosecuted. The evidential stage is comfortably met — the confession and footage are exactly the kind of reliable, admissible evidence the test asks for.",
+          "Now suppose two further facts emerge: the amount taken was a few pounds, it was a single, out-of-character incident, the assistant has since made full repayment and has no previous convictions, and her employer no longer wishes to pursue the matter (though the victim's wishes are only one factor, not a veto). A prosecutor weighing the public interest factors might reasonably conclude a caution, rather than a charge, meets the public interest — even though the evidential stage was never in doubt.",
+          "The exam skill being tested is not memorising the list of public interest factors, but recognising when a question is actually testing the evidential stage, the public interest stage, or (occasionally) both — and not assuming a strong-evidence case automatically ends in a charge."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Full Code Test",
+            "definition": "The two-stage test in the Code for Crown Prosecutors that must be satisfied before a charge is authorised: (1) the evidential stage — realistic prospect of conviction; and (2) the public interest stage — is a prosecution required in the public interest."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-07-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A suspect is captured on clear CCTV committing a serious assault causing grievous bodily harm to a stranger, unprovoked. He has three previous convictions for violence. Applying the Full Code Test, what is the most likely outcome?",
+          "options": ["No charge — the public interest test cannot be reached because the case is too serious", "Charge — both the evidential stage (strong, reliable evidence) and the public interest stage (seriousness, harm, prior convictions) point firmly towards prosecution", "Release under investigation indefinitely, since GBH always requires further forensic evidence before either stage can be assessed", "No charge — the victim's wishes are determinative and must be obtained first"],
+          "correctIndex": 1,
+          "explanation": "Clear CCTV evidence readily satisfies the evidential stage, and the seriousness of the harm plus the suspect's record of violence are precisely the kind of factors that point towards prosecution being required in the public interest. Neither wrong answer reflects how the two stages actually operate."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-07-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "Following an investigation, the police decide the case is closed and no prosecution will follow. Which of the four outcomes is this?",
+      "options": ["No further action", "Release under investigation", "Pre-charge bail", "Charge"],
+      "correctIndex": 0,
+      "explanation": "No further action closes the matter on the evidence gathered, distinguishing it from RUI (where enquiries continue) and bail (which is conditional and time-limited)."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which document sets out the Full Code Test that governs charging decisions?",
+      "options": ["The Criminal Procedure Rules", "The Code for Crown Prosecutors", "The Magistrates' Courts Act 1980", "The Police and Criminal Evidence Act 1984 Codes of Practice"],
+      "correctIndex": 1,
+      "explanation": "The Code for Crown Prosecutors, issued under the Prosecution of Offences Act 1985, contains the Full Code Test applied to every charging decision."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A prosecutor is deciding whether a prosecution is required given the suspect's age, previous record and the harm caused. Which stage of the Full Code Test is being applied?",
+      "options": ["The evidential stage", "The public interest stage", "The admissibility stage", "The disclosure stage"],
+      "correctIndex": 1,
+      "explanation": "Age, previous record and harm caused are classic public interest factors, applied only once the evidential stage is already satisfied."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A suspect is released while enquiries continue, with no bail conditions imposed and no date set for their return. Which outcome does this describe?",
+      "options": ["No further action", "Release under investigation", "Pre-charge bail", "Charge"],
+      "correctIndex": 1,
+      "explanation": "The absence of conditions and a fixed return date is the defining feature of release under investigation, as opposed to conditional pre-charge bail."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-05",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following correctly states the order in which the two stages of the Full Code Test are applied?",
+      "options": ["Public interest first, then evidential", "Evidential first, then public interest", "They are applied simultaneously with equal weight", "Either order, depending on the seriousness of the offence"],
+      "correctIndex": 1,
+      "explanation": "The evidential stage must be satisfied first; the public interest stage is only reached if the evidential stage is met, and can never substitute for insufficient evidence."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.5,
+      "prompt": "A prosecutor is assessing whether there is a realistic prospect of conviction. Which standard of proof, if any, is she applying?",
+      "options": ["Beyond reasonable doubt, the criminal trial standard", "A prediction standard — whether a reasonable jury, properly directed, would be more likely than not to convict on reliable, admissible evidence", "Balance of probabilities as understood in civil claims, applied without regard to admissibility", "No defined standard — it is entirely a matter of prosecutorial discretion"],
+      "correctIndex": 1,
+      "trapExplanation": "Candidates often import the criminal trial standard (beyond reasonable doubt) into the charging decision. The evidential stage is a distinct, lower prediction test about the likely outcome at trial, not the standard the tribunal of fact will itself apply."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.55,
+      "prompt": "The evidence against a suspect is strong and reliable, but the offence is minor, the suspect is a first-time offender who has made full reparation, and the victim does not support prosecution. Which of the following best describes how a prosecutor should proceed?",
+      "options": ["Charge automatically, since the evidential stage is satisfied and that is sufficient on its own", "Go on to weigh the public interest factors, which may properly lead to no charge despite the evidence being strong", "Refuse to consider public interest factors at all once the evidential stage is met, as this would be double-counting", "No further action is required because the evidential stage was never truly satisfied on these facts"],
+      "correctIndex": 1,
+      "trapExplanation": "A common error is assuming that once the evidential stage is met, a charge automatically follows. The public interest stage is a genuine, separate hurdle — strong evidence does not guarantee prosecution."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A suspect's confession was obtained after the police breached the PACE Codes of Practice on legal advice, and is likely to be excluded at trial. Without the confession, the remaining evidence is thin. What is the most accurate assessment of the evidential stage?",
+      "options": ["The evidential stage is met, because a confession exists regardless of how it was obtained", "The evidential stage is unlikely to be met, because the confession is unlikely to be admissible and cannot be relied on to establish a realistic prospect of conviction", "The evidential stage is irrelevant here, since public interest factors will determine the outcome instead", "The evidential stage is automatically met whenever a suspect has confessed at any point during questioning"],
+      "correctIndex": 1,
+      "trapExplanation": "The evidential stage only counts evidence likely to be admissible, reliable and credible. A confession likely to be excluded cannot be relied upon, however persuasive it looks on the file — the prosecutor must assess what remains."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "Police have gathered a single, uncorroborated witness statement that is inconsistent with other accounts and contradicted by CCTV footage. Applying the evidential stage, what should the prosecutor conclude?",
+      "options": ["There is a realistic prospect of conviction, because at least one witness supports the allegation", "There is unlikely to be a realistic prospect of conviction, because the evidence is neither reliable nor credible when weighed against the contradicting footage", "The evidential stage is irrelevant until the public interest stage has been considered first", "A realistic prospect of conviction exists automatically wherever any witness evidence exists"],
+      "correctIndex": 1,
+      "explanation": "The evidential test requires an objective assessment of whether the evidence, taken as a whole, is likely to be reliable and credible. Uncorroborated, inconsistent evidence contradicted by other material is unlikely to clear that bar."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A 78-year-old suspect with a serious, deteriorating illness and no previous convictions is strongly linked by DNA evidence to a minor criminal damage offence causing £40 of harm. What is the most likely outcome applying the Full Code Test?",
+      "options": ["Charge is inevitable once the evidential stage is met, regardless of any other factors", "The evidential stage is met, but the public interest stage may well point away from prosecution given the offence's low seriousness, the suspect's age and health, and lack of previous convictions", "No further action must follow automatically because of the suspect's age alone", "The public interest stage should be applied first, before considering the DNA evidence at all"],
+      "correctIndex": 1,
+      "explanation": "This tests the genuine role of the public interest stage: strong evidence does not compel a charge where the offence is minor and personal circumstances weigh clearly against prosecution being required."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-11",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Investigators need several more weeks to obtain forensic results and see no need to impose any restriction on the suspect in the meantime. Which outcome best fits this position, applying the four post-investigation outcomes?",
+      "options": ["No further action, pending the forensic results", "Release under investigation", "Pre-charge bail with conditions", "Charge, to be withdrawn later if forensics are unfavourable"],
+      "correctIndex": 1,
+      "explanation": "Where the investigation is ongoing and no conditions are needed, release under investigation is the appropriate outcome — it is not a closure (NFA) and does not require the conditions attached to bail."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-12",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "According to the Code for Crown Prosecutors, evidence can only support a realistic prospect of conviction if it is likely to be which of the following?",
+      "options": ["Reliable, credible and admissible", "Written, signed and dated by the suspect", "Corroborated by at least two independent witnesses in every case", "Obtained exclusively from forensic or scientific sources"],
+      "correctIndex": 0,
+      "explanation": "The Code requires the prosecutor to assess whether the evidence is likely to be reliable, credible and admissible — there is no fixed corroboration or source requirement."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "The Code for Crown Prosecutors lists factors such as seriousness of the offence, the suspect's culpability, and the suspect's age and previous convictions. Which stage of the Full Code Test do these factors belong to?",
+      "options": ["The evidential stage", "The public interest stage", "Neither stage — they are relevant only at sentencing", "Both stages equally, applied together as a single combined test"],
+      "correctIndex": 1,
+      "explanation": "These are the classic public interest factors used to decide whether, once the evidential stage is met, prosecution is actually required."
+    },
+    {
+      "itemId": "sqe1-clp-07-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A prosecutor is satisfied the evidence would likely be reliable, credible and admissible, and predicts a reasonable jury would be more likely than not to convict. Which stage of the Full Code Test has she just applied, and what is her conclusion on it?",
+      "options": ["The public interest stage; it is not met", "The evidential stage; it is met", "The evidential stage; it is not met", "The public interest stage; it is met"],
+      "correctIndex": 1,
+      "explanation": "Her reasoning tracks the wording of the evidential stage precisely — reliability, credibility, admissibility and a more-likely-than-not prediction of conviction — and on the facts given, that stage is satisfied."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common error in this lesson is treating strong evidence as the end of the analysis. It's only the first of two hurdles — check whether the question is actually testing the public interest stage before assuming a charge follows.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.charging-decisions"
+  }
+}

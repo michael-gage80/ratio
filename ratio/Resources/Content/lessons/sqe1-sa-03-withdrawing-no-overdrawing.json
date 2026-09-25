@@ -1,0 +1,456 @@
+{
+  "lessonId": "sqe1-sa-03",
+  "moduleId": "sqe1-solicitors-accounts",
+  "moduleTitle": "SQE1 · Solicitors Accounts",
+  "lessonNumber": 3,
+  "topicId": "sqe1.solicitors-accounts.withdrawing-no-overdrawing",
+  "title": "Withdrawing client money: conditions and the no-overdrawing principle",
+  "subtitle": "The three conditions for a lawful withdrawal, and why one client's ledger can never go into debit",
+  "track": "SQE1",
+  "estimatedMinutes": 16,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the three conditions rule 5 imposes on a compliant withdrawal from a client account: purpose, authorisation, and sufficiency of funds",
+    "Explain why an individual client's ledger must never go into debit, even where the pooled client account as a whole is in surplus",
+    "Apply the duty to replace an improperly withdrawn sum promptly, and explain why replacement does not erase the underlying breach"
+  ],
+  "leadingAuthorities": [
+    {
+      "citation": "SRA Accounts Rules 2019, r 5",
+      "role": "Sets the conditions for withdrawing client money and the prohibition on withdrawing more than is held for that client"
+    },
+    {
+      "citation": "SRA Accounts Rules 2019, r 8",
+      "role": "Requires accurate, up-to-date records showing each client's individual ledger balance"
+    },
+    {
+      "citation": "SRA Principles 2019, Principle 5",
+      "role": "Underlying duty to act with integrity, relevant to how an improper withdrawal is treated once discovered"
+    }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Withdrawal questions are where the module gets unforgiving, because the maths is simple but the reasoning has to be exact. Where the profile shows application lagging behind knowledge, this note appears: 'You know the three conditions — this lesson is about which one a given fact pattern is actually testing.'",
+    "profileHooks": {
+      "weakApplication": "Expect fact patterns with running ledger balances. Track the individual client's figure throughout, not the pooled client account total — that is where the traps in this lesson live.",
+      "weakKnowledge": "Fix the three conditions in Part 2 before moving on: purpose, authorisation, sufficient funds. Every later part in this lesson assumes you can name all three without hesitating."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "The firm's client account holds £500,000 across two hundred clients. One client's own ledger shows £1,200. A payment of £1,500 goes out against that client's matter. The pooled account can easily absorb it — but the rules do not look at the pool. They look at the one client whose money it was meant to be, and that client is now £300 short of money that was never really theirs to begin with.",
+    "lawStatedNotice": "Law stated as at 24 September 2026 under the SRA Accounts Rules 2019, rule 5. This is a settled, current provision; no amendment is pending."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Three conditions, all required together",
+        "voice": "structural — a checklist part students will return to before every test",
+        "body": [
+          "Rule 5 governs withdrawals from a client account and sets three conditions that must all be satisfied together, not any one in isolation. First, purpose: the withdrawal must be for the purpose for which the money is being held, or as otherwise permitted by the rules. Second, authorisation: the withdrawal must be properly authorised by, or on behalf of, the client (or third party) for whom the money is held. Third, sufficiency: there must be enough money held for that client to cover the withdrawal.",
+          "Each condition closes off a different kind of failure. Purpose stops money being used for something unconnected to why it was held — paying one client's disbursement out of another client's balance, for instance. Authorisation stops a firm acting on its own initiative with money it does not own. Sufficiency is the one this lesson spends most of its time on, because it is the condition most often misjudged by looking at the wrong total.",
+          "All three must be met at once. A withdrawal that is properly authorised and for the right purpose, but which exceeds the funds held for that client, is still not compliant — good intentions on two conditions do not excuse failing the third."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The three rule 5 conditions",
+            "points": [
+              "Purpose — the withdrawal is for the purpose for which the money is held, or otherwise permitted by the rules",
+              "Authorisation — the withdrawal is properly authorised by or on behalf of the client or third party for whom the money is held",
+              "Sufficiency — there is enough money held for that specific client to cover the withdrawal"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-03-check-01",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 4,
+          "prompt": "A cashier pays £2,000 out of the client account against a conveyancing client's matter, properly authorised by that client in writing, for a disbursement genuinely connected to the matter. The client's own ledger for that matter shows only £1,600 held. Analyse whether this withdrawal is compliant.",
+          "factsToOrder": [
+            "The payment is £2,000",
+            "It is for a purpose connected to the client's own matter",
+            "It is properly authorised by the client in writing",
+            "The client's individual ledger shows only £1,600 held"
+          ],
+          "scaffolds": [
+            {
+              "level": 1,
+              "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion"
+            },
+            {
+              "level": 2,
+              "support": "Rule and Issue given; student drags facts into Application and writes Conclusion"
+            },
+            {
+              "level": 3,
+              "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion"
+            },
+            {
+              "level": 4,
+              "support": "No scaffold; student writes full IRAC unaided"
+            }
+          ],
+          "modelAnswer": {
+            "issue": "Whether the £2,000 withdrawal complies with the three conditions in rule 5.",
+            "rule": "A withdrawal must satisfy purpose, authorisation, and sufficiency together — money withdrawn for a client must not exceed the amount held for that client.",
+            "application": "The purpose and authorisation conditions are satisfied: the payment is connected to the matter and properly authorised in writing. But only £1,600 is held for this client, so the £2,000 withdrawal exceeds the funds available for them by £400.",
+            "conclusion": "The withdrawal is not compliant, because the sufficiency condition fails, even though purpose and authorisation are both met."
+          }
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "The pooled account is not the client's account",
+        "voice": "Socratic — poses the counter-intuitive rule before resolving it",
+        "body": [
+          "Here is the question every student underestimates on first encounter: if a firm's client account holds hundreds of thousands of pounds across many clients, why should it matter if one client's own ledger dips slightly below zero, provided the account as a whole is never overdrawn at the bank?",
+          "The answer is that the client account is a single pooled bank account, but the money inside it is not pooled in law. Each client's money remains legally and separately theirs, tracked through an individual ledger the firm is required to maintain. Rule 5 prohibits withdrawing more than is held for a specific client precisely because the pooled account's healthy overall balance is made up of other clients' money — if one client's ledger goes into debit, the shortfall is, in substance, being covered by someone else's funds, without their knowledge or consent.",
+          "This is why 'the account was never overdrawn at the bank' is never a defence to a client ledger going into debit. The two facts are almost unrelated: a firm can breach rule 5 badly while the client account as a whole sits comfortably in credit, because the breach is measured client by client, not pound by pound against the bank's own statement."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Client ledger",
+            "definition": "The individual record a firm must maintain for each client (or matter) showing the running balance of that client's own money within the pooled client account. It is this individual figure, not the pooled account total, that rule 5's sufficiency condition is measured against."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-03-check-02",
+          "type": "highlightTheRatio",
+          "skillTag": "understanding",
+          "prompt": "In the passage below, highlight the sentence that states why an individual client ledger going into debit is a breach even when the pooled account is in credit.",
+          "passage": "The client account as a whole held £480,000 across many clients and remained comfortably in credit throughout. One client's ledger, however, briefly went into debit by £900 after a payment was made against that matter. If one client's ledger goes into debit, the shortfall is, in substance, being covered by other clients' money without their knowledge or consent. The firm's overall solvency at the bank is irrelevant to whether this particular client's funds were properly protected.",
+          "ratioSentence": "If one client's ledger goes into debit, the shortfall is, in substance, being covered by other clients' money without their knowledge or consent."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Reading a ledger for the trap",
+        "voice": "worked-example — walks a numerical scenario through the rule",
+        "body": [
+          "Consider a straightforward set of figures. A client's individual ledger holds £900. The firm receives instructions to pay a disbursement of £1,100 connected to that matter, properly authorised in writing by the client. Should the payment be made?",
+          "Working through the three conditions: purpose is satisfied (the disbursement is genuinely connected to the matter), and authorisation is satisfied (the client has authorised it in writing). Sufficiency fails: only £900 is held for this client, and the payment requested is £1,100 — a shortfall of £200. The payment cannot lawfully be made as instructed, however clearly authorised and however legitimate the purpose, until either more client money is received for that client or the payment is reduced to no more than £900.",
+          "The trap examiners set here is making purpose and authorisation look so obviously satisfied that a student stops checking sufficiency at all. Always run the ledger figure last, deliberately, as a separate final check — it is the condition most likely to be the one that actually fails on a given set of facts."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "SRA Accounts Rules 2019, r 5.1",
+            "text": "You must ensure that client money is only withdrawn from a client account in the following circumstances: ... (b) it is properly required for a payment to or on behalf of the client (or other person on whose behalf the money is held); ... and you must ensure that the withdrawal does not exceed the amount held on behalf of that person.",
+            "elements": [
+              "Properly required payment connected to the client's matter",
+              "For or on behalf of the client for whom the money is held",
+              "Withdrawal does not exceed the amount held for that specific person"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-03-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client's ledger shows £900 held. A properly authorised disbursement of £1,100, genuinely connected to the matter, is requested. What should the firm do?",
+          "options": [
+            "Make the full £1,100 payment, since purpose and authorisation are both satisfied",
+            "Decline to pay the full amount as instructed until sufficient client money is held, or reduce the payment to no more than £900",
+            "Make the payment and treat the £200 shortfall as an interest-free loan to the client",
+            "Make the payment out of another client's ledger balance temporarily, since the pooled account can absorb it"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sufficiency is a hard limit: however legitimate the purpose and authorisation, the withdrawal cannot exceed the amount actually held for that client. The firm must wait for more funds or limit the payment to £900."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "When an improper withdrawal has already happened",
+        "voice": "direct — moves from prevention to what happens after the breach",
+        "body": [
+          "Despite the conditions, improper withdrawals do occur — a cashier misreads a ledger, a payment is authorised against the wrong matter, or an urgent disbursement genuinely cannot wait for cleared funds. Once a client's ledger has gone into debit, the firm is under a duty to replace the missing client money promptly, restoring the ledger to its correct position using the firm's own money.",
+          "This duty exists independently of how the shortfall arose — it is not conditional on establishing fault, and it applies whether the breach was a careless slip or a deliberate decision to pay early. The point of the duty is protective: every day a client ledger sits in debit, that client's money is, in substance, being subsidised by other clients' funds in the pool, and the firm must close that gap as quickly as possible once it is identified.",
+          "Replacement is a duty to act on discovery, not a discretionary tidy-up. A firm that notices a client ledger in debit and decides to wait until the next routine reconciliation to fix it is itself failing a separate, ongoing obligation — the original breach and the delay in correcting it are treated as connected but distinct failures."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Prompt replacement",
+            "definition": "The duty, once an improper withdrawal has put a client ledger into debit, to restore that client's ledger to its correct balance using the firm's own money as soon as the shortfall is identified, rather than waiting for a routine reconciliation or the client to notice."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-03-check-04",
+          "type": "quickCheck",
+          "skillTag": "understanding",
+          "prompt": "A firm discovers that a client's ledger has been in debit by £350 for two weeks, having gone unnoticed until a routine file review. What should happen next?",
+          "options": [
+            "The firm should replace the £350 promptly from its own funds as soon as the shortfall is identified",
+            "Nothing further is required, since the error has already been discovered and recorded",
+            "The firm should wait until the matter concludes before correcting the ledger",
+            "The client should be asked to top up the £350 themselves"
+          ],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct. Discovery triggers an immediate duty to replace the shortfall from the firm's own money — waiting for the matter to conclude, or asking the client to cover the firm's own error, are both wrong.",
+          "feedbackIncorrect": "The duty to replace an improper withdrawal is triggered by discovery, not by the matter concluding, and it is the firm's own money that must close the gap — not the client's."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Replacement does not erase the breach",
+        "voice": "argumentative — makes the case for why fixing the number is not the same as fixing the wrong",
+        "body": [
+          "It is easy to conclude that once a client's ledger has been promptly restored to its correct balance, the episode is closed — the client's money is safe again, no harm was ultimately done, and the firm has behaved exactly as it should on discovering an error. This is only half right, and the exam items in this lesson are built around the half that is wrong.",
+          "Replacing the money is a separate obligation from having withdrawn it improperly in the first place. The original withdrawal was still a breach of rule 5 at the moment it happened — it exceeded the funds properly held for that client, regardless of what happened afterwards. Prompt replacement discharges the ongoing duty to protect the client and limits the consequences of the breach, but it does not retrospectively convert the original withdrawal into a compliant one.",
+          "This mirrors the reasoning from Lesson 2's mixed-receipt trap: a compliant later step does not launder a non-compliant earlier one. A firm's compliance record, its reporting obligations, and any regulatory consequences look at what happened at the moment of withdrawal, not only at where the numbers ended up once the dust settled."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often treat prompt replacement of an improperly withdrawn sum as curing the breach entirely, reasoning that 'no client was left out of pocket'.",
+            "whyItsWrong": "The original withdrawal breached rule 5 the moment it exceeded the funds held for that client. Replacement is a separate, additional duty that limits harm and must happen promptly — it does not retrospectively make the original withdrawal compliant, in the same way a fast correction does not cure a mixed receipt banked the wrong way round."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-sa-03-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A firm withdraws £2,500 against a client's matter when only £2,000 is held for that client, then replaces the £500 shortfall from its own funds the same afternoon after a cashier spots the error. Which statement is correct?",
+          "options": [
+            "No breach occurred at all, because the shortfall was corrected before the client noticed",
+            "A breach of rule 5 occurred at the moment of the £2,500 withdrawal; the same-day replacement discharges the separate duty to correct it but does not undo the original breach",
+            "A breach occurred, but it is cancelled out once the £500 is replaced",
+            "No breach occurred, because the firm used its own money to fix the shortfall rather than another client's money"
+          ],
+          "correctIndex": 1,
+          "explanation": "The withdrawal itself breached the sufficiency condition in rule 5 the moment it happened. Prompt replacement is the correct response and limits the consequences, but it is a separate duty — it does not erase the fact that the original withdrawal was non-compliant."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-sa-03-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "What are the three conditions rule 5 imposes on a withdrawal from a client account?",
+      "options": [
+        "Purpose, authorisation, and sufficiency of funds held for that client",
+        "Purpose, seniority of the authorising solicitor, and a minimum 24-hour wait",
+        "Client consent, VAT registration, and a signed invoice",
+        "Authorisation, insurance cover, and a written file note only"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rule 5 requires all three conditions together: the withdrawal must be for the right purpose, properly authorised, and must not exceed the funds actually held for that specific client."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "What is a client ledger?",
+      "options": [
+        "The individual running-balance record a firm keeps for each client's own money within the pooled client account",
+        "The bank's own statement for the firm's client account as a whole",
+        "A list of a client's outstanding invoices",
+        "The firm's record of hours billed to a client"
+      ],
+      "correctIndex": 0,
+      "explanation": "The client ledger tracks each client's own money separately, even though the funds physically sit together in one pooled client account — it is this individual figure the sufficiency condition is measured against."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Which of the following is NOT one of the three rule 5 conditions for a compliant withdrawal?",
+      "options": [
+        "The withdrawal is for the purpose for which the money is held",
+        "The withdrawal is properly authorised by or on behalf of the client",
+        "The withdrawal does not exceed the funds held for that client",
+        "The withdrawal is approved in advance by the firm's compliance officer for finance and administration in every case"
+      ],
+      "correctIndex": 3,
+      "trapExplanation": "COFA sign-off sounds plausible because a COFA does have general oversight responsibilities, but it is not one of the three rule 5 conditions that make an individual withdrawal compliant — those are purpose, authorisation, and sufficiency.",
+      "explanation": "The three rule 5 conditions are purpose, authorisation, and sufficiency of funds — case-by-case COFA approval is not a listed condition."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm's client account holds £600,000 across many clients and is comfortably in credit. One client's own ledger, after a payment against their matter, shows a debit balance of £250. Is this compliant?",
+      "options": [
+        "Yes — the pooled account as a whole remains healthily in credit",
+        "No — an individual client's ledger must never go into debit, regardless of the pooled account's overall position",
+        "Yes, provided the debit is corrected before the next bank statement",
+        "No, but only if the client complains"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "The pooled account's healthy total is a tempting reassurance, but it is irrelevant. Sufficiency is measured client by client — a debit on one client's ledger means another client's money is, in substance, covering the gap.",
+      "explanation": "An individual client's ledger going into debit is a breach regardless of the pooled account's overall balance, because the pooled total is made up of other clients' separately-owned money."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client's ledger shows £1,400. A disbursement of £1,600, genuinely connected to the matter and properly authorised in writing, is requested. The firm pays the full £1,600, reasoning that the client account overall holds plenty of money. Has a breach occurred?",
+      "options": [
+        "No — purpose and authorisation were both satisfied",
+        "Yes — the payment exceeds the £1,400 held for this specific client, breaching the sufficiency condition",
+        "No — because the pooled client account had sufficient funds",
+        "Yes, but only because the disbursement was not urgent"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Purpose and authorisation both being satisfied can make the payment feel fully justified, but sufficiency is a separate, independent condition — and here it fails by £200, regardless of how legitimate the other two conditions are.",
+      "explanation": "All three conditions must be met together. Purpose and authorisation being satisfied does not excuse exceeding the £1,400 actually held for this client — that alone makes the payment non-compliant."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A client's ledger holds £3,000. The client instructs the firm, verbally and informally in a phone call noted on file, to pay a £2,500 disbursement connected to the matter. Is the authorisation condition satisfied?",
+      "options": [
+        "Yes — authorisation can be given by or on behalf of the client, and a recorded instruction is capable of satisfying this condition",
+        "No — only a formal signed authority in a separate document can ever satisfy authorisation",
+        "No — verbal instructions are never sufficient under any circumstances",
+        "Yes, but only because the sum is comfortably within the funds held"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rule 5's authorisation condition does not prescribe a single rigid format. Instructions properly given by or on behalf of the client, recorded appropriately, can satisfy it — the firm should of course keep good evidence, but a phone instruction noted on file is capable of doing so."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A cashier pays £800 out of Client A's ledger to cover an unrelated disbursement actually connected to Client B's matter, by mistake. Client A's ledger held ample funds. Which condition has been breached?",
+      "options": [
+        "Sufficiency, because Client A's ledger balance was reduced",
+        "Purpose, because the payment was not for the purpose for which Client A's money was being held",
+        "Authorisation, because Client B never signed anything",
+        "None — the payment came from ample funds, so no condition is breached"
+      ],
+      "correctIndex": 1,
+      "explanation": "Client A's money has been used for a purpose unconnected to Client A's own matter. That is a purpose failure, distinct from sufficiency (there was plenty of money) and from authorisation in the narrow sense."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-08",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "Under rule 5, against what figure is the sufficiency condition for a withdrawal measured?",
+      "options": [
+        "The amount held for the specific client or person on whose behalf the withdrawal is made",
+        "The total balance of the firm's pooled client account across all clients",
+        "The firm's overall business account balance",
+        "The average balance held for that client over the life of the matter"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sufficiency is measured client by client, against that specific person's own ledger balance, not against the pooled account total or any average figure."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-09",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Why does an improperly authorised withdrawal remain a breach even after the firm promptly replaces the shortfall?",
+      "options": [
+        "Because replacement is a separate protective duty that limits harm, but the original withdrawal already breached rule 5 at the moment it happened",
+        "Because replacement using the firm's own money is itself a further breach",
+        "Because only the client, not the firm, can cure a breach by replacing funds",
+        "Replacement does in fact fully cure the breach retrospectively, once completed"
+      ],
+      "correctIndex": 0,
+      "explanation": "The breach crystallises at the point of the non-compliant withdrawal. Prompt replacement is a separate, additional duty that limits the consequences — it does not undo the fact that a breach already occurred."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-10",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A firm's client account, taken as a whole, has never once gone overdrawn at the bank throughout a busy year. What can be concluded about rule 5 compliance from this fact alone?",
+      "options": [
+        "Nothing reliable — individual client ledgers could still have gone into debit while the pooled total stayed positive",
+        "Full compliance, because an overdrawn pooled account is the only way rule 5 can be breached",
+        "Full compliance, because the bank would have refused any payment that breached rule 5",
+        "Nothing reliable, but only for firms with fewer than ten active clients"
+      ],
+      "correctIndex": 0,
+      "explanation": "The pooled account staying in credit tells you nothing about whether an individual client's ledger dipped into debit — that is measured separately, and is the more common way rule 5 is actually breached in practice."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-11",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which obligation requires a firm to keep an accurate, up-to-date individual ledger for each client, making the sufficiency condition in rule 5 checkable in practice?",
+      "options": [
+        "The record-keeping requirement (broadly, rule 8) to maintain accurate accounting records including individual client ledgers",
+        "The requirement to hold professional indemnity insurance",
+        "The requirement to deliver a bill before undertaking further work",
+        "The requirement to register for VAT"
+      ],
+      "correctIndex": 0,
+      "explanation": "Accurate, current records showing each client's individual balance are what make it possible to check the sufficiency condition before a withdrawal is made — without them, rule 5 could not be applied in practice."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-12",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A client's ledger holds exactly £1,000. A properly authorised, genuinely connected disbursement of exactly £1,000 is paid. Does this satisfy the sufficiency condition?",
+      "options": [
+        "Yes — the withdrawal does not exceed the amount held for that client",
+        "No — a withdrawal can never reduce a client's ledger to exactly nil",
+        "No — a small buffer must always be left in the client's ledger",
+        "Yes, but only if the client is informed the ledger will reach nil"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sufficiency is breached only where a withdrawal exceeds the amount held. A withdrawal that exactly matches the balance, leaving nil, does not exceed it and satisfies the condition."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A client's ledger holds £2,200. Two authorised, matter-connected payments are made on the same day: £1,300, then £1,100. Each payment individually appears to leave the ledger positive if checked against the original £2,200 balance rather than the running balance. What is the correct analysis?",
+      "options": [
+        "Both payments are compliant, since each is less than the original £2,200 balance",
+        "The second payment breaches sufficiency, because it must be checked against the running balance after the first payment (£900), not the original £2,200",
+        "Neither payment is compliant, because two withdrawals cannot be made on the same day",
+        "Both payments are compliant provided the total does not exceed double the ledger balance"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "Checking each payment against the original balance rather than the running balance is exactly the error this lesson warns against. After the first £1,300 payment, only £900 remains — the second £1,100 payment then exceeds what is actually left.",
+      "explanation": "Sufficiency must be checked against the current running balance at the time of each withdrawal. After the first payment, £900 remains, so the second £1,100 payment exceeds the funds held and breaches rule 5."
+    },
+    {
+      "itemId": "sqe1-sa-03-test-14",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A firm discovers an improper withdrawal has left a client's ledger £600 in debit. It replaces the £600 from its own funds the next working day, and separately reviews why the error occurred. From a rule 5 compliance standpoint, what is the status of the original withdrawal?",
+      "options": [
+        "It remains a breach that occurred at the time of the withdrawal, notwithstanding the prompt replacement and review",
+        "It is no longer a breach, because the firm has both replaced the money and reviewed the cause",
+        "It was never a breach, because the review shows the firm acted diligently afterwards",
+        "It becomes a breach only if the review finds the cashier was at fault"
+      ],
+      "correctIndex": 0,
+      "explanation": "Prompt replacement and a sensible review are the right response, but they do not retrospectively change the fact that a breach of rule 5 occurred at the point the client's ledger went into debit."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring error in this lesson is checking sufficiency against the wrong figure — the pooled client account total, the original balance before same-day payments, or the fact that money was later replaced — instead of the individual client's current running ledger balance at the moment of each withdrawal.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.solicitors-accounts.withdrawing-no-overdrawing"
+  }
+}

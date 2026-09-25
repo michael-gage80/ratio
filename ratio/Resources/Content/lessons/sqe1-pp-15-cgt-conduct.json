@@ -1,0 +1,332 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-pp-15",
+  "moduleId": "sqe1-property-practice",
+  "moduleTitle": "SQE1 · Property Practice",
+  "lessonNumber": 15,
+  "topicId": "sqe1.property-practice.cgt-conduct",
+  "title": "Capital gains tax on disposal, and conduct in conveyancing",
+  "subtitle": "CGT, Private Residence Relief, the 60-day return, and the conduct rules that run through every transaction",
+  "estimatedMinutes": 20,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain how CGT applies to a UK residential disposal, including the annual exempt amount and the scope of Private Residence Relief, including its final-period rule",
+    "State the 60-day reporting and payment window that applies to a non-resident's disposal of UK land, and identify when it is triggered",
+    "Apply the SRA's client care and conflict rules to a residential purchase, including the narrow buyer/lender conflict exception"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Taxation of Chargeable Gains Act 1992, ss 222-226A", "role": "Statutory basis for Private Residence Relief and its final-period and related rules" },
+    { "citation": "SRA Code of Conduct for Solicitors, paras 6.2, 8.6", "role": "Conflict of interest and client information/client care obligations applied to a residential conveyancing retainer" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "This is the last lesson in Property Practice, and it deliberately closes the loop: the tax consequences that follow a sale, and the professional conduct obligations that have sat underneath every lesson in this module without being named. Where the profile shows the earlier conduct-focused material (from Legal System and Legal Services) is solid, this note appears: 'You've done the conduct groundwork already — this lesson is about applying it specifically to a conveyancing file.'",
+    "profileHooks": {
+      "weakApplication": "The test pool leans on realistic fact patterns combining a figure (a gain, a date, a relationship between buyer and lender) with a conduct or tax judgement call. Identify which figure or rule is actually doing the work in each question.",
+      "weakKnowledge": "If the conduct rules from earlier in the course feel rusty, start with Part 4 before the rest of the lesson — the application questions assume you can state the conflict rule and its buyer/lender exception without prompting."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "Fifteen lessons ago this module started with the overriding objective and a client's first instructions. It ends here: the client has sold, the tax return is due, and the only question left is whether the file was run properly from the first phone call to the final completion statement.",
+    "lawStatedNotice": "The CGT annual exempt amount and the detail of Private Residence Relief given here reflect 2025/26 figures. Both are reviewed at least annually at the Budget, so always check the current year's rates and thresholds before advising on a live transaction."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "CGT on a residential disposal: the basic shape",
+        "voice": "structural — establishes the mechanics before the reliefs",
+        "body": [
+          "When an individual disposes of UK residential property at a gain, that gain is potentially chargeable to capital gains tax. The gain is broadly the disposal proceeds less the acquisition cost and allowable costs (such as improvement expenditure and certain fees), and it is taxed at the residential property rates, which are higher than the rates applying to most other assets.",
+          "Every individual has an annual exempt amount — a tax-free slice of gains each tax year, set at £3,000 for 2025/26 — before any CGT is due at all. It is modest by historical standards and easily used up by a single significant disposal, but it remains the first figure any calculation starts from.",
+          "None of this mechanism is unique to conveyancing solicitors to apply — advising in detail on a client's CGT liability is usually a matter for an accountant or tax adviser. What a conveyancing solicitor does need is enough fluency to flag the issue, explain in outline why it matters, and know when a statutory deadline (the 60-day window covered later in this lesson) makes referral urgent rather than optional."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Annual exempt amount",
+            "definition": "The amount of capital gains an individual can realise in a tax year before CGT becomes due — £3,000 for 2025/26, reviewed at each Budget."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-15-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Is it generally the conveyancing solicitor's role to calculate a client's precise CGT liability on a sale in detail?",
+          "options": ["No — that is generally a matter for an accountant or tax adviser, though the solicitor should flag the issue and relevant deadlines", "Yes — CGT calculation is a standard part of every conveyancing retainer"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Right. The conveyancer's job is to spot the issue and its deadlines, not to run the calculation.",
+          "feedbackIncorrect": "Not quite — detailed CGT calculation sits with a tax adviser. The conveyancer's role is to recognise when CGT is relevant and flag it, including any statutory deadline."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Private Residence Relief and the final-period rule",
+        "voice": "reference — the relief's scope, precisely stated",
+        "body": [
+          "Most people never pay CGT on selling their own home, because of Private Residence Relief (PRR) under Taxation of Chargeable Gains Act 1992, ss 222-226A. Where a property has been an individual's only or main residence throughout the period of ownership, the entire gain on disposal is exempt.",
+          "PRR is not always all-or-nothing, though. Where a property was the owner's main residence for only part of the ownership period — because, for example, it was let out for a period, or the owner moved out before selling — the relief is apportioned by reference to the time it was and wasn't the main residence, with one significant softening: a final-period exemption (nine months for 2025/26, in the ordinary case) treats the last months of ownership as if the owner were still living there, even if they had in fact already moved out, recognising that a sale rarely completes the instant someone leaves.",
+          "This final-period rule is precisely the kind of detail worth double-checking against the current year's guidance before advising on a live file, since both the exempt amount and relief details are reviewed at least annually at the Budget — a point flagged in this lesson's law-stated notice and worth internalising as a habit, not just a one-off caveat."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Taxation of Chargeable Gains Act 1992, s 223",
+            "text": "Where a dwelling-house... has been the individual's only or main residence throughout the period of ownership, no part of a gain to which this section applies shall be a chargeable gain; and where it has been the individual's only or main residence during part only of the period of ownership, relief shall be given by reference to the proportion of the period of ownership during which it was such a residence, together with the final period of ownership treated as such residence regardless of actual use.",
+            "elements": ["A dwelling-house that has been the individual's only or main residence", "Full exemption if that applies throughout the period of ownership", "Apportioned relief if it applies for only part of the period", "A final-period exemption treating the closing months of ownership as residence regardless of actual occupation"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-15-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "An owner moved out of their only home four months before selling it, having lived there as their main residence for the whole of the rest of the ownership period. Applying the final-period rule (nine months for 2025/26), what is the effect on the gain?",
+          "options": ["The gain is fully exempt under PRR, because the four-month gap falls within the final-period exemption", "The gain is fully chargeable, because the owner was not living there at the point of sale", "Only half the gain is exempt regardless of the length of the gap", "PRR is lost entirely once an owner moves out before completion"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — a four-month gap sits comfortably within the nine-month final-period exemption, so full relief is preserved despite the owner having already moved out.",
+          "feedbackIncorrect": "Look again at the final-period rule: it treats the closing months of ownership as residence regardless of actual occupation, up to the current threshold — here, four months is within that window."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "The 60-day window for non-resident disposals",
+        "voice": "direct — a hard deadline stated plainly",
+        "body": [
+          "Separately from the general self-assessment timetable, a UK residential property return must be filed, and any CGT paid on account, within 60 days of completion where the disposal is by a non-UK resident — this applies regardless of whether a gain, a loss, or no CGT is ultimately due, and irrespective of the seller's usual tax return timetable.",
+          "The same 60-day rule also applies to UK residents in narrower circumstances (broadly, where the gain is not fully covered by PRR), but the point most heavily tested is the non-resident trigger, because it applies without exception to essentially every UK residential disposal by someone who is not UK tax resident at the time.",
+          "For the conveyancing solicitor, the practical significance is timing: sixty days from completion is short, and missing it triggers penalties and interest regardless of the underlying tax position. A non-resident seller client should be told about this deadline at the outset of the retainer, well before completion, and referred promptly to a tax adviser — leaving it until after completion is a genuine, avoidable failure of client care."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "The 60-day UK land return",
+            "points": [
+              "Triggered on a UK residential property disposal by a non-UK resident, regardless of whether tax is actually due",
+              "Also applies more narrowly to UK residents where the gain is not fully relieved by PRR",
+              "Runs from the date of completion, not exchange",
+              "Penalties and interest apply for late filing regardless of the underlying tax outcome"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-15-check-03",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "A client who has lived and worked abroad for several years, and is non-UK resident, is selling a UK residential property. From what date does the 60-day return and payment window run?",
+          "options": ["Completion", "Exchange of contracts", "The date the property was first marketed", "The end of the tax year"],
+          "correctIndex": 0,
+          "explanation": "The 60-day clock runs from completion — a detail worth stating precisely, since exchange is the more instinctive (and wrong) answer for students used to thinking of exchange as the key transactional date."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Client care and conflict: the rules that sit under every file",
+        "voice": "argumentative — reframes conduct as operational, not abstract",
+        "body": [
+          "Every conveyancing file this module has covered has sat on top of two SRA obligations that rarely get their own airtime once the substantive law starts: client care and conflict of interest. Paragraph 8.6 of the SRA Code of Conduct for Solicitors requires that clients receive the best possible information about how their matter will be priced and conducted — in residential conveyancing this is typically delivered through a client care letter at the outset, setting out scope, cost, key stages and who is handling the file.",
+          "Paragraph 6.2 prohibits acting where there is an own-interest conflict or a conflict between two or more clients, subject to limited exceptions. Residential conveyancing has one exception worth knowing precisely: a solicitor may act for both a buyer and their mortgage lender on the same transaction, because the two share a substantially common interest in the purchase completing properly, provided the requirements of the exception are met (including that the lender's instructions are on standard terms, such as through the Lenders' Handbook, and no conflict has actually arisen on the facts).",
+          "This exception is narrow, not a general licence to act for any two parties with aligned interests. It does not extend, for example, to acting for both buyer and seller in an arm's-length residential sale, where their interests are fundamentally opposed on price and terms even if both simply 'want the deal to complete.'"
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume the buyer/lender exception means a solicitor can act for any two parties on a transaction as long as they broadly want the same outcome.",
+            "whyItsWrong": "The exception is specific to the buyer/lender relationship on standard mortgage terms, reflecting their substantially common interest in a properly completed purchase. It does not generalise to, say, acting for both buyer and seller, whose interests over price and terms are directly opposed."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-15-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "In which scenario can the firm properly rely on the buyer/lender conflict exception to act for both parties?",
+          "scenarioA": "The firm acts for a buyer purchasing a house, and also for the buyer's mortgage lender, instructed on the lender's standard conveyancing panel terms, with no conflict having arisen on the facts.",
+          "scenarioB": "The firm acts for a buyer purchasing a house from a seller who is a longstanding client of the same firm, with both parties keen for the sale to complete quickly.",
+          "correctScenario": "A",
+          "explanation": "A is the textbook buyer/lender exception. B is a straightforward buyer/seller conflict — both wanting the deal to complete does not remove the underlying conflict over price and terms, and no exception covers acting for opposing parties to the sale itself."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Closing the module: tax, conduct, and the file as a whole",
+        "voice": "direct — rounding-off tone, ties the module together",
+        "body": [
+          "This module began with sources of law and the overriding objective and has moved, stage by stage, through the mechanics of buying, selling, financing and completing a transaction in England and Wales. It closes here deliberately: a completed sale still generates work — a CGT deadline that may be measured in weeks, not months, for a non-resident client — and every step along the way has depended on the same conduct obligations that opened the wider SQE1 course.",
+          "The practical habit worth carrying forward is to treat tax and conduct not as separate 'extra' topics bolted onto conveyancing, but as running alongside every stage of a transaction: a client care letter at the start, a conflict check whenever a new party is instructed, and — at the end — a check of whether this particular disposal triggers a reporting deadline the client needs to know about before, not after, completion."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Client care letter",
+            "definition": "The document, required by SRA Code of Conduct for Solicitors, para 8.6, given to a client at the outset of a retainer setting out the scope of the matter, costs information, and how the matter will be handled."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-pp-15-check-05",
+          "type": "thresholdSlider",
+          "skillTag": "understanding",
+          "prompt": "How confident are you that a conveyancing solicitor's conduct obligations (client care, conflict checks) are relevant only at the start of a transaction, not at its close?",
+          "sliderLabels": ["Relevant only at the start", "Relevant throughout, including after completion"],
+          "correctPosition": "throughout",
+          "explanation": "Conduct obligations run for the life of the retainer and beyond — flagging a post-completion CGT deadline to a non-resident client is itself part of proper client care, not a separate, optional add-on."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-pp-15-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "A client asks their conveyancing solicitor to calculate the exact CGT payable on their forthcoming sale. What is the appropriate response?",
+      "options": ["Flag the potential CGT issue, explain the outline position and any deadline, and refer the client to a tax adviser for the precise calculation", "Decline to mention CGT at all, since it is entirely outside the scope of conveyancing", "Calculate the exact figure personally, since this is a routine part of every conveyancing retainer", "Tell the client CGT never applies to residential property"],
+      "correctIndex": 0,
+      "explanation": "Detailed CGT calculation sits with a tax adviser; the conveyancing solicitor's role is to spot the issue, explain it in outline, and refer on — particularly where a statutory deadline is in play."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "For 2025/26, what does the annual exempt amount represent for an individual disposing of a chargeable asset?",
+      "options": ["A tax-free slice of gains in the tax year before CGT becomes due", "The maximum gain that can ever be made tax-free over a lifetime", "The rate of CGT charged on residential property gains", "The period within which a CGT return must be filed"],
+      "correctIndex": 0,
+      "explanation": "The annual exempt amount is a yearly allowance, not a lifetime cap or a rate — it is the first figure deducted before any CGT calculation on the balance."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A client sold their only home, having lived there as their main residence throughout the entire period of ownership. What is the correct CGT position on the gain, applying Private Residence Relief?",
+      "options": ["The gain is fully exempt under PRR", "Half the gain is exempt and half is chargeable, as a default rule", "The gain is fully chargeable because CGT applies to all residential property regardless of use", "PRR only applies if the property is sold within five years of purchase"],
+      "correctIndex": 0,
+      "trapExplanation": "The tempting distractors invent limits — a 50% default or a five-year time limit — that do not exist in the relief as stated; full-period main residence use simply produces full exemption.",
+      "explanation": "Where a dwelling has been the individual's only or main residence throughout the whole period of ownership, PRR exempts the entire gain."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "An owner let their home out for two years in the middle of an otherwise unbroken period of main residence, then moved back in before selling shortly afterwards. How does PRR apply to the letting period?",
+      "options": ["The letting period is automatically covered by the final-period exemption, regardless of length", "The gain is apportioned, with the letting period generally not qualifying for main-residence relief in the same way as the periods of actual occupation, subject to any separate letting-related provision", "PRR is lost in its entirety once any letting has occurred", "The final-period exemption extends automatically to cover the whole letting period however long it was"],
+      "correctIndex": 1,
+      "trapExplanation": "Both the 'automatic full exemption' and 'PRR lost entirely' answers overstate the position in opposite directions — the correct approach is apportionment by reference to actual use, not an all-or-nothing outcome.",
+      "explanation": "PRR is apportioned by reference to the periods the dwelling was and wasn't the main residence; the final-period exemption only covers the closing months of ownership, not an extended earlier letting period of that length."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-05",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A UK residential property is sold by a seller who has been non-UK resident for the last three years. The sale completes on 1 June. By when must the UK land return be filed and any CGT paid, applying the 60-day rule?",
+      "options": ["Broadly 60 days after 1 June, i.e. around 31 July", "By the end of the tax year in which completion occurs", "Within 60 days of exchange of contracts, not completion", "There is no filing requirement if no CGT is actually due"],
+      "correctIndex": 0,
+      "explanation": "The clock runs from completion, not exchange, and applies regardless of whether tax is ultimately due — the deadline itself is not conditional on the outcome of the calculation."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-06",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A conveyancing solicitor takes instructions from a non-resident seller three weeks before an anticipated completion date, but does not mention the 60-day CGT return at all during the retainer. The deadline is then missed. What is the best characterisation of this?",
+      "options": ["No issue — CGT is entirely outside a conveyancing solicitor's remit", "A likely failure of client care, since the client should have been told about a deadline directly relevant to the transaction in good time", "A breach only if the client actually owed CGT", "The lender, not the solicitor, is responsible for flagging this deadline"],
+      "correctIndex": 1,
+      "explanation": "The deadline applies regardless of whether tax is ultimately due, so the failure to flag it is a client care issue in its own right, not something excused by the eventual tax outcome."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm is asked to act for both the buyer and the buyer's mortgage lender on a standard residential purchase, with the lender instructing on its usual conveyancing panel terms and no conflict apparent on the facts. Can the firm act for both?",
+      "options": ["No — acting for two parties on the same transaction is never permitted", "Yes, in principle, under the recognised buyer/lender exception, provided the specific conditions of that exception continue to be met", "Yes, but only if the lender pays a higher fee to the firm", "No — only in-house lender solicitors may act for a lender"],
+      "correctIndex": 1,
+      "explanation": "This is the standard buyer/lender conflict exception, resting on the substantially common interest in a properly completed purchase and typically evidenced by standard-terms lender instructions."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-08",
+      "type": "statuteParser",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.35,
+      "prompt": "Under SRA Code of Conduct for Solicitors, para 8.6, what must a client generally be given at the outset of a residential conveyancing retainer?",
+      "options": ["The best possible information about how the matter will be priced and conducted", "A guarantee of a fixed completion date", "A written waiver of any future conflict of interest", "Confirmation that no other client of the firm will ever be involved in a related transaction"],
+      "correctIndex": 0,
+      "explanation": "Paragraph 8.6 is the client information/costs transparency obligation, typically delivered through a client care letter — it is about information, not guarantees of outcome or blanket future waivers."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-09",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "Under SRA Code of Conduct for Solicitors, para 6.2, what is the general rule on acting where there is a conflict between two clients, before any exception is considered?",
+      "options": ["A solicitor must not act where there is a conflict, or a significant risk of one, between two or more current clients, subject to limited exceptions", "A solicitor may act for both clients provided both consent in writing, with no further conditions", "Conflicts only matter where the clients are unaware of each other's involvement", "The rule applies only to commercial, not residential, transactions"],
+      "correctIndex": 0,
+      "explanation": "The starting position is a prohibition, subject only to defined, limited exceptions such as the buyer/lender common-interest exception — consent alone is not automatically sufficient outside those exceptions."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-10",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "A firm is instructed by both the buyer and the seller in the same residential sale, each wanting a quick, low-cost completion. Applying para 6.2, can the firm rely on a 'common interest in completion' to act for both?",
+      "options": ["Yes — any shared interest in completing the deal is sufficient", "No — buyer and seller have directly opposing interests over price and terms, and no exception covers acting for both sides of an arm's-length sale", "Yes, provided both parties are told the firm is acting for the other", "No — but only because residential (not commercial) property is involved"],
+      "correctIndex": 1,
+      "explanation": "Wanting the same transaction to complete quickly is not the same as having a common interest in its terms; buyer and seller remain in a direct conflict over price and terms that no recognised exception covers."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-11",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A UK-resident client sells a second property (not their main residence) at a gain comfortably above the 2025/26 annual exempt amount. Which of the following best describes the tax position?",
+      "options": ["No CGT is due because PRR always applies to any residential sale", "CGT is likely due on the gain above the annual exempt amount, since the property was not the client's only or main residence", "The 60-day rule can never apply because the client is UK resident", "No return obligation arises at all for UK residents"],
+      "correctIndex": 1,
+      "trapExplanation": "Assuming PRR 'always applies' is the trap — PRR is specifically tied to only-or-main-residence use, which a second property, by definition, does not have.",
+      "explanation": "Without main-residence status, PRR does not apply, so the gain above the annual exempt amount is potentially chargeable — and a UK resident can still fall within the narrower 60-day rule if the gain is not fully relieved."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-12",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "Why does this lesson describe the CGT annual exempt amount and PRR detail as figures that need checking against the current tax year?",
+      "options": ["Because both are reviewed at least annually at the Budget and can change from year to year", "Because they are set once and never change", "Because they only apply to non-residents", "Because PRR was abolished after 2025/26"],
+      "correctIndex": 0,
+      "explanation": "The lesson's own law-stated notice flags this: annual Budget review means figures and thresholds current in 2025/26 should always be checked against the current year before advising on a live file."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-13",
+      "type": "applyTheRule",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.3,
+      "prompt": "Which of the following is the correct trigger for the 60-day UK land return obligation that applies without exception?",
+      "options": ["A UK residential property disposal by a non-UK resident", "Any UK residential property disposal by anyone, resident or not", "Only disposals where the gain exceeds £1 million", "Only disposals of newly built residential property"],
+      "correctIndex": 0,
+      "explanation": "The rule applies to essentially every UK residential disposal by a non-UK resident, regardless of the amount of gain or the type of property — it is the most heavily and reliably tested trigger."
+    },
+    {
+      "itemId": "sqe1-pp-15-test-14",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A trainee reasons: 'The buyer and lender both want this purchase to go through smoothly, so our firm's conflict obligations under para 6.2 don't really bite here.' What is the best correction to this reasoning?",
+      "options": ["The reasoning is correct as stated, and no further analysis is needed", "The conclusion happens to be broadly right, but the reasoning is incomplete — the firm can act because of the specific, narrow buyer/lender exception, not merely because both parties want the deal to complete", "Para 6.2 never applies to lenders at all, so the question is moot", "The firm can never act for a lender under any circumstances"],
+      "correctIndex": 1,
+      "trapExplanation": "The trap is rewarding a right answer reached for the wrong reason — 'both parties want it to complete' is not, by itself, the legal basis for the exception, even though a buyer/lender arrangement does in fact usually qualify.",
+      "explanation": "The buyer/lender exception rests on a substantially common interest in a properly completed purchase and specific conditions (such as standard lender instructions), not on a general observation that both sides want the deal done."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap in this closing lesson is treating tax and conduct as bolt-ons rather than live obligations running through the whole file — assuming PRR or the annual exemption always applies without checking the facts, or assuming a shared desire to complete is the same thing as the narrow conflict exception that actually permits acting for two parties.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.property-practice.cgt-conduct"
+  }
+}

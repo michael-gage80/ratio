@@ -1,0 +1,337 @@
+{
+  "lessonId": "sqe1-clp-10",
+  "moduleId": "sqe1-criminal-law-practice",
+  "moduleTitle": "SQE1 · Criminal Law and Practice",
+  "track": "SQE1",
+  "lessonNumber": 10,
+  "topicId": "sqe1.criminal-practice.case-management-disclosure",
+  "title": "Disclosure and the road to trial",
+  "subtitle": "The PTPH, prosecution disclosure duties, and unused material",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "Explain the purpose of the Plea and Trial Preparation Hearing and what it is used to case-manage in the Crown Court",
+    "State the prosecution's duty of initial disclosure under the Criminal Procedure and Investigations Act 1996 and how unused material is identified and scheduled",
+    "Apply the CPIA 1996 disclosure framework to a fact pattern and identify the practical consequence of a disclosure failure for the defence's ability to prepare"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Criminal Procedure and Investigations Act 1996, s 3", "role": "Prosecution's initial duty to disclose unused material capable of undermining its case or assisting the defence" },
+    { "citation": "Criminal Procedure and Investigations Act 1996, s 6A", "role": "Sets out what a defence statement in the Crown Court must contain" },
+    { "citation": "Criminal Procedure and Investigations Act 1996, s 7A", "role": "Imposes a continuing duty on the prosecution to keep disclosure under review" },
+    { "citation": "Criminal Procedure Rules, Part 3", "role": "Gives the court its general case management powers, exercised at hearings including the PTPH" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Disclosure sounds procedural until a trial collapses because of it. SQE1 tests whether you can spot, in a scenario, exactly which duty has been breached and what the defence's remedy is — not just recite that disclosure 'matters'.",
+    "profileHooks": {
+      "weakApplication": "You know the disclosure rules. This lesson's test pool leans hard on fact patterns — expect to be asked what a solicitor should actually do next, not what the rule says in the abstract.",
+      "weakKnowledge": "Slow down on Part 2 and Part 4 — get the sequence of duties (initial disclosure, defence statement, continuing duty) straight before tackling the application questions."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A trial collapses on its second day — not because a witness lied, but because a box of CCTV footage sat, unmentioned, on a schedule nobody read closely enough. The footage didn't need to be used by anyone to matter. It just needed to exist. This lesson is about the duty that turns 'we didn't rely on it' into 'we still had to hand it over'.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The CPIA 1996 framework is stable; the non-statutory Attorney General's Guidelines on Disclosure (most recently revised in 2022) supplement but do not alter the statutory tests covered here."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "The hearing that sets the shape of a Crown Court case",
+        "voice": "explanatory — situates the PTPH within the timeline",
+        "body": [
+          "Once a case is sent to the Crown Court, the parties do not simply wait for a trial date to appear. Within days of sending, the court lists a Plea and Trial Preparation Hearing (PTPH) — usually the defendant's first appearance in the Crown Court and the single most consequential case management event before trial.",
+          "At the PTPH the defendant is arraigned — asked to enter a plea on each count. A guilty plea can end the substantive case there and then, subject to sentencing. A not guilty plea triggers the court's real work: fixing a trial date, identifying the issues genuinely in dispute, setting a timetable for expert evidence and witness requirements, and — critically — the dates by which prosecution disclosure and the defence statement must be served.",
+          "Treat the PTPH as the moment the case's shape is fixed. Everything that follows — disclosure deadlines, the trial timetable, applications about admissibility — is set against directions the court gives at this hearing under its general case management powers in CrimPR Part 3."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Plea and Trial Preparation Hearing (PTPH)",
+            "definition": "The Crown Court's standard first hearing after a case is sent from the magistrates' court, at which the defendant is arraigned and the court sets directions and a timetable — including disclosure deadlines — for trial."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-10-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "At the PTPH, a defendant pleads not guilty. Which of the following is the court most likely to do at that same hearing?",
+          "options": ["Immediately proceed to jury selection that day", "Set a trial date and give case management directions, including disclosure deadlines"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. The PTPH is a case management hearing, not the trial itself — its job is to fix the timetable everything else runs against.",
+          "feedbackIncorrect": "Not quite — the PTPH does not involve a jury. Its function is to set directions and a timetable, including for disclosure, ahead of a later trial date."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Initial disclosure: what the prosecution must hand over, and when",
+        "voice": "structural — statute-first",
+        "body": [
+          "Section 3 CPIA 1996 imposes the prosecution's initial duty of disclosure: it must disclose to the accused any prosecution material which has not previously been disclosed and which might reasonably be considered capable of undermining the case for the prosecution, or of assisting the case for the accused.",
+          "That test — 'capable of undermining or assisting' — is deliberately wide, and it applies to unused material: everything the investigation gathered that the prosecution does not intend to rely on at trial. Used material (the evidence actually relied on) is served as part of the case papers; unused material is a separate universe, and s 3 is what forces it into the open.",
+          "In practice, the police and CPS work from a schedule of unused material — non-sensitive items are listed for the defence to inspect or receive; sensitive material (for example, information that could endanger an informant) is handled separately and may be the subject of a public interest immunity application to the court."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Criminal Procedure and Investigations Act 1996, s 3(1)(a)",
+            "text": "The prosecutor must disclose to the accused any prosecution material which has not previously been disclosed to the accused and which might reasonably be considered capable of undermining the case for the prosecution against the accused, or of assisting the case for the accused.",
+            "elements": ["Prosecution material not previously disclosed", "Might reasonably be considered capable of undermining the prosecution case", "...or of assisting the accused's case", "Applies to unused material identified via the schedule, not just material relied on at trial"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-10-check-02",
+          "type": "statuteParser",
+          "skillTag": "understanding",
+          "prompt": "Under s 3 CPIA 1996, which test governs whether an item of unused material must be disclosed to the defence?",
+          "options": ["Whether it might reasonably be considered capable of undermining the prosecution case or assisting the defence", "Whether the defence has specifically requested that item by name"],
+          "correctIndex": 0,
+          "feedbackCorrect": "Correct — the test looks at the content of the material against that undermining/assisting standard, not at whether anyone asked for it by name.",
+          "feedbackIncorrect": "Look again at s 3(1)(a) — the duty is triggered by content meeting the undermining/assisting test, and it is not conditional on the defence having identified the item first."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Unused material: schedules, sensitivity, and what the defence actually sees",
+        "voice": "case-narrative — grounds the rule in a realistic file",
+        "body": [
+          "The investigating officer prepares a schedule of non-sensitive unused material listing everything gathered that is not relied on as evidence — witness statements not used, CCTV not relied on, forensic reports that came back inconclusive, and so on. The prosecutor reviews that schedule against the s 3 test and decides what must actually be disclosed.",
+          "Sensitive material — items whose disclosure could cause real harm, such as details that would identify a covert source — goes on a separate sensitive schedule. If the prosecution wants to withhold something on public interest grounds, it applies to the court for a ruling, usually without notifying the defence of the material's content.",
+          "The practical risk sits with the non-sensitive schedule: an item can be technically listed and still be under-described, so its real significance to the defence case is missed unless someone actually reads it against the undermining/assisting test."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Two schedules, two routes",
+            "points": [
+              "Non-sensitive schedule — reviewed against the s 3 test; qualifying items must be disclosed to the defence",
+              "Sensitive schedule — withheld material the prosecution wants to keep back on public interest grounds, ruled on by the court, usually without the defence seeing the content",
+              "Listing an item is not the same as disclosing it — the duty is discharged by disclosure of qualifying content, not by mere administrative listing"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-10-check-03",
+          "type": "tapTheFact",
+          "skillTag": "application",
+          "prompt": "Tap the fact that triggers the prosecution's duty to disclose this item under s 3.",
+          "scenarioText": "A shopkeeper is prosecuted for assault after a fight outside his shop. The police hold CCTV footage from a camera across the street that was never relied on in the case papers, but which shows the alleged victim throwing the first punch. The footage sits, unmentioned in any detail, on the non-sensitive schedule of unused material that the officer prepares for the file.",
+          "tappableSpans": ["police hold CCTV footage from a camera across the street", "never relied on in the case papers", "shows the alleged victim throwing the first punch", "sits, unmentioned in any detail, on the non-sensitive schedule"],
+          "correctSpan": "shows the alleged victim throwing the first punch",
+          "feedbackCorrect": "That's the disclosure trigger — footage capable of undermining the prosecution case (self-defence becomes live) must be disclosed under s 3, regardless of whether the prosecution intends to rely on it.",
+          "feedbackIncorrect": "The disclosure test isn't about where the material sits administratively — it's about content. Look for the fact that shows this footage could undermine the prosecution's case."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "The defence statement and the continuing duty",
+        "voice": "structural — walks the timeline in order",
+        "body": [
+          "In the Crown Court, service of a defence statement is mandatory, not optional. Under s 6A CPIA 1996 it must set out the nature of the defence, including any particular defences relied on; the matters of fact on which the defendant takes issue with the prosecution and why; and, where relevant, details of any alibi.",
+          "The defence statement is not just paperwork — it narrows the case. It tells the prosecution what is genuinely in dispute, which in turn sharpens the question of what remaining unused material is capable of undermining the case as it is now understood.",
+          "That is why disclosure does not stop after initial disclosure. Section 7A CPIA 1996 imposes a continuing duty: the prosecution must keep the question of disclosure under review throughout the proceedings, right up to acquittal or conviction, and must disclose anything newly meeting the s 3 test — including material that only becomes significant once the defence statement reveals what is actually being contested."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Continuing duty of disclosure",
+            "definition": "Under s 7A CPIA 1996, the prosecution's obligation to keep disclosure under review throughout the case, not just at the initial disclosure stage — informed in particular by what the defence statement identifies as being in dispute."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-10-check-04",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps of the CPIA disclosure timeline in the correct order.",
+          "items": ["Prosecution serves initial disclosure of unused material (s 3)", "Defence serves a defence statement setting out the nature of its defence (s 6A)", "Prosecution reviews disclosure in light of the defence statement (s 7A)", "Trial proceeds on the issues the defence statement has narrowed"],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence — each stage depends on the one before it, and the continuing duty exists precisely because the defence statement can reveal what initial disclosure could not have anticipated.",
+          "feedbackIncorrect": "Check the order again — initial disclosure comes first, the defence statement responds to it, and the continuing duty only makes sense as a review that happens after the defence statement narrows the issues."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "When disclosure goes wrong: the practical consequence for the defence",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "A disclosure failure is not just a technical breach that gets tidied up by an order to comply. Late or non-disclosure of material capable of undermining the prosecution case can leave the defence unable to properly test the evidence, advise the client on plea, or prepare cross-examination.",
+          "Where the defence believes disclosure is inadequate, the s 6A defence statement can be used to trigger a s 8 CPIA application to the court for an order for specific disclosure. Where material surfaces late — close to or during trial — the practical remedy is usually an adjournment to allow proper preparation; in the most serious cases, an uncured failure can lead to a stay of proceedings as an abuse of process or, after conviction, an unsafe verdict on appeal.",
+          "The common thread across all of these consequences is the same: the defence's ability to prepare is the thing disclosure protects, and it is the thing a failure damages first."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students often assume a disclosure failure is simply a technical breach, remedied automatically once the prosecution is told to comply.",
+            "whyItsWrong": "Late or non-disclosure of material capable of undermining the prosecution case can leave the defence unable to properly test the evidence or advise on plea. The practical consequence is not a formality — it may justify an adjournment, a s 8 application for specific disclosure, or, where the unfairness cannot be cured, a stay of proceedings or an unsafe conviction."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-clp-10-check-05",
+          "type": "applyTheRule",
+          "skillTag": "application",
+          "prompt": "Two weeks before trial, the prosecution discloses CCTV footage that materially undermines the identification evidence against the defendant. The defence has already served its defence statement and prepared its case without this footage. What is the most appropriate immediate step for the defence solicitor?",
+          "options": ["Ignore it and proceed to trial as planned", "Seek an adjournment — and, if necessary, apply under s 8 CPIA for any further related material — to allow proper preparation in light of the new disclosure"],
+          "correctIndex": 1,
+          "feedbackCorrect": "Right. The footage changes what proper preparation looks like, so the immediate step is to secure the time — and, if there is reason to think more exists, to press for it — before trial proceeds.",
+          "feedbackIncorrect": "Proceeding unchanged ignores exactly the harm disclosure is meant to prevent. The practical response is to seek an adjournment and, where appropriate, pursue further disclosure under s 8."
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-clp-10-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.25,
+      "prompt": "At what point in Crown Court proceedings is the PTPH typically held?",
+      "options": ["Shortly after the case is sent from the magistrates' court", "Only after the prosecution has closed its case", "Immediately before sentencing", "After the jury has been sworn"],
+      "correctIndex": 0,
+      "explanation": "The PTPH is the standard first Crown Court hearing after sending, used to arraign the defendant and set the case management timetable — it comes at the start of the process, not near its end."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.2,
+      "prompt": "Which piece of legislation principally governs the prosecution's duty to disclose unused material in criminal proceedings?",
+      "options": ["Criminal Procedure and Investigations Act 1996", "Police and Criminal Evidence Act 1984", "Criminal Justice Act 2003", "Criminal Procedure Rules 2020"],
+      "correctIndex": 0,
+      "explanation": "The CPIA 1996 sets out the statutory disclosure framework, including the s 3 initial disclosure duty and the s 7A continuing duty."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-03",
+      "type": "quickCheck",
+      "skillTag": "understanding",
+      "difficultyStart": 0.35,
+      "prompt": "A prosecutor is deciding whether an item of unused material must be disclosed under s 3 CPIA 1996. Which question should they ask?",
+      "options": ["Could this reasonably be considered capable of undermining the prosecution case or assisting the defence?", "Has the defence specifically asked for this item?", "Is the item admissible as used evidence at trial?", "Would disclosing it embarrass the investigating officer?"],
+      "correctIndex": 0,
+      "explanation": "The s 3 test is content-based: capability of undermining the prosecution case or assisting the defence. It does not depend on a specific defence request or on the item's status as trial evidence."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-04",
+      "type": "quickCheck",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "A defence solicitor wants to identify what unused material the police hold in a case, before deciding whether to press for further disclosure. Which document should they first request sight of?",
+      "options": ["The schedule of non-sensitive unused material", "The indictment", "The PTPH form", "The jury bundle"],
+      "correctIndex": 0,
+      "explanation": "The non-sensitive schedule is the working document listing unused material and is the natural starting point for assessing whether further disclosure should be pursued."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-05",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "difficultyStart": 0.4,
+      "prompt": "Which of the following is NOT something the court typically sets directions for at the PTPH?",
+      "options": ["A trial date", "A timetable for expert evidence and disclosure", "The eventual sentence to be imposed if the defendant is convicted", "Directions for the defence statement deadline"],
+      "correctIndex": 2,
+      "trapExplanation": "The PTPH is a case management hearing before guilt is determined — sentence is not fixed there. Students sometimes conflate case management directions with sentencing outcomes, but the two are entirely separate stages.",
+      "explanation": "The PTPH deals with directions for trial preparation — trial date, timetable, disclosure — not with sentence, which can only follow conviction or a guilty plea."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-06",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "difficultyStart": 0.45,
+      "prompt": "A defence solicitor argues that, because their client has pleaded not guilty and will run a full defence, they are under no obligation to serve a defence statement in the Crown Court. Is this correct?",
+      "options": ["Yes — defence statements are always optional", "No — in the Crown Court, service of a defence statement is mandatory, not optional", "No — but only if the defendant is legally represented", "Yes — defence statements are only required where the defendant raises an alibi"],
+      "correctIndex": 1,
+      "trapExplanation": "Students often carry over the magistrates' court position, where a defence statement is voluntary, into the Crown Court, where s 6A CPIA 1996 makes it mandatory regardless of representation or the specific defence raised.",
+      "explanation": "In the Crown Court, a defence statement must be served; it is not conditional on legal representation or on the defence involving an alibi."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-07",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.5,
+      "prompt": "The prosecution serves a schedule listing an item of unused material as 'security camera footage, not relied upon', without describing its content. The defence solicitor is satisfied this discharges the prosecution's disclosure duty. Is this correct?",
+      "options": ["Yes, once an item appears on the schedule the duty is discharged regardless of content", "No — the s 3 duty depends on the content of the material against the undermining/assisting test, not merely on listing it", "Yes, because unused material is never subject to disclosure", "No — only sensitive material must ever be disclosed"],
+      "correctIndex": 1,
+      "trapExplanation": "Being listed on a schedule is an administrative step, not the disclosure itself. If the content meets the s 3 test, the material — not just a reference to it — must actually be disclosed.",
+      "explanation": "The disclosure duty is discharged by handing over qualifying content, not by a bare mention on a schedule that omits what the material actually shows."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-08",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "Shortly before trial, previously undisclosed material emerges that undermines a key prosecution witness's credibility. Defence counsel argues the trial should proceed unaffected because the material was 'unused' and therefore never going to be relied on by the prosecution anyway. Which statement best captures the flaw in this argument?",
+      "options": ["There is no flaw — unused material is legally irrelevant to a fair trial", "The flaw is that material capable of undermining the prosecution case must be disclosed under s 3 irrespective of whether the prosecution intends to rely on it, and late disclosure may require an adjournment or further steps", "The flaw is that the material should have been listed as used evidence instead", "There is no flaw, provided the jury is unaware of the material's existence"],
+      "correctIndex": 1,
+      "trapExplanation": "The label 'unused' describes how the prosecution intends to deploy the material at trial, not whether it must be disclosed — the s 3 test is about capability of undermining or assisting, and applies to unused material specifically.",
+      "explanation": "Late disclosure of material meeting the s 3 test has practical consequences for trial fairness regardless of the material's 'unused' status; it does not become irrelevant because the prosecution never planned to rely on it."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.45,
+      "prompt": "A defendant's solicitor serves a defence statement identifying an alibi and naming a witness who can support it. Some weeks later, the prosecution obtains further material relevant to that alibi. What duty, if any, does the prosecution now have?",
+      "options": ["None — the prosecution's disclosure duty ends once the defence statement is served", "A continuing duty under s 7A CPIA 1996 to keep the question of disclosure under review in light of the defence statement", "A duty only if the defence makes a fresh application to the court", "A duty only if the alibi witness is actually called to give evidence"],
+      "correctIndex": 1,
+      "explanation": "Section 7A imposes a continuing review duty precisely so that material becoming relevant after the defence statement — such as material bearing on a named alibi — is not left undisclosed."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-10",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.35,
+      "prompt": "At the PTPH, the defendant pleads not guilty to two counts on the indictment. The court fixes a trial date eleven months away and sets a timetable for disclosure and expert evidence. Which of the following best describes the legal basis for the court taking these case management steps?",
+      "options": ["The court's general case management powers under CrimPR Part 3", "The court has no power to give such directions before trial", "Such directions may only be given by the Court of Appeal", "The directions derive solely from the CPS's own internal guidance"],
+      "correctIndex": 0,
+      "explanation": "CrimPR Part 3 gives the court its general case management powers, which it exercises at hearings including the PTPH to set the trial timetable and related directions."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-11",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "difficultyStart": 0.55,
+      "prompt": "A defence solicitor believes the prosecution has failed to disclose material that would undermine the identification evidence against her client. She has already served a defence statement setting out the defence case. What is her appropriate next step under the CPIA 1996 framework if informal correspondence with the CPS does not resolve the issue?",
+      "options": ["Apply to the court under s 8 CPIA 1996 for an order for specific disclosure", "Wait until trial and raise it for the first time in cross-examination", "Report the officer in the case to a police complaints body", "Do nothing, since the defence statement has already been served"],
+      "correctIndex": 0,
+      "explanation": "Once a defence statement has been served, a s 8 application lets the defence ask the court to order specific disclosure of material it believes ought to have been, but was not, disclosed."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-12",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.3,
+      "prompt": "Section 3(1)(a) CPIA 1996 requires the prosecutor to disclose material meeting a particular test. Which of the following correctly states that test?",
+      "options": ["Material that might reasonably be considered capable of undermining the prosecution case or assisting the accused's case", "Material that the defence formally requests in writing", "Material that is admissible as prosecution evidence", "Material that the investigating officer personally considers important"],
+      "correctIndex": 0,
+      "explanation": "This is the statutory wording of the s 3(1)(a) test, applied to previously undisclosed prosecution material."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-13",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "difficultyStart": 0.4,
+      "prompt": "A defence statement served under s 6A CPIA 1996 in the Crown Court must set out certain matters. Which of the following is one of them?",
+      "options": ["The nature of the accused's defence, including any particular defences relied on", "The name of the defendant's preferred barrister", "A full transcript of the police interview", "The sentence the defendant expects to receive if convicted"],
+      "correctIndex": 0,
+      "explanation": "Section 6A requires the defence statement to set out the nature of the defence, the matters of fact in issue and why, and alibi details where relevant — not administrative or sentencing matters."
+    },
+    {
+      "itemId": "sqe1-clp-10-test-14",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "difficultyStart": 0.4,
+      "prompt": "The prosecution's duty of disclosure under the CPIA 1996 does not end once initial disclosure has been served. Which provision requires the prosecution to keep the question of disclosure under review as the case progresses?",
+      "options": ["Section 7A CPIA 1996", "Section 3 CPIA 1996 alone, with no further review required", "Section 78 PACE 1984", "Section 101 Criminal Justice Act 2003"],
+      "correctIndex": 0,
+      "explanation": "Section 7A is the source of the continuing duty; s 78 PACE and s 101 CJA 2003 are unrelated exclusionary provisions covered in later lessons on evidence."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The recurring trap is treating 'unused' as synonymous with 'irrelevant'. Material never relied on by the prosecution can still be exactly the material that wins a case for the defence — the s 3 test looks at content, not intended use.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.criminal-practice.case-management-disclosure"
+  }
+}

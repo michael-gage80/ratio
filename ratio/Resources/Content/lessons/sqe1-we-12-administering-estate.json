@@ -1,0 +1,382 @@
+{
+  "track": "SQE1",
+  "lessonId": "sqe1-we-12",
+  "moduleId": "sqe1-wills-administration-estates",
+  "moduleTitle": "SQE1 · Wills and Administration of Estates",
+  "lessonNumber": 12,
+  "topicId": "sqe1.wills-estates.administering-estate",
+  "title": "Administering the estate: collecting in and paying out",
+  "subtitle": "The statutory order of payment, and two ways to distribute without personal risk",
+  "estimatedMinutes": 18,
+  "itemCounts": {
+    "lecture": 5,
+    "testPool": 14,
+    "testServedPerAttempt": 4
+  },
+  "objectives": [
+    "State the statutory order in which different classes of gift bear the burden of paying the deceased's expenses and debts",
+    "Explain how a s 27 Trustee Act 1925 advertisement and a Re Benjamin order each protect personal representatives from personal liability, and what kind of uncertainty each is designed to address",
+    "Apply the distinction between s 27 and a Re Benjamin order to a set of facts to identify the correct protective step"
+  ],
+  "leadingAuthorities": [
+    { "citation": "Trustee Act 1925, s 27", "role": "Statutory advertisement protecting personal representatives from claims by unknown creditors and beneficiaries" },
+    { "citation": "Administration of Estates Act 1925, s 34(3) and Sch 1 Part II", "role": "Statutory order in which the estate's assets are applied to pay expenses and debts" },
+    { "citation": "Re Benjamin [1902] 1 Ch 723", "role": "Court order permitting distribution on a stated assumption where a beneficiary's existence or survival is genuinely in doubt" }
+  ],
+  "whyThisMattersTemplate": {
+    "default": "Most students can recite that personal representatives must 'pay debts before distributing'. Where the profile shows knowledge is ahead of application, this note appears: 'You know the order exists — this lesson tests whether you can pick the right protective step for a specific kind of uncertainty, because the two main tools solve different problems.'",
+    "profileHooks": {
+      "weakApplication": "You've scored well here on the statutory order itself before. The test pool leans towards application: expect scenarios asking which protective step a solicitor should take, not abstract statements of the rule.",
+      "weakKnowledge": "Start with Part 1 and get the basic payment order fixed first — residue, then general and pecuniary legacies, then specific gifts. The later parts on s 27 and Re Benjamin assume you already have that order as a fixed reference point."
+    }
+  },
+  "lawStatedAt": "2026-09-24",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "overview": {
+    "hook": "A personal representative pays out the last of an estate, satisfied every debt she knew about has been settled. Eight months later, a creditor she never heard of turns up with a genuine invoice from years before the death. Is she personally on the hook, out of her own pocket? The answer turns entirely on one small, unglamorous step most people never think to take — and on whether the same step would even have helped her, if the real uncertainty she faced wasn't about creditors at all.",
+    "lawStatedNotice": "Law stated as at 24 September 2026. The order of application of assets set out in AEA 1925, Sch 1 Part II can be varied by a contrary intention in the will; this lesson states the default statutory order that applies absent such a direction."
+  },
+  "lecture": {
+    "parts": [
+      {
+        "partNumber": 1,
+        "heading": "Who bears the cost first: the statutory order",
+        "voice": "structural — a reference-style part students will return to",
+        "body": [
+          "Before any beneficiary receives anything, the estate's expenses and debts have to be paid. But a will rarely leaves a single undivided pot — it usually contains a mix of specific gifts (a named item, or 'my house to my son'), general or pecuniary legacies (a sum of money, or an unspecified item of a described type), and a residuary gift (whatever is left after everything else). If the estate can't cover everything, someone's gift has to give way first, and the law fixes the order.",
+          "Section 34(3) of the Administration of Estates Act 1925, applying Schedule 1 Part II, sets a default order that applies unless the will shows a contrary intention. In simplified form: any part of the estate not disposed of by the will at all (a partial intestacy) is used first; then the residuary estate; then, if that isn't enough, general and pecuniary legacies abate (are reduced) rateably; and specific gifts bear the burden last of all, and only once everything above has been exhausted.",
+          "The intuition behind the order is protective: a testator who bothers to single out a specific item for a specific person ('my grandfather's watch to my nephew') has expressed the clearest, most personal intention in the will, so the law shields that gift until every less targeted category has already been used up."
+        ],
+        "components": [
+          {
+            "type": "ratioPanel",
+            "label": "Statutory order of application (simplified)",
+            "points": [
+              "1. Any property undisposed of by the will (partial intestacy)",
+              "2. The residuary estate",
+              "3. General and pecuniary legacies (abating rateably if insufficient)",
+              "4. Specific gifts (bearing the burden last, and only if everything above is exhausted)"
+            ]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-12-check-01",
+          "type": "quickCheck",
+          "skillTag": "knowledge",
+          "prompt": "Under the default statutory order, which category of gift is generally protected until last, and only bears the cost of debts and expenses once everything else has been exhausted?",
+          "options": ["The residuary estate", "General and pecuniary legacies", "Specific gifts"],
+          "correctIndex": 2,
+          "feedbackCorrect": "Right. Specific gifts sit at the bottom of the burden order — they're the last resort, reflecting the testator's clearest, most personal intention.",
+          "feedbackIncorrect": "Not quite — residue and general legacies are used up first. Specific gifts are the category protected until last, precisely because they represent the most targeted expression of the testator's wishes."
+        }
+      },
+      {
+        "partNumber": 2,
+        "heading": "Why 'residue first' isn't just an accident of drafting",
+        "voice": "argumentative — states the strongest case for the rule, then complicates it",
+        "body": [
+          "It might seem more natural for every beneficiary to contribute proportionately to the estate's debts, regardless of what kind of gift they received. The statutory order deliberately rejects that in favour of a hierarchy — and the reasoning repays a moment's thought, because it shows up throughout succession law.",
+          "A residuary beneficiary is, by definition, receiving 'whatever is left' — an inherently variable, unfixed amount. Reducing that amount to cover debts doesn't disappoint any precise expectation, because the residuary gift was never a fixed sum to begin with. A specific legatee, by contrast, was promised a particular thing; reducing or losing it entirely is a much sharper disappointment of a precise, personal intention.",
+          "This is also why the order matters practically, not just theoretically: a solicitor advising executors on an estate with insufficient assets needs to know exactly which beneficiaries lose out first, in what order, and by how much — get the order wrong, and a beneficiary who should have been protected ends up bearing a loss that should have fallen on someone else."
+        ],
+        "components": [
+          {
+            "type": "statuteBlock",
+            "citation": "Administration of Estates Act 1925, s 34(3)",
+            "text": "Where the estate of a deceased person is insufficient to satisfy all his liabilities, the same rules shall prevail and be observed as to the respective rights of secured and unsecured creditors and as to debts and liabilities provable and as to the valuation of annuities and future and contingent liabilities respectively, as may be in force for the time being under the law of bankruptcy with respect to the estates of persons adjudged bankrupt: and all persons who in any such case would be entitled to prove for and receive dividends out of the estate of the deceased may come in under the like conditions.",
+            "elements": ["Applies where the estate is insufficient to meet all liabilities", "Adopts the bankruptcy law rules on the ranking of creditors", "Governs debts owed to third parties — distinct from, though related to, the ranking of gifts to beneficiaries under Sch 1 Part II"]
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-12-check-02",
+          "type": "tapTheFact",
+          "skillTag": "understanding",
+          "prompt": "Tap the fact in this scenario that identifies which beneficiary's gift should abate first.",
+          "scenarioText": "A testator's will leaves her house specifically to her daughter, £10,000 to a charity as a pecuniary legacy, and the residue of her estate (after debts) to her son. The estate turns out to have unexpectedly high debts, exceeding the available residue.",
+          "tappableSpans": ["leaves her house specifically to her daughter", "£10,000 to a charity as a pecuniary legacy", "the residue of her estate (after debts) to her son", "unexpectedly high debts"],
+          "correctSpan": "the residue of her estate (after debts) to her son",
+          "feedbackCorrect": "Correct. The residuary gift to the son absorbs the shortfall first — his gift is defined as whatever is left after debts, so it is reduced before the pecuniary legacy or the specific gift of the house is touched.",
+          "feedbackIncorrect": "Look for the gift that is inherently defined as 'what's left over' — that is the one the statutory order uses first, before either the pecuniary legacy or the specific gift of the house."
+        }
+      },
+      {
+        "partNumber": 3,
+        "heading": "Section 27: protection from the creditor you never heard of",
+        "voice": "case-narrative — sets up the practical problem before naming the doctrine",
+        "body": [
+          "Suppose a personal representative has done everything right: reviewed the deceased's papers, contacted every creditor they could identify, and settled every known debt. Can they now safely distribute the estate? Not quite — there could always be a creditor, or an unknown beneficiary (for example, someone the deceased owed money to from years earlier, or a distant relative entitled on a partial intestacy) who simply never came forward.",
+          "Section 27 of the Trustee Act 1925 gives personal representatives a specific, formal way to close off that risk. By placing statutory advertisements — in the London Gazette, in a newspaper circulating in the area where any land in the estate is situated, and in any other appropriate way the circumstances call for — and giving at least two months for anyone with a claim to come forward, the personal representatives can then distribute the estate without becoming personally liable to any claimant who failed to respond in time.",
+          "Crucially, this protects the personal representatives themselves — it does not extinguish the missed claim. A late-arriving, genuine creditor or beneficiary can still pursue the assets by tracing them into the hands of the people who actually received the distribution. Section 27 shifts the risk of a late claim away from the personal representatives and onto the recipients of the distribution, rather than eliminating the claim altogether."
+        ],
+        "components": [
+          {
+            "type": "keyConcept",
+            "term": "Section 27 Trustee Act 1925 advertisement",
+            "definition": "A statutory notice (in the London Gazette, a locally circulating newspaper, and any other appropriate publication) giving creditors and unknown beneficiaries at least two months to come forward before distribution. Compliance protects the personal representatives from personal liability to anyone who fails to respond in time, though a genuine late claimant can still trace and recover the assets from those who received them."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-12-check-03",
+          "type": "sequence",
+          "skillTag": "understanding",
+          "prompt": "Put these steps in the correct order for a personal representative relying on s 27 protection.",
+          "items": [
+            "Place advertisements in the London Gazette and a locally circulating newspaper (and any other appropriate notice)",
+            "Allow at least two months for claims to be notified",
+            "Distribute the estate once the notice period has expired with no further claims addressed",
+            "If a genuine late claim later emerges, the claimant may trace the assets into the hands of the recipients, but has no personal claim against the personal representatives"
+          ],
+          "correctOrder": [0, 1, 2, 3],
+          "feedbackCorrect": "That's the sequence: advertise, wait out the notice period, distribute, and — if a genuine claim later surfaces — the loss falls on tracing against recipients, not on the personal representatives personally.",
+          "feedbackIncorrect": "Check the order — advertising and the two-month wait must both happen before distribution, and the personal representatives' protection only ever shields them personally; it doesn't stop a genuine late claimant tracing the assets afterward."
+        }
+      },
+      {
+        "partNumber": 4,
+        "heading": "Re Benjamin: a different kind of doubt",
+        "voice": "Socratic — poses the dilemma before resolving it",
+        "body": [
+          "Here's a case s 27 cannot solve, however carefully the advertisements are placed: what if the personal representatives know exactly who the beneficiaries are, but genuinely cannot establish a fact needed to distribute — for example, whether a beneficiary who went missing years ago is still alive, or survived the deceased at all? No advertisement resolves that; the problem isn't an unknown claimant, it's an unresolved fact about a known one.",
+          "This is precisely the gap a Re Benjamin order fills. In Re Benjamin itself, a beneficiary had disappeared some years before the testator's death, and it could not be established with certainty whether he had survived the testator or predeceased him — which mattered enormously, because the answer determined who was entitled to his share.",
+          "The court authorised the personal representatives to distribute the estate on the express assumption that the missing beneficiary had predeceased the testator, protecting them from personal liability if that assumption later turned out to be wrong. As with s 27, the order protects the personal representatives, not the ultimate answer to the underlying fact — if the missing beneficiary later reappears very much alive, they may still be able to pursue the assets by tracing them into the hands of whoever actually received them, but they cannot pursue the personal representatives personally.",
+          "The two tools therefore solve different problems: s 27 addresses claimants who might exist but haven't been identified; a Re Benjamin order addresses a specific factual doubt about someone who has been identified. Confusing the two — reaching for an advertisement when the real problem is a missing-beneficiary fact question, or vice versa — is the trap this lesson exists to close."
+        ],
+        "components": [
+          {
+            "type": "caseCard",
+            "caseName": "Re Benjamin",
+            "citation": "[1902] 1 Ch 723",
+            "court": "Chancery Division",
+            "year": 1902,
+            "factsShort": "A beneficiary had disappeared years before the testator's death, and it could not be proved whether he survived the testator or had predeceased him.",
+            "ratioShort": "Where a genuine factual doubt about a beneficiary's survival or existence cannot be resolved, the court may authorise distribution on a stated assumption, protecting the personal representatives from personal liability if the assumption later proves wrong.",
+            "expanded": {
+              "facts": "A beneficiary under the will had left home some years before the testator died and had not been heard from since. There was no direct evidence establishing whether he was alive or dead at the date of the testator's death, and therefore no clear basis on which the personal representatives could safely distribute his share.",
+              "judgmentExtract": "The court held that, faced with an unresolvable factual doubt of this kind, it could give directions authorising the personal representatives to distribute the estate on the footing of a stated assumption (here, that the missing beneficiary had predeceased the testator), without further liability attaching to them personally if that assumption later proved incorrect.",
+              "significance": "Re Benjamin has given its name to a distinct category of court order, used whenever administration is genuinely stalled by an unresolved question of fact about a beneficiary's existence, identity or survival — distinct from, and not a substitute for, the s 27 Trustee Act 1925 advertisement, which addresses unidentified claimants rather than unresolved facts about identified ones."
+            }
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-12-check-04",
+          "type": "distinguishTheCase",
+          "skillTag": "application",
+          "prompt": "Which scenario calls for a Re Benjamin order, rather than s 27 advertisements?",
+          "scenarioA": "The personal representatives are unsure whether the deceased had any creditors beyond the ones they have already identified and paid.",
+          "scenarioB": "The personal representatives know a named beneficiary exists but cannot establish whether she was alive at the date of the testator's death, since she has not been heard from in over a decade.",
+          "correctScenario": "B",
+          "explanation": "Scenario A is exactly what s 27 addresses — the risk of an unidentified claimant. Scenario B is a genuine factual doubt about an identified beneficiary's survival, which is the situation a Re Benjamin order exists to resolve."
+        }
+      },
+      {
+        "partNumber": 5,
+        "heading": "Combining the tools on a single estate",
+        "voice": "direct — sets up the trap the tests will probe",
+        "body": [
+          "A single estate can easily raise both problems at once, and a well-prepared personal representative uses both tools where both risks exist — they are not mutually exclusive. Advertising under s 27 addresses the risk of creditors or beneficiaries nobody has yet identified; if, separately, there's a genuine doubt about whether a known beneficiary is still alive or ever existed to inherit, an application for a Re Benjamin order addresses that distinct risk.",
+          "The most common SQE1 trap is treating s 27 as a general-purpose shield against any uncertainty in the estate. It is not — it is specifically about the two-month notice-and-advertisement process for unidentified claims. A solicitor who advises a client to 'just do the s 27 advertisement' when the real problem is a missing, unidentifiable-as-alive-or-dead beneficiary has given incomplete advice: the advertisement doesn't touch that risk at all.",
+          "The second most common trap is assuming either protection removes the underlying claim altogether. Neither does. Both simply redirect the risk of a valid but late or unresolved claim away from the personal representatives personally and onto the distributed assets — recoverable, if at all, only by tracing into the hands of whoever received them."
+        ],
+        "components": [
+          {
+            "type": "theTrap",
+            "commonWrongAnswer": "Students sometimes say that once a personal representative has complied with s 27, they are fully protected against any later claim on the estate, of any kind.",
+            "whyItsWrong": "Section 27 only protects against claims by creditors or beneficiaries whose existence was unknown and who failed to respond to the statutory advertisement. It does nothing for a distinct factual doubt about a known beneficiary's survival or existence — that calls for a Re Benjamin order instead, and neither tool extinguishes a valid claim outright; both merely shift it onto the distributed assets rather than the personal representatives."
+          }
+        ],
+        "interaction": {
+          "itemId": "sqe1-we-12-check-05",
+          "type": "irac",
+          "skillTag": "application",
+          "scaffoldLevels": 3,
+          "prompt": "The personal representatives of an estate have identified all known creditors and paid them. Separately, a beneficiary under the will emigrated twenty years ago and has not been in contact since; it is unclear whether she is still alive. Advise the personal representatives on the steps needed before they can safely distribute the estate.",
+          "factsToOrder": [
+            "All known creditors have already been identified and paid",
+            "A named beneficiary has been out of contact for twenty years",
+            "It is unclear whether that beneficiary is alive or dead",
+            "The personal representatives want to distribute without personal risk"
+          ],
+          "scaffolds": [
+            { "level": 1, "support": "Full model IRAC answer shown, with each fact mapped to Issue / Rule / Application / Conclusion" },
+            { "level": 2, "support": "Rule and Issue given; student drags facts into Application and writes Conclusion" },
+            { "level": 3, "support": "Issue given only; student selects the Rule, drags facts into Application, writes Conclusion" }
+          ],
+          "modelAnswer": {
+            "issue": "What further protective steps, if any, the personal representatives need before distributing, given a known beneficiary of uncertain survival status (rather than an unidentified creditor).",
+            "rule": "Section 27 Trustee Act 1925 protects personal representatives against claims by creditors or beneficiaries whose existence was unknown, provided a statutory advertisement is placed and at least two months allowed for claims. A Re Benjamin order protects personal representatives where a genuine factual doubt about a known beneficiary's survival or existence cannot otherwise be resolved, by authorising distribution on a stated assumption.",
+            "application": "The creditor risk here has already been addressed by identifying and paying all known creditors; s 27 advertisement could still be considered for any wholly unidentified claimants, but the pressing issue is different — the personal representatives know the beneficiary exists but cannot establish whether she is alive. That is a factual doubt about a known person, which s 27 does not address at all.",
+            "conclusion": "The personal representatives should apply for a Re Benjamin order, seeking the court's authorisation to distribute on a stated assumption about the missing beneficiary's survival, which will protect them personally even if that assumption later proves incorrect."
+          }
+        }
+      }
+    ]
+  },
+  "testPool": [
+    {
+      "itemId": "sqe1-we-12-test-01",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "Under the default statutory order of application, which category is used first to meet the estate's expenses and debts?",
+      "options": ["Specific gifts", "Property not disposed of by the will (partial intestacy)", "General and pecuniary legacies", "The residuary estate"],
+      "correctIndex": 1,
+      "explanation": "Any property the will fails to dispose of at all is applied first, ahead of residue, general and pecuniary legacies, and specific gifts."
+    },
+    {
+      "itemId": "sqe1-we-12-test-02",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "What is the minimum notice period personal representatives must allow after placing a s 27 Trustee Act 1925 advertisement before distributing?",
+      "options": ["Two weeks", "One month", "Two months", "Six months"],
+      "correctIndex": 2,
+      "explanation": "Section 27 requires a notice period of at least two months from the advertisement before the personal representatives may safely distribute."
+    },
+    {
+      "itemId": "sqe1-we-12-test-03",
+      "type": "mcqWithTrap",
+      "skillTag": "knowledge",
+      "prompt": "Which case gives its name to a court order authorising distribution on a stated assumption where a beneficiary's survival or existence is genuinely in doubt?",
+      "options": ["Re Benjamin [1902] 1 Ch 723", "R v Miller [1983] 2 AC 161", "Stone and Dobinson [1977] QB 354", "Airedale NHS Trust v Bland [1993] AC 789"],
+      "correctIndex": 0,
+      "trapExplanation": "The other cases listed are genuine authorities, but all come from criminal omissions liability, not succession law — a reminder to check that a case actually belongs to the doctrine being tested, not just that it sounds familiar.",
+      "explanation": "Re Benjamin [1902] 1 Ch 723 is the source of the 'Benjamin order', used where a genuine factual doubt about a known beneficiary cannot otherwise be resolved."
+    },
+    {
+      "itemId": "sqe1-we-12-test-04",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A trainee claims that s 27 compliance means a personal representative can never be sued over a missed creditor again, full stop. Which correction is accurate?",
+      "options": [
+        "Section 27 protects the personal representatives personally, but a genuine late-arriving creditor can still trace the distributed assets into the hands of the recipients",
+        "Section 27 extinguishes the missed creditor's claim entirely, against everyone",
+        "Section 27 only protects against creditors, never against unknown beneficiaries",
+        "Section 27 has no protective effect at all; it is purely a formality with no legal consequence"
+      ],
+      "correctIndex": 0,
+      "trapExplanation": "It's tempting to treat compliance as bulletproof, but the protection is specifically personal to the personal representatives — the underlying claim survives and can still be pursued against the recipients of the distribution by tracing.",
+      "explanation": "Section 27 shields the personal representatives from personal liability, not the claim itself. A genuine late claimant retains a route against the distributed assets in the hands of the recipients, via tracing."
+    },
+    {
+      "itemId": "sqe1-we-12-test-05",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Reading s 27 Trustee Act 1925 together with the Re Benjamin doctrine, which statement best captures the structural difference between the two protections?",
+      "options": [
+        "Section 27 addresses unidentified claimants; a Re Benjamin order addresses an unresolved factual doubt about an identified beneficiary",
+        "Section 27 and a Re Benjamin order both require exactly the same two-month advertisement process",
+        "A Re Benjamin order is simply a more formal version of a s 27 advertisement, used for larger estates",
+        "Section 27 can only be used by beneficiaries, never by personal representatives"
+      ],
+      "correctIndex": 0,
+      "explanation": "The two protections address genuinely different problems: s 27 is about people whose existence or claims are unknown; a Re Benjamin order is about a person who is known but whose survival or existence cannot be established as fact."
+    },
+    {
+      "itemId": "sqe1-we-12-test-06",
+      "type": "statuteParser",
+      "skillTag": "understanding",
+      "prompt": "Which statement best explains why specific gifts are protected until last under the statutory order of application?",
+      "options": [
+        "Specific gifts are always more valuable than residuary gifts",
+        "Specific gifts represent the testator's most targeted, personal expression of intention, in contrast to a residuary gift, which is inherently variable by definition",
+        "Specific gifts are exempt from inheritance tax, so protecting them reduces the estate's overall tax bill",
+        "The order has no underlying policy rationale; it is an arbitrary historical convention"
+      ],
+      "correctIndex": 1,
+      "explanation": "The order reflects the precision of the testator's intention: a residuary gift is inherently 'whatever remains', so reducing it disappoints no fixed expectation, whereas a specific gift is the most targeted promise in the will and is protected accordingly."
+    },
+    {
+      "itemId": "sqe1-we-12-test-07",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "An estate has a valid residuary gift and a specific gift of a painting, but insufficient assets to pay all debts once the residue is exhausted. Which gift should abate to cover the shortfall?",
+      "options": ["The specific gift of the painting, immediately", "Neither — the personal representatives must sell other assets outside the estate", "The residuary gift has already been exhausted by definition under the facts given, so this scenario cannot arise", "The specific gift of the painting only after any general or pecuniary legacies have also been exhausted"],
+      "correctIndex": 3,
+      "explanation": "Even where residue is exhausted, general and pecuniary legacies must abate before a specific gift bears any burden. The specific gift of the painting is protected until every higher category, including general and pecuniary legacies, has been used up."
+    },
+    {
+      "itemId": "sqe1-we-12-test-08",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "Personal representatives have identified and paid every creditor they could find through the deceased's paperwork, but want protection against a creditor they simply never discovered. What should the solicitor advise?",
+      "options": ["Nothing further is needed once known creditors are paid", "Place s 27 Trustee Act 1925 advertisements and wait at least two months before distributing", "Apply for a Re Benjamin order to cover any unknown creditors", "Distribute immediately, since liability for unknown creditors never attaches to personal representatives regardless"],
+      "correctIndex": 1,
+      "explanation": "The risk of an entirely unidentified creditor is exactly what s 27 advertisement addresses. A Re Benjamin order is the wrong tool — it is for factual doubt about a known beneficiary, not for unidentified claimants generally."
+    },
+    {
+      "itemId": "sqe1-we-12-test-09",
+      "type": "applyTheRule",
+      "skillTag": "application",
+      "prompt": "The personal representatives know that a named beneficiary under the will had a daughter, but cannot establish whether that daughter was alive at the relevant date for entitlement to vest, since she disappeared many years earlier. Which protective step is appropriate?",
+      "options": ["A s 27 advertisement, since the daughter's existence is technically unconfirmed", "A Re Benjamin order, addressing the unresolved factual doubt about a known individual's survival", "No protective step is available in this situation", "A citation compelling the daughter to apply for a grant"],
+      "correctIndex": 1,
+      "explanation": "This is precisely a Re Benjamin scenario: a known, named individual whose survival cannot be established as fact. A s 27 advertisement is the wrong tool, since it targets unidentified claimants, not a specific person whose status is in doubt."
+    },
+    {
+      "itemId": "sqe1-we-12-test-10",
+      "type": "mcqWithTrap",
+      "skillTag": "application",
+      "prompt": "Personal representatives comply fully with s 27, wait out the notice period, and then distribute. Eighteen months later, a genuine creditor who never saw the advertisement comes forward with a valid, provable debt. What is the correct advice?",
+      "options": [
+        "The creditor has no remedy at all against anyone, since the notice period has expired",
+        "The creditor may pursue the personal representatives personally for the debt",
+        "The creditor may seek to trace and recover from the assets in the hands of those who received the distribution, but has no personal claim against the personal representatives",
+        "The creditor must wait until the personal representatives' own deaths before pursuing any claim"
+      ],
+      "correctIndex": 2,
+      "trapExplanation": "It's tempting to think full s 27 compliance leaves the creditor with nothing, since that would feel like the 'safest' answer for the personal representatives — but the protection is personal to them, not a bar on the underlying debt, which survives against the recipients via tracing.",
+      "explanation": "Section 27 shields the personal representatives personally once they have complied, but the genuine debt is not extinguished — the creditor's remedy shifts to tracing the distributed assets into the hands of the recipients."
+    },
+    {
+      "itemId": "sqe1-we-12-test-11",
+      "type": "statuteParser",
+      "skillTag": "application",
+      "prompt": "A will leaves a specific painting to a niece, a pecuniary legacy of £5,000 to a friend, and the residue to the testator's two children equally. The estate has substantial debts, sufficient to exhaust the residue entirely with a further shortfall remaining. Which gift bears the next portion of the shortfall?",
+      "options": ["The pecuniary legacy to the friend, abating rateably if needed", "The specific gift of the painting to the niece", "The gifts abate in the order named in the will, regardless of category", "None of the gifts abate; the personal representatives absorb the shortfall personally"],
+      "correctIndex": 0,
+      "explanation": "With residue fully exhausted, general and pecuniary legacies (here, the £5,000 gift) are next in line to abate, ahead of the specific gift of the painting, which remains protected unless the shortfall is so large that even legacies cannot cover it."
+    },
+    {
+      "itemId": "sqe1-we-12-test-12",
+      "type": "quickCheck",
+      "skillTag": "knowledge",
+      "prompt": "In which publication(s) must a s 27 Trustee Act 1925 advertisement ordinarily be placed?",
+      "options": ["The London Gazette and a newspaper circulating in the area where any land in the estate is situated, plus any other appropriate notice", "Only the London Gazette", "Only a local newspaper", "Only the Probate Registry's public notice board"],
+      "correctIndex": 0,
+      "explanation": "The statutory advertisement is placed in the London Gazette, a newspaper circulating where relevant land is situated, and any other notice appropriate to the circumstances, such as a publication likely to reach a particular class of claimant."
+    },
+    {
+      "itemId": "sqe1-we-12-test-13",
+      "type": "mcqWithTrap",
+      "skillTag": "understanding",
+      "prompt": "A colleague suggests that a Re Benjamin order and s 27 compliance can simply be substituted for one another, whichever is more convenient to arrange. Is this accurate?",
+      "options": [
+        "Yes, they are functionally interchangeable in every case",
+        "No — each addresses a distinct category of risk, and using the wrong one leaves the actual risk on the facts unaddressed",
+        "No — a Re Benjamin order has replaced s 27 entirely and s 27 is now obsolete",
+        "Yes, but only for estates below a certain value"
+      ],
+      "correctIndex": 1,
+      "trapExplanation": "It's tempting to treat both as generic 'protective steps' that solve the same underlying problem of uncertainty, but they are targeted at different sources of uncertainty — using one where the other is needed leaves the real risk on the facts completely unaddressed.",
+      "explanation": "Section 27 and a Re Benjamin order are not interchangeable: one is for unidentified claimants, the other for a specific factual doubt about a known beneficiary. Picking the wrong one gives no protection against the risk actually present."
+    },
+    {
+      "itemId": "sqe1-we-12-test-14",
+      "type": "applyTheRule",
+      "skillTag": "understanding",
+      "prompt": "An estate faces both risks at once: several potentially unidentified creditors, and genuine doubt about whether a named beneficiary survived the testator. What is the most complete advice to the personal representatives?",
+      "options": [
+        "Only a Re Benjamin order is needed; it also covers unidentified creditors",
+        "Only s 27 advertisement is needed; it also covers factual doubts about known beneficiaries",
+        "Both steps should be taken — s 27 advertisement for the unidentified creditor risk, and an application for a Re Benjamin order for the beneficiary survival doubt — since the two risks are distinct and neither tool covers the other",
+        "Neither step is necessary if the personal representatives simply wait five years before distributing"
+      ],
+      "correctIndex": 2,
+      "explanation": "The two risks are independent, so both protective steps are appropriate together: s 27 for the unidentified-creditor risk, and a Re Benjamin order for the unresolved factual doubt about the named beneficiary's survival."
+    }
+  ],
+  "debriefConfig": {
+    "trapSummary": "The most common mistake in this lesson's test items is treating s 27 as a general-purpose shield against any uncertainty in the estate. It only ever addresses unidentified claimants; a genuine factual doubt about a known beneficiary's survival or existence calls for a Re Benjamin order instead, and neither tool extinguishes a valid claim outright.",
+    "reviewMisses": true,
+    "linkToPathway": "sqe1.wills-estates.administering-estate"
+  }
+}
