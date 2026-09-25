@@ -112,17 +112,21 @@ struct ColumnsLayout: Layout {
 @Observable
 final class KeyboardMonitor {
     static let shared = KeyboardMonitor()
-    private(set) var isConnected = GCKeyboard.coalesced != nil
+    private(set) var isConnected = KeyboardMonitor.keyboardPresent
+    /// "-noKeyHints" (debug screenshots) hides them even with the Mac's keyboard attached.
+    private static var keyboardPresent: Bool {
+        GCKeyboard.coalesced != nil && !ProcessInfo.processInfo.arguments.contains("-noKeyHints")
+    }
     @ObservationIgnored private var observers: [NSObjectProtocol] = []
 
     private init() {
         let center = NotificationCenter.default
         observers = [
             center.addObserver(forName: .GCKeyboardDidConnect, object: nil, queue: .main) { [weak self] _ in
-                MainActor.assumeIsolated { self?.isConnected = true }
+                MainActor.assumeIsolated { self?.isConnected = Self.keyboardPresent }
             },
             center.addObserver(forName: .GCKeyboardDidDisconnect, object: nil, queue: .main) { [weak self] _ in
-                MainActor.assumeIsolated { self?.isConnected = GCKeyboard.coalesced != nil }
+                MainActor.assumeIsolated { self?.isConnected = Self.keyboardPresent }
             },
         ]
     }
@@ -146,5 +150,28 @@ struct KeyHint: View {
             .foregroundStyle(Color.ratioInk2)
             .accessibilityHidden(true)
         }
+    }
+}
+
+// MARK: - Context menus
+
+private struct OptionalContextMenu<MenuItems: View>: ViewModifier {
+    let enabled: Bool
+    @ViewBuilder let items: MenuItems
+
+    func body(content: Content) -> some View {
+        if enabled {
+            content.contextMenu { items }
+        } else {
+            content
+        }
+    }
+}
+
+extension View {
+    /// A context menu only where it doesn't clash with a long-press action (iPad, where
+    /// iPhone rows use long press for something else).
+    func ratioContextMenu(enabled: Bool, @ViewBuilder _ items: () -> some View) -> some View {
+        modifier(OptionalContextMenu(enabled: enabled, items: items))
     }
 }

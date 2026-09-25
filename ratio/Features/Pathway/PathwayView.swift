@@ -10,6 +10,8 @@ struct PathwayView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.supportsMultipleWindows) private var supportsMultipleWindows
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.ratioWidth) private var width
     private var selected: Module? { navigator.lessonsModule }
@@ -317,6 +319,12 @@ struct PathwayView: View {
             }
         }
         .onLongPressGesture(minimumDuration: 0.35) { if width.isCompact { togglePeek(lesson) } }
+        .ratioContextMenu(enabled: !width.isCompact) {
+            Button("Open", systemImage: "arrow.right") { open(lesson) }
+            if supportsMultipleWindows {
+                Button("Open in new window", systemImage: "macwindow.badge.plus") { openWindow(id: "item", value: SceneItem.lesson(lesson.id)) }
+            }
+        }
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(.isButton)
         .accessibilityAction(named: "Open") { open(lesson) }

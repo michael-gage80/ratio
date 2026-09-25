@@ -83,6 +83,7 @@ struct MainTabView: View {
     @State private var navigator = AppNavigator()
     @Environment(DeepLinks.self) private var links
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var network = NetworkMonitor()
 
     init(uid: String, profile: UserProfile) {
@@ -90,6 +91,27 @@ struct MainTabView: View {
     }
 
     @Environment(ContentStore.self) private var content
+
+    /// "Your modules" in the iPad sidebar, each with its mastery.
+    @TabContentBuilder<AppNavigator.Tab>
+    private var moduleTabs: some TabContent<AppNavigator.Tab> {
+        TabSection(student.programme == .sqe1 ? "Your subjects" : "Your modules") {
+            ForEach(student.modules) { module in
+                Tab(value: AppNavigator.Tab.module(module)) {
+                    lessons
+                } label: {
+                    Text(module.title)
+                }
+                .badge(Text(masteryLabel(module)))
+                .tabPlacement(.sidebarOnly)
+            }
+        }
+        .tabPlacement(.sidebarOnly)
+    }
+
+    private func masteryLabel(_ module: Module) -> String {
+        student.mastery(of: content.lessons(in: module)).map { "\($0)%" } ?? ""
+    }
 
     /// Lessons, reached from its tab or a module in the sidebar.
     private var lessons: some View {
@@ -145,16 +167,9 @@ struct MainTabView: View {
                 }
                 .ratioMeasuresWidth()
             }
-            TabSection(student.programme == .sqe1 ? "Your subjects" : "Your modules") {
-                ForEach(student.modules) { module in
-                    Tab(value: AppNavigator.Tab.module(module)) {
-                        lessons
-                    } label: {
-                        Text(module.title)
-                    }
-                    .badge(Text(student.mastery(of: content.lessons(in: module)).map { "\($0)%" } ?? ""))
-                    .defaultVisibility(.hidden, for: .tabBar)
-                }
+            // Sidebar only (iPad, regular width): on iPhone they'd push Me into "More".
+            if horizontalSizeClass == .regular {
+                moduleTabs
             }
         }
         .tabViewStyle(.sidebarAdaptable)

@@ -399,7 +399,7 @@ struct DuelView: View {
                     .ratioCard(padding: 0)
                 } else {
                     // iPad: a row of cards, three across.
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: RatioSpace.s, alignment: .top), count: 3), spacing: RatioSpace.s) {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 280), spacing: RatioSpace.s, alignment: .top)], spacing: RatioSpace.s) {
                         ForEach(finished.prefix(6)) { match in
                             matchRow(match, inset: RatioSpace.s)
                                 .frame(maxHeight: .infinity, alignment: .top)

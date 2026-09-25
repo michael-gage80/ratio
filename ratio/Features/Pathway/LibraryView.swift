@@ -57,6 +57,8 @@ struct LibraryView: View {
     @Environment(ContentStore.self) private var content
     @Environment(StudentStore.self) private var student
     @Environment(AppNavigator.self) private var navigator
+    @Environment(\.openWindow) private var openWindow
+    @Environment(\.supportsMultipleWindows) private var supportsMultipleWindows
     @State private var kind: LibraryEntry.Kind = .cases
     @State private var module: Module?
     @State private var query = ""
@@ -146,6 +148,14 @@ struct LibraryView: View {
                                 }
                         }
                         .buttonStyle(.ratioPress)
+                        .contextMenu {
+                            if let lesson = entry.lessons.first, student.canStudy(entry.module) {
+                                Button("Open the lesson", systemImage: "book") { navigator.pathwayPath.append(.overview(lesson.id)) }
+                            }
+                            if supportsMultipleWindows, student.canStudy(entry.module) {
+                                Button("Open in new window", systemImage: "macwindow.badge.plus") { openWindow(id: "item", value: SceneItem.libraryEntry(entry.id)) }
+                            }
+                        }
                     }
                     Divider().overlay(Color.ratioRule)
                 }

@@ -95,11 +95,15 @@ private struct PageCurl<Page: View>: UIViewControllerRepresentable {
         guard turning, !context.coordinator.turned else { return }
         context.coordinator.turned = true
         // A beat for the check to show, then the turn.
+        let coordinator = context.coordinator
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
             let blank = UIViewController()
             blank.view.backgroundColor = .clear
-            controller.setViewControllers([blank], direction: .forward, animated: true) { _ in done() }
+            controller.setViewControllers([blank], direction: .forward, animated: true) { _ in coordinator.finish(done) }
         }
+        // The curl's completion doesn't always arrive (seen on iPad): never leave the
+        // splash up because of it.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) { coordinator.finish(done) }
     }
 
     func makeCoordinator() -> Coordinator { Coordinator() }
@@ -107,5 +111,12 @@ private struct PageCurl<Page: View>: UIViewControllerRepresentable {
     final class Coordinator {
         var hosting: UIHostingController<Page>?
         var turned = false
+        private var finished = false
+
+        func finish(_ done: () -> Void) {
+            guard !finished else { return }
+            finished = true
+            done()
+        }
     }
 }
