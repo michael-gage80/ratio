@@ -7,7 +7,8 @@ struct InteractionGalleryView: View {
     @Environment(ContentStore.self) private var content
     /// `-screen gallery-sequence` (debug hooks) opens on that type.
     @State private var index = DebugHooks.galleryIndex
-    @State private var iracLevel = 1
+    // "-galleryIracLevel 3" opens the IRAC builder at that level.
+    @State private var iracLevel = max(1, UserDefaults.standard.integer(forKey: "galleryIracLevel"))
     @State private var locked: ItemResponse?
 
     /// The first item of each type found across the lessons, in the board's order.

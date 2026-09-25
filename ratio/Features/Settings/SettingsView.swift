@@ -135,12 +135,14 @@ struct SettingsView: View {
         .manageSubscriptionsSheet(isPresented: $managingSubscription)
         .confirmationDialog(confirmTitle, isPresented: Binding(get: { confirming != nil }, set: { if !$0 { confirming = nil } }), titleVisibility: .visible, presenting: confirming) { confirmation in
             switch confirmation {
-            case .reset: Button("Reset my progress", role: .destructive) { Task { await reset() } }
+            case .reset:
+                Button("Reset, keep my notes", role: .destructive) { Task { await reset(keepNotes: true) } }
+                Button("Reset, notes too", role: .destructive) { Task { await reset(keepNotes: false) } }
             case .delete: Button("Delete my account", role: .destructive) { Task { await deleteAccount() } }
             }
         } message: { confirmation in
             switch confirmation {
-            case .reset: Text("Clears your scores, reviews, briefs and history. Your account, modules and plan stay.")
+            case .reset: Text("Clears your scores, reviews, briefs and history. Your account, modules and plan stay. You can keep your Pencil notes.")
             case .delete: Text("Deletes your account and everything in it, now. A subscription is cancelled separately, in Settings → Apple ID → Subscriptions.")
             }
         }
@@ -516,9 +518,9 @@ struct SettingsView: View {
         }
     }
 
-    private func reset() async {
+    private func reset(keepNotes: Bool) async {
         do {
-            _ = try await Functions.functions(region: "europe-west2").httpsCallable("resetProgress").call()
+            _ = try await Functions.functions(region: "europe-west2").httpsCallable("resetProgress").call(["keepNotes": keepNotes])
             message = "Your progress has been reset."
         } catch {
             message = "Reset didn't go through. Try again."

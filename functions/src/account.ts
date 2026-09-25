@@ -14,7 +14,7 @@ import { everyoneHasPlus, FREE_DUELS_PER_DAY, isPlus } from "./entitlement.js";
 
 /** What reset clears and delete removes, under users/{uid}. */
 const PROGRESS = ["skills", "items", "lessons", "testAttempts", "briefs", "activity"];
-const EVERYTHING = [...PROGRESS, "friends", "blocked", "devices", "usage"];
+const EVERYTHING = [...PROGRESS, "friends", "blocked", "devices", "usage", "notes"];
 
 function requireAuth(uid: string | undefined): string {
   if (!uid) throw new HttpsError("unauthenticated", "Sign in first.");
@@ -35,7 +35,14 @@ export const exportData = onCall(async (request) => {
     db.collection("ratings").where("uid", "==", uid).get(),
     db.collection("matches").where("players", "array-contains", uid).get(),
   ]);
+  // Pencil notes: each drawing (PencilKit data, base64) with the part it belongs to.
+  const [files] = await getStorage().bucket().getFiles({ prefix: `notes/${uid}/` }).catch(() => [[]] as [never[]]);
+  const noteDrawings = await Promise.all(files.map(async (file) => ({
+    path: file.name.replace(`notes/${uid}/`, ""),
+    drawing: (await file.download())[0].toString("base64"),
+  })));
   const json = JSON.stringify({
+    noteDrawings,
     exportedAt: new Date().toISOString(),
     account: { uid, email: request.auth?.token.email ?? null },
     profile: user.data() ?? null,
@@ -46,11 +53,18 @@ export const exportData = onCall(async (request) => {
   return { json };
 });
 
-/** Clears scores, reviews, briefs and history; keeps the account, profile and plan. */
-export const resetProgress = onCall(async (request) => {
+/**
+ * Clears scores, reviews, briefs and history; keeps the account, profile and plan.
+ * Pencil notes go too unless the student chose to keep them.
+ */
+export const resetProgress = onCall<{ keepNotes?: boolean }>(async (request) => {
   const uid = requireAuth(request.auth?.uid);
   const db = getFirestore();
   for (const name of PROGRESS) await db.recursiveDelete(db.collection(`users/${uid}/${name}`));
+  if (request.data?.keepNotes !== true) {
+    await db.recursiveDelete(db.collection(`users/${uid}/notes`));
+    await getStorage().bucket().deleteFiles({ prefix: `notes/${uid}/` }).catch(() => undefined);
+  }
   await db.doc(`users/${uid}`).update({ headline: FieldValue.delete(), headlineUpdatedAt: FieldValue.delete() });
   return { ok: true };
 });
@@ -75,6 +89,7 @@ export const deleteAccount = onCall(async (request) => {
   matches.docs.forEach((d) => writer.update(d.ref, { [`names.${uid}`]: "Deleted student" }));
   await writer.close();
   await getStorage().bucket().deleteFiles({ prefix: `avatars/${uid}/` }).catch(() => undefined);
+  await getStorage().bucket().deleteFiles({ prefix: `notes/${uid}/` }).catch(() => undefined);
   await getAuth().deleteUser(uid);
   logger.info("Account deleted", { uid });
   return { ok: true };
