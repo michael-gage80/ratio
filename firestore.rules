@@ -123,6 +123,19 @@ service cloud.firestore {
         allow read: if isOwner(uid);
       }
 
+      // Which lecture parts have Pencil notes (the drawings are in Storage under
+      // notes/{uid}/): the owner's alone.
+      match /notes/{noteId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && noteId.matches('^[a-z0-9-]{1,60}_[0-9]{1,2}$')
+          && request.resource.data.keys().hasOnly(['lessonId', 'part', 'width', 'updatedAt'])
+          && request.resource.data.lessonId is string && request.resource.data.lessonId.size() <= 60
+          && request.resource.data.part is int && request.resource.data.part >= 1 && request.resource.data.part <= 10
+          && request.resource.data.width is number && request.resource.data.width > 0
+          && request.resource.data.updatedAt == request.time;
+      }
+
       // Students this student has blocked — written by the blockUser Function.
       match /blocked/{otherUid} {
         allow read: if isOwner(uid);

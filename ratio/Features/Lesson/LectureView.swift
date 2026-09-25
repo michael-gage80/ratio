@@ -1,3 +1,4 @@
+import PencilKit
 import SwiftUI
 
 /// screens/18-lecture-gated-scroll.png — the lecture as one long page, each part
@@ -6,7 +7,8 @@ import SwiftUI
 /// no Continue button: once an answer locks, its feedback stays, the next part opens
 /// beneath, and the page scrolls to it after a moment (not with Reduce Motion). On iPad
 /// (screens/iPad/3-lesson/02) each part's case cards, statutes and maps sit in a margin
-/// beside its text; the margin is also where Pencil notes will go.
+/// beside its text, and Apple Pencil writes over the text and in the margin; the notes
+/// show, read-only, under each part on iPhone.
 struct LectureView: View {
     let lesson: Lesson
     /// Fallback for the IRAC scaffold level when this topic hasn't been assessed yet.
@@ -15,6 +17,10 @@ struct LectureView: View {
     let onExit: () -> Void
 
     @Environment(ContentStore.self) private var content
+    @Environment(StudentStore.self) private var student
+    @AppStorage("notes.show") private var showsNotes = true
+    @State private var notes: NotesStore?
+    @State private var session = NotesSession()
     @Environment(\.ratioWidth) private var width
     @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
     @AppStorage(RatioPreferences.reduceMotion) private var reduceMotion = false
@@ -61,12 +67,34 @@ struct LectureView: View {
             .scrollDismissesKeyboard(.interactively)
         }
         .ratioPage()
+        .overlay(alignment: .bottom) {
+            if !width.isCompact && showsNotes && session.paletteShown {
+                NotesPalette(session: session)
+                    .padding(.bottom, RatioSpace.s)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+        }
         .toolbar {
             ToolbarItem(placement: .principal) {
                 progressBar
             }
+            if !width.isCompact || notes?.hasNotes == true {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        withAnimation(RatioMotion.tap) { showsNotes.toggle() }
+                    } label: {
+                        Label("Show my annotations", systemImage: showsNotes ? "pencil.tip.crop.circle.fill" : "pencil.tip.crop.circle")
+                    }
+                    .accessibilityValue(showsNotes ? "On" : "Off")
+                }
+            }
         }
         .toolbarTitleDisplayMode(.inline)
+        .task {
+            let store = NotesStore(uid: student.uid, lessonId: lesson.id)
+            notes = store
+            await store.load()
+        }
         .task {
             guard !loaded else { return }
             partsCompleted = min(await progress.partsCompleted(lessonId: lesson.id), lesson.parts.count)
@@ -106,7 +134,7 @@ struct LectureView: View {
                     VStack(alignment: .leading, spacing: RatioSpace.xs) {
                         Rectangle().fill(Color.ratioRule).frame(height: 1)
                         Text("The margin").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
-                        Text("Case cards, statutes and the doctrine map sit here, beside the part they belong to.")
+                        Text("Case cards, statutes and the doctrine map sit here, beside the part they belong to. Write anywhere with Apple Pencil; your notes follow you to iPhone.")
                             .ratioFont(.small)
                             .foregroundStyle(Color.ratioInk2)
                     }
@@ -142,21 +170,43 @@ struct LectureView: View {
             VStack(alignment: .leading, spacing: RatioSpace.s) {
                 partText(part, index: index)
                 components(part)
+                if showsNotes, let drawing = notes?.drawings[index + 1]?.drawing, !drawing.strokes.isEmpty {
+                    VStack(alignment: .leading, spacing: RatioSpace.xs) {
+                        Text("Your notes · from iPad").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                        NotesImage(drawing: drawing)
+                    }
+                    .ratioPanel(.ratioPaper)
+                }
                 interaction(part, index: index, scroll: scroll)
             }
         } else {
-            // The part's text and interaction on the left; its components in the margin,
-            // level with the top of the part.
-            ColumnsLayout(fraction: Self.textFraction, spacing: RatioSpace.l) {
-                VStack(alignment: .leading, spacing: RatioSpace.s) {
-                    Rectangle().fill(Color.ratioInk).frame(height: 1)
-                    partText(part, index: index)
+            // The part's text on the left, its components in the margin level with the
+            // top of the part, and a Pencil canvas over both. The interaction sits below,
+            // out from under the canvas, so a Pencil tap answers rather than draws.
+            VStack(alignment: .leading, spacing: RatioSpace.s) {
+                ColumnsLayout(fraction: Self.textFraction, spacing: RatioSpace.l) {
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        Rectangle().fill(Color.ratioInk).frame(height: 1)
+                        partText(part, index: index)
+                    }
+                    VStack(alignment: .leading, spacing: RatioSpace.s) {
+                        components(part)
+                    }
+                    .padding(.top, RatioSpace.l)
+                }
+                .overlay {
+                    if showsNotes, let notes {
+                        GeometryReader { proxy in
+                            NotesCanvas(drawing: notes.drawing(part: index + 1, width: proxy.size.width), session: session) { drawing in
+                                notes.save(drawing, part: index + 1, width: proxy.size.width)
+                            }
+                        }
+                    }
+                }
+                ColumnsLayout(fraction: Self.textFraction, spacing: RatioSpace.l) {
                     interaction(part, index: index, scroll: scroll)
+                    Color.clear.frame(height: 0)
                 }
-                VStack(alignment: .leading, spacing: RatioSpace.s) {
-                    components(part)
-                }
-                .padding(.top, RatioSpace.l)
             }
         }
     }

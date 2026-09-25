@@ -19,5 +19,15 @@ service firebase.storage {
     match /avatars/{uid}/avatar.jpg {
       allow read: if request.auth != null;
     }
+
+    // Apple Pencil notes on lecture parts (PencilKit drawings). Private: only their
+    // owner can read or write them.
+    match /notes/{uid}/{lessonId}/{file} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && file.matches('^[0-9]{1,2}[.]drawing$')
+        && request.resource.contentType == 'application/octet-stream'
+        && request.resource.size < 2 * 1024 * 1024;
+    }
   }
 }

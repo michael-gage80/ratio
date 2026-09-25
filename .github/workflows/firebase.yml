@@ -52,7 +52,7 @@ jobs:
         run: npm ci --prefix functions && npm test --prefix functions
       - run: npm ci --prefix firestore-tests
       - name: Security rules tests
-        run: firebase emulators:exec --only firestore,database --project demo-ratio "npm --prefix firestore-tests test"
+        run: firebase emulators:exec --only firestore,database,storage --project demo-ratio "npm --prefix firestore-tests test"
 
   deploy:
     needs: test

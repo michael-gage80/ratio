@@ -352,6 +352,17 @@ describe('settings, plans and devices', () => {
     await assertFails(updateDoc(amara(), { freeModule: 'tort' }));
   });
 
+  test('Pencil notes are their owner\'s alone', async () => {
+    const note = (who, id) => doc(db(who), `users/amara/notes/${id}`);
+    await assertSucceeds(setDoc(note('amara', 'crime-03_2'), { lessonId: 'crime-03', part: 2, width: 812.5, updatedAt: serverTimestamp() }));
+    await assertSucceeds(getDoc(note('amara', 'crime-03_2')));
+    await assertFails(getDoc(note('zara', 'crime-03_2')));
+    await assertFails(setDoc(note('zara', 'crime-03_1'), { lessonId: 'crime-03', part: 1, width: 800, updatedAt: serverTimestamp() }));
+    await assertFails(setDoc(note('amara', 'crime-03_3'), { lessonId: 'crime-03', part: 3, width: 800, updatedAt: serverTimestamp(), text: 'x' }));
+    await assertFails(setDoc(note('amara', 'crime-03_4'), { lessonId: 'crime-03', part: 40, width: 800, updatedAt: serverTimestamp() }));
+    await assertSucceeds(deleteDoc(note('amara', 'crime-03_2')));
+  });
+
   test('a student registers their own push tokens only', async () => {
     const device = (uid) => doc(db(uid), 'users/amara/devices/token123');
     await assertSucceeds(setDoc(device('amara'), { platform: 'ios', updatedAt: serverTimestamp() }));

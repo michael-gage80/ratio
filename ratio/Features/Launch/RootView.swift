@@ -10,7 +10,7 @@ struct RootView: View {
     var body: some View {
         #if DEBUG
         if DebugHooks.screen?.hasPrefix("gallery") == true {
-            NavigationStack { InteractionGalleryView() }
+            NavigationStack { InteractionGalleryView() }.ratioMeasuresWidth()
         } else {
             app
         }
