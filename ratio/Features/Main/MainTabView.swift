@@ -23,6 +23,12 @@ final class AppNavigator {
     var replayingTutorials = false
     /// A friend-lobby code from a shared link (ratio://lobby/K7MP4X).
     var lobbyCode: String?
+    /// Quick start on Today: the Duel tab starts ranked matchmaking on this.
+    var quickStart: DuelScope?
+    /// Continue learning: a challenge half to reopen on the Duel tab.
+    var openChallengeId: String?
+    /// Continue learning: the lecture part to scroll to when that lesson's lecture opens.
+    var resumeLecture: (lessonId: String, part: Int)?
     /// Set to open the Ratio Plus sheet, with why ("Contract is part of Ratio Plus.").
     var paywall: String?
 
@@ -211,6 +217,7 @@ struct MainTabView: View {
         }
         .environment(student)
         .environment(navigator)
+        .environment(network)
         .task(id: notificationKey) { await RatioNotifications.reschedule(for: student) }
         .onChange(of: student.profile.consents?.analytics, initial: true) { _, consent in
             Analytics.setAnalyticsCollectionEnabled(consent == true)

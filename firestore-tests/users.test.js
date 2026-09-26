@@ -340,6 +340,16 @@ describe('settings, plans and devices', () => {
     await assertFails(updateDoc(amara(), { modules: ['sqe1-made-up'] }));
   });
 
+  test('Quick start and Continue learning can be saved, within limits', async () => {
+    await assertSucceeds(updateDoc(amara(), { duelScope: 'mixed' }));
+    await assertSucceeds(updateDoc(amara(), { duelScope: 'sqe1-dispute-resolution' }));
+    await assertFails(updateDoc(amara(), { duelScope: 'Not A Scope!' }));
+    await assertSucceeds(updateDoc(amara(), { recent: [{ kind: 'lesson', id: 'crime-03', part: 2, at: new Date() }] }));
+    await assertFails(updateDoc(amara(), { recent: Array(9).fill({ kind: 'lesson', id: 'crime-03', at: new Date() }) }));
+    await assertSucceeds(updateDoc(amara(), { recentDismissedAt: serverTimestamp() }));
+    await assertFails(updateDoc(amara(), { recentDismissedAt: new Date(0) }));
+  });
+
   test('the notifications page can mark itself read, only at the server time', async () => {
     await assertSucceeds(updateDoc(amara(), { notificationsReadAt: serverTimestamp() }));
     await assertFails(updateDoc(amara(), { notificationsReadAt: new Date(Date.now() + 86_400_000) }));

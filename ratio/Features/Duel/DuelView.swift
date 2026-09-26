@@ -56,7 +56,7 @@ struct DuelView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: RatioSpace.m) {
-                RatioPageHeader(eyebrow: "Human duels · Ranked", title: "Duel") {
+                RatioPageHeader(title: "Duel") {
                     // iPad: the free-duels line sits top right (screens/iPad/5-duel/01-duel.png).
                     if !width.isCompact && scope != nil && !student.isPlus { freeDuels(inline: true) }
                     ProfilePhoto(uid: student.uid, initial: student.profile.displayName ?? "?", version: student.profile.avatarVersion, size: 56)
@@ -123,6 +123,24 @@ struct DuelView: View {
             case .challenge(let challenge):
                 ChallengeView(challenge: challenge)
             }
+        }
+        // Opens on the chip picked last time (on any device).
+        .onChange(of: student.profile.duelScope, initial: true) { _, saved in
+            if let saved = saved.flatMap(DuelScope.init(id:)), scopes.contains(saved) { selected = saved }
+        }
+        // Quick start on Today: straight into matchmaking (the tutorial first, if never seen).
+        .onChange(of: navigator.quickStart, initial: true) { _, quick in
+            guard let quick else { return }
+            navigator.quickStart = nil
+            let target = scopes.contains(quick) ? quick : .mixed
+            selected = target
+            if tutorialSeen { showsMatchmaking = true } else { play(target, level: 1, tutorial: true) }
+        }
+        // Continue learning: reopen an unfinished challenge half.
+        .onChange(of: navigator.openChallengeId, initial: true) { _, id in
+            guard let id else { return }
+            navigator.openChallengeId = nil
+            if let challenge = student.challenges.first(where: { $0.id == id }) { cover = .challenge(challenge) }
         }
         .onChange(of: navigator.showsDuelTutorial, initial: true) { _, shows in
             guard shows, let scope else { return }
@@ -318,7 +336,10 @@ struct DuelView: View {
             ScrollView(.horizontal) {
                 HStack(spacing: RatioSpace.xs) {
                     ForEach(scopes) { option in
-                        Button { withAnimation(RatioMotion.tap) { selected = option } } label: {
+                        Button {
+                            withAnimation(RatioMotion.tap) { selected = option }
+                            student.rememberDuelScope(option)
+                        } label: {
                             Text(option.title)
                                 .ratioFont(.body)
                                 .fixedSize()

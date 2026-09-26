@@ -194,6 +194,7 @@ struct ChallengeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ratioPage()
         .ratioMeasuresWidth()
+        .onAppear { student.record(.challenge, id: challenge.id) }
         .task {
             guard model == nil else { return }
             let opponent = challenge.opponent(of: student.uid)
