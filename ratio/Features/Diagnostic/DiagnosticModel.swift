@@ -118,8 +118,9 @@ final class DiagnosticModel {
     }
 }
 
-/// The 48-item onboarding bank, bundled at Resources/Content/diagnostic-bank.json. The
-/// scoring Function holds the same file.
+/// The onboarding banks, bundled at Resources/Content: diagnostic-bank.json (LLB, 48
+/// items) and sqe1-diagnostic-bank.json (SQE1, 56 items), merged by module. The
+/// scoring Function holds the same files.
 struct DiagnosticBank: Decodable {
     private let totalItemsServedPerAttempt: Int
     private let modules: [String: Section]
@@ -132,11 +133,20 @@ struct DiagnosticBank: Decodable {
         modules[module.rawValue]?.items ?? []
     }
 
+    static let files = ["diagnostic-bank", "sqe1-diagnostic-bank"]
+
+    private init(totalItemsServedPerAttempt: Int, modules: [String: Section]) {
+        self.totalItemsServedPerAttempt = totalItemsServedPerAttempt
+        self.modules = modules
+    }
+
     static func load() throws -> DiagnosticBank {
-        guard let url = Bundle.main.url(forResource: "diagnostic-bank", withExtension: "json") else {
-            throw CocoaError(.fileNoSuchFile)
+        let banks = try files.map { name in
+            guard let url = Bundle.main.url(forResource: name, withExtension: "json") else { throw CocoaError(.fileNoSuchFile) }
+            return try JSONDecoder().decode(DiagnosticBank.self, from: Data(contentsOf: url))
         }
-        return try JSONDecoder().decode(DiagnosticBank.self, from: Data(contentsOf: url))
+        return DiagnosticBank(totalItemsServedPerAttempt: banks[0].totalItemsServedPerAttempt,
+                              modules: banks.reduce(into: [:]) { $0.merge($1.modules) { first, _ in first } })
     }
 }
 

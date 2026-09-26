@@ -19,12 +19,12 @@ import { readSide, Side, StoredRating, writeSide } from "./settle.js";
 import { BankItem, Estimate, Headline, isCorrect, ItemResponse, priorHeadline, scoreResponses, SKILLS, TopicEstimates } from "./scoring.js";
 
 
-// The same bank the app bundles, copied into lib/ at build time, so answers are
-// re-graded here rather than trusted from the client.
-const bank = JSON.parse(readFileSync(join(__dirname, "diagnostic-bank.json"), "utf8")) as {
-  totalItemsServedPerAttempt: number;
-  modules: Record<string, { items: BankItem[] }>;
-};
+// The same banks the app bundles (LLB and SQE1), copied into lib/ at build time, so
+// answers are re-graded here rather than trusted from the client.
+type Bank = { totalItemsServedPerAttempt: number; modules: Record<string, { items: BankItem[] }> };
+const banks = ["diagnostic-bank.json", "sqe1-diagnostic-bank.json"]
+  .map((file) => JSON.parse(readFileSync(join(__dirname, file), "utf8")) as Bank);
+const bank: Bank = { totalItemsServedPerAttempt: banks[0].totalItemsServedPerAttempt, modules: Object.assign({}, ...banks.map((b) => b.modules)) };
 const moduleOfItem = new Map<string, string>();
 const itemsById = new Map<string, BankItem>();
 for (const [moduleId, { items }] of Object.entries(bank.modules)) {

@@ -140,8 +140,7 @@ function lintLesson(file) {
   if (unrated) warnings.push(`${where}: ${unrated} test item(s) have no difficultyStart (scored as 0.5)`);
 }
 
-function lintDiagnosticBank() {
-  const where = 'diagnostic-bank.json';
+function lintDiagnosticBank(where) {
   const bank = JSON.parse(readFileSync(join(CONTENT, where), 'utf8'));
   for (const [moduleId, { items }] of Object.entries(bank.modules)) {
     for (const item of items) {
@@ -149,7 +148,10 @@ function lintDiagnosticBank() {
         for (const e of validateItem.errors) errors.push(`${where} ${item.itemId}${e.instancePath}: ${e.message}`);
         continue;
       }
-      if (!item.topicId?.startsWith(`${moduleId}.`)) errors.push(`${where} ${item.itemId}: topicId isn't in module ${moduleId}`);
+      const inModule = moduleId.startsWith('sqe1-')
+        ? item.topicId?.startsWith('sqe1.') && SQE_SUBJECTS[item.topicId.split('.')[1]] === moduleId
+        : item.topicId?.startsWith(`${moduleId}.`);
+      if (!inModule) errors.push(`${where} ${item.itemId}: topicId isn't in module ${moduleId}`);
       checkItem(`${where} ${moduleId}`, item);
     }
   }
@@ -157,7 +159,8 @@ function lintDiagnosticBank() {
 
 const files = readdirSync(LESSONS).filter((f) => /^[a-z0-9]+(-[a-z]+)?-\d{2}-[a-z0-9-]+\.json$/.test(f)).sort();
 files.forEach(lintLesson);
-lintDiagnosticBank();
+lintDiagnosticBank('diagnostic-bank.json');
+lintDiagnosticBank('sqe1-diagnostic-bank.json');
 
 const unreviewed = warnings.filter((w) => w.includes('not yet reviewed')).length;
 for (const w of warnings.filter((w) => !w.includes('not yet reviewed'))) console.log(`warning  ${w}`);

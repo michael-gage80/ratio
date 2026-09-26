@@ -6,7 +6,7 @@
     "node": "22"
   },
   "scripts": {
-    "build": "tsc && cp ../ratio/Resources/Content/diagnostic-bank.json lib/ && rm -rf lib/lessons && cp -R ../ratio/Resources/Content/lessons lib/lessons && rm -rf lib/certs && cp -R certs lib/certs",
+    "build": "tsc && cp ../ratio/Resources/Content/diagnostic-bank.json ../ratio/Resources/Content/sqe1-diagnostic-bank.json lib/ && rm -rf lib/lessons && cp -R ../ratio/Resources/Content/lessons lib/lessons && rm -rf lib/certs && cp -R certs lib/certs",
     "lint": "tsc --noEmit",
     "test": "npm run build && node --test 'lib/**/*.test.js'"
   },
