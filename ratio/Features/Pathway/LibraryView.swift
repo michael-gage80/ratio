@@ -283,6 +283,7 @@ struct LibraryEntryDetail: View {
     let entry: LibraryEntry
 
     @Environment(AppNavigator.self) private var navigator
+    @Environment(StudentStore.self) private var student
 
     var body: some View {
         VStack(alignment: .leading, spacing: RatioSpace.m) {
@@ -290,6 +291,7 @@ struct LibraryEntryDetail: View {
             LessonComponentView(component: entry.component, moduleTitle: entry.module.title)
             lessons(entry)
         }
+        .onAppear { student.record(.library, id: entry.id) }
     }
 
     private func lessons(_ entry: LibraryEntry) -> some View {

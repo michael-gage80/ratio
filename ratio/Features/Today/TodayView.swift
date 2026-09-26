@@ -10,6 +10,7 @@ struct TodayView: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
+    @Environment(NetworkMonitor.self) private var network
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.ratioWidth) private var width
     @AppStorage("tour.today.seen") private var tourSeen = false
@@ -201,6 +202,7 @@ struct TodayView: View {
     private var blocks: some View {
         ForEach(cards) { card in
             switch card {
+            case .continueLearning: ContinueLearningCard()
             case .duel: duelCard.tourAnchor(.more)
             case .streak: streakCard.tourAnchor(.streak)
             case .boards: boardsCard
@@ -255,7 +257,8 @@ struct TodayView: View {
     /// Dark ink (deep oxblood in dark mode), horizontal: who's online and the challenges waiting on the student.
     private var duelCard: some View {
         let yourGo = student.challenges.filter { $0.done[student.uid] != true }
-        return Button { navigator.tab = .duel } label: {
+        return VStack(alignment: .leading, spacing: RatioSpace.s) {
+        Button { navigator.tab = .duel } label: {
             HStack(spacing: RatioSpace.s) {
                 VStack(alignment: .leading, spacing: RatioSpace.xs) {
                     Text("Duel").ratioFont(.monoLabel).opacity(0.8)
@@ -288,10 +291,45 @@ struct TodayView: View {
                     Image(systemName: "arrow.right").opacity(0.8)
                 }
             }
-            .foregroundStyle(Color.ratioOnInk)
-            .ratioCard(.ratioDuelBlock, bordered: false)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.ratioPress)
+            if let scope = quickStartScope {
+                quickStart(scope)
+            }
+        }
+        .foregroundStyle(Color.ratioOnInk)
+        .ratioCard(.ratioDuelBlock, bordered: false)
+    }
+
+    /// The Duel tab's last chip, if still one of the student's (else Mixed); nil when no
+    /// module has lessons to duel on.
+    private var quickStartScope: DuelScope? {
+        let duelable = student.modules.filter { !content.lessons(in: $0).isEmpty }
+        guard !duelable.isEmpty else { return nil }
+        if let saved = student.profile.duelScope.flatMap(DuelScope.init(id:)), case .module(let module) = saved, duelable.contains(module) {
+            return saved
+        }
+        return .mixed
+    }
+
+    /// "Quick start · Tort →": straight into ranked matchmaking on the Duel tab.
+    private func quickStart(_ scope: DuelScope) -> some View {
+        Button {
+            navigator.tab = .duel
+            navigator.quickStart = scope
+        } label: {
+            Text("Quick start · \(scope.title) →")
+                .ratioFont(.h3)
+                .foregroundStyle(Color.ratioInk)
+                .padding(.horizontal, RatioSpace.m)
+                .frame(minHeight: 44)
+                .background(Color.ratioParchment, in: Capsule())
+        }
+        .buttonStyle(.ratioPress)
+        .disabled(!network.isOnline)
+        .opacity(network.isOnline ? 1 : 0.5)
+        .accessibilityHint(network.isOnline ? "Starts looking for an opponent" : "Needs a connection")
     }
 
     private var boardsCard: some View {

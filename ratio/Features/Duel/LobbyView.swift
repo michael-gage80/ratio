@@ -71,6 +71,7 @@ struct LobbyView: View {
         .ratioPage()
         .ratioMeasuresWidth()
         .onAppear(perform: listen)
+        .onAppear { student.record(.lobby, id: code) }
         .onDisappear { listeners.forEach { $0.remove() } }
         .fullScreenCover(item: Binding(get: { playing.map(MatchRef.init) }, set: { playing = $0?.id })) { match in
             LiveMatchView(matchId: match.id)
@@ -89,11 +90,8 @@ struct LobbyView: View {
 
     private var codeSection: some View {
         VStack(alignment: .leading, spacing: RatioSpace.m) {
-            VStack(spacing: RatioSpace.xs) {
-                codeKeys
-                Text("No 0, O, 1 or I · Easy to read aloud").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center)
-            }
-            .frame(maxWidth: .infinity)
+            codeKeys
+                .frame(maxWidth: .infinity)
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: RatioSpace.s) { copyButton; shareButton }
                 VStack(spacing: RatioSpace.xs) { copyButton; shareButton }

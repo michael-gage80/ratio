@@ -33,6 +33,12 @@ struct UserProfile: Decodable, Equatable {
     var consents: Consents?
     /// When the notifications page was last opened.
     var notificationsReadAt: Date?
+    /// The Duel tab's last chip ("mixed" or a module ID), for Quick start on Today.
+    var duelScope: String?
+    /// What the student opened most recently, newest first, for Continue learning.
+    var recent: [RecentItem]?
+    /// Continue learning's × — anything opened before this is hidden.
+    var recentDismissedAt: Date?
 
     nonisolated struct Subscription: Decodable, Equatable {
         var plan: String
@@ -110,5 +116,25 @@ struct SkillRepository {
         guard let map = snapshot?.data()?[skill.rawValue] as? [String: Double],
               let theta = map["theta"], let sigma = map["sigma"] else { return nil }
         return Estimate(theta: theta, sigma: sigma)
+    }
+}
+
+/// One thing the student opened, for Continue learning on Today.
+nonisolated struct RecentItem: Codable, Equatable {
+    enum Kind: String, Codable {
+        case lesson, library, challenge, lobby
+    }
+
+    var kind: Kind
+    /// A lesson ID, library entry ID, challenge ID or lobby code.
+    var id: String
+    /// Lessons: the lecture part the student was on (1-based); nil if only the overview.
+    var part: Int?
+    var at: Date
+
+    var firestore: [String: Any] {
+        var fields: [String: Any] = ["kind": kind.rawValue, "id": id, "at": Timestamp(date: at)]
+        if let part { fields["part"] = part }
+        return fields
     }
 }

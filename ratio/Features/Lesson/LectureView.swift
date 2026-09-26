@@ -18,6 +18,7 @@ struct LectureView: View {
 
     @Environment(ContentStore.self) private var content
     @Environment(StudentStore.self) private var student
+    @Environment(AppNavigator.self) private var navigator
     @AppStorage("notes.show") private var showsNotes = true
     @State private var notes: NotesStore?
     @State private var session = NotesSession()
@@ -65,6 +66,18 @@ struct LectureView: View {
             }
             .holdsStillWhileReordering()
             .scrollDismissesKeyboard(.interactively)
+            // Continue learning: once loaded, go to the part the student was on.
+            .onChange(of: loaded) { _, loaded in
+                guard loaded, let resume = navigator.resumeLecture, resume.lessonId == lesson.id else { return }
+                navigator.resumeLecture = nil
+                let part = min(resume.part, partsCompleted + 1, lesson.parts.count)
+                if part > 1, let target = lesson.parts[safe: part - 1] {
+                    Task {
+                        try? await Task.sleep(for: .seconds(0.3))
+                        scroll.scrollTo(target.id, anchor: .top)
+                    }
+                }
+            }
         }
         .ratioPage()
         .overlay(alignment: .bottom) {
@@ -98,6 +111,7 @@ struct LectureView: View {
         .task {
             guard !loaded else { return }
             partsCompleted = min(await progress.partsCompleted(lessonId: lesson.id), lesson.parts.count)
+            student.record(.lesson, id: lesson.id, part: min(partsCompleted + 1, lesson.parts.count))
             applicationEstimate = await SkillRepository().estimate(topicId: lesson.topicId, skill: .application) ?? headline?.application
             loaded = true
         }
@@ -297,6 +311,7 @@ struct LectureView: View {
         lastLocked = index
         partsCompleted = index + 1
         progress.save(lessonId: lesson.id, partsCompleted: partsCompleted)
+        student.record(.lesson, id: lesson.id, part: min(partsCompleted + 1, lesson.parts.count))
         let next = lesson.parts[safe: partsCompleted]
         Task {
             try? await Task.sleep(for: .seconds(1.5))

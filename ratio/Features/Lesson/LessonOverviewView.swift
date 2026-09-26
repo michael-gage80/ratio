@@ -8,6 +8,7 @@ struct LessonOverviewView: View {
     let onBegin: () -> Void
 
     @Environment(\.ratioWidth) private var width
+    @Environment(StudentStore.self) private var student
 
     private static let numerals = ["i.", "ii.", "iii.", "iv.", "v."]
 
@@ -47,6 +48,7 @@ struct LessonOverviewView: View {
         }
         .ratioPage()
         .toolbarTitleDisplayMode(.inline)
+        .onAppear { student.record(.lesson, id: lesson.id) }
     }
 
     @ViewBuilder

@@ -85,6 +85,27 @@ final class StudentStore {
 
     var programme: Programme { Programme(profile: profile.programme) }
 
+    /// Remembers what was just opened, for Continue learning (newest first, eight kept).
+    /// A lesson opened at its overview keeps the lecture part it had reached.
+    func record(_ kind: RecentItem.Kind, id: String, part: Int? = nil) {
+        var list = profile.recent ?? []
+        let existing = list.first { $0.kind == kind && $0.id == id }
+        let part = part ?? existing?.part
+        if let first = list.first, first.kind == kind, first.id == id, first.part == part, Date.now.timeIntervalSince(first.at) < 60 { return }
+        list.removeAll { $0.kind == kind && $0.id == id }
+        list.insert(RecentItem(kind: kind, id: id, part: part, at: .now), at: 0)
+        list = Array(list.prefix(8))
+        profile.recent = list
+        Task { [uid] in try? await UserRepository().update(uid: uid, ["recent": list.map(\.firestore)]) }
+    }
+
+    /// The Duel tab's chip, kept on the account for Quick start.
+    func rememberDuelScope(_ scope: DuelScope) {
+        guard profile.duelScope != scope.id else { return }
+        profile.duelScope = scope.id
+        Task { [uid] in try? await UserRepository().update(uid: uid, ["duelScope": scope.id]) }
+    }
+
     /// The student's modules in their programme (a student who switched keeps the old
     /// ones on file, but sees these).
     var modules: [Module] { (profile.modules ?? []).filter { $0.programme == programme } }
