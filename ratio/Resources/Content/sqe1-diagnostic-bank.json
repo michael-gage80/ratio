@@ -1,0 +1,893 @@
+{
+  "diagnosticId": "sqe1-onboarding-diagnostic-v1",
+  "purpose": "The SQE1-track equivalent of the LLB onboarding diagnostic: a short adaptive test that sets each SQE1 student's first profile (knowledge, understanding, application scores with wide uncertainty bands) before their first SQE1 lesson. Served to students who selected an SQE1 programme (or SQE1 modules) at the Year + modules onboarding step, once that programme option is live — see the PRD's Onboarding table.",
+  "totalItemsServedPerAttempt": 10,
+  "estimatedMinutes": 4,
+  "canBeSkipped": true,
+  "skippedProfileNote": "If skipped, the student receives a default profile with maximally wide uncertainty bands (σ at its starting maximum) on every skill in their chosen SQE1 modules, per the PRD's scoring model. No items in this bank are served in that case.",
+  "designNotes": [
+    "This bank mirrors onboarding-diagnostic-bank.json's structure and mechanics exactly (same item shapes, same adaptive selection logic), but is calibrated to a different cohort: SQE1 students already hold a qualifying law degree (or equivalent) and are starting SQE1 prep, not undergraduates starting from nothing. So the baseline here is 'what a law graduate would know or could reason out before studying this specific SQE1 module' — general litigation, business, property, succession, financial-conduct or criminal-process common sense — never the SQE1-Practice-specific mechanics (CPR thresholds, SRA Accounts Rules operation, PACE clock hours, the intestacy statutory order, and so on) that the module itself exists to teach. As with the LLB bank, the diagnostic must not assume the content it is about to measure the need for.",
+    "Item types are restricted to ones a student can complete in roughly 20–25 seconds: quickCheck, mcqWithTrap, recallFirst, tapTheFact, applyTheRule, distinguishTheCase (short form), thresholdSlider, statuteParser, sequence (3–4 items only). No irac or highlightTheRatio items — both assume more reading time than a 4-minute, 10-question diagnostic allows.",
+    "difficultyStart uses the same 0–1 scale as lesson testPool items. Diagnostic items sit low (0.15–0.40) to avoid over-penalising genuine beginners in a given subject — several SQE1 subjects (Solicitors Accounts, Wills and Administration of Estates) have no LLB overlap at all, so even a strong law graduate may be a true beginner there; the adaptive engine, not question difficulty, does the work of placing stronger students accurately as they answer correctly.",
+    "Each item still carries a topicId matching (or closely adjacent to) the module's real lesson topics, so a diagnostic answer seeds a genuine topic-level θ/σ pair rather than only a module-level guess.",
+    "The Criminal Law and Practice items test the practice/procedure layer only, consistent with that module's own scope — substantive criminal law is out of scope here and is instead covered by the LLB Crime module's own diagnostic items in onboarding-diagnostic-bank.json, for any student who took both tracks."
+  ],
+  "itemCounts": {
+    "perModule": 8,
+    "totalBank": 56
+  },
+  "skillDistributionTarget": {
+    "knowledge": "3 of 8 per module (24 of 56)",
+    "understanding": "3 of 8 per module (24 of 56)",
+    "application": "2 of 8 per module (8 of 56)",
+    "note": "Same skew as the LLB bank and for the same reason: application items need a scenario a pre-module student can still reason through unaided, which is harder to write well at foundational level than knowledge/understanding items."
+  },
+  "selectionLogic": {
+    "description": "How the app should turn this 56-item bank into the 10 items an individual SQE1 student actually sees. Identical mechanism to the LLB bank's selectionLogic — this is a specification for the Cloud Function that runs the diagnostic, not itself part of the content bundle.",
+    "steps": [
+      "1. Take the SQE1 modules the student selected at onboarding (they may have picked between 1 and 7).",
+      "2. Allocate 10 slots across those modules as evenly as possible (e.g. 1 module = 10 slots there; 7 modules = 2/2/1/1/1/1/2, rotating which modules get an extra slot between cohorts so no module is systematically shortchanged).",
+      "3. Within each module's allocation, prioritise skill spread over topic spread: try to serve at least one knowledge, one understanding and one application item per module before repeating a skill, subject to how many slots that module has.",
+      "4. Item selection within a skill is adaptive: start each module at its median-difficulty item for that skill; a correct answer moves the next pick from that module up one difficulty step (if available), an incorrect answer moves it down one step. Same K(σ)-driven logic as the main scoring model, applied provisionally during onboarding before σ has stabilised.",
+      "5. If a module has fewer unanswered items left than its remaining slot allocation, spill the remainder to the next most under-represented module rather than repeating an item.",
+      "6. Record every served item's topicId, skillTag and correctness so the first profile can be generated immediately after the 'Analysing' screen, per-topic, not just per-module."
+    ]
+  },
+  "lawStatedAt": "2026-09-25",
+  "reviewedBy": null,
+  "contentVersion": "0.1.0",
+  "modules": {
+    "sqe1-dispute-resolution": {
+      "moduleTitle": "SQE1 · Dispute Resolution",
+      "items": [
+        {
+          "itemId": "diag-dr-01",
+          "topicId": "sqe1.dispute-resolution.overriding-objective",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "When a civil case goes to court, do the courts have a general power to actively manage how the case is run (timetables, evidence, etc.), rather than just letting the parties do whatever they want?",
+          "options": [
+            "Yes — courts actively manage cases to deal with them fairly and efficiently",
+            "No — courts play no active role until the trial itself"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Civil courts don't just wait for trial — they manage cases as they progress, setting directions and timetables to keep proceedings fair and proportionate."
+        },
+        {
+          "itemId": "diag-dr-02",
+          "topicId": "sqe1.dispute-resolution.limitation",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.15,
+          "type": "recallFirst",
+          "prompt": "Name the general legal concept that stops a claimant bringing a civil claim if they wait too long after the event giving rise to it.",
+          "acceptableAnswers": [
+            "limitation period",
+            "limitation",
+            "statute of limitations",
+            "time limit for bringing a claim"
+          ],
+          "modelAnswer": "A limitation period — civil claims generally must be brought within a fixed time after the cause of action arises, or they become time-barred."
+        },
+        {
+          "itemId": "diag-dr-03",
+          "topicId": "sqe1.dispute-resolution.starting-proceedings",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Which best describes how a civil claim is generally started in England and Wales?",
+          "options": [
+            "The claimant reports the dispute to the police, who decide whether to prosecute",
+            "The claimant formally issues proceedings at court against the defendant",
+            "The claim only exists once a judge has held a hearing about it"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answer confuses civil claims with criminal prosecution (police/CPS) — civil disputes are started by the claimant issuing proceedings, not by a criminal-style report, and a claim exists once issued, not only once a hearing has taken place."
+        },
+        {
+          "itemId": "diag-dr-04",
+          "topicId": "sqe1.dispute-resolution.track-allocation",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "One dispute is a straightforward, low-value disagreement over a faulty item; another is a complex, high-value commercial dispute with many witnesses and expert evidence. Would you expect the court to handle these two cases identically, using exactly the same procedure and timetable?",
+          "options": [
+            "No — courts generally deal with cases in a way proportionate to their value and complexity, so procedures differ",
+            "Yes — every civil case, however small or large, follows exactly the same fixed procedure"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Civil procedure is broadly proportionate — simpler, lower-value cases are handled more lightly than complex, high-value ones, though the precise mechanics of how that's decided is something this module will cover."
+        },
+        {
+          "itemId": "diag-dr-05",
+          "topicId": "sqe1.dispute-resolution.interim-remedies",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which of these is a better example of an interim (pre-trial) court order, rather than a final remedy?",
+          "scenarioA": "A court order made months after trial, once the judge has decided who wins.",
+          "scenarioB": "A court order made urgently before trial to stop a party from selling or hiding disputed assets while the case is ongoing.",
+          "correctScenario": "B",
+          "explanation": "Courts can grant temporary, interim orders during the life of a case — before the final outcome is decided — to preserve the position; an order made after trial is a final remedy, not an interim one."
+        },
+        {
+          "itemId": "diag-dr-06",
+          "topicId": "sqe1.dispute-resolution.evidence",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact that is NOT actually evidence of what happened, just personal opinion.",
+          "scenarioText": "A shopkeeper is suing a delivery company after a package was damaged. She has a signed delivery note showing the package was received intact, a witness who saw the courier drop a box, and her own opinion that couriers are generally careless.",
+          "tappableSpans": [
+            "a signed delivery note showing the package was received intact",
+            "a witness who saw the courier drop a box",
+            "her own opinion that couriers are generally careless"
+          ],
+          "correctSpan": "her own opinion that couriers are generally careless",
+          "feedbackCorrect": "A general belief about how careless couriers usually are says nothing about what happened to this particular package — it isn't evidence of the specific facts in dispute, unlike the delivery note or the eyewitness account.",
+          "feedbackIncorrect": "Look for the fact that is a general belief or assumption, rather than something someone actually observed or documented about this specific event."
+        },
+        {
+          "itemId": "diag-dr-07",
+          "topicId": "sqe1.dispute-resolution.costs",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "statuteParser",
+          "prompt": "As a general starting point in civil litigation, who usually ends up bearing at least some of the costs of the case?",
+          "options": [
+            "The losing party typically has to pay some of the winning party's costs",
+            "Each party always pays only their own costs, whatever the outcome",
+            "The court itself pays all costs out of public funds"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "The general starting principle in civil litigation is that costs follow the event — the unsuccessful party usually contributes to the successful party's costs, though courts retain discretion to depart from this."
+        },
+        {
+          "itemId": "diag-dr-08",
+          "topicId": "sqe1.dispute-resolution.adr",
+          "skillTag": "understanding",
+          "difficultyStart": 0.25,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that parties to a civil dispute can resolve it themselves (e.g. through negotiation or mediation) without ever needing a judge to decide the outcome?",
+          "sliderLabels": [
+            "No — every civil dispute must end in a judge's decision",
+            "Yes — many disputes settle without a trial"
+          ],
+          "correctPosition": "many disputes settle without a trial",
+          "explanation": "Most civil disputes never reach a trial judgment — parties frequently settle through negotiation, mediation or other alternative dispute resolution, and courts actively encourage this."
+        }
+      ]
+    },
+    "sqe1-legal-system-legal-services": {
+      "moduleTitle": "SQE1 · Legal System and Legal Services",
+      "items": [
+        {
+          "itemId": "diag-ls-01",
+          "topicId": "sqe1.legal-system.sources-overview",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "In England and Wales, can a court's own written judgment itself become a binding source of law for future cases, not just an application of existing law?",
+          "options": [
+            "Yes — case law is a source of law here, not only Parliament's, via the practice of precedent",
+            "No — only Acts of Parliament count as law; judgments merely describe it"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "England and Wales is a common law jurisdiction: judicial decisions themselves generate binding precedent alongside legislation, rather than merely explaining it."
+        },
+        {
+          "itemId": "diag-ls-02",
+          "topicId": "sqe1.legal-system.court-hierarchy",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "statuteParser",
+          "prompt": "Which court sits above the others in the ordinary civil and criminal appeal routes for England and Wales?",
+          "options": [
+            "The Supreme Court",
+            "The County Court",
+            "The Crown Court"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "The Supreme Court is the final court of appeal for both civil and most criminal matters from England and Wales."
+        },
+        {
+          "itemId": "diag-ls-03",
+          "topicId": "sqe1.legal-system.judicial-role",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Which best describes judicial independence as a general constitutional idea?",
+          "options": [
+            "Judges decide cases free from control or pressure by the government or Parliament",
+            "Judges can ignore the law and decide cases however they personally prefer",
+            "Judges must always agree with government policy when deciding cases"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answer confuses independence from government control with judges being free of the law altogether — judicial independence means freedom from political interference, not freedom from law itself."
+        },
+        {
+          "itemId": "diag-ls-04",
+          "topicId": "sqe1.legal-system.profession-split",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "recallFirst",
+          "prompt": "Name the two main branches of the legal profession in England and Wales that a law graduate typically qualifies into.",
+          "acceptableAnswers": [
+            "solicitors and barristers",
+            "solicitor and barrister"
+          ],
+          "modelAnswer": "Solicitors and barristers — traditionally distinguished by solicitors handling ongoing client relationships and transactional or advisory work while barristers specialise in advocacy and advisory work, though the professions increasingly overlap."
+        },
+        {
+          "itemId": "diag-ls-05",
+          "topicId": "sqe1.legal-system.legal-regulator",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that anyone can call themselves a 'solicitor' or 'barrister' and practise law in England and Wales without being authorised by any regulatory body?",
+          "sliderLabels": [
+            "Yes — no authorisation is needed",
+            "No — practising under those titles requires authorisation by a regulator"
+          ],
+          "correctPosition": "practising under those titles requires authorisation by a regulator",
+          "explanation": "Legal professional titles and reserved activities are regulated — you cannot simply call yourself a solicitor or barrister and practise without being authorised, even before considering the detail of who regulates what."
+        },
+        {
+          "itemId": "diag-ls-06",
+          "topicId": "sqe1.legal-system.conduct-basics",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which scenario more clearly involves a lawyer breaching a basic professional duty to their client?",
+          "scenarioA": "A solicitor tells a client honestly that their claim is weak and advises against pursuing it.",
+          "scenarioB": "A solicitor knowingly misleads a client about the strength of their case to keep billing them for work.",
+          "correctScenario": "B",
+          "explanation": "Honest, even unwelcome, advice is consistent with a lawyer's basic duties to their client; deliberately misleading a client to extract more fees is a clear breach of the trust and honesty a lawyer owes them."
+        },
+        {
+          "itemId": "diag-ls-07",
+          "topicId": "sqe1.legal-system.funding-access",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact showing that state-funded support with legal costs exists in some form.",
+          "scenarioText": "Maria cannot afford a solicitor for her housing dispute. A friend mentions that some legal help in England and Wales is funded by the state for those who qualify, that some lawyers work on a no-win-no-fee basis, and that others simply charge privately by the hour.",
+          "tappableSpans": [
+            "cannot afford a solicitor",
+            "funded by the state for those who qualify",
+            "no-win-no-fee basis",
+            "charge privately by the hour"
+          ],
+          "correctSpan": "funded by the state for those who qualify",
+          "feedbackCorrect": "Some legal costs can be met by state funding for those who qualify — often called legal aid — alongside private and conditional-fee routes to paying for legal help.",
+          "feedbackIncorrect": "Look for the fact describing help with legal costs that comes from the state, rather than a private fee arrangement."
+        },
+        {
+          "itemId": "diag-ls-08",
+          "topicId": "sqe1.legal-system.aml-basics",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "A solicitor is asked by a new client to receive a large cash sum into the firm's account and quickly transfer it onward to a third party, with little explanation of where the money came from. Should this raise any concern for the solicitor beyond simply carrying out the client's instructions?",
+          "options": [
+            "Yes — lawyers handling client money are expected to be alert to the risk of facilitating money laundering, not just to follow instructions",
+            "No — a solicitor's only duty is to do exactly what the client asks with their money"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Lawyers who handle money on behalf of clients are treated as being in a position where they could be used to launder the proceeds of crime, so unusual instructions are expected to prompt scrutiny, not automatic compliance."
+        }
+      ]
+    },
+    "sqe1-business-law-practice": {
+      "moduleTitle": "SQE1 · Business Law and Practice",
+      "items": [
+        {
+          "itemId": "diag-blp-01",
+          "topicId": "sqe1.business-law.business-vehicles",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "Does an incorporated company have a legal personality separate from the people who own and run it?",
+          "options": [
+            "Yes — a company is a separate legal person, distinct from its shareholders and directors",
+            "No — a company is just a legal label for its owners; there is no real distinction"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Since Salomon v Salomon, an incorporated company has its own legal personality, distinct from its members, and can hold property, contract and be sued in its own name."
+        },
+        {
+          "itemId": "diag-blp-02",
+          "topicId": "sqe1.business-law.partnerships",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "In an ordinary (general) partnership with no limited liability arrangement, how are the partners typically liable for the firm's debts?",
+          "options": [
+            "Each partner is personally liable only up to the amount they invested",
+            "Partners are jointly and severally liable for the firm's debts, without a cap tied to their investment",
+            "The partnership itself is liable, but individual partners can never be pursued personally"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answer imports the limited-liability idea from company law — but in an ordinary partnership there is no such cap: partners share unlimited personal liability for partnership debts."
+        },
+        {
+          "itemId": "diag-blp-03",
+          "topicId": "sqe1.business-law.company-formation",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "Two friends want to start trading as a limited company. Before they can lawfully use 'Ltd' after the business's name and trade as that company, what generally has to happen first?",
+          "options": [
+            "The company must be validly incorporated (registered) — until then, it does not legally exist as a company",
+            "Nothing formal is required — they can simply start trading and register the company later if it works out"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "A company only comes into existence, with its own legal personality, once it is validly incorporated — trading as 'a company' before that has happened misdescribes the legal reality."
+        },
+        {
+          "itemId": "diag-blp-04",
+          "topicId": "sqe1.business-law.llps",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the type of business vehicle that combines the internal flexibility and tax treatment of a partnership with limited liability for its members.",
+          "acceptableAnswers": [
+            "limited liability partnership",
+            "LLP",
+            "an LLP"
+          ],
+          "modelAnswer": "A limited liability partnership (LLP) — its members have limited liability similar to company shareholders, while it can still be run with partnership-style flexibility."
+        },
+        {
+          "itemId": "diag-blp-05",
+          "topicId": "sqe1.business-law.share-capital",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which person is best described as a creditor of the company, rather than an owner of it?",
+          "scenarioA": "Someone who has bought ordinary shares in the company and is entitled to vote at general meetings.",
+          "scenarioB": "Someone who has lent the company money under a loan agreement, with a right to be repaid interest and capital.",
+          "correctScenario": "B",
+          "explanation": "A shareholder owns a stake in the company and shares its risk; a lender is a creditor with a contractual right to repayment, not an ownership interest — a distinction that runs through most of company finance."
+        },
+        {
+          "itemId": "diag-blp-06",
+          "topicId": "sqe1.business-law.debt-finance",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact that shows this arrangement is debt finance rather than an investment in the company's shares.",
+          "scenarioText": "A bank agrees to lend a growing company £200,000 for new equipment. The loan agreement sets a fixed interest rate and a repayment schedule, and gives the bank no right to vote at the company's general meetings.",
+          "tappableSpans": [
+            "A bank agrees to lend a growing company £200,000",
+            "sets a fixed interest rate and a repayment schedule",
+            "gives the bank no right to vote at the company's general meetings",
+            "for new equipment"
+          ],
+          "correctSpan": "gives the bank no right to vote at the company's general meetings",
+          "feedbackCorrect": "Lenders are creditors, not owners — the absence of any voting or ownership right, alongside a fixed repayment obligation, is what marks this out as debt finance rather than equity investment.",
+          "feedbackIncorrect": "Look for the fact that shows the bank has no ownership stake or say in how the company is run, not just the amount or purpose of the loan."
+        },
+        {
+          "itemId": "diag-blp-07",
+          "topicId": "sqe1.business-law.wrongful-trading",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that company directors owe legal duties to the company itself, and not merely a set of informal expectations about good conduct?",
+          "sliderLabels": [
+            "No — director duties are just informal good practice, not enforceable",
+            "Yes — directors owe genuine, legally enforceable duties to the company"
+          ],
+          "correctPosition": "Yes — directors owe genuine, legally enforceable duties to the company",
+          "explanation": "Directors owe duties (fiduciary and statutory, now largely codified) to the company — these are legally enforceable, not simply informal norms of good conduct."
+        },
+        {
+          "itemId": "diag-blp-08",
+          "topicId": "sqe1.business-law.business-tax",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "statuteParser",
+          "prompt": "In broad terms, which tax does an incorporated company generally pay on its profits, as distinct from the income tax an individual sole trader pays on theirs?",
+          "options": [
+            "Corporation tax",
+            "Income tax, in exactly the same way as an individual",
+            "No tax is charged on a company's profits"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Companies are separate legal (and taxable) persons and are generally charged corporation tax on their profits, distinct from the income tax regime that applies to individuals such as sole traders."
+        }
+      ]
+    },
+    "sqe1-property-practice": {
+      "moduleTitle": "SQE1 · Property Practice",
+      "items": [
+        {
+          "itemId": "diag-pp-01",
+          "topicId": "sqe1.property-practice.investigating-title",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "Does registration at the Land Registry generally record who owns a legal estate in land and what third-party interests affect it?",
+          "options": [
+            "Yes — the register is the primary record of ownership and many interests affecting registered land",
+            "No — the Land Registry only records planning permissions"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "The register of title is the state's central record of legal ownership of registered land, plus many (though not all) interests that bind it."
+        },
+        {
+          "itemId": "diag-pp-02",
+          "topicId": "sqe1.property-practice.searches",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the general legal principle meaning a buyer of land should investigate matters that might affect the property before committing to buy, rather than relying solely on the seller to volunteer them.",
+          "acceptableAnswers": [
+            "caveat emptor",
+            "buyer beware",
+            "let the buyer beware"
+          ],
+          "modelAnswer": "Caveat emptor ('let the buyer beware') — a seller of land has no general duty to disclose defects, so a buyer's advisers must investigate title and raise their own enquiries."
+        },
+        {
+          "itemId": "diag-pp-03",
+          "topicId": "sqe1.property-practice.contract-for-sale",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "Under general contract law principles, must a contract for the sale of land normally be in signed writing to be enforceable?",
+          "options": [
+            "Yes — contracts for the sale of land generally require signed writing to be enforceable",
+            "No — a purely verbal agreement to sell land is fully enforceable on its own"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Unlike most ordinary contracts, land contracts are subject to a statutory writing requirement — a bare oral agreement to sell land will not, by itself, be enforceable."
+        },
+        {
+          "itemId": "diag-pp-04",
+          "topicId": "sqe1.property-practice.exchange",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Before contracts are exchanged, which best describes the general legal position between a prospective buyer and seller of land?",
+          "options": [
+            "Neither party is bound — either can normally withdraw without breaching a contract",
+            "Both are already bound as if a contract existed",
+            "Only the buyer is bound, not the seller"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "Pre-exchange negotiations are generally treated as 'subject to contract', so either side can walk away — the trap is assuming that agreeing terms in principle already creates binding obligations."
+        },
+        {
+          "itemId": "diag-pp-05",
+          "topicId": "sqe1.property-practice.completion",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which of these marks 'completion' rather than 'exchange of contracts' in a straightforward land sale?",
+          "scenarioA": "The parties sign and swap identical contracts, becoming bound to go ahead with the sale.",
+          "scenarioB": "The purchase money is paid over, legal title transfers, and the buyer takes possession.",
+          "correctScenario": "B",
+          "explanation": "Exchange creates a binding contract to go ahead; completion is the later step where money and title actually change hands and the buyer takes possession."
+        },
+        {
+          "itemId": "diag-pp-06",
+          "topicId": "sqe1.property-practice.sdlt",
+          "skillTag": "understanding",
+          "difficultyStart": 0.25,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that buying property in England generally triggers some form of tax liability for the buyer, separate from the purchase price itself?",
+          "sliderLabels": [
+            "Definitely no extra tax on a purchase",
+            "Buying property typically triggers a tax liability"
+          ],
+          "correctPosition": "Buying property typically triggers a tax liability",
+          "explanation": "Land transactions in England generally attract a transfer tax payable by the buyer, on top of the price paid to the seller — this is the general principle, without needing the detailed mechanics of any particular tax."
+        },
+        {
+          "itemId": "diag-pp-07",
+          "topicId": "sqe1.property-practice.land-registration",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "A buyer completes the purchase of a house but the transfer has not yet been registered at the Land Registry. Does the buyer already hold full legal title to the land at that point?",
+          "options": [
+            "No — for a registrable disposition, legal title generally only passes on registration, not on completion alone",
+            "Yes — completion alone always transfers full legal title regardless of registration"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "For registered land, a registrable disposition such as a transfer of a freehold generally only takes effect at law once registered — before that, the buyer typically holds only an equitable interest."
+        },
+        {
+          "itemId": "diag-pp-08",
+          "topicId": "sqe1.property-practice.leasehold",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact that shows this occupier most likely has a lease rather than a mere licence.",
+          "scenarioText": "Priya pays monthly rent for a flat, has her own key, and can exclude the landlord and everyone else from the flat for an agreed year-long term.",
+          "tappableSpans": [
+            "pays monthly rent",
+            "has her own key",
+            "can exclude the landlord and everyone else from the flat",
+            "an agreed year-long term"
+          ],
+          "correctSpan": "can exclude the landlord and everyone else from the flat",
+          "feedbackCorrect": "Exclusive possession for a term is the hallmark of a lease, distinguishing it from a licence, which gives only personal permission to be on the property.",
+          "feedbackIncorrect": "Rent, a key and a fixed term can all accompany a licence too — look for the fact showing a right to exclude others, including the landlord."
+        }
+      ]
+    },
+    "sqe1-wills-administration-estates": {
+      "moduleTitle": "SQE1 · Wills and Administration of Estates",
+      "items": [
+        {
+          "itemId": "diag-we-01",
+          "topicId": "sqe1.wills-estates.testamentary-capacity",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "Does someone generally need to be of sound mind to make a valid will?",
+          "options": [
+            "Yes — a person generally needs the mental capacity to understand what they're doing when making a will",
+            "No — anyone can make a valid will regardless of their mental state"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "A will made by someone who lacked the mental capacity to understand what they were doing is vulnerable to challenge — capacity is a basic requirement, not a technicality."
+        },
+        {
+          "itemId": "diag-we-02",
+          "topicId": "sqe1.wills-estates.will-formalities",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Which of these is generally true about making a valid will in England and Wales?",
+          "options": [
+            "A will must normally be written down and signed, usually in front of witnesses",
+            "A will can always be made purely by telling family members your wishes out loud",
+            "A will only needs to exist in the deceased's mind, not on paper, to count"
+          ],
+          "correctIndex": 0,
+          "trapExplanation": "The tempting wrong answers treat a will as something that can exist informally in speech or intention alone — in practice, wills are subject to formal requirements around writing and signing."
+        },
+        {
+          "itemId": "diag-we-03",
+          "topicId": "sqe1.wills-estates.intestacy",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "Name the general term for what happens to someone's estate when they die without a valid will.",
+          "acceptableAnswers": [
+            "intestacy",
+            "dying intestate",
+            "intestate",
+            "intestate succession"
+          ],
+          "modelAnswer": "Intestacy — the estate is distributed according to a fixed statutory order rather than by the deceased's own wishes."
+        },
+        {
+          "itemId": "diag-we-04",
+          "topicId": "sqe1.wills-estates.grants-of-representation",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "A woman dies leaving a valid will that names her sister as the person responsible for dealing with her estate. Before the sister can access the deceased's bank accounts and distribute the estate, does she usually need some form of official legal authority first?",
+          "options": [
+            "Yes — the named person generally needs to obtain formal legal authority before banks and others will act on their instructions",
+            "No — a named person can access and distribute everything immediately with no further authority needed"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Being named in a will doesn't itself give immediate legal power over the deceased's assets — some form of formal authority to administer the estate is generally needed first."
+        },
+        {
+          "itemId": "diag-we-05",
+          "topicId": "sqe1.wills-estates.revocation",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "In which scenario is an earlier will more likely to have been affected by a later life event?",
+          "scenarioA": "A person writes a will in 2015, then in 2020 gets married without ever updating it.",
+          "scenarioB": "A person writes a will in 2015 and their personal circumstances stay exactly the same afterwards.",
+          "correctScenario": "A",
+          "explanation": "Major life events such as marriage can affect the validity of an existing will — an unchanged will made before such an event is more likely to need revisiting than one where nothing has changed."
+        },
+        {
+          "itemId": "diag-we-06",
+          "topicId": "sqe1.wills-estates.undue-influence",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that a will can potentially be challenged if it was made because someone pressured or coerced the will-maker, rather than reflecting the will-maker's own free wishes?",
+          "sliderLabels": [
+            "No — a will can never be challenged once it is signed",
+            "Yes — a will can potentially be challenged if it doesn't reflect the maker's free wishes"
+          ],
+          "correctPosition": "Yes — a will can potentially be challenged if it doesn't reflect the maker's free wishes",
+          "explanation": "A will is meant to reflect the free wishes of the person making it — where genuine pressure or coercion is involved, the will can potentially be challenged, not treated as automatically final."
+        },
+        {
+          "itemId": "diag-we-07",
+          "topicId": "sqe1.wills-estates.family-provision",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.3,
+          "type": "statuteParser",
+          "prompt": "If someone is left out of a will entirely, is it ever possible in England and Wales for them to make a legal claim for provision from the estate?",
+          "options": [
+            "No — a will's distribution is always final with no possible challenge",
+            "Yes — certain people, such as close family or dependants, can potentially apply to court for reasonable provision",
+            "Only if that person is named as an executor of the will"
+          ],
+          "correctIndex": 1,
+          "briefExplanation": "Being left out of a will does not automatically end the matter — certain categories of people can potentially bring a claim asking the court for reasonable financial provision."
+        },
+        {
+          "itemId": "diag-we-08",
+          "topicId": "sqe1.wills-estates.administering-estate",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact that shows debts must generally be settled before beneficiaries receive anything.",
+          "scenarioText": "After someone dies, the person managing their estate first has to work out everything they owned and owed, then pay off any outstanding debts and funeral costs, and only afterwards share out what's left among the beneficiaries.",
+          "tappableSpans": [
+            "work out everything they owned and owed",
+            "pay off any outstanding debts and funeral costs",
+            "share out what's left among the beneficiaries"
+          ],
+          "correctSpan": "pay off any outstanding debts and funeral costs",
+          "feedbackCorrect": "Debts and funeral costs are generally paid out of the estate before any distribution to beneficiaries — beneficiaries only receive what remains afterwards.",
+          "feedbackIncorrect": "Look for the step that happens before beneficiaries get anything — the estate's debts and costs are settled first, out of what the deceased owned."
+        }
+      ]
+    },
+    "sqe1-solicitors-accounts": {
+      "moduleTitle": "SQE1 · Solicitors Accounts",
+      "items": [
+        {
+          "itemId": "diag-sa-01",
+          "topicId": "sqe1.solicitors-accounts.classifying-client-money",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "quickCheck",
+          "prompt": "A solicitor is holding money on behalf of a client, to be paid out later. Should that money generally be kept separate from the solicitor's own business money?",
+          "options": [
+            "Yes — money held for someone else should be kept separate from your own money",
+            "No — it can all just go into the same pot as the firm's own funds"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Whenever you hold money that belongs to someone else, basic financial good practice is to keep it separate from your own funds so it is never confused with, or used as, your own money."
+        },
+        {
+          "itemId": "diag-sa-02",
+          "topicId": "sqe1.solicitors-accounts.receiving-money",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "A firm receives a cheque made out from a client for a house purchase, on top of the fee it will separately charge for its own work. Which best describes the two amounts?",
+          "options": [
+            "Both amounts belong to the firm as soon as they are received",
+            "The purchase money belongs to the client until it is used as instructed; the fee is the firm's own money",
+            "Neither amount belongs to anyone until the transaction fully completes"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "It is tempting to treat everything that lands in the firm's hands as 'the firm's money', but money held for a client's purpose (like a house purchase) still belongs to the client — only the firm's own fee is genuinely its own."
+        },
+        {
+          "itemId": "diag-sa-03",
+          "topicId": "sqe1.solicitors-accounts.withdrawing-money",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "A solicitor is holding a client's money for a specific purpose. Before paying any of it out to someone else, would you expect them to need a good reason connected to what the client asked for?",
+          "options": [
+            "Yes — money held for someone else should only be paid out for a proper purpose the client would recognise",
+            "No — the solicitor can pay it out to whoever they like, for any reason"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Basic common sense about holding someone else's money is that you only pay it out for the purpose it was given to you for, not on a whim."
+        },
+        {
+          "itemId": "diag-sa-04",
+          "topicId": "sqe1.solicitors-accounts.bookkeeping",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "recallFirst",
+          "prompt": "In everyday terms, what is the basic purpose of keeping accurate financial records (bookkeeping) when you are managing money for other people?",
+          "acceptableAnswers": [
+            "to keep track of whose money is whose",
+            "so you can show where the money went",
+            "to keep an accurate record of money in and out",
+            "accountability and transparency"
+          ],
+          "modelAnswer": "Bookkeeping means keeping an accurate, up-to-date record of money coming in and going out, so at any point you can show exactly whose money is being held and what has happened to it."
+        },
+        {
+          "itemId": "diag-sa-05",
+          "topicId": "sqe1.solicitors-accounts.recording-transactions",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "distinguishTheCase",
+          "prompt": "Which situation shows better everyday money-management practice?",
+          "scenarioA": "Every payment in or out is written down straight away, with a note of who it belongs to.",
+          "scenarioB": "Payments are just remembered mentally and sorted out later from memory, once a while.",
+          "correctScenario": "A",
+          "explanation": "Recording each transaction as it happens, with a clear note of whose money it is, is basic good practice — relying on memory later makes errors and confusion far more likely."
+        },
+        {
+          "itemId": "diag-sa-06",
+          "topicId": "sqe1.solicitors-accounts.disbursements",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact showing money being paid out on the client's behalf, to a third party, rather than money being paid to the firm itself.",
+          "scenarioText": "A solicitor charges the client a fee for their own time on the case, and separately pays a court filing fee to the court out of money held for the client.",
+          "tappableSpans": [
+            "charges the client a fee for their own time",
+            "separately pays a court filing fee",
+            "to the court",
+            "out of money held for the client"
+          ],
+          "correctSpan": "separately pays a court filing fee",
+          "feedbackCorrect": "A payment made to an outside party on the client's behalf, like a court fee, is a cost passed through to the client, not part of what the firm earns for its own work.",
+          "feedbackIncorrect": "Look for the payment going out to someone else entirely, not the amount the firm is charging for its own services."
+        },
+        {
+          "itemId": "diag-sa-07",
+          "topicId": "sqe1.solicitors-accounts.interest",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "If a firm holds a large sum of a client's money for a long period and it earns interest while sitting in an account, who would you generally expect to be entitled to that interest?",
+          "sliderLabels": [
+            "The firm, automatically, since it did the work",
+            "The client, since it is their money that earned it"
+          ],
+          "correctPosition": "The client, since it is their money that earned it",
+          "explanation": "As a starting, common-sense point, money that grows while it belongs to someone else generally still belongs to that person — the growth follows the money, not whoever happens to be looking after it."
+        },
+        {
+          "itemId": "diag-sa-08",
+          "topicId": "sqe1.solicitors-accounts.breaches",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.2,
+          "type": "statuteParser",
+          "prompt": "A solicitor accidentally spends some of a client's money on the firm's own office expenses. Is this the kind of thing that would generally be treated as a serious problem?",
+          "options": [
+            "Yes — using someone else's money for your own purposes without permission is a serious problem",
+            "No — it is fine as long as it is paid back eventually",
+            "No — money only matters once a client actually complains"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Using money that belongs to someone else, for your own purposes, without their permission, is a serious matter as a basic point of honesty and trust, however it might later be corrected."
+        }
+      ]
+    },
+    "sqe1-criminal-law-practice": {
+      "moduleTitle": "SQE1 · Criminal Law and Practice",
+      "items": [
+        {
+          "itemId": "diag-clp-01",
+          "topicId": "sqe1.criminal-practice.custody-clock",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.15,
+          "type": "quickCheck",
+          "prompt": "If the police arrest someone, can they legally hold that person in custody forever without ever charging or releasing them?",
+          "options": [
+            "No — the law sets limits on how long someone can be held without charge",
+            "Yes — the police can detain a suspect for as long as they think necessary"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Detention without charge is time-limited by law; the police must either charge, release, or apply to extend detention within those limits."
+        },
+        {
+          "itemId": "diag-clp-02",
+          "topicId": "sqe1.criminal-practice.legal-advice",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.15,
+          "type": "recallFirst",
+          "prompt": "Name the right a person being questioned by police at a station generally has, whatever their income.",
+          "acceptableAnswers": [
+            "right to free legal advice",
+            "right to a solicitor",
+            "free legal advice",
+            "right to legal representation"
+          ],
+          "modelAnswer": "A right to free, independent legal advice — a duty solicitor is available regardless of the suspect's means, and this right does not depend on being able to pay."
+        },
+        {
+          "itemId": "diag-clp-03",
+          "topicId": "sqe1.criminal-practice.charging",
+          "skillTag": "knowledge",
+          "difficultyStart": 0.25,
+          "type": "sequence",
+          "prompt": "Put these stages of a typical criminal case into the order they generally happen.",
+          "items": [
+            "A suspect is arrested and questioned by police",
+            "A decision is made on whether to charge the suspect with an offence",
+            "The charged defendant makes a first appearance in court",
+            "The case proceeds towards trial or sentence"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "itemId": "diag-clp-04",
+          "topicId": "sqe1.criminal-practice.bail",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "mcqWithTrap",
+          "prompt": "Which best describes how bail generally works after someone is charged with an offence?",
+          "options": [
+            "Every charged defendant is automatically released with no conditions at all",
+            "A court can grant bail, sometimes with conditions, or can remand the defendant in custody, depending on the risks involved",
+            "Only the defendant's own lawyer can decide whether their client gets bail"
+          ],
+          "correctIndex": 1,
+          "trapExplanation": "The tempting wrong answers overstate automatic freedom or wrongly hand the decision to the defence — bail is a judicial decision weighing risks such as absconding, reoffending or interfering with witnesses."
+        },
+        {
+          "itemId": "diag-clp-05",
+          "topicId": "sqe1.criminal-practice.classification-of-offences",
+          "skillTag": "understanding",
+          "difficultyStart": 0.3,
+          "type": "thresholdSlider",
+          "prompt": "How confident are you that every criminal offence, from minor to very serious, is tried in exactly the same way and in the same type of court?",
+          "sliderLabels": [
+            "Yes — all offences are tried identically",
+            "No — how serious the offence is affects which court deals with it"
+          ],
+          "correctPosition": "how serious the offence is affects which court deals with it",
+          "explanation": "Criminal offences vary in seriousness, and this generally determines which court handles the case and what trial process applies — minor and serious matters are not treated identically."
+        },
+        {
+          "itemId": "diag-clp-06",
+          "topicId": "sqe1.criminal-practice.allocation",
+          "skillTag": "understanding",
+          "difficultyStart": 0.35,
+          "type": "distinguishTheCase",
+          "prompt": "Which case is more likely to end up being dealt with by the higher, more serious level of criminal court?",
+          "scenarioA": "A first-time offender accused of shoplifting a low-value item from a supermarket.",
+          "scenarioB": "A defendant accused of a serious, violent armed robbery causing significant injury.",
+          "correctScenario": "B",
+          "explanation": "More serious offences, especially those involving violence and significant harm, are more likely to be sent to a higher court with greater sentencing powers than routine, low-level offending."
+        },
+        {
+          "itemId": "diag-clp-07",
+          "topicId": "sqe1.criminal-practice.sentencing",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "applyTheRule",
+          "prompt": "Two defendants are both convicted of theft. One stole a small item on impulse with no previous convictions; the other planned a much larger theft and has several previous convictions for similar offences. Would you expect them to receive the same sentence?",
+          "options": [
+            "No — sentencing generally reflects factors like the seriousness of the offence and the offender's previous record, so outcomes can differ",
+            "Yes — everyone convicted of the same offence must receive an identical sentence"
+          ],
+          "correctIndex": 0,
+          "briefExplanation": "Sentencing takes account of the seriousness of the specific offence and the offender's circumstances, including previous convictions — it is not a fixed, one-size-fits-all outcome for a given offence type."
+        },
+        {
+          "itemId": "diag-clp-08",
+          "topicId": "sqe1.criminal-practice.disclosure",
+          "skillTag": "application",
+          "difficultyStart": 0.35,
+          "type": "tapTheFact",
+          "prompt": "Tap the fact most relevant to whether the prosecution should share this with the defence before trial.",
+          "scenarioText": "The police investigate a robbery. During the investigation, they find CCTV footage that suggests someone other than the defendant may have committed the crime, but this footage is never mentioned in the prosecution's case summary.",
+          "tappableSpans": [
+            "The police investigate a robbery",
+            "CCTV footage that suggests someone other than the defendant may have committed the crime",
+            "never mentioned in the prosecution's case summary",
+            "the prosecution's case summary"
+          ],
+          "correctSpan": "CCTV footage that suggests someone other than the defendant may have committed the crime",
+          "feedbackCorrect": "The prosecution generally has a duty to disclose material that could undermine its case or assist the defence — evidence pointing to another possible perpetrator is a clear example of exactly that.",
+          "feedbackIncorrect": "Look for the piece of evidence that could actually help the defendant's case, not simply the fact that an investigation took place."
+        }
+      ]
+    }
+  }
+}
