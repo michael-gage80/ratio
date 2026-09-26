@@ -310,21 +310,36 @@ struct DuelView: View {
         }
     }
 
+    /// One row that scrolls sideways (running to the screen edges on iPhone), keeping the
+    /// selected chip in view.
     private func scopeChips(selected current: DuelScope) -> some View {
-        // Chips wrap onto more lines, as in the mockup, rather than scrolling sideways.
-        ChipFlow(spacing: RatioSpace.xs) {
-            ForEach(scopes) { option in
-                Button { withAnimation(RatioMotion.tap) { selected = option } } label: {
-                    Text(option.title)
-                        .ratioFont(.body)
-                        .padding(.horizontal, RatioSpace.s)
-                        .frame(minHeight: 44)
-                        .foregroundStyle(option == current ? Color.ratioParchment : Color.ratioInk)
-                        .background(option == current ? Color.ratioInk : Color.ratioPaper, in: Capsule())
-                        .overlay(Capsule().strokeBorder(Color.ratioRule))
+        let bleed = width.isCompact ? RatioSpace.m : 0
+        return ScrollViewReader { proxy in
+            ScrollView(.horizontal) {
+                HStack(spacing: RatioSpace.xs) {
+                    ForEach(scopes) { option in
+                        Button { withAnimation(RatioMotion.tap) { selected = option } } label: {
+                            Text(option.title)
+                                .ratioFont(.body)
+                                .fixedSize()
+                                .padding(.horizontal, RatioSpace.s)
+                                .frame(minHeight: 44)
+                                .foregroundStyle(option == current ? Color.ratioParchment : Color.ratioInk)
+                                .background(option == current ? Color.ratioInk : Color.ratioPaper, in: Capsule())
+                                .overlay(Capsule().strokeBorder(Color.ratioRule))
+                        }
+                        .buttonStyle(.ratioPress)
+                        .accessibilityAddTraits(option == current ? .isSelected : [])
+                        .id(option)
+                    }
                 }
-                .buttonStyle(.ratioPress)
-                .accessibilityAddTraits(option == current ? .isSelected : [])
+                .padding(.vertical, 1)
+            }
+            .scrollIndicators(.hidden)
+            .contentMargins(.horizontal, bleed, for: .scrollContent)
+            .padding(.horizontal, -bleed)
+            .onChange(of: current) { _, option in
+                withAnimation(RatioMotion.tap) { proxy.scrollTo(option, anchor: .center) }
             }
         }
     }
@@ -800,39 +815,3 @@ private struct SwipeToDecline<Content: View>: View {
     }
 }
 
-/// Lays chips out left to right, wrapping onto new lines as needed.
-private struct ChipFlow: Layout {
-    var spacing: CGFloat
-
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
-        let rows = rows(for: subviews, width: proposal.width ?? .infinity)
-        let height = rows.map(\.height).reduce(0, +) + spacing * CGFloat(max(0, rows.count - 1))
-        return CGSize(width: proposal.width ?? rows.map(\.width).max() ?? 0, height: height)
-    }
-
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
-        var y = bounds.minY
-        for row in rows(for: subviews, width: bounds.width) {
-            var x = bounds.minX
-            for index in row.indices {
-                let size = subviews[index].sizeThatFits(.unspecified)
-                subviews[index].place(at: CGPoint(x: x, y: y), proposal: ProposedViewSize(size))
-                x += size.width + spacing
-            }
-            y += row.height + spacing
-        }
-    }
-
-    private func rows(for subviews: Subviews, width: CGFloat) -> [(indices: [Int], width: CGFloat, height: CGFloat)] {
-        var rows: [(indices: [Int], width: CGFloat, height: CGFloat)] = []
-        for (index, subview) in subviews.enumerated() {
-            let size = subview.sizeThatFits(.unspecified)
-            if let last = rows.last, last.width + spacing + size.width <= width {
-                rows[rows.count - 1] = (last.indices + [index], last.width + spacing + size.width, max(last.height, size.height))
-            } else {
-                rows.append(([index], size.width, size.height))
-            }
-        }
-        return rows
-    }
-}
