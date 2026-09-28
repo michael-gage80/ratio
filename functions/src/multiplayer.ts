@@ -5,7 +5,9 @@
 
 import { getDatabaseWithUrl } from "firebase-admin/database";
 import { FieldValue, getFirestore, Timestamp, Transaction } from "firebase-admin/firestore";
+import { logger } from "firebase-functions";
 import { HttpsError, onCall } from "firebase-functions/v2/https";
+import { onSchedule } from "firebase-functions/v2/scheduler";
 import { checkDuel, countDuel, notify } from "./account.js";
 import { periodKeys } from "./boards.js";
 import { blockReason, MAX_MESSAGE_LENGTH } from "./chat.js";
@@ -102,6 +104,9 @@ export const liveAnswer = onCall<{ matchId?: string; round?: number; answerIndex
     throw new HttpsError("invalid-argument", "Malformed answer.");
   }
   await updateLive(matchId, uid, (state, player, now) => {
+    if (round === state.round && live.isSuspicious(timeMs, now - state.startsAt)) {
+      logger.warn("Implausibly fast answer", { matchId, uid, claimedMs: timeMs, serverMs: now - state.startsAt });
+    }
     const { state: next, outcome } = live.answer(state, player, round!, answerIndex!, timeMs, now);
     return outcome === "ignored" ? null : next;
   });
@@ -520,7 +525,8 @@ export const createChallenge = onCall<{ opponent?: string; moduleId?: string; se
   }
   if (await isBlocked(uid, opponent)) throw new HttpsError("permission-denied", "You can't challenge this student.");
   const open = await db.collection("challenges").where("players", "array-contains", uid).where("status", "==", "open").get();
-  if (open.docs.some((c) => (c.get("players") as string[]).includes(opponent))) {
+  // A lapsed challenge the sweep hasn't reached yet doesn't block a new one.
+  if (open.docs.some((c) => (c.get("players") as string[]).includes(opponent) && (c.get("expiresAt") as Timestamp).toMillis() > Date.now())) {
     throw new HttpsError("already-exists", "You already have a challenge open with this student.");
   }
 
@@ -574,6 +580,64 @@ export const declineChallenge = onCall<{ challengeId?: string }>(async (request)
 type Stored = Record<string, Answer[]>;
 
 /**
+ * Challenges past their 24 hours. If exactly one student finished their half, they win
+ * (rated, on the boards, as a forfeit); otherwise the challenge simply lapses. Both are
+ * told. Runs every 30 minutes.
+ */
+export const expireChallenges = onSchedule({ schedule: "every 30 minutes", timeZone: "Europe/London" }, async () => {
+  const db = getFirestore();
+  const lapsed = await db.collection("challenges").where("status", "==", "open").where("expiresAt", "<", Timestamp.now()).limit(200).get();
+  let settled = 0;
+  for (const doc of lapsed.docs) {
+    const outcome = await db.runTransaction(async (tx) => {
+      const secretRef = db.doc(`challengeSecrets/${doc.id}`);
+      const [challenge, secret] = await tx.getAll(doc.ref, secretRef);
+      if (challenge.get("status") !== "open") return null;
+      const players = challenge.get("players") as [string, string];
+      const done = challenge.get("done") as Record<string, boolean>;
+      const finished = players.filter((p) => done[p]);
+      if (finished.length !== 1) {
+        tx.update(doc.ref, { status: "expired" });
+        return { players, winner: null as string | null };
+      }
+      const winner = finished[0];
+      const loser = players.find((p) => p !== winner)!;
+      const questions = secret.get("questions") as DuelQuestion[];
+      const limitMs = challenge.get("limitMs") as number;
+      const answers = secret.get("answers") as Stored;
+      const played = playMatchWith(questions, (p, qi) => (players[p] === winner ? answers[winner]?.[qi] : undefined), limitMs);
+      const names = challenge.get("names") as Record<string, string>;
+      const initials = challenge.get("initials") as Record<string, string>;
+      const records = await settle(tx, doc.id, {
+        mode: "challenge",
+        moduleId: challenge.get("moduleId"),
+        limitMs,
+        order: players,
+        players: Object.fromEntries(players.map((p) => [p, { name: names[p], initial: initials[p] }])),
+        questions,
+        rounds: played.rounds,
+        score: played.score,
+        winner: players.indexOf(winner) as 0 | 1,
+        forfeitedBy: players.indexOf(loser) as 0 | 1,
+      });
+      tx.update(doc.ref, { status: "complete", results: records, completedAt: FieldValue.serverTimestamp() });
+      return { players, winner };
+    });
+    if (!outcome) continue;
+    settled += 1;
+    const names = doc.get("names") as Record<string, string>;
+    for (const uid of outcome.players) {
+      const other = names[outcome.players.find((p) => p !== uid)!];
+      const body = outcome.winner === null
+        ? `Your challenge with ${other} ran out of time.`
+        : outcome.winner === uid ? `${other} didn't play their half in time, so the win is yours.` : `Your challenge with ${other} ran out of time, so it went to them.`;
+      await notify(uid, "Challenge finished", body, { challengeId: doc.id });
+    }
+  }
+  logger.info("Expired challenges", { found: lapsed.size, settled });
+});
+
+/**
  * One step of a player's half: answers question `index` (if an answer is given) and
  * serves the next. The question the student sees is timed from when it was served.
  */
@@ -612,6 +676,9 @@ export const playChallenge = onCall<{ challengeId?: string; index?: number; answ
     if (Number.isInteger(index) && index === next() && servedAt[index!] != null) {
       const question = questions[index!];
       const elapsed = now - servedAt[index!]!;
+      if (typeof timeMs === "number" && live.isSuspicious(timeMs, elapsed)) {
+        logger.warn("Implausibly fast answer", { challengeId, uid, claimedMs: timeMs, serverMs: elapsed });
+      }
       const given: Answer = elapsed > limitMs + live.GRACE_MS || !Number.isInteger(answerIndex)
         ? { answerIndex: null, timeMs: limitMs }
         : { answerIndex: answerIndex!, timeMs: Math.max(MIN_ANSWER_MS, live.checkedTime(typeof timeMs === "number" ? timeMs : elapsed, elapsed)) };

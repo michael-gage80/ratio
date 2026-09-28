@@ -9,7 +9,8 @@ import { onSchedule } from "firebase-functions/v2/scheduler";
 import { isAcceptable, SafeSearch } from "./avatar.js";
 import { Brief, buildBrief, londonDate } from "./brief.js";
 import { duelLessons, HISTORY_LIMIT, lessonInfo, lessons, testItems, TopicScores } from "./content.js";
-import { Answer, DuelQuestion, matchQuestions, playMatch, questionPool, SPARRING_LEVELS, SPARRING_RD, sparringPlan } from "./duel.js";
+import { Answer, DuelQuestion, marked, matchQuestions, MIN_ANSWER_MS, nextQuestionIndex, questionPool, resolveRound, SPARRING_LEVELS, SPARRING_RD, sparringPlan } from "./duel.js";
+import { checkedTime, GRACE_MS, isSuspicious } from "./live.js";
 import { dueDate, review } from "./fsrs.js";
 import { INITIAL } from "./glicko.js";
 import { countDuel } from "./account.js";
@@ -391,7 +392,9 @@ interface StartSparringRequest {
 /**
  * Starts a match against a labelled sparring partner (PRD: "Sparring: bots in 5
  * difficulty bands ... always labelled"). The partner's answers are fixed now, on the
- * server; the student's are marked against the stored questions on submission.
+ * server. A rated match sends the phone neither the answers nor the partner's choices,
+ * only when the partner locks in; each round is then played through `playSparring`,
+ * which times it on the server. (The unrated tutorial is played on the phone.)
  */
 export const startSparring = onCall<StartSparringRequest>(async (request) => {
   const uid = request.auth?.uid;
@@ -424,58 +427,185 @@ export const startSparring = onCall<StartSparringRequest>(async (request) => {
     limitMs,
     questions,
     plan,
+    answers: [],
+    servedAt: [],
     status: "active",
     createdAt: FieldValue.serverTimestamp(),
   });
-  return { matchId: matchRef.id, questions, plan, partner, limitMs, rating };
+  return {
+    matchId: matchRef.id,
+    questions: questions.map((q) => ({ ...q, correctIndex: -1, why: "" })),
+    // When the partner answers, not what: -1 stands for "answered".
+    plan: plan.map((a) => ({ answerIndex: a.answerIndex === null ? null : -1, timeMs: a.timeMs })),
+    partner,
+    limitMs,
+    rating,
+  };
 });
 
-interface SubmitSparringRequest {
-  matchId?: string;
-  /** The student's answer for each round played, in order. */
-  answers?: Answer[];
+/** The pause between a round's reveal and the next question, as the app shows it. */
+const SPARRING_REVEAL_MS = 2400;
+
+/** Rounds played so far in a sparring match, from the student's stored answers. */
+function sparringProgress(questions: DuelQuestion[], answers: Answer[], plan: Answer[], limitMs: number) {
+  const score: [number, number] = [0, 0];
+  let regularPlayed = 0;
+  let finalPlayed = false;
+  const played: { questionIndex: number; answers: [Answer & { correct: boolean }, Answer & { correct: boolean }]; winner: 0 | 1 | null }[] = [];
+  const none: Answer = { answerIndex: null, timeMs: limitMs };
+  const advance = () => {
+    const index = nextQuestionIndex(questions, score, regularPlayed, finalPlayed);
+    if (index !== null) {
+      if (questions[index].final) finalPlayed = true;
+      else regularPlayed += 1;
+    }
+    return index;
+  };
+  let next = advance();
+  for (const answer of answers) {
+    if (next === null) break;
+    const question = questions[next];
+    const them = plan[next] ?? none;
+    const winner = resolveRound(question, [answer, them], limitMs);
+    if (winner !== null) score[winner] += 1;
+    played.push({ questionIndex: next, answers: [marked(question, answer, limitMs), marked(question, them, limitMs)], winner });
+    next = advance();
+  }
+  return { played, score, next };
 }
 
 /**
- * Referees a finished sparring match from the stored questions and plan: decides every
- * round, updates the Glicko-2 rating for the module, and moves the profile (PRD: duel
- * answers feed the profile, never the review queue). Idempotent.
+ * Settles a sparring match from what the server recorded (`recorded`, or the stored
+ * answers); rounds never answered count as unanswered.
  */
-export const submitSparring = onCall<SubmitSparringRequest>(async (request) => {
+async function settleSparring(tx: FirebaseFirestore.Transaction, db: FirebaseFirestore.Firestore, matchRef: FirebaseFirestore.DocumentReference,
+  match: FirebaseFirestore.DocumentSnapshot, uid: string, recorded?: Answer[]) {
+  const questions = match.get("questions") as DuelQuestion[];
+  const plan = match.get("plan") as Answer[];
+  const limitMs = match.get("limitMs") as number;
+  const answers = [...(recorded ?? (match.get("answers") as Answer[] | undefined) ?? [])];
+  let progress = sparringProgress(questions, answers, plan, limitMs);
+  while (progress.next !== null) {
+    answers.push({ answerIndex: null, timeMs: limitMs });
+    progress = sparringProgress(questions, answers, plan, limitMs);
+  }
+  const winner = progress.score[0] === progress.score[1] ? null : progress.score[0] > progress.score[1] ? 0 : 1;
+  const side: Side = {
+    uid,
+    moduleId: match.get("moduleId") as string,
+    answers: progress.played.map((round) => ({ question: questions[round.questionIndex], answer: round.answers[0] })),
+  };
+  const state = await readSide(tx, db, side);
+  const score = winner === 0 ? 1 : winner === 1 ? 0 : 0.5;
+  const partner = match.get("partner") as { rating: number };
+  const settlement = writeSide(tx, state, { rating: partner.rating, rd: SPARRING_RD }, score);
+  const result = { rounds: progress.played, score: progress.score, winner, ...settlement };
+  tx.update(matchRef, { status: "complete", answers, result, completedAt: FieldValue.serverTimestamp() });
+  return result;
+}
+
+interface PlaySparringRequest {
+  matchId?: string;
+  /** Set to answer the round being played: the choice (null if time ran out) and the phone's time. */
+  answered?: boolean;
+  answerIndex?: number | null;
+  timeMs?: number;
+}
+
+/**
+ * One step of a rated sparring match: records the student's answer to the round on
+ * screen (timed from when the server served it), reveals it, and serves the next round
+ * after the reveal — or, when the match is over, settles it.
+ */
+export const playSparring = onCall<PlaySparringRequest>(async (request) => {
   const uid = request.auth?.uid;
   if (!uid) throw new HttpsError("unauthenticated", "Sign in first.");
-  const { matchId, answers } = request.data ?? {};
+  const { matchId, answered, answerIndex, timeMs } = request.data ?? {};
   if (typeof matchId !== "string" || !/^[A-Za-z0-9]{10,40}$/.test(matchId)) throw new HttpsError("invalid-argument", "Unknown match.");
-  if (!Array.isArray(answers) || answers.length > 12) throw new HttpsError("invalid-argument", "Unexpected answers.");
-  const clean: Answer[] = answers.map((a) => ({
-    answerIndex: Number.isInteger(a?.answerIndex) ? a.answerIndex : null,
-    timeMs: typeof a?.timeMs === "number" && Number.isFinite(a.timeMs) ? Math.round(a.timeMs) : Number.MAX_SAFE_INTEGER,
-  }));
+  const db = getFirestore();
+  const matchRef = db.doc(`matches/${matchId}`);
+  return db.runTransaction(async (tx) => {
+    const match = await tx.get(matchRef);
+    if (!match.exists || !(match.get("players") as string[]).includes(uid) || match.get("mode") !== "sparring") throw new HttpsError("not-found", "Unknown match.");
+    if (match.get("status") === "complete") return { revealed: null, next: null, result: match.get("result") };
+    const questions = match.get("questions") as DuelQuestion[];
+    const plan = match.get("plan") as Answer[];
+    const limitMs = match.get("limitMs") as number;
+    const answers = (match.get("answers") as Answer[] | undefined) ?? [];
+    const servedAt = (match.get("servedAt") as number[] | undefined) ?? [];
+    const now = Date.now();
 
+    let revealed: { questionIndex: number; correctIndex: number; why: string; them: Answer; winner: 0 | 1 | null } | null = null;
+    const current = sparringProgress(questions, answers, plan, limitMs);
+    // The round on screen, if one has been served and not yet answered.
+    if (current.next !== null && servedAt.length > answers.length) {
+      const elapsed = now - servedAt[answers.length];
+      const late = elapsed > limitMs + GRACE_MS;
+      if (answered === true || late) {
+        if (typeof timeMs === "number" && isSuspicious(timeMs, elapsed)) {
+          logger.warn("Implausibly fast answer", { matchId, uid, claimedMs: timeMs, serverMs: elapsed });
+        }
+        const given: Answer = late || !Number.isInteger(answerIndex)
+          ? { answerIndex: null, timeMs: limitMs }
+          : { answerIndex: answerIndex!, timeMs: Math.max(MIN_ANSWER_MS, checkedTime(typeof timeMs === "number" ? timeMs : elapsed, elapsed)) };
+        answers.push(given);
+        const question = questions[current.next];
+        const them = plan[current.next] ?? { answerIndex: null, timeMs: limitMs };
+        revealed = { questionIndex: current.next, correctIndex: question.correctIndex, why: question.why, them, winner: resolveRound(question, [given, them], limitMs) };
+      }
+    }
+
+    const after = sparringProgress(questions, answers, plan, limitMs);
+    if (after.next === null) {
+      const settled = await settleSparring(tx, db, matchRef, match, uid, answers);
+      return { revealed, next: null, result: settled };
+    }
+    // Serve the next round: at once for the first, after the reveal otherwise.
+    if (servedAt.length === answers.length) servedAt.push(now + (revealed ? SPARRING_REVEAL_MS : 0));
+    tx.update(matchRef, { answers, servedAt });
+    return { revealed, next: after.next, result: null };
+  });
+});
+
+/**
+ * Settles a sparring match from what the server recorded (the answers sent with the
+ * request are ignored): decides every round, updates the Glicko-2 rating for the module,
+ * and moves the profile (PRD: duel answers feed the profile, never the review queue).
+ * Rounds never answered count as unanswered. Idempotent.
+ */
+export const submitSparring = onCall<{ matchId?: string }>(async (request) => {
+  const uid = request.auth?.uid;
+  if (!uid) throw new HttpsError("unauthenticated", "Sign in first.");
+  const matchId = request.data?.matchId;
+  if (typeof matchId !== "string" || !/^[A-Za-z0-9]{10,40}$/.test(matchId)) throw new HttpsError("invalid-argument", "Unknown match.");
   const db = getFirestore();
   const matchRef = db.doc(`matches/${matchId}`);
   return db.runTransaction(async (tx) => {
     const match = await tx.get(matchRef);
     if (!match.exists || !(match.get("players") as string[]).includes(uid)) throw new HttpsError("not-found", "Unknown match.");
     if (match.get("status") === "complete") return match.get("result");
-
-    const questions = match.get("questions") as DuelQuestion[];
-    const moduleId = match.get("moduleId") as string;
-    const partner = match.get("partner") as { rating: number };
-    const outcome = playMatch(questions, clean, match.get("plan") as Answer[], match.get("limitMs") as number);
-
-    const side: Side = {
-      uid,
-      moduleId,
-      answers: outcome.rounds.map((round) => ({ question: questions[round.questionIndex], answer: round.answers[0] })),
-    };
-    const state = await readSide(tx, db, side);
-    const score = outcome.winner === 0 ? 1 : outcome.winner === 1 ? 0 : 0.5;
-    const settlement = writeSide(tx, state, { rating: partner.rating, rd: SPARRING_RD }, score);
-    const result = { rounds: outcome.rounds, score: outcome.score, winner: outcome.winner, ...settlement };
-    tx.update(matchRef, { status: "complete", result, completedAt: FieldValue.serverTimestamp() });
-    return result;
+    return settleSparring(tx, db, matchRef, match, uid);
   });
+});
+
+/**
+ * Sparring matches left unfinished for 15 minutes are settled from what was played:
+ * walking away counts as not answering, so it can't be used to dodge a loss.
+ */
+export const settleAbandonedSparring = onSchedule({ schedule: "every 30 minutes", timeZone: "Europe/London" }, async () => {
+  const db = getFirestore();
+  const stale = await db.collection("matches").where("mode", "==", "sparring").where("status", "==", "active")
+    .where("createdAt", "<", Timestamp.fromMillis(Date.now() - 15 * 60 * 1000)).limit(200).get();
+  let settled = 0;
+  for (const doc of stale.docs) {
+    await db.runTransaction(async (tx) => {
+      const match = await tx.get(doc.ref);
+      if (match.get("status") !== "active") return;
+      await settleSparring(tx, db, doc.ref, match, (match.get("players") as string[])[0]);
+      settled += 1;
+    }).catch((error) => logger.error("Couldn't settle a sparring match", { id: doc.id, error: String(error) }));
+  }
+  logger.info("Settled abandoned sparring", { found: stale.size, settled });
 });
 
 // MARK: - Avatars

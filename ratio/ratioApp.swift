@@ -6,6 +6,7 @@
 //
 
 import FirebaseCore
+import FirebaseCrashlytics
 import GoogleSignIn
 import SwiftUI
 
@@ -19,8 +20,12 @@ struct ratioApp: App {
 
     init() {
         FirebaseApp.configure()
+        // Crash reports from release builds only (TestFlight and the App Store).
         #if DEBUG
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(false)
         DebugHooks.configure()
+        #else
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
         #endif
         UniversityDirectory.configure()
         if let clientID = FirebaseApp.app()?.options.clientID {
