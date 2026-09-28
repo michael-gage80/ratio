@@ -8,6 +8,11 @@ service firebase.storage {
       allow read: if request.auth != null;
     }
 
+    // The news reader's text and lead images, written only by the ingestNews Function.
+    match /news/{storyId}/{file} {
+      allow read: if request.auth != null;
+    }
+
     // Profile photos. The app uploads to upload.jpg; the moderateAvatar Function checks
     // it and moves it to avatar.jpg, which any signed-in student can see. Only the
     // owner can upload, and only a small JPEG.

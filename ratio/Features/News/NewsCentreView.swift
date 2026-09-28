@@ -1,14 +1,19 @@
 import SwiftUI
 
 /// screens/43-news-centre.png — "The Week in Law": UK legal news from the last 7 days,
-/// headline and link only, the lead story with its "Why it matters" note, a day-by-day
-/// list filtered by module, and the Sunday quiz (PRD: "Legal awareness centre").
+/// the lead story with its "Why it matters" note, a day-by-day list filtered by module,
+/// and the Sunday quiz (PRD: "Legal awareness centre"). Stories open in Ratio's reader
+/// where the source allows it, otherwise in Safari's Reader view in the app; subscriber-
+/// only stories carry a lock and open in Safari (NewsReader.swift).
 struct NewsCentreView: View {
     @Environment(StudentStore.self) private var student
     @Environment(AppNavigator.self) private var navigator
     @Environment(\.ratioWidth) private var width
+    @Environment(\.openURL) private var openURL
+    @AppStorage(NewsReading.readKey) private var read = ""
     @State private var module: Module?
     @State private var takingQuiz = false
+    @State private var safari: SafariLink?
 
     private var stories: [NewsStory] {
         guard let module else { return student.news }
@@ -26,7 +31,7 @@ struct NewsCentreView: View {
                 masthead
                 moduleChips
                 if let lead {
-                    LeadStory(story: lead) { open(lesson: $0) }
+                    LeadStory(story: lead, isRead: NewsReading.isRead(lead.id, in: read), open: { open(lead) }) { open(lesson: $0) }
                 }
                 if stories.isEmpty {
                     RatioEmptyState(art: .pediment, message: student.news.isEmpty
@@ -34,7 +39,7 @@ struct NewsCentreView: View {
                         : "No stories for \(module?.title ?? "this module") this week.",
                         actionTitle: module == nil ? nil : "Show all modules") { module = nil }
                 } else {
-                    Text("From the week · Headline and link only").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                    Text("From the week").ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
                     if width.isCompact {
                         ForEach(days, id: \.title) { day in dayGroup(day) }
                     } else {
@@ -48,7 +53,7 @@ struct NewsCentreView: View {
                 if let quiz = student.quiz {
                     QuizCard(quiz: quiz) { takingQuiz = true }
                 }
-                Text("Headlines link to the publisher.")
+                Text("\(Image(systemName: "lock.fill")) Subscriber only: opens at the publisher.")
                     .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2).multilineTextAlignment(.center).frame(maxWidth: .infinity)
             }
             .padding(RatioSpace.m)
@@ -59,6 +64,20 @@ struct NewsCentreView: View {
         .fullScreenCover(isPresented: $takingQuiz) {
             if let quiz = student.quiz { QuizView(quiz: quiz).ratioMeasuresWidth() }
         }
+        .fullScreenCover(item: $safari) { SafariView(url: $0.url).ignoresSafeArea() }
+    }
+
+    private func open(_ story: NewsStory) {
+        switch NewsOpening(story) {
+        case .reader: navigator.push(.newsStory(story.id))
+        case .inApp(let url):
+            NewsReading.markRead(story.id, in: &read)
+            safari = SafariLink(url: url)
+        case .safari(let url):
+            NewsReading.markRead(story.id, in: &read)
+            openURL(url)
+        case nil: break
+        }
     }
 
     private func dayGroup(_ day: (title: String, stories: [NewsStory])) -> some View {
@@ -66,7 +85,7 @@ struct NewsCentreView: View {
             Text(day.title).ratioFont(.h2).italic()
             Rectangle().fill(Color.ratioInk).frame(height: 1).padding(.top, RatioSpace.xs)
             ForEach(day.stories) { story in
-                StoryRow(story: story) { open(lesson: $0) }
+                StoryRow(story: story, isRead: NewsReading.isRead(story.id, in: read), open: { open(story) }) { open(lesson: $0) }
                 Divider().overlay(Color.ratioRule)
             }
         }
@@ -134,6 +153,8 @@ struct NewsCentreView: View {
 
 private struct LeadStory: View {
     let story: NewsStory
+    let isRead: Bool
+    let open: () -> Void
     let openLesson: (String) -> Void
 
     @Environment(\.ratioWidth) private var width
@@ -169,8 +190,7 @@ private struct LeadStory: View {
     private var headline: some View {
         VStack(alignment: .leading, spacing: RatioSpace.s) {
             HStack(alignment: .top) {
-                Text("Lead · \(story.source) · \(story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow)))")
-                    .ratioFont(.monoLabel).foregroundStyle(Color.ratioInk2)
+                StoryMeta(story: story, isRead: isRead, lead: true)
                 Spacer(minLength: RatioSpace.xs)
                 if let module = story.modules.first.flatMap(Module.init(rawValue:)) { RatioTag(module.title) }
             }
@@ -180,14 +200,46 @@ private struct LeadStory: View {
 
     @ViewBuilder
     private var source: some View {
-        if let link = story.link {
-            Link(destination: link) {
-                Label("Read at source", systemImage: "arrow.up.right").labelStyle(TrailingIconLabel())
-                    .ratioFont(.monoLabel)
+        if let opening = NewsOpening(story) {
+            Button(action: open) {
+                Group {
+                    switch opening {
+                    case .reader:
+                        Label("Read · \(story.reader?.minutes ?? 1) min", systemImage: "arrow.right")
+                    case .inApp:
+                        Label("Read", systemImage: "arrow.right")
+                    case .safari:
+                        Label("Read at \(story.source)", systemImage: "arrow.up.right")
+                    }
+                }
+                .labelStyle(TrailingIconLabel())
+                .ratioFont(.monoLabel)
+                .frame(minHeight: 44)
+                .contentShape(Rectangle())
             }
+            .buttonStyle(.ratioPress)
             .foregroundStyle(Color.ratioInk)
-            .frame(minHeight: 44)
         }
+    }
+}
+
+/// "Law Society Gazette · 🔒 · 2h ago · Crime · ✓ Read"
+private struct StoryMeta: View {
+    let story: NewsStory
+    let isRead: Bool
+    var lead = false
+
+    var body: some View {
+        var parts: [Text] = []
+        if lead { parts.append(Text("Lead")) }
+        parts.append(Text(story.source))
+        if story.paywalled == true { parts.append(Text(Image(systemName: "lock.fill")).accessibilityLabel("Subscriber only")) }
+        parts.append(Text(story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow))))
+        if !lead, let module = story.modules.first.flatMap(Module.init(rawValue:)) { parts.append(Text(module.title)) }
+        if isRead { parts.append(Text("\(Image(systemName: "checkmark")) Read")) }
+        return parts.dropFirst().reduce(parts[0]) { Text("\($0) · \($1)") }
+            .ratioFont(.monoLabel)
+            .foregroundStyle(Color.ratioInk2)
     }
 }
 
@@ -212,32 +264,46 @@ struct WhyItMattersBox: View {
 
 private struct StoryRow: View {
     let story: NewsStory
+    let isRead: Bool
+    let open: () -> Void
     let openLesson: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: RatioSpace.xs) {
-            Link(destination: story.link ?? URL(fileURLWithPath: "/")) {
+            Button(action: open) {
                 HStack(alignment: .top, spacing: RatioSpace.s) {
                     VStack(alignment: .leading, spacing: RatioSpace.xs) {
                         Text(story.title).ratioFont(.h3).multilineTextAlignment(.leading)
-                        Text(([story.source, story.publishedAt.formatted(.relative(presentation: .numeric, unitsStyle: .narrow))]
-                              + story.modules.prefix(1).compactMap { Module(rawValue: $0)?.title }).joined(separator: " · "))
-                            .ratioFont(.monoLabel)
-                            .foregroundStyle(Color.ratioInk2)
+                        StoryMeta(story: story, isRead: isRead)
                     }
                     Spacer(minLength: RatioSpace.xs)
-                    Image(systemName: "arrow.up.right").foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
+                    Image(systemName: icon).foregroundStyle(Color.ratioInk2).accessibilityHidden(true)
                 }
                 .contentShape(Rectangle())
             }
             .buttonStyle(.ratioPress)
-            .disabled(story.link == nil)
-            .accessibilityHint("Opens the story at \(story.source)")
+            .disabled(NewsOpening(story) == nil)
+            .accessibilityHint(hint)
             if let why = story.whyItMatters {
                 WhyItMattersBox(why: why, openLesson: openLesson)
             }
         }
         .padding(.vertical, RatioSpace.s)
+    }
+
+    private var icon: String {
+        switch NewsOpening(story) {
+        case .reader, .inApp: "arrow.right"
+        default: "arrow.up.right"
+        }
+    }
+
+    private var hint: String {
+        switch NewsOpening(story) {
+        case .reader: "Opens the story in Ratio"
+        case .inApp: "Opens the story in the app"
+        default: "Subscriber only. Opens the story at \(story.source) in Safari"
+        }
     }
 }
 

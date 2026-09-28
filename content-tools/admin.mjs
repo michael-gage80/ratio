@@ -20,6 +20,16 @@
 //   node content-tools/admin.mjs grant <email> <yyyy-mm-dd>
 //       Gives one account Plus until a date, without a purchase — for testers.
 //   node content-tools/admin.mjs revoke <email>
+//   node content-tools/admin.mjs news-text <sourceId> on|off|default
+//       Switches a news source's in-app reader text on or off (config/news.fullText),
+//       e.g. once a publisher has given permission. Stories from the last week are
+//       filled in on the next hourly run. Without a switch, sources use news.ts defaults
+//       (open-licence sources on, publishers off).
+//   node content-tools/admin.mjs news-images <sourceId> on|off
+//       Allows copying lead images for a source (config/news.images) — only when the
+//       images themselves are licensed for reuse.
+//   node content-tools/admin.mjs news-config
+//       Shows the current switches.
 
 import { readFileSync, readdirSync } from 'node:fs';
 import { initializeApp } from 'firebase-admin/app';
@@ -149,6 +159,21 @@ async function revoke(email) {
   console.log(`Revoked ${email}'s granted Plus.`);
 }
 
+async function newsSwitch(field, sourceId, value) {
+  if (!sourceId || !['on', 'off', 'default'].includes(value) || (field === 'images' && value === 'default')) {
+    fail(field === 'images' ? 'Usage: news-images <sourceId> on|off' : 'Usage: news-text <sourceId> on|off|default');
+  }
+  await db.doc('config/news').set({
+    [field]: { [sourceId]: value === 'default' ? FieldValue.delete() : value === 'on' },
+  }, { merge: true });
+  console.log(`${sourceId}: ${field === 'images' ? 'lead images' : 'reader text'} ${value}.`);
+}
+
+async function newsConfig() {
+  const doc = await db.doc('config/news').get();
+  console.log(JSON.stringify(doc.data() ?? {}, null, 2));
+}
+
 const [command, ...args] = process.argv.slice(2);
 switch (command) {
   case 'list': await list(Number(args[0]) || 7); break;
@@ -157,5 +182,8 @@ switch (command) {
   case 'licence': await licence(...args); break;
   case 'grant': await grant(args[0], args[1]); break;
   case 'revoke': await revoke(args[0]); break;
-  default: fail('Commands: list [days] | why <newsId> <lessonId> "text" | quiz <file.json> | licence … | grant <email> <date> | revoke <email>');
+  case 'news-text': await newsSwitch('fullText', args[0], args[1]); break;
+  case 'news-images': await newsSwitch('images', args[0], args[1]); break;
+  case 'news-config': await newsConfig(); break;
+  default: fail('Commands: list [days] | why <newsId> <lessonId> "text" | quiz <file.json> | licence … | grant <email> <date> | revoke <email> | news-text <source> on|off|default | news-images <source> on|off | news-config');
 }

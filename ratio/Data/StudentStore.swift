@@ -460,7 +460,9 @@ nonisolated struct ChallengeSummary: Decodable, Identifiable {
     }
 }
 
-/// `news/{id}`: a headline and link (never article text), with an optional hand-written note.
+/// `news/{id}`: a headline and link, with an optional hand-written note. Stories from
+/// sources whose text Ratio may show (functions/src/reader.ts) carry `reader`; the text
+/// itself is in Storage at news/{id}/{part}.json.
 nonisolated struct NewsStory: Decodable, Identifiable, Equatable {
     var id = ""
     var sourceId: String
@@ -470,8 +472,17 @@ nonisolated struct NewsStory: Decodable, Identifiable, Equatable {
     var publishedAt: Date
     var modules: [String]
     var whyItMatters: WhyItMatters?
+    /// Subscriber-only at the publisher: shown with a lock, opened in Safari.
+    var paywalled: Bool?
+    var reader: Reader?
 
     var link: URL? { URL(string: url) }
+
+    nonisolated struct Reader: Decodable, Equatable {
+        /// "article", or a judgment's "summary" then "judgment".
+        var parts: [String]
+        var minutes: Int
+    }
 
     nonisolated struct WhyItMatters: Decodable, Equatable {
         var text: String
@@ -481,7 +492,7 @@ nonisolated struct NewsStory: Decodable, Identifiable, Equatable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case sourceId, source, title, url, publishedAt, modules, whyItMatters
+        case sourceId, source, title, url, publishedAt, modules, whyItMatters, paywalled, reader
     }
 }
 

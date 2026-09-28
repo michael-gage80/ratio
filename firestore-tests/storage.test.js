@@ -1,4 +1,4 @@
-// Storage rules: Pencil notes. Run against the emulator:
+// Storage rules: Pencil notes and the news reader. Run against the emulator:
 //   firebase emulators:exec --only firestore,database,storage "npm --prefix firestore-tests test"
 import { readFileSync } from 'node:fs';
 import { after, before, describe, test } from 'node:test';
@@ -30,5 +30,16 @@ describe('Pencil notes', () => {
   test('only drawing files of the right type', async () => {
     await assertFails(uploadBytes(ref(storage('amara'), 'notes/amara/crime-03/notes.txt'), drawing, meta));
     await assertFails(uploadBytes(ref(storage('amara'), 'notes/amara/crime-03/2.drawing'), drawing, { contentType: 'image/png' }));
+  });
+});
+
+describe('News reader text', () => {
+  test('any signed-in student can read it; no client can write it', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await uploadBytes(ref(ctx.storage(), 'news/abc123/article.json'), new TextEncoder().encode('{}'), { contentType: 'application/json' });
+    });
+    await assertSucceeds(getBytes(ref(storage('amara'), 'news/abc123/article.json')));
+    await assertFails(getBytes(ref(env.unauthenticatedContext().storage(), 'news/abc123/article.json')));
+    await assertFails(uploadBytes(ref(storage('amara'), 'news/abc123/article.json'), new TextEncoder().encode('{}'), { contentType: 'application/json' }));
   });
 });

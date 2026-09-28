@@ -1,11 +1,26 @@
 // The legal awareness centre's feed (PRD: "Legal awareness centre"). Headlines, sources,
-// dates and links only — never article text — pulled from RSS and Atom, filtered to UK
-// law, deduplicated across sources, and tagged by module.
+// dates and links, pulled from RSS and Atom, filtered to UK law, deduplicated across
+// sources, and tagged by module. Article text is kept only for sources whose full-text
+// switch is on (article.ts, reader.ts): official sources under open licences, and a
+// publisher only once they've given permission (config/news, set with admin.mjs).
 //
 // Each source's terms must be checked before launch (PRD); a source whose terms forbid
 // this use is dropped from SOURCES.
 
 import { XMLParser } from "fast-xml-parser";
+
+/** How a source's text is read in the app (reader.ts). */
+export type Extractor =
+  /** Find Case Law's Akoma Ntoso: the court's press summary, then the judgment. */
+  | "uksc"
+  /** legislation.gov.uk: the Act's explanatory notes (overview), once published. */
+  | "legislation"
+  /** The Bills API: long title, stage and summary. */
+  | "bills"
+  /** The feed item's own HTML (content:encoded). */
+  | "feed"
+  /** The publisher's page, through Readability. */
+  | "page";
 
 export interface Source {
   id: string;
@@ -15,18 +30,55 @@ export interface Source {
   allLegal: boolean;
   /** Links under these paths are dropped (e.g. non-UK sections). */
   excludePaths?: string[];
+  extractor: Extractor;
+  /**
+   * Whether article text may be stored and shown in Ratio before config/news says
+   * otherwise: only for open licences. Publishers stay off until they've agreed.
+   */
+  fullText: boolean;
+  /** The attribution the licence asks for, shown under the article. */
+  licence?: string;
+  /** "always": every article is subscriber-only; "check": look at each page for paywall markup. */
+  paywall: "always" | "check" | "never";
+  /** At most this many new items a day (high-volume feeds), most module matches first. */
+  perDay?: number;
+  /** Only items that tag a module (every bill's title says "Bill", so the legal filter can't tell). */
+  requireModule?: boolean;
+  /** A Google News search feed: titles end " - Publisher", links go via Google. */
+  googleNews?: boolean;
+  /** A WordPress REST API listing (JSON) rather than RSS or Atom. */
+  wordpress?: boolean;
 }
 
+const OGL = "Contains public sector information licensed under the Open Government Licence v3.0.";
+const OPL = "Contains Parliamentary information licensed under the Open Parliament Licence v3.0.";
+const OJL = "Contains public sector information licensed under the Open Justice Licence v1.0. © Crown copyright.";
+const lawcom = (type: string) => `https://lawcom.gov.uk/wp-json/wp/v2/${type}?per_page=20&_fields=date_gmt,link,title,content`;
+const googleNews = (query: string) => `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=en-GB&gl=GB&ceid=GB:en`;
+
 export const SOURCES: Source[] = [
-  { id: "uksc", name: "UK Supreme Court", url: "https://caselaw.nationalarchives.gov.uk/uksc/atom.xml", allLegal: true },
-  { id: "gazette-top", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13505.rss", allLegal: true },
-  { id: "gazette", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13506.rss", allLegal: true },
-  { id: "legalcheek", name: "Legal Cheek", url: "https://www.legalcheek.com/feed/", allLegal: true },
+  { id: "uksc", name: "UK Supreme Court", url: "https://caselaw.nationalarchives.gov.uk/uksc/atom.xml", allLegal: true, extractor: "uksc", fullText: true, licence: OJL, paywall: "never" },
+  // The Law Commission's site has no working feed; its WordPress API lists news and publications with their text.
+  { id: "lawcom", name: "Law Commission", url: lawcom("news"), allLegal: true, extractor: "feed", fullText: true, licence: OGL, paywall: "never", wordpress: true },
+  { id: "lawcom-publications", name: "Law Commission", url: lawcom("publication"), allLegal: true, extractor: "feed", fullText: true, licence: OGL, paywall: "never", wordpress: true },
+  { id: "acts", name: "New Acts", url: "https://www.legislation.gov.uk/ukpga/data.feed", allLegal: true, extractor: "legislation", fullText: true, licence: OGL, paywall: "never" },
+  { id: "commonslibrary", name: "Commons Library", url: "https://commonslibrary.parliament.uk/feed/", allLegal: false, extractor: "feed", fullText: true, licence: OPL, paywall: "never" },
+  { id: "lordslibrary", name: "Lords Library", url: "https://lordslibrary.parliament.uk/feed/", allLegal: false, extractor: "feed", fullText: true, licence: OPL, paywall: "never" },
+  { id: "bills", name: "UK Parliament", url: "https://bills.parliament.uk/rss/allbills.rss", allLegal: false, extractor: "bills", fullText: true, licence: OPL, paywall: "never", perDay: 3, requireModule: true },
+  { id: "gazette-top", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13505.rss", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
+  { id: "gazette", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13506.rss", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
+  { id: "legalcheek", name: "Legal Cheek", url: "https://www.legalcheek.com/feed/", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
+  { id: "legalfutures", name: "Legal Futures", url: "https://www.legalfutures.co.uk/feed", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
   {
-    id: "guardian", name: "The Guardian", url: "https://www.theguardian.com/law/rss", allLegal: true,
+    id: "guardian", name: "The Guardian", url: "https://www.theguardian.com/law/rss", allLegal: true, extractor: "page", fullText: false, paywall: "never",
     excludePaths: ["/us-news/", "/australia-news/", "/world/", "/global-development/"],
   },
-  { id: "bbc", name: "BBC News", url: "https://feeds.bbci.co.uk/news/uk/rss.xml", allLegal: false },
+  { id: "bbc", name: "BBC News", url: "https://feeds.bbci.co.uk/news/uk/rss.xml", allLegal: false, extractor: "page", fullText: false, paywall: "never" },
+  // No public feeds: Google News searches of each site, headlines only.
+  { id: "times", name: "The Times", url: googleNews("site:thetimes.com/uk/law when:7d"), allLegal: false, extractor: "page", fullText: false, paywall: "always", perDay: 4, googleNews: true },
+  { id: "ft", name: "Financial Times", url: googleNews("site:ft.com legal when:7d"), allLegal: false, extractor: "page", fullText: false, paywall: "always", perDay: 4, googleNews: true },
+  { id: "law360", name: "Law360 UK", url: googleNews("site:law360.co.uk when:7d"), allLegal: true, extractor: "page", fullText: false, paywall: "always", perDay: 4, googleNews: true },
+  { id: "solicitorsjournal", name: "Solicitors Journal", url: googleNews("site:solicitorsjournal.com when:7d"), allLegal: true, extractor: "page", fullText: false, paywall: "never", perDay: 4, googleNews: true },
 ];
 
 export interface NewsItem {
@@ -35,6 +87,8 @@ export interface NewsItem {
   title: string;
   url: string;
   publishedAt: Date;
+  /** The item's own HTML, kept only for "feed" sources (the Commons and Lords Libraries). */
+  html?: string;
 }
 
 const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@", textNodeName: "#text" });
@@ -53,23 +107,54 @@ const decode = (s: string) =>
 
 const list = <T>(value: T | T[] | undefined): T[] => (value === undefined ? [] : Array.isArray(value) ? value : [value]);
 
-/** Items from an RSS 2.0 or Atom document. Anything without a title, link or date is skipped. */
+/** Items from an RSS 2.0 or Atom document (or a WordPress REST listing). Anything without a title, link or date is skipped. */
 export function parseFeed(xml: string, source: Source): NewsItem[] {
+  if (source.wordpress) return clean(parseWordPress(xml), source);
   const doc = parser.parse(xml);
-  const raw: { title: string; url: string; date: string }[] = doc.rss
-    ? list(doc.rss.channel?.item).map((item: Record<string, unknown>) => ({
-      title: text(item.title), url: text(item.link), date: text(item.pubDate) || text(item["dc:date"]),
-    }))
+  const raw: { title: string; url: string; date: string; html?: string }[] = doc.rss
+    ? list(doc.rss.channel?.item).map((item: Record<string, unknown>) => {
+      // Parliament's bills feed dates items with <a10:updated> and gives the stage as an attribute.
+      const stage = text(item["@p4:stage"]);
+      return {
+        title: stage ? `${text(item.title)} · ${stage}` : text(item.title),
+        url: text(item.link),
+        date: text(item.pubDate) || text(item["dc:date"]) || text(item["a10:updated"]),
+        ...(source.extractor === "feed" ? { html: text(item["content:encoded"]) } : {}),
+      };
+    })
     : list(doc.feed?.entry).map((entry: Record<string, unknown>) => {
       const links = list(entry.link as Record<string, string> | Record<string, string>[]);
       const link = links.find((l) => !l["@type"] && (l["@rel"] ?? "alternate") === "alternate") ?? links[0];
       return { title: text(entry.title), url: link?.["@href"] ?? "", date: text(entry.published) || text(entry.updated) };
     });
+  return clean(raw, source);
+}
+
+function parseWordPress(json: string): { title: string; url: string; date: string; html?: string }[] {
+  try {
+    const posts = JSON.parse(json) as { date_gmt?: string; link?: string; title?: { rendered?: string }; content?: { rendered?: string } }[];
+    return posts.map((p) => ({ title: p.title?.rendered ?? "", url: p.link ?? "", date: p.date_gmt ? `${p.date_gmt}Z` : "", html: p.content?.rendered }));
+  } catch {
+    return [];
+  }
+}
+
+function clean(raw: { title: string; url: string; date: string; html?: string }[], source: Source): NewsItem[] {
   return raw
-    .map((r) => ({ sourceId: source.id, source: source.name, title: decode(r.title), url: r.url.trim(), publishedAt: new Date(r.date) }))
+    .map((r) => ({
+      sourceId: source.id,
+      source: source.name,
+      title: source.googleNews ? decode(r.title).replace(/\s+[-–]\s+[^-–]+$/, "") : decode(r.title),
+      url: r.url.trim().replace(/^http:\/\/(www\.)?legislation\.gov\.uk/, "https://www.legislation.gov.uk"),
+      publishedAt: new Date(r.date),
+      ...(r.html ? { html: r.html } : {}),
+    }))
     .filter((i) => i.title && /^https:\/\//.test(i.url) && !Number.isNaN(i.publishedAt.getTime()))
+    // Section fronts in site searches ("Latest Legal News"), not stories.
+    .filter((i) => !source.googleNews || i.title.split(/\s+/).length >= 4)
     .filter((i) => !source.excludePaths?.some((path) => i.url.includes(path)))
-    .filter((i) => source.allLegal || isLegal(i.title));
+    .filter((i) => source.allLegal || isLegal(i.title))
+    .filter((i) => !source.requireModule || modulesFor(i.title).length > 0);
 }
 
 /** For general news feeds: headlines about courts, law and the legal system. */
