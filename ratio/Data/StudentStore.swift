@@ -40,9 +40,9 @@ final class StudentStore {
     private(set) var quiz: SundayQuiz?
     /// Duels started today, for the free plan's allowance (kept by Functions).
     private(set) var duelsToday = 0
-    /// Everyone has Plus during the beta — config/app.plusForEveryone, off at launch
-    /// (same default as functions/src/entitlement.ts).
-    private(set) var plusForEveryone = true
+    /// Everyone has Plus during the beta — config/app.plusForEveryone. Off unless the
+    /// document says true (same default as functions/src/entitlement.ts).
+    private(set) var plusForEveryone = false
 
     /// Students with the app open, counted every five minutes (functions/src/online.ts).
     private(set) var online: Int?
@@ -177,7 +177,7 @@ final class StudentStore {
                 },
             Firestore.firestore().collection("config").document("app").addSnapshotListener { [weak self] snapshot, _ in
                 guard let snapshot else { return }
-                self?.plusForEveryone = snapshot.data()?["plusForEveryone"] as? Bool ?? true
+                self?.plusForEveryone = snapshot.data()?["plusForEveryone"] as? Bool ?? false
             },
             user.collection("usage").document(UKDate.key()).addSnapshotListener { [weak self] snapshot, _ in
                 self?.duelsToday = snapshot?.data()?["duels"] as? Int ?? 0

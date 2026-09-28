@@ -528,6 +528,10 @@ struct SettingsView: View {
     }
 
     private func deleteAccount() async {
+        guard await session.revokeAppleSignInIfUsed() else {
+            message = "Your account hasn't been deleted. Confirm with Apple to delete it."
+            return
+        }
         do {
             _ = try await Functions.functions(region: "europe-west2").httpsCallable("deleteAccount").call()
             session.signOut()

@@ -238,7 +238,28 @@ enum DuelService {
 
     private nonisolated struct SubmitRequest: Encodable {
         let matchId: String
-        let answers: [DuelAnswer]
+    }
+
+    private nonisolated struct PlayRequest: Encodable {
+        let matchId: String
+        let answered: Bool
+        let answerIndex: Int?
+        let timeMs: Int?
+    }
+
+    /// What `playSparring` returns for one step of a rated sparring match.
+    nonisolated struct SparringStep: Decodable {
+        nonisolated struct Revealed: Decodable {
+            let questionIndex: Int
+            let correctIndex: Int
+            let why: String
+            let them: DuelAnswer
+            let winner: Int?
+        }
+
+        let revealed: Revealed?
+        let next: Int?
+        let result: SparringResult?
     }
 
     private static var functions: Functions { Functions.functions(region: "europe-west2") }
@@ -248,9 +269,16 @@ enum DuelService {
             .call(StartRequest(moduleId: scope.id, level: level, seconds: seconds, tutorial: tutorial))
     }
 
-    static func submitSparring(matchId: String, answers: [DuelAnswer]) async throws -> SparringResult {
+    /// Settles a rated sparring match from what the server recorded.
+    static func submitSparring(matchId: String) async throws -> SparringResult {
         try await functions.httpsCallable("submitSparring", requestAs: SubmitRequest.self, responseAs: SparringResult.self)
-            .call(SubmitRequest(matchId: matchId, answers: answers))
+            .call(SubmitRequest(matchId: matchId))
+    }
+
+    /// Answers the round on screen (nil to be served the first round) and gets the reveal.
+    static func playSparring(matchId: String, answer: DuelAnswer?) async throws -> SparringStep {
+        try await functions.httpsCallable("playSparring", requestAs: PlayRequest.self, responseAs: SparringStep.self)
+            .call(PlayRequest(matchId: matchId, answered: answer != nil, answerIndex: answer?.answerIndex, timeMs: answer?.timeMs))
     }
 }
 

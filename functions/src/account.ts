@@ -3,6 +3,7 @@
 // daily duel allowance; and push notifications for challenges.
 
 import { getAuth } from "firebase-admin/auth";
+import { getDatabase } from "firebase-admin/database";
 import { FieldValue, getFirestore, Timestamp } from "firebase-admin/firestore";
 import { getMessaging } from "firebase-admin/messaging";
 import { getStorage } from "firebase-admin/storage";
@@ -31,10 +32,14 @@ export const exportData = onCall(async (request) => {
     const snapshot = await db.collection(`users/${uid}/${name}`).get();
     collections[name] = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }));
   }
-  const [ratings, matches] = await Promise.all([
+  const [ratings, matches, challenges, subscriptions] = await Promise.all([
     db.collection("ratings").where("uid", "==", uid).get(),
     db.collection("matches").where("players", "array-contains", uid).get(),
+    db.collection("challenges").where("players", "array-contains", uid).get(),
+    db.collection("subscriptions").where("uid", "==", uid).get(),
   ]);
+  const code = user.get("licence.code") as string | undefined;
+  const seat = code ? await db.doc(`licences/${code}/students/${uid}`).get() : undefined;
   // Pencil notes: each drawing (PencilKit data, base64) with the part it belongs to.
   const [files] = await getStorage().bucket().getFiles({ prefix: `notes/${uid}/` }).catch(() => [[]] as [never[]]);
   const noteDrawings = await Promise.all(files.map(async (file) => ({
@@ -49,6 +54,9 @@ export const exportData = onCall(async (request) => {
     ...collections,
     ratings: ratings.docs.map((d) => ({ id: d.id, ...d.data() })),
     matches: matches.docs.map((d) => ({ id: d.id, ...d.data() })),
+    challenges: challenges.docs.map((d) => ({ id: d.id, ...d.data() })),
+    subscriptions: subscriptions.docs.map((d) => ({ originalTransactionId: d.id, ...d.data() })),
+    licenceSeat: seat?.exists ? { code, ...seat.data() } : null,
   }, (_, value) => (value instanceof Timestamp ? value.toDate().toISOString() : value), 2);
   return { json };
 });
@@ -71,23 +79,51 @@ export const resetProgress = onCall<{ keepNotes?: boolean }>(async (request) => 
 
 /**
  * Deletes the account (PRD: "delete account in the app"). Removes the student's data,
- * ratings, board entries and photo, anonymises their name in opponents' match history,
- * and deletes the sign-in. Runs at once, well inside the 30 days the PRD allows.
+ * ratings, board entries, photo and notes; frees their university licence seat and
+ * unlinks their App Store subscription (so it can be restored on another account);
+ * withdraws open challenges and anonymises their name in opponents' match and challenge
+ * history; and deletes the sign-in. Runs at once, well inside the 30 days the PRD allows.
+ * The app revokes a Sign in with Apple token first (Apple requires it).
  */
 export const deleteAccount = onCall(async (request) => {
   const uid = requireAuth(request.auth?.uid);
   const db = getFirestore();
+  const code = (await db.doc(`users/${uid}`).get()).get("licence.code") as string | undefined;
+  if (code) {
+    const licenceRef = db.doc(`licences/${code}`);
+    await db.runTransaction(async (tx) => {
+      const seat = await tx.get(licenceRef.collection("students").doc(uid));
+      if (!seat.exists) return;
+      tx.delete(seat.ref);
+      tx.update(licenceRef, { used: FieldValue.increment(-1) });
+    }).catch((error) => logger.warn("Couldn't free licence seat", { uid, code, error: String(error) }));
+  }
   await db.recursiveDelete(db.doc(`users/${uid}`));
-  const [ratings, entries, matches] = await Promise.all([
+  const [ratings, entries, matches, challenges, subscriptions] = await Promise.all([
     db.collection("ratings").where("uid", "==", uid).get(),
     db.collectionGroup("entries").where("uid", "==", uid).get(),
     db.collection("matches").where("players", "array-contains", uid).get(),
+    db.collection("challenges").where("players", "array-contains", uid).get(),
+    db.collection("subscriptions").where("uid", "==", uid).get(),
   ]);
   const writer = db.bulkWriter();
   ratings.docs.forEach((d) => writer.delete(d.ref));
   entries.docs.forEach((d) => writer.delete(d.ref));
+  subscriptions.docs.forEach((d) => writer.delete(d.ref));
   matches.docs.forEach((d) => writer.update(d.ref, { [`names.${uid}`]: "Deleted student" }));
+  challenges.docs.forEach((d) => {
+    const secret = db.doc(`challengeSecrets/${d.id}`);
+    if (d.get("status") === "open") {
+      writer.delete(d.ref);
+      writer.delete(secret);
+    } else {
+      writer.update(d.ref, { [`names.${uid}`]: "Deleted student", [`initials.${uid}`]: "D" });
+      writer.update(secret, { [`answers.${uid}`]: FieldValue.delete(), [`servedAt.${uid}`]: FieldValue.delete() }).catch(() => undefined);
+    }
+  });
+  writer.delete(db.doc(`matchQueue/${uid}`));
   await writer.close();
+  await getDatabase().ref(`online/${uid}`).remove().catch(() => undefined);
   await getStorage().bucket().deleteFiles({ prefix: `avatars/${uid}/` }).catch(() => undefined);
   await getStorage().bucket().deleteFiles({ prefix: `notes/${uid}/` }).catch(() => undefined);
   await getAuth().deleteUser(uid);

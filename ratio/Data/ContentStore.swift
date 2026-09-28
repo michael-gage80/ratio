@@ -107,8 +107,9 @@ final class ContentStore {
     private static func loadBundled() -> [Module: ModuleContent] {
         let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil) ?? []
         let lessons = urls
-            // Only real lesson files: iCloud leaves "name 2.json" copies in synced folders.
-            .filter { $0.lastPathComponent.wholeMatch(of: /[a-z]+-\d{2}-[a-z0-9-]+\.json/) != nil }
+            // Only real lesson files ("crime-03-…", "sqe1-ls-12-…"), matching the publisher in
+            // functions/src/content.ts: iCloud leaves "name 2.json" copies in synced folders.
+            .filter { $0.lastPathComponent.wholeMatch(of: /[a-z0-9]+(-[a-z]+)?-\d{2}-[a-z0-9-]+\.json/) != nil }
             .compactMap { url -> Lesson? in
                 do {
                     return try JSONDecoder().decode(Lesson.self, from: Data(contentsOf: url))

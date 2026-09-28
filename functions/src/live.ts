@@ -115,14 +115,25 @@ function finish(state: LiveState, winner: number | null, forfeitedBy: number | n
 }
 
 /**
+ * How much faster than the server's own measurement a device's time may be: enough
+ * for ordinary network lag, not enough to buy a point. A modified app claiming a much
+ * faster answer just gets the server's time.
+ */
+export const CLAIM_SLACK_MS = 1000;
+
+/**
  * The device's measured time is trusted within what the server saw: never longer than
- * the time since the question went out (plus a little clock slack), and never so much
- * shorter that the answer must have been sent late. Otherwise the server's own
- * elapsed time is used.
+ * the time since the question went out (plus a little clock slack), and never more
+ * than `CLAIM_SLACK_MS` shorter. Otherwise the server's own elapsed time is used.
  */
 export function checkedTime(claimedMs: number, serverElapsedMs: number): number {
-  const plausible = claimedMs >= MIN_ANSWER_MS && claimedMs <= serverElapsedMs + 500 && claimedMs >= serverElapsedMs - 4000;
+  const plausible = claimedMs >= MIN_ANSWER_MS && claimedMs <= serverElapsedMs + 500 && claimedMs >= serverElapsedMs - CLAIM_SLACK_MS;
   return Math.round(plausible ? claimedMs : serverElapsedMs);
+}
+
+/** A claim far faster than the server saw: worth logging for review. */
+export function isSuspicious(claimedMs: number, serverElapsedMs: number): boolean {
+  return claimedMs < serverElapsedMs - CLAIM_SLACK_MS * 2;
 }
 
 export type AnswerOutcome = "recorded" | "resolved" | "ignored";
@@ -153,6 +164,11 @@ function resolve(state: LiveState, now: number): LiveState {
   const pending = state.pending;
   const none: Answer = { answerIndex: null, timeMs: state.limitMs };
   const answers: [Answer, Answer] = [strip(pending[0]) ?? none, strip(pending[1]) ?? none];
+  // A dead heat on time goes to whichever answer reached the server first.
+  if (pending[0] && pending[1] && answers[0].timeMs === answers[1].timeMs && pending[0].at !== pending[1].at) {
+    const later = pending[0].at > pending[1].at ? 0 : 1;
+    answers[later] = { ...answers[later], timeMs: answers[later].timeMs + 1 };
+  }
   const winner = resolveRound(question, answers, state.limitMs);
   const score: [number, number] = [...state.score];
   if (winner !== null) score[winner] += 1;

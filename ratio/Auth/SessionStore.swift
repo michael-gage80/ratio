@@ -2,6 +2,7 @@ import AuthenticationServices
 import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
+import OSLog
 import UIKit
 
 /// The single source of truth for who is signed in. Wraps Firebase Auth's state
@@ -53,6 +54,31 @@ final class SessionStore {
             let credential = OAuthProvider.appleCredential(withIDToken: idToken, rawNonce: nonce, fullName: apple.fullName)
             try await Auth.auth().signIn(with: credential)
         }
+    }
+
+    /// Before deleting the account, Apple requires the app to revoke its Sign in with
+    /// Apple token. That needs a fresh authorisation code, so the student confirms with
+    /// Apple once more. Returns false if they cancel; other failures (a network error, or
+    /// the Apple key missing from the Firebase console) are logged and don't block the
+    /// deletion, which removes the Firebase account either way.
+    func revokeAppleSignInIfUsed() async -> Bool {
+        guard let user = Auth.auth().currentUser,
+              user.providerData.contains(where: { $0.providerID == "apple.com" }) else { return true }
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = []
+        do {
+            let credential = try await AppleReauthorization().perform(request)
+            guard let data = credential.authorizationCode, let code = String(data: data, encoding: .utf8) else {
+                throw SessionError.missingCredential
+            }
+            try await Auth.auth().revokeToken(withAuthorizationCode: code)
+        } catch ASAuthorizationError.canceled {
+            return false
+        } catch {
+            Logger(subsystem: "com.mg.ratio", category: "SessionStore")
+                .error("Apple token revocation failed: \(error.localizedDescription, privacy: .public)")
+        }
+        return true
     }
 
     // MARK: Google
@@ -183,5 +209,41 @@ private extension UIApplication {
             top = presented
         }
         return top
+    }
+}
+
+/// One Sign in with Apple request outside SwiftUI's SignInWithAppleButton, awaited.
+private final class AppleReauthorization: NSObject, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    private var continuation: CheckedContinuation<ASAuthorizationAppleIDCredential, Error>?
+
+    func perform(_ request: ASAuthorizationAppleIDRequest) async throws -> ASAuthorizationAppleIDCredential {
+        try await withCheckedThrowingContinuation { continuation in
+            self.continuation = continuation
+            let controller = ASAuthorizationController(authorizationRequests: [request])
+            controller.delegate = self
+            controller.presentationContextProvider = self
+            controller.performRequests()
+        }
+    }
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            continuation?.resume(returning: credential)
+        } else {
+            continuation?.resume(throwing: SessionError.missingCredential)
+        }
+        continuation = nil
+    }
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        continuation?.resume(throwing: error)
+        continuation = nil
+    }
+
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        // Only asked while Settings is on screen, so there is always a window scene.
+        let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+        let windows = scenes.flatMap(\.windows)
+        return windows.first(where: \.isKeyWindow) ?? windows.first ?? ASPresentationAnchor(windowScene: scenes[0])
     }
 }

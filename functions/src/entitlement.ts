@@ -5,11 +5,12 @@
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
 
 /**
- * During the beta everyone has Plus, so testers can use every module. config/app
- * .plusForEveryone overrides this (set it to false in the Firebase console at launch);
- * the app reads the same document.
+ * During the beta everyone has Plus, so testers can use every module: set
+ * config/app.plusForEveryone to true in the Firebase console. Missing or unreadable, it
+ * counts as off, so a lost or mistyped setting never gives Plus away. The app reads the
+ * same document.
  */
-export const BETA_PLUS_FOR_EVERYONE = true;
+export const BETA_PLUS_FOR_EVERYONE = false;
 let cached: { value: boolean; at: number } | undefined;
 
 export async function everyoneHasPlus(): Promise<boolean> {

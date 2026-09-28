@@ -1,7 +1,9 @@
 import Foundation
 
-/// One sparring match (or the tutorial) from start to judgment. Rounds are revealed
-/// locally with `DuelRules`; the finished match is refereed by `submitSparring`.
+/// One sparring match (or the tutorial) from start to judgment. A rated match is played
+/// round by round through `playSparring`, which times and reveals each answer on the
+/// server (the phone never holds the answers); the unrated tutorial is revealed locally
+/// with `DuelRules`.
 @Observable
 final class DuelMatchModel: DuelRoundModel {
     enum Phase: Equatable {
@@ -30,6 +32,8 @@ final class DuelMatchModel: DuelRoundModel {
     @ObservationIgnored private var regularPlayed = 0
     @ObservationIgnored private var finalPlayed = false
     @ObservationIgnored private var clock: Task<Void, Never>?
+    /// The server's settlement, once the last round is played.
+    @ObservationIgnored private var settled: SparringResult?
 
     init(scope: DuelScope, level: Int, seconds: Int, isTutorial: Bool) {
         self.scope = scope
@@ -82,6 +86,16 @@ final class DuelMatchModel: DuelRoundModel {
     func begin() {
         if phase == .coaching {
             startClock()
+        } else if let matchId = match?.matchId {
+            // The server serves (and times) the first round.
+            Task {
+                do {
+                    _ = try await DuelService.playSparring(matchId: matchId, answer: nil)
+                    nextRound()
+                } catch {
+                    phase = .submitFailed
+                }
+            }
         } else {
             nextRound()
         }
@@ -109,9 +123,15 @@ final class DuelMatchModel: DuelRoundModel {
             phase = .finished // The tutorial isn't refereed or rated.
             return
         }
+        if let settled {
+            result = settled
+            phase = .finished
+            ActivityRepository.markToday()
+            return
+        }
         phase = .submitting
         do {
-            result = try await DuelService.submitSparring(matchId: matchId, answers: played.map(\.you))
+            result = try await DuelService.submitSparring(matchId: matchId)
             phase = .finished
             ActivityRepository.markToday()
         } catch {
@@ -160,9 +180,13 @@ final class DuelMatchModel: DuelRoundModel {
     }
 
     private func endRound(with answer: DuelAnswer) {
-        guard phase == .playing, let match, let current else { return }
+        guard phase == .playing, yourAnswer == nil, let match, let current else { return }
         clock?.cancel()
         yourAnswer = answer
+        if let matchId = match.matchId {
+            reveal(answer, matchId: matchId)
+            return
+        }
         let them = match.plan[safe: current] ?? DuelAnswer(answerIndex: nil, timeMs: limitMs)
         let winner = DuelRules.winner(of: match.questions[current], you: answer, them: them, limitMs: limitMs)
         if let winner { score[winner] += 1 }
@@ -172,6 +196,32 @@ final class DuelMatchModel: DuelRoundModel {
             try? await Task.sleep(for: .seconds(2.4))
             guard !Task.isCancelled else { return }
             self?.nextRound()
+        }
+    }
+
+    /// Rated: the server marks the answer and reveals the round (its answer, the
+    /// partner's, and who took the point).
+    private func reveal(_ answer: DuelAnswer, matchId: String) {
+        Task { [weak self] in
+            guard let self else { return }
+            do {
+                let step = try await DuelService.playSparring(matchId: matchId, answer: answer)
+                settled = step.result
+                if let revealed = step.revealed {
+                    match?.questions[revealed.questionIndex].correctIndex = revealed.correctIndex
+                    match?.questions[revealed.questionIndex].why = revealed.why
+                    if let winner = revealed.winner { score[winner] += 1 }
+                    played.append(DuelPlayed(questionIndex: revealed.questionIndex, you: answer, them: revealed.them, winner: revealed.winner))
+                }
+                phase = .revealing
+                clock = Task { [weak self] in
+                    try? await Task.sleep(for: .seconds(2.4))
+                    guard !Task.isCancelled else { return }
+                    self?.nextRound()
+                }
+            } catch {
+                phase = .submitFailed
+            }
         }
     }
 }
