@@ -73,6 +73,8 @@ final class AppNavigator {
 enum Route: Hashable {
     case brief
     case news
+    /// A story in the news reader.
+    case newsStory(String)
     case notifications
     case library
     case libraryEntry(String)
@@ -267,6 +269,8 @@ struct RouteDestination: View {
             BriefStepView()
         case .news:
             NewsCentreView()
+        case .newsStory(let id):
+            NewsReaderView(storyId: id)
         case .notifications:
             NotificationsView()
         case .library:

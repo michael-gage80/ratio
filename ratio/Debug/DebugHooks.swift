@@ -67,6 +67,10 @@ enum DebugHooks {
         case "module": navigator.tab = .me; navigator.mePath = [.module(.crime)]
         case "notifications": navigator.todayPath = [.notifications]
         case "news": navigator.todayPath = [.news]
+        // "-screen news-story <storyId>": the reader for one story.
+        case "news-story":
+            let id = arguments.firstIndex(of: "news-story").flatMap { arguments.indices.contains($0 + 1) ? arguments[$0 + 1] : nil } ?? ""
+            navigator.todayPath = [.news, .newsStory(id)]
         case "brief": navigator.todayPath = [.brief]
         case "paywall": navigator.paywall = "Contract is part of Ratio Plus."
         default: break
