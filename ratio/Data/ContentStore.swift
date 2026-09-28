@@ -53,8 +53,12 @@ final class ContentStore {
         modules.values.lazy.flatMap(\.lessons).first { $0.id == id }
     }
 
-    /// A test item and its lesson, for brief steps that draw items from anywhere.
+    /// A test item and its lesson, for brief steps that draw items from anywhere —
+    /// including case recalls from Case of the week, built from the case card.
     func testItem(id: String) -> (item: Item, lesson: Lesson)? {
+        if let found = caseCard(itemId: id) {
+            return (Item(caseRecall: found.card, id: id, topicId: found.lesson.topicId), found.lesson)
+        }
         for lesson in modules.values.lazy.flatMap(\.lessons) {
             if let item = lesson.testPool.first(where: { $0.id == id }) { return (item, lesson) }
         }

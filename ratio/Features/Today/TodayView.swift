@@ -33,7 +33,7 @@ struct TodayView: View {
                 Group {
                     if width.isCompact {
                         VStack(alignment: .leading, spacing: RatioSpace.s) {
-                            header.padding(.bottom, RatioSpace.xs)
+                            header
                             briefCard.tourAnchor(.brief)
                             blocks
                         }
@@ -47,7 +47,10 @@ struct TodayView: View {
                         }
                     }
                 }
-                .padding(RatioSpace.m)
+                // iPhone: the date row sits just under the status bar, with no dead space above it.
+                .padding(.horizontal, RatioSpace.m)
+                .padding(.top, width.isCompact ? RatioSpace.xs : RatioSpace.m)
+                .padding(.bottom, RatioSpace.m)
             }
             .onChange(of: tourStop) { _, stop in
                 guard let stop else { return }
@@ -95,11 +98,15 @@ struct TodayView: View {
             await student.ensureBrief()
             if !tourSeen { tourStop = .brief }
         }
+        .task(id: CaseOfWeek.weekKey()) { await student.ensureCaseOfWeek() }
         .onChange(of: tourSeen) { _, seen in
             if !seen { tourStop = .brief } // Replayed from Settings.
         }
         .onChange(of: scenePhase) { _, phase in
-            if phase == .active { Task { await student.ensureBrief() } }
+            if phase == .active {
+                Task { await student.ensureBrief() }
+                Task { await student.ensureCaseOfWeek() }
+            }
         }
     }
 
@@ -205,6 +212,7 @@ struct TodayView: View {
             case .continueLearning: ContinueLearningCard()
             case .duel: duelCard.tourAnchor(.more)
             case .streak: streakCard.tourAnchor(.streak)
+            case .caseOfWeek: CaseOfWeekCard()
             case .boards: boardsCard
             case .news: newsCard
             }

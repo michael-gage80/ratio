@@ -46,6 +46,9 @@ public extension Color {
     static let ratioForest = Color("Forest", bundle: .main)
     /// The Duel block on Today, with `ratioOnInk` text: ink, deep oxblood in dark (#1D1B18 · dark #9B2A24).
     static let ratioDuelBlock = Color("DuelBlock", bundle: .main)
+    /// The Case of the week block on Today, with `ratioOnInk` text: oxblood, a deeper
+    /// claret in dark mode so it stays distinct from the Duel block (#9B2A24 · dark #5A1D1A).
+    static let ratioCaseBlock = Color("CaseBlock", bundle: .main)
 
     /// Text field / input boundary (#8C857A both appearances — meets the 3:1 WCAG
     /// 1.4.11 non-text contrast requirement against both paper surfaces).
