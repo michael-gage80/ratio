@@ -54,7 +54,7 @@ final class ContentStore {
     }
 
     /// A test item and its lesson, for brief steps that draw items from anywhere —
-    /// including case recalls from Case of the week, built from the case card.
+    /// including case recalls from Case of the day, built from the case card.
     func testItem(id: String) -> (item: Item, lesson: Lesson)? {
         if let found = caseCard(itemId: id) {
             return (Item(caseRecall: found.card, id: id, topicId: found.lesson.topicId), found.lesson)

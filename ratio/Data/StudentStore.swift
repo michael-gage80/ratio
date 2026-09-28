@@ -50,10 +50,11 @@ final class StudentStore {
     @ObservationIgnored private var onlineHandle: DatabaseHandle?
     @ObservationIgnored private var briefListener: ListenerRegistration?
     @ObservationIgnored private var briefDate: String?
-    /// This week's Case of the week (users/{uid}/caseWeeks/{monday}); nil until chosen.
-    private(set) var caseWeek: CaseWeek?
-    @ObservationIgnored private var caseWeekListener: ListenerRegistration?
-    @ObservationIgnored private var caseWeekKey: String?
+    /// Case of the day for today and the next six days (users/{uid}/caseDays/{date}),
+    /// chosen a week ahead so the reminder can name each day's case.
+    private(set) var caseDays: [CaseDay] = []
+    @ObservationIgnored private var caseDaysListener: ListenerRegistration?
+    @ObservationIgnored private var caseDaysFrom: String?
 
     init(uid: String, profile: UserProfile) {
         self.uid = uid
@@ -225,9 +226,9 @@ final class StudentStore {
         briefListener?.remove()
         briefListener = nil
         briefDate = nil
-        caseWeekListener?.remove()
-        caseWeekListener = nil
-        caseWeekKey = nil
+        caseDaysListener?.remove()
+        caseDaysListener = nil
+        caseDaysFrom = nil
     }
 
     /// Follows today's brief document, switching over when the UK date changes.
@@ -259,40 +260,53 @@ final class StudentStore {
         if let built = response.brief { brief = built } else { briefUnavailable = true }
     }
 
-    // MARK: Case of the week (functions/src/caseOfWeek.ts)
+    // MARK: Case of the day (functions/src/caseOfDay.ts)
 
-    private nonisolated struct CaseWeekResponse: Decodable {
-        let caseWeek: CaseWeek?
+    /// Today's case, once chosen.
+    var caseOfDay: CaseDay? { caseDays.first { $0.date == UKDate.key() } }
+
+    private nonisolated struct CaseDaysResponse: Decodable {
+        let days: [CaseDay]
     }
 
     private nonisolated struct RateCaseRequest: Encodable {
-        let week: String
+        let date: String
         let knew: Bool
     }
 
-    /// Follows this week's case, choosing it on the server the first time it's asked for.
-    func ensureCaseOfWeek() async {
-        let week = CaseOfWeek.weekKey()
-        if caseWeekKey != week {
-            caseWeekListener?.remove()
-            caseWeekKey = week
-            caseWeek = nil
-            caseWeekListener = Firestore.firestore().collection("users").document(uid).collection("caseWeeks").document(week)
-                .addSnapshotListener { [weak self] snapshot, _ in
-                    guard let snapshot, snapshot.exists else { return }
-                    self?.caseWeek = try? snapshot.data(as: CaseWeek.self)
-                }
-        }
-        guard caseWeek == nil else { return }
-        let function = Functions.functions(region: "europe-west2").httpsCallable("getCaseOfWeek", requestAs: [String: String].self, responseAs: CaseWeekResponse.self)
-        if let chosen = try? await function.call([:]).caseWeek, chosen.week == caseWeekKey { caseWeek = chosen }
+    private nonisolated struct RateCaseResponse: Decodable {
+        let day: CaseDay
     }
 
-    /// "Knew it" or "Didn't know it". A miss comes back as a review in a later brief.
-    func rateCaseOfWeek(knew: Bool) async throws {
-        guard let week = caseWeek?.week else { return }
-        let function = Functions.functions(region: "europe-west2").httpsCallable("rateCaseOfWeek", requestAs: RateCaseRequest.self, responseAs: CaseWeekResponse.self)
-        if let rated = try await function.call(RateCaseRequest(week: week, knew: knew)).caseWeek, rated.week == caseWeekKey { caseWeek = rated }
+    /// Follows the coming week's cases, asking the server to choose any missing.
+    func ensureCaseOfDay() async {
+        let today = UKDate.key()
+        if caseDaysFrom != today {
+            caseDaysListener?.remove()
+            caseDaysFrom = today
+            caseDays = []
+            caseDaysListener = Firestore.firestore().collection("users").document(uid).collection("caseDays")
+                .whereField("date", isGreaterThanOrEqualTo: today)
+                .order(by: "date").limit(to: 7)
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    guard let snapshot else { return }
+                    self?.caseDays = snapshot.documents.compactMap { try? $0.data(as: CaseDay.self) }
+                }
+        }
+        let function = Functions.functions(region: "europe-west2").httpsCallable("getCaseOfDay", requestAs: [String: String].self, responseAs: CaseDaysResponse.self)
+        guard let days = try? await function.call([:]).days, caseDaysFrom == today else { return }
+        // The listener normally delivers these too; this covers a slow first snapshot.
+        if caseDays.count < days.count { caseDays = days }
+    }
+
+    /// "Knew it" or "Didn't know it" on today's case. A miss comes back as a review in a
+    /// later brief; either way the day counts towards the week.
+    func rateCaseOfDay(knew: Bool) async throws {
+        guard let date = caseOfDay?.date else { return }
+        let function = Functions.functions(region: "europe-west2").httpsCallable("rateCaseOfDay", requestAs: RateCaseRequest.self, responseAs: RateCaseResponse.self)
+        let rated = try await function.call(RateCaseRequest(date: date, knew: knew)).day
+        ActivityRepository.markToday()
+        if let index = caseDays.firstIndex(where: { $0.date == rated.date }) { caseDays[index] = rated }
     }
 }
 
@@ -337,7 +351,7 @@ nonisolated struct ReviewItem: Decodable {
     var topicId: String
     var due: Date
     var lastCorrect: Bool
-    /// "case" for a case recall (Case of the week), which doesn't mark its lesson as tested.
+    /// "case" for a case recall (Case of the day), which doesn't mark its lesson as tested.
     var kind: String?
 
     var isCaseRecall: Bool { kind == "case" }
@@ -643,5 +657,12 @@ struct Streak {
         if remaining <= 0 { return "Week done. Anything more is a bonus." }
         if remaining > daysLeft { return "A fresh week starts on Monday." }
         return remaining == 1 ? "One more day keeps the week." : "\(remaining) more days keep the week."
+    }
+}
+
+extension Streak {
+    /// The Monday (UK date key) of `date`'s week, as exam pauses are stored.
+    static func weekKey(for date: Date) -> String {
+        UKDate.key(for: UKDate.calendar.dateInterval(of: .weekOfYear, for: date)?.start ?? date)
     }
 }

@@ -351,6 +351,16 @@ struct SettingsView: View {
             if settings.streakReminder ?? true {
                 SettingsTime("Streak reminder time", time: settings.streakTime ?? "19:00") { save(["settings.streakTime": $0]) }
             }
+            SettingsToggle("Case of the day reminder", detail: "Names the day's case. Not sent once you've done it", isOn: Binding(
+                get: { settings.caseReminder ?? false },
+                set: { on in
+                    save(["settings.caseReminder": on])
+                    if on { Task { await RatioNotifications.requestPermission() } }
+                }
+            ))
+            if settings.caseReminder ?? false {
+                SettingsTime("Case reminder time", time: settings.caseTime ?? "12:30") { save(["settings.caseTime": $0]) }
+            }
             SettingsTime("Quiet from", time: settings.quietStart ?? "22:00") { save(["settings.quietStart": $0]) }
             SettingsTime("Quiet until", time: settings.quietEnd ?? "08:00") { save(["settings.quietEnd": $0]) }
         }

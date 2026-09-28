@@ -70,6 +70,10 @@ nonisolated struct StudySettings: Codable, Equatable {
     var streakReminder: Bool?
     /// "19:00".
     var streakTime: String?
+    /// The Case of the day reminder: off unless the student turns it on.
+    var caseReminder: Bool?
+    /// "12:30".
+    var caseTime: String?
     /// Today's cards in the student's order, and the ones they've hidden.
     var homeOrder: [String]?
     var homeHidden: [String]?

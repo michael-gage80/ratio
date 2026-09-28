@@ -204,16 +204,16 @@ describe('daily briefs', () => {
   });
 });
 
-describe('case of the week', () => {
+describe('case of the day', () => {
   test('is readable by its owner and writable by no client', async () => {
-    const path = 'users/amara/caseWeeks/2026-09-28';
+    const path = 'users/amara/caseDays/2026-09-28';
     await env.withSecurityRulesDisabled(async (ctx) => {
       await setDoc(doc(ctx.firestore(), path), { caseId: 'case-r-v-woollin', result: null });
     });
     await assertSucceeds(getDoc(doc(db('amara'), path)));
     await assertFails(getDoc(doc(db('zara'), path)));
     await assertFails(updateDoc(doc(db('amara'), path), { result: 'knew' }));
-    await assertFails(setDoc(doc(db('amara'), 'users/amara/caseWeeks/2026-10-05'), { caseId: 'case-r-v-woollin' }));
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/caseDays/2026-09-29'), { caseId: 'case-r-v-woollin' }));
   });
 });
 
@@ -341,6 +341,9 @@ describe('settings, plans and devices', () => {
   test('the streak reminder and home layout can be saved, within limits', async () => {
     await assertSucceeds(updateDoc(amara(), { settings: { streakReminder: false, streakTime: '19:30', homeOrder: ['duel', 'streak'], homeHidden: ['news'] } }));
     await assertFails(updateDoc(amara(), { settings: { streakTime: '7pm' } }));
+    await assertSucceeds(updateDoc(amara(), { settings: { caseReminder: true, caseTime: '12:30', homeOrder: ['caseOfDay'] } }));
+    await assertFails(updateDoc(amara(), { settings: { caseReminder: 'yes' } }));
+    await assertFails(updateDoc(amara(), { settings: { caseTime: '25:00' } }));
     await assertFails(updateDoc(amara(), { settings: { streakReminder: 'yes' } }));
     await assertFails(updateDoc(amara(), { settings: { homeHidden: Array(11).fill('news') } }));
   });

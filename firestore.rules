@@ -93,8 +93,8 @@ service cloud.firestore {
         allow read: if isOwner(uid);
       }
 
-      // Case of the week, one per Monday — chosen and rated only by Functions.
-      match /caseWeeks/{week} {
+      // Case of the day, chosen a week ahead — chosen and rated only by Functions.
+      match /caseDays/{date} {
         allow read: if isOwner(uid);
       }
 
@@ -188,8 +188,11 @@ service cloud.firestore {
       let time = '^([01][0-9]|2[0-3]):[0-5][0-9]$';
       return s is map
         && s.keys().hasOnly(['weeklyTarget', 'pausedWeeks', 'briefTime', 'briefReminder', 'streakReminder', 'streakTime',
-                             'quietStart', 'quietEnd', 'studyStart', 'studyEnd', 'homeOrder', 'homeHidden'])
+                             'quietStart', 'quietEnd', 'studyStart', 'studyEnd', 'homeOrder', 'homeHidden',
+                             'caseReminder', 'caseTime'])
         && (!('streakReminder' in s) || s.streakReminder is bool)
+        && (!('caseReminder' in s) || s.caseReminder is bool)
+        && (!('caseTime' in s) || (s.caseTime is string && s.caseTime.matches(time)))
         && (!('streakTime' in s) || (s.streakTime is string && s.streakTime.matches(time)))
         && (!('homeOrder' in s) || (s.homeOrder is list && s.homeOrder.size() <= 10))
         && (!('homeHidden' in s) || (s.homeHidden is list && s.homeHidden.size() <= 10))

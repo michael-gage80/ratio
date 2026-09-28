@@ -138,7 +138,7 @@ struct MainTabView: View {
 
     /// Reminders are re-planned when anything they depend on changes.
     private var notificationKey: String {
-        "\(student.activeDays.count)-\(student.items.count)-\(String(describing: student.settings))-\(UKDate.key())"
+        "\(student.activeDays.count)-\(student.items.count)-\(String(describing: student.settings))-\(UKDate.key())-\(student.caseDays.map { "\($0.date)\($0.result?.rawValue ?? "")" })"
     }
 
     var body: some View {
@@ -218,12 +218,16 @@ struct MainTabView: View {
         .environment(student)
         .environment(navigator)
         .environment(network)
-        .task(id: notificationKey) { await RatioNotifications.reschedule(for: student) }
+        .task(id: notificationKey) { await RatioNotifications.reschedule(for: student, content: content) }
         .onChange(of: student.profile.consents?.analytics, initial: true) { _, consent in
             Analytics.setAnalyticsCollectionEnabled(consent == true)
         }
         .onAppear {
             AppDelegate.openChallenge = { [navigator] _ in navigator.tab = .duel }
+            AppDelegate.openToday = { [navigator] in
+                navigator.todayPath = []
+                navigator.tab = .today
+            }
             // Keep this phone's push token current once permission has been given.
             Task {
                 if await UNUserNotificationCenter.current().notificationSettings().authorizationStatus == .authorized {

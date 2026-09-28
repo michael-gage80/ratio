@@ -11,6 +11,7 @@ import UserNotifications
 enum RatioNotifications {
     private static let briefPrefix = "brief-"
     private static let rescue = "streak-rescue"
+    private static let casePrefix = "case-of-day-"
 
     /// Asks once, at a moment the student can see why (after the Today tour).
     @discardableResult
@@ -21,11 +22,11 @@ enum RatioNotifications {
     }
 
     /// Re-plans the next week's reminders from the student's settings and progress.
-    static func reschedule(for student: StudentStore) async {
+    static func reschedule(for student: StudentStore, content cases: ContentStore) async {
         let center = UNUserNotificationCenter.current()
         guard await center.notificationSettings().authorizationStatus == .authorized else { return }
         let pending = await center.pendingNotificationRequests().map(\.identifier)
-        center.removePendingNotificationRequests(withIdentifiers: pending.filter { $0.hasPrefix(briefPrefix) || $0 == rescue })
+        center.removePendingNotificationRequests(withIdentifiers: pending.filter { $0.hasPrefix(briefPrefix) || $0.hasPrefix(casePrefix) || $0 == rescue })
 
         let settings = student.settings
         let quiet = (settings.quietStart ?? "22:00", settings.quietEnd ?? "08:00")
@@ -44,6 +45,25 @@ enum RatioNotifications {
                 content.body = due > 0 ? "About 15 minutes, with \(due) \(due == 1 ? "review" : "reviews") that \(due == 1 ? "has" : "have") come due." : "About 15 minutes, built from yesterday's answers."
                 content.sound = .default
                 await add(content, id: "\(briefPrefix)\(UKDate.key(for: day))", at: fire)
+            }
+        }
+
+        // Case of the day (opt-in): each day's case is chosen a week ahead, so every
+        // reminder can name it. None once the day's case is rated, while the card is
+        // hidden from Today, or in an exam-paused week.
+        let caseHidden = HomeCard.arranged(order: settings.homeOrder, hidden: settings.homeHidden).contains(.caseOfDay) == false
+        if settings.caseReminder ?? false, !caseHidden {
+            let time = settings.caseTime ?? "12:30"
+            for day in student.caseDays where day.result == nil {
+                guard let date = UKDate.date(fromKey: day.date), let fire = self.date(date, at: time), fire > .now,
+                      !isQuiet(time, quiet), !(settings.pausedWeeks ?? []).contains(Streak.weekKey(for: date)),
+                      let found = cases.caseCard(itemId: day.caseId) else { continue }
+                let content = UNMutableNotificationContent()
+                content.title = "Case of the day"
+                content.body = "\(found.card.caseName): can you recall the ratio?"
+                content.sound = .default
+                content.userInfo = ["open": "today"]
+                await add(content, id: "\(casePrefix)\(day.date)", at: fire)
             }
         }
 
@@ -93,6 +113,8 @@ enum RatioNotifications {
 final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     /// A tapped challenge notification, for the tabs to open.
     static var openChallenge: ((String) -> Void)?
+    /// A tapped Case of the day reminder: back to Today.
+    static var openToday: (() -> Void)?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
@@ -115,9 +137,12 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
     }
 
     nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        let challengeId = response.notification.request.content.userInfo["challengeId"] as? String
+        let userInfo = response.notification.request.content.userInfo
+        let challengeId = userInfo["challengeId"] as? String
+        let opensToday = userInfo["open"] as? String == "today"
         await MainActor.run {
             if let challengeId { AppDelegate.openChallenge?(challengeId) }
+            if opensToday { AppDelegate.openToday?() }
         }
     }
 }

@@ -68,7 +68,7 @@ struct TodayView: View {
         }
         .sheet(isPresented: $editingHome) {
             EditHomeSheet(order: HomeCard.arranged(order: student.settings.homeOrder, hidden: nil),
-                          hidden: Set((student.settings.homeHidden ?? []).compactMap(HomeCard.init(rawValue:)))) { order, hidden in
+                          hidden: Set((student.settings.homeHidden ?? []).compactMap(HomeCard.init(saved:)))) { order, hidden in
                 Task {
                     try? await UserRepository().update(uid: student.uid, [
                         "settings.homeOrder": order.map(\.rawValue),
@@ -98,14 +98,14 @@ struct TodayView: View {
             await student.ensureBrief()
             if !tourSeen { tourStop = .brief }
         }
-        .task(id: CaseOfWeek.weekKey()) { await student.ensureCaseOfWeek() }
+        .task(id: UKDate.key()) { await student.ensureCaseOfDay() }
         .onChange(of: tourSeen) { _, seen in
             if !seen { tourStop = .brief } // Replayed from Settings.
         }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active {
                 Task { await student.ensureBrief() }
-                Task { await student.ensureCaseOfWeek() }
+                Task { await student.ensureCaseOfDay() }
             }
         }
     }
@@ -212,7 +212,7 @@ struct TodayView: View {
             case .continueLearning: ContinueLearningCard()
             case .duel: duelCard.tourAnchor(.more)
             case .streak: streakCard.tourAnchor(.streak)
-            case .caseOfWeek: CaseOfWeekCard()
+            case .caseOfDay: CaseOfDayCard()
             case .boards: boardsCard
             case .news: newsCard
             }

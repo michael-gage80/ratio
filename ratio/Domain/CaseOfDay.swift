@@ -1,13 +1,14 @@
 import Foundation
 
-/// `users/{uid}/caseWeeks/{monday}`: the week's case, chosen by the `getCaseOfWeek`
-/// Function (functions/src/caseOfWeek.ts), and the student's rating once given.
-nonisolated struct CaseWeek: Decodable, Equatable {
+/// `users/{uid}/caseDays/{date}`: the day's case, chosen a week ahead by the
+/// `getCaseOfDay` Function (functions/src/caseOfDay.ts), and the student's rating once given.
+nonisolated struct CaseDay: Decodable, Equatable {
     enum Result: String, Decodable {
         case knew, missed
     }
 
-    var week: String
+    /// The UK date, "2026-09-28".
+    var date: String
     /// The case's review-item ID ("case-r-v-woollin").
     var caseId: String
     /// The lesson the card links to.
@@ -18,7 +19,7 @@ nonisolated struct CaseWeek: Decodable, Equatable {
 
 /// Rules shared with functions/src/content.ts, so the app and the server agree on
 /// which case cards are cases and what each one's review item is called.
-enum CaseOfWeek {
+enum CaseOfDay {
     static let itemPrefix = "case-"
 
     /// Same rule as `caseItemId` in functions/src/content.ts.
@@ -34,23 +35,18 @@ enum CaseOfWeek {
     static func isReportedCase(_ card: LessonComponent.CaseCard) -> Bool {
         card.citation.contains(/[\[(]\d{4}[\])]/) && !card.court.contains(/^N\/A|(?i)not a case/)
     }
-
-    /// The UK date of this week's Monday: the case changes at 00:00 UK time on Monday.
-    static func weekKey(for date: Date = .now) -> String {
-        UKDate.key(for: UKDate.calendar.dateInterval(of: .weekOfYear, for: date)?.start ?? date)
-    }
 }
 
 extension ContentStore {
     /// A case by its review-item ID, with the first lesson (by ID) whose lecture has it —
     /// the same lesson the server files its review under.
     func caseCard(itemId: String) -> (card: LessonComponent.CaseCard, lesson: Lesson)? {
-        guard itemId.hasPrefix(CaseOfWeek.itemPrefix) else { return nil }
+        guard itemId.hasPrefix(CaseOfDay.itemPrefix) else { return nil }
         var found: (card: LessonComponent.CaseCard, lesson: Lesson)?
         for module in Module.allCases {
             for lesson in lessons(in: module) where found.map({ lesson.id < $0.lesson.id }) ?? true {
                 for case .caseCard(let card) in lesson.parts.flatMap(\.components)
-                where CaseOfWeek.itemId(for: card.caseName) == itemId && CaseOfWeek.isReportedCase(card) {
+                where CaseOfDay.itemId(for: card.caseName) == itemId && CaseOfDay.isReportedCase(card) {
                     found = (card, lesson)
                     break
                 }
@@ -68,7 +64,7 @@ extension Item {
         self.topicId = topicId
         skill = .knowledge
         difficulty = 0.5
-        prompt = "Case of the week · \(card.caseName) \(card.citation). \(card.factsShort) What was the ratio?"
+        prompt = "Case of the day · \(card.caseName) \(card.citation). \(card.factsShort) What was the ratio?"
         kind = .recall(modelAnswer: card.ratioShort, acceptableAnswers: [])
         explanation = card.expanded?.significance
         trapExplanation = nil
