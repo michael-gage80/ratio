@@ -654,4 +654,4 @@ export * from "./newsIngest.js";
 export * from "./account.js";
 export * from "./purchases.js";
 export * from "./online.js";
-export * from "./caseOfWeek.js";
+export * from "./caseOfDay.js";

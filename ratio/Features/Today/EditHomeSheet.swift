@@ -3,7 +3,7 @@ import SwiftUI
 /// The blocks on Today after the brief, which always comes first. Their order and which
 /// are hidden are kept in `settings.homeOrder` and `settings.homeHidden`.
 enum HomeCard: String, CaseIterable, Identifiable {
-    case continueLearning, duel, streak, caseOfWeek, boards, news
+    case continueLearning, duel, streak, caseOfDay, boards, news
 
     var id: String { rawValue }
 
@@ -12,7 +12,7 @@ enum HomeCard: String, CaseIterable, Identifiable {
         case .continueLearning: "Continue learning"
         case .duel: "Duel"
         case .streak: "This week"
-        case .caseOfWeek: "Case of the week"
+        case .caseOfDay: "Case of the day"
         case .boards: "Boards"
         case .news: "The week in law"
         }
@@ -21,12 +21,18 @@ enum HomeCard: String, CaseIterable, Identifiable {
     /// The saved order (unknown IDs dropped), minus hidden cards. A card added since the
     /// order was saved goes in at its default place (after the one before it by default).
     static func arranged(order: [String]?, hidden: [String]?) -> [HomeCard] {
-        var all = (order ?? []).compactMap(HomeCard.init(rawValue:))
+        var all = (order ?? []).compactMap(HomeCard.init(saved:))
         for (index, card) in allCases.enumerated() where !all.contains(card) {
             let before = allCases[..<index].last { all.contains($0) }
             all.insert(card, at: before.flatMap { all.firstIndex(of: $0).map { $0 + 1 } } ?? 0)
         }
-        return all.filter { !(hidden ?? []).contains($0.rawValue) }
+        let hidden = Set((hidden ?? []).compactMap(HomeCard.init(saved:)))
+        return all.filter { !hidden.contains($0) }
+    }
+
+    /// A saved ID, including "caseOfWeek" from when the case changed weekly.
+    nonisolated init?(saved: String) {
+        self.init(rawValue: saved == "caseOfWeek" ? "caseOfDay" : saved)
     }
 }
 

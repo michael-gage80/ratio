@@ -1,10 +1,10 @@
 import SwiftUI
 
-/// Case of the week on Today: an oxblood block with one case from the student's own
+/// Case of the day on Today: an oxblood block with one case from the student's own
 /// modules. The facts first, then "What was the ratio?" to reveal it, then Knew it /
 /// Didn't know it — a miss comes back in a later brief's Review. Once rated it
-/// collapses to one line for the rest of the week (functions/src/caseOfWeek.ts).
-struct CaseOfWeekCard: View {
+/// collapses to one line until tomorrow (functions/src/caseOfDay.ts).
+struct CaseOfDayCard: View {
     @Environment(StudentStore.self) private var student
     @Environment(ContentStore.self) private var content
     @Environment(AppNavigator.self) private var navigator
@@ -15,27 +15,27 @@ struct CaseOfWeekCard: View {
     @State private var failed = false
 
     var body: some View {
-        if let week = student.caseWeek, let found = content.caseCard(itemId: week.caseId) {
+        if let day = student.caseOfDay, let found = content.caseCard(itemId: day.caseId) {
             Group {
-                if let result = week.result {
+                if let result = day.result {
                     rated(found.card, result: result)
                 } else {
-                    full(found.card, week: week, module: found.lesson.moduleId)
+                    full(found.card, day: day, module: found.lesson.moduleId)
                 }
             }
             .foregroundStyle(Color.ratioOnInk)
             .ratioCard(.ratioCaseBlock, bordered: false)
             .animation(RatioMotion.reveal, value: revealed)
-            .animation(RatioMotion.reveal, value: week.result)
+            .animation(RatioMotion.reveal, value: day.result)
         }
     }
 
     // MARK: Before rating
 
-    private func full(_ card: LessonComponent.CaseCard, week: CaseWeek, module: Module) -> some View {
+    private func full(_ card: LessonComponent.CaseCard, day: CaseDay, module: Module) -> some View {
         VStack(alignment: .leading, spacing: RatioSpace.s) {
             VStack(alignment: .leading, spacing: RatioSpace.xs) {
-                Text("Case of the week · \(module.title)").ratioFont(.monoLabel).opacity(0.8)
+                Text("Case of the day · \(module.title)").ratioFont(.monoLabel).opacity(0.8)
                 Text(card.caseName).italic().ratioFont(.h2)
                 Text("\(card.citation) · \(card.court)").ratioFont(.monoLabel).opacity(0.8)
             }
@@ -52,7 +52,7 @@ struct CaseOfWeekCard: View {
                 .background(Color.ratioOnInk.opacity(0.12), in: RoundedRectangle(cornerRadius: RatioRadius.panel, style: .continuous))
                 .transition(.opacity.combined(with: .move(edge: .top)))
 
-                links(card, lessonId: week.lessonId)
+                links(card, lessonId: day.lessonId)
 
                 Text("Did you know it?").ratioFont(.monoLabel).opacity(0.8)
                 HStack(spacing: RatioSpace.s) {
@@ -113,11 +113,11 @@ struct CaseOfWeekCard: View {
 
     // MARK: After rating
 
-    private func rated(_ card: LessonComponent.CaseCard, result: CaseWeek.Result) -> some View {
+    private func rated(_ card: LessonComponent.CaseCard, result: CaseDay.Result) -> some View {
         Button { openCase(card) } label: {
             HStack(spacing: RatioSpace.s) {
                 VStack(alignment: .leading, spacing: RatioSpace.xxs) {
-                    Text("Case of the week").ratioFont(.monoLabel).opacity(0.8)
+                    Text("Case of the day").ratioFont(.monoLabel).opacity(0.8)
                     Text("\(result == .knew ? "✓ " : "")\(Text(card.caseName).italic()) · \(result == .knew ? "You knew it" : "Back in your reviews")")
                         .ratioFont(.h3)
                         .multilineTextAlignment(.leading)
@@ -138,7 +138,7 @@ struct CaseOfWeekCard: View {
         failed = false
         Task {
             do {
-                try await student.rateCaseOfWeek(knew: knew)
+                try await student.rateCaseOfDay(knew: knew)
                 revealed = false
             } catch {
                 failed = true
