@@ -50,6 +50,10 @@ final class StudentStore {
     @ObservationIgnored private var onlineHandle: DatabaseHandle?
     @ObservationIgnored private var briefListener: ListenerRegistration?
     @ObservationIgnored private var briefDate: String?
+    /// This week's Case of the week (users/{uid}/caseWeeks/{monday}); nil until chosen.
+    private(set) var caseWeek: CaseWeek?
+    @ObservationIgnored private var caseWeekListener: ListenerRegistration?
+    @ObservationIgnored private var caseWeekKey: String?
 
     init(uid: String, profile: UserProfile) {
         self.uid = uid
@@ -221,6 +225,9 @@ final class StudentStore {
         briefListener?.remove()
         briefListener = nil
         briefDate = nil
+        caseWeekListener?.remove()
+        caseWeekListener = nil
+        caseWeekKey = nil
     }
 
     /// Follows today's brief document, switching over when the UK date changes.
@@ -250,6 +257,42 @@ final class StudentStore {
         let function = Functions.functions(region: "europe-west2").httpsCallable("getBrief", requestAs: [String: String].self, responseAs: BriefResponse.self)
         guard let response = try? await function.call([:]) else { return }
         if let built = response.brief { brief = built } else { briefUnavailable = true }
+    }
+
+    // MARK: Case of the week (functions/src/caseOfWeek.ts)
+
+    private nonisolated struct CaseWeekResponse: Decodable {
+        let caseWeek: CaseWeek?
+    }
+
+    private nonisolated struct RateCaseRequest: Encodable {
+        let week: String
+        let knew: Bool
+    }
+
+    /// Follows this week's case, choosing it on the server the first time it's asked for.
+    func ensureCaseOfWeek() async {
+        let week = CaseOfWeek.weekKey()
+        if caseWeekKey != week {
+            caseWeekListener?.remove()
+            caseWeekKey = week
+            caseWeek = nil
+            caseWeekListener = Firestore.firestore().collection("users").document(uid).collection("caseWeeks").document(week)
+                .addSnapshotListener { [weak self] snapshot, _ in
+                    guard let snapshot, snapshot.exists else { return }
+                    self?.caseWeek = try? snapshot.data(as: CaseWeek.self)
+                }
+        }
+        guard caseWeek == nil else { return }
+        let function = Functions.functions(region: "europe-west2").httpsCallable("getCaseOfWeek", requestAs: [String: String].self, responseAs: CaseWeekResponse.self)
+        if let chosen = try? await function.call([:]).caseWeek, chosen.week == caseWeekKey { caseWeek = chosen }
+    }
+
+    /// "Knew it" or "Didn't know it". A miss comes back as a review in a later brief.
+    func rateCaseOfWeek(knew: Bool) async throws {
+        guard let week = caseWeek?.week else { return }
+        let function = Functions.functions(region: "europe-west2").httpsCallable("rateCaseOfWeek", requestAs: RateCaseRequest.self, responseAs: CaseWeekResponse.self)
+        if let rated = try await function.call(RateCaseRequest(week: week, knew: knew)).caseWeek, rated.week == caseWeekKey { caseWeek = rated }
     }
 }
 
@@ -294,6 +337,10 @@ nonisolated struct ReviewItem: Decodable {
     var topicId: String
     var due: Date
     var lastCorrect: Bool
+    /// "case" for a case recall (Case of the week), which doesn't mark its lesson as tested.
+    var kind: String?
+
+    var isCaseRecall: Bool { kind == "case" }
 }
 
 /// `users/{uid}/testAttempts/{attemptId}` (the fields the app needs).
@@ -463,7 +510,7 @@ enum LessonState {
 extension StudentStore {
     /// Tested lessons are secure until an item is missed or comes due for review.
     func state(of lesson: Lesson, now: Date = .now) -> LessonState {
-        let tested = items.filter { $0.lessonId == lesson.id }
+        let tested = items.filter { $0.lessonId == lesson.id && !$0.isCaseRecall }
         if !tested.isEmpty {
             return tested.contains { !$0.lastCorrect || $0.due <= now } ? .needsReview : .secure
         }

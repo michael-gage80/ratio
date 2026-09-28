@@ -11,7 +11,7 @@ struct StatTiles: View {
     /// "secure", counted in one pass over the items rather than once per lesson.
     private var secureLessons: Int {
         let now = Date.now
-        return Dictionary(grouping: student.items, by: \.lessonId).values.count { items in
+        return Dictionary(grouping: student.items.filter { !$0.isCaseRecall }, by: \.lessonId).values.count { items in
             !items.contains { !$0.lastCorrect || $0.due <= now }
         }
     }

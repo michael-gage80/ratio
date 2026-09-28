@@ -3,7 +3,7 @@ import SwiftUI
 /// The blocks on Today after the brief, which always comes first. Their order and which
 /// are hidden are kept in `settings.homeOrder` and `settings.homeHidden`.
 enum HomeCard: String, CaseIterable, Identifiable {
-    case continueLearning, duel, streak, boards, news
+    case continueLearning, duel, streak, caseOfWeek, boards, news
 
     var id: String { rawValue }
 
@@ -12,6 +12,7 @@ enum HomeCard: String, CaseIterable, Identifiable {
         case .continueLearning: "Continue learning"
         case .duel: "Duel"
         case .streak: "This week"
+        case .caseOfWeek: "Case of the week"
         case .boards: "Boards"
         case .news: "The week in law"
         }

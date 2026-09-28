@@ -46,12 +46,84 @@ export const lessons = new Map<string, Lesson>(
     .map((lesson) => [lesson.lessonId, lesson]),
 );
 
-/** Every test item, tagged with its lesson's topic. */
-export const testItems = new Map<string, { item: BankItem; lessonId: string }>(
-  [...lessons.values()].flatMap((lesson) =>
+/** A case card from the lectures (Case of the week, and its case-recall reviews). */
+export interface CaseEntry {
+  /** "case-" plus the case name as a slug; the app derives the same ID. */
+  itemId: string;
+  caseName: string;
+  citation: string;
+  court: string;
+  factsShort: string;
+  ratioShort: string;
+  /** The first lesson, by ID, whose lecture has the case: its module and topic. */
+  lessonId: string;
+  moduleId: string;
+  topicId: string;
+  /** Every lesson whose lecture has the case. */
+  lessonIds: string[];
+}
+
+export const CASE_ITEM_PREFIX = "case-";
+
+/** Same rule as the app's `CaseOfWeek.itemId(for:)`. */
+export function caseItemId(caseName: string): string {
+  return CASE_ITEM_PREFIX + caseName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+}
+
+/**
+ * A reported case, not a worked example or summary on a case card: a year in brackets
+ * in the citation ("[1993]", "(1843)") and a real court. Same rule as the app.
+ */
+export function isReportedCase(citation: string, court: string): boolean {
+  return /[[(]\d{4}[\])]/.test(citation) && !/^N\/A|not a case/i.test(court);
+}
+
+/** Every case in the lectures, once each (lessons in ID order, so the first lesson is stable). */
+export const cases = new Map<string, CaseEntry>();
+for (const lesson of lessons.values()) {
+  for (const part of lesson.lecture.parts as { components?: Record<string, unknown>[] }[]) {
+    for (const component of part.components ?? []) {
+      if (component.type !== "caseCard") continue;
+      const caseName = String(component.caseName ?? "");
+      if (!caseName || !component.ratioShort || !isReportedCase(String(component.citation ?? ""), String(component.court ?? ""))) continue;
+      const itemId = caseItemId(caseName);
+      const existing = cases.get(itemId);
+      if (existing) {
+        if (!existing.lessonIds.includes(lesson.lessonId)) existing.lessonIds.push(lesson.lessonId);
+        continue;
+      }
+      cases.set(itemId, {
+        itemId,
+        caseName,
+        citation: String(component.citation ?? ""),
+        court: String(component.court ?? ""),
+        factsShort: String(component.factsShort ?? ""),
+        ratioShort: String(component.ratioShort),
+        lessonId: lesson.lessonId,
+        moduleId: lesson.moduleId,
+        topicId: lesson.topicId,
+        lessonIds: [lesson.lessonId],
+      });
+    }
+  }
+}
+
+/**
+ * A case recalled from its facts: marked by the student against the ratio, like a
+ * recallFirst item, and counted as a light Knowledge answer.
+ */
+export const CASE_RECALL_WEIGHT = 0.5;
+function caseRecallItem(entry: CaseEntry): BankItem {
+  return { itemId: entry.itemId, topicId: entry.topicId, skillTag: "knowledge", difficultyStart: 0.5, type: "recallFirst", weight: CASE_RECALL_WEIGHT };
+}
+
+/** Every test item, tagged with its lesson's topic — plus a case-recall item for every case. */
+export const testItems = new Map<string, { item: BankItem; lessonId: string }>([
+  ...[...lessons.values()].flatMap((lesson) =>
     lesson.testPool.map((item) => [item.itemId, { item: { ...item, topicId: lesson.topicId }, lessonId: lesson.lessonId }] as const),
   ),
-);
+  ...[...cases.values()].map((entry) => [entry.itemId, { item: caseRecallItem(entry), lessonId: entry.lessonId }] as const),
+]);
 
 export const lessonInfo: LessonInfo[] = [...lessons.values()].map((l) => ({
   lessonId: l.lessonId,

@@ -39,11 +39,12 @@ export const difficultyToLogit = (difficulty: number): number => (difficulty - 0
 /** Larger σ, larger steps: early answers move the estimate further. */
 const gain = (sigma: number): number => sigma * sigma;
 
-export function update(estimate: Estimate, difficulty: number, correct: boolean): Estimate {
+/** `weight` below 1 makes a lighter answer (a self-marked case recall): a smaller step, less certainty gained. */
+export function update(estimate: Estimate, difficulty: number, correct: boolean, weight = 1): Estimate {
   const p = 1 / (1 + Math.exp(-(estimate.theta - difficultyToLogit(difficulty))));
   return {
-    theta: estimate.theta + gain(estimate.sigma) * ((correct ? 1 : 0) - p),
-    sigma: Math.max(SIGMA_MIN, estimate.sigma * SHRINK),
+    theta: estimate.theta + weight * gain(estimate.sigma) * ((correct ? 1 : 0) - p),
+    sigma: Math.max(SIGMA_MIN, estimate.sigma * SHRINK ** weight),
   };
 }
 
@@ -57,6 +58,8 @@ export interface BankItem {
   skillTag: Skill;
   difficultyStart: number;
   type: string;
+  /** Below 1 for lighter answers (case recall); 1 when missing. */
+  weight?: number;
   correctIndex?: number;
   correctScenario?: "A" | "B";
   correctSpan?: string;
@@ -170,8 +173,8 @@ export function scoreResponses(
     const skill = item.skillTag;
     const correct = isCorrect(item, response);
     const topic = (topics[item.topicId] ??= {});
-    topic[skill] = update(topic[skill] ?? { theta: headline[skill].theta, sigma: SIGMA_PRIOR }, item.difficultyStart, correct);
-    headline[skill] = update(headline[skill], item.difficultyStart, correct);
+    topic[skill] = update(topic[skill] ?? { theta: headline[skill].theta, sigma: SIGMA_PRIOR }, item.difficultyStart, correct, item.weight);
+    headline[skill] = update(headline[skill], item.difficultyStart, correct, item.weight);
   }
   return { topics, headline };
 }

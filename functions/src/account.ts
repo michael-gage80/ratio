@@ -14,7 +14,7 @@ import { MODULES } from "./content.js";
 import { everyoneHasPlus, FREE_DUELS_PER_DAY, isPlus } from "./entitlement.js";
 
 /** What reset clears and delete removes, under users/{uid}. */
-const PROGRESS = ["skills", "items", "lessons", "testAttempts", "briefs", "activity"];
+const PROGRESS = ["skills", "items", "lessons", "testAttempts", "briefs", "activity", "caseWeeks"];
 const EVERYTHING = [...PROGRESS, "friends", "blocked", "devices", "usage", "notes"];
 
 function requireAuth(uid: string | undefined): string {

@@ -93,6 +93,11 @@ service cloud.firestore {
         allow read: if isOwner(uid);
       }
 
+      // Case of the week, one per Monday — chosen and rated only by Functions.
+      match /caseWeeks/{week} {
+        allow read: if isOwner(uid);
+      }
+
       // The days the student was active, for the weekly streak target. A marker per UK
       // date and nothing else.
       match /activity/{date} {

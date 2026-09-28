@@ -204,6 +204,19 @@ describe('daily briefs', () => {
   });
 });
 
+describe('case of the week', () => {
+  test('is readable by its owner and writable by no client', async () => {
+    const path = 'users/amara/caseWeeks/2026-09-28';
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), path), { caseId: 'case-r-v-woollin', result: null });
+    });
+    await assertSucceeds(getDoc(doc(db('amara'), path)));
+    await assertFails(getDoc(doc(db('zara'), path)));
+    await assertFails(updateDoc(doc(db('amara'), path), { result: 'knew' }));
+    await assertFails(setDoc(doc(db('amara'), 'users/amara/caseWeeks/2026-10-05'), { caseId: 'case-r-v-woollin' }));
+  });
+});
+
 describe('activity', () => {
   const today = new Date().toISOString().slice(0, 10);
   const day = (uid, date = today) => doc(db(uid), `users/${uid}/activity/${date}`);

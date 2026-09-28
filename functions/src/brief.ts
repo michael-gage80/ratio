@@ -120,7 +120,8 @@ export function interleave(items: ItemState[]): ItemState[] {
 type LessonState = "notStarted" | "inProgress" | "secure" | "needsReview";
 
 function lessonState(lesson: LessonInfo, input: BriefInput): LessonState {
-  const tested = input.items.filter((i) => i.lessonId === lesson.lessonId);
+  // Case recalls (Case of the week) are reviewed like any item but don't mark a lesson as tested.
+  const tested = input.items.filter((i) => i.lessonId === lesson.lessonId && !i.itemId.startsWith("case-"));
   if (tested.length > 0) return tested.some((i) => !i.lastCorrect || i.due <= input.now) ? "needsReview" : "secure";
   return (input.partsCompleted[lesson.lessonId] ?? 0) > 0 ? "inProgress" : "notStarted";
 }
