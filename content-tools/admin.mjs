@@ -22,9 +22,9 @@
 //   node content-tools/admin.mjs revoke <email>
 //   node content-tools/admin.mjs news-text <sourceId> on|off|default
 //       Switches a news source's in-app reader text on or off (config/news.fullText),
-//       e.g. once a publisher has given permission. Stories from the last week are
-//       filled in on the next hourly run. Without a switch, sources use news.ts defaults
-//       (open-licence sources on, publishers off).
+//       e.g. if a publisher objects. Stories from the last week are filled in on the next
+//       hourly run. Without a switch, sources use news.ts defaults (on for open-licence
+//       sources and free publishers; off for Google News and paywalled sources).
 //   node content-tools/admin.mjs news-images <sourceId> on|off
 //       Allows copying lead images for a source (config/news.images) — only when the
 //       images themselves are licensed for reuse.

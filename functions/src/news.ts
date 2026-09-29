@@ -1,8 +1,9 @@
 // The legal awareness centre's feed (PRD: "Legal awareness centre"). Headlines, sources,
 // dates and links, pulled from RSS and Atom, filtered to UK law, deduplicated across
-// sources, and tagged by module. Article text is kept only for sources whose full-text
-// switch is on (article.ts, reader.ts): official sources under open licences, and a
-// publisher only once they've given permission (config/news, set with admin.mjs).
+// sources, and tagged by module. Article text is kept for sources whose full-text switch
+// is on (article.ts, reader.ts): official sources under open licences, and the free
+// publishers (Mike's decision, 29 Sept 2026, taking the republishing risk; any source can
+// be switched off in config/news with admin.mjs, no deploy needed).
 //
 // Each source's terms must be checked before launch (PRD); a source whose terms forbid
 // this use is dropped from SOURCES.
@@ -32,8 +33,8 @@ export interface Source {
   excludePaths?: string[];
   extractor: Extractor;
   /**
-   * Whether article text may be stored and shown in Ratio before config/news says
-   * otherwise: only for open licences. Publishers stay off until they've agreed.
+   * Whether article text is stored and shown in Ratio unless config/news says otherwise.
+   * Off for sources whose links can't be read (Google News) and for paywalled ones.
    */
   fullText: boolean;
   /** The attribution the licence asks for, shown under the article. */
@@ -65,15 +66,15 @@ export const SOURCES: Source[] = [
   { id: "commonslibrary", name: "Commons Library", url: "https://commonslibrary.parliament.uk/feed/", allLegal: false, extractor: "feed", fullText: true, licence: OPL, paywall: "never" },
   { id: "lordslibrary", name: "Lords Library", url: "https://lordslibrary.parliament.uk/feed/", allLegal: false, extractor: "feed", fullText: true, licence: OPL, paywall: "never" },
   { id: "bills", name: "UK Parliament", url: "https://bills.parliament.uk/rss/allbills.rss", allLegal: false, extractor: "bills", fullText: true, licence: OPL, paywall: "never", perDay: 3, requireModule: true },
-  { id: "gazette-top", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13505.rss", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
-  { id: "gazette", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13506.rss", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
-  { id: "legalcheek", name: "Legal Cheek", url: "https://www.legalcheek.com/feed/", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
-  { id: "legalfutures", name: "Legal Futures", url: "https://www.legalfutures.co.uk/feed", allLegal: true, extractor: "page", fullText: false, paywall: "check" },
+  { id: "gazette-top", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13505.rss", allLegal: true, extractor: "page", fullText: true, licence: "© Law Society Gazette.", paywall: "check" },
+  { id: "gazette", name: "Law Society Gazette", url: "https://www.lawgazette.co.uk/13506.rss", allLegal: true, extractor: "page", fullText: true, licence: "© Law Society Gazette.", paywall: "check" },
+  { id: "legalcheek", name: "Legal Cheek", url: "https://www.legalcheek.com/feed/", allLegal: true, extractor: "page", fullText: true, licence: "© Legal Cheek.", paywall: "check" },
+  { id: "legalfutures", name: "Legal Futures", url: "https://www.legalfutures.co.uk/feed", allLegal: true, extractor: "page", fullText: true, licence: "© Legal Futures.", paywall: "check" },
   {
-    id: "guardian", name: "The Guardian", url: "https://www.theguardian.com/law/rss", allLegal: true, extractor: "page", fullText: false, paywall: "never",
+    id: "guardian", name: "The Guardian", url: "https://www.theguardian.com/law/rss", allLegal: true, extractor: "page", fullText: true, licence: "© Guardian News & Media Ltd.", paywall: "never",
     excludePaths: ["/us-news/", "/australia-news/", "/world/", "/global-development/"],
   },
-  { id: "bbc", name: "BBC News", url: "https://feeds.bbci.co.uk/news/uk/rss.xml", allLegal: false, extractor: "page", fullText: false, paywall: "never" },
+  { id: "bbc", name: "BBC News", url: "https://feeds.bbci.co.uk/news/uk/rss.xml", allLegal: false, extractor: "page", fullText: true, licence: "© BBC News.", paywall: "never" },
   // No public feeds: Google News searches of each site, headlines only.
   { id: "times", name: "The Times", url: googleNews("site:thetimes.com/uk/law when:7d"), allLegal: false, extractor: "page", fullText: false, paywall: "always", perDay: 4, googleNews: true },
   { id: "ft", name: "Financial Times", url: googleNews("site:ft.com legal when:7d"), allLegal: false, extractor: "page", fullText: false, paywall: "always", perDay: 4, googleNews: true },

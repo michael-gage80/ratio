@@ -146,7 +146,7 @@ export const ingestNews = onSchedule({ schedule: "every 60 minutes", timeZone: "
     if (!source || !config.fullText(source) || d.get("paywalled") === true) return false;
     const checked = (d.get("readerCheckedAt") as Timestamp | undefined)?.toMillis() ?? 0;
     return isNew.has(d.id) || now - checked >= RETRY_MS;
-  }).slice(0, 40);
+  }).slice(0, 80);
   let built = 0;
   await inBatches(due, 4, async (d) => {
     const source = bySource.get(d.get("sourceId") as string)!;

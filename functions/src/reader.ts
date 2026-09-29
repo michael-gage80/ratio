@@ -1,7 +1,7 @@
 // Fetches a story's text for the in-app reader and stores it in Cloud Storage at
 // news/{id}/{part}.json (a judgment can outgrow a Firestore document). Each source has
 // its own route to clean text (news.ts `extractor`); publishers' pages go through
-// Readability, but only once their full-text switch is on (config/news).
+// Readability, for sources whose full-text switch is on (news.ts, config/news).
 
 import { getStorage } from "firebase-admin/storage";
 import { parseHTML } from "linkedom";
@@ -149,7 +149,7 @@ export async function buildReader(story: StoryInput, source: Source, images: boo
       title: story.title,
       source: source.name,
       url: story.url,
-      licence: source.licence ?? `© ${source.name}. Shown with permission.`,
+      licence: source.licence ?? `© ${source.name}.`,
       ...(part.byline ? { byline: part.byline } : {}),
       blocks: index === 0 && lead ? [lead, ...part.blocks] : part.blocks,
     });
