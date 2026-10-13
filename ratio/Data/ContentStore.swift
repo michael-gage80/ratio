@@ -31,6 +31,12 @@ final class ContentStore {
     }
 
     private var modules: [Module: ModuleContent] = [:]
+
+    /// Changes whenever any module's lessons do (a download), for views built from them.
+    var revision: String {
+        Module.allCases.map { modules[$0]?.version ?? "-" }.joined(separator: ",")
+    }
+
     private let logger = Logger(subsystem: "com.mg.ratio", category: "ContentStore")
 
     /// Bundled lessons count as version 0.0.0, so any published bundle supersedes them.

@@ -20,10 +20,11 @@ struct LibraryEntry: Identifiable {
 }
 
 extension ContentStore {
-    /// Every case, statute and doctrine map in the lectures, once each, A–Z.
-    func library() -> [LibraryEntry] {
+    /// Every case, statute and doctrine map in the given modules' lectures, once each, A–Z.
+    /// An entry in several modules belongs to the first of them, in the order given.
+    func library(modules: [Module] = Module.allCases) -> [LibraryEntry] {
         var entries: [String: LibraryEntry] = [:]
-        for module in Module.allCases {
+        for module in modules {
             for lesson in lessons(in: module) {
                 for component in lesson.parts.flatMap(\.components) {
                     let entry: LibraryEntry? = switch component {
@@ -49,10 +50,11 @@ extension ContentStore {
     }
 }
 
-/// The Library in Lessons: every case, piece of legislation and doctrine map, searchable
-/// and filtered by module, each linking back to its lessons. Everything is listed for
-/// everyone; opening one outside a free student's module needs Plus. On iPad the list
-/// sits on the left and the selected entry on the right.
+/// The Library in Lessons: every case, piece of legislation and doctrine map in the
+/// student's modules, searchable and filtered by module, each linking back to its
+/// lessons. Rebuilt when the student's modules change or new lessons download. Opening
+/// one outside a free student's module needs Plus. On iPad the list sits on the left and
+/// the selected entry on the right.
 struct LibraryView: View {
     @Environment(ContentStore.self) private var content
     @Environment(StudentStore.self) private var student
@@ -62,7 +64,7 @@ struct LibraryView: View {
     @State private var kind: LibraryEntry.Kind = .cases
     @State private var module: Module?
     @State private var query = ""
-    /// Nil until built (once, on first appearance).
+    /// Nil until built; rebuilt when the modules or the content change.
     @State private var entries: [LibraryEntry]?
     /// iPad: the entry shown beside the list.
     @State private var selectedID: String?
@@ -101,7 +103,12 @@ struct LibraryView: View {
         .ratioPage()
         .scrollDismissesKeyboard(.interactively)
         .toolbar(.hidden, for: .navigationBar)
-        .task { if entries == nil { entries = content.library() } }
+        .task(id: "\(student.modules.map(\.rawValue))|\(content.revision)") {
+            entries = content.library(modules: student.modules)
+            // A filter for a module that's no longer the student's shows nothing.
+            if let module, !student.modules.contains(module) { self.module = nil }
+            if let selectedID, entries?.contains(where: { $0.id == selectedID }) != true { self.selectedID = nil }
+        }
         // ⌘F: search, on a hardware keyboard.
         .background {
             Button("Search") { searchFocused = true }
@@ -169,7 +176,7 @@ struct LibraryView: View {
         Menu {
             Picker("Module", selection: $module) {
                 Text("All modules").tag(Module?.none)
-                ForEach(student.programme.modules) { Text($0.title).tag(Module?.some($0)) }
+                ForEach(student.modules) { Text($0.title).tag(Module?.some($0)) }
             }
         } label: {
             Image(systemName: module == nil ? "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
